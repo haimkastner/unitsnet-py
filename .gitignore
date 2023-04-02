@@ -1,6 +1,11 @@
 # VS CODE
 .vscode
 
+# pip deps
+requirements.txt
+setup.py
+.pypirc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

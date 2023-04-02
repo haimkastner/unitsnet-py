@@ -1,34 +1,19 @@
-import requests
-import json
 
-
-def __get_json_from_cdn(cdn_url):
-    try:
-        response = requests.get(
-            cdn_url, headers={"user-agent": "PostmanRuntime/7.20.1"}
-        )
-        response.raise_for_status()
-        # Skip utf-8 BOM char.
-        cleaned_text = response.text.lstrip('\ufeff')
-        json_data = json.loads(cleaned_text)
-        return json_data
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to retrieve JSON from cdn: {e}")
-
+from utils import get_json_from_cdn
 
 def get_definitions(repo_owner_and_name):
     directory_url = f"https://api.github.com/repos/{repo_owner_and_name}/contents/Common/UnitDefinitions"
     files_url = f"https://raw.githubusercontent.com/{repo_owner_and_name}/master/Common/UnitDefinitions"
 
     print("Fetching units files list...")
-    # directory_files = [{ 'name': 'Volume.json'}]
+    # directory_files = [{ 'name': 'Length.json'}]
                         
-    directory_files = __get_json_from_cdn(directory_url)
+    directory_files = get_json_from_cdn(directory_url)
     
     definitions = []
     for file in directory_files:
         name = file.get('name')
-        definition = __get_json_from_cdn(f'{files_url}/{name}')
+        definition = get_json_from_cdn(f'{files_url}/{name}')
         
         for unit in definition['Units']:
             markAsDeprecated = False
@@ -47,9 +32,6 @@ def get_definitions(repo_owner_and_name):
         definitions.append(definition)
         
         print(f'[get_definitions] Unit {name}.{pluralName} successfully fetched')
-        
-        # if name == 'Acceleration.json':
-            # break
     
     return definitions
         

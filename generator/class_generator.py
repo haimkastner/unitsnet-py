@@ -1,6 +1,6 @@
 import string
 from jinja2 import Template, StrictUndefined
-import re
+from utils import camel_to_snake, upper_to_lower_camelcase
 
 # The factor between unit and his prefix.
 prefixes_factor = {
@@ -27,9 +27,7 @@ with open("generator/unit_template.jinja2", "r") as f:
     template_str = f.read()
 
 
-def camel_to_snake(name):
-    name = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
-    return re.sub("([a-z0-9])([A-Z])", r"\1_\2", name).lower()
+
 
 
 def format_formula(original_formula: string):
@@ -57,8 +55,8 @@ def generate_prefixes(unit, prefixes) -> list:
             'Deprecated': deprecated,
             'FromUnitToBaseFunc': from_unit_prefix_to_base_formula,
             'FromBaseToUnitFunc': from_base_to_unit_prefix_formula,
-            'SingularName': f'{prefix}{singular_name}',
-            'PluralName': f'{prefix}{plural_nName}',
+            'SingularName': f'{prefix}{upper_to_lower_camelcase(singular_name)}',
+            'PluralName': f'{prefix}{upper_to_lower_camelcase(plural_nName)}',
             'Localization': [{
                 'Culture': 'en-US',
                 'Abbreviations': [''],
@@ -133,7 +131,7 @@ def generate_unit_class(unit_definition):
     # Render the template with the data
     code = template.render(template_data)
 
-    with open(f"units/{camel_to_snake(unit_name)}.g.py", "w", encoding="utf-8") as f:
+    with open(f"unitsnet_py/units/{camel_to_snake(unit_name)}.py", "w", encoding="utf-8") as f:
         f.write(code)
 
     print(f'[generate_unit_class] Generating units for {unit_name} finished successfully')
