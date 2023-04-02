@@ -27,7 +27,7 @@ def export_generator(definitions: list):
     # Render the template with the data
     code = template.render(template_data)
 
-    with open(f"unitsnet-py/main.py", "w", encoding="utf-8") as f:
+    with open(f"unitsnet-py/__init__.py", "w", encoding="utf-8") as f:
         f.write(code)
 
     print(f'[generate_unit_class] Generating main.py finished successfully')
