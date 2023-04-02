@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "unitsnet-py"
-version = "0.1.9"
+name = "unitsnet_py"
+version = "0.1.20"
 description = "A better way to hold unit variables and easily convert to the destination unit"
 repository = "https://github.com/haimkastner/unitsnet-py"
 authors = ["Haim Kastner <haim.kastner@gmail.com>"]
@@ -10,7 +10,7 @@ maintainers = [
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "unitsnet-py" },
+    { include = "unitsnet_py" },
 ]
 
 [tool.poetry.dependencies]
