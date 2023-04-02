@@ -131,7 +131,7 @@ def generate_unit_class(unit_definition):
     # Render the template with the data
     code = template.render(template_data)
 
-    with open(f"units/{camel_to_snake(unit_name)}.py", "w", encoding="utf-8") as f:
+    with open(f"unitsnet-py/units/{camel_to_snake(unit_name)}.py", "w", encoding="utf-8") as f:
         f.write(code)
 
     print(f'[generate_unit_class] Generating units for {unit_name} finished successfully')
