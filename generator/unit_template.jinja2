@@ -1,0 +1,172 @@
+from enum import Enum
+import math
+import string
+
+{% if unit %}
+class {{ unit }}Units(Enum):
+        """
+            {{ unit }}Units enumeration
+        """
+        {% for method in methods %}
+        {{ method.unit }} = '{{ method.unit_value }}'
+        """
+            {{ method.description }}
+        """
+        {% endfor %}
+    {% endif %}
+class {{ unit }}:
+    """
+    {{ description }}
+
+    Args:
+        value (float): The value.
+        from_unit ({{ unit }}Units): The {{ unit }} unit to create from, The default unit is {{ base_unit }}
+    """
+    def __init__(self, value: float, from_unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}):
+        if math.isnan(value):
+            raise ValueError('Invalid unit: value is NaN')
+        self.__value = self.__convert_to_base(value, from_unit)
+        {% for method in methods %}
+        self.__{{ method.name }} = None
+        {% endfor %}
+
+    def __convert_from_base(self, from_unit: {{ unit }}Units) -> float:
+        value = self.__value
+        {% for method in methods %}
+        if from_unit == {{ unit }}Units.{{ method.unit }}:
+            return {{ method.formula_from_base }}
+        {% endfor %}
+        return None
+
+
+    def __convert_to_base(self, value: float, to_unit: {{ unit }}Units) -> float:
+        {% for method in methods %}
+        if to_unit == {{ unit }}Units.{{ method.unit }}:
+            return {{ method.formula_to_base }}
+        {% endfor %}
+        return None
+
+
+    @property
+    def base_value(self) -> float:
+        return self.__value
+
+    {% for method in methods %}
+    @staticmethod
+    def from_{{ method.name }}({{ method.name }}: float):
+        """
+        Create a new instance of {{ unit }} from a value in {{ method.name }}.
+
+        {{ method.description }}
+
+        :param meters: The {{ unit }} value in {{ method.name }}.
+        :type {{ method.name }}: float
+        :return: A new instance of {{ unit }}.
+        :rtype: {{ unit }}
+        """
+        return {{ unit }}({{ method.name }}, {{ unit }}Units.{{ method.unit }})
+
+    {% endfor %}{% for method in methods %}
+    @property
+    def {{ method.name }}(self) -> float:
+        """
+        {{ method.description }}
+        """
+        if self.__{{ method.name }} != None:
+            return self.__{{ method.name }}
+        self.__{{ method.name }} = self.__convert_from_base({{ unit }}Units.{{ method.unit }})
+        return self.__{{ method.name }}
+
+    {% endfor %}
+    def to_string(self, unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> string:
+        """
+        Format the {{ unit }} to string.
+        Note! the default format for {{ unit }} is {{ base_unit }}.
+        To specify the unit format set the 'unit' parameter.
+        """
+        {% for method in methods %}
+        if unit == {{ unit }}Units.{{ method.unit }}:
+            return f"""{self.{{ method.name }}} {{ method.abbreviation }}"""
+        {% endfor %}
+        return f'{self.__value}'
+
+
+    def get_unit_abbreviation(self, unit_abbreviation: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> string:
+        """
+        Get {{ unit }} unit abbreviation.
+        Note! the default abbreviation for {{ unit }} is {{ base_unit }}.
+        To specify the unit abbreviation set the 'unit_abbreviation' parameter.
+        """
+        {% for method in methods %}
+        if unit_abbreviation == {{ unit }}Units.{{ method.unit }}:
+            return """{{ method.abbreviation }}"""
+        {% endfor %}
+
+    def __str__(self):
+        return self.to_string()
+
+
+    def __add__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for +: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value + other.__value)
+
+
+    def __mul__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for *: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value * other.__value)
+
+
+    def __sub__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for -: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value - other.__value)
+
+
+    def __truediv__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for /: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value / other.__value)
+
+
+    def __mod__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for %: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value % other.__value)
+
+
+    def __pow__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for **: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return {{ unit }}(self.__value ** other.__value)
+
+
+    def __eq__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for ==: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return self.__value == other.__value
+
+
+    def __lt__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for <: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return self.__value < other.__value
+
+
+    def __gt__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for >: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return self.__value > other.__value
+
+
+    def __le__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for <=: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return self.__value <= other.__value
+
+
+    def __ge__(self, other):
+        if not isinstance(other, {{ unit }}):
+            raise TypeError("unsupported operand type(s) for >=: '{{ unit }}' and '{}'".format(type(other).__name__))
+        return self.__value >= other.__value
