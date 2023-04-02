@@ -48,7 +48,14 @@ jobs:
         run: |
           python setup.py sdist
           pip install twine
-          twine upload dist/* -u USERNAME -p $API_KEY
+          
+          echo "[pypi]" > .pypirc 
+          echo "username = __token__" >> .pypirc 
+          echo "password = $API_KEY" >> .pypirc 
+
+          twine upload dist/*
+
+          echo "-" > .pypirc
 
       - name: Create Release
         id: create_release
