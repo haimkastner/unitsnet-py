@@ -2,5 +2,5 @@
 {% endfor %}
 
 __all__ = [
-{% for method in methods %} '{{ method.unit_name }}', {{ method.unit_name }}Units,
+{% for method in methods %} '{{ method.unit_name }}', '{{ method.unit_name }}Units',
 {% endfor %}]
