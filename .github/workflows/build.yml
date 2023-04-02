@@ -18,11 +18,44 @@ jobs:
           pip install -r requirements.txt
           python generator/generate_units.py
       
+      - name: Bump version
+        id: update_version
+        run: |
+          poetry version patch
+          version=$(poetry version | awk '{print $NF}')
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
+
+      - name: Get version info
+        id: version_info
+        run: |
+          body=$(git log -1 --pretty=%B | sed -n '1p')
+          echo "BODY=$body" >> $GITHUB_OUTPUT
+
+      - name: Commit and push version
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Update to version ${{ steps.update_version.outputs.VERSION }} [skip-ci]
+      
       - name: Generate setup
         run: |
           pip install poetry2setup
           poetry2setup > setup.py
-
-          cat ./setup.py
       
- 
+      - name: Publish release
+        run: |
+          python setup.py sdist
+          pip install twine
+          twine upload dist/* -u USERNAME -p $PIP_API_KEY
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.update_version.outputs.VERSION }}
+          name: Package Version ${{ steps.update_version.outputs.VERSION }}
+          body: ${{  steps.version_info.outputs.BODY }}
+          draft: false
+          prerelease: false
