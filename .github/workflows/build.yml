@@ -43,10 +43,12 @@ jobs:
           poetry2setup > setup.py
       
       - name: Publish release
+        env:
+          API_KEY: '${{ secrets.PIP_API_KEY }}'
         run: |
           python setup.py sdist
           pip install twine
-          twine upload dist/* -u USERNAME -p $PIP_API_KEY
+          twine upload dist/* -u USERNAME -p $API_KEY
 
       - name: Create Release
         id: create_release
