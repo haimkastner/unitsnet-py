@@ -47,9 +47,6 @@ def get_definitions(repo_owner_and_name):
         definitions.append(definition)
         
         print(f'[get_definitions] Unit {name}.{pluralName} successfully fetched')
-        
-        # if name == 'Acceleration.json':
-            # break
     
     return definitions
         

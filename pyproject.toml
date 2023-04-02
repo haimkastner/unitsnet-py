@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "unitsnet-py"
+version = "0.1.0"
+description = "A better way to hold unit variables and easily convert to the destination unit"
+authors = ["Haim Kastner <haim.kastner@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Jinja2 = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
