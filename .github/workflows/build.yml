@@ -17,5 +17,5 @@ jobs:
           pip install --user poetry
           poetry install
 
-          python units/generate_units.py
+          python generator/generate_units.py
  
