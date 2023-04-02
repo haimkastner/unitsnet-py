@@ -23,52 +23,52 @@ class MolarMassUnits(Enum):
             
         """
         
-        NanoGramPerMole = 'nano_gram_per_mole'
+        NanogramPerMole = 'nanogram_per_mole'
         """
             
         """
         
-        MicroGramPerMole = 'micro_gram_per_mole'
+        MicrogramPerMole = 'microgram_per_mole'
         """
             
         """
         
-        MilliGramPerMole = 'milli_gram_per_mole'
+        MilligramPerMole = 'milligram_per_mole'
         """
             
         """
         
-        CentiGramPerMole = 'centi_gram_per_mole'
+        CentigramPerMole = 'centigram_per_mole'
         """
             
         """
         
-        DeciGramPerMole = 'deci_gram_per_mole'
+        DecigramPerMole = 'decigram_per_mole'
         """
             
         """
         
-        DecaGramPerMole = 'deca_gram_per_mole'
+        DecagramPerMole = 'decagram_per_mole'
         """
             
         """
         
-        HectoGramPerMole = 'hecto_gram_per_mole'
+        HectogramPerMole = 'hectogram_per_mole'
         """
             
         """
         
-        KiloGramPerMole = 'kilo_gram_per_mole'
+        KilogramPerMole = 'kilogram_per_mole'
         """
             
         """
         
-        KiloPoundPerMole = 'kilo_pound_per_mole'
+        KilopoundPerMole = 'kilopound_per_mole'
         """
             
         """
         
-        MegaPoundPerMole = 'mega_pound_per_mole'
+        MegapoundPerMole = 'megapound_per_mole'
         """
             
         """
@@ -93,25 +93,25 @@ class MolarMass:
         
         self.__pounds_per_mole = None
         
-        self.__nano_grams_per_mole = None
+        self.__nanograms_per_mole = None
         
-        self.__micro_grams_per_mole = None
+        self.__micrograms_per_mole = None
         
-        self.__milli_grams_per_mole = None
+        self.__milligrams_per_mole = None
         
-        self.__centi_grams_per_mole = None
+        self.__centigrams_per_mole = None
         
-        self.__deci_grams_per_mole = None
+        self.__decigrams_per_mole = None
         
-        self.__deca_grams_per_mole = None
+        self.__decagrams_per_mole = None
         
-        self.__hecto_grams_per_mole = None
+        self.__hectograms_per_mole = None
         
-        self.__kilo_grams_per_mole = None
+        self.__kilograms_per_mole = None
         
-        self.__kilo_pounds_per_mole = None
+        self.__kilopounds_per_mole = None
         
-        self.__mega_pounds_per_mole = None
+        self.__megapounds_per_mole = None
         
 
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:
@@ -126,34 +126,34 @@ class MolarMass:
         if from_unit == MolarMassUnits.PoundPerMole:
             return (value / 0.45359237)
         
-        if from_unit == MolarMassUnits.NanoGramPerMole:
+        if from_unit == MolarMassUnits.NanogramPerMole:
             return ((value * 1e3) / 1e-09)
         
-        if from_unit == MolarMassUnits.MicroGramPerMole:
+        if from_unit == MolarMassUnits.MicrogramPerMole:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == MolarMassUnits.MilliGramPerMole:
+        if from_unit == MolarMassUnits.MilligramPerMole:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == MolarMassUnits.CentiGramPerMole:
+        if from_unit == MolarMassUnits.CentigramPerMole:
             return ((value * 1e3) / 0.01)
         
-        if from_unit == MolarMassUnits.DeciGramPerMole:
+        if from_unit == MolarMassUnits.DecigramPerMole:
             return ((value * 1e3) / 0.1)
         
-        if from_unit == MolarMassUnits.DecaGramPerMole:
+        if from_unit == MolarMassUnits.DecagramPerMole:
             return ((value * 1e3) / 10.0)
         
-        if from_unit == MolarMassUnits.HectoGramPerMole:
+        if from_unit == MolarMassUnits.HectogramPerMole:
             return ((value * 1e3) / 100.0)
         
-        if from_unit == MolarMassUnits.KiloGramPerMole:
+        if from_unit == MolarMassUnits.KilogramPerMole:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == MolarMassUnits.KiloPoundPerMole:
+        if from_unit == MolarMassUnits.KilopoundPerMole:
             return ((value / 0.45359237) / 1000.0)
         
-        if from_unit == MolarMassUnits.MegaPoundPerMole:
+        if from_unit == MolarMassUnits.MegapoundPerMole:
             return ((value / 0.45359237) / 1000000.0)
         
         return None
@@ -170,34 +170,34 @@ class MolarMass:
         if to_unit == MolarMassUnits.PoundPerMole:
             return (value * 0.45359237)
         
-        if to_unit == MolarMassUnits.NanoGramPerMole:
+        if to_unit == MolarMassUnits.NanogramPerMole:
             return ((value / 1e3) * 1e-09)
         
-        if to_unit == MolarMassUnits.MicroGramPerMole:
+        if to_unit == MolarMassUnits.MicrogramPerMole:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == MolarMassUnits.MilliGramPerMole:
+        if to_unit == MolarMassUnits.MilligramPerMole:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == MolarMassUnits.CentiGramPerMole:
+        if to_unit == MolarMassUnits.CentigramPerMole:
             return ((value / 1e3) * 0.01)
         
-        if to_unit == MolarMassUnits.DeciGramPerMole:
+        if to_unit == MolarMassUnits.DecigramPerMole:
             return ((value / 1e3) * 0.1)
         
-        if to_unit == MolarMassUnits.DecaGramPerMole:
+        if to_unit == MolarMassUnits.DecagramPerMole:
             return ((value / 1e3) * 10.0)
         
-        if to_unit == MolarMassUnits.HectoGramPerMole:
+        if to_unit == MolarMassUnits.HectogramPerMole:
             return ((value / 1e3) * 100.0)
         
-        if to_unit == MolarMassUnits.KiloGramPerMole:
+        if to_unit == MolarMassUnits.KilogramPerMole:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == MolarMassUnits.KiloPoundPerMole:
+        if to_unit == MolarMassUnits.KilopoundPerMole:
             return ((value * 0.45359237) * 1000.0)
         
-        if to_unit == MolarMassUnits.MegaPoundPerMole:
+        if to_unit == MolarMassUnits.MegapoundPerMole:
             return ((value * 0.45359237) * 1000000.0)
         
         return None
@@ -254,153 +254,153 @@ class MolarMass:
 
     
     @staticmethod
-    def from_nano_grams_per_mole(nano_grams_per_mole: float):
+    def from_nanograms_per_mole(nanograms_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in nano_grams_per_mole.
+        Create a new instance of MolarMass from a value in nanograms_per_mole.
 
         
 
-        :param meters: The MolarMass value in nano_grams_per_mole.
-        :type nano_grams_per_mole: float
+        :param meters: The MolarMass value in nanograms_per_mole.
+        :type nanograms_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(nano_grams_per_mole, MolarMassUnits.NanoGramPerMole)
+        return MolarMass(nanograms_per_mole, MolarMassUnits.NanogramPerMole)
 
     
     @staticmethod
-    def from_micro_grams_per_mole(micro_grams_per_mole: float):
+    def from_micrograms_per_mole(micrograms_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in micro_grams_per_mole.
+        Create a new instance of MolarMass from a value in micrograms_per_mole.
 
         
 
-        :param meters: The MolarMass value in micro_grams_per_mole.
-        :type micro_grams_per_mole: float
+        :param meters: The MolarMass value in micrograms_per_mole.
+        :type micrograms_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(micro_grams_per_mole, MolarMassUnits.MicroGramPerMole)
+        return MolarMass(micrograms_per_mole, MolarMassUnits.MicrogramPerMole)
 
     
     @staticmethod
-    def from_milli_grams_per_mole(milli_grams_per_mole: float):
+    def from_milligrams_per_mole(milligrams_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in milli_grams_per_mole.
+        Create a new instance of MolarMass from a value in milligrams_per_mole.
 
         
 
-        :param meters: The MolarMass value in milli_grams_per_mole.
-        :type milli_grams_per_mole: float
+        :param meters: The MolarMass value in milligrams_per_mole.
+        :type milligrams_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(milli_grams_per_mole, MolarMassUnits.MilliGramPerMole)
+        return MolarMass(milligrams_per_mole, MolarMassUnits.MilligramPerMole)
 
     
     @staticmethod
-    def from_centi_grams_per_mole(centi_grams_per_mole: float):
+    def from_centigrams_per_mole(centigrams_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in centi_grams_per_mole.
+        Create a new instance of MolarMass from a value in centigrams_per_mole.
 
         
 
-        :param meters: The MolarMass value in centi_grams_per_mole.
-        :type centi_grams_per_mole: float
+        :param meters: The MolarMass value in centigrams_per_mole.
+        :type centigrams_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(centi_grams_per_mole, MolarMassUnits.CentiGramPerMole)
+        return MolarMass(centigrams_per_mole, MolarMassUnits.CentigramPerMole)
 
     
     @staticmethod
-    def from_deci_grams_per_mole(deci_grams_per_mole: float):
+    def from_decigrams_per_mole(decigrams_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in deci_grams_per_mole.
+        Create a new instance of MolarMass from a value in decigrams_per_mole.
 
         
 
-        :param meters: The MolarMass value in deci_grams_per_mole.
-        :type deci_grams_per_mole: float
+        :param meters: The MolarMass value in decigrams_per_mole.
+        :type decigrams_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(deci_grams_per_mole, MolarMassUnits.DeciGramPerMole)
+        return MolarMass(decigrams_per_mole, MolarMassUnits.DecigramPerMole)
 
     
     @staticmethod
-    def from_deca_grams_per_mole(deca_grams_per_mole: float):
+    def from_decagrams_per_mole(decagrams_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in deca_grams_per_mole.
+        Create a new instance of MolarMass from a value in decagrams_per_mole.
 
         
 
-        :param meters: The MolarMass value in deca_grams_per_mole.
-        :type deca_grams_per_mole: float
+        :param meters: The MolarMass value in decagrams_per_mole.
+        :type decagrams_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(deca_grams_per_mole, MolarMassUnits.DecaGramPerMole)
+        return MolarMass(decagrams_per_mole, MolarMassUnits.DecagramPerMole)
 
     
     @staticmethod
-    def from_hecto_grams_per_mole(hecto_grams_per_mole: float):
+    def from_hectograms_per_mole(hectograms_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in hecto_grams_per_mole.
+        Create a new instance of MolarMass from a value in hectograms_per_mole.
 
         
 
-        :param meters: The MolarMass value in hecto_grams_per_mole.
-        :type hecto_grams_per_mole: float
+        :param meters: The MolarMass value in hectograms_per_mole.
+        :type hectograms_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(hecto_grams_per_mole, MolarMassUnits.HectoGramPerMole)
+        return MolarMass(hectograms_per_mole, MolarMassUnits.HectogramPerMole)
 
     
     @staticmethod
-    def from_kilo_grams_per_mole(kilo_grams_per_mole: float):
+    def from_kilograms_per_mole(kilograms_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in kilo_grams_per_mole.
+        Create a new instance of MolarMass from a value in kilograms_per_mole.
 
         
 
-        :param meters: The MolarMass value in kilo_grams_per_mole.
-        :type kilo_grams_per_mole: float
+        :param meters: The MolarMass value in kilograms_per_mole.
+        :type kilograms_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(kilo_grams_per_mole, MolarMassUnits.KiloGramPerMole)
+        return MolarMass(kilograms_per_mole, MolarMassUnits.KilogramPerMole)
 
     
     @staticmethod
-    def from_kilo_pounds_per_mole(kilo_pounds_per_mole: float):
+    def from_kilopounds_per_mole(kilopounds_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in kilo_pounds_per_mole.
+        Create a new instance of MolarMass from a value in kilopounds_per_mole.
 
         
 
-        :param meters: The MolarMass value in kilo_pounds_per_mole.
-        :type kilo_pounds_per_mole: float
+        :param meters: The MolarMass value in kilopounds_per_mole.
+        :type kilopounds_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(kilo_pounds_per_mole, MolarMassUnits.KiloPoundPerMole)
+        return MolarMass(kilopounds_per_mole, MolarMassUnits.KilopoundPerMole)
 
     
     @staticmethod
-    def from_mega_pounds_per_mole(mega_pounds_per_mole: float):
+    def from_megapounds_per_mole(megapounds_per_mole: float):
         """
-        Create a new instance of MolarMass from a value in mega_pounds_per_mole.
+        Create a new instance of MolarMass from a value in megapounds_per_mole.
 
         
 
-        :param meters: The MolarMass value in mega_pounds_per_mole.
-        :type mega_pounds_per_mole: float
+        :param meters: The MolarMass value in megapounds_per_mole.
+        :type megapounds_per_mole: float
         :return: A new instance of MolarMass.
         :rtype: MolarMass
         """
-        return MolarMass(mega_pounds_per_mole, MolarMassUnits.MegaPoundPerMole)
+        return MolarMass(megapounds_per_mole, MolarMassUnits.MegapoundPerMole)
 
     
     @property
@@ -437,113 +437,113 @@ class MolarMass:
 
     
     @property
-    def nano_grams_per_mole(self) -> float:
+    def nanograms_per_mole(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_mole != None:
-            return self.__nano_grams_per_mole
-        self.__nano_grams_per_mole = self.__convert_from_base(MolarMassUnits.NanoGramPerMole)
-        return self.__nano_grams_per_mole
+        if self.__nanograms_per_mole != None:
+            return self.__nanograms_per_mole
+        self.__nanograms_per_mole = self.__convert_from_base(MolarMassUnits.NanogramPerMole)
+        return self.__nanograms_per_mole
 
     
     @property
-    def micro_grams_per_mole(self) -> float:
+    def micrograms_per_mole(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_mole != None:
-            return self.__micro_grams_per_mole
-        self.__micro_grams_per_mole = self.__convert_from_base(MolarMassUnits.MicroGramPerMole)
-        return self.__micro_grams_per_mole
+        if self.__micrograms_per_mole != None:
+            return self.__micrograms_per_mole
+        self.__micrograms_per_mole = self.__convert_from_base(MolarMassUnits.MicrogramPerMole)
+        return self.__micrograms_per_mole
 
     
     @property
-    def milli_grams_per_mole(self) -> float:
+    def milligrams_per_mole(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_mole != None:
-            return self.__milli_grams_per_mole
-        self.__milli_grams_per_mole = self.__convert_from_base(MolarMassUnits.MilliGramPerMole)
-        return self.__milli_grams_per_mole
+        if self.__milligrams_per_mole != None:
+            return self.__milligrams_per_mole
+        self.__milligrams_per_mole = self.__convert_from_base(MolarMassUnits.MilligramPerMole)
+        return self.__milligrams_per_mole
 
     
     @property
-    def centi_grams_per_mole(self) -> float:
+    def centigrams_per_mole(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_mole != None:
-            return self.__centi_grams_per_mole
-        self.__centi_grams_per_mole = self.__convert_from_base(MolarMassUnits.CentiGramPerMole)
-        return self.__centi_grams_per_mole
+        if self.__centigrams_per_mole != None:
+            return self.__centigrams_per_mole
+        self.__centigrams_per_mole = self.__convert_from_base(MolarMassUnits.CentigramPerMole)
+        return self.__centigrams_per_mole
 
     
     @property
-    def deci_grams_per_mole(self) -> float:
+    def decigrams_per_mole(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_mole != None:
-            return self.__deci_grams_per_mole
-        self.__deci_grams_per_mole = self.__convert_from_base(MolarMassUnits.DeciGramPerMole)
-        return self.__deci_grams_per_mole
+        if self.__decigrams_per_mole != None:
+            return self.__decigrams_per_mole
+        self.__decigrams_per_mole = self.__convert_from_base(MolarMassUnits.DecigramPerMole)
+        return self.__decigrams_per_mole
 
     
     @property
-    def deca_grams_per_mole(self) -> float:
+    def decagrams_per_mole(self) -> float:
         """
         
         """
-        if self.__deca_grams_per_mole != None:
-            return self.__deca_grams_per_mole
-        self.__deca_grams_per_mole = self.__convert_from_base(MolarMassUnits.DecaGramPerMole)
-        return self.__deca_grams_per_mole
+        if self.__decagrams_per_mole != None:
+            return self.__decagrams_per_mole
+        self.__decagrams_per_mole = self.__convert_from_base(MolarMassUnits.DecagramPerMole)
+        return self.__decagrams_per_mole
 
     
     @property
-    def hecto_grams_per_mole(self) -> float:
+    def hectograms_per_mole(self) -> float:
         """
         
         """
-        if self.__hecto_grams_per_mole != None:
-            return self.__hecto_grams_per_mole
-        self.__hecto_grams_per_mole = self.__convert_from_base(MolarMassUnits.HectoGramPerMole)
-        return self.__hecto_grams_per_mole
+        if self.__hectograms_per_mole != None:
+            return self.__hectograms_per_mole
+        self.__hectograms_per_mole = self.__convert_from_base(MolarMassUnits.HectogramPerMole)
+        return self.__hectograms_per_mole
 
     
     @property
-    def kilo_grams_per_mole(self) -> float:
+    def kilograms_per_mole(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_mole != None:
-            return self.__kilo_grams_per_mole
-        self.__kilo_grams_per_mole = self.__convert_from_base(MolarMassUnits.KiloGramPerMole)
-        return self.__kilo_grams_per_mole
+        if self.__kilograms_per_mole != None:
+            return self.__kilograms_per_mole
+        self.__kilograms_per_mole = self.__convert_from_base(MolarMassUnits.KilogramPerMole)
+        return self.__kilograms_per_mole
 
     
     @property
-    def kilo_pounds_per_mole(self) -> float:
+    def kilopounds_per_mole(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_per_mole != None:
-            return self.__kilo_pounds_per_mole
-        self.__kilo_pounds_per_mole = self.__convert_from_base(MolarMassUnits.KiloPoundPerMole)
-        return self.__kilo_pounds_per_mole
+        if self.__kilopounds_per_mole != None:
+            return self.__kilopounds_per_mole
+        self.__kilopounds_per_mole = self.__convert_from_base(MolarMassUnits.KilopoundPerMole)
+        return self.__kilopounds_per_mole
 
     
     @property
-    def mega_pounds_per_mole(self) -> float:
+    def megapounds_per_mole(self) -> float:
         """
         
         """
-        if self.__mega_pounds_per_mole != None:
-            return self.__mega_pounds_per_mole
-        self.__mega_pounds_per_mole = self.__convert_from_base(MolarMassUnits.MegaPoundPerMole)
-        return self.__mega_pounds_per_mole
+        if self.__megapounds_per_mole != None:
+            return self.__megapounds_per_mole
+        self.__megapounds_per_mole = self.__convert_from_base(MolarMassUnits.MegapoundPerMole)
+        return self.__megapounds_per_mole
 
     
     def to_string(self, unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> string:
@@ -562,35 +562,35 @@ class MolarMass:
         if unit == MolarMassUnits.PoundPerMole:
             return f"""{self.pounds_per_mole} lb/mol"""
         
-        if unit == MolarMassUnits.NanoGramPerMole:
-            return f"""{self.nano_grams_per_mole} """
+        if unit == MolarMassUnits.NanogramPerMole:
+            return f"""{self.nanograms_per_mole} """
         
-        if unit == MolarMassUnits.MicroGramPerMole:
-            return f"""{self.micro_grams_per_mole} """
+        if unit == MolarMassUnits.MicrogramPerMole:
+            return f"""{self.micrograms_per_mole} """
         
-        if unit == MolarMassUnits.MilliGramPerMole:
-            return f"""{self.milli_grams_per_mole} """
+        if unit == MolarMassUnits.MilligramPerMole:
+            return f"""{self.milligrams_per_mole} """
         
-        if unit == MolarMassUnits.CentiGramPerMole:
-            return f"""{self.centi_grams_per_mole} """
+        if unit == MolarMassUnits.CentigramPerMole:
+            return f"""{self.centigrams_per_mole} """
         
-        if unit == MolarMassUnits.DeciGramPerMole:
-            return f"""{self.deci_grams_per_mole} """
+        if unit == MolarMassUnits.DecigramPerMole:
+            return f"""{self.decigrams_per_mole} """
         
-        if unit == MolarMassUnits.DecaGramPerMole:
-            return f"""{self.deca_grams_per_mole} """
+        if unit == MolarMassUnits.DecagramPerMole:
+            return f"""{self.decagrams_per_mole} """
         
-        if unit == MolarMassUnits.HectoGramPerMole:
-            return f"""{self.hecto_grams_per_mole} """
+        if unit == MolarMassUnits.HectogramPerMole:
+            return f"""{self.hectograms_per_mole} """
         
-        if unit == MolarMassUnits.KiloGramPerMole:
-            return f"""{self.kilo_grams_per_mole} """
+        if unit == MolarMassUnits.KilogramPerMole:
+            return f"""{self.kilograms_per_mole} """
         
-        if unit == MolarMassUnits.KiloPoundPerMole:
-            return f"""{self.kilo_pounds_per_mole} """
+        if unit == MolarMassUnits.KilopoundPerMole:
+            return f"""{self.kilopounds_per_mole} """
         
-        if unit == MolarMassUnits.MegaPoundPerMole:
-            return f"""{self.mega_pounds_per_mole} """
+        if unit == MolarMassUnits.MegapoundPerMole:
+            return f"""{self.megapounds_per_mole} """
         
         return f'{self.__value}'
 
@@ -611,34 +611,34 @@ class MolarMass:
         if unit_abbreviation == MolarMassUnits.PoundPerMole:
             return """lb/mol"""
         
-        if unit_abbreviation == MolarMassUnits.NanoGramPerMole:
+        if unit_abbreviation == MolarMassUnits.NanogramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.MicroGramPerMole:
+        if unit_abbreviation == MolarMassUnits.MicrogramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.MilliGramPerMole:
+        if unit_abbreviation == MolarMassUnits.MilligramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.CentiGramPerMole:
+        if unit_abbreviation == MolarMassUnits.CentigramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.DeciGramPerMole:
+        if unit_abbreviation == MolarMassUnits.DecigramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.DecaGramPerMole:
+        if unit_abbreviation == MolarMassUnits.DecagramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.HectoGramPerMole:
+        if unit_abbreviation == MolarMassUnits.HectogramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.KiloGramPerMole:
+        if unit_abbreviation == MolarMassUnits.KilogramPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.KiloPoundPerMole:
+        if unit_abbreviation == MolarMassUnits.KilopoundPerMole:
             return """"""
         
-        if unit_abbreviation == MolarMassUnits.MegaPoundPerMole:
+        if unit_abbreviation == MolarMassUnits.MegapoundPerMole:
             return """"""
         
 

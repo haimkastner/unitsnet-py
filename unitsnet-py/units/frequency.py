@@ -43,32 +43,32 @@ class FrequencyUnits(Enum):
             
         """
         
-        MicroHertz = 'micro_hertz'
+        Microhertz = 'microhertz'
         """
             
         """
         
-        MilliHertz = 'milli_hertz'
+        Millihertz = 'millihertz'
         """
             
         """
         
-        KiloHertz = 'kilo_hertz'
+        Kilohertz = 'kilohertz'
         """
             
         """
         
-        MegaHertz = 'mega_hertz'
+        Megahertz = 'megahertz'
         """
             
         """
         
-        GigaHertz = 'giga_hertz'
+        Gigahertz = 'gigahertz'
         """
             
         """
         
-        TeraHertz = 'tera_hertz'
+        Terahertz = 'terahertz'
         """
             
         """
@@ -101,17 +101,17 @@ class Frequency:
         
         self.__b_units = None
         
-        self.__micro_hertz = None
+        self.__microhertz = None
         
-        self.__milli_hertz = None
+        self.__millihertz = None
         
-        self.__kilo_hertz = None
+        self.__kilohertz = None
         
-        self.__mega_hertz = None
+        self.__megahertz = None
         
-        self.__giga_hertz = None
+        self.__gigahertz = None
         
-        self.__tera_hertz = None
+        self.__terahertz = None
         
 
     def __convert_from_base(self, from_unit: FrequencyUnits) -> float:
@@ -138,22 +138,22 @@ class Frequency:
         if from_unit == FrequencyUnits.BUnit:
             return (value * value * 1e-3)
         
-        if from_unit == FrequencyUnits.MicroHertz:
+        if from_unit == FrequencyUnits.Microhertz:
             return ((value) / 1e-06)
         
-        if from_unit == FrequencyUnits.MilliHertz:
+        if from_unit == FrequencyUnits.Millihertz:
             return ((value) / 0.001)
         
-        if from_unit == FrequencyUnits.KiloHertz:
+        if from_unit == FrequencyUnits.Kilohertz:
             return ((value) / 1000.0)
         
-        if from_unit == FrequencyUnits.MegaHertz:
+        if from_unit == FrequencyUnits.Megahertz:
             return ((value) / 1000000.0)
         
-        if from_unit == FrequencyUnits.GigaHertz:
+        if from_unit == FrequencyUnits.Gigahertz:
             return ((value) / 1000000000.0)
         
-        if from_unit == FrequencyUnits.TeraHertz:
+        if from_unit == FrequencyUnits.Terahertz:
             return ((value) / 1000000000000.0)
         
         return None
@@ -182,22 +182,22 @@ class Frequency:
         if to_unit == FrequencyUnits.BUnit:
             return (math.sqrt(value * 1e3))
         
-        if to_unit == FrequencyUnits.MicroHertz:
+        if to_unit == FrequencyUnits.Microhertz:
             return ((value) * 1e-06)
         
-        if to_unit == FrequencyUnits.MilliHertz:
+        if to_unit == FrequencyUnits.Millihertz:
             return ((value) * 0.001)
         
-        if to_unit == FrequencyUnits.KiloHertz:
+        if to_unit == FrequencyUnits.Kilohertz:
             return ((value) * 1000.0)
         
-        if to_unit == FrequencyUnits.MegaHertz:
+        if to_unit == FrequencyUnits.Megahertz:
             return ((value) * 1000000.0)
         
-        if to_unit == FrequencyUnits.GigaHertz:
+        if to_unit == FrequencyUnits.Gigahertz:
             return ((value) * 1000000000.0)
         
-        if to_unit == FrequencyUnits.TeraHertz:
+        if to_unit == FrequencyUnits.Terahertz:
             return ((value) * 1000000000000.0)
         
         return None
@@ -314,93 +314,93 @@ class Frequency:
 
     
     @staticmethod
-    def from_micro_hertz(micro_hertz: float):
+    def from_microhertz(microhertz: float):
         """
-        Create a new instance of Frequency from a value in micro_hertz.
+        Create a new instance of Frequency from a value in microhertz.
 
         
 
-        :param meters: The Frequency value in micro_hertz.
-        :type micro_hertz: float
+        :param meters: The Frequency value in microhertz.
+        :type microhertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(micro_hertz, FrequencyUnits.MicroHertz)
+        return Frequency(microhertz, FrequencyUnits.Microhertz)
 
     
     @staticmethod
-    def from_milli_hertz(milli_hertz: float):
+    def from_millihertz(millihertz: float):
         """
-        Create a new instance of Frequency from a value in milli_hertz.
+        Create a new instance of Frequency from a value in millihertz.
 
         
 
-        :param meters: The Frequency value in milli_hertz.
-        :type milli_hertz: float
+        :param meters: The Frequency value in millihertz.
+        :type millihertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(milli_hertz, FrequencyUnits.MilliHertz)
+        return Frequency(millihertz, FrequencyUnits.Millihertz)
 
     
     @staticmethod
-    def from_kilo_hertz(kilo_hertz: float):
+    def from_kilohertz(kilohertz: float):
         """
-        Create a new instance of Frequency from a value in kilo_hertz.
+        Create a new instance of Frequency from a value in kilohertz.
 
         
 
-        :param meters: The Frequency value in kilo_hertz.
-        :type kilo_hertz: float
+        :param meters: The Frequency value in kilohertz.
+        :type kilohertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(kilo_hertz, FrequencyUnits.KiloHertz)
+        return Frequency(kilohertz, FrequencyUnits.Kilohertz)
 
     
     @staticmethod
-    def from_mega_hertz(mega_hertz: float):
+    def from_megahertz(megahertz: float):
         """
-        Create a new instance of Frequency from a value in mega_hertz.
+        Create a new instance of Frequency from a value in megahertz.
 
         
 
-        :param meters: The Frequency value in mega_hertz.
-        :type mega_hertz: float
+        :param meters: The Frequency value in megahertz.
+        :type megahertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(mega_hertz, FrequencyUnits.MegaHertz)
+        return Frequency(megahertz, FrequencyUnits.Megahertz)
 
     
     @staticmethod
-    def from_giga_hertz(giga_hertz: float):
+    def from_gigahertz(gigahertz: float):
         """
-        Create a new instance of Frequency from a value in giga_hertz.
+        Create a new instance of Frequency from a value in gigahertz.
 
         
 
-        :param meters: The Frequency value in giga_hertz.
-        :type giga_hertz: float
+        :param meters: The Frequency value in gigahertz.
+        :type gigahertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(giga_hertz, FrequencyUnits.GigaHertz)
+        return Frequency(gigahertz, FrequencyUnits.Gigahertz)
 
     
     @staticmethod
-    def from_tera_hertz(tera_hertz: float):
+    def from_terahertz(terahertz: float):
         """
-        Create a new instance of Frequency from a value in tera_hertz.
+        Create a new instance of Frequency from a value in terahertz.
 
         
 
-        :param meters: The Frequency value in tera_hertz.
-        :type tera_hertz: float
+        :param meters: The Frequency value in terahertz.
+        :type terahertz: float
         :return: A new instance of Frequency.
         :rtype: Frequency
         """
-        return Frequency(tera_hertz, FrequencyUnits.TeraHertz)
+        return Frequency(terahertz, FrequencyUnits.Terahertz)
 
     
     @property
@@ -481,69 +481,69 @@ class Frequency:
 
     
     @property
-    def micro_hertz(self) -> float:
+    def microhertz(self) -> float:
         """
         
         """
-        if self.__micro_hertz != None:
-            return self.__micro_hertz
-        self.__micro_hertz = self.__convert_from_base(FrequencyUnits.MicroHertz)
-        return self.__micro_hertz
+        if self.__microhertz != None:
+            return self.__microhertz
+        self.__microhertz = self.__convert_from_base(FrequencyUnits.Microhertz)
+        return self.__microhertz
 
     
     @property
-    def milli_hertz(self) -> float:
+    def millihertz(self) -> float:
         """
         
         """
-        if self.__milli_hertz != None:
-            return self.__milli_hertz
-        self.__milli_hertz = self.__convert_from_base(FrequencyUnits.MilliHertz)
-        return self.__milli_hertz
+        if self.__millihertz != None:
+            return self.__millihertz
+        self.__millihertz = self.__convert_from_base(FrequencyUnits.Millihertz)
+        return self.__millihertz
 
     
     @property
-    def kilo_hertz(self) -> float:
+    def kilohertz(self) -> float:
         """
         
         """
-        if self.__kilo_hertz != None:
-            return self.__kilo_hertz
-        self.__kilo_hertz = self.__convert_from_base(FrequencyUnits.KiloHertz)
-        return self.__kilo_hertz
+        if self.__kilohertz != None:
+            return self.__kilohertz
+        self.__kilohertz = self.__convert_from_base(FrequencyUnits.Kilohertz)
+        return self.__kilohertz
 
     
     @property
-    def mega_hertz(self) -> float:
+    def megahertz(self) -> float:
         """
         
         """
-        if self.__mega_hertz != None:
-            return self.__mega_hertz
-        self.__mega_hertz = self.__convert_from_base(FrequencyUnits.MegaHertz)
-        return self.__mega_hertz
+        if self.__megahertz != None:
+            return self.__megahertz
+        self.__megahertz = self.__convert_from_base(FrequencyUnits.Megahertz)
+        return self.__megahertz
 
     
     @property
-    def giga_hertz(self) -> float:
+    def gigahertz(self) -> float:
         """
         
         """
-        if self.__giga_hertz != None:
-            return self.__giga_hertz
-        self.__giga_hertz = self.__convert_from_base(FrequencyUnits.GigaHertz)
-        return self.__giga_hertz
+        if self.__gigahertz != None:
+            return self.__gigahertz
+        self.__gigahertz = self.__convert_from_base(FrequencyUnits.Gigahertz)
+        return self.__gigahertz
 
     
     @property
-    def tera_hertz(self) -> float:
+    def terahertz(self) -> float:
         """
         
         """
-        if self.__tera_hertz != None:
-            return self.__tera_hertz
-        self.__tera_hertz = self.__convert_from_base(FrequencyUnits.TeraHertz)
-        return self.__tera_hertz
+        if self.__terahertz != None:
+            return self.__terahertz
+        self.__terahertz = self.__convert_from_base(FrequencyUnits.Terahertz)
+        return self.__terahertz
 
     
     def to_string(self, unit: FrequencyUnits = FrequencyUnits.Hertz) -> string:
@@ -574,23 +574,23 @@ class Frequency:
         if unit == FrequencyUnits.BUnit:
             return f"""{self.b_units} B Units"""
         
-        if unit == FrequencyUnits.MicroHertz:
-            return f"""{self.micro_hertz} """
+        if unit == FrequencyUnits.Microhertz:
+            return f"""{self.microhertz} """
         
-        if unit == FrequencyUnits.MilliHertz:
-            return f"""{self.milli_hertz} """
+        if unit == FrequencyUnits.Millihertz:
+            return f"""{self.millihertz} """
         
-        if unit == FrequencyUnits.KiloHertz:
-            return f"""{self.kilo_hertz} """
+        if unit == FrequencyUnits.Kilohertz:
+            return f"""{self.kilohertz} """
         
-        if unit == FrequencyUnits.MegaHertz:
-            return f"""{self.mega_hertz} """
+        if unit == FrequencyUnits.Megahertz:
+            return f"""{self.megahertz} """
         
-        if unit == FrequencyUnits.GigaHertz:
-            return f"""{self.giga_hertz} """
+        if unit == FrequencyUnits.Gigahertz:
+            return f"""{self.gigahertz} """
         
-        if unit == FrequencyUnits.TeraHertz:
-            return f"""{self.tera_hertz} """
+        if unit == FrequencyUnits.Terahertz:
+            return f"""{self.terahertz} """
         
         return f'{self.__value}'
 
@@ -623,22 +623,22 @@ class Frequency:
         if unit_abbreviation == FrequencyUnits.BUnit:
             return """B Units"""
         
-        if unit_abbreviation == FrequencyUnits.MicroHertz:
+        if unit_abbreviation == FrequencyUnits.Microhertz:
             return """"""
         
-        if unit_abbreviation == FrequencyUnits.MilliHertz:
+        if unit_abbreviation == FrequencyUnits.Millihertz:
             return """"""
         
-        if unit_abbreviation == FrequencyUnits.KiloHertz:
+        if unit_abbreviation == FrequencyUnits.Kilohertz:
             return """"""
         
-        if unit_abbreviation == FrequencyUnits.MegaHertz:
+        if unit_abbreviation == FrequencyUnits.Megahertz:
             return """"""
         
-        if unit_abbreviation == FrequencyUnits.GigaHertz:
+        if unit_abbreviation == FrequencyUnits.Gigahertz:
             return """"""
         
-        if unit_abbreviation == FrequencyUnits.TeraHertz:
+        if unit_abbreviation == FrequencyUnits.Terahertz:
             return """"""
         
 

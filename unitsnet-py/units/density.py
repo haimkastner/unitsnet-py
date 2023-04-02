@@ -138,127 +138,127 @@ class DensityUnits(Enum):
             
         """
         
-        KiloGramPerCubicMillimeter = 'kilo_gram_per_cubic_millimeter'
+        KilogramPerCubicMillimeter = 'kilogram_per_cubic_millimeter'
         """
             
         """
         
-        KiloGramPerCubicCentimeter = 'kilo_gram_per_cubic_centimeter'
+        KilogramPerCubicCentimeter = 'kilogram_per_cubic_centimeter'
         """
             
         """
         
-        KiloGramPerCubicMeter = 'kilo_gram_per_cubic_meter'
+        KilogramPerCubicMeter = 'kilogram_per_cubic_meter'
         """
             
         """
         
-        MilliGramPerCubicMeter = 'milli_gram_per_cubic_meter'
+        MilligramPerCubicMeter = 'milligram_per_cubic_meter'
         """
             
         """
         
-        MicroGramPerCubicMeter = 'micro_gram_per_cubic_meter'
+        MicrogramPerCubicMeter = 'microgram_per_cubic_meter'
         """
             
         """
         
-        KiloPoundPerCubicInch = 'kilo_pound_per_cubic_inch'
+        KilopoundPerCubicInch = 'kilopound_per_cubic_inch'
         """
             
         """
         
-        KiloPoundPerCubicFoot = 'kilo_pound_per_cubic_foot'
+        KilopoundPerCubicFoot = 'kilopound_per_cubic_foot'
         """
             
         """
         
-        PicoGramPerLiter = 'pico_gram_per_liter'
+        PicogramPerLiter = 'picogram_per_liter'
         """
             
         """
         
-        NanoGramPerLiter = 'nano_gram_per_liter'
+        NanogramPerLiter = 'nanogram_per_liter'
         """
             
         """
         
-        MicroGramPerLiter = 'micro_gram_per_liter'
+        MicrogramPerLiter = 'microgram_per_liter'
         """
             
         """
         
-        MilliGramPerLiter = 'milli_gram_per_liter'
+        MilligramPerLiter = 'milligram_per_liter'
         """
             
         """
         
-        CentiGramPerLiter = 'centi_gram_per_liter'
+        CentigramPerLiter = 'centigram_per_liter'
         """
             
         """
         
-        DeciGramPerLiter = 'deci_gram_per_liter'
+        DecigramPerLiter = 'decigram_per_liter'
         """
             
         """
         
-        PicoGramPerDeciliter = 'pico_gram_per_deciliter'
+        PicogramPerDeciliter = 'picogram_per_deciliter'
         """
             
         """
         
-        NanoGramPerDeciliter = 'nano_gram_per_deciliter'
+        NanogramPerDeciliter = 'nanogram_per_deciliter'
         """
             
         """
         
-        MicroGramPerDeciliter = 'micro_gram_per_deciliter'
+        MicrogramPerDeciliter = 'microgram_per_deciliter'
         """
             
         """
         
-        MilliGramPerDeciliter = 'milli_gram_per_deciliter'
+        MilligramPerDeciliter = 'milligram_per_deciliter'
         """
             
         """
         
-        CentiGramPerDeciliter = 'centi_gram_per_deciliter'
+        CentigramPerDeciliter = 'centigram_per_deciliter'
         """
             
         """
         
-        DeciGramPerDeciliter = 'deci_gram_per_deciliter'
+        DecigramPerDeciliter = 'decigram_per_deciliter'
         """
             
         """
         
-        PicoGramPerMilliliter = 'pico_gram_per_milliliter'
+        PicogramPerMilliliter = 'picogram_per_milliliter'
         """
             
         """
         
-        NanoGramPerMilliliter = 'nano_gram_per_milliliter'
+        NanogramPerMilliliter = 'nanogram_per_milliliter'
         """
             
         """
         
-        MicroGramPerMilliliter = 'micro_gram_per_milliliter'
+        MicrogramPerMilliliter = 'microgram_per_milliliter'
         """
             
         """
         
-        MilliGramPerMilliliter = 'milli_gram_per_milliliter'
+        MilligramPerMilliliter = 'milligram_per_milliliter'
         """
             
         """
         
-        CentiGramPerMilliliter = 'centi_gram_per_milliliter'
+        CentigramPerMilliliter = 'centigram_per_milliliter'
         """
             
         """
         
-        DeciGramPerMilliliter = 'deci_gram_per_milliliter'
+        DecigramPerMilliliter = 'decigram_per_milliliter'
         """
             
         """
@@ -329,55 +329,55 @@ class Density:
         
         self.__slugs_per_cubic_inch = None
         
-        self.__kilo_grams_per_cubic_millimeter = None
+        self.__kilograms_per_cubic_millimeter = None
         
-        self.__kilo_grams_per_cubic_centimeter = None
+        self.__kilograms_per_cubic_centimeter = None
         
-        self.__kilo_grams_per_cubic_meter = None
+        self.__kilograms_per_cubic_meter = None
         
-        self.__milli_grams_per_cubic_meter = None
+        self.__milligrams_per_cubic_meter = None
         
-        self.__micro_grams_per_cubic_meter = None
+        self.__micrograms_per_cubic_meter = None
         
-        self.__kilo_pounds_per_cubic_inch = None
+        self.__kilopounds_per_cubic_inch = None
         
-        self.__kilo_pounds_per_cubic_foot = None
+        self.__kilopounds_per_cubic_foot = None
         
-        self.__pico_grams_per_liter = None
+        self.__picograms_per_liter = None
         
-        self.__nano_grams_per_liter = None
+        self.__nanograms_per_liter = None
         
-        self.__micro_grams_per_liter = None
+        self.__micrograms_per_liter = None
         
-        self.__milli_grams_per_liter = None
+        self.__milligrams_per_liter = None
         
-        self.__centi_grams_per_liter = None
+        self.__centigrams_per_liter = None
         
-        self.__deci_grams_per_liter = None
+        self.__decigrams_per_liter = None
         
-        self.__pico_grams_per_deci_liter = None
+        self.__picograms_per_deci_liter = None
         
-        self.__nano_grams_per_deci_liter = None
+        self.__nanograms_per_deci_liter = None
         
-        self.__micro_grams_per_deci_liter = None
+        self.__micrograms_per_deci_liter = None
         
-        self.__milli_grams_per_deci_liter = None
+        self.__milligrams_per_deci_liter = None
         
-        self.__centi_grams_per_deci_liter = None
+        self.__centigrams_per_deci_liter = None
         
-        self.__deci_grams_per_deci_liter = None
+        self.__decigrams_per_deci_liter = None
         
-        self.__pico_grams_per_milliliter = None
+        self.__picograms_per_milliliter = None
         
-        self.__nano_grams_per_milliliter = None
+        self.__nanograms_per_milliliter = None
         
-        self.__micro_grams_per_milliliter = None
+        self.__micrograms_per_milliliter = None
         
-        self.__milli_grams_per_milliliter = None
+        self.__milligrams_per_milliliter = None
         
-        self.__centi_grams_per_milliliter = None
+        self.__centigrams_per_milliliter = None
         
-        self.__deci_grams_per_milliliter = None
+        self.__decigrams_per_milliliter = None
         
 
     def __convert_from_base(self, from_unit: DensityUnits) -> float:
@@ -461,79 +461,79 @@ class Density:
         if from_unit == DensityUnits.SlugPerCubicInch:
             return (value / 890574.60201535)
         
-        if from_unit == DensityUnits.KiloGramPerCubicMillimeter:
+        if from_unit == DensityUnits.KilogramPerCubicMillimeter:
             return ((value * 1e-6) / 1000.0)
         
-        if from_unit == DensityUnits.KiloGramPerCubicCentimeter:
+        if from_unit == DensityUnits.KilogramPerCubicCentimeter:
             return ((value * 1e-3) / 1000.0)
         
-        if from_unit == DensityUnits.KiloGramPerCubicMeter:
+        if from_unit == DensityUnits.KilogramPerCubicMeter:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == DensityUnits.MilliGramPerCubicMeter:
+        if from_unit == DensityUnits.MilligramPerCubicMeter:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == DensityUnits.MicroGramPerCubicMeter:
+        if from_unit == DensityUnits.MicrogramPerCubicMeter:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == DensityUnits.KiloPoundPerCubicInch:
+        if from_unit == DensityUnits.KilopoundPerCubicInch:
             return ((value * 3.6127298147753e-5) / 1000.0)
         
-        if from_unit == DensityUnits.KiloPoundPerCubicFoot:
+        if from_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value * 0.062427961) / 1000.0)
         
-        if from_unit == DensityUnits.PicoGramPerLiter:
+        if from_unit == DensityUnits.PicogramPerLiter:
             return ((value * 1) / 1e-12)
         
-        if from_unit == DensityUnits.NanoGramPerLiter:
+        if from_unit == DensityUnits.NanogramPerLiter:
             return ((value * 1) / 1e-09)
         
-        if from_unit == DensityUnits.MicroGramPerLiter:
+        if from_unit == DensityUnits.MicrogramPerLiter:
             return ((value * 1) / 1e-06)
         
-        if from_unit == DensityUnits.MilliGramPerLiter:
+        if from_unit == DensityUnits.MilligramPerLiter:
             return ((value * 1) / 0.001)
         
-        if from_unit == DensityUnits.CentiGramPerLiter:
+        if from_unit == DensityUnits.CentigramPerLiter:
             return ((value * 1) / 0.01)
         
-        if from_unit == DensityUnits.DeciGramPerLiter:
+        if from_unit == DensityUnits.DecigramPerLiter:
             return ((value * 1) / 0.1)
         
-        if from_unit == DensityUnits.PicoGramPerDeciliter:
+        if from_unit == DensityUnits.PicogramPerDeciliter:
             return ((value * 1e-1) / 1e-12)
         
-        if from_unit == DensityUnits.NanoGramPerDeciliter:
+        if from_unit == DensityUnits.NanogramPerDeciliter:
             return ((value * 1e-1) / 1e-09)
         
-        if from_unit == DensityUnits.MicroGramPerDeciliter:
+        if from_unit == DensityUnits.MicrogramPerDeciliter:
             return ((value * 1e-1) / 1e-06)
         
-        if from_unit == DensityUnits.MilliGramPerDeciliter:
+        if from_unit == DensityUnits.MilligramPerDeciliter:
             return ((value * 1e-1) / 0.001)
         
-        if from_unit == DensityUnits.CentiGramPerDeciliter:
+        if from_unit == DensityUnits.CentigramPerDeciliter:
             return ((value * 1e-1) / 0.01)
         
-        if from_unit == DensityUnits.DeciGramPerDeciliter:
+        if from_unit == DensityUnits.DecigramPerDeciliter:
             return ((value * 1e-1) / 0.1)
         
-        if from_unit == DensityUnits.PicoGramPerMilliliter:
+        if from_unit == DensityUnits.PicogramPerMilliliter:
             return ((value * 1e-3) / 1e-12)
         
-        if from_unit == DensityUnits.NanoGramPerMilliliter:
+        if from_unit == DensityUnits.NanogramPerMilliliter:
             return ((value * 1e-3) / 1e-09)
         
-        if from_unit == DensityUnits.MicroGramPerMilliliter:
+        if from_unit == DensityUnits.MicrogramPerMilliliter:
             return ((value * 1e-3) / 1e-06)
         
-        if from_unit == DensityUnits.MilliGramPerMilliliter:
+        if from_unit == DensityUnits.MilligramPerMilliliter:
             return ((value * 1e-3) / 0.001)
         
-        if from_unit == DensityUnits.CentiGramPerMilliliter:
+        if from_unit == DensityUnits.CentigramPerMilliliter:
             return ((value * 1e-3) / 0.01)
         
-        if from_unit == DensityUnits.DeciGramPerMilliliter:
+        if from_unit == DensityUnits.DecigramPerMilliliter:
             return ((value * 1e-3) / 0.1)
         
         return None
@@ -619,79 +619,79 @@ class Density:
         if to_unit == DensityUnits.SlugPerCubicInch:
             return (value * 890574.60201535)
         
-        if to_unit == DensityUnits.KiloGramPerCubicMillimeter:
+        if to_unit == DensityUnits.KilogramPerCubicMillimeter:
             return ((value / 1e-6) * 1000.0)
         
-        if to_unit == DensityUnits.KiloGramPerCubicCentimeter:
+        if to_unit == DensityUnits.KilogramPerCubicCentimeter:
             return ((value / 1e-3) * 1000.0)
         
-        if to_unit == DensityUnits.KiloGramPerCubicMeter:
+        if to_unit == DensityUnits.KilogramPerCubicMeter:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == DensityUnits.MilliGramPerCubicMeter:
+        if to_unit == DensityUnits.MilligramPerCubicMeter:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == DensityUnits.MicroGramPerCubicMeter:
+        if to_unit == DensityUnits.MicrogramPerCubicMeter:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == DensityUnits.KiloPoundPerCubicInch:
+        if to_unit == DensityUnits.KilopoundPerCubicInch:
             return ((value / 3.6127298147753e-5) * 1000.0)
         
-        if to_unit == DensityUnits.KiloPoundPerCubicFoot:
+        if to_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value / 0.062427961) * 1000.0)
         
-        if to_unit == DensityUnits.PicoGramPerLiter:
+        if to_unit == DensityUnits.PicogramPerLiter:
             return ((value / 1) * 1e-12)
         
-        if to_unit == DensityUnits.NanoGramPerLiter:
+        if to_unit == DensityUnits.NanogramPerLiter:
             return ((value / 1) * 1e-09)
         
-        if to_unit == DensityUnits.MicroGramPerLiter:
+        if to_unit == DensityUnits.MicrogramPerLiter:
             return ((value / 1) * 1e-06)
         
-        if to_unit == DensityUnits.MilliGramPerLiter:
+        if to_unit == DensityUnits.MilligramPerLiter:
             return ((value / 1) * 0.001)
         
-        if to_unit == DensityUnits.CentiGramPerLiter:
+        if to_unit == DensityUnits.CentigramPerLiter:
             return ((value / 1) * 0.01)
         
-        if to_unit == DensityUnits.DeciGramPerLiter:
+        if to_unit == DensityUnits.DecigramPerLiter:
             return ((value / 1) * 0.1)
         
-        if to_unit == DensityUnits.PicoGramPerDeciliter:
+        if to_unit == DensityUnits.PicogramPerDeciliter:
             return ((value / 1e-1) * 1e-12)
         
-        if to_unit == DensityUnits.NanoGramPerDeciliter:
+        if to_unit == DensityUnits.NanogramPerDeciliter:
             return ((value / 1e-1) * 1e-09)
         
-        if to_unit == DensityUnits.MicroGramPerDeciliter:
+        if to_unit == DensityUnits.MicrogramPerDeciliter:
             return ((value / 1e-1) * 1e-06)
         
-        if to_unit == DensityUnits.MilliGramPerDeciliter:
+        if to_unit == DensityUnits.MilligramPerDeciliter:
             return ((value / 1e-1) * 0.001)
         
-        if to_unit == DensityUnits.CentiGramPerDeciliter:
+        if to_unit == DensityUnits.CentigramPerDeciliter:
             return ((value / 1e-1) * 0.01)
         
-        if to_unit == DensityUnits.DeciGramPerDeciliter:
+        if to_unit == DensityUnits.DecigramPerDeciliter:
             return ((value / 1e-1) * 0.1)
         
-        if to_unit == DensityUnits.PicoGramPerMilliliter:
+        if to_unit == DensityUnits.PicogramPerMilliliter:
             return ((value / 1e-3) * 1e-12)
         
-        if to_unit == DensityUnits.NanoGramPerMilliliter:
+        if to_unit == DensityUnits.NanogramPerMilliliter:
             return ((value / 1e-3) * 1e-09)
         
-        if to_unit == DensityUnits.MicroGramPerMilliliter:
+        if to_unit == DensityUnits.MicrogramPerMilliliter:
             return ((value / 1e-3) * 1e-06)
         
-        if to_unit == DensityUnits.MilliGramPerMilliliter:
+        if to_unit == DensityUnits.MilligramPerMilliliter:
             return ((value / 1e-3) * 0.001)
         
-        if to_unit == DensityUnits.CentiGramPerMilliliter:
+        if to_unit == DensityUnits.CentigramPerMilliliter:
             return ((value / 1e-3) * 0.01)
         
-        if to_unit == DensityUnits.DeciGramPerMilliliter:
+        if to_unit == DensityUnits.DecigramPerMilliliter:
             return ((value / 1e-3) * 0.1)
         
         return None
@@ -1093,378 +1093,378 @@ class Density:
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_millimeter(kilo_grams_per_cubic_millimeter: float):
+    def from_kilograms_per_cubic_millimeter(kilograms_per_cubic_millimeter: float):
         """
-        Create a new instance of Density from a value in kilo_grams_per_cubic_millimeter.
+        Create a new instance of Density from a value in kilograms_per_cubic_millimeter.
 
         
 
-        :param meters: The Density value in kilo_grams_per_cubic_millimeter.
-        :type kilo_grams_per_cubic_millimeter: float
+        :param meters: The Density value in kilograms_per_cubic_millimeter.
+        :type kilograms_per_cubic_millimeter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(kilo_grams_per_cubic_millimeter, DensityUnits.KiloGramPerCubicMillimeter)
+        return Density(kilograms_per_cubic_millimeter, DensityUnits.KilogramPerCubicMillimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_centimeter(kilo_grams_per_cubic_centimeter: float):
+    def from_kilograms_per_cubic_centimeter(kilograms_per_cubic_centimeter: float):
         """
-        Create a new instance of Density from a value in kilo_grams_per_cubic_centimeter.
+        Create a new instance of Density from a value in kilograms_per_cubic_centimeter.
 
         
 
-        :param meters: The Density value in kilo_grams_per_cubic_centimeter.
-        :type kilo_grams_per_cubic_centimeter: float
+        :param meters: The Density value in kilograms_per_cubic_centimeter.
+        :type kilograms_per_cubic_centimeter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(kilo_grams_per_cubic_centimeter, DensityUnits.KiloGramPerCubicCentimeter)
+        return Density(kilograms_per_cubic_centimeter, DensityUnits.KilogramPerCubicCentimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_meter(kilo_grams_per_cubic_meter: float):
+    def from_kilograms_per_cubic_meter(kilograms_per_cubic_meter: float):
         """
-        Create a new instance of Density from a value in kilo_grams_per_cubic_meter.
+        Create a new instance of Density from a value in kilograms_per_cubic_meter.
 
         
 
-        :param meters: The Density value in kilo_grams_per_cubic_meter.
-        :type kilo_grams_per_cubic_meter: float
+        :param meters: The Density value in kilograms_per_cubic_meter.
+        :type kilograms_per_cubic_meter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(kilo_grams_per_cubic_meter, DensityUnits.KiloGramPerCubicMeter)
+        return Density(kilograms_per_cubic_meter, DensityUnits.KilogramPerCubicMeter)
 
     
     @staticmethod
-    def from_milli_grams_per_cubic_meter(milli_grams_per_cubic_meter: float):
+    def from_milligrams_per_cubic_meter(milligrams_per_cubic_meter: float):
         """
-        Create a new instance of Density from a value in milli_grams_per_cubic_meter.
+        Create a new instance of Density from a value in milligrams_per_cubic_meter.
 
         
 
-        :param meters: The Density value in milli_grams_per_cubic_meter.
-        :type milli_grams_per_cubic_meter: float
+        :param meters: The Density value in milligrams_per_cubic_meter.
+        :type milligrams_per_cubic_meter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(milli_grams_per_cubic_meter, DensityUnits.MilliGramPerCubicMeter)
+        return Density(milligrams_per_cubic_meter, DensityUnits.MilligramPerCubicMeter)
 
     
     @staticmethod
-    def from_micro_grams_per_cubic_meter(micro_grams_per_cubic_meter: float):
+    def from_micrograms_per_cubic_meter(micrograms_per_cubic_meter: float):
         """
-        Create a new instance of Density from a value in micro_grams_per_cubic_meter.
+        Create a new instance of Density from a value in micrograms_per_cubic_meter.
 
         
 
-        :param meters: The Density value in micro_grams_per_cubic_meter.
-        :type micro_grams_per_cubic_meter: float
+        :param meters: The Density value in micrograms_per_cubic_meter.
+        :type micrograms_per_cubic_meter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(micro_grams_per_cubic_meter, DensityUnits.MicroGramPerCubicMeter)
+        return Density(micrograms_per_cubic_meter, DensityUnits.MicrogramPerCubicMeter)
 
     
     @staticmethod
-    def from_kilo_pounds_per_cubic_inch(kilo_pounds_per_cubic_inch: float):
+    def from_kilopounds_per_cubic_inch(kilopounds_per_cubic_inch: float):
         """
-        Create a new instance of Density from a value in kilo_pounds_per_cubic_inch.
+        Create a new instance of Density from a value in kilopounds_per_cubic_inch.
 
         
 
-        :param meters: The Density value in kilo_pounds_per_cubic_inch.
-        :type kilo_pounds_per_cubic_inch: float
+        :param meters: The Density value in kilopounds_per_cubic_inch.
+        :type kilopounds_per_cubic_inch: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(kilo_pounds_per_cubic_inch, DensityUnits.KiloPoundPerCubicInch)
+        return Density(kilopounds_per_cubic_inch, DensityUnits.KilopoundPerCubicInch)
 
     
     @staticmethod
-    def from_kilo_pounds_per_cubic_foot(kilo_pounds_per_cubic_foot: float):
+    def from_kilopounds_per_cubic_foot(kilopounds_per_cubic_foot: float):
         """
-        Create a new instance of Density from a value in kilo_pounds_per_cubic_foot.
+        Create a new instance of Density from a value in kilopounds_per_cubic_foot.
 
         
 
-        :param meters: The Density value in kilo_pounds_per_cubic_foot.
-        :type kilo_pounds_per_cubic_foot: float
+        :param meters: The Density value in kilopounds_per_cubic_foot.
+        :type kilopounds_per_cubic_foot: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(kilo_pounds_per_cubic_foot, DensityUnits.KiloPoundPerCubicFoot)
+        return Density(kilopounds_per_cubic_foot, DensityUnits.KilopoundPerCubicFoot)
 
     
     @staticmethod
-    def from_pico_grams_per_liter(pico_grams_per_liter: float):
+    def from_picograms_per_liter(picograms_per_liter: float):
         """
-        Create a new instance of Density from a value in pico_grams_per_liter.
+        Create a new instance of Density from a value in picograms_per_liter.
 
         
 
-        :param meters: The Density value in pico_grams_per_liter.
-        :type pico_grams_per_liter: float
+        :param meters: The Density value in picograms_per_liter.
+        :type picograms_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(pico_grams_per_liter, DensityUnits.PicoGramPerLiter)
+        return Density(picograms_per_liter, DensityUnits.PicogramPerLiter)
 
     
     @staticmethod
-    def from_nano_grams_per_liter(nano_grams_per_liter: float):
+    def from_nanograms_per_liter(nanograms_per_liter: float):
         """
-        Create a new instance of Density from a value in nano_grams_per_liter.
+        Create a new instance of Density from a value in nanograms_per_liter.
 
         
 
-        :param meters: The Density value in nano_grams_per_liter.
-        :type nano_grams_per_liter: float
+        :param meters: The Density value in nanograms_per_liter.
+        :type nanograms_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(nano_grams_per_liter, DensityUnits.NanoGramPerLiter)
+        return Density(nanograms_per_liter, DensityUnits.NanogramPerLiter)
 
     
     @staticmethod
-    def from_micro_grams_per_liter(micro_grams_per_liter: float):
+    def from_micrograms_per_liter(micrograms_per_liter: float):
         """
-        Create a new instance of Density from a value in micro_grams_per_liter.
+        Create a new instance of Density from a value in micrograms_per_liter.
 
         
 
-        :param meters: The Density value in micro_grams_per_liter.
-        :type micro_grams_per_liter: float
+        :param meters: The Density value in micrograms_per_liter.
+        :type micrograms_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(micro_grams_per_liter, DensityUnits.MicroGramPerLiter)
+        return Density(micrograms_per_liter, DensityUnits.MicrogramPerLiter)
 
     
     @staticmethod
-    def from_milli_grams_per_liter(milli_grams_per_liter: float):
+    def from_milligrams_per_liter(milligrams_per_liter: float):
         """
-        Create a new instance of Density from a value in milli_grams_per_liter.
+        Create a new instance of Density from a value in milligrams_per_liter.
 
         
 
-        :param meters: The Density value in milli_grams_per_liter.
-        :type milli_grams_per_liter: float
+        :param meters: The Density value in milligrams_per_liter.
+        :type milligrams_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(milli_grams_per_liter, DensityUnits.MilliGramPerLiter)
+        return Density(milligrams_per_liter, DensityUnits.MilligramPerLiter)
 
     
     @staticmethod
-    def from_centi_grams_per_liter(centi_grams_per_liter: float):
+    def from_centigrams_per_liter(centigrams_per_liter: float):
         """
-        Create a new instance of Density from a value in centi_grams_per_liter.
+        Create a new instance of Density from a value in centigrams_per_liter.
 
         
 
-        :param meters: The Density value in centi_grams_per_liter.
-        :type centi_grams_per_liter: float
+        :param meters: The Density value in centigrams_per_liter.
+        :type centigrams_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(centi_grams_per_liter, DensityUnits.CentiGramPerLiter)
+        return Density(centigrams_per_liter, DensityUnits.CentigramPerLiter)
 
     
     @staticmethod
-    def from_deci_grams_per_liter(deci_grams_per_liter: float):
+    def from_decigrams_per_liter(decigrams_per_liter: float):
         """
-        Create a new instance of Density from a value in deci_grams_per_liter.
+        Create a new instance of Density from a value in decigrams_per_liter.
 
         
 
-        :param meters: The Density value in deci_grams_per_liter.
-        :type deci_grams_per_liter: float
+        :param meters: The Density value in decigrams_per_liter.
+        :type decigrams_per_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(deci_grams_per_liter, DensityUnits.DeciGramPerLiter)
+        return Density(decigrams_per_liter, DensityUnits.DecigramPerLiter)
 
     
     @staticmethod
-    def from_pico_grams_per_deci_liter(pico_grams_per_deci_liter: float):
+    def from_picograms_per_deci_liter(picograms_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in pico_grams_per_deci_liter.
+        Create a new instance of Density from a value in picograms_per_deci_liter.
 
         
 
-        :param meters: The Density value in pico_grams_per_deci_liter.
-        :type pico_grams_per_deci_liter: float
+        :param meters: The Density value in picograms_per_deci_liter.
+        :type picograms_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(pico_grams_per_deci_liter, DensityUnits.PicoGramPerDeciliter)
+        return Density(picograms_per_deci_liter, DensityUnits.PicogramPerDeciliter)
 
     
     @staticmethod
-    def from_nano_grams_per_deci_liter(nano_grams_per_deci_liter: float):
+    def from_nanograms_per_deci_liter(nanograms_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in nano_grams_per_deci_liter.
+        Create a new instance of Density from a value in nanograms_per_deci_liter.
 
         
 
-        :param meters: The Density value in nano_grams_per_deci_liter.
-        :type nano_grams_per_deci_liter: float
+        :param meters: The Density value in nanograms_per_deci_liter.
+        :type nanograms_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(nano_grams_per_deci_liter, DensityUnits.NanoGramPerDeciliter)
+        return Density(nanograms_per_deci_liter, DensityUnits.NanogramPerDeciliter)
 
     
     @staticmethod
-    def from_micro_grams_per_deci_liter(micro_grams_per_deci_liter: float):
+    def from_micrograms_per_deci_liter(micrograms_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in micro_grams_per_deci_liter.
+        Create a new instance of Density from a value in micrograms_per_deci_liter.
 
         
 
-        :param meters: The Density value in micro_grams_per_deci_liter.
-        :type micro_grams_per_deci_liter: float
+        :param meters: The Density value in micrograms_per_deci_liter.
+        :type micrograms_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(micro_grams_per_deci_liter, DensityUnits.MicroGramPerDeciliter)
+        return Density(micrograms_per_deci_liter, DensityUnits.MicrogramPerDeciliter)
 
     
     @staticmethod
-    def from_milli_grams_per_deci_liter(milli_grams_per_deci_liter: float):
+    def from_milligrams_per_deci_liter(milligrams_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in milli_grams_per_deci_liter.
+        Create a new instance of Density from a value in milligrams_per_deci_liter.
 
         
 
-        :param meters: The Density value in milli_grams_per_deci_liter.
-        :type milli_grams_per_deci_liter: float
+        :param meters: The Density value in milligrams_per_deci_liter.
+        :type milligrams_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(milli_grams_per_deci_liter, DensityUnits.MilliGramPerDeciliter)
+        return Density(milligrams_per_deci_liter, DensityUnits.MilligramPerDeciliter)
 
     
     @staticmethod
-    def from_centi_grams_per_deci_liter(centi_grams_per_deci_liter: float):
+    def from_centigrams_per_deci_liter(centigrams_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in centi_grams_per_deci_liter.
+        Create a new instance of Density from a value in centigrams_per_deci_liter.
 
         
 
-        :param meters: The Density value in centi_grams_per_deci_liter.
-        :type centi_grams_per_deci_liter: float
+        :param meters: The Density value in centigrams_per_deci_liter.
+        :type centigrams_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(centi_grams_per_deci_liter, DensityUnits.CentiGramPerDeciliter)
+        return Density(centigrams_per_deci_liter, DensityUnits.CentigramPerDeciliter)
 
     
     @staticmethod
-    def from_deci_grams_per_deci_liter(deci_grams_per_deci_liter: float):
+    def from_decigrams_per_deci_liter(decigrams_per_deci_liter: float):
         """
-        Create a new instance of Density from a value in deci_grams_per_deci_liter.
+        Create a new instance of Density from a value in decigrams_per_deci_liter.
 
         
 
-        :param meters: The Density value in deci_grams_per_deci_liter.
-        :type deci_grams_per_deci_liter: float
+        :param meters: The Density value in decigrams_per_deci_liter.
+        :type decigrams_per_deci_liter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(deci_grams_per_deci_liter, DensityUnits.DeciGramPerDeciliter)
+        return Density(decigrams_per_deci_liter, DensityUnits.DecigramPerDeciliter)
 
     
     @staticmethod
-    def from_pico_grams_per_milliliter(pico_grams_per_milliliter: float):
+    def from_picograms_per_milliliter(picograms_per_milliliter: float):
         """
-        Create a new instance of Density from a value in pico_grams_per_milliliter.
+        Create a new instance of Density from a value in picograms_per_milliliter.
 
         
 
-        :param meters: The Density value in pico_grams_per_milliliter.
-        :type pico_grams_per_milliliter: float
+        :param meters: The Density value in picograms_per_milliliter.
+        :type picograms_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(pico_grams_per_milliliter, DensityUnits.PicoGramPerMilliliter)
+        return Density(picograms_per_milliliter, DensityUnits.PicogramPerMilliliter)
 
     
     @staticmethod
-    def from_nano_grams_per_milliliter(nano_grams_per_milliliter: float):
+    def from_nanograms_per_milliliter(nanograms_per_milliliter: float):
         """
-        Create a new instance of Density from a value in nano_grams_per_milliliter.
+        Create a new instance of Density from a value in nanograms_per_milliliter.
 
         
 
-        :param meters: The Density value in nano_grams_per_milliliter.
-        :type nano_grams_per_milliliter: float
+        :param meters: The Density value in nanograms_per_milliliter.
+        :type nanograms_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(nano_grams_per_milliliter, DensityUnits.NanoGramPerMilliliter)
+        return Density(nanograms_per_milliliter, DensityUnits.NanogramPerMilliliter)
 
     
     @staticmethod
-    def from_micro_grams_per_milliliter(micro_grams_per_milliliter: float):
+    def from_micrograms_per_milliliter(micrograms_per_milliliter: float):
         """
-        Create a new instance of Density from a value in micro_grams_per_milliliter.
+        Create a new instance of Density from a value in micrograms_per_milliliter.
 
         
 
-        :param meters: The Density value in micro_grams_per_milliliter.
-        :type micro_grams_per_milliliter: float
+        :param meters: The Density value in micrograms_per_milliliter.
+        :type micrograms_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(micro_grams_per_milliliter, DensityUnits.MicroGramPerMilliliter)
+        return Density(micrograms_per_milliliter, DensityUnits.MicrogramPerMilliliter)
 
     
     @staticmethod
-    def from_milli_grams_per_milliliter(milli_grams_per_milliliter: float):
+    def from_milligrams_per_milliliter(milligrams_per_milliliter: float):
         """
-        Create a new instance of Density from a value in milli_grams_per_milliliter.
+        Create a new instance of Density from a value in milligrams_per_milliliter.
 
         
 
-        :param meters: The Density value in milli_grams_per_milliliter.
-        :type milli_grams_per_milliliter: float
+        :param meters: The Density value in milligrams_per_milliliter.
+        :type milligrams_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(milli_grams_per_milliliter, DensityUnits.MilliGramPerMilliliter)
+        return Density(milligrams_per_milliliter, DensityUnits.MilligramPerMilliliter)
 
     
     @staticmethod
-    def from_centi_grams_per_milliliter(centi_grams_per_milliliter: float):
+    def from_centigrams_per_milliliter(centigrams_per_milliliter: float):
         """
-        Create a new instance of Density from a value in centi_grams_per_milliliter.
+        Create a new instance of Density from a value in centigrams_per_milliliter.
 
         
 
-        :param meters: The Density value in centi_grams_per_milliliter.
-        :type centi_grams_per_milliliter: float
+        :param meters: The Density value in centigrams_per_milliliter.
+        :type centigrams_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(centi_grams_per_milliliter, DensityUnits.CentiGramPerMilliliter)
+        return Density(centigrams_per_milliliter, DensityUnits.CentigramPerMilliliter)
 
     
     @staticmethod
-    def from_deci_grams_per_milliliter(deci_grams_per_milliliter: float):
+    def from_decigrams_per_milliliter(decigrams_per_milliliter: float):
         """
-        Create a new instance of Density from a value in deci_grams_per_milliliter.
+        Create a new instance of Density from a value in decigrams_per_milliliter.
 
         
 
-        :param meters: The Density value in deci_grams_per_milliliter.
-        :type deci_grams_per_milliliter: float
+        :param meters: The Density value in decigrams_per_milliliter.
+        :type decigrams_per_milliliter: float
         :return: A new instance of Density.
         :rtype: Density
         """
-        return Density(deci_grams_per_milliliter, DensityUnits.DeciGramPerMilliliter)
+        return Density(decigrams_per_milliliter, DensityUnits.DecigramPerMilliliter)
 
     
     @property
@@ -1754,278 +1754,278 @@ class Density:
 
     
     @property
-    def kilo_grams_per_cubic_millimeter(self) -> float:
+    def kilograms_per_cubic_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_millimeter != None:
-            return self.__kilo_grams_per_cubic_millimeter
-        self.__kilo_grams_per_cubic_millimeter = self.__convert_from_base(DensityUnits.KiloGramPerCubicMillimeter)
-        return self.__kilo_grams_per_cubic_millimeter
+        if self.__kilograms_per_cubic_millimeter != None:
+            return self.__kilograms_per_cubic_millimeter
+        self.__kilograms_per_cubic_millimeter = self.__convert_from_base(DensityUnits.KilogramPerCubicMillimeter)
+        return self.__kilograms_per_cubic_millimeter
 
     
     @property
-    def kilo_grams_per_cubic_centimeter(self) -> float:
+    def kilograms_per_cubic_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_centimeter != None:
-            return self.__kilo_grams_per_cubic_centimeter
-        self.__kilo_grams_per_cubic_centimeter = self.__convert_from_base(DensityUnits.KiloGramPerCubicCentimeter)
-        return self.__kilo_grams_per_cubic_centimeter
+        if self.__kilograms_per_cubic_centimeter != None:
+            return self.__kilograms_per_cubic_centimeter
+        self.__kilograms_per_cubic_centimeter = self.__convert_from_base(DensityUnits.KilogramPerCubicCentimeter)
+        return self.__kilograms_per_cubic_centimeter
 
     
     @property
-    def kilo_grams_per_cubic_meter(self) -> float:
+    def kilograms_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_meter != None:
-            return self.__kilo_grams_per_cubic_meter
-        self.__kilo_grams_per_cubic_meter = self.__convert_from_base(DensityUnits.KiloGramPerCubicMeter)
-        return self.__kilo_grams_per_cubic_meter
+        if self.__kilograms_per_cubic_meter != None:
+            return self.__kilograms_per_cubic_meter
+        self.__kilograms_per_cubic_meter = self.__convert_from_base(DensityUnits.KilogramPerCubicMeter)
+        return self.__kilograms_per_cubic_meter
 
     
     @property
-    def milli_grams_per_cubic_meter(self) -> float:
+    def milligrams_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_cubic_meter != None:
-            return self.__milli_grams_per_cubic_meter
-        self.__milli_grams_per_cubic_meter = self.__convert_from_base(DensityUnits.MilliGramPerCubicMeter)
-        return self.__milli_grams_per_cubic_meter
+        if self.__milligrams_per_cubic_meter != None:
+            return self.__milligrams_per_cubic_meter
+        self.__milligrams_per_cubic_meter = self.__convert_from_base(DensityUnits.MilligramPerCubicMeter)
+        return self.__milligrams_per_cubic_meter
 
     
     @property
-    def micro_grams_per_cubic_meter(self) -> float:
+    def micrograms_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_cubic_meter != None:
-            return self.__micro_grams_per_cubic_meter
-        self.__micro_grams_per_cubic_meter = self.__convert_from_base(DensityUnits.MicroGramPerCubicMeter)
-        return self.__micro_grams_per_cubic_meter
+        if self.__micrograms_per_cubic_meter != None:
+            return self.__micrograms_per_cubic_meter
+        self.__micrograms_per_cubic_meter = self.__convert_from_base(DensityUnits.MicrogramPerCubicMeter)
+        return self.__micrograms_per_cubic_meter
 
     
     @property
-    def kilo_pounds_per_cubic_inch(self) -> float:
+    def kilopounds_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_per_cubic_inch != None:
-            return self.__kilo_pounds_per_cubic_inch
-        self.__kilo_pounds_per_cubic_inch = self.__convert_from_base(DensityUnits.KiloPoundPerCubicInch)
-        return self.__kilo_pounds_per_cubic_inch
+        if self.__kilopounds_per_cubic_inch != None:
+            return self.__kilopounds_per_cubic_inch
+        self.__kilopounds_per_cubic_inch = self.__convert_from_base(DensityUnits.KilopoundPerCubicInch)
+        return self.__kilopounds_per_cubic_inch
 
     
     @property
-    def kilo_pounds_per_cubic_foot(self) -> float:
+    def kilopounds_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_per_cubic_foot != None:
-            return self.__kilo_pounds_per_cubic_foot
-        self.__kilo_pounds_per_cubic_foot = self.__convert_from_base(DensityUnits.KiloPoundPerCubicFoot)
-        return self.__kilo_pounds_per_cubic_foot
+        if self.__kilopounds_per_cubic_foot != None:
+            return self.__kilopounds_per_cubic_foot
+        self.__kilopounds_per_cubic_foot = self.__convert_from_base(DensityUnits.KilopoundPerCubicFoot)
+        return self.__kilopounds_per_cubic_foot
 
     
     @property
-    def pico_grams_per_liter(self) -> float:
+    def picograms_per_liter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_liter != None:
-            return self.__pico_grams_per_liter
-        self.__pico_grams_per_liter = self.__convert_from_base(DensityUnits.PicoGramPerLiter)
-        return self.__pico_grams_per_liter
+        if self.__picograms_per_liter != None:
+            return self.__picograms_per_liter
+        self.__picograms_per_liter = self.__convert_from_base(DensityUnits.PicogramPerLiter)
+        return self.__picograms_per_liter
 
     
     @property
-    def nano_grams_per_liter(self) -> float:
+    def nanograms_per_liter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_liter != None:
-            return self.__nano_grams_per_liter
-        self.__nano_grams_per_liter = self.__convert_from_base(DensityUnits.NanoGramPerLiter)
-        return self.__nano_grams_per_liter
+        if self.__nanograms_per_liter != None:
+            return self.__nanograms_per_liter
+        self.__nanograms_per_liter = self.__convert_from_base(DensityUnits.NanogramPerLiter)
+        return self.__nanograms_per_liter
 
     
     @property
-    def micro_grams_per_liter(self) -> float:
+    def micrograms_per_liter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_liter != None:
-            return self.__micro_grams_per_liter
-        self.__micro_grams_per_liter = self.__convert_from_base(DensityUnits.MicroGramPerLiter)
-        return self.__micro_grams_per_liter
+        if self.__micrograms_per_liter != None:
+            return self.__micrograms_per_liter
+        self.__micrograms_per_liter = self.__convert_from_base(DensityUnits.MicrogramPerLiter)
+        return self.__micrograms_per_liter
 
     
     @property
-    def milli_grams_per_liter(self) -> float:
+    def milligrams_per_liter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_liter != None:
-            return self.__milli_grams_per_liter
-        self.__milli_grams_per_liter = self.__convert_from_base(DensityUnits.MilliGramPerLiter)
-        return self.__milli_grams_per_liter
+        if self.__milligrams_per_liter != None:
+            return self.__milligrams_per_liter
+        self.__milligrams_per_liter = self.__convert_from_base(DensityUnits.MilligramPerLiter)
+        return self.__milligrams_per_liter
 
     
     @property
-    def centi_grams_per_liter(self) -> float:
+    def centigrams_per_liter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_liter != None:
-            return self.__centi_grams_per_liter
-        self.__centi_grams_per_liter = self.__convert_from_base(DensityUnits.CentiGramPerLiter)
-        return self.__centi_grams_per_liter
+        if self.__centigrams_per_liter != None:
+            return self.__centigrams_per_liter
+        self.__centigrams_per_liter = self.__convert_from_base(DensityUnits.CentigramPerLiter)
+        return self.__centigrams_per_liter
 
     
     @property
-    def deci_grams_per_liter(self) -> float:
+    def decigrams_per_liter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_liter != None:
-            return self.__deci_grams_per_liter
-        self.__deci_grams_per_liter = self.__convert_from_base(DensityUnits.DeciGramPerLiter)
-        return self.__deci_grams_per_liter
+        if self.__decigrams_per_liter != None:
+            return self.__decigrams_per_liter
+        self.__decigrams_per_liter = self.__convert_from_base(DensityUnits.DecigramPerLiter)
+        return self.__decigrams_per_liter
 
     
     @property
-    def pico_grams_per_deci_liter(self) -> float:
+    def picograms_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_deci_liter != None:
-            return self.__pico_grams_per_deci_liter
-        self.__pico_grams_per_deci_liter = self.__convert_from_base(DensityUnits.PicoGramPerDeciliter)
-        return self.__pico_grams_per_deci_liter
+        if self.__picograms_per_deci_liter != None:
+            return self.__picograms_per_deci_liter
+        self.__picograms_per_deci_liter = self.__convert_from_base(DensityUnits.PicogramPerDeciliter)
+        return self.__picograms_per_deci_liter
 
     
     @property
-    def nano_grams_per_deci_liter(self) -> float:
+    def nanograms_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_deci_liter != None:
-            return self.__nano_grams_per_deci_liter
-        self.__nano_grams_per_deci_liter = self.__convert_from_base(DensityUnits.NanoGramPerDeciliter)
-        return self.__nano_grams_per_deci_liter
+        if self.__nanograms_per_deci_liter != None:
+            return self.__nanograms_per_deci_liter
+        self.__nanograms_per_deci_liter = self.__convert_from_base(DensityUnits.NanogramPerDeciliter)
+        return self.__nanograms_per_deci_liter
 
     
     @property
-    def micro_grams_per_deci_liter(self) -> float:
+    def micrograms_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_deci_liter != None:
-            return self.__micro_grams_per_deci_liter
-        self.__micro_grams_per_deci_liter = self.__convert_from_base(DensityUnits.MicroGramPerDeciliter)
-        return self.__micro_grams_per_deci_liter
+        if self.__micrograms_per_deci_liter != None:
+            return self.__micrograms_per_deci_liter
+        self.__micrograms_per_deci_liter = self.__convert_from_base(DensityUnits.MicrogramPerDeciliter)
+        return self.__micrograms_per_deci_liter
 
     
     @property
-    def milli_grams_per_deci_liter(self) -> float:
+    def milligrams_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_deci_liter != None:
-            return self.__milli_grams_per_deci_liter
-        self.__milli_grams_per_deci_liter = self.__convert_from_base(DensityUnits.MilliGramPerDeciliter)
-        return self.__milli_grams_per_deci_liter
+        if self.__milligrams_per_deci_liter != None:
+            return self.__milligrams_per_deci_liter
+        self.__milligrams_per_deci_liter = self.__convert_from_base(DensityUnits.MilligramPerDeciliter)
+        return self.__milligrams_per_deci_liter
 
     
     @property
-    def centi_grams_per_deci_liter(self) -> float:
+    def centigrams_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_deci_liter != None:
-            return self.__centi_grams_per_deci_liter
-        self.__centi_grams_per_deci_liter = self.__convert_from_base(DensityUnits.CentiGramPerDeciliter)
-        return self.__centi_grams_per_deci_liter
+        if self.__centigrams_per_deci_liter != None:
+            return self.__centigrams_per_deci_liter
+        self.__centigrams_per_deci_liter = self.__convert_from_base(DensityUnits.CentigramPerDeciliter)
+        return self.__centigrams_per_deci_liter
 
     
     @property
-    def deci_grams_per_deci_liter(self) -> float:
+    def decigrams_per_deci_liter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_deci_liter != None:
-            return self.__deci_grams_per_deci_liter
-        self.__deci_grams_per_deci_liter = self.__convert_from_base(DensityUnits.DeciGramPerDeciliter)
-        return self.__deci_grams_per_deci_liter
+        if self.__decigrams_per_deci_liter != None:
+            return self.__decigrams_per_deci_liter
+        self.__decigrams_per_deci_liter = self.__convert_from_base(DensityUnits.DecigramPerDeciliter)
+        return self.__decigrams_per_deci_liter
 
     
     @property
-    def pico_grams_per_milliliter(self) -> float:
+    def picograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_milliliter != None:
-            return self.__pico_grams_per_milliliter
-        self.__pico_grams_per_milliliter = self.__convert_from_base(DensityUnits.PicoGramPerMilliliter)
-        return self.__pico_grams_per_milliliter
+        if self.__picograms_per_milliliter != None:
+            return self.__picograms_per_milliliter
+        self.__picograms_per_milliliter = self.__convert_from_base(DensityUnits.PicogramPerMilliliter)
+        return self.__picograms_per_milliliter
 
     
     @property
-    def nano_grams_per_milliliter(self) -> float:
+    def nanograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_milliliter != None:
-            return self.__nano_grams_per_milliliter
-        self.__nano_grams_per_milliliter = self.__convert_from_base(DensityUnits.NanoGramPerMilliliter)
-        return self.__nano_grams_per_milliliter
+        if self.__nanograms_per_milliliter != None:
+            return self.__nanograms_per_milliliter
+        self.__nanograms_per_milliliter = self.__convert_from_base(DensityUnits.NanogramPerMilliliter)
+        return self.__nanograms_per_milliliter
 
     
     @property
-    def micro_grams_per_milliliter(self) -> float:
+    def micrograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_milliliter != None:
-            return self.__micro_grams_per_milliliter
-        self.__micro_grams_per_milliliter = self.__convert_from_base(DensityUnits.MicroGramPerMilliliter)
-        return self.__micro_grams_per_milliliter
+        if self.__micrograms_per_milliliter != None:
+            return self.__micrograms_per_milliliter
+        self.__micrograms_per_milliliter = self.__convert_from_base(DensityUnits.MicrogramPerMilliliter)
+        return self.__micrograms_per_milliliter
 
     
     @property
-    def milli_grams_per_milliliter(self) -> float:
+    def milligrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_milliliter != None:
-            return self.__milli_grams_per_milliliter
-        self.__milli_grams_per_milliliter = self.__convert_from_base(DensityUnits.MilliGramPerMilliliter)
-        return self.__milli_grams_per_milliliter
+        if self.__milligrams_per_milliliter != None:
+            return self.__milligrams_per_milliliter
+        self.__milligrams_per_milliliter = self.__convert_from_base(DensityUnits.MilligramPerMilliliter)
+        return self.__milligrams_per_milliliter
 
     
     @property
-    def centi_grams_per_milliliter(self) -> float:
+    def centigrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_milliliter != None:
-            return self.__centi_grams_per_milliliter
-        self.__centi_grams_per_milliliter = self.__convert_from_base(DensityUnits.CentiGramPerMilliliter)
-        return self.__centi_grams_per_milliliter
+        if self.__centigrams_per_milliliter != None:
+            return self.__centigrams_per_milliliter
+        self.__centigrams_per_milliliter = self.__convert_from_base(DensityUnits.CentigramPerMilliliter)
+        return self.__centigrams_per_milliliter
 
     
     @property
-    def deci_grams_per_milliliter(self) -> float:
+    def decigrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_milliliter != None:
-            return self.__deci_grams_per_milliliter
-        self.__deci_grams_per_milliliter = self.__convert_from_base(DensityUnits.DeciGramPerMilliliter)
-        return self.__deci_grams_per_milliliter
+        if self.__decigrams_per_milliliter != None:
+            return self.__decigrams_per_milliliter
+        self.__decigrams_per_milliliter = self.__convert_from_base(DensityUnits.DecigramPerMilliliter)
+        return self.__decigrams_per_milliliter
 
     
     def to_string(self, unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> string:
@@ -2113,80 +2113,80 @@ class Density:
         if unit == DensityUnits.SlugPerCubicInch:
             return f"""{self.slugs_per_cubic_inch} slug/in³"""
         
-        if unit == DensityUnits.KiloGramPerCubicMillimeter:
-            return f"""{self.kilo_grams_per_cubic_millimeter} """
+        if unit == DensityUnits.KilogramPerCubicMillimeter:
+            return f"""{self.kilograms_per_cubic_millimeter} """
         
-        if unit == DensityUnits.KiloGramPerCubicCentimeter:
-            return f"""{self.kilo_grams_per_cubic_centimeter} """
+        if unit == DensityUnits.KilogramPerCubicCentimeter:
+            return f"""{self.kilograms_per_cubic_centimeter} """
         
-        if unit == DensityUnits.KiloGramPerCubicMeter:
-            return f"""{self.kilo_grams_per_cubic_meter} """
+        if unit == DensityUnits.KilogramPerCubicMeter:
+            return f"""{self.kilograms_per_cubic_meter} """
         
-        if unit == DensityUnits.MilliGramPerCubicMeter:
-            return f"""{self.milli_grams_per_cubic_meter} """
+        if unit == DensityUnits.MilligramPerCubicMeter:
+            return f"""{self.milligrams_per_cubic_meter} """
         
-        if unit == DensityUnits.MicroGramPerCubicMeter:
-            return f"""{self.micro_grams_per_cubic_meter} """
+        if unit == DensityUnits.MicrogramPerCubicMeter:
+            return f"""{self.micrograms_per_cubic_meter} """
         
-        if unit == DensityUnits.KiloPoundPerCubicInch:
-            return f"""{self.kilo_pounds_per_cubic_inch} """
+        if unit == DensityUnits.KilopoundPerCubicInch:
+            return f"""{self.kilopounds_per_cubic_inch} """
         
-        if unit == DensityUnits.KiloPoundPerCubicFoot:
-            return f"""{self.kilo_pounds_per_cubic_foot} """
+        if unit == DensityUnits.KilopoundPerCubicFoot:
+            return f"""{self.kilopounds_per_cubic_foot} """
         
-        if unit == DensityUnits.PicoGramPerLiter:
-            return f"""{self.pico_grams_per_liter} """
+        if unit == DensityUnits.PicogramPerLiter:
+            return f"""{self.picograms_per_liter} """
         
-        if unit == DensityUnits.NanoGramPerLiter:
-            return f"""{self.nano_grams_per_liter} """
+        if unit == DensityUnits.NanogramPerLiter:
+            return f"""{self.nanograms_per_liter} """
         
-        if unit == DensityUnits.MicroGramPerLiter:
-            return f"""{self.micro_grams_per_liter} """
+        if unit == DensityUnits.MicrogramPerLiter:
+            return f"""{self.micrograms_per_liter} """
         
-        if unit == DensityUnits.MilliGramPerLiter:
-            return f"""{self.milli_grams_per_liter} """
+        if unit == DensityUnits.MilligramPerLiter:
+            return f"""{self.milligrams_per_liter} """
         
-        if unit == DensityUnits.CentiGramPerLiter:
-            return f"""{self.centi_grams_per_liter} """
+        if unit == DensityUnits.CentigramPerLiter:
+            return f"""{self.centigrams_per_liter} """
         
-        if unit == DensityUnits.DeciGramPerLiter:
-            return f"""{self.deci_grams_per_liter} """
+        if unit == DensityUnits.DecigramPerLiter:
+            return f"""{self.decigrams_per_liter} """
         
-        if unit == DensityUnits.PicoGramPerDeciliter:
-            return f"""{self.pico_grams_per_deci_liter} """
+        if unit == DensityUnits.PicogramPerDeciliter:
+            return f"""{self.picograms_per_deci_liter} """
         
-        if unit == DensityUnits.NanoGramPerDeciliter:
-            return f"""{self.nano_grams_per_deci_liter} """
+        if unit == DensityUnits.NanogramPerDeciliter:
+            return f"""{self.nanograms_per_deci_liter} """
         
-        if unit == DensityUnits.MicroGramPerDeciliter:
-            return f"""{self.micro_grams_per_deci_liter} """
+        if unit == DensityUnits.MicrogramPerDeciliter:
+            return f"""{self.micrograms_per_deci_liter} """
         
-        if unit == DensityUnits.MilliGramPerDeciliter:
-            return f"""{self.milli_grams_per_deci_liter} """
+        if unit == DensityUnits.MilligramPerDeciliter:
+            return f"""{self.milligrams_per_deci_liter} """
         
-        if unit == DensityUnits.CentiGramPerDeciliter:
-            return f"""{self.centi_grams_per_deci_liter} """
+        if unit == DensityUnits.CentigramPerDeciliter:
+            return f"""{self.centigrams_per_deci_liter} """
         
-        if unit == DensityUnits.DeciGramPerDeciliter:
-            return f"""{self.deci_grams_per_deci_liter} """
+        if unit == DensityUnits.DecigramPerDeciliter:
+            return f"""{self.decigrams_per_deci_liter} """
         
-        if unit == DensityUnits.PicoGramPerMilliliter:
-            return f"""{self.pico_grams_per_milliliter} """
+        if unit == DensityUnits.PicogramPerMilliliter:
+            return f"""{self.picograms_per_milliliter} """
         
-        if unit == DensityUnits.NanoGramPerMilliliter:
-            return f"""{self.nano_grams_per_milliliter} """
+        if unit == DensityUnits.NanogramPerMilliliter:
+            return f"""{self.nanograms_per_milliliter} """
         
-        if unit == DensityUnits.MicroGramPerMilliliter:
-            return f"""{self.micro_grams_per_milliliter} """
+        if unit == DensityUnits.MicrogramPerMilliliter:
+            return f"""{self.micrograms_per_milliliter} """
         
-        if unit == DensityUnits.MilliGramPerMilliliter:
-            return f"""{self.milli_grams_per_milliliter} """
+        if unit == DensityUnits.MilligramPerMilliliter:
+            return f"""{self.milligrams_per_milliliter} """
         
-        if unit == DensityUnits.CentiGramPerMilliliter:
-            return f"""{self.centi_grams_per_milliliter} """
+        if unit == DensityUnits.CentigramPerMilliliter:
+            return f"""{self.centigrams_per_milliliter} """
         
-        if unit == DensityUnits.DeciGramPerMilliliter:
-            return f"""{self.deci_grams_per_milliliter} """
+        if unit == DensityUnits.DecigramPerMilliliter:
+            return f"""{self.decigrams_per_milliliter} """
         
         return f'{self.__value}'
 
@@ -2276,79 +2276,79 @@ class Density:
         if unit_abbreviation == DensityUnits.SlugPerCubicInch:
             return """slug/in³"""
         
-        if unit_abbreviation == DensityUnits.KiloGramPerCubicMillimeter:
+        if unit_abbreviation == DensityUnits.KilogramPerCubicMillimeter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.KiloGramPerCubicCentimeter:
+        if unit_abbreviation == DensityUnits.KilogramPerCubicCentimeter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.KiloGramPerCubicMeter:
+        if unit_abbreviation == DensityUnits.KilogramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MilliGramPerCubicMeter:
+        if unit_abbreviation == DensityUnits.MilligramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MicroGramPerCubicMeter:
+        if unit_abbreviation == DensityUnits.MicrogramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.KiloPoundPerCubicInch:
+        if unit_abbreviation == DensityUnits.KilopoundPerCubicInch:
             return """"""
         
-        if unit_abbreviation == DensityUnits.KiloPoundPerCubicFoot:
+        if unit_abbreviation == DensityUnits.KilopoundPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == DensityUnits.PicoGramPerLiter:
+        if unit_abbreviation == DensityUnits.PicogramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.NanoGramPerLiter:
+        if unit_abbreviation == DensityUnits.NanogramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MicroGramPerLiter:
+        if unit_abbreviation == DensityUnits.MicrogramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MilliGramPerLiter:
+        if unit_abbreviation == DensityUnits.MilligramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.CentiGramPerLiter:
+        if unit_abbreviation == DensityUnits.CentigramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.DeciGramPerLiter:
+        if unit_abbreviation == DensityUnits.DecigramPerLiter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.PicoGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.PicogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.NanoGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.NanogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MicroGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.MicrogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MilliGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.MilligramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.CentiGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.CentigramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.DeciGramPerDeciliter:
+        if unit_abbreviation == DensityUnits.DecigramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.PicoGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.PicogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.NanoGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.NanogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MicroGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.MicrogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.MilliGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.MilligramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.CentiGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.CentigramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == DensityUnits.DeciGramPerMilliliter:
+        if unit_abbreviation == DensityUnits.DecigramPerMilliliter:
             return """"""
         
 

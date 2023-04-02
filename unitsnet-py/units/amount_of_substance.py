@@ -18,67 +18,67 @@ class AmountOfSubstanceUnits(Enum):
             
         """
         
-        NanoMole = 'nano_mole'
+        Nanomole = 'nanomole'
         """
             
         """
         
-        MicroMole = 'micro_mole'
+        Micromole = 'micromole'
         """
             
         """
         
-        MilliMole = 'milli_mole'
+        Millimole = 'millimole'
         """
             
         """
         
-        CentiMole = 'centi_mole'
+        Centimole = 'centimole'
         """
             
         """
         
-        DeciMole = 'deci_mole'
+        Decimole = 'decimole'
         """
             
         """
         
-        KiloMole = 'kilo_mole'
+        Kilomole = 'kilomole'
         """
             
         """
         
-        MegaMole = 'mega_mole'
+        Megamole = 'megamole'
         """
             
         """
         
-        NanoPoundMole = 'nano_pound_mole'
+        NanopoundMole = 'nanopound_mole'
         """
             
         """
         
-        MicroPoundMole = 'micro_pound_mole'
+        MicropoundMole = 'micropound_mole'
         """
             
         """
         
-        MilliPoundMole = 'milli_pound_mole'
+        MillipoundMole = 'millipound_mole'
         """
             
         """
         
-        CentiPoundMole = 'centi_pound_mole'
+        CentipoundMole = 'centipound_mole'
         """
             
         """
         
-        DeciPoundMole = 'deci_pound_mole'
+        DecipoundMole = 'decipound_mole'
         """
             
         """
         
-        KiloPoundMole = 'kilo_pound_mole'
+        KilopoundMole = 'kilopound_mole'
         """
             
         """
@@ -101,31 +101,31 @@ class AmountOfSubstance:
         
         self.__pound_moles = None
         
-        self.__nano_moles = None
+        self.__nanomoles = None
         
-        self.__micro_moles = None
+        self.__micromoles = None
         
-        self.__milli_moles = None
+        self.__millimoles = None
         
-        self.__centi_moles = None
+        self.__centimoles = None
         
-        self.__deci_moles = None
+        self.__decimoles = None
         
-        self.__kilo_moles = None
+        self.__kilomoles = None
         
-        self.__mega_moles = None
+        self.__megamoles = None
         
-        self.__nano_pound_moles = None
+        self.__nanopound_moles = None
         
-        self.__micro_pound_moles = None
+        self.__micropound_moles = None
         
-        self.__milli_pound_moles = None
+        self.__millipound_moles = None
         
-        self.__centi_pound_moles = None
+        self.__centipound_moles = None
         
-        self.__deci_pound_moles = None
+        self.__decipound_moles = None
         
-        self.__kilo_pound_moles = None
+        self.__kilopound_moles = None
         
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
@@ -137,43 +137,43 @@ class AmountOfSubstance:
         if from_unit == AmountOfSubstanceUnits.PoundMole:
             return (value / 453.59237)
         
-        if from_unit == AmountOfSubstanceUnits.NanoMole:
+        if from_unit == AmountOfSubstanceUnits.Nanomole:
             return ((value) / 1e-09)
         
-        if from_unit == AmountOfSubstanceUnits.MicroMole:
+        if from_unit == AmountOfSubstanceUnits.Micromole:
             return ((value) / 1e-06)
         
-        if from_unit == AmountOfSubstanceUnits.MilliMole:
+        if from_unit == AmountOfSubstanceUnits.Millimole:
             return ((value) / 0.001)
         
-        if from_unit == AmountOfSubstanceUnits.CentiMole:
+        if from_unit == AmountOfSubstanceUnits.Centimole:
             return ((value) / 0.01)
         
-        if from_unit == AmountOfSubstanceUnits.DeciMole:
+        if from_unit == AmountOfSubstanceUnits.Decimole:
             return ((value) / 0.1)
         
-        if from_unit == AmountOfSubstanceUnits.KiloMole:
+        if from_unit == AmountOfSubstanceUnits.Kilomole:
             return ((value) / 1000.0)
         
-        if from_unit == AmountOfSubstanceUnits.MegaMole:
+        if from_unit == AmountOfSubstanceUnits.Megamole:
             return ((value) / 1000000.0)
         
-        if from_unit == AmountOfSubstanceUnits.NanoPoundMole:
+        if from_unit == AmountOfSubstanceUnits.NanopoundMole:
             return ((value / 453.59237) / 1e-09)
         
-        if from_unit == AmountOfSubstanceUnits.MicroPoundMole:
+        if from_unit == AmountOfSubstanceUnits.MicropoundMole:
             return ((value / 453.59237) / 1e-06)
         
-        if from_unit == AmountOfSubstanceUnits.MilliPoundMole:
+        if from_unit == AmountOfSubstanceUnits.MillipoundMole:
             return ((value / 453.59237) / 0.001)
         
-        if from_unit == AmountOfSubstanceUnits.CentiPoundMole:
+        if from_unit == AmountOfSubstanceUnits.CentipoundMole:
             return ((value / 453.59237) / 0.01)
         
-        if from_unit == AmountOfSubstanceUnits.DeciPoundMole:
+        if from_unit == AmountOfSubstanceUnits.DecipoundMole:
             return ((value / 453.59237) / 0.1)
         
-        if from_unit == AmountOfSubstanceUnits.KiloPoundMole:
+        if from_unit == AmountOfSubstanceUnits.KilopoundMole:
             return ((value / 453.59237) / 1000.0)
         
         return None
@@ -187,43 +187,43 @@ class AmountOfSubstance:
         if to_unit == AmountOfSubstanceUnits.PoundMole:
             return (value * 453.59237)
         
-        if to_unit == AmountOfSubstanceUnits.NanoMole:
+        if to_unit == AmountOfSubstanceUnits.Nanomole:
             return ((value) * 1e-09)
         
-        if to_unit == AmountOfSubstanceUnits.MicroMole:
+        if to_unit == AmountOfSubstanceUnits.Micromole:
             return ((value) * 1e-06)
         
-        if to_unit == AmountOfSubstanceUnits.MilliMole:
+        if to_unit == AmountOfSubstanceUnits.Millimole:
             return ((value) * 0.001)
         
-        if to_unit == AmountOfSubstanceUnits.CentiMole:
+        if to_unit == AmountOfSubstanceUnits.Centimole:
             return ((value) * 0.01)
         
-        if to_unit == AmountOfSubstanceUnits.DeciMole:
+        if to_unit == AmountOfSubstanceUnits.Decimole:
             return ((value) * 0.1)
         
-        if to_unit == AmountOfSubstanceUnits.KiloMole:
+        if to_unit == AmountOfSubstanceUnits.Kilomole:
             return ((value) * 1000.0)
         
-        if to_unit == AmountOfSubstanceUnits.MegaMole:
+        if to_unit == AmountOfSubstanceUnits.Megamole:
             return ((value) * 1000000.0)
         
-        if to_unit == AmountOfSubstanceUnits.NanoPoundMole:
+        if to_unit == AmountOfSubstanceUnits.NanopoundMole:
             return ((value * 453.59237) * 1e-09)
         
-        if to_unit == AmountOfSubstanceUnits.MicroPoundMole:
+        if to_unit == AmountOfSubstanceUnits.MicropoundMole:
             return ((value * 453.59237) * 1e-06)
         
-        if to_unit == AmountOfSubstanceUnits.MilliPoundMole:
+        if to_unit == AmountOfSubstanceUnits.MillipoundMole:
             return ((value * 453.59237) * 0.001)
         
-        if to_unit == AmountOfSubstanceUnits.CentiPoundMole:
+        if to_unit == AmountOfSubstanceUnits.CentipoundMole:
             return ((value * 453.59237) * 0.01)
         
-        if to_unit == AmountOfSubstanceUnits.DeciPoundMole:
+        if to_unit == AmountOfSubstanceUnits.DecipoundMole:
             return ((value * 453.59237) * 0.1)
         
-        if to_unit == AmountOfSubstanceUnits.KiloPoundMole:
+        if to_unit == AmountOfSubstanceUnits.KilopoundMole:
             return ((value * 453.59237) * 1000.0)
         
         return None
@@ -265,198 +265,198 @@ class AmountOfSubstance:
 
     
     @staticmethod
-    def from_nano_moles(nano_moles: float):
+    def from_nanomoles(nanomoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in nano_moles.
+        Create a new instance of AmountOfSubstance from a value in nanomoles.
 
         
 
-        :param meters: The AmountOfSubstance value in nano_moles.
-        :type nano_moles: float
+        :param meters: The AmountOfSubstance value in nanomoles.
+        :type nanomoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(nano_moles, AmountOfSubstanceUnits.NanoMole)
+        return AmountOfSubstance(nanomoles, AmountOfSubstanceUnits.Nanomole)
 
     
     @staticmethod
-    def from_micro_moles(micro_moles: float):
+    def from_micromoles(micromoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in micro_moles.
+        Create a new instance of AmountOfSubstance from a value in micromoles.
 
         
 
-        :param meters: The AmountOfSubstance value in micro_moles.
-        :type micro_moles: float
+        :param meters: The AmountOfSubstance value in micromoles.
+        :type micromoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(micro_moles, AmountOfSubstanceUnits.MicroMole)
+        return AmountOfSubstance(micromoles, AmountOfSubstanceUnits.Micromole)
 
     
     @staticmethod
-    def from_milli_moles(milli_moles: float):
+    def from_millimoles(millimoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in milli_moles.
+        Create a new instance of AmountOfSubstance from a value in millimoles.
 
         
 
-        :param meters: The AmountOfSubstance value in milli_moles.
-        :type milli_moles: float
+        :param meters: The AmountOfSubstance value in millimoles.
+        :type millimoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(milli_moles, AmountOfSubstanceUnits.MilliMole)
+        return AmountOfSubstance(millimoles, AmountOfSubstanceUnits.Millimole)
 
     
     @staticmethod
-    def from_centi_moles(centi_moles: float):
+    def from_centimoles(centimoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in centi_moles.
+        Create a new instance of AmountOfSubstance from a value in centimoles.
 
         
 
-        :param meters: The AmountOfSubstance value in centi_moles.
-        :type centi_moles: float
+        :param meters: The AmountOfSubstance value in centimoles.
+        :type centimoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(centi_moles, AmountOfSubstanceUnits.CentiMole)
+        return AmountOfSubstance(centimoles, AmountOfSubstanceUnits.Centimole)
 
     
     @staticmethod
-    def from_deci_moles(deci_moles: float):
+    def from_decimoles(decimoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in deci_moles.
+        Create a new instance of AmountOfSubstance from a value in decimoles.
 
         
 
-        :param meters: The AmountOfSubstance value in deci_moles.
-        :type deci_moles: float
+        :param meters: The AmountOfSubstance value in decimoles.
+        :type decimoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(deci_moles, AmountOfSubstanceUnits.DeciMole)
+        return AmountOfSubstance(decimoles, AmountOfSubstanceUnits.Decimole)
 
     
     @staticmethod
-    def from_kilo_moles(kilo_moles: float):
+    def from_kilomoles(kilomoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in kilo_moles.
+        Create a new instance of AmountOfSubstance from a value in kilomoles.
 
         
 
-        :param meters: The AmountOfSubstance value in kilo_moles.
-        :type kilo_moles: float
+        :param meters: The AmountOfSubstance value in kilomoles.
+        :type kilomoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(kilo_moles, AmountOfSubstanceUnits.KiloMole)
+        return AmountOfSubstance(kilomoles, AmountOfSubstanceUnits.Kilomole)
 
     
     @staticmethod
-    def from_mega_moles(mega_moles: float):
+    def from_megamoles(megamoles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in mega_moles.
+        Create a new instance of AmountOfSubstance from a value in megamoles.
 
         
 
-        :param meters: The AmountOfSubstance value in mega_moles.
-        :type mega_moles: float
+        :param meters: The AmountOfSubstance value in megamoles.
+        :type megamoles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(mega_moles, AmountOfSubstanceUnits.MegaMole)
+        return AmountOfSubstance(megamoles, AmountOfSubstanceUnits.Megamole)
 
     
     @staticmethod
-    def from_nano_pound_moles(nano_pound_moles: float):
+    def from_nanopound_moles(nanopound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in nano_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in nanopound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in nano_pound_moles.
-        :type nano_pound_moles: float
+        :param meters: The AmountOfSubstance value in nanopound_moles.
+        :type nanopound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(nano_pound_moles, AmountOfSubstanceUnits.NanoPoundMole)
+        return AmountOfSubstance(nanopound_moles, AmountOfSubstanceUnits.NanopoundMole)
 
     
     @staticmethod
-    def from_micro_pound_moles(micro_pound_moles: float):
+    def from_micropound_moles(micropound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in micro_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in micropound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in micro_pound_moles.
-        :type micro_pound_moles: float
+        :param meters: The AmountOfSubstance value in micropound_moles.
+        :type micropound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(micro_pound_moles, AmountOfSubstanceUnits.MicroPoundMole)
+        return AmountOfSubstance(micropound_moles, AmountOfSubstanceUnits.MicropoundMole)
 
     
     @staticmethod
-    def from_milli_pound_moles(milli_pound_moles: float):
+    def from_millipound_moles(millipound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in milli_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in millipound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in milli_pound_moles.
-        :type milli_pound_moles: float
+        :param meters: The AmountOfSubstance value in millipound_moles.
+        :type millipound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(milli_pound_moles, AmountOfSubstanceUnits.MilliPoundMole)
+        return AmountOfSubstance(millipound_moles, AmountOfSubstanceUnits.MillipoundMole)
 
     
     @staticmethod
-    def from_centi_pound_moles(centi_pound_moles: float):
+    def from_centipound_moles(centipound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in centi_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in centipound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in centi_pound_moles.
-        :type centi_pound_moles: float
+        :param meters: The AmountOfSubstance value in centipound_moles.
+        :type centipound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(centi_pound_moles, AmountOfSubstanceUnits.CentiPoundMole)
+        return AmountOfSubstance(centipound_moles, AmountOfSubstanceUnits.CentipoundMole)
 
     
     @staticmethod
-    def from_deci_pound_moles(deci_pound_moles: float):
+    def from_decipound_moles(decipound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in deci_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in decipound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in deci_pound_moles.
-        :type deci_pound_moles: float
+        :param meters: The AmountOfSubstance value in decipound_moles.
+        :type decipound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(deci_pound_moles, AmountOfSubstanceUnits.DeciPoundMole)
+        return AmountOfSubstance(decipound_moles, AmountOfSubstanceUnits.DecipoundMole)
 
     
     @staticmethod
-    def from_kilo_pound_moles(kilo_pound_moles: float):
+    def from_kilopound_moles(kilopound_moles: float):
         """
-        Create a new instance of AmountOfSubstance from a value in kilo_pound_moles.
+        Create a new instance of AmountOfSubstance from a value in kilopound_moles.
 
         
 
-        :param meters: The AmountOfSubstance value in kilo_pound_moles.
-        :type kilo_pound_moles: float
+        :param meters: The AmountOfSubstance value in kilopound_moles.
+        :type kilopound_moles: float
         :return: A new instance of AmountOfSubstance.
         :rtype: AmountOfSubstance
         """
-        return AmountOfSubstance(kilo_pound_moles, AmountOfSubstanceUnits.KiloPoundMole)
+        return AmountOfSubstance(kilopound_moles, AmountOfSubstanceUnits.KilopoundMole)
 
     
     @property
@@ -482,146 +482,146 @@ class AmountOfSubstance:
 
     
     @property
-    def nano_moles(self) -> float:
+    def nanomoles(self) -> float:
         """
         
         """
-        if self.__nano_moles != None:
-            return self.__nano_moles
-        self.__nano_moles = self.__convert_from_base(AmountOfSubstanceUnits.NanoMole)
-        return self.__nano_moles
+        if self.__nanomoles != None:
+            return self.__nanomoles
+        self.__nanomoles = self.__convert_from_base(AmountOfSubstanceUnits.Nanomole)
+        return self.__nanomoles
 
     
     @property
-    def micro_moles(self) -> float:
+    def micromoles(self) -> float:
         """
         
         """
-        if self.__micro_moles != None:
-            return self.__micro_moles
-        self.__micro_moles = self.__convert_from_base(AmountOfSubstanceUnits.MicroMole)
-        return self.__micro_moles
+        if self.__micromoles != None:
+            return self.__micromoles
+        self.__micromoles = self.__convert_from_base(AmountOfSubstanceUnits.Micromole)
+        return self.__micromoles
 
     
     @property
-    def milli_moles(self) -> float:
+    def millimoles(self) -> float:
         """
         
         """
-        if self.__milli_moles != None:
-            return self.__milli_moles
-        self.__milli_moles = self.__convert_from_base(AmountOfSubstanceUnits.MilliMole)
-        return self.__milli_moles
+        if self.__millimoles != None:
+            return self.__millimoles
+        self.__millimoles = self.__convert_from_base(AmountOfSubstanceUnits.Millimole)
+        return self.__millimoles
 
     
     @property
-    def centi_moles(self) -> float:
+    def centimoles(self) -> float:
         """
         
         """
-        if self.__centi_moles != None:
-            return self.__centi_moles
-        self.__centi_moles = self.__convert_from_base(AmountOfSubstanceUnits.CentiMole)
-        return self.__centi_moles
+        if self.__centimoles != None:
+            return self.__centimoles
+        self.__centimoles = self.__convert_from_base(AmountOfSubstanceUnits.Centimole)
+        return self.__centimoles
 
     
     @property
-    def deci_moles(self) -> float:
+    def decimoles(self) -> float:
         """
         
         """
-        if self.__deci_moles != None:
-            return self.__deci_moles
-        self.__deci_moles = self.__convert_from_base(AmountOfSubstanceUnits.DeciMole)
-        return self.__deci_moles
+        if self.__decimoles != None:
+            return self.__decimoles
+        self.__decimoles = self.__convert_from_base(AmountOfSubstanceUnits.Decimole)
+        return self.__decimoles
 
     
     @property
-    def kilo_moles(self) -> float:
+    def kilomoles(self) -> float:
         """
         
         """
-        if self.__kilo_moles != None:
-            return self.__kilo_moles
-        self.__kilo_moles = self.__convert_from_base(AmountOfSubstanceUnits.KiloMole)
-        return self.__kilo_moles
+        if self.__kilomoles != None:
+            return self.__kilomoles
+        self.__kilomoles = self.__convert_from_base(AmountOfSubstanceUnits.Kilomole)
+        return self.__kilomoles
 
     
     @property
-    def mega_moles(self) -> float:
+    def megamoles(self) -> float:
         """
         
         """
-        if self.__mega_moles != None:
-            return self.__mega_moles
-        self.__mega_moles = self.__convert_from_base(AmountOfSubstanceUnits.MegaMole)
-        return self.__mega_moles
+        if self.__megamoles != None:
+            return self.__megamoles
+        self.__megamoles = self.__convert_from_base(AmountOfSubstanceUnits.Megamole)
+        return self.__megamoles
 
     
     @property
-    def nano_pound_moles(self) -> float:
+    def nanopound_moles(self) -> float:
         """
         
         """
-        if self.__nano_pound_moles != None:
-            return self.__nano_pound_moles
-        self.__nano_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.NanoPoundMole)
-        return self.__nano_pound_moles
+        if self.__nanopound_moles != None:
+            return self.__nanopound_moles
+        self.__nanopound_moles = self.__convert_from_base(AmountOfSubstanceUnits.NanopoundMole)
+        return self.__nanopound_moles
 
     
     @property
-    def micro_pound_moles(self) -> float:
+    def micropound_moles(self) -> float:
         """
         
         """
-        if self.__micro_pound_moles != None:
-            return self.__micro_pound_moles
-        self.__micro_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.MicroPoundMole)
-        return self.__micro_pound_moles
+        if self.__micropound_moles != None:
+            return self.__micropound_moles
+        self.__micropound_moles = self.__convert_from_base(AmountOfSubstanceUnits.MicropoundMole)
+        return self.__micropound_moles
 
     
     @property
-    def milli_pound_moles(self) -> float:
+    def millipound_moles(self) -> float:
         """
         
         """
-        if self.__milli_pound_moles != None:
-            return self.__milli_pound_moles
-        self.__milli_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.MilliPoundMole)
-        return self.__milli_pound_moles
+        if self.__millipound_moles != None:
+            return self.__millipound_moles
+        self.__millipound_moles = self.__convert_from_base(AmountOfSubstanceUnits.MillipoundMole)
+        return self.__millipound_moles
 
     
     @property
-    def centi_pound_moles(self) -> float:
+    def centipound_moles(self) -> float:
         """
         
         """
-        if self.__centi_pound_moles != None:
-            return self.__centi_pound_moles
-        self.__centi_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.CentiPoundMole)
-        return self.__centi_pound_moles
+        if self.__centipound_moles != None:
+            return self.__centipound_moles
+        self.__centipound_moles = self.__convert_from_base(AmountOfSubstanceUnits.CentipoundMole)
+        return self.__centipound_moles
 
     
     @property
-    def deci_pound_moles(self) -> float:
+    def decipound_moles(self) -> float:
         """
         
         """
-        if self.__deci_pound_moles != None:
-            return self.__deci_pound_moles
-        self.__deci_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.DeciPoundMole)
-        return self.__deci_pound_moles
+        if self.__decipound_moles != None:
+            return self.__decipound_moles
+        self.__decipound_moles = self.__convert_from_base(AmountOfSubstanceUnits.DecipoundMole)
+        return self.__decipound_moles
 
     
     @property
-    def kilo_pound_moles(self) -> float:
+    def kilopound_moles(self) -> float:
         """
         
         """
-        if self.__kilo_pound_moles != None:
-            return self.__kilo_pound_moles
-        self.__kilo_pound_moles = self.__convert_from_base(AmountOfSubstanceUnits.KiloPoundMole)
-        return self.__kilo_pound_moles
+        if self.__kilopound_moles != None:
+            return self.__kilopound_moles
+        self.__kilopound_moles = self.__convert_from_base(AmountOfSubstanceUnits.KilopoundMole)
+        return self.__kilopound_moles
 
     
     def to_string(self, unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> string:
@@ -637,44 +637,44 @@ class AmountOfSubstance:
         if unit == AmountOfSubstanceUnits.PoundMole:
             return f"""{self.pound_moles} lbmol"""
         
-        if unit == AmountOfSubstanceUnits.NanoMole:
-            return f"""{self.nano_moles} """
+        if unit == AmountOfSubstanceUnits.Nanomole:
+            return f"""{self.nanomoles} """
         
-        if unit == AmountOfSubstanceUnits.MicroMole:
-            return f"""{self.micro_moles} """
+        if unit == AmountOfSubstanceUnits.Micromole:
+            return f"""{self.micromoles} """
         
-        if unit == AmountOfSubstanceUnits.MilliMole:
-            return f"""{self.milli_moles} """
+        if unit == AmountOfSubstanceUnits.Millimole:
+            return f"""{self.millimoles} """
         
-        if unit == AmountOfSubstanceUnits.CentiMole:
-            return f"""{self.centi_moles} """
+        if unit == AmountOfSubstanceUnits.Centimole:
+            return f"""{self.centimoles} """
         
-        if unit == AmountOfSubstanceUnits.DeciMole:
-            return f"""{self.deci_moles} """
+        if unit == AmountOfSubstanceUnits.Decimole:
+            return f"""{self.decimoles} """
         
-        if unit == AmountOfSubstanceUnits.KiloMole:
-            return f"""{self.kilo_moles} """
+        if unit == AmountOfSubstanceUnits.Kilomole:
+            return f"""{self.kilomoles} """
         
-        if unit == AmountOfSubstanceUnits.MegaMole:
-            return f"""{self.mega_moles} """
+        if unit == AmountOfSubstanceUnits.Megamole:
+            return f"""{self.megamoles} """
         
-        if unit == AmountOfSubstanceUnits.NanoPoundMole:
-            return f"""{self.nano_pound_moles} """
+        if unit == AmountOfSubstanceUnits.NanopoundMole:
+            return f"""{self.nanopound_moles} """
         
-        if unit == AmountOfSubstanceUnits.MicroPoundMole:
-            return f"""{self.micro_pound_moles} """
+        if unit == AmountOfSubstanceUnits.MicropoundMole:
+            return f"""{self.micropound_moles} """
         
-        if unit == AmountOfSubstanceUnits.MilliPoundMole:
-            return f"""{self.milli_pound_moles} """
+        if unit == AmountOfSubstanceUnits.MillipoundMole:
+            return f"""{self.millipound_moles} """
         
-        if unit == AmountOfSubstanceUnits.CentiPoundMole:
-            return f"""{self.centi_pound_moles} """
+        if unit == AmountOfSubstanceUnits.CentipoundMole:
+            return f"""{self.centipound_moles} """
         
-        if unit == AmountOfSubstanceUnits.DeciPoundMole:
-            return f"""{self.deci_pound_moles} """
+        if unit == AmountOfSubstanceUnits.DecipoundMole:
+            return f"""{self.decipound_moles} """
         
-        if unit == AmountOfSubstanceUnits.KiloPoundMole:
-            return f"""{self.kilo_pound_moles} """
+        if unit == AmountOfSubstanceUnits.KilopoundMole:
+            return f"""{self.kilopound_moles} """
         
         return f'{self.__value}'
 
@@ -692,43 +692,43 @@ class AmountOfSubstance:
         if unit_abbreviation == AmountOfSubstanceUnits.PoundMole:
             return """lbmol"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.NanoMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Nanomole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.MicroMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Micromole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.MilliMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Millimole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.CentiMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Centimole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.DeciMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Decimole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.KiloMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Kilomole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.MegaMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.Megamole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.NanoPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.NanopoundMole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.MicroPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.MicropoundMole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.MilliPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.MillipoundMole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.CentiPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.CentipoundMole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.DeciPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.DecipoundMole:
             return """"""
         
-        if unit_abbreviation == AmountOfSubstanceUnits.KiloPoundMole:
+        if unit_abbreviation == AmountOfSubstanceUnits.KilopoundMole:
             return """"""
         
 

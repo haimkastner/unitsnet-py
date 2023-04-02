@@ -53,107 +53,107 @@ class SpecificEnergyUnits(Enum):
             
         """
         
-        KiloJoulePerKilogram = 'kilo_joule_per_kilogram'
+        KilojoulePerKilogram = 'kilojoule_per_kilogram'
         """
             
         """
         
-        MegaJoulePerKilogram = 'mega_joule_per_kilogram'
+        MegajoulePerKilogram = 'megajoule_per_kilogram'
         """
             
         """
         
-        KiloCaloriePerGram = 'kilo_calorie_per_gram'
+        KilocaloriePerGram = 'kilocalorie_per_gram'
         """
             
         """
         
-        KiloWattHourPerKilogram = 'kilo_watt_hour_per_kilogram'
+        KilowattHourPerKilogram = 'kilowatt_hour_per_kilogram'
         """
             
         """
         
-        MegaWattHourPerKilogram = 'mega_watt_hour_per_kilogram'
+        MegawattHourPerKilogram = 'megawatt_hour_per_kilogram'
         """
             
         """
         
-        GigaWattHourPerKilogram = 'giga_watt_hour_per_kilogram'
+        GigawattHourPerKilogram = 'gigawatt_hour_per_kilogram'
         """
             
         """
         
-        KiloWattDayPerKilogram = 'kilo_watt_day_per_kilogram'
+        KilowattDayPerKilogram = 'kilowatt_day_per_kilogram'
         """
             
         """
         
-        MegaWattDayPerKilogram = 'mega_watt_day_per_kilogram'
+        MegawattDayPerKilogram = 'megawatt_day_per_kilogram'
         """
             
         """
         
-        GigaWattDayPerKilogram = 'giga_watt_day_per_kilogram'
+        GigawattDayPerKilogram = 'gigawatt_day_per_kilogram'
         """
             
         """
         
-        TeraWattDayPerKilogram = 'tera_watt_day_per_kilogram'
+        TerawattDayPerKilogram = 'terawatt_day_per_kilogram'
         """
             
         """
         
-        KiloWattDayPerTonne = 'kilo_watt_day_per_tonne'
+        KilowattDayPerTonne = 'kilowatt_day_per_tonne'
         """
             
         """
         
-        MegaWattDayPerTonne = 'mega_watt_day_per_tonne'
+        MegawattDayPerTonne = 'megawatt_day_per_tonne'
         """
             
         """
         
-        GigaWattDayPerTonne = 'giga_watt_day_per_tonne'
+        GigawattDayPerTonne = 'gigawatt_day_per_tonne'
         """
             
         """
         
-        TeraWattDayPerTonne = 'tera_watt_day_per_tonne'
+        TerawattDayPerTonne = 'terawatt_day_per_tonne'
         """
             
         """
         
-        KiloWattDayPerShortTon = 'kilo_watt_day_per_short_ton'
+        KilowattDayPerShortTon = 'kilowatt_day_per_short_ton'
         """
             
         """
         
-        MegaWattDayPerShortTon = 'mega_watt_day_per_short_ton'
+        MegawattDayPerShortTon = 'megawatt_day_per_short_ton'
         """
             
         """
         
-        GigaWattDayPerShortTon = 'giga_watt_day_per_short_ton'
+        GigawattDayPerShortTon = 'gigawatt_day_per_short_ton'
         """
             
         """
         
-        TeraWattDayPerShortTon = 'tera_watt_day_per_short_ton'
+        TerawattDayPerShortTon = 'terawatt_day_per_short_ton'
         """
             
         """
         
-        KiloWattHourPerPound = 'kilo_watt_hour_per_pound'
+        KilowattHourPerPound = 'kilowatt_hour_per_pound'
         """
             
         """
         
-        MegaWattHourPerPound = 'mega_watt_hour_per_pound'
+        MegawattHourPerPound = 'megawatt_hour_per_pound'
         """
             
         """
         
-        GigaWattHourPerPound = 'giga_watt_hour_per_pound'
+        GigawattHourPerPound = 'gigawatt_hour_per_pound'
         """
             
         """
@@ -190,47 +190,47 @@ class SpecificEnergy:
         
         self.__btu_per_pound = None
         
-        self.__kilo_joules_per_kilogram = None
+        self.__kilojoules_per_kilogram = None
         
-        self.__mega_joules_per_kilogram = None
+        self.__megajoules_per_kilogram = None
         
-        self.__kilo_calories_per_gram = None
+        self.__kilocalories_per_gram = None
         
-        self.__kilo_watt_hours_per_kilogram = None
+        self.__kilowatt_hours_per_kilogram = None
         
-        self.__mega_watt_hours_per_kilogram = None
+        self.__megawatt_hours_per_kilogram = None
         
-        self.__giga_watt_hours_per_kilogram = None
+        self.__gigawatt_hours_per_kilogram = None
         
-        self.__kilo_watt_days_per_kilogram = None
+        self.__kilowatt_days_per_kilogram = None
         
-        self.__mega_watt_days_per_kilogram = None
+        self.__megawatt_days_per_kilogram = None
         
-        self.__giga_watt_days_per_kilogram = None
+        self.__gigawatt_days_per_kilogram = None
         
-        self.__tera_watt_days_per_kilogram = None
+        self.__terawatt_days_per_kilogram = None
         
-        self.__kilo_watt_days_per_tonne = None
+        self.__kilowatt_days_per_tonne = None
         
-        self.__mega_watt_days_per_tonne = None
+        self.__megawatt_days_per_tonne = None
         
-        self.__giga_watt_days_per_tonne = None
+        self.__gigawatt_days_per_tonne = None
         
-        self.__tera_watt_days_per_tonne = None
+        self.__terawatt_days_per_tonne = None
         
-        self.__kilo_watt_days_per_short_ton = None
+        self.__kilowatt_days_per_short_ton = None
         
-        self.__mega_watt_days_per_short_ton = None
+        self.__megawatt_days_per_short_ton = None
         
-        self.__giga_watt_days_per_short_ton = None
+        self.__gigawatt_days_per_short_ton = None
         
-        self.__tera_watt_days_per_short_ton = None
+        self.__terawatt_days_per_short_ton = None
         
-        self.__kilo_watt_hours_per_pound = None
+        self.__kilowatt_hours_per_pound = None
         
-        self.__mega_watt_hours_per_pound = None
+        self.__megawatt_hours_per_pound = None
         
-        self.__giga_watt_hours_per_pound = None
+        self.__gigawatt_hours_per_pound = None
         
 
     def __convert_from_base(self, from_unit: SpecificEnergyUnits) -> float:
@@ -263,67 +263,67 @@ class SpecificEnergy:
         if from_unit == SpecificEnergyUnits.BtuPerPound:
             return (value / 2326.000075362)
         
-        if from_unit == SpecificEnergyUnits.KiloJoulePerKilogram:
+        if from_unit == SpecificEnergyUnits.KilojoulePerKilogram:
             return ((value) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaJoulePerKilogram:
+        if from_unit == SpecificEnergyUnits.MegajoulePerKilogram:
             return ((value) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloCaloriePerGram:
+        if from_unit == SpecificEnergyUnits.KilocaloriePerGram:
             return ((value / 4.184e3) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloWattHourPerKilogram:
+        if from_unit == SpecificEnergyUnits.KilowattHourPerKilogram:
             return ((value / 3.6e3) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaWattHourPerKilogram:
+        if from_unit == SpecificEnergyUnits.MegawattHourPerKilogram:
             return ((value / 3.6e3) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.GigaWattHourPerKilogram:
+        if from_unit == SpecificEnergyUnits.GigawattHourPerKilogram:
             return ((value / 3.6e3) / 1000000000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloWattDayPerKilogram:
+        if from_unit == SpecificEnergyUnits.KilowattDayPerKilogram:
             return ((value / (24 * 3.6e3)) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaWattDayPerKilogram:
+        if from_unit == SpecificEnergyUnits.MegawattDayPerKilogram:
             return ((value / (24 * 3.6e3)) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.GigaWattDayPerKilogram:
+        if from_unit == SpecificEnergyUnits.GigawattDayPerKilogram:
             return ((value / (24 * 3.6e3)) / 1000000000.0)
         
-        if from_unit == SpecificEnergyUnits.TeraWattDayPerKilogram:
+        if from_unit == SpecificEnergyUnits.TerawattDayPerKilogram:
             return ((value / (24 * 3.6e3)) / 1000000000000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloWattDayPerTonne:
+        if from_unit == SpecificEnergyUnits.KilowattDayPerTonne:
             return ((value / ((24 * 3.6e3) / 1e3)) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaWattDayPerTonne:
+        if from_unit == SpecificEnergyUnits.MegawattDayPerTonne:
             return ((value / ((24 * 3.6e3) / 1e3)) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.GigaWattDayPerTonne:
+        if from_unit == SpecificEnergyUnits.GigawattDayPerTonne:
             return ((value / ((24 * 3.6e3) / 1e3)) / 1000000000.0)
         
-        if from_unit == SpecificEnergyUnits.TeraWattDayPerTonne:
+        if from_unit == SpecificEnergyUnits.TerawattDayPerTonne:
             return ((value / ((24 * 3.6e3) / 1e3)) / 1000000000000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloWattDayPerShortTon:
+        if from_unit == SpecificEnergyUnits.KilowattDayPerShortTon:
             return ((value / ((24 * 3.6e3) / 9.0718474e2)) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaWattDayPerShortTon:
+        if from_unit == SpecificEnergyUnits.MegawattDayPerShortTon:
             return ((value / ((24 * 3.6e3) / 9.0718474e2)) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.GigaWattDayPerShortTon:
+        if from_unit == SpecificEnergyUnits.GigawattDayPerShortTon:
             return ((value / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000.0)
         
-        if from_unit == SpecificEnergyUnits.TeraWattDayPerShortTon:
+        if from_unit == SpecificEnergyUnits.TerawattDayPerShortTon:
             return ((value / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000000.0)
         
-        if from_unit == SpecificEnergyUnits.KiloWattHourPerPound:
+        if from_unit == SpecificEnergyUnits.KilowattHourPerPound:
             return ((value / 7.93664e3) / 1000.0)
         
-        if from_unit == SpecificEnergyUnits.MegaWattHourPerPound:
+        if from_unit == SpecificEnergyUnits.MegawattHourPerPound:
             return ((value / 7.93664e3) / 1000000.0)
         
-        if from_unit == SpecificEnergyUnits.GigaWattHourPerPound:
+        if from_unit == SpecificEnergyUnits.GigawattHourPerPound:
             return ((value / 7.93664e3) / 1000000000.0)
         
         return None
@@ -358,67 +358,67 @@ class SpecificEnergy:
         if to_unit == SpecificEnergyUnits.BtuPerPound:
             return (value * 2326.000075362)
         
-        if to_unit == SpecificEnergyUnits.KiloJoulePerKilogram:
+        if to_unit == SpecificEnergyUnits.KilojoulePerKilogram:
             return ((value) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaJoulePerKilogram:
+        if to_unit == SpecificEnergyUnits.MegajoulePerKilogram:
             return ((value) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloCaloriePerGram:
+        if to_unit == SpecificEnergyUnits.KilocaloriePerGram:
             return ((value * 4.184e3) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloWattHourPerKilogram:
+        if to_unit == SpecificEnergyUnits.KilowattHourPerKilogram:
             return ((value * 3.6e3) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaWattHourPerKilogram:
+        if to_unit == SpecificEnergyUnits.MegawattHourPerKilogram:
             return ((value * 3.6e3) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.GigaWattHourPerKilogram:
+        if to_unit == SpecificEnergyUnits.GigawattHourPerKilogram:
             return ((value * 3.6e3) * 1000000000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloWattDayPerKilogram:
+        if to_unit == SpecificEnergyUnits.KilowattDayPerKilogram:
             return ((value * (24 * 3.6e3)) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaWattDayPerKilogram:
+        if to_unit == SpecificEnergyUnits.MegawattDayPerKilogram:
             return ((value * (24 * 3.6e3)) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.GigaWattDayPerKilogram:
+        if to_unit == SpecificEnergyUnits.GigawattDayPerKilogram:
             return ((value * (24 * 3.6e3)) * 1000000000.0)
         
-        if to_unit == SpecificEnergyUnits.TeraWattDayPerKilogram:
+        if to_unit == SpecificEnergyUnits.TerawattDayPerKilogram:
             return ((value * (24 * 3.6e3)) * 1000000000000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloWattDayPerTonne:
+        if to_unit == SpecificEnergyUnits.KilowattDayPerTonne:
             return ((value * ((24 * 3.6e3) / 1e3)) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaWattDayPerTonne:
+        if to_unit == SpecificEnergyUnits.MegawattDayPerTonne:
             return ((value * ((24 * 3.6e3) / 1e3)) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.GigaWattDayPerTonne:
+        if to_unit == SpecificEnergyUnits.GigawattDayPerTonne:
             return ((value * ((24 * 3.6e3) / 1e3)) * 1000000000.0)
         
-        if to_unit == SpecificEnergyUnits.TeraWattDayPerTonne:
+        if to_unit == SpecificEnergyUnits.TerawattDayPerTonne:
             return ((value * ((24 * 3.6e3) / 1e3)) * 1000000000000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloWattDayPerShortTon:
+        if to_unit == SpecificEnergyUnits.KilowattDayPerShortTon:
             return ((value * ((24 * 3.6e3) / 9.0718474e2)) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaWattDayPerShortTon:
+        if to_unit == SpecificEnergyUnits.MegawattDayPerShortTon:
             return ((value * ((24 * 3.6e3) / 9.0718474e2)) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.GigaWattDayPerShortTon:
+        if to_unit == SpecificEnergyUnits.GigawattDayPerShortTon:
             return ((value * ((24 * 3.6e3) / 9.0718474e2)) * 1000000000.0)
         
-        if to_unit == SpecificEnergyUnits.TeraWattDayPerShortTon:
+        if to_unit == SpecificEnergyUnits.TerawattDayPerShortTon:
             return ((value * ((24 * 3.6e3) / 9.0718474e2)) * 1000000000000.0)
         
-        if to_unit == SpecificEnergyUnits.KiloWattHourPerPound:
+        if to_unit == SpecificEnergyUnits.KilowattHourPerPound:
             return ((value * 7.93664e3) * 1000.0)
         
-        if to_unit == SpecificEnergyUnits.MegaWattHourPerPound:
+        if to_unit == SpecificEnergyUnits.MegawattHourPerPound:
             return ((value * 7.93664e3) * 1000000.0)
         
-        if to_unit == SpecificEnergyUnits.GigaWattHourPerPound:
+        if to_unit == SpecificEnergyUnits.GigawattHourPerPound:
             return ((value * 7.93664e3) * 1000000000.0)
         
         return None
@@ -565,318 +565,318 @@ class SpecificEnergy:
 
     
     @staticmethod
-    def from_kilo_joules_per_kilogram(kilo_joules_per_kilogram: float):
+    def from_kilojoules_per_kilogram(kilojoules_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_joules_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in kilojoules_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_joules_per_kilogram.
-        :type kilo_joules_per_kilogram: float
+        :param meters: The SpecificEnergy value in kilojoules_per_kilogram.
+        :type kilojoules_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_joules_per_kilogram, SpecificEnergyUnits.KiloJoulePerKilogram)
+        return SpecificEnergy(kilojoules_per_kilogram, SpecificEnergyUnits.KilojoulePerKilogram)
 
     
     @staticmethod
-    def from_mega_joules_per_kilogram(mega_joules_per_kilogram: float):
+    def from_megajoules_per_kilogram(megajoules_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_joules_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in megajoules_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in mega_joules_per_kilogram.
-        :type mega_joules_per_kilogram: float
+        :param meters: The SpecificEnergy value in megajoules_per_kilogram.
+        :type megajoules_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_joules_per_kilogram, SpecificEnergyUnits.MegaJoulePerKilogram)
+        return SpecificEnergy(megajoules_per_kilogram, SpecificEnergyUnits.MegajoulePerKilogram)
 
     
     @staticmethod
-    def from_kilo_calories_per_gram(kilo_calories_per_gram: float):
+    def from_kilocalories_per_gram(kilocalories_per_gram: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_calories_per_gram.
+        Create a new instance of SpecificEnergy from a value in kilocalories_per_gram.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_calories_per_gram.
-        :type kilo_calories_per_gram: float
+        :param meters: The SpecificEnergy value in kilocalories_per_gram.
+        :type kilocalories_per_gram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_calories_per_gram, SpecificEnergyUnits.KiloCaloriePerGram)
+        return SpecificEnergy(kilocalories_per_gram, SpecificEnergyUnits.KilocaloriePerGram)
 
     
     @staticmethod
-    def from_kilo_watt_hours_per_kilogram(kilo_watt_hours_per_kilogram: float):
+    def from_kilowatt_hours_per_kilogram(kilowatt_hours_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_watt_hours_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in kilowatt_hours_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_watt_hours_per_kilogram.
-        :type kilo_watt_hours_per_kilogram: float
+        :param meters: The SpecificEnergy value in kilowatt_hours_per_kilogram.
+        :type kilowatt_hours_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_watt_hours_per_kilogram, SpecificEnergyUnits.KiloWattHourPerKilogram)
+        return SpecificEnergy(kilowatt_hours_per_kilogram, SpecificEnergyUnits.KilowattHourPerKilogram)
 
     
     @staticmethod
-    def from_mega_watt_hours_per_kilogram(mega_watt_hours_per_kilogram: float):
+    def from_megawatt_hours_per_kilogram(megawatt_hours_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_watt_hours_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in megawatt_hours_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in mega_watt_hours_per_kilogram.
-        :type mega_watt_hours_per_kilogram: float
+        :param meters: The SpecificEnergy value in megawatt_hours_per_kilogram.
+        :type megawatt_hours_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_watt_hours_per_kilogram, SpecificEnergyUnits.MegaWattHourPerKilogram)
+        return SpecificEnergy(megawatt_hours_per_kilogram, SpecificEnergyUnits.MegawattHourPerKilogram)
 
     
     @staticmethod
-    def from_giga_watt_hours_per_kilogram(giga_watt_hours_per_kilogram: float):
+    def from_gigawatt_hours_per_kilogram(gigawatt_hours_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in giga_watt_hours_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in gigawatt_hours_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in giga_watt_hours_per_kilogram.
-        :type giga_watt_hours_per_kilogram: float
+        :param meters: The SpecificEnergy value in gigawatt_hours_per_kilogram.
+        :type gigawatt_hours_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(giga_watt_hours_per_kilogram, SpecificEnergyUnits.GigaWattHourPerKilogram)
+        return SpecificEnergy(gigawatt_hours_per_kilogram, SpecificEnergyUnits.GigawattHourPerKilogram)
 
     
     @staticmethod
-    def from_kilo_watt_days_per_kilogram(kilo_watt_days_per_kilogram: float):
+    def from_kilowatt_days_per_kilogram(kilowatt_days_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_watt_days_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in kilowatt_days_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_watt_days_per_kilogram.
-        :type kilo_watt_days_per_kilogram: float
+        :param meters: The SpecificEnergy value in kilowatt_days_per_kilogram.
+        :type kilowatt_days_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_watt_days_per_kilogram, SpecificEnergyUnits.KiloWattDayPerKilogram)
+        return SpecificEnergy(kilowatt_days_per_kilogram, SpecificEnergyUnits.KilowattDayPerKilogram)
 
     
     @staticmethod
-    def from_mega_watt_days_per_kilogram(mega_watt_days_per_kilogram: float):
+    def from_megawatt_days_per_kilogram(megawatt_days_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_watt_days_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in megawatt_days_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in mega_watt_days_per_kilogram.
-        :type mega_watt_days_per_kilogram: float
+        :param meters: The SpecificEnergy value in megawatt_days_per_kilogram.
+        :type megawatt_days_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_watt_days_per_kilogram, SpecificEnergyUnits.MegaWattDayPerKilogram)
+        return SpecificEnergy(megawatt_days_per_kilogram, SpecificEnergyUnits.MegawattDayPerKilogram)
 
     
     @staticmethod
-    def from_giga_watt_days_per_kilogram(giga_watt_days_per_kilogram: float):
+    def from_gigawatt_days_per_kilogram(gigawatt_days_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in giga_watt_days_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in gigawatt_days_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in giga_watt_days_per_kilogram.
-        :type giga_watt_days_per_kilogram: float
+        :param meters: The SpecificEnergy value in gigawatt_days_per_kilogram.
+        :type gigawatt_days_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(giga_watt_days_per_kilogram, SpecificEnergyUnits.GigaWattDayPerKilogram)
+        return SpecificEnergy(gigawatt_days_per_kilogram, SpecificEnergyUnits.GigawattDayPerKilogram)
 
     
     @staticmethod
-    def from_tera_watt_days_per_kilogram(tera_watt_days_per_kilogram: float):
+    def from_terawatt_days_per_kilogram(terawatt_days_per_kilogram: float):
         """
-        Create a new instance of SpecificEnergy from a value in tera_watt_days_per_kilogram.
+        Create a new instance of SpecificEnergy from a value in terawatt_days_per_kilogram.
 
         
 
-        :param meters: The SpecificEnergy value in tera_watt_days_per_kilogram.
-        :type tera_watt_days_per_kilogram: float
+        :param meters: The SpecificEnergy value in terawatt_days_per_kilogram.
+        :type terawatt_days_per_kilogram: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(tera_watt_days_per_kilogram, SpecificEnergyUnits.TeraWattDayPerKilogram)
+        return SpecificEnergy(terawatt_days_per_kilogram, SpecificEnergyUnits.TerawattDayPerKilogram)
 
     
     @staticmethod
-    def from_kilo_watt_days_per_tonne(kilo_watt_days_per_tonne: float):
+    def from_kilowatt_days_per_tonne(kilowatt_days_per_tonne: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_watt_days_per_tonne.
+        Create a new instance of SpecificEnergy from a value in kilowatt_days_per_tonne.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_watt_days_per_tonne.
-        :type kilo_watt_days_per_tonne: float
+        :param meters: The SpecificEnergy value in kilowatt_days_per_tonne.
+        :type kilowatt_days_per_tonne: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_watt_days_per_tonne, SpecificEnergyUnits.KiloWattDayPerTonne)
+        return SpecificEnergy(kilowatt_days_per_tonne, SpecificEnergyUnits.KilowattDayPerTonne)
 
     
     @staticmethod
-    def from_mega_watt_days_per_tonne(mega_watt_days_per_tonne: float):
+    def from_megawatt_days_per_tonne(megawatt_days_per_tonne: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_watt_days_per_tonne.
+        Create a new instance of SpecificEnergy from a value in megawatt_days_per_tonne.
 
         
 
-        :param meters: The SpecificEnergy value in mega_watt_days_per_tonne.
-        :type mega_watt_days_per_tonne: float
+        :param meters: The SpecificEnergy value in megawatt_days_per_tonne.
+        :type megawatt_days_per_tonne: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_watt_days_per_tonne, SpecificEnergyUnits.MegaWattDayPerTonne)
+        return SpecificEnergy(megawatt_days_per_tonne, SpecificEnergyUnits.MegawattDayPerTonne)
 
     
     @staticmethod
-    def from_giga_watt_days_per_tonne(giga_watt_days_per_tonne: float):
+    def from_gigawatt_days_per_tonne(gigawatt_days_per_tonne: float):
         """
-        Create a new instance of SpecificEnergy from a value in giga_watt_days_per_tonne.
+        Create a new instance of SpecificEnergy from a value in gigawatt_days_per_tonne.
 
         
 
-        :param meters: The SpecificEnergy value in giga_watt_days_per_tonne.
-        :type giga_watt_days_per_tonne: float
+        :param meters: The SpecificEnergy value in gigawatt_days_per_tonne.
+        :type gigawatt_days_per_tonne: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(giga_watt_days_per_tonne, SpecificEnergyUnits.GigaWattDayPerTonne)
+        return SpecificEnergy(gigawatt_days_per_tonne, SpecificEnergyUnits.GigawattDayPerTonne)
 
     
     @staticmethod
-    def from_tera_watt_days_per_tonne(tera_watt_days_per_tonne: float):
+    def from_terawatt_days_per_tonne(terawatt_days_per_tonne: float):
         """
-        Create a new instance of SpecificEnergy from a value in tera_watt_days_per_tonne.
+        Create a new instance of SpecificEnergy from a value in terawatt_days_per_tonne.
 
         
 
-        :param meters: The SpecificEnergy value in tera_watt_days_per_tonne.
-        :type tera_watt_days_per_tonne: float
+        :param meters: The SpecificEnergy value in terawatt_days_per_tonne.
+        :type terawatt_days_per_tonne: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(tera_watt_days_per_tonne, SpecificEnergyUnits.TeraWattDayPerTonne)
+        return SpecificEnergy(terawatt_days_per_tonne, SpecificEnergyUnits.TerawattDayPerTonne)
 
     
     @staticmethod
-    def from_kilo_watt_days_per_short_ton(kilo_watt_days_per_short_ton: float):
+    def from_kilowatt_days_per_short_ton(kilowatt_days_per_short_ton: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_watt_days_per_short_ton.
+        Create a new instance of SpecificEnergy from a value in kilowatt_days_per_short_ton.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_watt_days_per_short_ton.
-        :type kilo_watt_days_per_short_ton: float
+        :param meters: The SpecificEnergy value in kilowatt_days_per_short_ton.
+        :type kilowatt_days_per_short_ton: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_watt_days_per_short_ton, SpecificEnergyUnits.KiloWattDayPerShortTon)
+        return SpecificEnergy(kilowatt_days_per_short_ton, SpecificEnergyUnits.KilowattDayPerShortTon)
 
     
     @staticmethod
-    def from_mega_watt_days_per_short_ton(mega_watt_days_per_short_ton: float):
+    def from_megawatt_days_per_short_ton(megawatt_days_per_short_ton: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_watt_days_per_short_ton.
+        Create a new instance of SpecificEnergy from a value in megawatt_days_per_short_ton.
 
         
 
-        :param meters: The SpecificEnergy value in mega_watt_days_per_short_ton.
-        :type mega_watt_days_per_short_ton: float
+        :param meters: The SpecificEnergy value in megawatt_days_per_short_ton.
+        :type megawatt_days_per_short_ton: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_watt_days_per_short_ton, SpecificEnergyUnits.MegaWattDayPerShortTon)
+        return SpecificEnergy(megawatt_days_per_short_ton, SpecificEnergyUnits.MegawattDayPerShortTon)
 
     
     @staticmethod
-    def from_giga_watt_days_per_short_ton(giga_watt_days_per_short_ton: float):
+    def from_gigawatt_days_per_short_ton(gigawatt_days_per_short_ton: float):
         """
-        Create a new instance of SpecificEnergy from a value in giga_watt_days_per_short_ton.
+        Create a new instance of SpecificEnergy from a value in gigawatt_days_per_short_ton.
 
         
 
-        :param meters: The SpecificEnergy value in giga_watt_days_per_short_ton.
-        :type giga_watt_days_per_short_ton: float
+        :param meters: The SpecificEnergy value in gigawatt_days_per_short_ton.
+        :type gigawatt_days_per_short_ton: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(giga_watt_days_per_short_ton, SpecificEnergyUnits.GigaWattDayPerShortTon)
+        return SpecificEnergy(gigawatt_days_per_short_ton, SpecificEnergyUnits.GigawattDayPerShortTon)
 
     
     @staticmethod
-    def from_tera_watt_days_per_short_ton(tera_watt_days_per_short_ton: float):
+    def from_terawatt_days_per_short_ton(terawatt_days_per_short_ton: float):
         """
-        Create a new instance of SpecificEnergy from a value in tera_watt_days_per_short_ton.
+        Create a new instance of SpecificEnergy from a value in terawatt_days_per_short_ton.
 
         
 
-        :param meters: The SpecificEnergy value in tera_watt_days_per_short_ton.
-        :type tera_watt_days_per_short_ton: float
+        :param meters: The SpecificEnergy value in terawatt_days_per_short_ton.
+        :type terawatt_days_per_short_ton: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(tera_watt_days_per_short_ton, SpecificEnergyUnits.TeraWattDayPerShortTon)
+        return SpecificEnergy(terawatt_days_per_short_ton, SpecificEnergyUnits.TerawattDayPerShortTon)
 
     
     @staticmethod
-    def from_kilo_watt_hours_per_pound(kilo_watt_hours_per_pound: float):
+    def from_kilowatt_hours_per_pound(kilowatt_hours_per_pound: float):
         """
-        Create a new instance of SpecificEnergy from a value in kilo_watt_hours_per_pound.
+        Create a new instance of SpecificEnergy from a value in kilowatt_hours_per_pound.
 
         
 
-        :param meters: The SpecificEnergy value in kilo_watt_hours_per_pound.
-        :type kilo_watt_hours_per_pound: float
+        :param meters: The SpecificEnergy value in kilowatt_hours_per_pound.
+        :type kilowatt_hours_per_pound: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(kilo_watt_hours_per_pound, SpecificEnergyUnits.KiloWattHourPerPound)
+        return SpecificEnergy(kilowatt_hours_per_pound, SpecificEnergyUnits.KilowattHourPerPound)
 
     
     @staticmethod
-    def from_mega_watt_hours_per_pound(mega_watt_hours_per_pound: float):
+    def from_megawatt_hours_per_pound(megawatt_hours_per_pound: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_watt_hours_per_pound.
+        Create a new instance of SpecificEnergy from a value in megawatt_hours_per_pound.
 
         
 
-        :param meters: The SpecificEnergy value in mega_watt_hours_per_pound.
-        :type mega_watt_hours_per_pound: float
+        :param meters: The SpecificEnergy value in megawatt_hours_per_pound.
+        :type megawatt_hours_per_pound: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_watt_hours_per_pound, SpecificEnergyUnits.MegaWattHourPerPound)
+        return SpecificEnergy(megawatt_hours_per_pound, SpecificEnergyUnits.MegawattHourPerPound)
 
     
     @staticmethod
-    def from_giga_watt_hours_per_pound(giga_watt_hours_per_pound: float):
+    def from_gigawatt_hours_per_pound(gigawatt_hours_per_pound: float):
         """
-        Create a new instance of SpecificEnergy from a value in giga_watt_hours_per_pound.
+        Create a new instance of SpecificEnergy from a value in gigawatt_hours_per_pound.
 
         
 
-        :param meters: The SpecificEnergy value in giga_watt_hours_per_pound.
-        :type giga_watt_hours_per_pound: float
+        :param meters: The SpecificEnergy value in gigawatt_hours_per_pound.
+        :type gigawatt_hours_per_pound: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(giga_watt_hours_per_pound, SpecificEnergyUnits.GigaWattHourPerPound)
+        return SpecificEnergy(gigawatt_hours_per_pound, SpecificEnergyUnits.GigawattHourPerPound)
 
     
     @property
@@ -979,234 +979,234 @@ class SpecificEnergy:
 
     
     @property
-    def kilo_joules_per_kilogram(self) -> float:
+    def kilojoules_per_kilogram(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_kilogram != None:
-            return self.__kilo_joules_per_kilogram
-        self.__kilo_joules_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KiloJoulePerKilogram)
-        return self.__kilo_joules_per_kilogram
+        if self.__kilojoules_per_kilogram != None:
+            return self.__kilojoules_per_kilogram
+        self.__kilojoules_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KilojoulePerKilogram)
+        return self.__kilojoules_per_kilogram
 
     
     @property
-    def mega_joules_per_kilogram(self) -> float:
+    def megajoules_per_kilogram(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_kilogram != None:
-            return self.__mega_joules_per_kilogram
-        self.__mega_joules_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegaJoulePerKilogram)
-        return self.__mega_joules_per_kilogram
+        if self.__megajoules_per_kilogram != None:
+            return self.__megajoules_per_kilogram
+        self.__megajoules_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegajoulePerKilogram)
+        return self.__megajoules_per_kilogram
 
     
     @property
-    def kilo_calories_per_gram(self) -> float:
+    def kilocalories_per_gram(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_gram != None:
-            return self.__kilo_calories_per_gram
-        self.__kilo_calories_per_gram = self.__convert_from_base(SpecificEnergyUnits.KiloCaloriePerGram)
-        return self.__kilo_calories_per_gram
+        if self.__kilocalories_per_gram != None:
+            return self.__kilocalories_per_gram
+        self.__kilocalories_per_gram = self.__convert_from_base(SpecificEnergyUnits.KilocaloriePerGram)
+        return self.__kilocalories_per_gram
 
     
     @property
-    def kilo_watt_hours_per_kilogram(self) -> float:
+    def kilowatt_hours_per_kilogram(self) -> float:
         """
         
         """
-        if self.__kilo_watt_hours_per_kilogram != None:
-            return self.__kilo_watt_hours_per_kilogram
-        self.__kilo_watt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KiloWattHourPerKilogram)
-        return self.__kilo_watt_hours_per_kilogram
+        if self.__kilowatt_hours_per_kilogram != None:
+            return self.__kilowatt_hours_per_kilogram
+        self.__kilowatt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KilowattHourPerKilogram)
+        return self.__kilowatt_hours_per_kilogram
 
     
     @property
-    def mega_watt_hours_per_kilogram(self) -> float:
+    def megawatt_hours_per_kilogram(self) -> float:
         """
         
         """
-        if self.__mega_watt_hours_per_kilogram != None:
-            return self.__mega_watt_hours_per_kilogram
-        self.__mega_watt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegaWattHourPerKilogram)
-        return self.__mega_watt_hours_per_kilogram
+        if self.__megawatt_hours_per_kilogram != None:
+            return self.__megawatt_hours_per_kilogram
+        self.__megawatt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegawattHourPerKilogram)
+        return self.__megawatt_hours_per_kilogram
 
     
     @property
-    def giga_watt_hours_per_kilogram(self) -> float:
+    def gigawatt_hours_per_kilogram(self) -> float:
         """
         
         """
-        if self.__giga_watt_hours_per_kilogram != None:
-            return self.__giga_watt_hours_per_kilogram
-        self.__giga_watt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.GigaWattHourPerKilogram)
-        return self.__giga_watt_hours_per_kilogram
+        if self.__gigawatt_hours_per_kilogram != None:
+            return self.__gigawatt_hours_per_kilogram
+        self.__gigawatt_hours_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.GigawattHourPerKilogram)
+        return self.__gigawatt_hours_per_kilogram
 
     
     @property
-    def kilo_watt_days_per_kilogram(self) -> float:
+    def kilowatt_days_per_kilogram(self) -> float:
         """
         
         """
-        if self.__kilo_watt_days_per_kilogram != None:
-            return self.__kilo_watt_days_per_kilogram
-        self.__kilo_watt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KiloWattDayPerKilogram)
-        return self.__kilo_watt_days_per_kilogram
+        if self.__kilowatt_days_per_kilogram != None:
+            return self.__kilowatt_days_per_kilogram
+        self.__kilowatt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.KilowattDayPerKilogram)
+        return self.__kilowatt_days_per_kilogram
 
     
     @property
-    def mega_watt_days_per_kilogram(self) -> float:
+    def megawatt_days_per_kilogram(self) -> float:
         """
         
         """
-        if self.__mega_watt_days_per_kilogram != None:
-            return self.__mega_watt_days_per_kilogram
-        self.__mega_watt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegaWattDayPerKilogram)
-        return self.__mega_watt_days_per_kilogram
+        if self.__megawatt_days_per_kilogram != None:
+            return self.__megawatt_days_per_kilogram
+        self.__megawatt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.MegawattDayPerKilogram)
+        return self.__megawatt_days_per_kilogram
 
     
     @property
-    def giga_watt_days_per_kilogram(self) -> float:
+    def gigawatt_days_per_kilogram(self) -> float:
         """
         
         """
-        if self.__giga_watt_days_per_kilogram != None:
-            return self.__giga_watt_days_per_kilogram
-        self.__giga_watt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.GigaWattDayPerKilogram)
-        return self.__giga_watt_days_per_kilogram
+        if self.__gigawatt_days_per_kilogram != None:
+            return self.__gigawatt_days_per_kilogram
+        self.__gigawatt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.GigawattDayPerKilogram)
+        return self.__gigawatt_days_per_kilogram
 
     
     @property
-    def tera_watt_days_per_kilogram(self) -> float:
+    def terawatt_days_per_kilogram(self) -> float:
         """
         
         """
-        if self.__tera_watt_days_per_kilogram != None:
-            return self.__tera_watt_days_per_kilogram
-        self.__tera_watt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.TeraWattDayPerKilogram)
-        return self.__tera_watt_days_per_kilogram
+        if self.__terawatt_days_per_kilogram != None:
+            return self.__terawatt_days_per_kilogram
+        self.__terawatt_days_per_kilogram = self.__convert_from_base(SpecificEnergyUnits.TerawattDayPerKilogram)
+        return self.__terawatt_days_per_kilogram
 
     
     @property
-    def kilo_watt_days_per_tonne(self) -> float:
+    def kilowatt_days_per_tonne(self) -> float:
         """
         
         """
-        if self.__kilo_watt_days_per_tonne != None:
-            return self.__kilo_watt_days_per_tonne
-        self.__kilo_watt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.KiloWattDayPerTonne)
-        return self.__kilo_watt_days_per_tonne
+        if self.__kilowatt_days_per_tonne != None:
+            return self.__kilowatt_days_per_tonne
+        self.__kilowatt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.KilowattDayPerTonne)
+        return self.__kilowatt_days_per_tonne
 
     
     @property
-    def mega_watt_days_per_tonne(self) -> float:
+    def megawatt_days_per_tonne(self) -> float:
         """
         
         """
-        if self.__mega_watt_days_per_tonne != None:
-            return self.__mega_watt_days_per_tonne
-        self.__mega_watt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.MegaWattDayPerTonne)
-        return self.__mega_watt_days_per_tonne
+        if self.__megawatt_days_per_tonne != None:
+            return self.__megawatt_days_per_tonne
+        self.__megawatt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.MegawattDayPerTonne)
+        return self.__megawatt_days_per_tonne
 
     
     @property
-    def giga_watt_days_per_tonne(self) -> float:
+    def gigawatt_days_per_tonne(self) -> float:
         """
         
         """
-        if self.__giga_watt_days_per_tonne != None:
-            return self.__giga_watt_days_per_tonne
-        self.__giga_watt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.GigaWattDayPerTonne)
-        return self.__giga_watt_days_per_tonne
+        if self.__gigawatt_days_per_tonne != None:
+            return self.__gigawatt_days_per_tonne
+        self.__gigawatt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.GigawattDayPerTonne)
+        return self.__gigawatt_days_per_tonne
 
     
     @property
-    def tera_watt_days_per_tonne(self) -> float:
+    def terawatt_days_per_tonne(self) -> float:
         """
         
         """
-        if self.__tera_watt_days_per_tonne != None:
-            return self.__tera_watt_days_per_tonne
-        self.__tera_watt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.TeraWattDayPerTonne)
-        return self.__tera_watt_days_per_tonne
+        if self.__terawatt_days_per_tonne != None:
+            return self.__terawatt_days_per_tonne
+        self.__terawatt_days_per_tonne = self.__convert_from_base(SpecificEnergyUnits.TerawattDayPerTonne)
+        return self.__terawatt_days_per_tonne
 
     
     @property
-    def kilo_watt_days_per_short_ton(self) -> float:
+    def kilowatt_days_per_short_ton(self) -> float:
         """
         
         """
-        if self.__kilo_watt_days_per_short_ton != None:
-            return self.__kilo_watt_days_per_short_ton
-        self.__kilo_watt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.KiloWattDayPerShortTon)
-        return self.__kilo_watt_days_per_short_ton
+        if self.__kilowatt_days_per_short_ton != None:
+            return self.__kilowatt_days_per_short_ton
+        self.__kilowatt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.KilowattDayPerShortTon)
+        return self.__kilowatt_days_per_short_ton
 
     
     @property
-    def mega_watt_days_per_short_ton(self) -> float:
+    def megawatt_days_per_short_ton(self) -> float:
         """
         
         """
-        if self.__mega_watt_days_per_short_ton != None:
-            return self.__mega_watt_days_per_short_ton
-        self.__mega_watt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.MegaWattDayPerShortTon)
-        return self.__mega_watt_days_per_short_ton
+        if self.__megawatt_days_per_short_ton != None:
+            return self.__megawatt_days_per_short_ton
+        self.__megawatt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.MegawattDayPerShortTon)
+        return self.__megawatt_days_per_short_ton
 
     
     @property
-    def giga_watt_days_per_short_ton(self) -> float:
+    def gigawatt_days_per_short_ton(self) -> float:
         """
         
         """
-        if self.__giga_watt_days_per_short_ton != None:
-            return self.__giga_watt_days_per_short_ton
-        self.__giga_watt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.GigaWattDayPerShortTon)
-        return self.__giga_watt_days_per_short_ton
+        if self.__gigawatt_days_per_short_ton != None:
+            return self.__gigawatt_days_per_short_ton
+        self.__gigawatt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.GigawattDayPerShortTon)
+        return self.__gigawatt_days_per_short_ton
 
     
     @property
-    def tera_watt_days_per_short_ton(self) -> float:
+    def terawatt_days_per_short_ton(self) -> float:
         """
         
         """
-        if self.__tera_watt_days_per_short_ton != None:
-            return self.__tera_watt_days_per_short_ton
-        self.__tera_watt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.TeraWattDayPerShortTon)
-        return self.__tera_watt_days_per_short_ton
+        if self.__terawatt_days_per_short_ton != None:
+            return self.__terawatt_days_per_short_ton
+        self.__terawatt_days_per_short_ton = self.__convert_from_base(SpecificEnergyUnits.TerawattDayPerShortTon)
+        return self.__terawatt_days_per_short_ton
 
     
     @property
-    def kilo_watt_hours_per_pound(self) -> float:
+    def kilowatt_hours_per_pound(self) -> float:
         """
         
         """
-        if self.__kilo_watt_hours_per_pound != None:
-            return self.__kilo_watt_hours_per_pound
-        self.__kilo_watt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.KiloWattHourPerPound)
-        return self.__kilo_watt_hours_per_pound
+        if self.__kilowatt_hours_per_pound != None:
+            return self.__kilowatt_hours_per_pound
+        self.__kilowatt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.KilowattHourPerPound)
+        return self.__kilowatt_hours_per_pound
 
     
     @property
-    def mega_watt_hours_per_pound(self) -> float:
+    def megawatt_hours_per_pound(self) -> float:
         """
         
         """
-        if self.__mega_watt_hours_per_pound != None:
-            return self.__mega_watt_hours_per_pound
-        self.__mega_watt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.MegaWattHourPerPound)
-        return self.__mega_watt_hours_per_pound
+        if self.__megawatt_hours_per_pound != None:
+            return self.__megawatt_hours_per_pound
+        self.__megawatt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.MegawattHourPerPound)
+        return self.__megawatt_hours_per_pound
 
     
     @property
-    def giga_watt_hours_per_pound(self) -> float:
+    def gigawatt_hours_per_pound(self) -> float:
         """
         
         """
-        if self.__giga_watt_hours_per_pound != None:
-            return self.__giga_watt_hours_per_pound
-        self.__giga_watt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.GigaWattHourPerPound)
-        return self.__giga_watt_hours_per_pound
+        if self.__gigawatt_hours_per_pound != None:
+            return self.__gigawatt_hours_per_pound
+        self.__gigawatt_hours_per_pound = self.__convert_from_base(SpecificEnergyUnits.GigawattHourPerPound)
+        return self.__gigawatt_hours_per_pound
 
     
     def to_string(self, unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> string:
@@ -1243,68 +1243,68 @@ class SpecificEnergy:
         if unit == SpecificEnergyUnits.BtuPerPound:
             return f"""{self.btu_per_pound} btu/lb"""
         
-        if unit == SpecificEnergyUnits.KiloJoulePerKilogram:
-            return f"""{self.kilo_joules_per_kilogram} """
+        if unit == SpecificEnergyUnits.KilojoulePerKilogram:
+            return f"""{self.kilojoules_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.MegaJoulePerKilogram:
-            return f"""{self.mega_joules_per_kilogram} """
+        if unit == SpecificEnergyUnits.MegajoulePerKilogram:
+            return f"""{self.megajoules_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.KiloCaloriePerGram:
-            return f"""{self.kilo_calories_per_gram} """
+        if unit == SpecificEnergyUnits.KilocaloriePerGram:
+            return f"""{self.kilocalories_per_gram} """
         
-        if unit == SpecificEnergyUnits.KiloWattHourPerKilogram:
-            return f"""{self.kilo_watt_hours_per_kilogram} """
+        if unit == SpecificEnergyUnits.KilowattHourPerKilogram:
+            return f"""{self.kilowatt_hours_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.MegaWattHourPerKilogram:
-            return f"""{self.mega_watt_hours_per_kilogram} """
+        if unit == SpecificEnergyUnits.MegawattHourPerKilogram:
+            return f"""{self.megawatt_hours_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.GigaWattHourPerKilogram:
-            return f"""{self.giga_watt_hours_per_kilogram} """
+        if unit == SpecificEnergyUnits.GigawattHourPerKilogram:
+            return f"""{self.gigawatt_hours_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.KiloWattDayPerKilogram:
-            return f"""{self.kilo_watt_days_per_kilogram} """
+        if unit == SpecificEnergyUnits.KilowattDayPerKilogram:
+            return f"""{self.kilowatt_days_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.MegaWattDayPerKilogram:
-            return f"""{self.mega_watt_days_per_kilogram} """
+        if unit == SpecificEnergyUnits.MegawattDayPerKilogram:
+            return f"""{self.megawatt_days_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.GigaWattDayPerKilogram:
-            return f"""{self.giga_watt_days_per_kilogram} """
+        if unit == SpecificEnergyUnits.GigawattDayPerKilogram:
+            return f"""{self.gigawatt_days_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.TeraWattDayPerKilogram:
-            return f"""{self.tera_watt_days_per_kilogram} """
+        if unit == SpecificEnergyUnits.TerawattDayPerKilogram:
+            return f"""{self.terawatt_days_per_kilogram} """
         
-        if unit == SpecificEnergyUnits.KiloWattDayPerTonne:
-            return f"""{self.kilo_watt_days_per_tonne} """
+        if unit == SpecificEnergyUnits.KilowattDayPerTonne:
+            return f"""{self.kilowatt_days_per_tonne} """
         
-        if unit == SpecificEnergyUnits.MegaWattDayPerTonne:
-            return f"""{self.mega_watt_days_per_tonne} """
+        if unit == SpecificEnergyUnits.MegawattDayPerTonne:
+            return f"""{self.megawatt_days_per_tonne} """
         
-        if unit == SpecificEnergyUnits.GigaWattDayPerTonne:
-            return f"""{self.giga_watt_days_per_tonne} """
+        if unit == SpecificEnergyUnits.GigawattDayPerTonne:
+            return f"""{self.gigawatt_days_per_tonne} """
         
-        if unit == SpecificEnergyUnits.TeraWattDayPerTonne:
-            return f"""{self.tera_watt_days_per_tonne} """
+        if unit == SpecificEnergyUnits.TerawattDayPerTonne:
+            return f"""{self.terawatt_days_per_tonne} """
         
-        if unit == SpecificEnergyUnits.KiloWattDayPerShortTon:
-            return f"""{self.kilo_watt_days_per_short_ton} """
+        if unit == SpecificEnergyUnits.KilowattDayPerShortTon:
+            return f"""{self.kilowatt_days_per_short_ton} """
         
-        if unit == SpecificEnergyUnits.MegaWattDayPerShortTon:
-            return f"""{self.mega_watt_days_per_short_ton} """
+        if unit == SpecificEnergyUnits.MegawattDayPerShortTon:
+            return f"""{self.megawatt_days_per_short_ton} """
         
-        if unit == SpecificEnergyUnits.GigaWattDayPerShortTon:
-            return f"""{self.giga_watt_days_per_short_ton} """
+        if unit == SpecificEnergyUnits.GigawattDayPerShortTon:
+            return f"""{self.gigawatt_days_per_short_ton} """
         
-        if unit == SpecificEnergyUnits.TeraWattDayPerShortTon:
-            return f"""{self.tera_watt_days_per_short_ton} """
+        if unit == SpecificEnergyUnits.TerawattDayPerShortTon:
+            return f"""{self.terawatt_days_per_short_ton} """
         
-        if unit == SpecificEnergyUnits.KiloWattHourPerPound:
-            return f"""{self.kilo_watt_hours_per_pound} """
+        if unit == SpecificEnergyUnits.KilowattHourPerPound:
+            return f"""{self.kilowatt_hours_per_pound} """
         
-        if unit == SpecificEnergyUnits.MegaWattHourPerPound:
-            return f"""{self.mega_watt_hours_per_pound} """
+        if unit == SpecificEnergyUnits.MegawattHourPerPound:
+            return f"""{self.megawatt_hours_per_pound} """
         
-        if unit == SpecificEnergyUnits.GigaWattHourPerPound:
-            return f"""{self.giga_watt_hours_per_pound} """
+        if unit == SpecificEnergyUnits.GigawattHourPerPound:
+            return f"""{self.gigawatt_hours_per_pound} """
         
         return f'{self.__value}'
 
@@ -1343,67 +1343,67 @@ class SpecificEnergy:
         if unit_abbreviation == SpecificEnergyUnits.BtuPerPound:
             return """btu/lb"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloJoulePerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.KilojoulePerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaJoulePerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.MegajoulePerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloCaloriePerGram:
+        if unit_abbreviation == SpecificEnergyUnits.KilocaloriePerGram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloWattHourPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.KilowattHourPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaWattHourPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.MegawattHourPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.GigaWattHourPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.GigawattHourPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloWattDayPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaWattDayPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.GigaWattDayPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.TeraWattDayPerKilogram:
+        if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerKilogram:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloWattDayPerTonne:
+        if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerTonne:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaWattDayPerTonne:
+        if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerTonne:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.GigaWattDayPerTonne:
+        if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerTonne:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.TeraWattDayPerTonne:
+        if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerTonne:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloWattDayPerShortTon:
+        if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerShortTon:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaWattDayPerShortTon:
+        if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerShortTon:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.GigaWattDayPerShortTon:
+        if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerShortTon:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.TeraWattDayPerShortTon:
+        if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerShortTon:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.KiloWattHourPerPound:
+        if unit_abbreviation == SpecificEnergyUnits.KilowattHourPerPound:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaWattHourPerPound:
+        if unit_abbreviation == SpecificEnergyUnits.MegawattHourPerPound:
             return """"""
         
-        if unit_abbreviation == SpecificEnergyUnits.GigaWattHourPerPound:
+        if unit_abbreviation == SpecificEnergyUnits.GigawattHourPerPound:
             return """"""
         
 

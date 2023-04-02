@@ -13,12 +13,12 @@ class ApparentEnergyUnits(Enum):
             
         """
         
-        KiloVoltampereHour = 'kilo_voltampere_hour'
+        KilovoltampereHour = 'kilovoltampere_hour'
         """
             
         """
         
-        MegaVoltampereHour = 'mega_voltampere_hour'
+        MegavoltampereHour = 'megavoltampere_hour'
         """
             
         """
@@ -39,9 +39,9 @@ class ApparentEnergy:
         
         self.__voltampere_hours = None
         
-        self.__kilo_voltampere_hours = None
+        self.__kilovoltampere_hours = None
         
-        self.__mega_voltampere_hours = None
+        self.__megavoltampere_hours = None
         
 
     def __convert_from_base(self, from_unit: ApparentEnergyUnits) -> float:
@@ -50,10 +50,10 @@ class ApparentEnergy:
         if from_unit == ApparentEnergyUnits.VoltampereHour:
             return (value)
         
-        if from_unit == ApparentEnergyUnits.KiloVoltampereHour:
+        if from_unit == ApparentEnergyUnits.KilovoltampereHour:
             return ((value) / 1000.0)
         
-        if from_unit == ApparentEnergyUnits.MegaVoltampereHour:
+        if from_unit == ApparentEnergyUnits.MegavoltampereHour:
             return ((value) / 1000000.0)
         
         return None
@@ -64,10 +64,10 @@ class ApparentEnergy:
         if to_unit == ApparentEnergyUnits.VoltampereHour:
             return (value)
         
-        if to_unit == ApparentEnergyUnits.KiloVoltampereHour:
+        if to_unit == ApparentEnergyUnits.KilovoltampereHour:
             return ((value) * 1000.0)
         
-        if to_unit == ApparentEnergyUnits.MegaVoltampereHour:
+        if to_unit == ApparentEnergyUnits.MegavoltampereHour:
             return ((value) * 1000000.0)
         
         return None
@@ -94,33 +94,33 @@ class ApparentEnergy:
 
     
     @staticmethod
-    def from_kilo_voltampere_hours(kilo_voltampere_hours: float):
+    def from_kilovoltampere_hours(kilovoltampere_hours: float):
         """
-        Create a new instance of ApparentEnergy from a value in kilo_voltampere_hours.
+        Create a new instance of ApparentEnergy from a value in kilovoltampere_hours.
 
         
 
-        :param meters: The ApparentEnergy value in kilo_voltampere_hours.
-        :type kilo_voltampere_hours: float
+        :param meters: The ApparentEnergy value in kilovoltampere_hours.
+        :type kilovoltampere_hours: float
         :return: A new instance of ApparentEnergy.
         :rtype: ApparentEnergy
         """
-        return ApparentEnergy(kilo_voltampere_hours, ApparentEnergyUnits.KiloVoltampereHour)
+        return ApparentEnergy(kilovoltampere_hours, ApparentEnergyUnits.KilovoltampereHour)
 
     
     @staticmethod
-    def from_mega_voltampere_hours(mega_voltampere_hours: float):
+    def from_megavoltampere_hours(megavoltampere_hours: float):
         """
-        Create a new instance of ApparentEnergy from a value in mega_voltampere_hours.
+        Create a new instance of ApparentEnergy from a value in megavoltampere_hours.
 
         
 
-        :param meters: The ApparentEnergy value in mega_voltampere_hours.
-        :type mega_voltampere_hours: float
+        :param meters: The ApparentEnergy value in megavoltampere_hours.
+        :type megavoltampere_hours: float
         :return: A new instance of ApparentEnergy.
         :rtype: ApparentEnergy
         """
-        return ApparentEnergy(mega_voltampere_hours, ApparentEnergyUnits.MegaVoltampereHour)
+        return ApparentEnergy(megavoltampere_hours, ApparentEnergyUnits.MegavoltampereHour)
 
     
     @property
@@ -135,25 +135,25 @@ class ApparentEnergy:
 
     
     @property
-    def kilo_voltampere_hours(self) -> float:
+    def kilovoltampere_hours(self) -> float:
         """
         
         """
-        if self.__kilo_voltampere_hours != None:
-            return self.__kilo_voltampere_hours
-        self.__kilo_voltampere_hours = self.__convert_from_base(ApparentEnergyUnits.KiloVoltampereHour)
-        return self.__kilo_voltampere_hours
+        if self.__kilovoltampere_hours != None:
+            return self.__kilovoltampere_hours
+        self.__kilovoltampere_hours = self.__convert_from_base(ApparentEnergyUnits.KilovoltampereHour)
+        return self.__kilovoltampere_hours
 
     
     @property
-    def mega_voltampere_hours(self) -> float:
+    def megavoltampere_hours(self) -> float:
         """
         
         """
-        if self.__mega_voltampere_hours != None:
-            return self.__mega_voltampere_hours
-        self.__mega_voltampere_hours = self.__convert_from_base(ApparentEnergyUnits.MegaVoltampereHour)
-        return self.__mega_voltampere_hours
+        if self.__megavoltampere_hours != None:
+            return self.__megavoltampere_hours
+        self.__megavoltampere_hours = self.__convert_from_base(ApparentEnergyUnits.MegavoltampereHour)
+        return self.__megavoltampere_hours
 
     
     def to_string(self, unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> string:
@@ -166,11 +166,11 @@ class ApparentEnergy:
         if unit == ApparentEnergyUnits.VoltampereHour:
             return f"""{self.voltampere_hours} VAh"""
         
-        if unit == ApparentEnergyUnits.KiloVoltampereHour:
-            return f"""{self.kilo_voltampere_hours} """
+        if unit == ApparentEnergyUnits.KilovoltampereHour:
+            return f"""{self.kilovoltampere_hours} """
         
-        if unit == ApparentEnergyUnits.MegaVoltampereHour:
-            return f"""{self.mega_voltampere_hours} """
+        if unit == ApparentEnergyUnits.MegavoltampereHour:
+            return f"""{self.megavoltampere_hours} """
         
         return f'{self.__value}'
 
@@ -185,10 +185,10 @@ class ApparentEnergy:
         if unit_abbreviation == ApparentEnergyUnits.VoltampereHour:
             return """VAh"""
         
-        if unit_abbreviation == ApparentEnergyUnits.KiloVoltampereHour:
+        if unit_abbreviation == ApparentEnergyUnits.KilovoltampereHour:
             return """"""
         
-        if unit_abbreviation == ApparentEnergyUnits.MegaVoltampereHour:
+        if unit_abbreviation == ApparentEnergyUnits.MegavoltampereHour:
             return """"""
         
 

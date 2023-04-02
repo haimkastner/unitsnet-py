@@ -73,62 +73,62 @@ class MassUnits(Enum):
             Earth mass is a ratio unit to the mass of planet Earth.
         """
         
-        NanoGram = 'nano_gram'
+        Nanogram = 'nanogram'
         """
             
         """
         
-        MicroGram = 'micro_gram'
+        Microgram = 'microgram'
         """
             
         """
         
-        MilliGram = 'milli_gram'
+        Milligram = 'milligram'
         """
             
         """
         
-        CentiGram = 'centi_gram'
+        Centigram = 'centigram'
         """
             
         """
         
-        DeciGram = 'deci_gram'
+        Decigram = 'decigram'
         """
             
         """
         
-        DecaGram = 'deca_gram'
+        Decagram = 'decagram'
         """
             
         """
         
-        HectoGram = 'hecto_gram'
+        Hectogram = 'hectogram'
         """
             
         """
         
-        KiloGram = 'kilo_gram'
+        Kilogram = 'kilogram'
         """
             
         """
         
-        KiloTonne = 'kilo_tonne'
+        Kilotonne = 'kilotonne'
         """
             
         """
         
-        MegaTonne = 'mega_tonne'
+        Megatonne = 'megatonne'
         """
             
         """
         
-        KiloPound = 'kilo_pound'
+        Kilopound = 'kilopound'
         """
             
         """
         
-        MegaPound = 'mega_pound'
+        Megapound = 'megapound'
         """
             
         """
@@ -173,29 +173,29 @@ class Mass:
         
         self.__earth_masses = None
         
-        self.__nano_grams = None
+        self.__nanograms = None
         
-        self.__micro_grams = None
+        self.__micrograms = None
         
-        self.__milli_grams = None
+        self.__milligrams = None
         
-        self.__centi_grams = None
+        self.__centigrams = None
         
-        self.__deci_grams = None
+        self.__decigrams = None
         
-        self.__deca_grams = None
+        self.__decagrams = None
         
-        self.__hecto_grams = None
+        self.__hectograms = None
         
-        self.__kilo_grams = None
+        self.__kilograms = None
         
-        self.__kilo_tonnes = None
+        self.__kilotonnes = None
         
-        self.__mega_tonnes = None
+        self.__megatonnes = None
         
-        self.__kilo_pounds = None
+        self.__kilopounds = None
         
-        self.__mega_pounds = None
+        self.__megapounds = None
         
 
     def __convert_from_base(self, from_unit: MassUnits) -> float:
@@ -240,40 +240,40 @@ class Mass:
         if from_unit == MassUnits.EarthMass:
             return (value / 5.9722e+24)
         
-        if from_unit == MassUnits.NanoGram:
+        if from_unit == MassUnits.Nanogram:
             return ((value * 1e3) / 1e-09)
         
-        if from_unit == MassUnits.MicroGram:
+        if from_unit == MassUnits.Microgram:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == MassUnits.MilliGram:
+        if from_unit == MassUnits.Milligram:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == MassUnits.CentiGram:
+        if from_unit == MassUnits.Centigram:
             return ((value * 1e3) / 0.01)
         
-        if from_unit == MassUnits.DeciGram:
+        if from_unit == MassUnits.Decigram:
             return ((value * 1e3) / 0.1)
         
-        if from_unit == MassUnits.DecaGram:
+        if from_unit == MassUnits.Decagram:
             return ((value * 1e3) / 10.0)
         
-        if from_unit == MassUnits.HectoGram:
+        if from_unit == MassUnits.Hectogram:
             return ((value * 1e3) / 100.0)
         
-        if from_unit == MassUnits.KiloGram:
+        if from_unit == MassUnits.Kilogram:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == MassUnits.KiloTonne:
+        if from_unit == MassUnits.Kilotonne:
             return ((value / 1e3) / 1000.0)
         
-        if from_unit == MassUnits.MegaTonne:
+        if from_unit == MassUnits.Megatonne:
             return ((value / 1e3) / 1000000.0)
         
-        if from_unit == MassUnits.KiloPound:
+        if from_unit == MassUnits.Kilopound:
             return ((value / 0.45359237) / 1000.0)
         
-        if from_unit == MassUnits.MegaPound:
+        if from_unit == MassUnits.Megapound:
             return ((value / 0.45359237) / 1000000.0)
         
         return None
@@ -320,40 +320,40 @@ class Mass:
         if to_unit == MassUnits.EarthMass:
             return (value * 5.9722e+24)
         
-        if to_unit == MassUnits.NanoGram:
+        if to_unit == MassUnits.Nanogram:
             return ((value / 1e3) * 1e-09)
         
-        if to_unit == MassUnits.MicroGram:
+        if to_unit == MassUnits.Microgram:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == MassUnits.MilliGram:
+        if to_unit == MassUnits.Milligram:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == MassUnits.CentiGram:
+        if to_unit == MassUnits.Centigram:
             return ((value / 1e3) * 0.01)
         
-        if to_unit == MassUnits.DeciGram:
+        if to_unit == MassUnits.Decigram:
             return ((value / 1e3) * 0.1)
         
-        if to_unit == MassUnits.DecaGram:
+        if to_unit == MassUnits.Decagram:
             return ((value / 1e3) * 10.0)
         
-        if to_unit == MassUnits.HectoGram:
+        if to_unit == MassUnits.Hectogram:
             return ((value / 1e3) * 100.0)
         
-        if to_unit == MassUnits.KiloGram:
+        if to_unit == MassUnits.Kilogram:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == MassUnits.KiloTonne:
+        if to_unit == MassUnits.Kilotonne:
             return ((value * 1e3) * 1000.0)
         
-        if to_unit == MassUnits.MegaTonne:
+        if to_unit == MassUnits.Megatonne:
             return ((value * 1e3) * 1000000.0)
         
-        if to_unit == MassUnits.KiloPound:
+        if to_unit == MassUnits.Kilopound:
             return ((value * 0.45359237) * 1000.0)
         
-        if to_unit == MassUnits.MegaPound:
+        if to_unit == MassUnits.Megapound:
             return ((value * 0.45359237) * 1000000.0)
         
         return None
@@ -560,183 +560,183 @@ class Mass:
 
     
     @staticmethod
-    def from_nano_grams(nano_grams: float):
+    def from_nanograms(nanograms: float):
         """
-        Create a new instance of Mass from a value in nano_grams.
+        Create a new instance of Mass from a value in nanograms.
 
         
 
-        :param meters: The Mass value in nano_grams.
-        :type nano_grams: float
+        :param meters: The Mass value in nanograms.
+        :type nanograms: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(nano_grams, MassUnits.NanoGram)
+        return Mass(nanograms, MassUnits.Nanogram)
 
     
     @staticmethod
-    def from_micro_grams(micro_grams: float):
+    def from_micrograms(micrograms: float):
         """
-        Create a new instance of Mass from a value in micro_grams.
+        Create a new instance of Mass from a value in micrograms.
 
         
 
-        :param meters: The Mass value in micro_grams.
-        :type micro_grams: float
+        :param meters: The Mass value in micrograms.
+        :type micrograms: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(micro_grams, MassUnits.MicroGram)
+        return Mass(micrograms, MassUnits.Microgram)
 
     
     @staticmethod
-    def from_milli_grams(milli_grams: float):
+    def from_milligrams(milligrams: float):
         """
-        Create a new instance of Mass from a value in milli_grams.
+        Create a new instance of Mass from a value in milligrams.
 
         
 
-        :param meters: The Mass value in milli_grams.
-        :type milli_grams: float
+        :param meters: The Mass value in milligrams.
+        :type milligrams: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(milli_grams, MassUnits.MilliGram)
+        return Mass(milligrams, MassUnits.Milligram)
 
     
     @staticmethod
-    def from_centi_grams(centi_grams: float):
+    def from_centigrams(centigrams: float):
         """
-        Create a new instance of Mass from a value in centi_grams.
+        Create a new instance of Mass from a value in centigrams.
 
         
 
-        :param meters: The Mass value in centi_grams.
-        :type centi_grams: float
+        :param meters: The Mass value in centigrams.
+        :type centigrams: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(centi_grams, MassUnits.CentiGram)
+        return Mass(centigrams, MassUnits.Centigram)
 
     
     @staticmethod
-    def from_deci_grams(deci_grams: float):
+    def from_decigrams(decigrams: float):
         """
-        Create a new instance of Mass from a value in deci_grams.
+        Create a new instance of Mass from a value in decigrams.
 
         
 
-        :param meters: The Mass value in deci_grams.
-        :type deci_grams: float
+        :param meters: The Mass value in decigrams.
+        :type decigrams: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(deci_grams, MassUnits.DeciGram)
+        return Mass(decigrams, MassUnits.Decigram)
 
     
     @staticmethod
-    def from_deca_grams(deca_grams: float):
+    def from_decagrams(decagrams: float):
         """
-        Create a new instance of Mass from a value in deca_grams.
+        Create a new instance of Mass from a value in decagrams.
 
         
 
-        :param meters: The Mass value in deca_grams.
-        :type deca_grams: float
+        :param meters: The Mass value in decagrams.
+        :type decagrams: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(deca_grams, MassUnits.DecaGram)
+        return Mass(decagrams, MassUnits.Decagram)
 
     
     @staticmethod
-    def from_hecto_grams(hecto_grams: float):
+    def from_hectograms(hectograms: float):
         """
-        Create a new instance of Mass from a value in hecto_grams.
+        Create a new instance of Mass from a value in hectograms.
 
         
 
-        :param meters: The Mass value in hecto_grams.
-        :type hecto_grams: float
+        :param meters: The Mass value in hectograms.
+        :type hectograms: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(hecto_grams, MassUnits.HectoGram)
+        return Mass(hectograms, MassUnits.Hectogram)
 
     
     @staticmethod
-    def from_kilo_grams(kilo_grams: float):
+    def from_kilograms(kilograms: float):
         """
-        Create a new instance of Mass from a value in kilo_grams.
+        Create a new instance of Mass from a value in kilograms.
 
         
 
-        :param meters: The Mass value in kilo_grams.
-        :type kilo_grams: float
+        :param meters: The Mass value in kilograms.
+        :type kilograms: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(kilo_grams, MassUnits.KiloGram)
+        return Mass(kilograms, MassUnits.Kilogram)
 
     
     @staticmethod
-    def from_kilo_tonnes(kilo_tonnes: float):
+    def from_kilotonnes(kilotonnes: float):
         """
-        Create a new instance of Mass from a value in kilo_tonnes.
+        Create a new instance of Mass from a value in kilotonnes.
 
         
 
-        :param meters: The Mass value in kilo_tonnes.
-        :type kilo_tonnes: float
+        :param meters: The Mass value in kilotonnes.
+        :type kilotonnes: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(kilo_tonnes, MassUnits.KiloTonne)
+        return Mass(kilotonnes, MassUnits.Kilotonne)
 
     
     @staticmethod
-    def from_mega_tonnes(mega_tonnes: float):
+    def from_megatonnes(megatonnes: float):
         """
-        Create a new instance of Mass from a value in mega_tonnes.
+        Create a new instance of Mass from a value in megatonnes.
 
         
 
-        :param meters: The Mass value in mega_tonnes.
-        :type mega_tonnes: float
+        :param meters: The Mass value in megatonnes.
+        :type megatonnes: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(mega_tonnes, MassUnits.MegaTonne)
+        return Mass(megatonnes, MassUnits.Megatonne)
 
     
     @staticmethod
-    def from_kilo_pounds(kilo_pounds: float):
+    def from_kilopounds(kilopounds: float):
         """
-        Create a new instance of Mass from a value in kilo_pounds.
+        Create a new instance of Mass from a value in kilopounds.
 
         
 
-        :param meters: The Mass value in kilo_pounds.
-        :type kilo_pounds: float
+        :param meters: The Mass value in kilopounds.
+        :type kilopounds: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(kilo_pounds, MassUnits.KiloPound)
+        return Mass(kilopounds, MassUnits.Kilopound)
 
     
     @staticmethod
-    def from_mega_pounds(mega_pounds: float):
+    def from_megapounds(megapounds: float):
         """
-        Create a new instance of Mass from a value in mega_pounds.
+        Create a new instance of Mass from a value in megapounds.
 
         
 
-        :param meters: The Mass value in mega_pounds.
-        :type mega_pounds: float
+        :param meters: The Mass value in megapounds.
+        :type megapounds: float
         :return: A new instance of Mass.
         :rtype: Mass
         """
-        return Mass(mega_pounds, MassUnits.MegaPound)
+        return Mass(megapounds, MassUnits.Megapound)
 
     
     @property
@@ -883,135 +883,135 @@ class Mass:
 
     
     @property
-    def nano_grams(self) -> float:
+    def nanograms(self) -> float:
         """
         
         """
-        if self.__nano_grams != None:
-            return self.__nano_grams
-        self.__nano_grams = self.__convert_from_base(MassUnits.NanoGram)
-        return self.__nano_grams
+        if self.__nanograms != None:
+            return self.__nanograms
+        self.__nanograms = self.__convert_from_base(MassUnits.Nanogram)
+        return self.__nanograms
 
     
     @property
-    def micro_grams(self) -> float:
+    def micrograms(self) -> float:
         """
         
         """
-        if self.__micro_grams != None:
-            return self.__micro_grams
-        self.__micro_grams = self.__convert_from_base(MassUnits.MicroGram)
-        return self.__micro_grams
+        if self.__micrograms != None:
+            return self.__micrograms
+        self.__micrograms = self.__convert_from_base(MassUnits.Microgram)
+        return self.__micrograms
 
     
     @property
-    def milli_grams(self) -> float:
+    def milligrams(self) -> float:
         """
         
         """
-        if self.__milli_grams != None:
-            return self.__milli_grams
-        self.__milli_grams = self.__convert_from_base(MassUnits.MilliGram)
-        return self.__milli_grams
+        if self.__milligrams != None:
+            return self.__milligrams
+        self.__milligrams = self.__convert_from_base(MassUnits.Milligram)
+        return self.__milligrams
 
     
     @property
-    def centi_grams(self) -> float:
+    def centigrams(self) -> float:
         """
         
         """
-        if self.__centi_grams != None:
-            return self.__centi_grams
-        self.__centi_grams = self.__convert_from_base(MassUnits.CentiGram)
-        return self.__centi_grams
+        if self.__centigrams != None:
+            return self.__centigrams
+        self.__centigrams = self.__convert_from_base(MassUnits.Centigram)
+        return self.__centigrams
 
     
     @property
-    def deci_grams(self) -> float:
+    def decigrams(self) -> float:
         """
         
         """
-        if self.__deci_grams != None:
-            return self.__deci_grams
-        self.__deci_grams = self.__convert_from_base(MassUnits.DeciGram)
-        return self.__deci_grams
+        if self.__decigrams != None:
+            return self.__decigrams
+        self.__decigrams = self.__convert_from_base(MassUnits.Decigram)
+        return self.__decigrams
 
     
     @property
-    def deca_grams(self) -> float:
+    def decagrams(self) -> float:
         """
         
         """
-        if self.__deca_grams != None:
-            return self.__deca_grams
-        self.__deca_grams = self.__convert_from_base(MassUnits.DecaGram)
-        return self.__deca_grams
+        if self.__decagrams != None:
+            return self.__decagrams
+        self.__decagrams = self.__convert_from_base(MassUnits.Decagram)
+        return self.__decagrams
 
     
     @property
-    def hecto_grams(self) -> float:
+    def hectograms(self) -> float:
         """
         
         """
-        if self.__hecto_grams != None:
-            return self.__hecto_grams
-        self.__hecto_grams = self.__convert_from_base(MassUnits.HectoGram)
-        return self.__hecto_grams
+        if self.__hectograms != None:
+            return self.__hectograms
+        self.__hectograms = self.__convert_from_base(MassUnits.Hectogram)
+        return self.__hectograms
 
     
     @property
-    def kilo_grams(self) -> float:
+    def kilograms(self) -> float:
         """
         
         """
-        if self.__kilo_grams != None:
-            return self.__kilo_grams
-        self.__kilo_grams = self.__convert_from_base(MassUnits.KiloGram)
-        return self.__kilo_grams
+        if self.__kilograms != None:
+            return self.__kilograms
+        self.__kilograms = self.__convert_from_base(MassUnits.Kilogram)
+        return self.__kilograms
 
     
     @property
-    def kilo_tonnes(self) -> float:
+    def kilotonnes(self) -> float:
         """
         
         """
-        if self.__kilo_tonnes != None:
-            return self.__kilo_tonnes
-        self.__kilo_tonnes = self.__convert_from_base(MassUnits.KiloTonne)
-        return self.__kilo_tonnes
+        if self.__kilotonnes != None:
+            return self.__kilotonnes
+        self.__kilotonnes = self.__convert_from_base(MassUnits.Kilotonne)
+        return self.__kilotonnes
 
     
     @property
-    def mega_tonnes(self) -> float:
+    def megatonnes(self) -> float:
         """
         
         """
-        if self.__mega_tonnes != None:
-            return self.__mega_tonnes
-        self.__mega_tonnes = self.__convert_from_base(MassUnits.MegaTonne)
-        return self.__mega_tonnes
+        if self.__megatonnes != None:
+            return self.__megatonnes
+        self.__megatonnes = self.__convert_from_base(MassUnits.Megatonne)
+        return self.__megatonnes
 
     
     @property
-    def kilo_pounds(self) -> float:
+    def kilopounds(self) -> float:
         """
         
         """
-        if self.__kilo_pounds != None:
-            return self.__kilo_pounds
-        self.__kilo_pounds = self.__convert_from_base(MassUnits.KiloPound)
-        return self.__kilo_pounds
+        if self.__kilopounds != None:
+            return self.__kilopounds
+        self.__kilopounds = self.__convert_from_base(MassUnits.Kilopound)
+        return self.__kilopounds
 
     
     @property
-    def mega_pounds(self) -> float:
+    def megapounds(self) -> float:
         """
         
         """
-        if self.__mega_pounds != None:
-            return self.__mega_pounds
-        self.__mega_pounds = self.__convert_from_base(MassUnits.MegaPound)
-        return self.__mega_pounds
+        if self.__megapounds != None:
+            return self.__megapounds
+        self.__megapounds = self.__convert_from_base(MassUnits.Megapound)
+        return self.__megapounds
 
     
     def to_string(self, unit: MassUnits = MassUnits.Kilogram) -> string:
@@ -1060,41 +1060,41 @@ class Mass:
         if unit == MassUnits.EarthMass:
             return f"""{self.earth_masses} em"""
         
-        if unit == MassUnits.NanoGram:
-            return f"""{self.nano_grams} """
+        if unit == MassUnits.Nanogram:
+            return f"""{self.nanograms} """
         
-        if unit == MassUnits.MicroGram:
-            return f"""{self.micro_grams} """
+        if unit == MassUnits.Microgram:
+            return f"""{self.micrograms} """
         
-        if unit == MassUnits.MilliGram:
-            return f"""{self.milli_grams} """
+        if unit == MassUnits.Milligram:
+            return f"""{self.milligrams} """
         
-        if unit == MassUnits.CentiGram:
-            return f"""{self.centi_grams} """
+        if unit == MassUnits.Centigram:
+            return f"""{self.centigrams} """
         
-        if unit == MassUnits.DeciGram:
-            return f"""{self.deci_grams} """
+        if unit == MassUnits.Decigram:
+            return f"""{self.decigrams} """
         
-        if unit == MassUnits.DecaGram:
-            return f"""{self.deca_grams} """
+        if unit == MassUnits.Decagram:
+            return f"""{self.decagrams} """
         
-        if unit == MassUnits.HectoGram:
-            return f"""{self.hecto_grams} """
+        if unit == MassUnits.Hectogram:
+            return f"""{self.hectograms} """
         
-        if unit == MassUnits.KiloGram:
-            return f"""{self.kilo_grams} """
+        if unit == MassUnits.Kilogram:
+            return f"""{self.kilograms} """
         
-        if unit == MassUnits.KiloTonne:
-            return f"""{self.kilo_tonnes} """
+        if unit == MassUnits.Kilotonne:
+            return f"""{self.kilotonnes} """
         
-        if unit == MassUnits.MegaTonne:
-            return f"""{self.mega_tonnes} """
+        if unit == MassUnits.Megatonne:
+            return f"""{self.megatonnes} """
         
-        if unit == MassUnits.KiloPound:
-            return f"""{self.kilo_pounds} """
+        if unit == MassUnits.Kilopound:
+            return f"""{self.kilopounds} """
         
-        if unit == MassUnits.MegaPound:
-            return f"""{self.mega_pounds} """
+        if unit == MassUnits.Megapound:
+            return f"""{self.megapounds} """
         
         return f'{self.__value}'
 
@@ -1145,40 +1145,40 @@ class Mass:
         if unit_abbreviation == MassUnits.EarthMass:
             return """em"""
         
-        if unit_abbreviation == MassUnits.NanoGram:
+        if unit_abbreviation == MassUnits.Nanogram:
             return """"""
         
-        if unit_abbreviation == MassUnits.MicroGram:
+        if unit_abbreviation == MassUnits.Microgram:
             return """"""
         
-        if unit_abbreviation == MassUnits.MilliGram:
+        if unit_abbreviation == MassUnits.Milligram:
             return """"""
         
-        if unit_abbreviation == MassUnits.CentiGram:
+        if unit_abbreviation == MassUnits.Centigram:
             return """"""
         
-        if unit_abbreviation == MassUnits.DeciGram:
+        if unit_abbreviation == MassUnits.Decigram:
             return """"""
         
-        if unit_abbreviation == MassUnits.DecaGram:
+        if unit_abbreviation == MassUnits.Decagram:
             return """"""
         
-        if unit_abbreviation == MassUnits.HectoGram:
+        if unit_abbreviation == MassUnits.Hectogram:
             return """"""
         
-        if unit_abbreviation == MassUnits.KiloGram:
+        if unit_abbreviation == MassUnits.Kilogram:
             return """"""
         
-        if unit_abbreviation == MassUnits.KiloTonne:
+        if unit_abbreviation == MassUnits.Kilotonne:
             return """"""
         
-        if unit_abbreviation == MassUnits.MegaTonne:
+        if unit_abbreviation == MassUnits.Megatonne:
             return """"""
         
-        if unit_abbreviation == MassUnits.KiloPound:
+        if unit_abbreviation == MassUnits.Kilopound:
             return """"""
         
-        if unit_abbreviation == MassUnits.MegaPound:
+        if unit_abbreviation == MassUnits.Megapound:
             return """"""
         
 

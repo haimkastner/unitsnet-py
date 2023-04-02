@@ -28,27 +28,27 @@ class VolumetricHeatCapacityUnits(Enum):
             
         """
         
-        KiloJoulePerCubicMeterKelvin = 'kilo_joule_per_cubic_meter_kelvin'
+        KilojoulePerCubicMeterKelvin = 'kilojoule_per_cubic_meter_kelvin'
         """
             
         """
         
-        MegaJoulePerCubicMeterKelvin = 'mega_joule_per_cubic_meter_kelvin'
+        MegajoulePerCubicMeterKelvin = 'megajoule_per_cubic_meter_kelvin'
         """
             
         """
         
-        KiloJoulePerCubicMeterDegreeCelsius = 'kilo_joule_per_cubic_meter_degree_celsius'
+        KilojoulePerCubicMeterDegreeCelsius = 'kilojoule_per_cubic_meter_degree_celsius'
         """
             
         """
         
-        MegaJoulePerCubicMeterDegreeCelsius = 'mega_joule_per_cubic_meter_degree_celsius'
+        MegajoulePerCubicMeterDegreeCelsius = 'megajoule_per_cubic_meter_degree_celsius'
         """
             
         """
         
-        KiloCaloriePerCubicCentimeterDegreeCelsius = 'kilo_calorie_per_cubic_centimeter_degree_celsius'
+        KilocaloriePerCubicCentimeterDegreeCelsius = 'kilocalorie_per_cubic_centimeter_degree_celsius'
         """
             
         """
@@ -75,15 +75,15 @@ class VolumetricHeatCapacity:
         
         self.__btus_per_cubic_foot_degree_fahrenheit = None
         
-        self.__kilo_joules_per_cubic_meter_kelvin = None
+        self.__kilojoules_per_cubic_meter_kelvin = None
         
-        self.__mega_joules_per_cubic_meter_kelvin = None
+        self.__megajoules_per_cubic_meter_kelvin = None
         
-        self.__kilo_joules_per_cubic_meter_degree_celsius = None
+        self.__kilojoules_per_cubic_meter_degree_celsius = None
         
-        self.__mega_joules_per_cubic_meter_degree_celsius = None
+        self.__megajoules_per_cubic_meter_degree_celsius = None
         
-        self.__kilo_calories_per_cubic_centimeter_degree_celsius = None
+        self.__kilocalories_per_cubic_centimeter_degree_celsius = None
         
 
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:
@@ -101,19 +101,19 @@ class VolumetricHeatCapacity:
         if from_unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
             return (value * 1.4910660e-5)
         
-        if from_unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin:
+        if from_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
             return ((value) / 1000.0)
         
-        if from_unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin:
+        if from_unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
             return ((value) / 1000000.0)
         
-        if from_unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius:
+        if from_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
             return ((value) / 1000.0)
         
-        if from_unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius:
+        if from_unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
             return ((value) / 1000000.0)
         
-        if from_unit == VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius:
+        if from_unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
             return ((value * 2.388459e-7) / 1000.0)
         
         return None
@@ -133,19 +133,19 @@ class VolumetricHeatCapacity:
         if to_unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
             return (value / 1.4910660e-5)
         
-        if to_unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin:
+        if to_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
             return ((value) * 1000.0)
         
-        if to_unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin:
+        if to_unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
             return ((value) * 1000000.0)
         
-        if to_unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius:
+        if to_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
             return ((value) * 1000.0)
         
-        if to_unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius:
+        if to_unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
             return ((value) * 1000000.0)
         
-        if to_unit == VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius:
+        if to_unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
             return ((value / 2.388459e-7) * 1000.0)
         
         return None
@@ -217,78 +217,78 @@ class VolumetricHeatCapacity:
 
     
     @staticmethod
-    def from_kilo_joules_per_cubic_meter_kelvin(kilo_joules_per_cubic_meter_kelvin: float):
+    def from_kilojoules_per_cubic_meter_kelvin(kilojoules_per_cubic_meter_kelvin: float):
         """
-        Create a new instance of VolumetricHeatCapacity from a value in kilo_joules_per_cubic_meter_kelvin.
+        Create a new instance of VolumetricHeatCapacity from a value in kilojoules_per_cubic_meter_kelvin.
 
         
 
-        :param meters: The VolumetricHeatCapacity value in kilo_joules_per_cubic_meter_kelvin.
-        :type kilo_joules_per_cubic_meter_kelvin: float
+        :param meters: The VolumetricHeatCapacity value in kilojoules_per_cubic_meter_kelvin.
+        :type kilojoules_per_cubic_meter_kelvin: float
         :return: A new instance of VolumetricHeatCapacity.
         :rtype: VolumetricHeatCapacity
         """
-        return VolumetricHeatCapacity(kilo_joules_per_cubic_meter_kelvin, VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin)
+        return VolumetricHeatCapacity(kilojoules_per_cubic_meter_kelvin, VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin)
 
     
     @staticmethod
-    def from_mega_joules_per_cubic_meter_kelvin(mega_joules_per_cubic_meter_kelvin: float):
+    def from_megajoules_per_cubic_meter_kelvin(megajoules_per_cubic_meter_kelvin: float):
         """
-        Create a new instance of VolumetricHeatCapacity from a value in mega_joules_per_cubic_meter_kelvin.
+        Create a new instance of VolumetricHeatCapacity from a value in megajoules_per_cubic_meter_kelvin.
 
         
 
-        :param meters: The VolumetricHeatCapacity value in mega_joules_per_cubic_meter_kelvin.
-        :type mega_joules_per_cubic_meter_kelvin: float
+        :param meters: The VolumetricHeatCapacity value in megajoules_per_cubic_meter_kelvin.
+        :type megajoules_per_cubic_meter_kelvin: float
         :return: A new instance of VolumetricHeatCapacity.
         :rtype: VolumetricHeatCapacity
         """
-        return VolumetricHeatCapacity(mega_joules_per_cubic_meter_kelvin, VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin)
+        return VolumetricHeatCapacity(megajoules_per_cubic_meter_kelvin, VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin)
 
     
     @staticmethod
-    def from_kilo_joules_per_cubic_meter_degree_celsius(kilo_joules_per_cubic_meter_degree_celsius: float):
+    def from_kilojoules_per_cubic_meter_degree_celsius(kilojoules_per_cubic_meter_degree_celsius: float):
         """
-        Create a new instance of VolumetricHeatCapacity from a value in kilo_joules_per_cubic_meter_degree_celsius.
+        Create a new instance of VolumetricHeatCapacity from a value in kilojoules_per_cubic_meter_degree_celsius.
 
         
 
-        :param meters: The VolumetricHeatCapacity value in kilo_joules_per_cubic_meter_degree_celsius.
-        :type kilo_joules_per_cubic_meter_degree_celsius: float
+        :param meters: The VolumetricHeatCapacity value in kilojoules_per_cubic_meter_degree_celsius.
+        :type kilojoules_per_cubic_meter_degree_celsius: float
         :return: A new instance of VolumetricHeatCapacity.
         :rtype: VolumetricHeatCapacity
         """
-        return VolumetricHeatCapacity(kilo_joules_per_cubic_meter_degree_celsius, VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius)
+        return VolumetricHeatCapacity(kilojoules_per_cubic_meter_degree_celsius, VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius)
 
     
     @staticmethod
-    def from_mega_joules_per_cubic_meter_degree_celsius(mega_joules_per_cubic_meter_degree_celsius: float):
+    def from_megajoules_per_cubic_meter_degree_celsius(megajoules_per_cubic_meter_degree_celsius: float):
         """
-        Create a new instance of VolumetricHeatCapacity from a value in mega_joules_per_cubic_meter_degree_celsius.
+        Create a new instance of VolumetricHeatCapacity from a value in megajoules_per_cubic_meter_degree_celsius.
 
         
 
-        :param meters: The VolumetricHeatCapacity value in mega_joules_per_cubic_meter_degree_celsius.
-        :type mega_joules_per_cubic_meter_degree_celsius: float
+        :param meters: The VolumetricHeatCapacity value in megajoules_per_cubic_meter_degree_celsius.
+        :type megajoules_per_cubic_meter_degree_celsius: float
         :return: A new instance of VolumetricHeatCapacity.
         :rtype: VolumetricHeatCapacity
         """
-        return VolumetricHeatCapacity(mega_joules_per_cubic_meter_degree_celsius, VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius)
+        return VolumetricHeatCapacity(megajoules_per_cubic_meter_degree_celsius, VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius)
 
     
     @staticmethod
-    def from_kilo_calories_per_cubic_centimeter_degree_celsius(kilo_calories_per_cubic_centimeter_degree_celsius: float):
+    def from_kilocalories_per_cubic_centimeter_degree_celsius(kilocalories_per_cubic_centimeter_degree_celsius: float):
         """
-        Create a new instance of VolumetricHeatCapacity from a value in kilo_calories_per_cubic_centimeter_degree_celsius.
+        Create a new instance of VolumetricHeatCapacity from a value in kilocalories_per_cubic_centimeter_degree_celsius.
 
         
 
-        :param meters: The VolumetricHeatCapacity value in kilo_calories_per_cubic_centimeter_degree_celsius.
-        :type kilo_calories_per_cubic_centimeter_degree_celsius: float
+        :param meters: The VolumetricHeatCapacity value in kilocalories_per_cubic_centimeter_degree_celsius.
+        :type kilocalories_per_cubic_centimeter_degree_celsius: float
         :return: A new instance of VolumetricHeatCapacity.
         :rtype: VolumetricHeatCapacity
         """
-        return VolumetricHeatCapacity(kilo_calories_per_cubic_centimeter_degree_celsius, VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius)
+        return VolumetricHeatCapacity(kilocalories_per_cubic_centimeter_degree_celsius, VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius)
 
     
     @property
@@ -336,58 +336,58 @@ class VolumetricHeatCapacity:
 
     
     @property
-    def kilo_joules_per_cubic_meter_kelvin(self) -> float:
+    def kilojoules_per_cubic_meter_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_cubic_meter_kelvin != None:
-            return self.__kilo_joules_per_cubic_meter_kelvin
-        self.__kilo_joules_per_cubic_meter_kelvin = self.__convert_from_base(VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin)
-        return self.__kilo_joules_per_cubic_meter_kelvin
+        if self.__kilojoules_per_cubic_meter_kelvin != None:
+            return self.__kilojoules_per_cubic_meter_kelvin
+        self.__kilojoules_per_cubic_meter_kelvin = self.__convert_from_base(VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin)
+        return self.__kilojoules_per_cubic_meter_kelvin
 
     
     @property
-    def mega_joules_per_cubic_meter_kelvin(self) -> float:
+    def megajoules_per_cubic_meter_kelvin(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_cubic_meter_kelvin != None:
-            return self.__mega_joules_per_cubic_meter_kelvin
-        self.__mega_joules_per_cubic_meter_kelvin = self.__convert_from_base(VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin)
-        return self.__mega_joules_per_cubic_meter_kelvin
+        if self.__megajoules_per_cubic_meter_kelvin != None:
+            return self.__megajoules_per_cubic_meter_kelvin
+        self.__megajoules_per_cubic_meter_kelvin = self.__convert_from_base(VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin)
+        return self.__megajoules_per_cubic_meter_kelvin
 
     
     @property
-    def kilo_joules_per_cubic_meter_degree_celsius(self) -> float:
+    def kilojoules_per_cubic_meter_degree_celsius(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_cubic_meter_degree_celsius != None:
-            return self.__kilo_joules_per_cubic_meter_degree_celsius
-        self.__kilo_joules_per_cubic_meter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius)
-        return self.__kilo_joules_per_cubic_meter_degree_celsius
+        if self.__kilojoules_per_cubic_meter_degree_celsius != None:
+            return self.__kilojoules_per_cubic_meter_degree_celsius
+        self.__kilojoules_per_cubic_meter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius)
+        return self.__kilojoules_per_cubic_meter_degree_celsius
 
     
     @property
-    def mega_joules_per_cubic_meter_degree_celsius(self) -> float:
+    def megajoules_per_cubic_meter_degree_celsius(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_cubic_meter_degree_celsius != None:
-            return self.__mega_joules_per_cubic_meter_degree_celsius
-        self.__mega_joules_per_cubic_meter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius)
-        return self.__mega_joules_per_cubic_meter_degree_celsius
+        if self.__megajoules_per_cubic_meter_degree_celsius != None:
+            return self.__megajoules_per_cubic_meter_degree_celsius
+        self.__megajoules_per_cubic_meter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius)
+        return self.__megajoules_per_cubic_meter_degree_celsius
 
     
     @property
-    def kilo_calories_per_cubic_centimeter_degree_celsius(self) -> float:
+    def kilocalories_per_cubic_centimeter_degree_celsius(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_cubic_centimeter_degree_celsius != None:
-            return self.__kilo_calories_per_cubic_centimeter_degree_celsius
-        self.__kilo_calories_per_cubic_centimeter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius)
-        return self.__kilo_calories_per_cubic_centimeter_degree_celsius
+        if self.__kilocalories_per_cubic_centimeter_degree_celsius != None:
+            return self.__kilocalories_per_cubic_centimeter_degree_celsius
+        self.__kilocalories_per_cubic_centimeter_degree_celsius = self.__convert_from_base(VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius)
+        return self.__kilocalories_per_cubic_centimeter_degree_celsius
 
     
     def to_string(self, unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> string:
@@ -409,20 +409,20 @@ class VolumetricHeatCapacity:
         if unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
             return f"""{self.btus_per_cubic_foot_degree_fahrenheit} BTU/ft³·°F"""
         
-        if unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin:
-            return f"""{self.kilo_joules_per_cubic_meter_kelvin} """
+        if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
+            return f"""{self.kilojoules_per_cubic_meter_kelvin} """
         
-        if unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin:
-            return f"""{self.mega_joules_per_cubic_meter_kelvin} """
+        if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
+            return f"""{self.megajoules_per_cubic_meter_kelvin} """
         
-        if unit == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius:
-            return f"""{self.kilo_joules_per_cubic_meter_degree_celsius} """
+        if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
+            return f"""{self.kilojoules_per_cubic_meter_degree_celsius} """
         
-        if unit == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius:
-            return f"""{self.mega_joules_per_cubic_meter_degree_celsius} """
+        if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
+            return f"""{self.megajoules_per_cubic_meter_degree_celsius} """
         
-        if unit == VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{self.kilo_calories_per_cubic_centimeter_degree_celsius} """
+        if unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
+            return f"""{self.kilocalories_per_cubic_centimeter_degree_celsius} """
         
         return f'{self.__value}'
 
@@ -446,19 +446,19 @@ class VolumetricHeatCapacity:
         if unit_abbreviation == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
             return """BTU/ft³·°F"""
         
-        if unit_abbreviation == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterKelvin:
+        if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
             return """"""
         
-        if unit_abbreviation == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterKelvin:
+        if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
             return """"""
         
-        if unit_abbreviation == VolumetricHeatCapacityUnits.KiloJoulePerCubicMeterDegreeCelsius:
+        if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
             return """"""
         
-        if unit_abbreviation == VolumetricHeatCapacityUnits.MegaJoulePerCubicMeterDegreeCelsius:
+        if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
             return """"""
         
-        if unit_abbreviation == VolumetricHeatCapacityUnits.KiloCaloriePerCubicCentimeterDegreeCelsius:
+        if unit_abbreviation == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
             return """"""
         
 

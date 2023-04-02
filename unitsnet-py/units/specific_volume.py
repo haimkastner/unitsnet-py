@@ -18,7 +18,7 @@ class SpecificVolumeUnits(Enum):
             
         """
         
-        MilliCubicMeterPerKilogram = 'milli_cubic_meter_per_kilogram'
+        MillicubicMeterPerKilogram = 'millicubic_meter_per_kilogram'
         """
             
         """
@@ -41,7 +41,7 @@ class SpecificVolume:
         
         self.__cubic_feet_per_pound = None
         
-        self.__milli_cubic_meters_per_kilogram = None
+        self.__millicubic_meters_per_kilogram = None
         
 
     def __convert_from_base(self, from_unit: SpecificVolumeUnits) -> float:
@@ -53,7 +53,7 @@ class SpecificVolume:
         if from_unit == SpecificVolumeUnits.CubicFootPerPound:
             return (value * 16.01846353)
         
-        if from_unit == SpecificVolumeUnits.MilliCubicMeterPerKilogram:
+        if from_unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return ((value) / 0.001)
         
         return None
@@ -67,7 +67,7 @@ class SpecificVolume:
         if to_unit == SpecificVolumeUnits.CubicFootPerPound:
             return (value / 16.01846353)
         
-        if to_unit == SpecificVolumeUnits.MilliCubicMeterPerKilogram:
+        if to_unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return ((value) * 0.001)
         
         return None
@@ -109,18 +109,18 @@ class SpecificVolume:
 
     
     @staticmethod
-    def from_milli_cubic_meters_per_kilogram(milli_cubic_meters_per_kilogram: float):
+    def from_millicubic_meters_per_kilogram(millicubic_meters_per_kilogram: float):
         """
-        Create a new instance of SpecificVolume from a value in milli_cubic_meters_per_kilogram.
+        Create a new instance of SpecificVolume from a value in millicubic_meters_per_kilogram.
 
         
 
-        :param meters: The SpecificVolume value in milli_cubic_meters_per_kilogram.
-        :type milli_cubic_meters_per_kilogram: float
+        :param meters: The SpecificVolume value in millicubic_meters_per_kilogram.
+        :type millicubic_meters_per_kilogram: float
         :return: A new instance of SpecificVolume.
         :rtype: SpecificVolume
         """
-        return SpecificVolume(milli_cubic_meters_per_kilogram, SpecificVolumeUnits.MilliCubicMeterPerKilogram)
+        return SpecificVolume(millicubic_meters_per_kilogram, SpecificVolumeUnits.MillicubicMeterPerKilogram)
 
     
     @property
@@ -146,14 +146,14 @@ class SpecificVolume:
 
     
     @property
-    def milli_cubic_meters_per_kilogram(self) -> float:
+    def millicubic_meters_per_kilogram(self) -> float:
         """
         
         """
-        if self.__milli_cubic_meters_per_kilogram != None:
-            return self.__milli_cubic_meters_per_kilogram
-        self.__milli_cubic_meters_per_kilogram = self.__convert_from_base(SpecificVolumeUnits.MilliCubicMeterPerKilogram)
-        return self.__milli_cubic_meters_per_kilogram
+        if self.__millicubic_meters_per_kilogram != None:
+            return self.__millicubic_meters_per_kilogram
+        self.__millicubic_meters_per_kilogram = self.__convert_from_base(SpecificVolumeUnits.MillicubicMeterPerKilogram)
+        return self.__millicubic_meters_per_kilogram
 
     
     def to_string(self, unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> string:
@@ -169,8 +169,8 @@ class SpecificVolume:
         if unit == SpecificVolumeUnits.CubicFootPerPound:
             return f"""{self.cubic_feet_per_pound} ft³/lb"""
         
-        if unit == SpecificVolumeUnits.MilliCubicMeterPerKilogram:
-            return f"""{self.milli_cubic_meters_per_kilogram} """
+        if unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
+            return f"""{self.millicubic_meters_per_kilogram} """
         
         return f'{self.__value}'
 
@@ -188,7 +188,7 @@ class SpecificVolume:
         if unit_abbreviation == SpecificVolumeUnits.CubicFootPerPound:
             return """ft³/lb"""
         
-        if unit_abbreviation == SpecificVolumeUnits.MilliCubicMeterPerKilogram:
+        if unit_abbreviation == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return """"""
         
 

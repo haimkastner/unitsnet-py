@@ -13,12 +13,12 @@ class MolarEnergyUnits(Enum):
             
         """
         
-        KiloJoulePerMole = 'kilo_joule_per_mole'
+        KilojoulePerMole = 'kilojoule_per_mole'
         """
             
         """
         
-        MegaJoulePerMole = 'mega_joule_per_mole'
+        MegajoulePerMole = 'megajoule_per_mole'
         """
             
         """
@@ -39,9 +39,9 @@ class MolarEnergy:
         
         self.__joules_per_mole = None
         
-        self.__kilo_joules_per_mole = None
+        self.__kilojoules_per_mole = None
         
-        self.__mega_joules_per_mole = None
+        self.__megajoules_per_mole = None
         
 
     def __convert_from_base(self, from_unit: MolarEnergyUnits) -> float:
@@ -50,10 +50,10 @@ class MolarEnergy:
         if from_unit == MolarEnergyUnits.JoulePerMole:
             return (value)
         
-        if from_unit == MolarEnergyUnits.KiloJoulePerMole:
+        if from_unit == MolarEnergyUnits.KilojoulePerMole:
             return ((value) / 1000.0)
         
-        if from_unit == MolarEnergyUnits.MegaJoulePerMole:
+        if from_unit == MolarEnergyUnits.MegajoulePerMole:
             return ((value) / 1000000.0)
         
         return None
@@ -64,10 +64,10 @@ class MolarEnergy:
         if to_unit == MolarEnergyUnits.JoulePerMole:
             return (value)
         
-        if to_unit == MolarEnergyUnits.KiloJoulePerMole:
+        if to_unit == MolarEnergyUnits.KilojoulePerMole:
             return ((value) * 1000.0)
         
-        if to_unit == MolarEnergyUnits.MegaJoulePerMole:
+        if to_unit == MolarEnergyUnits.MegajoulePerMole:
             return ((value) * 1000000.0)
         
         return None
@@ -94,33 +94,33 @@ class MolarEnergy:
 
     
     @staticmethod
-    def from_kilo_joules_per_mole(kilo_joules_per_mole: float):
+    def from_kilojoules_per_mole(kilojoules_per_mole: float):
         """
-        Create a new instance of MolarEnergy from a value in kilo_joules_per_mole.
+        Create a new instance of MolarEnergy from a value in kilojoules_per_mole.
 
         
 
-        :param meters: The MolarEnergy value in kilo_joules_per_mole.
-        :type kilo_joules_per_mole: float
+        :param meters: The MolarEnergy value in kilojoules_per_mole.
+        :type kilojoules_per_mole: float
         :return: A new instance of MolarEnergy.
         :rtype: MolarEnergy
         """
-        return MolarEnergy(kilo_joules_per_mole, MolarEnergyUnits.KiloJoulePerMole)
+        return MolarEnergy(kilojoules_per_mole, MolarEnergyUnits.KilojoulePerMole)
 
     
     @staticmethod
-    def from_mega_joules_per_mole(mega_joules_per_mole: float):
+    def from_megajoules_per_mole(megajoules_per_mole: float):
         """
-        Create a new instance of MolarEnergy from a value in mega_joules_per_mole.
+        Create a new instance of MolarEnergy from a value in megajoules_per_mole.
 
         
 
-        :param meters: The MolarEnergy value in mega_joules_per_mole.
-        :type mega_joules_per_mole: float
+        :param meters: The MolarEnergy value in megajoules_per_mole.
+        :type megajoules_per_mole: float
         :return: A new instance of MolarEnergy.
         :rtype: MolarEnergy
         """
-        return MolarEnergy(mega_joules_per_mole, MolarEnergyUnits.MegaJoulePerMole)
+        return MolarEnergy(megajoules_per_mole, MolarEnergyUnits.MegajoulePerMole)
 
     
     @property
@@ -135,25 +135,25 @@ class MolarEnergy:
 
     
     @property
-    def kilo_joules_per_mole(self) -> float:
+    def kilojoules_per_mole(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_mole != None:
-            return self.__kilo_joules_per_mole
-        self.__kilo_joules_per_mole = self.__convert_from_base(MolarEnergyUnits.KiloJoulePerMole)
-        return self.__kilo_joules_per_mole
+        if self.__kilojoules_per_mole != None:
+            return self.__kilojoules_per_mole
+        self.__kilojoules_per_mole = self.__convert_from_base(MolarEnergyUnits.KilojoulePerMole)
+        return self.__kilojoules_per_mole
 
     
     @property
-    def mega_joules_per_mole(self) -> float:
+    def megajoules_per_mole(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_mole != None:
-            return self.__mega_joules_per_mole
-        self.__mega_joules_per_mole = self.__convert_from_base(MolarEnergyUnits.MegaJoulePerMole)
-        return self.__mega_joules_per_mole
+        if self.__megajoules_per_mole != None:
+            return self.__megajoules_per_mole
+        self.__megajoules_per_mole = self.__convert_from_base(MolarEnergyUnits.MegajoulePerMole)
+        return self.__megajoules_per_mole
 
     
     def to_string(self, unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> string:
@@ -166,11 +166,11 @@ class MolarEnergy:
         if unit == MolarEnergyUnits.JoulePerMole:
             return f"""{self.joules_per_mole} J/mol"""
         
-        if unit == MolarEnergyUnits.KiloJoulePerMole:
-            return f"""{self.kilo_joules_per_mole} """
+        if unit == MolarEnergyUnits.KilojoulePerMole:
+            return f"""{self.kilojoules_per_mole} """
         
-        if unit == MolarEnergyUnits.MegaJoulePerMole:
-            return f"""{self.mega_joules_per_mole} """
+        if unit == MolarEnergyUnits.MegajoulePerMole:
+            return f"""{self.megajoules_per_mole} """
         
         return f'{self.__value}'
 
@@ -185,10 +185,10 @@ class MolarEnergy:
         if unit_abbreviation == MolarEnergyUnits.JoulePerMole:
             return """J/mol"""
         
-        if unit_abbreviation == MolarEnergyUnits.KiloJoulePerMole:
+        if unit_abbreviation == MolarEnergyUnits.KilojoulePerMole:
             return """"""
         
-        if unit_abbreviation == MolarEnergyUnits.MegaJoulePerMole:
+        if unit_abbreviation == MolarEnergyUnits.MegajoulePerMole:
             return """"""
         
 

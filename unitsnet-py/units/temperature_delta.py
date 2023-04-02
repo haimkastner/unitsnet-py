@@ -48,7 +48,7 @@ class TemperatureDeltaUnits(Enum):
             
         """
         
-        MilliDegreeCelsius = 'milli_degree_celsius'
+        MillidegreeCelsius = 'millidegree_celsius'
         """
             
         """
@@ -83,7 +83,7 @@ class TemperatureDelta:
         
         self.__degrees_roemer = None
         
-        self.__milli_degrees_celsius = None
+        self.__millidegrees_celsius = None
         
 
     def __convert_from_base(self, from_unit: TemperatureDeltaUnits) -> float:
@@ -113,7 +113,7 @@ class TemperatureDelta:
         if from_unit == TemperatureDeltaUnits.DegreeRoemer:
             return (value * 21 / 40)
         
-        if from_unit == TemperatureDeltaUnits.MilliDegreeCelsius:
+        if from_unit == TemperatureDeltaUnits.MillidegreeCelsius:
             return ((value) / 0.001)
         
         return None
@@ -145,7 +145,7 @@ class TemperatureDelta:
         if to_unit == TemperatureDeltaUnits.DegreeRoemer:
             return (value * 40 / 21)
         
-        if to_unit == TemperatureDeltaUnits.MilliDegreeCelsius:
+        if to_unit == TemperatureDeltaUnits.MillidegreeCelsius:
             return ((value) * 0.001)
         
         return None
@@ -277,18 +277,18 @@ class TemperatureDelta:
 
     
     @staticmethod
-    def from_milli_degrees_celsius(milli_degrees_celsius: float):
+    def from_millidegrees_celsius(millidegrees_celsius: float):
         """
-        Create a new instance of TemperatureDelta from a value in milli_degrees_celsius.
+        Create a new instance of TemperatureDelta from a value in millidegrees_celsius.
 
         
 
-        :param meters: The TemperatureDelta value in milli_degrees_celsius.
-        :type milli_degrees_celsius: float
+        :param meters: The TemperatureDelta value in millidegrees_celsius.
+        :type millidegrees_celsius: float
         :return: A new instance of TemperatureDelta.
         :rtype: TemperatureDelta
         """
-        return TemperatureDelta(milli_degrees_celsius, TemperatureDeltaUnits.MilliDegreeCelsius)
+        return TemperatureDelta(millidegrees_celsius, TemperatureDeltaUnits.MillidegreeCelsius)
 
     
     @property
@@ -380,14 +380,14 @@ class TemperatureDelta:
 
     
     @property
-    def milli_degrees_celsius(self) -> float:
+    def millidegrees_celsius(self) -> float:
         """
         
         """
-        if self.__milli_degrees_celsius != None:
-            return self.__milli_degrees_celsius
-        self.__milli_degrees_celsius = self.__convert_from_base(TemperatureDeltaUnits.MilliDegreeCelsius)
-        return self.__milli_degrees_celsius
+        if self.__millidegrees_celsius != None:
+            return self.__millidegrees_celsius
+        self.__millidegrees_celsius = self.__convert_from_base(TemperatureDeltaUnits.MillidegreeCelsius)
+        return self.__millidegrees_celsius
 
     
     def to_string(self, unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> string:
@@ -421,8 +421,8 @@ class TemperatureDelta:
         if unit == TemperatureDeltaUnits.DegreeRoemer:
             return f"""{self.degrees_roemer} ∆°Rø"""
         
-        if unit == TemperatureDeltaUnits.MilliDegreeCelsius:
-            return f"""{self.milli_degrees_celsius} """
+        if unit == TemperatureDeltaUnits.MillidegreeCelsius:
+            return f"""{self.millidegrees_celsius} """
         
         return f'{self.__value}'
 
@@ -458,7 +458,7 @@ class TemperatureDelta:
         if unit_abbreviation == TemperatureDeltaUnits.DegreeRoemer:
             return """∆°Rø"""
         
-        if unit_abbreviation == TemperatureDeltaUnits.MilliDegreeCelsius:
+        if unit_abbreviation == TemperatureDeltaUnits.MillidegreeCelsius:
             return """"""
         
 

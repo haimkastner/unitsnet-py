@@ -28,32 +28,32 @@ class LuminanceUnits(Enum):
             
         """
         
-        NanoCandelaPerSquareMeter = 'nano_candela_per_square_meter'
+        NanocandelaPerSquareMeter = 'nanocandela_per_square_meter'
         """
             
         """
         
-        MicroCandelaPerSquareMeter = 'micro_candela_per_square_meter'
+        MicrocandelaPerSquareMeter = 'microcandela_per_square_meter'
         """
             
         """
         
-        MilliCandelaPerSquareMeter = 'milli_candela_per_square_meter'
+        MillicandelaPerSquareMeter = 'millicandela_per_square_meter'
         """
             
         """
         
-        CentiCandelaPerSquareMeter = 'centi_candela_per_square_meter'
+        CenticandelaPerSquareMeter = 'centicandela_per_square_meter'
         """
             
         """
         
-        DeciCandelaPerSquareMeter = 'deci_candela_per_square_meter'
+        DecicandelaPerSquareMeter = 'decicandela_per_square_meter'
         """
             
         """
         
-        KiloCandelaPerSquareMeter = 'kilo_candela_per_square_meter'
+        KilocandelaPerSquareMeter = 'kilocandela_per_square_meter'
         """
             
         """
@@ -80,17 +80,17 @@ class Luminance:
         
         self.__nits = None
         
-        self.__nano_candelas_per_square_meter = None
+        self.__nanocandelas_per_square_meter = None
         
-        self.__micro_candelas_per_square_meter = None
+        self.__microcandelas_per_square_meter = None
         
-        self.__milli_candelas_per_square_meter = None
+        self.__millicandelas_per_square_meter = None
         
-        self.__centi_candelas_per_square_meter = None
+        self.__centicandelas_per_square_meter = None
         
-        self.__deci_candelas_per_square_meter = None
+        self.__decicandelas_per_square_meter = None
         
-        self.__kilo_candelas_per_square_meter = None
+        self.__kilocandelas_per_square_meter = None
         
 
     def __convert_from_base(self, from_unit: LuminanceUnits) -> float:
@@ -108,22 +108,22 @@ class Luminance:
         if from_unit == LuminanceUnits.Nit:
             return (value)
         
-        if from_unit == LuminanceUnits.NanoCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.NanocandelaPerSquareMeter:
             return ((value) / 1e-09)
         
-        if from_unit == LuminanceUnits.MicroCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.MicrocandelaPerSquareMeter:
             return ((value) / 1e-06)
         
-        if from_unit == LuminanceUnits.MilliCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.MillicandelaPerSquareMeter:
             return ((value) / 0.001)
         
-        if from_unit == LuminanceUnits.CentiCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.CenticandelaPerSquareMeter:
             return ((value) / 0.01)
         
-        if from_unit == LuminanceUnits.DeciCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.DecicandelaPerSquareMeter:
             return ((value) / 0.1)
         
-        if from_unit == LuminanceUnits.KiloCandelaPerSquareMeter:
+        if from_unit == LuminanceUnits.KilocandelaPerSquareMeter:
             return ((value) / 1000.0)
         
         return None
@@ -143,22 +143,22 @@ class Luminance:
         if to_unit == LuminanceUnits.Nit:
             return (value)
         
-        if to_unit == LuminanceUnits.NanoCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.NanocandelaPerSquareMeter:
             return ((value) * 1e-09)
         
-        if to_unit == LuminanceUnits.MicroCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.MicrocandelaPerSquareMeter:
             return ((value) * 1e-06)
         
-        if to_unit == LuminanceUnits.MilliCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.MillicandelaPerSquareMeter:
             return ((value) * 0.001)
         
-        if to_unit == LuminanceUnits.CentiCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.CenticandelaPerSquareMeter:
             return ((value) * 0.01)
         
-        if to_unit == LuminanceUnits.DeciCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.DecicandelaPerSquareMeter:
             return ((value) * 0.1)
         
-        if to_unit == LuminanceUnits.KiloCandelaPerSquareMeter:
+        if to_unit == LuminanceUnits.KilocandelaPerSquareMeter:
             return ((value) * 1000.0)
         
         return None
@@ -230,93 +230,93 @@ class Luminance:
 
     
     @staticmethod
-    def from_nano_candelas_per_square_meter(nano_candelas_per_square_meter: float):
+    def from_nanocandelas_per_square_meter(nanocandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in nano_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in nanocandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in nano_candelas_per_square_meter.
-        :type nano_candelas_per_square_meter: float
+        :param meters: The Luminance value in nanocandelas_per_square_meter.
+        :type nanocandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(nano_candelas_per_square_meter, LuminanceUnits.NanoCandelaPerSquareMeter)
+        return Luminance(nanocandelas_per_square_meter, LuminanceUnits.NanocandelaPerSquareMeter)
 
     
     @staticmethod
-    def from_micro_candelas_per_square_meter(micro_candelas_per_square_meter: float):
+    def from_microcandelas_per_square_meter(microcandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in micro_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in microcandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in micro_candelas_per_square_meter.
-        :type micro_candelas_per_square_meter: float
+        :param meters: The Luminance value in microcandelas_per_square_meter.
+        :type microcandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(micro_candelas_per_square_meter, LuminanceUnits.MicroCandelaPerSquareMeter)
+        return Luminance(microcandelas_per_square_meter, LuminanceUnits.MicrocandelaPerSquareMeter)
 
     
     @staticmethod
-    def from_milli_candelas_per_square_meter(milli_candelas_per_square_meter: float):
+    def from_millicandelas_per_square_meter(millicandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in milli_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in millicandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in milli_candelas_per_square_meter.
-        :type milli_candelas_per_square_meter: float
+        :param meters: The Luminance value in millicandelas_per_square_meter.
+        :type millicandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(milli_candelas_per_square_meter, LuminanceUnits.MilliCandelaPerSquareMeter)
+        return Luminance(millicandelas_per_square_meter, LuminanceUnits.MillicandelaPerSquareMeter)
 
     
     @staticmethod
-    def from_centi_candelas_per_square_meter(centi_candelas_per_square_meter: float):
+    def from_centicandelas_per_square_meter(centicandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in centi_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in centicandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in centi_candelas_per_square_meter.
-        :type centi_candelas_per_square_meter: float
+        :param meters: The Luminance value in centicandelas_per_square_meter.
+        :type centicandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(centi_candelas_per_square_meter, LuminanceUnits.CentiCandelaPerSquareMeter)
+        return Luminance(centicandelas_per_square_meter, LuminanceUnits.CenticandelaPerSquareMeter)
 
     
     @staticmethod
-    def from_deci_candelas_per_square_meter(deci_candelas_per_square_meter: float):
+    def from_decicandelas_per_square_meter(decicandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in deci_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in decicandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in deci_candelas_per_square_meter.
-        :type deci_candelas_per_square_meter: float
+        :param meters: The Luminance value in decicandelas_per_square_meter.
+        :type decicandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(deci_candelas_per_square_meter, LuminanceUnits.DeciCandelaPerSquareMeter)
+        return Luminance(decicandelas_per_square_meter, LuminanceUnits.DecicandelaPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_candelas_per_square_meter(kilo_candelas_per_square_meter: float):
+    def from_kilocandelas_per_square_meter(kilocandelas_per_square_meter: float):
         """
-        Create a new instance of Luminance from a value in kilo_candelas_per_square_meter.
+        Create a new instance of Luminance from a value in kilocandelas_per_square_meter.
 
         
 
-        :param meters: The Luminance value in kilo_candelas_per_square_meter.
-        :type kilo_candelas_per_square_meter: float
+        :param meters: The Luminance value in kilocandelas_per_square_meter.
+        :type kilocandelas_per_square_meter: float
         :return: A new instance of Luminance.
         :rtype: Luminance
         """
-        return Luminance(kilo_candelas_per_square_meter, LuminanceUnits.KiloCandelaPerSquareMeter)
+        return Luminance(kilocandelas_per_square_meter, LuminanceUnits.KilocandelaPerSquareMeter)
 
     
     @property
@@ -364,69 +364,69 @@ class Luminance:
 
     
     @property
-    def nano_candelas_per_square_meter(self) -> float:
+    def nanocandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__nano_candelas_per_square_meter != None:
-            return self.__nano_candelas_per_square_meter
-        self.__nano_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.NanoCandelaPerSquareMeter)
-        return self.__nano_candelas_per_square_meter
+        if self.__nanocandelas_per_square_meter != None:
+            return self.__nanocandelas_per_square_meter
+        self.__nanocandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.NanocandelaPerSquareMeter)
+        return self.__nanocandelas_per_square_meter
 
     
     @property
-    def micro_candelas_per_square_meter(self) -> float:
+    def microcandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__micro_candelas_per_square_meter != None:
-            return self.__micro_candelas_per_square_meter
-        self.__micro_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.MicroCandelaPerSquareMeter)
-        return self.__micro_candelas_per_square_meter
+        if self.__microcandelas_per_square_meter != None:
+            return self.__microcandelas_per_square_meter
+        self.__microcandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.MicrocandelaPerSquareMeter)
+        return self.__microcandelas_per_square_meter
 
     
     @property
-    def milli_candelas_per_square_meter(self) -> float:
+    def millicandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__milli_candelas_per_square_meter != None:
-            return self.__milli_candelas_per_square_meter
-        self.__milli_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.MilliCandelaPerSquareMeter)
-        return self.__milli_candelas_per_square_meter
+        if self.__millicandelas_per_square_meter != None:
+            return self.__millicandelas_per_square_meter
+        self.__millicandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.MillicandelaPerSquareMeter)
+        return self.__millicandelas_per_square_meter
 
     
     @property
-    def centi_candelas_per_square_meter(self) -> float:
+    def centicandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__centi_candelas_per_square_meter != None:
-            return self.__centi_candelas_per_square_meter
-        self.__centi_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.CentiCandelaPerSquareMeter)
-        return self.__centi_candelas_per_square_meter
+        if self.__centicandelas_per_square_meter != None:
+            return self.__centicandelas_per_square_meter
+        self.__centicandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.CenticandelaPerSquareMeter)
+        return self.__centicandelas_per_square_meter
 
     
     @property
-    def deci_candelas_per_square_meter(self) -> float:
+    def decicandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__deci_candelas_per_square_meter != None:
-            return self.__deci_candelas_per_square_meter
-        self.__deci_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.DeciCandelaPerSquareMeter)
-        return self.__deci_candelas_per_square_meter
+        if self.__decicandelas_per_square_meter != None:
+            return self.__decicandelas_per_square_meter
+        self.__decicandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.DecicandelaPerSquareMeter)
+        return self.__decicandelas_per_square_meter
 
     
     @property
-    def kilo_candelas_per_square_meter(self) -> float:
+    def kilocandelas_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_candelas_per_square_meter != None:
-            return self.__kilo_candelas_per_square_meter
-        self.__kilo_candelas_per_square_meter = self.__convert_from_base(LuminanceUnits.KiloCandelaPerSquareMeter)
-        return self.__kilo_candelas_per_square_meter
+        if self.__kilocandelas_per_square_meter != None:
+            return self.__kilocandelas_per_square_meter
+        self.__kilocandelas_per_square_meter = self.__convert_from_base(LuminanceUnits.KilocandelaPerSquareMeter)
+        return self.__kilocandelas_per_square_meter
 
     
     def to_string(self, unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> string:
@@ -448,23 +448,23 @@ class Luminance:
         if unit == LuminanceUnits.Nit:
             return f"""{self.nits} nt"""
         
-        if unit == LuminanceUnits.NanoCandelaPerSquareMeter:
-            return f"""{self.nano_candelas_per_square_meter} """
+        if unit == LuminanceUnits.NanocandelaPerSquareMeter:
+            return f"""{self.nanocandelas_per_square_meter} """
         
-        if unit == LuminanceUnits.MicroCandelaPerSquareMeter:
-            return f"""{self.micro_candelas_per_square_meter} """
+        if unit == LuminanceUnits.MicrocandelaPerSquareMeter:
+            return f"""{self.microcandelas_per_square_meter} """
         
-        if unit == LuminanceUnits.MilliCandelaPerSquareMeter:
-            return f"""{self.milli_candelas_per_square_meter} """
+        if unit == LuminanceUnits.MillicandelaPerSquareMeter:
+            return f"""{self.millicandelas_per_square_meter} """
         
-        if unit == LuminanceUnits.CentiCandelaPerSquareMeter:
-            return f"""{self.centi_candelas_per_square_meter} """
+        if unit == LuminanceUnits.CenticandelaPerSquareMeter:
+            return f"""{self.centicandelas_per_square_meter} """
         
-        if unit == LuminanceUnits.DeciCandelaPerSquareMeter:
-            return f"""{self.deci_candelas_per_square_meter} """
+        if unit == LuminanceUnits.DecicandelaPerSquareMeter:
+            return f"""{self.decicandelas_per_square_meter} """
         
-        if unit == LuminanceUnits.KiloCandelaPerSquareMeter:
-            return f"""{self.kilo_candelas_per_square_meter} """
+        if unit == LuminanceUnits.KilocandelaPerSquareMeter:
+            return f"""{self.kilocandelas_per_square_meter} """
         
         return f'{self.__value}'
 
@@ -488,22 +488,22 @@ class Luminance:
         if unit_abbreviation == LuminanceUnits.Nit:
             return """nt"""
         
-        if unit_abbreviation == LuminanceUnits.NanoCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.NanocandelaPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == LuminanceUnits.MicroCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.MicrocandelaPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == LuminanceUnits.MilliCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.MillicandelaPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == LuminanceUnits.CentiCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.CenticandelaPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == LuminanceUnits.DeciCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.DecicandelaPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == LuminanceUnits.KiloCandelaPerSquareMeter:
+        if unit_abbreviation == LuminanceUnits.KilocandelaPerSquareMeter:
             return """"""
         
 

@@ -48,17 +48,17 @@ class DurationUnits(Enum):
             
         """
         
-        NanoSecond = 'nano_second'
+        Nanosecond = 'nanosecond'
         """
             
         """
         
-        MicroSecond = 'micro_second'
+        Microsecond = 'microsecond'
         """
             
         """
         
-        MilliSecond = 'milli_second'
+        Millisecond = 'millisecond'
         """
             
         """
@@ -93,11 +93,11 @@ class Duration:
         
         self.__julian_years = None
         
-        self.__nano_seconds = None
+        self.__nanoseconds = None
         
-        self.__micro_seconds = None
+        self.__microseconds = None
         
-        self.__milli_seconds = None
+        self.__milliseconds = None
         
 
     def __convert_from_base(self, from_unit: DurationUnits) -> float:
@@ -127,13 +127,13 @@ class Duration:
         if from_unit == DurationUnits.JulianYear:
             return (value / (365.25 * 24 * 3600))
         
-        if from_unit == DurationUnits.NanoSecond:
+        if from_unit == DurationUnits.Nanosecond:
             return ((value) / 1e-09)
         
-        if from_unit == DurationUnits.MicroSecond:
+        if from_unit == DurationUnits.Microsecond:
             return ((value) / 1e-06)
         
-        if from_unit == DurationUnits.MilliSecond:
+        if from_unit == DurationUnits.Millisecond:
             return ((value) / 0.001)
         
         return None
@@ -165,13 +165,13 @@ class Duration:
         if to_unit == DurationUnits.JulianYear:
             return (value * 365.25 * 24 * 3600)
         
-        if to_unit == DurationUnits.NanoSecond:
+        if to_unit == DurationUnits.Nanosecond:
             return ((value) * 1e-09)
         
-        if to_unit == DurationUnits.MicroSecond:
+        if to_unit == DurationUnits.Microsecond:
             return ((value) * 1e-06)
         
-        if to_unit == DurationUnits.MilliSecond:
+        if to_unit == DurationUnits.Millisecond:
             return ((value) * 0.001)
         
         return None
@@ -303,48 +303,48 @@ class Duration:
 
     
     @staticmethod
-    def from_nano_seconds(nano_seconds: float):
+    def from_nanoseconds(nanoseconds: float):
         """
-        Create a new instance of Duration from a value in nano_seconds.
+        Create a new instance of Duration from a value in nanoseconds.
 
         
 
-        :param meters: The Duration value in nano_seconds.
-        :type nano_seconds: float
+        :param meters: The Duration value in nanoseconds.
+        :type nanoseconds: float
         :return: A new instance of Duration.
         :rtype: Duration
         """
-        return Duration(nano_seconds, DurationUnits.NanoSecond)
+        return Duration(nanoseconds, DurationUnits.Nanosecond)
 
     
     @staticmethod
-    def from_micro_seconds(micro_seconds: float):
+    def from_microseconds(microseconds: float):
         """
-        Create a new instance of Duration from a value in micro_seconds.
+        Create a new instance of Duration from a value in microseconds.
 
         
 
-        :param meters: The Duration value in micro_seconds.
-        :type micro_seconds: float
+        :param meters: The Duration value in microseconds.
+        :type microseconds: float
         :return: A new instance of Duration.
         :rtype: Duration
         """
-        return Duration(micro_seconds, DurationUnits.MicroSecond)
+        return Duration(microseconds, DurationUnits.Microsecond)
 
     
     @staticmethod
-    def from_milli_seconds(milli_seconds: float):
+    def from_milliseconds(milliseconds: float):
         """
-        Create a new instance of Duration from a value in milli_seconds.
+        Create a new instance of Duration from a value in milliseconds.
 
         
 
-        :param meters: The Duration value in milli_seconds.
-        :type milli_seconds: float
+        :param meters: The Duration value in milliseconds.
+        :type milliseconds: float
         :return: A new instance of Duration.
         :rtype: Duration
         """
-        return Duration(milli_seconds, DurationUnits.MilliSecond)
+        return Duration(milliseconds, DurationUnits.Millisecond)
 
     
     @property
@@ -436,36 +436,36 @@ class Duration:
 
     
     @property
-    def nano_seconds(self) -> float:
+    def nanoseconds(self) -> float:
         """
         
         """
-        if self.__nano_seconds != None:
-            return self.__nano_seconds
-        self.__nano_seconds = self.__convert_from_base(DurationUnits.NanoSecond)
-        return self.__nano_seconds
+        if self.__nanoseconds != None:
+            return self.__nanoseconds
+        self.__nanoseconds = self.__convert_from_base(DurationUnits.Nanosecond)
+        return self.__nanoseconds
 
     
     @property
-    def micro_seconds(self) -> float:
+    def microseconds(self) -> float:
         """
         
         """
-        if self.__micro_seconds != None:
-            return self.__micro_seconds
-        self.__micro_seconds = self.__convert_from_base(DurationUnits.MicroSecond)
-        return self.__micro_seconds
+        if self.__microseconds != None:
+            return self.__microseconds
+        self.__microseconds = self.__convert_from_base(DurationUnits.Microsecond)
+        return self.__microseconds
 
     
     @property
-    def milli_seconds(self) -> float:
+    def milliseconds(self) -> float:
         """
         
         """
-        if self.__milli_seconds != None:
-            return self.__milli_seconds
-        self.__milli_seconds = self.__convert_from_base(DurationUnits.MilliSecond)
-        return self.__milli_seconds
+        if self.__milliseconds != None:
+            return self.__milliseconds
+        self.__milliseconds = self.__convert_from_base(DurationUnits.Millisecond)
+        return self.__milliseconds
 
     
     def to_string(self, unit: DurationUnits = DurationUnits.Second) -> string:
@@ -499,14 +499,14 @@ class Duration:
         if unit == DurationUnits.JulianYear:
             return f"""{self.julian_years} jyr"""
         
-        if unit == DurationUnits.NanoSecond:
-            return f"""{self.nano_seconds} """
+        if unit == DurationUnits.Nanosecond:
+            return f"""{self.nanoseconds} """
         
-        if unit == DurationUnits.MicroSecond:
-            return f"""{self.micro_seconds} """
+        if unit == DurationUnits.Microsecond:
+            return f"""{self.microseconds} """
         
-        if unit == DurationUnits.MilliSecond:
-            return f"""{self.milli_seconds} """
+        if unit == DurationUnits.Millisecond:
+            return f"""{self.milliseconds} """
         
         return f'{self.__value}'
 
@@ -542,13 +542,13 @@ class Duration:
         if unit_abbreviation == DurationUnits.JulianYear:
             return """jyr"""
         
-        if unit_abbreviation == DurationUnits.NanoSecond:
+        if unit_abbreviation == DurationUnits.Nanosecond:
             return """"""
         
-        if unit_abbreviation == DurationUnits.MicroSecond:
+        if unit_abbreviation == DurationUnits.Microsecond:
             return """"""
         
-        if unit_abbreviation == DurationUnits.MilliSecond:
+        if unit_abbreviation == DurationUnits.Millisecond:
             return """"""
         
 

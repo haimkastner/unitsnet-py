@@ -28,7 +28,7 @@ class HeatTransferCoefficientUnits(Enum):
             
         """
         
-        KiloCaloriePerHourSquareMeterDegreeCelsius = 'kilo_calorie_per_hour_square_meter_degree_celsius'
+        KilocaloriePerHourSquareMeterDegreeCelsius = 'kilocalorie_per_hour_square_meter_degree_celsius'
         """
             
         """
@@ -55,7 +55,7 @@ class HeatTransferCoefficient:
         
         self.__calories_per_hour_square_meter_degree_celsius = None
         
-        self.__kilo_calories_per_hour_square_meter_degree_celsius = None
+        self.__kilocalories_per_hour_square_meter_degree_celsius = None
         
 
     def __convert_from_base(self, from_unit: HeatTransferCoefficientUnits) -> float:
@@ -73,7 +73,7 @@ class HeatTransferCoefficient:
         if from_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return ((value / 4.1868) * 3600)
         
-        if from_unit == HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius:
+        if from_unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
             return (((value / 4.1868) * 3600) / 1000.0)
         
         return None
@@ -93,7 +93,7 @@ class HeatTransferCoefficient:
         if to_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return ((value * 4.1868) / 3600)
         
-        if to_unit == HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius:
+        if to_unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
             return (((value * 4.1868) / 3600) * 1000.0)
         
         return None
@@ -165,18 +165,18 @@ class HeatTransferCoefficient:
 
     
     @staticmethod
-    def from_kilo_calories_per_hour_square_meter_degree_celsius(kilo_calories_per_hour_square_meter_degree_celsius: float):
+    def from_kilocalories_per_hour_square_meter_degree_celsius(kilocalories_per_hour_square_meter_degree_celsius: float):
         """
-        Create a new instance of HeatTransferCoefficient from a value in kilo_calories_per_hour_square_meter_degree_celsius.
+        Create a new instance of HeatTransferCoefficient from a value in kilocalories_per_hour_square_meter_degree_celsius.
 
         
 
-        :param meters: The HeatTransferCoefficient value in kilo_calories_per_hour_square_meter_degree_celsius.
-        :type kilo_calories_per_hour_square_meter_degree_celsius: float
+        :param meters: The HeatTransferCoefficient value in kilocalories_per_hour_square_meter_degree_celsius.
+        :type kilocalories_per_hour_square_meter_degree_celsius: float
         :return: A new instance of HeatTransferCoefficient.
         :rtype: HeatTransferCoefficient
         """
-        return HeatTransferCoefficient(kilo_calories_per_hour_square_meter_degree_celsius, HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius)
+        return HeatTransferCoefficient(kilocalories_per_hour_square_meter_degree_celsius, HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius)
 
     
     @property
@@ -224,14 +224,14 @@ class HeatTransferCoefficient:
 
     
     @property
-    def kilo_calories_per_hour_square_meter_degree_celsius(self) -> float:
+    def kilocalories_per_hour_square_meter_degree_celsius(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_hour_square_meter_degree_celsius != None:
-            return self.__kilo_calories_per_hour_square_meter_degree_celsius
-        self.__kilo_calories_per_hour_square_meter_degree_celsius = self.__convert_from_base(HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius)
-        return self.__kilo_calories_per_hour_square_meter_degree_celsius
+        if self.__kilocalories_per_hour_square_meter_degree_celsius != None:
+            return self.__kilocalories_per_hour_square_meter_degree_celsius
+        self.__kilocalories_per_hour_square_meter_degree_celsius = self.__convert_from_base(HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius)
+        return self.__kilocalories_per_hour_square_meter_degree_celsius
 
     
     def to_string(self, unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> string:
@@ -253,8 +253,8 @@ class HeatTransferCoefficient:
         if unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return f"""{self.calories_per_hour_square_meter_degree_celsius} kcal/h·m²·°C"""
         
-        if unit == HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{self.kilo_calories_per_hour_square_meter_degree_celsius} """
+        if unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
+            return f"""{self.kilocalories_per_hour_square_meter_degree_celsius} """
         
         return f'{self.__value}'
 
@@ -278,7 +278,7 @@ class HeatTransferCoefficient:
         if unit_abbreviation == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return """kcal/h·m²·°C"""
         
-        if unit_abbreviation == HeatTransferCoefficientUnits.KiloCaloriePerHourSquareMeterDegreeCelsius:
+        if unit_abbreviation == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
             return """"""
         
 

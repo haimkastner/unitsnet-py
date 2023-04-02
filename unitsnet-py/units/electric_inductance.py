@@ -13,22 +13,22 @@ class ElectricInductanceUnits(Enum):
             
         """
         
-        PicoHenry = 'pico_henry'
+        Picohenry = 'picohenry'
         """
             
         """
         
-        NanoHenry = 'nano_henry'
+        Nanohenry = 'nanohenry'
         """
             
         """
         
-        MicroHenry = 'micro_henry'
+        Microhenry = 'microhenry'
         """
             
         """
         
-        MilliHenry = 'milli_henry'
+        Millihenry = 'millihenry'
         """
             
         """
@@ -49,13 +49,13 @@ class ElectricInductance:
         
         self.__henries = None
         
-        self.__pico_henries = None
+        self.__picohenries = None
         
-        self.__nano_henries = None
+        self.__nanohenries = None
         
-        self.__micro_henries = None
+        self.__microhenries = None
         
-        self.__milli_henries = None
+        self.__millihenries = None
         
 
     def __convert_from_base(self, from_unit: ElectricInductanceUnits) -> float:
@@ -64,16 +64,16 @@ class ElectricInductance:
         if from_unit == ElectricInductanceUnits.Henry:
             return (value)
         
-        if from_unit == ElectricInductanceUnits.PicoHenry:
+        if from_unit == ElectricInductanceUnits.Picohenry:
             return ((value) / 1e-12)
         
-        if from_unit == ElectricInductanceUnits.NanoHenry:
+        if from_unit == ElectricInductanceUnits.Nanohenry:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricInductanceUnits.MicroHenry:
+        if from_unit == ElectricInductanceUnits.Microhenry:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricInductanceUnits.MilliHenry:
+        if from_unit == ElectricInductanceUnits.Millihenry:
             return ((value) / 0.001)
         
         return None
@@ -84,16 +84,16 @@ class ElectricInductance:
         if to_unit == ElectricInductanceUnits.Henry:
             return (value)
         
-        if to_unit == ElectricInductanceUnits.PicoHenry:
+        if to_unit == ElectricInductanceUnits.Picohenry:
             return ((value) * 1e-12)
         
-        if to_unit == ElectricInductanceUnits.NanoHenry:
+        if to_unit == ElectricInductanceUnits.Nanohenry:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricInductanceUnits.MicroHenry:
+        if to_unit == ElectricInductanceUnits.Microhenry:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricInductanceUnits.MilliHenry:
+        if to_unit == ElectricInductanceUnits.Millihenry:
             return ((value) * 0.001)
         
         return None
@@ -120,63 +120,63 @@ class ElectricInductance:
 
     
     @staticmethod
-    def from_pico_henries(pico_henries: float):
+    def from_picohenries(picohenries: float):
         """
-        Create a new instance of ElectricInductance from a value in pico_henries.
+        Create a new instance of ElectricInductance from a value in picohenries.
 
         
 
-        :param meters: The ElectricInductance value in pico_henries.
-        :type pico_henries: float
+        :param meters: The ElectricInductance value in picohenries.
+        :type picohenries: float
         :return: A new instance of ElectricInductance.
         :rtype: ElectricInductance
         """
-        return ElectricInductance(pico_henries, ElectricInductanceUnits.PicoHenry)
+        return ElectricInductance(picohenries, ElectricInductanceUnits.Picohenry)
 
     
     @staticmethod
-    def from_nano_henries(nano_henries: float):
+    def from_nanohenries(nanohenries: float):
         """
-        Create a new instance of ElectricInductance from a value in nano_henries.
+        Create a new instance of ElectricInductance from a value in nanohenries.
 
         
 
-        :param meters: The ElectricInductance value in nano_henries.
-        :type nano_henries: float
+        :param meters: The ElectricInductance value in nanohenries.
+        :type nanohenries: float
         :return: A new instance of ElectricInductance.
         :rtype: ElectricInductance
         """
-        return ElectricInductance(nano_henries, ElectricInductanceUnits.NanoHenry)
+        return ElectricInductance(nanohenries, ElectricInductanceUnits.Nanohenry)
 
     
     @staticmethod
-    def from_micro_henries(micro_henries: float):
+    def from_microhenries(microhenries: float):
         """
-        Create a new instance of ElectricInductance from a value in micro_henries.
+        Create a new instance of ElectricInductance from a value in microhenries.
 
         
 
-        :param meters: The ElectricInductance value in micro_henries.
-        :type micro_henries: float
+        :param meters: The ElectricInductance value in microhenries.
+        :type microhenries: float
         :return: A new instance of ElectricInductance.
         :rtype: ElectricInductance
         """
-        return ElectricInductance(micro_henries, ElectricInductanceUnits.MicroHenry)
+        return ElectricInductance(microhenries, ElectricInductanceUnits.Microhenry)
 
     
     @staticmethod
-    def from_milli_henries(milli_henries: float):
+    def from_millihenries(millihenries: float):
         """
-        Create a new instance of ElectricInductance from a value in milli_henries.
+        Create a new instance of ElectricInductance from a value in millihenries.
 
         
 
-        :param meters: The ElectricInductance value in milli_henries.
-        :type milli_henries: float
+        :param meters: The ElectricInductance value in millihenries.
+        :type millihenries: float
         :return: A new instance of ElectricInductance.
         :rtype: ElectricInductance
         """
-        return ElectricInductance(milli_henries, ElectricInductanceUnits.MilliHenry)
+        return ElectricInductance(millihenries, ElectricInductanceUnits.Millihenry)
 
     
     @property
@@ -191,47 +191,47 @@ class ElectricInductance:
 
     
     @property
-    def pico_henries(self) -> float:
+    def picohenries(self) -> float:
         """
         
         """
-        if self.__pico_henries != None:
-            return self.__pico_henries
-        self.__pico_henries = self.__convert_from_base(ElectricInductanceUnits.PicoHenry)
-        return self.__pico_henries
+        if self.__picohenries != None:
+            return self.__picohenries
+        self.__picohenries = self.__convert_from_base(ElectricInductanceUnits.Picohenry)
+        return self.__picohenries
 
     
     @property
-    def nano_henries(self) -> float:
+    def nanohenries(self) -> float:
         """
         
         """
-        if self.__nano_henries != None:
-            return self.__nano_henries
-        self.__nano_henries = self.__convert_from_base(ElectricInductanceUnits.NanoHenry)
-        return self.__nano_henries
+        if self.__nanohenries != None:
+            return self.__nanohenries
+        self.__nanohenries = self.__convert_from_base(ElectricInductanceUnits.Nanohenry)
+        return self.__nanohenries
 
     
     @property
-    def micro_henries(self) -> float:
+    def microhenries(self) -> float:
         """
         
         """
-        if self.__micro_henries != None:
-            return self.__micro_henries
-        self.__micro_henries = self.__convert_from_base(ElectricInductanceUnits.MicroHenry)
-        return self.__micro_henries
+        if self.__microhenries != None:
+            return self.__microhenries
+        self.__microhenries = self.__convert_from_base(ElectricInductanceUnits.Microhenry)
+        return self.__microhenries
 
     
     @property
-    def milli_henries(self) -> float:
+    def millihenries(self) -> float:
         """
         
         """
-        if self.__milli_henries != None:
-            return self.__milli_henries
-        self.__milli_henries = self.__convert_from_base(ElectricInductanceUnits.MilliHenry)
-        return self.__milli_henries
+        if self.__millihenries != None:
+            return self.__millihenries
+        self.__millihenries = self.__convert_from_base(ElectricInductanceUnits.Millihenry)
+        return self.__millihenries
 
     
     def to_string(self, unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> string:
@@ -244,17 +244,17 @@ class ElectricInductance:
         if unit == ElectricInductanceUnits.Henry:
             return f"""{self.henries} H"""
         
-        if unit == ElectricInductanceUnits.PicoHenry:
-            return f"""{self.pico_henries} """
+        if unit == ElectricInductanceUnits.Picohenry:
+            return f"""{self.picohenries} """
         
-        if unit == ElectricInductanceUnits.NanoHenry:
-            return f"""{self.nano_henries} """
+        if unit == ElectricInductanceUnits.Nanohenry:
+            return f"""{self.nanohenries} """
         
-        if unit == ElectricInductanceUnits.MicroHenry:
-            return f"""{self.micro_henries} """
+        if unit == ElectricInductanceUnits.Microhenry:
+            return f"""{self.microhenries} """
         
-        if unit == ElectricInductanceUnits.MilliHenry:
-            return f"""{self.milli_henries} """
+        if unit == ElectricInductanceUnits.Millihenry:
+            return f"""{self.millihenries} """
         
         return f'{self.__value}'
 
@@ -269,16 +269,16 @@ class ElectricInductance:
         if unit_abbreviation == ElectricInductanceUnits.Henry:
             return """H"""
         
-        if unit_abbreviation == ElectricInductanceUnits.PicoHenry:
+        if unit_abbreviation == ElectricInductanceUnits.Picohenry:
             return """"""
         
-        if unit_abbreviation == ElectricInductanceUnits.NanoHenry:
+        if unit_abbreviation == ElectricInductanceUnits.Nanohenry:
             return """"""
         
-        if unit_abbreviation == ElectricInductanceUnits.MicroHenry:
+        if unit_abbreviation == ElectricInductanceUnits.Microhenry:
             return """"""
         
-        if unit_abbreviation == ElectricInductanceUnits.MilliHenry:
+        if unit_abbreviation == ElectricInductanceUnits.Millihenry:
             return """"""
         
 

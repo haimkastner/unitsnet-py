@@ -23,12 +23,12 @@ class RotationalStiffnessPerLengthUnits(Enum):
             
         """
         
-        KiloNewtonMeterPerRadianPerMeter = 'kilo_newton_meter_per_radian_per_meter'
+        KilonewtonMeterPerRadianPerMeter = 'kilonewton_meter_per_radian_per_meter'
         """
             
         """
         
-        MegaNewtonMeterPerRadianPerMeter = 'mega_newton_meter_per_radian_per_meter'
+        MeganewtonMeterPerRadianPerMeter = 'meganewton_meter_per_radian_per_meter'
         """
             
         """
@@ -53,9 +53,9 @@ class RotationalStiffnessPerLength:
         
         self.__kilopound_force_feet_per_degrees_per_feet = None
         
-        self.__kilo_newton_meters_per_radian_per_meter = None
+        self.__kilonewton_meters_per_radian_per_meter = None
         
-        self.__mega_newton_meters_per_radian_per_meter = None
+        self.__meganewton_meters_per_radian_per_meter = None
         
 
     def __convert_from_base(self, from_unit: RotationalStiffnessPerLengthUnits) -> float:
@@ -70,10 +70,10 @@ class RotationalStiffnessPerLength:
         if from_unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
             return (value / 254864.324570)
         
-        if from_unit == RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter:
+        if from_unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
             return ((value) / 1000.0)
         
-        if from_unit == RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter:
+        if from_unit == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
             return ((value) / 1000000.0)
         
         return None
@@ -90,10 +90,10 @@ class RotationalStiffnessPerLength:
         if to_unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
             return (value * 254864.324570)
         
-        if to_unit == RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter:
+        if to_unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
             return ((value) * 1000.0)
         
-        if to_unit == RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter:
+        if to_unit == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
             return ((value) * 1000000.0)
         
         return None
@@ -150,33 +150,33 @@ class RotationalStiffnessPerLength:
 
     
     @staticmethod
-    def from_kilo_newton_meters_per_radian_per_meter(kilo_newton_meters_per_radian_per_meter: float):
+    def from_kilonewton_meters_per_radian_per_meter(kilonewton_meters_per_radian_per_meter: float):
         """
-        Create a new instance of RotationalStiffnessPerLength from a value in kilo_newton_meters_per_radian_per_meter.
+        Create a new instance of RotationalStiffnessPerLength from a value in kilonewton_meters_per_radian_per_meter.
 
         
 
-        :param meters: The RotationalStiffnessPerLength value in kilo_newton_meters_per_radian_per_meter.
-        :type kilo_newton_meters_per_radian_per_meter: float
+        :param meters: The RotationalStiffnessPerLength value in kilonewton_meters_per_radian_per_meter.
+        :type kilonewton_meters_per_radian_per_meter: float
         :return: A new instance of RotationalStiffnessPerLength.
         :rtype: RotationalStiffnessPerLength
         """
-        return RotationalStiffnessPerLength(kilo_newton_meters_per_radian_per_meter, RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter)
+        return RotationalStiffnessPerLength(kilonewton_meters_per_radian_per_meter, RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter)
 
     
     @staticmethod
-    def from_mega_newton_meters_per_radian_per_meter(mega_newton_meters_per_radian_per_meter: float):
+    def from_meganewton_meters_per_radian_per_meter(meganewton_meters_per_radian_per_meter: float):
         """
-        Create a new instance of RotationalStiffnessPerLength from a value in mega_newton_meters_per_radian_per_meter.
+        Create a new instance of RotationalStiffnessPerLength from a value in meganewton_meters_per_radian_per_meter.
 
         
 
-        :param meters: The RotationalStiffnessPerLength value in mega_newton_meters_per_radian_per_meter.
-        :type mega_newton_meters_per_radian_per_meter: float
+        :param meters: The RotationalStiffnessPerLength value in meganewton_meters_per_radian_per_meter.
+        :type meganewton_meters_per_radian_per_meter: float
         :return: A new instance of RotationalStiffnessPerLength.
         :rtype: RotationalStiffnessPerLength
         """
-        return RotationalStiffnessPerLength(mega_newton_meters_per_radian_per_meter, RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter)
+        return RotationalStiffnessPerLength(meganewton_meters_per_radian_per_meter, RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter)
 
     
     @property
@@ -213,25 +213,25 @@ class RotationalStiffnessPerLength:
 
     
     @property
-    def kilo_newton_meters_per_radian_per_meter(self) -> float:
+    def kilonewton_meters_per_radian_per_meter(self) -> float:
         """
         
         """
-        if self.__kilo_newton_meters_per_radian_per_meter != None:
-            return self.__kilo_newton_meters_per_radian_per_meter
-        self.__kilo_newton_meters_per_radian_per_meter = self.__convert_from_base(RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter)
-        return self.__kilo_newton_meters_per_radian_per_meter
+        if self.__kilonewton_meters_per_radian_per_meter != None:
+            return self.__kilonewton_meters_per_radian_per_meter
+        self.__kilonewton_meters_per_radian_per_meter = self.__convert_from_base(RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter)
+        return self.__kilonewton_meters_per_radian_per_meter
 
     
     @property
-    def mega_newton_meters_per_radian_per_meter(self) -> float:
+    def meganewton_meters_per_radian_per_meter(self) -> float:
         """
         
         """
-        if self.__mega_newton_meters_per_radian_per_meter != None:
-            return self.__mega_newton_meters_per_radian_per_meter
-        self.__mega_newton_meters_per_radian_per_meter = self.__convert_from_base(RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter)
-        return self.__mega_newton_meters_per_radian_per_meter
+        if self.__meganewton_meters_per_radian_per_meter != None:
+            return self.__meganewton_meters_per_radian_per_meter
+        self.__meganewton_meters_per_radian_per_meter = self.__convert_from_base(RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter)
+        return self.__meganewton_meters_per_radian_per_meter
 
     
     def to_string(self, unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter) -> string:
@@ -250,11 +250,11 @@ class RotationalStiffnessPerLength:
         if unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
             return f"""{self.kilopound_force_feet_per_degrees_per_feet} kipf·ft/°/ft"""
         
-        if unit == RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter:
-            return f"""{self.kilo_newton_meters_per_radian_per_meter} """
+        if unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
+            return f"""{self.kilonewton_meters_per_radian_per_meter} """
         
-        if unit == RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter:
-            return f"""{self.mega_newton_meters_per_radian_per_meter} """
+        if unit == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
+            return f"""{self.meganewton_meters_per_radian_per_meter} """
         
         return f'{self.__value}'
 
@@ -275,10 +275,10 @@ class RotationalStiffnessPerLength:
         if unit_abbreviation == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
             return """kipf·ft/°/ft"""
         
-        if unit_abbreviation == RotationalStiffnessPerLengthUnits.KiloNewtonMeterPerRadianPerMeter:
+        if unit_abbreviation == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
             return """"""
         
-        if unit_abbreviation == RotationalStiffnessPerLengthUnits.MegaNewtonMeterPerRadianPerMeter:
+        if unit_abbreviation == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
             return """"""
         
 

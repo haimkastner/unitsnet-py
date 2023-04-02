@@ -18,62 +18,62 @@ class LuminosityUnits(Enum):
             
         """
         
-        FemtoWatt = 'femto_watt'
+        Femtowatt = 'femtowatt'
         """
             
         """
         
-        PicoWatt = 'pico_watt'
+        Picowatt = 'picowatt'
         """
             
         """
         
-        NanoWatt = 'nano_watt'
+        Nanowatt = 'nanowatt'
         """
             
         """
         
-        MicroWatt = 'micro_watt'
+        Microwatt = 'microwatt'
         """
             
         """
         
-        MilliWatt = 'milli_watt'
+        Milliwatt = 'milliwatt'
         """
             
         """
         
-        DeciWatt = 'deci_watt'
+        Deciwatt = 'deciwatt'
         """
             
         """
         
-        DecaWatt = 'deca_watt'
+        Decawatt = 'decawatt'
         """
             
         """
         
-        KiloWatt = 'kilo_watt'
+        Kilowatt = 'kilowatt'
         """
             
         """
         
-        MegaWatt = 'mega_watt'
+        Megawatt = 'megawatt'
         """
             
         """
         
-        GigaWatt = 'giga_watt'
+        Gigawatt = 'gigawatt'
         """
             
         """
         
-        TeraWatt = 'tera_watt'
+        Terawatt = 'terawatt'
         """
             
         """
         
-        PetaWatt = 'peta_watt'
+        Petawatt = 'petawatt'
         """
             
         """
@@ -96,29 +96,29 @@ class Luminosity:
         
         self.__solar_luminosities = None
         
-        self.__femto_watts = None
+        self.__femtowatts = None
         
-        self.__pico_watts = None
+        self.__picowatts = None
         
-        self.__nano_watts = None
+        self.__nanowatts = None
         
-        self.__micro_watts = None
+        self.__microwatts = None
         
-        self.__milli_watts = None
+        self.__milliwatts = None
         
-        self.__deci_watts = None
+        self.__deciwatts = None
         
-        self.__deca_watts = None
+        self.__decawatts = None
         
-        self.__kilo_watts = None
+        self.__kilowatts = None
         
-        self.__mega_watts = None
+        self.__megawatts = None
         
-        self.__giga_watts = None
+        self.__gigawatts = None
         
-        self.__tera_watts = None
+        self.__terawatts = None
         
-        self.__peta_watts = None
+        self.__petawatts = None
         
 
     def __convert_from_base(self, from_unit: LuminosityUnits) -> float:
@@ -130,40 +130,40 @@ class Luminosity:
         if from_unit == LuminosityUnits.SolarLuminosity:
             return (value / 3.846e26)
         
-        if from_unit == LuminosityUnits.FemtoWatt:
+        if from_unit == LuminosityUnits.Femtowatt:
             return ((value) / 1e-15)
         
-        if from_unit == LuminosityUnits.PicoWatt:
+        if from_unit == LuminosityUnits.Picowatt:
             return ((value) / 1e-12)
         
-        if from_unit == LuminosityUnits.NanoWatt:
+        if from_unit == LuminosityUnits.Nanowatt:
             return ((value) / 1e-09)
         
-        if from_unit == LuminosityUnits.MicroWatt:
+        if from_unit == LuminosityUnits.Microwatt:
             return ((value) / 1e-06)
         
-        if from_unit == LuminosityUnits.MilliWatt:
+        if from_unit == LuminosityUnits.Milliwatt:
             return ((value) / 0.001)
         
-        if from_unit == LuminosityUnits.DeciWatt:
+        if from_unit == LuminosityUnits.Deciwatt:
             return ((value) / 0.1)
         
-        if from_unit == LuminosityUnits.DecaWatt:
+        if from_unit == LuminosityUnits.Decawatt:
             return ((value) / 10.0)
         
-        if from_unit == LuminosityUnits.KiloWatt:
+        if from_unit == LuminosityUnits.Kilowatt:
             return ((value) / 1000.0)
         
-        if from_unit == LuminosityUnits.MegaWatt:
+        if from_unit == LuminosityUnits.Megawatt:
             return ((value) / 1000000.0)
         
-        if from_unit == LuminosityUnits.GigaWatt:
+        if from_unit == LuminosityUnits.Gigawatt:
             return ((value) / 1000000000.0)
         
-        if from_unit == LuminosityUnits.TeraWatt:
+        if from_unit == LuminosityUnits.Terawatt:
             return ((value) / 1000000000000.0)
         
-        if from_unit == LuminosityUnits.PetaWatt:
+        if from_unit == LuminosityUnits.Petawatt:
             return ((value) / 1000000000000000.0)
         
         return None
@@ -177,40 +177,40 @@ class Luminosity:
         if to_unit == LuminosityUnits.SolarLuminosity:
             return (value * 3.846e26)
         
-        if to_unit == LuminosityUnits.FemtoWatt:
+        if to_unit == LuminosityUnits.Femtowatt:
             return ((value) * 1e-15)
         
-        if to_unit == LuminosityUnits.PicoWatt:
+        if to_unit == LuminosityUnits.Picowatt:
             return ((value) * 1e-12)
         
-        if to_unit == LuminosityUnits.NanoWatt:
+        if to_unit == LuminosityUnits.Nanowatt:
             return ((value) * 1e-09)
         
-        if to_unit == LuminosityUnits.MicroWatt:
+        if to_unit == LuminosityUnits.Microwatt:
             return ((value) * 1e-06)
         
-        if to_unit == LuminosityUnits.MilliWatt:
+        if to_unit == LuminosityUnits.Milliwatt:
             return ((value) * 0.001)
         
-        if to_unit == LuminosityUnits.DeciWatt:
+        if to_unit == LuminosityUnits.Deciwatt:
             return ((value) * 0.1)
         
-        if to_unit == LuminosityUnits.DecaWatt:
+        if to_unit == LuminosityUnits.Decawatt:
             return ((value) * 10.0)
         
-        if to_unit == LuminosityUnits.KiloWatt:
+        if to_unit == LuminosityUnits.Kilowatt:
             return ((value) * 1000.0)
         
-        if to_unit == LuminosityUnits.MegaWatt:
+        if to_unit == LuminosityUnits.Megawatt:
             return ((value) * 1000000.0)
         
-        if to_unit == LuminosityUnits.GigaWatt:
+        if to_unit == LuminosityUnits.Gigawatt:
             return ((value) * 1000000000.0)
         
-        if to_unit == LuminosityUnits.TeraWatt:
+        if to_unit == LuminosityUnits.Terawatt:
             return ((value) * 1000000000000.0)
         
-        if to_unit == LuminosityUnits.PetaWatt:
+        if to_unit == LuminosityUnits.Petawatt:
             return ((value) * 1000000000000000.0)
         
         return None
@@ -252,183 +252,183 @@ class Luminosity:
 
     
     @staticmethod
-    def from_femto_watts(femto_watts: float):
+    def from_femtowatts(femtowatts: float):
         """
-        Create a new instance of Luminosity from a value in femto_watts.
+        Create a new instance of Luminosity from a value in femtowatts.
 
         
 
-        :param meters: The Luminosity value in femto_watts.
-        :type femto_watts: float
+        :param meters: The Luminosity value in femtowatts.
+        :type femtowatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(femto_watts, LuminosityUnits.FemtoWatt)
+        return Luminosity(femtowatts, LuminosityUnits.Femtowatt)
 
     
     @staticmethod
-    def from_pico_watts(pico_watts: float):
+    def from_picowatts(picowatts: float):
         """
-        Create a new instance of Luminosity from a value in pico_watts.
+        Create a new instance of Luminosity from a value in picowatts.
 
         
 
-        :param meters: The Luminosity value in pico_watts.
-        :type pico_watts: float
+        :param meters: The Luminosity value in picowatts.
+        :type picowatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(pico_watts, LuminosityUnits.PicoWatt)
+        return Luminosity(picowatts, LuminosityUnits.Picowatt)
 
     
     @staticmethod
-    def from_nano_watts(nano_watts: float):
+    def from_nanowatts(nanowatts: float):
         """
-        Create a new instance of Luminosity from a value in nano_watts.
+        Create a new instance of Luminosity from a value in nanowatts.
 
         
 
-        :param meters: The Luminosity value in nano_watts.
-        :type nano_watts: float
+        :param meters: The Luminosity value in nanowatts.
+        :type nanowatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(nano_watts, LuminosityUnits.NanoWatt)
+        return Luminosity(nanowatts, LuminosityUnits.Nanowatt)
 
     
     @staticmethod
-    def from_micro_watts(micro_watts: float):
+    def from_microwatts(microwatts: float):
         """
-        Create a new instance of Luminosity from a value in micro_watts.
+        Create a new instance of Luminosity from a value in microwatts.
 
         
 
-        :param meters: The Luminosity value in micro_watts.
-        :type micro_watts: float
+        :param meters: The Luminosity value in microwatts.
+        :type microwatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(micro_watts, LuminosityUnits.MicroWatt)
+        return Luminosity(microwatts, LuminosityUnits.Microwatt)
 
     
     @staticmethod
-    def from_milli_watts(milli_watts: float):
+    def from_milliwatts(milliwatts: float):
         """
-        Create a new instance of Luminosity from a value in milli_watts.
+        Create a new instance of Luminosity from a value in milliwatts.
 
         
 
-        :param meters: The Luminosity value in milli_watts.
-        :type milli_watts: float
+        :param meters: The Luminosity value in milliwatts.
+        :type milliwatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(milli_watts, LuminosityUnits.MilliWatt)
+        return Luminosity(milliwatts, LuminosityUnits.Milliwatt)
 
     
     @staticmethod
-    def from_deci_watts(deci_watts: float):
+    def from_deciwatts(deciwatts: float):
         """
-        Create a new instance of Luminosity from a value in deci_watts.
+        Create a new instance of Luminosity from a value in deciwatts.
 
         
 
-        :param meters: The Luminosity value in deci_watts.
-        :type deci_watts: float
+        :param meters: The Luminosity value in deciwatts.
+        :type deciwatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(deci_watts, LuminosityUnits.DeciWatt)
+        return Luminosity(deciwatts, LuminosityUnits.Deciwatt)
 
     
     @staticmethod
-    def from_deca_watts(deca_watts: float):
+    def from_decawatts(decawatts: float):
         """
-        Create a new instance of Luminosity from a value in deca_watts.
+        Create a new instance of Luminosity from a value in decawatts.
 
         
 
-        :param meters: The Luminosity value in deca_watts.
-        :type deca_watts: float
+        :param meters: The Luminosity value in decawatts.
+        :type decawatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(deca_watts, LuminosityUnits.DecaWatt)
+        return Luminosity(decawatts, LuminosityUnits.Decawatt)
 
     
     @staticmethod
-    def from_kilo_watts(kilo_watts: float):
+    def from_kilowatts(kilowatts: float):
         """
-        Create a new instance of Luminosity from a value in kilo_watts.
+        Create a new instance of Luminosity from a value in kilowatts.
 
         
 
-        :param meters: The Luminosity value in kilo_watts.
-        :type kilo_watts: float
+        :param meters: The Luminosity value in kilowatts.
+        :type kilowatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(kilo_watts, LuminosityUnits.KiloWatt)
+        return Luminosity(kilowatts, LuminosityUnits.Kilowatt)
 
     
     @staticmethod
-    def from_mega_watts(mega_watts: float):
+    def from_megawatts(megawatts: float):
         """
-        Create a new instance of Luminosity from a value in mega_watts.
+        Create a new instance of Luminosity from a value in megawatts.
 
         
 
-        :param meters: The Luminosity value in mega_watts.
-        :type mega_watts: float
+        :param meters: The Luminosity value in megawatts.
+        :type megawatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(mega_watts, LuminosityUnits.MegaWatt)
+        return Luminosity(megawatts, LuminosityUnits.Megawatt)
 
     
     @staticmethod
-    def from_giga_watts(giga_watts: float):
+    def from_gigawatts(gigawatts: float):
         """
-        Create a new instance of Luminosity from a value in giga_watts.
+        Create a new instance of Luminosity from a value in gigawatts.
 
         
 
-        :param meters: The Luminosity value in giga_watts.
-        :type giga_watts: float
+        :param meters: The Luminosity value in gigawatts.
+        :type gigawatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(giga_watts, LuminosityUnits.GigaWatt)
+        return Luminosity(gigawatts, LuminosityUnits.Gigawatt)
 
     
     @staticmethod
-    def from_tera_watts(tera_watts: float):
+    def from_terawatts(terawatts: float):
         """
-        Create a new instance of Luminosity from a value in tera_watts.
+        Create a new instance of Luminosity from a value in terawatts.
 
         
 
-        :param meters: The Luminosity value in tera_watts.
-        :type tera_watts: float
+        :param meters: The Luminosity value in terawatts.
+        :type terawatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(tera_watts, LuminosityUnits.TeraWatt)
+        return Luminosity(terawatts, LuminosityUnits.Terawatt)
 
     
     @staticmethod
-    def from_peta_watts(peta_watts: float):
+    def from_petawatts(petawatts: float):
         """
-        Create a new instance of Luminosity from a value in peta_watts.
+        Create a new instance of Luminosity from a value in petawatts.
 
         
 
-        :param meters: The Luminosity value in peta_watts.
-        :type peta_watts: float
+        :param meters: The Luminosity value in petawatts.
+        :type petawatts: float
         :return: A new instance of Luminosity.
         :rtype: Luminosity
         """
-        return Luminosity(peta_watts, LuminosityUnits.PetaWatt)
+        return Luminosity(petawatts, LuminosityUnits.Petawatt)
 
     
     @property
@@ -454,135 +454,135 @@ class Luminosity:
 
     
     @property
-    def femto_watts(self) -> float:
+    def femtowatts(self) -> float:
         """
         
         """
-        if self.__femto_watts != None:
-            return self.__femto_watts
-        self.__femto_watts = self.__convert_from_base(LuminosityUnits.FemtoWatt)
-        return self.__femto_watts
+        if self.__femtowatts != None:
+            return self.__femtowatts
+        self.__femtowatts = self.__convert_from_base(LuminosityUnits.Femtowatt)
+        return self.__femtowatts
 
     
     @property
-    def pico_watts(self) -> float:
+    def picowatts(self) -> float:
         """
         
         """
-        if self.__pico_watts != None:
-            return self.__pico_watts
-        self.__pico_watts = self.__convert_from_base(LuminosityUnits.PicoWatt)
-        return self.__pico_watts
+        if self.__picowatts != None:
+            return self.__picowatts
+        self.__picowatts = self.__convert_from_base(LuminosityUnits.Picowatt)
+        return self.__picowatts
 
     
     @property
-    def nano_watts(self) -> float:
+    def nanowatts(self) -> float:
         """
         
         """
-        if self.__nano_watts != None:
-            return self.__nano_watts
-        self.__nano_watts = self.__convert_from_base(LuminosityUnits.NanoWatt)
-        return self.__nano_watts
+        if self.__nanowatts != None:
+            return self.__nanowatts
+        self.__nanowatts = self.__convert_from_base(LuminosityUnits.Nanowatt)
+        return self.__nanowatts
 
     
     @property
-    def micro_watts(self) -> float:
+    def microwatts(self) -> float:
         """
         
         """
-        if self.__micro_watts != None:
-            return self.__micro_watts
-        self.__micro_watts = self.__convert_from_base(LuminosityUnits.MicroWatt)
-        return self.__micro_watts
+        if self.__microwatts != None:
+            return self.__microwatts
+        self.__microwatts = self.__convert_from_base(LuminosityUnits.Microwatt)
+        return self.__microwatts
 
     
     @property
-    def milli_watts(self) -> float:
+    def milliwatts(self) -> float:
         """
         
         """
-        if self.__milli_watts != None:
-            return self.__milli_watts
-        self.__milli_watts = self.__convert_from_base(LuminosityUnits.MilliWatt)
-        return self.__milli_watts
+        if self.__milliwatts != None:
+            return self.__milliwatts
+        self.__milliwatts = self.__convert_from_base(LuminosityUnits.Milliwatt)
+        return self.__milliwatts
 
     
     @property
-    def deci_watts(self) -> float:
+    def deciwatts(self) -> float:
         """
         
         """
-        if self.__deci_watts != None:
-            return self.__deci_watts
-        self.__deci_watts = self.__convert_from_base(LuminosityUnits.DeciWatt)
-        return self.__deci_watts
+        if self.__deciwatts != None:
+            return self.__deciwatts
+        self.__deciwatts = self.__convert_from_base(LuminosityUnits.Deciwatt)
+        return self.__deciwatts
 
     
     @property
-    def deca_watts(self) -> float:
+    def decawatts(self) -> float:
         """
         
         """
-        if self.__deca_watts != None:
-            return self.__deca_watts
-        self.__deca_watts = self.__convert_from_base(LuminosityUnits.DecaWatt)
-        return self.__deca_watts
+        if self.__decawatts != None:
+            return self.__decawatts
+        self.__decawatts = self.__convert_from_base(LuminosityUnits.Decawatt)
+        return self.__decawatts
 
     
     @property
-    def kilo_watts(self) -> float:
+    def kilowatts(self) -> float:
         """
         
         """
-        if self.__kilo_watts != None:
-            return self.__kilo_watts
-        self.__kilo_watts = self.__convert_from_base(LuminosityUnits.KiloWatt)
-        return self.__kilo_watts
+        if self.__kilowatts != None:
+            return self.__kilowatts
+        self.__kilowatts = self.__convert_from_base(LuminosityUnits.Kilowatt)
+        return self.__kilowatts
 
     
     @property
-    def mega_watts(self) -> float:
+    def megawatts(self) -> float:
         """
         
         """
-        if self.__mega_watts != None:
-            return self.__mega_watts
-        self.__mega_watts = self.__convert_from_base(LuminosityUnits.MegaWatt)
-        return self.__mega_watts
+        if self.__megawatts != None:
+            return self.__megawatts
+        self.__megawatts = self.__convert_from_base(LuminosityUnits.Megawatt)
+        return self.__megawatts
 
     
     @property
-    def giga_watts(self) -> float:
+    def gigawatts(self) -> float:
         """
         
         """
-        if self.__giga_watts != None:
-            return self.__giga_watts
-        self.__giga_watts = self.__convert_from_base(LuminosityUnits.GigaWatt)
-        return self.__giga_watts
+        if self.__gigawatts != None:
+            return self.__gigawatts
+        self.__gigawatts = self.__convert_from_base(LuminosityUnits.Gigawatt)
+        return self.__gigawatts
 
     
     @property
-    def tera_watts(self) -> float:
+    def terawatts(self) -> float:
         """
         
         """
-        if self.__tera_watts != None:
-            return self.__tera_watts
-        self.__tera_watts = self.__convert_from_base(LuminosityUnits.TeraWatt)
-        return self.__tera_watts
+        if self.__terawatts != None:
+            return self.__terawatts
+        self.__terawatts = self.__convert_from_base(LuminosityUnits.Terawatt)
+        return self.__terawatts
 
     
     @property
-    def peta_watts(self) -> float:
+    def petawatts(self) -> float:
         """
         
         """
-        if self.__peta_watts != None:
-            return self.__peta_watts
-        self.__peta_watts = self.__convert_from_base(LuminosityUnits.PetaWatt)
-        return self.__peta_watts
+        if self.__petawatts != None:
+            return self.__petawatts
+        self.__petawatts = self.__convert_from_base(LuminosityUnits.Petawatt)
+        return self.__petawatts
 
     
     def to_string(self, unit: LuminosityUnits = LuminosityUnits.Watt) -> string:
@@ -598,41 +598,41 @@ class Luminosity:
         if unit == LuminosityUnits.SolarLuminosity:
             return f"""{self.solar_luminosities} L⊙"""
         
-        if unit == LuminosityUnits.FemtoWatt:
-            return f"""{self.femto_watts} """
+        if unit == LuminosityUnits.Femtowatt:
+            return f"""{self.femtowatts} """
         
-        if unit == LuminosityUnits.PicoWatt:
-            return f"""{self.pico_watts} """
+        if unit == LuminosityUnits.Picowatt:
+            return f"""{self.picowatts} """
         
-        if unit == LuminosityUnits.NanoWatt:
-            return f"""{self.nano_watts} """
+        if unit == LuminosityUnits.Nanowatt:
+            return f"""{self.nanowatts} """
         
-        if unit == LuminosityUnits.MicroWatt:
-            return f"""{self.micro_watts} """
+        if unit == LuminosityUnits.Microwatt:
+            return f"""{self.microwatts} """
         
-        if unit == LuminosityUnits.MilliWatt:
-            return f"""{self.milli_watts} """
+        if unit == LuminosityUnits.Milliwatt:
+            return f"""{self.milliwatts} """
         
-        if unit == LuminosityUnits.DeciWatt:
-            return f"""{self.deci_watts} """
+        if unit == LuminosityUnits.Deciwatt:
+            return f"""{self.deciwatts} """
         
-        if unit == LuminosityUnits.DecaWatt:
-            return f"""{self.deca_watts} """
+        if unit == LuminosityUnits.Decawatt:
+            return f"""{self.decawatts} """
         
-        if unit == LuminosityUnits.KiloWatt:
-            return f"""{self.kilo_watts} """
+        if unit == LuminosityUnits.Kilowatt:
+            return f"""{self.kilowatts} """
         
-        if unit == LuminosityUnits.MegaWatt:
-            return f"""{self.mega_watts} """
+        if unit == LuminosityUnits.Megawatt:
+            return f"""{self.megawatts} """
         
-        if unit == LuminosityUnits.GigaWatt:
-            return f"""{self.giga_watts} """
+        if unit == LuminosityUnits.Gigawatt:
+            return f"""{self.gigawatts} """
         
-        if unit == LuminosityUnits.TeraWatt:
-            return f"""{self.tera_watts} """
+        if unit == LuminosityUnits.Terawatt:
+            return f"""{self.terawatts} """
         
-        if unit == LuminosityUnits.PetaWatt:
-            return f"""{self.peta_watts} """
+        if unit == LuminosityUnits.Petawatt:
+            return f"""{self.petawatts} """
         
         return f'{self.__value}'
 
@@ -650,40 +650,40 @@ class Luminosity:
         if unit_abbreviation == LuminosityUnits.SolarLuminosity:
             return """L⊙"""
         
-        if unit_abbreviation == LuminosityUnits.FemtoWatt:
+        if unit_abbreviation == LuminosityUnits.Femtowatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.PicoWatt:
+        if unit_abbreviation == LuminosityUnits.Picowatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.NanoWatt:
+        if unit_abbreviation == LuminosityUnits.Nanowatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.MicroWatt:
+        if unit_abbreviation == LuminosityUnits.Microwatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.MilliWatt:
+        if unit_abbreviation == LuminosityUnits.Milliwatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.DeciWatt:
+        if unit_abbreviation == LuminosityUnits.Deciwatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.DecaWatt:
+        if unit_abbreviation == LuminosityUnits.Decawatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.KiloWatt:
+        if unit_abbreviation == LuminosityUnits.Kilowatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.MegaWatt:
+        if unit_abbreviation == LuminosityUnits.Megawatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.GigaWatt:
+        if unit_abbreviation == LuminosityUnits.Gigawatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.TeraWatt:
+        if unit_abbreviation == LuminosityUnits.Terawatt:
             return """"""
         
-        if unit_abbreviation == LuminosityUnits.PetaWatt:
+        if unit_abbreviation == LuminosityUnits.Petawatt:
             return """"""
         
 

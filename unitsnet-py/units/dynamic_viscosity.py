@@ -43,17 +43,17 @@ class DynamicViscosityUnits(Enum):
             
         """
         
-        MilliPascalSecond = 'milli_pascal_second'
+        MillipascalSecond = 'millipascal_second'
         """
             
         """
         
-        MicroPascalSecond = 'micro_pascal_second'
+        MicropascalSecond = 'micropascal_second'
         """
             
         """
         
-        CentiPoise = 'centi_poise'
+        Centipoise = 'centipoise'
         """
             
         """
@@ -86,11 +86,11 @@ class DynamicViscosity:
         
         self.__pounds_per_foot_second = None
         
-        self.__milli_pascal_seconds = None
+        self.__millipascal_seconds = None
         
-        self.__micro_pascal_seconds = None
+        self.__micropascal_seconds = None
         
-        self.__centi_poise = None
+        self.__centipoise = None
         
 
     def __convert_from_base(self, from_unit: DynamicViscosityUnits) -> float:
@@ -117,13 +117,13 @@ class DynamicViscosity:
         if from_unit == DynamicViscosityUnits.PoundPerFootSecond:
             return (value / 1.4881639)
         
-        if from_unit == DynamicViscosityUnits.MilliPascalSecond:
+        if from_unit == DynamicViscosityUnits.MillipascalSecond:
             return ((value) / 0.001)
         
-        if from_unit == DynamicViscosityUnits.MicroPascalSecond:
+        if from_unit == DynamicViscosityUnits.MicropascalSecond:
             return ((value) / 1e-06)
         
-        if from_unit == DynamicViscosityUnits.CentiPoise:
+        if from_unit == DynamicViscosityUnits.Centipoise:
             return ((value * 10) / 0.01)
         
         return None
@@ -152,13 +152,13 @@ class DynamicViscosity:
         if to_unit == DynamicViscosityUnits.PoundPerFootSecond:
             return (value * 1.4881639)
         
-        if to_unit == DynamicViscosityUnits.MilliPascalSecond:
+        if to_unit == DynamicViscosityUnits.MillipascalSecond:
             return ((value) * 0.001)
         
-        if to_unit == DynamicViscosityUnits.MicroPascalSecond:
+        if to_unit == DynamicViscosityUnits.MicropascalSecond:
             return ((value) * 1e-06)
         
-        if to_unit == DynamicViscosityUnits.CentiPoise:
+        if to_unit == DynamicViscosityUnits.Centipoise:
             return ((value / 10) * 0.01)
         
         return None
@@ -275,48 +275,48 @@ class DynamicViscosity:
 
     
     @staticmethod
-    def from_milli_pascal_seconds(milli_pascal_seconds: float):
+    def from_millipascal_seconds(millipascal_seconds: float):
         """
-        Create a new instance of DynamicViscosity from a value in milli_pascal_seconds.
+        Create a new instance of DynamicViscosity from a value in millipascal_seconds.
 
         
 
-        :param meters: The DynamicViscosity value in milli_pascal_seconds.
-        :type milli_pascal_seconds: float
+        :param meters: The DynamicViscosity value in millipascal_seconds.
+        :type millipascal_seconds: float
         :return: A new instance of DynamicViscosity.
         :rtype: DynamicViscosity
         """
-        return DynamicViscosity(milli_pascal_seconds, DynamicViscosityUnits.MilliPascalSecond)
+        return DynamicViscosity(millipascal_seconds, DynamicViscosityUnits.MillipascalSecond)
 
     
     @staticmethod
-    def from_micro_pascal_seconds(micro_pascal_seconds: float):
+    def from_micropascal_seconds(micropascal_seconds: float):
         """
-        Create a new instance of DynamicViscosity from a value in micro_pascal_seconds.
+        Create a new instance of DynamicViscosity from a value in micropascal_seconds.
 
         
 
-        :param meters: The DynamicViscosity value in micro_pascal_seconds.
-        :type micro_pascal_seconds: float
+        :param meters: The DynamicViscosity value in micropascal_seconds.
+        :type micropascal_seconds: float
         :return: A new instance of DynamicViscosity.
         :rtype: DynamicViscosity
         """
-        return DynamicViscosity(micro_pascal_seconds, DynamicViscosityUnits.MicroPascalSecond)
+        return DynamicViscosity(micropascal_seconds, DynamicViscosityUnits.MicropascalSecond)
 
     
     @staticmethod
-    def from_centi_poise(centi_poise: float):
+    def from_centipoise(centipoise: float):
         """
-        Create a new instance of DynamicViscosity from a value in centi_poise.
+        Create a new instance of DynamicViscosity from a value in centipoise.
 
         
 
-        :param meters: The DynamicViscosity value in centi_poise.
-        :type centi_poise: float
+        :param meters: The DynamicViscosity value in centipoise.
+        :type centipoise: float
         :return: A new instance of DynamicViscosity.
         :rtype: DynamicViscosity
         """
-        return DynamicViscosity(centi_poise, DynamicViscosityUnits.CentiPoise)
+        return DynamicViscosity(centipoise, DynamicViscosityUnits.Centipoise)
 
     
     @property
@@ -397,36 +397,36 @@ class DynamicViscosity:
 
     
     @property
-    def milli_pascal_seconds(self) -> float:
+    def millipascal_seconds(self) -> float:
         """
         
         """
-        if self.__milli_pascal_seconds != None:
-            return self.__milli_pascal_seconds
-        self.__milli_pascal_seconds = self.__convert_from_base(DynamicViscosityUnits.MilliPascalSecond)
-        return self.__milli_pascal_seconds
+        if self.__millipascal_seconds != None:
+            return self.__millipascal_seconds
+        self.__millipascal_seconds = self.__convert_from_base(DynamicViscosityUnits.MillipascalSecond)
+        return self.__millipascal_seconds
 
     
     @property
-    def micro_pascal_seconds(self) -> float:
+    def micropascal_seconds(self) -> float:
         """
         
         """
-        if self.__micro_pascal_seconds != None:
-            return self.__micro_pascal_seconds
-        self.__micro_pascal_seconds = self.__convert_from_base(DynamicViscosityUnits.MicroPascalSecond)
-        return self.__micro_pascal_seconds
+        if self.__micropascal_seconds != None:
+            return self.__micropascal_seconds
+        self.__micropascal_seconds = self.__convert_from_base(DynamicViscosityUnits.MicropascalSecond)
+        return self.__micropascal_seconds
 
     
     @property
-    def centi_poise(self) -> float:
+    def centipoise(self) -> float:
         """
         
         """
-        if self.__centi_poise != None:
-            return self.__centi_poise
-        self.__centi_poise = self.__convert_from_base(DynamicViscosityUnits.CentiPoise)
-        return self.__centi_poise
+        if self.__centipoise != None:
+            return self.__centipoise
+        self.__centipoise = self.__convert_from_base(DynamicViscosityUnits.Centipoise)
+        return self.__centipoise
 
     
     def to_string(self, unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> string:
@@ -457,14 +457,14 @@ class DynamicViscosity:
         if unit == DynamicViscosityUnits.PoundPerFootSecond:
             return f"""{self.pounds_per_foot_second} lb/ft·s"""
         
-        if unit == DynamicViscosityUnits.MilliPascalSecond:
-            return f"""{self.milli_pascal_seconds} """
+        if unit == DynamicViscosityUnits.MillipascalSecond:
+            return f"""{self.millipascal_seconds} """
         
-        if unit == DynamicViscosityUnits.MicroPascalSecond:
-            return f"""{self.micro_pascal_seconds} """
+        if unit == DynamicViscosityUnits.MicropascalSecond:
+            return f"""{self.micropascal_seconds} """
         
-        if unit == DynamicViscosityUnits.CentiPoise:
-            return f"""{self.centi_poise} """
+        if unit == DynamicViscosityUnits.Centipoise:
+            return f"""{self.centipoise} """
         
         return f'{self.__value}'
 
@@ -497,13 +497,13 @@ class DynamicViscosity:
         if unit_abbreviation == DynamicViscosityUnits.PoundPerFootSecond:
             return """lb/ft·s"""
         
-        if unit_abbreviation == DynamicViscosityUnits.MilliPascalSecond:
+        if unit_abbreviation == DynamicViscosityUnits.MillipascalSecond:
             return """"""
         
-        if unit_abbreviation == DynamicViscosityUnits.MicroPascalSecond:
+        if unit_abbreviation == DynamicViscosityUnits.MicropascalSecond:
             return """"""
         
-        if unit_abbreviation == DynamicViscosityUnits.CentiPoise:
+        if unit_abbreviation == DynamicViscosityUnits.Centipoise:
             return """"""
         
 

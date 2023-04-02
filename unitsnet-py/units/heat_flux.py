@@ -63,37 +63,37 @@ class HeatFluxUnits(Enum):
             
         """
         
-        NanoWattPerSquareMeter = 'nano_watt_per_square_meter'
+        NanowattPerSquareMeter = 'nanowatt_per_square_meter'
         """
             
         """
         
-        MicroWattPerSquareMeter = 'micro_watt_per_square_meter'
+        MicrowattPerSquareMeter = 'microwatt_per_square_meter'
         """
             
         """
         
-        MilliWattPerSquareMeter = 'milli_watt_per_square_meter'
+        MilliwattPerSquareMeter = 'milliwatt_per_square_meter'
         """
             
         """
         
-        CentiWattPerSquareMeter = 'centi_watt_per_square_meter'
+        CentiwattPerSquareMeter = 'centiwatt_per_square_meter'
         """
             
         """
         
-        DeciWattPerSquareMeter = 'deci_watt_per_square_meter'
+        DeciwattPerSquareMeter = 'deciwatt_per_square_meter'
         """
             
         """
         
-        KiloWattPerSquareMeter = 'kilo_watt_per_square_meter'
+        KilowattPerSquareMeter = 'kilowatt_per_square_meter'
         """
             
         """
         
-        KiloCaloriePerSecondSquareCentimeter = 'kilo_calorie_per_second_square_centimeter'
+        KilocaloriePerSecondSquareCentimeter = 'kilocalorie_per_second_square_centimeter'
         """
             
         """
@@ -134,19 +134,19 @@ class HeatFlux:
         
         self.__pounds_per_second_cubed = None
         
-        self.__nano_watts_per_square_meter = None
+        self.__nanowatts_per_square_meter = None
         
-        self.__micro_watts_per_square_meter = None
+        self.__microwatts_per_square_meter = None
         
-        self.__milli_watts_per_square_meter = None
+        self.__milliwatts_per_square_meter = None
         
-        self.__centi_watts_per_square_meter = None
+        self.__centiwatts_per_square_meter = None
         
-        self.__deci_watts_per_square_meter = None
+        self.__deciwatts_per_square_meter = None
         
-        self.__kilo_watts_per_square_meter = None
+        self.__kilowatts_per_square_meter = None
         
-        self.__kilo_calories_per_second_square_centimeter = None
+        self.__kilocalories_per_second_square_centimeter = None
         
 
     def __convert_from_base(self, from_unit: HeatFluxUnits) -> float:
@@ -185,25 +185,25 @@ class HeatFlux:
         if from_unit == HeatFluxUnits.PoundPerSecondCubed:
             return (value / 4.5359237e-1)
         
-        if from_unit == HeatFluxUnits.NanoWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.NanowattPerSquareMeter:
             return ((value) / 1e-09)
         
-        if from_unit == HeatFluxUnits.MicroWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.MicrowattPerSquareMeter:
             return ((value) / 1e-06)
         
-        if from_unit == HeatFluxUnits.MilliWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.MilliwattPerSquareMeter:
             return ((value) / 0.001)
         
-        if from_unit == HeatFluxUnits.CentiWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.CentiwattPerSquareMeter:
             return ((value) / 0.01)
         
-        if from_unit == HeatFluxUnits.DeciWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.DeciwattPerSquareMeter:
             return ((value) / 0.1)
         
-        if from_unit == HeatFluxUnits.KiloWattPerSquareMeter:
+        if from_unit == HeatFluxUnits.KilowattPerSquareMeter:
             return ((value) / 1000.0)
         
-        if from_unit == HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter:
+        if from_unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
             return ((value / 4.1868e4) / 1000.0)
         
         return None
@@ -244,25 +244,25 @@ class HeatFlux:
         if to_unit == HeatFluxUnits.PoundPerSecondCubed:
             return (value * 4.5359237e-1)
         
-        if to_unit == HeatFluxUnits.NanoWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.NanowattPerSquareMeter:
             return ((value) * 1e-09)
         
-        if to_unit == HeatFluxUnits.MicroWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.MicrowattPerSquareMeter:
             return ((value) * 1e-06)
         
-        if to_unit == HeatFluxUnits.MilliWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.MilliwattPerSquareMeter:
             return ((value) * 0.001)
         
-        if to_unit == HeatFluxUnits.CentiWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.CentiwattPerSquareMeter:
             return ((value) * 0.01)
         
-        if to_unit == HeatFluxUnits.DeciWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.DeciwattPerSquareMeter:
             return ((value) * 0.1)
         
-        if to_unit == HeatFluxUnits.KiloWattPerSquareMeter:
+        if to_unit == HeatFluxUnits.KilowattPerSquareMeter:
             return ((value) * 1000.0)
         
-        if to_unit == HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter:
+        if to_unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
             return ((value * 4.1868e4) * 1000.0)
         
         return None
@@ -439,108 +439,108 @@ class HeatFlux:
 
     
     @staticmethod
-    def from_nano_watts_per_square_meter(nano_watts_per_square_meter: float):
+    def from_nanowatts_per_square_meter(nanowatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in nano_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in nanowatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in nano_watts_per_square_meter.
-        :type nano_watts_per_square_meter: float
+        :param meters: The HeatFlux value in nanowatts_per_square_meter.
+        :type nanowatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(nano_watts_per_square_meter, HeatFluxUnits.NanoWattPerSquareMeter)
+        return HeatFlux(nanowatts_per_square_meter, HeatFluxUnits.NanowattPerSquareMeter)
 
     
     @staticmethod
-    def from_micro_watts_per_square_meter(micro_watts_per_square_meter: float):
+    def from_microwatts_per_square_meter(microwatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in micro_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in microwatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in micro_watts_per_square_meter.
-        :type micro_watts_per_square_meter: float
+        :param meters: The HeatFlux value in microwatts_per_square_meter.
+        :type microwatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(micro_watts_per_square_meter, HeatFluxUnits.MicroWattPerSquareMeter)
+        return HeatFlux(microwatts_per_square_meter, HeatFluxUnits.MicrowattPerSquareMeter)
 
     
     @staticmethod
-    def from_milli_watts_per_square_meter(milli_watts_per_square_meter: float):
+    def from_milliwatts_per_square_meter(milliwatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in milli_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in milliwatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in milli_watts_per_square_meter.
-        :type milli_watts_per_square_meter: float
+        :param meters: The HeatFlux value in milliwatts_per_square_meter.
+        :type milliwatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(milli_watts_per_square_meter, HeatFluxUnits.MilliWattPerSquareMeter)
+        return HeatFlux(milliwatts_per_square_meter, HeatFluxUnits.MilliwattPerSquareMeter)
 
     
     @staticmethod
-    def from_centi_watts_per_square_meter(centi_watts_per_square_meter: float):
+    def from_centiwatts_per_square_meter(centiwatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in centi_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in centiwatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in centi_watts_per_square_meter.
-        :type centi_watts_per_square_meter: float
+        :param meters: The HeatFlux value in centiwatts_per_square_meter.
+        :type centiwatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(centi_watts_per_square_meter, HeatFluxUnits.CentiWattPerSquareMeter)
+        return HeatFlux(centiwatts_per_square_meter, HeatFluxUnits.CentiwattPerSquareMeter)
 
     
     @staticmethod
-    def from_deci_watts_per_square_meter(deci_watts_per_square_meter: float):
+    def from_deciwatts_per_square_meter(deciwatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in deci_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in deciwatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in deci_watts_per_square_meter.
-        :type deci_watts_per_square_meter: float
+        :param meters: The HeatFlux value in deciwatts_per_square_meter.
+        :type deciwatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(deci_watts_per_square_meter, HeatFluxUnits.DeciWattPerSquareMeter)
+        return HeatFlux(deciwatts_per_square_meter, HeatFluxUnits.DeciwattPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_square_meter(kilo_watts_per_square_meter: float):
+    def from_kilowatts_per_square_meter(kilowatts_per_square_meter: float):
         """
-        Create a new instance of HeatFlux from a value in kilo_watts_per_square_meter.
+        Create a new instance of HeatFlux from a value in kilowatts_per_square_meter.
 
         
 
-        :param meters: The HeatFlux value in kilo_watts_per_square_meter.
-        :type kilo_watts_per_square_meter: float
+        :param meters: The HeatFlux value in kilowatts_per_square_meter.
+        :type kilowatts_per_square_meter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(kilo_watts_per_square_meter, HeatFluxUnits.KiloWattPerSquareMeter)
+        return HeatFlux(kilowatts_per_square_meter, HeatFluxUnits.KilowattPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_calories_per_second_square_centimeter(kilo_calories_per_second_square_centimeter: float):
+    def from_kilocalories_per_second_square_centimeter(kilocalories_per_second_square_centimeter: float):
         """
-        Create a new instance of HeatFlux from a value in kilo_calories_per_second_square_centimeter.
+        Create a new instance of HeatFlux from a value in kilocalories_per_second_square_centimeter.
 
         
 
-        :param meters: The HeatFlux value in kilo_calories_per_second_square_centimeter.
-        :type kilo_calories_per_second_square_centimeter: float
+        :param meters: The HeatFlux value in kilocalories_per_second_square_centimeter.
+        :type kilocalories_per_second_square_centimeter: float
         :return: A new instance of HeatFlux.
         :rtype: HeatFlux
         """
-        return HeatFlux(kilo_calories_per_second_square_centimeter, HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter)
+        return HeatFlux(kilocalories_per_second_square_centimeter, HeatFluxUnits.KilocaloriePerSecondSquareCentimeter)
 
     
     @property
@@ -665,80 +665,80 @@ class HeatFlux:
 
     
     @property
-    def nano_watts_per_square_meter(self) -> float:
+    def nanowatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_square_meter != None:
-            return self.__nano_watts_per_square_meter
-        self.__nano_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.NanoWattPerSquareMeter)
-        return self.__nano_watts_per_square_meter
+        if self.__nanowatts_per_square_meter != None:
+            return self.__nanowatts_per_square_meter
+        self.__nanowatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.NanowattPerSquareMeter)
+        return self.__nanowatts_per_square_meter
 
     
     @property
-    def micro_watts_per_square_meter(self) -> float:
+    def microwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_square_meter != None:
-            return self.__micro_watts_per_square_meter
-        self.__micro_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.MicroWattPerSquareMeter)
-        return self.__micro_watts_per_square_meter
+        if self.__microwatts_per_square_meter != None:
+            return self.__microwatts_per_square_meter
+        self.__microwatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.MicrowattPerSquareMeter)
+        return self.__microwatts_per_square_meter
 
     
     @property
-    def milli_watts_per_square_meter(self) -> float:
+    def milliwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_square_meter != None:
-            return self.__milli_watts_per_square_meter
-        self.__milli_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.MilliWattPerSquareMeter)
-        return self.__milli_watts_per_square_meter
+        if self.__milliwatts_per_square_meter != None:
+            return self.__milliwatts_per_square_meter
+        self.__milliwatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.MilliwattPerSquareMeter)
+        return self.__milliwatts_per_square_meter
 
     
     @property
-    def centi_watts_per_square_meter(self) -> float:
+    def centiwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__centi_watts_per_square_meter != None:
-            return self.__centi_watts_per_square_meter
-        self.__centi_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.CentiWattPerSquareMeter)
-        return self.__centi_watts_per_square_meter
+        if self.__centiwatts_per_square_meter != None:
+            return self.__centiwatts_per_square_meter
+        self.__centiwatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.CentiwattPerSquareMeter)
+        return self.__centiwatts_per_square_meter
 
     
     @property
-    def deci_watts_per_square_meter(self) -> float:
+    def deciwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__deci_watts_per_square_meter != None:
-            return self.__deci_watts_per_square_meter
-        self.__deci_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.DeciWattPerSquareMeter)
-        return self.__deci_watts_per_square_meter
+        if self.__deciwatts_per_square_meter != None:
+            return self.__deciwatts_per_square_meter
+        self.__deciwatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.DeciwattPerSquareMeter)
+        return self.__deciwatts_per_square_meter
 
     
     @property
-    def kilo_watts_per_square_meter(self) -> float:
+    def kilowatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_square_meter != None:
-            return self.__kilo_watts_per_square_meter
-        self.__kilo_watts_per_square_meter = self.__convert_from_base(HeatFluxUnits.KiloWattPerSquareMeter)
-        return self.__kilo_watts_per_square_meter
+        if self.__kilowatts_per_square_meter != None:
+            return self.__kilowatts_per_square_meter
+        self.__kilowatts_per_square_meter = self.__convert_from_base(HeatFluxUnits.KilowattPerSquareMeter)
+        return self.__kilowatts_per_square_meter
 
     
     @property
-    def kilo_calories_per_second_square_centimeter(self) -> float:
+    def kilocalories_per_second_square_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_second_square_centimeter != None:
-            return self.__kilo_calories_per_second_square_centimeter
-        self.__kilo_calories_per_second_square_centimeter = self.__convert_from_base(HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter)
-        return self.__kilo_calories_per_second_square_centimeter
+        if self.__kilocalories_per_second_square_centimeter != None:
+            return self.__kilocalories_per_second_square_centimeter
+        self.__kilocalories_per_second_square_centimeter = self.__convert_from_base(HeatFluxUnits.KilocaloriePerSecondSquareCentimeter)
+        return self.__kilocalories_per_second_square_centimeter
 
     
     def to_string(self, unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> string:
@@ -781,26 +781,26 @@ class HeatFlux:
         if unit == HeatFluxUnits.PoundPerSecondCubed:
             return f"""{self.pounds_per_second_cubed} lb/s³"""
         
-        if unit == HeatFluxUnits.NanoWattPerSquareMeter:
-            return f"""{self.nano_watts_per_square_meter} """
+        if unit == HeatFluxUnits.NanowattPerSquareMeter:
+            return f"""{self.nanowatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.MicroWattPerSquareMeter:
-            return f"""{self.micro_watts_per_square_meter} """
+        if unit == HeatFluxUnits.MicrowattPerSquareMeter:
+            return f"""{self.microwatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.MilliWattPerSquareMeter:
-            return f"""{self.milli_watts_per_square_meter} """
+        if unit == HeatFluxUnits.MilliwattPerSquareMeter:
+            return f"""{self.milliwatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.CentiWattPerSquareMeter:
-            return f"""{self.centi_watts_per_square_meter} """
+        if unit == HeatFluxUnits.CentiwattPerSquareMeter:
+            return f"""{self.centiwatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.DeciWattPerSquareMeter:
-            return f"""{self.deci_watts_per_square_meter} """
+        if unit == HeatFluxUnits.DeciwattPerSquareMeter:
+            return f"""{self.deciwatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.KiloWattPerSquareMeter:
-            return f"""{self.kilo_watts_per_square_meter} """
+        if unit == HeatFluxUnits.KilowattPerSquareMeter:
+            return f"""{self.kilowatts_per_square_meter} """
         
-        if unit == HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter:
-            return f"""{self.kilo_calories_per_second_square_centimeter} """
+        if unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
+            return f"""{self.kilocalories_per_second_square_centimeter} """
         
         return f'{self.__value}'
 
@@ -845,25 +845,25 @@ class HeatFlux:
         if unit_abbreviation == HeatFluxUnits.PoundPerSecondCubed:
             return """lb/s³"""
         
-        if unit_abbreviation == HeatFluxUnits.NanoWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.NanowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.MicroWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.MicrowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.MilliWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.MilliwattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.CentiWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.CentiwattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.DeciWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.DeciwattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.KiloWattPerSquareMeter:
+        if unit_abbreviation == HeatFluxUnits.KilowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == HeatFluxUnits.KiloCaloriePerSecondSquareCentimeter:
+        if unit_abbreviation == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
             return """"""
         
 

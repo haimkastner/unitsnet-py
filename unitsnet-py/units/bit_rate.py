@@ -18,62 +18,62 @@ class BitRateUnits(Enum):
             
         """
         
-        KiloBitPerSecond = 'kilo_bit_per_second'
+        KilobitPerSecond = 'kilobit_per_second'
         """
             
         """
         
-        MegaBitPerSecond = 'mega_bit_per_second'
+        MegabitPerSecond = 'megabit_per_second'
         """
             
         """
         
-        GigaBitPerSecond = 'giga_bit_per_second'
+        GigabitPerSecond = 'gigabit_per_second'
         """
             
         """
         
-        TeraBitPerSecond = 'tera_bit_per_second'
+        TerabitPerSecond = 'terabit_per_second'
         """
             
         """
         
-        PetaBitPerSecond = 'peta_bit_per_second'
+        PetabitPerSecond = 'petabit_per_second'
         """
             
         """
         
-        ExaBitPerSecond = 'exa_bit_per_second'
+        ExabitPerSecond = 'exabit_per_second'
         """
             
         """
         
-        KiloBytePerSecond = 'kilo_byte_per_second'
+        KilobytePerSecond = 'kilobyte_per_second'
         """
             
         """
         
-        MegaBytePerSecond = 'mega_byte_per_second'
+        MegabytePerSecond = 'megabyte_per_second'
         """
             
         """
         
-        GigaBytePerSecond = 'giga_byte_per_second'
+        GigabytePerSecond = 'gigabyte_per_second'
         """
             
         """
         
-        TeraBytePerSecond = 'tera_byte_per_second'
+        TerabytePerSecond = 'terabyte_per_second'
         """
             
         """
         
-        PetaBytePerSecond = 'peta_byte_per_second'
+        PetabytePerSecond = 'petabyte_per_second'
         """
             
         """
         
-        ExaBytePerSecond = 'exa_byte_per_second'
+        ExabytePerSecond = 'exabyte_per_second'
         """
             
         """
@@ -96,29 +96,29 @@ class BitRate:
         
         self.__bytes_per_second = None
         
-        self.__kilo_bits_per_second = None
+        self.__kilobits_per_second = None
         
-        self.__mega_bits_per_second = None
+        self.__megabits_per_second = None
         
-        self.__giga_bits_per_second = None
+        self.__gigabits_per_second = None
         
-        self.__tera_bits_per_second = None
+        self.__terabits_per_second = None
         
-        self.__peta_bits_per_second = None
+        self.__petabits_per_second = None
         
-        self.__exa_bits_per_second = None
+        self.__exabits_per_second = None
         
-        self.__kilo_bytes_per_second = None
+        self.__kilobytes_per_second = None
         
-        self.__mega_bytes_per_second = None
+        self.__megabytes_per_second = None
         
-        self.__giga_bytes_per_second = None
+        self.__gigabytes_per_second = None
         
-        self.__tera_bytes_per_second = None
+        self.__terabytes_per_second = None
         
-        self.__peta_bytes_per_second = None
+        self.__petabytes_per_second = None
         
-        self.__exa_bytes_per_second = None
+        self.__exabytes_per_second = None
         
 
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:
@@ -130,40 +130,40 @@ class BitRate:
         if from_unit == BitRateUnits.BytePerSecond:
             return (value / 8)
         
-        if from_unit == BitRateUnits.KiloBitPerSecond:
+        if from_unit == BitRateUnits.KilobitPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == BitRateUnits.MegaBitPerSecond:
+        if from_unit == BitRateUnits.MegabitPerSecond:
             return ((value) / 1000000.0)
         
-        if from_unit == BitRateUnits.GigaBitPerSecond:
+        if from_unit == BitRateUnits.GigabitPerSecond:
             return ((value) / 1000000000.0)
         
-        if from_unit == BitRateUnits.TeraBitPerSecond:
+        if from_unit == BitRateUnits.TerabitPerSecond:
             return ((value) / 1000000000000.0)
         
-        if from_unit == BitRateUnits.PetaBitPerSecond:
+        if from_unit == BitRateUnits.PetabitPerSecond:
             return ((value) / 1000000000000000.0)
         
-        if from_unit == BitRateUnits.ExaBitPerSecond:
+        if from_unit == BitRateUnits.ExabitPerSecond:
             return ((value) / 1e+18)
         
-        if from_unit == BitRateUnits.KiloBytePerSecond:
+        if from_unit == BitRateUnits.KilobytePerSecond:
             return ((value / 8) / 1000.0)
         
-        if from_unit == BitRateUnits.MegaBytePerSecond:
+        if from_unit == BitRateUnits.MegabytePerSecond:
             return ((value / 8) / 1000000.0)
         
-        if from_unit == BitRateUnits.GigaBytePerSecond:
+        if from_unit == BitRateUnits.GigabytePerSecond:
             return ((value / 8) / 1000000000.0)
         
-        if from_unit == BitRateUnits.TeraBytePerSecond:
+        if from_unit == BitRateUnits.TerabytePerSecond:
             return ((value / 8) / 1000000000000.0)
         
-        if from_unit == BitRateUnits.PetaBytePerSecond:
+        if from_unit == BitRateUnits.PetabytePerSecond:
             return ((value / 8) / 1000000000000000.0)
         
-        if from_unit == BitRateUnits.ExaBytePerSecond:
+        if from_unit == BitRateUnits.ExabytePerSecond:
             return ((value / 8) / 1e+18)
         
         return None
@@ -177,40 +177,40 @@ class BitRate:
         if to_unit == BitRateUnits.BytePerSecond:
             return (value * 8)
         
-        if to_unit == BitRateUnits.KiloBitPerSecond:
+        if to_unit == BitRateUnits.KilobitPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == BitRateUnits.MegaBitPerSecond:
+        if to_unit == BitRateUnits.MegabitPerSecond:
             return ((value) * 1000000.0)
         
-        if to_unit == BitRateUnits.GigaBitPerSecond:
+        if to_unit == BitRateUnits.GigabitPerSecond:
             return ((value) * 1000000000.0)
         
-        if to_unit == BitRateUnits.TeraBitPerSecond:
+        if to_unit == BitRateUnits.TerabitPerSecond:
             return ((value) * 1000000000000.0)
         
-        if to_unit == BitRateUnits.PetaBitPerSecond:
+        if to_unit == BitRateUnits.PetabitPerSecond:
             return ((value) * 1000000000000000.0)
         
-        if to_unit == BitRateUnits.ExaBitPerSecond:
+        if to_unit == BitRateUnits.ExabitPerSecond:
             return ((value) * 1e+18)
         
-        if to_unit == BitRateUnits.KiloBytePerSecond:
+        if to_unit == BitRateUnits.KilobytePerSecond:
             return ((value * 8) * 1000.0)
         
-        if to_unit == BitRateUnits.MegaBytePerSecond:
+        if to_unit == BitRateUnits.MegabytePerSecond:
             return ((value * 8) * 1000000.0)
         
-        if to_unit == BitRateUnits.GigaBytePerSecond:
+        if to_unit == BitRateUnits.GigabytePerSecond:
             return ((value * 8) * 1000000000.0)
         
-        if to_unit == BitRateUnits.TeraBytePerSecond:
+        if to_unit == BitRateUnits.TerabytePerSecond:
             return ((value * 8) * 1000000000000.0)
         
-        if to_unit == BitRateUnits.PetaBytePerSecond:
+        if to_unit == BitRateUnits.PetabytePerSecond:
             return ((value * 8) * 1000000000000000.0)
         
-        if to_unit == BitRateUnits.ExaBytePerSecond:
+        if to_unit == BitRateUnits.ExabytePerSecond:
             return ((value * 8) * 1e+18)
         
         return None
@@ -252,183 +252,183 @@ class BitRate:
 
     
     @staticmethod
-    def from_kilo_bits_per_second(kilo_bits_per_second: float):
+    def from_kilobits_per_second(kilobits_per_second: float):
         """
-        Create a new instance of BitRate from a value in kilo_bits_per_second.
+        Create a new instance of BitRate from a value in kilobits_per_second.
 
         
 
-        :param meters: The BitRate value in kilo_bits_per_second.
-        :type kilo_bits_per_second: float
+        :param meters: The BitRate value in kilobits_per_second.
+        :type kilobits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(kilo_bits_per_second, BitRateUnits.KiloBitPerSecond)
+        return BitRate(kilobits_per_second, BitRateUnits.KilobitPerSecond)
 
     
     @staticmethod
-    def from_mega_bits_per_second(mega_bits_per_second: float):
+    def from_megabits_per_second(megabits_per_second: float):
         """
-        Create a new instance of BitRate from a value in mega_bits_per_second.
+        Create a new instance of BitRate from a value in megabits_per_second.
 
         
 
-        :param meters: The BitRate value in mega_bits_per_second.
-        :type mega_bits_per_second: float
+        :param meters: The BitRate value in megabits_per_second.
+        :type megabits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(mega_bits_per_second, BitRateUnits.MegaBitPerSecond)
+        return BitRate(megabits_per_second, BitRateUnits.MegabitPerSecond)
 
     
     @staticmethod
-    def from_giga_bits_per_second(giga_bits_per_second: float):
+    def from_gigabits_per_second(gigabits_per_second: float):
         """
-        Create a new instance of BitRate from a value in giga_bits_per_second.
+        Create a new instance of BitRate from a value in gigabits_per_second.
 
         
 
-        :param meters: The BitRate value in giga_bits_per_second.
-        :type giga_bits_per_second: float
+        :param meters: The BitRate value in gigabits_per_second.
+        :type gigabits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(giga_bits_per_second, BitRateUnits.GigaBitPerSecond)
+        return BitRate(gigabits_per_second, BitRateUnits.GigabitPerSecond)
 
     
     @staticmethod
-    def from_tera_bits_per_second(tera_bits_per_second: float):
+    def from_terabits_per_second(terabits_per_second: float):
         """
-        Create a new instance of BitRate from a value in tera_bits_per_second.
+        Create a new instance of BitRate from a value in terabits_per_second.
 
         
 
-        :param meters: The BitRate value in tera_bits_per_second.
-        :type tera_bits_per_second: float
+        :param meters: The BitRate value in terabits_per_second.
+        :type terabits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(tera_bits_per_second, BitRateUnits.TeraBitPerSecond)
+        return BitRate(terabits_per_second, BitRateUnits.TerabitPerSecond)
 
     
     @staticmethod
-    def from_peta_bits_per_second(peta_bits_per_second: float):
+    def from_petabits_per_second(petabits_per_second: float):
         """
-        Create a new instance of BitRate from a value in peta_bits_per_second.
+        Create a new instance of BitRate from a value in petabits_per_second.
 
         
 
-        :param meters: The BitRate value in peta_bits_per_second.
-        :type peta_bits_per_second: float
+        :param meters: The BitRate value in petabits_per_second.
+        :type petabits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(peta_bits_per_second, BitRateUnits.PetaBitPerSecond)
+        return BitRate(petabits_per_second, BitRateUnits.PetabitPerSecond)
 
     
     @staticmethod
-    def from_exa_bits_per_second(exa_bits_per_second: float):
+    def from_exabits_per_second(exabits_per_second: float):
         """
-        Create a new instance of BitRate from a value in exa_bits_per_second.
+        Create a new instance of BitRate from a value in exabits_per_second.
 
         
 
-        :param meters: The BitRate value in exa_bits_per_second.
-        :type exa_bits_per_second: float
+        :param meters: The BitRate value in exabits_per_second.
+        :type exabits_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(exa_bits_per_second, BitRateUnits.ExaBitPerSecond)
+        return BitRate(exabits_per_second, BitRateUnits.ExabitPerSecond)
 
     
     @staticmethod
-    def from_kilo_bytes_per_second(kilo_bytes_per_second: float):
+    def from_kilobytes_per_second(kilobytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in kilo_bytes_per_second.
+        Create a new instance of BitRate from a value in kilobytes_per_second.
 
         
 
-        :param meters: The BitRate value in kilo_bytes_per_second.
-        :type kilo_bytes_per_second: float
+        :param meters: The BitRate value in kilobytes_per_second.
+        :type kilobytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(kilo_bytes_per_second, BitRateUnits.KiloBytePerSecond)
+        return BitRate(kilobytes_per_second, BitRateUnits.KilobytePerSecond)
 
     
     @staticmethod
-    def from_mega_bytes_per_second(mega_bytes_per_second: float):
+    def from_megabytes_per_second(megabytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in mega_bytes_per_second.
+        Create a new instance of BitRate from a value in megabytes_per_second.
 
         
 
-        :param meters: The BitRate value in mega_bytes_per_second.
-        :type mega_bytes_per_second: float
+        :param meters: The BitRate value in megabytes_per_second.
+        :type megabytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(mega_bytes_per_second, BitRateUnits.MegaBytePerSecond)
+        return BitRate(megabytes_per_second, BitRateUnits.MegabytePerSecond)
 
     
     @staticmethod
-    def from_giga_bytes_per_second(giga_bytes_per_second: float):
+    def from_gigabytes_per_second(gigabytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in giga_bytes_per_second.
+        Create a new instance of BitRate from a value in gigabytes_per_second.
 
         
 
-        :param meters: The BitRate value in giga_bytes_per_second.
-        :type giga_bytes_per_second: float
+        :param meters: The BitRate value in gigabytes_per_second.
+        :type gigabytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(giga_bytes_per_second, BitRateUnits.GigaBytePerSecond)
+        return BitRate(gigabytes_per_second, BitRateUnits.GigabytePerSecond)
 
     
     @staticmethod
-    def from_tera_bytes_per_second(tera_bytes_per_second: float):
+    def from_terabytes_per_second(terabytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in tera_bytes_per_second.
+        Create a new instance of BitRate from a value in terabytes_per_second.
 
         
 
-        :param meters: The BitRate value in tera_bytes_per_second.
-        :type tera_bytes_per_second: float
+        :param meters: The BitRate value in terabytes_per_second.
+        :type terabytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(tera_bytes_per_second, BitRateUnits.TeraBytePerSecond)
+        return BitRate(terabytes_per_second, BitRateUnits.TerabytePerSecond)
 
     
     @staticmethod
-    def from_peta_bytes_per_second(peta_bytes_per_second: float):
+    def from_petabytes_per_second(petabytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in peta_bytes_per_second.
+        Create a new instance of BitRate from a value in petabytes_per_second.
 
         
 
-        :param meters: The BitRate value in peta_bytes_per_second.
-        :type peta_bytes_per_second: float
+        :param meters: The BitRate value in petabytes_per_second.
+        :type petabytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(peta_bytes_per_second, BitRateUnits.PetaBytePerSecond)
+        return BitRate(petabytes_per_second, BitRateUnits.PetabytePerSecond)
 
     
     @staticmethod
-    def from_exa_bytes_per_second(exa_bytes_per_second: float):
+    def from_exabytes_per_second(exabytes_per_second: float):
         """
-        Create a new instance of BitRate from a value in exa_bytes_per_second.
+        Create a new instance of BitRate from a value in exabytes_per_second.
 
         
 
-        :param meters: The BitRate value in exa_bytes_per_second.
-        :type exa_bytes_per_second: float
+        :param meters: The BitRate value in exabytes_per_second.
+        :type exabytes_per_second: float
         :return: A new instance of BitRate.
         :rtype: BitRate
         """
-        return BitRate(exa_bytes_per_second, BitRateUnits.ExaBytePerSecond)
+        return BitRate(exabytes_per_second, BitRateUnits.ExabytePerSecond)
 
     
     @property
@@ -454,135 +454,135 @@ class BitRate:
 
     
     @property
-    def kilo_bits_per_second(self) -> float:
+    def kilobits_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_bits_per_second != None:
-            return self.__kilo_bits_per_second
-        self.__kilo_bits_per_second = self.__convert_from_base(BitRateUnits.KiloBitPerSecond)
-        return self.__kilo_bits_per_second
+        if self.__kilobits_per_second != None:
+            return self.__kilobits_per_second
+        self.__kilobits_per_second = self.__convert_from_base(BitRateUnits.KilobitPerSecond)
+        return self.__kilobits_per_second
 
     
     @property
-    def mega_bits_per_second(self) -> float:
+    def megabits_per_second(self) -> float:
         """
         
         """
-        if self.__mega_bits_per_second != None:
-            return self.__mega_bits_per_second
-        self.__mega_bits_per_second = self.__convert_from_base(BitRateUnits.MegaBitPerSecond)
-        return self.__mega_bits_per_second
+        if self.__megabits_per_second != None:
+            return self.__megabits_per_second
+        self.__megabits_per_second = self.__convert_from_base(BitRateUnits.MegabitPerSecond)
+        return self.__megabits_per_second
 
     
     @property
-    def giga_bits_per_second(self) -> float:
+    def gigabits_per_second(self) -> float:
         """
         
         """
-        if self.__giga_bits_per_second != None:
-            return self.__giga_bits_per_second
-        self.__giga_bits_per_second = self.__convert_from_base(BitRateUnits.GigaBitPerSecond)
-        return self.__giga_bits_per_second
+        if self.__gigabits_per_second != None:
+            return self.__gigabits_per_second
+        self.__gigabits_per_second = self.__convert_from_base(BitRateUnits.GigabitPerSecond)
+        return self.__gigabits_per_second
 
     
     @property
-    def tera_bits_per_second(self) -> float:
+    def terabits_per_second(self) -> float:
         """
         
         """
-        if self.__tera_bits_per_second != None:
-            return self.__tera_bits_per_second
-        self.__tera_bits_per_second = self.__convert_from_base(BitRateUnits.TeraBitPerSecond)
-        return self.__tera_bits_per_second
+        if self.__terabits_per_second != None:
+            return self.__terabits_per_second
+        self.__terabits_per_second = self.__convert_from_base(BitRateUnits.TerabitPerSecond)
+        return self.__terabits_per_second
 
     
     @property
-    def peta_bits_per_second(self) -> float:
+    def petabits_per_second(self) -> float:
         """
         
         """
-        if self.__peta_bits_per_second != None:
-            return self.__peta_bits_per_second
-        self.__peta_bits_per_second = self.__convert_from_base(BitRateUnits.PetaBitPerSecond)
-        return self.__peta_bits_per_second
+        if self.__petabits_per_second != None:
+            return self.__petabits_per_second
+        self.__petabits_per_second = self.__convert_from_base(BitRateUnits.PetabitPerSecond)
+        return self.__petabits_per_second
 
     
     @property
-    def exa_bits_per_second(self) -> float:
+    def exabits_per_second(self) -> float:
         """
         
         """
-        if self.__exa_bits_per_second != None:
-            return self.__exa_bits_per_second
-        self.__exa_bits_per_second = self.__convert_from_base(BitRateUnits.ExaBitPerSecond)
-        return self.__exa_bits_per_second
+        if self.__exabits_per_second != None:
+            return self.__exabits_per_second
+        self.__exabits_per_second = self.__convert_from_base(BitRateUnits.ExabitPerSecond)
+        return self.__exabits_per_second
 
     
     @property
-    def kilo_bytes_per_second(self) -> float:
+    def kilobytes_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_bytes_per_second != None:
-            return self.__kilo_bytes_per_second
-        self.__kilo_bytes_per_second = self.__convert_from_base(BitRateUnits.KiloBytePerSecond)
-        return self.__kilo_bytes_per_second
+        if self.__kilobytes_per_second != None:
+            return self.__kilobytes_per_second
+        self.__kilobytes_per_second = self.__convert_from_base(BitRateUnits.KilobytePerSecond)
+        return self.__kilobytes_per_second
 
     
     @property
-    def mega_bytes_per_second(self) -> float:
+    def megabytes_per_second(self) -> float:
         """
         
         """
-        if self.__mega_bytes_per_second != None:
-            return self.__mega_bytes_per_second
-        self.__mega_bytes_per_second = self.__convert_from_base(BitRateUnits.MegaBytePerSecond)
-        return self.__mega_bytes_per_second
+        if self.__megabytes_per_second != None:
+            return self.__megabytes_per_second
+        self.__megabytes_per_second = self.__convert_from_base(BitRateUnits.MegabytePerSecond)
+        return self.__megabytes_per_second
 
     
     @property
-    def giga_bytes_per_second(self) -> float:
+    def gigabytes_per_second(self) -> float:
         """
         
         """
-        if self.__giga_bytes_per_second != None:
-            return self.__giga_bytes_per_second
-        self.__giga_bytes_per_second = self.__convert_from_base(BitRateUnits.GigaBytePerSecond)
-        return self.__giga_bytes_per_second
+        if self.__gigabytes_per_second != None:
+            return self.__gigabytes_per_second
+        self.__gigabytes_per_second = self.__convert_from_base(BitRateUnits.GigabytePerSecond)
+        return self.__gigabytes_per_second
 
     
     @property
-    def tera_bytes_per_second(self) -> float:
+    def terabytes_per_second(self) -> float:
         """
         
         """
-        if self.__tera_bytes_per_second != None:
-            return self.__tera_bytes_per_second
-        self.__tera_bytes_per_second = self.__convert_from_base(BitRateUnits.TeraBytePerSecond)
-        return self.__tera_bytes_per_second
+        if self.__terabytes_per_second != None:
+            return self.__terabytes_per_second
+        self.__terabytes_per_second = self.__convert_from_base(BitRateUnits.TerabytePerSecond)
+        return self.__terabytes_per_second
 
     
     @property
-    def peta_bytes_per_second(self) -> float:
+    def petabytes_per_second(self) -> float:
         """
         
         """
-        if self.__peta_bytes_per_second != None:
-            return self.__peta_bytes_per_second
-        self.__peta_bytes_per_second = self.__convert_from_base(BitRateUnits.PetaBytePerSecond)
-        return self.__peta_bytes_per_second
+        if self.__petabytes_per_second != None:
+            return self.__petabytes_per_second
+        self.__petabytes_per_second = self.__convert_from_base(BitRateUnits.PetabytePerSecond)
+        return self.__petabytes_per_second
 
     
     @property
-    def exa_bytes_per_second(self) -> float:
+    def exabytes_per_second(self) -> float:
         """
         
         """
-        if self.__exa_bytes_per_second != None:
-            return self.__exa_bytes_per_second
-        self.__exa_bytes_per_second = self.__convert_from_base(BitRateUnits.ExaBytePerSecond)
-        return self.__exa_bytes_per_second
+        if self.__exabytes_per_second != None:
+            return self.__exabytes_per_second
+        self.__exabytes_per_second = self.__convert_from_base(BitRateUnits.ExabytePerSecond)
+        return self.__exabytes_per_second
 
     
     def to_string(self, unit: BitRateUnits = BitRateUnits.BitPerSecond) -> string:
@@ -598,41 +598,41 @@ class BitRate:
         if unit == BitRateUnits.BytePerSecond:
             return f"""{self.bytes_per_second} B/s"""
         
-        if unit == BitRateUnits.KiloBitPerSecond:
-            return f"""{self.kilo_bits_per_second} """
+        if unit == BitRateUnits.KilobitPerSecond:
+            return f"""{self.kilobits_per_second} """
         
-        if unit == BitRateUnits.MegaBitPerSecond:
-            return f"""{self.mega_bits_per_second} """
+        if unit == BitRateUnits.MegabitPerSecond:
+            return f"""{self.megabits_per_second} """
         
-        if unit == BitRateUnits.GigaBitPerSecond:
-            return f"""{self.giga_bits_per_second} """
+        if unit == BitRateUnits.GigabitPerSecond:
+            return f"""{self.gigabits_per_second} """
         
-        if unit == BitRateUnits.TeraBitPerSecond:
-            return f"""{self.tera_bits_per_second} """
+        if unit == BitRateUnits.TerabitPerSecond:
+            return f"""{self.terabits_per_second} """
         
-        if unit == BitRateUnits.PetaBitPerSecond:
-            return f"""{self.peta_bits_per_second} """
+        if unit == BitRateUnits.PetabitPerSecond:
+            return f"""{self.petabits_per_second} """
         
-        if unit == BitRateUnits.ExaBitPerSecond:
-            return f"""{self.exa_bits_per_second} """
+        if unit == BitRateUnits.ExabitPerSecond:
+            return f"""{self.exabits_per_second} """
         
-        if unit == BitRateUnits.KiloBytePerSecond:
-            return f"""{self.kilo_bytes_per_second} """
+        if unit == BitRateUnits.KilobytePerSecond:
+            return f"""{self.kilobytes_per_second} """
         
-        if unit == BitRateUnits.MegaBytePerSecond:
-            return f"""{self.mega_bytes_per_second} """
+        if unit == BitRateUnits.MegabytePerSecond:
+            return f"""{self.megabytes_per_second} """
         
-        if unit == BitRateUnits.GigaBytePerSecond:
-            return f"""{self.giga_bytes_per_second} """
+        if unit == BitRateUnits.GigabytePerSecond:
+            return f"""{self.gigabytes_per_second} """
         
-        if unit == BitRateUnits.TeraBytePerSecond:
-            return f"""{self.tera_bytes_per_second} """
+        if unit == BitRateUnits.TerabytePerSecond:
+            return f"""{self.terabytes_per_second} """
         
-        if unit == BitRateUnits.PetaBytePerSecond:
-            return f"""{self.peta_bytes_per_second} """
+        if unit == BitRateUnits.PetabytePerSecond:
+            return f"""{self.petabytes_per_second} """
         
-        if unit == BitRateUnits.ExaBytePerSecond:
-            return f"""{self.exa_bytes_per_second} """
+        if unit == BitRateUnits.ExabytePerSecond:
+            return f"""{self.exabytes_per_second} """
         
         return f'{self.__value}'
 
@@ -650,40 +650,40 @@ class BitRate:
         if unit_abbreviation == BitRateUnits.BytePerSecond:
             return """B/s"""
         
-        if unit_abbreviation == BitRateUnits.KiloBitPerSecond:
+        if unit_abbreviation == BitRateUnits.KilobitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.MegaBitPerSecond:
+        if unit_abbreviation == BitRateUnits.MegabitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.GigaBitPerSecond:
+        if unit_abbreviation == BitRateUnits.GigabitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.TeraBitPerSecond:
+        if unit_abbreviation == BitRateUnits.TerabitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.PetaBitPerSecond:
+        if unit_abbreviation == BitRateUnits.PetabitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.ExaBitPerSecond:
+        if unit_abbreviation == BitRateUnits.ExabitPerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.KiloBytePerSecond:
+        if unit_abbreviation == BitRateUnits.KilobytePerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.MegaBytePerSecond:
+        if unit_abbreviation == BitRateUnits.MegabytePerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.GigaBytePerSecond:
+        if unit_abbreviation == BitRateUnits.GigabytePerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.TeraBytePerSecond:
+        if unit_abbreviation == BitRateUnits.TerabytePerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.PetaBytePerSecond:
+        if unit_abbreviation == BitRateUnits.PetabytePerSecond:
             return """"""
         
-        if unit_abbreviation == BitRateUnits.ExaBytePerSecond:
+        if unit_abbreviation == BitRateUnits.ExabytePerSecond:
             return """"""
         
 

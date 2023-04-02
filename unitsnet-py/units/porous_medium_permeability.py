@@ -23,12 +23,12 @@ class PorousMediumPermeabilityUnits(Enum):
             
         """
         
-        MicroDarcy = 'micro_darcy'
+        Microdarcy = 'microdarcy'
         """
             
         """
         
-        MilliDarcy = 'milli_darcy'
+        Millidarcy = 'millidarcy'
         """
             
         """
@@ -53,9 +53,9 @@ class PorousMediumPermeability:
         
         self.__square_centimeters = None
         
-        self.__micro_darcys = None
+        self.__microdarcys = None
         
-        self.__milli_darcys = None
+        self.__millidarcys = None
         
 
     def __convert_from_base(self, from_unit: PorousMediumPermeabilityUnits) -> float:
@@ -70,10 +70,10 @@ class PorousMediumPermeability:
         if from_unit == PorousMediumPermeabilityUnits.SquareCentimeter:
             return (value / 1e-4)
         
-        if from_unit == PorousMediumPermeabilityUnits.MicroDarcy:
+        if from_unit == PorousMediumPermeabilityUnits.Microdarcy:
             return ((value / 9.869233e-13) / 1e-06)
         
-        if from_unit == PorousMediumPermeabilityUnits.MilliDarcy:
+        if from_unit == PorousMediumPermeabilityUnits.Millidarcy:
             return ((value / 9.869233e-13) / 0.001)
         
         return None
@@ -90,10 +90,10 @@ class PorousMediumPermeability:
         if to_unit == PorousMediumPermeabilityUnits.SquareCentimeter:
             return (value * 1e-4)
         
-        if to_unit == PorousMediumPermeabilityUnits.MicroDarcy:
+        if to_unit == PorousMediumPermeabilityUnits.Microdarcy:
             return ((value * 9.869233e-13) * 1e-06)
         
-        if to_unit == PorousMediumPermeabilityUnits.MilliDarcy:
+        if to_unit == PorousMediumPermeabilityUnits.Millidarcy:
             return ((value * 9.869233e-13) * 0.001)
         
         return None
@@ -150,33 +150,33 @@ class PorousMediumPermeability:
 
     
     @staticmethod
-    def from_micro_darcys(micro_darcys: float):
+    def from_microdarcys(microdarcys: float):
         """
-        Create a new instance of PorousMediumPermeability from a value in micro_darcys.
+        Create a new instance of PorousMediumPermeability from a value in microdarcys.
 
         
 
-        :param meters: The PorousMediumPermeability value in micro_darcys.
-        :type micro_darcys: float
+        :param meters: The PorousMediumPermeability value in microdarcys.
+        :type microdarcys: float
         :return: A new instance of PorousMediumPermeability.
         :rtype: PorousMediumPermeability
         """
-        return PorousMediumPermeability(micro_darcys, PorousMediumPermeabilityUnits.MicroDarcy)
+        return PorousMediumPermeability(microdarcys, PorousMediumPermeabilityUnits.Microdarcy)
 
     
     @staticmethod
-    def from_milli_darcys(milli_darcys: float):
+    def from_millidarcys(millidarcys: float):
         """
-        Create a new instance of PorousMediumPermeability from a value in milli_darcys.
+        Create a new instance of PorousMediumPermeability from a value in millidarcys.
 
         
 
-        :param meters: The PorousMediumPermeability value in milli_darcys.
-        :type milli_darcys: float
+        :param meters: The PorousMediumPermeability value in millidarcys.
+        :type millidarcys: float
         :return: A new instance of PorousMediumPermeability.
         :rtype: PorousMediumPermeability
         """
-        return PorousMediumPermeability(milli_darcys, PorousMediumPermeabilityUnits.MilliDarcy)
+        return PorousMediumPermeability(millidarcys, PorousMediumPermeabilityUnits.Millidarcy)
 
     
     @property
@@ -213,25 +213,25 @@ class PorousMediumPermeability:
 
     
     @property
-    def micro_darcys(self) -> float:
+    def microdarcys(self) -> float:
         """
         
         """
-        if self.__micro_darcys != None:
-            return self.__micro_darcys
-        self.__micro_darcys = self.__convert_from_base(PorousMediumPermeabilityUnits.MicroDarcy)
-        return self.__micro_darcys
+        if self.__microdarcys != None:
+            return self.__microdarcys
+        self.__microdarcys = self.__convert_from_base(PorousMediumPermeabilityUnits.Microdarcy)
+        return self.__microdarcys
 
     
     @property
-    def milli_darcys(self) -> float:
+    def millidarcys(self) -> float:
         """
         
         """
-        if self.__milli_darcys != None:
-            return self.__milli_darcys
-        self.__milli_darcys = self.__convert_from_base(PorousMediumPermeabilityUnits.MilliDarcy)
-        return self.__milli_darcys
+        if self.__millidarcys != None:
+            return self.__millidarcys
+        self.__millidarcys = self.__convert_from_base(PorousMediumPermeabilityUnits.Millidarcy)
+        return self.__millidarcys
 
     
     def to_string(self, unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> string:
@@ -250,11 +250,11 @@ class PorousMediumPermeability:
         if unit == PorousMediumPermeabilityUnits.SquareCentimeter:
             return f"""{self.square_centimeters} cm²"""
         
-        if unit == PorousMediumPermeabilityUnits.MicroDarcy:
-            return f"""{self.micro_darcys} """
+        if unit == PorousMediumPermeabilityUnits.Microdarcy:
+            return f"""{self.microdarcys} """
         
-        if unit == PorousMediumPermeabilityUnits.MilliDarcy:
-            return f"""{self.milli_darcys} """
+        if unit == PorousMediumPermeabilityUnits.Millidarcy:
+            return f"""{self.millidarcys} """
         
         return f'{self.__value}'
 
@@ -275,10 +275,10 @@ class PorousMediumPermeability:
         if unit_abbreviation == PorousMediumPermeabilityUnits.SquareCentimeter:
             return """cm²"""
         
-        if unit_abbreviation == PorousMediumPermeabilityUnits.MicroDarcy:
+        if unit_abbreviation == PorousMediumPermeabilityUnits.Microdarcy:
             return """"""
         
-        if unit_abbreviation == PorousMediumPermeabilityUnits.MilliDarcy:
+        if unit_abbreviation == PorousMediumPermeabilityUnits.Millidarcy:
             return """"""
         
 

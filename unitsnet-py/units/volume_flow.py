@@ -188,157 +188,157 @@ class VolumeFlowUnits(Enum):
             
         """
         
-        MegaUsGallonPerDay = 'mega_us_gallon_per_day'
+        MegausGallonPerDay = 'megaus_gallon_per_day'
         """
             
         """
         
-        NanoLiterPerSecond = 'nano_liter_per_second'
+        NanoliterPerSecond = 'nanoliter_per_second'
         """
             
         """
         
-        MicroLiterPerSecond = 'micro_liter_per_second'
+        MicroliterPerSecond = 'microliter_per_second'
         """
             
         """
         
-        MilliLiterPerSecond = 'milli_liter_per_second'
+        MilliliterPerSecond = 'milliliter_per_second'
         """
             
         """
         
-        CentiLiterPerSecond = 'centi_liter_per_second'
+        CentiliterPerSecond = 'centiliter_per_second'
         """
             
         """
         
-        DeciLiterPerSecond = 'deci_liter_per_second'
+        DeciliterPerSecond = 'deciliter_per_second'
         """
             
         """
         
-        KiloLiterPerSecond = 'kilo_liter_per_second'
+        KiloliterPerSecond = 'kiloliter_per_second'
         """
             
         """
         
-        MegaLiterPerSecond = 'mega_liter_per_second'
+        MegaliterPerSecond = 'megaliter_per_second'
         """
             
         """
         
-        NanoLiterPerMinute = 'nano_liter_per_minute'
+        NanoliterPerMinute = 'nanoliter_per_minute'
         """
             
         """
         
-        MicroLiterPerMinute = 'micro_liter_per_minute'
+        MicroliterPerMinute = 'microliter_per_minute'
         """
             
         """
         
-        MilliLiterPerMinute = 'milli_liter_per_minute'
+        MilliliterPerMinute = 'milliliter_per_minute'
         """
             
         """
         
-        CentiLiterPerMinute = 'centi_liter_per_minute'
+        CentiliterPerMinute = 'centiliter_per_minute'
         """
             
         """
         
-        DeciLiterPerMinute = 'deci_liter_per_minute'
+        DeciliterPerMinute = 'deciliter_per_minute'
         """
             
         """
         
-        KiloLiterPerMinute = 'kilo_liter_per_minute'
+        KiloliterPerMinute = 'kiloliter_per_minute'
         """
             
         """
         
-        MegaLiterPerMinute = 'mega_liter_per_minute'
+        MegaliterPerMinute = 'megaliter_per_minute'
         """
             
         """
         
-        NanoLiterPerHour = 'nano_liter_per_hour'
+        NanoliterPerHour = 'nanoliter_per_hour'
         """
             
         """
         
-        MicroLiterPerHour = 'micro_liter_per_hour'
+        MicroliterPerHour = 'microliter_per_hour'
         """
             
         """
         
-        MilliLiterPerHour = 'milli_liter_per_hour'
+        MilliliterPerHour = 'milliliter_per_hour'
         """
             
         """
         
-        CentiLiterPerHour = 'centi_liter_per_hour'
+        CentiliterPerHour = 'centiliter_per_hour'
         """
             
         """
         
-        DeciLiterPerHour = 'deci_liter_per_hour'
+        DeciliterPerHour = 'deciliter_per_hour'
         """
             
         """
         
-        KiloLiterPerHour = 'kilo_liter_per_hour'
+        KiloliterPerHour = 'kiloliter_per_hour'
         """
             
         """
         
-        MegaLiterPerHour = 'mega_liter_per_hour'
+        MegaliterPerHour = 'megaliter_per_hour'
         """
             
         """
         
-        NanoLiterPerDay = 'nano_liter_per_day'
+        NanoliterPerDay = 'nanoliter_per_day'
         """
             
         """
         
-        MicroLiterPerDay = 'micro_liter_per_day'
+        MicroliterPerDay = 'microliter_per_day'
         """
             
         """
         
-        MilliLiterPerDay = 'milli_liter_per_day'
+        MilliliterPerDay = 'milliliter_per_day'
         """
             
         """
         
-        CentiLiterPerDay = 'centi_liter_per_day'
+        CentiliterPerDay = 'centiliter_per_day'
         """
             
         """
         
-        DeciLiterPerDay = 'deci_liter_per_day'
+        DeciliterPerDay = 'deciliter_per_day'
         """
             
         """
         
-        KiloLiterPerDay = 'kilo_liter_per_day'
+        KiloliterPerDay = 'kiloliter_per_day'
         """
             
         """
         
-        MegaLiterPerDay = 'mega_liter_per_day'
+        MegaliterPerDay = 'megaliter_per_day'
         """
             
         """
         
-        MegaUkGallonPerDay = 'mega_uk_gallon_per_day'
+        MegaukGallonPerDay = 'megauk_gallon_per_day'
         """
             
         """
         
-        MegaUkGallonPerSecond = 'mega_uk_gallon_per_second'
+        MegaukGallonPerSecond = 'megauk_gallon_per_second'
         """
             
         """
@@ -429,67 +429,67 @@ class VolumeFlow:
         
         self.__cubic_centimeters_per_minute = None
         
-        self.__mega_us_gallons_per_day = None
+        self.__megaus_gallons_per_day = None
         
-        self.__nano_liters_per_second = None
+        self.__nanoliters_per_second = None
         
-        self.__micro_liters_per_second = None
+        self.__microliters_per_second = None
         
-        self.__milli_liters_per_second = None
+        self.__milliliters_per_second = None
         
-        self.__centi_liters_per_second = None
+        self.__centiliters_per_second = None
         
-        self.__deci_liters_per_second = None
+        self.__deciliters_per_second = None
         
-        self.__kilo_liters_per_second = None
+        self.__kiloliters_per_second = None
         
-        self.__mega_liters_per_second = None
+        self.__megaliters_per_second = None
         
-        self.__nano_liters_per_minute = None
+        self.__nanoliters_per_minute = None
         
-        self.__micro_liters_per_minute = None
+        self.__microliters_per_minute = None
         
-        self.__milli_liters_per_minute = None
+        self.__milliliters_per_minute = None
         
-        self.__centi_liters_per_minute = None
+        self.__centiliters_per_minute = None
         
-        self.__deci_liters_per_minute = None
+        self.__deciliters_per_minute = None
         
-        self.__kilo_liters_per_minute = None
+        self.__kiloliters_per_minute = None
         
-        self.__mega_liters_per_minute = None
+        self.__megaliters_per_minute = None
         
-        self.__nano_liters_per_hour = None
+        self.__nanoliters_per_hour = None
         
-        self.__micro_liters_per_hour = None
+        self.__microliters_per_hour = None
         
-        self.__milli_liters_per_hour = None
+        self.__milliliters_per_hour = None
         
-        self.__centi_liters_per_hour = None
+        self.__centiliters_per_hour = None
         
-        self.__deci_liters_per_hour = None
+        self.__deciliters_per_hour = None
         
-        self.__kilo_liters_per_hour = None
+        self.__kiloliters_per_hour = None
         
-        self.__mega_liters_per_hour = None
+        self.__megaliters_per_hour = None
         
-        self.__nano_liters_per_day = None
+        self.__nanoliters_per_day = None
         
-        self.__micro_liters_per_day = None
+        self.__microliters_per_day = None
         
-        self.__milli_liters_per_day = None
+        self.__milliliters_per_day = None
         
-        self.__centi_liters_per_day = None
+        self.__centiliters_per_day = None
         
-        self.__deci_liters_per_day = None
+        self.__deciliters_per_day = None
         
-        self.__kilo_liters_per_day = None
+        self.__kiloliters_per_day = None
         
-        self.__mega_liters_per_day = None
+        self.__megaliters_per_day = None
         
-        self.__mega_uk_gallons_per_day = None
+        self.__megauk_gallons_per_day = None
         
-        self.__mega_uk_gallons_per_second = None
+        self.__megauk_gallons_per_second = None
         
 
     def __convert_from_base(self, from_unit: VolumeFlowUnits) -> float:
@@ -603,97 +603,97 @@ class VolumeFlow:
         if from_unit == VolumeFlowUnits.CubicCentimeterPerMinute:
             return (value / 1.6666666666667e-8)
         
-        if from_unit == VolumeFlowUnits.MegaUsGallonPerDay:
+        if from_unit == VolumeFlowUnits.MegausGallonPerDay:
             return ((value * 22824465.227) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.NanoLiterPerSecond:
+        if from_unit == VolumeFlowUnits.NanoliterPerSecond:
             return ((value * 1000) / 1e-09)
         
-        if from_unit == VolumeFlowUnits.MicroLiterPerSecond:
+        if from_unit == VolumeFlowUnits.MicroliterPerSecond:
             return ((value * 1000) / 1e-06)
         
-        if from_unit == VolumeFlowUnits.MilliLiterPerSecond:
+        if from_unit == VolumeFlowUnits.MilliliterPerSecond:
             return ((value * 1000) / 0.001)
         
-        if from_unit == VolumeFlowUnits.CentiLiterPerSecond:
+        if from_unit == VolumeFlowUnits.CentiliterPerSecond:
             return ((value * 1000) / 0.01)
         
-        if from_unit == VolumeFlowUnits.DeciLiterPerSecond:
+        if from_unit == VolumeFlowUnits.DeciliterPerSecond:
             return ((value * 1000) / 0.1)
         
-        if from_unit == VolumeFlowUnits.KiloLiterPerSecond:
+        if from_unit == VolumeFlowUnits.KiloliterPerSecond:
             return ((value * 1000) / 1000.0)
         
-        if from_unit == VolumeFlowUnits.MegaLiterPerSecond:
+        if from_unit == VolumeFlowUnits.MegaliterPerSecond:
             return ((value * 1000) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.NanoLiterPerMinute:
+        if from_unit == VolumeFlowUnits.NanoliterPerMinute:
             return ((value * 60000.00000) / 1e-09)
         
-        if from_unit == VolumeFlowUnits.MicroLiterPerMinute:
+        if from_unit == VolumeFlowUnits.MicroliterPerMinute:
             return ((value * 60000.00000) / 1e-06)
         
-        if from_unit == VolumeFlowUnits.MilliLiterPerMinute:
+        if from_unit == VolumeFlowUnits.MilliliterPerMinute:
             return ((value * 60000.00000) / 0.001)
         
-        if from_unit == VolumeFlowUnits.CentiLiterPerMinute:
+        if from_unit == VolumeFlowUnits.CentiliterPerMinute:
             return ((value * 60000.00000) / 0.01)
         
-        if from_unit == VolumeFlowUnits.DeciLiterPerMinute:
+        if from_unit == VolumeFlowUnits.DeciliterPerMinute:
             return ((value * 60000.00000) / 0.1)
         
-        if from_unit == VolumeFlowUnits.KiloLiterPerMinute:
+        if from_unit == VolumeFlowUnits.KiloliterPerMinute:
             return ((value * 60000.00000) / 1000.0)
         
-        if from_unit == VolumeFlowUnits.MegaLiterPerMinute:
+        if from_unit == VolumeFlowUnits.MegaliterPerMinute:
             return ((value * 60000.00000) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.NanoLiterPerHour:
+        if from_unit == VolumeFlowUnits.NanoliterPerHour:
             return ((value * 3600000.000) / 1e-09)
         
-        if from_unit == VolumeFlowUnits.MicroLiterPerHour:
+        if from_unit == VolumeFlowUnits.MicroliterPerHour:
             return ((value * 3600000.000) / 1e-06)
         
-        if from_unit == VolumeFlowUnits.MilliLiterPerHour:
+        if from_unit == VolumeFlowUnits.MilliliterPerHour:
             return ((value * 3600000.000) / 0.001)
         
-        if from_unit == VolumeFlowUnits.CentiLiterPerHour:
+        if from_unit == VolumeFlowUnits.CentiliterPerHour:
             return ((value * 3600000.000) / 0.01)
         
-        if from_unit == VolumeFlowUnits.DeciLiterPerHour:
+        if from_unit == VolumeFlowUnits.DeciliterPerHour:
             return ((value * 3600000.000) / 0.1)
         
-        if from_unit == VolumeFlowUnits.KiloLiterPerHour:
+        if from_unit == VolumeFlowUnits.KiloliterPerHour:
             return ((value * 3600000.000) / 1000.0)
         
-        if from_unit == VolumeFlowUnits.MegaLiterPerHour:
+        if from_unit == VolumeFlowUnits.MegaliterPerHour:
             return ((value * 3600000.000) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.NanoLiterPerDay:
+        if from_unit == VolumeFlowUnits.NanoliterPerDay:
             return ((value * 86400000) / 1e-09)
         
-        if from_unit == VolumeFlowUnits.MicroLiterPerDay:
+        if from_unit == VolumeFlowUnits.MicroliterPerDay:
             return ((value * 86400000) / 1e-06)
         
-        if from_unit == VolumeFlowUnits.MilliLiterPerDay:
+        if from_unit == VolumeFlowUnits.MilliliterPerDay:
             return ((value * 86400000) / 0.001)
         
-        if from_unit == VolumeFlowUnits.CentiLiterPerDay:
+        if from_unit == VolumeFlowUnits.CentiliterPerDay:
             return ((value * 86400000) / 0.01)
         
-        if from_unit == VolumeFlowUnits.DeciLiterPerDay:
+        if from_unit == VolumeFlowUnits.DeciliterPerDay:
             return ((value * 86400000) / 0.1)
         
-        if from_unit == VolumeFlowUnits.KiloLiterPerDay:
+        if from_unit == VolumeFlowUnits.KiloliterPerDay:
             return ((value * 86400000) / 1000.0)
         
-        if from_unit == VolumeFlowUnits.MegaLiterPerDay:
+        if from_unit == VolumeFlowUnits.MegaliterPerDay:
             return ((value * 86400000) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.MegaUkGallonPerDay:
+        if from_unit == VolumeFlowUnits.MegaukGallonPerDay:
             return ((value * 19005304) / 1000000.0)
         
-        if from_unit == VolumeFlowUnits.MegaUkGallonPerSecond:
+        if from_unit == VolumeFlowUnits.MegaukGallonPerSecond:
             return ((value * 219.969) / 1000000.0)
         
         return None
@@ -809,97 +809,97 @@ class VolumeFlow:
         if to_unit == VolumeFlowUnits.CubicCentimeterPerMinute:
             return (value * 1.6666666666667e-8)
         
-        if to_unit == VolumeFlowUnits.MegaUsGallonPerDay:
+        if to_unit == VolumeFlowUnits.MegausGallonPerDay:
             return ((value / 22824465.227) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.NanoLiterPerSecond:
+        if to_unit == VolumeFlowUnits.NanoliterPerSecond:
             return ((value / 1000) * 1e-09)
         
-        if to_unit == VolumeFlowUnits.MicroLiterPerSecond:
+        if to_unit == VolumeFlowUnits.MicroliterPerSecond:
             return ((value / 1000) * 1e-06)
         
-        if to_unit == VolumeFlowUnits.MilliLiterPerSecond:
+        if to_unit == VolumeFlowUnits.MilliliterPerSecond:
             return ((value / 1000) * 0.001)
         
-        if to_unit == VolumeFlowUnits.CentiLiterPerSecond:
+        if to_unit == VolumeFlowUnits.CentiliterPerSecond:
             return ((value / 1000) * 0.01)
         
-        if to_unit == VolumeFlowUnits.DeciLiterPerSecond:
+        if to_unit == VolumeFlowUnits.DeciliterPerSecond:
             return ((value / 1000) * 0.1)
         
-        if to_unit == VolumeFlowUnits.KiloLiterPerSecond:
+        if to_unit == VolumeFlowUnits.KiloliterPerSecond:
             return ((value / 1000) * 1000.0)
         
-        if to_unit == VolumeFlowUnits.MegaLiterPerSecond:
+        if to_unit == VolumeFlowUnits.MegaliterPerSecond:
             return ((value / 1000) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.NanoLiterPerMinute:
+        if to_unit == VolumeFlowUnits.NanoliterPerMinute:
             return ((value / 60000.00000) * 1e-09)
         
-        if to_unit == VolumeFlowUnits.MicroLiterPerMinute:
+        if to_unit == VolumeFlowUnits.MicroliterPerMinute:
             return ((value / 60000.00000) * 1e-06)
         
-        if to_unit == VolumeFlowUnits.MilliLiterPerMinute:
+        if to_unit == VolumeFlowUnits.MilliliterPerMinute:
             return ((value / 60000.00000) * 0.001)
         
-        if to_unit == VolumeFlowUnits.CentiLiterPerMinute:
+        if to_unit == VolumeFlowUnits.CentiliterPerMinute:
             return ((value / 60000.00000) * 0.01)
         
-        if to_unit == VolumeFlowUnits.DeciLiterPerMinute:
+        if to_unit == VolumeFlowUnits.DeciliterPerMinute:
             return ((value / 60000.00000) * 0.1)
         
-        if to_unit == VolumeFlowUnits.KiloLiterPerMinute:
+        if to_unit == VolumeFlowUnits.KiloliterPerMinute:
             return ((value / 60000.00000) * 1000.0)
         
-        if to_unit == VolumeFlowUnits.MegaLiterPerMinute:
+        if to_unit == VolumeFlowUnits.MegaliterPerMinute:
             return ((value / 60000.00000) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.NanoLiterPerHour:
+        if to_unit == VolumeFlowUnits.NanoliterPerHour:
             return ((value / 3600000.000) * 1e-09)
         
-        if to_unit == VolumeFlowUnits.MicroLiterPerHour:
+        if to_unit == VolumeFlowUnits.MicroliterPerHour:
             return ((value / 3600000.000) * 1e-06)
         
-        if to_unit == VolumeFlowUnits.MilliLiterPerHour:
+        if to_unit == VolumeFlowUnits.MilliliterPerHour:
             return ((value / 3600000.000) * 0.001)
         
-        if to_unit == VolumeFlowUnits.CentiLiterPerHour:
+        if to_unit == VolumeFlowUnits.CentiliterPerHour:
             return ((value / 3600000.000) * 0.01)
         
-        if to_unit == VolumeFlowUnits.DeciLiterPerHour:
+        if to_unit == VolumeFlowUnits.DeciliterPerHour:
             return ((value / 3600000.000) * 0.1)
         
-        if to_unit == VolumeFlowUnits.KiloLiterPerHour:
+        if to_unit == VolumeFlowUnits.KiloliterPerHour:
             return ((value / 3600000.000) * 1000.0)
         
-        if to_unit == VolumeFlowUnits.MegaLiterPerHour:
+        if to_unit == VolumeFlowUnits.MegaliterPerHour:
             return ((value / 3600000.000) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.NanoLiterPerDay:
+        if to_unit == VolumeFlowUnits.NanoliterPerDay:
             return ((value / 86400000) * 1e-09)
         
-        if to_unit == VolumeFlowUnits.MicroLiterPerDay:
+        if to_unit == VolumeFlowUnits.MicroliterPerDay:
             return ((value / 86400000) * 1e-06)
         
-        if to_unit == VolumeFlowUnits.MilliLiterPerDay:
+        if to_unit == VolumeFlowUnits.MilliliterPerDay:
             return ((value / 86400000) * 0.001)
         
-        if to_unit == VolumeFlowUnits.CentiLiterPerDay:
+        if to_unit == VolumeFlowUnits.CentiliterPerDay:
             return ((value / 86400000) * 0.01)
         
-        if to_unit == VolumeFlowUnits.DeciLiterPerDay:
+        if to_unit == VolumeFlowUnits.DeciliterPerDay:
             return ((value / 86400000) * 0.1)
         
-        if to_unit == VolumeFlowUnits.KiloLiterPerDay:
+        if to_unit == VolumeFlowUnits.KiloliterPerDay:
             return ((value / 86400000) * 1000.0)
         
-        if to_unit == VolumeFlowUnits.MegaLiterPerDay:
+        if to_unit == VolumeFlowUnits.MegaliterPerDay:
             return ((value / 86400000) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.MegaUkGallonPerDay:
+        if to_unit == VolumeFlowUnits.MegaukGallonPerDay:
             return ((value / 19005304) * 1000000.0)
         
-        if to_unit == VolumeFlowUnits.MegaUkGallonPerSecond:
+        if to_unit == VolumeFlowUnits.MegaukGallonPerSecond:
             return ((value / 219.969) * 1000000.0)
         
         return None
@@ -1451,468 +1451,468 @@ class VolumeFlow:
 
     
     @staticmethod
-    def from_mega_us_gallons_per_day(mega_us_gallons_per_day: float):
+    def from_megaus_gallons_per_day(megaus_gallons_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_us_gallons_per_day.
+        Create a new instance of VolumeFlow from a value in megaus_gallons_per_day.
 
         
 
-        :param meters: The VolumeFlow value in mega_us_gallons_per_day.
-        :type mega_us_gallons_per_day: float
+        :param meters: The VolumeFlow value in megaus_gallons_per_day.
+        :type megaus_gallons_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_us_gallons_per_day, VolumeFlowUnits.MegaUsGallonPerDay)
+        return VolumeFlow(megaus_gallons_per_day, VolumeFlowUnits.MegausGallonPerDay)
 
     
     @staticmethod
-    def from_nano_liters_per_second(nano_liters_per_second: float):
+    def from_nanoliters_per_second(nanoliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in nano_liters_per_second.
+        Create a new instance of VolumeFlow from a value in nanoliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in nano_liters_per_second.
-        :type nano_liters_per_second: float
+        :param meters: The VolumeFlow value in nanoliters_per_second.
+        :type nanoliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(nano_liters_per_second, VolumeFlowUnits.NanoLiterPerSecond)
+        return VolumeFlow(nanoliters_per_second, VolumeFlowUnits.NanoliterPerSecond)
 
     
     @staticmethod
-    def from_micro_liters_per_second(micro_liters_per_second: float):
+    def from_microliters_per_second(microliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in micro_liters_per_second.
+        Create a new instance of VolumeFlow from a value in microliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in micro_liters_per_second.
-        :type micro_liters_per_second: float
+        :param meters: The VolumeFlow value in microliters_per_second.
+        :type microliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(micro_liters_per_second, VolumeFlowUnits.MicroLiterPerSecond)
+        return VolumeFlow(microliters_per_second, VolumeFlowUnits.MicroliterPerSecond)
 
     
     @staticmethod
-    def from_milli_liters_per_second(milli_liters_per_second: float):
+    def from_milliliters_per_second(milliliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in milli_liters_per_second.
+        Create a new instance of VolumeFlow from a value in milliliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in milli_liters_per_second.
-        :type milli_liters_per_second: float
+        :param meters: The VolumeFlow value in milliliters_per_second.
+        :type milliliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(milli_liters_per_second, VolumeFlowUnits.MilliLiterPerSecond)
+        return VolumeFlow(milliliters_per_second, VolumeFlowUnits.MilliliterPerSecond)
 
     
     @staticmethod
-    def from_centi_liters_per_second(centi_liters_per_second: float):
+    def from_centiliters_per_second(centiliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in centi_liters_per_second.
+        Create a new instance of VolumeFlow from a value in centiliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in centi_liters_per_second.
-        :type centi_liters_per_second: float
+        :param meters: The VolumeFlow value in centiliters_per_second.
+        :type centiliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(centi_liters_per_second, VolumeFlowUnits.CentiLiterPerSecond)
+        return VolumeFlow(centiliters_per_second, VolumeFlowUnits.CentiliterPerSecond)
 
     
     @staticmethod
-    def from_deci_liters_per_second(deci_liters_per_second: float):
+    def from_deciliters_per_second(deciliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in deci_liters_per_second.
+        Create a new instance of VolumeFlow from a value in deciliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in deci_liters_per_second.
-        :type deci_liters_per_second: float
+        :param meters: The VolumeFlow value in deciliters_per_second.
+        :type deciliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(deci_liters_per_second, VolumeFlowUnits.DeciLiterPerSecond)
+        return VolumeFlow(deciliters_per_second, VolumeFlowUnits.DeciliterPerSecond)
 
     
     @staticmethod
-    def from_kilo_liters_per_second(kilo_liters_per_second: float):
+    def from_kiloliters_per_second(kiloliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in kilo_liters_per_second.
+        Create a new instance of VolumeFlow from a value in kiloliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in kilo_liters_per_second.
-        :type kilo_liters_per_second: float
+        :param meters: The VolumeFlow value in kiloliters_per_second.
+        :type kiloliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(kilo_liters_per_second, VolumeFlowUnits.KiloLiterPerSecond)
+        return VolumeFlow(kiloliters_per_second, VolumeFlowUnits.KiloliterPerSecond)
 
     
     @staticmethod
-    def from_mega_liters_per_second(mega_liters_per_second: float):
+    def from_megaliters_per_second(megaliters_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_liters_per_second.
+        Create a new instance of VolumeFlow from a value in megaliters_per_second.
 
         
 
-        :param meters: The VolumeFlow value in mega_liters_per_second.
-        :type mega_liters_per_second: float
+        :param meters: The VolumeFlow value in megaliters_per_second.
+        :type megaliters_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_liters_per_second, VolumeFlowUnits.MegaLiterPerSecond)
+        return VolumeFlow(megaliters_per_second, VolumeFlowUnits.MegaliterPerSecond)
 
     
     @staticmethod
-    def from_nano_liters_per_minute(nano_liters_per_minute: float):
+    def from_nanoliters_per_minute(nanoliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in nano_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in nanoliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in nano_liters_per_minute.
-        :type nano_liters_per_minute: float
+        :param meters: The VolumeFlow value in nanoliters_per_minute.
+        :type nanoliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(nano_liters_per_minute, VolumeFlowUnits.NanoLiterPerMinute)
+        return VolumeFlow(nanoliters_per_minute, VolumeFlowUnits.NanoliterPerMinute)
 
     
     @staticmethod
-    def from_micro_liters_per_minute(micro_liters_per_minute: float):
+    def from_microliters_per_minute(microliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in micro_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in microliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in micro_liters_per_minute.
-        :type micro_liters_per_minute: float
+        :param meters: The VolumeFlow value in microliters_per_minute.
+        :type microliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(micro_liters_per_minute, VolumeFlowUnits.MicroLiterPerMinute)
+        return VolumeFlow(microliters_per_minute, VolumeFlowUnits.MicroliterPerMinute)
 
     
     @staticmethod
-    def from_milli_liters_per_minute(milli_liters_per_minute: float):
+    def from_milliliters_per_minute(milliliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in milli_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in milliliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in milli_liters_per_minute.
-        :type milli_liters_per_minute: float
+        :param meters: The VolumeFlow value in milliliters_per_minute.
+        :type milliliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(milli_liters_per_minute, VolumeFlowUnits.MilliLiterPerMinute)
+        return VolumeFlow(milliliters_per_minute, VolumeFlowUnits.MilliliterPerMinute)
 
     
     @staticmethod
-    def from_centi_liters_per_minute(centi_liters_per_minute: float):
+    def from_centiliters_per_minute(centiliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in centi_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in centiliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in centi_liters_per_minute.
-        :type centi_liters_per_minute: float
+        :param meters: The VolumeFlow value in centiliters_per_minute.
+        :type centiliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(centi_liters_per_minute, VolumeFlowUnits.CentiLiterPerMinute)
+        return VolumeFlow(centiliters_per_minute, VolumeFlowUnits.CentiliterPerMinute)
 
     
     @staticmethod
-    def from_deci_liters_per_minute(deci_liters_per_minute: float):
+    def from_deciliters_per_minute(deciliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in deci_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in deciliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in deci_liters_per_minute.
-        :type deci_liters_per_minute: float
+        :param meters: The VolumeFlow value in deciliters_per_minute.
+        :type deciliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(deci_liters_per_minute, VolumeFlowUnits.DeciLiterPerMinute)
+        return VolumeFlow(deciliters_per_minute, VolumeFlowUnits.DeciliterPerMinute)
 
     
     @staticmethod
-    def from_kilo_liters_per_minute(kilo_liters_per_minute: float):
+    def from_kiloliters_per_minute(kiloliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in kilo_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in kiloliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in kilo_liters_per_minute.
-        :type kilo_liters_per_minute: float
+        :param meters: The VolumeFlow value in kiloliters_per_minute.
+        :type kiloliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(kilo_liters_per_minute, VolumeFlowUnits.KiloLiterPerMinute)
+        return VolumeFlow(kiloliters_per_minute, VolumeFlowUnits.KiloliterPerMinute)
 
     
     @staticmethod
-    def from_mega_liters_per_minute(mega_liters_per_minute: float):
+    def from_megaliters_per_minute(megaliters_per_minute: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_liters_per_minute.
+        Create a new instance of VolumeFlow from a value in megaliters_per_minute.
 
         
 
-        :param meters: The VolumeFlow value in mega_liters_per_minute.
-        :type mega_liters_per_minute: float
+        :param meters: The VolumeFlow value in megaliters_per_minute.
+        :type megaliters_per_minute: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_liters_per_minute, VolumeFlowUnits.MegaLiterPerMinute)
+        return VolumeFlow(megaliters_per_minute, VolumeFlowUnits.MegaliterPerMinute)
 
     
     @staticmethod
-    def from_nano_liters_per_hour(nano_liters_per_hour: float):
+    def from_nanoliters_per_hour(nanoliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in nano_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in nanoliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in nano_liters_per_hour.
-        :type nano_liters_per_hour: float
+        :param meters: The VolumeFlow value in nanoliters_per_hour.
+        :type nanoliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(nano_liters_per_hour, VolumeFlowUnits.NanoLiterPerHour)
+        return VolumeFlow(nanoliters_per_hour, VolumeFlowUnits.NanoliterPerHour)
 
     
     @staticmethod
-    def from_micro_liters_per_hour(micro_liters_per_hour: float):
+    def from_microliters_per_hour(microliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in micro_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in microliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in micro_liters_per_hour.
-        :type micro_liters_per_hour: float
+        :param meters: The VolumeFlow value in microliters_per_hour.
+        :type microliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(micro_liters_per_hour, VolumeFlowUnits.MicroLiterPerHour)
+        return VolumeFlow(microliters_per_hour, VolumeFlowUnits.MicroliterPerHour)
 
     
     @staticmethod
-    def from_milli_liters_per_hour(milli_liters_per_hour: float):
+    def from_milliliters_per_hour(milliliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in milli_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in milliliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in milli_liters_per_hour.
-        :type milli_liters_per_hour: float
+        :param meters: The VolumeFlow value in milliliters_per_hour.
+        :type milliliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(milli_liters_per_hour, VolumeFlowUnits.MilliLiterPerHour)
+        return VolumeFlow(milliliters_per_hour, VolumeFlowUnits.MilliliterPerHour)
 
     
     @staticmethod
-    def from_centi_liters_per_hour(centi_liters_per_hour: float):
+    def from_centiliters_per_hour(centiliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in centi_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in centiliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in centi_liters_per_hour.
-        :type centi_liters_per_hour: float
+        :param meters: The VolumeFlow value in centiliters_per_hour.
+        :type centiliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(centi_liters_per_hour, VolumeFlowUnits.CentiLiterPerHour)
+        return VolumeFlow(centiliters_per_hour, VolumeFlowUnits.CentiliterPerHour)
 
     
     @staticmethod
-    def from_deci_liters_per_hour(deci_liters_per_hour: float):
+    def from_deciliters_per_hour(deciliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in deci_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in deciliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in deci_liters_per_hour.
-        :type deci_liters_per_hour: float
+        :param meters: The VolumeFlow value in deciliters_per_hour.
+        :type deciliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(deci_liters_per_hour, VolumeFlowUnits.DeciLiterPerHour)
+        return VolumeFlow(deciliters_per_hour, VolumeFlowUnits.DeciliterPerHour)
 
     
     @staticmethod
-    def from_kilo_liters_per_hour(kilo_liters_per_hour: float):
+    def from_kiloliters_per_hour(kiloliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in kilo_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in kiloliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in kilo_liters_per_hour.
-        :type kilo_liters_per_hour: float
+        :param meters: The VolumeFlow value in kiloliters_per_hour.
+        :type kiloliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(kilo_liters_per_hour, VolumeFlowUnits.KiloLiterPerHour)
+        return VolumeFlow(kiloliters_per_hour, VolumeFlowUnits.KiloliterPerHour)
 
     
     @staticmethod
-    def from_mega_liters_per_hour(mega_liters_per_hour: float):
+    def from_megaliters_per_hour(megaliters_per_hour: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_liters_per_hour.
+        Create a new instance of VolumeFlow from a value in megaliters_per_hour.
 
         
 
-        :param meters: The VolumeFlow value in mega_liters_per_hour.
-        :type mega_liters_per_hour: float
+        :param meters: The VolumeFlow value in megaliters_per_hour.
+        :type megaliters_per_hour: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_liters_per_hour, VolumeFlowUnits.MegaLiterPerHour)
+        return VolumeFlow(megaliters_per_hour, VolumeFlowUnits.MegaliterPerHour)
 
     
     @staticmethod
-    def from_nano_liters_per_day(nano_liters_per_day: float):
+    def from_nanoliters_per_day(nanoliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in nano_liters_per_day.
+        Create a new instance of VolumeFlow from a value in nanoliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in nano_liters_per_day.
-        :type nano_liters_per_day: float
+        :param meters: The VolumeFlow value in nanoliters_per_day.
+        :type nanoliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(nano_liters_per_day, VolumeFlowUnits.NanoLiterPerDay)
+        return VolumeFlow(nanoliters_per_day, VolumeFlowUnits.NanoliterPerDay)
 
     
     @staticmethod
-    def from_micro_liters_per_day(micro_liters_per_day: float):
+    def from_microliters_per_day(microliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in micro_liters_per_day.
+        Create a new instance of VolumeFlow from a value in microliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in micro_liters_per_day.
-        :type micro_liters_per_day: float
+        :param meters: The VolumeFlow value in microliters_per_day.
+        :type microliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(micro_liters_per_day, VolumeFlowUnits.MicroLiterPerDay)
+        return VolumeFlow(microliters_per_day, VolumeFlowUnits.MicroliterPerDay)
 
     
     @staticmethod
-    def from_milli_liters_per_day(milli_liters_per_day: float):
+    def from_milliliters_per_day(milliliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in milli_liters_per_day.
+        Create a new instance of VolumeFlow from a value in milliliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in milli_liters_per_day.
-        :type milli_liters_per_day: float
+        :param meters: The VolumeFlow value in milliliters_per_day.
+        :type milliliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(milli_liters_per_day, VolumeFlowUnits.MilliLiterPerDay)
+        return VolumeFlow(milliliters_per_day, VolumeFlowUnits.MilliliterPerDay)
 
     
     @staticmethod
-    def from_centi_liters_per_day(centi_liters_per_day: float):
+    def from_centiliters_per_day(centiliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in centi_liters_per_day.
+        Create a new instance of VolumeFlow from a value in centiliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in centi_liters_per_day.
-        :type centi_liters_per_day: float
+        :param meters: The VolumeFlow value in centiliters_per_day.
+        :type centiliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(centi_liters_per_day, VolumeFlowUnits.CentiLiterPerDay)
+        return VolumeFlow(centiliters_per_day, VolumeFlowUnits.CentiliterPerDay)
 
     
     @staticmethod
-    def from_deci_liters_per_day(deci_liters_per_day: float):
+    def from_deciliters_per_day(deciliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in deci_liters_per_day.
+        Create a new instance of VolumeFlow from a value in deciliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in deci_liters_per_day.
-        :type deci_liters_per_day: float
+        :param meters: The VolumeFlow value in deciliters_per_day.
+        :type deciliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(deci_liters_per_day, VolumeFlowUnits.DeciLiterPerDay)
+        return VolumeFlow(deciliters_per_day, VolumeFlowUnits.DeciliterPerDay)
 
     
     @staticmethod
-    def from_kilo_liters_per_day(kilo_liters_per_day: float):
+    def from_kiloliters_per_day(kiloliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in kilo_liters_per_day.
+        Create a new instance of VolumeFlow from a value in kiloliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in kilo_liters_per_day.
-        :type kilo_liters_per_day: float
+        :param meters: The VolumeFlow value in kiloliters_per_day.
+        :type kiloliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(kilo_liters_per_day, VolumeFlowUnits.KiloLiterPerDay)
+        return VolumeFlow(kiloliters_per_day, VolumeFlowUnits.KiloliterPerDay)
 
     
     @staticmethod
-    def from_mega_liters_per_day(mega_liters_per_day: float):
+    def from_megaliters_per_day(megaliters_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_liters_per_day.
+        Create a new instance of VolumeFlow from a value in megaliters_per_day.
 
         
 
-        :param meters: The VolumeFlow value in mega_liters_per_day.
-        :type mega_liters_per_day: float
+        :param meters: The VolumeFlow value in megaliters_per_day.
+        :type megaliters_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_liters_per_day, VolumeFlowUnits.MegaLiterPerDay)
+        return VolumeFlow(megaliters_per_day, VolumeFlowUnits.MegaliterPerDay)
 
     
     @staticmethod
-    def from_mega_uk_gallons_per_day(mega_uk_gallons_per_day: float):
+    def from_megauk_gallons_per_day(megauk_gallons_per_day: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_uk_gallons_per_day.
+        Create a new instance of VolumeFlow from a value in megauk_gallons_per_day.
 
         
 
-        :param meters: The VolumeFlow value in mega_uk_gallons_per_day.
-        :type mega_uk_gallons_per_day: float
+        :param meters: The VolumeFlow value in megauk_gallons_per_day.
+        :type megauk_gallons_per_day: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_uk_gallons_per_day, VolumeFlowUnits.MegaUkGallonPerDay)
+        return VolumeFlow(megauk_gallons_per_day, VolumeFlowUnits.MegaukGallonPerDay)
 
     
     @staticmethod
-    def from_mega_uk_gallons_per_second(mega_uk_gallons_per_second: float):
+    def from_megauk_gallons_per_second(megauk_gallons_per_second: float):
         """
-        Create a new instance of VolumeFlow from a value in mega_uk_gallons_per_second.
+        Create a new instance of VolumeFlow from a value in megauk_gallons_per_second.
 
         
 
-        :param meters: The VolumeFlow value in mega_uk_gallons_per_second.
-        :type mega_uk_gallons_per_second: float
+        :param meters: The VolumeFlow value in megauk_gallons_per_second.
+        :type megauk_gallons_per_second: float
         :return: A new instance of VolumeFlow.
         :rtype: VolumeFlow
         """
-        return VolumeFlow(mega_uk_gallons_per_second, VolumeFlowUnits.MegaUkGallonPerSecond)
+        return VolumeFlow(megauk_gallons_per_second, VolumeFlowUnits.MegaukGallonPerSecond)
 
     
     @property
@@ -2312,344 +2312,344 @@ class VolumeFlow:
 
     
     @property
-    def mega_us_gallons_per_day(self) -> float:
+    def megaus_gallons_per_day(self) -> float:
         """
         
         """
-        if self.__mega_us_gallons_per_day != None:
-            return self.__mega_us_gallons_per_day
-        self.__mega_us_gallons_per_day = self.__convert_from_base(VolumeFlowUnits.MegaUsGallonPerDay)
-        return self.__mega_us_gallons_per_day
+        if self.__megaus_gallons_per_day != None:
+            return self.__megaus_gallons_per_day
+        self.__megaus_gallons_per_day = self.__convert_from_base(VolumeFlowUnits.MegausGallonPerDay)
+        return self.__megaus_gallons_per_day
 
     
     @property
-    def nano_liters_per_second(self) -> float:
+    def nanoliters_per_second(self) -> float:
         """
         
         """
-        if self.__nano_liters_per_second != None:
-            return self.__nano_liters_per_second
-        self.__nano_liters_per_second = self.__convert_from_base(VolumeFlowUnits.NanoLiterPerSecond)
-        return self.__nano_liters_per_second
+        if self.__nanoliters_per_second != None:
+            return self.__nanoliters_per_second
+        self.__nanoliters_per_second = self.__convert_from_base(VolumeFlowUnits.NanoliterPerSecond)
+        return self.__nanoliters_per_second
 
     
     @property
-    def micro_liters_per_second(self) -> float:
+    def microliters_per_second(self) -> float:
         """
         
         """
-        if self.__micro_liters_per_second != None:
-            return self.__micro_liters_per_second
-        self.__micro_liters_per_second = self.__convert_from_base(VolumeFlowUnits.MicroLiterPerSecond)
-        return self.__micro_liters_per_second
+        if self.__microliters_per_second != None:
+            return self.__microliters_per_second
+        self.__microliters_per_second = self.__convert_from_base(VolumeFlowUnits.MicroliterPerSecond)
+        return self.__microliters_per_second
 
     
     @property
-    def milli_liters_per_second(self) -> float:
+    def milliliters_per_second(self) -> float:
         """
         
         """
-        if self.__milli_liters_per_second != None:
-            return self.__milli_liters_per_second
-        self.__milli_liters_per_second = self.__convert_from_base(VolumeFlowUnits.MilliLiterPerSecond)
-        return self.__milli_liters_per_second
+        if self.__milliliters_per_second != None:
+            return self.__milliliters_per_second
+        self.__milliliters_per_second = self.__convert_from_base(VolumeFlowUnits.MilliliterPerSecond)
+        return self.__milliliters_per_second
 
     
     @property
-    def centi_liters_per_second(self) -> float:
+    def centiliters_per_second(self) -> float:
         """
         
         """
-        if self.__centi_liters_per_second != None:
-            return self.__centi_liters_per_second
-        self.__centi_liters_per_second = self.__convert_from_base(VolumeFlowUnits.CentiLiterPerSecond)
-        return self.__centi_liters_per_second
+        if self.__centiliters_per_second != None:
+            return self.__centiliters_per_second
+        self.__centiliters_per_second = self.__convert_from_base(VolumeFlowUnits.CentiliterPerSecond)
+        return self.__centiliters_per_second
 
     
     @property
-    def deci_liters_per_second(self) -> float:
+    def deciliters_per_second(self) -> float:
         """
         
         """
-        if self.__deci_liters_per_second != None:
-            return self.__deci_liters_per_second
-        self.__deci_liters_per_second = self.__convert_from_base(VolumeFlowUnits.DeciLiterPerSecond)
-        return self.__deci_liters_per_second
+        if self.__deciliters_per_second != None:
+            return self.__deciliters_per_second
+        self.__deciliters_per_second = self.__convert_from_base(VolumeFlowUnits.DeciliterPerSecond)
+        return self.__deciliters_per_second
 
     
     @property
-    def kilo_liters_per_second(self) -> float:
+    def kiloliters_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_liters_per_second != None:
-            return self.__kilo_liters_per_second
-        self.__kilo_liters_per_second = self.__convert_from_base(VolumeFlowUnits.KiloLiterPerSecond)
-        return self.__kilo_liters_per_second
+        if self.__kiloliters_per_second != None:
+            return self.__kiloliters_per_second
+        self.__kiloliters_per_second = self.__convert_from_base(VolumeFlowUnits.KiloliterPerSecond)
+        return self.__kiloliters_per_second
 
     
     @property
-    def mega_liters_per_second(self) -> float:
+    def megaliters_per_second(self) -> float:
         """
         
         """
-        if self.__mega_liters_per_second != None:
-            return self.__mega_liters_per_second
-        self.__mega_liters_per_second = self.__convert_from_base(VolumeFlowUnits.MegaLiterPerSecond)
-        return self.__mega_liters_per_second
+        if self.__megaliters_per_second != None:
+            return self.__megaliters_per_second
+        self.__megaliters_per_second = self.__convert_from_base(VolumeFlowUnits.MegaliterPerSecond)
+        return self.__megaliters_per_second
 
     
     @property
-    def nano_liters_per_minute(self) -> float:
+    def nanoliters_per_minute(self) -> float:
         """
         
         """
-        if self.__nano_liters_per_minute != None:
-            return self.__nano_liters_per_minute
-        self.__nano_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.NanoLiterPerMinute)
-        return self.__nano_liters_per_minute
+        if self.__nanoliters_per_minute != None:
+            return self.__nanoliters_per_minute
+        self.__nanoliters_per_minute = self.__convert_from_base(VolumeFlowUnits.NanoliterPerMinute)
+        return self.__nanoliters_per_minute
 
     
     @property
-    def micro_liters_per_minute(self) -> float:
+    def microliters_per_minute(self) -> float:
         """
         
         """
-        if self.__micro_liters_per_minute != None:
-            return self.__micro_liters_per_minute
-        self.__micro_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.MicroLiterPerMinute)
-        return self.__micro_liters_per_minute
+        if self.__microliters_per_minute != None:
+            return self.__microliters_per_minute
+        self.__microliters_per_minute = self.__convert_from_base(VolumeFlowUnits.MicroliterPerMinute)
+        return self.__microliters_per_minute
 
     
     @property
-    def milli_liters_per_minute(self) -> float:
+    def milliliters_per_minute(self) -> float:
         """
         
         """
-        if self.__milli_liters_per_minute != None:
-            return self.__milli_liters_per_minute
-        self.__milli_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.MilliLiterPerMinute)
-        return self.__milli_liters_per_minute
+        if self.__milliliters_per_minute != None:
+            return self.__milliliters_per_minute
+        self.__milliliters_per_minute = self.__convert_from_base(VolumeFlowUnits.MilliliterPerMinute)
+        return self.__milliliters_per_minute
 
     
     @property
-    def centi_liters_per_minute(self) -> float:
+    def centiliters_per_minute(self) -> float:
         """
         
         """
-        if self.__centi_liters_per_minute != None:
-            return self.__centi_liters_per_minute
-        self.__centi_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.CentiLiterPerMinute)
-        return self.__centi_liters_per_minute
+        if self.__centiliters_per_minute != None:
+            return self.__centiliters_per_minute
+        self.__centiliters_per_minute = self.__convert_from_base(VolumeFlowUnits.CentiliterPerMinute)
+        return self.__centiliters_per_minute
 
     
     @property
-    def deci_liters_per_minute(self) -> float:
+    def deciliters_per_minute(self) -> float:
         """
         
         """
-        if self.__deci_liters_per_minute != None:
-            return self.__deci_liters_per_minute
-        self.__deci_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.DeciLiterPerMinute)
-        return self.__deci_liters_per_minute
+        if self.__deciliters_per_minute != None:
+            return self.__deciliters_per_minute
+        self.__deciliters_per_minute = self.__convert_from_base(VolumeFlowUnits.DeciliterPerMinute)
+        return self.__deciliters_per_minute
 
     
     @property
-    def kilo_liters_per_minute(self) -> float:
+    def kiloliters_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_liters_per_minute != None:
-            return self.__kilo_liters_per_minute
-        self.__kilo_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.KiloLiterPerMinute)
-        return self.__kilo_liters_per_minute
+        if self.__kiloliters_per_minute != None:
+            return self.__kiloliters_per_minute
+        self.__kiloliters_per_minute = self.__convert_from_base(VolumeFlowUnits.KiloliterPerMinute)
+        return self.__kiloliters_per_minute
 
     
     @property
-    def mega_liters_per_minute(self) -> float:
+    def megaliters_per_minute(self) -> float:
         """
         
         """
-        if self.__mega_liters_per_minute != None:
-            return self.__mega_liters_per_minute
-        self.__mega_liters_per_minute = self.__convert_from_base(VolumeFlowUnits.MegaLiterPerMinute)
-        return self.__mega_liters_per_minute
+        if self.__megaliters_per_minute != None:
+            return self.__megaliters_per_minute
+        self.__megaliters_per_minute = self.__convert_from_base(VolumeFlowUnits.MegaliterPerMinute)
+        return self.__megaliters_per_minute
 
     
     @property
-    def nano_liters_per_hour(self) -> float:
+    def nanoliters_per_hour(self) -> float:
         """
         
         """
-        if self.__nano_liters_per_hour != None:
-            return self.__nano_liters_per_hour
-        self.__nano_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.NanoLiterPerHour)
-        return self.__nano_liters_per_hour
+        if self.__nanoliters_per_hour != None:
+            return self.__nanoliters_per_hour
+        self.__nanoliters_per_hour = self.__convert_from_base(VolumeFlowUnits.NanoliterPerHour)
+        return self.__nanoliters_per_hour
 
     
     @property
-    def micro_liters_per_hour(self) -> float:
+    def microliters_per_hour(self) -> float:
         """
         
         """
-        if self.__micro_liters_per_hour != None:
-            return self.__micro_liters_per_hour
-        self.__micro_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.MicroLiterPerHour)
-        return self.__micro_liters_per_hour
+        if self.__microliters_per_hour != None:
+            return self.__microliters_per_hour
+        self.__microliters_per_hour = self.__convert_from_base(VolumeFlowUnits.MicroliterPerHour)
+        return self.__microliters_per_hour
 
     
     @property
-    def milli_liters_per_hour(self) -> float:
+    def milliliters_per_hour(self) -> float:
         """
         
         """
-        if self.__milli_liters_per_hour != None:
-            return self.__milli_liters_per_hour
-        self.__milli_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.MilliLiterPerHour)
-        return self.__milli_liters_per_hour
+        if self.__milliliters_per_hour != None:
+            return self.__milliliters_per_hour
+        self.__milliliters_per_hour = self.__convert_from_base(VolumeFlowUnits.MilliliterPerHour)
+        return self.__milliliters_per_hour
 
     
     @property
-    def centi_liters_per_hour(self) -> float:
+    def centiliters_per_hour(self) -> float:
         """
         
         """
-        if self.__centi_liters_per_hour != None:
-            return self.__centi_liters_per_hour
-        self.__centi_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.CentiLiterPerHour)
-        return self.__centi_liters_per_hour
+        if self.__centiliters_per_hour != None:
+            return self.__centiliters_per_hour
+        self.__centiliters_per_hour = self.__convert_from_base(VolumeFlowUnits.CentiliterPerHour)
+        return self.__centiliters_per_hour
 
     
     @property
-    def deci_liters_per_hour(self) -> float:
+    def deciliters_per_hour(self) -> float:
         """
         
         """
-        if self.__deci_liters_per_hour != None:
-            return self.__deci_liters_per_hour
-        self.__deci_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.DeciLiterPerHour)
-        return self.__deci_liters_per_hour
+        if self.__deciliters_per_hour != None:
+            return self.__deciliters_per_hour
+        self.__deciliters_per_hour = self.__convert_from_base(VolumeFlowUnits.DeciliterPerHour)
+        return self.__deciliters_per_hour
 
     
     @property
-    def kilo_liters_per_hour(self) -> float:
+    def kiloliters_per_hour(self) -> float:
         """
         
         """
-        if self.__kilo_liters_per_hour != None:
-            return self.__kilo_liters_per_hour
-        self.__kilo_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.KiloLiterPerHour)
-        return self.__kilo_liters_per_hour
+        if self.__kiloliters_per_hour != None:
+            return self.__kiloliters_per_hour
+        self.__kiloliters_per_hour = self.__convert_from_base(VolumeFlowUnits.KiloliterPerHour)
+        return self.__kiloliters_per_hour
 
     
     @property
-    def mega_liters_per_hour(self) -> float:
+    def megaliters_per_hour(self) -> float:
         """
         
         """
-        if self.__mega_liters_per_hour != None:
-            return self.__mega_liters_per_hour
-        self.__mega_liters_per_hour = self.__convert_from_base(VolumeFlowUnits.MegaLiterPerHour)
-        return self.__mega_liters_per_hour
+        if self.__megaliters_per_hour != None:
+            return self.__megaliters_per_hour
+        self.__megaliters_per_hour = self.__convert_from_base(VolumeFlowUnits.MegaliterPerHour)
+        return self.__megaliters_per_hour
 
     
     @property
-    def nano_liters_per_day(self) -> float:
+    def nanoliters_per_day(self) -> float:
         """
         
         """
-        if self.__nano_liters_per_day != None:
-            return self.__nano_liters_per_day
-        self.__nano_liters_per_day = self.__convert_from_base(VolumeFlowUnits.NanoLiterPerDay)
-        return self.__nano_liters_per_day
+        if self.__nanoliters_per_day != None:
+            return self.__nanoliters_per_day
+        self.__nanoliters_per_day = self.__convert_from_base(VolumeFlowUnits.NanoliterPerDay)
+        return self.__nanoliters_per_day
 
     
     @property
-    def micro_liters_per_day(self) -> float:
+    def microliters_per_day(self) -> float:
         """
         
         """
-        if self.__micro_liters_per_day != None:
-            return self.__micro_liters_per_day
-        self.__micro_liters_per_day = self.__convert_from_base(VolumeFlowUnits.MicroLiterPerDay)
-        return self.__micro_liters_per_day
+        if self.__microliters_per_day != None:
+            return self.__microliters_per_day
+        self.__microliters_per_day = self.__convert_from_base(VolumeFlowUnits.MicroliterPerDay)
+        return self.__microliters_per_day
 
     
     @property
-    def milli_liters_per_day(self) -> float:
+    def milliliters_per_day(self) -> float:
         """
         
         """
-        if self.__milli_liters_per_day != None:
-            return self.__milli_liters_per_day
-        self.__milli_liters_per_day = self.__convert_from_base(VolumeFlowUnits.MilliLiterPerDay)
-        return self.__milli_liters_per_day
+        if self.__milliliters_per_day != None:
+            return self.__milliliters_per_day
+        self.__milliliters_per_day = self.__convert_from_base(VolumeFlowUnits.MilliliterPerDay)
+        return self.__milliliters_per_day
 
     
     @property
-    def centi_liters_per_day(self) -> float:
+    def centiliters_per_day(self) -> float:
         """
         
         """
-        if self.__centi_liters_per_day != None:
-            return self.__centi_liters_per_day
-        self.__centi_liters_per_day = self.__convert_from_base(VolumeFlowUnits.CentiLiterPerDay)
-        return self.__centi_liters_per_day
+        if self.__centiliters_per_day != None:
+            return self.__centiliters_per_day
+        self.__centiliters_per_day = self.__convert_from_base(VolumeFlowUnits.CentiliterPerDay)
+        return self.__centiliters_per_day
 
     
     @property
-    def deci_liters_per_day(self) -> float:
+    def deciliters_per_day(self) -> float:
         """
         
         """
-        if self.__deci_liters_per_day != None:
-            return self.__deci_liters_per_day
-        self.__deci_liters_per_day = self.__convert_from_base(VolumeFlowUnits.DeciLiterPerDay)
-        return self.__deci_liters_per_day
+        if self.__deciliters_per_day != None:
+            return self.__deciliters_per_day
+        self.__deciliters_per_day = self.__convert_from_base(VolumeFlowUnits.DeciliterPerDay)
+        return self.__deciliters_per_day
 
     
     @property
-    def kilo_liters_per_day(self) -> float:
+    def kiloliters_per_day(self) -> float:
         """
         
         """
-        if self.__kilo_liters_per_day != None:
-            return self.__kilo_liters_per_day
-        self.__kilo_liters_per_day = self.__convert_from_base(VolumeFlowUnits.KiloLiterPerDay)
-        return self.__kilo_liters_per_day
+        if self.__kiloliters_per_day != None:
+            return self.__kiloliters_per_day
+        self.__kiloliters_per_day = self.__convert_from_base(VolumeFlowUnits.KiloliterPerDay)
+        return self.__kiloliters_per_day
 
     
     @property
-    def mega_liters_per_day(self) -> float:
+    def megaliters_per_day(self) -> float:
         """
         
         """
-        if self.__mega_liters_per_day != None:
-            return self.__mega_liters_per_day
-        self.__mega_liters_per_day = self.__convert_from_base(VolumeFlowUnits.MegaLiterPerDay)
-        return self.__mega_liters_per_day
+        if self.__megaliters_per_day != None:
+            return self.__megaliters_per_day
+        self.__megaliters_per_day = self.__convert_from_base(VolumeFlowUnits.MegaliterPerDay)
+        return self.__megaliters_per_day
 
     
     @property
-    def mega_uk_gallons_per_day(self) -> float:
+    def megauk_gallons_per_day(self) -> float:
         """
         
         """
-        if self.__mega_uk_gallons_per_day != None:
-            return self.__mega_uk_gallons_per_day
-        self.__mega_uk_gallons_per_day = self.__convert_from_base(VolumeFlowUnits.MegaUkGallonPerDay)
-        return self.__mega_uk_gallons_per_day
+        if self.__megauk_gallons_per_day != None:
+            return self.__megauk_gallons_per_day
+        self.__megauk_gallons_per_day = self.__convert_from_base(VolumeFlowUnits.MegaukGallonPerDay)
+        return self.__megauk_gallons_per_day
 
     
     @property
-    def mega_uk_gallons_per_second(self) -> float:
+    def megauk_gallons_per_second(self) -> float:
         """
         
         """
-        if self.__mega_uk_gallons_per_second != None:
-            return self.__mega_uk_gallons_per_second
-        self.__mega_uk_gallons_per_second = self.__convert_from_base(VolumeFlowUnits.MegaUkGallonPerSecond)
-        return self.__mega_uk_gallons_per_second
+        if self.__megauk_gallons_per_second != None:
+            return self.__megauk_gallons_per_second
+        self.__megauk_gallons_per_second = self.__convert_from_base(VolumeFlowUnits.MegaukGallonPerSecond)
+        return self.__megauk_gallons_per_second
 
     
     def to_string(self, unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> string:
@@ -2767,98 +2767,98 @@ class VolumeFlow:
         if unit == VolumeFlowUnits.CubicCentimeterPerMinute:
             return f"""{self.cubic_centimeters_per_minute} cm³/min"""
         
-        if unit == VolumeFlowUnits.MegaUsGallonPerDay:
-            return f"""{self.mega_us_gallons_per_day} """
+        if unit == VolumeFlowUnits.MegausGallonPerDay:
+            return f"""{self.megaus_gallons_per_day} """
         
-        if unit == VolumeFlowUnits.NanoLiterPerSecond:
-            return f"""{self.nano_liters_per_second} """
+        if unit == VolumeFlowUnits.NanoliterPerSecond:
+            return f"""{self.nanoliters_per_second} """
         
-        if unit == VolumeFlowUnits.MicroLiterPerSecond:
-            return f"""{self.micro_liters_per_second} """
+        if unit == VolumeFlowUnits.MicroliterPerSecond:
+            return f"""{self.microliters_per_second} """
         
-        if unit == VolumeFlowUnits.MilliLiterPerSecond:
-            return f"""{self.milli_liters_per_second} """
+        if unit == VolumeFlowUnits.MilliliterPerSecond:
+            return f"""{self.milliliters_per_second} """
         
-        if unit == VolumeFlowUnits.CentiLiterPerSecond:
-            return f"""{self.centi_liters_per_second} """
+        if unit == VolumeFlowUnits.CentiliterPerSecond:
+            return f"""{self.centiliters_per_second} """
         
-        if unit == VolumeFlowUnits.DeciLiterPerSecond:
-            return f"""{self.deci_liters_per_second} """
+        if unit == VolumeFlowUnits.DeciliterPerSecond:
+            return f"""{self.deciliters_per_second} """
         
-        if unit == VolumeFlowUnits.KiloLiterPerSecond:
-            return f"""{self.kilo_liters_per_second} """
+        if unit == VolumeFlowUnits.KiloliterPerSecond:
+            return f"""{self.kiloliters_per_second} """
         
-        if unit == VolumeFlowUnits.MegaLiterPerSecond:
-            return f"""{self.mega_liters_per_second} """
+        if unit == VolumeFlowUnits.MegaliterPerSecond:
+            return f"""{self.megaliters_per_second} """
         
-        if unit == VolumeFlowUnits.NanoLiterPerMinute:
-            return f"""{self.nano_liters_per_minute} """
+        if unit == VolumeFlowUnits.NanoliterPerMinute:
+            return f"""{self.nanoliters_per_minute} """
         
-        if unit == VolumeFlowUnits.MicroLiterPerMinute:
-            return f"""{self.micro_liters_per_minute} """
+        if unit == VolumeFlowUnits.MicroliterPerMinute:
+            return f"""{self.microliters_per_minute} """
         
-        if unit == VolumeFlowUnits.MilliLiterPerMinute:
-            return f"""{self.milli_liters_per_minute} """
+        if unit == VolumeFlowUnits.MilliliterPerMinute:
+            return f"""{self.milliliters_per_minute} """
         
-        if unit == VolumeFlowUnits.CentiLiterPerMinute:
-            return f"""{self.centi_liters_per_minute} """
+        if unit == VolumeFlowUnits.CentiliterPerMinute:
+            return f"""{self.centiliters_per_minute} """
         
-        if unit == VolumeFlowUnits.DeciLiterPerMinute:
-            return f"""{self.deci_liters_per_minute} """
+        if unit == VolumeFlowUnits.DeciliterPerMinute:
+            return f"""{self.deciliters_per_minute} """
         
-        if unit == VolumeFlowUnits.KiloLiterPerMinute:
-            return f"""{self.kilo_liters_per_minute} """
+        if unit == VolumeFlowUnits.KiloliterPerMinute:
+            return f"""{self.kiloliters_per_minute} """
         
-        if unit == VolumeFlowUnits.MegaLiterPerMinute:
-            return f"""{self.mega_liters_per_minute} """
+        if unit == VolumeFlowUnits.MegaliterPerMinute:
+            return f"""{self.megaliters_per_minute} """
         
-        if unit == VolumeFlowUnits.NanoLiterPerHour:
-            return f"""{self.nano_liters_per_hour} """
+        if unit == VolumeFlowUnits.NanoliterPerHour:
+            return f"""{self.nanoliters_per_hour} """
         
-        if unit == VolumeFlowUnits.MicroLiterPerHour:
-            return f"""{self.micro_liters_per_hour} """
+        if unit == VolumeFlowUnits.MicroliterPerHour:
+            return f"""{self.microliters_per_hour} """
         
-        if unit == VolumeFlowUnits.MilliLiterPerHour:
-            return f"""{self.milli_liters_per_hour} """
+        if unit == VolumeFlowUnits.MilliliterPerHour:
+            return f"""{self.milliliters_per_hour} """
         
-        if unit == VolumeFlowUnits.CentiLiterPerHour:
-            return f"""{self.centi_liters_per_hour} """
+        if unit == VolumeFlowUnits.CentiliterPerHour:
+            return f"""{self.centiliters_per_hour} """
         
-        if unit == VolumeFlowUnits.DeciLiterPerHour:
-            return f"""{self.deci_liters_per_hour} """
+        if unit == VolumeFlowUnits.DeciliterPerHour:
+            return f"""{self.deciliters_per_hour} """
         
-        if unit == VolumeFlowUnits.KiloLiterPerHour:
-            return f"""{self.kilo_liters_per_hour} """
+        if unit == VolumeFlowUnits.KiloliterPerHour:
+            return f"""{self.kiloliters_per_hour} """
         
-        if unit == VolumeFlowUnits.MegaLiterPerHour:
-            return f"""{self.mega_liters_per_hour} """
+        if unit == VolumeFlowUnits.MegaliterPerHour:
+            return f"""{self.megaliters_per_hour} """
         
-        if unit == VolumeFlowUnits.NanoLiterPerDay:
-            return f"""{self.nano_liters_per_day} """
+        if unit == VolumeFlowUnits.NanoliterPerDay:
+            return f"""{self.nanoliters_per_day} """
         
-        if unit == VolumeFlowUnits.MicroLiterPerDay:
-            return f"""{self.micro_liters_per_day} """
+        if unit == VolumeFlowUnits.MicroliterPerDay:
+            return f"""{self.microliters_per_day} """
         
-        if unit == VolumeFlowUnits.MilliLiterPerDay:
-            return f"""{self.milli_liters_per_day} """
+        if unit == VolumeFlowUnits.MilliliterPerDay:
+            return f"""{self.milliliters_per_day} """
         
-        if unit == VolumeFlowUnits.CentiLiterPerDay:
-            return f"""{self.centi_liters_per_day} """
+        if unit == VolumeFlowUnits.CentiliterPerDay:
+            return f"""{self.centiliters_per_day} """
         
-        if unit == VolumeFlowUnits.DeciLiterPerDay:
-            return f"""{self.deci_liters_per_day} """
+        if unit == VolumeFlowUnits.DeciliterPerDay:
+            return f"""{self.deciliters_per_day} """
         
-        if unit == VolumeFlowUnits.KiloLiterPerDay:
-            return f"""{self.kilo_liters_per_day} """
+        if unit == VolumeFlowUnits.KiloliterPerDay:
+            return f"""{self.kiloliters_per_day} """
         
-        if unit == VolumeFlowUnits.MegaLiterPerDay:
-            return f"""{self.mega_liters_per_day} """
+        if unit == VolumeFlowUnits.MegaliterPerDay:
+            return f"""{self.megaliters_per_day} """
         
-        if unit == VolumeFlowUnits.MegaUkGallonPerDay:
-            return f"""{self.mega_uk_gallons_per_day} """
+        if unit == VolumeFlowUnits.MegaukGallonPerDay:
+            return f"""{self.megauk_gallons_per_day} """
         
-        if unit == VolumeFlowUnits.MegaUkGallonPerSecond:
-            return f"""{self.mega_uk_gallons_per_second} """
+        if unit == VolumeFlowUnits.MegaukGallonPerSecond:
+            return f"""{self.megauk_gallons_per_second} """
         
         return f'{self.__value}'
 
@@ -2978,97 +2978,97 @@ class VolumeFlow:
         if unit_abbreviation == VolumeFlowUnits.CubicCentimeterPerMinute:
             return """cm³/min"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaUsGallonPerDay:
+        if unit_abbreviation == VolumeFlowUnits.MegausGallonPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.NanoLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.NanoliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MicroLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.MicroliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MilliLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.MilliliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.CentiLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.CentiliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.DeciLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.DeciliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.KiloLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.KiloliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaLiterPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.MegaliterPerSecond:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.NanoLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.NanoliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MicroLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.MicroliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MilliLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.MilliliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.CentiLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.CentiliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.DeciLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.DeciliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.KiloLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.KiloliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaLiterPerMinute:
+        if unit_abbreviation == VolumeFlowUnits.MegaliterPerMinute:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.NanoLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.NanoliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MicroLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.MicroliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MilliLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.MilliliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.CentiLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.CentiliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.DeciLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.DeciliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.KiloLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.KiloliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaLiterPerHour:
+        if unit_abbreviation == VolumeFlowUnits.MegaliterPerHour:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.NanoLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.NanoliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MicroLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.MicroliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MilliLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.MilliliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.CentiLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.CentiliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.DeciLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.DeciliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.KiloLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.KiloliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaLiterPerDay:
+        if unit_abbreviation == VolumeFlowUnits.MegaliterPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaUkGallonPerDay:
+        if unit_abbreviation == VolumeFlowUnits.MegaukGallonPerDay:
             return """"""
         
-        if unit_abbreviation == VolumeFlowUnits.MegaUkGallonPerSecond:
+        if unit_abbreviation == VolumeFlowUnits.MegaukGallonPerSecond:
             return """"""
         
 

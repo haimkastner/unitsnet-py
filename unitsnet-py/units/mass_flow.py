@@ -68,107 +68,107 @@ class MassFlowUnits(Enum):
             
         """
         
-        NanoGramPerSecond = 'nano_gram_per_second'
+        NanogramPerSecond = 'nanogram_per_second'
         """
             
         """
         
-        MicroGramPerSecond = 'micro_gram_per_second'
+        MicrogramPerSecond = 'microgram_per_second'
         """
             
         """
         
-        MilliGramPerSecond = 'milli_gram_per_second'
+        MilligramPerSecond = 'milligram_per_second'
         """
             
         """
         
-        CentiGramPerSecond = 'centi_gram_per_second'
+        CentigramPerSecond = 'centigram_per_second'
         """
             
         """
         
-        DeciGramPerSecond = 'deci_gram_per_second'
+        DecigramPerSecond = 'decigram_per_second'
         """
             
         """
         
-        DecaGramPerSecond = 'deca_gram_per_second'
+        DecagramPerSecond = 'decagram_per_second'
         """
             
         """
         
-        HectoGramPerSecond = 'hecto_gram_per_second'
+        HectogramPerSecond = 'hectogram_per_second'
         """
             
         """
         
-        KiloGramPerSecond = 'kilo_gram_per_second'
+        KilogramPerSecond = 'kilogram_per_second'
         """
             
         """
         
-        NanoGramPerDay = 'nano_gram_per_day'
+        NanogramPerDay = 'nanogram_per_day'
         """
             
         """
         
-        MicroGramPerDay = 'micro_gram_per_day'
+        MicrogramPerDay = 'microgram_per_day'
         """
             
         """
         
-        MilliGramPerDay = 'milli_gram_per_day'
+        MilligramPerDay = 'milligram_per_day'
         """
             
         """
         
-        CentiGramPerDay = 'centi_gram_per_day'
+        CentigramPerDay = 'centigram_per_day'
         """
             
         """
         
-        DeciGramPerDay = 'deci_gram_per_day'
+        DecigramPerDay = 'decigram_per_day'
         """
             
         """
         
-        DecaGramPerDay = 'deca_gram_per_day'
+        DecagramPerDay = 'decagram_per_day'
         """
             
         """
         
-        HectoGramPerDay = 'hecto_gram_per_day'
+        HectogramPerDay = 'hectogram_per_day'
         """
             
         """
         
-        KiloGramPerDay = 'kilo_gram_per_day'
+        KilogramPerDay = 'kilogram_per_day'
         """
             
         """
         
-        MegaGramPerDay = 'mega_gram_per_day'
+        MegagramPerDay = 'megagram_per_day'
         """
             
         """
         
-        MegaPoundPerDay = 'mega_pound_per_day'
+        MegapoundPerDay = 'megapound_per_day'
         """
             
         """
         
-        MegaPoundPerHour = 'mega_pound_per_hour'
+        MegapoundPerHour = 'megapound_per_hour'
         """
             
         """
         
-        MegaPoundPerMinute = 'mega_pound_per_minute'
+        MegapoundPerMinute = 'megapound_per_minute'
         """
             
         """
         
-        MegaPoundPerSecond = 'mega_pound_per_second'
+        MegapoundPerSecond = 'megapound_per_second'
         """
             
         """
@@ -211,47 +211,47 @@ class MassFlow:
         
         self.__short_tons_per_hour = None
         
-        self.__nano_grams_per_second = None
+        self.__nanograms_per_second = None
         
-        self.__micro_grams_per_second = None
+        self.__micrograms_per_second = None
         
-        self.__milli_grams_per_second = None
+        self.__milligrams_per_second = None
         
-        self.__centi_grams_per_second = None
+        self.__centigrams_per_second = None
         
-        self.__deci_grams_per_second = None
+        self.__decigrams_per_second = None
         
-        self.__deca_grams_per_second = None
+        self.__decagrams_per_second = None
         
-        self.__hecto_grams_per_second = None
+        self.__hectograms_per_second = None
         
-        self.__kilo_grams_per_second = None
+        self.__kilograms_per_second = None
         
-        self.__nano_grams_per_day = None
+        self.__nanograms_per_day = None
         
-        self.__micro_grams_per_day = None
+        self.__micrograms_per_day = None
         
-        self.__milli_grams_per_day = None
+        self.__milligrams_per_day = None
         
-        self.__centi_grams_per_day = None
+        self.__centigrams_per_day = None
         
-        self.__deci_grams_per_day = None
+        self.__decigrams_per_day = None
         
-        self.__deca_grams_per_day = None
+        self.__decagrams_per_day = None
         
-        self.__hecto_grams_per_day = None
+        self.__hectograms_per_day = None
         
-        self.__kilo_grams_per_day = None
+        self.__kilograms_per_day = None
         
-        self.__mega_grams_per_day = None
+        self.__megagrams_per_day = None
         
-        self.__mega_pounds_per_day = None
+        self.__megapounds_per_day = None
         
-        self.__mega_pounds_per_hour = None
+        self.__megapounds_per_hour = None
         
-        self.__mega_pounds_per_minute = None
+        self.__megapounds_per_minute = None
         
-        self.__mega_pounds_per_second = None
+        self.__megapounds_per_second = None
         
 
     def __convert_from_base(self, from_unit: MassFlowUnits) -> float:
@@ -293,67 +293,67 @@ class MassFlow:
         if from_unit == MassFlowUnits.ShortTonPerHour:
             return (value / 251.9957611)
         
-        if from_unit == MassFlowUnits.NanoGramPerSecond:
+        if from_unit == MassFlowUnits.NanogramPerSecond:
             return ((value) / 1e-09)
         
-        if from_unit == MassFlowUnits.MicroGramPerSecond:
+        if from_unit == MassFlowUnits.MicrogramPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == MassFlowUnits.MilliGramPerSecond:
+        if from_unit == MassFlowUnits.MilligramPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == MassFlowUnits.CentiGramPerSecond:
+        if from_unit == MassFlowUnits.CentigramPerSecond:
             return ((value) / 0.01)
         
-        if from_unit == MassFlowUnits.DeciGramPerSecond:
+        if from_unit == MassFlowUnits.DecigramPerSecond:
             return ((value) / 0.1)
         
-        if from_unit == MassFlowUnits.DecaGramPerSecond:
+        if from_unit == MassFlowUnits.DecagramPerSecond:
             return ((value) / 10.0)
         
-        if from_unit == MassFlowUnits.HectoGramPerSecond:
+        if from_unit == MassFlowUnits.HectogramPerSecond:
             return ((value) / 100.0)
         
-        if from_unit == MassFlowUnits.KiloGramPerSecond:
+        if from_unit == MassFlowUnits.KilogramPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == MassFlowUnits.NanoGramPerDay:
+        if from_unit == MassFlowUnits.NanogramPerDay:
             return ((value * 86400) / 1e-09)
         
-        if from_unit == MassFlowUnits.MicroGramPerDay:
+        if from_unit == MassFlowUnits.MicrogramPerDay:
             return ((value * 86400) / 1e-06)
         
-        if from_unit == MassFlowUnits.MilliGramPerDay:
+        if from_unit == MassFlowUnits.MilligramPerDay:
             return ((value * 86400) / 0.001)
         
-        if from_unit == MassFlowUnits.CentiGramPerDay:
+        if from_unit == MassFlowUnits.CentigramPerDay:
             return ((value * 86400) / 0.01)
         
-        if from_unit == MassFlowUnits.DeciGramPerDay:
+        if from_unit == MassFlowUnits.DecigramPerDay:
             return ((value * 86400) / 0.1)
         
-        if from_unit == MassFlowUnits.DecaGramPerDay:
+        if from_unit == MassFlowUnits.DecagramPerDay:
             return ((value * 86400) / 10.0)
         
-        if from_unit == MassFlowUnits.HectoGramPerDay:
+        if from_unit == MassFlowUnits.HectogramPerDay:
             return ((value * 86400) / 100.0)
         
-        if from_unit == MassFlowUnits.KiloGramPerDay:
+        if from_unit == MassFlowUnits.KilogramPerDay:
             return ((value * 86400) / 1000.0)
         
-        if from_unit == MassFlowUnits.MegaGramPerDay:
+        if from_unit == MassFlowUnits.MegagramPerDay:
             return ((value * 86400) / 1000000.0)
         
-        if from_unit == MassFlowUnits.MegaPoundPerDay:
+        if from_unit == MassFlowUnits.MegapoundPerDay:
             return ((value * 190.47936) / 1000000.0)
         
-        if from_unit == MassFlowUnits.MegaPoundPerHour:
+        if from_unit == MassFlowUnits.MegapoundPerHour:
             return ((value * 7.93664) / 1000000.0)
         
-        if from_unit == MassFlowUnits.MegaPoundPerMinute:
+        if from_unit == MassFlowUnits.MegapoundPerMinute:
             return ((value * 0.132277) / 1000000.0)
         
-        if from_unit == MassFlowUnits.MegaPoundPerSecond:
+        if from_unit == MassFlowUnits.MegapoundPerSecond:
             return ((value / 453.59237) / 1000000.0)
         
         return None
@@ -397,67 +397,67 @@ class MassFlow:
         if to_unit == MassFlowUnits.ShortTonPerHour:
             return (value * 251.9957611)
         
-        if to_unit == MassFlowUnits.NanoGramPerSecond:
+        if to_unit == MassFlowUnits.NanogramPerSecond:
             return ((value) * 1e-09)
         
-        if to_unit == MassFlowUnits.MicroGramPerSecond:
+        if to_unit == MassFlowUnits.MicrogramPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == MassFlowUnits.MilliGramPerSecond:
+        if to_unit == MassFlowUnits.MilligramPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == MassFlowUnits.CentiGramPerSecond:
+        if to_unit == MassFlowUnits.CentigramPerSecond:
             return ((value) * 0.01)
         
-        if to_unit == MassFlowUnits.DeciGramPerSecond:
+        if to_unit == MassFlowUnits.DecigramPerSecond:
             return ((value) * 0.1)
         
-        if to_unit == MassFlowUnits.DecaGramPerSecond:
+        if to_unit == MassFlowUnits.DecagramPerSecond:
             return ((value) * 10.0)
         
-        if to_unit == MassFlowUnits.HectoGramPerSecond:
+        if to_unit == MassFlowUnits.HectogramPerSecond:
             return ((value) * 100.0)
         
-        if to_unit == MassFlowUnits.KiloGramPerSecond:
+        if to_unit == MassFlowUnits.KilogramPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == MassFlowUnits.NanoGramPerDay:
+        if to_unit == MassFlowUnits.NanogramPerDay:
             return ((value / 86400) * 1e-09)
         
-        if to_unit == MassFlowUnits.MicroGramPerDay:
+        if to_unit == MassFlowUnits.MicrogramPerDay:
             return ((value / 86400) * 1e-06)
         
-        if to_unit == MassFlowUnits.MilliGramPerDay:
+        if to_unit == MassFlowUnits.MilligramPerDay:
             return ((value / 86400) * 0.001)
         
-        if to_unit == MassFlowUnits.CentiGramPerDay:
+        if to_unit == MassFlowUnits.CentigramPerDay:
             return ((value / 86400) * 0.01)
         
-        if to_unit == MassFlowUnits.DeciGramPerDay:
+        if to_unit == MassFlowUnits.DecigramPerDay:
             return ((value / 86400) * 0.1)
         
-        if to_unit == MassFlowUnits.DecaGramPerDay:
+        if to_unit == MassFlowUnits.DecagramPerDay:
             return ((value / 86400) * 10.0)
         
-        if to_unit == MassFlowUnits.HectoGramPerDay:
+        if to_unit == MassFlowUnits.HectogramPerDay:
             return ((value / 86400) * 100.0)
         
-        if to_unit == MassFlowUnits.KiloGramPerDay:
+        if to_unit == MassFlowUnits.KilogramPerDay:
             return ((value / 86400) * 1000.0)
         
-        if to_unit == MassFlowUnits.MegaGramPerDay:
+        if to_unit == MassFlowUnits.MegagramPerDay:
             return ((value / 86400) * 1000000.0)
         
-        if to_unit == MassFlowUnits.MegaPoundPerDay:
+        if to_unit == MassFlowUnits.MegapoundPerDay:
             return ((value / 190.47936) * 1000000.0)
         
-        if to_unit == MassFlowUnits.MegaPoundPerHour:
+        if to_unit == MassFlowUnits.MegapoundPerHour:
             return ((value / 7.93664) * 1000000.0)
         
-        if to_unit == MassFlowUnits.MegaPoundPerMinute:
+        if to_unit == MassFlowUnits.MegapoundPerMinute:
             return ((value / 0.132277) * 1000000.0)
         
-        if to_unit == MassFlowUnits.MegaPoundPerSecond:
+        if to_unit == MassFlowUnits.MegapoundPerSecond:
             return ((value * 453.59237) * 1000000.0)
         
         return None
@@ -649,318 +649,318 @@ class MassFlow:
 
     
     @staticmethod
-    def from_nano_grams_per_second(nano_grams_per_second: float):
+    def from_nanograms_per_second(nanograms_per_second: float):
         """
-        Create a new instance of MassFlow from a value in nano_grams_per_second.
+        Create a new instance of MassFlow from a value in nanograms_per_second.
 
         
 
-        :param meters: The MassFlow value in nano_grams_per_second.
-        :type nano_grams_per_second: float
+        :param meters: The MassFlow value in nanograms_per_second.
+        :type nanograms_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(nano_grams_per_second, MassFlowUnits.NanoGramPerSecond)
+        return MassFlow(nanograms_per_second, MassFlowUnits.NanogramPerSecond)
 
     
     @staticmethod
-    def from_micro_grams_per_second(micro_grams_per_second: float):
+    def from_micrograms_per_second(micrograms_per_second: float):
         """
-        Create a new instance of MassFlow from a value in micro_grams_per_second.
+        Create a new instance of MassFlow from a value in micrograms_per_second.
 
         
 
-        :param meters: The MassFlow value in micro_grams_per_second.
-        :type micro_grams_per_second: float
+        :param meters: The MassFlow value in micrograms_per_second.
+        :type micrograms_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(micro_grams_per_second, MassFlowUnits.MicroGramPerSecond)
+        return MassFlow(micrograms_per_second, MassFlowUnits.MicrogramPerSecond)
 
     
     @staticmethod
-    def from_milli_grams_per_second(milli_grams_per_second: float):
+    def from_milligrams_per_second(milligrams_per_second: float):
         """
-        Create a new instance of MassFlow from a value in milli_grams_per_second.
+        Create a new instance of MassFlow from a value in milligrams_per_second.
 
         
 
-        :param meters: The MassFlow value in milli_grams_per_second.
-        :type milli_grams_per_second: float
+        :param meters: The MassFlow value in milligrams_per_second.
+        :type milligrams_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(milli_grams_per_second, MassFlowUnits.MilliGramPerSecond)
+        return MassFlow(milligrams_per_second, MassFlowUnits.MilligramPerSecond)
 
     
     @staticmethod
-    def from_centi_grams_per_second(centi_grams_per_second: float):
+    def from_centigrams_per_second(centigrams_per_second: float):
         """
-        Create a new instance of MassFlow from a value in centi_grams_per_second.
+        Create a new instance of MassFlow from a value in centigrams_per_second.
 
         
 
-        :param meters: The MassFlow value in centi_grams_per_second.
-        :type centi_grams_per_second: float
+        :param meters: The MassFlow value in centigrams_per_second.
+        :type centigrams_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(centi_grams_per_second, MassFlowUnits.CentiGramPerSecond)
+        return MassFlow(centigrams_per_second, MassFlowUnits.CentigramPerSecond)
 
     
     @staticmethod
-    def from_deci_grams_per_second(deci_grams_per_second: float):
+    def from_decigrams_per_second(decigrams_per_second: float):
         """
-        Create a new instance of MassFlow from a value in deci_grams_per_second.
+        Create a new instance of MassFlow from a value in decigrams_per_second.
 
         
 
-        :param meters: The MassFlow value in deci_grams_per_second.
-        :type deci_grams_per_second: float
+        :param meters: The MassFlow value in decigrams_per_second.
+        :type decigrams_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(deci_grams_per_second, MassFlowUnits.DeciGramPerSecond)
+        return MassFlow(decigrams_per_second, MassFlowUnits.DecigramPerSecond)
 
     
     @staticmethod
-    def from_deca_grams_per_second(deca_grams_per_second: float):
+    def from_decagrams_per_second(decagrams_per_second: float):
         """
-        Create a new instance of MassFlow from a value in deca_grams_per_second.
+        Create a new instance of MassFlow from a value in decagrams_per_second.
 
         
 
-        :param meters: The MassFlow value in deca_grams_per_second.
-        :type deca_grams_per_second: float
+        :param meters: The MassFlow value in decagrams_per_second.
+        :type decagrams_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(deca_grams_per_second, MassFlowUnits.DecaGramPerSecond)
+        return MassFlow(decagrams_per_second, MassFlowUnits.DecagramPerSecond)
 
     
     @staticmethod
-    def from_hecto_grams_per_second(hecto_grams_per_second: float):
+    def from_hectograms_per_second(hectograms_per_second: float):
         """
-        Create a new instance of MassFlow from a value in hecto_grams_per_second.
+        Create a new instance of MassFlow from a value in hectograms_per_second.
 
         
 
-        :param meters: The MassFlow value in hecto_grams_per_second.
-        :type hecto_grams_per_second: float
+        :param meters: The MassFlow value in hectograms_per_second.
+        :type hectograms_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(hecto_grams_per_second, MassFlowUnits.HectoGramPerSecond)
+        return MassFlow(hectograms_per_second, MassFlowUnits.HectogramPerSecond)
 
     
     @staticmethod
-    def from_kilo_grams_per_second(kilo_grams_per_second: float):
+    def from_kilograms_per_second(kilograms_per_second: float):
         """
-        Create a new instance of MassFlow from a value in kilo_grams_per_second.
+        Create a new instance of MassFlow from a value in kilograms_per_second.
 
         
 
-        :param meters: The MassFlow value in kilo_grams_per_second.
-        :type kilo_grams_per_second: float
+        :param meters: The MassFlow value in kilograms_per_second.
+        :type kilograms_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(kilo_grams_per_second, MassFlowUnits.KiloGramPerSecond)
+        return MassFlow(kilograms_per_second, MassFlowUnits.KilogramPerSecond)
 
     
     @staticmethod
-    def from_nano_grams_per_day(nano_grams_per_day: float):
+    def from_nanograms_per_day(nanograms_per_day: float):
         """
-        Create a new instance of MassFlow from a value in nano_grams_per_day.
+        Create a new instance of MassFlow from a value in nanograms_per_day.
 
         
 
-        :param meters: The MassFlow value in nano_grams_per_day.
-        :type nano_grams_per_day: float
+        :param meters: The MassFlow value in nanograms_per_day.
+        :type nanograms_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(nano_grams_per_day, MassFlowUnits.NanoGramPerDay)
+        return MassFlow(nanograms_per_day, MassFlowUnits.NanogramPerDay)
 
     
     @staticmethod
-    def from_micro_grams_per_day(micro_grams_per_day: float):
+    def from_micrograms_per_day(micrograms_per_day: float):
         """
-        Create a new instance of MassFlow from a value in micro_grams_per_day.
+        Create a new instance of MassFlow from a value in micrograms_per_day.
 
         
 
-        :param meters: The MassFlow value in micro_grams_per_day.
-        :type micro_grams_per_day: float
+        :param meters: The MassFlow value in micrograms_per_day.
+        :type micrograms_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(micro_grams_per_day, MassFlowUnits.MicroGramPerDay)
+        return MassFlow(micrograms_per_day, MassFlowUnits.MicrogramPerDay)
 
     
     @staticmethod
-    def from_milli_grams_per_day(milli_grams_per_day: float):
+    def from_milligrams_per_day(milligrams_per_day: float):
         """
-        Create a new instance of MassFlow from a value in milli_grams_per_day.
+        Create a new instance of MassFlow from a value in milligrams_per_day.
 
         
 
-        :param meters: The MassFlow value in milli_grams_per_day.
-        :type milli_grams_per_day: float
+        :param meters: The MassFlow value in milligrams_per_day.
+        :type milligrams_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(milli_grams_per_day, MassFlowUnits.MilliGramPerDay)
+        return MassFlow(milligrams_per_day, MassFlowUnits.MilligramPerDay)
 
     
     @staticmethod
-    def from_centi_grams_per_day(centi_grams_per_day: float):
+    def from_centigrams_per_day(centigrams_per_day: float):
         """
-        Create a new instance of MassFlow from a value in centi_grams_per_day.
+        Create a new instance of MassFlow from a value in centigrams_per_day.
 
         
 
-        :param meters: The MassFlow value in centi_grams_per_day.
-        :type centi_grams_per_day: float
+        :param meters: The MassFlow value in centigrams_per_day.
+        :type centigrams_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(centi_grams_per_day, MassFlowUnits.CentiGramPerDay)
+        return MassFlow(centigrams_per_day, MassFlowUnits.CentigramPerDay)
 
     
     @staticmethod
-    def from_deci_grams_per_day(deci_grams_per_day: float):
+    def from_decigrams_per_day(decigrams_per_day: float):
         """
-        Create a new instance of MassFlow from a value in deci_grams_per_day.
+        Create a new instance of MassFlow from a value in decigrams_per_day.
 
         
 
-        :param meters: The MassFlow value in deci_grams_per_day.
-        :type deci_grams_per_day: float
+        :param meters: The MassFlow value in decigrams_per_day.
+        :type decigrams_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(deci_grams_per_day, MassFlowUnits.DeciGramPerDay)
+        return MassFlow(decigrams_per_day, MassFlowUnits.DecigramPerDay)
 
     
     @staticmethod
-    def from_deca_grams_per_day(deca_grams_per_day: float):
+    def from_decagrams_per_day(decagrams_per_day: float):
         """
-        Create a new instance of MassFlow from a value in deca_grams_per_day.
+        Create a new instance of MassFlow from a value in decagrams_per_day.
 
         
 
-        :param meters: The MassFlow value in deca_grams_per_day.
-        :type deca_grams_per_day: float
+        :param meters: The MassFlow value in decagrams_per_day.
+        :type decagrams_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(deca_grams_per_day, MassFlowUnits.DecaGramPerDay)
+        return MassFlow(decagrams_per_day, MassFlowUnits.DecagramPerDay)
 
     
     @staticmethod
-    def from_hecto_grams_per_day(hecto_grams_per_day: float):
+    def from_hectograms_per_day(hectograms_per_day: float):
         """
-        Create a new instance of MassFlow from a value in hecto_grams_per_day.
+        Create a new instance of MassFlow from a value in hectograms_per_day.
 
         
 
-        :param meters: The MassFlow value in hecto_grams_per_day.
-        :type hecto_grams_per_day: float
+        :param meters: The MassFlow value in hectograms_per_day.
+        :type hectograms_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(hecto_grams_per_day, MassFlowUnits.HectoGramPerDay)
+        return MassFlow(hectograms_per_day, MassFlowUnits.HectogramPerDay)
 
     
     @staticmethod
-    def from_kilo_grams_per_day(kilo_grams_per_day: float):
+    def from_kilograms_per_day(kilograms_per_day: float):
         """
-        Create a new instance of MassFlow from a value in kilo_grams_per_day.
+        Create a new instance of MassFlow from a value in kilograms_per_day.
 
         
 
-        :param meters: The MassFlow value in kilo_grams_per_day.
-        :type kilo_grams_per_day: float
+        :param meters: The MassFlow value in kilograms_per_day.
+        :type kilograms_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(kilo_grams_per_day, MassFlowUnits.KiloGramPerDay)
+        return MassFlow(kilograms_per_day, MassFlowUnits.KilogramPerDay)
 
     
     @staticmethod
-    def from_mega_grams_per_day(mega_grams_per_day: float):
+    def from_megagrams_per_day(megagrams_per_day: float):
         """
-        Create a new instance of MassFlow from a value in mega_grams_per_day.
+        Create a new instance of MassFlow from a value in megagrams_per_day.
 
         
 
-        :param meters: The MassFlow value in mega_grams_per_day.
-        :type mega_grams_per_day: float
+        :param meters: The MassFlow value in megagrams_per_day.
+        :type megagrams_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(mega_grams_per_day, MassFlowUnits.MegaGramPerDay)
+        return MassFlow(megagrams_per_day, MassFlowUnits.MegagramPerDay)
 
     
     @staticmethod
-    def from_mega_pounds_per_day(mega_pounds_per_day: float):
+    def from_megapounds_per_day(megapounds_per_day: float):
         """
-        Create a new instance of MassFlow from a value in mega_pounds_per_day.
+        Create a new instance of MassFlow from a value in megapounds_per_day.
 
         
 
-        :param meters: The MassFlow value in mega_pounds_per_day.
-        :type mega_pounds_per_day: float
+        :param meters: The MassFlow value in megapounds_per_day.
+        :type megapounds_per_day: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(mega_pounds_per_day, MassFlowUnits.MegaPoundPerDay)
+        return MassFlow(megapounds_per_day, MassFlowUnits.MegapoundPerDay)
 
     
     @staticmethod
-    def from_mega_pounds_per_hour(mega_pounds_per_hour: float):
+    def from_megapounds_per_hour(megapounds_per_hour: float):
         """
-        Create a new instance of MassFlow from a value in mega_pounds_per_hour.
+        Create a new instance of MassFlow from a value in megapounds_per_hour.
 
         
 
-        :param meters: The MassFlow value in mega_pounds_per_hour.
-        :type mega_pounds_per_hour: float
+        :param meters: The MassFlow value in megapounds_per_hour.
+        :type megapounds_per_hour: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(mega_pounds_per_hour, MassFlowUnits.MegaPoundPerHour)
+        return MassFlow(megapounds_per_hour, MassFlowUnits.MegapoundPerHour)
 
     
     @staticmethod
-    def from_mega_pounds_per_minute(mega_pounds_per_minute: float):
+    def from_megapounds_per_minute(megapounds_per_minute: float):
         """
-        Create a new instance of MassFlow from a value in mega_pounds_per_minute.
+        Create a new instance of MassFlow from a value in megapounds_per_minute.
 
         
 
-        :param meters: The MassFlow value in mega_pounds_per_minute.
-        :type mega_pounds_per_minute: float
+        :param meters: The MassFlow value in megapounds_per_minute.
+        :type megapounds_per_minute: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(mega_pounds_per_minute, MassFlowUnits.MegaPoundPerMinute)
+        return MassFlow(megapounds_per_minute, MassFlowUnits.MegapoundPerMinute)
 
     
     @staticmethod
-    def from_mega_pounds_per_second(mega_pounds_per_second: float):
+    def from_megapounds_per_second(megapounds_per_second: float):
         """
-        Create a new instance of MassFlow from a value in mega_pounds_per_second.
+        Create a new instance of MassFlow from a value in megapounds_per_second.
 
         
 
-        :param meters: The MassFlow value in mega_pounds_per_second.
-        :type mega_pounds_per_second: float
+        :param meters: The MassFlow value in megapounds_per_second.
+        :type megapounds_per_second: float
         :return: A new instance of MassFlow.
         :rtype: MassFlow
         """
-        return MassFlow(mega_pounds_per_second, MassFlowUnits.MegaPoundPerSecond)
+        return MassFlow(megapounds_per_second, MassFlowUnits.MegapoundPerSecond)
 
     
     @property
@@ -1096,234 +1096,234 @@ class MassFlow:
 
     
     @property
-    def nano_grams_per_second(self) -> float:
+    def nanograms_per_second(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_second != None:
-            return self.__nano_grams_per_second
-        self.__nano_grams_per_second = self.__convert_from_base(MassFlowUnits.NanoGramPerSecond)
-        return self.__nano_grams_per_second
+        if self.__nanograms_per_second != None:
+            return self.__nanograms_per_second
+        self.__nanograms_per_second = self.__convert_from_base(MassFlowUnits.NanogramPerSecond)
+        return self.__nanograms_per_second
 
     
     @property
-    def micro_grams_per_second(self) -> float:
+    def micrograms_per_second(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_second != None:
-            return self.__micro_grams_per_second
-        self.__micro_grams_per_second = self.__convert_from_base(MassFlowUnits.MicroGramPerSecond)
-        return self.__micro_grams_per_second
+        if self.__micrograms_per_second != None:
+            return self.__micrograms_per_second
+        self.__micrograms_per_second = self.__convert_from_base(MassFlowUnits.MicrogramPerSecond)
+        return self.__micrograms_per_second
 
     
     @property
-    def milli_grams_per_second(self) -> float:
+    def milligrams_per_second(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_second != None:
-            return self.__milli_grams_per_second
-        self.__milli_grams_per_second = self.__convert_from_base(MassFlowUnits.MilliGramPerSecond)
-        return self.__milli_grams_per_second
+        if self.__milligrams_per_second != None:
+            return self.__milligrams_per_second
+        self.__milligrams_per_second = self.__convert_from_base(MassFlowUnits.MilligramPerSecond)
+        return self.__milligrams_per_second
 
     
     @property
-    def centi_grams_per_second(self) -> float:
+    def centigrams_per_second(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_second != None:
-            return self.__centi_grams_per_second
-        self.__centi_grams_per_second = self.__convert_from_base(MassFlowUnits.CentiGramPerSecond)
-        return self.__centi_grams_per_second
+        if self.__centigrams_per_second != None:
+            return self.__centigrams_per_second
+        self.__centigrams_per_second = self.__convert_from_base(MassFlowUnits.CentigramPerSecond)
+        return self.__centigrams_per_second
 
     
     @property
-    def deci_grams_per_second(self) -> float:
+    def decigrams_per_second(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_second != None:
-            return self.__deci_grams_per_second
-        self.__deci_grams_per_second = self.__convert_from_base(MassFlowUnits.DeciGramPerSecond)
-        return self.__deci_grams_per_second
+        if self.__decigrams_per_second != None:
+            return self.__decigrams_per_second
+        self.__decigrams_per_second = self.__convert_from_base(MassFlowUnits.DecigramPerSecond)
+        return self.__decigrams_per_second
 
     
     @property
-    def deca_grams_per_second(self) -> float:
+    def decagrams_per_second(self) -> float:
         """
         
         """
-        if self.__deca_grams_per_second != None:
-            return self.__deca_grams_per_second
-        self.__deca_grams_per_second = self.__convert_from_base(MassFlowUnits.DecaGramPerSecond)
-        return self.__deca_grams_per_second
+        if self.__decagrams_per_second != None:
+            return self.__decagrams_per_second
+        self.__decagrams_per_second = self.__convert_from_base(MassFlowUnits.DecagramPerSecond)
+        return self.__decagrams_per_second
 
     
     @property
-    def hecto_grams_per_second(self) -> float:
+    def hectograms_per_second(self) -> float:
         """
         
         """
-        if self.__hecto_grams_per_second != None:
-            return self.__hecto_grams_per_second
-        self.__hecto_grams_per_second = self.__convert_from_base(MassFlowUnits.HectoGramPerSecond)
-        return self.__hecto_grams_per_second
+        if self.__hectograms_per_second != None:
+            return self.__hectograms_per_second
+        self.__hectograms_per_second = self.__convert_from_base(MassFlowUnits.HectogramPerSecond)
+        return self.__hectograms_per_second
 
     
     @property
-    def kilo_grams_per_second(self) -> float:
+    def kilograms_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_second != None:
-            return self.__kilo_grams_per_second
-        self.__kilo_grams_per_second = self.__convert_from_base(MassFlowUnits.KiloGramPerSecond)
-        return self.__kilo_grams_per_second
+        if self.__kilograms_per_second != None:
+            return self.__kilograms_per_second
+        self.__kilograms_per_second = self.__convert_from_base(MassFlowUnits.KilogramPerSecond)
+        return self.__kilograms_per_second
 
     
     @property
-    def nano_grams_per_day(self) -> float:
+    def nanograms_per_day(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_day != None:
-            return self.__nano_grams_per_day
-        self.__nano_grams_per_day = self.__convert_from_base(MassFlowUnits.NanoGramPerDay)
-        return self.__nano_grams_per_day
+        if self.__nanograms_per_day != None:
+            return self.__nanograms_per_day
+        self.__nanograms_per_day = self.__convert_from_base(MassFlowUnits.NanogramPerDay)
+        return self.__nanograms_per_day
 
     
     @property
-    def micro_grams_per_day(self) -> float:
+    def micrograms_per_day(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_day != None:
-            return self.__micro_grams_per_day
-        self.__micro_grams_per_day = self.__convert_from_base(MassFlowUnits.MicroGramPerDay)
-        return self.__micro_grams_per_day
+        if self.__micrograms_per_day != None:
+            return self.__micrograms_per_day
+        self.__micrograms_per_day = self.__convert_from_base(MassFlowUnits.MicrogramPerDay)
+        return self.__micrograms_per_day
 
     
     @property
-    def milli_grams_per_day(self) -> float:
+    def milligrams_per_day(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_day != None:
-            return self.__milli_grams_per_day
-        self.__milli_grams_per_day = self.__convert_from_base(MassFlowUnits.MilliGramPerDay)
-        return self.__milli_grams_per_day
+        if self.__milligrams_per_day != None:
+            return self.__milligrams_per_day
+        self.__milligrams_per_day = self.__convert_from_base(MassFlowUnits.MilligramPerDay)
+        return self.__milligrams_per_day
 
     
     @property
-    def centi_grams_per_day(self) -> float:
+    def centigrams_per_day(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_day != None:
-            return self.__centi_grams_per_day
-        self.__centi_grams_per_day = self.__convert_from_base(MassFlowUnits.CentiGramPerDay)
-        return self.__centi_grams_per_day
+        if self.__centigrams_per_day != None:
+            return self.__centigrams_per_day
+        self.__centigrams_per_day = self.__convert_from_base(MassFlowUnits.CentigramPerDay)
+        return self.__centigrams_per_day
 
     
     @property
-    def deci_grams_per_day(self) -> float:
+    def decigrams_per_day(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_day != None:
-            return self.__deci_grams_per_day
-        self.__deci_grams_per_day = self.__convert_from_base(MassFlowUnits.DeciGramPerDay)
-        return self.__deci_grams_per_day
+        if self.__decigrams_per_day != None:
+            return self.__decigrams_per_day
+        self.__decigrams_per_day = self.__convert_from_base(MassFlowUnits.DecigramPerDay)
+        return self.__decigrams_per_day
 
     
     @property
-    def deca_grams_per_day(self) -> float:
+    def decagrams_per_day(self) -> float:
         """
         
         """
-        if self.__deca_grams_per_day != None:
-            return self.__deca_grams_per_day
-        self.__deca_grams_per_day = self.__convert_from_base(MassFlowUnits.DecaGramPerDay)
-        return self.__deca_grams_per_day
+        if self.__decagrams_per_day != None:
+            return self.__decagrams_per_day
+        self.__decagrams_per_day = self.__convert_from_base(MassFlowUnits.DecagramPerDay)
+        return self.__decagrams_per_day
 
     
     @property
-    def hecto_grams_per_day(self) -> float:
+    def hectograms_per_day(self) -> float:
         """
         
         """
-        if self.__hecto_grams_per_day != None:
-            return self.__hecto_grams_per_day
-        self.__hecto_grams_per_day = self.__convert_from_base(MassFlowUnits.HectoGramPerDay)
-        return self.__hecto_grams_per_day
+        if self.__hectograms_per_day != None:
+            return self.__hectograms_per_day
+        self.__hectograms_per_day = self.__convert_from_base(MassFlowUnits.HectogramPerDay)
+        return self.__hectograms_per_day
 
     
     @property
-    def kilo_grams_per_day(self) -> float:
+    def kilograms_per_day(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_day != None:
-            return self.__kilo_grams_per_day
-        self.__kilo_grams_per_day = self.__convert_from_base(MassFlowUnits.KiloGramPerDay)
-        return self.__kilo_grams_per_day
+        if self.__kilograms_per_day != None:
+            return self.__kilograms_per_day
+        self.__kilograms_per_day = self.__convert_from_base(MassFlowUnits.KilogramPerDay)
+        return self.__kilograms_per_day
 
     
     @property
-    def mega_grams_per_day(self) -> float:
+    def megagrams_per_day(self) -> float:
         """
         
         """
-        if self.__mega_grams_per_day != None:
-            return self.__mega_grams_per_day
-        self.__mega_grams_per_day = self.__convert_from_base(MassFlowUnits.MegaGramPerDay)
-        return self.__mega_grams_per_day
+        if self.__megagrams_per_day != None:
+            return self.__megagrams_per_day
+        self.__megagrams_per_day = self.__convert_from_base(MassFlowUnits.MegagramPerDay)
+        return self.__megagrams_per_day
 
     
     @property
-    def mega_pounds_per_day(self) -> float:
+    def megapounds_per_day(self) -> float:
         """
         
         """
-        if self.__mega_pounds_per_day != None:
-            return self.__mega_pounds_per_day
-        self.__mega_pounds_per_day = self.__convert_from_base(MassFlowUnits.MegaPoundPerDay)
-        return self.__mega_pounds_per_day
+        if self.__megapounds_per_day != None:
+            return self.__megapounds_per_day
+        self.__megapounds_per_day = self.__convert_from_base(MassFlowUnits.MegapoundPerDay)
+        return self.__megapounds_per_day
 
     
     @property
-    def mega_pounds_per_hour(self) -> float:
+    def megapounds_per_hour(self) -> float:
         """
         
         """
-        if self.__mega_pounds_per_hour != None:
-            return self.__mega_pounds_per_hour
-        self.__mega_pounds_per_hour = self.__convert_from_base(MassFlowUnits.MegaPoundPerHour)
-        return self.__mega_pounds_per_hour
+        if self.__megapounds_per_hour != None:
+            return self.__megapounds_per_hour
+        self.__megapounds_per_hour = self.__convert_from_base(MassFlowUnits.MegapoundPerHour)
+        return self.__megapounds_per_hour
 
     
     @property
-    def mega_pounds_per_minute(self) -> float:
+    def megapounds_per_minute(self) -> float:
         """
         
         """
-        if self.__mega_pounds_per_minute != None:
-            return self.__mega_pounds_per_minute
-        self.__mega_pounds_per_minute = self.__convert_from_base(MassFlowUnits.MegaPoundPerMinute)
-        return self.__mega_pounds_per_minute
+        if self.__megapounds_per_minute != None:
+            return self.__megapounds_per_minute
+        self.__megapounds_per_minute = self.__convert_from_base(MassFlowUnits.MegapoundPerMinute)
+        return self.__megapounds_per_minute
 
     
     @property
-    def mega_pounds_per_second(self) -> float:
+    def megapounds_per_second(self) -> float:
         """
         
         """
-        if self.__mega_pounds_per_second != None:
-            return self.__mega_pounds_per_second
-        self.__mega_pounds_per_second = self.__convert_from_base(MassFlowUnits.MegaPoundPerSecond)
-        return self.__mega_pounds_per_second
+        if self.__megapounds_per_second != None:
+            return self.__megapounds_per_second
+        self.__megapounds_per_second = self.__convert_from_base(MassFlowUnits.MegapoundPerSecond)
+        return self.__megapounds_per_second
 
     
     def to_string(self, unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> string:
@@ -1369,68 +1369,68 @@ class MassFlow:
         if unit == MassFlowUnits.ShortTonPerHour:
             return f"""{self.short_tons_per_hour} short tn/h"""
         
-        if unit == MassFlowUnits.NanoGramPerSecond:
-            return f"""{self.nano_grams_per_second} """
+        if unit == MassFlowUnits.NanogramPerSecond:
+            return f"""{self.nanograms_per_second} """
         
-        if unit == MassFlowUnits.MicroGramPerSecond:
-            return f"""{self.micro_grams_per_second} """
+        if unit == MassFlowUnits.MicrogramPerSecond:
+            return f"""{self.micrograms_per_second} """
         
-        if unit == MassFlowUnits.MilliGramPerSecond:
-            return f"""{self.milli_grams_per_second} """
+        if unit == MassFlowUnits.MilligramPerSecond:
+            return f"""{self.milligrams_per_second} """
         
-        if unit == MassFlowUnits.CentiGramPerSecond:
-            return f"""{self.centi_grams_per_second} """
+        if unit == MassFlowUnits.CentigramPerSecond:
+            return f"""{self.centigrams_per_second} """
         
-        if unit == MassFlowUnits.DeciGramPerSecond:
-            return f"""{self.deci_grams_per_second} """
+        if unit == MassFlowUnits.DecigramPerSecond:
+            return f"""{self.decigrams_per_second} """
         
-        if unit == MassFlowUnits.DecaGramPerSecond:
-            return f"""{self.deca_grams_per_second} """
+        if unit == MassFlowUnits.DecagramPerSecond:
+            return f"""{self.decagrams_per_second} """
         
-        if unit == MassFlowUnits.HectoGramPerSecond:
-            return f"""{self.hecto_grams_per_second} """
+        if unit == MassFlowUnits.HectogramPerSecond:
+            return f"""{self.hectograms_per_second} """
         
-        if unit == MassFlowUnits.KiloGramPerSecond:
-            return f"""{self.kilo_grams_per_second} """
+        if unit == MassFlowUnits.KilogramPerSecond:
+            return f"""{self.kilograms_per_second} """
         
-        if unit == MassFlowUnits.NanoGramPerDay:
-            return f"""{self.nano_grams_per_day} """
+        if unit == MassFlowUnits.NanogramPerDay:
+            return f"""{self.nanograms_per_day} """
         
-        if unit == MassFlowUnits.MicroGramPerDay:
-            return f"""{self.micro_grams_per_day} """
+        if unit == MassFlowUnits.MicrogramPerDay:
+            return f"""{self.micrograms_per_day} """
         
-        if unit == MassFlowUnits.MilliGramPerDay:
-            return f"""{self.milli_grams_per_day} """
+        if unit == MassFlowUnits.MilligramPerDay:
+            return f"""{self.milligrams_per_day} """
         
-        if unit == MassFlowUnits.CentiGramPerDay:
-            return f"""{self.centi_grams_per_day} """
+        if unit == MassFlowUnits.CentigramPerDay:
+            return f"""{self.centigrams_per_day} """
         
-        if unit == MassFlowUnits.DeciGramPerDay:
-            return f"""{self.deci_grams_per_day} """
+        if unit == MassFlowUnits.DecigramPerDay:
+            return f"""{self.decigrams_per_day} """
         
-        if unit == MassFlowUnits.DecaGramPerDay:
-            return f"""{self.deca_grams_per_day} """
+        if unit == MassFlowUnits.DecagramPerDay:
+            return f"""{self.decagrams_per_day} """
         
-        if unit == MassFlowUnits.HectoGramPerDay:
-            return f"""{self.hecto_grams_per_day} """
+        if unit == MassFlowUnits.HectogramPerDay:
+            return f"""{self.hectograms_per_day} """
         
-        if unit == MassFlowUnits.KiloGramPerDay:
-            return f"""{self.kilo_grams_per_day} """
+        if unit == MassFlowUnits.KilogramPerDay:
+            return f"""{self.kilograms_per_day} """
         
-        if unit == MassFlowUnits.MegaGramPerDay:
-            return f"""{self.mega_grams_per_day} """
+        if unit == MassFlowUnits.MegagramPerDay:
+            return f"""{self.megagrams_per_day} """
         
-        if unit == MassFlowUnits.MegaPoundPerDay:
-            return f"""{self.mega_pounds_per_day} """
+        if unit == MassFlowUnits.MegapoundPerDay:
+            return f"""{self.megapounds_per_day} """
         
-        if unit == MassFlowUnits.MegaPoundPerHour:
-            return f"""{self.mega_pounds_per_hour} """
+        if unit == MassFlowUnits.MegapoundPerHour:
+            return f"""{self.megapounds_per_hour} """
         
-        if unit == MassFlowUnits.MegaPoundPerMinute:
-            return f"""{self.mega_pounds_per_minute} """
+        if unit == MassFlowUnits.MegapoundPerMinute:
+            return f"""{self.megapounds_per_minute} """
         
-        if unit == MassFlowUnits.MegaPoundPerSecond:
-            return f"""{self.mega_pounds_per_second} """
+        if unit == MassFlowUnits.MegapoundPerSecond:
+            return f"""{self.megapounds_per_second} """
         
         return f'{self.__value}'
 
@@ -1478,67 +1478,67 @@ class MassFlow:
         if unit_abbreviation == MassFlowUnits.ShortTonPerHour:
             return """short tn/h"""
         
-        if unit_abbreviation == MassFlowUnits.NanoGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.NanogramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MicroGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.MicrogramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MilliGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.MilligramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.CentiGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.CentigramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.DeciGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.DecigramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.DecaGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.DecagramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.HectoGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.HectogramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.KiloGramPerSecond:
+        if unit_abbreviation == MassFlowUnits.KilogramPerSecond:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.NanoGramPerDay:
+        if unit_abbreviation == MassFlowUnits.NanogramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MicroGramPerDay:
+        if unit_abbreviation == MassFlowUnits.MicrogramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MilliGramPerDay:
+        if unit_abbreviation == MassFlowUnits.MilligramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.CentiGramPerDay:
+        if unit_abbreviation == MassFlowUnits.CentigramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.DeciGramPerDay:
+        if unit_abbreviation == MassFlowUnits.DecigramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.DecaGramPerDay:
+        if unit_abbreviation == MassFlowUnits.DecagramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.HectoGramPerDay:
+        if unit_abbreviation == MassFlowUnits.HectogramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.KiloGramPerDay:
+        if unit_abbreviation == MassFlowUnits.KilogramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MegaGramPerDay:
+        if unit_abbreviation == MassFlowUnits.MegagramPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MegaPoundPerDay:
+        if unit_abbreviation == MassFlowUnits.MegapoundPerDay:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MegaPoundPerHour:
+        if unit_abbreviation == MassFlowUnits.MegapoundPerHour:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MegaPoundPerMinute:
+        if unit_abbreviation == MassFlowUnits.MegapoundPerMinute:
             return """"""
         
-        if unit_abbreviation == MassFlowUnits.MegaPoundPerSecond:
+        if unit_abbreviation == MassFlowUnits.MegapoundPerSecond:
             return """"""
         
 

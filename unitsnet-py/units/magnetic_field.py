@@ -18,22 +18,22 @@ class MagneticFieldUnits(Enum):
             
         """
         
-        NanoTesla = 'nano_tesla'
+        Nanotesla = 'nanotesla'
         """
             
         """
         
-        MicroTesla = 'micro_tesla'
+        Microtesla = 'microtesla'
         """
             
         """
         
-        MilliTesla = 'milli_tesla'
+        Millitesla = 'millitesla'
         """
             
         """
         
-        MilliGauss = 'milli_gauss'
+        Milligauss = 'milligauss'
         """
             
         """
@@ -56,13 +56,13 @@ class MagneticField:
         
         self.__gausses = None
         
-        self.__nano_teslas = None
+        self.__nanoteslas = None
         
-        self.__micro_teslas = None
+        self.__microteslas = None
         
-        self.__milli_teslas = None
+        self.__milliteslas = None
         
-        self.__milli_gausses = None
+        self.__milligausses = None
         
 
     def __convert_from_base(self, from_unit: MagneticFieldUnits) -> float:
@@ -74,16 +74,16 @@ class MagneticField:
         if from_unit == MagneticFieldUnits.Gauss:
             return (value * 1e4)
         
-        if from_unit == MagneticFieldUnits.NanoTesla:
+        if from_unit == MagneticFieldUnits.Nanotesla:
             return ((value) / 1e-09)
         
-        if from_unit == MagneticFieldUnits.MicroTesla:
+        if from_unit == MagneticFieldUnits.Microtesla:
             return ((value) / 1e-06)
         
-        if from_unit == MagneticFieldUnits.MilliTesla:
+        if from_unit == MagneticFieldUnits.Millitesla:
             return ((value) / 0.001)
         
-        if from_unit == MagneticFieldUnits.MilliGauss:
+        if from_unit == MagneticFieldUnits.Milligauss:
             return ((value * 1e4) / 0.001)
         
         return None
@@ -97,16 +97,16 @@ class MagneticField:
         if to_unit == MagneticFieldUnits.Gauss:
             return (value / 1e4)
         
-        if to_unit == MagneticFieldUnits.NanoTesla:
+        if to_unit == MagneticFieldUnits.Nanotesla:
             return ((value) * 1e-09)
         
-        if to_unit == MagneticFieldUnits.MicroTesla:
+        if to_unit == MagneticFieldUnits.Microtesla:
             return ((value) * 1e-06)
         
-        if to_unit == MagneticFieldUnits.MilliTesla:
+        if to_unit == MagneticFieldUnits.Millitesla:
             return ((value) * 0.001)
         
-        if to_unit == MagneticFieldUnits.MilliGauss:
+        if to_unit == MagneticFieldUnits.Milligauss:
             return ((value / 1e4) * 0.001)
         
         return None
@@ -148,63 +148,63 @@ class MagneticField:
 
     
     @staticmethod
-    def from_nano_teslas(nano_teslas: float):
+    def from_nanoteslas(nanoteslas: float):
         """
-        Create a new instance of MagneticField from a value in nano_teslas.
+        Create a new instance of MagneticField from a value in nanoteslas.
 
         
 
-        :param meters: The MagneticField value in nano_teslas.
-        :type nano_teslas: float
+        :param meters: The MagneticField value in nanoteslas.
+        :type nanoteslas: float
         :return: A new instance of MagneticField.
         :rtype: MagneticField
         """
-        return MagneticField(nano_teslas, MagneticFieldUnits.NanoTesla)
+        return MagneticField(nanoteslas, MagneticFieldUnits.Nanotesla)
 
     
     @staticmethod
-    def from_micro_teslas(micro_teslas: float):
+    def from_microteslas(microteslas: float):
         """
-        Create a new instance of MagneticField from a value in micro_teslas.
+        Create a new instance of MagneticField from a value in microteslas.
 
         
 
-        :param meters: The MagneticField value in micro_teslas.
-        :type micro_teslas: float
+        :param meters: The MagneticField value in microteslas.
+        :type microteslas: float
         :return: A new instance of MagneticField.
         :rtype: MagneticField
         """
-        return MagneticField(micro_teslas, MagneticFieldUnits.MicroTesla)
+        return MagneticField(microteslas, MagneticFieldUnits.Microtesla)
 
     
     @staticmethod
-    def from_milli_teslas(milli_teslas: float):
+    def from_milliteslas(milliteslas: float):
         """
-        Create a new instance of MagneticField from a value in milli_teslas.
+        Create a new instance of MagneticField from a value in milliteslas.
 
         
 
-        :param meters: The MagneticField value in milli_teslas.
-        :type milli_teslas: float
+        :param meters: The MagneticField value in milliteslas.
+        :type milliteslas: float
         :return: A new instance of MagneticField.
         :rtype: MagneticField
         """
-        return MagneticField(milli_teslas, MagneticFieldUnits.MilliTesla)
+        return MagneticField(milliteslas, MagneticFieldUnits.Millitesla)
 
     
     @staticmethod
-    def from_milli_gausses(milli_gausses: float):
+    def from_milligausses(milligausses: float):
         """
-        Create a new instance of MagneticField from a value in milli_gausses.
+        Create a new instance of MagneticField from a value in milligausses.
 
         
 
-        :param meters: The MagneticField value in milli_gausses.
-        :type milli_gausses: float
+        :param meters: The MagneticField value in milligausses.
+        :type milligausses: float
         :return: A new instance of MagneticField.
         :rtype: MagneticField
         """
-        return MagneticField(milli_gausses, MagneticFieldUnits.MilliGauss)
+        return MagneticField(milligausses, MagneticFieldUnits.Milligauss)
 
     
     @property
@@ -230,47 +230,47 @@ class MagneticField:
 
     
     @property
-    def nano_teslas(self) -> float:
+    def nanoteslas(self) -> float:
         """
         
         """
-        if self.__nano_teslas != None:
-            return self.__nano_teslas
-        self.__nano_teslas = self.__convert_from_base(MagneticFieldUnits.NanoTesla)
-        return self.__nano_teslas
+        if self.__nanoteslas != None:
+            return self.__nanoteslas
+        self.__nanoteslas = self.__convert_from_base(MagneticFieldUnits.Nanotesla)
+        return self.__nanoteslas
 
     
     @property
-    def micro_teslas(self) -> float:
+    def microteslas(self) -> float:
         """
         
         """
-        if self.__micro_teslas != None:
-            return self.__micro_teslas
-        self.__micro_teslas = self.__convert_from_base(MagneticFieldUnits.MicroTesla)
-        return self.__micro_teslas
+        if self.__microteslas != None:
+            return self.__microteslas
+        self.__microteslas = self.__convert_from_base(MagneticFieldUnits.Microtesla)
+        return self.__microteslas
 
     
     @property
-    def milli_teslas(self) -> float:
+    def milliteslas(self) -> float:
         """
         
         """
-        if self.__milli_teslas != None:
-            return self.__milli_teslas
-        self.__milli_teslas = self.__convert_from_base(MagneticFieldUnits.MilliTesla)
-        return self.__milli_teslas
+        if self.__milliteslas != None:
+            return self.__milliteslas
+        self.__milliteslas = self.__convert_from_base(MagneticFieldUnits.Millitesla)
+        return self.__milliteslas
 
     
     @property
-    def milli_gausses(self) -> float:
+    def milligausses(self) -> float:
         """
         
         """
-        if self.__milli_gausses != None:
-            return self.__milli_gausses
-        self.__milli_gausses = self.__convert_from_base(MagneticFieldUnits.MilliGauss)
-        return self.__milli_gausses
+        if self.__milligausses != None:
+            return self.__milligausses
+        self.__milligausses = self.__convert_from_base(MagneticFieldUnits.Milligauss)
+        return self.__milligausses
 
     
     def to_string(self, unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> string:
@@ -286,17 +286,17 @@ class MagneticField:
         if unit == MagneticFieldUnits.Gauss:
             return f"""{self.gausses} G"""
         
-        if unit == MagneticFieldUnits.NanoTesla:
-            return f"""{self.nano_teslas} """
+        if unit == MagneticFieldUnits.Nanotesla:
+            return f"""{self.nanoteslas} """
         
-        if unit == MagneticFieldUnits.MicroTesla:
-            return f"""{self.micro_teslas} """
+        if unit == MagneticFieldUnits.Microtesla:
+            return f"""{self.microteslas} """
         
-        if unit == MagneticFieldUnits.MilliTesla:
-            return f"""{self.milli_teslas} """
+        if unit == MagneticFieldUnits.Millitesla:
+            return f"""{self.milliteslas} """
         
-        if unit == MagneticFieldUnits.MilliGauss:
-            return f"""{self.milli_gausses} """
+        if unit == MagneticFieldUnits.Milligauss:
+            return f"""{self.milligausses} """
         
         return f'{self.__value}'
 
@@ -314,16 +314,16 @@ class MagneticField:
         if unit_abbreviation == MagneticFieldUnits.Gauss:
             return """G"""
         
-        if unit_abbreviation == MagneticFieldUnits.NanoTesla:
+        if unit_abbreviation == MagneticFieldUnits.Nanotesla:
             return """"""
         
-        if unit_abbreviation == MagneticFieldUnits.MicroTesla:
+        if unit_abbreviation == MagneticFieldUnits.Microtesla:
             return """"""
         
-        if unit_abbreviation == MagneticFieldUnits.MilliTesla:
+        if unit_abbreviation == MagneticFieldUnits.Millitesla:
             return """"""
         
-        if unit_abbreviation == MagneticFieldUnits.MilliGauss:
+        if unit_abbreviation == MagneticFieldUnits.Milligauss:
             return """"""
         
 

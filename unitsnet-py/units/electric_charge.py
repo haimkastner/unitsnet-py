@@ -18,47 +18,47 @@ class ElectricChargeUnits(Enum):
             
         """
         
-        PicoCoulomb = 'pico_coulomb'
+        Picocoulomb = 'picocoulomb'
         """
             
         """
         
-        NanoCoulomb = 'nano_coulomb'
+        Nanocoulomb = 'nanocoulomb'
         """
             
         """
         
-        MicroCoulomb = 'micro_coulomb'
+        Microcoulomb = 'microcoulomb'
         """
             
         """
         
-        MilliCoulomb = 'milli_coulomb'
+        Millicoulomb = 'millicoulomb'
         """
             
         """
         
-        KiloCoulomb = 'kilo_coulomb'
+        Kilocoulomb = 'kilocoulomb'
         """
             
         """
         
-        MegaCoulomb = 'mega_coulomb'
+        Megacoulomb = 'megacoulomb'
         """
             
         """
         
-        MilliAmpereHour = 'milli_ampere_hour'
+        MilliampereHour = 'milliampere_hour'
         """
             
         """
         
-        KiloAmpereHour = 'kilo_ampere_hour'
+        KiloampereHour = 'kiloampere_hour'
         """
             
         """
         
-        MegaAmpereHour = 'mega_ampere_hour'
+        MegaampereHour = 'megaampere_hour'
         """
             
         """
@@ -81,23 +81,23 @@ class ElectricCharge:
         
         self.__ampere_hours = None
         
-        self.__pico_coulombs = None
+        self.__picocoulombs = None
         
-        self.__nano_coulombs = None
+        self.__nanocoulombs = None
         
-        self.__micro_coulombs = None
+        self.__microcoulombs = None
         
-        self.__milli_coulombs = None
+        self.__millicoulombs = None
         
-        self.__kilo_coulombs = None
+        self.__kilocoulombs = None
         
-        self.__mega_coulombs = None
+        self.__megacoulombs = None
         
-        self.__milli_ampere_hours = None
+        self.__milliampere_hours = None
         
-        self.__kilo_ampere_hours = None
+        self.__kiloampere_hours = None
         
-        self.__mega_ampere_hours = None
+        self.__megaampere_hours = None
         
 
     def __convert_from_base(self, from_unit: ElectricChargeUnits) -> float:
@@ -109,31 +109,31 @@ class ElectricCharge:
         if from_unit == ElectricChargeUnits.AmpereHour:
             return (value * 2.77777777777e-4)
         
-        if from_unit == ElectricChargeUnits.PicoCoulomb:
+        if from_unit == ElectricChargeUnits.Picocoulomb:
             return ((value) / 1e-12)
         
-        if from_unit == ElectricChargeUnits.NanoCoulomb:
+        if from_unit == ElectricChargeUnits.Nanocoulomb:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricChargeUnits.MicroCoulomb:
+        if from_unit == ElectricChargeUnits.Microcoulomb:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricChargeUnits.MilliCoulomb:
+        if from_unit == ElectricChargeUnits.Millicoulomb:
             return ((value) / 0.001)
         
-        if from_unit == ElectricChargeUnits.KiloCoulomb:
+        if from_unit == ElectricChargeUnits.Kilocoulomb:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricChargeUnits.MegaCoulomb:
+        if from_unit == ElectricChargeUnits.Megacoulomb:
             return ((value) / 1000000.0)
         
-        if from_unit == ElectricChargeUnits.MilliAmpereHour:
+        if from_unit == ElectricChargeUnits.MilliampereHour:
             return ((value * 2.77777777777e-4) / 0.001)
         
-        if from_unit == ElectricChargeUnits.KiloAmpereHour:
+        if from_unit == ElectricChargeUnits.KiloampereHour:
             return ((value * 2.77777777777e-4) / 1000.0)
         
-        if from_unit == ElectricChargeUnits.MegaAmpereHour:
+        if from_unit == ElectricChargeUnits.MegaampereHour:
             return ((value * 2.77777777777e-4) / 1000000.0)
         
         return None
@@ -147,31 +147,31 @@ class ElectricCharge:
         if to_unit == ElectricChargeUnits.AmpereHour:
             return (value / 2.77777777777e-4)
         
-        if to_unit == ElectricChargeUnits.PicoCoulomb:
+        if to_unit == ElectricChargeUnits.Picocoulomb:
             return ((value) * 1e-12)
         
-        if to_unit == ElectricChargeUnits.NanoCoulomb:
+        if to_unit == ElectricChargeUnits.Nanocoulomb:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricChargeUnits.MicroCoulomb:
+        if to_unit == ElectricChargeUnits.Microcoulomb:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricChargeUnits.MilliCoulomb:
+        if to_unit == ElectricChargeUnits.Millicoulomb:
             return ((value) * 0.001)
         
-        if to_unit == ElectricChargeUnits.KiloCoulomb:
+        if to_unit == ElectricChargeUnits.Kilocoulomb:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricChargeUnits.MegaCoulomb:
+        if to_unit == ElectricChargeUnits.Megacoulomb:
             return ((value) * 1000000.0)
         
-        if to_unit == ElectricChargeUnits.MilliAmpereHour:
+        if to_unit == ElectricChargeUnits.MilliampereHour:
             return ((value / 2.77777777777e-4) * 0.001)
         
-        if to_unit == ElectricChargeUnits.KiloAmpereHour:
+        if to_unit == ElectricChargeUnits.KiloampereHour:
             return ((value / 2.77777777777e-4) * 1000.0)
         
-        if to_unit == ElectricChargeUnits.MegaAmpereHour:
+        if to_unit == ElectricChargeUnits.MegaampereHour:
             return ((value / 2.77777777777e-4) * 1000000.0)
         
         return None
@@ -213,138 +213,138 @@ class ElectricCharge:
 
     
     @staticmethod
-    def from_pico_coulombs(pico_coulombs: float):
+    def from_picocoulombs(picocoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in pico_coulombs.
+        Create a new instance of ElectricCharge from a value in picocoulombs.
 
         
 
-        :param meters: The ElectricCharge value in pico_coulombs.
-        :type pico_coulombs: float
+        :param meters: The ElectricCharge value in picocoulombs.
+        :type picocoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(pico_coulombs, ElectricChargeUnits.PicoCoulomb)
+        return ElectricCharge(picocoulombs, ElectricChargeUnits.Picocoulomb)
 
     
     @staticmethod
-    def from_nano_coulombs(nano_coulombs: float):
+    def from_nanocoulombs(nanocoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in nano_coulombs.
+        Create a new instance of ElectricCharge from a value in nanocoulombs.
 
         
 
-        :param meters: The ElectricCharge value in nano_coulombs.
-        :type nano_coulombs: float
+        :param meters: The ElectricCharge value in nanocoulombs.
+        :type nanocoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(nano_coulombs, ElectricChargeUnits.NanoCoulomb)
+        return ElectricCharge(nanocoulombs, ElectricChargeUnits.Nanocoulomb)
 
     
     @staticmethod
-    def from_micro_coulombs(micro_coulombs: float):
+    def from_microcoulombs(microcoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in micro_coulombs.
+        Create a new instance of ElectricCharge from a value in microcoulombs.
 
         
 
-        :param meters: The ElectricCharge value in micro_coulombs.
-        :type micro_coulombs: float
+        :param meters: The ElectricCharge value in microcoulombs.
+        :type microcoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(micro_coulombs, ElectricChargeUnits.MicroCoulomb)
+        return ElectricCharge(microcoulombs, ElectricChargeUnits.Microcoulomb)
 
     
     @staticmethod
-    def from_milli_coulombs(milli_coulombs: float):
+    def from_millicoulombs(millicoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in milli_coulombs.
+        Create a new instance of ElectricCharge from a value in millicoulombs.
 
         
 
-        :param meters: The ElectricCharge value in milli_coulombs.
-        :type milli_coulombs: float
+        :param meters: The ElectricCharge value in millicoulombs.
+        :type millicoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(milli_coulombs, ElectricChargeUnits.MilliCoulomb)
+        return ElectricCharge(millicoulombs, ElectricChargeUnits.Millicoulomb)
 
     
     @staticmethod
-    def from_kilo_coulombs(kilo_coulombs: float):
+    def from_kilocoulombs(kilocoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in kilo_coulombs.
+        Create a new instance of ElectricCharge from a value in kilocoulombs.
 
         
 
-        :param meters: The ElectricCharge value in kilo_coulombs.
-        :type kilo_coulombs: float
+        :param meters: The ElectricCharge value in kilocoulombs.
+        :type kilocoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(kilo_coulombs, ElectricChargeUnits.KiloCoulomb)
+        return ElectricCharge(kilocoulombs, ElectricChargeUnits.Kilocoulomb)
 
     
     @staticmethod
-    def from_mega_coulombs(mega_coulombs: float):
+    def from_megacoulombs(megacoulombs: float):
         """
-        Create a new instance of ElectricCharge from a value in mega_coulombs.
+        Create a new instance of ElectricCharge from a value in megacoulombs.
 
         
 
-        :param meters: The ElectricCharge value in mega_coulombs.
-        :type mega_coulombs: float
+        :param meters: The ElectricCharge value in megacoulombs.
+        :type megacoulombs: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(mega_coulombs, ElectricChargeUnits.MegaCoulomb)
+        return ElectricCharge(megacoulombs, ElectricChargeUnits.Megacoulomb)
 
     
     @staticmethod
-    def from_milli_ampere_hours(milli_ampere_hours: float):
+    def from_milliampere_hours(milliampere_hours: float):
         """
-        Create a new instance of ElectricCharge from a value in milli_ampere_hours.
+        Create a new instance of ElectricCharge from a value in milliampere_hours.
 
         
 
-        :param meters: The ElectricCharge value in milli_ampere_hours.
-        :type milli_ampere_hours: float
+        :param meters: The ElectricCharge value in milliampere_hours.
+        :type milliampere_hours: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(milli_ampere_hours, ElectricChargeUnits.MilliAmpereHour)
+        return ElectricCharge(milliampere_hours, ElectricChargeUnits.MilliampereHour)
 
     
     @staticmethod
-    def from_kilo_ampere_hours(kilo_ampere_hours: float):
+    def from_kiloampere_hours(kiloampere_hours: float):
         """
-        Create a new instance of ElectricCharge from a value in kilo_ampere_hours.
+        Create a new instance of ElectricCharge from a value in kiloampere_hours.
 
         
 
-        :param meters: The ElectricCharge value in kilo_ampere_hours.
-        :type kilo_ampere_hours: float
+        :param meters: The ElectricCharge value in kiloampere_hours.
+        :type kiloampere_hours: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(kilo_ampere_hours, ElectricChargeUnits.KiloAmpereHour)
+        return ElectricCharge(kiloampere_hours, ElectricChargeUnits.KiloampereHour)
 
     
     @staticmethod
-    def from_mega_ampere_hours(mega_ampere_hours: float):
+    def from_megaampere_hours(megaampere_hours: float):
         """
-        Create a new instance of ElectricCharge from a value in mega_ampere_hours.
+        Create a new instance of ElectricCharge from a value in megaampere_hours.
 
         
 
-        :param meters: The ElectricCharge value in mega_ampere_hours.
-        :type mega_ampere_hours: float
+        :param meters: The ElectricCharge value in megaampere_hours.
+        :type megaampere_hours: float
         :return: A new instance of ElectricCharge.
         :rtype: ElectricCharge
         """
-        return ElectricCharge(mega_ampere_hours, ElectricChargeUnits.MegaAmpereHour)
+        return ElectricCharge(megaampere_hours, ElectricChargeUnits.MegaampereHour)
 
     
     @property
@@ -370,102 +370,102 @@ class ElectricCharge:
 
     
     @property
-    def pico_coulombs(self) -> float:
+    def picocoulombs(self) -> float:
         """
         
         """
-        if self.__pico_coulombs != None:
-            return self.__pico_coulombs
-        self.__pico_coulombs = self.__convert_from_base(ElectricChargeUnits.PicoCoulomb)
-        return self.__pico_coulombs
+        if self.__picocoulombs != None:
+            return self.__picocoulombs
+        self.__picocoulombs = self.__convert_from_base(ElectricChargeUnits.Picocoulomb)
+        return self.__picocoulombs
 
     
     @property
-    def nano_coulombs(self) -> float:
+    def nanocoulombs(self) -> float:
         """
         
         """
-        if self.__nano_coulombs != None:
-            return self.__nano_coulombs
-        self.__nano_coulombs = self.__convert_from_base(ElectricChargeUnits.NanoCoulomb)
-        return self.__nano_coulombs
+        if self.__nanocoulombs != None:
+            return self.__nanocoulombs
+        self.__nanocoulombs = self.__convert_from_base(ElectricChargeUnits.Nanocoulomb)
+        return self.__nanocoulombs
 
     
     @property
-    def micro_coulombs(self) -> float:
+    def microcoulombs(self) -> float:
         """
         
         """
-        if self.__micro_coulombs != None:
-            return self.__micro_coulombs
-        self.__micro_coulombs = self.__convert_from_base(ElectricChargeUnits.MicroCoulomb)
-        return self.__micro_coulombs
+        if self.__microcoulombs != None:
+            return self.__microcoulombs
+        self.__microcoulombs = self.__convert_from_base(ElectricChargeUnits.Microcoulomb)
+        return self.__microcoulombs
 
     
     @property
-    def milli_coulombs(self) -> float:
+    def millicoulombs(self) -> float:
         """
         
         """
-        if self.__milli_coulombs != None:
-            return self.__milli_coulombs
-        self.__milli_coulombs = self.__convert_from_base(ElectricChargeUnits.MilliCoulomb)
-        return self.__milli_coulombs
+        if self.__millicoulombs != None:
+            return self.__millicoulombs
+        self.__millicoulombs = self.__convert_from_base(ElectricChargeUnits.Millicoulomb)
+        return self.__millicoulombs
 
     
     @property
-    def kilo_coulombs(self) -> float:
+    def kilocoulombs(self) -> float:
         """
         
         """
-        if self.__kilo_coulombs != None:
-            return self.__kilo_coulombs
-        self.__kilo_coulombs = self.__convert_from_base(ElectricChargeUnits.KiloCoulomb)
-        return self.__kilo_coulombs
+        if self.__kilocoulombs != None:
+            return self.__kilocoulombs
+        self.__kilocoulombs = self.__convert_from_base(ElectricChargeUnits.Kilocoulomb)
+        return self.__kilocoulombs
 
     
     @property
-    def mega_coulombs(self) -> float:
+    def megacoulombs(self) -> float:
         """
         
         """
-        if self.__mega_coulombs != None:
-            return self.__mega_coulombs
-        self.__mega_coulombs = self.__convert_from_base(ElectricChargeUnits.MegaCoulomb)
-        return self.__mega_coulombs
+        if self.__megacoulombs != None:
+            return self.__megacoulombs
+        self.__megacoulombs = self.__convert_from_base(ElectricChargeUnits.Megacoulomb)
+        return self.__megacoulombs
 
     
     @property
-    def milli_ampere_hours(self) -> float:
+    def milliampere_hours(self) -> float:
         """
         
         """
-        if self.__milli_ampere_hours != None:
-            return self.__milli_ampere_hours
-        self.__milli_ampere_hours = self.__convert_from_base(ElectricChargeUnits.MilliAmpereHour)
-        return self.__milli_ampere_hours
+        if self.__milliampere_hours != None:
+            return self.__milliampere_hours
+        self.__milliampere_hours = self.__convert_from_base(ElectricChargeUnits.MilliampereHour)
+        return self.__milliampere_hours
 
     
     @property
-    def kilo_ampere_hours(self) -> float:
+    def kiloampere_hours(self) -> float:
         """
         
         """
-        if self.__kilo_ampere_hours != None:
-            return self.__kilo_ampere_hours
-        self.__kilo_ampere_hours = self.__convert_from_base(ElectricChargeUnits.KiloAmpereHour)
-        return self.__kilo_ampere_hours
+        if self.__kiloampere_hours != None:
+            return self.__kiloampere_hours
+        self.__kiloampere_hours = self.__convert_from_base(ElectricChargeUnits.KiloampereHour)
+        return self.__kiloampere_hours
 
     
     @property
-    def mega_ampere_hours(self) -> float:
+    def megaampere_hours(self) -> float:
         """
         
         """
-        if self.__mega_ampere_hours != None:
-            return self.__mega_ampere_hours
-        self.__mega_ampere_hours = self.__convert_from_base(ElectricChargeUnits.MegaAmpereHour)
-        return self.__mega_ampere_hours
+        if self.__megaampere_hours != None:
+            return self.__megaampere_hours
+        self.__megaampere_hours = self.__convert_from_base(ElectricChargeUnits.MegaampereHour)
+        return self.__megaampere_hours
 
     
     def to_string(self, unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> string:
@@ -481,32 +481,32 @@ class ElectricCharge:
         if unit == ElectricChargeUnits.AmpereHour:
             return f"""{self.ampere_hours} A-h"""
         
-        if unit == ElectricChargeUnits.PicoCoulomb:
-            return f"""{self.pico_coulombs} """
+        if unit == ElectricChargeUnits.Picocoulomb:
+            return f"""{self.picocoulombs} """
         
-        if unit == ElectricChargeUnits.NanoCoulomb:
-            return f"""{self.nano_coulombs} """
+        if unit == ElectricChargeUnits.Nanocoulomb:
+            return f"""{self.nanocoulombs} """
         
-        if unit == ElectricChargeUnits.MicroCoulomb:
-            return f"""{self.micro_coulombs} """
+        if unit == ElectricChargeUnits.Microcoulomb:
+            return f"""{self.microcoulombs} """
         
-        if unit == ElectricChargeUnits.MilliCoulomb:
-            return f"""{self.milli_coulombs} """
+        if unit == ElectricChargeUnits.Millicoulomb:
+            return f"""{self.millicoulombs} """
         
-        if unit == ElectricChargeUnits.KiloCoulomb:
-            return f"""{self.kilo_coulombs} """
+        if unit == ElectricChargeUnits.Kilocoulomb:
+            return f"""{self.kilocoulombs} """
         
-        if unit == ElectricChargeUnits.MegaCoulomb:
-            return f"""{self.mega_coulombs} """
+        if unit == ElectricChargeUnits.Megacoulomb:
+            return f"""{self.megacoulombs} """
         
-        if unit == ElectricChargeUnits.MilliAmpereHour:
-            return f"""{self.milli_ampere_hours} """
+        if unit == ElectricChargeUnits.MilliampereHour:
+            return f"""{self.milliampere_hours} """
         
-        if unit == ElectricChargeUnits.KiloAmpereHour:
-            return f"""{self.kilo_ampere_hours} """
+        if unit == ElectricChargeUnits.KiloampereHour:
+            return f"""{self.kiloampere_hours} """
         
-        if unit == ElectricChargeUnits.MegaAmpereHour:
-            return f"""{self.mega_ampere_hours} """
+        if unit == ElectricChargeUnits.MegaampereHour:
+            return f"""{self.megaampere_hours} """
         
         return f'{self.__value}'
 
@@ -524,31 +524,31 @@ class ElectricCharge:
         if unit_abbreviation == ElectricChargeUnits.AmpereHour:
             return """A-h"""
         
-        if unit_abbreviation == ElectricChargeUnits.PicoCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Picocoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.NanoCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Nanocoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.MicroCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Microcoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.MilliCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Millicoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.KiloCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Kilocoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.MegaCoulomb:
+        if unit_abbreviation == ElectricChargeUnits.Megacoulomb:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.MilliAmpereHour:
+        if unit_abbreviation == ElectricChargeUnits.MilliampereHour:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.KiloAmpereHour:
+        if unit_abbreviation == ElectricChargeUnits.KiloampereHour:
             return """"""
         
-        if unit_abbreviation == ElectricChargeUnits.MegaAmpereHour:
+        if unit_abbreviation == ElectricChargeUnits.MegaampereHour:
             return """"""
         
 

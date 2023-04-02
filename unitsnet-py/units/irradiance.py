@@ -18,62 +18,62 @@ class IrradianceUnits(Enum):
             
         """
         
-        PicoWattPerSquareMeter = 'pico_watt_per_square_meter'
+        PicowattPerSquareMeter = 'picowatt_per_square_meter'
         """
             
         """
         
-        NanoWattPerSquareMeter = 'nano_watt_per_square_meter'
+        NanowattPerSquareMeter = 'nanowatt_per_square_meter'
         """
             
         """
         
-        MicroWattPerSquareMeter = 'micro_watt_per_square_meter'
+        MicrowattPerSquareMeter = 'microwatt_per_square_meter'
         """
             
         """
         
-        MilliWattPerSquareMeter = 'milli_watt_per_square_meter'
+        MilliwattPerSquareMeter = 'milliwatt_per_square_meter'
         """
             
         """
         
-        KiloWattPerSquareMeter = 'kilo_watt_per_square_meter'
+        KilowattPerSquareMeter = 'kilowatt_per_square_meter'
         """
             
         """
         
-        MegaWattPerSquareMeter = 'mega_watt_per_square_meter'
+        MegawattPerSquareMeter = 'megawatt_per_square_meter'
         """
             
         """
         
-        PicoWattPerSquareCentimeter = 'pico_watt_per_square_centimeter'
+        PicowattPerSquareCentimeter = 'picowatt_per_square_centimeter'
         """
             
         """
         
-        NanoWattPerSquareCentimeter = 'nano_watt_per_square_centimeter'
+        NanowattPerSquareCentimeter = 'nanowatt_per_square_centimeter'
         """
             
         """
         
-        MicroWattPerSquareCentimeter = 'micro_watt_per_square_centimeter'
+        MicrowattPerSquareCentimeter = 'microwatt_per_square_centimeter'
         """
             
         """
         
-        MilliWattPerSquareCentimeter = 'milli_watt_per_square_centimeter'
+        MilliwattPerSquareCentimeter = 'milliwatt_per_square_centimeter'
         """
             
         """
         
-        KiloWattPerSquareCentimeter = 'kilo_watt_per_square_centimeter'
+        KilowattPerSquareCentimeter = 'kilowatt_per_square_centimeter'
         """
             
         """
         
-        MegaWattPerSquareCentimeter = 'mega_watt_per_square_centimeter'
+        MegawattPerSquareCentimeter = 'megawatt_per_square_centimeter'
         """
             
         """
@@ -96,29 +96,29 @@ class Irradiance:
         
         self.__watts_per_square_centimeter = None
         
-        self.__pico_watts_per_square_meter = None
+        self.__picowatts_per_square_meter = None
         
-        self.__nano_watts_per_square_meter = None
+        self.__nanowatts_per_square_meter = None
         
-        self.__micro_watts_per_square_meter = None
+        self.__microwatts_per_square_meter = None
         
-        self.__milli_watts_per_square_meter = None
+        self.__milliwatts_per_square_meter = None
         
-        self.__kilo_watts_per_square_meter = None
+        self.__kilowatts_per_square_meter = None
         
-        self.__mega_watts_per_square_meter = None
+        self.__megawatts_per_square_meter = None
         
-        self.__pico_watts_per_square_centimeter = None
+        self.__picowatts_per_square_centimeter = None
         
-        self.__nano_watts_per_square_centimeter = None
+        self.__nanowatts_per_square_centimeter = None
         
-        self.__micro_watts_per_square_centimeter = None
+        self.__microwatts_per_square_centimeter = None
         
-        self.__milli_watts_per_square_centimeter = None
+        self.__milliwatts_per_square_centimeter = None
         
-        self.__kilo_watts_per_square_centimeter = None
+        self.__kilowatts_per_square_centimeter = None
         
-        self.__mega_watts_per_square_centimeter = None
+        self.__megawatts_per_square_centimeter = None
         
 
     def __convert_from_base(self, from_unit: IrradianceUnits) -> float:
@@ -130,40 +130,40 @@ class Irradiance:
         if from_unit == IrradianceUnits.WattPerSquareCentimeter:
             return (value * 0.0001)
         
-        if from_unit == IrradianceUnits.PicoWattPerSquareMeter:
+        if from_unit == IrradianceUnits.PicowattPerSquareMeter:
             return ((value) / 1e-12)
         
-        if from_unit == IrradianceUnits.NanoWattPerSquareMeter:
+        if from_unit == IrradianceUnits.NanowattPerSquareMeter:
             return ((value) / 1e-09)
         
-        if from_unit == IrradianceUnits.MicroWattPerSquareMeter:
+        if from_unit == IrradianceUnits.MicrowattPerSquareMeter:
             return ((value) / 1e-06)
         
-        if from_unit == IrradianceUnits.MilliWattPerSquareMeter:
+        if from_unit == IrradianceUnits.MilliwattPerSquareMeter:
             return ((value) / 0.001)
         
-        if from_unit == IrradianceUnits.KiloWattPerSquareMeter:
+        if from_unit == IrradianceUnits.KilowattPerSquareMeter:
             return ((value) / 1000.0)
         
-        if from_unit == IrradianceUnits.MegaWattPerSquareMeter:
+        if from_unit == IrradianceUnits.MegawattPerSquareMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == IrradianceUnits.PicoWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.PicowattPerSquareCentimeter:
             return ((value * 0.0001) / 1e-12)
         
-        if from_unit == IrradianceUnits.NanoWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.NanowattPerSquareCentimeter:
             return ((value * 0.0001) / 1e-09)
         
-        if from_unit == IrradianceUnits.MicroWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.MicrowattPerSquareCentimeter:
             return ((value * 0.0001) / 1e-06)
         
-        if from_unit == IrradianceUnits.MilliWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.MilliwattPerSquareCentimeter:
             return ((value * 0.0001) / 0.001)
         
-        if from_unit == IrradianceUnits.KiloWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.KilowattPerSquareCentimeter:
             return ((value * 0.0001) / 1000.0)
         
-        if from_unit == IrradianceUnits.MegaWattPerSquareCentimeter:
+        if from_unit == IrradianceUnits.MegawattPerSquareCentimeter:
             return ((value * 0.0001) / 1000000.0)
         
         return None
@@ -177,40 +177,40 @@ class Irradiance:
         if to_unit == IrradianceUnits.WattPerSquareCentimeter:
             return (value * 10000)
         
-        if to_unit == IrradianceUnits.PicoWattPerSquareMeter:
+        if to_unit == IrradianceUnits.PicowattPerSquareMeter:
             return ((value) * 1e-12)
         
-        if to_unit == IrradianceUnits.NanoWattPerSquareMeter:
+        if to_unit == IrradianceUnits.NanowattPerSquareMeter:
             return ((value) * 1e-09)
         
-        if to_unit == IrradianceUnits.MicroWattPerSquareMeter:
+        if to_unit == IrradianceUnits.MicrowattPerSquareMeter:
             return ((value) * 1e-06)
         
-        if to_unit == IrradianceUnits.MilliWattPerSquareMeter:
+        if to_unit == IrradianceUnits.MilliwattPerSquareMeter:
             return ((value) * 0.001)
         
-        if to_unit == IrradianceUnits.KiloWattPerSquareMeter:
+        if to_unit == IrradianceUnits.KilowattPerSquareMeter:
             return ((value) * 1000.0)
         
-        if to_unit == IrradianceUnits.MegaWattPerSquareMeter:
+        if to_unit == IrradianceUnits.MegawattPerSquareMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == IrradianceUnits.PicoWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.PicowattPerSquareCentimeter:
             return ((value * 10000) * 1e-12)
         
-        if to_unit == IrradianceUnits.NanoWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.NanowattPerSquareCentimeter:
             return ((value * 10000) * 1e-09)
         
-        if to_unit == IrradianceUnits.MicroWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.MicrowattPerSquareCentimeter:
             return ((value * 10000) * 1e-06)
         
-        if to_unit == IrradianceUnits.MilliWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.MilliwattPerSquareCentimeter:
             return ((value * 10000) * 0.001)
         
-        if to_unit == IrradianceUnits.KiloWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.KilowattPerSquareCentimeter:
             return ((value * 10000) * 1000.0)
         
-        if to_unit == IrradianceUnits.MegaWattPerSquareCentimeter:
+        if to_unit == IrradianceUnits.MegawattPerSquareCentimeter:
             return ((value * 10000) * 1000000.0)
         
         return None
@@ -252,183 +252,183 @@ class Irradiance:
 
     
     @staticmethod
-    def from_pico_watts_per_square_meter(pico_watts_per_square_meter: float):
+    def from_picowatts_per_square_meter(picowatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in pico_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in picowatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in pico_watts_per_square_meter.
-        :type pico_watts_per_square_meter: float
+        :param meters: The Irradiance value in picowatts_per_square_meter.
+        :type picowatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(pico_watts_per_square_meter, IrradianceUnits.PicoWattPerSquareMeter)
+        return Irradiance(picowatts_per_square_meter, IrradianceUnits.PicowattPerSquareMeter)
 
     
     @staticmethod
-    def from_nano_watts_per_square_meter(nano_watts_per_square_meter: float):
+    def from_nanowatts_per_square_meter(nanowatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in nano_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in nanowatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in nano_watts_per_square_meter.
-        :type nano_watts_per_square_meter: float
+        :param meters: The Irradiance value in nanowatts_per_square_meter.
+        :type nanowatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(nano_watts_per_square_meter, IrradianceUnits.NanoWattPerSquareMeter)
+        return Irradiance(nanowatts_per_square_meter, IrradianceUnits.NanowattPerSquareMeter)
 
     
     @staticmethod
-    def from_micro_watts_per_square_meter(micro_watts_per_square_meter: float):
+    def from_microwatts_per_square_meter(microwatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in micro_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in microwatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in micro_watts_per_square_meter.
-        :type micro_watts_per_square_meter: float
+        :param meters: The Irradiance value in microwatts_per_square_meter.
+        :type microwatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(micro_watts_per_square_meter, IrradianceUnits.MicroWattPerSquareMeter)
+        return Irradiance(microwatts_per_square_meter, IrradianceUnits.MicrowattPerSquareMeter)
 
     
     @staticmethod
-    def from_milli_watts_per_square_meter(milli_watts_per_square_meter: float):
+    def from_milliwatts_per_square_meter(milliwatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in milli_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in milliwatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in milli_watts_per_square_meter.
-        :type milli_watts_per_square_meter: float
+        :param meters: The Irradiance value in milliwatts_per_square_meter.
+        :type milliwatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(milli_watts_per_square_meter, IrradianceUnits.MilliWattPerSquareMeter)
+        return Irradiance(milliwatts_per_square_meter, IrradianceUnits.MilliwattPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_square_meter(kilo_watts_per_square_meter: float):
+    def from_kilowatts_per_square_meter(kilowatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in kilo_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in kilowatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in kilo_watts_per_square_meter.
-        :type kilo_watts_per_square_meter: float
+        :param meters: The Irradiance value in kilowatts_per_square_meter.
+        :type kilowatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(kilo_watts_per_square_meter, IrradianceUnits.KiloWattPerSquareMeter)
+        return Irradiance(kilowatts_per_square_meter, IrradianceUnits.KilowattPerSquareMeter)
 
     
     @staticmethod
-    def from_mega_watts_per_square_meter(mega_watts_per_square_meter: float):
+    def from_megawatts_per_square_meter(megawatts_per_square_meter: float):
         """
-        Create a new instance of Irradiance from a value in mega_watts_per_square_meter.
+        Create a new instance of Irradiance from a value in megawatts_per_square_meter.
 
         
 
-        :param meters: The Irradiance value in mega_watts_per_square_meter.
-        :type mega_watts_per_square_meter: float
+        :param meters: The Irradiance value in megawatts_per_square_meter.
+        :type megawatts_per_square_meter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(mega_watts_per_square_meter, IrradianceUnits.MegaWattPerSquareMeter)
+        return Irradiance(megawatts_per_square_meter, IrradianceUnits.MegawattPerSquareMeter)
 
     
     @staticmethod
-    def from_pico_watts_per_square_centimeter(pico_watts_per_square_centimeter: float):
+    def from_picowatts_per_square_centimeter(picowatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in pico_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in picowatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in pico_watts_per_square_centimeter.
-        :type pico_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in picowatts_per_square_centimeter.
+        :type picowatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(pico_watts_per_square_centimeter, IrradianceUnits.PicoWattPerSquareCentimeter)
+        return Irradiance(picowatts_per_square_centimeter, IrradianceUnits.PicowattPerSquareCentimeter)
 
     
     @staticmethod
-    def from_nano_watts_per_square_centimeter(nano_watts_per_square_centimeter: float):
+    def from_nanowatts_per_square_centimeter(nanowatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in nano_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in nanowatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in nano_watts_per_square_centimeter.
-        :type nano_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in nanowatts_per_square_centimeter.
+        :type nanowatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(nano_watts_per_square_centimeter, IrradianceUnits.NanoWattPerSquareCentimeter)
+        return Irradiance(nanowatts_per_square_centimeter, IrradianceUnits.NanowattPerSquareCentimeter)
 
     
     @staticmethod
-    def from_micro_watts_per_square_centimeter(micro_watts_per_square_centimeter: float):
+    def from_microwatts_per_square_centimeter(microwatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in micro_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in microwatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in micro_watts_per_square_centimeter.
-        :type micro_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in microwatts_per_square_centimeter.
+        :type microwatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(micro_watts_per_square_centimeter, IrradianceUnits.MicroWattPerSquareCentimeter)
+        return Irradiance(microwatts_per_square_centimeter, IrradianceUnits.MicrowattPerSquareCentimeter)
 
     
     @staticmethod
-    def from_milli_watts_per_square_centimeter(milli_watts_per_square_centimeter: float):
+    def from_milliwatts_per_square_centimeter(milliwatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in milli_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in milliwatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in milli_watts_per_square_centimeter.
-        :type milli_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in milliwatts_per_square_centimeter.
+        :type milliwatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(milli_watts_per_square_centimeter, IrradianceUnits.MilliWattPerSquareCentimeter)
+        return Irradiance(milliwatts_per_square_centimeter, IrradianceUnits.MilliwattPerSquareCentimeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_square_centimeter(kilo_watts_per_square_centimeter: float):
+    def from_kilowatts_per_square_centimeter(kilowatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in kilo_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in kilowatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in kilo_watts_per_square_centimeter.
-        :type kilo_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in kilowatts_per_square_centimeter.
+        :type kilowatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(kilo_watts_per_square_centimeter, IrradianceUnits.KiloWattPerSquareCentimeter)
+        return Irradiance(kilowatts_per_square_centimeter, IrradianceUnits.KilowattPerSquareCentimeter)
 
     
     @staticmethod
-    def from_mega_watts_per_square_centimeter(mega_watts_per_square_centimeter: float):
+    def from_megawatts_per_square_centimeter(megawatts_per_square_centimeter: float):
         """
-        Create a new instance of Irradiance from a value in mega_watts_per_square_centimeter.
+        Create a new instance of Irradiance from a value in megawatts_per_square_centimeter.
 
         
 
-        :param meters: The Irradiance value in mega_watts_per_square_centimeter.
-        :type mega_watts_per_square_centimeter: float
+        :param meters: The Irradiance value in megawatts_per_square_centimeter.
+        :type megawatts_per_square_centimeter: float
         :return: A new instance of Irradiance.
         :rtype: Irradiance
         """
-        return Irradiance(mega_watts_per_square_centimeter, IrradianceUnits.MegaWattPerSquareCentimeter)
+        return Irradiance(megawatts_per_square_centimeter, IrradianceUnits.MegawattPerSquareCentimeter)
 
     
     @property
@@ -454,135 +454,135 @@ class Irradiance:
 
     
     @property
-    def pico_watts_per_square_meter(self) -> float:
+    def picowatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_square_meter != None:
-            return self.__pico_watts_per_square_meter
-        self.__pico_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.PicoWattPerSquareMeter)
-        return self.__pico_watts_per_square_meter
+        if self.__picowatts_per_square_meter != None:
+            return self.__picowatts_per_square_meter
+        self.__picowatts_per_square_meter = self.__convert_from_base(IrradianceUnits.PicowattPerSquareMeter)
+        return self.__picowatts_per_square_meter
 
     
     @property
-    def nano_watts_per_square_meter(self) -> float:
+    def nanowatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_square_meter != None:
-            return self.__nano_watts_per_square_meter
-        self.__nano_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.NanoWattPerSquareMeter)
-        return self.__nano_watts_per_square_meter
+        if self.__nanowatts_per_square_meter != None:
+            return self.__nanowatts_per_square_meter
+        self.__nanowatts_per_square_meter = self.__convert_from_base(IrradianceUnits.NanowattPerSquareMeter)
+        return self.__nanowatts_per_square_meter
 
     
     @property
-    def micro_watts_per_square_meter(self) -> float:
+    def microwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_square_meter != None:
-            return self.__micro_watts_per_square_meter
-        self.__micro_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.MicroWattPerSquareMeter)
-        return self.__micro_watts_per_square_meter
+        if self.__microwatts_per_square_meter != None:
+            return self.__microwatts_per_square_meter
+        self.__microwatts_per_square_meter = self.__convert_from_base(IrradianceUnits.MicrowattPerSquareMeter)
+        return self.__microwatts_per_square_meter
 
     
     @property
-    def milli_watts_per_square_meter(self) -> float:
+    def milliwatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_square_meter != None:
-            return self.__milli_watts_per_square_meter
-        self.__milli_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.MilliWattPerSquareMeter)
-        return self.__milli_watts_per_square_meter
+        if self.__milliwatts_per_square_meter != None:
+            return self.__milliwatts_per_square_meter
+        self.__milliwatts_per_square_meter = self.__convert_from_base(IrradianceUnits.MilliwattPerSquareMeter)
+        return self.__milliwatts_per_square_meter
 
     
     @property
-    def kilo_watts_per_square_meter(self) -> float:
+    def kilowatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_square_meter != None:
-            return self.__kilo_watts_per_square_meter
-        self.__kilo_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.KiloWattPerSquareMeter)
-        return self.__kilo_watts_per_square_meter
+        if self.__kilowatts_per_square_meter != None:
+            return self.__kilowatts_per_square_meter
+        self.__kilowatts_per_square_meter = self.__convert_from_base(IrradianceUnits.KilowattPerSquareMeter)
+        return self.__kilowatts_per_square_meter
 
     
     @property
-    def mega_watts_per_square_meter(self) -> float:
+    def megawatts_per_square_meter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_square_meter != None:
-            return self.__mega_watts_per_square_meter
-        self.__mega_watts_per_square_meter = self.__convert_from_base(IrradianceUnits.MegaWattPerSquareMeter)
-        return self.__mega_watts_per_square_meter
+        if self.__megawatts_per_square_meter != None:
+            return self.__megawatts_per_square_meter
+        self.__megawatts_per_square_meter = self.__convert_from_base(IrradianceUnits.MegawattPerSquareMeter)
+        return self.__megawatts_per_square_meter
 
     
     @property
-    def pico_watts_per_square_centimeter(self) -> float:
+    def picowatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_square_centimeter != None:
-            return self.__pico_watts_per_square_centimeter
-        self.__pico_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.PicoWattPerSquareCentimeter)
-        return self.__pico_watts_per_square_centimeter
+        if self.__picowatts_per_square_centimeter != None:
+            return self.__picowatts_per_square_centimeter
+        self.__picowatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.PicowattPerSquareCentimeter)
+        return self.__picowatts_per_square_centimeter
 
     
     @property
-    def nano_watts_per_square_centimeter(self) -> float:
+    def nanowatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_square_centimeter != None:
-            return self.__nano_watts_per_square_centimeter
-        self.__nano_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.NanoWattPerSquareCentimeter)
-        return self.__nano_watts_per_square_centimeter
+        if self.__nanowatts_per_square_centimeter != None:
+            return self.__nanowatts_per_square_centimeter
+        self.__nanowatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.NanowattPerSquareCentimeter)
+        return self.__nanowatts_per_square_centimeter
 
     
     @property
-    def micro_watts_per_square_centimeter(self) -> float:
+    def microwatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_square_centimeter != None:
-            return self.__micro_watts_per_square_centimeter
-        self.__micro_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MicroWattPerSquareCentimeter)
-        return self.__micro_watts_per_square_centimeter
+        if self.__microwatts_per_square_centimeter != None:
+            return self.__microwatts_per_square_centimeter
+        self.__microwatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MicrowattPerSquareCentimeter)
+        return self.__microwatts_per_square_centimeter
 
     
     @property
-    def milli_watts_per_square_centimeter(self) -> float:
+    def milliwatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_square_centimeter != None:
-            return self.__milli_watts_per_square_centimeter
-        self.__milli_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MilliWattPerSquareCentimeter)
-        return self.__milli_watts_per_square_centimeter
+        if self.__milliwatts_per_square_centimeter != None:
+            return self.__milliwatts_per_square_centimeter
+        self.__milliwatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MilliwattPerSquareCentimeter)
+        return self.__milliwatts_per_square_centimeter
 
     
     @property
-    def kilo_watts_per_square_centimeter(self) -> float:
+    def kilowatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_square_centimeter != None:
-            return self.__kilo_watts_per_square_centimeter
-        self.__kilo_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.KiloWattPerSquareCentimeter)
-        return self.__kilo_watts_per_square_centimeter
+        if self.__kilowatts_per_square_centimeter != None:
+            return self.__kilowatts_per_square_centimeter
+        self.__kilowatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.KilowattPerSquareCentimeter)
+        return self.__kilowatts_per_square_centimeter
 
     
     @property
-    def mega_watts_per_square_centimeter(self) -> float:
+    def megawatts_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_square_centimeter != None:
-            return self.__mega_watts_per_square_centimeter
-        self.__mega_watts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MegaWattPerSquareCentimeter)
-        return self.__mega_watts_per_square_centimeter
+        if self.__megawatts_per_square_centimeter != None:
+            return self.__megawatts_per_square_centimeter
+        self.__megawatts_per_square_centimeter = self.__convert_from_base(IrradianceUnits.MegawattPerSquareCentimeter)
+        return self.__megawatts_per_square_centimeter
 
     
     def to_string(self, unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> string:
@@ -598,41 +598,41 @@ class Irradiance:
         if unit == IrradianceUnits.WattPerSquareCentimeter:
             return f"""{self.watts_per_square_centimeter} W/cm²"""
         
-        if unit == IrradianceUnits.PicoWattPerSquareMeter:
-            return f"""{self.pico_watts_per_square_meter} """
+        if unit == IrradianceUnits.PicowattPerSquareMeter:
+            return f"""{self.picowatts_per_square_meter} """
         
-        if unit == IrradianceUnits.NanoWattPerSquareMeter:
-            return f"""{self.nano_watts_per_square_meter} """
+        if unit == IrradianceUnits.NanowattPerSquareMeter:
+            return f"""{self.nanowatts_per_square_meter} """
         
-        if unit == IrradianceUnits.MicroWattPerSquareMeter:
-            return f"""{self.micro_watts_per_square_meter} """
+        if unit == IrradianceUnits.MicrowattPerSquareMeter:
+            return f"""{self.microwatts_per_square_meter} """
         
-        if unit == IrradianceUnits.MilliWattPerSquareMeter:
-            return f"""{self.milli_watts_per_square_meter} """
+        if unit == IrradianceUnits.MilliwattPerSquareMeter:
+            return f"""{self.milliwatts_per_square_meter} """
         
-        if unit == IrradianceUnits.KiloWattPerSquareMeter:
-            return f"""{self.kilo_watts_per_square_meter} """
+        if unit == IrradianceUnits.KilowattPerSquareMeter:
+            return f"""{self.kilowatts_per_square_meter} """
         
-        if unit == IrradianceUnits.MegaWattPerSquareMeter:
-            return f"""{self.mega_watts_per_square_meter} """
+        if unit == IrradianceUnits.MegawattPerSquareMeter:
+            return f"""{self.megawatts_per_square_meter} """
         
-        if unit == IrradianceUnits.PicoWattPerSquareCentimeter:
-            return f"""{self.pico_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.PicowattPerSquareCentimeter:
+            return f"""{self.picowatts_per_square_centimeter} """
         
-        if unit == IrradianceUnits.NanoWattPerSquareCentimeter:
-            return f"""{self.nano_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.NanowattPerSquareCentimeter:
+            return f"""{self.nanowatts_per_square_centimeter} """
         
-        if unit == IrradianceUnits.MicroWattPerSquareCentimeter:
-            return f"""{self.micro_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.MicrowattPerSquareCentimeter:
+            return f"""{self.microwatts_per_square_centimeter} """
         
-        if unit == IrradianceUnits.MilliWattPerSquareCentimeter:
-            return f"""{self.milli_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.MilliwattPerSquareCentimeter:
+            return f"""{self.milliwatts_per_square_centimeter} """
         
-        if unit == IrradianceUnits.KiloWattPerSquareCentimeter:
-            return f"""{self.kilo_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.KilowattPerSquareCentimeter:
+            return f"""{self.kilowatts_per_square_centimeter} """
         
-        if unit == IrradianceUnits.MegaWattPerSquareCentimeter:
-            return f"""{self.mega_watts_per_square_centimeter} """
+        if unit == IrradianceUnits.MegawattPerSquareCentimeter:
+            return f"""{self.megawatts_per_square_centimeter} """
         
         return f'{self.__value}'
 
@@ -650,40 +650,40 @@ class Irradiance:
         if unit_abbreviation == IrradianceUnits.WattPerSquareCentimeter:
             return """W/cm²"""
         
-        if unit_abbreviation == IrradianceUnits.PicoWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.PicowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.NanoWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.NanowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MicroWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.MicrowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MilliWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.MilliwattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.KiloWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.KilowattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MegaWattPerSquareMeter:
+        if unit_abbreviation == IrradianceUnits.MegawattPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.PicoWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.PicowattPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.NanoWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.NanowattPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MicroWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.MicrowattPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MilliWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.MilliwattPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.KiloWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.KilowattPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradianceUnits.MegaWattPerSquareCentimeter:
+        if unit_abbreviation == IrradianceUnits.MegawattPerSquareCentimeter:
             return """"""
         
 

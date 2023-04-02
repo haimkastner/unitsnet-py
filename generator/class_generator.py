@@ -1,6 +1,6 @@
 import string
 from jinja2 import Template, StrictUndefined
-from utils import camel_to_snake
+from utils import camel_to_snake, upper_to_lower_camelcase
 
 # The factor between unit and his prefix.
 prefixes_factor = {
@@ -55,8 +55,8 @@ def generate_prefixes(unit, prefixes) -> list:
             'Deprecated': deprecated,
             'FromUnitToBaseFunc': from_unit_prefix_to_base_formula,
             'FromBaseToUnitFunc': from_base_to_unit_prefix_formula,
-            'SingularName': f'{prefix}{singular_name}',
-            'PluralName': f'{prefix}{plural_nName}',
+            'SingularName': f'{prefix}{upper_to_lower_camelcase(singular_name)}',
+            'PluralName': f'{prefix}{upper_to_lower_camelcase(plural_nName)}',
             'Localization': [{
                 'Culture': 'en-US',
                 'Abbreviations': [''],

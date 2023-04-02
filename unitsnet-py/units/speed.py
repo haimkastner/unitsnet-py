@@ -98,77 +98,77 @@ class SpeedUnits(Enum):
             
         """
         
-        NanoMeterPerSecond = 'nano_meter_per_second'
+        NanometerPerSecond = 'nanometer_per_second'
         """
             
         """
         
-        MicroMeterPerSecond = 'micro_meter_per_second'
+        MicrometerPerSecond = 'micrometer_per_second'
         """
             
         """
         
-        MilliMeterPerSecond = 'milli_meter_per_second'
+        MillimeterPerSecond = 'millimeter_per_second'
         """
             
         """
         
-        CentiMeterPerSecond = 'centi_meter_per_second'
+        CentimeterPerSecond = 'centimeter_per_second'
         """
             
         """
         
-        DeciMeterPerSecond = 'deci_meter_per_second'
+        DecimeterPerSecond = 'decimeter_per_second'
         """
             
         """
         
-        KiloMeterPerSecond = 'kilo_meter_per_second'
+        KilometerPerSecond = 'kilometer_per_second'
         """
             
         """
         
-        NanoMeterPerMinute = 'nano_meter_per_minute'
+        NanometerPerMinute = 'nanometer_per_minute'
         """
             
         """
         
-        MicroMeterPerMinute = 'micro_meter_per_minute'
+        MicrometerPerMinute = 'micrometer_per_minute'
         """
             
         """
         
-        MilliMeterPerMinute = 'milli_meter_per_minute'
+        MillimeterPerMinute = 'millimeter_per_minute'
         """
             
         """
         
-        CentiMeterPerMinute = 'centi_meter_per_minute'
+        CentimeterPerMinute = 'centimeter_per_minute'
         """
             
         """
         
-        DeciMeterPerMinute = 'deci_meter_per_minute'
+        DecimeterPerMinute = 'decimeter_per_minute'
         """
             
         """
         
-        KiloMeterPerMinute = 'kilo_meter_per_minute'
+        KilometerPerMinute = 'kilometer_per_minute'
         """
             
         """
         
-        MilliMeterPerHour = 'milli_meter_per_hour'
+        MillimeterPerHour = 'millimeter_per_hour'
         """
             
         """
         
-        CentiMeterPerHour = 'centi_meter_per_hour'
+        CentimeterPerHour = 'centimeter_per_hour'
         """
             
         """
         
-        KiloMeterPerHour = 'kilo_meter_per_hour'
+        KilometerPerHour = 'kilometer_per_hour'
         """
             
         """
@@ -223,35 +223,35 @@ class Speed:
         
         self.__mach = None
         
-        self.__nano_meters_per_second = None
+        self.__nanometers_per_second = None
         
-        self.__micro_meters_per_second = None
+        self.__micrometers_per_second = None
         
-        self.__milli_meters_per_second = None
+        self.__millimeters_per_second = None
         
-        self.__centi_meters_per_second = None
+        self.__centimeters_per_second = None
         
-        self.__deci_meters_per_second = None
+        self.__decimeters_per_second = None
         
-        self.__kilo_meters_per_second = None
+        self.__kilometers_per_second = None
         
-        self.__nano_meters_per_minutes = None
+        self.__nanometers_per_minutes = None
         
-        self.__micro_meters_per_minutes = None
+        self.__micrometers_per_minutes = None
         
-        self.__milli_meters_per_minutes = None
+        self.__millimeters_per_minutes = None
         
-        self.__centi_meters_per_minutes = None
+        self.__centimeters_per_minutes = None
         
-        self.__deci_meters_per_minutes = None
+        self.__decimeters_per_minutes = None
         
-        self.__kilo_meters_per_minutes = None
+        self.__kilometers_per_minutes = None
         
-        self.__milli_meters_per_hour = None
+        self.__millimeters_per_hour = None
         
-        self.__centi_meters_per_hour = None
+        self.__centimeters_per_hour = None
         
-        self.__kilo_meters_per_hour = None
+        self.__kilometers_per_hour = None
         
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
@@ -311,49 +311,49 @@ class Speed:
         if from_unit == SpeedUnits.Mach:
             return (value / 340.29)
         
-        if from_unit == SpeedUnits.NanoMeterPerSecond:
+        if from_unit == SpeedUnits.NanometerPerSecond:
             return ((value) / 1e-09)
         
-        if from_unit == SpeedUnits.MicroMeterPerSecond:
+        if from_unit == SpeedUnits.MicrometerPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == SpeedUnits.MilliMeterPerSecond:
+        if from_unit == SpeedUnits.MillimeterPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == SpeedUnits.CentiMeterPerSecond:
+        if from_unit == SpeedUnits.CentimeterPerSecond:
             return ((value) / 0.01)
         
-        if from_unit == SpeedUnits.DeciMeterPerSecond:
+        if from_unit == SpeedUnits.DecimeterPerSecond:
             return ((value) / 0.1)
         
-        if from_unit == SpeedUnits.KiloMeterPerSecond:
+        if from_unit == SpeedUnits.KilometerPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == SpeedUnits.NanoMeterPerMinute:
+        if from_unit == SpeedUnits.NanometerPerMinute:
             return ((value * 60) / 1e-09)
         
-        if from_unit == SpeedUnits.MicroMeterPerMinute:
+        if from_unit == SpeedUnits.MicrometerPerMinute:
             return ((value * 60) / 1e-06)
         
-        if from_unit == SpeedUnits.MilliMeterPerMinute:
+        if from_unit == SpeedUnits.MillimeterPerMinute:
             return ((value * 60) / 0.001)
         
-        if from_unit == SpeedUnits.CentiMeterPerMinute:
+        if from_unit == SpeedUnits.CentimeterPerMinute:
             return ((value * 60) / 0.01)
         
-        if from_unit == SpeedUnits.DeciMeterPerMinute:
+        if from_unit == SpeedUnits.DecimeterPerMinute:
             return ((value * 60) / 0.1)
         
-        if from_unit == SpeedUnits.KiloMeterPerMinute:
+        if from_unit == SpeedUnits.KilometerPerMinute:
             return ((value * 60) / 1000.0)
         
-        if from_unit == SpeedUnits.MilliMeterPerHour:
+        if from_unit == SpeedUnits.MillimeterPerHour:
             return ((value * 3600) / 0.001)
         
-        if from_unit == SpeedUnits.CentiMeterPerHour:
+        if from_unit == SpeedUnits.CentimeterPerHour:
             return ((value * 3600) / 0.01)
         
-        if from_unit == SpeedUnits.KiloMeterPerHour:
+        if from_unit == SpeedUnits.KilometerPerHour:
             return ((value * 3600) / 1000.0)
         
         return None
@@ -415,49 +415,49 @@ class Speed:
         if to_unit == SpeedUnits.Mach:
             return (value * 340.29)
         
-        if to_unit == SpeedUnits.NanoMeterPerSecond:
+        if to_unit == SpeedUnits.NanometerPerSecond:
             return ((value) * 1e-09)
         
-        if to_unit == SpeedUnits.MicroMeterPerSecond:
+        if to_unit == SpeedUnits.MicrometerPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == SpeedUnits.MilliMeterPerSecond:
+        if to_unit == SpeedUnits.MillimeterPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == SpeedUnits.CentiMeterPerSecond:
+        if to_unit == SpeedUnits.CentimeterPerSecond:
             return ((value) * 0.01)
         
-        if to_unit == SpeedUnits.DeciMeterPerSecond:
+        if to_unit == SpeedUnits.DecimeterPerSecond:
             return ((value) * 0.1)
         
-        if to_unit == SpeedUnits.KiloMeterPerSecond:
+        if to_unit == SpeedUnits.KilometerPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == SpeedUnits.NanoMeterPerMinute:
+        if to_unit == SpeedUnits.NanometerPerMinute:
             return ((value / 60) * 1e-09)
         
-        if to_unit == SpeedUnits.MicroMeterPerMinute:
+        if to_unit == SpeedUnits.MicrometerPerMinute:
             return ((value / 60) * 1e-06)
         
-        if to_unit == SpeedUnits.MilliMeterPerMinute:
+        if to_unit == SpeedUnits.MillimeterPerMinute:
             return ((value / 60) * 0.001)
         
-        if to_unit == SpeedUnits.CentiMeterPerMinute:
+        if to_unit == SpeedUnits.CentimeterPerMinute:
             return ((value / 60) * 0.01)
         
-        if to_unit == SpeedUnits.DeciMeterPerMinute:
+        if to_unit == SpeedUnits.DecimeterPerMinute:
             return ((value / 60) * 0.1)
         
-        if to_unit == SpeedUnits.KiloMeterPerMinute:
+        if to_unit == SpeedUnits.KilometerPerMinute:
             return ((value / 60) * 1000.0)
         
-        if to_unit == SpeedUnits.MilliMeterPerHour:
+        if to_unit == SpeedUnits.MillimeterPerHour:
             return ((value / 3600) * 0.001)
         
-        if to_unit == SpeedUnits.CentiMeterPerHour:
+        if to_unit == SpeedUnits.CentimeterPerHour:
             return ((value / 3600) * 0.01)
         
-        if to_unit == SpeedUnits.KiloMeterPerHour:
+        if to_unit == SpeedUnits.KilometerPerHour:
             return ((value / 3600) * 1000.0)
         
         return None
@@ -739,228 +739,228 @@ class Speed:
 
     
     @staticmethod
-    def from_nano_meters_per_second(nano_meters_per_second: float):
+    def from_nanometers_per_second(nanometers_per_second: float):
         """
-        Create a new instance of Speed from a value in nano_meters_per_second.
+        Create a new instance of Speed from a value in nanometers_per_second.
 
         
 
-        :param meters: The Speed value in nano_meters_per_second.
-        :type nano_meters_per_second: float
+        :param meters: The Speed value in nanometers_per_second.
+        :type nanometers_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(nano_meters_per_second, SpeedUnits.NanoMeterPerSecond)
+        return Speed(nanometers_per_second, SpeedUnits.NanometerPerSecond)
 
     
     @staticmethod
-    def from_micro_meters_per_second(micro_meters_per_second: float):
+    def from_micrometers_per_second(micrometers_per_second: float):
         """
-        Create a new instance of Speed from a value in micro_meters_per_second.
+        Create a new instance of Speed from a value in micrometers_per_second.
 
         
 
-        :param meters: The Speed value in micro_meters_per_second.
-        :type micro_meters_per_second: float
+        :param meters: The Speed value in micrometers_per_second.
+        :type micrometers_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(micro_meters_per_second, SpeedUnits.MicroMeterPerSecond)
+        return Speed(micrometers_per_second, SpeedUnits.MicrometerPerSecond)
 
     
     @staticmethod
-    def from_milli_meters_per_second(milli_meters_per_second: float):
+    def from_millimeters_per_second(millimeters_per_second: float):
         """
-        Create a new instance of Speed from a value in milli_meters_per_second.
+        Create a new instance of Speed from a value in millimeters_per_second.
 
         
 
-        :param meters: The Speed value in milli_meters_per_second.
-        :type milli_meters_per_second: float
+        :param meters: The Speed value in millimeters_per_second.
+        :type millimeters_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(milli_meters_per_second, SpeedUnits.MilliMeterPerSecond)
+        return Speed(millimeters_per_second, SpeedUnits.MillimeterPerSecond)
 
     
     @staticmethod
-    def from_centi_meters_per_second(centi_meters_per_second: float):
+    def from_centimeters_per_second(centimeters_per_second: float):
         """
-        Create a new instance of Speed from a value in centi_meters_per_second.
+        Create a new instance of Speed from a value in centimeters_per_second.
 
         
 
-        :param meters: The Speed value in centi_meters_per_second.
-        :type centi_meters_per_second: float
+        :param meters: The Speed value in centimeters_per_second.
+        :type centimeters_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(centi_meters_per_second, SpeedUnits.CentiMeterPerSecond)
+        return Speed(centimeters_per_second, SpeedUnits.CentimeterPerSecond)
 
     
     @staticmethod
-    def from_deci_meters_per_second(deci_meters_per_second: float):
+    def from_decimeters_per_second(decimeters_per_second: float):
         """
-        Create a new instance of Speed from a value in deci_meters_per_second.
+        Create a new instance of Speed from a value in decimeters_per_second.
 
         
 
-        :param meters: The Speed value in deci_meters_per_second.
-        :type deci_meters_per_second: float
+        :param meters: The Speed value in decimeters_per_second.
+        :type decimeters_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(deci_meters_per_second, SpeedUnits.DeciMeterPerSecond)
+        return Speed(decimeters_per_second, SpeedUnits.DecimeterPerSecond)
 
     
     @staticmethod
-    def from_kilo_meters_per_second(kilo_meters_per_second: float):
+    def from_kilometers_per_second(kilometers_per_second: float):
         """
-        Create a new instance of Speed from a value in kilo_meters_per_second.
+        Create a new instance of Speed from a value in kilometers_per_second.
 
         
 
-        :param meters: The Speed value in kilo_meters_per_second.
-        :type kilo_meters_per_second: float
+        :param meters: The Speed value in kilometers_per_second.
+        :type kilometers_per_second: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(kilo_meters_per_second, SpeedUnits.KiloMeterPerSecond)
+        return Speed(kilometers_per_second, SpeedUnits.KilometerPerSecond)
 
     
     @staticmethod
-    def from_nano_meters_per_minutes(nano_meters_per_minutes: float):
+    def from_nanometers_per_minutes(nanometers_per_minutes: float):
         """
-        Create a new instance of Speed from a value in nano_meters_per_minutes.
+        Create a new instance of Speed from a value in nanometers_per_minutes.
 
         
 
-        :param meters: The Speed value in nano_meters_per_minutes.
-        :type nano_meters_per_minutes: float
+        :param meters: The Speed value in nanometers_per_minutes.
+        :type nanometers_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(nano_meters_per_minutes, SpeedUnits.NanoMeterPerMinute)
+        return Speed(nanometers_per_minutes, SpeedUnits.NanometerPerMinute)
 
     
     @staticmethod
-    def from_micro_meters_per_minutes(micro_meters_per_minutes: float):
+    def from_micrometers_per_minutes(micrometers_per_minutes: float):
         """
-        Create a new instance of Speed from a value in micro_meters_per_minutes.
+        Create a new instance of Speed from a value in micrometers_per_minutes.
 
         
 
-        :param meters: The Speed value in micro_meters_per_minutes.
-        :type micro_meters_per_minutes: float
+        :param meters: The Speed value in micrometers_per_minutes.
+        :type micrometers_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(micro_meters_per_minutes, SpeedUnits.MicroMeterPerMinute)
+        return Speed(micrometers_per_minutes, SpeedUnits.MicrometerPerMinute)
 
     
     @staticmethod
-    def from_milli_meters_per_minutes(milli_meters_per_minutes: float):
+    def from_millimeters_per_minutes(millimeters_per_minutes: float):
         """
-        Create a new instance of Speed from a value in milli_meters_per_minutes.
+        Create a new instance of Speed from a value in millimeters_per_minutes.
 
         
 
-        :param meters: The Speed value in milli_meters_per_minutes.
-        :type milli_meters_per_minutes: float
+        :param meters: The Speed value in millimeters_per_minutes.
+        :type millimeters_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(milli_meters_per_minutes, SpeedUnits.MilliMeterPerMinute)
+        return Speed(millimeters_per_minutes, SpeedUnits.MillimeterPerMinute)
 
     
     @staticmethod
-    def from_centi_meters_per_minutes(centi_meters_per_minutes: float):
+    def from_centimeters_per_minutes(centimeters_per_minutes: float):
         """
-        Create a new instance of Speed from a value in centi_meters_per_minutes.
+        Create a new instance of Speed from a value in centimeters_per_minutes.
 
         
 
-        :param meters: The Speed value in centi_meters_per_minutes.
-        :type centi_meters_per_minutes: float
+        :param meters: The Speed value in centimeters_per_minutes.
+        :type centimeters_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(centi_meters_per_minutes, SpeedUnits.CentiMeterPerMinute)
+        return Speed(centimeters_per_minutes, SpeedUnits.CentimeterPerMinute)
 
     
     @staticmethod
-    def from_deci_meters_per_minutes(deci_meters_per_minutes: float):
+    def from_decimeters_per_minutes(decimeters_per_minutes: float):
         """
-        Create a new instance of Speed from a value in deci_meters_per_minutes.
+        Create a new instance of Speed from a value in decimeters_per_minutes.
 
         
 
-        :param meters: The Speed value in deci_meters_per_minutes.
-        :type deci_meters_per_minutes: float
+        :param meters: The Speed value in decimeters_per_minutes.
+        :type decimeters_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(deci_meters_per_minutes, SpeedUnits.DeciMeterPerMinute)
+        return Speed(decimeters_per_minutes, SpeedUnits.DecimeterPerMinute)
 
     
     @staticmethod
-    def from_kilo_meters_per_minutes(kilo_meters_per_minutes: float):
+    def from_kilometers_per_minutes(kilometers_per_minutes: float):
         """
-        Create a new instance of Speed from a value in kilo_meters_per_minutes.
+        Create a new instance of Speed from a value in kilometers_per_minutes.
 
         
 
-        :param meters: The Speed value in kilo_meters_per_minutes.
-        :type kilo_meters_per_minutes: float
+        :param meters: The Speed value in kilometers_per_minutes.
+        :type kilometers_per_minutes: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(kilo_meters_per_minutes, SpeedUnits.KiloMeterPerMinute)
+        return Speed(kilometers_per_minutes, SpeedUnits.KilometerPerMinute)
 
     
     @staticmethod
-    def from_milli_meters_per_hour(milli_meters_per_hour: float):
+    def from_millimeters_per_hour(millimeters_per_hour: float):
         """
-        Create a new instance of Speed from a value in milli_meters_per_hour.
+        Create a new instance of Speed from a value in millimeters_per_hour.
 
         
 
-        :param meters: The Speed value in milli_meters_per_hour.
-        :type milli_meters_per_hour: float
+        :param meters: The Speed value in millimeters_per_hour.
+        :type millimeters_per_hour: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(milli_meters_per_hour, SpeedUnits.MilliMeterPerHour)
+        return Speed(millimeters_per_hour, SpeedUnits.MillimeterPerHour)
 
     
     @staticmethod
-    def from_centi_meters_per_hour(centi_meters_per_hour: float):
+    def from_centimeters_per_hour(centimeters_per_hour: float):
         """
-        Create a new instance of Speed from a value in centi_meters_per_hour.
+        Create a new instance of Speed from a value in centimeters_per_hour.
 
         
 
-        :param meters: The Speed value in centi_meters_per_hour.
-        :type centi_meters_per_hour: float
+        :param meters: The Speed value in centimeters_per_hour.
+        :type centimeters_per_hour: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(centi_meters_per_hour, SpeedUnits.CentiMeterPerHour)
+        return Speed(centimeters_per_hour, SpeedUnits.CentimeterPerHour)
 
     
     @staticmethod
-    def from_kilo_meters_per_hour(kilo_meters_per_hour: float):
+    def from_kilometers_per_hour(kilometers_per_hour: float):
         """
-        Create a new instance of Speed from a value in kilo_meters_per_hour.
+        Create a new instance of Speed from a value in kilometers_per_hour.
 
         
 
-        :param meters: The Speed value in kilo_meters_per_hour.
-        :type kilo_meters_per_hour: float
+        :param meters: The Speed value in kilometers_per_hour.
+        :type kilometers_per_hour: float
         :return: A new instance of Speed.
         :rtype: Speed
         """
-        return Speed(kilo_meters_per_hour, SpeedUnits.KiloMeterPerHour)
+        return Speed(kilometers_per_hour, SpeedUnits.KilometerPerHour)
 
     
     @property
@@ -1162,168 +1162,168 @@ class Speed:
 
     
     @property
-    def nano_meters_per_second(self) -> float:
+    def nanometers_per_second(self) -> float:
         """
         
         """
-        if self.__nano_meters_per_second != None:
-            return self.__nano_meters_per_second
-        self.__nano_meters_per_second = self.__convert_from_base(SpeedUnits.NanoMeterPerSecond)
-        return self.__nano_meters_per_second
+        if self.__nanometers_per_second != None:
+            return self.__nanometers_per_second
+        self.__nanometers_per_second = self.__convert_from_base(SpeedUnits.NanometerPerSecond)
+        return self.__nanometers_per_second
 
     
     @property
-    def micro_meters_per_second(self) -> float:
+    def micrometers_per_second(self) -> float:
         """
         
         """
-        if self.__micro_meters_per_second != None:
-            return self.__micro_meters_per_second
-        self.__micro_meters_per_second = self.__convert_from_base(SpeedUnits.MicroMeterPerSecond)
-        return self.__micro_meters_per_second
+        if self.__micrometers_per_second != None:
+            return self.__micrometers_per_second
+        self.__micrometers_per_second = self.__convert_from_base(SpeedUnits.MicrometerPerSecond)
+        return self.__micrometers_per_second
 
     
     @property
-    def milli_meters_per_second(self) -> float:
+    def millimeters_per_second(self) -> float:
         """
         
         """
-        if self.__milli_meters_per_second != None:
-            return self.__milli_meters_per_second
-        self.__milli_meters_per_second = self.__convert_from_base(SpeedUnits.MilliMeterPerSecond)
-        return self.__milli_meters_per_second
+        if self.__millimeters_per_second != None:
+            return self.__millimeters_per_second
+        self.__millimeters_per_second = self.__convert_from_base(SpeedUnits.MillimeterPerSecond)
+        return self.__millimeters_per_second
 
     
     @property
-    def centi_meters_per_second(self) -> float:
+    def centimeters_per_second(self) -> float:
         """
         
         """
-        if self.__centi_meters_per_second != None:
-            return self.__centi_meters_per_second
-        self.__centi_meters_per_second = self.__convert_from_base(SpeedUnits.CentiMeterPerSecond)
-        return self.__centi_meters_per_second
+        if self.__centimeters_per_second != None:
+            return self.__centimeters_per_second
+        self.__centimeters_per_second = self.__convert_from_base(SpeedUnits.CentimeterPerSecond)
+        return self.__centimeters_per_second
 
     
     @property
-    def deci_meters_per_second(self) -> float:
+    def decimeters_per_second(self) -> float:
         """
         
         """
-        if self.__deci_meters_per_second != None:
-            return self.__deci_meters_per_second
-        self.__deci_meters_per_second = self.__convert_from_base(SpeedUnits.DeciMeterPerSecond)
-        return self.__deci_meters_per_second
+        if self.__decimeters_per_second != None:
+            return self.__decimeters_per_second
+        self.__decimeters_per_second = self.__convert_from_base(SpeedUnits.DecimeterPerSecond)
+        return self.__decimeters_per_second
 
     
     @property
-    def kilo_meters_per_second(self) -> float:
+    def kilometers_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_meters_per_second != None:
-            return self.__kilo_meters_per_second
-        self.__kilo_meters_per_second = self.__convert_from_base(SpeedUnits.KiloMeterPerSecond)
-        return self.__kilo_meters_per_second
+        if self.__kilometers_per_second != None:
+            return self.__kilometers_per_second
+        self.__kilometers_per_second = self.__convert_from_base(SpeedUnits.KilometerPerSecond)
+        return self.__kilometers_per_second
 
     
     @property
-    def nano_meters_per_minutes(self) -> float:
+    def nanometers_per_minutes(self) -> float:
         """
         
         """
-        if self.__nano_meters_per_minutes != None:
-            return self.__nano_meters_per_minutes
-        self.__nano_meters_per_minutes = self.__convert_from_base(SpeedUnits.NanoMeterPerMinute)
-        return self.__nano_meters_per_minutes
+        if self.__nanometers_per_minutes != None:
+            return self.__nanometers_per_minutes
+        self.__nanometers_per_minutes = self.__convert_from_base(SpeedUnits.NanometerPerMinute)
+        return self.__nanometers_per_minutes
 
     
     @property
-    def micro_meters_per_minutes(self) -> float:
+    def micrometers_per_minutes(self) -> float:
         """
         
         """
-        if self.__micro_meters_per_minutes != None:
-            return self.__micro_meters_per_minutes
-        self.__micro_meters_per_minutes = self.__convert_from_base(SpeedUnits.MicroMeterPerMinute)
-        return self.__micro_meters_per_minutes
+        if self.__micrometers_per_minutes != None:
+            return self.__micrometers_per_minutes
+        self.__micrometers_per_minutes = self.__convert_from_base(SpeedUnits.MicrometerPerMinute)
+        return self.__micrometers_per_minutes
 
     
     @property
-    def milli_meters_per_minutes(self) -> float:
+    def millimeters_per_minutes(self) -> float:
         """
         
         """
-        if self.__milli_meters_per_minutes != None:
-            return self.__milli_meters_per_minutes
-        self.__milli_meters_per_minutes = self.__convert_from_base(SpeedUnits.MilliMeterPerMinute)
-        return self.__milli_meters_per_minutes
+        if self.__millimeters_per_minutes != None:
+            return self.__millimeters_per_minutes
+        self.__millimeters_per_minutes = self.__convert_from_base(SpeedUnits.MillimeterPerMinute)
+        return self.__millimeters_per_minutes
 
     
     @property
-    def centi_meters_per_minutes(self) -> float:
+    def centimeters_per_minutes(self) -> float:
         """
         
         """
-        if self.__centi_meters_per_minutes != None:
-            return self.__centi_meters_per_minutes
-        self.__centi_meters_per_minutes = self.__convert_from_base(SpeedUnits.CentiMeterPerMinute)
-        return self.__centi_meters_per_minutes
+        if self.__centimeters_per_minutes != None:
+            return self.__centimeters_per_minutes
+        self.__centimeters_per_minutes = self.__convert_from_base(SpeedUnits.CentimeterPerMinute)
+        return self.__centimeters_per_minutes
 
     
     @property
-    def deci_meters_per_minutes(self) -> float:
+    def decimeters_per_minutes(self) -> float:
         """
         
         """
-        if self.__deci_meters_per_minutes != None:
-            return self.__deci_meters_per_minutes
-        self.__deci_meters_per_minutes = self.__convert_from_base(SpeedUnits.DeciMeterPerMinute)
-        return self.__deci_meters_per_minutes
+        if self.__decimeters_per_minutes != None:
+            return self.__decimeters_per_minutes
+        self.__decimeters_per_minutes = self.__convert_from_base(SpeedUnits.DecimeterPerMinute)
+        return self.__decimeters_per_minutes
 
     
     @property
-    def kilo_meters_per_minutes(self) -> float:
+    def kilometers_per_minutes(self) -> float:
         """
         
         """
-        if self.__kilo_meters_per_minutes != None:
-            return self.__kilo_meters_per_minutes
-        self.__kilo_meters_per_minutes = self.__convert_from_base(SpeedUnits.KiloMeterPerMinute)
-        return self.__kilo_meters_per_minutes
+        if self.__kilometers_per_minutes != None:
+            return self.__kilometers_per_minutes
+        self.__kilometers_per_minutes = self.__convert_from_base(SpeedUnits.KilometerPerMinute)
+        return self.__kilometers_per_minutes
 
     
     @property
-    def milli_meters_per_hour(self) -> float:
+    def millimeters_per_hour(self) -> float:
         """
         
         """
-        if self.__milli_meters_per_hour != None:
-            return self.__milli_meters_per_hour
-        self.__milli_meters_per_hour = self.__convert_from_base(SpeedUnits.MilliMeterPerHour)
-        return self.__milli_meters_per_hour
+        if self.__millimeters_per_hour != None:
+            return self.__millimeters_per_hour
+        self.__millimeters_per_hour = self.__convert_from_base(SpeedUnits.MillimeterPerHour)
+        return self.__millimeters_per_hour
 
     
     @property
-    def centi_meters_per_hour(self) -> float:
+    def centimeters_per_hour(self) -> float:
         """
         
         """
-        if self.__centi_meters_per_hour != None:
-            return self.__centi_meters_per_hour
-        self.__centi_meters_per_hour = self.__convert_from_base(SpeedUnits.CentiMeterPerHour)
-        return self.__centi_meters_per_hour
+        if self.__centimeters_per_hour != None:
+            return self.__centimeters_per_hour
+        self.__centimeters_per_hour = self.__convert_from_base(SpeedUnits.CentimeterPerHour)
+        return self.__centimeters_per_hour
 
     
     @property
-    def kilo_meters_per_hour(self) -> float:
+    def kilometers_per_hour(self) -> float:
         """
         
         """
-        if self.__kilo_meters_per_hour != None:
-            return self.__kilo_meters_per_hour
-        self.__kilo_meters_per_hour = self.__convert_from_base(SpeedUnits.KiloMeterPerHour)
-        return self.__kilo_meters_per_hour
+        if self.__kilometers_per_hour != None:
+            return self.__kilometers_per_hour
+        self.__kilometers_per_hour = self.__convert_from_base(SpeedUnits.KilometerPerHour)
+        return self.__kilometers_per_hour
 
     
     def to_string(self, unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> string:
@@ -1387,50 +1387,50 @@ class Speed:
         if unit == SpeedUnits.Mach:
             return f"""{self.mach} M"""
         
-        if unit == SpeedUnits.NanoMeterPerSecond:
-            return f"""{self.nano_meters_per_second} """
+        if unit == SpeedUnits.NanometerPerSecond:
+            return f"""{self.nanometers_per_second} """
         
-        if unit == SpeedUnits.MicroMeterPerSecond:
-            return f"""{self.micro_meters_per_second} """
+        if unit == SpeedUnits.MicrometerPerSecond:
+            return f"""{self.micrometers_per_second} """
         
-        if unit == SpeedUnits.MilliMeterPerSecond:
-            return f"""{self.milli_meters_per_second} """
+        if unit == SpeedUnits.MillimeterPerSecond:
+            return f"""{self.millimeters_per_second} """
         
-        if unit == SpeedUnits.CentiMeterPerSecond:
-            return f"""{self.centi_meters_per_second} """
+        if unit == SpeedUnits.CentimeterPerSecond:
+            return f"""{self.centimeters_per_second} """
         
-        if unit == SpeedUnits.DeciMeterPerSecond:
-            return f"""{self.deci_meters_per_second} """
+        if unit == SpeedUnits.DecimeterPerSecond:
+            return f"""{self.decimeters_per_second} """
         
-        if unit == SpeedUnits.KiloMeterPerSecond:
-            return f"""{self.kilo_meters_per_second} """
+        if unit == SpeedUnits.KilometerPerSecond:
+            return f"""{self.kilometers_per_second} """
         
-        if unit == SpeedUnits.NanoMeterPerMinute:
-            return f"""{self.nano_meters_per_minutes} """
+        if unit == SpeedUnits.NanometerPerMinute:
+            return f"""{self.nanometers_per_minutes} """
         
-        if unit == SpeedUnits.MicroMeterPerMinute:
-            return f"""{self.micro_meters_per_minutes} """
+        if unit == SpeedUnits.MicrometerPerMinute:
+            return f"""{self.micrometers_per_minutes} """
         
-        if unit == SpeedUnits.MilliMeterPerMinute:
-            return f"""{self.milli_meters_per_minutes} """
+        if unit == SpeedUnits.MillimeterPerMinute:
+            return f"""{self.millimeters_per_minutes} """
         
-        if unit == SpeedUnits.CentiMeterPerMinute:
-            return f"""{self.centi_meters_per_minutes} """
+        if unit == SpeedUnits.CentimeterPerMinute:
+            return f"""{self.centimeters_per_minutes} """
         
-        if unit == SpeedUnits.DeciMeterPerMinute:
-            return f"""{self.deci_meters_per_minutes} """
+        if unit == SpeedUnits.DecimeterPerMinute:
+            return f"""{self.decimeters_per_minutes} """
         
-        if unit == SpeedUnits.KiloMeterPerMinute:
-            return f"""{self.kilo_meters_per_minutes} """
+        if unit == SpeedUnits.KilometerPerMinute:
+            return f"""{self.kilometers_per_minutes} """
         
-        if unit == SpeedUnits.MilliMeterPerHour:
-            return f"""{self.milli_meters_per_hour} """
+        if unit == SpeedUnits.MillimeterPerHour:
+            return f"""{self.millimeters_per_hour} """
         
-        if unit == SpeedUnits.CentiMeterPerHour:
-            return f"""{self.centi_meters_per_hour} """
+        if unit == SpeedUnits.CentimeterPerHour:
+            return f"""{self.centimeters_per_hour} """
         
-        if unit == SpeedUnits.KiloMeterPerHour:
-            return f"""{self.kilo_meters_per_hour} """
+        if unit == SpeedUnits.KilometerPerHour:
+            return f"""{self.kilometers_per_hour} """
         
         return f'{self.__value}'
 
@@ -1496,49 +1496,49 @@ class Speed:
         if unit_abbreviation == SpeedUnits.Mach:
             return """M"""
         
-        if unit_abbreviation == SpeedUnits.NanoMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.NanometerPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.MicroMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.MicrometerPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.MilliMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.MillimeterPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.CentiMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.CentimeterPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.DeciMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.DecimeterPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.KiloMeterPerSecond:
+        if unit_abbreviation == SpeedUnits.KilometerPerSecond:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.NanoMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.NanometerPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.MicroMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.MicrometerPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.MilliMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.MillimeterPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.CentiMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.CentimeterPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.DeciMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.DecimeterPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.KiloMeterPerMinute:
+        if unit_abbreviation == SpeedUnits.KilometerPerMinute:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.MilliMeterPerHour:
+        if unit_abbreviation == SpeedUnits.MillimeterPerHour:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.CentiMeterPerHour:
+        if unit_abbreviation == SpeedUnits.CentimeterPerHour:
             return """"""
         
-        if unit_abbreviation == SpeedUnits.KiloMeterPerHour:
+        if unit_abbreviation == SpeedUnits.KilometerPerHour:
             return """"""
         
 

@@ -18,62 +18,62 @@ class InformationUnits(Enum):
             
         """
         
-        KiloByte = 'kilo_byte'
+        Kilobyte = 'kilobyte'
         """
             
         """
         
-        MegaByte = 'mega_byte'
+        Megabyte = 'megabyte'
         """
             
         """
         
-        GigaByte = 'giga_byte'
+        Gigabyte = 'gigabyte'
         """
             
         """
         
-        TeraByte = 'tera_byte'
+        Terabyte = 'terabyte'
         """
             
         """
         
-        PetaByte = 'peta_byte'
+        Petabyte = 'petabyte'
         """
             
         """
         
-        ExaByte = 'exa_byte'
+        Exabyte = 'exabyte'
         """
             
         """
         
-        KiloBit = 'kilo_bit'
+        Kilobit = 'kilobit'
         """
             
         """
         
-        MegaBit = 'mega_bit'
+        Megabit = 'megabit'
         """
             
         """
         
-        GigaBit = 'giga_bit'
+        Gigabit = 'gigabit'
         """
             
         """
         
-        TeraBit = 'tera_bit'
+        Terabit = 'terabit'
         """
             
         """
         
-        PetaBit = 'peta_bit'
+        Petabit = 'petabit'
         """
             
         """
         
-        ExaBit = 'exa_bit'
+        Exabit = 'exabit'
         """
             
         """
@@ -96,29 +96,29 @@ class Information:
         
         self.__bits = None
         
-        self.__kilo_bytes = None
+        self.__kilobytes = None
         
-        self.__mega_bytes = None
+        self.__megabytes = None
         
-        self.__giga_bytes = None
+        self.__gigabytes = None
         
-        self.__tera_bytes = None
+        self.__terabytes = None
         
-        self.__peta_bytes = None
+        self.__petabytes = None
         
-        self.__exa_bytes = None
+        self.__exabytes = None
         
-        self.__kilo_bits = None
+        self.__kilobits = None
         
-        self.__mega_bits = None
+        self.__megabits = None
         
-        self.__giga_bits = None
+        self.__gigabits = None
         
-        self.__tera_bits = None
+        self.__terabits = None
         
-        self.__peta_bits = None
+        self.__petabits = None
         
-        self.__exa_bits = None
+        self.__exabits = None
         
 
     def __convert_from_base(self, from_unit: InformationUnits) -> float:
@@ -130,40 +130,40 @@ class Information:
         if from_unit == InformationUnits.Bit:
             return (value)
         
-        if from_unit == InformationUnits.KiloByte:
+        if from_unit == InformationUnits.Kilobyte:
             return ((value / 8) / 1000.0)
         
-        if from_unit == InformationUnits.MegaByte:
+        if from_unit == InformationUnits.Megabyte:
             return ((value / 8) / 1000000.0)
         
-        if from_unit == InformationUnits.GigaByte:
+        if from_unit == InformationUnits.Gigabyte:
             return ((value / 8) / 1000000000.0)
         
-        if from_unit == InformationUnits.TeraByte:
+        if from_unit == InformationUnits.Terabyte:
             return ((value / 8) / 1000000000000.0)
         
-        if from_unit == InformationUnits.PetaByte:
+        if from_unit == InformationUnits.Petabyte:
             return ((value / 8) / 1000000000000000.0)
         
-        if from_unit == InformationUnits.ExaByte:
+        if from_unit == InformationUnits.Exabyte:
             return ((value / 8) / 1e+18)
         
-        if from_unit == InformationUnits.KiloBit:
+        if from_unit == InformationUnits.Kilobit:
             return ((value) / 1000.0)
         
-        if from_unit == InformationUnits.MegaBit:
+        if from_unit == InformationUnits.Megabit:
             return ((value) / 1000000.0)
         
-        if from_unit == InformationUnits.GigaBit:
+        if from_unit == InformationUnits.Gigabit:
             return ((value) / 1000000000.0)
         
-        if from_unit == InformationUnits.TeraBit:
+        if from_unit == InformationUnits.Terabit:
             return ((value) / 1000000000000.0)
         
-        if from_unit == InformationUnits.PetaBit:
+        if from_unit == InformationUnits.Petabit:
             return ((value) / 1000000000000000.0)
         
-        if from_unit == InformationUnits.ExaBit:
+        if from_unit == InformationUnits.Exabit:
             return ((value) / 1e+18)
         
         return None
@@ -177,40 +177,40 @@ class Information:
         if to_unit == InformationUnits.Bit:
             return (value)
         
-        if to_unit == InformationUnits.KiloByte:
+        if to_unit == InformationUnits.Kilobyte:
             return ((value * 8) * 1000.0)
         
-        if to_unit == InformationUnits.MegaByte:
+        if to_unit == InformationUnits.Megabyte:
             return ((value * 8) * 1000000.0)
         
-        if to_unit == InformationUnits.GigaByte:
+        if to_unit == InformationUnits.Gigabyte:
             return ((value * 8) * 1000000000.0)
         
-        if to_unit == InformationUnits.TeraByte:
+        if to_unit == InformationUnits.Terabyte:
             return ((value * 8) * 1000000000000.0)
         
-        if to_unit == InformationUnits.PetaByte:
+        if to_unit == InformationUnits.Petabyte:
             return ((value * 8) * 1000000000000000.0)
         
-        if to_unit == InformationUnits.ExaByte:
+        if to_unit == InformationUnits.Exabyte:
             return ((value * 8) * 1e+18)
         
-        if to_unit == InformationUnits.KiloBit:
+        if to_unit == InformationUnits.Kilobit:
             return ((value) * 1000.0)
         
-        if to_unit == InformationUnits.MegaBit:
+        if to_unit == InformationUnits.Megabit:
             return ((value) * 1000000.0)
         
-        if to_unit == InformationUnits.GigaBit:
+        if to_unit == InformationUnits.Gigabit:
             return ((value) * 1000000000.0)
         
-        if to_unit == InformationUnits.TeraBit:
+        if to_unit == InformationUnits.Terabit:
             return ((value) * 1000000000000.0)
         
-        if to_unit == InformationUnits.PetaBit:
+        if to_unit == InformationUnits.Petabit:
             return ((value) * 1000000000000000.0)
         
-        if to_unit == InformationUnits.ExaBit:
+        if to_unit == InformationUnits.Exabit:
             return ((value) * 1e+18)
         
         return None
@@ -252,183 +252,183 @@ class Information:
 
     
     @staticmethod
-    def from_kilo_bytes(kilo_bytes: float):
+    def from_kilobytes(kilobytes: float):
         """
-        Create a new instance of Information from a value in kilo_bytes.
+        Create a new instance of Information from a value in kilobytes.
 
         
 
-        :param meters: The Information value in kilo_bytes.
-        :type kilo_bytes: float
+        :param meters: The Information value in kilobytes.
+        :type kilobytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(kilo_bytes, InformationUnits.KiloByte)
+        return Information(kilobytes, InformationUnits.Kilobyte)
 
     
     @staticmethod
-    def from_mega_bytes(mega_bytes: float):
+    def from_megabytes(megabytes: float):
         """
-        Create a new instance of Information from a value in mega_bytes.
+        Create a new instance of Information from a value in megabytes.
 
         
 
-        :param meters: The Information value in mega_bytes.
-        :type mega_bytes: float
+        :param meters: The Information value in megabytes.
+        :type megabytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(mega_bytes, InformationUnits.MegaByte)
+        return Information(megabytes, InformationUnits.Megabyte)
 
     
     @staticmethod
-    def from_giga_bytes(giga_bytes: float):
+    def from_gigabytes(gigabytes: float):
         """
-        Create a new instance of Information from a value in giga_bytes.
+        Create a new instance of Information from a value in gigabytes.
 
         
 
-        :param meters: The Information value in giga_bytes.
-        :type giga_bytes: float
+        :param meters: The Information value in gigabytes.
+        :type gigabytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(giga_bytes, InformationUnits.GigaByte)
+        return Information(gigabytes, InformationUnits.Gigabyte)
 
     
     @staticmethod
-    def from_tera_bytes(tera_bytes: float):
+    def from_terabytes(terabytes: float):
         """
-        Create a new instance of Information from a value in tera_bytes.
+        Create a new instance of Information from a value in terabytes.
 
         
 
-        :param meters: The Information value in tera_bytes.
-        :type tera_bytes: float
+        :param meters: The Information value in terabytes.
+        :type terabytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(tera_bytes, InformationUnits.TeraByte)
+        return Information(terabytes, InformationUnits.Terabyte)
 
     
     @staticmethod
-    def from_peta_bytes(peta_bytes: float):
+    def from_petabytes(petabytes: float):
         """
-        Create a new instance of Information from a value in peta_bytes.
+        Create a new instance of Information from a value in petabytes.
 
         
 
-        :param meters: The Information value in peta_bytes.
-        :type peta_bytes: float
+        :param meters: The Information value in petabytes.
+        :type petabytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(peta_bytes, InformationUnits.PetaByte)
+        return Information(petabytes, InformationUnits.Petabyte)
 
     
     @staticmethod
-    def from_exa_bytes(exa_bytes: float):
+    def from_exabytes(exabytes: float):
         """
-        Create a new instance of Information from a value in exa_bytes.
+        Create a new instance of Information from a value in exabytes.
 
         
 
-        :param meters: The Information value in exa_bytes.
-        :type exa_bytes: float
+        :param meters: The Information value in exabytes.
+        :type exabytes: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(exa_bytes, InformationUnits.ExaByte)
+        return Information(exabytes, InformationUnits.Exabyte)
 
     
     @staticmethod
-    def from_kilo_bits(kilo_bits: float):
+    def from_kilobits(kilobits: float):
         """
-        Create a new instance of Information from a value in kilo_bits.
+        Create a new instance of Information from a value in kilobits.
 
         
 
-        :param meters: The Information value in kilo_bits.
-        :type kilo_bits: float
+        :param meters: The Information value in kilobits.
+        :type kilobits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(kilo_bits, InformationUnits.KiloBit)
+        return Information(kilobits, InformationUnits.Kilobit)
 
     
     @staticmethod
-    def from_mega_bits(mega_bits: float):
+    def from_megabits(megabits: float):
         """
-        Create a new instance of Information from a value in mega_bits.
+        Create a new instance of Information from a value in megabits.
 
         
 
-        :param meters: The Information value in mega_bits.
-        :type mega_bits: float
+        :param meters: The Information value in megabits.
+        :type megabits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(mega_bits, InformationUnits.MegaBit)
+        return Information(megabits, InformationUnits.Megabit)
 
     
     @staticmethod
-    def from_giga_bits(giga_bits: float):
+    def from_gigabits(gigabits: float):
         """
-        Create a new instance of Information from a value in giga_bits.
+        Create a new instance of Information from a value in gigabits.
 
         
 
-        :param meters: The Information value in giga_bits.
-        :type giga_bits: float
+        :param meters: The Information value in gigabits.
+        :type gigabits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(giga_bits, InformationUnits.GigaBit)
+        return Information(gigabits, InformationUnits.Gigabit)
 
     
     @staticmethod
-    def from_tera_bits(tera_bits: float):
+    def from_terabits(terabits: float):
         """
-        Create a new instance of Information from a value in tera_bits.
+        Create a new instance of Information from a value in terabits.
 
         
 
-        :param meters: The Information value in tera_bits.
-        :type tera_bits: float
+        :param meters: The Information value in terabits.
+        :type terabits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(tera_bits, InformationUnits.TeraBit)
+        return Information(terabits, InformationUnits.Terabit)
 
     
     @staticmethod
-    def from_peta_bits(peta_bits: float):
+    def from_petabits(petabits: float):
         """
-        Create a new instance of Information from a value in peta_bits.
+        Create a new instance of Information from a value in petabits.
 
         
 
-        :param meters: The Information value in peta_bits.
-        :type peta_bits: float
+        :param meters: The Information value in petabits.
+        :type petabits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(peta_bits, InformationUnits.PetaBit)
+        return Information(petabits, InformationUnits.Petabit)
 
     
     @staticmethod
-    def from_exa_bits(exa_bits: float):
+    def from_exabits(exabits: float):
         """
-        Create a new instance of Information from a value in exa_bits.
+        Create a new instance of Information from a value in exabits.
 
         
 
-        :param meters: The Information value in exa_bits.
-        :type exa_bits: float
+        :param meters: The Information value in exabits.
+        :type exabits: float
         :return: A new instance of Information.
         :rtype: Information
         """
-        return Information(exa_bits, InformationUnits.ExaBit)
+        return Information(exabits, InformationUnits.Exabit)
 
     
     @property
@@ -454,135 +454,135 @@ class Information:
 
     
     @property
-    def kilo_bytes(self) -> float:
+    def kilobytes(self) -> float:
         """
         
         """
-        if self.__kilo_bytes != None:
-            return self.__kilo_bytes
-        self.__kilo_bytes = self.__convert_from_base(InformationUnits.KiloByte)
-        return self.__kilo_bytes
+        if self.__kilobytes != None:
+            return self.__kilobytes
+        self.__kilobytes = self.__convert_from_base(InformationUnits.Kilobyte)
+        return self.__kilobytes
 
     
     @property
-    def mega_bytes(self) -> float:
+    def megabytes(self) -> float:
         """
         
         """
-        if self.__mega_bytes != None:
-            return self.__mega_bytes
-        self.__mega_bytes = self.__convert_from_base(InformationUnits.MegaByte)
-        return self.__mega_bytes
+        if self.__megabytes != None:
+            return self.__megabytes
+        self.__megabytes = self.__convert_from_base(InformationUnits.Megabyte)
+        return self.__megabytes
 
     
     @property
-    def giga_bytes(self) -> float:
+    def gigabytes(self) -> float:
         """
         
         """
-        if self.__giga_bytes != None:
-            return self.__giga_bytes
-        self.__giga_bytes = self.__convert_from_base(InformationUnits.GigaByte)
-        return self.__giga_bytes
+        if self.__gigabytes != None:
+            return self.__gigabytes
+        self.__gigabytes = self.__convert_from_base(InformationUnits.Gigabyte)
+        return self.__gigabytes
 
     
     @property
-    def tera_bytes(self) -> float:
+    def terabytes(self) -> float:
         """
         
         """
-        if self.__tera_bytes != None:
-            return self.__tera_bytes
-        self.__tera_bytes = self.__convert_from_base(InformationUnits.TeraByte)
-        return self.__tera_bytes
+        if self.__terabytes != None:
+            return self.__terabytes
+        self.__terabytes = self.__convert_from_base(InformationUnits.Terabyte)
+        return self.__terabytes
 
     
     @property
-    def peta_bytes(self) -> float:
+    def petabytes(self) -> float:
         """
         
         """
-        if self.__peta_bytes != None:
-            return self.__peta_bytes
-        self.__peta_bytes = self.__convert_from_base(InformationUnits.PetaByte)
-        return self.__peta_bytes
+        if self.__petabytes != None:
+            return self.__petabytes
+        self.__petabytes = self.__convert_from_base(InformationUnits.Petabyte)
+        return self.__petabytes
 
     
     @property
-    def exa_bytes(self) -> float:
+    def exabytes(self) -> float:
         """
         
         """
-        if self.__exa_bytes != None:
-            return self.__exa_bytes
-        self.__exa_bytes = self.__convert_from_base(InformationUnits.ExaByte)
-        return self.__exa_bytes
+        if self.__exabytes != None:
+            return self.__exabytes
+        self.__exabytes = self.__convert_from_base(InformationUnits.Exabyte)
+        return self.__exabytes
 
     
     @property
-    def kilo_bits(self) -> float:
+    def kilobits(self) -> float:
         """
         
         """
-        if self.__kilo_bits != None:
-            return self.__kilo_bits
-        self.__kilo_bits = self.__convert_from_base(InformationUnits.KiloBit)
-        return self.__kilo_bits
+        if self.__kilobits != None:
+            return self.__kilobits
+        self.__kilobits = self.__convert_from_base(InformationUnits.Kilobit)
+        return self.__kilobits
 
     
     @property
-    def mega_bits(self) -> float:
+    def megabits(self) -> float:
         """
         
         """
-        if self.__mega_bits != None:
-            return self.__mega_bits
-        self.__mega_bits = self.__convert_from_base(InformationUnits.MegaBit)
-        return self.__mega_bits
+        if self.__megabits != None:
+            return self.__megabits
+        self.__megabits = self.__convert_from_base(InformationUnits.Megabit)
+        return self.__megabits
 
     
     @property
-    def giga_bits(self) -> float:
+    def gigabits(self) -> float:
         """
         
         """
-        if self.__giga_bits != None:
-            return self.__giga_bits
-        self.__giga_bits = self.__convert_from_base(InformationUnits.GigaBit)
-        return self.__giga_bits
+        if self.__gigabits != None:
+            return self.__gigabits
+        self.__gigabits = self.__convert_from_base(InformationUnits.Gigabit)
+        return self.__gigabits
 
     
     @property
-    def tera_bits(self) -> float:
+    def terabits(self) -> float:
         """
         
         """
-        if self.__tera_bits != None:
-            return self.__tera_bits
-        self.__tera_bits = self.__convert_from_base(InformationUnits.TeraBit)
-        return self.__tera_bits
+        if self.__terabits != None:
+            return self.__terabits
+        self.__terabits = self.__convert_from_base(InformationUnits.Terabit)
+        return self.__terabits
 
     
     @property
-    def peta_bits(self) -> float:
+    def petabits(self) -> float:
         """
         
         """
-        if self.__peta_bits != None:
-            return self.__peta_bits
-        self.__peta_bits = self.__convert_from_base(InformationUnits.PetaBit)
-        return self.__peta_bits
+        if self.__petabits != None:
+            return self.__petabits
+        self.__petabits = self.__convert_from_base(InformationUnits.Petabit)
+        return self.__petabits
 
     
     @property
-    def exa_bits(self) -> float:
+    def exabits(self) -> float:
         """
         
         """
-        if self.__exa_bits != None:
-            return self.__exa_bits
-        self.__exa_bits = self.__convert_from_base(InformationUnits.ExaBit)
-        return self.__exa_bits
+        if self.__exabits != None:
+            return self.__exabits
+        self.__exabits = self.__convert_from_base(InformationUnits.Exabit)
+        return self.__exabits
 
     
     def to_string(self, unit: InformationUnits = InformationUnits.Bit) -> string:
@@ -598,41 +598,41 @@ class Information:
         if unit == InformationUnits.Bit:
             return f"""{self.bits} b"""
         
-        if unit == InformationUnits.KiloByte:
-            return f"""{self.kilo_bytes} """
+        if unit == InformationUnits.Kilobyte:
+            return f"""{self.kilobytes} """
         
-        if unit == InformationUnits.MegaByte:
-            return f"""{self.mega_bytes} """
+        if unit == InformationUnits.Megabyte:
+            return f"""{self.megabytes} """
         
-        if unit == InformationUnits.GigaByte:
-            return f"""{self.giga_bytes} """
+        if unit == InformationUnits.Gigabyte:
+            return f"""{self.gigabytes} """
         
-        if unit == InformationUnits.TeraByte:
-            return f"""{self.tera_bytes} """
+        if unit == InformationUnits.Terabyte:
+            return f"""{self.terabytes} """
         
-        if unit == InformationUnits.PetaByte:
-            return f"""{self.peta_bytes} """
+        if unit == InformationUnits.Petabyte:
+            return f"""{self.petabytes} """
         
-        if unit == InformationUnits.ExaByte:
-            return f"""{self.exa_bytes} """
+        if unit == InformationUnits.Exabyte:
+            return f"""{self.exabytes} """
         
-        if unit == InformationUnits.KiloBit:
-            return f"""{self.kilo_bits} """
+        if unit == InformationUnits.Kilobit:
+            return f"""{self.kilobits} """
         
-        if unit == InformationUnits.MegaBit:
-            return f"""{self.mega_bits} """
+        if unit == InformationUnits.Megabit:
+            return f"""{self.megabits} """
         
-        if unit == InformationUnits.GigaBit:
-            return f"""{self.giga_bits} """
+        if unit == InformationUnits.Gigabit:
+            return f"""{self.gigabits} """
         
-        if unit == InformationUnits.TeraBit:
-            return f"""{self.tera_bits} """
+        if unit == InformationUnits.Terabit:
+            return f"""{self.terabits} """
         
-        if unit == InformationUnits.PetaBit:
-            return f"""{self.peta_bits} """
+        if unit == InformationUnits.Petabit:
+            return f"""{self.petabits} """
         
-        if unit == InformationUnits.ExaBit:
-            return f"""{self.exa_bits} """
+        if unit == InformationUnits.Exabit:
+            return f"""{self.exabits} """
         
         return f'{self.__value}'
 
@@ -650,40 +650,40 @@ class Information:
         if unit_abbreviation == InformationUnits.Bit:
             return """b"""
         
-        if unit_abbreviation == InformationUnits.KiloByte:
+        if unit_abbreviation == InformationUnits.Kilobyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.MegaByte:
+        if unit_abbreviation == InformationUnits.Megabyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.GigaByte:
+        if unit_abbreviation == InformationUnits.Gigabyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.TeraByte:
+        if unit_abbreviation == InformationUnits.Terabyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.PetaByte:
+        if unit_abbreviation == InformationUnits.Petabyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.ExaByte:
+        if unit_abbreviation == InformationUnits.Exabyte:
             return """"""
         
-        if unit_abbreviation == InformationUnits.KiloBit:
+        if unit_abbreviation == InformationUnits.Kilobit:
             return """"""
         
-        if unit_abbreviation == InformationUnits.MegaBit:
+        if unit_abbreviation == InformationUnits.Megabit:
             return """"""
         
-        if unit_abbreviation == InformationUnits.GigaBit:
+        if unit_abbreviation == InformationUnits.Gigabit:
             return """"""
         
-        if unit_abbreviation == InformationUnits.TeraBit:
+        if unit_abbreviation == InformationUnits.Terabit:
             return """"""
         
-        if unit_abbreviation == InformationUnits.PetaBit:
+        if unit_abbreviation == InformationUnits.Petabit:
             return """"""
         
-        if unit_abbreviation == InformationUnits.ExaBit:
+        if unit_abbreviation == InformationUnits.Exabit:
             return """"""
         
 

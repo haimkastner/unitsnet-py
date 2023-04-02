@@ -13,12 +13,12 @@ class MolarEntropyUnits(Enum):
             
         """
         
-        KiloJoulePerMoleKelvin = 'kilo_joule_per_mole_kelvin'
+        KilojoulePerMoleKelvin = 'kilojoule_per_mole_kelvin'
         """
             
         """
         
-        MegaJoulePerMoleKelvin = 'mega_joule_per_mole_kelvin'
+        MegajoulePerMoleKelvin = 'megajoule_per_mole_kelvin'
         """
             
         """
@@ -39,9 +39,9 @@ class MolarEntropy:
         
         self.__joules_per_mole_kelvin = None
         
-        self.__kilo_joules_per_mole_kelvin = None
+        self.__kilojoules_per_mole_kelvin = None
         
-        self.__mega_joules_per_mole_kelvin = None
+        self.__megajoules_per_mole_kelvin = None
         
 
     def __convert_from_base(self, from_unit: MolarEntropyUnits) -> float:
@@ -50,10 +50,10 @@ class MolarEntropy:
         if from_unit == MolarEntropyUnits.JoulePerMoleKelvin:
             return (value)
         
-        if from_unit == MolarEntropyUnits.KiloJoulePerMoleKelvin:
+        if from_unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
             return ((value) / 1000.0)
         
-        if from_unit == MolarEntropyUnits.MegaJoulePerMoleKelvin:
+        if from_unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
             return ((value) / 1000000.0)
         
         return None
@@ -64,10 +64,10 @@ class MolarEntropy:
         if to_unit == MolarEntropyUnits.JoulePerMoleKelvin:
             return (value)
         
-        if to_unit == MolarEntropyUnits.KiloJoulePerMoleKelvin:
+        if to_unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
             return ((value) * 1000.0)
         
-        if to_unit == MolarEntropyUnits.MegaJoulePerMoleKelvin:
+        if to_unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
             return ((value) * 1000000.0)
         
         return None
@@ -94,33 +94,33 @@ class MolarEntropy:
 
     
     @staticmethod
-    def from_kilo_joules_per_mole_kelvin(kilo_joules_per_mole_kelvin: float):
+    def from_kilojoules_per_mole_kelvin(kilojoules_per_mole_kelvin: float):
         """
-        Create a new instance of MolarEntropy from a value in kilo_joules_per_mole_kelvin.
+        Create a new instance of MolarEntropy from a value in kilojoules_per_mole_kelvin.
 
         
 
-        :param meters: The MolarEntropy value in kilo_joules_per_mole_kelvin.
-        :type kilo_joules_per_mole_kelvin: float
+        :param meters: The MolarEntropy value in kilojoules_per_mole_kelvin.
+        :type kilojoules_per_mole_kelvin: float
         :return: A new instance of MolarEntropy.
         :rtype: MolarEntropy
         """
-        return MolarEntropy(kilo_joules_per_mole_kelvin, MolarEntropyUnits.KiloJoulePerMoleKelvin)
+        return MolarEntropy(kilojoules_per_mole_kelvin, MolarEntropyUnits.KilojoulePerMoleKelvin)
 
     
     @staticmethod
-    def from_mega_joules_per_mole_kelvin(mega_joules_per_mole_kelvin: float):
+    def from_megajoules_per_mole_kelvin(megajoules_per_mole_kelvin: float):
         """
-        Create a new instance of MolarEntropy from a value in mega_joules_per_mole_kelvin.
+        Create a new instance of MolarEntropy from a value in megajoules_per_mole_kelvin.
 
         
 
-        :param meters: The MolarEntropy value in mega_joules_per_mole_kelvin.
-        :type mega_joules_per_mole_kelvin: float
+        :param meters: The MolarEntropy value in megajoules_per_mole_kelvin.
+        :type megajoules_per_mole_kelvin: float
         :return: A new instance of MolarEntropy.
         :rtype: MolarEntropy
         """
-        return MolarEntropy(mega_joules_per_mole_kelvin, MolarEntropyUnits.MegaJoulePerMoleKelvin)
+        return MolarEntropy(megajoules_per_mole_kelvin, MolarEntropyUnits.MegajoulePerMoleKelvin)
 
     
     @property
@@ -135,25 +135,25 @@ class MolarEntropy:
 
     
     @property
-    def kilo_joules_per_mole_kelvin(self) -> float:
+    def kilojoules_per_mole_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_mole_kelvin != None:
-            return self.__kilo_joules_per_mole_kelvin
-        self.__kilo_joules_per_mole_kelvin = self.__convert_from_base(MolarEntropyUnits.KiloJoulePerMoleKelvin)
-        return self.__kilo_joules_per_mole_kelvin
+        if self.__kilojoules_per_mole_kelvin != None:
+            return self.__kilojoules_per_mole_kelvin
+        self.__kilojoules_per_mole_kelvin = self.__convert_from_base(MolarEntropyUnits.KilojoulePerMoleKelvin)
+        return self.__kilojoules_per_mole_kelvin
 
     
     @property
-    def mega_joules_per_mole_kelvin(self) -> float:
+    def megajoules_per_mole_kelvin(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_mole_kelvin != None:
-            return self.__mega_joules_per_mole_kelvin
-        self.__mega_joules_per_mole_kelvin = self.__convert_from_base(MolarEntropyUnits.MegaJoulePerMoleKelvin)
-        return self.__mega_joules_per_mole_kelvin
+        if self.__megajoules_per_mole_kelvin != None:
+            return self.__megajoules_per_mole_kelvin
+        self.__megajoules_per_mole_kelvin = self.__convert_from_base(MolarEntropyUnits.MegajoulePerMoleKelvin)
+        return self.__megajoules_per_mole_kelvin
 
     
     def to_string(self, unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> string:
@@ -166,11 +166,11 @@ class MolarEntropy:
         if unit == MolarEntropyUnits.JoulePerMoleKelvin:
             return f"""{self.joules_per_mole_kelvin} J/(mol*K)"""
         
-        if unit == MolarEntropyUnits.KiloJoulePerMoleKelvin:
-            return f"""{self.kilo_joules_per_mole_kelvin} """
+        if unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
+            return f"""{self.kilojoules_per_mole_kelvin} """
         
-        if unit == MolarEntropyUnits.MegaJoulePerMoleKelvin:
-            return f"""{self.mega_joules_per_mole_kelvin} """
+        if unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
+            return f"""{self.megajoules_per_mole_kelvin} """
         
         return f'{self.__value}'
 
@@ -185,10 +185,10 @@ class MolarEntropy:
         if unit_abbreviation == MolarEntropyUnits.JoulePerMoleKelvin:
             return """J/(mol*K)"""
         
-        if unit_abbreviation == MolarEntropyUnits.KiloJoulePerMoleKelvin:
+        if unit_abbreviation == MolarEntropyUnits.KilojoulePerMoleKelvin:
             return """"""
         
-        if unit_abbreviation == MolarEntropyUnits.MegaJoulePerMoleKelvin:
+        if unit_abbreviation == MolarEntropyUnits.MegajoulePerMoleKelvin:
             return """"""
         
 

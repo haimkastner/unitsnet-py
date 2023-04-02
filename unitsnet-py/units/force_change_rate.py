@@ -28,57 +28,57 @@ class ForceChangeRateUnits(Enum):
             
         """
         
-        DecaNewtonPerMinute = 'deca_newton_per_minute'
+        DecanewtonPerMinute = 'decanewton_per_minute'
         """
             
         """
         
-        KiloNewtonPerMinute = 'kilo_newton_per_minute'
+        KilonewtonPerMinute = 'kilonewton_per_minute'
         """
             
         """
         
-        NanoNewtonPerSecond = 'nano_newton_per_second'
+        NanonewtonPerSecond = 'nanonewton_per_second'
         """
             
         """
         
-        MicroNewtonPerSecond = 'micro_newton_per_second'
+        MicronewtonPerSecond = 'micronewton_per_second'
         """
             
         """
         
-        MilliNewtonPerSecond = 'milli_newton_per_second'
+        MillinewtonPerSecond = 'millinewton_per_second'
         """
             
         """
         
-        CentiNewtonPerSecond = 'centi_newton_per_second'
+        CentinewtonPerSecond = 'centinewton_per_second'
         """
             
         """
         
-        DeciNewtonPerSecond = 'deci_newton_per_second'
+        DecinewtonPerSecond = 'decinewton_per_second'
         """
             
         """
         
-        DecaNewtonPerSecond = 'deca_newton_per_second'
+        DecanewtonPerSecond = 'decanewton_per_second'
         """
             
         """
         
-        KiloNewtonPerSecond = 'kilo_newton_per_second'
+        KilonewtonPerSecond = 'kilonewton_per_second'
         """
             
         """
         
-        KiloPoundForcePerMinute = 'kilo_pound_force_per_minute'
+        KilopoundForcePerMinute = 'kilopound_force_per_minute'
         """
             
         """
         
-        KiloPoundForcePerSecond = 'kilo_pound_force_per_second'
+        KilopoundForcePerSecond = 'kilopound_force_per_second'
         """
             
         """
@@ -105,27 +105,27 @@ class ForceChangeRate:
         
         self.__pounds_force_per_second = None
         
-        self.__deca_newtons_per_minute = None
+        self.__decanewtons_per_minute = None
         
-        self.__kilo_newtons_per_minute = None
+        self.__kilonewtons_per_minute = None
         
-        self.__nano_newtons_per_second = None
+        self.__nanonewtons_per_second = None
         
-        self.__micro_newtons_per_second = None
+        self.__micronewtons_per_second = None
         
-        self.__milli_newtons_per_second = None
+        self.__millinewtons_per_second = None
         
-        self.__centi_newtons_per_second = None
+        self.__centinewtons_per_second = None
         
-        self.__deci_newtons_per_second = None
+        self.__decinewtons_per_second = None
         
-        self.__deca_newtons_per_second = None
+        self.__decanewtons_per_second = None
         
-        self.__kilo_newtons_per_second = None
+        self.__kilonewtons_per_second = None
         
-        self.__kilo_pounds_force_per_minute = None
+        self.__kilopounds_force_per_minute = None
         
-        self.__kilo_pounds_force_per_second = None
+        self.__kilopounds_force_per_second = None
         
 
     def __convert_from_base(self, from_unit: ForceChangeRateUnits) -> float:
@@ -143,37 +143,37 @@ class ForceChangeRate:
         if from_unit == ForceChangeRateUnits.PoundForcePerSecond:
             return (value / 4.4482216152605095551842641431421)
         
-        if from_unit == ForceChangeRateUnits.DecaNewtonPerMinute:
+        if from_unit == ForceChangeRateUnits.DecanewtonPerMinute:
             return ((value * 60) / 10.0)
         
-        if from_unit == ForceChangeRateUnits.KiloNewtonPerMinute:
+        if from_unit == ForceChangeRateUnits.KilonewtonPerMinute:
             return ((value * 60) / 1000.0)
         
-        if from_unit == ForceChangeRateUnits.NanoNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.NanonewtonPerSecond:
             return ((value) / 1e-09)
         
-        if from_unit == ForceChangeRateUnits.MicroNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.MicronewtonPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == ForceChangeRateUnits.MilliNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.MillinewtonPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == ForceChangeRateUnits.CentiNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.CentinewtonPerSecond:
             return ((value) / 0.01)
         
-        if from_unit == ForceChangeRateUnits.DeciNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.DecinewtonPerSecond:
             return ((value) / 0.1)
         
-        if from_unit == ForceChangeRateUnits.DecaNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.DecanewtonPerSecond:
             return ((value) / 10.0)
         
-        if from_unit == ForceChangeRateUnits.KiloNewtonPerSecond:
+        if from_unit == ForceChangeRateUnits.KilonewtonPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == ForceChangeRateUnits.KiloPoundForcePerMinute:
+        if from_unit == ForceChangeRateUnits.KilopoundForcePerMinute:
             return ((value / 4.4482216152605095551842641431421 * 60) / 1000.0)
         
-        if from_unit == ForceChangeRateUnits.KiloPoundForcePerSecond:
+        if from_unit == ForceChangeRateUnits.KilopoundForcePerSecond:
             return ((value / 4.4482216152605095551842641431421) / 1000.0)
         
         return None
@@ -193,37 +193,37 @@ class ForceChangeRate:
         if to_unit == ForceChangeRateUnits.PoundForcePerSecond:
             return (value * 4.4482216152605095551842641431421)
         
-        if to_unit == ForceChangeRateUnits.DecaNewtonPerMinute:
+        if to_unit == ForceChangeRateUnits.DecanewtonPerMinute:
             return ((value / 60) * 10.0)
         
-        if to_unit == ForceChangeRateUnits.KiloNewtonPerMinute:
+        if to_unit == ForceChangeRateUnits.KilonewtonPerMinute:
             return ((value / 60) * 1000.0)
         
-        if to_unit == ForceChangeRateUnits.NanoNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.NanonewtonPerSecond:
             return ((value) * 1e-09)
         
-        if to_unit == ForceChangeRateUnits.MicroNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.MicronewtonPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == ForceChangeRateUnits.MilliNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.MillinewtonPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == ForceChangeRateUnits.CentiNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.CentinewtonPerSecond:
             return ((value) * 0.01)
         
-        if to_unit == ForceChangeRateUnits.DeciNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.DecinewtonPerSecond:
             return ((value) * 0.1)
         
-        if to_unit == ForceChangeRateUnits.DecaNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.DecanewtonPerSecond:
             return ((value) * 10.0)
         
-        if to_unit == ForceChangeRateUnits.KiloNewtonPerSecond:
+        if to_unit == ForceChangeRateUnits.KilonewtonPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == ForceChangeRateUnits.KiloPoundForcePerMinute:
+        if to_unit == ForceChangeRateUnits.KilopoundForcePerMinute:
             return ((value * 4.4482216152605095551842641431421 / 60) * 1000.0)
         
-        if to_unit == ForceChangeRateUnits.KiloPoundForcePerSecond:
+        if to_unit == ForceChangeRateUnits.KilopoundForcePerSecond:
             return ((value * 4.4482216152605095551842641431421) * 1000.0)
         
         return None
@@ -295,168 +295,168 @@ class ForceChangeRate:
 
     
     @staticmethod
-    def from_deca_newtons_per_minute(deca_newtons_per_minute: float):
+    def from_decanewtons_per_minute(decanewtons_per_minute: float):
         """
-        Create a new instance of ForceChangeRate from a value in deca_newtons_per_minute.
+        Create a new instance of ForceChangeRate from a value in decanewtons_per_minute.
 
         
 
-        :param meters: The ForceChangeRate value in deca_newtons_per_minute.
-        :type deca_newtons_per_minute: float
+        :param meters: The ForceChangeRate value in decanewtons_per_minute.
+        :type decanewtons_per_minute: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(deca_newtons_per_minute, ForceChangeRateUnits.DecaNewtonPerMinute)
+        return ForceChangeRate(decanewtons_per_minute, ForceChangeRateUnits.DecanewtonPerMinute)
 
     
     @staticmethod
-    def from_kilo_newtons_per_minute(kilo_newtons_per_minute: float):
+    def from_kilonewtons_per_minute(kilonewtons_per_minute: float):
         """
-        Create a new instance of ForceChangeRate from a value in kilo_newtons_per_minute.
+        Create a new instance of ForceChangeRate from a value in kilonewtons_per_minute.
 
         
 
-        :param meters: The ForceChangeRate value in kilo_newtons_per_minute.
-        :type kilo_newtons_per_minute: float
+        :param meters: The ForceChangeRate value in kilonewtons_per_minute.
+        :type kilonewtons_per_minute: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(kilo_newtons_per_minute, ForceChangeRateUnits.KiloNewtonPerMinute)
+        return ForceChangeRate(kilonewtons_per_minute, ForceChangeRateUnits.KilonewtonPerMinute)
 
     
     @staticmethod
-    def from_nano_newtons_per_second(nano_newtons_per_second: float):
+    def from_nanonewtons_per_second(nanonewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in nano_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in nanonewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in nano_newtons_per_second.
-        :type nano_newtons_per_second: float
+        :param meters: The ForceChangeRate value in nanonewtons_per_second.
+        :type nanonewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(nano_newtons_per_second, ForceChangeRateUnits.NanoNewtonPerSecond)
+        return ForceChangeRate(nanonewtons_per_second, ForceChangeRateUnits.NanonewtonPerSecond)
 
     
     @staticmethod
-    def from_micro_newtons_per_second(micro_newtons_per_second: float):
+    def from_micronewtons_per_second(micronewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in micro_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in micronewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in micro_newtons_per_second.
-        :type micro_newtons_per_second: float
+        :param meters: The ForceChangeRate value in micronewtons_per_second.
+        :type micronewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(micro_newtons_per_second, ForceChangeRateUnits.MicroNewtonPerSecond)
+        return ForceChangeRate(micronewtons_per_second, ForceChangeRateUnits.MicronewtonPerSecond)
 
     
     @staticmethod
-    def from_milli_newtons_per_second(milli_newtons_per_second: float):
+    def from_millinewtons_per_second(millinewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in milli_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in millinewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in milli_newtons_per_second.
-        :type milli_newtons_per_second: float
+        :param meters: The ForceChangeRate value in millinewtons_per_second.
+        :type millinewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(milli_newtons_per_second, ForceChangeRateUnits.MilliNewtonPerSecond)
+        return ForceChangeRate(millinewtons_per_second, ForceChangeRateUnits.MillinewtonPerSecond)
 
     
     @staticmethod
-    def from_centi_newtons_per_second(centi_newtons_per_second: float):
+    def from_centinewtons_per_second(centinewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in centi_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in centinewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in centi_newtons_per_second.
-        :type centi_newtons_per_second: float
+        :param meters: The ForceChangeRate value in centinewtons_per_second.
+        :type centinewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(centi_newtons_per_second, ForceChangeRateUnits.CentiNewtonPerSecond)
+        return ForceChangeRate(centinewtons_per_second, ForceChangeRateUnits.CentinewtonPerSecond)
 
     
     @staticmethod
-    def from_deci_newtons_per_second(deci_newtons_per_second: float):
+    def from_decinewtons_per_second(decinewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in deci_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in decinewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in deci_newtons_per_second.
-        :type deci_newtons_per_second: float
+        :param meters: The ForceChangeRate value in decinewtons_per_second.
+        :type decinewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(deci_newtons_per_second, ForceChangeRateUnits.DeciNewtonPerSecond)
+        return ForceChangeRate(decinewtons_per_second, ForceChangeRateUnits.DecinewtonPerSecond)
 
     
     @staticmethod
-    def from_deca_newtons_per_second(deca_newtons_per_second: float):
+    def from_decanewtons_per_second(decanewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in deca_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in decanewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in deca_newtons_per_second.
-        :type deca_newtons_per_second: float
+        :param meters: The ForceChangeRate value in decanewtons_per_second.
+        :type decanewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(deca_newtons_per_second, ForceChangeRateUnits.DecaNewtonPerSecond)
+        return ForceChangeRate(decanewtons_per_second, ForceChangeRateUnits.DecanewtonPerSecond)
 
     
     @staticmethod
-    def from_kilo_newtons_per_second(kilo_newtons_per_second: float):
+    def from_kilonewtons_per_second(kilonewtons_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in kilo_newtons_per_second.
+        Create a new instance of ForceChangeRate from a value in kilonewtons_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in kilo_newtons_per_second.
-        :type kilo_newtons_per_second: float
+        :param meters: The ForceChangeRate value in kilonewtons_per_second.
+        :type kilonewtons_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(kilo_newtons_per_second, ForceChangeRateUnits.KiloNewtonPerSecond)
+        return ForceChangeRate(kilonewtons_per_second, ForceChangeRateUnits.KilonewtonPerSecond)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_minute(kilo_pounds_force_per_minute: float):
+    def from_kilopounds_force_per_minute(kilopounds_force_per_minute: float):
         """
-        Create a new instance of ForceChangeRate from a value in kilo_pounds_force_per_minute.
+        Create a new instance of ForceChangeRate from a value in kilopounds_force_per_minute.
 
         
 
-        :param meters: The ForceChangeRate value in kilo_pounds_force_per_minute.
-        :type kilo_pounds_force_per_minute: float
+        :param meters: The ForceChangeRate value in kilopounds_force_per_minute.
+        :type kilopounds_force_per_minute: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(kilo_pounds_force_per_minute, ForceChangeRateUnits.KiloPoundForcePerMinute)
+        return ForceChangeRate(kilopounds_force_per_minute, ForceChangeRateUnits.KilopoundForcePerMinute)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_second(kilo_pounds_force_per_second: float):
+    def from_kilopounds_force_per_second(kilopounds_force_per_second: float):
         """
-        Create a new instance of ForceChangeRate from a value in kilo_pounds_force_per_second.
+        Create a new instance of ForceChangeRate from a value in kilopounds_force_per_second.
 
         
 
-        :param meters: The ForceChangeRate value in kilo_pounds_force_per_second.
-        :type kilo_pounds_force_per_second: float
+        :param meters: The ForceChangeRate value in kilopounds_force_per_second.
+        :type kilopounds_force_per_second: float
         :return: A new instance of ForceChangeRate.
         :rtype: ForceChangeRate
         """
-        return ForceChangeRate(kilo_pounds_force_per_second, ForceChangeRateUnits.KiloPoundForcePerSecond)
+        return ForceChangeRate(kilopounds_force_per_second, ForceChangeRateUnits.KilopoundForcePerSecond)
 
     
     @property
@@ -504,124 +504,124 @@ class ForceChangeRate:
 
     
     @property
-    def deca_newtons_per_minute(self) -> float:
+    def decanewtons_per_minute(self) -> float:
         """
         
         """
-        if self.__deca_newtons_per_minute != None:
-            return self.__deca_newtons_per_minute
-        self.__deca_newtons_per_minute = self.__convert_from_base(ForceChangeRateUnits.DecaNewtonPerMinute)
-        return self.__deca_newtons_per_minute
+        if self.__decanewtons_per_minute != None:
+            return self.__decanewtons_per_minute
+        self.__decanewtons_per_minute = self.__convert_from_base(ForceChangeRateUnits.DecanewtonPerMinute)
+        return self.__decanewtons_per_minute
 
     
     @property
-    def kilo_newtons_per_minute(self) -> float:
+    def kilonewtons_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_minute != None:
-            return self.__kilo_newtons_per_minute
-        self.__kilo_newtons_per_minute = self.__convert_from_base(ForceChangeRateUnits.KiloNewtonPerMinute)
-        return self.__kilo_newtons_per_minute
+        if self.__kilonewtons_per_minute != None:
+            return self.__kilonewtons_per_minute
+        self.__kilonewtons_per_minute = self.__convert_from_base(ForceChangeRateUnits.KilonewtonPerMinute)
+        return self.__kilonewtons_per_minute
 
     
     @property
-    def nano_newtons_per_second(self) -> float:
+    def nanonewtons_per_second(self) -> float:
         """
         
         """
-        if self.__nano_newtons_per_second != None:
-            return self.__nano_newtons_per_second
-        self.__nano_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.NanoNewtonPerSecond)
-        return self.__nano_newtons_per_second
+        if self.__nanonewtons_per_second != None:
+            return self.__nanonewtons_per_second
+        self.__nanonewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.NanonewtonPerSecond)
+        return self.__nanonewtons_per_second
 
     
     @property
-    def micro_newtons_per_second(self) -> float:
+    def micronewtons_per_second(self) -> float:
         """
         
         """
-        if self.__micro_newtons_per_second != None:
-            return self.__micro_newtons_per_second
-        self.__micro_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.MicroNewtonPerSecond)
-        return self.__micro_newtons_per_second
+        if self.__micronewtons_per_second != None:
+            return self.__micronewtons_per_second
+        self.__micronewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.MicronewtonPerSecond)
+        return self.__micronewtons_per_second
 
     
     @property
-    def milli_newtons_per_second(self) -> float:
+    def millinewtons_per_second(self) -> float:
         """
         
         """
-        if self.__milli_newtons_per_second != None:
-            return self.__milli_newtons_per_second
-        self.__milli_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.MilliNewtonPerSecond)
-        return self.__milli_newtons_per_second
+        if self.__millinewtons_per_second != None:
+            return self.__millinewtons_per_second
+        self.__millinewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.MillinewtonPerSecond)
+        return self.__millinewtons_per_second
 
     
     @property
-    def centi_newtons_per_second(self) -> float:
+    def centinewtons_per_second(self) -> float:
         """
         
         """
-        if self.__centi_newtons_per_second != None:
-            return self.__centi_newtons_per_second
-        self.__centi_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.CentiNewtonPerSecond)
-        return self.__centi_newtons_per_second
+        if self.__centinewtons_per_second != None:
+            return self.__centinewtons_per_second
+        self.__centinewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.CentinewtonPerSecond)
+        return self.__centinewtons_per_second
 
     
     @property
-    def deci_newtons_per_second(self) -> float:
+    def decinewtons_per_second(self) -> float:
         """
         
         """
-        if self.__deci_newtons_per_second != None:
-            return self.__deci_newtons_per_second
-        self.__deci_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.DeciNewtonPerSecond)
-        return self.__deci_newtons_per_second
+        if self.__decinewtons_per_second != None:
+            return self.__decinewtons_per_second
+        self.__decinewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.DecinewtonPerSecond)
+        return self.__decinewtons_per_second
 
     
     @property
-    def deca_newtons_per_second(self) -> float:
+    def decanewtons_per_second(self) -> float:
         """
         
         """
-        if self.__deca_newtons_per_second != None:
-            return self.__deca_newtons_per_second
-        self.__deca_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.DecaNewtonPerSecond)
-        return self.__deca_newtons_per_second
+        if self.__decanewtons_per_second != None:
+            return self.__decanewtons_per_second
+        self.__decanewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.DecanewtonPerSecond)
+        return self.__decanewtons_per_second
 
     
     @property
-    def kilo_newtons_per_second(self) -> float:
+    def kilonewtons_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_second != None:
-            return self.__kilo_newtons_per_second
-        self.__kilo_newtons_per_second = self.__convert_from_base(ForceChangeRateUnits.KiloNewtonPerSecond)
-        return self.__kilo_newtons_per_second
+        if self.__kilonewtons_per_second != None:
+            return self.__kilonewtons_per_second
+        self.__kilonewtons_per_second = self.__convert_from_base(ForceChangeRateUnits.KilonewtonPerSecond)
+        return self.__kilonewtons_per_second
 
     
     @property
-    def kilo_pounds_force_per_minute(self) -> float:
+    def kilopounds_force_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_minute != None:
-            return self.__kilo_pounds_force_per_minute
-        self.__kilo_pounds_force_per_minute = self.__convert_from_base(ForceChangeRateUnits.KiloPoundForcePerMinute)
-        return self.__kilo_pounds_force_per_minute
+        if self.__kilopounds_force_per_minute != None:
+            return self.__kilopounds_force_per_minute
+        self.__kilopounds_force_per_minute = self.__convert_from_base(ForceChangeRateUnits.KilopoundForcePerMinute)
+        return self.__kilopounds_force_per_minute
 
     
     @property
-    def kilo_pounds_force_per_second(self) -> float:
+    def kilopounds_force_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_second != None:
-            return self.__kilo_pounds_force_per_second
-        self.__kilo_pounds_force_per_second = self.__convert_from_base(ForceChangeRateUnits.KiloPoundForcePerSecond)
-        return self.__kilo_pounds_force_per_second
+        if self.__kilopounds_force_per_second != None:
+            return self.__kilopounds_force_per_second
+        self.__kilopounds_force_per_second = self.__convert_from_base(ForceChangeRateUnits.KilopoundForcePerSecond)
+        return self.__kilopounds_force_per_second
 
     
     def to_string(self, unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> string:
@@ -643,38 +643,38 @@ class ForceChangeRate:
         if unit == ForceChangeRateUnits.PoundForcePerSecond:
             return f"""{self.pounds_force_per_second} lbf/s"""
         
-        if unit == ForceChangeRateUnits.DecaNewtonPerMinute:
-            return f"""{self.deca_newtons_per_minute} """
+        if unit == ForceChangeRateUnits.DecanewtonPerMinute:
+            return f"""{self.decanewtons_per_minute} """
         
-        if unit == ForceChangeRateUnits.KiloNewtonPerMinute:
-            return f"""{self.kilo_newtons_per_minute} """
+        if unit == ForceChangeRateUnits.KilonewtonPerMinute:
+            return f"""{self.kilonewtons_per_minute} """
         
-        if unit == ForceChangeRateUnits.NanoNewtonPerSecond:
-            return f"""{self.nano_newtons_per_second} """
+        if unit == ForceChangeRateUnits.NanonewtonPerSecond:
+            return f"""{self.nanonewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.MicroNewtonPerSecond:
-            return f"""{self.micro_newtons_per_second} """
+        if unit == ForceChangeRateUnits.MicronewtonPerSecond:
+            return f"""{self.micronewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.MilliNewtonPerSecond:
-            return f"""{self.milli_newtons_per_second} """
+        if unit == ForceChangeRateUnits.MillinewtonPerSecond:
+            return f"""{self.millinewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.CentiNewtonPerSecond:
-            return f"""{self.centi_newtons_per_second} """
+        if unit == ForceChangeRateUnits.CentinewtonPerSecond:
+            return f"""{self.centinewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.DeciNewtonPerSecond:
-            return f"""{self.deci_newtons_per_second} """
+        if unit == ForceChangeRateUnits.DecinewtonPerSecond:
+            return f"""{self.decinewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.DecaNewtonPerSecond:
-            return f"""{self.deca_newtons_per_second} """
+        if unit == ForceChangeRateUnits.DecanewtonPerSecond:
+            return f"""{self.decanewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.KiloNewtonPerSecond:
-            return f"""{self.kilo_newtons_per_second} """
+        if unit == ForceChangeRateUnits.KilonewtonPerSecond:
+            return f"""{self.kilonewtons_per_second} """
         
-        if unit == ForceChangeRateUnits.KiloPoundForcePerMinute:
-            return f"""{self.kilo_pounds_force_per_minute} """
+        if unit == ForceChangeRateUnits.KilopoundForcePerMinute:
+            return f"""{self.kilopounds_force_per_minute} """
         
-        if unit == ForceChangeRateUnits.KiloPoundForcePerSecond:
-            return f"""{self.kilo_pounds_force_per_second} """
+        if unit == ForceChangeRateUnits.KilopoundForcePerSecond:
+            return f"""{self.kilopounds_force_per_second} """
         
         return f'{self.__value}'
 
@@ -698,37 +698,37 @@ class ForceChangeRate:
         if unit_abbreviation == ForceChangeRateUnits.PoundForcePerSecond:
             return """lbf/s"""
         
-        if unit_abbreviation == ForceChangeRateUnits.DecaNewtonPerMinute:
+        if unit_abbreviation == ForceChangeRateUnits.DecanewtonPerMinute:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.KiloNewtonPerMinute:
+        if unit_abbreviation == ForceChangeRateUnits.KilonewtonPerMinute:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.NanoNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.NanonewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.MicroNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.MicronewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.MilliNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.MillinewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.CentiNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.CentinewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.DeciNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.DecinewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.DecaNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.DecanewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.KiloNewtonPerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.KilonewtonPerSecond:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.KiloPoundForcePerMinute:
+        if unit_abbreviation == ForceChangeRateUnits.KilopoundForcePerMinute:
             return """"""
         
-        if unit_abbreviation == ForceChangeRateUnits.KiloPoundForcePerSecond:
+        if unit_abbreviation == ForceChangeRateUnits.KilopoundForcePerSecond:
             return """"""
         
 

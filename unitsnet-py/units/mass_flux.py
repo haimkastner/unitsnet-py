@@ -38,32 +38,32 @@ class MassFluxUnits(Enum):
             
         """
         
-        KiloGramPerSecondPerSquareMeter = 'kilo_gram_per_second_per_square_meter'
+        KilogramPerSecondPerSquareMeter = 'kilogram_per_second_per_square_meter'
         """
             
         """
         
-        KiloGramPerSecondPerSquareCentimeter = 'kilo_gram_per_second_per_square_centimeter'
+        KilogramPerSecondPerSquareCentimeter = 'kilogram_per_second_per_square_centimeter'
         """
             
         """
         
-        KiloGramPerSecondPerSquareMillimeter = 'kilo_gram_per_second_per_square_millimeter'
+        KilogramPerSecondPerSquareMillimeter = 'kilogram_per_second_per_square_millimeter'
         """
             
         """
         
-        KiloGramPerHourPerSquareMeter = 'kilo_gram_per_hour_per_square_meter'
+        KilogramPerHourPerSquareMeter = 'kilogram_per_hour_per_square_meter'
         """
             
         """
         
-        KiloGramPerHourPerSquareCentimeter = 'kilo_gram_per_hour_per_square_centimeter'
+        KilogramPerHourPerSquareCentimeter = 'kilogram_per_hour_per_square_centimeter'
         """
             
         """
         
-        KiloGramPerHourPerSquareMillimeter = 'kilo_gram_per_hour_per_square_millimeter'
+        KilogramPerHourPerSquareMillimeter = 'kilogram_per_hour_per_square_millimeter'
         """
             
         """
@@ -94,17 +94,17 @@ class MassFlux:
         
         self.__grams_per_hour_per_square_millimeter = None
         
-        self.__kilo_grams_per_second_per_square_meter = None
+        self.__kilograms_per_second_per_square_meter = None
         
-        self.__kilo_grams_per_second_per_square_centimeter = None
+        self.__kilograms_per_second_per_square_centimeter = None
         
-        self.__kilo_grams_per_second_per_square_millimeter = None
+        self.__kilograms_per_second_per_square_millimeter = None
         
-        self.__kilo_grams_per_hour_per_square_meter = None
+        self.__kilograms_per_hour_per_square_meter = None
         
-        self.__kilo_grams_per_hour_per_square_centimeter = None
+        self.__kilograms_per_hour_per_square_centimeter = None
         
-        self.__kilo_grams_per_hour_per_square_millimeter = None
+        self.__kilograms_per_hour_per_square_millimeter = None
         
 
     def __convert_from_base(self, from_unit: MassFluxUnits) -> float:
@@ -128,22 +128,22 @@ class MassFlux:
         if from_unit == MassFluxUnits.GramPerHourPerSquareMillimeter:
             return (value * 3.6e0)
         
-        if from_unit == MassFluxUnits.KiloGramPerSecondPerSquareMeter:
+        if from_unit == MassFluxUnits.KilogramPerSecondPerSquareMeter:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == MassFluxUnits.KiloGramPerSecondPerSquareCentimeter:
+        if from_unit == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
             return ((value * 1e-1) / 1000.0)
         
-        if from_unit == MassFluxUnits.KiloGramPerSecondPerSquareMillimeter:
+        if from_unit == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
             return ((value * 1e-3) / 1000.0)
         
-        if from_unit == MassFluxUnits.KiloGramPerHourPerSquareMeter:
+        if from_unit == MassFluxUnits.KilogramPerHourPerSquareMeter:
             return ((value * 3.6e6) / 1000.0)
         
-        if from_unit == MassFluxUnits.KiloGramPerHourPerSquareCentimeter:
+        if from_unit == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
             return ((value * 3.6e2) / 1000.0)
         
-        if from_unit == MassFluxUnits.KiloGramPerHourPerSquareMillimeter:
+        if from_unit == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
             return ((value * 3.6e0) / 1000.0)
         
         return None
@@ -169,22 +169,22 @@ class MassFlux:
         if to_unit == MassFluxUnits.GramPerHourPerSquareMillimeter:
             return (value / 3.6e0)
         
-        if to_unit == MassFluxUnits.KiloGramPerSecondPerSquareMeter:
+        if to_unit == MassFluxUnits.KilogramPerSecondPerSquareMeter:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == MassFluxUnits.KiloGramPerSecondPerSquareCentimeter:
+        if to_unit == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
             return ((value / 1e-1) * 1000.0)
         
-        if to_unit == MassFluxUnits.KiloGramPerSecondPerSquareMillimeter:
+        if to_unit == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
             return ((value / 1e-3) * 1000.0)
         
-        if to_unit == MassFluxUnits.KiloGramPerHourPerSquareMeter:
+        if to_unit == MassFluxUnits.KilogramPerHourPerSquareMeter:
             return ((value / 3.6e6) * 1000.0)
         
-        if to_unit == MassFluxUnits.KiloGramPerHourPerSquareCentimeter:
+        if to_unit == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
             return ((value / 3.6e2) * 1000.0)
         
-        if to_unit == MassFluxUnits.KiloGramPerHourPerSquareMillimeter:
+        if to_unit == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
             return ((value / 3.6e0) * 1000.0)
         
         return None
@@ -286,93 +286,93 @@ class MassFlux:
 
     
     @staticmethod
-    def from_kilo_grams_per_second_per_square_meter(kilo_grams_per_second_per_square_meter: float):
+    def from_kilograms_per_second_per_square_meter(kilograms_per_second_per_square_meter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_second_per_square_meter.
+        Create a new instance of MassFlux from a value in kilograms_per_second_per_square_meter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_second_per_square_meter.
-        :type kilo_grams_per_second_per_square_meter: float
+        :param meters: The MassFlux value in kilograms_per_second_per_square_meter.
+        :type kilograms_per_second_per_square_meter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_second_per_square_meter, MassFluxUnits.KiloGramPerSecondPerSquareMeter)
+        return MassFlux(kilograms_per_second_per_square_meter, MassFluxUnits.KilogramPerSecondPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_second_per_square_centimeter(kilo_grams_per_second_per_square_centimeter: float):
+    def from_kilograms_per_second_per_square_centimeter(kilograms_per_second_per_square_centimeter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_second_per_square_centimeter.
+        Create a new instance of MassFlux from a value in kilograms_per_second_per_square_centimeter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_second_per_square_centimeter.
-        :type kilo_grams_per_second_per_square_centimeter: float
+        :param meters: The MassFlux value in kilograms_per_second_per_square_centimeter.
+        :type kilograms_per_second_per_square_centimeter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_second_per_square_centimeter, MassFluxUnits.KiloGramPerSecondPerSquareCentimeter)
+        return MassFlux(kilograms_per_second_per_square_centimeter, MassFluxUnits.KilogramPerSecondPerSquareCentimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_second_per_square_millimeter(kilo_grams_per_second_per_square_millimeter: float):
+    def from_kilograms_per_second_per_square_millimeter(kilograms_per_second_per_square_millimeter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_second_per_square_millimeter.
+        Create a new instance of MassFlux from a value in kilograms_per_second_per_square_millimeter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_second_per_square_millimeter.
-        :type kilo_grams_per_second_per_square_millimeter: float
+        :param meters: The MassFlux value in kilograms_per_second_per_square_millimeter.
+        :type kilograms_per_second_per_square_millimeter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_second_per_square_millimeter, MassFluxUnits.KiloGramPerSecondPerSquareMillimeter)
+        return MassFlux(kilograms_per_second_per_square_millimeter, MassFluxUnits.KilogramPerSecondPerSquareMillimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_hour_per_square_meter(kilo_grams_per_hour_per_square_meter: float):
+    def from_kilograms_per_hour_per_square_meter(kilograms_per_hour_per_square_meter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_hour_per_square_meter.
+        Create a new instance of MassFlux from a value in kilograms_per_hour_per_square_meter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_hour_per_square_meter.
-        :type kilo_grams_per_hour_per_square_meter: float
+        :param meters: The MassFlux value in kilograms_per_hour_per_square_meter.
+        :type kilograms_per_hour_per_square_meter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_hour_per_square_meter, MassFluxUnits.KiloGramPerHourPerSquareMeter)
+        return MassFlux(kilograms_per_hour_per_square_meter, MassFluxUnits.KilogramPerHourPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_hour_per_square_centimeter(kilo_grams_per_hour_per_square_centimeter: float):
+    def from_kilograms_per_hour_per_square_centimeter(kilograms_per_hour_per_square_centimeter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_hour_per_square_centimeter.
+        Create a new instance of MassFlux from a value in kilograms_per_hour_per_square_centimeter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_hour_per_square_centimeter.
-        :type kilo_grams_per_hour_per_square_centimeter: float
+        :param meters: The MassFlux value in kilograms_per_hour_per_square_centimeter.
+        :type kilograms_per_hour_per_square_centimeter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_hour_per_square_centimeter, MassFluxUnits.KiloGramPerHourPerSquareCentimeter)
+        return MassFlux(kilograms_per_hour_per_square_centimeter, MassFluxUnits.KilogramPerHourPerSquareCentimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_hour_per_square_millimeter(kilo_grams_per_hour_per_square_millimeter: float):
+    def from_kilograms_per_hour_per_square_millimeter(kilograms_per_hour_per_square_millimeter: float):
         """
-        Create a new instance of MassFlux from a value in kilo_grams_per_hour_per_square_millimeter.
+        Create a new instance of MassFlux from a value in kilograms_per_hour_per_square_millimeter.
 
         
 
-        :param meters: The MassFlux value in kilo_grams_per_hour_per_square_millimeter.
-        :type kilo_grams_per_hour_per_square_millimeter: float
+        :param meters: The MassFlux value in kilograms_per_hour_per_square_millimeter.
+        :type kilograms_per_hour_per_square_millimeter: float
         :return: A new instance of MassFlux.
         :rtype: MassFlux
         """
-        return MassFlux(kilo_grams_per_hour_per_square_millimeter, MassFluxUnits.KiloGramPerHourPerSquareMillimeter)
+        return MassFlux(kilograms_per_hour_per_square_millimeter, MassFluxUnits.KilogramPerHourPerSquareMillimeter)
 
     
     @property
@@ -442,69 +442,69 @@ class MassFlux:
 
     
     @property
-    def kilo_grams_per_second_per_square_meter(self) -> float:
+    def kilograms_per_second_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_second_per_square_meter != None:
-            return self.__kilo_grams_per_second_per_square_meter
-        self.__kilo_grams_per_second_per_square_meter = self.__convert_from_base(MassFluxUnits.KiloGramPerSecondPerSquareMeter)
-        return self.__kilo_grams_per_second_per_square_meter
+        if self.__kilograms_per_second_per_square_meter != None:
+            return self.__kilograms_per_second_per_square_meter
+        self.__kilograms_per_second_per_square_meter = self.__convert_from_base(MassFluxUnits.KilogramPerSecondPerSquareMeter)
+        return self.__kilograms_per_second_per_square_meter
 
     
     @property
-    def kilo_grams_per_second_per_square_centimeter(self) -> float:
+    def kilograms_per_second_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_second_per_square_centimeter != None:
-            return self.__kilo_grams_per_second_per_square_centimeter
-        self.__kilo_grams_per_second_per_square_centimeter = self.__convert_from_base(MassFluxUnits.KiloGramPerSecondPerSquareCentimeter)
-        return self.__kilo_grams_per_second_per_square_centimeter
+        if self.__kilograms_per_second_per_square_centimeter != None:
+            return self.__kilograms_per_second_per_square_centimeter
+        self.__kilograms_per_second_per_square_centimeter = self.__convert_from_base(MassFluxUnits.KilogramPerSecondPerSquareCentimeter)
+        return self.__kilograms_per_second_per_square_centimeter
 
     
     @property
-    def kilo_grams_per_second_per_square_millimeter(self) -> float:
+    def kilograms_per_second_per_square_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_second_per_square_millimeter != None:
-            return self.__kilo_grams_per_second_per_square_millimeter
-        self.__kilo_grams_per_second_per_square_millimeter = self.__convert_from_base(MassFluxUnits.KiloGramPerSecondPerSquareMillimeter)
-        return self.__kilo_grams_per_second_per_square_millimeter
+        if self.__kilograms_per_second_per_square_millimeter != None:
+            return self.__kilograms_per_second_per_square_millimeter
+        self.__kilograms_per_second_per_square_millimeter = self.__convert_from_base(MassFluxUnits.KilogramPerSecondPerSquareMillimeter)
+        return self.__kilograms_per_second_per_square_millimeter
 
     
     @property
-    def kilo_grams_per_hour_per_square_meter(self) -> float:
+    def kilograms_per_hour_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_hour_per_square_meter != None:
-            return self.__kilo_grams_per_hour_per_square_meter
-        self.__kilo_grams_per_hour_per_square_meter = self.__convert_from_base(MassFluxUnits.KiloGramPerHourPerSquareMeter)
-        return self.__kilo_grams_per_hour_per_square_meter
+        if self.__kilograms_per_hour_per_square_meter != None:
+            return self.__kilograms_per_hour_per_square_meter
+        self.__kilograms_per_hour_per_square_meter = self.__convert_from_base(MassFluxUnits.KilogramPerHourPerSquareMeter)
+        return self.__kilograms_per_hour_per_square_meter
 
     
     @property
-    def kilo_grams_per_hour_per_square_centimeter(self) -> float:
+    def kilograms_per_hour_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_hour_per_square_centimeter != None:
-            return self.__kilo_grams_per_hour_per_square_centimeter
-        self.__kilo_grams_per_hour_per_square_centimeter = self.__convert_from_base(MassFluxUnits.KiloGramPerHourPerSquareCentimeter)
-        return self.__kilo_grams_per_hour_per_square_centimeter
+        if self.__kilograms_per_hour_per_square_centimeter != None:
+            return self.__kilograms_per_hour_per_square_centimeter
+        self.__kilograms_per_hour_per_square_centimeter = self.__convert_from_base(MassFluxUnits.KilogramPerHourPerSquareCentimeter)
+        return self.__kilograms_per_hour_per_square_centimeter
 
     
     @property
-    def kilo_grams_per_hour_per_square_millimeter(self) -> float:
+    def kilograms_per_hour_per_square_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_hour_per_square_millimeter != None:
-            return self.__kilo_grams_per_hour_per_square_millimeter
-        self.__kilo_grams_per_hour_per_square_millimeter = self.__convert_from_base(MassFluxUnits.KiloGramPerHourPerSquareMillimeter)
-        return self.__kilo_grams_per_hour_per_square_millimeter
+        if self.__kilograms_per_hour_per_square_millimeter != None:
+            return self.__kilograms_per_hour_per_square_millimeter
+        self.__kilograms_per_hour_per_square_millimeter = self.__convert_from_base(MassFluxUnits.KilogramPerHourPerSquareMillimeter)
+        return self.__kilograms_per_hour_per_square_millimeter
 
     
     def to_string(self, unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> string:
@@ -532,23 +532,23 @@ class MassFlux:
         if unit == MassFluxUnits.GramPerHourPerSquareMillimeter:
             return f"""{self.grams_per_hour_per_square_millimeter} g·h⁻¹·mm⁻²"""
         
-        if unit == MassFluxUnits.KiloGramPerSecondPerSquareMeter:
-            return f"""{self.kilo_grams_per_second_per_square_meter} """
+        if unit == MassFluxUnits.KilogramPerSecondPerSquareMeter:
+            return f"""{self.kilograms_per_second_per_square_meter} """
         
-        if unit == MassFluxUnits.KiloGramPerSecondPerSquareCentimeter:
-            return f"""{self.kilo_grams_per_second_per_square_centimeter} """
+        if unit == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
+            return f"""{self.kilograms_per_second_per_square_centimeter} """
         
-        if unit == MassFluxUnits.KiloGramPerSecondPerSquareMillimeter:
-            return f"""{self.kilo_grams_per_second_per_square_millimeter} """
+        if unit == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
+            return f"""{self.kilograms_per_second_per_square_millimeter} """
         
-        if unit == MassFluxUnits.KiloGramPerHourPerSquareMeter:
-            return f"""{self.kilo_grams_per_hour_per_square_meter} """
+        if unit == MassFluxUnits.KilogramPerHourPerSquareMeter:
+            return f"""{self.kilograms_per_hour_per_square_meter} """
         
-        if unit == MassFluxUnits.KiloGramPerHourPerSquareCentimeter:
-            return f"""{self.kilo_grams_per_hour_per_square_centimeter} """
+        if unit == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
+            return f"""{self.kilograms_per_hour_per_square_centimeter} """
         
-        if unit == MassFluxUnits.KiloGramPerHourPerSquareMillimeter:
-            return f"""{self.kilo_grams_per_hour_per_square_millimeter} """
+        if unit == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
+            return f"""{self.kilograms_per_hour_per_square_millimeter} """
         
         return f'{self.__value}'
 
@@ -578,22 +578,22 @@ class MassFlux:
         if unit_abbreviation == MassFluxUnits.GramPerHourPerSquareMillimeter:
             return """g·h⁻¹·mm⁻²"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerSecondPerSquareMeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerSecondPerSquareCentimeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerSecondPerSquareMillimeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
             return """"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerHourPerSquareMeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerHourPerSquareCentimeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == MassFluxUnits.KiloGramPerHourPerSquareMillimeter:
+        if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
             return """"""
         
 

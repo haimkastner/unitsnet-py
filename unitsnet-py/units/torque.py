@@ -83,52 +83,52 @@ class TorqueUnits(Enum):
             
         """
         
-        KiloNewtonMillimeter = 'kilo_newton_millimeter'
+        KilonewtonMillimeter = 'kilonewton_millimeter'
         """
             
         """
         
-        MegaNewtonMillimeter = 'mega_newton_millimeter'
+        MeganewtonMillimeter = 'meganewton_millimeter'
         """
             
         """
         
-        KiloNewtonCentimeter = 'kilo_newton_centimeter'
+        KilonewtonCentimeter = 'kilonewton_centimeter'
         """
             
         """
         
-        MegaNewtonCentimeter = 'mega_newton_centimeter'
+        MeganewtonCentimeter = 'meganewton_centimeter'
         """
             
         """
         
-        KiloNewtonMeter = 'kilo_newton_meter'
+        KilonewtonMeter = 'kilonewton_meter'
         """
             
         """
         
-        MegaNewtonMeter = 'mega_newton_meter'
+        MeganewtonMeter = 'meganewton_meter'
         """
             
         """
         
-        KiloPoundForceInch = 'kilo_pound_force_inch'
+        KilopoundForceInch = 'kilopound_force_inch'
         """
             
         """
         
-        MegaPoundForceInch = 'mega_pound_force_inch'
+        MegapoundForceInch = 'megapound_force_inch'
         """
             
         """
         
-        KiloPoundForceFoot = 'kilo_pound_force_foot'
+        KilopoundForceFoot = 'kilopound_force_foot'
         """
             
         """
         
-        MegaPoundForceFoot = 'mega_pound_force_foot'
+        MegapoundForceFoot = 'megapound_force_foot'
         """
             
         """
@@ -177,25 +177,25 @@ class Torque:
         
         self.__tonne_force_meters = None
         
-        self.__kilo_newton_millimeters = None
+        self.__kilonewton_millimeters = None
         
-        self.__mega_newton_millimeters = None
+        self.__meganewton_millimeters = None
         
-        self.__kilo_newton_centimeters = None
+        self.__kilonewton_centimeters = None
         
-        self.__mega_newton_centimeters = None
+        self.__meganewton_centimeters = None
         
-        self.__kilo_newton_meters = None
+        self.__kilonewton_meters = None
         
-        self.__mega_newton_meters = None
+        self.__meganewton_meters = None
         
-        self.__kilo_pound_force_inches = None
+        self.__kilopound_force_inches = None
         
-        self.__mega_pound_force_inches = None
+        self.__megapound_force_inches = None
         
-        self.__kilo_pound_force_feet = None
+        self.__kilopound_force_feet = None
         
-        self.__mega_pound_force_feet = None
+        self.__megapound_force_feet = None
         
 
     def __convert_from_base(self, from_unit: TorqueUnits) -> float:
@@ -246,34 +246,34 @@ class Torque:
         if from_unit == TorqueUnits.TonneForceMeter:
             return (value / 9.80665e3)
         
-        if from_unit == TorqueUnits.KiloNewtonMillimeter:
+        if from_unit == TorqueUnits.KilonewtonMillimeter:
             return ((value * 1000) / 1000.0)
         
-        if from_unit == TorqueUnits.MegaNewtonMillimeter:
+        if from_unit == TorqueUnits.MeganewtonMillimeter:
             return ((value * 1000) / 1000000.0)
         
-        if from_unit == TorqueUnits.KiloNewtonCentimeter:
+        if from_unit == TorqueUnits.KilonewtonCentimeter:
             return ((value * 100) / 1000.0)
         
-        if from_unit == TorqueUnits.MegaNewtonCentimeter:
+        if from_unit == TorqueUnits.MeganewtonCentimeter:
             return ((value * 100) / 1000000.0)
         
-        if from_unit == TorqueUnits.KiloNewtonMeter:
+        if from_unit == TorqueUnits.KilonewtonMeter:
             return ((value) / 1000.0)
         
-        if from_unit == TorqueUnits.MegaNewtonMeter:
+        if from_unit == TorqueUnits.MeganewtonMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == TorqueUnits.KiloPoundForceInch:
+        if from_unit == TorqueUnits.KilopoundForceInch:
             return ((value / 1.129848290276167e-1) / 1000.0)
         
-        if from_unit == TorqueUnits.MegaPoundForceInch:
+        if from_unit == TorqueUnits.MegapoundForceInch:
             return ((value / 1.129848290276167e-1) / 1000000.0)
         
-        if from_unit == TorqueUnits.KiloPoundForceFoot:
+        if from_unit == TorqueUnits.KilopoundForceFoot:
             return ((value / 1.3558179483314) / 1000.0)
         
-        if from_unit == TorqueUnits.MegaPoundForceFoot:
+        if from_unit == TorqueUnits.MegapoundForceFoot:
             return ((value / 1.3558179483314) / 1000000.0)
         
         return None
@@ -326,34 +326,34 @@ class Torque:
         if to_unit == TorqueUnits.TonneForceMeter:
             return (value * 9.80665e3)
         
-        if to_unit == TorqueUnits.KiloNewtonMillimeter:
+        if to_unit == TorqueUnits.KilonewtonMillimeter:
             return ((value * 0.001) * 1000.0)
         
-        if to_unit == TorqueUnits.MegaNewtonMillimeter:
+        if to_unit == TorqueUnits.MeganewtonMillimeter:
             return ((value * 0.001) * 1000000.0)
         
-        if to_unit == TorqueUnits.KiloNewtonCentimeter:
+        if to_unit == TorqueUnits.KilonewtonCentimeter:
             return ((value * 0.01) * 1000.0)
         
-        if to_unit == TorqueUnits.MegaNewtonCentimeter:
+        if to_unit == TorqueUnits.MeganewtonCentimeter:
             return ((value * 0.01) * 1000000.0)
         
-        if to_unit == TorqueUnits.KiloNewtonMeter:
+        if to_unit == TorqueUnits.KilonewtonMeter:
             return ((value) * 1000.0)
         
-        if to_unit == TorqueUnits.MegaNewtonMeter:
+        if to_unit == TorqueUnits.MeganewtonMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == TorqueUnits.KiloPoundForceInch:
+        if to_unit == TorqueUnits.KilopoundForceInch:
             return ((value * 1.129848290276167e-1) * 1000.0)
         
-        if to_unit == TorqueUnits.MegaPoundForceInch:
+        if to_unit == TorqueUnits.MegapoundForceInch:
             return ((value * 1.129848290276167e-1) * 1000000.0)
         
-        if to_unit == TorqueUnits.KiloPoundForceFoot:
+        if to_unit == TorqueUnits.KilopoundForceFoot:
             return ((value * 1.3558179483314) * 1000.0)
         
-        if to_unit == TorqueUnits.MegaPoundForceFoot:
+        if to_unit == TorqueUnits.MegapoundForceFoot:
             return ((value * 1.3558179483314) * 1000000.0)
         
         return None
@@ -590,153 +590,153 @@ class Torque:
 
     
     @staticmethod
-    def from_kilo_newton_millimeters(kilo_newton_millimeters: float):
+    def from_kilonewton_millimeters(kilonewton_millimeters: float):
         """
-        Create a new instance of Torque from a value in kilo_newton_millimeters.
+        Create a new instance of Torque from a value in kilonewton_millimeters.
 
         
 
-        :param meters: The Torque value in kilo_newton_millimeters.
-        :type kilo_newton_millimeters: float
+        :param meters: The Torque value in kilonewton_millimeters.
+        :type kilonewton_millimeters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(kilo_newton_millimeters, TorqueUnits.KiloNewtonMillimeter)
+        return Torque(kilonewton_millimeters, TorqueUnits.KilonewtonMillimeter)
 
     
     @staticmethod
-    def from_mega_newton_millimeters(mega_newton_millimeters: float):
+    def from_meganewton_millimeters(meganewton_millimeters: float):
         """
-        Create a new instance of Torque from a value in mega_newton_millimeters.
+        Create a new instance of Torque from a value in meganewton_millimeters.
 
         
 
-        :param meters: The Torque value in mega_newton_millimeters.
-        :type mega_newton_millimeters: float
+        :param meters: The Torque value in meganewton_millimeters.
+        :type meganewton_millimeters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(mega_newton_millimeters, TorqueUnits.MegaNewtonMillimeter)
+        return Torque(meganewton_millimeters, TorqueUnits.MeganewtonMillimeter)
 
     
     @staticmethod
-    def from_kilo_newton_centimeters(kilo_newton_centimeters: float):
+    def from_kilonewton_centimeters(kilonewton_centimeters: float):
         """
-        Create a new instance of Torque from a value in kilo_newton_centimeters.
+        Create a new instance of Torque from a value in kilonewton_centimeters.
 
         
 
-        :param meters: The Torque value in kilo_newton_centimeters.
-        :type kilo_newton_centimeters: float
+        :param meters: The Torque value in kilonewton_centimeters.
+        :type kilonewton_centimeters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(kilo_newton_centimeters, TorqueUnits.KiloNewtonCentimeter)
+        return Torque(kilonewton_centimeters, TorqueUnits.KilonewtonCentimeter)
 
     
     @staticmethod
-    def from_mega_newton_centimeters(mega_newton_centimeters: float):
+    def from_meganewton_centimeters(meganewton_centimeters: float):
         """
-        Create a new instance of Torque from a value in mega_newton_centimeters.
+        Create a new instance of Torque from a value in meganewton_centimeters.
 
         
 
-        :param meters: The Torque value in mega_newton_centimeters.
-        :type mega_newton_centimeters: float
+        :param meters: The Torque value in meganewton_centimeters.
+        :type meganewton_centimeters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(mega_newton_centimeters, TorqueUnits.MegaNewtonCentimeter)
+        return Torque(meganewton_centimeters, TorqueUnits.MeganewtonCentimeter)
 
     
     @staticmethod
-    def from_kilo_newton_meters(kilo_newton_meters: float):
+    def from_kilonewton_meters(kilonewton_meters: float):
         """
-        Create a new instance of Torque from a value in kilo_newton_meters.
+        Create a new instance of Torque from a value in kilonewton_meters.
 
         
 
-        :param meters: The Torque value in kilo_newton_meters.
-        :type kilo_newton_meters: float
+        :param meters: The Torque value in kilonewton_meters.
+        :type kilonewton_meters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(kilo_newton_meters, TorqueUnits.KiloNewtonMeter)
+        return Torque(kilonewton_meters, TorqueUnits.KilonewtonMeter)
 
     
     @staticmethod
-    def from_mega_newton_meters(mega_newton_meters: float):
+    def from_meganewton_meters(meganewton_meters: float):
         """
-        Create a new instance of Torque from a value in mega_newton_meters.
+        Create a new instance of Torque from a value in meganewton_meters.
 
         
 
-        :param meters: The Torque value in mega_newton_meters.
-        :type mega_newton_meters: float
+        :param meters: The Torque value in meganewton_meters.
+        :type meganewton_meters: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(mega_newton_meters, TorqueUnits.MegaNewtonMeter)
+        return Torque(meganewton_meters, TorqueUnits.MeganewtonMeter)
 
     
     @staticmethod
-    def from_kilo_pound_force_inches(kilo_pound_force_inches: float):
+    def from_kilopound_force_inches(kilopound_force_inches: float):
         """
-        Create a new instance of Torque from a value in kilo_pound_force_inches.
+        Create a new instance of Torque from a value in kilopound_force_inches.
 
         
 
-        :param meters: The Torque value in kilo_pound_force_inches.
-        :type kilo_pound_force_inches: float
+        :param meters: The Torque value in kilopound_force_inches.
+        :type kilopound_force_inches: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(kilo_pound_force_inches, TorqueUnits.KiloPoundForceInch)
+        return Torque(kilopound_force_inches, TorqueUnits.KilopoundForceInch)
 
     
     @staticmethod
-    def from_mega_pound_force_inches(mega_pound_force_inches: float):
+    def from_megapound_force_inches(megapound_force_inches: float):
         """
-        Create a new instance of Torque from a value in mega_pound_force_inches.
+        Create a new instance of Torque from a value in megapound_force_inches.
 
         
 
-        :param meters: The Torque value in mega_pound_force_inches.
-        :type mega_pound_force_inches: float
+        :param meters: The Torque value in megapound_force_inches.
+        :type megapound_force_inches: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(mega_pound_force_inches, TorqueUnits.MegaPoundForceInch)
+        return Torque(megapound_force_inches, TorqueUnits.MegapoundForceInch)
 
     
     @staticmethod
-    def from_kilo_pound_force_feet(kilo_pound_force_feet: float):
+    def from_kilopound_force_feet(kilopound_force_feet: float):
         """
-        Create a new instance of Torque from a value in kilo_pound_force_feet.
+        Create a new instance of Torque from a value in kilopound_force_feet.
 
         
 
-        :param meters: The Torque value in kilo_pound_force_feet.
-        :type kilo_pound_force_feet: float
+        :param meters: The Torque value in kilopound_force_feet.
+        :type kilopound_force_feet: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(kilo_pound_force_feet, TorqueUnits.KiloPoundForceFoot)
+        return Torque(kilopound_force_feet, TorqueUnits.KilopoundForceFoot)
 
     
     @staticmethod
-    def from_mega_pound_force_feet(mega_pound_force_feet: float):
+    def from_megapound_force_feet(megapound_force_feet: float):
         """
-        Create a new instance of Torque from a value in mega_pound_force_feet.
+        Create a new instance of Torque from a value in megapound_force_feet.
 
         
 
-        :param meters: The Torque value in mega_pound_force_feet.
-        :type mega_pound_force_feet: float
+        :param meters: The Torque value in megapound_force_feet.
+        :type megapound_force_feet: float
         :return: A new instance of Torque.
         :rtype: Torque
         """
-        return Torque(mega_pound_force_feet, TorqueUnits.MegaPoundForceFoot)
+        return Torque(megapound_force_feet, TorqueUnits.MegapoundForceFoot)
 
     
     @property
@@ -905,113 +905,113 @@ class Torque:
 
     
     @property
-    def kilo_newton_millimeters(self) -> float:
+    def kilonewton_millimeters(self) -> float:
         """
         
         """
-        if self.__kilo_newton_millimeters != None:
-            return self.__kilo_newton_millimeters
-        self.__kilo_newton_millimeters = self.__convert_from_base(TorqueUnits.KiloNewtonMillimeter)
-        return self.__kilo_newton_millimeters
+        if self.__kilonewton_millimeters != None:
+            return self.__kilonewton_millimeters
+        self.__kilonewton_millimeters = self.__convert_from_base(TorqueUnits.KilonewtonMillimeter)
+        return self.__kilonewton_millimeters
 
     
     @property
-    def mega_newton_millimeters(self) -> float:
+    def meganewton_millimeters(self) -> float:
         """
         
         """
-        if self.__mega_newton_millimeters != None:
-            return self.__mega_newton_millimeters
-        self.__mega_newton_millimeters = self.__convert_from_base(TorqueUnits.MegaNewtonMillimeter)
-        return self.__mega_newton_millimeters
+        if self.__meganewton_millimeters != None:
+            return self.__meganewton_millimeters
+        self.__meganewton_millimeters = self.__convert_from_base(TorqueUnits.MeganewtonMillimeter)
+        return self.__meganewton_millimeters
 
     
     @property
-    def kilo_newton_centimeters(self) -> float:
+    def kilonewton_centimeters(self) -> float:
         """
         
         """
-        if self.__kilo_newton_centimeters != None:
-            return self.__kilo_newton_centimeters
-        self.__kilo_newton_centimeters = self.__convert_from_base(TorqueUnits.KiloNewtonCentimeter)
-        return self.__kilo_newton_centimeters
+        if self.__kilonewton_centimeters != None:
+            return self.__kilonewton_centimeters
+        self.__kilonewton_centimeters = self.__convert_from_base(TorqueUnits.KilonewtonCentimeter)
+        return self.__kilonewton_centimeters
 
     
     @property
-    def mega_newton_centimeters(self) -> float:
+    def meganewton_centimeters(self) -> float:
         """
         
         """
-        if self.__mega_newton_centimeters != None:
-            return self.__mega_newton_centimeters
-        self.__mega_newton_centimeters = self.__convert_from_base(TorqueUnits.MegaNewtonCentimeter)
-        return self.__mega_newton_centimeters
+        if self.__meganewton_centimeters != None:
+            return self.__meganewton_centimeters
+        self.__meganewton_centimeters = self.__convert_from_base(TorqueUnits.MeganewtonCentimeter)
+        return self.__meganewton_centimeters
 
     
     @property
-    def kilo_newton_meters(self) -> float:
+    def kilonewton_meters(self) -> float:
         """
         
         """
-        if self.__kilo_newton_meters != None:
-            return self.__kilo_newton_meters
-        self.__kilo_newton_meters = self.__convert_from_base(TorqueUnits.KiloNewtonMeter)
-        return self.__kilo_newton_meters
+        if self.__kilonewton_meters != None:
+            return self.__kilonewton_meters
+        self.__kilonewton_meters = self.__convert_from_base(TorqueUnits.KilonewtonMeter)
+        return self.__kilonewton_meters
 
     
     @property
-    def mega_newton_meters(self) -> float:
+    def meganewton_meters(self) -> float:
         """
         
         """
-        if self.__mega_newton_meters != None:
-            return self.__mega_newton_meters
-        self.__mega_newton_meters = self.__convert_from_base(TorqueUnits.MegaNewtonMeter)
-        return self.__mega_newton_meters
+        if self.__meganewton_meters != None:
+            return self.__meganewton_meters
+        self.__meganewton_meters = self.__convert_from_base(TorqueUnits.MeganewtonMeter)
+        return self.__meganewton_meters
 
     
     @property
-    def kilo_pound_force_inches(self) -> float:
+    def kilopound_force_inches(self) -> float:
         """
         
         """
-        if self.__kilo_pound_force_inches != None:
-            return self.__kilo_pound_force_inches
-        self.__kilo_pound_force_inches = self.__convert_from_base(TorqueUnits.KiloPoundForceInch)
-        return self.__kilo_pound_force_inches
+        if self.__kilopound_force_inches != None:
+            return self.__kilopound_force_inches
+        self.__kilopound_force_inches = self.__convert_from_base(TorqueUnits.KilopoundForceInch)
+        return self.__kilopound_force_inches
 
     
     @property
-    def mega_pound_force_inches(self) -> float:
+    def megapound_force_inches(self) -> float:
         """
         
         """
-        if self.__mega_pound_force_inches != None:
-            return self.__mega_pound_force_inches
-        self.__mega_pound_force_inches = self.__convert_from_base(TorqueUnits.MegaPoundForceInch)
-        return self.__mega_pound_force_inches
+        if self.__megapound_force_inches != None:
+            return self.__megapound_force_inches
+        self.__megapound_force_inches = self.__convert_from_base(TorqueUnits.MegapoundForceInch)
+        return self.__megapound_force_inches
 
     
     @property
-    def kilo_pound_force_feet(self) -> float:
+    def kilopound_force_feet(self) -> float:
         """
         
         """
-        if self.__kilo_pound_force_feet != None:
-            return self.__kilo_pound_force_feet
-        self.__kilo_pound_force_feet = self.__convert_from_base(TorqueUnits.KiloPoundForceFoot)
-        return self.__kilo_pound_force_feet
+        if self.__kilopound_force_feet != None:
+            return self.__kilopound_force_feet
+        self.__kilopound_force_feet = self.__convert_from_base(TorqueUnits.KilopoundForceFoot)
+        return self.__kilopound_force_feet
 
     
     @property
-    def mega_pound_force_feet(self) -> float:
+    def megapound_force_feet(self) -> float:
         """
         
         """
-        if self.__mega_pound_force_feet != None:
-            return self.__mega_pound_force_feet
-        self.__mega_pound_force_feet = self.__convert_from_base(TorqueUnits.MegaPoundForceFoot)
-        return self.__mega_pound_force_feet
+        if self.__megapound_force_feet != None:
+            return self.__megapound_force_feet
+        self.__megapound_force_feet = self.__convert_from_base(TorqueUnits.MegapoundForceFoot)
+        return self.__megapound_force_feet
 
     
     def to_string(self, unit: TorqueUnits = TorqueUnits.NewtonMeter) -> string:
@@ -1066,35 +1066,35 @@ class Torque:
         if unit == TorqueUnits.TonneForceMeter:
             return f"""{self.tonne_force_meters} tf·m"""
         
-        if unit == TorqueUnits.KiloNewtonMillimeter:
-            return f"""{self.kilo_newton_millimeters} """
+        if unit == TorqueUnits.KilonewtonMillimeter:
+            return f"""{self.kilonewton_millimeters} """
         
-        if unit == TorqueUnits.MegaNewtonMillimeter:
-            return f"""{self.mega_newton_millimeters} """
+        if unit == TorqueUnits.MeganewtonMillimeter:
+            return f"""{self.meganewton_millimeters} """
         
-        if unit == TorqueUnits.KiloNewtonCentimeter:
-            return f"""{self.kilo_newton_centimeters} """
+        if unit == TorqueUnits.KilonewtonCentimeter:
+            return f"""{self.kilonewton_centimeters} """
         
-        if unit == TorqueUnits.MegaNewtonCentimeter:
-            return f"""{self.mega_newton_centimeters} """
+        if unit == TorqueUnits.MeganewtonCentimeter:
+            return f"""{self.meganewton_centimeters} """
         
-        if unit == TorqueUnits.KiloNewtonMeter:
-            return f"""{self.kilo_newton_meters} """
+        if unit == TorqueUnits.KilonewtonMeter:
+            return f"""{self.kilonewton_meters} """
         
-        if unit == TorqueUnits.MegaNewtonMeter:
-            return f"""{self.mega_newton_meters} """
+        if unit == TorqueUnits.MeganewtonMeter:
+            return f"""{self.meganewton_meters} """
         
-        if unit == TorqueUnits.KiloPoundForceInch:
-            return f"""{self.kilo_pound_force_inches} """
+        if unit == TorqueUnits.KilopoundForceInch:
+            return f"""{self.kilopound_force_inches} """
         
-        if unit == TorqueUnits.MegaPoundForceInch:
-            return f"""{self.mega_pound_force_inches} """
+        if unit == TorqueUnits.MegapoundForceInch:
+            return f"""{self.megapound_force_inches} """
         
-        if unit == TorqueUnits.KiloPoundForceFoot:
-            return f"""{self.kilo_pound_force_feet} """
+        if unit == TorqueUnits.KilopoundForceFoot:
+            return f"""{self.kilopound_force_feet} """
         
-        if unit == TorqueUnits.MegaPoundForceFoot:
-            return f"""{self.mega_pound_force_feet} """
+        if unit == TorqueUnits.MegapoundForceFoot:
+            return f"""{self.megapound_force_feet} """
         
         return f'{self.__value}'
 
@@ -1151,34 +1151,34 @@ class Torque:
         if unit_abbreviation == TorqueUnits.TonneForceMeter:
             return """tf·m"""
         
-        if unit_abbreviation == TorqueUnits.KiloNewtonMillimeter:
+        if unit_abbreviation == TorqueUnits.KilonewtonMillimeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.MegaNewtonMillimeter:
+        if unit_abbreviation == TorqueUnits.MeganewtonMillimeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.KiloNewtonCentimeter:
+        if unit_abbreviation == TorqueUnits.KilonewtonCentimeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.MegaNewtonCentimeter:
+        if unit_abbreviation == TorqueUnits.MeganewtonCentimeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.KiloNewtonMeter:
+        if unit_abbreviation == TorqueUnits.KilonewtonMeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.MegaNewtonMeter:
+        if unit_abbreviation == TorqueUnits.MeganewtonMeter:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.KiloPoundForceInch:
+        if unit_abbreviation == TorqueUnits.KilopoundForceInch:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.MegaPoundForceInch:
+        if unit_abbreviation == TorqueUnits.MegapoundForceInch:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.KiloPoundForceFoot:
+        if unit_abbreviation == TorqueUnits.KilopoundForceFoot:
             return """"""
         
-        if unit_abbreviation == TorqueUnits.MegaPoundForceFoot:
+        if unit_abbreviation == TorqueUnits.MegapoundForceFoot:
             return """"""
         
 

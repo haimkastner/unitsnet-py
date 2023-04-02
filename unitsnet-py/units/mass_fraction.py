@@ -48,82 +48,82 @@ class MassFractionUnits(Enum):
             
         """
         
-        NanoGramPerGram = 'nano_gram_per_gram'
+        NanogramPerGram = 'nanogram_per_gram'
         """
             
         """
         
-        MicroGramPerGram = 'micro_gram_per_gram'
+        MicrogramPerGram = 'microgram_per_gram'
         """
             
         """
         
-        MilliGramPerGram = 'milli_gram_per_gram'
+        MilligramPerGram = 'milligram_per_gram'
         """
             
         """
         
-        CentiGramPerGram = 'centi_gram_per_gram'
+        CentigramPerGram = 'centigram_per_gram'
         """
             
         """
         
-        DeciGramPerGram = 'deci_gram_per_gram'
+        DecigramPerGram = 'decigram_per_gram'
         """
             
         """
         
-        DecaGramPerGram = 'deca_gram_per_gram'
+        DecagramPerGram = 'decagram_per_gram'
         """
             
         """
         
-        HectoGramPerGram = 'hecto_gram_per_gram'
+        HectogramPerGram = 'hectogram_per_gram'
         """
             
         """
         
-        KiloGramPerGram = 'kilo_gram_per_gram'
+        KilogramPerGram = 'kilogram_per_gram'
         """
             
         """
         
-        NanoGramPerKilogram = 'nano_gram_per_kilogram'
+        NanogramPerKilogram = 'nanogram_per_kilogram'
         """
             
         """
         
-        MicroGramPerKilogram = 'micro_gram_per_kilogram'
+        MicrogramPerKilogram = 'microgram_per_kilogram'
         """
             
         """
         
-        MilliGramPerKilogram = 'milli_gram_per_kilogram'
+        MilligramPerKilogram = 'milligram_per_kilogram'
         """
             
         """
         
-        CentiGramPerKilogram = 'centi_gram_per_kilogram'
+        CentigramPerKilogram = 'centigram_per_kilogram'
         """
             
         """
         
-        DeciGramPerKilogram = 'deci_gram_per_kilogram'
+        DecigramPerKilogram = 'decigram_per_kilogram'
         """
             
         """
         
-        DecaGramPerKilogram = 'deca_gram_per_kilogram'
+        DecagramPerKilogram = 'decagram_per_kilogram'
         """
             
         """
         
-        HectoGramPerKilogram = 'hecto_gram_per_kilogram'
+        HectogramPerKilogram = 'hectogram_per_kilogram'
         """
             
         """
         
-        KiloGramPerKilogram = 'kilo_gram_per_kilogram'
+        KilogramPerKilogram = 'kilogram_per_kilogram'
         """
             
         """
@@ -158,37 +158,37 @@ class MassFraction:
         
         self.__parts_per_trillion = None
         
-        self.__nano_grams_per_gram = None
+        self.__nanograms_per_gram = None
         
-        self.__micro_grams_per_gram = None
+        self.__micrograms_per_gram = None
         
-        self.__milli_grams_per_gram = None
+        self.__milligrams_per_gram = None
         
-        self.__centi_grams_per_gram = None
+        self.__centigrams_per_gram = None
         
-        self.__deci_grams_per_gram = None
+        self.__decigrams_per_gram = None
         
-        self.__deca_grams_per_gram = None
+        self.__decagrams_per_gram = None
         
-        self.__hecto_grams_per_gram = None
+        self.__hectograms_per_gram = None
         
-        self.__kilo_grams_per_gram = None
+        self.__kilograms_per_gram = None
         
-        self.__nano_grams_per_kilogram = None
+        self.__nanograms_per_kilogram = None
         
-        self.__micro_grams_per_kilogram = None
+        self.__micrograms_per_kilogram = None
         
-        self.__milli_grams_per_kilogram = None
+        self.__milligrams_per_kilogram = None
         
-        self.__centi_grams_per_kilogram = None
+        self.__centigrams_per_kilogram = None
         
-        self.__deci_grams_per_kilogram = None
+        self.__decigrams_per_kilogram = None
         
-        self.__deca_grams_per_kilogram = None
+        self.__decagrams_per_kilogram = None
         
-        self.__hecto_grams_per_kilogram = None
+        self.__hectograms_per_kilogram = None
         
-        self.__kilo_grams_per_kilogram = None
+        self.__kilograms_per_kilogram = None
         
 
     def __convert_from_base(self, from_unit: MassFractionUnits) -> float:
@@ -218,52 +218,52 @@ class MassFraction:
         if from_unit == MassFractionUnits.PartPerTrillion:
             return (value * 1e12)
         
-        if from_unit == MassFractionUnits.NanoGramPerGram:
+        if from_unit == MassFractionUnits.NanogramPerGram:
             return ((value) / 1e-09)
         
-        if from_unit == MassFractionUnits.MicroGramPerGram:
+        if from_unit == MassFractionUnits.MicrogramPerGram:
             return ((value) / 1e-06)
         
-        if from_unit == MassFractionUnits.MilliGramPerGram:
+        if from_unit == MassFractionUnits.MilligramPerGram:
             return ((value) / 0.001)
         
-        if from_unit == MassFractionUnits.CentiGramPerGram:
+        if from_unit == MassFractionUnits.CentigramPerGram:
             return ((value) / 0.01)
         
-        if from_unit == MassFractionUnits.DeciGramPerGram:
+        if from_unit == MassFractionUnits.DecigramPerGram:
             return ((value) / 0.1)
         
-        if from_unit == MassFractionUnits.DecaGramPerGram:
+        if from_unit == MassFractionUnits.DecagramPerGram:
             return ((value) / 10.0)
         
-        if from_unit == MassFractionUnits.HectoGramPerGram:
+        if from_unit == MassFractionUnits.HectogramPerGram:
             return ((value) / 100.0)
         
-        if from_unit == MassFractionUnits.KiloGramPerGram:
+        if from_unit == MassFractionUnits.KilogramPerGram:
             return ((value) / 1000.0)
         
-        if from_unit == MassFractionUnits.NanoGramPerKilogram:
+        if from_unit == MassFractionUnits.NanogramPerKilogram:
             return ((value * 1e3) / 1e-09)
         
-        if from_unit == MassFractionUnits.MicroGramPerKilogram:
+        if from_unit == MassFractionUnits.MicrogramPerKilogram:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == MassFractionUnits.MilliGramPerKilogram:
+        if from_unit == MassFractionUnits.MilligramPerKilogram:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == MassFractionUnits.CentiGramPerKilogram:
+        if from_unit == MassFractionUnits.CentigramPerKilogram:
             return ((value * 1e3) / 0.01)
         
-        if from_unit == MassFractionUnits.DeciGramPerKilogram:
+        if from_unit == MassFractionUnits.DecigramPerKilogram:
             return ((value * 1e3) / 0.1)
         
-        if from_unit == MassFractionUnits.DecaGramPerKilogram:
+        if from_unit == MassFractionUnits.DecagramPerKilogram:
             return ((value * 1e3) / 10.0)
         
-        if from_unit == MassFractionUnits.HectoGramPerKilogram:
+        if from_unit == MassFractionUnits.HectogramPerKilogram:
             return ((value * 1e3) / 100.0)
         
-        if from_unit == MassFractionUnits.KiloGramPerKilogram:
+        if from_unit == MassFractionUnits.KilogramPerKilogram:
             return ((value * 1e3) / 1000.0)
         
         return None
@@ -295,52 +295,52 @@ class MassFraction:
         if to_unit == MassFractionUnits.PartPerTrillion:
             return (value / 1e12)
         
-        if to_unit == MassFractionUnits.NanoGramPerGram:
+        if to_unit == MassFractionUnits.NanogramPerGram:
             return ((value) * 1e-09)
         
-        if to_unit == MassFractionUnits.MicroGramPerGram:
+        if to_unit == MassFractionUnits.MicrogramPerGram:
             return ((value) * 1e-06)
         
-        if to_unit == MassFractionUnits.MilliGramPerGram:
+        if to_unit == MassFractionUnits.MilligramPerGram:
             return ((value) * 0.001)
         
-        if to_unit == MassFractionUnits.CentiGramPerGram:
+        if to_unit == MassFractionUnits.CentigramPerGram:
             return ((value) * 0.01)
         
-        if to_unit == MassFractionUnits.DeciGramPerGram:
+        if to_unit == MassFractionUnits.DecigramPerGram:
             return ((value) * 0.1)
         
-        if to_unit == MassFractionUnits.DecaGramPerGram:
+        if to_unit == MassFractionUnits.DecagramPerGram:
             return ((value) * 10.0)
         
-        if to_unit == MassFractionUnits.HectoGramPerGram:
+        if to_unit == MassFractionUnits.HectogramPerGram:
             return ((value) * 100.0)
         
-        if to_unit == MassFractionUnits.KiloGramPerGram:
+        if to_unit == MassFractionUnits.KilogramPerGram:
             return ((value) * 1000.0)
         
-        if to_unit == MassFractionUnits.NanoGramPerKilogram:
+        if to_unit == MassFractionUnits.NanogramPerKilogram:
             return ((value / 1e3) * 1e-09)
         
-        if to_unit == MassFractionUnits.MicroGramPerKilogram:
+        if to_unit == MassFractionUnits.MicrogramPerKilogram:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == MassFractionUnits.MilliGramPerKilogram:
+        if to_unit == MassFractionUnits.MilligramPerKilogram:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == MassFractionUnits.CentiGramPerKilogram:
+        if to_unit == MassFractionUnits.CentigramPerKilogram:
             return ((value / 1e3) * 0.01)
         
-        if to_unit == MassFractionUnits.DeciGramPerKilogram:
+        if to_unit == MassFractionUnits.DecigramPerKilogram:
             return ((value / 1e3) * 0.1)
         
-        if to_unit == MassFractionUnits.DecaGramPerKilogram:
+        if to_unit == MassFractionUnits.DecagramPerKilogram:
             return ((value / 1e3) * 10.0)
         
-        if to_unit == MassFractionUnits.HectoGramPerKilogram:
+        if to_unit == MassFractionUnits.HectogramPerKilogram:
             return ((value / 1e3) * 100.0)
         
-        if to_unit == MassFractionUnits.KiloGramPerKilogram:
+        if to_unit == MassFractionUnits.KilogramPerKilogram:
             return ((value / 1e3) * 1000.0)
         
         return None
@@ -472,243 +472,243 @@ class MassFraction:
 
     
     @staticmethod
-    def from_nano_grams_per_gram(nano_grams_per_gram: float):
+    def from_nanograms_per_gram(nanograms_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in nano_grams_per_gram.
+        Create a new instance of MassFraction from a value in nanograms_per_gram.
 
         
 
-        :param meters: The MassFraction value in nano_grams_per_gram.
-        :type nano_grams_per_gram: float
+        :param meters: The MassFraction value in nanograms_per_gram.
+        :type nanograms_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(nano_grams_per_gram, MassFractionUnits.NanoGramPerGram)
+        return MassFraction(nanograms_per_gram, MassFractionUnits.NanogramPerGram)
 
     
     @staticmethod
-    def from_micro_grams_per_gram(micro_grams_per_gram: float):
+    def from_micrograms_per_gram(micrograms_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in micro_grams_per_gram.
+        Create a new instance of MassFraction from a value in micrograms_per_gram.
 
         
 
-        :param meters: The MassFraction value in micro_grams_per_gram.
-        :type micro_grams_per_gram: float
+        :param meters: The MassFraction value in micrograms_per_gram.
+        :type micrograms_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(micro_grams_per_gram, MassFractionUnits.MicroGramPerGram)
+        return MassFraction(micrograms_per_gram, MassFractionUnits.MicrogramPerGram)
 
     
     @staticmethod
-    def from_milli_grams_per_gram(milli_grams_per_gram: float):
+    def from_milligrams_per_gram(milligrams_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in milli_grams_per_gram.
+        Create a new instance of MassFraction from a value in milligrams_per_gram.
 
         
 
-        :param meters: The MassFraction value in milli_grams_per_gram.
-        :type milli_grams_per_gram: float
+        :param meters: The MassFraction value in milligrams_per_gram.
+        :type milligrams_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(milli_grams_per_gram, MassFractionUnits.MilliGramPerGram)
+        return MassFraction(milligrams_per_gram, MassFractionUnits.MilligramPerGram)
 
     
     @staticmethod
-    def from_centi_grams_per_gram(centi_grams_per_gram: float):
+    def from_centigrams_per_gram(centigrams_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in centi_grams_per_gram.
+        Create a new instance of MassFraction from a value in centigrams_per_gram.
 
         
 
-        :param meters: The MassFraction value in centi_grams_per_gram.
-        :type centi_grams_per_gram: float
+        :param meters: The MassFraction value in centigrams_per_gram.
+        :type centigrams_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(centi_grams_per_gram, MassFractionUnits.CentiGramPerGram)
+        return MassFraction(centigrams_per_gram, MassFractionUnits.CentigramPerGram)
 
     
     @staticmethod
-    def from_deci_grams_per_gram(deci_grams_per_gram: float):
+    def from_decigrams_per_gram(decigrams_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in deci_grams_per_gram.
+        Create a new instance of MassFraction from a value in decigrams_per_gram.
 
         
 
-        :param meters: The MassFraction value in deci_grams_per_gram.
-        :type deci_grams_per_gram: float
+        :param meters: The MassFraction value in decigrams_per_gram.
+        :type decigrams_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(deci_grams_per_gram, MassFractionUnits.DeciGramPerGram)
+        return MassFraction(decigrams_per_gram, MassFractionUnits.DecigramPerGram)
 
     
     @staticmethod
-    def from_deca_grams_per_gram(deca_grams_per_gram: float):
+    def from_decagrams_per_gram(decagrams_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in deca_grams_per_gram.
+        Create a new instance of MassFraction from a value in decagrams_per_gram.
 
         
 
-        :param meters: The MassFraction value in deca_grams_per_gram.
-        :type deca_grams_per_gram: float
+        :param meters: The MassFraction value in decagrams_per_gram.
+        :type decagrams_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(deca_grams_per_gram, MassFractionUnits.DecaGramPerGram)
+        return MassFraction(decagrams_per_gram, MassFractionUnits.DecagramPerGram)
 
     
     @staticmethod
-    def from_hecto_grams_per_gram(hecto_grams_per_gram: float):
+    def from_hectograms_per_gram(hectograms_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in hecto_grams_per_gram.
+        Create a new instance of MassFraction from a value in hectograms_per_gram.
 
         
 
-        :param meters: The MassFraction value in hecto_grams_per_gram.
-        :type hecto_grams_per_gram: float
+        :param meters: The MassFraction value in hectograms_per_gram.
+        :type hectograms_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(hecto_grams_per_gram, MassFractionUnits.HectoGramPerGram)
+        return MassFraction(hectograms_per_gram, MassFractionUnits.HectogramPerGram)
 
     
     @staticmethod
-    def from_kilo_grams_per_gram(kilo_grams_per_gram: float):
+    def from_kilograms_per_gram(kilograms_per_gram: float):
         """
-        Create a new instance of MassFraction from a value in kilo_grams_per_gram.
+        Create a new instance of MassFraction from a value in kilograms_per_gram.
 
         
 
-        :param meters: The MassFraction value in kilo_grams_per_gram.
-        :type kilo_grams_per_gram: float
+        :param meters: The MassFraction value in kilograms_per_gram.
+        :type kilograms_per_gram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(kilo_grams_per_gram, MassFractionUnits.KiloGramPerGram)
+        return MassFraction(kilograms_per_gram, MassFractionUnits.KilogramPerGram)
 
     
     @staticmethod
-    def from_nano_grams_per_kilogram(nano_grams_per_kilogram: float):
+    def from_nanograms_per_kilogram(nanograms_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in nano_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in nanograms_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in nano_grams_per_kilogram.
-        :type nano_grams_per_kilogram: float
+        :param meters: The MassFraction value in nanograms_per_kilogram.
+        :type nanograms_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(nano_grams_per_kilogram, MassFractionUnits.NanoGramPerKilogram)
+        return MassFraction(nanograms_per_kilogram, MassFractionUnits.NanogramPerKilogram)
 
     
     @staticmethod
-    def from_micro_grams_per_kilogram(micro_grams_per_kilogram: float):
+    def from_micrograms_per_kilogram(micrograms_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in micro_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in micrograms_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in micro_grams_per_kilogram.
-        :type micro_grams_per_kilogram: float
+        :param meters: The MassFraction value in micrograms_per_kilogram.
+        :type micrograms_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(micro_grams_per_kilogram, MassFractionUnits.MicroGramPerKilogram)
+        return MassFraction(micrograms_per_kilogram, MassFractionUnits.MicrogramPerKilogram)
 
     
     @staticmethod
-    def from_milli_grams_per_kilogram(milli_grams_per_kilogram: float):
+    def from_milligrams_per_kilogram(milligrams_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in milli_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in milligrams_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in milli_grams_per_kilogram.
-        :type milli_grams_per_kilogram: float
+        :param meters: The MassFraction value in milligrams_per_kilogram.
+        :type milligrams_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(milli_grams_per_kilogram, MassFractionUnits.MilliGramPerKilogram)
+        return MassFraction(milligrams_per_kilogram, MassFractionUnits.MilligramPerKilogram)
 
     
     @staticmethod
-    def from_centi_grams_per_kilogram(centi_grams_per_kilogram: float):
+    def from_centigrams_per_kilogram(centigrams_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in centi_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in centigrams_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in centi_grams_per_kilogram.
-        :type centi_grams_per_kilogram: float
+        :param meters: The MassFraction value in centigrams_per_kilogram.
+        :type centigrams_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(centi_grams_per_kilogram, MassFractionUnits.CentiGramPerKilogram)
+        return MassFraction(centigrams_per_kilogram, MassFractionUnits.CentigramPerKilogram)
 
     
     @staticmethod
-    def from_deci_grams_per_kilogram(deci_grams_per_kilogram: float):
+    def from_decigrams_per_kilogram(decigrams_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in deci_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in decigrams_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in deci_grams_per_kilogram.
-        :type deci_grams_per_kilogram: float
+        :param meters: The MassFraction value in decigrams_per_kilogram.
+        :type decigrams_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(deci_grams_per_kilogram, MassFractionUnits.DeciGramPerKilogram)
+        return MassFraction(decigrams_per_kilogram, MassFractionUnits.DecigramPerKilogram)
 
     
     @staticmethod
-    def from_deca_grams_per_kilogram(deca_grams_per_kilogram: float):
+    def from_decagrams_per_kilogram(decagrams_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in deca_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in decagrams_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in deca_grams_per_kilogram.
-        :type deca_grams_per_kilogram: float
+        :param meters: The MassFraction value in decagrams_per_kilogram.
+        :type decagrams_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(deca_grams_per_kilogram, MassFractionUnits.DecaGramPerKilogram)
+        return MassFraction(decagrams_per_kilogram, MassFractionUnits.DecagramPerKilogram)
 
     
     @staticmethod
-    def from_hecto_grams_per_kilogram(hecto_grams_per_kilogram: float):
+    def from_hectograms_per_kilogram(hectograms_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in hecto_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in hectograms_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in hecto_grams_per_kilogram.
-        :type hecto_grams_per_kilogram: float
+        :param meters: The MassFraction value in hectograms_per_kilogram.
+        :type hectograms_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(hecto_grams_per_kilogram, MassFractionUnits.HectoGramPerKilogram)
+        return MassFraction(hectograms_per_kilogram, MassFractionUnits.HectogramPerKilogram)
 
     
     @staticmethod
-    def from_kilo_grams_per_kilogram(kilo_grams_per_kilogram: float):
+    def from_kilograms_per_kilogram(kilograms_per_kilogram: float):
         """
-        Create a new instance of MassFraction from a value in kilo_grams_per_kilogram.
+        Create a new instance of MassFraction from a value in kilograms_per_kilogram.
 
         
 
-        :param meters: The MassFraction value in kilo_grams_per_kilogram.
-        :type kilo_grams_per_kilogram: float
+        :param meters: The MassFraction value in kilograms_per_kilogram.
+        :type kilograms_per_kilogram: float
         :return: A new instance of MassFraction.
         :rtype: MassFraction
         """
-        return MassFraction(kilo_grams_per_kilogram, MassFractionUnits.KiloGramPerKilogram)
+        return MassFraction(kilograms_per_kilogram, MassFractionUnits.KilogramPerKilogram)
 
     
     @property
@@ -800,179 +800,179 @@ class MassFraction:
 
     
     @property
-    def nano_grams_per_gram(self) -> float:
+    def nanograms_per_gram(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_gram != None:
-            return self.__nano_grams_per_gram
-        self.__nano_grams_per_gram = self.__convert_from_base(MassFractionUnits.NanoGramPerGram)
-        return self.__nano_grams_per_gram
+        if self.__nanograms_per_gram != None:
+            return self.__nanograms_per_gram
+        self.__nanograms_per_gram = self.__convert_from_base(MassFractionUnits.NanogramPerGram)
+        return self.__nanograms_per_gram
 
     
     @property
-    def micro_grams_per_gram(self) -> float:
+    def micrograms_per_gram(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_gram != None:
-            return self.__micro_grams_per_gram
-        self.__micro_grams_per_gram = self.__convert_from_base(MassFractionUnits.MicroGramPerGram)
-        return self.__micro_grams_per_gram
+        if self.__micrograms_per_gram != None:
+            return self.__micrograms_per_gram
+        self.__micrograms_per_gram = self.__convert_from_base(MassFractionUnits.MicrogramPerGram)
+        return self.__micrograms_per_gram
 
     
     @property
-    def milli_grams_per_gram(self) -> float:
+    def milligrams_per_gram(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_gram != None:
-            return self.__milli_grams_per_gram
-        self.__milli_grams_per_gram = self.__convert_from_base(MassFractionUnits.MilliGramPerGram)
-        return self.__milli_grams_per_gram
+        if self.__milligrams_per_gram != None:
+            return self.__milligrams_per_gram
+        self.__milligrams_per_gram = self.__convert_from_base(MassFractionUnits.MilligramPerGram)
+        return self.__milligrams_per_gram
 
     
     @property
-    def centi_grams_per_gram(self) -> float:
+    def centigrams_per_gram(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_gram != None:
-            return self.__centi_grams_per_gram
-        self.__centi_grams_per_gram = self.__convert_from_base(MassFractionUnits.CentiGramPerGram)
-        return self.__centi_grams_per_gram
+        if self.__centigrams_per_gram != None:
+            return self.__centigrams_per_gram
+        self.__centigrams_per_gram = self.__convert_from_base(MassFractionUnits.CentigramPerGram)
+        return self.__centigrams_per_gram
 
     
     @property
-    def deci_grams_per_gram(self) -> float:
+    def decigrams_per_gram(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_gram != None:
-            return self.__deci_grams_per_gram
-        self.__deci_grams_per_gram = self.__convert_from_base(MassFractionUnits.DeciGramPerGram)
-        return self.__deci_grams_per_gram
+        if self.__decigrams_per_gram != None:
+            return self.__decigrams_per_gram
+        self.__decigrams_per_gram = self.__convert_from_base(MassFractionUnits.DecigramPerGram)
+        return self.__decigrams_per_gram
 
     
     @property
-    def deca_grams_per_gram(self) -> float:
+    def decagrams_per_gram(self) -> float:
         """
         
         """
-        if self.__deca_grams_per_gram != None:
-            return self.__deca_grams_per_gram
-        self.__deca_grams_per_gram = self.__convert_from_base(MassFractionUnits.DecaGramPerGram)
-        return self.__deca_grams_per_gram
+        if self.__decagrams_per_gram != None:
+            return self.__decagrams_per_gram
+        self.__decagrams_per_gram = self.__convert_from_base(MassFractionUnits.DecagramPerGram)
+        return self.__decagrams_per_gram
 
     
     @property
-    def hecto_grams_per_gram(self) -> float:
+    def hectograms_per_gram(self) -> float:
         """
         
         """
-        if self.__hecto_grams_per_gram != None:
-            return self.__hecto_grams_per_gram
-        self.__hecto_grams_per_gram = self.__convert_from_base(MassFractionUnits.HectoGramPerGram)
-        return self.__hecto_grams_per_gram
+        if self.__hectograms_per_gram != None:
+            return self.__hectograms_per_gram
+        self.__hectograms_per_gram = self.__convert_from_base(MassFractionUnits.HectogramPerGram)
+        return self.__hectograms_per_gram
 
     
     @property
-    def kilo_grams_per_gram(self) -> float:
+    def kilograms_per_gram(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_gram != None:
-            return self.__kilo_grams_per_gram
-        self.__kilo_grams_per_gram = self.__convert_from_base(MassFractionUnits.KiloGramPerGram)
-        return self.__kilo_grams_per_gram
+        if self.__kilograms_per_gram != None:
+            return self.__kilograms_per_gram
+        self.__kilograms_per_gram = self.__convert_from_base(MassFractionUnits.KilogramPerGram)
+        return self.__kilograms_per_gram
 
     
     @property
-    def nano_grams_per_kilogram(self) -> float:
+    def nanograms_per_kilogram(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_kilogram != None:
-            return self.__nano_grams_per_kilogram
-        self.__nano_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.NanoGramPerKilogram)
-        return self.__nano_grams_per_kilogram
+        if self.__nanograms_per_kilogram != None:
+            return self.__nanograms_per_kilogram
+        self.__nanograms_per_kilogram = self.__convert_from_base(MassFractionUnits.NanogramPerKilogram)
+        return self.__nanograms_per_kilogram
 
     
     @property
-    def micro_grams_per_kilogram(self) -> float:
+    def micrograms_per_kilogram(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_kilogram != None:
-            return self.__micro_grams_per_kilogram
-        self.__micro_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.MicroGramPerKilogram)
-        return self.__micro_grams_per_kilogram
+        if self.__micrograms_per_kilogram != None:
+            return self.__micrograms_per_kilogram
+        self.__micrograms_per_kilogram = self.__convert_from_base(MassFractionUnits.MicrogramPerKilogram)
+        return self.__micrograms_per_kilogram
 
     
     @property
-    def milli_grams_per_kilogram(self) -> float:
+    def milligrams_per_kilogram(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_kilogram != None:
-            return self.__milli_grams_per_kilogram
-        self.__milli_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.MilliGramPerKilogram)
-        return self.__milli_grams_per_kilogram
+        if self.__milligrams_per_kilogram != None:
+            return self.__milligrams_per_kilogram
+        self.__milligrams_per_kilogram = self.__convert_from_base(MassFractionUnits.MilligramPerKilogram)
+        return self.__milligrams_per_kilogram
 
     
     @property
-    def centi_grams_per_kilogram(self) -> float:
+    def centigrams_per_kilogram(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_kilogram != None:
-            return self.__centi_grams_per_kilogram
-        self.__centi_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.CentiGramPerKilogram)
-        return self.__centi_grams_per_kilogram
+        if self.__centigrams_per_kilogram != None:
+            return self.__centigrams_per_kilogram
+        self.__centigrams_per_kilogram = self.__convert_from_base(MassFractionUnits.CentigramPerKilogram)
+        return self.__centigrams_per_kilogram
 
     
     @property
-    def deci_grams_per_kilogram(self) -> float:
+    def decigrams_per_kilogram(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_kilogram != None:
-            return self.__deci_grams_per_kilogram
-        self.__deci_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.DeciGramPerKilogram)
-        return self.__deci_grams_per_kilogram
+        if self.__decigrams_per_kilogram != None:
+            return self.__decigrams_per_kilogram
+        self.__decigrams_per_kilogram = self.__convert_from_base(MassFractionUnits.DecigramPerKilogram)
+        return self.__decigrams_per_kilogram
 
     
     @property
-    def deca_grams_per_kilogram(self) -> float:
+    def decagrams_per_kilogram(self) -> float:
         """
         
         """
-        if self.__deca_grams_per_kilogram != None:
-            return self.__deca_grams_per_kilogram
-        self.__deca_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.DecaGramPerKilogram)
-        return self.__deca_grams_per_kilogram
+        if self.__decagrams_per_kilogram != None:
+            return self.__decagrams_per_kilogram
+        self.__decagrams_per_kilogram = self.__convert_from_base(MassFractionUnits.DecagramPerKilogram)
+        return self.__decagrams_per_kilogram
 
     
     @property
-    def hecto_grams_per_kilogram(self) -> float:
+    def hectograms_per_kilogram(self) -> float:
         """
         
         """
-        if self.__hecto_grams_per_kilogram != None:
-            return self.__hecto_grams_per_kilogram
-        self.__hecto_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.HectoGramPerKilogram)
-        return self.__hecto_grams_per_kilogram
+        if self.__hectograms_per_kilogram != None:
+            return self.__hectograms_per_kilogram
+        self.__hectograms_per_kilogram = self.__convert_from_base(MassFractionUnits.HectogramPerKilogram)
+        return self.__hectograms_per_kilogram
 
     
     @property
-    def kilo_grams_per_kilogram(self) -> float:
+    def kilograms_per_kilogram(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_kilogram != None:
-            return self.__kilo_grams_per_kilogram
-        self.__kilo_grams_per_kilogram = self.__convert_from_base(MassFractionUnits.KiloGramPerKilogram)
-        return self.__kilo_grams_per_kilogram
+        if self.__kilograms_per_kilogram != None:
+            return self.__kilograms_per_kilogram
+        self.__kilograms_per_kilogram = self.__convert_from_base(MassFractionUnits.KilogramPerKilogram)
+        return self.__kilograms_per_kilogram
 
     
     def to_string(self, unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> string:
@@ -1006,53 +1006,53 @@ class MassFraction:
         if unit == MassFractionUnits.PartPerTrillion:
             return f"""{self.parts_per_trillion} ppt"""
         
-        if unit == MassFractionUnits.NanoGramPerGram:
-            return f"""{self.nano_grams_per_gram} """
+        if unit == MassFractionUnits.NanogramPerGram:
+            return f"""{self.nanograms_per_gram} """
         
-        if unit == MassFractionUnits.MicroGramPerGram:
-            return f"""{self.micro_grams_per_gram} """
+        if unit == MassFractionUnits.MicrogramPerGram:
+            return f"""{self.micrograms_per_gram} """
         
-        if unit == MassFractionUnits.MilliGramPerGram:
-            return f"""{self.milli_grams_per_gram} """
+        if unit == MassFractionUnits.MilligramPerGram:
+            return f"""{self.milligrams_per_gram} """
         
-        if unit == MassFractionUnits.CentiGramPerGram:
-            return f"""{self.centi_grams_per_gram} """
+        if unit == MassFractionUnits.CentigramPerGram:
+            return f"""{self.centigrams_per_gram} """
         
-        if unit == MassFractionUnits.DeciGramPerGram:
-            return f"""{self.deci_grams_per_gram} """
+        if unit == MassFractionUnits.DecigramPerGram:
+            return f"""{self.decigrams_per_gram} """
         
-        if unit == MassFractionUnits.DecaGramPerGram:
-            return f"""{self.deca_grams_per_gram} """
+        if unit == MassFractionUnits.DecagramPerGram:
+            return f"""{self.decagrams_per_gram} """
         
-        if unit == MassFractionUnits.HectoGramPerGram:
-            return f"""{self.hecto_grams_per_gram} """
+        if unit == MassFractionUnits.HectogramPerGram:
+            return f"""{self.hectograms_per_gram} """
         
-        if unit == MassFractionUnits.KiloGramPerGram:
-            return f"""{self.kilo_grams_per_gram} """
+        if unit == MassFractionUnits.KilogramPerGram:
+            return f"""{self.kilograms_per_gram} """
         
-        if unit == MassFractionUnits.NanoGramPerKilogram:
-            return f"""{self.nano_grams_per_kilogram} """
+        if unit == MassFractionUnits.NanogramPerKilogram:
+            return f"""{self.nanograms_per_kilogram} """
         
-        if unit == MassFractionUnits.MicroGramPerKilogram:
-            return f"""{self.micro_grams_per_kilogram} """
+        if unit == MassFractionUnits.MicrogramPerKilogram:
+            return f"""{self.micrograms_per_kilogram} """
         
-        if unit == MassFractionUnits.MilliGramPerKilogram:
-            return f"""{self.milli_grams_per_kilogram} """
+        if unit == MassFractionUnits.MilligramPerKilogram:
+            return f"""{self.milligrams_per_kilogram} """
         
-        if unit == MassFractionUnits.CentiGramPerKilogram:
-            return f"""{self.centi_grams_per_kilogram} """
+        if unit == MassFractionUnits.CentigramPerKilogram:
+            return f"""{self.centigrams_per_kilogram} """
         
-        if unit == MassFractionUnits.DeciGramPerKilogram:
-            return f"""{self.deci_grams_per_kilogram} """
+        if unit == MassFractionUnits.DecigramPerKilogram:
+            return f"""{self.decigrams_per_kilogram} """
         
-        if unit == MassFractionUnits.DecaGramPerKilogram:
-            return f"""{self.deca_grams_per_kilogram} """
+        if unit == MassFractionUnits.DecagramPerKilogram:
+            return f"""{self.decagrams_per_kilogram} """
         
-        if unit == MassFractionUnits.HectoGramPerKilogram:
-            return f"""{self.hecto_grams_per_kilogram} """
+        if unit == MassFractionUnits.HectogramPerKilogram:
+            return f"""{self.hectograms_per_kilogram} """
         
-        if unit == MassFractionUnits.KiloGramPerKilogram:
-            return f"""{self.kilo_grams_per_kilogram} """
+        if unit == MassFractionUnits.KilogramPerKilogram:
+            return f"""{self.kilograms_per_kilogram} """
         
         return f'{self.__value}'
 
@@ -1088,52 +1088,52 @@ class MassFraction:
         if unit_abbreviation == MassFractionUnits.PartPerTrillion:
             return """ppt"""
         
-        if unit_abbreviation == MassFractionUnits.NanoGramPerGram:
+        if unit_abbreviation == MassFractionUnits.NanogramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.MicroGramPerGram:
+        if unit_abbreviation == MassFractionUnits.MicrogramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.MilliGramPerGram:
+        if unit_abbreviation == MassFractionUnits.MilligramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.CentiGramPerGram:
+        if unit_abbreviation == MassFractionUnits.CentigramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.DeciGramPerGram:
+        if unit_abbreviation == MassFractionUnits.DecigramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.DecaGramPerGram:
+        if unit_abbreviation == MassFractionUnits.DecagramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.HectoGramPerGram:
+        if unit_abbreviation == MassFractionUnits.HectogramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.KiloGramPerGram:
+        if unit_abbreviation == MassFractionUnits.KilogramPerGram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.NanoGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.NanogramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.MicroGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.MicrogramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.MilliGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.MilligramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.CentiGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.CentigramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.DeciGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.DecigramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.DecaGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.DecagramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.HectoGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.HectogramPerKilogram:
             return """"""
         
-        if unit_abbreviation == MassFractionUnits.KiloGramPerKilogram:
+        if unit_abbreviation == MassFractionUnits.KilogramPerKilogram:
             return """"""
         
 

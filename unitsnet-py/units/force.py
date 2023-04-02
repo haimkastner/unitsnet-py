@@ -53,32 +53,32 @@ class ForceUnits(Enum):
             The short ton-force is a unit of force equal to 2,000 pounds-force (907.18474 kgf), that is most commonly used in the United States – known there simply as the ton or US ton.
         """
         
-        MicroNewton = 'micro_newton'
+        Micronewton = 'micronewton'
         """
             
         """
         
-        MilliNewton = 'milli_newton'
+        Millinewton = 'millinewton'
         """
             
         """
         
-        DecaNewton = 'deca_newton'
+        Decanewton = 'decanewton'
         """
             
         """
         
-        KiloNewton = 'kilo_newton'
+        Kilonewton = 'kilonewton'
         """
             
         """
         
-        MegaNewton = 'mega_newton'
+        Meganewton = 'meganewton'
         """
             
         """
         
-        KiloPoundForce = 'kilo_pound_force'
+        KilopoundForce = 'kilopound_force'
         """
             
         """
@@ -115,17 +115,17 @@ class Force:
         
         self.__short_tons_force = None
         
-        self.__micro_newtons = None
+        self.__micronewtons = None
         
-        self.__milli_newtons = None
+        self.__millinewtons = None
         
-        self.__deca_newtons = None
+        self.__decanewtons = None
         
-        self.__kilo_newtons = None
+        self.__kilonewtons = None
         
-        self.__mega_newtons = None
+        self.__meganewtons = None
         
-        self.__kilo_pounds_force = None
+        self.__kilopounds_force = None
         
 
     def __convert_from_base(self, from_unit: ForceUnits) -> float:
@@ -158,22 +158,22 @@ class Force:
         if from_unit == ForceUnits.ShortTonForce:
             return (value / 8.896443230521e3)
         
-        if from_unit == ForceUnits.MicroNewton:
+        if from_unit == ForceUnits.Micronewton:
             return ((value) / 1e-06)
         
-        if from_unit == ForceUnits.MilliNewton:
+        if from_unit == ForceUnits.Millinewton:
             return ((value) / 0.001)
         
-        if from_unit == ForceUnits.DecaNewton:
+        if from_unit == ForceUnits.Decanewton:
             return ((value) / 10.0)
         
-        if from_unit == ForceUnits.KiloNewton:
+        if from_unit == ForceUnits.Kilonewton:
             return ((value) / 1000.0)
         
-        if from_unit == ForceUnits.MegaNewton:
+        if from_unit == ForceUnits.Meganewton:
             return ((value) / 1000000.0)
         
-        if from_unit == ForceUnits.KiloPoundForce:
+        if from_unit == ForceUnits.KilopoundForce:
             return ((value / 4.4482216152605095551842641431421) / 1000.0)
         
         return None
@@ -208,22 +208,22 @@ class Force:
         if to_unit == ForceUnits.ShortTonForce:
             return (value * 8.896443230521e3)
         
-        if to_unit == ForceUnits.MicroNewton:
+        if to_unit == ForceUnits.Micronewton:
             return ((value) * 1e-06)
         
-        if to_unit == ForceUnits.MilliNewton:
+        if to_unit == ForceUnits.Millinewton:
             return ((value) * 0.001)
         
-        if to_unit == ForceUnits.DecaNewton:
+        if to_unit == ForceUnits.Decanewton:
             return ((value) * 10.0)
         
-        if to_unit == ForceUnits.KiloNewton:
+        if to_unit == ForceUnits.Kilonewton:
             return ((value) * 1000.0)
         
-        if to_unit == ForceUnits.MegaNewton:
+        if to_unit == ForceUnits.Meganewton:
             return ((value) * 1000000.0)
         
-        if to_unit == ForceUnits.KiloPoundForce:
+        if to_unit == ForceUnits.KilopoundForce:
             return ((value * 4.4482216152605095551842641431421) * 1000.0)
         
         return None
@@ -370,93 +370,93 @@ class Force:
 
     
     @staticmethod
-    def from_micro_newtons(micro_newtons: float):
+    def from_micronewtons(micronewtons: float):
         """
-        Create a new instance of Force from a value in micro_newtons.
+        Create a new instance of Force from a value in micronewtons.
 
         
 
-        :param meters: The Force value in micro_newtons.
-        :type micro_newtons: float
+        :param meters: The Force value in micronewtons.
+        :type micronewtons: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(micro_newtons, ForceUnits.MicroNewton)
+        return Force(micronewtons, ForceUnits.Micronewton)
 
     
     @staticmethod
-    def from_milli_newtons(milli_newtons: float):
+    def from_millinewtons(millinewtons: float):
         """
-        Create a new instance of Force from a value in milli_newtons.
+        Create a new instance of Force from a value in millinewtons.
 
         
 
-        :param meters: The Force value in milli_newtons.
-        :type milli_newtons: float
+        :param meters: The Force value in millinewtons.
+        :type millinewtons: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(milli_newtons, ForceUnits.MilliNewton)
+        return Force(millinewtons, ForceUnits.Millinewton)
 
     
     @staticmethod
-    def from_deca_newtons(deca_newtons: float):
+    def from_decanewtons(decanewtons: float):
         """
-        Create a new instance of Force from a value in deca_newtons.
+        Create a new instance of Force from a value in decanewtons.
 
         
 
-        :param meters: The Force value in deca_newtons.
-        :type deca_newtons: float
+        :param meters: The Force value in decanewtons.
+        :type decanewtons: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(deca_newtons, ForceUnits.DecaNewton)
+        return Force(decanewtons, ForceUnits.Decanewton)
 
     
     @staticmethod
-    def from_kilo_newtons(kilo_newtons: float):
+    def from_kilonewtons(kilonewtons: float):
         """
-        Create a new instance of Force from a value in kilo_newtons.
+        Create a new instance of Force from a value in kilonewtons.
 
         
 
-        :param meters: The Force value in kilo_newtons.
-        :type kilo_newtons: float
+        :param meters: The Force value in kilonewtons.
+        :type kilonewtons: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(kilo_newtons, ForceUnits.KiloNewton)
+        return Force(kilonewtons, ForceUnits.Kilonewton)
 
     
     @staticmethod
-    def from_mega_newtons(mega_newtons: float):
+    def from_meganewtons(meganewtons: float):
         """
-        Create a new instance of Force from a value in mega_newtons.
+        Create a new instance of Force from a value in meganewtons.
 
         
 
-        :param meters: The Force value in mega_newtons.
-        :type mega_newtons: float
+        :param meters: The Force value in meganewtons.
+        :type meganewtons: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(mega_newtons, ForceUnits.MegaNewton)
+        return Force(meganewtons, ForceUnits.Meganewton)
 
     
     @staticmethod
-    def from_kilo_pounds_force(kilo_pounds_force: float):
+    def from_kilopounds_force(kilopounds_force: float):
         """
-        Create a new instance of Force from a value in kilo_pounds_force.
+        Create a new instance of Force from a value in kilopounds_force.
 
         
 
-        :param meters: The Force value in kilo_pounds_force.
-        :type kilo_pounds_force: float
+        :param meters: The Force value in kilopounds_force.
+        :type kilopounds_force: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(kilo_pounds_force, ForceUnits.KiloPoundForce)
+        return Force(kilopounds_force, ForceUnits.KilopoundForce)
 
     
     @property
@@ -559,69 +559,69 @@ class Force:
 
     
     @property
-    def micro_newtons(self) -> float:
+    def micronewtons(self) -> float:
         """
         
         """
-        if self.__micro_newtons != None:
-            return self.__micro_newtons
-        self.__micro_newtons = self.__convert_from_base(ForceUnits.MicroNewton)
-        return self.__micro_newtons
+        if self.__micronewtons != None:
+            return self.__micronewtons
+        self.__micronewtons = self.__convert_from_base(ForceUnits.Micronewton)
+        return self.__micronewtons
 
     
     @property
-    def milli_newtons(self) -> float:
+    def millinewtons(self) -> float:
         """
         
         """
-        if self.__milli_newtons != None:
-            return self.__milli_newtons
-        self.__milli_newtons = self.__convert_from_base(ForceUnits.MilliNewton)
-        return self.__milli_newtons
+        if self.__millinewtons != None:
+            return self.__millinewtons
+        self.__millinewtons = self.__convert_from_base(ForceUnits.Millinewton)
+        return self.__millinewtons
 
     
     @property
-    def deca_newtons(self) -> float:
+    def decanewtons(self) -> float:
         """
         
         """
-        if self.__deca_newtons != None:
-            return self.__deca_newtons
-        self.__deca_newtons = self.__convert_from_base(ForceUnits.DecaNewton)
-        return self.__deca_newtons
+        if self.__decanewtons != None:
+            return self.__decanewtons
+        self.__decanewtons = self.__convert_from_base(ForceUnits.Decanewton)
+        return self.__decanewtons
 
     
     @property
-    def kilo_newtons(self) -> float:
+    def kilonewtons(self) -> float:
         """
         
         """
-        if self.__kilo_newtons != None:
-            return self.__kilo_newtons
-        self.__kilo_newtons = self.__convert_from_base(ForceUnits.KiloNewton)
-        return self.__kilo_newtons
+        if self.__kilonewtons != None:
+            return self.__kilonewtons
+        self.__kilonewtons = self.__convert_from_base(ForceUnits.Kilonewton)
+        return self.__kilonewtons
 
     
     @property
-    def mega_newtons(self) -> float:
+    def meganewtons(self) -> float:
         """
         
         """
-        if self.__mega_newtons != None:
-            return self.__mega_newtons
-        self.__mega_newtons = self.__convert_from_base(ForceUnits.MegaNewton)
-        return self.__mega_newtons
+        if self.__meganewtons != None:
+            return self.__meganewtons
+        self.__meganewtons = self.__convert_from_base(ForceUnits.Meganewton)
+        return self.__meganewtons
 
     
     @property
-    def kilo_pounds_force(self) -> float:
+    def kilopounds_force(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force != None:
-            return self.__kilo_pounds_force
-        self.__kilo_pounds_force = self.__convert_from_base(ForceUnits.KiloPoundForce)
-        return self.__kilo_pounds_force
+        if self.__kilopounds_force != None:
+            return self.__kilopounds_force
+        self.__kilopounds_force = self.__convert_from_base(ForceUnits.KilopoundForce)
+        return self.__kilopounds_force
 
     
     def to_string(self, unit: ForceUnits = ForceUnits.Newton) -> string:
@@ -658,23 +658,23 @@ class Force:
         if unit == ForceUnits.ShortTonForce:
             return f"""{self.short_tons_force} tf (short)"""
         
-        if unit == ForceUnits.MicroNewton:
-            return f"""{self.micro_newtons} """
+        if unit == ForceUnits.Micronewton:
+            return f"""{self.micronewtons} """
         
-        if unit == ForceUnits.MilliNewton:
-            return f"""{self.milli_newtons} """
+        if unit == ForceUnits.Millinewton:
+            return f"""{self.millinewtons} """
         
-        if unit == ForceUnits.DecaNewton:
-            return f"""{self.deca_newtons} """
+        if unit == ForceUnits.Decanewton:
+            return f"""{self.decanewtons} """
         
-        if unit == ForceUnits.KiloNewton:
-            return f"""{self.kilo_newtons} """
+        if unit == ForceUnits.Kilonewton:
+            return f"""{self.kilonewtons} """
         
-        if unit == ForceUnits.MegaNewton:
-            return f"""{self.mega_newtons} """
+        if unit == ForceUnits.Meganewton:
+            return f"""{self.meganewtons} """
         
-        if unit == ForceUnits.KiloPoundForce:
-            return f"""{self.kilo_pounds_force} """
+        if unit == ForceUnits.KilopoundForce:
+            return f"""{self.kilopounds_force} """
         
         return f'{self.__value}'
 
@@ -713,22 +713,22 @@ class Force:
         if unit_abbreviation == ForceUnits.ShortTonForce:
             return """tf (short)"""
         
-        if unit_abbreviation == ForceUnits.MicroNewton:
+        if unit_abbreviation == ForceUnits.Micronewton:
             return """"""
         
-        if unit_abbreviation == ForceUnits.MilliNewton:
+        if unit_abbreviation == ForceUnits.Millinewton:
             return """"""
         
-        if unit_abbreviation == ForceUnits.DecaNewton:
+        if unit_abbreviation == ForceUnits.Decanewton:
             return """"""
         
-        if unit_abbreviation == ForceUnits.KiloNewton:
+        if unit_abbreviation == ForceUnits.Kilonewton:
             return """"""
         
-        if unit_abbreviation == ForceUnits.MegaNewton:
+        if unit_abbreviation == ForceUnits.Meganewton:
             return """"""
         
-        if unit_abbreviation == ForceUnits.KiloPoundForce:
+        if unit_abbreviation == ForceUnits.KilopoundForce:
             return """"""
         
 

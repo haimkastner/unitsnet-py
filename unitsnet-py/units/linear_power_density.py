@@ -33,102 +33,102 @@ class LinearPowerDensityUnits(Enum):
             
         """
         
-        MilliWattPerMeter = 'milli_watt_per_meter'
+        MilliwattPerMeter = 'milliwatt_per_meter'
         """
             
         """
         
-        KiloWattPerMeter = 'kilo_watt_per_meter'
+        KilowattPerMeter = 'kilowatt_per_meter'
         """
             
         """
         
-        MegaWattPerMeter = 'mega_watt_per_meter'
+        MegawattPerMeter = 'megawatt_per_meter'
         """
             
         """
         
-        GigaWattPerMeter = 'giga_watt_per_meter'
+        GigawattPerMeter = 'gigawatt_per_meter'
         """
             
         """
         
-        MilliWattPerCentimeter = 'milli_watt_per_centimeter'
+        MilliwattPerCentimeter = 'milliwatt_per_centimeter'
         """
             
         """
         
-        KiloWattPerCentimeter = 'kilo_watt_per_centimeter'
+        KilowattPerCentimeter = 'kilowatt_per_centimeter'
         """
             
         """
         
-        MegaWattPerCentimeter = 'mega_watt_per_centimeter'
+        MegawattPerCentimeter = 'megawatt_per_centimeter'
         """
             
         """
         
-        GigaWattPerCentimeter = 'giga_watt_per_centimeter'
+        GigawattPerCentimeter = 'gigawatt_per_centimeter'
         """
             
         """
         
-        MilliWattPerMillimeter = 'milli_watt_per_millimeter'
+        MilliwattPerMillimeter = 'milliwatt_per_millimeter'
         """
             
         """
         
-        KiloWattPerMillimeter = 'kilo_watt_per_millimeter'
+        KilowattPerMillimeter = 'kilowatt_per_millimeter'
         """
             
         """
         
-        MegaWattPerMillimeter = 'mega_watt_per_millimeter'
+        MegawattPerMillimeter = 'megawatt_per_millimeter'
         """
             
         """
         
-        GigaWattPerMillimeter = 'giga_watt_per_millimeter'
+        GigawattPerMillimeter = 'gigawatt_per_millimeter'
         """
             
         """
         
-        MilliWattPerInch = 'milli_watt_per_inch'
+        MilliwattPerInch = 'milliwatt_per_inch'
         """
             
         """
         
-        KiloWattPerInch = 'kilo_watt_per_inch'
+        KilowattPerInch = 'kilowatt_per_inch'
         """
             
         """
         
-        MegaWattPerInch = 'mega_watt_per_inch'
+        MegawattPerInch = 'megawatt_per_inch'
         """
             
         """
         
-        GigaWattPerInch = 'giga_watt_per_inch'
+        GigawattPerInch = 'gigawatt_per_inch'
         """
             
         """
         
-        MilliWattPerFoot = 'milli_watt_per_foot'
+        MilliwattPerFoot = 'milliwatt_per_foot'
         """
             
         """
         
-        KiloWattPerFoot = 'kilo_watt_per_foot'
+        KilowattPerFoot = 'kilowatt_per_foot'
         """
             
         """
         
-        MegaWattPerFoot = 'mega_watt_per_foot'
+        MegawattPerFoot = 'megawatt_per_foot'
         """
             
         """
         
-        GigaWattPerFoot = 'giga_watt_per_foot'
+        GigawattPerFoot = 'gigawatt_per_foot'
         """
             
         """
@@ -157,45 +157,45 @@ class LinearPowerDensity:
         
         self.__watts_per_foot = None
         
-        self.__milli_watts_per_meter = None
+        self.__milliwatts_per_meter = None
         
-        self.__kilo_watts_per_meter = None
+        self.__kilowatts_per_meter = None
         
-        self.__mega_watts_per_meter = None
+        self.__megawatts_per_meter = None
         
-        self.__giga_watts_per_meter = None
+        self.__gigawatts_per_meter = None
         
-        self.__milli_watts_per_centimeter = None
+        self.__milliwatts_per_centimeter = None
         
-        self.__kilo_watts_per_centimeter = None
+        self.__kilowatts_per_centimeter = None
         
-        self.__mega_watts_per_centimeter = None
+        self.__megawatts_per_centimeter = None
         
-        self.__giga_watts_per_centimeter = None
+        self.__gigawatts_per_centimeter = None
         
-        self.__milli_watts_per_millimeter = None
+        self.__milliwatts_per_millimeter = None
         
-        self.__kilo_watts_per_millimeter = None
+        self.__kilowatts_per_millimeter = None
         
-        self.__mega_watts_per_millimeter = None
+        self.__megawatts_per_millimeter = None
         
-        self.__giga_watts_per_millimeter = None
+        self.__gigawatts_per_millimeter = None
         
-        self.__milli_watts_per_inch = None
+        self.__milliwatts_per_inch = None
         
-        self.__kilo_watts_per_inch = None
+        self.__kilowatts_per_inch = None
         
-        self.__mega_watts_per_inch = None
+        self.__megawatts_per_inch = None
         
-        self.__giga_watts_per_inch = None
+        self.__gigawatts_per_inch = None
         
-        self.__milli_watts_per_foot = None
+        self.__milliwatts_per_foot = None
         
-        self.__kilo_watts_per_foot = None
+        self.__kilowatts_per_foot = None
         
-        self.__mega_watts_per_foot = None
+        self.__megawatts_per_foot = None
         
-        self.__giga_watts_per_foot = None
+        self.__gigawatts_per_foot = None
         
 
     def __convert_from_base(self, from_unit: LinearPowerDensityUnits) -> float:
@@ -216,64 +216,64 @@ class LinearPowerDensity:
         if from_unit == LinearPowerDensityUnits.WattPerFoot:
             return (value / 3.280839895)
         
-        if from_unit == LinearPowerDensityUnits.MilliWattPerMeter:
+        if from_unit == LinearPowerDensityUnits.MilliwattPerMeter:
             return ((value) / 0.001)
         
-        if from_unit == LinearPowerDensityUnits.KiloWattPerMeter:
+        if from_unit == LinearPowerDensityUnits.KilowattPerMeter:
             return ((value) / 1000.0)
         
-        if from_unit == LinearPowerDensityUnits.MegaWattPerMeter:
+        if from_unit == LinearPowerDensityUnits.MegawattPerMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == LinearPowerDensityUnits.GigaWattPerMeter:
+        if from_unit == LinearPowerDensityUnits.GigawattPerMeter:
             return ((value) / 1000000000.0)
         
-        if from_unit == LinearPowerDensityUnits.MilliWattPerCentimeter:
+        if from_unit == LinearPowerDensityUnits.MilliwattPerCentimeter:
             return ((value / 1e2) / 0.001)
         
-        if from_unit == LinearPowerDensityUnits.KiloWattPerCentimeter:
+        if from_unit == LinearPowerDensityUnits.KilowattPerCentimeter:
             return ((value / 1e2) / 1000.0)
         
-        if from_unit == LinearPowerDensityUnits.MegaWattPerCentimeter:
+        if from_unit == LinearPowerDensityUnits.MegawattPerCentimeter:
             return ((value / 1e2) / 1000000.0)
         
-        if from_unit == LinearPowerDensityUnits.GigaWattPerCentimeter:
+        if from_unit == LinearPowerDensityUnits.GigawattPerCentimeter:
             return ((value / 1e2) / 1000000000.0)
         
-        if from_unit == LinearPowerDensityUnits.MilliWattPerMillimeter:
+        if from_unit == LinearPowerDensityUnits.MilliwattPerMillimeter:
             return ((value / 1e3) / 0.001)
         
-        if from_unit == LinearPowerDensityUnits.KiloWattPerMillimeter:
+        if from_unit == LinearPowerDensityUnits.KilowattPerMillimeter:
             return ((value / 1e3) / 1000.0)
         
-        if from_unit == LinearPowerDensityUnits.MegaWattPerMillimeter:
+        if from_unit == LinearPowerDensityUnits.MegawattPerMillimeter:
             return ((value / 1e3) / 1000000.0)
         
-        if from_unit == LinearPowerDensityUnits.GigaWattPerMillimeter:
+        if from_unit == LinearPowerDensityUnits.GigawattPerMillimeter:
             return ((value / 1e3) / 1000000000.0)
         
-        if from_unit == LinearPowerDensityUnits.MilliWattPerInch:
+        if from_unit == LinearPowerDensityUnits.MilliwattPerInch:
             return ((value / 39.37007874) / 0.001)
         
-        if from_unit == LinearPowerDensityUnits.KiloWattPerInch:
+        if from_unit == LinearPowerDensityUnits.KilowattPerInch:
             return ((value / 39.37007874) / 1000.0)
         
-        if from_unit == LinearPowerDensityUnits.MegaWattPerInch:
+        if from_unit == LinearPowerDensityUnits.MegawattPerInch:
             return ((value / 39.37007874) / 1000000.0)
         
-        if from_unit == LinearPowerDensityUnits.GigaWattPerInch:
+        if from_unit == LinearPowerDensityUnits.GigawattPerInch:
             return ((value / 39.37007874) / 1000000000.0)
         
-        if from_unit == LinearPowerDensityUnits.MilliWattPerFoot:
+        if from_unit == LinearPowerDensityUnits.MilliwattPerFoot:
             return ((value / 3.280839895) / 0.001)
         
-        if from_unit == LinearPowerDensityUnits.KiloWattPerFoot:
+        if from_unit == LinearPowerDensityUnits.KilowattPerFoot:
             return ((value / 3.280839895) / 1000.0)
         
-        if from_unit == LinearPowerDensityUnits.MegaWattPerFoot:
+        if from_unit == LinearPowerDensityUnits.MegawattPerFoot:
             return ((value / 3.280839895) / 1000000.0)
         
-        if from_unit == LinearPowerDensityUnits.GigaWattPerFoot:
+        if from_unit == LinearPowerDensityUnits.GigawattPerFoot:
             return ((value / 3.280839895) / 1000000000.0)
         
         return None
@@ -296,64 +296,64 @@ class LinearPowerDensity:
         if to_unit == LinearPowerDensityUnits.WattPerFoot:
             return (value * 3.280839895)
         
-        if to_unit == LinearPowerDensityUnits.MilliWattPerMeter:
+        if to_unit == LinearPowerDensityUnits.MilliwattPerMeter:
             return ((value) * 0.001)
         
-        if to_unit == LinearPowerDensityUnits.KiloWattPerMeter:
+        if to_unit == LinearPowerDensityUnits.KilowattPerMeter:
             return ((value) * 1000.0)
         
-        if to_unit == LinearPowerDensityUnits.MegaWattPerMeter:
+        if to_unit == LinearPowerDensityUnits.MegawattPerMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == LinearPowerDensityUnits.GigaWattPerMeter:
+        if to_unit == LinearPowerDensityUnits.GigawattPerMeter:
             return ((value) * 1000000000.0)
         
-        if to_unit == LinearPowerDensityUnits.MilliWattPerCentimeter:
+        if to_unit == LinearPowerDensityUnits.MilliwattPerCentimeter:
             return ((value * 1e2) * 0.001)
         
-        if to_unit == LinearPowerDensityUnits.KiloWattPerCentimeter:
+        if to_unit == LinearPowerDensityUnits.KilowattPerCentimeter:
             return ((value * 1e2) * 1000.0)
         
-        if to_unit == LinearPowerDensityUnits.MegaWattPerCentimeter:
+        if to_unit == LinearPowerDensityUnits.MegawattPerCentimeter:
             return ((value * 1e2) * 1000000.0)
         
-        if to_unit == LinearPowerDensityUnits.GigaWattPerCentimeter:
+        if to_unit == LinearPowerDensityUnits.GigawattPerCentimeter:
             return ((value * 1e2) * 1000000000.0)
         
-        if to_unit == LinearPowerDensityUnits.MilliWattPerMillimeter:
+        if to_unit == LinearPowerDensityUnits.MilliwattPerMillimeter:
             return ((value * 1e3) * 0.001)
         
-        if to_unit == LinearPowerDensityUnits.KiloWattPerMillimeter:
+        if to_unit == LinearPowerDensityUnits.KilowattPerMillimeter:
             return ((value * 1e3) * 1000.0)
         
-        if to_unit == LinearPowerDensityUnits.MegaWattPerMillimeter:
+        if to_unit == LinearPowerDensityUnits.MegawattPerMillimeter:
             return ((value * 1e3) * 1000000.0)
         
-        if to_unit == LinearPowerDensityUnits.GigaWattPerMillimeter:
+        if to_unit == LinearPowerDensityUnits.GigawattPerMillimeter:
             return ((value * 1e3) * 1000000000.0)
         
-        if to_unit == LinearPowerDensityUnits.MilliWattPerInch:
+        if to_unit == LinearPowerDensityUnits.MilliwattPerInch:
             return ((value * 39.37007874) * 0.001)
         
-        if to_unit == LinearPowerDensityUnits.KiloWattPerInch:
+        if to_unit == LinearPowerDensityUnits.KilowattPerInch:
             return ((value * 39.37007874) * 1000.0)
         
-        if to_unit == LinearPowerDensityUnits.MegaWattPerInch:
+        if to_unit == LinearPowerDensityUnits.MegawattPerInch:
             return ((value * 39.37007874) * 1000000.0)
         
-        if to_unit == LinearPowerDensityUnits.GigaWattPerInch:
+        if to_unit == LinearPowerDensityUnits.GigawattPerInch:
             return ((value * 39.37007874) * 1000000000.0)
         
-        if to_unit == LinearPowerDensityUnits.MilliWattPerFoot:
+        if to_unit == LinearPowerDensityUnits.MilliwattPerFoot:
             return ((value * 3.280839895) * 0.001)
         
-        if to_unit == LinearPowerDensityUnits.KiloWattPerFoot:
+        if to_unit == LinearPowerDensityUnits.KilowattPerFoot:
             return ((value * 3.280839895) * 1000.0)
         
-        if to_unit == LinearPowerDensityUnits.MegaWattPerFoot:
+        if to_unit == LinearPowerDensityUnits.MegawattPerFoot:
             return ((value * 3.280839895) * 1000000.0)
         
-        if to_unit == LinearPowerDensityUnits.GigaWattPerFoot:
+        if to_unit == LinearPowerDensityUnits.GigawattPerFoot:
             return ((value * 3.280839895) * 1000000000.0)
         
         return None
@@ -440,303 +440,303 @@ class LinearPowerDensity:
 
     
     @staticmethod
-    def from_milli_watts_per_meter(milli_watts_per_meter: float):
+    def from_milliwatts_per_meter(milliwatts_per_meter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in milli_watts_per_meter.
+        Create a new instance of LinearPowerDensity from a value in milliwatts_per_meter.
 
         
 
-        :param meters: The LinearPowerDensity value in milli_watts_per_meter.
-        :type milli_watts_per_meter: float
+        :param meters: The LinearPowerDensity value in milliwatts_per_meter.
+        :type milliwatts_per_meter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(milli_watts_per_meter, LinearPowerDensityUnits.MilliWattPerMeter)
+        return LinearPowerDensity(milliwatts_per_meter, LinearPowerDensityUnits.MilliwattPerMeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_meter(kilo_watts_per_meter: float):
+    def from_kilowatts_per_meter(kilowatts_per_meter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in kilo_watts_per_meter.
+        Create a new instance of LinearPowerDensity from a value in kilowatts_per_meter.
 
         
 
-        :param meters: The LinearPowerDensity value in kilo_watts_per_meter.
-        :type kilo_watts_per_meter: float
+        :param meters: The LinearPowerDensity value in kilowatts_per_meter.
+        :type kilowatts_per_meter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(kilo_watts_per_meter, LinearPowerDensityUnits.KiloWattPerMeter)
+        return LinearPowerDensity(kilowatts_per_meter, LinearPowerDensityUnits.KilowattPerMeter)
 
     
     @staticmethod
-    def from_mega_watts_per_meter(mega_watts_per_meter: float):
+    def from_megawatts_per_meter(megawatts_per_meter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in mega_watts_per_meter.
+        Create a new instance of LinearPowerDensity from a value in megawatts_per_meter.
 
         
 
-        :param meters: The LinearPowerDensity value in mega_watts_per_meter.
-        :type mega_watts_per_meter: float
+        :param meters: The LinearPowerDensity value in megawatts_per_meter.
+        :type megawatts_per_meter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(mega_watts_per_meter, LinearPowerDensityUnits.MegaWattPerMeter)
+        return LinearPowerDensity(megawatts_per_meter, LinearPowerDensityUnits.MegawattPerMeter)
 
     
     @staticmethod
-    def from_giga_watts_per_meter(giga_watts_per_meter: float):
+    def from_gigawatts_per_meter(gigawatts_per_meter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in giga_watts_per_meter.
+        Create a new instance of LinearPowerDensity from a value in gigawatts_per_meter.
 
         
 
-        :param meters: The LinearPowerDensity value in giga_watts_per_meter.
-        :type giga_watts_per_meter: float
+        :param meters: The LinearPowerDensity value in gigawatts_per_meter.
+        :type gigawatts_per_meter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(giga_watts_per_meter, LinearPowerDensityUnits.GigaWattPerMeter)
+        return LinearPowerDensity(gigawatts_per_meter, LinearPowerDensityUnits.GigawattPerMeter)
 
     
     @staticmethod
-    def from_milli_watts_per_centimeter(milli_watts_per_centimeter: float):
+    def from_milliwatts_per_centimeter(milliwatts_per_centimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in milli_watts_per_centimeter.
+        Create a new instance of LinearPowerDensity from a value in milliwatts_per_centimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in milli_watts_per_centimeter.
-        :type milli_watts_per_centimeter: float
+        :param meters: The LinearPowerDensity value in milliwatts_per_centimeter.
+        :type milliwatts_per_centimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(milli_watts_per_centimeter, LinearPowerDensityUnits.MilliWattPerCentimeter)
+        return LinearPowerDensity(milliwatts_per_centimeter, LinearPowerDensityUnits.MilliwattPerCentimeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_centimeter(kilo_watts_per_centimeter: float):
+    def from_kilowatts_per_centimeter(kilowatts_per_centimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in kilo_watts_per_centimeter.
+        Create a new instance of LinearPowerDensity from a value in kilowatts_per_centimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in kilo_watts_per_centimeter.
-        :type kilo_watts_per_centimeter: float
+        :param meters: The LinearPowerDensity value in kilowatts_per_centimeter.
+        :type kilowatts_per_centimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(kilo_watts_per_centimeter, LinearPowerDensityUnits.KiloWattPerCentimeter)
+        return LinearPowerDensity(kilowatts_per_centimeter, LinearPowerDensityUnits.KilowattPerCentimeter)
 
     
     @staticmethod
-    def from_mega_watts_per_centimeter(mega_watts_per_centimeter: float):
+    def from_megawatts_per_centimeter(megawatts_per_centimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in mega_watts_per_centimeter.
+        Create a new instance of LinearPowerDensity from a value in megawatts_per_centimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in mega_watts_per_centimeter.
-        :type mega_watts_per_centimeter: float
+        :param meters: The LinearPowerDensity value in megawatts_per_centimeter.
+        :type megawatts_per_centimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(mega_watts_per_centimeter, LinearPowerDensityUnits.MegaWattPerCentimeter)
+        return LinearPowerDensity(megawatts_per_centimeter, LinearPowerDensityUnits.MegawattPerCentimeter)
 
     
     @staticmethod
-    def from_giga_watts_per_centimeter(giga_watts_per_centimeter: float):
+    def from_gigawatts_per_centimeter(gigawatts_per_centimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in giga_watts_per_centimeter.
+        Create a new instance of LinearPowerDensity from a value in gigawatts_per_centimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in giga_watts_per_centimeter.
-        :type giga_watts_per_centimeter: float
+        :param meters: The LinearPowerDensity value in gigawatts_per_centimeter.
+        :type gigawatts_per_centimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(giga_watts_per_centimeter, LinearPowerDensityUnits.GigaWattPerCentimeter)
+        return LinearPowerDensity(gigawatts_per_centimeter, LinearPowerDensityUnits.GigawattPerCentimeter)
 
     
     @staticmethod
-    def from_milli_watts_per_millimeter(milli_watts_per_millimeter: float):
+    def from_milliwatts_per_millimeter(milliwatts_per_millimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in milli_watts_per_millimeter.
+        Create a new instance of LinearPowerDensity from a value in milliwatts_per_millimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in milli_watts_per_millimeter.
-        :type milli_watts_per_millimeter: float
+        :param meters: The LinearPowerDensity value in milliwatts_per_millimeter.
+        :type milliwatts_per_millimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(milli_watts_per_millimeter, LinearPowerDensityUnits.MilliWattPerMillimeter)
+        return LinearPowerDensity(milliwatts_per_millimeter, LinearPowerDensityUnits.MilliwattPerMillimeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_millimeter(kilo_watts_per_millimeter: float):
+    def from_kilowatts_per_millimeter(kilowatts_per_millimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in kilo_watts_per_millimeter.
+        Create a new instance of LinearPowerDensity from a value in kilowatts_per_millimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in kilo_watts_per_millimeter.
-        :type kilo_watts_per_millimeter: float
+        :param meters: The LinearPowerDensity value in kilowatts_per_millimeter.
+        :type kilowatts_per_millimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(kilo_watts_per_millimeter, LinearPowerDensityUnits.KiloWattPerMillimeter)
+        return LinearPowerDensity(kilowatts_per_millimeter, LinearPowerDensityUnits.KilowattPerMillimeter)
 
     
     @staticmethod
-    def from_mega_watts_per_millimeter(mega_watts_per_millimeter: float):
+    def from_megawatts_per_millimeter(megawatts_per_millimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in mega_watts_per_millimeter.
+        Create a new instance of LinearPowerDensity from a value in megawatts_per_millimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in mega_watts_per_millimeter.
-        :type mega_watts_per_millimeter: float
+        :param meters: The LinearPowerDensity value in megawatts_per_millimeter.
+        :type megawatts_per_millimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(mega_watts_per_millimeter, LinearPowerDensityUnits.MegaWattPerMillimeter)
+        return LinearPowerDensity(megawatts_per_millimeter, LinearPowerDensityUnits.MegawattPerMillimeter)
 
     
     @staticmethod
-    def from_giga_watts_per_millimeter(giga_watts_per_millimeter: float):
+    def from_gigawatts_per_millimeter(gigawatts_per_millimeter: float):
         """
-        Create a new instance of LinearPowerDensity from a value in giga_watts_per_millimeter.
+        Create a new instance of LinearPowerDensity from a value in gigawatts_per_millimeter.
 
         
 
-        :param meters: The LinearPowerDensity value in giga_watts_per_millimeter.
-        :type giga_watts_per_millimeter: float
+        :param meters: The LinearPowerDensity value in gigawatts_per_millimeter.
+        :type gigawatts_per_millimeter: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(giga_watts_per_millimeter, LinearPowerDensityUnits.GigaWattPerMillimeter)
+        return LinearPowerDensity(gigawatts_per_millimeter, LinearPowerDensityUnits.GigawattPerMillimeter)
 
     
     @staticmethod
-    def from_milli_watts_per_inch(milli_watts_per_inch: float):
+    def from_milliwatts_per_inch(milliwatts_per_inch: float):
         """
-        Create a new instance of LinearPowerDensity from a value in milli_watts_per_inch.
+        Create a new instance of LinearPowerDensity from a value in milliwatts_per_inch.
 
         
 
-        :param meters: The LinearPowerDensity value in milli_watts_per_inch.
-        :type milli_watts_per_inch: float
+        :param meters: The LinearPowerDensity value in milliwatts_per_inch.
+        :type milliwatts_per_inch: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(milli_watts_per_inch, LinearPowerDensityUnits.MilliWattPerInch)
+        return LinearPowerDensity(milliwatts_per_inch, LinearPowerDensityUnits.MilliwattPerInch)
 
     
     @staticmethod
-    def from_kilo_watts_per_inch(kilo_watts_per_inch: float):
+    def from_kilowatts_per_inch(kilowatts_per_inch: float):
         """
-        Create a new instance of LinearPowerDensity from a value in kilo_watts_per_inch.
+        Create a new instance of LinearPowerDensity from a value in kilowatts_per_inch.
 
         
 
-        :param meters: The LinearPowerDensity value in kilo_watts_per_inch.
-        :type kilo_watts_per_inch: float
+        :param meters: The LinearPowerDensity value in kilowatts_per_inch.
+        :type kilowatts_per_inch: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(kilo_watts_per_inch, LinearPowerDensityUnits.KiloWattPerInch)
+        return LinearPowerDensity(kilowatts_per_inch, LinearPowerDensityUnits.KilowattPerInch)
 
     
     @staticmethod
-    def from_mega_watts_per_inch(mega_watts_per_inch: float):
+    def from_megawatts_per_inch(megawatts_per_inch: float):
         """
-        Create a new instance of LinearPowerDensity from a value in mega_watts_per_inch.
+        Create a new instance of LinearPowerDensity from a value in megawatts_per_inch.
 
         
 
-        :param meters: The LinearPowerDensity value in mega_watts_per_inch.
-        :type mega_watts_per_inch: float
+        :param meters: The LinearPowerDensity value in megawatts_per_inch.
+        :type megawatts_per_inch: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(mega_watts_per_inch, LinearPowerDensityUnits.MegaWattPerInch)
+        return LinearPowerDensity(megawatts_per_inch, LinearPowerDensityUnits.MegawattPerInch)
 
     
     @staticmethod
-    def from_giga_watts_per_inch(giga_watts_per_inch: float):
+    def from_gigawatts_per_inch(gigawatts_per_inch: float):
         """
-        Create a new instance of LinearPowerDensity from a value in giga_watts_per_inch.
+        Create a new instance of LinearPowerDensity from a value in gigawatts_per_inch.
 
         
 
-        :param meters: The LinearPowerDensity value in giga_watts_per_inch.
-        :type giga_watts_per_inch: float
+        :param meters: The LinearPowerDensity value in gigawatts_per_inch.
+        :type gigawatts_per_inch: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(giga_watts_per_inch, LinearPowerDensityUnits.GigaWattPerInch)
+        return LinearPowerDensity(gigawatts_per_inch, LinearPowerDensityUnits.GigawattPerInch)
 
     
     @staticmethod
-    def from_milli_watts_per_foot(milli_watts_per_foot: float):
+    def from_milliwatts_per_foot(milliwatts_per_foot: float):
         """
-        Create a new instance of LinearPowerDensity from a value in milli_watts_per_foot.
+        Create a new instance of LinearPowerDensity from a value in milliwatts_per_foot.
 
         
 
-        :param meters: The LinearPowerDensity value in milli_watts_per_foot.
-        :type milli_watts_per_foot: float
+        :param meters: The LinearPowerDensity value in milliwatts_per_foot.
+        :type milliwatts_per_foot: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(milli_watts_per_foot, LinearPowerDensityUnits.MilliWattPerFoot)
+        return LinearPowerDensity(milliwatts_per_foot, LinearPowerDensityUnits.MilliwattPerFoot)
 
     
     @staticmethod
-    def from_kilo_watts_per_foot(kilo_watts_per_foot: float):
+    def from_kilowatts_per_foot(kilowatts_per_foot: float):
         """
-        Create a new instance of LinearPowerDensity from a value in kilo_watts_per_foot.
+        Create a new instance of LinearPowerDensity from a value in kilowatts_per_foot.
 
         
 
-        :param meters: The LinearPowerDensity value in kilo_watts_per_foot.
-        :type kilo_watts_per_foot: float
+        :param meters: The LinearPowerDensity value in kilowatts_per_foot.
+        :type kilowatts_per_foot: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(kilo_watts_per_foot, LinearPowerDensityUnits.KiloWattPerFoot)
+        return LinearPowerDensity(kilowatts_per_foot, LinearPowerDensityUnits.KilowattPerFoot)
 
     
     @staticmethod
-    def from_mega_watts_per_foot(mega_watts_per_foot: float):
+    def from_megawatts_per_foot(megawatts_per_foot: float):
         """
-        Create a new instance of LinearPowerDensity from a value in mega_watts_per_foot.
+        Create a new instance of LinearPowerDensity from a value in megawatts_per_foot.
 
         
 
-        :param meters: The LinearPowerDensity value in mega_watts_per_foot.
-        :type mega_watts_per_foot: float
+        :param meters: The LinearPowerDensity value in megawatts_per_foot.
+        :type megawatts_per_foot: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(mega_watts_per_foot, LinearPowerDensityUnits.MegaWattPerFoot)
+        return LinearPowerDensity(megawatts_per_foot, LinearPowerDensityUnits.MegawattPerFoot)
 
     
     @staticmethod
-    def from_giga_watts_per_foot(giga_watts_per_foot: float):
+    def from_gigawatts_per_foot(gigawatts_per_foot: float):
         """
-        Create a new instance of LinearPowerDensity from a value in giga_watts_per_foot.
+        Create a new instance of LinearPowerDensity from a value in gigawatts_per_foot.
 
         
 
-        :param meters: The LinearPowerDensity value in giga_watts_per_foot.
-        :type giga_watts_per_foot: float
+        :param meters: The LinearPowerDensity value in gigawatts_per_foot.
+        :type gigawatts_per_foot: float
         :return: A new instance of LinearPowerDensity.
         :rtype: LinearPowerDensity
         """
-        return LinearPowerDensity(giga_watts_per_foot, LinearPowerDensityUnits.GigaWattPerFoot)
+        return LinearPowerDensity(gigawatts_per_foot, LinearPowerDensityUnits.GigawattPerFoot)
 
     
     @property
@@ -795,223 +795,223 @@ class LinearPowerDensity:
 
     
     @property
-    def milli_watts_per_meter(self) -> float:
+    def milliwatts_per_meter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_meter != None:
-            return self.__milli_watts_per_meter
-        self.__milli_watts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.MilliWattPerMeter)
-        return self.__milli_watts_per_meter
+        if self.__milliwatts_per_meter != None:
+            return self.__milliwatts_per_meter
+        self.__milliwatts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.MilliwattPerMeter)
+        return self.__milliwatts_per_meter
 
     
     @property
-    def kilo_watts_per_meter(self) -> float:
+    def kilowatts_per_meter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_meter != None:
-            return self.__kilo_watts_per_meter
-        self.__kilo_watts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.KiloWattPerMeter)
-        return self.__kilo_watts_per_meter
+        if self.__kilowatts_per_meter != None:
+            return self.__kilowatts_per_meter
+        self.__kilowatts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.KilowattPerMeter)
+        return self.__kilowatts_per_meter
 
     
     @property
-    def mega_watts_per_meter(self) -> float:
+    def megawatts_per_meter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_meter != None:
-            return self.__mega_watts_per_meter
-        self.__mega_watts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.MegaWattPerMeter)
-        return self.__mega_watts_per_meter
+        if self.__megawatts_per_meter != None:
+            return self.__megawatts_per_meter
+        self.__megawatts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.MegawattPerMeter)
+        return self.__megawatts_per_meter
 
     
     @property
-    def giga_watts_per_meter(self) -> float:
+    def gigawatts_per_meter(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_meter != None:
-            return self.__giga_watts_per_meter
-        self.__giga_watts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.GigaWattPerMeter)
-        return self.__giga_watts_per_meter
+        if self.__gigawatts_per_meter != None:
+            return self.__gigawatts_per_meter
+        self.__gigawatts_per_meter = self.__convert_from_base(LinearPowerDensityUnits.GigawattPerMeter)
+        return self.__gigawatts_per_meter
 
     
     @property
-    def milli_watts_per_centimeter(self) -> float:
+    def milliwatts_per_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_centimeter != None:
-            return self.__milli_watts_per_centimeter
-        self.__milli_watts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.MilliWattPerCentimeter)
-        return self.__milli_watts_per_centimeter
+        if self.__milliwatts_per_centimeter != None:
+            return self.__milliwatts_per_centimeter
+        self.__milliwatts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.MilliwattPerCentimeter)
+        return self.__milliwatts_per_centimeter
 
     
     @property
-    def kilo_watts_per_centimeter(self) -> float:
+    def kilowatts_per_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_centimeter != None:
-            return self.__kilo_watts_per_centimeter
-        self.__kilo_watts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.KiloWattPerCentimeter)
-        return self.__kilo_watts_per_centimeter
+        if self.__kilowatts_per_centimeter != None:
+            return self.__kilowatts_per_centimeter
+        self.__kilowatts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.KilowattPerCentimeter)
+        return self.__kilowatts_per_centimeter
 
     
     @property
-    def mega_watts_per_centimeter(self) -> float:
+    def megawatts_per_centimeter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_centimeter != None:
-            return self.__mega_watts_per_centimeter
-        self.__mega_watts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.MegaWattPerCentimeter)
-        return self.__mega_watts_per_centimeter
+        if self.__megawatts_per_centimeter != None:
+            return self.__megawatts_per_centimeter
+        self.__megawatts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.MegawattPerCentimeter)
+        return self.__megawatts_per_centimeter
 
     
     @property
-    def giga_watts_per_centimeter(self) -> float:
+    def gigawatts_per_centimeter(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_centimeter != None:
-            return self.__giga_watts_per_centimeter
-        self.__giga_watts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.GigaWattPerCentimeter)
-        return self.__giga_watts_per_centimeter
+        if self.__gigawatts_per_centimeter != None:
+            return self.__gigawatts_per_centimeter
+        self.__gigawatts_per_centimeter = self.__convert_from_base(LinearPowerDensityUnits.GigawattPerCentimeter)
+        return self.__gigawatts_per_centimeter
 
     
     @property
-    def milli_watts_per_millimeter(self) -> float:
+    def milliwatts_per_millimeter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_millimeter != None:
-            return self.__milli_watts_per_millimeter
-        self.__milli_watts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.MilliWattPerMillimeter)
-        return self.__milli_watts_per_millimeter
+        if self.__milliwatts_per_millimeter != None:
+            return self.__milliwatts_per_millimeter
+        self.__milliwatts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.MilliwattPerMillimeter)
+        return self.__milliwatts_per_millimeter
 
     
     @property
-    def kilo_watts_per_millimeter(self) -> float:
+    def kilowatts_per_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_millimeter != None:
-            return self.__kilo_watts_per_millimeter
-        self.__kilo_watts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.KiloWattPerMillimeter)
-        return self.__kilo_watts_per_millimeter
+        if self.__kilowatts_per_millimeter != None:
+            return self.__kilowatts_per_millimeter
+        self.__kilowatts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.KilowattPerMillimeter)
+        return self.__kilowatts_per_millimeter
 
     
     @property
-    def mega_watts_per_millimeter(self) -> float:
+    def megawatts_per_millimeter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_millimeter != None:
-            return self.__mega_watts_per_millimeter
-        self.__mega_watts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.MegaWattPerMillimeter)
-        return self.__mega_watts_per_millimeter
+        if self.__megawatts_per_millimeter != None:
+            return self.__megawatts_per_millimeter
+        self.__megawatts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.MegawattPerMillimeter)
+        return self.__megawatts_per_millimeter
 
     
     @property
-    def giga_watts_per_millimeter(self) -> float:
+    def gigawatts_per_millimeter(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_millimeter != None:
-            return self.__giga_watts_per_millimeter
-        self.__giga_watts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.GigaWattPerMillimeter)
-        return self.__giga_watts_per_millimeter
+        if self.__gigawatts_per_millimeter != None:
+            return self.__gigawatts_per_millimeter
+        self.__gigawatts_per_millimeter = self.__convert_from_base(LinearPowerDensityUnits.GigawattPerMillimeter)
+        return self.__gigawatts_per_millimeter
 
     
     @property
-    def milli_watts_per_inch(self) -> float:
+    def milliwatts_per_inch(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_inch != None:
-            return self.__milli_watts_per_inch
-        self.__milli_watts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.MilliWattPerInch)
-        return self.__milli_watts_per_inch
+        if self.__milliwatts_per_inch != None:
+            return self.__milliwatts_per_inch
+        self.__milliwatts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.MilliwattPerInch)
+        return self.__milliwatts_per_inch
 
     
     @property
-    def kilo_watts_per_inch(self) -> float:
+    def kilowatts_per_inch(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_inch != None:
-            return self.__kilo_watts_per_inch
-        self.__kilo_watts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.KiloWattPerInch)
-        return self.__kilo_watts_per_inch
+        if self.__kilowatts_per_inch != None:
+            return self.__kilowatts_per_inch
+        self.__kilowatts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.KilowattPerInch)
+        return self.__kilowatts_per_inch
 
     
     @property
-    def mega_watts_per_inch(self) -> float:
+    def megawatts_per_inch(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_inch != None:
-            return self.__mega_watts_per_inch
-        self.__mega_watts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.MegaWattPerInch)
-        return self.__mega_watts_per_inch
+        if self.__megawatts_per_inch != None:
+            return self.__megawatts_per_inch
+        self.__megawatts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.MegawattPerInch)
+        return self.__megawatts_per_inch
 
     
     @property
-    def giga_watts_per_inch(self) -> float:
+    def gigawatts_per_inch(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_inch != None:
-            return self.__giga_watts_per_inch
-        self.__giga_watts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.GigaWattPerInch)
-        return self.__giga_watts_per_inch
+        if self.__gigawatts_per_inch != None:
+            return self.__gigawatts_per_inch
+        self.__gigawatts_per_inch = self.__convert_from_base(LinearPowerDensityUnits.GigawattPerInch)
+        return self.__gigawatts_per_inch
 
     
     @property
-    def milli_watts_per_foot(self) -> float:
+    def milliwatts_per_foot(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_foot != None:
-            return self.__milli_watts_per_foot
-        self.__milli_watts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.MilliWattPerFoot)
-        return self.__milli_watts_per_foot
+        if self.__milliwatts_per_foot != None:
+            return self.__milliwatts_per_foot
+        self.__milliwatts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.MilliwattPerFoot)
+        return self.__milliwatts_per_foot
 
     
     @property
-    def kilo_watts_per_foot(self) -> float:
+    def kilowatts_per_foot(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_foot != None:
-            return self.__kilo_watts_per_foot
-        self.__kilo_watts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.KiloWattPerFoot)
-        return self.__kilo_watts_per_foot
+        if self.__kilowatts_per_foot != None:
+            return self.__kilowatts_per_foot
+        self.__kilowatts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.KilowattPerFoot)
+        return self.__kilowatts_per_foot
 
     
     @property
-    def mega_watts_per_foot(self) -> float:
+    def megawatts_per_foot(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_foot != None:
-            return self.__mega_watts_per_foot
-        self.__mega_watts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.MegaWattPerFoot)
-        return self.__mega_watts_per_foot
+        if self.__megawatts_per_foot != None:
+            return self.__megawatts_per_foot
+        self.__megawatts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.MegawattPerFoot)
+        return self.__megawatts_per_foot
 
     
     @property
-    def giga_watts_per_foot(self) -> float:
+    def gigawatts_per_foot(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_foot != None:
-            return self.__giga_watts_per_foot
-        self.__giga_watts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.GigaWattPerFoot)
-        return self.__giga_watts_per_foot
+        if self.__gigawatts_per_foot != None:
+            return self.__gigawatts_per_foot
+        self.__gigawatts_per_foot = self.__convert_from_base(LinearPowerDensityUnits.GigawattPerFoot)
+        return self.__gigawatts_per_foot
 
     
     def to_string(self, unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> string:
@@ -1036,65 +1036,65 @@ class LinearPowerDensity:
         if unit == LinearPowerDensityUnits.WattPerFoot:
             return f"""{self.watts_per_foot} W/ft"""
         
-        if unit == LinearPowerDensityUnits.MilliWattPerMeter:
-            return f"""{self.milli_watts_per_meter} """
+        if unit == LinearPowerDensityUnits.MilliwattPerMeter:
+            return f"""{self.milliwatts_per_meter} """
         
-        if unit == LinearPowerDensityUnits.KiloWattPerMeter:
-            return f"""{self.kilo_watts_per_meter} """
+        if unit == LinearPowerDensityUnits.KilowattPerMeter:
+            return f"""{self.kilowatts_per_meter} """
         
-        if unit == LinearPowerDensityUnits.MegaWattPerMeter:
-            return f"""{self.mega_watts_per_meter} """
+        if unit == LinearPowerDensityUnits.MegawattPerMeter:
+            return f"""{self.megawatts_per_meter} """
         
-        if unit == LinearPowerDensityUnits.GigaWattPerMeter:
-            return f"""{self.giga_watts_per_meter} """
+        if unit == LinearPowerDensityUnits.GigawattPerMeter:
+            return f"""{self.gigawatts_per_meter} """
         
-        if unit == LinearPowerDensityUnits.MilliWattPerCentimeter:
-            return f"""{self.milli_watts_per_centimeter} """
+        if unit == LinearPowerDensityUnits.MilliwattPerCentimeter:
+            return f"""{self.milliwatts_per_centimeter} """
         
-        if unit == LinearPowerDensityUnits.KiloWattPerCentimeter:
-            return f"""{self.kilo_watts_per_centimeter} """
+        if unit == LinearPowerDensityUnits.KilowattPerCentimeter:
+            return f"""{self.kilowatts_per_centimeter} """
         
-        if unit == LinearPowerDensityUnits.MegaWattPerCentimeter:
-            return f"""{self.mega_watts_per_centimeter} """
+        if unit == LinearPowerDensityUnits.MegawattPerCentimeter:
+            return f"""{self.megawatts_per_centimeter} """
         
-        if unit == LinearPowerDensityUnits.GigaWattPerCentimeter:
-            return f"""{self.giga_watts_per_centimeter} """
+        if unit == LinearPowerDensityUnits.GigawattPerCentimeter:
+            return f"""{self.gigawatts_per_centimeter} """
         
-        if unit == LinearPowerDensityUnits.MilliWattPerMillimeter:
-            return f"""{self.milli_watts_per_millimeter} """
+        if unit == LinearPowerDensityUnits.MilliwattPerMillimeter:
+            return f"""{self.milliwatts_per_millimeter} """
         
-        if unit == LinearPowerDensityUnits.KiloWattPerMillimeter:
-            return f"""{self.kilo_watts_per_millimeter} """
+        if unit == LinearPowerDensityUnits.KilowattPerMillimeter:
+            return f"""{self.kilowatts_per_millimeter} """
         
-        if unit == LinearPowerDensityUnits.MegaWattPerMillimeter:
-            return f"""{self.mega_watts_per_millimeter} """
+        if unit == LinearPowerDensityUnits.MegawattPerMillimeter:
+            return f"""{self.megawatts_per_millimeter} """
         
-        if unit == LinearPowerDensityUnits.GigaWattPerMillimeter:
-            return f"""{self.giga_watts_per_millimeter} """
+        if unit == LinearPowerDensityUnits.GigawattPerMillimeter:
+            return f"""{self.gigawatts_per_millimeter} """
         
-        if unit == LinearPowerDensityUnits.MilliWattPerInch:
-            return f"""{self.milli_watts_per_inch} """
+        if unit == LinearPowerDensityUnits.MilliwattPerInch:
+            return f"""{self.milliwatts_per_inch} """
         
-        if unit == LinearPowerDensityUnits.KiloWattPerInch:
-            return f"""{self.kilo_watts_per_inch} """
+        if unit == LinearPowerDensityUnits.KilowattPerInch:
+            return f"""{self.kilowatts_per_inch} """
         
-        if unit == LinearPowerDensityUnits.MegaWattPerInch:
-            return f"""{self.mega_watts_per_inch} """
+        if unit == LinearPowerDensityUnits.MegawattPerInch:
+            return f"""{self.megawatts_per_inch} """
         
-        if unit == LinearPowerDensityUnits.GigaWattPerInch:
-            return f"""{self.giga_watts_per_inch} """
+        if unit == LinearPowerDensityUnits.GigawattPerInch:
+            return f"""{self.gigawatts_per_inch} """
         
-        if unit == LinearPowerDensityUnits.MilliWattPerFoot:
-            return f"""{self.milli_watts_per_foot} """
+        if unit == LinearPowerDensityUnits.MilliwattPerFoot:
+            return f"""{self.milliwatts_per_foot} """
         
-        if unit == LinearPowerDensityUnits.KiloWattPerFoot:
-            return f"""{self.kilo_watts_per_foot} """
+        if unit == LinearPowerDensityUnits.KilowattPerFoot:
+            return f"""{self.kilowatts_per_foot} """
         
-        if unit == LinearPowerDensityUnits.MegaWattPerFoot:
-            return f"""{self.mega_watts_per_foot} """
+        if unit == LinearPowerDensityUnits.MegawattPerFoot:
+            return f"""{self.megawatts_per_foot} """
         
-        if unit == LinearPowerDensityUnits.GigaWattPerFoot:
-            return f"""{self.giga_watts_per_foot} """
+        if unit == LinearPowerDensityUnits.GigawattPerFoot:
+            return f"""{self.gigawatts_per_foot} """
         
         return f'{self.__value}'
 
@@ -1121,64 +1121,64 @@ class LinearPowerDensity:
         if unit_abbreviation == LinearPowerDensityUnits.WattPerFoot:
             return """W/ft"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MilliWattPerMeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.KiloWattPerMeter:
+        if unit_abbreviation == LinearPowerDensityUnits.KilowattPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MegaWattPerMeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MegawattPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.GigaWattPerMeter:
+        if unit_abbreviation == LinearPowerDensityUnits.GigawattPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MilliWattPerCentimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.KiloWattPerCentimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.KilowattPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MegaWattPerCentimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MegawattPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.GigaWattPerCentimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.GigawattPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MilliWattPerMillimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.KiloWattPerMillimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.KilowattPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MegaWattPerMillimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.MegawattPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.GigaWattPerMillimeter:
+        if unit_abbreviation == LinearPowerDensityUnits.GigawattPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MilliWattPerInch:
+        if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerInch:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.KiloWattPerInch:
+        if unit_abbreviation == LinearPowerDensityUnits.KilowattPerInch:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MegaWattPerInch:
+        if unit_abbreviation == LinearPowerDensityUnits.MegawattPerInch:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.GigaWattPerInch:
+        if unit_abbreviation == LinearPowerDensityUnits.GigawattPerInch:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MilliWattPerFoot:
+        if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerFoot:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.KiloWattPerFoot:
+        if unit_abbreviation == LinearPowerDensityUnits.KilowattPerFoot:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.MegaWattPerFoot:
+        if unit_abbreviation == LinearPowerDensityUnits.MegawattPerFoot:
             return """"""
         
-        if unit_abbreviation == LinearPowerDensityUnits.GigaWattPerFoot:
+        if unit_abbreviation == LinearPowerDensityUnits.GigawattPerFoot:
             return """"""
         
 

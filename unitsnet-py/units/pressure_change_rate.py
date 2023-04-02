@@ -38,42 +38,42 @@ class PressureChangeRateUnits(Enum):
             
         """
         
-        KiloPascalPerSecond = 'kilo_pascal_per_second'
+        KilopascalPerSecond = 'kilopascal_per_second'
         """
             
         """
         
-        MegaPascalPerSecond = 'mega_pascal_per_second'
+        MegapascalPerSecond = 'megapascal_per_second'
         """
             
         """
         
-        KiloPascalPerMinute = 'kilo_pascal_per_minute'
+        KilopascalPerMinute = 'kilopascal_per_minute'
         """
             
         """
         
-        MegaPascalPerMinute = 'mega_pascal_per_minute'
+        MegapascalPerMinute = 'megapascal_per_minute'
         """
             
         """
         
-        KiloPoundForcePerSquareInchPerSecond = 'kilo_pound_force_per_square_inch_per_second'
+        KilopoundForcePerSquareInchPerSecond = 'kilopound_force_per_square_inch_per_second'
         """
             
         """
         
-        MegaPoundForcePerSquareInchPerSecond = 'mega_pound_force_per_square_inch_per_second'
+        MegapoundForcePerSquareInchPerSecond = 'megapound_force_per_square_inch_per_second'
         """
             
         """
         
-        KiloPoundForcePerSquareInchPerMinute = 'kilo_pound_force_per_square_inch_per_minute'
+        KilopoundForcePerSquareInchPerMinute = 'kilopound_force_per_square_inch_per_minute'
         """
             
         """
         
-        MegaPoundForcePerSquareInchPerMinute = 'mega_pound_force_per_square_inch_per_minute'
+        MegapoundForcePerSquareInchPerMinute = 'megapound_force_per_square_inch_per_minute'
         """
             
         """
@@ -104,21 +104,21 @@ class PressureChangeRate:
         
         self.__pounds_force_per_square_inch_per_minute = None
         
-        self.__kilo_pascals_per_second = None
+        self.__kilopascals_per_second = None
         
-        self.__mega_pascals_per_second = None
+        self.__megapascals_per_second = None
         
-        self.__kilo_pascals_per_minute = None
+        self.__kilopascals_per_minute = None
         
-        self.__mega_pascals_per_minute = None
+        self.__megapascals_per_minute = None
         
-        self.__kilo_pounds_force_per_square_inch_per_second = None
+        self.__kilopounds_force_per_square_inch_per_second = None
         
-        self.__mega_pounds_force_per_square_inch_per_second = None
+        self.__megapounds_force_per_square_inch_per_second = None
         
-        self.__kilo_pounds_force_per_square_inch_per_minute = None
+        self.__kilopounds_force_per_square_inch_per_minute = None
         
-        self.__mega_pounds_force_per_square_inch_per_minute = None
+        self.__megapounds_force_per_square_inch_per_minute = None
         
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:
@@ -142,28 +142,28 @@ class PressureChangeRate:
         if from_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return (value / 6.894757293168361e3 * 60)
         
-        if from_unit == PressureChangeRateUnits.KiloPascalPerSecond:
+        if from_unit == PressureChangeRateUnits.KilopascalPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == PressureChangeRateUnits.MegaPascalPerSecond:
+        if from_unit == PressureChangeRateUnits.MegapascalPerSecond:
             return ((value) / 1000000.0)
         
-        if from_unit == PressureChangeRateUnits.KiloPascalPerMinute:
+        if from_unit == PressureChangeRateUnits.KilopascalPerMinute:
             return ((value * 60) / 1000.0)
         
-        if from_unit == PressureChangeRateUnits.MegaPascalPerMinute:
+        if from_unit == PressureChangeRateUnits.MegapascalPerMinute:
             return ((value * 60) / 1000000.0)
         
-        if from_unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond:
+        if from_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
             return ((value / 6.894757293168361e3) / 1000.0)
         
-        if from_unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond:
+        if from_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
             return ((value / 6.894757293168361e3) / 1000000.0)
         
-        if from_unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute:
+        if from_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
             return ((value / 6.894757293168361e3 * 60) / 1000.0)
         
-        if from_unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute:
+        if from_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return ((value / 6.894757293168361e3 * 60) / 1000000.0)
         
         return None
@@ -189,28 +189,28 @@ class PressureChangeRate:
         if to_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return (value * 6.894757293168361e3 / 60)
         
-        if to_unit == PressureChangeRateUnits.KiloPascalPerSecond:
+        if to_unit == PressureChangeRateUnits.KilopascalPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == PressureChangeRateUnits.MegaPascalPerSecond:
+        if to_unit == PressureChangeRateUnits.MegapascalPerSecond:
             return ((value) * 1000000.0)
         
-        if to_unit == PressureChangeRateUnits.KiloPascalPerMinute:
+        if to_unit == PressureChangeRateUnits.KilopascalPerMinute:
             return ((value / 60) * 1000.0)
         
-        if to_unit == PressureChangeRateUnits.MegaPascalPerMinute:
+        if to_unit == PressureChangeRateUnits.MegapascalPerMinute:
             return ((value / 60) * 1000000.0)
         
-        if to_unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond:
+        if to_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
             return ((value * 6.894757293168361e3) * 1000.0)
         
-        if to_unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond:
+        if to_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
             return ((value * 6.894757293168361e3) * 1000000.0)
         
-        if to_unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute:
+        if to_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
             return ((value * 6.894757293168361e3 / 60) * 1000.0)
         
-        if to_unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute:
+        if to_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return ((value * 6.894757293168361e3 / 60) * 1000000.0)
         
         return None
@@ -312,123 +312,123 @@ class PressureChangeRate:
 
     
     @staticmethod
-    def from_kilo_pascals_per_second(kilo_pascals_per_second: float):
+    def from_kilopascals_per_second(kilopascals_per_second: float):
         """
-        Create a new instance of PressureChangeRate from a value in kilo_pascals_per_second.
+        Create a new instance of PressureChangeRate from a value in kilopascals_per_second.
 
         
 
-        :param meters: The PressureChangeRate value in kilo_pascals_per_second.
-        :type kilo_pascals_per_second: float
+        :param meters: The PressureChangeRate value in kilopascals_per_second.
+        :type kilopascals_per_second: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(kilo_pascals_per_second, PressureChangeRateUnits.KiloPascalPerSecond)
+        return PressureChangeRate(kilopascals_per_second, PressureChangeRateUnits.KilopascalPerSecond)
 
     
     @staticmethod
-    def from_mega_pascals_per_second(mega_pascals_per_second: float):
+    def from_megapascals_per_second(megapascals_per_second: float):
         """
-        Create a new instance of PressureChangeRate from a value in mega_pascals_per_second.
+        Create a new instance of PressureChangeRate from a value in megapascals_per_second.
 
         
 
-        :param meters: The PressureChangeRate value in mega_pascals_per_second.
-        :type mega_pascals_per_second: float
+        :param meters: The PressureChangeRate value in megapascals_per_second.
+        :type megapascals_per_second: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(mega_pascals_per_second, PressureChangeRateUnits.MegaPascalPerSecond)
+        return PressureChangeRate(megapascals_per_second, PressureChangeRateUnits.MegapascalPerSecond)
 
     
     @staticmethod
-    def from_kilo_pascals_per_minute(kilo_pascals_per_minute: float):
+    def from_kilopascals_per_minute(kilopascals_per_minute: float):
         """
-        Create a new instance of PressureChangeRate from a value in kilo_pascals_per_minute.
+        Create a new instance of PressureChangeRate from a value in kilopascals_per_minute.
 
         
 
-        :param meters: The PressureChangeRate value in kilo_pascals_per_minute.
-        :type kilo_pascals_per_minute: float
+        :param meters: The PressureChangeRate value in kilopascals_per_minute.
+        :type kilopascals_per_minute: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(kilo_pascals_per_minute, PressureChangeRateUnits.KiloPascalPerMinute)
+        return PressureChangeRate(kilopascals_per_minute, PressureChangeRateUnits.KilopascalPerMinute)
 
     
     @staticmethod
-    def from_mega_pascals_per_minute(mega_pascals_per_minute: float):
+    def from_megapascals_per_minute(megapascals_per_minute: float):
         """
-        Create a new instance of PressureChangeRate from a value in mega_pascals_per_minute.
+        Create a new instance of PressureChangeRate from a value in megapascals_per_minute.
 
         
 
-        :param meters: The PressureChangeRate value in mega_pascals_per_minute.
-        :type mega_pascals_per_minute: float
+        :param meters: The PressureChangeRate value in megapascals_per_minute.
+        :type megapascals_per_minute: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(mega_pascals_per_minute, PressureChangeRateUnits.MegaPascalPerMinute)
+        return PressureChangeRate(megapascals_per_minute, PressureChangeRateUnits.MegapascalPerMinute)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_square_inch_per_second(kilo_pounds_force_per_square_inch_per_second: float):
+    def from_kilopounds_force_per_square_inch_per_second(kilopounds_force_per_square_inch_per_second: float):
         """
-        Create a new instance of PressureChangeRate from a value in kilo_pounds_force_per_square_inch_per_second.
+        Create a new instance of PressureChangeRate from a value in kilopounds_force_per_square_inch_per_second.
 
         
 
-        :param meters: The PressureChangeRate value in kilo_pounds_force_per_square_inch_per_second.
-        :type kilo_pounds_force_per_square_inch_per_second: float
+        :param meters: The PressureChangeRate value in kilopounds_force_per_square_inch_per_second.
+        :type kilopounds_force_per_square_inch_per_second: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(kilo_pounds_force_per_square_inch_per_second, PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond)
+        return PressureChangeRate(kilopounds_force_per_square_inch_per_second, PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond)
 
     
     @staticmethod
-    def from_mega_pounds_force_per_square_inch_per_second(mega_pounds_force_per_square_inch_per_second: float):
+    def from_megapounds_force_per_square_inch_per_second(megapounds_force_per_square_inch_per_second: float):
         """
-        Create a new instance of PressureChangeRate from a value in mega_pounds_force_per_square_inch_per_second.
+        Create a new instance of PressureChangeRate from a value in megapounds_force_per_square_inch_per_second.
 
         
 
-        :param meters: The PressureChangeRate value in mega_pounds_force_per_square_inch_per_second.
-        :type mega_pounds_force_per_square_inch_per_second: float
+        :param meters: The PressureChangeRate value in megapounds_force_per_square_inch_per_second.
+        :type megapounds_force_per_square_inch_per_second: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(mega_pounds_force_per_square_inch_per_second, PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond)
+        return PressureChangeRate(megapounds_force_per_square_inch_per_second, PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_square_inch_per_minute(kilo_pounds_force_per_square_inch_per_minute: float):
+    def from_kilopounds_force_per_square_inch_per_minute(kilopounds_force_per_square_inch_per_minute: float):
         """
-        Create a new instance of PressureChangeRate from a value in kilo_pounds_force_per_square_inch_per_minute.
+        Create a new instance of PressureChangeRate from a value in kilopounds_force_per_square_inch_per_minute.
 
         
 
-        :param meters: The PressureChangeRate value in kilo_pounds_force_per_square_inch_per_minute.
-        :type kilo_pounds_force_per_square_inch_per_minute: float
+        :param meters: The PressureChangeRate value in kilopounds_force_per_square_inch_per_minute.
+        :type kilopounds_force_per_square_inch_per_minute: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(kilo_pounds_force_per_square_inch_per_minute, PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute)
+        return PressureChangeRate(kilopounds_force_per_square_inch_per_minute, PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute)
 
     
     @staticmethod
-    def from_mega_pounds_force_per_square_inch_per_minute(mega_pounds_force_per_square_inch_per_minute: float):
+    def from_megapounds_force_per_square_inch_per_minute(megapounds_force_per_square_inch_per_minute: float):
         """
-        Create a new instance of PressureChangeRate from a value in mega_pounds_force_per_square_inch_per_minute.
+        Create a new instance of PressureChangeRate from a value in megapounds_force_per_square_inch_per_minute.
 
         
 
-        :param meters: The PressureChangeRate value in mega_pounds_force_per_square_inch_per_minute.
-        :type mega_pounds_force_per_square_inch_per_minute: float
+        :param meters: The PressureChangeRate value in megapounds_force_per_square_inch_per_minute.
+        :type megapounds_force_per_square_inch_per_minute: float
         :return: A new instance of PressureChangeRate.
         :rtype: PressureChangeRate
         """
-        return PressureChangeRate(mega_pounds_force_per_square_inch_per_minute, PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute)
+        return PressureChangeRate(megapounds_force_per_square_inch_per_minute, PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute)
 
     
     @property
@@ -498,91 +498,91 @@ class PressureChangeRate:
 
     
     @property
-    def kilo_pascals_per_second(self) -> float:
+    def kilopascals_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_pascals_per_second != None:
-            return self.__kilo_pascals_per_second
-        self.__kilo_pascals_per_second = self.__convert_from_base(PressureChangeRateUnits.KiloPascalPerSecond)
-        return self.__kilo_pascals_per_second
+        if self.__kilopascals_per_second != None:
+            return self.__kilopascals_per_second
+        self.__kilopascals_per_second = self.__convert_from_base(PressureChangeRateUnits.KilopascalPerSecond)
+        return self.__kilopascals_per_second
 
     
     @property
-    def mega_pascals_per_second(self) -> float:
+    def megapascals_per_second(self) -> float:
         """
         
         """
-        if self.__mega_pascals_per_second != None:
-            return self.__mega_pascals_per_second
-        self.__mega_pascals_per_second = self.__convert_from_base(PressureChangeRateUnits.MegaPascalPerSecond)
-        return self.__mega_pascals_per_second
+        if self.__megapascals_per_second != None:
+            return self.__megapascals_per_second
+        self.__megapascals_per_second = self.__convert_from_base(PressureChangeRateUnits.MegapascalPerSecond)
+        return self.__megapascals_per_second
 
     
     @property
-    def kilo_pascals_per_minute(self) -> float:
+    def kilopascals_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_pascals_per_minute != None:
-            return self.__kilo_pascals_per_minute
-        self.__kilo_pascals_per_minute = self.__convert_from_base(PressureChangeRateUnits.KiloPascalPerMinute)
-        return self.__kilo_pascals_per_minute
+        if self.__kilopascals_per_minute != None:
+            return self.__kilopascals_per_minute
+        self.__kilopascals_per_minute = self.__convert_from_base(PressureChangeRateUnits.KilopascalPerMinute)
+        return self.__kilopascals_per_minute
 
     
     @property
-    def mega_pascals_per_minute(self) -> float:
+    def megapascals_per_minute(self) -> float:
         """
         
         """
-        if self.__mega_pascals_per_minute != None:
-            return self.__mega_pascals_per_minute
-        self.__mega_pascals_per_minute = self.__convert_from_base(PressureChangeRateUnits.MegaPascalPerMinute)
-        return self.__mega_pascals_per_minute
+        if self.__megapascals_per_minute != None:
+            return self.__megapascals_per_minute
+        self.__megapascals_per_minute = self.__convert_from_base(PressureChangeRateUnits.MegapascalPerMinute)
+        return self.__megapascals_per_minute
 
     
     @property
-    def kilo_pounds_force_per_square_inch_per_second(self) -> float:
+    def kilopounds_force_per_square_inch_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_square_inch_per_second != None:
-            return self.__kilo_pounds_force_per_square_inch_per_second
-        self.__kilo_pounds_force_per_square_inch_per_second = self.__convert_from_base(PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond)
-        return self.__kilo_pounds_force_per_square_inch_per_second
+        if self.__kilopounds_force_per_square_inch_per_second != None:
+            return self.__kilopounds_force_per_square_inch_per_second
+        self.__kilopounds_force_per_square_inch_per_second = self.__convert_from_base(PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond)
+        return self.__kilopounds_force_per_square_inch_per_second
 
     
     @property
-    def mega_pounds_force_per_square_inch_per_second(self) -> float:
+    def megapounds_force_per_square_inch_per_second(self) -> float:
         """
         
         """
-        if self.__mega_pounds_force_per_square_inch_per_second != None:
-            return self.__mega_pounds_force_per_square_inch_per_second
-        self.__mega_pounds_force_per_square_inch_per_second = self.__convert_from_base(PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond)
-        return self.__mega_pounds_force_per_square_inch_per_second
+        if self.__megapounds_force_per_square_inch_per_second != None:
+            return self.__megapounds_force_per_square_inch_per_second
+        self.__megapounds_force_per_square_inch_per_second = self.__convert_from_base(PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond)
+        return self.__megapounds_force_per_square_inch_per_second
 
     
     @property
-    def kilo_pounds_force_per_square_inch_per_minute(self) -> float:
+    def kilopounds_force_per_square_inch_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_square_inch_per_minute != None:
-            return self.__kilo_pounds_force_per_square_inch_per_minute
-        self.__kilo_pounds_force_per_square_inch_per_minute = self.__convert_from_base(PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute)
-        return self.__kilo_pounds_force_per_square_inch_per_minute
+        if self.__kilopounds_force_per_square_inch_per_minute != None:
+            return self.__kilopounds_force_per_square_inch_per_minute
+        self.__kilopounds_force_per_square_inch_per_minute = self.__convert_from_base(PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute)
+        return self.__kilopounds_force_per_square_inch_per_minute
 
     
     @property
-    def mega_pounds_force_per_square_inch_per_minute(self) -> float:
+    def megapounds_force_per_square_inch_per_minute(self) -> float:
         """
         
         """
-        if self.__mega_pounds_force_per_square_inch_per_minute != None:
-            return self.__mega_pounds_force_per_square_inch_per_minute
-        self.__mega_pounds_force_per_square_inch_per_minute = self.__convert_from_base(PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute)
-        return self.__mega_pounds_force_per_square_inch_per_minute
+        if self.__megapounds_force_per_square_inch_per_minute != None:
+            return self.__megapounds_force_per_square_inch_per_minute
+        self.__megapounds_force_per_square_inch_per_minute = self.__convert_from_base(PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute)
+        return self.__megapounds_force_per_square_inch_per_minute
 
     
     def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> string:
@@ -610,29 +610,29 @@ class PressureChangeRate:
         if unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return f"""{self.pounds_force_per_square_inch_per_minute} psi/min"""
         
-        if unit == PressureChangeRateUnits.KiloPascalPerSecond:
-            return f"""{self.kilo_pascals_per_second} """
+        if unit == PressureChangeRateUnits.KilopascalPerSecond:
+            return f"""{self.kilopascals_per_second} """
         
-        if unit == PressureChangeRateUnits.MegaPascalPerSecond:
-            return f"""{self.mega_pascals_per_second} """
+        if unit == PressureChangeRateUnits.MegapascalPerSecond:
+            return f"""{self.megapascals_per_second} """
         
-        if unit == PressureChangeRateUnits.KiloPascalPerMinute:
-            return f"""{self.kilo_pascals_per_minute} """
+        if unit == PressureChangeRateUnits.KilopascalPerMinute:
+            return f"""{self.kilopascals_per_minute} """
         
-        if unit == PressureChangeRateUnits.MegaPascalPerMinute:
-            return f"""{self.mega_pascals_per_minute} """
+        if unit == PressureChangeRateUnits.MegapascalPerMinute:
+            return f"""{self.megapascals_per_minute} """
         
-        if unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond:
-            return f"""{self.kilo_pounds_force_per_square_inch_per_second} """
+        if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
+            return f"""{self.kilopounds_force_per_square_inch_per_second} """
         
-        if unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond:
-            return f"""{self.mega_pounds_force_per_square_inch_per_second} """
+        if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
+            return f"""{self.megapounds_force_per_square_inch_per_second} """
         
-        if unit == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute:
-            return f"""{self.kilo_pounds_force_per_square_inch_per_minute} """
+        if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
+            return f"""{self.kilopounds_force_per_square_inch_per_minute} """
         
-        if unit == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute:
-            return f"""{self.mega_pounds_force_per_square_inch_per_minute} """
+        if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
+            return f"""{self.megapounds_force_per_square_inch_per_minute} """
         
         return f'{self.__value}'
 
@@ -662,28 +662,28 @@ class PressureChangeRate:
         if unit_abbreviation == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return """psi/min"""
         
-        if unit_abbreviation == PressureChangeRateUnits.KiloPascalPerSecond:
+        if unit_abbreviation == PressureChangeRateUnits.KilopascalPerSecond:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.MegaPascalPerSecond:
+        if unit_abbreviation == PressureChangeRateUnits.MegapascalPerSecond:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.KiloPascalPerMinute:
+        if unit_abbreviation == PressureChangeRateUnits.KilopascalPerMinute:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.MegaPascalPerMinute:
+        if unit_abbreviation == PressureChangeRateUnits.MegapascalPerMinute:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerSecond:
+        if unit_abbreviation == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerSecond:
+        if unit_abbreviation == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.KiloPoundForcePerSquareInchPerMinute:
+        if unit_abbreviation == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
             return """"""
         
-        if unit_abbreviation == PressureChangeRateUnits.MegaPoundForcePerSquareInchPerMinute:
+        if unit_abbreviation == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return """"""
         
 

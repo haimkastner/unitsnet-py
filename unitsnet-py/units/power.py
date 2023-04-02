@@ -48,92 +48,92 @@ class PowerUnits(Enum):
             
         """
         
-        FemtoWatt = 'femto_watt'
+        Femtowatt = 'femtowatt'
         """
             
         """
         
-        PicoWatt = 'pico_watt'
+        Picowatt = 'picowatt'
         """
             
         """
         
-        NanoWatt = 'nano_watt'
+        Nanowatt = 'nanowatt'
         """
             
         """
         
-        MicroWatt = 'micro_watt'
+        Microwatt = 'microwatt'
         """
             
         """
         
-        MilliWatt = 'milli_watt'
+        Milliwatt = 'milliwatt'
         """
             
         """
         
-        DeciWatt = 'deci_watt'
+        Deciwatt = 'deciwatt'
         """
             
         """
         
-        DecaWatt = 'deca_watt'
+        Decawatt = 'decawatt'
         """
             
         """
         
-        KiloWatt = 'kilo_watt'
+        Kilowatt = 'kilowatt'
         """
             
         """
         
-        MegaWatt = 'mega_watt'
+        Megawatt = 'megawatt'
         """
             
         """
         
-        GigaWatt = 'giga_watt'
+        Gigawatt = 'gigawatt'
         """
             
         """
         
-        TeraWatt = 'tera_watt'
+        Terawatt = 'terawatt'
         """
             
         """
         
-        PetaWatt = 'peta_watt'
+        Petawatt = 'petawatt'
         """
             
         """
         
-        KiloBritishThermalUnitPerHour = 'kilo_british_thermal_unit_per_hour'
+        KilobritishThermalUnitPerHour = 'kilobritish_thermal_unit_per_hour'
         """
             
         """
         
-        MegaBritishThermalUnitPerHour = 'mega_british_thermal_unit_per_hour'
+        MegabritishThermalUnitPerHour = 'megabritish_thermal_unit_per_hour'
         """
             
         """
         
-        MilliJoulePerHour = 'milli_joule_per_hour'
+        MillijoulePerHour = 'millijoule_per_hour'
         """
             
         """
         
-        KiloJoulePerHour = 'kilo_joule_per_hour'
+        KilojoulePerHour = 'kilojoule_per_hour'
         """
             
         """
         
-        MegaJoulePerHour = 'mega_joule_per_hour'
+        MegajoulePerHour = 'megajoule_per_hour'
         """
             
         """
         
-        GigaJoulePerHour = 'giga_joule_per_hour'
+        GigajoulePerHour = 'gigajoule_per_hour'
         """
             
         """
@@ -168,41 +168,41 @@ class Power:
         
         self.__joules_per_hour = None
         
-        self.__femto_watts = None
+        self.__femtowatts = None
         
-        self.__pico_watts = None
+        self.__picowatts = None
         
-        self.__nano_watts = None
+        self.__nanowatts = None
         
-        self.__micro_watts = None
+        self.__microwatts = None
         
-        self.__milli_watts = None
+        self.__milliwatts = None
         
-        self.__deci_watts = None
+        self.__deciwatts = None
         
-        self.__deca_watts = None
+        self.__decawatts = None
         
-        self.__kilo_watts = None
+        self.__kilowatts = None
         
-        self.__mega_watts = None
+        self.__megawatts = None
         
-        self.__giga_watts = None
+        self.__gigawatts = None
         
-        self.__tera_watts = None
+        self.__terawatts = None
         
-        self.__peta_watts = None
+        self.__petawatts = None
         
-        self.__kilo_british_thermal_units_per_hour = None
+        self.__kilobritish_thermal_units_per_hour = None
         
-        self.__mega_british_thermal_units_per_hour = None
+        self.__megabritish_thermal_units_per_hour = None
         
-        self.__milli_joules_per_hour = None
+        self.__millijoules_per_hour = None
         
-        self.__kilo_joules_per_hour = None
+        self.__kilojoules_per_hour = None
         
-        self.__mega_joules_per_hour = None
+        self.__megajoules_per_hour = None
         
-        self.__giga_joules_per_hour = None
+        self.__gigajoules_per_hour = None
         
 
     def __convert_from_base(self, from_unit: PowerUnits) -> float:
@@ -232,58 +232,58 @@ class Power:
         if from_unit == PowerUnits.JoulePerHour:
             return (value * 3600)
         
-        if from_unit == PowerUnits.FemtoWatt:
+        if from_unit == PowerUnits.Femtowatt:
             return ((value) / 1e-15)
         
-        if from_unit == PowerUnits.PicoWatt:
+        if from_unit == PowerUnits.Picowatt:
             return ((value) / 1e-12)
         
-        if from_unit == PowerUnits.NanoWatt:
+        if from_unit == PowerUnits.Nanowatt:
             return ((value) / 1e-09)
         
-        if from_unit == PowerUnits.MicroWatt:
+        if from_unit == PowerUnits.Microwatt:
             return ((value) / 1e-06)
         
-        if from_unit == PowerUnits.MilliWatt:
+        if from_unit == PowerUnits.Milliwatt:
             return ((value) / 0.001)
         
-        if from_unit == PowerUnits.DeciWatt:
+        if from_unit == PowerUnits.Deciwatt:
             return ((value) / 0.1)
         
-        if from_unit == PowerUnits.DecaWatt:
+        if from_unit == PowerUnits.Decawatt:
             return ((value) / 10.0)
         
-        if from_unit == PowerUnits.KiloWatt:
+        if from_unit == PowerUnits.Kilowatt:
             return ((value) / 1000.0)
         
-        if from_unit == PowerUnits.MegaWatt:
+        if from_unit == PowerUnits.Megawatt:
             return ((value) / 1000000.0)
         
-        if from_unit == PowerUnits.GigaWatt:
+        if from_unit == PowerUnits.Gigawatt:
             return ((value) / 1000000000.0)
         
-        if from_unit == PowerUnits.TeraWatt:
+        if from_unit == PowerUnits.Terawatt:
             return ((value) / 1000000000000.0)
         
-        if from_unit == PowerUnits.PetaWatt:
+        if from_unit == PowerUnits.Petawatt:
             return ((value) / 1000000000000000.0)
         
-        if from_unit == PowerUnits.KiloBritishThermalUnitPerHour:
+        if from_unit == PowerUnits.KilobritishThermalUnitPerHour:
             return ((value / 0.29307107017) / 1000.0)
         
-        if from_unit == PowerUnits.MegaBritishThermalUnitPerHour:
+        if from_unit == PowerUnits.MegabritishThermalUnitPerHour:
             return ((value / 0.29307107017) / 1000000.0)
         
-        if from_unit == PowerUnits.MilliJoulePerHour:
+        if from_unit == PowerUnits.MillijoulePerHour:
             return ((value * 3600) / 0.001)
         
-        if from_unit == PowerUnits.KiloJoulePerHour:
+        if from_unit == PowerUnits.KilojoulePerHour:
             return ((value * 3600) / 1000.0)
         
-        if from_unit == PowerUnits.MegaJoulePerHour:
+        if from_unit == PowerUnits.MegajoulePerHour:
             return ((value * 3600) / 1000000.0)
         
-        if from_unit == PowerUnits.GigaJoulePerHour:
+        if from_unit == PowerUnits.GigajoulePerHour:
             return ((value * 3600) / 1000000000.0)
         
         return None
@@ -315,58 +315,58 @@ class Power:
         if to_unit == PowerUnits.JoulePerHour:
             return (value / 3600)
         
-        if to_unit == PowerUnits.FemtoWatt:
+        if to_unit == PowerUnits.Femtowatt:
             return ((value) * 1e-15)
         
-        if to_unit == PowerUnits.PicoWatt:
+        if to_unit == PowerUnits.Picowatt:
             return ((value) * 1e-12)
         
-        if to_unit == PowerUnits.NanoWatt:
+        if to_unit == PowerUnits.Nanowatt:
             return ((value) * 1e-09)
         
-        if to_unit == PowerUnits.MicroWatt:
+        if to_unit == PowerUnits.Microwatt:
             return ((value) * 1e-06)
         
-        if to_unit == PowerUnits.MilliWatt:
+        if to_unit == PowerUnits.Milliwatt:
             return ((value) * 0.001)
         
-        if to_unit == PowerUnits.DeciWatt:
+        if to_unit == PowerUnits.Deciwatt:
             return ((value) * 0.1)
         
-        if to_unit == PowerUnits.DecaWatt:
+        if to_unit == PowerUnits.Decawatt:
             return ((value) * 10.0)
         
-        if to_unit == PowerUnits.KiloWatt:
+        if to_unit == PowerUnits.Kilowatt:
             return ((value) * 1000.0)
         
-        if to_unit == PowerUnits.MegaWatt:
+        if to_unit == PowerUnits.Megawatt:
             return ((value) * 1000000.0)
         
-        if to_unit == PowerUnits.GigaWatt:
+        if to_unit == PowerUnits.Gigawatt:
             return ((value) * 1000000000.0)
         
-        if to_unit == PowerUnits.TeraWatt:
+        if to_unit == PowerUnits.Terawatt:
             return ((value) * 1000000000000.0)
         
-        if to_unit == PowerUnits.PetaWatt:
+        if to_unit == PowerUnits.Petawatt:
             return ((value) * 1000000000000000.0)
         
-        if to_unit == PowerUnits.KiloBritishThermalUnitPerHour:
+        if to_unit == PowerUnits.KilobritishThermalUnitPerHour:
             return ((value * 0.29307107017) * 1000.0)
         
-        if to_unit == PowerUnits.MegaBritishThermalUnitPerHour:
+        if to_unit == PowerUnits.MegabritishThermalUnitPerHour:
             return ((value * 0.29307107017) * 1000000.0)
         
-        if to_unit == PowerUnits.MilliJoulePerHour:
+        if to_unit == PowerUnits.MillijoulePerHour:
             return ((value / 3600) * 0.001)
         
-        if to_unit == PowerUnits.KiloJoulePerHour:
+        if to_unit == PowerUnits.KilojoulePerHour:
             return ((value / 3600) * 1000.0)
         
-        if to_unit == PowerUnits.MegaJoulePerHour:
+        if to_unit == PowerUnits.MegajoulePerHour:
             return ((value / 3600) * 1000000.0)
         
-        if to_unit == PowerUnits.GigaJoulePerHour:
+        if to_unit == PowerUnits.GigajoulePerHour:
             return ((value / 3600) * 1000000000.0)
         
         return None
@@ -498,273 +498,273 @@ class Power:
 
     
     @staticmethod
-    def from_femto_watts(femto_watts: float):
+    def from_femtowatts(femtowatts: float):
         """
-        Create a new instance of Power from a value in femto_watts.
+        Create a new instance of Power from a value in femtowatts.
 
         
 
-        :param meters: The Power value in femto_watts.
-        :type femto_watts: float
+        :param meters: The Power value in femtowatts.
+        :type femtowatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(femto_watts, PowerUnits.FemtoWatt)
+        return Power(femtowatts, PowerUnits.Femtowatt)
 
     
     @staticmethod
-    def from_pico_watts(pico_watts: float):
+    def from_picowatts(picowatts: float):
         """
-        Create a new instance of Power from a value in pico_watts.
+        Create a new instance of Power from a value in picowatts.
 
         
 
-        :param meters: The Power value in pico_watts.
-        :type pico_watts: float
+        :param meters: The Power value in picowatts.
+        :type picowatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(pico_watts, PowerUnits.PicoWatt)
+        return Power(picowatts, PowerUnits.Picowatt)
 
     
     @staticmethod
-    def from_nano_watts(nano_watts: float):
+    def from_nanowatts(nanowatts: float):
         """
-        Create a new instance of Power from a value in nano_watts.
+        Create a new instance of Power from a value in nanowatts.
 
         
 
-        :param meters: The Power value in nano_watts.
-        :type nano_watts: float
+        :param meters: The Power value in nanowatts.
+        :type nanowatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(nano_watts, PowerUnits.NanoWatt)
+        return Power(nanowatts, PowerUnits.Nanowatt)
 
     
     @staticmethod
-    def from_micro_watts(micro_watts: float):
+    def from_microwatts(microwatts: float):
         """
-        Create a new instance of Power from a value in micro_watts.
+        Create a new instance of Power from a value in microwatts.
 
         
 
-        :param meters: The Power value in micro_watts.
-        :type micro_watts: float
+        :param meters: The Power value in microwatts.
+        :type microwatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(micro_watts, PowerUnits.MicroWatt)
+        return Power(microwatts, PowerUnits.Microwatt)
 
     
     @staticmethod
-    def from_milli_watts(milli_watts: float):
+    def from_milliwatts(milliwatts: float):
         """
-        Create a new instance of Power from a value in milli_watts.
+        Create a new instance of Power from a value in milliwatts.
 
         
 
-        :param meters: The Power value in milli_watts.
-        :type milli_watts: float
+        :param meters: The Power value in milliwatts.
+        :type milliwatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(milli_watts, PowerUnits.MilliWatt)
+        return Power(milliwatts, PowerUnits.Milliwatt)
 
     
     @staticmethod
-    def from_deci_watts(deci_watts: float):
+    def from_deciwatts(deciwatts: float):
         """
-        Create a new instance of Power from a value in deci_watts.
+        Create a new instance of Power from a value in deciwatts.
 
         
 
-        :param meters: The Power value in deci_watts.
-        :type deci_watts: float
+        :param meters: The Power value in deciwatts.
+        :type deciwatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(deci_watts, PowerUnits.DeciWatt)
+        return Power(deciwatts, PowerUnits.Deciwatt)
 
     
     @staticmethod
-    def from_deca_watts(deca_watts: float):
+    def from_decawatts(decawatts: float):
         """
-        Create a new instance of Power from a value in deca_watts.
+        Create a new instance of Power from a value in decawatts.
 
         
 
-        :param meters: The Power value in deca_watts.
-        :type deca_watts: float
+        :param meters: The Power value in decawatts.
+        :type decawatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(deca_watts, PowerUnits.DecaWatt)
+        return Power(decawatts, PowerUnits.Decawatt)
 
     
     @staticmethod
-    def from_kilo_watts(kilo_watts: float):
+    def from_kilowatts(kilowatts: float):
         """
-        Create a new instance of Power from a value in kilo_watts.
+        Create a new instance of Power from a value in kilowatts.
 
         
 
-        :param meters: The Power value in kilo_watts.
-        :type kilo_watts: float
+        :param meters: The Power value in kilowatts.
+        :type kilowatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(kilo_watts, PowerUnits.KiloWatt)
+        return Power(kilowatts, PowerUnits.Kilowatt)
 
     
     @staticmethod
-    def from_mega_watts(mega_watts: float):
+    def from_megawatts(megawatts: float):
         """
-        Create a new instance of Power from a value in mega_watts.
+        Create a new instance of Power from a value in megawatts.
 
         
 
-        :param meters: The Power value in mega_watts.
-        :type mega_watts: float
+        :param meters: The Power value in megawatts.
+        :type megawatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(mega_watts, PowerUnits.MegaWatt)
+        return Power(megawatts, PowerUnits.Megawatt)
 
     
     @staticmethod
-    def from_giga_watts(giga_watts: float):
+    def from_gigawatts(gigawatts: float):
         """
-        Create a new instance of Power from a value in giga_watts.
+        Create a new instance of Power from a value in gigawatts.
 
         
 
-        :param meters: The Power value in giga_watts.
-        :type giga_watts: float
+        :param meters: The Power value in gigawatts.
+        :type gigawatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(giga_watts, PowerUnits.GigaWatt)
+        return Power(gigawatts, PowerUnits.Gigawatt)
 
     
     @staticmethod
-    def from_tera_watts(tera_watts: float):
+    def from_terawatts(terawatts: float):
         """
-        Create a new instance of Power from a value in tera_watts.
+        Create a new instance of Power from a value in terawatts.
 
         
 
-        :param meters: The Power value in tera_watts.
-        :type tera_watts: float
+        :param meters: The Power value in terawatts.
+        :type terawatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(tera_watts, PowerUnits.TeraWatt)
+        return Power(terawatts, PowerUnits.Terawatt)
 
     
     @staticmethod
-    def from_peta_watts(peta_watts: float):
+    def from_petawatts(petawatts: float):
         """
-        Create a new instance of Power from a value in peta_watts.
+        Create a new instance of Power from a value in petawatts.
 
         
 
-        :param meters: The Power value in peta_watts.
-        :type peta_watts: float
+        :param meters: The Power value in petawatts.
+        :type petawatts: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(peta_watts, PowerUnits.PetaWatt)
+        return Power(petawatts, PowerUnits.Petawatt)
 
     
     @staticmethod
-    def from_kilo_british_thermal_units_per_hour(kilo_british_thermal_units_per_hour: float):
+    def from_kilobritish_thermal_units_per_hour(kilobritish_thermal_units_per_hour: float):
         """
-        Create a new instance of Power from a value in kilo_british_thermal_units_per_hour.
+        Create a new instance of Power from a value in kilobritish_thermal_units_per_hour.
 
         
 
-        :param meters: The Power value in kilo_british_thermal_units_per_hour.
-        :type kilo_british_thermal_units_per_hour: float
+        :param meters: The Power value in kilobritish_thermal_units_per_hour.
+        :type kilobritish_thermal_units_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(kilo_british_thermal_units_per_hour, PowerUnits.KiloBritishThermalUnitPerHour)
+        return Power(kilobritish_thermal_units_per_hour, PowerUnits.KilobritishThermalUnitPerHour)
 
     
     @staticmethod
-    def from_mega_british_thermal_units_per_hour(mega_british_thermal_units_per_hour: float):
+    def from_megabritish_thermal_units_per_hour(megabritish_thermal_units_per_hour: float):
         """
-        Create a new instance of Power from a value in mega_british_thermal_units_per_hour.
+        Create a new instance of Power from a value in megabritish_thermal_units_per_hour.
 
         
 
-        :param meters: The Power value in mega_british_thermal_units_per_hour.
-        :type mega_british_thermal_units_per_hour: float
+        :param meters: The Power value in megabritish_thermal_units_per_hour.
+        :type megabritish_thermal_units_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(mega_british_thermal_units_per_hour, PowerUnits.MegaBritishThermalUnitPerHour)
+        return Power(megabritish_thermal_units_per_hour, PowerUnits.MegabritishThermalUnitPerHour)
 
     
     @staticmethod
-    def from_milli_joules_per_hour(milli_joules_per_hour: float):
+    def from_millijoules_per_hour(millijoules_per_hour: float):
         """
-        Create a new instance of Power from a value in milli_joules_per_hour.
+        Create a new instance of Power from a value in millijoules_per_hour.
 
         
 
-        :param meters: The Power value in milli_joules_per_hour.
-        :type milli_joules_per_hour: float
+        :param meters: The Power value in millijoules_per_hour.
+        :type millijoules_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(milli_joules_per_hour, PowerUnits.MilliJoulePerHour)
+        return Power(millijoules_per_hour, PowerUnits.MillijoulePerHour)
 
     
     @staticmethod
-    def from_kilo_joules_per_hour(kilo_joules_per_hour: float):
+    def from_kilojoules_per_hour(kilojoules_per_hour: float):
         """
-        Create a new instance of Power from a value in kilo_joules_per_hour.
+        Create a new instance of Power from a value in kilojoules_per_hour.
 
         
 
-        :param meters: The Power value in kilo_joules_per_hour.
-        :type kilo_joules_per_hour: float
+        :param meters: The Power value in kilojoules_per_hour.
+        :type kilojoules_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(kilo_joules_per_hour, PowerUnits.KiloJoulePerHour)
+        return Power(kilojoules_per_hour, PowerUnits.KilojoulePerHour)
 
     
     @staticmethod
-    def from_mega_joules_per_hour(mega_joules_per_hour: float):
+    def from_megajoules_per_hour(megajoules_per_hour: float):
         """
-        Create a new instance of Power from a value in mega_joules_per_hour.
+        Create a new instance of Power from a value in megajoules_per_hour.
 
         
 
-        :param meters: The Power value in mega_joules_per_hour.
-        :type mega_joules_per_hour: float
+        :param meters: The Power value in megajoules_per_hour.
+        :type megajoules_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(mega_joules_per_hour, PowerUnits.MegaJoulePerHour)
+        return Power(megajoules_per_hour, PowerUnits.MegajoulePerHour)
 
     
     @staticmethod
-    def from_giga_joules_per_hour(giga_joules_per_hour: float):
+    def from_gigajoules_per_hour(gigajoules_per_hour: float):
         """
-        Create a new instance of Power from a value in giga_joules_per_hour.
+        Create a new instance of Power from a value in gigajoules_per_hour.
 
         
 
-        :param meters: The Power value in giga_joules_per_hour.
-        :type giga_joules_per_hour: float
+        :param meters: The Power value in gigajoules_per_hour.
+        :type gigajoules_per_hour: float
         :return: A new instance of Power.
         :rtype: Power
         """
-        return Power(giga_joules_per_hour, PowerUnits.GigaJoulePerHour)
+        return Power(gigajoules_per_hour, PowerUnits.GigajoulePerHour)
 
     
     @property
@@ -856,201 +856,201 @@ class Power:
 
     
     @property
-    def femto_watts(self) -> float:
+    def femtowatts(self) -> float:
         """
         
         """
-        if self.__femto_watts != None:
-            return self.__femto_watts
-        self.__femto_watts = self.__convert_from_base(PowerUnits.FemtoWatt)
-        return self.__femto_watts
+        if self.__femtowatts != None:
+            return self.__femtowatts
+        self.__femtowatts = self.__convert_from_base(PowerUnits.Femtowatt)
+        return self.__femtowatts
 
     
     @property
-    def pico_watts(self) -> float:
+    def picowatts(self) -> float:
         """
         
         """
-        if self.__pico_watts != None:
-            return self.__pico_watts
-        self.__pico_watts = self.__convert_from_base(PowerUnits.PicoWatt)
-        return self.__pico_watts
+        if self.__picowatts != None:
+            return self.__picowatts
+        self.__picowatts = self.__convert_from_base(PowerUnits.Picowatt)
+        return self.__picowatts
 
     
     @property
-    def nano_watts(self) -> float:
+    def nanowatts(self) -> float:
         """
         
         """
-        if self.__nano_watts != None:
-            return self.__nano_watts
-        self.__nano_watts = self.__convert_from_base(PowerUnits.NanoWatt)
-        return self.__nano_watts
+        if self.__nanowatts != None:
+            return self.__nanowatts
+        self.__nanowatts = self.__convert_from_base(PowerUnits.Nanowatt)
+        return self.__nanowatts
 
     
     @property
-    def micro_watts(self) -> float:
+    def microwatts(self) -> float:
         """
         
         """
-        if self.__micro_watts != None:
-            return self.__micro_watts
-        self.__micro_watts = self.__convert_from_base(PowerUnits.MicroWatt)
-        return self.__micro_watts
+        if self.__microwatts != None:
+            return self.__microwatts
+        self.__microwatts = self.__convert_from_base(PowerUnits.Microwatt)
+        return self.__microwatts
 
     
     @property
-    def milli_watts(self) -> float:
+    def milliwatts(self) -> float:
         """
         
         """
-        if self.__milli_watts != None:
-            return self.__milli_watts
-        self.__milli_watts = self.__convert_from_base(PowerUnits.MilliWatt)
-        return self.__milli_watts
+        if self.__milliwatts != None:
+            return self.__milliwatts
+        self.__milliwatts = self.__convert_from_base(PowerUnits.Milliwatt)
+        return self.__milliwatts
 
     
     @property
-    def deci_watts(self) -> float:
+    def deciwatts(self) -> float:
         """
         
         """
-        if self.__deci_watts != None:
-            return self.__deci_watts
-        self.__deci_watts = self.__convert_from_base(PowerUnits.DeciWatt)
-        return self.__deci_watts
+        if self.__deciwatts != None:
+            return self.__deciwatts
+        self.__deciwatts = self.__convert_from_base(PowerUnits.Deciwatt)
+        return self.__deciwatts
 
     
     @property
-    def deca_watts(self) -> float:
+    def decawatts(self) -> float:
         """
         
         """
-        if self.__deca_watts != None:
-            return self.__deca_watts
-        self.__deca_watts = self.__convert_from_base(PowerUnits.DecaWatt)
-        return self.__deca_watts
+        if self.__decawatts != None:
+            return self.__decawatts
+        self.__decawatts = self.__convert_from_base(PowerUnits.Decawatt)
+        return self.__decawatts
 
     
     @property
-    def kilo_watts(self) -> float:
+    def kilowatts(self) -> float:
         """
         
         """
-        if self.__kilo_watts != None:
-            return self.__kilo_watts
-        self.__kilo_watts = self.__convert_from_base(PowerUnits.KiloWatt)
-        return self.__kilo_watts
+        if self.__kilowatts != None:
+            return self.__kilowatts
+        self.__kilowatts = self.__convert_from_base(PowerUnits.Kilowatt)
+        return self.__kilowatts
 
     
     @property
-    def mega_watts(self) -> float:
+    def megawatts(self) -> float:
         """
         
         """
-        if self.__mega_watts != None:
-            return self.__mega_watts
-        self.__mega_watts = self.__convert_from_base(PowerUnits.MegaWatt)
-        return self.__mega_watts
+        if self.__megawatts != None:
+            return self.__megawatts
+        self.__megawatts = self.__convert_from_base(PowerUnits.Megawatt)
+        return self.__megawatts
 
     
     @property
-    def giga_watts(self) -> float:
+    def gigawatts(self) -> float:
         """
         
         """
-        if self.__giga_watts != None:
-            return self.__giga_watts
-        self.__giga_watts = self.__convert_from_base(PowerUnits.GigaWatt)
-        return self.__giga_watts
+        if self.__gigawatts != None:
+            return self.__gigawatts
+        self.__gigawatts = self.__convert_from_base(PowerUnits.Gigawatt)
+        return self.__gigawatts
 
     
     @property
-    def tera_watts(self) -> float:
+    def terawatts(self) -> float:
         """
         
         """
-        if self.__tera_watts != None:
-            return self.__tera_watts
-        self.__tera_watts = self.__convert_from_base(PowerUnits.TeraWatt)
-        return self.__tera_watts
+        if self.__terawatts != None:
+            return self.__terawatts
+        self.__terawatts = self.__convert_from_base(PowerUnits.Terawatt)
+        return self.__terawatts
 
     
     @property
-    def peta_watts(self) -> float:
+    def petawatts(self) -> float:
         """
         
         """
-        if self.__peta_watts != None:
-            return self.__peta_watts
-        self.__peta_watts = self.__convert_from_base(PowerUnits.PetaWatt)
-        return self.__peta_watts
+        if self.__petawatts != None:
+            return self.__petawatts
+        self.__petawatts = self.__convert_from_base(PowerUnits.Petawatt)
+        return self.__petawatts
 
     
     @property
-    def kilo_british_thermal_units_per_hour(self) -> float:
+    def kilobritish_thermal_units_per_hour(self) -> float:
         """
         
         """
-        if self.__kilo_british_thermal_units_per_hour != None:
-            return self.__kilo_british_thermal_units_per_hour
-        self.__kilo_british_thermal_units_per_hour = self.__convert_from_base(PowerUnits.KiloBritishThermalUnitPerHour)
-        return self.__kilo_british_thermal_units_per_hour
+        if self.__kilobritish_thermal_units_per_hour != None:
+            return self.__kilobritish_thermal_units_per_hour
+        self.__kilobritish_thermal_units_per_hour = self.__convert_from_base(PowerUnits.KilobritishThermalUnitPerHour)
+        return self.__kilobritish_thermal_units_per_hour
 
     
     @property
-    def mega_british_thermal_units_per_hour(self) -> float:
+    def megabritish_thermal_units_per_hour(self) -> float:
         """
         
         """
-        if self.__mega_british_thermal_units_per_hour != None:
-            return self.__mega_british_thermal_units_per_hour
-        self.__mega_british_thermal_units_per_hour = self.__convert_from_base(PowerUnits.MegaBritishThermalUnitPerHour)
-        return self.__mega_british_thermal_units_per_hour
+        if self.__megabritish_thermal_units_per_hour != None:
+            return self.__megabritish_thermal_units_per_hour
+        self.__megabritish_thermal_units_per_hour = self.__convert_from_base(PowerUnits.MegabritishThermalUnitPerHour)
+        return self.__megabritish_thermal_units_per_hour
 
     
     @property
-    def milli_joules_per_hour(self) -> float:
+    def millijoules_per_hour(self) -> float:
         """
         
         """
-        if self.__milli_joules_per_hour != None:
-            return self.__milli_joules_per_hour
-        self.__milli_joules_per_hour = self.__convert_from_base(PowerUnits.MilliJoulePerHour)
-        return self.__milli_joules_per_hour
+        if self.__millijoules_per_hour != None:
+            return self.__millijoules_per_hour
+        self.__millijoules_per_hour = self.__convert_from_base(PowerUnits.MillijoulePerHour)
+        return self.__millijoules_per_hour
 
     
     @property
-    def kilo_joules_per_hour(self) -> float:
+    def kilojoules_per_hour(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_hour != None:
-            return self.__kilo_joules_per_hour
-        self.__kilo_joules_per_hour = self.__convert_from_base(PowerUnits.KiloJoulePerHour)
-        return self.__kilo_joules_per_hour
+        if self.__kilojoules_per_hour != None:
+            return self.__kilojoules_per_hour
+        self.__kilojoules_per_hour = self.__convert_from_base(PowerUnits.KilojoulePerHour)
+        return self.__kilojoules_per_hour
 
     
     @property
-    def mega_joules_per_hour(self) -> float:
+    def megajoules_per_hour(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_hour != None:
-            return self.__mega_joules_per_hour
-        self.__mega_joules_per_hour = self.__convert_from_base(PowerUnits.MegaJoulePerHour)
-        return self.__mega_joules_per_hour
+        if self.__megajoules_per_hour != None:
+            return self.__megajoules_per_hour
+        self.__megajoules_per_hour = self.__convert_from_base(PowerUnits.MegajoulePerHour)
+        return self.__megajoules_per_hour
 
     
     @property
-    def giga_joules_per_hour(self) -> float:
+    def gigajoules_per_hour(self) -> float:
         """
         
         """
-        if self.__giga_joules_per_hour != None:
-            return self.__giga_joules_per_hour
-        self.__giga_joules_per_hour = self.__convert_from_base(PowerUnits.GigaJoulePerHour)
-        return self.__giga_joules_per_hour
+        if self.__gigajoules_per_hour != None:
+            return self.__gigajoules_per_hour
+        self.__gigajoules_per_hour = self.__convert_from_base(PowerUnits.GigajoulePerHour)
+        return self.__gigajoules_per_hour
 
     
     def to_string(self, unit: PowerUnits = PowerUnits.Watt) -> string:
@@ -1084,59 +1084,59 @@ class Power:
         if unit == PowerUnits.JoulePerHour:
             return f"""{self.joules_per_hour} J/h"""
         
-        if unit == PowerUnits.FemtoWatt:
-            return f"""{self.femto_watts} """
+        if unit == PowerUnits.Femtowatt:
+            return f"""{self.femtowatts} """
         
-        if unit == PowerUnits.PicoWatt:
-            return f"""{self.pico_watts} """
+        if unit == PowerUnits.Picowatt:
+            return f"""{self.picowatts} """
         
-        if unit == PowerUnits.NanoWatt:
-            return f"""{self.nano_watts} """
+        if unit == PowerUnits.Nanowatt:
+            return f"""{self.nanowatts} """
         
-        if unit == PowerUnits.MicroWatt:
-            return f"""{self.micro_watts} """
+        if unit == PowerUnits.Microwatt:
+            return f"""{self.microwatts} """
         
-        if unit == PowerUnits.MilliWatt:
-            return f"""{self.milli_watts} """
+        if unit == PowerUnits.Milliwatt:
+            return f"""{self.milliwatts} """
         
-        if unit == PowerUnits.DeciWatt:
-            return f"""{self.deci_watts} """
+        if unit == PowerUnits.Deciwatt:
+            return f"""{self.deciwatts} """
         
-        if unit == PowerUnits.DecaWatt:
-            return f"""{self.deca_watts} """
+        if unit == PowerUnits.Decawatt:
+            return f"""{self.decawatts} """
         
-        if unit == PowerUnits.KiloWatt:
-            return f"""{self.kilo_watts} """
+        if unit == PowerUnits.Kilowatt:
+            return f"""{self.kilowatts} """
         
-        if unit == PowerUnits.MegaWatt:
-            return f"""{self.mega_watts} """
+        if unit == PowerUnits.Megawatt:
+            return f"""{self.megawatts} """
         
-        if unit == PowerUnits.GigaWatt:
-            return f"""{self.giga_watts} """
+        if unit == PowerUnits.Gigawatt:
+            return f"""{self.gigawatts} """
         
-        if unit == PowerUnits.TeraWatt:
-            return f"""{self.tera_watts} """
+        if unit == PowerUnits.Terawatt:
+            return f"""{self.terawatts} """
         
-        if unit == PowerUnits.PetaWatt:
-            return f"""{self.peta_watts} """
+        if unit == PowerUnits.Petawatt:
+            return f"""{self.petawatts} """
         
-        if unit == PowerUnits.KiloBritishThermalUnitPerHour:
-            return f"""{self.kilo_british_thermal_units_per_hour} """
+        if unit == PowerUnits.KilobritishThermalUnitPerHour:
+            return f"""{self.kilobritish_thermal_units_per_hour} """
         
-        if unit == PowerUnits.MegaBritishThermalUnitPerHour:
-            return f"""{self.mega_british_thermal_units_per_hour} """
+        if unit == PowerUnits.MegabritishThermalUnitPerHour:
+            return f"""{self.megabritish_thermal_units_per_hour} """
         
-        if unit == PowerUnits.MilliJoulePerHour:
-            return f"""{self.milli_joules_per_hour} """
+        if unit == PowerUnits.MillijoulePerHour:
+            return f"""{self.millijoules_per_hour} """
         
-        if unit == PowerUnits.KiloJoulePerHour:
-            return f"""{self.kilo_joules_per_hour} """
+        if unit == PowerUnits.KilojoulePerHour:
+            return f"""{self.kilojoules_per_hour} """
         
-        if unit == PowerUnits.MegaJoulePerHour:
-            return f"""{self.mega_joules_per_hour} """
+        if unit == PowerUnits.MegajoulePerHour:
+            return f"""{self.megajoules_per_hour} """
         
-        if unit == PowerUnits.GigaJoulePerHour:
-            return f"""{self.giga_joules_per_hour} """
+        if unit == PowerUnits.GigajoulePerHour:
+            return f"""{self.gigajoules_per_hour} """
         
         return f'{self.__value}'
 
@@ -1172,58 +1172,58 @@ class Power:
         if unit_abbreviation == PowerUnits.JoulePerHour:
             return """J/h"""
         
-        if unit_abbreviation == PowerUnits.FemtoWatt:
+        if unit_abbreviation == PowerUnits.Femtowatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.PicoWatt:
+        if unit_abbreviation == PowerUnits.Picowatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.NanoWatt:
+        if unit_abbreviation == PowerUnits.Nanowatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MicroWatt:
+        if unit_abbreviation == PowerUnits.Microwatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MilliWatt:
+        if unit_abbreviation == PowerUnits.Milliwatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.DeciWatt:
+        if unit_abbreviation == PowerUnits.Deciwatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.DecaWatt:
+        if unit_abbreviation == PowerUnits.Decawatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.KiloWatt:
+        if unit_abbreviation == PowerUnits.Kilowatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MegaWatt:
+        if unit_abbreviation == PowerUnits.Megawatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.GigaWatt:
+        if unit_abbreviation == PowerUnits.Gigawatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.TeraWatt:
+        if unit_abbreviation == PowerUnits.Terawatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.PetaWatt:
+        if unit_abbreviation == PowerUnits.Petawatt:
             return """"""
         
-        if unit_abbreviation == PowerUnits.KiloBritishThermalUnitPerHour:
+        if unit_abbreviation == PowerUnits.KilobritishThermalUnitPerHour:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MegaBritishThermalUnitPerHour:
+        if unit_abbreviation == PowerUnits.MegabritishThermalUnitPerHour:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MilliJoulePerHour:
+        if unit_abbreviation == PowerUnits.MillijoulePerHour:
             return """"""
         
-        if unit_abbreviation == PowerUnits.KiloJoulePerHour:
+        if unit_abbreviation == PowerUnits.KilojoulePerHour:
             return """"""
         
-        if unit_abbreviation == PowerUnits.MegaJoulePerHour:
+        if unit_abbreviation == PowerUnits.MegajoulePerHour:
             return """"""
         
-        if unit_abbreviation == PowerUnits.GigaJoulePerHour:
+        if unit_abbreviation == PowerUnits.GigajoulePerHour:
             return """"""
         
 

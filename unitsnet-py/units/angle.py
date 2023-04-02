@@ -48,42 +48,42 @@ class AngleUnits(Enum):
             
         """
         
-        NanoRadian = 'nano_radian'
+        Nanoradian = 'nanoradian'
         """
             
         """
         
-        MicroRadian = 'micro_radian'
+        Microradian = 'microradian'
         """
             
         """
         
-        MilliRadian = 'milli_radian'
+        Milliradian = 'milliradian'
         """
             
         """
         
-        CentiRadian = 'centi_radian'
+        Centiradian = 'centiradian'
         """
             
         """
         
-        DeciRadian = 'deci_radian'
+        Deciradian = 'deciradian'
         """
             
         """
         
-        NanoDegree = 'nano_degree'
+        Nanodegree = 'nanodegree'
         """
             
         """
         
-        MicroDegree = 'micro_degree'
+        Microdegree = 'microdegree'
         """
             
         """
         
-        MilliDegree = 'milli_degree'
+        Millidegree = 'millidegree'
         """
             
         """
@@ -118,21 +118,21 @@ class Angle:
         
         self.__tilt = None
         
-        self.__nano_radians = None
+        self.__nanoradians = None
         
-        self.__micro_radians = None
+        self.__microradians = None
         
-        self.__milli_radians = None
+        self.__milliradians = None
         
-        self.__centi_radians = None
+        self.__centiradians = None
         
-        self.__deci_radians = None
+        self.__deciradians = None
         
-        self.__nano_degrees = None
+        self.__nanodegrees = None
         
-        self.__micro_degrees = None
+        self.__microdegrees = None
         
-        self.__milli_degrees = None
+        self.__millidegrees = None
         
 
     def __convert_from_base(self, from_unit: AngleUnits) -> float:
@@ -162,28 +162,28 @@ class Angle:
         if from_unit == AngleUnits.Tilt:
             return (math.sin(value / 180 * math.pi))
         
-        if from_unit == AngleUnits.NanoRadian:
+        if from_unit == AngleUnits.Nanoradian:
             return ((value / 180 * math.pi) / 1e-09)
         
-        if from_unit == AngleUnits.MicroRadian:
+        if from_unit == AngleUnits.Microradian:
             return ((value / 180 * math.pi) / 1e-06)
         
-        if from_unit == AngleUnits.MilliRadian:
+        if from_unit == AngleUnits.Milliradian:
             return ((value / 180 * math.pi) / 0.001)
         
-        if from_unit == AngleUnits.CentiRadian:
+        if from_unit == AngleUnits.Centiradian:
             return ((value / 180 * math.pi) / 0.01)
         
-        if from_unit == AngleUnits.DeciRadian:
+        if from_unit == AngleUnits.Deciradian:
             return ((value / 180 * math.pi) / 0.1)
         
-        if from_unit == AngleUnits.NanoDegree:
+        if from_unit == AngleUnits.Nanodegree:
             return ((value) / 1e-09)
         
-        if from_unit == AngleUnits.MicroDegree:
+        if from_unit == AngleUnits.Microdegree:
             return ((value) / 1e-06)
         
-        if from_unit == AngleUnits.MilliDegree:
+        if from_unit == AngleUnits.Millidegree:
             return ((value) / 0.001)
         
         return None
@@ -215,28 +215,28 @@ class Angle:
         if to_unit == AngleUnits.Tilt:
             return (math.asin(value) * 180 / math.pi)
         
-        if to_unit == AngleUnits.NanoRadian:
+        if to_unit == AngleUnits.Nanoradian:
             return ((value * 180 / math.pi) * 1e-09)
         
-        if to_unit == AngleUnits.MicroRadian:
+        if to_unit == AngleUnits.Microradian:
             return ((value * 180 / math.pi) * 1e-06)
         
-        if to_unit == AngleUnits.MilliRadian:
+        if to_unit == AngleUnits.Milliradian:
             return ((value * 180 / math.pi) * 0.001)
         
-        if to_unit == AngleUnits.CentiRadian:
+        if to_unit == AngleUnits.Centiradian:
             return ((value * 180 / math.pi) * 0.01)
         
-        if to_unit == AngleUnits.DeciRadian:
+        if to_unit == AngleUnits.Deciradian:
             return ((value * 180 / math.pi) * 0.1)
         
-        if to_unit == AngleUnits.NanoDegree:
+        if to_unit == AngleUnits.Nanodegree:
             return ((value) * 1e-09)
         
-        if to_unit == AngleUnits.MicroDegree:
+        if to_unit == AngleUnits.Microdegree:
             return ((value) * 1e-06)
         
-        if to_unit == AngleUnits.MilliDegree:
+        if to_unit == AngleUnits.Millidegree:
             return ((value) * 0.001)
         
         return None
@@ -368,123 +368,123 @@ class Angle:
 
     
     @staticmethod
-    def from_nano_radians(nano_radians: float):
+    def from_nanoradians(nanoradians: float):
         """
-        Create a new instance of Angle from a value in nano_radians.
+        Create a new instance of Angle from a value in nanoradians.
 
         
 
-        :param meters: The Angle value in nano_radians.
-        :type nano_radians: float
+        :param meters: The Angle value in nanoradians.
+        :type nanoradians: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(nano_radians, AngleUnits.NanoRadian)
+        return Angle(nanoradians, AngleUnits.Nanoradian)
 
     
     @staticmethod
-    def from_micro_radians(micro_radians: float):
+    def from_microradians(microradians: float):
         """
-        Create a new instance of Angle from a value in micro_radians.
+        Create a new instance of Angle from a value in microradians.
 
         
 
-        :param meters: The Angle value in micro_radians.
-        :type micro_radians: float
+        :param meters: The Angle value in microradians.
+        :type microradians: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(micro_radians, AngleUnits.MicroRadian)
+        return Angle(microradians, AngleUnits.Microradian)
 
     
     @staticmethod
-    def from_milli_radians(milli_radians: float):
+    def from_milliradians(milliradians: float):
         """
-        Create a new instance of Angle from a value in milli_radians.
+        Create a new instance of Angle from a value in milliradians.
 
         
 
-        :param meters: The Angle value in milli_radians.
-        :type milli_radians: float
+        :param meters: The Angle value in milliradians.
+        :type milliradians: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(milli_radians, AngleUnits.MilliRadian)
+        return Angle(milliradians, AngleUnits.Milliradian)
 
     
     @staticmethod
-    def from_centi_radians(centi_radians: float):
+    def from_centiradians(centiradians: float):
         """
-        Create a new instance of Angle from a value in centi_radians.
+        Create a new instance of Angle from a value in centiradians.
 
         
 
-        :param meters: The Angle value in centi_radians.
-        :type centi_radians: float
+        :param meters: The Angle value in centiradians.
+        :type centiradians: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(centi_radians, AngleUnits.CentiRadian)
+        return Angle(centiradians, AngleUnits.Centiradian)
 
     
     @staticmethod
-    def from_deci_radians(deci_radians: float):
+    def from_deciradians(deciradians: float):
         """
-        Create a new instance of Angle from a value in deci_radians.
+        Create a new instance of Angle from a value in deciradians.
 
         
 
-        :param meters: The Angle value in deci_radians.
-        :type deci_radians: float
+        :param meters: The Angle value in deciradians.
+        :type deciradians: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(deci_radians, AngleUnits.DeciRadian)
+        return Angle(deciradians, AngleUnits.Deciradian)
 
     
     @staticmethod
-    def from_nano_degrees(nano_degrees: float):
+    def from_nanodegrees(nanodegrees: float):
         """
-        Create a new instance of Angle from a value in nano_degrees.
+        Create a new instance of Angle from a value in nanodegrees.
 
         
 
-        :param meters: The Angle value in nano_degrees.
-        :type nano_degrees: float
+        :param meters: The Angle value in nanodegrees.
+        :type nanodegrees: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(nano_degrees, AngleUnits.NanoDegree)
+        return Angle(nanodegrees, AngleUnits.Nanodegree)
 
     
     @staticmethod
-    def from_micro_degrees(micro_degrees: float):
+    def from_microdegrees(microdegrees: float):
         """
-        Create a new instance of Angle from a value in micro_degrees.
+        Create a new instance of Angle from a value in microdegrees.
 
         
 
-        :param meters: The Angle value in micro_degrees.
-        :type micro_degrees: float
+        :param meters: The Angle value in microdegrees.
+        :type microdegrees: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(micro_degrees, AngleUnits.MicroDegree)
+        return Angle(microdegrees, AngleUnits.Microdegree)
 
     
     @staticmethod
-    def from_milli_degrees(milli_degrees: float):
+    def from_millidegrees(millidegrees: float):
         """
-        Create a new instance of Angle from a value in milli_degrees.
+        Create a new instance of Angle from a value in millidegrees.
 
         
 
-        :param meters: The Angle value in milli_degrees.
-        :type milli_degrees: float
+        :param meters: The Angle value in millidegrees.
+        :type millidegrees: float
         :return: A new instance of Angle.
         :rtype: Angle
         """
-        return Angle(milli_degrees, AngleUnits.MilliDegree)
+        return Angle(millidegrees, AngleUnits.Millidegree)
 
     
     @property
@@ -576,91 +576,91 @@ class Angle:
 
     
     @property
-    def nano_radians(self) -> float:
+    def nanoradians(self) -> float:
         """
         
         """
-        if self.__nano_radians != None:
-            return self.__nano_radians
-        self.__nano_radians = self.__convert_from_base(AngleUnits.NanoRadian)
-        return self.__nano_radians
+        if self.__nanoradians != None:
+            return self.__nanoradians
+        self.__nanoradians = self.__convert_from_base(AngleUnits.Nanoradian)
+        return self.__nanoradians
 
     
     @property
-    def micro_radians(self) -> float:
+    def microradians(self) -> float:
         """
         
         """
-        if self.__micro_radians != None:
-            return self.__micro_radians
-        self.__micro_radians = self.__convert_from_base(AngleUnits.MicroRadian)
-        return self.__micro_radians
+        if self.__microradians != None:
+            return self.__microradians
+        self.__microradians = self.__convert_from_base(AngleUnits.Microradian)
+        return self.__microradians
 
     
     @property
-    def milli_radians(self) -> float:
+    def milliradians(self) -> float:
         """
         
         """
-        if self.__milli_radians != None:
-            return self.__milli_radians
-        self.__milli_radians = self.__convert_from_base(AngleUnits.MilliRadian)
-        return self.__milli_radians
+        if self.__milliradians != None:
+            return self.__milliradians
+        self.__milliradians = self.__convert_from_base(AngleUnits.Milliradian)
+        return self.__milliradians
 
     
     @property
-    def centi_radians(self) -> float:
+    def centiradians(self) -> float:
         """
         
         """
-        if self.__centi_radians != None:
-            return self.__centi_radians
-        self.__centi_radians = self.__convert_from_base(AngleUnits.CentiRadian)
-        return self.__centi_radians
+        if self.__centiradians != None:
+            return self.__centiradians
+        self.__centiradians = self.__convert_from_base(AngleUnits.Centiradian)
+        return self.__centiradians
 
     
     @property
-    def deci_radians(self) -> float:
+    def deciradians(self) -> float:
         """
         
         """
-        if self.__deci_radians != None:
-            return self.__deci_radians
-        self.__deci_radians = self.__convert_from_base(AngleUnits.DeciRadian)
-        return self.__deci_radians
+        if self.__deciradians != None:
+            return self.__deciradians
+        self.__deciradians = self.__convert_from_base(AngleUnits.Deciradian)
+        return self.__deciradians
 
     
     @property
-    def nano_degrees(self) -> float:
+    def nanodegrees(self) -> float:
         """
         
         """
-        if self.__nano_degrees != None:
-            return self.__nano_degrees
-        self.__nano_degrees = self.__convert_from_base(AngleUnits.NanoDegree)
-        return self.__nano_degrees
+        if self.__nanodegrees != None:
+            return self.__nanodegrees
+        self.__nanodegrees = self.__convert_from_base(AngleUnits.Nanodegree)
+        return self.__nanodegrees
 
     
     @property
-    def micro_degrees(self) -> float:
+    def microdegrees(self) -> float:
         """
         
         """
-        if self.__micro_degrees != None:
-            return self.__micro_degrees
-        self.__micro_degrees = self.__convert_from_base(AngleUnits.MicroDegree)
-        return self.__micro_degrees
+        if self.__microdegrees != None:
+            return self.__microdegrees
+        self.__microdegrees = self.__convert_from_base(AngleUnits.Microdegree)
+        return self.__microdegrees
 
     
     @property
-    def milli_degrees(self) -> float:
+    def millidegrees(self) -> float:
         """
         
         """
-        if self.__milli_degrees != None:
-            return self.__milli_degrees
-        self.__milli_degrees = self.__convert_from_base(AngleUnits.MilliDegree)
-        return self.__milli_degrees
+        if self.__millidegrees != None:
+            return self.__millidegrees
+        self.__millidegrees = self.__convert_from_base(AngleUnits.Millidegree)
+        return self.__millidegrees
 
     
     def to_string(self, unit: AngleUnits = AngleUnits.Degree) -> string:
@@ -694,29 +694,29 @@ class Angle:
         if unit == AngleUnits.Tilt:
             return f"""{self.tilt} sin(θ)"""
         
-        if unit == AngleUnits.NanoRadian:
-            return f"""{self.nano_radians} """
+        if unit == AngleUnits.Nanoradian:
+            return f"""{self.nanoradians} """
         
-        if unit == AngleUnits.MicroRadian:
-            return f"""{self.micro_radians} """
+        if unit == AngleUnits.Microradian:
+            return f"""{self.microradians} """
         
-        if unit == AngleUnits.MilliRadian:
-            return f"""{self.milli_radians} """
+        if unit == AngleUnits.Milliradian:
+            return f"""{self.milliradians} """
         
-        if unit == AngleUnits.CentiRadian:
-            return f"""{self.centi_radians} """
+        if unit == AngleUnits.Centiradian:
+            return f"""{self.centiradians} """
         
-        if unit == AngleUnits.DeciRadian:
-            return f"""{self.deci_radians} """
+        if unit == AngleUnits.Deciradian:
+            return f"""{self.deciradians} """
         
-        if unit == AngleUnits.NanoDegree:
-            return f"""{self.nano_degrees} """
+        if unit == AngleUnits.Nanodegree:
+            return f"""{self.nanodegrees} """
         
-        if unit == AngleUnits.MicroDegree:
-            return f"""{self.micro_degrees} """
+        if unit == AngleUnits.Microdegree:
+            return f"""{self.microdegrees} """
         
-        if unit == AngleUnits.MilliDegree:
-            return f"""{self.milli_degrees} """
+        if unit == AngleUnits.Millidegree:
+            return f"""{self.millidegrees} """
         
         return f'{self.__value}'
 
@@ -752,28 +752,28 @@ class Angle:
         if unit_abbreviation == AngleUnits.Tilt:
             return """sin(θ)"""
         
-        if unit_abbreviation == AngleUnits.NanoRadian:
+        if unit_abbreviation == AngleUnits.Nanoradian:
             return """"""
         
-        if unit_abbreviation == AngleUnits.MicroRadian:
+        if unit_abbreviation == AngleUnits.Microradian:
             return """"""
         
-        if unit_abbreviation == AngleUnits.MilliRadian:
+        if unit_abbreviation == AngleUnits.Milliradian:
             return """"""
         
-        if unit_abbreviation == AngleUnits.CentiRadian:
+        if unit_abbreviation == AngleUnits.Centiradian:
             return """"""
         
-        if unit_abbreviation == AngleUnits.DeciRadian:
+        if unit_abbreviation == AngleUnits.Deciradian:
             return """"""
         
-        if unit_abbreviation == AngleUnits.NanoDegree:
+        if unit_abbreviation == AngleUnits.Nanodegree:
             return """"""
         
-        if unit_abbreviation == AngleUnits.MicroDegree:
+        if unit_abbreviation == AngleUnits.Microdegree:
             return """"""
         
-        if unit_abbreviation == AngleUnits.MilliDegree:
+        if unit_abbreviation == AngleUnits.Millidegree:
             return """"""
         
 

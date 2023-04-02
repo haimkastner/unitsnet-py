@@ -28,27 +28,27 @@ class SpecificEntropyUnits(Enum):
             
         """
         
-        KiloJoulePerKilogramKelvin = 'kilo_joule_per_kilogram_kelvin'
+        KilojoulePerKilogramKelvin = 'kilojoule_per_kilogram_kelvin'
         """
             
         """
         
-        MegaJoulePerKilogramKelvin = 'mega_joule_per_kilogram_kelvin'
+        MegajoulePerKilogramKelvin = 'megajoule_per_kilogram_kelvin'
         """
             
         """
         
-        KiloJoulePerKilogramDegreeCelsius = 'kilo_joule_per_kilogram_degree_celsius'
+        KilojoulePerKilogramDegreeCelsius = 'kilojoule_per_kilogram_degree_celsius'
         """
             
         """
         
-        MegaJoulePerKilogramDegreeCelsius = 'mega_joule_per_kilogram_degree_celsius'
+        MegajoulePerKilogramDegreeCelsius = 'megajoule_per_kilogram_degree_celsius'
         """
             
         """
         
-        KiloCaloriePerGramKelvin = 'kilo_calorie_per_gram_kelvin'
+        KilocaloriePerGramKelvin = 'kilocalorie_per_gram_kelvin'
         """
             
         """
@@ -75,15 +75,15 @@ class SpecificEntropy:
         
         self.__btus_per_pound_fahrenheit = None
         
-        self.__kilo_joules_per_kilogram_kelvin = None
+        self.__kilojoules_per_kilogram_kelvin = None
         
-        self.__mega_joules_per_kilogram_kelvin = None
+        self.__megajoules_per_kilogram_kelvin = None
         
-        self.__kilo_joules_per_kilogram_degree_celsius = None
+        self.__kilojoules_per_kilogram_degree_celsius = None
         
-        self.__mega_joules_per_kilogram_degree_celsius = None
+        self.__megajoules_per_kilogram_degree_celsius = None
         
-        self.__kilo_calories_per_gram_kelvin = None
+        self.__kilocalories_per_gram_kelvin = None
         
 
     def __convert_from_base(self, from_unit: SpecificEntropyUnits) -> float:
@@ -101,19 +101,19 @@ class SpecificEntropy:
         if from_unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return (value / 4.1868e3)
         
-        if from_unit == SpecificEntropyUnits.KiloJoulePerKilogramKelvin:
+        if from_unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
             return ((value) / 1000.0)
         
-        if from_unit == SpecificEntropyUnits.MegaJoulePerKilogramKelvin:
+        if from_unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
             return ((value) / 1000000.0)
         
-        if from_unit == SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius:
+        if from_unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
             return ((value) / 1000.0)
         
-        if from_unit == SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius:
+        if from_unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
             return ((value) / 1000000.0)
         
-        if from_unit == SpecificEntropyUnits.KiloCaloriePerGramKelvin:
+        if from_unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
             return ((value / 4.184e3) / 1000.0)
         
         return None
@@ -133,19 +133,19 @@ class SpecificEntropy:
         if to_unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return (value * 4.1868e3)
         
-        if to_unit == SpecificEntropyUnits.KiloJoulePerKilogramKelvin:
+        if to_unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
             return ((value) * 1000.0)
         
-        if to_unit == SpecificEntropyUnits.MegaJoulePerKilogramKelvin:
+        if to_unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
             return ((value) * 1000000.0)
         
-        if to_unit == SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius:
+        if to_unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
             return ((value) * 1000.0)
         
-        if to_unit == SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius:
+        if to_unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
             return ((value) * 1000000.0)
         
-        if to_unit == SpecificEntropyUnits.KiloCaloriePerGramKelvin:
+        if to_unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
             return ((value * 4.184e3) * 1000.0)
         
         return None
@@ -217,78 +217,78 @@ class SpecificEntropy:
 
     
     @staticmethod
-    def from_kilo_joules_per_kilogram_kelvin(kilo_joules_per_kilogram_kelvin: float):
+    def from_kilojoules_per_kilogram_kelvin(kilojoules_per_kilogram_kelvin: float):
         """
-        Create a new instance of SpecificEntropy from a value in kilo_joules_per_kilogram_kelvin.
+        Create a new instance of SpecificEntropy from a value in kilojoules_per_kilogram_kelvin.
 
         
 
-        :param meters: The SpecificEntropy value in kilo_joules_per_kilogram_kelvin.
-        :type kilo_joules_per_kilogram_kelvin: float
+        :param meters: The SpecificEntropy value in kilojoules_per_kilogram_kelvin.
+        :type kilojoules_per_kilogram_kelvin: float
         :return: A new instance of SpecificEntropy.
         :rtype: SpecificEntropy
         """
-        return SpecificEntropy(kilo_joules_per_kilogram_kelvin, SpecificEntropyUnits.KiloJoulePerKilogramKelvin)
+        return SpecificEntropy(kilojoules_per_kilogram_kelvin, SpecificEntropyUnits.KilojoulePerKilogramKelvin)
 
     
     @staticmethod
-    def from_mega_joules_per_kilogram_kelvin(mega_joules_per_kilogram_kelvin: float):
+    def from_megajoules_per_kilogram_kelvin(megajoules_per_kilogram_kelvin: float):
         """
-        Create a new instance of SpecificEntropy from a value in mega_joules_per_kilogram_kelvin.
+        Create a new instance of SpecificEntropy from a value in megajoules_per_kilogram_kelvin.
 
         
 
-        :param meters: The SpecificEntropy value in mega_joules_per_kilogram_kelvin.
-        :type mega_joules_per_kilogram_kelvin: float
+        :param meters: The SpecificEntropy value in megajoules_per_kilogram_kelvin.
+        :type megajoules_per_kilogram_kelvin: float
         :return: A new instance of SpecificEntropy.
         :rtype: SpecificEntropy
         """
-        return SpecificEntropy(mega_joules_per_kilogram_kelvin, SpecificEntropyUnits.MegaJoulePerKilogramKelvin)
+        return SpecificEntropy(megajoules_per_kilogram_kelvin, SpecificEntropyUnits.MegajoulePerKilogramKelvin)
 
     
     @staticmethod
-    def from_kilo_joules_per_kilogram_degree_celsius(kilo_joules_per_kilogram_degree_celsius: float):
+    def from_kilojoules_per_kilogram_degree_celsius(kilojoules_per_kilogram_degree_celsius: float):
         """
-        Create a new instance of SpecificEntropy from a value in kilo_joules_per_kilogram_degree_celsius.
+        Create a new instance of SpecificEntropy from a value in kilojoules_per_kilogram_degree_celsius.
 
         
 
-        :param meters: The SpecificEntropy value in kilo_joules_per_kilogram_degree_celsius.
-        :type kilo_joules_per_kilogram_degree_celsius: float
+        :param meters: The SpecificEntropy value in kilojoules_per_kilogram_degree_celsius.
+        :type kilojoules_per_kilogram_degree_celsius: float
         :return: A new instance of SpecificEntropy.
         :rtype: SpecificEntropy
         """
-        return SpecificEntropy(kilo_joules_per_kilogram_degree_celsius, SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius)
+        return SpecificEntropy(kilojoules_per_kilogram_degree_celsius, SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius)
 
     
     @staticmethod
-    def from_mega_joules_per_kilogram_degree_celsius(mega_joules_per_kilogram_degree_celsius: float):
+    def from_megajoules_per_kilogram_degree_celsius(megajoules_per_kilogram_degree_celsius: float):
         """
-        Create a new instance of SpecificEntropy from a value in mega_joules_per_kilogram_degree_celsius.
+        Create a new instance of SpecificEntropy from a value in megajoules_per_kilogram_degree_celsius.
 
         
 
-        :param meters: The SpecificEntropy value in mega_joules_per_kilogram_degree_celsius.
-        :type mega_joules_per_kilogram_degree_celsius: float
+        :param meters: The SpecificEntropy value in megajoules_per_kilogram_degree_celsius.
+        :type megajoules_per_kilogram_degree_celsius: float
         :return: A new instance of SpecificEntropy.
         :rtype: SpecificEntropy
         """
-        return SpecificEntropy(mega_joules_per_kilogram_degree_celsius, SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius)
+        return SpecificEntropy(megajoules_per_kilogram_degree_celsius, SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius)
 
     
     @staticmethod
-    def from_kilo_calories_per_gram_kelvin(kilo_calories_per_gram_kelvin: float):
+    def from_kilocalories_per_gram_kelvin(kilocalories_per_gram_kelvin: float):
         """
-        Create a new instance of SpecificEntropy from a value in kilo_calories_per_gram_kelvin.
+        Create a new instance of SpecificEntropy from a value in kilocalories_per_gram_kelvin.
 
         
 
-        :param meters: The SpecificEntropy value in kilo_calories_per_gram_kelvin.
-        :type kilo_calories_per_gram_kelvin: float
+        :param meters: The SpecificEntropy value in kilocalories_per_gram_kelvin.
+        :type kilocalories_per_gram_kelvin: float
         :return: A new instance of SpecificEntropy.
         :rtype: SpecificEntropy
         """
-        return SpecificEntropy(kilo_calories_per_gram_kelvin, SpecificEntropyUnits.KiloCaloriePerGramKelvin)
+        return SpecificEntropy(kilocalories_per_gram_kelvin, SpecificEntropyUnits.KilocaloriePerGramKelvin)
 
     
     @property
@@ -336,58 +336,58 @@ class SpecificEntropy:
 
     
     @property
-    def kilo_joules_per_kilogram_kelvin(self) -> float:
+    def kilojoules_per_kilogram_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_kilogram_kelvin != None:
-            return self.__kilo_joules_per_kilogram_kelvin
-        self.__kilo_joules_per_kilogram_kelvin = self.__convert_from_base(SpecificEntropyUnits.KiloJoulePerKilogramKelvin)
-        return self.__kilo_joules_per_kilogram_kelvin
+        if self.__kilojoules_per_kilogram_kelvin != None:
+            return self.__kilojoules_per_kilogram_kelvin
+        self.__kilojoules_per_kilogram_kelvin = self.__convert_from_base(SpecificEntropyUnits.KilojoulePerKilogramKelvin)
+        return self.__kilojoules_per_kilogram_kelvin
 
     
     @property
-    def mega_joules_per_kilogram_kelvin(self) -> float:
+    def megajoules_per_kilogram_kelvin(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_kilogram_kelvin != None:
-            return self.__mega_joules_per_kilogram_kelvin
-        self.__mega_joules_per_kilogram_kelvin = self.__convert_from_base(SpecificEntropyUnits.MegaJoulePerKilogramKelvin)
-        return self.__mega_joules_per_kilogram_kelvin
+        if self.__megajoules_per_kilogram_kelvin != None:
+            return self.__megajoules_per_kilogram_kelvin
+        self.__megajoules_per_kilogram_kelvin = self.__convert_from_base(SpecificEntropyUnits.MegajoulePerKilogramKelvin)
+        return self.__megajoules_per_kilogram_kelvin
 
     
     @property
-    def kilo_joules_per_kilogram_degree_celsius(self) -> float:
+    def kilojoules_per_kilogram_degree_celsius(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_kilogram_degree_celsius != None:
-            return self.__kilo_joules_per_kilogram_degree_celsius
-        self.__kilo_joules_per_kilogram_degree_celsius = self.__convert_from_base(SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius)
-        return self.__kilo_joules_per_kilogram_degree_celsius
+        if self.__kilojoules_per_kilogram_degree_celsius != None:
+            return self.__kilojoules_per_kilogram_degree_celsius
+        self.__kilojoules_per_kilogram_degree_celsius = self.__convert_from_base(SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius)
+        return self.__kilojoules_per_kilogram_degree_celsius
 
     
     @property
-    def mega_joules_per_kilogram_degree_celsius(self) -> float:
+    def megajoules_per_kilogram_degree_celsius(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_kilogram_degree_celsius != None:
-            return self.__mega_joules_per_kilogram_degree_celsius
-        self.__mega_joules_per_kilogram_degree_celsius = self.__convert_from_base(SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius)
-        return self.__mega_joules_per_kilogram_degree_celsius
+        if self.__megajoules_per_kilogram_degree_celsius != None:
+            return self.__megajoules_per_kilogram_degree_celsius
+        self.__megajoules_per_kilogram_degree_celsius = self.__convert_from_base(SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius)
+        return self.__megajoules_per_kilogram_degree_celsius
 
     
     @property
-    def kilo_calories_per_gram_kelvin(self) -> float:
+    def kilocalories_per_gram_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_gram_kelvin != None:
-            return self.__kilo_calories_per_gram_kelvin
-        self.__kilo_calories_per_gram_kelvin = self.__convert_from_base(SpecificEntropyUnits.KiloCaloriePerGramKelvin)
-        return self.__kilo_calories_per_gram_kelvin
+        if self.__kilocalories_per_gram_kelvin != None:
+            return self.__kilocalories_per_gram_kelvin
+        self.__kilocalories_per_gram_kelvin = self.__convert_from_base(SpecificEntropyUnits.KilocaloriePerGramKelvin)
+        return self.__kilocalories_per_gram_kelvin
 
     
     def to_string(self, unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> string:
@@ -409,20 +409,20 @@ class SpecificEntropy:
         if unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return f"""{self.btus_per_pound_fahrenheit} BTU/lb·°F"""
         
-        if unit == SpecificEntropyUnits.KiloJoulePerKilogramKelvin:
-            return f"""{self.kilo_joules_per_kilogram_kelvin} """
+        if unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
+            return f"""{self.kilojoules_per_kilogram_kelvin} """
         
-        if unit == SpecificEntropyUnits.MegaJoulePerKilogramKelvin:
-            return f"""{self.mega_joules_per_kilogram_kelvin} """
+        if unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
+            return f"""{self.megajoules_per_kilogram_kelvin} """
         
-        if unit == SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius:
-            return f"""{self.kilo_joules_per_kilogram_degree_celsius} """
+        if unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
+            return f"""{self.kilojoules_per_kilogram_degree_celsius} """
         
-        if unit == SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius:
-            return f"""{self.mega_joules_per_kilogram_degree_celsius} """
+        if unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
+            return f"""{self.megajoules_per_kilogram_degree_celsius} """
         
-        if unit == SpecificEntropyUnits.KiloCaloriePerGramKelvin:
-            return f"""{self.kilo_calories_per_gram_kelvin} """
+        if unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
+            return f"""{self.kilocalories_per_gram_kelvin} """
         
         return f'{self.__value}'
 
@@ -446,19 +446,19 @@ class SpecificEntropy:
         if unit_abbreviation == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return """BTU/lb·°F"""
         
-        if unit_abbreviation == SpecificEntropyUnits.KiloJoulePerKilogramKelvin:
+        if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
             return """"""
         
-        if unit_abbreviation == SpecificEntropyUnits.MegaJoulePerKilogramKelvin:
+        if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
             return """"""
         
-        if unit_abbreviation == SpecificEntropyUnits.KiloJoulePerKilogramDegreeCelsius:
+        if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
             return """"""
         
-        if unit_abbreviation == SpecificEntropyUnits.MegaJoulePerKilogramDegreeCelsius:
+        if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
             return """"""
         
-        if unit_abbreviation == SpecificEntropyUnits.KiloCaloriePerGramKelvin:
+        if unit_abbreviation == SpecificEntropyUnits.KilocaloriePerGramKelvin:
             return """"""
         
 

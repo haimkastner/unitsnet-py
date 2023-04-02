@@ -38,17 +38,17 @@ class MolarFlowUnits(Enum):
             
         """
         
-        KiloMolePerSecond = 'kilo_mole_per_second'
+        KilomolePerSecond = 'kilomole_per_second'
         """
             
         """
         
-        KiloMolePerMinute = 'kilo_mole_per_minute'
+        KilomolePerMinute = 'kilomole_per_minute'
         """
             
         """
         
-        KiloMolePerHour = 'kilo_mole_per_hour'
+        KilomolePerHour = 'kilomole_per_hour'
         """
             
         """
@@ -79,11 +79,11 @@ class MolarFlow:
         
         self.__pound_moles_per_hour = None
         
-        self.__kilo_moles_per_second = None
+        self.__kilomoles_per_second = None
         
-        self.__kilo_moles_per_minute = None
+        self.__kilomoles_per_minute = None
         
-        self.__kilo_moles_per_hour = None
+        self.__kilomoles_per_hour = None
         
 
     def __convert_from_base(self, from_unit: MolarFlowUnits) -> float:
@@ -107,13 +107,13 @@ class MolarFlow:
         if from_unit == MolarFlowUnits.PoundMolePerHour:
             return ((value / 453.59237) * 3600)
         
-        if from_unit == MolarFlowUnits.KiloMolePerSecond:
+        if from_unit == MolarFlowUnits.KilomolePerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == MolarFlowUnits.KiloMolePerMinute:
+        if from_unit == MolarFlowUnits.KilomolePerMinute:
             return ((value * 60) / 1000.0)
         
-        if from_unit == MolarFlowUnits.KiloMolePerHour:
+        if from_unit == MolarFlowUnits.KilomolePerHour:
             return ((value * 3600) / 1000.0)
         
         return None
@@ -139,13 +139,13 @@ class MolarFlow:
         if to_unit == MolarFlowUnits.PoundMolePerHour:
             return ((value * 453.59237) / 3600)
         
-        if to_unit == MolarFlowUnits.KiloMolePerSecond:
+        if to_unit == MolarFlowUnits.KilomolePerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == MolarFlowUnits.KiloMolePerMinute:
+        if to_unit == MolarFlowUnits.KilomolePerMinute:
             return ((value / 60) * 1000.0)
         
-        if to_unit == MolarFlowUnits.KiloMolePerHour:
+        if to_unit == MolarFlowUnits.KilomolePerHour:
             return ((value / 3600) * 1000.0)
         
         return None
@@ -247,48 +247,48 @@ class MolarFlow:
 
     
     @staticmethod
-    def from_kilo_moles_per_second(kilo_moles_per_second: float):
+    def from_kilomoles_per_second(kilomoles_per_second: float):
         """
-        Create a new instance of MolarFlow from a value in kilo_moles_per_second.
+        Create a new instance of MolarFlow from a value in kilomoles_per_second.
 
         
 
-        :param meters: The MolarFlow value in kilo_moles_per_second.
-        :type kilo_moles_per_second: float
+        :param meters: The MolarFlow value in kilomoles_per_second.
+        :type kilomoles_per_second: float
         :return: A new instance of MolarFlow.
         :rtype: MolarFlow
         """
-        return MolarFlow(kilo_moles_per_second, MolarFlowUnits.KiloMolePerSecond)
+        return MolarFlow(kilomoles_per_second, MolarFlowUnits.KilomolePerSecond)
 
     
     @staticmethod
-    def from_kilo_moles_per_minute(kilo_moles_per_minute: float):
+    def from_kilomoles_per_minute(kilomoles_per_minute: float):
         """
-        Create a new instance of MolarFlow from a value in kilo_moles_per_minute.
+        Create a new instance of MolarFlow from a value in kilomoles_per_minute.
 
         
 
-        :param meters: The MolarFlow value in kilo_moles_per_minute.
-        :type kilo_moles_per_minute: float
+        :param meters: The MolarFlow value in kilomoles_per_minute.
+        :type kilomoles_per_minute: float
         :return: A new instance of MolarFlow.
         :rtype: MolarFlow
         """
-        return MolarFlow(kilo_moles_per_minute, MolarFlowUnits.KiloMolePerMinute)
+        return MolarFlow(kilomoles_per_minute, MolarFlowUnits.KilomolePerMinute)
 
     
     @staticmethod
-    def from_kilo_moles_per_hour(kilo_moles_per_hour: float):
+    def from_kilomoles_per_hour(kilomoles_per_hour: float):
         """
-        Create a new instance of MolarFlow from a value in kilo_moles_per_hour.
+        Create a new instance of MolarFlow from a value in kilomoles_per_hour.
 
         
 
-        :param meters: The MolarFlow value in kilo_moles_per_hour.
-        :type kilo_moles_per_hour: float
+        :param meters: The MolarFlow value in kilomoles_per_hour.
+        :type kilomoles_per_hour: float
         :return: A new instance of MolarFlow.
         :rtype: MolarFlow
         """
-        return MolarFlow(kilo_moles_per_hour, MolarFlowUnits.KiloMolePerHour)
+        return MolarFlow(kilomoles_per_hour, MolarFlowUnits.KilomolePerHour)
 
     
     @property
@@ -358,36 +358,36 @@ class MolarFlow:
 
     
     @property
-    def kilo_moles_per_second(self) -> float:
+    def kilomoles_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_moles_per_second != None:
-            return self.__kilo_moles_per_second
-        self.__kilo_moles_per_second = self.__convert_from_base(MolarFlowUnits.KiloMolePerSecond)
-        return self.__kilo_moles_per_second
+        if self.__kilomoles_per_second != None:
+            return self.__kilomoles_per_second
+        self.__kilomoles_per_second = self.__convert_from_base(MolarFlowUnits.KilomolePerSecond)
+        return self.__kilomoles_per_second
 
     
     @property
-    def kilo_moles_per_minute(self) -> float:
+    def kilomoles_per_minute(self) -> float:
         """
         
         """
-        if self.__kilo_moles_per_minute != None:
-            return self.__kilo_moles_per_minute
-        self.__kilo_moles_per_minute = self.__convert_from_base(MolarFlowUnits.KiloMolePerMinute)
-        return self.__kilo_moles_per_minute
+        if self.__kilomoles_per_minute != None:
+            return self.__kilomoles_per_minute
+        self.__kilomoles_per_minute = self.__convert_from_base(MolarFlowUnits.KilomolePerMinute)
+        return self.__kilomoles_per_minute
 
     
     @property
-    def kilo_moles_per_hour(self) -> float:
+    def kilomoles_per_hour(self) -> float:
         """
         
         """
-        if self.__kilo_moles_per_hour != None:
-            return self.__kilo_moles_per_hour
-        self.__kilo_moles_per_hour = self.__convert_from_base(MolarFlowUnits.KiloMolePerHour)
-        return self.__kilo_moles_per_hour
+        if self.__kilomoles_per_hour != None:
+            return self.__kilomoles_per_hour
+        self.__kilomoles_per_hour = self.__convert_from_base(MolarFlowUnits.KilomolePerHour)
+        return self.__kilomoles_per_hour
 
     
     def to_string(self, unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> string:
@@ -415,14 +415,14 @@ class MolarFlow:
         if unit == MolarFlowUnits.PoundMolePerHour:
             return f"""{self.pound_moles_per_hour} lbmol/h"""
         
-        if unit == MolarFlowUnits.KiloMolePerSecond:
-            return f"""{self.kilo_moles_per_second} """
+        if unit == MolarFlowUnits.KilomolePerSecond:
+            return f"""{self.kilomoles_per_second} """
         
-        if unit == MolarFlowUnits.KiloMolePerMinute:
-            return f"""{self.kilo_moles_per_minute} """
+        if unit == MolarFlowUnits.KilomolePerMinute:
+            return f"""{self.kilomoles_per_minute} """
         
-        if unit == MolarFlowUnits.KiloMolePerHour:
-            return f"""{self.kilo_moles_per_hour} """
+        if unit == MolarFlowUnits.KilomolePerHour:
+            return f"""{self.kilomoles_per_hour} """
         
         return f'{self.__value}'
 
@@ -452,13 +452,13 @@ class MolarFlow:
         if unit_abbreviation == MolarFlowUnits.PoundMolePerHour:
             return """lbmol/h"""
         
-        if unit_abbreviation == MolarFlowUnits.KiloMolePerSecond:
+        if unit_abbreviation == MolarFlowUnits.KilomolePerSecond:
             return """"""
         
-        if unit_abbreviation == MolarFlowUnits.KiloMolePerMinute:
+        if unit_abbreviation == MolarFlowUnits.KilomolePerMinute:
             return """"""
         
-        if unit_abbreviation == MolarFlowUnits.KiloMolePerHour:
+        if unit_abbreviation == MolarFlowUnits.KilomolePerHour:
             return """"""
         
 

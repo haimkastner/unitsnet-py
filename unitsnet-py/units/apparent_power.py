@@ -13,27 +13,27 @@ class ApparentPowerUnits(Enum):
             
         """
         
-        MicroVoltampere = 'micro_voltampere'
+        Microvoltampere = 'microvoltampere'
         """
             
         """
         
-        MilliVoltampere = 'milli_voltampere'
+        Millivoltampere = 'millivoltampere'
         """
             
         """
         
-        KiloVoltampere = 'kilo_voltampere'
+        Kilovoltampere = 'kilovoltampere'
         """
             
         """
         
-        MegaVoltampere = 'mega_voltampere'
+        Megavoltampere = 'megavoltampere'
         """
             
         """
         
-        GigaVoltampere = 'giga_voltampere'
+        Gigavoltampere = 'gigavoltampere'
         """
             
         """
@@ -54,15 +54,15 @@ class ApparentPower:
         
         self.__voltamperes = None
         
-        self.__micro_voltamperes = None
+        self.__microvoltamperes = None
         
-        self.__milli_voltamperes = None
+        self.__millivoltamperes = None
         
-        self.__kilo_voltamperes = None
+        self.__kilovoltamperes = None
         
-        self.__mega_voltamperes = None
+        self.__megavoltamperes = None
         
-        self.__giga_voltamperes = None
+        self.__gigavoltamperes = None
         
 
     def __convert_from_base(self, from_unit: ApparentPowerUnits) -> float:
@@ -71,19 +71,19 @@ class ApparentPower:
         if from_unit == ApparentPowerUnits.Voltampere:
             return (value)
         
-        if from_unit == ApparentPowerUnits.MicroVoltampere:
+        if from_unit == ApparentPowerUnits.Microvoltampere:
             return ((value) / 1e-06)
         
-        if from_unit == ApparentPowerUnits.MilliVoltampere:
+        if from_unit == ApparentPowerUnits.Millivoltampere:
             return ((value) / 0.001)
         
-        if from_unit == ApparentPowerUnits.KiloVoltampere:
+        if from_unit == ApparentPowerUnits.Kilovoltampere:
             return ((value) / 1000.0)
         
-        if from_unit == ApparentPowerUnits.MegaVoltampere:
+        if from_unit == ApparentPowerUnits.Megavoltampere:
             return ((value) / 1000000.0)
         
-        if from_unit == ApparentPowerUnits.GigaVoltampere:
+        if from_unit == ApparentPowerUnits.Gigavoltampere:
             return ((value) / 1000000000.0)
         
         return None
@@ -94,19 +94,19 @@ class ApparentPower:
         if to_unit == ApparentPowerUnits.Voltampere:
             return (value)
         
-        if to_unit == ApparentPowerUnits.MicroVoltampere:
+        if to_unit == ApparentPowerUnits.Microvoltampere:
             return ((value) * 1e-06)
         
-        if to_unit == ApparentPowerUnits.MilliVoltampere:
+        if to_unit == ApparentPowerUnits.Millivoltampere:
             return ((value) * 0.001)
         
-        if to_unit == ApparentPowerUnits.KiloVoltampere:
+        if to_unit == ApparentPowerUnits.Kilovoltampere:
             return ((value) * 1000.0)
         
-        if to_unit == ApparentPowerUnits.MegaVoltampere:
+        if to_unit == ApparentPowerUnits.Megavoltampere:
             return ((value) * 1000000.0)
         
-        if to_unit == ApparentPowerUnits.GigaVoltampere:
+        if to_unit == ApparentPowerUnits.Gigavoltampere:
             return ((value) * 1000000000.0)
         
         return None
@@ -133,78 +133,78 @@ class ApparentPower:
 
     
     @staticmethod
-    def from_micro_voltamperes(micro_voltamperes: float):
+    def from_microvoltamperes(microvoltamperes: float):
         """
-        Create a new instance of ApparentPower from a value in micro_voltamperes.
+        Create a new instance of ApparentPower from a value in microvoltamperes.
 
         
 
-        :param meters: The ApparentPower value in micro_voltamperes.
-        :type micro_voltamperes: float
+        :param meters: The ApparentPower value in microvoltamperes.
+        :type microvoltamperes: float
         :return: A new instance of ApparentPower.
         :rtype: ApparentPower
         """
-        return ApparentPower(micro_voltamperes, ApparentPowerUnits.MicroVoltampere)
+        return ApparentPower(microvoltamperes, ApparentPowerUnits.Microvoltampere)
 
     
     @staticmethod
-    def from_milli_voltamperes(milli_voltamperes: float):
+    def from_millivoltamperes(millivoltamperes: float):
         """
-        Create a new instance of ApparentPower from a value in milli_voltamperes.
+        Create a new instance of ApparentPower from a value in millivoltamperes.
 
         
 
-        :param meters: The ApparentPower value in milli_voltamperes.
-        :type milli_voltamperes: float
+        :param meters: The ApparentPower value in millivoltamperes.
+        :type millivoltamperes: float
         :return: A new instance of ApparentPower.
         :rtype: ApparentPower
         """
-        return ApparentPower(milli_voltamperes, ApparentPowerUnits.MilliVoltampere)
+        return ApparentPower(millivoltamperes, ApparentPowerUnits.Millivoltampere)
 
     
     @staticmethod
-    def from_kilo_voltamperes(kilo_voltamperes: float):
+    def from_kilovoltamperes(kilovoltamperes: float):
         """
-        Create a new instance of ApparentPower from a value in kilo_voltamperes.
+        Create a new instance of ApparentPower from a value in kilovoltamperes.
 
         
 
-        :param meters: The ApparentPower value in kilo_voltamperes.
-        :type kilo_voltamperes: float
+        :param meters: The ApparentPower value in kilovoltamperes.
+        :type kilovoltamperes: float
         :return: A new instance of ApparentPower.
         :rtype: ApparentPower
         """
-        return ApparentPower(kilo_voltamperes, ApparentPowerUnits.KiloVoltampere)
+        return ApparentPower(kilovoltamperes, ApparentPowerUnits.Kilovoltampere)
 
     
     @staticmethod
-    def from_mega_voltamperes(mega_voltamperes: float):
+    def from_megavoltamperes(megavoltamperes: float):
         """
-        Create a new instance of ApparentPower from a value in mega_voltamperes.
+        Create a new instance of ApparentPower from a value in megavoltamperes.
 
         
 
-        :param meters: The ApparentPower value in mega_voltamperes.
-        :type mega_voltamperes: float
+        :param meters: The ApparentPower value in megavoltamperes.
+        :type megavoltamperes: float
         :return: A new instance of ApparentPower.
         :rtype: ApparentPower
         """
-        return ApparentPower(mega_voltamperes, ApparentPowerUnits.MegaVoltampere)
+        return ApparentPower(megavoltamperes, ApparentPowerUnits.Megavoltampere)
 
     
     @staticmethod
-    def from_giga_voltamperes(giga_voltamperes: float):
+    def from_gigavoltamperes(gigavoltamperes: float):
         """
-        Create a new instance of ApparentPower from a value in giga_voltamperes.
+        Create a new instance of ApparentPower from a value in gigavoltamperes.
 
         
 
-        :param meters: The ApparentPower value in giga_voltamperes.
-        :type giga_voltamperes: float
+        :param meters: The ApparentPower value in gigavoltamperes.
+        :type gigavoltamperes: float
         :return: A new instance of ApparentPower.
         :rtype: ApparentPower
         """
-        return ApparentPower(giga_voltamperes, ApparentPowerUnits.GigaVoltampere)
+        return ApparentPower(gigavoltamperes, ApparentPowerUnits.Gigavoltampere)
 
     
     @property
@@ -219,58 +219,58 @@ class ApparentPower:
 
     
     @property
-    def micro_voltamperes(self) -> float:
+    def microvoltamperes(self) -> float:
         """
         
         """
-        if self.__micro_voltamperes != None:
-            return self.__micro_voltamperes
-        self.__micro_voltamperes = self.__convert_from_base(ApparentPowerUnits.MicroVoltampere)
-        return self.__micro_voltamperes
+        if self.__microvoltamperes != None:
+            return self.__microvoltamperes
+        self.__microvoltamperes = self.__convert_from_base(ApparentPowerUnits.Microvoltampere)
+        return self.__microvoltamperes
 
     
     @property
-    def milli_voltamperes(self) -> float:
+    def millivoltamperes(self) -> float:
         """
         
         """
-        if self.__milli_voltamperes != None:
-            return self.__milli_voltamperes
-        self.__milli_voltamperes = self.__convert_from_base(ApparentPowerUnits.MilliVoltampere)
-        return self.__milli_voltamperes
+        if self.__millivoltamperes != None:
+            return self.__millivoltamperes
+        self.__millivoltamperes = self.__convert_from_base(ApparentPowerUnits.Millivoltampere)
+        return self.__millivoltamperes
 
     
     @property
-    def kilo_voltamperes(self) -> float:
+    def kilovoltamperes(self) -> float:
         """
         
         """
-        if self.__kilo_voltamperes != None:
-            return self.__kilo_voltamperes
-        self.__kilo_voltamperes = self.__convert_from_base(ApparentPowerUnits.KiloVoltampere)
-        return self.__kilo_voltamperes
+        if self.__kilovoltamperes != None:
+            return self.__kilovoltamperes
+        self.__kilovoltamperes = self.__convert_from_base(ApparentPowerUnits.Kilovoltampere)
+        return self.__kilovoltamperes
 
     
     @property
-    def mega_voltamperes(self) -> float:
+    def megavoltamperes(self) -> float:
         """
         
         """
-        if self.__mega_voltamperes != None:
-            return self.__mega_voltamperes
-        self.__mega_voltamperes = self.__convert_from_base(ApparentPowerUnits.MegaVoltampere)
-        return self.__mega_voltamperes
+        if self.__megavoltamperes != None:
+            return self.__megavoltamperes
+        self.__megavoltamperes = self.__convert_from_base(ApparentPowerUnits.Megavoltampere)
+        return self.__megavoltamperes
 
     
     @property
-    def giga_voltamperes(self) -> float:
+    def gigavoltamperes(self) -> float:
         """
         
         """
-        if self.__giga_voltamperes != None:
-            return self.__giga_voltamperes
-        self.__giga_voltamperes = self.__convert_from_base(ApparentPowerUnits.GigaVoltampere)
-        return self.__giga_voltamperes
+        if self.__gigavoltamperes != None:
+            return self.__gigavoltamperes
+        self.__gigavoltamperes = self.__convert_from_base(ApparentPowerUnits.Gigavoltampere)
+        return self.__gigavoltamperes
 
     
     def to_string(self, unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> string:
@@ -283,20 +283,20 @@ class ApparentPower:
         if unit == ApparentPowerUnits.Voltampere:
             return f"""{self.voltamperes} VA"""
         
-        if unit == ApparentPowerUnits.MicroVoltampere:
-            return f"""{self.micro_voltamperes} """
+        if unit == ApparentPowerUnits.Microvoltampere:
+            return f"""{self.microvoltamperes} """
         
-        if unit == ApparentPowerUnits.MilliVoltampere:
-            return f"""{self.milli_voltamperes} """
+        if unit == ApparentPowerUnits.Millivoltampere:
+            return f"""{self.millivoltamperes} """
         
-        if unit == ApparentPowerUnits.KiloVoltampere:
-            return f"""{self.kilo_voltamperes} """
+        if unit == ApparentPowerUnits.Kilovoltampere:
+            return f"""{self.kilovoltamperes} """
         
-        if unit == ApparentPowerUnits.MegaVoltampere:
-            return f"""{self.mega_voltamperes} """
+        if unit == ApparentPowerUnits.Megavoltampere:
+            return f"""{self.megavoltamperes} """
         
-        if unit == ApparentPowerUnits.GigaVoltampere:
-            return f"""{self.giga_voltamperes} """
+        if unit == ApparentPowerUnits.Gigavoltampere:
+            return f"""{self.gigavoltamperes} """
         
         return f'{self.__value}'
 
@@ -311,19 +311,19 @@ class ApparentPower:
         if unit_abbreviation == ApparentPowerUnits.Voltampere:
             return """VA"""
         
-        if unit_abbreviation == ApparentPowerUnits.MicroVoltampere:
+        if unit_abbreviation == ApparentPowerUnits.Microvoltampere:
             return """"""
         
-        if unit_abbreviation == ApparentPowerUnits.MilliVoltampere:
+        if unit_abbreviation == ApparentPowerUnits.Millivoltampere:
             return """"""
         
-        if unit_abbreviation == ApparentPowerUnits.KiloVoltampere:
+        if unit_abbreviation == ApparentPowerUnits.Kilovoltampere:
             return """"""
         
-        if unit_abbreviation == ApparentPowerUnits.MegaVoltampere:
+        if unit_abbreviation == ApparentPowerUnits.Megavoltampere:
             return """"""
         
-        if unit_abbreviation == ApparentPowerUnits.GigaVoltampere:
+        if unit_abbreviation == ApparentPowerUnits.Gigavoltampere:
             return """"""
         
 

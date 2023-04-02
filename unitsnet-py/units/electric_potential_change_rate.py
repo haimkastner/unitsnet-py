@@ -28,82 +28,82 @@ class ElectricPotentialChangeRateUnits(Enum):
             
         """
         
-        MicroVoltPerSecond = 'micro_volt_per_second'
+        MicrovoltPerSecond = 'microvolt_per_second'
         """
             
         """
         
-        MilliVoltPerSecond = 'milli_volt_per_second'
+        MillivoltPerSecond = 'millivolt_per_second'
         """
             
         """
         
-        KiloVoltPerSecond = 'kilo_volt_per_second'
+        KilovoltPerSecond = 'kilovolt_per_second'
         """
             
         """
         
-        MegaVoltPerSecond = 'mega_volt_per_second'
+        MegavoltPerSecond = 'megavolt_per_second'
         """
             
         """
         
-        MicroVoltPerMicrosecond = 'micro_volt_per_microsecond'
+        MicrovoltPerMicrosecond = 'microvolt_per_microsecond'
         """
             
         """
         
-        MilliVoltPerMicrosecond = 'milli_volt_per_microsecond'
+        MillivoltPerMicrosecond = 'millivolt_per_microsecond'
         """
             
         """
         
-        KiloVoltPerMicrosecond = 'kilo_volt_per_microsecond'
+        KilovoltPerMicrosecond = 'kilovolt_per_microsecond'
         """
             
         """
         
-        MegaVoltPerMicrosecond = 'mega_volt_per_microsecond'
+        MegavoltPerMicrosecond = 'megavolt_per_microsecond'
         """
             
         """
         
-        MicroVoltPerMinute = 'micro_volt_per_minute'
+        MicrovoltPerMinute = 'microvolt_per_minute'
         """
             
         """
         
-        MilliVoltPerMinute = 'milli_volt_per_minute'
+        MillivoltPerMinute = 'millivolt_per_minute'
         """
             
         """
         
-        KiloVoltPerMinute = 'kilo_volt_per_minute'
+        KilovoltPerMinute = 'kilovolt_per_minute'
         """
             
         """
         
-        MegaVoltPerMinute = 'mega_volt_per_minute'
+        MegavoltPerMinute = 'megavolt_per_minute'
         """
             
         """
         
-        MicroVoltPerHour = 'micro_volt_per_hour'
+        MicrovoltPerHour = 'microvolt_per_hour'
         """
             
         """
         
-        MilliVoltPerHour = 'milli_volt_per_hour'
+        MillivoltPerHour = 'millivolt_per_hour'
         """
             
         """
         
-        KiloVoltPerHour = 'kilo_volt_per_hour'
+        KilovoltPerHour = 'kilovolt_per_hour'
         """
             
         """
         
-        MegaVoltPerHour = 'mega_volt_per_hour'
+        MegavoltPerHour = 'megavolt_per_hour'
         """
             
         """
@@ -130,37 +130,37 @@ class ElectricPotentialChangeRate:
         
         self.__volts_per_hours = None
         
-        self.__micro_volts_per_seconds = None
+        self.__microvolts_per_seconds = None
         
-        self.__milli_volts_per_seconds = None
+        self.__millivolts_per_seconds = None
         
-        self.__kilo_volts_per_seconds = None
+        self.__kilovolts_per_seconds = None
         
-        self.__mega_volts_per_seconds = None
+        self.__megavolts_per_seconds = None
         
-        self.__micro_volts_per_microseconds = None
+        self.__microvolts_per_microseconds = None
         
-        self.__milli_volts_per_microseconds = None
+        self.__millivolts_per_microseconds = None
         
-        self.__kilo_volts_per_microseconds = None
+        self.__kilovolts_per_microseconds = None
         
-        self.__mega_volts_per_microseconds = None
+        self.__megavolts_per_microseconds = None
         
-        self.__micro_volts_per_minutes = None
+        self.__microvolts_per_minutes = None
         
-        self.__milli_volts_per_minutes = None
+        self.__millivolts_per_minutes = None
         
-        self.__kilo_volts_per_minutes = None
+        self.__kilovolts_per_minutes = None
         
-        self.__mega_volts_per_minutes = None
+        self.__megavolts_per_minutes = None
         
-        self.__micro_volts_per_hours = None
+        self.__microvolts_per_hours = None
         
-        self.__milli_volts_per_hours = None
+        self.__millivolts_per_hours = None
         
-        self.__kilo_volts_per_hours = None
+        self.__kilovolts_per_hours = None
         
-        self.__mega_volts_per_hours = None
+        self.__megavolts_per_hours = None
         
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
@@ -178,52 +178,52 @@ class ElectricPotentialChangeRate:
         if from_unit == ElectricPotentialChangeRateUnits.VoltPerHour:
             return (value * 3600)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MicroVoltPerSecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MilliVoltPerSecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == ElectricPotentialChangeRateUnits.KiloVoltPerSecond:
+        if from_unit == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MegaVoltPerSecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
             return ((value) / 1000000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
             return ((value / 1e6) / 1e-06)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
             return ((value / 1e6) / 0.001)
         
-        if from_unit == ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond:
+        if from_unit == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
             return ((value / 1e6) / 1000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond:
+        if from_unit == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
             return ((value / 1e6) / 1000000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MicroVoltPerMinute:
+        if from_unit == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
             return ((value * 60) / 1e-06)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MilliVoltPerMinute:
+        if from_unit == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
             return ((value * 60) / 0.001)
         
-        if from_unit == ElectricPotentialChangeRateUnits.KiloVoltPerMinute:
+        if from_unit == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
             return ((value * 60) / 1000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MegaVoltPerMinute:
+        if from_unit == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
             return ((value * 60) / 1000000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MicroVoltPerHour:
+        if from_unit == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
             return ((value * 3600) / 1e-06)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MilliVoltPerHour:
+        if from_unit == ElectricPotentialChangeRateUnits.MillivoltPerHour:
             return ((value * 3600) / 0.001)
         
-        if from_unit == ElectricPotentialChangeRateUnits.KiloVoltPerHour:
+        if from_unit == ElectricPotentialChangeRateUnits.KilovoltPerHour:
             return ((value * 3600) / 1000.0)
         
-        if from_unit == ElectricPotentialChangeRateUnits.MegaVoltPerHour:
+        if from_unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
             return ((value * 3600) / 1000000.0)
         
         return None
@@ -243,52 +243,52 @@ class ElectricPotentialChangeRate:
         if to_unit == ElectricPotentialChangeRateUnits.VoltPerHour:
             return (value / 3600)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MicroVoltPerSecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MilliVoltPerSecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == ElectricPotentialChangeRateUnits.KiloVoltPerSecond:
+        if to_unit == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MegaVoltPerSecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
             return ((value) * 1000000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
             return ((value * 1e6) * 1e-06)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
             return ((value * 1e6) * 0.001)
         
-        if to_unit == ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond:
+        if to_unit == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
             return ((value * 1e6) * 1000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond:
+        if to_unit == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
             return ((value * 1e6) * 1000000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MicroVoltPerMinute:
+        if to_unit == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
             return ((value / 60) * 1e-06)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MilliVoltPerMinute:
+        if to_unit == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
             return ((value / 60) * 0.001)
         
-        if to_unit == ElectricPotentialChangeRateUnits.KiloVoltPerMinute:
+        if to_unit == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
             return ((value / 60) * 1000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MegaVoltPerMinute:
+        if to_unit == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
             return ((value / 60) * 1000000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MicroVoltPerHour:
+        if to_unit == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
             return ((value / 3600) * 1e-06)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MilliVoltPerHour:
+        if to_unit == ElectricPotentialChangeRateUnits.MillivoltPerHour:
             return ((value / 3600) * 0.001)
         
-        if to_unit == ElectricPotentialChangeRateUnits.KiloVoltPerHour:
+        if to_unit == ElectricPotentialChangeRateUnits.KilovoltPerHour:
             return ((value / 3600) * 1000.0)
         
-        if to_unit == ElectricPotentialChangeRateUnits.MegaVoltPerHour:
+        if to_unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
             return ((value / 3600) * 1000000.0)
         
         return None
@@ -360,243 +360,243 @@ class ElectricPotentialChangeRate:
 
     
     @staticmethod
-    def from_micro_volts_per_seconds(micro_volts_per_seconds: float):
+    def from_microvolts_per_seconds(microvolts_per_seconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in micro_volts_per_seconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in microvolts_per_seconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in micro_volts_per_seconds.
-        :type micro_volts_per_seconds: float
+        :param meters: The ElectricPotentialChangeRate value in microvolts_per_seconds.
+        :type microvolts_per_seconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(micro_volts_per_seconds, ElectricPotentialChangeRateUnits.MicroVoltPerSecond)
+        return ElectricPotentialChangeRate(microvolts_per_seconds, ElectricPotentialChangeRateUnits.MicrovoltPerSecond)
 
     
     @staticmethod
-    def from_milli_volts_per_seconds(milli_volts_per_seconds: float):
+    def from_millivolts_per_seconds(millivolts_per_seconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in milli_volts_per_seconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in millivolts_per_seconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in milli_volts_per_seconds.
-        :type milli_volts_per_seconds: float
+        :param meters: The ElectricPotentialChangeRate value in millivolts_per_seconds.
+        :type millivolts_per_seconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(milli_volts_per_seconds, ElectricPotentialChangeRateUnits.MilliVoltPerSecond)
+        return ElectricPotentialChangeRate(millivolts_per_seconds, ElectricPotentialChangeRateUnits.MillivoltPerSecond)
 
     
     @staticmethod
-    def from_kilo_volts_per_seconds(kilo_volts_per_seconds: float):
+    def from_kilovolts_per_seconds(kilovolts_per_seconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in kilo_volts_per_seconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in kilovolts_per_seconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in kilo_volts_per_seconds.
-        :type kilo_volts_per_seconds: float
+        :param meters: The ElectricPotentialChangeRate value in kilovolts_per_seconds.
+        :type kilovolts_per_seconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(kilo_volts_per_seconds, ElectricPotentialChangeRateUnits.KiloVoltPerSecond)
+        return ElectricPotentialChangeRate(kilovolts_per_seconds, ElectricPotentialChangeRateUnits.KilovoltPerSecond)
 
     
     @staticmethod
-    def from_mega_volts_per_seconds(mega_volts_per_seconds: float):
+    def from_megavolts_per_seconds(megavolts_per_seconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in mega_volts_per_seconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in megavolts_per_seconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in mega_volts_per_seconds.
-        :type mega_volts_per_seconds: float
+        :param meters: The ElectricPotentialChangeRate value in megavolts_per_seconds.
+        :type megavolts_per_seconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(mega_volts_per_seconds, ElectricPotentialChangeRateUnits.MegaVoltPerSecond)
+        return ElectricPotentialChangeRate(megavolts_per_seconds, ElectricPotentialChangeRateUnits.MegavoltPerSecond)
 
     
     @staticmethod
-    def from_micro_volts_per_microseconds(micro_volts_per_microseconds: float):
+    def from_microvolts_per_microseconds(microvolts_per_microseconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in micro_volts_per_microseconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in microvolts_per_microseconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in micro_volts_per_microseconds.
-        :type micro_volts_per_microseconds: float
+        :param meters: The ElectricPotentialChangeRate value in microvolts_per_microseconds.
+        :type microvolts_per_microseconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(micro_volts_per_microseconds, ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond)
+        return ElectricPotentialChangeRate(microvolts_per_microseconds, ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond)
 
     
     @staticmethod
-    def from_milli_volts_per_microseconds(milli_volts_per_microseconds: float):
+    def from_millivolts_per_microseconds(millivolts_per_microseconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in milli_volts_per_microseconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in millivolts_per_microseconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in milli_volts_per_microseconds.
-        :type milli_volts_per_microseconds: float
+        :param meters: The ElectricPotentialChangeRate value in millivolts_per_microseconds.
+        :type millivolts_per_microseconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(milli_volts_per_microseconds, ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond)
+        return ElectricPotentialChangeRate(millivolts_per_microseconds, ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond)
 
     
     @staticmethod
-    def from_kilo_volts_per_microseconds(kilo_volts_per_microseconds: float):
+    def from_kilovolts_per_microseconds(kilovolts_per_microseconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in kilo_volts_per_microseconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in kilovolts_per_microseconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in kilo_volts_per_microseconds.
-        :type kilo_volts_per_microseconds: float
+        :param meters: The ElectricPotentialChangeRate value in kilovolts_per_microseconds.
+        :type kilovolts_per_microseconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(kilo_volts_per_microseconds, ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond)
+        return ElectricPotentialChangeRate(kilovolts_per_microseconds, ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond)
 
     
     @staticmethod
-    def from_mega_volts_per_microseconds(mega_volts_per_microseconds: float):
+    def from_megavolts_per_microseconds(megavolts_per_microseconds: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in mega_volts_per_microseconds.
+        Create a new instance of ElectricPotentialChangeRate from a value in megavolts_per_microseconds.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in mega_volts_per_microseconds.
-        :type mega_volts_per_microseconds: float
+        :param meters: The ElectricPotentialChangeRate value in megavolts_per_microseconds.
+        :type megavolts_per_microseconds: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(mega_volts_per_microseconds, ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond)
+        return ElectricPotentialChangeRate(megavolts_per_microseconds, ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond)
 
     
     @staticmethod
-    def from_micro_volts_per_minutes(micro_volts_per_minutes: float):
+    def from_microvolts_per_minutes(microvolts_per_minutes: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in micro_volts_per_minutes.
+        Create a new instance of ElectricPotentialChangeRate from a value in microvolts_per_minutes.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in micro_volts_per_minutes.
-        :type micro_volts_per_minutes: float
+        :param meters: The ElectricPotentialChangeRate value in microvolts_per_minutes.
+        :type microvolts_per_minutes: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(micro_volts_per_minutes, ElectricPotentialChangeRateUnits.MicroVoltPerMinute)
+        return ElectricPotentialChangeRate(microvolts_per_minutes, ElectricPotentialChangeRateUnits.MicrovoltPerMinute)
 
     
     @staticmethod
-    def from_milli_volts_per_minutes(milli_volts_per_minutes: float):
+    def from_millivolts_per_minutes(millivolts_per_minutes: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in milli_volts_per_minutes.
+        Create a new instance of ElectricPotentialChangeRate from a value in millivolts_per_minutes.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in milli_volts_per_minutes.
-        :type milli_volts_per_minutes: float
+        :param meters: The ElectricPotentialChangeRate value in millivolts_per_minutes.
+        :type millivolts_per_minutes: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(milli_volts_per_minutes, ElectricPotentialChangeRateUnits.MilliVoltPerMinute)
+        return ElectricPotentialChangeRate(millivolts_per_minutes, ElectricPotentialChangeRateUnits.MillivoltPerMinute)
 
     
     @staticmethod
-    def from_kilo_volts_per_minutes(kilo_volts_per_minutes: float):
+    def from_kilovolts_per_minutes(kilovolts_per_minutes: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in kilo_volts_per_minutes.
+        Create a new instance of ElectricPotentialChangeRate from a value in kilovolts_per_minutes.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in kilo_volts_per_minutes.
-        :type kilo_volts_per_minutes: float
+        :param meters: The ElectricPotentialChangeRate value in kilovolts_per_minutes.
+        :type kilovolts_per_minutes: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(kilo_volts_per_minutes, ElectricPotentialChangeRateUnits.KiloVoltPerMinute)
+        return ElectricPotentialChangeRate(kilovolts_per_minutes, ElectricPotentialChangeRateUnits.KilovoltPerMinute)
 
     
     @staticmethod
-    def from_mega_volts_per_minutes(mega_volts_per_minutes: float):
+    def from_megavolts_per_minutes(megavolts_per_minutes: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in mega_volts_per_minutes.
+        Create a new instance of ElectricPotentialChangeRate from a value in megavolts_per_minutes.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in mega_volts_per_minutes.
-        :type mega_volts_per_minutes: float
+        :param meters: The ElectricPotentialChangeRate value in megavolts_per_minutes.
+        :type megavolts_per_minutes: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(mega_volts_per_minutes, ElectricPotentialChangeRateUnits.MegaVoltPerMinute)
+        return ElectricPotentialChangeRate(megavolts_per_minutes, ElectricPotentialChangeRateUnits.MegavoltPerMinute)
 
     
     @staticmethod
-    def from_micro_volts_per_hours(micro_volts_per_hours: float):
+    def from_microvolts_per_hours(microvolts_per_hours: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in micro_volts_per_hours.
+        Create a new instance of ElectricPotentialChangeRate from a value in microvolts_per_hours.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in micro_volts_per_hours.
-        :type micro_volts_per_hours: float
+        :param meters: The ElectricPotentialChangeRate value in microvolts_per_hours.
+        :type microvolts_per_hours: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(micro_volts_per_hours, ElectricPotentialChangeRateUnits.MicroVoltPerHour)
+        return ElectricPotentialChangeRate(microvolts_per_hours, ElectricPotentialChangeRateUnits.MicrovoltPerHour)
 
     
     @staticmethod
-    def from_milli_volts_per_hours(milli_volts_per_hours: float):
+    def from_millivolts_per_hours(millivolts_per_hours: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in milli_volts_per_hours.
+        Create a new instance of ElectricPotentialChangeRate from a value in millivolts_per_hours.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in milli_volts_per_hours.
-        :type milli_volts_per_hours: float
+        :param meters: The ElectricPotentialChangeRate value in millivolts_per_hours.
+        :type millivolts_per_hours: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(milli_volts_per_hours, ElectricPotentialChangeRateUnits.MilliVoltPerHour)
+        return ElectricPotentialChangeRate(millivolts_per_hours, ElectricPotentialChangeRateUnits.MillivoltPerHour)
 
     
     @staticmethod
-    def from_kilo_volts_per_hours(kilo_volts_per_hours: float):
+    def from_kilovolts_per_hours(kilovolts_per_hours: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in kilo_volts_per_hours.
+        Create a new instance of ElectricPotentialChangeRate from a value in kilovolts_per_hours.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in kilo_volts_per_hours.
-        :type kilo_volts_per_hours: float
+        :param meters: The ElectricPotentialChangeRate value in kilovolts_per_hours.
+        :type kilovolts_per_hours: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(kilo_volts_per_hours, ElectricPotentialChangeRateUnits.KiloVoltPerHour)
+        return ElectricPotentialChangeRate(kilovolts_per_hours, ElectricPotentialChangeRateUnits.KilovoltPerHour)
 
     
     @staticmethod
-    def from_mega_volts_per_hours(mega_volts_per_hours: float):
+    def from_megavolts_per_hours(megavolts_per_hours: float):
         """
-        Create a new instance of ElectricPotentialChangeRate from a value in mega_volts_per_hours.
+        Create a new instance of ElectricPotentialChangeRate from a value in megavolts_per_hours.
 
         
 
-        :param meters: The ElectricPotentialChangeRate value in mega_volts_per_hours.
-        :type mega_volts_per_hours: float
+        :param meters: The ElectricPotentialChangeRate value in megavolts_per_hours.
+        :type megavolts_per_hours: float
         :return: A new instance of ElectricPotentialChangeRate.
         :rtype: ElectricPotentialChangeRate
         """
-        return ElectricPotentialChangeRate(mega_volts_per_hours, ElectricPotentialChangeRateUnits.MegaVoltPerHour)
+        return ElectricPotentialChangeRate(megavolts_per_hours, ElectricPotentialChangeRateUnits.MegavoltPerHour)
 
     
     @property
@@ -644,179 +644,179 @@ class ElectricPotentialChangeRate:
 
     
     @property
-    def micro_volts_per_seconds(self) -> float:
+    def microvolts_per_seconds(self) -> float:
         """
         
         """
-        if self.__micro_volts_per_seconds != None:
-            return self.__micro_volts_per_seconds
-        self.__micro_volts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicroVoltPerSecond)
-        return self.__micro_volts_per_seconds
+        if self.__microvolts_per_seconds != None:
+            return self.__microvolts_per_seconds
+        self.__microvolts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicrovoltPerSecond)
+        return self.__microvolts_per_seconds
 
     
     @property
-    def milli_volts_per_seconds(self) -> float:
+    def millivolts_per_seconds(self) -> float:
         """
         
         """
-        if self.__milli_volts_per_seconds != None:
-            return self.__milli_volts_per_seconds
-        self.__milli_volts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MilliVoltPerSecond)
-        return self.__milli_volts_per_seconds
+        if self.__millivolts_per_seconds != None:
+            return self.__millivolts_per_seconds
+        self.__millivolts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MillivoltPerSecond)
+        return self.__millivolts_per_seconds
 
     
     @property
-    def kilo_volts_per_seconds(self) -> float:
+    def kilovolts_per_seconds(self) -> float:
         """
         
         """
-        if self.__kilo_volts_per_seconds != None:
-            return self.__kilo_volts_per_seconds
-        self.__kilo_volts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.KiloVoltPerSecond)
-        return self.__kilo_volts_per_seconds
+        if self.__kilovolts_per_seconds != None:
+            return self.__kilovolts_per_seconds
+        self.__kilovolts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.KilovoltPerSecond)
+        return self.__kilovolts_per_seconds
 
     
     @property
-    def mega_volts_per_seconds(self) -> float:
+    def megavolts_per_seconds(self) -> float:
         """
         
         """
-        if self.__mega_volts_per_seconds != None:
-            return self.__mega_volts_per_seconds
-        self.__mega_volts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegaVoltPerSecond)
-        return self.__mega_volts_per_seconds
+        if self.__megavolts_per_seconds != None:
+            return self.__megavolts_per_seconds
+        self.__megavolts_per_seconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegavoltPerSecond)
+        return self.__megavolts_per_seconds
 
     
     @property
-    def micro_volts_per_microseconds(self) -> float:
+    def microvolts_per_microseconds(self) -> float:
         """
         
         """
-        if self.__micro_volts_per_microseconds != None:
-            return self.__micro_volts_per_microseconds
-        self.__micro_volts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond)
-        return self.__micro_volts_per_microseconds
+        if self.__microvolts_per_microseconds != None:
+            return self.__microvolts_per_microseconds
+        self.__microvolts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond)
+        return self.__microvolts_per_microseconds
 
     
     @property
-    def milli_volts_per_microseconds(self) -> float:
+    def millivolts_per_microseconds(self) -> float:
         """
         
         """
-        if self.__milli_volts_per_microseconds != None:
-            return self.__milli_volts_per_microseconds
-        self.__milli_volts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond)
-        return self.__milli_volts_per_microseconds
+        if self.__millivolts_per_microseconds != None:
+            return self.__millivolts_per_microseconds
+        self.__millivolts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond)
+        return self.__millivolts_per_microseconds
 
     
     @property
-    def kilo_volts_per_microseconds(self) -> float:
+    def kilovolts_per_microseconds(self) -> float:
         """
         
         """
-        if self.__kilo_volts_per_microseconds != None:
-            return self.__kilo_volts_per_microseconds
-        self.__kilo_volts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond)
-        return self.__kilo_volts_per_microseconds
+        if self.__kilovolts_per_microseconds != None:
+            return self.__kilovolts_per_microseconds
+        self.__kilovolts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond)
+        return self.__kilovolts_per_microseconds
 
     
     @property
-    def mega_volts_per_microseconds(self) -> float:
+    def megavolts_per_microseconds(self) -> float:
         """
         
         """
-        if self.__mega_volts_per_microseconds != None:
-            return self.__mega_volts_per_microseconds
-        self.__mega_volts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond)
-        return self.__mega_volts_per_microseconds
+        if self.__megavolts_per_microseconds != None:
+            return self.__megavolts_per_microseconds
+        self.__megavolts_per_microseconds = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond)
+        return self.__megavolts_per_microseconds
 
     
     @property
-    def micro_volts_per_minutes(self) -> float:
+    def microvolts_per_minutes(self) -> float:
         """
         
         """
-        if self.__micro_volts_per_minutes != None:
-            return self.__micro_volts_per_minutes
-        self.__micro_volts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicroVoltPerMinute)
-        return self.__micro_volts_per_minutes
+        if self.__microvolts_per_minutes != None:
+            return self.__microvolts_per_minutes
+        self.__microvolts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicrovoltPerMinute)
+        return self.__microvolts_per_minutes
 
     
     @property
-    def milli_volts_per_minutes(self) -> float:
+    def millivolts_per_minutes(self) -> float:
         """
         
         """
-        if self.__milli_volts_per_minutes != None:
-            return self.__milli_volts_per_minutes
-        self.__milli_volts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MilliVoltPerMinute)
-        return self.__milli_volts_per_minutes
+        if self.__millivolts_per_minutes != None:
+            return self.__millivolts_per_minutes
+        self.__millivolts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MillivoltPerMinute)
+        return self.__millivolts_per_minutes
 
     
     @property
-    def kilo_volts_per_minutes(self) -> float:
+    def kilovolts_per_minutes(self) -> float:
         """
         
         """
-        if self.__kilo_volts_per_minutes != None:
-            return self.__kilo_volts_per_minutes
-        self.__kilo_volts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.KiloVoltPerMinute)
-        return self.__kilo_volts_per_minutes
+        if self.__kilovolts_per_minutes != None:
+            return self.__kilovolts_per_minutes
+        self.__kilovolts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.KilovoltPerMinute)
+        return self.__kilovolts_per_minutes
 
     
     @property
-    def mega_volts_per_minutes(self) -> float:
+    def megavolts_per_minutes(self) -> float:
         """
         
         """
-        if self.__mega_volts_per_minutes != None:
-            return self.__mega_volts_per_minutes
-        self.__mega_volts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegaVoltPerMinute)
-        return self.__mega_volts_per_minutes
+        if self.__megavolts_per_minutes != None:
+            return self.__megavolts_per_minutes
+        self.__megavolts_per_minutes = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegavoltPerMinute)
+        return self.__megavolts_per_minutes
 
     
     @property
-    def micro_volts_per_hours(self) -> float:
+    def microvolts_per_hours(self) -> float:
         """
         
         """
-        if self.__micro_volts_per_hours != None:
-            return self.__micro_volts_per_hours
-        self.__micro_volts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicroVoltPerHour)
-        return self.__micro_volts_per_hours
+        if self.__microvolts_per_hours != None:
+            return self.__microvolts_per_hours
+        self.__microvolts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MicrovoltPerHour)
+        return self.__microvolts_per_hours
 
     
     @property
-    def milli_volts_per_hours(self) -> float:
+    def millivolts_per_hours(self) -> float:
         """
         
         """
-        if self.__milli_volts_per_hours != None:
-            return self.__milli_volts_per_hours
-        self.__milli_volts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MilliVoltPerHour)
-        return self.__milli_volts_per_hours
+        if self.__millivolts_per_hours != None:
+            return self.__millivolts_per_hours
+        self.__millivolts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MillivoltPerHour)
+        return self.__millivolts_per_hours
 
     
     @property
-    def kilo_volts_per_hours(self) -> float:
+    def kilovolts_per_hours(self) -> float:
         """
         
         """
-        if self.__kilo_volts_per_hours != None:
-            return self.__kilo_volts_per_hours
-        self.__kilo_volts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.KiloVoltPerHour)
-        return self.__kilo_volts_per_hours
+        if self.__kilovolts_per_hours != None:
+            return self.__kilovolts_per_hours
+        self.__kilovolts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.KilovoltPerHour)
+        return self.__kilovolts_per_hours
 
     
     @property
-    def mega_volts_per_hours(self) -> float:
+    def megavolts_per_hours(self) -> float:
         """
         
         """
-        if self.__mega_volts_per_hours != None:
-            return self.__mega_volts_per_hours
-        self.__mega_volts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegaVoltPerHour)
-        return self.__mega_volts_per_hours
+        if self.__megavolts_per_hours != None:
+            return self.__megavolts_per_hours
+        self.__megavolts_per_hours = self.__convert_from_base(ElectricPotentialChangeRateUnits.MegavoltPerHour)
+        return self.__megavolts_per_hours
 
     
     def to_string(self, unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> string:
@@ -838,53 +838,53 @@ class ElectricPotentialChangeRate:
         if unit == ElectricPotentialChangeRateUnits.VoltPerHour:
             return f"""{self.volts_per_hours} V/h"""
         
-        if unit == ElectricPotentialChangeRateUnits.MicroVoltPerSecond:
-            return f"""{self.micro_volts_per_seconds} """
+        if unit == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
+            return f"""{self.microvolts_per_seconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MilliVoltPerSecond:
-            return f"""{self.milli_volts_per_seconds} """
+        if unit == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
+            return f"""{self.millivolts_per_seconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.KiloVoltPerSecond:
-            return f"""{self.kilo_volts_per_seconds} """
+        if unit == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
+            return f"""{self.kilovolts_per_seconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MegaVoltPerSecond:
-            return f"""{self.mega_volts_per_seconds} """
+        if unit == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
+            return f"""{self.megavolts_per_seconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond:
-            return f"""{self.micro_volts_per_microseconds} """
+        if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
+            return f"""{self.microvolts_per_microseconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond:
-            return f"""{self.milli_volts_per_microseconds} """
+        if unit == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
+            return f"""{self.millivolts_per_microseconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond:
-            return f"""{self.kilo_volts_per_microseconds} """
+        if unit == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
+            return f"""{self.kilovolts_per_microseconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond:
-            return f"""{self.mega_volts_per_microseconds} """
+        if unit == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
+            return f"""{self.megavolts_per_microseconds} """
         
-        if unit == ElectricPotentialChangeRateUnits.MicroVoltPerMinute:
-            return f"""{self.micro_volts_per_minutes} """
+        if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
+            return f"""{self.microvolts_per_minutes} """
         
-        if unit == ElectricPotentialChangeRateUnits.MilliVoltPerMinute:
-            return f"""{self.milli_volts_per_minutes} """
+        if unit == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
+            return f"""{self.millivolts_per_minutes} """
         
-        if unit == ElectricPotentialChangeRateUnits.KiloVoltPerMinute:
-            return f"""{self.kilo_volts_per_minutes} """
+        if unit == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
+            return f"""{self.kilovolts_per_minutes} """
         
-        if unit == ElectricPotentialChangeRateUnits.MegaVoltPerMinute:
-            return f"""{self.mega_volts_per_minutes} """
+        if unit == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
+            return f"""{self.megavolts_per_minutes} """
         
-        if unit == ElectricPotentialChangeRateUnits.MicroVoltPerHour:
-            return f"""{self.micro_volts_per_hours} """
+        if unit == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
+            return f"""{self.microvolts_per_hours} """
         
-        if unit == ElectricPotentialChangeRateUnits.MilliVoltPerHour:
-            return f"""{self.milli_volts_per_hours} """
+        if unit == ElectricPotentialChangeRateUnits.MillivoltPerHour:
+            return f"""{self.millivolts_per_hours} """
         
-        if unit == ElectricPotentialChangeRateUnits.KiloVoltPerHour:
-            return f"""{self.kilo_volts_per_hours} """
+        if unit == ElectricPotentialChangeRateUnits.KilovoltPerHour:
+            return f"""{self.kilovolts_per_hours} """
         
-        if unit == ElectricPotentialChangeRateUnits.MegaVoltPerHour:
-            return f"""{self.mega_volts_per_hours} """
+        if unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
+            return f"""{self.megavolts_per_hours} """
         
         return f'{self.__value}'
 
@@ -908,52 +908,52 @@ class ElectricPotentialChangeRate:
         if unit_abbreviation == ElectricPotentialChangeRateUnits.VoltPerHour:
             return """V/h"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicroVoltPerSecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MilliVoltPerSecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.KiloVoltPerSecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegaVoltPerSecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicroVoltPerMicrosecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MilliVoltPerMicrosecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.KiloVoltPerMicrosecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegaVoltPerMicrosecond:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicroVoltPerMinute:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MilliVoltPerMinute:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.KiloVoltPerMinute:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegaVoltPerMinute:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicroVoltPerHour:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MilliVoltPerHour:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerHour:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.KiloVoltPerHour:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerHour:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegaVoltPerHour:
+        if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerHour:
             return """"""
         
 

@@ -13,27 +13,27 @@ class ElectricPotentialUnits(Enum):
             
         """
         
-        NanoVolt = 'nano_volt'
+        Nanovolt = 'nanovolt'
         """
             
         """
         
-        MicroVolt = 'micro_volt'
+        Microvolt = 'microvolt'
         """
             
         """
         
-        MilliVolt = 'milli_volt'
+        Millivolt = 'millivolt'
         """
             
         """
         
-        KiloVolt = 'kilo_volt'
+        Kilovolt = 'kilovolt'
         """
             
         """
         
-        MegaVolt = 'mega_volt'
+        Megavolt = 'megavolt'
         """
             
         """
@@ -54,15 +54,15 @@ class ElectricPotential:
         
         self.__volts = None
         
-        self.__nano_volts = None
+        self.__nanovolts = None
         
-        self.__micro_volts = None
+        self.__microvolts = None
         
-        self.__milli_volts = None
+        self.__millivolts = None
         
-        self.__kilo_volts = None
+        self.__kilovolts = None
         
-        self.__mega_volts = None
+        self.__megavolts = None
         
 
     def __convert_from_base(self, from_unit: ElectricPotentialUnits) -> float:
@@ -71,19 +71,19 @@ class ElectricPotential:
         if from_unit == ElectricPotentialUnits.Volt:
             return (value)
         
-        if from_unit == ElectricPotentialUnits.NanoVolt:
+        if from_unit == ElectricPotentialUnits.Nanovolt:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricPotentialUnits.MicroVolt:
+        if from_unit == ElectricPotentialUnits.Microvolt:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricPotentialUnits.MilliVolt:
+        if from_unit == ElectricPotentialUnits.Millivolt:
             return ((value) / 0.001)
         
-        if from_unit == ElectricPotentialUnits.KiloVolt:
+        if from_unit == ElectricPotentialUnits.Kilovolt:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricPotentialUnits.MegaVolt:
+        if from_unit == ElectricPotentialUnits.Megavolt:
             return ((value) / 1000000.0)
         
         return None
@@ -94,19 +94,19 @@ class ElectricPotential:
         if to_unit == ElectricPotentialUnits.Volt:
             return (value)
         
-        if to_unit == ElectricPotentialUnits.NanoVolt:
+        if to_unit == ElectricPotentialUnits.Nanovolt:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricPotentialUnits.MicroVolt:
+        if to_unit == ElectricPotentialUnits.Microvolt:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricPotentialUnits.MilliVolt:
+        if to_unit == ElectricPotentialUnits.Millivolt:
             return ((value) * 0.001)
         
-        if to_unit == ElectricPotentialUnits.KiloVolt:
+        if to_unit == ElectricPotentialUnits.Kilovolt:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricPotentialUnits.MegaVolt:
+        if to_unit == ElectricPotentialUnits.Megavolt:
             return ((value) * 1000000.0)
         
         return None
@@ -133,78 +133,78 @@ class ElectricPotential:
 
     
     @staticmethod
-    def from_nano_volts(nano_volts: float):
+    def from_nanovolts(nanovolts: float):
         """
-        Create a new instance of ElectricPotential from a value in nano_volts.
+        Create a new instance of ElectricPotential from a value in nanovolts.
 
         
 
-        :param meters: The ElectricPotential value in nano_volts.
-        :type nano_volts: float
+        :param meters: The ElectricPotential value in nanovolts.
+        :type nanovolts: float
         :return: A new instance of ElectricPotential.
         :rtype: ElectricPotential
         """
-        return ElectricPotential(nano_volts, ElectricPotentialUnits.NanoVolt)
+        return ElectricPotential(nanovolts, ElectricPotentialUnits.Nanovolt)
 
     
     @staticmethod
-    def from_micro_volts(micro_volts: float):
+    def from_microvolts(microvolts: float):
         """
-        Create a new instance of ElectricPotential from a value in micro_volts.
+        Create a new instance of ElectricPotential from a value in microvolts.
 
         
 
-        :param meters: The ElectricPotential value in micro_volts.
-        :type micro_volts: float
+        :param meters: The ElectricPotential value in microvolts.
+        :type microvolts: float
         :return: A new instance of ElectricPotential.
         :rtype: ElectricPotential
         """
-        return ElectricPotential(micro_volts, ElectricPotentialUnits.MicroVolt)
+        return ElectricPotential(microvolts, ElectricPotentialUnits.Microvolt)
 
     
     @staticmethod
-    def from_milli_volts(milli_volts: float):
+    def from_millivolts(millivolts: float):
         """
-        Create a new instance of ElectricPotential from a value in milli_volts.
+        Create a new instance of ElectricPotential from a value in millivolts.
 
         
 
-        :param meters: The ElectricPotential value in milli_volts.
-        :type milli_volts: float
+        :param meters: The ElectricPotential value in millivolts.
+        :type millivolts: float
         :return: A new instance of ElectricPotential.
         :rtype: ElectricPotential
         """
-        return ElectricPotential(milli_volts, ElectricPotentialUnits.MilliVolt)
+        return ElectricPotential(millivolts, ElectricPotentialUnits.Millivolt)
 
     
     @staticmethod
-    def from_kilo_volts(kilo_volts: float):
+    def from_kilovolts(kilovolts: float):
         """
-        Create a new instance of ElectricPotential from a value in kilo_volts.
+        Create a new instance of ElectricPotential from a value in kilovolts.
 
         
 
-        :param meters: The ElectricPotential value in kilo_volts.
-        :type kilo_volts: float
+        :param meters: The ElectricPotential value in kilovolts.
+        :type kilovolts: float
         :return: A new instance of ElectricPotential.
         :rtype: ElectricPotential
         """
-        return ElectricPotential(kilo_volts, ElectricPotentialUnits.KiloVolt)
+        return ElectricPotential(kilovolts, ElectricPotentialUnits.Kilovolt)
 
     
     @staticmethod
-    def from_mega_volts(mega_volts: float):
+    def from_megavolts(megavolts: float):
         """
-        Create a new instance of ElectricPotential from a value in mega_volts.
+        Create a new instance of ElectricPotential from a value in megavolts.
 
         
 
-        :param meters: The ElectricPotential value in mega_volts.
-        :type mega_volts: float
+        :param meters: The ElectricPotential value in megavolts.
+        :type megavolts: float
         :return: A new instance of ElectricPotential.
         :rtype: ElectricPotential
         """
-        return ElectricPotential(mega_volts, ElectricPotentialUnits.MegaVolt)
+        return ElectricPotential(megavolts, ElectricPotentialUnits.Megavolt)
 
     
     @property
@@ -219,58 +219,58 @@ class ElectricPotential:
 
     
     @property
-    def nano_volts(self) -> float:
+    def nanovolts(self) -> float:
         """
         
         """
-        if self.__nano_volts != None:
-            return self.__nano_volts
-        self.__nano_volts = self.__convert_from_base(ElectricPotentialUnits.NanoVolt)
-        return self.__nano_volts
+        if self.__nanovolts != None:
+            return self.__nanovolts
+        self.__nanovolts = self.__convert_from_base(ElectricPotentialUnits.Nanovolt)
+        return self.__nanovolts
 
     
     @property
-    def micro_volts(self) -> float:
+    def microvolts(self) -> float:
         """
         
         """
-        if self.__micro_volts != None:
-            return self.__micro_volts
-        self.__micro_volts = self.__convert_from_base(ElectricPotentialUnits.MicroVolt)
-        return self.__micro_volts
+        if self.__microvolts != None:
+            return self.__microvolts
+        self.__microvolts = self.__convert_from_base(ElectricPotentialUnits.Microvolt)
+        return self.__microvolts
 
     
     @property
-    def milli_volts(self) -> float:
+    def millivolts(self) -> float:
         """
         
         """
-        if self.__milli_volts != None:
-            return self.__milli_volts
-        self.__milli_volts = self.__convert_from_base(ElectricPotentialUnits.MilliVolt)
-        return self.__milli_volts
+        if self.__millivolts != None:
+            return self.__millivolts
+        self.__millivolts = self.__convert_from_base(ElectricPotentialUnits.Millivolt)
+        return self.__millivolts
 
     
     @property
-    def kilo_volts(self) -> float:
+    def kilovolts(self) -> float:
         """
         
         """
-        if self.__kilo_volts != None:
-            return self.__kilo_volts
-        self.__kilo_volts = self.__convert_from_base(ElectricPotentialUnits.KiloVolt)
-        return self.__kilo_volts
+        if self.__kilovolts != None:
+            return self.__kilovolts
+        self.__kilovolts = self.__convert_from_base(ElectricPotentialUnits.Kilovolt)
+        return self.__kilovolts
 
     
     @property
-    def mega_volts(self) -> float:
+    def megavolts(self) -> float:
         """
         
         """
-        if self.__mega_volts != None:
-            return self.__mega_volts
-        self.__mega_volts = self.__convert_from_base(ElectricPotentialUnits.MegaVolt)
-        return self.__mega_volts
+        if self.__megavolts != None:
+            return self.__megavolts
+        self.__megavolts = self.__convert_from_base(ElectricPotentialUnits.Megavolt)
+        return self.__megavolts
 
     
     def to_string(self, unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt) -> string:
@@ -283,20 +283,20 @@ class ElectricPotential:
         if unit == ElectricPotentialUnits.Volt:
             return f"""{self.volts} V"""
         
-        if unit == ElectricPotentialUnits.NanoVolt:
-            return f"""{self.nano_volts} """
+        if unit == ElectricPotentialUnits.Nanovolt:
+            return f"""{self.nanovolts} """
         
-        if unit == ElectricPotentialUnits.MicroVolt:
-            return f"""{self.micro_volts} """
+        if unit == ElectricPotentialUnits.Microvolt:
+            return f"""{self.microvolts} """
         
-        if unit == ElectricPotentialUnits.MilliVolt:
-            return f"""{self.milli_volts} """
+        if unit == ElectricPotentialUnits.Millivolt:
+            return f"""{self.millivolts} """
         
-        if unit == ElectricPotentialUnits.KiloVolt:
-            return f"""{self.kilo_volts} """
+        if unit == ElectricPotentialUnits.Kilovolt:
+            return f"""{self.kilovolts} """
         
-        if unit == ElectricPotentialUnits.MegaVolt:
-            return f"""{self.mega_volts} """
+        if unit == ElectricPotentialUnits.Megavolt:
+            return f"""{self.megavolts} """
         
         return f'{self.__value}'
 
@@ -311,19 +311,19 @@ class ElectricPotential:
         if unit_abbreviation == ElectricPotentialUnits.Volt:
             return """V"""
         
-        if unit_abbreviation == ElectricPotentialUnits.NanoVolt:
+        if unit_abbreviation == ElectricPotentialUnits.Nanovolt:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialUnits.MicroVolt:
+        if unit_abbreviation == ElectricPotentialUnits.Microvolt:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialUnits.MilliVolt:
+        if unit_abbreviation == ElectricPotentialUnits.Millivolt:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialUnits.KiloVolt:
+        if unit_abbreviation == ElectricPotentialUnits.Kilovolt:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialUnits.MegaVolt:
+        if unit_abbreviation == ElectricPotentialUnits.Megavolt:
             return """"""
         
 

@@ -23,32 +23,32 @@ class KinematicViscosityUnits(Enum):
             
         """
         
-        NanoStokes = 'nano_stokes'
+        Nanostokes = 'nanostokes'
         """
             
         """
         
-        MicroStokes = 'micro_stokes'
+        Microstokes = 'microstokes'
         """
             
         """
         
-        MilliStokes = 'milli_stokes'
+        Millistokes = 'millistokes'
         """
             
         """
         
-        CentiStokes = 'centi_stokes'
+        Centistokes = 'centistokes'
         """
             
         """
         
-        DeciStokes = 'deci_stokes'
+        Decistokes = 'decistokes'
         """
             
         """
         
-        KiloStokes = 'kilo_stokes'
+        Kilostokes = 'kilostokes'
         """
             
         """
@@ -73,17 +73,17 @@ class KinematicViscosity:
         
         self.__square_feet_per_second = None
         
-        self.__nano_stokes = None
+        self.__nanostokes = None
         
-        self.__micro_stokes = None
+        self.__microstokes = None
         
-        self.__milli_stokes = None
+        self.__millistokes = None
         
-        self.__centi_stokes = None
+        self.__centistokes = None
         
-        self.__deci_stokes = None
+        self.__decistokes = None
         
-        self.__kilo_stokes = None
+        self.__kilostokes = None
         
 
     def __convert_from_base(self, from_unit: KinematicViscosityUnits) -> float:
@@ -98,22 +98,22 @@ class KinematicViscosity:
         if from_unit == KinematicViscosityUnits.SquareFootPerSecond:
             return (value * 10.7639)
         
-        if from_unit == KinematicViscosityUnits.NanoStokes:
+        if from_unit == KinematicViscosityUnits.Nanostokes:
             return ((value * 1e4) / 1e-09)
         
-        if from_unit == KinematicViscosityUnits.MicroStokes:
+        if from_unit == KinematicViscosityUnits.Microstokes:
             return ((value * 1e4) / 1e-06)
         
-        if from_unit == KinematicViscosityUnits.MilliStokes:
+        if from_unit == KinematicViscosityUnits.Millistokes:
             return ((value * 1e4) / 0.001)
         
-        if from_unit == KinematicViscosityUnits.CentiStokes:
+        if from_unit == KinematicViscosityUnits.Centistokes:
             return ((value * 1e4) / 0.01)
         
-        if from_unit == KinematicViscosityUnits.DeciStokes:
+        if from_unit == KinematicViscosityUnits.Decistokes:
             return ((value * 1e4) / 0.1)
         
-        if from_unit == KinematicViscosityUnits.KiloStokes:
+        if from_unit == KinematicViscosityUnits.Kilostokes:
             return ((value * 1e4) / 1000.0)
         
         return None
@@ -130,22 +130,22 @@ class KinematicViscosity:
         if to_unit == KinematicViscosityUnits.SquareFootPerSecond:
             return (value / 10.7639)
         
-        if to_unit == KinematicViscosityUnits.NanoStokes:
+        if to_unit == KinematicViscosityUnits.Nanostokes:
             return ((value / 1e4) * 1e-09)
         
-        if to_unit == KinematicViscosityUnits.MicroStokes:
+        if to_unit == KinematicViscosityUnits.Microstokes:
             return ((value / 1e4) * 1e-06)
         
-        if to_unit == KinematicViscosityUnits.MilliStokes:
+        if to_unit == KinematicViscosityUnits.Millistokes:
             return ((value / 1e4) * 0.001)
         
-        if to_unit == KinematicViscosityUnits.CentiStokes:
+        if to_unit == KinematicViscosityUnits.Centistokes:
             return ((value / 1e4) * 0.01)
         
-        if to_unit == KinematicViscosityUnits.DeciStokes:
+        if to_unit == KinematicViscosityUnits.Decistokes:
             return ((value / 1e4) * 0.1)
         
-        if to_unit == KinematicViscosityUnits.KiloStokes:
+        if to_unit == KinematicViscosityUnits.Kilostokes:
             return ((value / 1e4) * 1000.0)
         
         return None
@@ -202,93 +202,93 @@ class KinematicViscosity:
 
     
     @staticmethod
-    def from_nano_stokes(nano_stokes: float):
+    def from_nanostokes(nanostokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in nano_stokes.
+        Create a new instance of KinematicViscosity from a value in nanostokes.
 
         
 
-        :param meters: The KinematicViscosity value in nano_stokes.
-        :type nano_stokes: float
+        :param meters: The KinematicViscosity value in nanostokes.
+        :type nanostokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(nano_stokes, KinematicViscosityUnits.NanoStokes)
+        return KinematicViscosity(nanostokes, KinematicViscosityUnits.Nanostokes)
 
     
     @staticmethod
-    def from_micro_stokes(micro_stokes: float):
+    def from_microstokes(microstokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in micro_stokes.
+        Create a new instance of KinematicViscosity from a value in microstokes.
 
         
 
-        :param meters: The KinematicViscosity value in micro_stokes.
-        :type micro_stokes: float
+        :param meters: The KinematicViscosity value in microstokes.
+        :type microstokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(micro_stokes, KinematicViscosityUnits.MicroStokes)
+        return KinematicViscosity(microstokes, KinematicViscosityUnits.Microstokes)
 
     
     @staticmethod
-    def from_milli_stokes(milli_stokes: float):
+    def from_millistokes(millistokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in milli_stokes.
+        Create a new instance of KinematicViscosity from a value in millistokes.
 
         
 
-        :param meters: The KinematicViscosity value in milli_stokes.
-        :type milli_stokes: float
+        :param meters: The KinematicViscosity value in millistokes.
+        :type millistokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(milli_stokes, KinematicViscosityUnits.MilliStokes)
+        return KinematicViscosity(millistokes, KinematicViscosityUnits.Millistokes)
 
     
     @staticmethod
-    def from_centi_stokes(centi_stokes: float):
+    def from_centistokes(centistokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in centi_stokes.
+        Create a new instance of KinematicViscosity from a value in centistokes.
 
         
 
-        :param meters: The KinematicViscosity value in centi_stokes.
-        :type centi_stokes: float
+        :param meters: The KinematicViscosity value in centistokes.
+        :type centistokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(centi_stokes, KinematicViscosityUnits.CentiStokes)
+        return KinematicViscosity(centistokes, KinematicViscosityUnits.Centistokes)
 
     
     @staticmethod
-    def from_deci_stokes(deci_stokes: float):
+    def from_decistokes(decistokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in deci_stokes.
+        Create a new instance of KinematicViscosity from a value in decistokes.
 
         
 
-        :param meters: The KinematicViscosity value in deci_stokes.
-        :type deci_stokes: float
+        :param meters: The KinematicViscosity value in decistokes.
+        :type decistokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(deci_stokes, KinematicViscosityUnits.DeciStokes)
+        return KinematicViscosity(decistokes, KinematicViscosityUnits.Decistokes)
 
     
     @staticmethod
-    def from_kilo_stokes(kilo_stokes: float):
+    def from_kilostokes(kilostokes: float):
         """
-        Create a new instance of KinematicViscosity from a value in kilo_stokes.
+        Create a new instance of KinematicViscosity from a value in kilostokes.
 
         
 
-        :param meters: The KinematicViscosity value in kilo_stokes.
-        :type kilo_stokes: float
+        :param meters: The KinematicViscosity value in kilostokes.
+        :type kilostokes: float
         :return: A new instance of KinematicViscosity.
         :rtype: KinematicViscosity
         """
-        return KinematicViscosity(kilo_stokes, KinematicViscosityUnits.KiloStokes)
+        return KinematicViscosity(kilostokes, KinematicViscosityUnits.Kilostokes)
 
     
     @property
@@ -325,69 +325,69 @@ class KinematicViscosity:
 
     
     @property
-    def nano_stokes(self) -> float:
+    def nanostokes(self) -> float:
         """
         
         """
-        if self.__nano_stokes != None:
-            return self.__nano_stokes
-        self.__nano_stokes = self.__convert_from_base(KinematicViscosityUnits.NanoStokes)
-        return self.__nano_stokes
+        if self.__nanostokes != None:
+            return self.__nanostokes
+        self.__nanostokes = self.__convert_from_base(KinematicViscosityUnits.Nanostokes)
+        return self.__nanostokes
 
     
     @property
-    def micro_stokes(self) -> float:
+    def microstokes(self) -> float:
         """
         
         """
-        if self.__micro_stokes != None:
-            return self.__micro_stokes
-        self.__micro_stokes = self.__convert_from_base(KinematicViscosityUnits.MicroStokes)
-        return self.__micro_stokes
+        if self.__microstokes != None:
+            return self.__microstokes
+        self.__microstokes = self.__convert_from_base(KinematicViscosityUnits.Microstokes)
+        return self.__microstokes
 
     
     @property
-    def milli_stokes(self) -> float:
+    def millistokes(self) -> float:
         """
         
         """
-        if self.__milli_stokes != None:
-            return self.__milli_stokes
-        self.__milli_stokes = self.__convert_from_base(KinematicViscosityUnits.MilliStokes)
-        return self.__milli_stokes
+        if self.__millistokes != None:
+            return self.__millistokes
+        self.__millistokes = self.__convert_from_base(KinematicViscosityUnits.Millistokes)
+        return self.__millistokes
 
     
     @property
-    def centi_stokes(self) -> float:
+    def centistokes(self) -> float:
         """
         
         """
-        if self.__centi_stokes != None:
-            return self.__centi_stokes
-        self.__centi_stokes = self.__convert_from_base(KinematicViscosityUnits.CentiStokes)
-        return self.__centi_stokes
+        if self.__centistokes != None:
+            return self.__centistokes
+        self.__centistokes = self.__convert_from_base(KinematicViscosityUnits.Centistokes)
+        return self.__centistokes
 
     
     @property
-    def deci_stokes(self) -> float:
+    def decistokes(self) -> float:
         """
         
         """
-        if self.__deci_stokes != None:
-            return self.__deci_stokes
-        self.__deci_stokes = self.__convert_from_base(KinematicViscosityUnits.DeciStokes)
-        return self.__deci_stokes
+        if self.__decistokes != None:
+            return self.__decistokes
+        self.__decistokes = self.__convert_from_base(KinematicViscosityUnits.Decistokes)
+        return self.__decistokes
 
     
     @property
-    def kilo_stokes(self) -> float:
+    def kilostokes(self) -> float:
         """
         
         """
-        if self.__kilo_stokes != None:
-            return self.__kilo_stokes
-        self.__kilo_stokes = self.__convert_from_base(KinematicViscosityUnits.KiloStokes)
-        return self.__kilo_stokes
+        if self.__kilostokes != None:
+            return self.__kilostokes
+        self.__kilostokes = self.__convert_from_base(KinematicViscosityUnits.Kilostokes)
+        return self.__kilostokes
 
     
     def to_string(self, unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> string:
@@ -406,23 +406,23 @@ class KinematicViscosity:
         if unit == KinematicViscosityUnits.SquareFootPerSecond:
             return f"""{self.square_feet_per_second} ft²/s"""
         
-        if unit == KinematicViscosityUnits.NanoStokes:
-            return f"""{self.nano_stokes} """
+        if unit == KinematicViscosityUnits.Nanostokes:
+            return f"""{self.nanostokes} """
         
-        if unit == KinematicViscosityUnits.MicroStokes:
-            return f"""{self.micro_stokes} """
+        if unit == KinematicViscosityUnits.Microstokes:
+            return f"""{self.microstokes} """
         
-        if unit == KinematicViscosityUnits.MilliStokes:
-            return f"""{self.milli_stokes} """
+        if unit == KinematicViscosityUnits.Millistokes:
+            return f"""{self.millistokes} """
         
-        if unit == KinematicViscosityUnits.CentiStokes:
-            return f"""{self.centi_stokes} """
+        if unit == KinematicViscosityUnits.Centistokes:
+            return f"""{self.centistokes} """
         
-        if unit == KinematicViscosityUnits.DeciStokes:
-            return f"""{self.deci_stokes} """
+        if unit == KinematicViscosityUnits.Decistokes:
+            return f"""{self.decistokes} """
         
-        if unit == KinematicViscosityUnits.KiloStokes:
-            return f"""{self.kilo_stokes} """
+        if unit == KinematicViscosityUnits.Kilostokes:
+            return f"""{self.kilostokes} """
         
         return f'{self.__value}'
 
@@ -443,22 +443,22 @@ class KinematicViscosity:
         if unit_abbreviation == KinematicViscosityUnits.SquareFootPerSecond:
             return """ft²/s"""
         
-        if unit_abbreviation == KinematicViscosityUnits.NanoStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Nanostokes:
             return """"""
         
-        if unit_abbreviation == KinematicViscosityUnits.MicroStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Microstokes:
             return """"""
         
-        if unit_abbreviation == KinematicViscosityUnits.MilliStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Millistokes:
             return """"""
         
-        if unit_abbreviation == KinematicViscosityUnits.CentiStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Centistokes:
             return """"""
         
-        if unit_abbreviation == KinematicViscosityUnits.DeciStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Decistokes:
             return """"""
         
-        if unit_abbreviation == KinematicViscosityUnits.KiloStokes:
+        if unit_abbreviation == KinematicViscosityUnits.Kilostokes:
             return """"""
         
 

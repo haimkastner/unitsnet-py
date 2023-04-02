@@ -18,42 +18,42 @@ class TemperatureChangeRateUnits(Enum):
             
         """
         
-        NanoDegreeCelsiusPerSecond = 'nano_degree_celsius_per_second'
+        NanodegreeCelsiusPerSecond = 'nanodegree_celsius_per_second'
         """
             
         """
         
-        MicroDegreeCelsiusPerSecond = 'micro_degree_celsius_per_second'
+        MicrodegreeCelsiusPerSecond = 'microdegree_celsius_per_second'
         """
             
         """
         
-        MilliDegreeCelsiusPerSecond = 'milli_degree_celsius_per_second'
+        MillidegreeCelsiusPerSecond = 'millidegree_celsius_per_second'
         """
             
         """
         
-        CentiDegreeCelsiusPerSecond = 'centi_degree_celsius_per_second'
+        CentidegreeCelsiusPerSecond = 'centidegree_celsius_per_second'
         """
             
         """
         
-        DeciDegreeCelsiusPerSecond = 'deci_degree_celsius_per_second'
+        DecidegreeCelsiusPerSecond = 'decidegree_celsius_per_second'
         """
             
         """
         
-        DecaDegreeCelsiusPerSecond = 'deca_degree_celsius_per_second'
+        DecadegreeCelsiusPerSecond = 'decadegree_celsius_per_second'
         """
             
         """
         
-        HectoDegreeCelsiusPerSecond = 'hecto_degree_celsius_per_second'
+        HectodegreeCelsiusPerSecond = 'hectodegree_celsius_per_second'
         """
             
         """
         
-        KiloDegreeCelsiusPerSecond = 'kilo_degree_celsius_per_second'
+        KilodegreeCelsiusPerSecond = 'kilodegree_celsius_per_second'
         """
             
         """
@@ -76,21 +76,21 @@ class TemperatureChangeRate:
         
         self.__degrees_celsius_per_minute = None
         
-        self.__nano_degrees_celsius_per_second = None
+        self.__nanodegrees_celsius_per_second = None
         
-        self.__micro_degrees_celsius_per_second = None
+        self.__microdegrees_celsius_per_second = None
         
-        self.__milli_degrees_celsius_per_second = None
+        self.__millidegrees_celsius_per_second = None
         
-        self.__centi_degrees_celsius_per_second = None
+        self.__centidegrees_celsius_per_second = None
         
-        self.__deci_degrees_celsius_per_second = None
+        self.__decidegrees_celsius_per_second = None
         
-        self.__deca_degrees_celsius_per_second = None
+        self.__decadegrees_celsius_per_second = None
         
-        self.__hecto_degrees_celsius_per_second = None
+        self.__hectodegrees_celsius_per_second = None
         
-        self.__kilo_degrees_celsius_per_second = None
+        self.__kilodegrees_celsius_per_second = None
         
 
     def __convert_from_base(self, from_unit: TemperatureChangeRateUnits) -> float:
@@ -102,28 +102,28 @@ class TemperatureChangeRate:
         if from_unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return (value * 60)
         
-        if from_unit == TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) / 1e-09)
         
-        if from_unit == TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
             return ((value) / 0.01)
         
-        if from_unit == TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
             return ((value) / 0.1)
         
-        if from_unit == TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
             return ((value) / 10.0)
         
-        if from_unit == TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
             return ((value) / 100.0)
         
-        if from_unit == TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond:
+        if from_unit == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
             return ((value) / 1000.0)
         
         return None
@@ -137,28 +137,28 @@ class TemperatureChangeRate:
         if to_unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return (value / 60)
         
-        if to_unit == TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) * 1e-09)
         
-        if to_unit == TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
             return ((value) * 0.01)
         
-        if to_unit == TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
             return ((value) * 0.1)
         
-        if to_unit == TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
             return ((value) * 10.0)
         
-        if to_unit == TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
             return ((value) * 100.0)
         
-        if to_unit == TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond:
+        if to_unit == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
             return ((value) * 1000.0)
         
         return None
@@ -200,123 +200,123 @@ class TemperatureChangeRate:
 
     
     @staticmethod
-    def from_nano_degrees_celsius_per_second(nano_degrees_celsius_per_second: float):
+    def from_nanodegrees_celsius_per_second(nanodegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in nano_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in nanodegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in nano_degrees_celsius_per_second.
-        :type nano_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in nanodegrees_celsius_per_second.
+        :type nanodegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(nano_degrees_celsius_per_second, TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(nanodegrees_celsius_per_second, TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_micro_degrees_celsius_per_second(micro_degrees_celsius_per_second: float):
+    def from_microdegrees_celsius_per_second(microdegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in micro_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in microdegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in micro_degrees_celsius_per_second.
-        :type micro_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in microdegrees_celsius_per_second.
+        :type microdegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(micro_degrees_celsius_per_second, TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(microdegrees_celsius_per_second, TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_milli_degrees_celsius_per_second(milli_degrees_celsius_per_second: float):
+    def from_millidegrees_celsius_per_second(millidegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in milli_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in millidegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in milli_degrees_celsius_per_second.
-        :type milli_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in millidegrees_celsius_per_second.
+        :type millidegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(milli_degrees_celsius_per_second, TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(millidegrees_celsius_per_second, TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_centi_degrees_celsius_per_second(centi_degrees_celsius_per_second: float):
+    def from_centidegrees_celsius_per_second(centidegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in centi_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in centidegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in centi_degrees_celsius_per_second.
-        :type centi_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in centidegrees_celsius_per_second.
+        :type centidegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(centi_degrees_celsius_per_second, TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(centidegrees_celsius_per_second, TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_deci_degrees_celsius_per_second(deci_degrees_celsius_per_second: float):
+    def from_decidegrees_celsius_per_second(decidegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in deci_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in decidegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in deci_degrees_celsius_per_second.
-        :type deci_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in decidegrees_celsius_per_second.
+        :type decidegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(deci_degrees_celsius_per_second, TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(decidegrees_celsius_per_second, TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_deca_degrees_celsius_per_second(deca_degrees_celsius_per_second: float):
+    def from_decadegrees_celsius_per_second(decadegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in deca_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in decadegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in deca_degrees_celsius_per_second.
-        :type deca_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in decadegrees_celsius_per_second.
+        :type decadegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(deca_degrees_celsius_per_second, TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(decadegrees_celsius_per_second, TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_hecto_degrees_celsius_per_second(hecto_degrees_celsius_per_second: float):
+    def from_hectodegrees_celsius_per_second(hectodegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in hecto_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in hectodegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in hecto_degrees_celsius_per_second.
-        :type hecto_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in hectodegrees_celsius_per_second.
+        :type hectodegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(hecto_degrees_celsius_per_second, TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(hectodegrees_celsius_per_second, TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond)
 
     
     @staticmethod
-    def from_kilo_degrees_celsius_per_second(kilo_degrees_celsius_per_second: float):
+    def from_kilodegrees_celsius_per_second(kilodegrees_celsius_per_second: float):
         """
-        Create a new instance of TemperatureChangeRate from a value in kilo_degrees_celsius_per_second.
+        Create a new instance of TemperatureChangeRate from a value in kilodegrees_celsius_per_second.
 
         
 
-        :param meters: The TemperatureChangeRate value in kilo_degrees_celsius_per_second.
-        :type kilo_degrees_celsius_per_second: float
+        :param meters: The TemperatureChangeRate value in kilodegrees_celsius_per_second.
+        :type kilodegrees_celsius_per_second: float
         :return: A new instance of TemperatureChangeRate.
         :rtype: TemperatureChangeRate
         """
-        return TemperatureChangeRate(kilo_degrees_celsius_per_second, TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond)
+        return TemperatureChangeRate(kilodegrees_celsius_per_second, TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond)
 
     
     @property
@@ -342,91 +342,91 @@ class TemperatureChangeRate:
 
     
     @property
-    def nano_degrees_celsius_per_second(self) -> float:
+    def nanodegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__nano_degrees_celsius_per_second != None:
-            return self.__nano_degrees_celsius_per_second
-        self.__nano_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond)
-        return self.__nano_degrees_celsius_per_second
+        if self.__nanodegrees_celsius_per_second != None:
+            return self.__nanodegrees_celsius_per_second
+        self.__nanodegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond)
+        return self.__nanodegrees_celsius_per_second
 
     
     @property
-    def micro_degrees_celsius_per_second(self) -> float:
+    def microdegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__micro_degrees_celsius_per_second != None:
-            return self.__micro_degrees_celsius_per_second
-        self.__micro_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond)
-        return self.__micro_degrees_celsius_per_second
+        if self.__microdegrees_celsius_per_second != None:
+            return self.__microdegrees_celsius_per_second
+        self.__microdegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond)
+        return self.__microdegrees_celsius_per_second
 
     
     @property
-    def milli_degrees_celsius_per_second(self) -> float:
+    def millidegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__milli_degrees_celsius_per_second != None:
-            return self.__milli_degrees_celsius_per_second
-        self.__milli_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond)
-        return self.__milli_degrees_celsius_per_second
+        if self.__millidegrees_celsius_per_second != None:
+            return self.__millidegrees_celsius_per_second
+        self.__millidegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond)
+        return self.__millidegrees_celsius_per_second
 
     
     @property
-    def centi_degrees_celsius_per_second(self) -> float:
+    def centidegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__centi_degrees_celsius_per_second != None:
-            return self.__centi_degrees_celsius_per_second
-        self.__centi_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond)
-        return self.__centi_degrees_celsius_per_second
+        if self.__centidegrees_celsius_per_second != None:
+            return self.__centidegrees_celsius_per_second
+        self.__centidegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond)
+        return self.__centidegrees_celsius_per_second
 
     
     @property
-    def deci_degrees_celsius_per_second(self) -> float:
+    def decidegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__deci_degrees_celsius_per_second != None:
-            return self.__deci_degrees_celsius_per_second
-        self.__deci_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond)
-        return self.__deci_degrees_celsius_per_second
+        if self.__decidegrees_celsius_per_second != None:
+            return self.__decidegrees_celsius_per_second
+        self.__decidegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond)
+        return self.__decidegrees_celsius_per_second
 
     
     @property
-    def deca_degrees_celsius_per_second(self) -> float:
+    def decadegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__deca_degrees_celsius_per_second != None:
-            return self.__deca_degrees_celsius_per_second
-        self.__deca_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond)
-        return self.__deca_degrees_celsius_per_second
+        if self.__decadegrees_celsius_per_second != None:
+            return self.__decadegrees_celsius_per_second
+        self.__decadegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond)
+        return self.__decadegrees_celsius_per_second
 
     
     @property
-    def hecto_degrees_celsius_per_second(self) -> float:
+    def hectodegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__hecto_degrees_celsius_per_second != None:
-            return self.__hecto_degrees_celsius_per_second
-        self.__hecto_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond)
-        return self.__hecto_degrees_celsius_per_second
+        if self.__hectodegrees_celsius_per_second != None:
+            return self.__hectodegrees_celsius_per_second
+        self.__hectodegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond)
+        return self.__hectodegrees_celsius_per_second
 
     
     @property
-    def kilo_degrees_celsius_per_second(self) -> float:
+    def kilodegrees_celsius_per_second(self) -> float:
         """
         
         """
-        if self.__kilo_degrees_celsius_per_second != None:
-            return self.__kilo_degrees_celsius_per_second
-        self.__kilo_degrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond)
-        return self.__kilo_degrees_celsius_per_second
+        if self.__kilodegrees_celsius_per_second != None:
+            return self.__kilodegrees_celsius_per_second
+        self.__kilodegrees_celsius_per_second = self.__convert_from_base(TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond)
+        return self.__kilodegrees_celsius_per_second
 
     
     def to_string(self, unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> string:
@@ -442,29 +442,29 @@ class TemperatureChangeRate:
         if unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return f"""{self.degrees_celsius_per_minute} °C/min"""
         
-        if unit == TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond:
-            return f"""{self.nano_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
+            return f"""{self.nanodegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond:
-            return f"""{self.micro_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
+            return f"""{self.microdegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond:
-            return f"""{self.milli_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
+            return f"""{self.millidegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond:
-            return f"""{self.centi_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
+            return f"""{self.centidegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond:
-            return f"""{self.deci_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
+            return f"""{self.decidegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond:
-            return f"""{self.deca_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
+            return f"""{self.decadegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond:
-            return f"""{self.hecto_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
+            return f"""{self.hectodegrees_celsius_per_second} """
         
-        if unit == TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond:
-            return f"""{self.kilo_degrees_celsius_per_second} """
+        if unit == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
+            return f"""{self.kilodegrees_celsius_per_second} """
         
         return f'{self.__value}'
 
@@ -482,28 +482,28 @@ class TemperatureChangeRate:
         if unit_abbreviation == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return """°C/min"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.NanoDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.MicroDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.MilliDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.CentiDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.DeciDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.DecaDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.HectoDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
             return """"""
         
-        if unit_abbreviation == TemperatureChangeRateUnits.KiloDegreeCelsiusPerSecond:
+        if unit_abbreviation == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
             return """"""
         
 

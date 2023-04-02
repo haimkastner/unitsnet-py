@@ -128,67 +128,67 @@ class LengthUnits(Enum):
             In radar-related subjects and in JTIDS, a data mile is a unit of distance equal to 6000 feet (1.8288 kilometres or 0.987 nautical miles).
         """
         
-        NanoMeter = 'nano_meter'
+        Nanometer = 'nanometer'
         """
             
         """
         
-        MicroMeter = 'micro_meter'
+        Micrometer = 'micrometer'
         """
             
         """
         
-        MilliMeter = 'milli_meter'
+        Millimeter = 'millimeter'
         """
             
         """
         
-        CentiMeter = 'centi_meter'
+        Centimeter = 'centimeter'
         """
             
         """
         
-        DeciMeter = 'deci_meter'
+        Decimeter = 'decimeter'
         """
             
         """
         
-        DecaMeter = 'deca_meter'
+        Decameter = 'decameter'
         """
             
         """
         
-        HectoMeter = 'hecto_meter'
+        Hectometer = 'hectometer'
         """
             
         """
         
-        KiloMeter = 'kilo_meter'
+        Kilometer = 'kilometer'
         """
             
         """
         
-        MegaMeter = 'mega_meter'
+        Megameter = 'megameter'
         """
             
         """
         
-        KiloParsec = 'kilo_parsec'
+        Kiloparsec = 'kiloparsec'
         """
             
         """
         
-        MegaParsec = 'mega_parsec'
+        Megaparsec = 'megaparsec'
         """
             
         """
         
-        KiloLightYear = 'kilo_light_year'
+        KilolightYear = 'kilolight_year'
         """
             
         """
         
-        MegaLightYear = 'mega_light_year'
+        MegalightYear = 'megalight_year'
         """
             
         """
@@ -255,31 +255,31 @@ class Length:
         
         self.__data_miles = None
         
-        self.__nano_meters = None
+        self.__nanometers = None
         
-        self.__micro_meters = None
+        self.__micrometers = None
         
-        self.__milli_meters = None
+        self.__millimeters = None
         
-        self.__centi_meters = None
+        self.__centimeters = None
         
-        self.__deci_meters = None
+        self.__decimeters = None
         
-        self.__deca_meters = None
+        self.__decameters = None
         
-        self.__hecto_meters = None
+        self.__hectometers = None
         
-        self.__kilo_meters = None
+        self.__kilometers = None
         
-        self.__mega_meters = None
+        self.__megameters = None
         
-        self.__kilo_parsecs = None
+        self.__kiloparsecs = None
         
-        self.__mega_parsecs = None
+        self.__megaparsecs = None
         
-        self.__kilo_light_years = None
+        self.__kilolight_years = None
         
-        self.__mega_light_years = None
+        self.__megalight_years = None
         
 
     def __convert_from_base(self, from_unit: LengthUnits) -> float:
@@ -357,43 +357,43 @@ class Length:
         if from_unit == LengthUnits.DataMile:
             return (value / 1828.8)
         
-        if from_unit == LengthUnits.NanoMeter:
+        if from_unit == LengthUnits.Nanometer:
             return ((value) / 1e-09)
         
-        if from_unit == LengthUnits.MicroMeter:
+        if from_unit == LengthUnits.Micrometer:
             return ((value) / 1e-06)
         
-        if from_unit == LengthUnits.MilliMeter:
+        if from_unit == LengthUnits.Millimeter:
             return ((value) / 0.001)
         
-        if from_unit == LengthUnits.CentiMeter:
+        if from_unit == LengthUnits.Centimeter:
             return ((value) / 0.01)
         
-        if from_unit == LengthUnits.DeciMeter:
+        if from_unit == LengthUnits.Decimeter:
             return ((value) / 0.1)
         
-        if from_unit == LengthUnits.DecaMeter:
+        if from_unit == LengthUnits.Decameter:
             return ((value) / 10.0)
         
-        if from_unit == LengthUnits.HectoMeter:
+        if from_unit == LengthUnits.Hectometer:
             return ((value) / 100.0)
         
-        if from_unit == LengthUnits.KiloMeter:
+        if from_unit == LengthUnits.Kilometer:
             return ((value) / 1000.0)
         
-        if from_unit == LengthUnits.MegaMeter:
+        if from_unit == LengthUnits.Megameter:
             return ((value) / 1000000.0)
         
-        if from_unit == LengthUnits.KiloParsec:
+        if from_unit == LengthUnits.Kiloparsec:
             return ((value / 3.08567758128e16) / 1000.0)
         
-        if from_unit == LengthUnits.MegaParsec:
+        if from_unit == LengthUnits.Megaparsec:
             return ((value / 3.08567758128e16) / 1000000.0)
         
-        if from_unit == LengthUnits.KiloLightYear:
+        if from_unit == LengthUnits.KilolightYear:
             return ((value / 9.46073047258e15) / 1000.0)
         
-        if from_unit == LengthUnits.MegaLightYear:
+        if from_unit == LengthUnits.MegalightYear:
             return ((value / 9.46073047258e15) / 1000000.0)
         
         return None
@@ -473,43 +473,43 @@ class Length:
         if to_unit == LengthUnits.DataMile:
             return (value * 1828.8)
         
-        if to_unit == LengthUnits.NanoMeter:
+        if to_unit == LengthUnits.Nanometer:
             return ((value) * 1e-09)
         
-        if to_unit == LengthUnits.MicroMeter:
+        if to_unit == LengthUnits.Micrometer:
             return ((value) * 1e-06)
         
-        if to_unit == LengthUnits.MilliMeter:
+        if to_unit == LengthUnits.Millimeter:
             return ((value) * 0.001)
         
-        if to_unit == LengthUnits.CentiMeter:
+        if to_unit == LengthUnits.Centimeter:
             return ((value) * 0.01)
         
-        if to_unit == LengthUnits.DeciMeter:
+        if to_unit == LengthUnits.Decimeter:
             return ((value) * 0.1)
         
-        if to_unit == LengthUnits.DecaMeter:
+        if to_unit == LengthUnits.Decameter:
             return ((value) * 10.0)
         
-        if to_unit == LengthUnits.HectoMeter:
+        if to_unit == LengthUnits.Hectometer:
             return ((value) * 100.0)
         
-        if to_unit == LengthUnits.KiloMeter:
+        if to_unit == LengthUnits.Kilometer:
             return ((value) * 1000.0)
         
-        if to_unit == LengthUnits.MegaMeter:
+        if to_unit == LengthUnits.Megameter:
             return ((value) * 1000000.0)
         
-        if to_unit == LengthUnits.KiloParsec:
+        if to_unit == LengthUnits.Kiloparsec:
             return ((value * 3.08567758128e16) * 1000.0)
         
-        if to_unit == LengthUnits.MegaParsec:
+        if to_unit == LengthUnits.Megaparsec:
             return ((value * 3.08567758128e16) * 1000000.0)
         
-        if to_unit == LengthUnits.KiloLightYear:
+        if to_unit == LengthUnits.KilolightYear:
             return ((value * 9.46073047258e15) * 1000.0)
         
-        if to_unit == LengthUnits.MegaLightYear:
+        if to_unit == LengthUnits.MegalightYear:
             return ((value * 9.46073047258e15) * 1000000.0)
         
         return None
@@ -881,198 +881,198 @@ class Length:
 
     
     @staticmethod
-    def from_nano_meters(nano_meters: float):
+    def from_nanometers(nanometers: float):
         """
-        Create a new instance of Length from a value in nano_meters.
+        Create a new instance of Length from a value in nanometers.
 
         
 
-        :param meters: The Length value in nano_meters.
-        :type nano_meters: float
+        :param meters: The Length value in nanometers.
+        :type nanometers: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(nano_meters, LengthUnits.NanoMeter)
+        return Length(nanometers, LengthUnits.Nanometer)
 
     
     @staticmethod
-    def from_micro_meters(micro_meters: float):
+    def from_micrometers(micrometers: float):
         """
-        Create a new instance of Length from a value in micro_meters.
+        Create a new instance of Length from a value in micrometers.
 
         
 
-        :param meters: The Length value in micro_meters.
-        :type micro_meters: float
+        :param meters: The Length value in micrometers.
+        :type micrometers: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(micro_meters, LengthUnits.MicroMeter)
+        return Length(micrometers, LengthUnits.Micrometer)
 
     
     @staticmethod
-    def from_milli_meters(milli_meters: float):
+    def from_millimeters(millimeters: float):
         """
-        Create a new instance of Length from a value in milli_meters.
+        Create a new instance of Length from a value in millimeters.
 
         
 
-        :param meters: The Length value in milli_meters.
-        :type milli_meters: float
+        :param meters: The Length value in millimeters.
+        :type millimeters: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(milli_meters, LengthUnits.MilliMeter)
+        return Length(millimeters, LengthUnits.Millimeter)
 
     
     @staticmethod
-    def from_centi_meters(centi_meters: float):
+    def from_centimeters(centimeters: float):
         """
-        Create a new instance of Length from a value in centi_meters.
+        Create a new instance of Length from a value in centimeters.
 
         
 
-        :param meters: The Length value in centi_meters.
-        :type centi_meters: float
+        :param meters: The Length value in centimeters.
+        :type centimeters: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(centi_meters, LengthUnits.CentiMeter)
+        return Length(centimeters, LengthUnits.Centimeter)
 
     
     @staticmethod
-    def from_deci_meters(deci_meters: float):
+    def from_decimeters(decimeters: float):
         """
-        Create a new instance of Length from a value in deci_meters.
+        Create a new instance of Length from a value in decimeters.
 
         
 
-        :param meters: The Length value in deci_meters.
-        :type deci_meters: float
+        :param meters: The Length value in decimeters.
+        :type decimeters: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(deci_meters, LengthUnits.DeciMeter)
+        return Length(decimeters, LengthUnits.Decimeter)
 
     
     @staticmethod
-    def from_deca_meters(deca_meters: float):
+    def from_decameters(decameters: float):
         """
-        Create a new instance of Length from a value in deca_meters.
+        Create a new instance of Length from a value in decameters.
 
         
 
-        :param meters: The Length value in deca_meters.
-        :type deca_meters: float
+        :param meters: The Length value in decameters.
+        :type decameters: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(deca_meters, LengthUnits.DecaMeter)
+        return Length(decameters, LengthUnits.Decameter)
 
     
     @staticmethod
-    def from_hecto_meters(hecto_meters: float):
+    def from_hectometers(hectometers: float):
         """
-        Create a new instance of Length from a value in hecto_meters.
+        Create a new instance of Length from a value in hectometers.
 
         
 
-        :param meters: The Length value in hecto_meters.
-        :type hecto_meters: float
+        :param meters: The Length value in hectometers.
+        :type hectometers: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(hecto_meters, LengthUnits.HectoMeter)
+        return Length(hectometers, LengthUnits.Hectometer)
 
     
     @staticmethod
-    def from_kilo_meters(kilo_meters: float):
+    def from_kilometers(kilometers: float):
         """
-        Create a new instance of Length from a value in kilo_meters.
+        Create a new instance of Length from a value in kilometers.
 
         
 
-        :param meters: The Length value in kilo_meters.
-        :type kilo_meters: float
+        :param meters: The Length value in kilometers.
+        :type kilometers: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(kilo_meters, LengthUnits.KiloMeter)
+        return Length(kilometers, LengthUnits.Kilometer)
 
     
     @staticmethod
-    def from_mega_meters(mega_meters: float):
+    def from_megameters(megameters: float):
         """
-        Create a new instance of Length from a value in mega_meters.
+        Create a new instance of Length from a value in megameters.
 
         
 
-        :param meters: The Length value in mega_meters.
-        :type mega_meters: float
+        :param meters: The Length value in megameters.
+        :type megameters: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(mega_meters, LengthUnits.MegaMeter)
+        return Length(megameters, LengthUnits.Megameter)
 
     
     @staticmethod
-    def from_kilo_parsecs(kilo_parsecs: float):
+    def from_kiloparsecs(kiloparsecs: float):
         """
-        Create a new instance of Length from a value in kilo_parsecs.
+        Create a new instance of Length from a value in kiloparsecs.
 
         
 
-        :param meters: The Length value in kilo_parsecs.
-        :type kilo_parsecs: float
+        :param meters: The Length value in kiloparsecs.
+        :type kiloparsecs: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(kilo_parsecs, LengthUnits.KiloParsec)
+        return Length(kiloparsecs, LengthUnits.Kiloparsec)
 
     
     @staticmethod
-    def from_mega_parsecs(mega_parsecs: float):
+    def from_megaparsecs(megaparsecs: float):
         """
-        Create a new instance of Length from a value in mega_parsecs.
+        Create a new instance of Length from a value in megaparsecs.
 
         
 
-        :param meters: The Length value in mega_parsecs.
-        :type mega_parsecs: float
+        :param meters: The Length value in megaparsecs.
+        :type megaparsecs: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(mega_parsecs, LengthUnits.MegaParsec)
+        return Length(megaparsecs, LengthUnits.Megaparsec)
 
     
     @staticmethod
-    def from_kilo_light_years(kilo_light_years: float):
+    def from_kilolight_years(kilolight_years: float):
         """
-        Create a new instance of Length from a value in kilo_light_years.
+        Create a new instance of Length from a value in kilolight_years.
 
         
 
-        :param meters: The Length value in kilo_light_years.
-        :type kilo_light_years: float
+        :param meters: The Length value in kilolight_years.
+        :type kilolight_years: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(kilo_light_years, LengthUnits.KiloLightYear)
+        return Length(kilolight_years, LengthUnits.KilolightYear)
 
     
     @staticmethod
-    def from_mega_light_years(mega_light_years: float):
+    def from_megalight_years(megalight_years: float):
         """
-        Create a new instance of Length from a value in mega_light_years.
+        Create a new instance of Length from a value in megalight_years.
 
         
 
-        :param meters: The Length value in mega_light_years.
-        :type mega_light_years: float
+        :param meters: The Length value in megalight_years.
+        :type megalight_years: float
         :return: A new instance of Length.
         :rtype: Length
         """
-        return Length(mega_light_years, LengthUnits.MegaLightYear)
+        return Length(megalight_years, LengthUnits.MegalightYear)
 
     
     @property
@@ -1340,146 +1340,146 @@ class Length:
 
     
     @property
-    def nano_meters(self) -> float:
+    def nanometers(self) -> float:
         """
         
         """
-        if self.__nano_meters != None:
-            return self.__nano_meters
-        self.__nano_meters = self.__convert_from_base(LengthUnits.NanoMeter)
-        return self.__nano_meters
+        if self.__nanometers != None:
+            return self.__nanometers
+        self.__nanometers = self.__convert_from_base(LengthUnits.Nanometer)
+        return self.__nanometers
 
     
     @property
-    def micro_meters(self) -> float:
+    def micrometers(self) -> float:
         """
         
         """
-        if self.__micro_meters != None:
-            return self.__micro_meters
-        self.__micro_meters = self.__convert_from_base(LengthUnits.MicroMeter)
-        return self.__micro_meters
+        if self.__micrometers != None:
+            return self.__micrometers
+        self.__micrometers = self.__convert_from_base(LengthUnits.Micrometer)
+        return self.__micrometers
 
     
     @property
-    def milli_meters(self) -> float:
+    def millimeters(self) -> float:
         """
         
         """
-        if self.__milli_meters != None:
-            return self.__milli_meters
-        self.__milli_meters = self.__convert_from_base(LengthUnits.MilliMeter)
-        return self.__milli_meters
+        if self.__millimeters != None:
+            return self.__millimeters
+        self.__millimeters = self.__convert_from_base(LengthUnits.Millimeter)
+        return self.__millimeters
 
     
     @property
-    def centi_meters(self) -> float:
+    def centimeters(self) -> float:
         """
         
         """
-        if self.__centi_meters != None:
-            return self.__centi_meters
-        self.__centi_meters = self.__convert_from_base(LengthUnits.CentiMeter)
-        return self.__centi_meters
+        if self.__centimeters != None:
+            return self.__centimeters
+        self.__centimeters = self.__convert_from_base(LengthUnits.Centimeter)
+        return self.__centimeters
 
     
     @property
-    def deci_meters(self) -> float:
+    def decimeters(self) -> float:
         """
         
         """
-        if self.__deci_meters != None:
-            return self.__deci_meters
-        self.__deci_meters = self.__convert_from_base(LengthUnits.DeciMeter)
-        return self.__deci_meters
+        if self.__decimeters != None:
+            return self.__decimeters
+        self.__decimeters = self.__convert_from_base(LengthUnits.Decimeter)
+        return self.__decimeters
 
     
     @property
-    def deca_meters(self) -> float:
+    def decameters(self) -> float:
         """
         
         """
-        if self.__deca_meters != None:
-            return self.__deca_meters
-        self.__deca_meters = self.__convert_from_base(LengthUnits.DecaMeter)
-        return self.__deca_meters
+        if self.__decameters != None:
+            return self.__decameters
+        self.__decameters = self.__convert_from_base(LengthUnits.Decameter)
+        return self.__decameters
 
     
     @property
-    def hecto_meters(self) -> float:
+    def hectometers(self) -> float:
         """
         
         """
-        if self.__hecto_meters != None:
-            return self.__hecto_meters
-        self.__hecto_meters = self.__convert_from_base(LengthUnits.HectoMeter)
-        return self.__hecto_meters
+        if self.__hectometers != None:
+            return self.__hectometers
+        self.__hectometers = self.__convert_from_base(LengthUnits.Hectometer)
+        return self.__hectometers
 
     
     @property
-    def kilo_meters(self) -> float:
+    def kilometers(self) -> float:
         """
         
         """
-        if self.__kilo_meters != None:
-            return self.__kilo_meters
-        self.__kilo_meters = self.__convert_from_base(LengthUnits.KiloMeter)
-        return self.__kilo_meters
+        if self.__kilometers != None:
+            return self.__kilometers
+        self.__kilometers = self.__convert_from_base(LengthUnits.Kilometer)
+        return self.__kilometers
 
     
     @property
-    def mega_meters(self) -> float:
+    def megameters(self) -> float:
         """
         
         """
-        if self.__mega_meters != None:
-            return self.__mega_meters
-        self.__mega_meters = self.__convert_from_base(LengthUnits.MegaMeter)
-        return self.__mega_meters
+        if self.__megameters != None:
+            return self.__megameters
+        self.__megameters = self.__convert_from_base(LengthUnits.Megameter)
+        return self.__megameters
 
     
     @property
-    def kilo_parsecs(self) -> float:
+    def kiloparsecs(self) -> float:
         """
         
         """
-        if self.__kilo_parsecs != None:
-            return self.__kilo_parsecs
-        self.__kilo_parsecs = self.__convert_from_base(LengthUnits.KiloParsec)
-        return self.__kilo_parsecs
+        if self.__kiloparsecs != None:
+            return self.__kiloparsecs
+        self.__kiloparsecs = self.__convert_from_base(LengthUnits.Kiloparsec)
+        return self.__kiloparsecs
 
     
     @property
-    def mega_parsecs(self) -> float:
+    def megaparsecs(self) -> float:
         """
         
         """
-        if self.__mega_parsecs != None:
-            return self.__mega_parsecs
-        self.__mega_parsecs = self.__convert_from_base(LengthUnits.MegaParsec)
-        return self.__mega_parsecs
+        if self.__megaparsecs != None:
+            return self.__megaparsecs
+        self.__megaparsecs = self.__convert_from_base(LengthUnits.Megaparsec)
+        return self.__megaparsecs
 
     
     @property
-    def kilo_light_years(self) -> float:
+    def kilolight_years(self) -> float:
         """
         
         """
-        if self.__kilo_light_years != None:
-            return self.__kilo_light_years
-        self.__kilo_light_years = self.__convert_from_base(LengthUnits.KiloLightYear)
-        return self.__kilo_light_years
+        if self.__kilolight_years != None:
+            return self.__kilolight_years
+        self.__kilolight_years = self.__convert_from_base(LengthUnits.KilolightYear)
+        return self.__kilolight_years
 
     
     @property
-    def mega_light_years(self) -> float:
+    def megalight_years(self) -> float:
         """
         
         """
-        if self.__mega_light_years != None:
-            return self.__mega_light_years
-        self.__mega_light_years = self.__convert_from_base(LengthUnits.MegaLightYear)
-        return self.__mega_light_years
+        if self.__megalight_years != None:
+            return self.__megalight_years
+        self.__megalight_years = self.__convert_from_base(LengthUnits.MegalightYear)
+        return self.__megalight_years
 
     
     def to_string(self, unit: LengthUnits = LengthUnits.Meter) -> string:
@@ -1561,44 +1561,44 @@ class Length:
         if unit == LengthUnits.DataMile:
             return f"""{self.data_miles} DM"""
         
-        if unit == LengthUnits.NanoMeter:
-            return f"""{self.nano_meters} """
+        if unit == LengthUnits.Nanometer:
+            return f"""{self.nanometers} """
         
-        if unit == LengthUnits.MicroMeter:
-            return f"""{self.micro_meters} """
+        if unit == LengthUnits.Micrometer:
+            return f"""{self.micrometers} """
         
-        if unit == LengthUnits.MilliMeter:
-            return f"""{self.milli_meters} """
+        if unit == LengthUnits.Millimeter:
+            return f"""{self.millimeters} """
         
-        if unit == LengthUnits.CentiMeter:
-            return f"""{self.centi_meters} """
+        if unit == LengthUnits.Centimeter:
+            return f"""{self.centimeters} """
         
-        if unit == LengthUnits.DeciMeter:
-            return f"""{self.deci_meters} """
+        if unit == LengthUnits.Decimeter:
+            return f"""{self.decimeters} """
         
-        if unit == LengthUnits.DecaMeter:
-            return f"""{self.deca_meters} """
+        if unit == LengthUnits.Decameter:
+            return f"""{self.decameters} """
         
-        if unit == LengthUnits.HectoMeter:
-            return f"""{self.hecto_meters} """
+        if unit == LengthUnits.Hectometer:
+            return f"""{self.hectometers} """
         
-        if unit == LengthUnits.KiloMeter:
-            return f"""{self.kilo_meters} """
+        if unit == LengthUnits.Kilometer:
+            return f"""{self.kilometers} """
         
-        if unit == LengthUnits.MegaMeter:
-            return f"""{self.mega_meters} """
+        if unit == LengthUnits.Megameter:
+            return f"""{self.megameters} """
         
-        if unit == LengthUnits.KiloParsec:
-            return f"""{self.kilo_parsecs} """
+        if unit == LengthUnits.Kiloparsec:
+            return f"""{self.kiloparsecs} """
         
-        if unit == LengthUnits.MegaParsec:
-            return f"""{self.mega_parsecs} """
+        if unit == LengthUnits.Megaparsec:
+            return f"""{self.megaparsecs} """
         
-        if unit == LengthUnits.KiloLightYear:
-            return f"""{self.kilo_light_years} """
+        if unit == LengthUnits.KilolightYear:
+            return f"""{self.kilolight_years} """
         
-        if unit == LengthUnits.MegaLightYear:
-            return f"""{self.mega_light_years} """
+        if unit == LengthUnits.MegalightYear:
+            return f"""{self.megalight_years} """
         
         return f'{self.__value}'
 
@@ -1682,43 +1682,43 @@ class Length:
         if unit_abbreviation == LengthUnits.DataMile:
             return """DM"""
         
-        if unit_abbreviation == LengthUnits.NanoMeter:
+        if unit_abbreviation == LengthUnits.Nanometer:
             return """"""
         
-        if unit_abbreviation == LengthUnits.MicroMeter:
+        if unit_abbreviation == LengthUnits.Micrometer:
             return """"""
         
-        if unit_abbreviation == LengthUnits.MilliMeter:
+        if unit_abbreviation == LengthUnits.Millimeter:
             return """"""
         
-        if unit_abbreviation == LengthUnits.CentiMeter:
+        if unit_abbreviation == LengthUnits.Centimeter:
             return """"""
         
-        if unit_abbreviation == LengthUnits.DeciMeter:
+        if unit_abbreviation == LengthUnits.Decimeter:
             return """"""
         
-        if unit_abbreviation == LengthUnits.DecaMeter:
+        if unit_abbreviation == LengthUnits.Decameter:
             return """"""
         
-        if unit_abbreviation == LengthUnits.HectoMeter:
+        if unit_abbreviation == LengthUnits.Hectometer:
             return """"""
         
-        if unit_abbreviation == LengthUnits.KiloMeter:
+        if unit_abbreviation == LengthUnits.Kilometer:
             return """"""
         
-        if unit_abbreviation == LengthUnits.MegaMeter:
+        if unit_abbreviation == LengthUnits.Megameter:
             return """"""
         
-        if unit_abbreviation == LengthUnits.KiloParsec:
+        if unit_abbreviation == LengthUnits.Kiloparsec:
             return """"""
         
-        if unit_abbreviation == LengthUnits.MegaParsec:
+        if unit_abbreviation == LengthUnits.Megaparsec:
             return """"""
         
-        if unit_abbreviation == LengthUnits.KiloLightYear:
+        if unit_abbreviation == LengthUnits.KilolightYear:
             return """"""
         
-        if unit_abbreviation == LengthUnits.MegaLightYear:
+        if unit_abbreviation == LengthUnits.MegalightYear:
             return """"""
         
 

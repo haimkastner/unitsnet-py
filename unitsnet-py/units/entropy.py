@@ -23,22 +23,22 @@ class EntropyUnits(Enum):
             
         """
         
-        KiloJoulePerKelvin = 'kilo_joule_per_kelvin'
+        KilojoulePerKelvin = 'kilojoule_per_kelvin'
         """
             
         """
         
-        MegaJoulePerKelvin = 'mega_joule_per_kelvin'
+        MegajoulePerKelvin = 'megajoule_per_kelvin'
         """
             
         """
         
-        KiloCaloriePerKelvin = 'kilo_calorie_per_kelvin'
+        KilocaloriePerKelvin = 'kilocalorie_per_kelvin'
         """
             
         """
         
-        KiloJoulePerDegreeCelsius = 'kilo_joule_per_degree_celsius'
+        KilojoulePerDegreeCelsius = 'kilojoule_per_degree_celsius'
         """
             
         """
@@ -63,13 +63,13 @@ class Entropy:
         
         self.__joules_per_degree_celsius = None
         
-        self.__kilo_joules_per_kelvin = None
+        self.__kilojoules_per_kelvin = None
         
-        self.__mega_joules_per_kelvin = None
+        self.__megajoules_per_kelvin = None
         
-        self.__kilo_calories_per_kelvin = None
+        self.__kilocalories_per_kelvin = None
         
-        self.__kilo_joules_per_degree_celsius = None
+        self.__kilojoules_per_degree_celsius = None
         
 
     def __convert_from_base(self, from_unit: EntropyUnits) -> float:
@@ -84,16 +84,16 @@ class Entropy:
         if from_unit == EntropyUnits.JoulePerDegreeCelsius:
             return (value)
         
-        if from_unit == EntropyUnits.KiloJoulePerKelvin:
+        if from_unit == EntropyUnits.KilojoulePerKelvin:
             return ((value) / 1000.0)
         
-        if from_unit == EntropyUnits.MegaJoulePerKelvin:
+        if from_unit == EntropyUnits.MegajoulePerKelvin:
             return ((value) / 1000000.0)
         
-        if from_unit == EntropyUnits.KiloCaloriePerKelvin:
+        if from_unit == EntropyUnits.KilocaloriePerKelvin:
             return ((value / 4.184) / 1000.0)
         
-        if from_unit == EntropyUnits.KiloJoulePerDegreeCelsius:
+        if from_unit == EntropyUnits.KilojoulePerDegreeCelsius:
             return ((value) / 1000.0)
         
         return None
@@ -110,16 +110,16 @@ class Entropy:
         if to_unit == EntropyUnits.JoulePerDegreeCelsius:
             return (value)
         
-        if to_unit == EntropyUnits.KiloJoulePerKelvin:
+        if to_unit == EntropyUnits.KilojoulePerKelvin:
             return ((value) * 1000.0)
         
-        if to_unit == EntropyUnits.MegaJoulePerKelvin:
+        if to_unit == EntropyUnits.MegajoulePerKelvin:
             return ((value) * 1000000.0)
         
-        if to_unit == EntropyUnits.KiloCaloriePerKelvin:
+        if to_unit == EntropyUnits.KilocaloriePerKelvin:
             return ((value * 4.184) * 1000.0)
         
-        if to_unit == EntropyUnits.KiloJoulePerDegreeCelsius:
+        if to_unit == EntropyUnits.KilojoulePerDegreeCelsius:
             return ((value) * 1000.0)
         
         return None
@@ -176,63 +176,63 @@ class Entropy:
 
     
     @staticmethod
-    def from_kilo_joules_per_kelvin(kilo_joules_per_kelvin: float):
+    def from_kilojoules_per_kelvin(kilojoules_per_kelvin: float):
         """
-        Create a new instance of Entropy from a value in kilo_joules_per_kelvin.
+        Create a new instance of Entropy from a value in kilojoules_per_kelvin.
 
         
 
-        :param meters: The Entropy value in kilo_joules_per_kelvin.
-        :type kilo_joules_per_kelvin: float
+        :param meters: The Entropy value in kilojoules_per_kelvin.
+        :type kilojoules_per_kelvin: float
         :return: A new instance of Entropy.
         :rtype: Entropy
         """
-        return Entropy(kilo_joules_per_kelvin, EntropyUnits.KiloJoulePerKelvin)
+        return Entropy(kilojoules_per_kelvin, EntropyUnits.KilojoulePerKelvin)
 
     
     @staticmethod
-    def from_mega_joules_per_kelvin(mega_joules_per_kelvin: float):
+    def from_megajoules_per_kelvin(megajoules_per_kelvin: float):
         """
-        Create a new instance of Entropy from a value in mega_joules_per_kelvin.
+        Create a new instance of Entropy from a value in megajoules_per_kelvin.
 
         
 
-        :param meters: The Entropy value in mega_joules_per_kelvin.
-        :type mega_joules_per_kelvin: float
+        :param meters: The Entropy value in megajoules_per_kelvin.
+        :type megajoules_per_kelvin: float
         :return: A new instance of Entropy.
         :rtype: Entropy
         """
-        return Entropy(mega_joules_per_kelvin, EntropyUnits.MegaJoulePerKelvin)
+        return Entropy(megajoules_per_kelvin, EntropyUnits.MegajoulePerKelvin)
 
     
     @staticmethod
-    def from_kilo_calories_per_kelvin(kilo_calories_per_kelvin: float):
+    def from_kilocalories_per_kelvin(kilocalories_per_kelvin: float):
         """
-        Create a new instance of Entropy from a value in kilo_calories_per_kelvin.
+        Create a new instance of Entropy from a value in kilocalories_per_kelvin.
 
         
 
-        :param meters: The Entropy value in kilo_calories_per_kelvin.
-        :type kilo_calories_per_kelvin: float
+        :param meters: The Entropy value in kilocalories_per_kelvin.
+        :type kilocalories_per_kelvin: float
         :return: A new instance of Entropy.
         :rtype: Entropy
         """
-        return Entropy(kilo_calories_per_kelvin, EntropyUnits.KiloCaloriePerKelvin)
+        return Entropy(kilocalories_per_kelvin, EntropyUnits.KilocaloriePerKelvin)
 
     
     @staticmethod
-    def from_kilo_joules_per_degree_celsius(kilo_joules_per_degree_celsius: float):
+    def from_kilojoules_per_degree_celsius(kilojoules_per_degree_celsius: float):
         """
-        Create a new instance of Entropy from a value in kilo_joules_per_degree_celsius.
+        Create a new instance of Entropy from a value in kilojoules_per_degree_celsius.
 
         
 
-        :param meters: The Entropy value in kilo_joules_per_degree_celsius.
-        :type kilo_joules_per_degree_celsius: float
+        :param meters: The Entropy value in kilojoules_per_degree_celsius.
+        :type kilojoules_per_degree_celsius: float
         :return: A new instance of Entropy.
         :rtype: Entropy
         """
-        return Entropy(kilo_joules_per_degree_celsius, EntropyUnits.KiloJoulePerDegreeCelsius)
+        return Entropy(kilojoules_per_degree_celsius, EntropyUnits.KilojoulePerDegreeCelsius)
 
     
     @property
@@ -269,47 +269,47 @@ class Entropy:
 
     
     @property
-    def kilo_joules_per_kelvin(self) -> float:
+    def kilojoules_per_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_kelvin != None:
-            return self.__kilo_joules_per_kelvin
-        self.__kilo_joules_per_kelvin = self.__convert_from_base(EntropyUnits.KiloJoulePerKelvin)
-        return self.__kilo_joules_per_kelvin
+        if self.__kilojoules_per_kelvin != None:
+            return self.__kilojoules_per_kelvin
+        self.__kilojoules_per_kelvin = self.__convert_from_base(EntropyUnits.KilojoulePerKelvin)
+        return self.__kilojoules_per_kelvin
 
     
     @property
-    def mega_joules_per_kelvin(self) -> float:
+    def megajoules_per_kelvin(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_kelvin != None:
-            return self.__mega_joules_per_kelvin
-        self.__mega_joules_per_kelvin = self.__convert_from_base(EntropyUnits.MegaJoulePerKelvin)
-        return self.__mega_joules_per_kelvin
+        if self.__megajoules_per_kelvin != None:
+            return self.__megajoules_per_kelvin
+        self.__megajoules_per_kelvin = self.__convert_from_base(EntropyUnits.MegajoulePerKelvin)
+        return self.__megajoules_per_kelvin
 
     
     @property
-    def kilo_calories_per_kelvin(self) -> float:
+    def kilocalories_per_kelvin(self) -> float:
         """
         
         """
-        if self.__kilo_calories_per_kelvin != None:
-            return self.__kilo_calories_per_kelvin
-        self.__kilo_calories_per_kelvin = self.__convert_from_base(EntropyUnits.KiloCaloriePerKelvin)
-        return self.__kilo_calories_per_kelvin
+        if self.__kilocalories_per_kelvin != None:
+            return self.__kilocalories_per_kelvin
+        self.__kilocalories_per_kelvin = self.__convert_from_base(EntropyUnits.KilocaloriePerKelvin)
+        return self.__kilocalories_per_kelvin
 
     
     @property
-    def kilo_joules_per_degree_celsius(self) -> float:
+    def kilojoules_per_degree_celsius(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_degree_celsius != None:
-            return self.__kilo_joules_per_degree_celsius
-        self.__kilo_joules_per_degree_celsius = self.__convert_from_base(EntropyUnits.KiloJoulePerDegreeCelsius)
-        return self.__kilo_joules_per_degree_celsius
+        if self.__kilojoules_per_degree_celsius != None:
+            return self.__kilojoules_per_degree_celsius
+        self.__kilojoules_per_degree_celsius = self.__convert_from_base(EntropyUnits.KilojoulePerDegreeCelsius)
+        return self.__kilojoules_per_degree_celsius
 
     
     def to_string(self, unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> string:
@@ -328,17 +328,17 @@ class Entropy:
         if unit == EntropyUnits.JoulePerDegreeCelsius:
             return f"""{self.joules_per_degree_celsius} J/C"""
         
-        if unit == EntropyUnits.KiloJoulePerKelvin:
-            return f"""{self.kilo_joules_per_kelvin} """
+        if unit == EntropyUnits.KilojoulePerKelvin:
+            return f"""{self.kilojoules_per_kelvin} """
         
-        if unit == EntropyUnits.MegaJoulePerKelvin:
-            return f"""{self.mega_joules_per_kelvin} """
+        if unit == EntropyUnits.MegajoulePerKelvin:
+            return f"""{self.megajoules_per_kelvin} """
         
-        if unit == EntropyUnits.KiloCaloriePerKelvin:
-            return f"""{self.kilo_calories_per_kelvin} """
+        if unit == EntropyUnits.KilocaloriePerKelvin:
+            return f"""{self.kilocalories_per_kelvin} """
         
-        if unit == EntropyUnits.KiloJoulePerDegreeCelsius:
-            return f"""{self.kilo_joules_per_degree_celsius} """
+        if unit == EntropyUnits.KilojoulePerDegreeCelsius:
+            return f"""{self.kilojoules_per_degree_celsius} """
         
         return f'{self.__value}'
 
@@ -359,16 +359,16 @@ class Entropy:
         if unit_abbreviation == EntropyUnits.JoulePerDegreeCelsius:
             return """J/C"""
         
-        if unit_abbreviation == EntropyUnits.KiloJoulePerKelvin:
+        if unit_abbreviation == EntropyUnits.KilojoulePerKelvin:
             return """"""
         
-        if unit_abbreviation == EntropyUnits.MegaJoulePerKelvin:
+        if unit_abbreviation == EntropyUnits.MegajoulePerKelvin:
             return """"""
         
-        if unit_abbreviation == EntropyUnits.KiloCaloriePerKelvin:
+        if unit_abbreviation == EntropyUnits.KilocaloriePerKelvin:
             return """"""
         
-        if unit_abbreviation == EntropyUnits.KiloJoulePerDegreeCelsius:
+        if unit_abbreviation == EntropyUnits.KilojoulePerDegreeCelsius:
             return """"""
         
 

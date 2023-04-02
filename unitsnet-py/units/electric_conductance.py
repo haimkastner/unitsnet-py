@@ -13,22 +13,22 @@ class ElectricConductanceUnits(Enum):
             
         """
         
-        NanoSiemens = 'nano_siemens'
+        Nanosiemens = 'nanosiemens'
         """
             
         """
         
-        MicroSiemens = 'micro_siemens'
+        Microsiemens = 'microsiemens'
         """
             
         """
         
-        MilliSiemens = 'milli_siemens'
+        Millisiemens = 'millisiemens'
         """
             
         """
         
-        KiloSiemens = 'kilo_siemens'
+        Kilosiemens = 'kilosiemens'
         """
             
         """
@@ -49,13 +49,13 @@ class ElectricConductance:
         
         self.__siemens = None
         
-        self.__nano_siemens = None
+        self.__nanosiemens = None
         
-        self.__micro_siemens = None
+        self.__microsiemens = None
         
-        self.__milli_siemens = None
+        self.__millisiemens = None
         
-        self.__kilo_siemens = None
+        self.__kilosiemens = None
         
 
     def __convert_from_base(self, from_unit: ElectricConductanceUnits) -> float:
@@ -64,16 +64,16 @@ class ElectricConductance:
         if from_unit == ElectricConductanceUnits.Siemens:
             return (value)
         
-        if from_unit == ElectricConductanceUnits.NanoSiemens:
+        if from_unit == ElectricConductanceUnits.Nanosiemens:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricConductanceUnits.MicroSiemens:
+        if from_unit == ElectricConductanceUnits.Microsiemens:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricConductanceUnits.MilliSiemens:
+        if from_unit == ElectricConductanceUnits.Millisiemens:
             return ((value) / 0.001)
         
-        if from_unit == ElectricConductanceUnits.KiloSiemens:
+        if from_unit == ElectricConductanceUnits.Kilosiemens:
             return ((value) / 1000.0)
         
         return None
@@ -84,16 +84,16 @@ class ElectricConductance:
         if to_unit == ElectricConductanceUnits.Siemens:
             return (value)
         
-        if to_unit == ElectricConductanceUnits.NanoSiemens:
+        if to_unit == ElectricConductanceUnits.Nanosiemens:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricConductanceUnits.MicroSiemens:
+        if to_unit == ElectricConductanceUnits.Microsiemens:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricConductanceUnits.MilliSiemens:
+        if to_unit == ElectricConductanceUnits.Millisiemens:
             return ((value) * 0.001)
         
-        if to_unit == ElectricConductanceUnits.KiloSiemens:
+        if to_unit == ElectricConductanceUnits.Kilosiemens:
             return ((value) * 1000.0)
         
         return None
@@ -120,63 +120,63 @@ class ElectricConductance:
 
     
     @staticmethod
-    def from_nano_siemens(nano_siemens: float):
+    def from_nanosiemens(nanosiemens: float):
         """
-        Create a new instance of ElectricConductance from a value in nano_siemens.
+        Create a new instance of ElectricConductance from a value in nanosiemens.
 
         
 
-        :param meters: The ElectricConductance value in nano_siemens.
-        :type nano_siemens: float
+        :param meters: The ElectricConductance value in nanosiemens.
+        :type nanosiemens: float
         :return: A new instance of ElectricConductance.
         :rtype: ElectricConductance
         """
-        return ElectricConductance(nano_siemens, ElectricConductanceUnits.NanoSiemens)
+        return ElectricConductance(nanosiemens, ElectricConductanceUnits.Nanosiemens)
 
     
     @staticmethod
-    def from_micro_siemens(micro_siemens: float):
+    def from_microsiemens(microsiemens: float):
         """
-        Create a new instance of ElectricConductance from a value in micro_siemens.
+        Create a new instance of ElectricConductance from a value in microsiemens.
 
         
 
-        :param meters: The ElectricConductance value in micro_siemens.
-        :type micro_siemens: float
+        :param meters: The ElectricConductance value in microsiemens.
+        :type microsiemens: float
         :return: A new instance of ElectricConductance.
         :rtype: ElectricConductance
         """
-        return ElectricConductance(micro_siemens, ElectricConductanceUnits.MicroSiemens)
+        return ElectricConductance(microsiemens, ElectricConductanceUnits.Microsiemens)
 
     
     @staticmethod
-    def from_milli_siemens(milli_siemens: float):
+    def from_millisiemens(millisiemens: float):
         """
-        Create a new instance of ElectricConductance from a value in milli_siemens.
+        Create a new instance of ElectricConductance from a value in millisiemens.
 
         
 
-        :param meters: The ElectricConductance value in milli_siemens.
-        :type milli_siemens: float
+        :param meters: The ElectricConductance value in millisiemens.
+        :type millisiemens: float
         :return: A new instance of ElectricConductance.
         :rtype: ElectricConductance
         """
-        return ElectricConductance(milli_siemens, ElectricConductanceUnits.MilliSiemens)
+        return ElectricConductance(millisiemens, ElectricConductanceUnits.Millisiemens)
 
     
     @staticmethod
-    def from_kilo_siemens(kilo_siemens: float):
+    def from_kilosiemens(kilosiemens: float):
         """
-        Create a new instance of ElectricConductance from a value in kilo_siemens.
+        Create a new instance of ElectricConductance from a value in kilosiemens.
 
         
 
-        :param meters: The ElectricConductance value in kilo_siemens.
-        :type kilo_siemens: float
+        :param meters: The ElectricConductance value in kilosiemens.
+        :type kilosiemens: float
         :return: A new instance of ElectricConductance.
         :rtype: ElectricConductance
         """
-        return ElectricConductance(kilo_siemens, ElectricConductanceUnits.KiloSiemens)
+        return ElectricConductance(kilosiemens, ElectricConductanceUnits.Kilosiemens)
 
     
     @property
@@ -191,47 +191,47 @@ class ElectricConductance:
 
     
     @property
-    def nano_siemens(self) -> float:
+    def nanosiemens(self) -> float:
         """
         
         """
-        if self.__nano_siemens != None:
-            return self.__nano_siemens
-        self.__nano_siemens = self.__convert_from_base(ElectricConductanceUnits.NanoSiemens)
-        return self.__nano_siemens
+        if self.__nanosiemens != None:
+            return self.__nanosiemens
+        self.__nanosiemens = self.__convert_from_base(ElectricConductanceUnits.Nanosiemens)
+        return self.__nanosiemens
 
     
     @property
-    def micro_siemens(self) -> float:
+    def microsiemens(self) -> float:
         """
         
         """
-        if self.__micro_siemens != None:
-            return self.__micro_siemens
-        self.__micro_siemens = self.__convert_from_base(ElectricConductanceUnits.MicroSiemens)
-        return self.__micro_siemens
+        if self.__microsiemens != None:
+            return self.__microsiemens
+        self.__microsiemens = self.__convert_from_base(ElectricConductanceUnits.Microsiemens)
+        return self.__microsiemens
 
     
     @property
-    def milli_siemens(self) -> float:
+    def millisiemens(self) -> float:
         """
         
         """
-        if self.__milli_siemens != None:
-            return self.__milli_siemens
-        self.__milli_siemens = self.__convert_from_base(ElectricConductanceUnits.MilliSiemens)
-        return self.__milli_siemens
+        if self.__millisiemens != None:
+            return self.__millisiemens
+        self.__millisiemens = self.__convert_from_base(ElectricConductanceUnits.Millisiemens)
+        return self.__millisiemens
 
     
     @property
-    def kilo_siemens(self) -> float:
+    def kilosiemens(self) -> float:
         """
         
         """
-        if self.__kilo_siemens != None:
-            return self.__kilo_siemens
-        self.__kilo_siemens = self.__convert_from_base(ElectricConductanceUnits.KiloSiemens)
-        return self.__kilo_siemens
+        if self.__kilosiemens != None:
+            return self.__kilosiemens
+        self.__kilosiemens = self.__convert_from_base(ElectricConductanceUnits.Kilosiemens)
+        return self.__kilosiemens
 
     
     def to_string(self, unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> string:
@@ -244,17 +244,17 @@ class ElectricConductance:
         if unit == ElectricConductanceUnits.Siemens:
             return f"""{self.siemens} S"""
         
-        if unit == ElectricConductanceUnits.NanoSiemens:
-            return f"""{self.nano_siemens} """
+        if unit == ElectricConductanceUnits.Nanosiemens:
+            return f"""{self.nanosiemens} """
         
-        if unit == ElectricConductanceUnits.MicroSiemens:
-            return f"""{self.micro_siemens} """
+        if unit == ElectricConductanceUnits.Microsiemens:
+            return f"""{self.microsiemens} """
         
-        if unit == ElectricConductanceUnits.MilliSiemens:
-            return f"""{self.milli_siemens} """
+        if unit == ElectricConductanceUnits.Millisiemens:
+            return f"""{self.millisiemens} """
         
-        if unit == ElectricConductanceUnits.KiloSiemens:
-            return f"""{self.kilo_siemens} """
+        if unit == ElectricConductanceUnits.Kilosiemens:
+            return f"""{self.kilosiemens} """
         
         return f'{self.__value}'
 
@@ -269,16 +269,16 @@ class ElectricConductance:
         if unit_abbreviation == ElectricConductanceUnits.Siemens:
             return """S"""
         
-        if unit_abbreviation == ElectricConductanceUnits.NanoSiemens:
+        if unit_abbreviation == ElectricConductanceUnits.Nanosiemens:
             return """"""
         
-        if unit_abbreviation == ElectricConductanceUnits.MicroSiemens:
+        if unit_abbreviation == ElectricConductanceUnits.Microsiemens:
             return """"""
         
-        if unit_abbreviation == ElectricConductanceUnits.MilliSiemens:
+        if unit_abbreviation == ElectricConductanceUnits.Millisiemens:
             return """"""
         
-        if unit_abbreviation == ElectricConductanceUnits.KiloSiemens:
+        if unit_abbreviation == ElectricConductanceUnits.Kilosiemens:
             return """"""
         
 

@@ -28,37 +28,37 @@ class JerkUnits(Enum):
             
         """
         
-        NanoMeterPerSecondCubed = 'nano_meter_per_second_cubed'
+        NanometerPerSecondCubed = 'nanometer_per_second_cubed'
         """
             
         """
         
-        MicroMeterPerSecondCubed = 'micro_meter_per_second_cubed'
+        MicrometerPerSecondCubed = 'micrometer_per_second_cubed'
         """
             
         """
         
-        MilliMeterPerSecondCubed = 'milli_meter_per_second_cubed'
+        MillimeterPerSecondCubed = 'millimeter_per_second_cubed'
         """
             
         """
         
-        CentiMeterPerSecondCubed = 'centi_meter_per_second_cubed'
+        CentimeterPerSecondCubed = 'centimeter_per_second_cubed'
         """
             
         """
         
-        DeciMeterPerSecondCubed = 'deci_meter_per_second_cubed'
+        DecimeterPerSecondCubed = 'decimeter_per_second_cubed'
         """
             
         """
         
-        KiloMeterPerSecondCubed = 'kilo_meter_per_second_cubed'
+        KilometerPerSecondCubed = 'kilometer_per_second_cubed'
         """
             
         """
         
-        MilliStandardGravitiesPerSecond = 'milli_standard_gravities_per_second'
+        MillistandardGravitiesPerSecond = 'millistandard_gravities_per_second'
         """
             
         """
@@ -85,19 +85,19 @@ class Jerk:
         
         self.__standard_gravities_per_second = None
         
-        self.__nano_meters_per_second_cubed = None
+        self.__nanometers_per_second_cubed = None
         
-        self.__micro_meters_per_second_cubed = None
+        self.__micrometers_per_second_cubed = None
         
-        self.__milli_meters_per_second_cubed = None
+        self.__millimeters_per_second_cubed = None
         
-        self.__centi_meters_per_second_cubed = None
+        self.__centimeters_per_second_cubed = None
         
-        self.__deci_meters_per_second_cubed = None
+        self.__decimeters_per_second_cubed = None
         
-        self.__kilo_meters_per_second_cubed = None
+        self.__kilometers_per_second_cubed = None
         
-        self.__milli_standard_gravities_per_second = None
+        self.__millistandard_gravities_per_second = None
         
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
@@ -115,25 +115,25 @@ class Jerk:
         if from_unit == JerkUnits.StandardGravitiesPerSecond:
             return (value / 9.80665)
         
-        if from_unit == JerkUnits.NanoMeterPerSecondCubed:
+        if from_unit == JerkUnits.NanometerPerSecondCubed:
             return ((value) / 1e-09)
         
-        if from_unit == JerkUnits.MicroMeterPerSecondCubed:
+        if from_unit == JerkUnits.MicrometerPerSecondCubed:
             return ((value) / 1e-06)
         
-        if from_unit == JerkUnits.MilliMeterPerSecondCubed:
+        if from_unit == JerkUnits.MillimeterPerSecondCubed:
             return ((value) / 0.001)
         
-        if from_unit == JerkUnits.CentiMeterPerSecondCubed:
+        if from_unit == JerkUnits.CentimeterPerSecondCubed:
             return ((value) / 0.01)
         
-        if from_unit == JerkUnits.DeciMeterPerSecondCubed:
+        if from_unit == JerkUnits.DecimeterPerSecondCubed:
             return ((value) / 0.1)
         
-        if from_unit == JerkUnits.KiloMeterPerSecondCubed:
+        if from_unit == JerkUnits.KilometerPerSecondCubed:
             return ((value) / 1000.0)
         
-        if from_unit == JerkUnits.MilliStandardGravitiesPerSecond:
+        if from_unit == JerkUnits.MillistandardGravitiesPerSecond:
             return ((value / 9.80665) / 0.001)
         
         return None
@@ -153,25 +153,25 @@ class Jerk:
         if to_unit == JerkUnits.StandardGravitiesPerSecond:
             return (value * 9.80665)
         
-        if to_unit == JerkUnits.NanoMeterPerSecondCubed:
+        if to_unit == JerkUnits.NanometerPerSecondCubed:
             return ((value) * 1e-09)
         
-        if to_unit == JerkUnits.MicroMeterPerSecondCubed:
+        if to_unit == JerkUnits.MicrometerPerSecondCubed:
             return ((value) * 1e-06)
         
-        if to_unit == JerkUnits.MilliMeterPerSecondCubed:
+        if to_unit == JerkUnits.MillimeterPerSecondCubed:
             return ((value) * 0.001)
         
-        if to_unit == JerkUnits.CentiMeterPerSecondCubed:
+        if to_unit == JerkUnits.CentimeterPerSecondCubed:
             return ((value) * 0.01)
         
-        if to_unit == JerkUnits.DeciMeterPerSecondCubed:
+        if to_unit == JerkUnits.DecimeterPerSecondCubed:
             return ((value) * 0.1)
         
-        if to_unit == JerkUnits.KiloMeterPerSecondCubed:
+        if to_unit == JerkUnits.KilometerPerSecondCubed:
             return ((value) * 1000.0)
         
-        if to_unit == JerkUnits.MilliStandardGravitiesPerSecond:
+        if to_unit == JerkUnits.MillistandardGravitiesPerSecond:
             return ((value * 9.80665) * 0.001)
         
         return None
@@ -243,108 +243,108 @@ class Jerk:
 
     
     @staticmethod
-    def from_nano_meters_per_second_cubed(nano_meters_per_second_cubed: float):
+    def from_nanometers_per_second_cubed(nanometers_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in nano_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in nanometers_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in nano_meters_per_second_cubed.
-        :type nano_meters_per_second_cubed: float
+        :param meters: The Jerk value in nanometers_per_second_cubed.
+        :type nanometers_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(nano_meters_per_second_cubed, JerkUnits.NanoMeterPerSecondCubed)
+        return Jerk(nanometers_per_second_cubed, JerkUnits.NanometerPerSecondCubed)
 
     
     @staticmethod
-    def from_micro_meters_per_second_cubed(micro_meters_per_second_cubed: float):
+    def from_micrometers_per_second_cubed(micrometers_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in micro_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in micrometers_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in micro_meters_per_second_cubed.
-        :type micro_meters_per_second_cubed: float
+        :param meters: The Jerk value in micrometers_per_second_cubed.
+        :type micrometers_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(micro_meters_per_second_cubed, JerkUnits.MicroMeterPerSecondCubed)
+        return Jerk(micrometers_per_second_cubed, JerkUnits.MicrometerPerSecondCubed)
 
     
     @staticmethod
-    def from_milli_meters_per_second_cubed(milli_meters_per_second_cubed: float):
+    def from_millimeters_per_second_cubed(millimeters_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in milli_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in millimeters_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in milli_meters_per_second_cubed.
-        :type milli_meters_per_second_cubed: float
+        :param meters: The Jerk value in millimeters_per_second_cubed.
+        :type millimeters_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(milli_meters_per_second_cubed, JerkUnits.MilliMeterPerSecondCubed)
+        return Jerk(millimeters_per_second_cubed, JerkUnits.MillimeterPerSecondCubed)
 
     
     @staticmethod
-    def from_centi_meters_per_second_cubed(centi_meters_per_second_cubed: float):
+    def from_centimeters_per_second_cubed(centimeters_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in centi_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in centimeters_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in centi_meters_per_second_cubed.
-        :type centi_meters_per_second_cubed: float
+        :param meters: The Jerk value in centimeters_per_second_cubed.
+        :type centimeters_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(centi_meters_per_second_cubed, JerkUnits.CentiMeterPerSecondCubed)
+        return Jerk(centimeters_per_second_cubed, JerkUnits.CentimeterPerSecondCubed)
 
     
     @staticmethod
-    def from_deci_meters_per_second_cubed(deci_meters_per_second_cubed: float):
+    def from_decimeters_per_second_cubed(decimeters_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in deci_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in decimeters_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in deci_meters_per_second_cubed.
-        :type deci_meters_per_second_cubed: float
+        :param meters: The Jerk value in decimeters_per_second_cubed.
+        :type decimeters_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(deci_meters_per_second_cubed, JerkUnits.DeciMeterPerSecondCubed)
+        return Jerk(decimeters_per_second_cubed, JerkUnits.DecimeterPerSecondCubed)
 
     
     @staticmethod
-    def from_kilo_meters_per_second_cubed(kilo_meters_per_second_cubed: float):
+    def from_kilometers_per_second_cubed(kilometers_per_second_cubed: float):
         """
-        Create a new instance of Jerk from a value in kilo_meters_per_second_cubed.
+        Create a new instance of Jerk from a value in kilometers_per_second_cubed.
 
         
 
-        :param meters: The Jerk value in kilo_meters_per_second_cubed.
-        :type kilo_meters_per_second_cubed: float
+        :param meters: The Jerk value in kilometers_per_second_cubed.
+        :type kilometers_per_second_cubed: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(kilo_meters_per_second_cubed, JerkUnits.KiloMeterPerSecondCubed)
+        return Jerk(kilometers_per_second_cubed, JerkUnits.KilometerPerSecondCubed)
 
     
     @staticmethod
-    def from_milli_standard_gravities_per_second(milli_standard_gravities_per_second: float):
+    def from_millistandard_gravities_per_second(millistandard_gravities_per_second: float):
         """
-        Create a new instance of Jerk from a value in milli_standard_gravities_per_second.
+        Create a new instance of Jerk from a value in millistandard_gravities_per_second.
 
         
 
-        :param meters: The Jerk value in milli_standard_gravities_per_second.
-        :type milli_standard_gravities_per_second: float
+        :param meters: The Jerk value in millistandard_gravities_per_second.
+        :type millistandard_gravities_per_second: float
         :return: A new instance of Jerk.
         :rtype: Jerk
         """
-        return Jerk(milli_standard_gravities_per_second, JerkUnits.MilliStandardGravitiesPerSecond)
+        return Jerk(millistandard_gravities_per_second, JerkUnits.MillistandardGravitiesPerSecond)
 
     
     @property
@@ -392,80 +392,80 @@ class Jerk:
 
     
     @property
-    def nano_meters_per_second_cubed(self) -> float:
+    def nanometers_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__nano_meters_per_second_cubed != None:
-            return self.__nano_meters_per_second_cubed
-        self.__nano_meters_per_second_cubed = self.__convert_from_base(JerkUnits.NanoMeterPerSecondCubed)
-        return self.__nano_meters_per_second_cubed
+        if self.__nanometers_per_second_cubed != None:
+            return self.__nanometers_per_second_cubed
+        self.__nanometers_per_second_cubed = self.__convert_from_base(JerkUnits.NanometerPerSecondCubed)
+        return self.__nanometers_per_second_cubed
 
     
     @property
-    def micro_meters_per_second_cubed(self) -> float:
+    def micrometers_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__micro_meters_per_second_cubed != None:
-            return self.__micro_meters_per_second_cubed
-        self.__micro_meters_per_second_cubed = self.__convert_from_base(JerkUnits.MicroMeterPerSecondCubed)
-        return self.__micro_meters_per_second_cubed
+        if self.__micrometers_per_second_cubed != None:
+            return self.__micrometers_per_second_cubed
+        self.__micrometers_per_second_cubed = self.__convert_from_base(JerkUnits.MicrometerPerSecondCubed)
+        return self.__micrometers_per_second_cubed
 
     
     @property
-    def milli_meters_per_second_cubed(self) -> float:
+    def millimeters_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__milli_meters_per_second_cubed != None:
-            return self.__milli_meters_per_second_cubed
-        self.__milli_meters_per_second_cubed = self.__convert_from_base(JerkUnits.MilliMeterPerSecondCubed)
-        return self.__milli_meters_per_second_cubed
+        if self.__millimeters_per_second_cubed != None:
+            return self.__millimeters_per_second_cubed
+        self.__millimeters_per_second_cubed = self.__convert_from_base(JerkUnits.MillimeterPerSecondCubed)
+        return self.__millimeters_per_second_cubed
 
     
     @property
-    def centi_meters_per_second_cubed(self) -> float:
+    def centimeters_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__centi_meters_per_second_cubed != None:
-            return self.__centi_meters_per_second_cubed
-        self.__centi_meters_per_second_cubed = self.__convert_from_base(JerkUnits.CentiMeterPerSecondCubed)
-        return self.__centi_meters_per_second_cubed
+        if self.__centimeters_per_second_cubed != None:
+            return self.__centimeters_per_second_cubed
+        self.__centimeters_per_second_cubed = self.__convert_from_base(JerkUnits.CentimeterPerSecondCubed)
+        return self.__centimeters_per_second_cubed
 
     
     @property
-    def deci_meters_per_second_cubed(self) -> float:
+    def decimeters_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__deci_meters_per_second_cubed != None:
-            return self.__deci_meters_per_second_cubed
-        self.__deci_meters_per_second_cubed = self.__convert_from_base(JerkUnits.DeciMeterPerSecondCubed)
-        return self.__deci_meters_per_second_cubed
+        if self.__decimeters_per_second_cubed != None:
+            return self.__decimeters_per_second_cubed
+        self.__decimeters_per_second_cubed = self.__convert_from_base(JerkUnits.DecimeterPerSecondCubed)
+        return self.__decimeters_per_second_cubed
 
     
     @property
-    def kilo_meters_per_second_cubed(self) -> float:
+    def kilometers_per_second_cubed(self) -> float:
         """
         
         """
-        if self.__kilo_meters_per_second_cubed != None:
-            return self.__kilo_meters_per_second_cubed
-        self.__kilo_meters_per_second_cubed = self.__convert_from_base(JerkUnits.KiloMeterPerSecondCubed)
-        return self.__kilo_meters_per_second_cubed
+        if self.__kilometers_per_second_cubed != None:
+            return self.__kilometers_per_second_cubed
+        self.__kilometers_per_second_cubed = self.__convert_from_base(JerkUnits.KilometerPerSecondCubed)
+        return self.__kilometers_per_second_cubed
 
     
     @property
-    def milli_standard_gravities_per_second(self) -> float:
+    def millistandard_gravities_per_second(self) -> float:
         """
         
         """
-        if self.__milli_standard_gravities_per_second != None:
-            return self.__milli_standard_gravities_per_second
-        self.__milli_standard_gravities_per_second = self.__convert_from_base(JerkUnits.MilliStandardGravitiesPerSecond)
-        return self.__milli_standard_gravities_per_second
+        if self.__millistandard_gravities_per_second != None:
+            return self.__millistandard_gravities_per_second
+        self.__millistandard_gravities_per_second = self.__convert_from_base(JerkUnits.MillistandardGravitiesPerSecond)
+        return self.__millistandard_gravities_per_second
 
     
     def to_string(self, unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> string:
@@ -487,26 +487,26 @@ class Jerk:
         if unit == JerkUnits.StandardGravitiesPerSecond:
             return f"""{self.standard_gravities_per_second} g/s"""
         
-        if unit == JerkUnits.NanoMeterPerSecondCubed:
-            return f"""{self.nano_meters_per_second_cubed} """
+        if unit == JerkUnits.NanometerPerSecondCubed:
+            return f"""{self.nanometers_per_second_cubed} """
         
-        if unit == JerkUnits.MicroMeterPerSecondCubed:
-            return f"""{self.micro_meters_per_second_cubed} """
+        if unit == JerkUnits.MicrometerPerSecondCubed:
+            return f"""{self.micrometers_per_second_cubed} """
         
-        if unit == JerkUnits.MilliMeterPerSecondCubed:
-            return f"""{self.milli_meters_per_second_cubed} """
+        if unit == JerkUnits.MillimeterPerSecondCubed:
+            return f"""{self.millimeters_per_second_cubed} """
         
-        if unit == JerkUnits.CentiMeterPerSecondCubed:
-            return f"""{self.centi_meters_per_second_cubed} """
+        if unit == JerkUnits.CentimeterPerSecondCubed:
+            return f"""{self.centimeters_per_second_cubed} """
         
-        if unit == JerkUnits.DeciMeterPerSecondCubed:
-            return f"""{self.deci_meters_per_second_cubed} """
+        if unit == JerkUnits.DecimeterPerSecondCubed:
+            return f"""{self.decimeters_per_second_cubed} """
         
-        if unit == JerkUnits.KiloMeterPerSecondCubed:
-            return f"""{self.kilo_meters_per_second_cubed} """
+        if unit == JerkUnits.KilometerPerSecondCubed:
+            return f"""{self.kilometers_per_second_cubed} """
         
-        if unit == JerkUnits.MilliStandardGravitiesPerSecond:
-            return f"""{self.milli_standard_gravities_per_second} """
+        if unit == JerkUnits.MillistandardGravitiesPerSecond:
+            return f"""{self.millistandard_gravities_per_second} """
         
         return f'{self.__value}'
 
@@ -530,25 +530,25 @@ class Jerk:
         if unit_abbreviation == JerkUnits.StandardGravitiesPerSecond:
             return """g/s"""
         
-        if unit_abbreviation == JerkUnits.NanoMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.NanometerPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.MicroMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.MicrometerPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.MilliMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.MillimeterPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.CentiMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.CentimeterPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.DeciMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.DecimeterPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.KiloMeterPerSecondCubed:
+        if unit_abbreviation == JerkUnits.KilometerPerSecondCubed:
             return """"""
         
-        if unit_abbreviation == JerkUnits.MilliStandardGravitiesPerSecond:
+        if unit_abbreviation == JerkUnits.MillistandardGravitiesPerSecond:
             return """"""
         
 

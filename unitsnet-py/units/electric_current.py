@@ -13,42 +13,42 @@ class ElectricCurrentUnits(Enum):
             
         """
         
-        FemtoAmpere = 'femto_ampere'
+        Femtoampere = 'femtoampere'
         """
             
         """
         
-        PicoAmpere = 'pico_ampere'
+        Picoampere = 'picoampere'
         """
             
         """
         
-        NanoAmpere = 'nano_ampere'
+        Nanoampere = 'nanoampere'
         """
             
         """
         
-        MicroAmpere = 'micro_ampere'
+        Microampere = 'microampere'
         """
             
         """
         
-        MilliAmpere = 'milli_ampere'
+        Milliampere = 'milliampere'
         """
             
         """
         
-        CentiAmpere = 'centi_ampere'
+        Centiampere = 'centiampere'
         """
             
         """
         
-        KiloAmpere = 'kilo_ampere'
+        Kiloampere = 'kiloampere'
         """
             
         """
         
-        MegaAmpere = 'mega_ampere'
+        Megaampere = 'megaampere'
         """
             
         """
@@ -69,21 +69,21 @@ class ElectricCurrent:
         
         self.__amperes = None
         
-        self.__femto_amperes = None
+        self.__femtoamperes = None
         
-        self.__pico_amperes = None
+        self.__picoamperes = None
         
-        self.__nano_amperes = None
+        self.__nanoamperes = None
         
-        self.__micro_amperes = None
+        self.__microamperes = None
         
-        self.__milli_amperes = None
+        self.__milliamperes = None
         
-        self.__centi_amperes = None
+        self.__centiamperes = None
         
-        self.__kilo_amperes = None
+        self.__kiloamperes = None
         
-        self.__mega_amperes = None
+        self.__megaamperes = None
         
 
     def __convert_from_base(self, from_unit: ElectricCurrentUnits) -> float:
@@ -92,28 +92,28 @@ class ElectricCurrent:
         if from_unit == ElectricCurrentUnits.Ampere:
             return (value)
         
-        if from_unit == ElectricCurrentUnits.FemtoAmpere:
+        if from_unit == ElectricCurrentUnits.Femtoampere:
             return ((value) / 1e-15)
         
-        if from_unit == ElectricCurrentUnits.PicoAmpere:
+        if from_unit == ElectricCurrentUnits.Picoampere:
             return ((value) / 1e-12)
         
-        if from_unit == ElectricCurrentUnits.NanoAmpere:
+        if from_unit == ElectricCurrentUnits.Nanoampere:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricCurrentUnits.MicroAmpere:
+        if from_unit == ElectricCurrentUnits.Microampere:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricCurrentUnits.MilliAmpere:
+        if from_unit == ElectricCurrentUnits.Milliampere:
             return ((value) / 0.001)
         
-        if from_unit == ElectricCurrentUnits.CentiAmpere:
+        if from_unit == ElectricCurrentUnits.Centiampere:
             return ((value) / 0.01)
         
-        if from_unit == ElectricCurrentUnits.KiloAmpere:
+        if from_unit == ElectricCurrentUnits.Kiloampere:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricCurrentUnits.MegaAmpere:
+        if from_unit == ElectricCurrentUnits.Megaampere:
             return ((value) / 1000000.0)
         
         return None
@@ -124,28 +124,28 @@ class ElectricCurrent:
         if to_unit == ElectricCurrentUnits.Ampere:
             return (value)
         
-        if to_unit == ElectricCurrentUnits.FemtoAmpere:
+        if to_unit == ElectricCurrentUnits.Femtoampere:
             return ((value) * 1e-15)
         
-        if to_unit == ElectricCurrentUnits.PicoAmpere:
+        if to_unit == ElectricCurrentUnits.Picoampere:
             return ((value) * 1e-12)
         
-        if to_unit == ElectricCurrentUnits.NanoAmpere:
+        if to_unit == ElectricCurrentUnits.Nanoampere:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricCurrentUnits.MicroAmpere:
+        if to_unit == ElectricCurrentUnits.Microampere:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricCurrentUnits.MilliAmpere:
+        if to_unit == ElectricCurrentUnits.Milliampere:
             return ((value) * 0.001)
         
-        if to_unit == ElectricCurrentUnits.CentiAmpere:
+        if to_unit == ElectricCurrentUnits.Centiampere:
             return ((value) * 0.01)
         
-        if to_unit == ElectricCurrentUnits.KiloAmpere:
+        if to_unit == ElectricCurrentUnits.Kiloampere:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricCurrentUnits.MegaAmpere:
+        if to_unit == ElectricCurrentUnits.Megaampere:
             return ((value) * 1000000.0)
         
         return None
@@ -172,123 +172,123 @@ class ElectricCurrent:
 
     
     @staticmethod
-    def from_femto_amperes(femto_amperes: float):
+    def from_femtoamperes(femtoamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in femto_amperes.
+        Create a new instance of ElectricCurrent from a value in femtoamperes.
 
         
 
-        :param meters: The ElectricCurrent value in femto_amperes.
-        :type femto_amperes: float
+        :param meters: The ElectricCurrent value in femtoamperes.
+        :type femtoamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(femto_amperes, ElectricCurrentUnits.FemtoAmpere)
+        return ElectricCurrent(femtoamperes, ElectricCurrentUnits.Femtoampere)
 
     
     @staticmethod
-    def from_pico_amperes(pico_amperes: float):
+    def from_picoamperes(picoamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in pico_amperes.
+        Create a new instance of ElectricCurrent from a value in picoamperes.
 
         
 
-        :param meters: The ElectricCurrent value in pico_amperes.
-        :type pico_amperes: float
+        :param meters: The ElectricCurrent value in picoamperes.
+        :type picoamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(pico_amperes, ElectricCurrentUnits.PicoAmpere)
+        return ElectricCurrent(picoamperes, ElectricCurrentUnits.Picoampere)
 
     
     @staticmethod
-    def from_nano_amperes(nano_amperes: float):
+    def from_nanoamperes(nanoamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in nano_amperes.
+        Create a new instance of ElectricCurrent from a value in nanoamperes.
 
         
 
-        :param meters: The ElectricCurrent value in nano_amperes.
-        :type nano_amperes: float
+        :param meters: The ElectricCurrent value in nanoamperes.
+        :type nanoamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(nano_amperes, ElectricCurrentUnits.NanoAmpere)
+        return ElectricCurrent(nanoamperes, ElectricCurrentUnits.Nanoampere)
 
     
     @staticmethod
-    def from_micro_amperes(micro_amperes: float):
+    def from_microamperes(microamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in micro_amperes.
+        Create a new instance of ElectricCurrent from a value in microamperes.
 
         
 
-        :param meters: The ElectricCurrent value in micro_amperes.
-        :type micro_amperes: float
+        :param meters: The ElectricCurrent value in microamperes.
+        :type microamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(micro_amperes, ElectricCurrentUnits.MicroAmpere)
+        return ElectricCurrent(microamperes, ElectricCurrentUnits.Microampere)
 
     
     @staticmethod
-    def from_milli_amperes(milli_amperes: float):
+    def from_milliamperes(milliamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in milli_amperes.
+        Create a new instance of ElectricCurrent from a value in milliamperes.
 
         
 
-        :param meters: The ElectricCurrent value in milli_amperes.
-        :type milli_amperes: float
+        :param meters: The ElectricCurrent value in milliamperes.
+        :type milliamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(milli_amperes, ElectricCurrentUnits.MilliAmpere)
+        return ElectricCurrent(milliamperes, ElectricCurrentUnits.Milliampere)
 
     
     @staticmethod
-    def from_centi_amperes(centi_amperes: float):
+    def from_centiamperes(centiamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in centi_amperes.
+        Create a new instance of ElectricCurrent from a value in centiamperes.
 
         
 
-        :param meters: The ElectricCurrent value in centi_amperes.
-        :type centi_amperes: float
+        :param meters: The ElectricCurrent value in centiamperes.
+        :type centiamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(centi_amperes, ElectricCurrentUnits.CentiAmpere)
+        return ElectricCurrent(centiamperes, ElectricCurrentUnits.Centiampere)
 
     
     @staticmethod
-    def from_kilo_amperes(kilo_amperes: float):
+    def from_kiloamperes(kiloamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in kilo_amperes.
+        Create a new instance of ElectricCurrent from a value in kiloamperes.
 
         
 
-        :param meters: The ElectricCurrent value in kilo_amperes.
-        :type kilo_amperes: float
+        :param meters: The ElectricCurrent value in kiloamperes.
+        :type kiloamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(kilo_amperes, ElectricCurrentUnits.KiloAmpere)
+        return ElectricCurrent(kiloamperes, ElectricCurrentUnits.Kiloampere)
 
     
     @staticmethod
-    def from_mega_amperes(mega_amperes: float):
+    def from_megaamperes(megaamperes: float):
         """
-        Create a new instance of ElectricCurrent from a value in mega_amperes.
+        Create a new instance of ElectricCurrent from a value in megaamperes.
 
         
 
-        :param meters: The ElectricCurrent value in mega_amperes.
-        :type mega_amperes: float
+        :param meters: The ElectricCurrent value in megaamperes.
+        :type megaamperes: float
         :return: A new instance of ElectricCurrent.
         :rtype: ElectricCurrent
         """
-        return ElectricCurrent(mega_amperes, ElectricCurrentUnits.MegaAmpere)
+        return ElectricCurrent(megaamperes, ElectricCurrentUnits.Megaampere)
 
     
     @property
@@ -303,91 +303,91 @@ class ElectricCurrent:
 
     
     @property
-    def femto_amperes(self) -> float:
+    def femtoamperes(self) -> float:
         """
         
         """
-        if self.__femto_amperes != None:
-            return self.__femto_amperes
-        self.__femto_amperes = self.__convert_from_base(ElectricCurrentUnits.FemtoAmpere)
-        return self.__femto_amperes
+        if self.__femtoamperes != None:
+            return self.__femtoamperes
+        self.__femtoamperes = self.__convert_from_base(ElectricCurrentUnits.Femtoampere)
+        return self.__femtoamperes
 
     
     @property
-    def pico_amperes(self) -> float:
+    def picoamperes(self) -> float:
         """
         
         """
-        if self.__pico_amperes != None:
-            return self.__pico_amperes
-        self.__pico_amperes = self.__convert_from_base(ElectricCurrentUnits.PicoAmpere)
-        return self.__pico_amperes
+        if self.__picoamperes != None:
+            return self.__picoamperes
+        self.__picoamperes = self.__convert_from_base(ElectricCurrentUnits.Picoampere)
+        return self.__picoamperes
 
     
     @property
-    def nano_amperes(self) -> float:
+    def nanoamperes(self) -> float:
         """
         
         """
-        if self.__nano_amperes != None:
-            return self.__nano_amperes
-        self.__nano_amperes = self.__convert_from_base(ElectricCurrentUnits.NanoAmpere)
-        return self.__nano_amperes
+        if self.__nanoamperes != None:
+            return self.__nanoamperes
+        self.__nanoamperes = self.__convert_from_base(ElectricCurrentUnits.Nanoampere)
+        return self.__nanoamperes
 
     
     @property
-    def micro_amperes(self) -> float:
+    def microamperes(self) -> float:
         """
         
         """
-        if self.__micro_amperes != None:
-            return self.__micro_amperes
-        self.__micro_amperes = self.__convert_from_base(ElectricCurrentUnits.MicroAmpere)
-        return self.__micro_amperes
+        if self.__microamperes != None:
+            return self.__microamperes
+        self.__microamperes = self.__convert_from_base(ElectricCurrentUnits.Microampere)
+        return self.__microamperes
 
     
     @property
-    def milli_amperes(self) -> float:
+    def milliamperes(self) -> float:
         """
         
         """
-        if self.__milli_amperes != None:
-            return self.__milli_amperes
-        self.__milli_amperes = self.__convert_from_base(ElectricCurrentUnits.MilliAmpere)
-        return self.__milli_amperes
+        if self.__milliamperes != None:
+            return self.__milliamperes
+        self.__milliamperes = self.__convert_from_base(ElectricCurrentUnits.Milliampere)
+        return self.__milliamperes
 
     
     @property
-    def centi_amperes(self) -> float:
+    def centiamperes(self) -> float:
         """
         
         """
-        if self.__centi_amperes != None:
-            return self.__centi_amperes
-        self.__centi_amperes = self.__convert_from_base(ElectricCurrentUnits.CentiAmpere)
-        return self.__centi_amperes
+        if self.__centiamperes != None:
+            return self.__centiamperes
+        self.__centiamperes = self.__convert_from_base(ElectricCurrentUnits.Centiampere)
+        return self.__centiamperes
 
     
     @property
-    def kilo_amperes(self) -> float:
+    def kiloamperes(self) -> float:
         """
         
         """
-        if self.__kilo_amperes != None:
-            return self.__kilo_amperes
-        self.__kilo_amperes = self.__convert_from_base(ElectricCurrentUnits.KiloAmpere)
-        return self.__kilo_amperes
+        if self.__kiloamperes != None:
+            return self.__kiloamperes
+        self.__kiloamperes = self.__convert_from_base(ElectricCurrentUnits.Kiloampere)
+        return self.__kiloamperes
 
     
     @property
-    def mega_amperes(self) -> float:
+    def megaamperes(self) -> float:
         """
         
         """
-        if self.__mega_amperes != None:
-            return self.__mega_amperes
-        self.__mega_amperes = self.__convert_from_base(ElectricCurrentUnits.MegaAmpere)
-        return self.__mega_amperes
+        if self.__megaamperes != None:
+            return self.__megaamperes
+        self.__megaamperes = self.__convert_from_base(ElectricCurrentUnits.Megaampere)
+        return self.__megaamperes
 
     
     def to_string(self, unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> string:
@@ -400,29 +400,29 @@ class ElectricCurrent:
         if unit == ElectricCurrentUnits.Ampere:
             return f"""{self.amperes} A"""
         
-        if unit == ElectricCurrentUnits.FemtoAmpere:
-            return f"""{self.femto_amperes} """
+        if unit == ElectricCurrentUnits.Femtoampere:
+            return f"""{self.femtoamperes} """
         
-        if unit == ElectricCurrentUnits.PicoAmpere:
-            return f"""{self.pico_amperes} """
+        if unit == ElectricCurrentUnits.Picoampere:
+            return f"""{self.picoamperes} """
         
-        if unit == ElectricCurrentUnits.NanoAmpere:
-            return f"""{self.nano_amperes} """
+        if unit == ElectricCurrentUnits.Nanoampere:
+            return f"""{self.nanoamperes} """
         
-        if unit == ElectricCurrentUnits.MicroAmpere:
-            return f"""{self.micro_amperes} """
+        if unit == ElectricCurrentUnits.Microampere:
+            return f"""{self.microamperes} """
         
-        if unit == ElectricCurrentUnits.MilliAmpere:
-            return f"""{self.milli_amperes} """
+        if unit == ElectricCurrentUnits.Milliampere:
+            return f"""{self.milliamperes} """
         
-        if unit == ElectricCurrentUnits.CentiAmpere:
-            return f"""{self.centi_amperes} """
+        if unit == ElectricCurrentUnits.Centiampere:
+            return f"""{self.centiamperes} """
         
-        if unit == ElectricCurrentUnits.KiloAmpere:
-            return f"""{self.kilo_amperes} """
+        if unit == ElectricCurrentUnits.Kiloampere:
+            return f"""{self.kiloamperes} """
         
-        if unit == ElectricCurrentUnits.MegaAmpere:
-            return f"""{self.mega_amperes} """
+        if unit == ElectricCurrentUnits.Megaampere:
+            return f"""{self.megaamperes} """
         
         return f'{self.__value}'
 
@@ -437,28 +437,28 @@ class ElectricCurrent:
         if unit_abbreviation == ElectricCurrentUnits.Ampere:
             return """A"""
         
-        if unit_abbreviation == ElectricCurrentUnits.FemtoAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Femtoampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.PicoAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Picoampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.NanoAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Nanoampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.MicroAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Microampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.MilliAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Milliampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.CentiAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Centiampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.KiloAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Kiloampere:
             return """"""
         
-        if unit_abbreviation == ElectricCurrentUnits.MegaAmpere:
+        if unit_abbreviation == ElectricCurrentUnits.Megaampere:
             return """"""
         
 

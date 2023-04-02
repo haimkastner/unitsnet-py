@@ -78,122 +78,122 @@ class ForcePerLengthUnits(Enum):
             
         """
         
-        NanoNewtonPerMeter = 'nano_newton_per_meter'
+        NanonewtonPerMeter = 'nanonewton_per_meter'
         """
             
         """
         
-        MicroNewtonPerMeter = 'micro_newton_per_meter'
+        MicronewtonPerMeter = 'micronewton_per_meter'
         """
             
         """
         
-        MilliNewtonPerMeter = 'milli_newton_per_meter'
+        MillinewtonPerMeter = 'millinewton_per_meter'
         """
             
         """
         
-        CentiNewtonPerMeter = 'centi_newton_per_meter'
+        CentinewtonPerMeter = 'centinewton_per_meter'
         """
             
         """
         
-        DeciNewtonPerMeter = 'deci_newton_per_meter'
+        DecinewtonPerMeter = 'decinewton_per_meter'
         """
             
         """
         
-        DecaNewtonPerMeter = 'deca_newton_per_meter'
+        DecanewtonPerMeter = 'decanewton_per_meter'
         """
             
         """
         
-        KiloNewtonPerMeter = 'kilo_newton_per_meter'
+        KilonewtonPerMeter = 'kilonewton_per_meter'
         """
             
         """
         
-        MegaNewtonPerMeter = 'mega_newton_per_meter'
+        MeganewtonPerMeter = 'meganewton_per_meter'
         """
             
         """
         
-        NanoNewtonPerCentimeter = 'nano_newton_per_centimeter'
+        NanonewtonPerCentimeter = 'nanonewton_per_centimeter'
         """
             
         """
         
-        MicroNewtonPerCentimeter = 'micro_newton_per_centimeter'
+        MicronewtonPerCentimeter = 'micronewton_per_centimeter'
         """
             
         """
         
-        MilliNewtonPerCentimeter = 'milli_newton_per_centimeter'
+        MillinewtonPerCentimeter = 'millinewton_per_centimeter'
         """
             
         """
         
-        CentiNewtonPerCentimeter = 'centi_newton_per_centimeter'
+        CentinewtonPerCentimeter = 'centinewton_per_centimeter'
         """
             
         """
         
-        DeciNewtonPerCentimeter = 'deci_newton_per_centimeter'
+        DecinewtonPerCentimeter = 'decinewton_per_centimeter'
         """
             
         """
         
-        DecaNewtonPerCentimeter = 'deca_newton_per_centimeter'
+        DecanewtonPerCentimeter = 'decanewton_per_centimeter'
         """
             
         """
         
-        KiloNewtonPerCentimeter = 'kilo_newton_per_centimeter'
+        KilonewtonPerCentimeter = 'kilonewton_per_centimeter'
         """
             
         """
         
-        MegaNewtonPerCentimeter = 'mega_newton_per_centimeter'
+        MeganewtonPerCentimeter = 'meganewton_per_centimeter'
         """
             
         """
         
-        NanoNewtonPerMillimeter = 'nano_newton_per_millimeter'
+        NanonewtonPerMillimeter = 'nanonewton_per_millimeter'
         """
             
         """
         
-        MicroNewtonPerMillimeter = 'micro_newton_per_millimeter'
+        MicronewtonPerMillimeter = 'micronewton_per_millimeter'
         """
             
         """
         
-        MilliNewtonPerMillimeter = 'milli_newton_per_millimeter'
+        MillinewtonPerMillimeter = 'millinewton_per_millimeter'
         """
             
         """
         
-        CentiNewtonPerMillimeter = 'centi_newton_per_millimeter'
+        CentinewtonPerMillimeter = 'centinewton_per_millimeter'
         """
             
         """
         
-        DeciNewtonPerMillimeter = 'deci_newton_per_millimeter'
+        DecinewtonPerMillimeter = 'decinewton_per_millimeter'
         """
             
         """
         
-        DecaNewtonPerMillimeter = 'deca_newton_per_millimeter'
+        DecanewtonPerMillimeter = 'decanewton_per_millimeter'
         """
             
         """
         
-        KiloNewtonPerMillimeter = 'kilo_newton_per_millimeter'
+        KilonewtonPerMillimeter = 'kilonewton_per_millimeter'
         """
             
         """
         
-        MegaNewtonPerMillimeter = 'mega_newton_per_millimeter'
+        MeganewtonPerMillimeter = 'meganewton_per_millimeter'
         """
             
         """
@@ -240,53 +240,53 @@ class ForcePerLength:
         
         self.__kilopounds_force_per_inch = None
         
-        self.__nano_newtons_per_meter = None
+        self.__nanonewtons_per_meter = None
         
-        self.__micro_newtons_per_meter = None
+        self.__micronewtons_per_meter = None
         
-        self.__milli_newtons_per_meter = None
+        self.__millinewtons_per_meter = None
         
-        self.__centi_newtons_per_meter = None
+        self.__centinewtons_per_meter = None
         
-        self.__deci_newtons_per_meter = None
+        self.__decinewtons_per_meter = None
         
-        self.__deca_newtons_per_meter = None
+        self.__decanewtons_per_meter = None
         
-        self.__kilo_newtons_per_meter = None
+        self.__kilonewtons_per_meter = None
         
-        self.__mega_newtons_per_meter = None
+        self.__meganewtons_per_meter = None
         
-        self.__nano_newtons_per_centimeter = None
+        self.__nanonewtons_per_centimeter = None
         
-        self.__micro_newtons_per_centimeter = None
+        self.__micronewtons_per_centimeter = None
         
-        self.__milli_newtons_per_centimeter = None
+        self.__millinewtons_per_centimeter = None
         
-        self.__centi_newtons_per_centimeter = None
+        self.__centinewtons_per_centimeter = None
         
-        self.__deci_newtons_per_centimeter = None
+        self.__decinewtons_per_centimeter = None
         
-        self.__deca_newtons_per_centimeter = None
+        self.__decanewtons_per_centimeter = None
         
-        self.__kilo_newtons_per_centimeter = None
+        self.__kilonewtons_per_centimeter = None
         
-        self.__mega_newtons_per_centimeter = None
+        self.__meganewtons_per_centimeter = None
         
-        self.__nano_newtons_per_millimeter = None
+        self.__nanonewtons_per_millimeter = None
         
-        self.__micro_newtons_per_millimeter = None
+        self.__micronewtons_per_millimeter = None
         
-        self.__milli_newtons_per_millimeter = None
+        self.__millinewtons_per_millimeter = None
         
-        self.__centi_newtons_per_millimeter = None
+        self.__centinewtons_per_millimeter = None
         
-        self.__deci_newtons_per_millimeter = None
+        self.__decinewtons_per_millimeter = None
         
-        self.__deca_newtons_per_millimeter = None
+        self.__decanewtons_per_millimeter = None
         
-        self.__kilo_newtons_per_millimeter = None
+        self.__kilonewtons_per_millimeter = None
         
-        self.__mega_newtons_per_millimeter = None
+        self.__meganewtons_per_millimeter = None
         
 
     def __convert_from_base(self, from_unit: ForcePerLengthUnits) -> float:
@@ -334,76 +334,76 @@ class ForcePerLength:
         if from_unit == ForcePerLengthUnits.KilopoundForcePerInch:
             return (value / 1.75126835e5)
         
-        if from_unit == ForcePerLengthUnits.NanoNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.NanonewtonPerMeter:
             return ((value) / 1e-09)
         
-        if from_unit == ForcePerLengthUnits.MicroNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.MicronewtonPerMeter:
             return ((value) / 1e-06)
         
-        if from_unit == ForcePerLengthUnits.MilliNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.MillinewtonPerMeter:
             return ((value) / 0.001)
         
-        if from_unit == ForcePerLengthUnits.CentiNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.CentinewtonPerMeter:
             return ((value) / 0.01)
         
-        if from_unit == ForcePerLengthUnits.DeciNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.DecinewtonPerMeter:
             return ((value) / 0.1)
         
-        if from_unit == ForcePerLengthUnits.DecaNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.DecanewtonPerMeter:
             return ((value) / 10.0)
         
-        if from_unit == ForcePerLengthUnits.KiloNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.KilonewtonPerMeter:
             return ((value) / 1000.0)
         
-        if from_unit == ForcePerLengthUnits.MegaNewtonPerMeter:
+        if from_unit == ForcePerLengthUnits.MeganewtonPerMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == ForcePerLengthUnits.NanoNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.NanonewtonPerCentimeter:
             return ((value / 1e2) / 1e-09)
         
-        if from_unit == ForcePerLengthUnits.MicroNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.MicronewtonPerCentimeter:
             return ((value / 1e2) / 1e-06)
         
-        if from_unit == ForcePerLengthUnits.MilliNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.MillinewtonPerCentimeter:
             return ((value / 1e2) / 0.001)
         
-        if from_unit == ForcePerLengthUnits.CentiNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.CentinewtonPerCentimeter:
             return ((value / 1e2) / 0.01)
         
-        if from_unit == ForcePerLengthUnits.DeciNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.DecinewtonPerCentimeter:
             return ((value / 1e2) / 0.1)
         
-        if from_unit == ForcePerLengthUnits.DecaNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.DecanewtonPerCentimeter:
             return ((value / 1e2) / 10.0)
         
-        if from_unit == ForcePerLengthUnits.KiloNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.KilonewtonPerCentimeter:
             return ((value / 1e2) / 1000.0)
         
-        if from_unit == ForcePerLengthUnits.MegaNewtonPerCentimeter:
+        if from_unit == ForcePerLengthUnits.MeganewtonPerCentimeter:
             return ((value / 1e2) / 1000000.0)
         
-        if from_unit == ForcePerLengthUnits.NanoNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.NanonewtonPerMillimeter:
             return ((value / 1e3) / 1e-09)
         
-        if from_unit == ForcePerLengthUnits.MicroNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.MicronewtonPerMillimeter:
             return ((value / 1e3) / 1e-06)
         
-        if from_unit == ForcePerLengthUnits.MilliNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.MillinewtonPerMillimeter:
             return ((value / 1e3) / 0.001)
         
-        if from_unit == ForcePerLengthUnits.CentiNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.CentinewtonPerMillimeter:
             return ((value / 1e3) / 0.01)
         
-        if from_unit == ForcePerLengthUnits.DeciNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.DecinewtonPerMillimeter:
             return ((value / 1e3) / 0.1)
         
-        if from_unit == ForcePerLengthUnits.DecaNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.DecanewtonPerMillimeter:
             return ((value / 1e3) / 10.0)
         
-        if from_unit == ForcePerLengthUnits.KiloNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.KilonewtonPerMillimeter:
             return ((value / 1e3) / 1000.0)
         
-        if from_unit == ForcePerLengthUnits.MegaNewtonPerMillimeter:
+        if from_unit == ForcePerLengthUnits.MeganewtonPerMillimeter:
             return ((value / 1e3) / 1000000.0)
         
         return None
@@ -453,76 +453,76 @@ class ForcePerLength:
         if to_unit == ForcePerLengthUnits.KilopoundForcePerInch:
             return (value * 1.75126835e5)
         
-        if to_unit == ForcePerLengthUnits.NanoNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.NanonewtonPerMeter:
             return ((value) * 1e-09)
         
-        if to_unit == ForcePerLengthUnits.MicroNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.MicronewtonPerMeter:
             return ((value) * 1e-06)
         
-        if to_unit == ForcePerLengthUnits.MilliNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.MillinewtonPerMeter:
             return ((value) * 0.001)
         
-        if to_unit == ForcePerLengthUnits.CentiNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.CentinewtonPerMeter:
             return ((value) * 0.01)
         
-        if to_unit == ForcePerLengthUnits.DeciNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.DecinewtonPerMeter:
             return ((value) * 0.1)
         
-        if to_unit == ForcePerLengthUnits.DecaNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.DecanewtonPerMeter:
             return ((value) * 10.0)
         
-        if to_unit == ForcePerLengthUnits.KiloNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.KilonewtonPerMeter:
             return ((value) * 1000.0)
         
-        if to_unit == ForcePerLengthUnits.MegaNewtonPerMeter:
+        if to_unit == ForcePerLengthUnits.MeganewtonPerMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == ForcePerLengthUnits.NanoNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.NanonewtonPerCentimeter:
             return ((value * 1e2) * 1e-09)
         
-        if to_unit == ForcePerLengthUnits.MicroNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.MicronewtonPerCentimeter:
             return ((value * 1e2) * 1e-06)
         
-        if to_unit == ForcePerLengthUnits.MilliNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.MillinewtonPerCentimeter:
             return ((value * 1e2) * 0.001)
         
-        if to_unit == ForcePerLengthUnits.CentiNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.CentinewtonPerCentimeter:
             return ((value * 1e2) * 0.01)
         
-        if to_unit == ForcePerLengthUnits.DeciNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.DecinewtonPerCentimeter:
             return ((value * 1e2) * 0.1)
         
-        if to_unit == ForcePerLengthUnits.DecaNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.DecanewtonPerCentimeter:
             return ((value * 1e2) * 10.0)
         
-        if to_unit == ForcePerLengthUnits.KiloNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.KilonewtonPerCentimeter:
             return ((value * 1e2) * 1000.0)
         
-        if to_unit == ForcePerLengthUnits.MegaNewtonPerCentimeter:
+        if to_unit == ForcePerLengthUnits.MeganewtonPerCentimeter:
             return ((value * 1e2) * 1000000.0)
         
-        if to_unit == ForcePerLengthUnits.NanoNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.NanonewtonPerMillimeter:
             return ((value * 1e3) * 1e-09)
         
-        if to_unit == ForcePerLengthUnits.MicroNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.MicronewtonPerMillimeter:
             return ((value * 1e3) * 1e-06)
         
-        if to_unit == ForcePerLengthUnits.MilliNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.MillinewtonPerMillimeter:
             return ((value * 1e3) * 0.001)
         
-        if to_unit == ForcePerLengthUnits.CentiNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.CentinewtonPerMillimeter:
             return ((value * 1e3) * 0.01)
         
-        if to_unit == ForcePerLengthUnits.DeciNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.DecinewtonPerMillimeter:
             return ((value * 1e3) * 0.1)
         
-        if to_unit == ForcePerLengthUnits.DecaNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.DecanewtonPerMillimeter:
             return ((value * 1e3) * 10.0)
         
-        if to_unit == ForcePerLengthUnits.KiloNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.KilonewtonPerMillimeter:
             return ((value * 1e3) * 1000.0)
         
-        if to_unit == ForcePerLengthUnits.MegaNewtonPerMillimeter:
+        if to_unit == ForcePerLengthUnits.MeganewtonPerMillimeter:
             return ((value * 1e3) * 1000000.0)
         
         return None
@@ -744,363 +744,363 @@ class ForcePerLength:
 
     
     @staticmethod
-    def from_nano_newtons_per_meter(nano_newtons_per_meter: float):
+    def from_nanonewtons_per_meter(nanonewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in nano_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in nanonewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in nano_newtons_per_meter.
-        :type nano_newtons_per_meter: float
+        :param meters: The ForcePerLength value in nanonewtons_per_meter.
+        :type nanonewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(nano_newtons_per_meter, ForcePerLengthUnits.NanoNewtonPerMeter)
+        return ForcePerLength(nanonewtons_per_meter, ForcePerLengthUnits.NanonewtonPerMeter)
 
     
     @staticmethod
-    def from_micro_newtons_per_meter(micro_newtons_per_meter: float):
+    def from_micronewtons_per_meter(micronewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in micro_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in micronewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in micro_newtons_per_meter.
-        :type micro_newtons_per_meter: float
+        :param meters: The ForcePerLength value in micronewtons_per_meter.
+        :type micronewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(micro_newtons_per_meter, ForcePerLengthUnits.MicroNewtonPerMeter)
+        return ForcePerLength(micronewtons_per_meter, ForcePerLengthUnits.MicronewtonPerMeter)
 
     
     @staticmethod
-    def from_milli_newtons_per_meter(milli_newtons_per_meter: float):
+    def from_millinewtons_per_meter(millinewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in milli_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in millinewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in milli_newtons_per_meter.
-        :type milli_newtons_per_meter: float
+        :param meters: The ForcePerLength value in millinewtons_per_meter.
+        :type millinewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(milli_newtons_per_meter, ForcePerLengthUnits.MilliNewtonPerMeter)
+        return ForcePerLength(millinewtons_per_meter, ForcePerLengthUnits.MillinewtonPerMeter)
 
     
     @staticmethod
-    def from_centi_newtons_per_meter(centi_newtons_per_meter: float):
+    def from_centinewtons_per_meter(centinewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in centi_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in centinewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in centi_newtons_per_meter.
-        :type centi_newtons_per_meter: float
+        :param meters: The ForcePerLength value in centinewtons_per_meter.
+        :type centinewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(centi_newtons_per_meter, ForcePerLengthUnits.CentiNewtonPerMeter)
+        return ForcePerLength(centinewtons_per_meter, ForcePerLengthUnits.CentinewtonPerMeter)
 
     
     @staticmethod
-    def from_deci_newtons_per_meter(deci_newtons_per_meter: float):
+    def from_decinewtons_per_meter(decinewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in deci_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in decinewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in deci_newtons_per_meter.
-        :type deci_newtons_per_meter: float
+        :param meters: The ForcePerLength value in decinewtons_per_meter.
+        :type decinewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deci_newtons_per_meter, ForcePerLengthUnits.DeciNewtonPerMeter)
+        return ForcePerLength(decinewtons_per_meter, ForcePerLengthUnits.DecinewtonPerMeter)
 
     
     @staticmethod
-    def from_deca_newtons_per_meter(deca_newtons_per_meter: float):
+    def from_decanewtons_per_meter(decanewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in deca_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in decanewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in deca_newtons_per_meter.
-        :type deca_newtons_per_meter: float
+        :param meters: The ForcePerLength value in decanewtons_per_meter.
+        :type decanewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deca_newtons_per_meter, ForcePerLengthUnits.DecaNewtonPerMeter)
+        return ForcePerLength(decanewtons_per_meter, ForcePerLengthUnits.DecanewtonPerMeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_meter(kilo_newtons_per_meter: float):
+    def from_kilonewtons_per_meter(kilonewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in kilo_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in kilonewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in kilo_newtons_per_meter.
-        :type kilo_newtons_per_meter: float
+        :param meters: The ForcePerLength value in kilonewtons_per_meter.
+        :type kilonewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(kilo_newtons_per_meter, ForcePerLengthUnits.KiloNewtonPerMeter)
+        return ForcePerLength(kilonewtons_per_meter, ForcePerLengthUnits.KilonewtonPerMeter)
 
     
     @staticmethod
-    def from_mega_newtons_per_meter(mega_newtons_per_meter: float):
+    def from_meganewtons_per_meter(meganewtons_per_meter: float):
         """
-        Create a new instance of ForcePerLength from a value in mega_newtons_per_meter.
+        Create a new instance of ForcePerLength from a value in meganewtons_per_meter.
 
         
 
-        :param meters: The ForcePerLength value in mega_newtons_per_meter.
-        :type mega_newtons_per_meter: float
+        :param meters: The ForcePerLength value in meganewtons_per_meter.
+        :type meganewtons_per_meter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(mega_newtons_per_meter, ForcePerLengthUnits.MegaNewtonPerMeter)
+        return ForcePerLength(meganewtons_per_meter, ForcePerLengthUnits.MeganewtonPerMeter)
 
     
     @staticmethod
-    def from_nano_newtons_per_centimeter(nano_newtons_per_centimeter: float):
+    def from_nanonewtons_per_centimeter(nanonewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in nano_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in nanonewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in nano_newtons_per_centimeter.
-        :type nano_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in nanonewtons_per_centimeter.
+        :type nanonewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(nano_newtons_per_centimeter, ForcePerLengthUnits.NanoNewtonPerCentimeter)
+        return ForcePerLength(nanonewtons_per_centimeter, ForcePerLengthUnits.NanonewtonPerCentimeter)
 
     
     @staticmethod
-    def from_micro_newtons_per_centimeter(micro_newtons_per_centimeter: float):
+    def from_micronewtons_per_centimeter(micronewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in micro_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in micronewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in micro_newtons_per_centimeter.
-        :type micro_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in micronewtons_per_centimeter.
+        :type micronewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(micro_newtons_per_centimeter, ForcePerLengthUnits.MicroNewtonPerCentimeter)
+        return ForcePerLength(micronewtons_per_centimeter, ForcePerLengthUnits.MicronewtonPerCentimeter)
 
     
     @staticmethod
-    def from_milli_newtons_per_centimeter(milli_newtons_per_centimeter: float):
+    def from_millinewtons_per_centimeter(millinewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in milli_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in millinewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in milli_newtons_per_centimeter.
-        :type milli_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in millinewtons_per_centimeter.
+        :type millinewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(milli_newtons_per_centimeter, ForcePerLengthUnits.MilliNewtonPerCentimeter)
+        return ForcePerLength(millinewtons_per_centimeter, ForcePerLengthUnits.MillinewtonPerCentimeter)
 
     
     @staticmethod
-    def from_centi_newtons_per_centimeter(centi_newtons_per_centimeter: float):
+    def from_centinewtons_per_centimeter(centinewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in centi_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in centinewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in centi_newtons_per_centimeter.
-        :type centi_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in centinewtons_per_centimeter.
+        :type centinewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(centi_newtons_per_centimeter, ForcePerLengthUnits.CentiNewtonPerCentimeter)
+        return ForcePerLength(centinewtons_per_centimeter, ForcePerLengthUnits.CentinewtonPerCentimeter)
 
     
     @staticmethod
-    def from_deci_newtons_per_centimeter(deci_newtons_per_centimeter: float):
+    def from_decinewtons_per_centimeter(decinewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in deci_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in decinewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in deci_newtons_per_centimeter.
-        :type deci_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in decinewtons_per_centimeter.
+        :type decinewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deci_newtons_per_centimeter, ForcePerLengthUnits.DeciNewtonPerCentimeter)
+        return ForcePerLength(decinewtons_per_centimeter, ForcePerLengthUnits.DecinewtonPerCentimeter)
 
     
     @staticmethod
-    def from_deca_newtons_per_centimeter(deca_newtons_per_centimeter: float):
+    def from_decanewtons_per_centimeter(decanewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in deca_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in decanewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in deca_newtons_per_centimeter.
-        :type deca_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in decanewtons_per_centimeter.
+        :type decanewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deca_newtons_per_centimeter, ForcePerLengthUnits.DecaNewtonPerCentimeter)
+        return ForcePerLength(decanewtons_per_centimeter, ForcePerLengthUnits.DecanewtonPerCentimeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_centimeter(kilo_newtons_per_centimeter: float):
+    def from_kilonewtons_per_centimeter(kilonewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in kilo_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in kilonewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in kilo_newtons_per_centimeter.
-        :type kilo_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in kilonewtons_per_centimeter.
+        :type kilonewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(kilo_newtons_per_centimeter, ForcePerLengthUnits.KiloNewtonPerCentimeter)
+        return ForcePerLength(kilonewtons_per_centimeter, ForcePerLengthUnits.KilonewtonPerCentimeter)
 
     
     @staticmethod
-    def from_mega_newtons_per_centimeter(mega_newtons_per_centimeter: float):
+    def from_meganewtons_per_centimeter(meganewtons_per_centimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in mega_newtons_per_centimeter.
+        Create a new instance of ForcePerLength from a value in meganewtons_per_centimeter.
 
         
 
-        :param meters: The ForcePerLength value in mega_newtons_per_centimeter.
-        :type mega_newtons_per_centimeter: float
+        :param meters: The ForcePerLength value in meganewtons_per_centimeter.
+        :type meganewtons_per_centimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(mega_newtons_per_centimeter, ForcePerLengthUnits.MegaNewtonPerCentimeter)
+        return ForcePerLength(meganewtons_per_centimeter, ForcePerLengthUnits.MeganewtonPerCentimeter)
 
     
     @staticmethod
-    def from_nano_newtons_per_millimeter(nano_newtons_per_millimeter: float):
+    def from_nanonewtons_per_millimeter(nanonewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in nano_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in nanonewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in nano_newtons_per_millimeter.
-        :type nano_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in nanonewtons_per_millimeter.
+        :type nanonewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(nano_newtons_per_millimeter, ForcePerLengthUnits.NanoNewtonPerMillimeter)
+        return ForcePerLength(nanonewtons_per_millimeter, ForcePerLengthUnits.NanonewtonPerMillimeter)
 
     
     @staticmethod
-    def from_micro_newtons_per_millimeter(micro_newtons_per_millimeter: float):
+    def from_micronewtons_per_millimeter(micronewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in micro_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in micronewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in micro_newtons_per_millimeter.
-        :type micro_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in micronewtons_per_millimeter.
+        :type micronewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(micro_newtons_per_millimeter, ForcePerLengthUnits.MicroNewtonPerMillimeter)
+        return ForcePerLength(micronewtons_per_millimeter, ForcePerLengthUnits.MicronewtonPerMillimeter)
 
     
     @staticmethod
-    def from_milli_newtons_per_millimeter(milli_newtons_per_millimeter: float):
+    def from_millinewtons_per_millimeter(millinewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in milli_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in millinewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in milli_newtons_per_millimeter.
-        :type milli_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in millinewtons_per_millimeter.
+        :type millinewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(milli_newtons_per_millimeter, ForcePerLengthUnits.MilliNewtonPerMillimeter)
+        return ForcePerLength(millinewtons_per_millimeter, ForcePerLengthUnits.MillinewtonPerMillimeter)
 
     
     @staticmethod
-    def from_centi_newtons_per_millimeter(centi_newtons_per_millimeter: float):
+    def from_centinewtons_per_millimeter(centinewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in centi_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in centinewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in centi_newtons_per_millimeter.
-        :type centi_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in centinewtons_per_millimeter.
+        :type centinewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(centi_newtons_per_millimeter, ForcePerLengthUnits.CentiNewtonPerMillimeter)
+        return ForcePerLength(centinewtons_per_millimeter, ForcePerLengthUnits.CentinewtonPerMillimeter)
 
     
     @staticmethod
-    def from_deci_newtons_per_millimeter(deci_newtons_per_millimeter: float):
+    def from_decinewtons_per_millimeter(decinewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in deci_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in decinewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in deci_newtons_per_millimeter.
-        :type deci_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in decinewtons_per_millimeter.
+        :type decinewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deci_newtons_per_millimeter, ForcePerLengthUnits.DeciNewtonPerMillimeter)
+        return ForcePerLength(decinewtons_per_millimeter, ForcePerLengthUnits.DecinewtonPerMillimeter)
 
     
     @staticmethod
-    def from_deca_newtons_per_millimeter(deca_newtons_per_millimeter: float):
+    def from_decanewtons_per_millimeter(decanewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in deca_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in decanewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in deca_newtons_per_millimeter.
-        :type deca_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in decanewtons_per_millimeter.
+        :type decanewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(deca_newtons_per_millimeter, ForcePerLengthUnits.DecaNewtonPerMillimeter)
+        return ForcePerLength(decanewtons_per_millimeter, ForcePerLengthUnits.DecanewtonPerMillimeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_millimeter(kilo_newtons_per_millimeter: float):
+    def from_kilonewtons_per_millimeter(kilonewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in kilo_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in kilonewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in kilo_newtons_per_millimeter.
-        :type kilo_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in kilonewtons_per_millimeter.
+        :type kilonewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(kilo_newtons_per_millimeter, ForcePerLengthUnits.KiloNewtonPerMillimeter)
+        return ForcePerLength(kilonewtons_per_millimeter, ForcePerLengthUnits.KilonewtonPerMillimeter)
 
     
     @staticmethod
-    def from_mega_newtons_per_millimeter(mega_newtons_per_millimeter: float):
+    def from_meganewtons_per_millimeter(meganewtons_per_millimeter: float):
         """
-        Create a new instance of ForcePerLength from a value in mega_newtons_per_millimeter.
+        Create a new instance of ForcePerLength from a value in meganewtons_per_millimeter.
 
         
 
-        :param meters: The ForcePerLength value in mega_newtons_per_millimeter.
-        :type mega_newtons_per_millimeter: float
+        :param meters: The ForcePerLength value in meganewtons_per_millimeter.
+        :type meganewtons_per_millimeter: float
         :return: A new instance of ForcePerLength.
         :rtype: ForcePerLength
         """
-        return ForcePerLength(mega_newtons_per_millimeter, ForcePerLengthUnits.MegaNewtonPerMillimeter)
+        return ForcePerLength(meganewtons_per_millimeter, ForcePerLengthUnits.MeganewtonPerMillimeter)
 
     
     @property
@@ -1258,267 +1258,267 @@ class ForcePerLength:
 
     
     @property
-    def nano_newtons_per_meter(self) -> float:
+    def nanonewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__nano_newtons_per_meter != None:
-            return self.__nano_newtons_per_meter
-        self.__nano_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.NanoNewtonPerMeter)
-        return self.__nano_newtons_per_meter
+        if self.__nanonewtons_per_meter != None:
+            return self.__nanonewtons_per_meter
+        self.__nanonewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.NanonewtonPerMeter)
+        return self.__nanonewtons_per_meter
 
     
     @property
-    def micro_newtons_per_meter(self) -> float:
+    def micronewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__micro_newtons_per_meter != None:
-            return self.__micro_newtons_per_meter
-        self.__micro_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MicroNewtonPerMeter)
-        return self.__micro_newtons_per_meter
+        if self.__micronewtons_per_meter != None:
+            return self.__micronewtons_per_meter
+        self.__micronewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MicronewtonPerMeter)
+        return self.__micronewtons_per_meter
 
     
     @property
-    def milli_newtons_per_meter(self) -> float:
+    def millinewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__milli_newtons_per_meter != None:
-            return self.__milli_newtons_per_meter
-        self.__milli_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MilliNewtonPerMeter)
-        return self.__milli_newtons_per_meter
+        if self.__millinewtons_per_meter != None:
+            return self.__millinewtons_per_meter
+        self.__millinewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MillinewtonPerMeter)
+        return self.__millinewtons_per_meter
 
     
     @property
-    def centi_newtons_per_meter(self) -> float:
+    def centinewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__centi_newtons_per_meter != None:
-            return self.__centi_newtons_per_meter
-        self.__centi_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.CentiNewtonPerMeter)
-        return self.__centi_newtons_per_meter
+        if self.__centinewtons_per_meter != None:
+            return self.__centinewtons_per_meter
+        self.__centinewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.CentinewtonPerMeter)
+        return self.__centinewtons_per_meter
 
     
     @property
-    def deci_newtons_per_meter(self) -> float:
+    def decinewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__deci_newtons_per_meter != None:
-            return self.__deci_newtons_per_meter
-        self.__deci_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.DeciNewtonPerMeter)
-        return self.__deci_newtons_per_meter
+        if self.__decinewtons_per_meter != None:
+            return self.__decinewtons_per_meter
+        self.__decinewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.DecinewtonPerMeter)
+        return self.__decinewtons_per_meter
 
     
     @property
-    def deca_newtons_per_meter(self) -> float:
+    def decanewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__deca_newtons_per_meter != None:
-            return self.__deca_newtons_per_meter
-        self.__deca_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.DecaNewtonPerMeter)
-        return self.__deca_newtons_per_meter
+        if self.__decanewtons_per_meter != None:
+            return self.__decanewtons_per_meter
+        self.__decanewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.DecanewtonPerMeter)
+        return self.__decanewtons_per_meter
 
     
     @property
-    def kilo_newtons_per_meter(self) -> float:
+    def kilonewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_meter != None:
-            return self.__kilo_newtons_per_meter
-        self.__kilo_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.KiloNewtonPerMeter)
-        return self.__kilo_newtons_per_meter
+        if self.__kilonewtons_per_meter != None:
+            return self.__kilonewtons_per_meter
+        self.__kilonewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.KilonewtonPerMeter)
+        return self.__kilonewtons_per_meter
 
     
     @property
-    def mega_newtons_per_meter(self) -> float:
+    def meganewtons_per_meter(self) -> float:
         """
         
         """
-        if self.__mega_newtons_per_meter != None:
-            return self.__mega_newtons_per_meter
-        self.__mega_newtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MegaNewtonPerMeter)
-        return self.__mega_newtons_per_meter
+        if self.__meganewtons_per_meter != None:
+            return self.__meganewtons_per_meter
+        self.__meganewtons_per_meter = self.__convert_from_base(ForcePerLengthUnits.MeganewtonPerMeter)
+        return self.__meganewtons_per_meter
 
     
     @property
-    def nano_newtons_per_centimeter(self) -> float:
+    def nanonewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__nano_newtons_per_centimeter != None:
-            return self.__nano_newtons_per_centimeter
-        self.__nano_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.NanoNewtonPerCentimeter)
-        return self.__nano_newtons_per_centimeter
+        if self.__nanonewtons_per_centimeter != None:
+            return self.__nanonewtons_per_centimeter
+        self.__nanonewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.NanonewtonPerCentimeter)
+        return self.__nanonewtons_per_centimeter
 
     
     @property
-    def micro_newtons_per_centimeter(self) -> float:
+    def micronewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__micro_newtons_per_centimeter != None:
-            return self.__micro_newtons_per_centimeter
-        self.__micro_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MicroNewtonPerCentimeter)
-        return self.__micro_newtons_per_centimeter
+        if self.__micronewtons_per_centimeter != None:
+            return self.__micronewtons_per_centimeter
+        self.__micronewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MicronewtonPerCentimeter)
+        return self.__micronewtons_per_centimeter
 
     
     @property
-    def milli_newtons_per_centimeter(self) -> float:
+    def millinewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_newtons_per_centimeter != None:
-            return self.__milli_newtons_per_centimeter
-        self.__milli_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MilliNewtonPerCentimeter)
-        return self.__milli_newtons_per_centimeter
+        if self.__millinewtons_per_centimeter != None:
+            return self.__millinewtons_per_centimeter
+        self.__millinewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MillinewtonPerCentimeter)
+        return self.__millinewtons_per_centimeter
 
     
     @property
-    def centi_newtons_per_centimeter(self) -> float:
+    def centinewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__centi_newtons_per_centimeter != None:
-            return self.__centi_newtons_per_centimeter
-        self.__centi_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.CentiNewtonPerCentimeter)
-        return self.__centi_newtons_per_centimeter
+        if self.__centinewtons_per_centimeter != None:
+            return self.__centinewtons_per_centimeter
+        self.__centinewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.CentinewtonPerCentimeter)
+        return self.__centinewtons_per_centimeter
 
     
     @property
-    def deci_newtons_per_centimeter(self) -> float:
+    def decinewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__deci_newtons_per_centimeter != None:
-            return self.__deci_newtons_per_centimeter
-        self.__deci_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.DeciNewtonPerCentimeter)
-        return self.__deci_newtons_per_centimeter
+        if self.__decinewtons_per_centimeter != None:
+            return self.__decinewtons_per_centimeter
+        self.__decinewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.DecinewtonPerCentimeter)
+        return self.__decinewtons_per_centimeter
 
     
     @property
-    def deca_newtons_per_centimeter(self) -> float:
+    def decanewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__deca_newtons_per_centimeter != None:
-            return self.__deca_newtons_per_centimeter
-        self.__deca_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.DecaNewtonPerCentimeter)
-        return self.__deca_newtons_per_centimeter
+        if self.__decanewtons_per_centimeter != None:
+            return self.__decanewtons_per_centimeter
+        self.__decanewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.DecanewtonPerCentimeter)
+        return self.__decanewtons_per_centimeter
 
     
     @property
-    def kilo_newtons_per_centimeter(self) -> float:
+    def kilonewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_centimeter != None:
-            return self.__kilo_newtons_per_centimeter
-        self.__kilo_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.KiloNewtonPerCentimeter)
-        return self.__kilo_newtons_per_centimeter
+        if self.__kilonewtons_per_centimeter != None:
+            return self.__kilonewtons_per_centimeter
+        self.__kilonewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.KilonewtonPerCentimeter)
+        return self.__kilonewtons_per_centimeter
 
     
     @property
-    def mega_newtons_per_centimeter(self) -> float:
+    def meganewtons_per_centimeter(self) -> float:
         """
         
         """
-        if self.__mega_newtons_per_centimeter != None:
-            return self.__mega_newtons_per_centimeter
-        self.__mega_newtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MegaNewtonPerCentimeter)
-        return self.__mega_newtons_per_centimeter
+        if self.__meganewtons_per_centimeter != None:
+            return self.__meganewtons_per_centimeter
+        self.__meganewtons_per_centimeter = self.__convert_from_base(ForcePerLengthUnits.MeganewtonPerCentimeter)
+        return self.__meganewtons_per_centimeter
 
     
     @property
-    def nano_newtons_per_millimeter(self) -> float:
+    def nanonewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__nano_newtons_per_millimeter != None:
-            return self.__nano_newtons_per_millimeter
-        self.__nano_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.NanoNewtonPerMillimeter)
-        return self.__nano_newtons_per_millimeter
+        if self.__nanonewtons_per_millimeter != None:
+            return self.__nanonewtons_per_millimeter
+        self.__nanonewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.NanonewtonPerMillimeter)
+        return self.__nanonewtons_per_millimeter
 
     
     @property
-    def micro_newtons_per_millimeter(self) -> float:
+    def micronewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__micro_newtons_per_millimeter != None:
-            return self.__micro_newtons_per_millimeter
-        self.__micro_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MicroNewtonPerMillimeter)
-        return self.__micro_newtons_per_millimeter
+        if self.__micronewtons_per_millimeter != None:
+            return self.__micronewtons_per_millimeter
+        self.__micronewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MicronewtonPerMillimeter)
+        return self.__micronewtons_per_millimeter
 
     
     @property
-    def milli_newtons_per_millimeter(self) -> float:
+    def millinewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__milli_newtons_per_millimeter != None:
-            return self.__milli_newtons_per_millimeter
-        self.__milli_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MilliNewtonPerMillimeter)
-        return self.__milli_newtons_per_millimeter
+        if self.__millinewtons_per_millimeter != None:
+            return self.__millinewtons_per_millimeter
+        self.__millinewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MillinewtonPerMillimeter)
+        return self.__millinewtons_per_millimeter
 
     
     @property
-    def centi_newtons_per_millimeter(self) -> float:
+    def centinewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__centi_newtons_per_millimeter != None:
-            return self.__centi_newtons_per_millimeter
-        self.__centi_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.CentiNewtonPerMillimeter)
-        return self.__centi_newtons_per_millimeter
+        if self.__centinewtons_per_millimeter != None:
+            return self.__centinewtons_per_millimeter
+        self.__centinewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.CentinewtonPerMillimeter)
+        return self.__centinewtons_per_millimeter
 
     
     @property
-    def deci_newtons_per_millimeter(self) -> float:
+    def decinewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__deci_newtons_per_millimeter != None:
-            return self.__deci_newtons_per_millimeter
-        self.__deci_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.DeciNewtonPerMillimeter)
-        return self.__deci_newtons_per_millimeter
+        if self.__decinewtons_per_millimeter != None:
+            return self.__decinewtons_per_millimeter
+        self.__decinewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.DecinewtonPerMillimeter)
+        return self.__decinewtons_per_millimeter
 
     
     @property
-    def deca_newtons_per_millimeter(self) -> float:
+    def decanewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__deca_newtons_per_millimeter != None:
-            return self.__deca_newtons_per_millimeter
-        self.__deca_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.DecaNewtonPerMillimeter)
-        return self.__deca_newtons_per_millimeter
+        if self.__decanewtons_per_millimeter != None:
+            return self.__decanewtons_per_millimeter
+        self.__decanewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.DecanewtonPerMillimeter)
+        return self.__decanewtons_per_millimeter
 
     
     @property
-    def kilo_newtons_per_millimeter(self) -> float:
+    def kilonewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_millimeter != None:
-            return self.__kilo_newtons_per_millimeter
-        self.__kilo_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.KiloNewtonPerMillimeter)
-        return self.__kilo_newtons_per_millimeter
+        if self.__kilonewtons_per_millimeter != None:
+            return self.__kilonewtons_per_millimeter
+        self.__kilonewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.KilonewtonPerMillimeter)
+        return self.__kilonewtons_per_millimeter
 
     
     @property
-    def mega_newtons_per_millimeter(self) -> float:
+    def meganewtons_per_millimeter(self) -> float:
         """
         
         """
-        if self.__mega_newtons_per_millimeter != None:
-            return self.__mega_newtons_per_millimeter
-        self.__mega_newtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MegaNewtonPerMillimeter)
-        return self.__mega_newtons_per_millimeter
+        if self.__meganewtons_per_millimeter != None:
+            return self.__meganewtons_per_millimeter
+        self.__meganewtons_per_millimeter = self.__convert_from_base(ForcePerLengthUnits.MeganewtonPerMillimeter)
+        return self.__meganewtons_per_millimeter
 
     
     def to_string(self, unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> string:
@@ -1570,77 +1570,77 @@ class ForcePerLength:
         if unit == ForcePerLengthUnits.KilopoundForcePerInch:
             return f"""{self.kilopounds_force_per_inch} kipf/in"""
         
-        if unit == ForcePerLengthUnits.NanoNewtonPerMeter:
-            return f"""{self.nano_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.NanonewtonPerMeter:
+            return f"""{self.nanonewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.MicroNewtonPerMeter:
-            return f"""{self.micro_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.MicronewtonPerMeter:
+            return f"""{self.micronewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.MilliNewtonPerMeter:
-            return f"""{self.milli_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.MillinewtonPerMeter:
+            return f"""{self.millinewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.CentiNewtonPerMeter:
-            return f"""{self.centi_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.CentinewtonPerMeter:
+            return f"""{self.centinewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.DeciNewtonPerMeter:
-            return f"""{self.deci_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.DecinewtonPerMeter:
+            return f"""{self.decinewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.DecaNewtonPerMeter:
-            return f"""{self.deca_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.DecanewtonPerMeter:
+            return f"""{self.decanewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.KiloNewtonPerMeter:
-            return f"""{self.kilo_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.KilonewtonPerMeter:
+            return f"""{self.kilonewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.MegaNewtonPerMeter:
-            return f"""{self.mega_newtons_per_meter} """
+        if unit == ForcePerLengthUnits.MeganewtonPerMeter:
+            return f"""{self.meganewtons_per_meter} """
         
-        if unit == ForcePerLengthUnits.NanoNewtonPerCentimeter:
-            return f"""{self.nano_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.NanonewtonPerCentimeter:
+            return f"""{self.nanonewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.MicroNewtonPerCentimeter:
-            return f"""{self.micro_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.MicronewtonPerCentimeter:
+            return f"""{self.micronewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.MilliNewtonPerCentimeter:
-            return f"""{self.milli_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.MillinewtonPerCentimeter:
+            return f"""{self.millinewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.CentiNewtonPerCentimeter:
-            return f"""{self.centi_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.CentinewtonPerCentimeter:
+            return f"""{self.centinewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.DeciNewtonPerCentimeter:
-            return f"""{self.deci_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.DecinewtonPerCentimeter:
+            return f"""{self.decinewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.DecaNewtonPerCentimeter:
-            return f"""{self.deca_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.DecanewtonPerCentimeter:
+            return f"""{self.decanewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.KiloNewtonPerCentimeter:
-            return f"""{self.kilo_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.KilonewtonPerCentimeter:
+            return f"""{self.kilonewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.MegaNewtonPerCentimeter:
-            return f"""{self.mega_newtons_per_centimeter} """
+        if unit == ForcePerLengthUnits.MeganewtonPerCentimeter:
+            return f"""{self.meganewtons_per_centimeter} """
         
-        if unit == ForcePerLengthUnits.NanoNewtonPerMillimeter:
-            return f"""{self.nano_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.NanonewtonPerMillimeter:
+            return f"""{self.nanonewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.MicroNewtonPerMillimeter:
-            return f"""{self.micro_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.MicronewtonPerMillimeter:
+            return f"""{self.micronewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.MilliNewtonPerMillimeter:
-            return f"""{self.milli_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.MillinewtonPerMillimeter:
+            return f"""{self.millinewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.CentiNewtonPerMillimeter:
-            return f"""{self.centi_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.CentinewtonPerMillimeter:
+            return f"""{self.centinewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.DeciNewtonPerMillimeter:
-            return f"""{self.deci_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.DecinewtonPerMillimeter:
+            return f"""{self.decinewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.DecaNewtonPerMillimeter:
-            return f"""{self.deca_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.DecanewtonPerMillimeter:
+            return f"""{self.decanewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.KiloNewtonPerMillimeter:
-            return f"""{self.kilo_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.KilonewtonPerMillimeter:
+            return f"""{self.kilonewtons_per_millimeter} """
         
-        if unit == ForcePerLengthUnits.MegaNewtonPerMillimeter:
-            return f"""{self.mega_newtons_per_millimeter} """
+        if unit == ForcePerLengthUnits.MeganewtonPerMillimeter:
+            return f"""{self.meganewtons_per_millimeter} """
         
         return f'{self.__value}'
 
@@ -1694,76 +1694,76 @@ class ForcePerLength:
         if unit_abbreviation == ForcePerLengthUnits.KilopoundForcePerInch:
             return """kipf/in"""
         
-        if unit_abbreviation == ForcePerLengthUnits.NanoNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MicroNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MilliNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.CentiNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DeciNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DecaNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.KiloNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MegaNewtonPerMeter:
+        if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerMeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.NanoNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MicroNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MilliNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.CentiNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DeciNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DecaNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.KiloNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MegaNewtonPerCentimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.NanoNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MicroNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MilliNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.CentiNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DeciNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.DecaNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.KiloNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerMillimeter:
             return """"""
         
-        if unit_abbreviation == ForcePerLengthUnits.MegaNewtonPerMillimeter:
+        if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerMillimeter:
             return """"""
         
 

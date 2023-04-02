@@ -168,107 +168,107 @@ class VolumeUnits(Enum):
             
         """
         
-        NanoLiter = 'nano_liter'
+        Nanoliter = 'nanoliter'
         """
             
         """
         
-        MicroLiter = 'micro_liter'
+        Microliter = 'microliter'
         """
             
         """
         
-        MilliLiter = 'milli_liter'
+        Milliliter = 'milliliter'
         """
             
         """
         
-        CentiLiter = 'centi_liter'
+        Centiliter = 'centiliter'
         """
             
         """
         
-        DeciLiter = 'deci_liter'
+        Deciliter = 'deciliter'
         """
             
         """
         
-        DecaLiter = 'deca_liter'
+        Decaliter = 'decaliter'
         """
             
         """
         
-        HectoLiter = 'hecto_liter'
+        Hectoliter = 'hectoliter'
         """
             
         """
         
-        KiloLiter = 'kilo_liter'
+        Kiloliter = 'kiloliter'
         """
             
         """
         
-        MegaLiter = 'mega_liter'
+        Megaliter = 'megaliter'
         """
             
         """
         
-        HectoCubicMeter = 'hecto_cubic_meter'
+        HectocubicMeter = 'hectocubic_meter'
         """
             
         """
         
-        KiloCubicMeter = 'kilo_cubic_meter'
+        KilocubicMeter = 'kilocubic_meter'
         """
             
         """
         
-        HectoCubicFoot = 'hecto_cubic_foot'
+        HectocubicFoot = 'hectocubic_foot'
         """
             
         """
         
-        KiloCubicFoot = 'kilo_cubic_foot'
+        KilocubicFoot = 'kilocubic_foot'
         """
             
         """
         
-        MegaCubicFoot = 'mega_cubic_foot'
+        MegacubicFoot = 'megacubic_foot'
         """
             
         """
         
-        KiloImperialGallon = 'kilo_imperial_gallon'
+        KiloimperialGallon = 'kiloimperial_gallon'
         """
             
         """
         
-        MegaImperialGallon = 'mega_imperial_gallon'
+        MegaimperialGallon = 'megaimperial_gallon'
         """
             
         """
         
-        DecaUsGallon = 'deca_us_gallon'
+        DecausGallon = 'decaus_gallon'
         """
             
         """
         
-        DeciUsGallon = 'deci_us_gallon'
+        DeciusGallon = 'decius_gallon'
         """
             
         """
         
-        HectoUsGallon = 'hecto_us_gallon'
+        HectousGallon = 'hectous_gallon'
         """
             
         """
         
-        KiloUsGallon = 'kilo_us_gallon'
+        KilousGallon = 'kilous_gallon'
         """
             
         """
         
-        MegaUsGallon = 'mega_us_gallon'
+        MegausGallon = 'megaus_gallon'
         """
             
         """
@@ -351,47 +351,47 @@ class Volume:
         
         self.__board_feet = None
         
-        self.__nano_liters = None
+        self.__nanoliters = None
         
-        self.__micro_liters = None
+        self.__microliters = None
         
-        self.__milli_liters = None
+        self.__milliliters = None
         
-        self.__centi_liters = None
+        self.__centiliters = None
         
-        self.__deci_liters = None
+        self.__deciliters = None
         
-        self.__deca_liters = None
+        self.__decaliters = None
         
-        self.__hecto_liters = None
+        self.__hectoliters = None
         
-        self.__kilo_liters = None
+        self.__kiloliters = None
         
-        self.__mega_liters = None
+        self.__megaliters = None
         
-        self.__hecto_cubic_meters = None
+        self.__hectocubic_meters = None
         
-        self.__kilo_cubic_meters = None
+        self.__kilocubic_meters = None
         
-        self.__hecto_cubic_feet = None
+        self.__hectocubic_feet = None
         
-        self.__kilo_cubic_feet = None
+        self.__kilocubic_feet = None
         
-        self.__mega_cubic_feet = None
+        self.__megacubic_feet = None
         
-        self.__kilo_imperial_gallons = None
+        self.__kiloimperial_gallons = None
         
-        self.__mega_imperial_gallons = None
+        self.__megaimperial_gallons = None
         
-        self.__deca_us_gallons = None
+        self.__decaus_gallons = None
         
-        self.__deci_us_gallons = None
+        self.__decius_gallons = None
         
-        self.__hecto_us_gallons = None
+        self.__hectous_gallons = None
         
-        self.__kilo_us_gallons = None
+        self.__kilous_gallons = None
         
-        self.__mega_us_gallons = None
+        self.__megaus_gallons = None
         
 
     def __convert_from_base(self, from_unit: VolumeUnits) -> float:
@@ -493,67 +493,67 @@ class Volume:
         if from_unit == VolumeUnits.BoardFoot:
             return (value / 2.3597372158e-3)
         
-        if from_unit == VolumeUnits.NanoLiter:
+        if from_unit == VolumeUnits.Nanoliter:
             return ((value * 1e3) / 1e-09)
         
-        if from_unit == VolumeUnits.MicroLiter:
+        if from_unit == VolumeUnits.Microliter:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == VolumeUnits.MilliLiter:
+        if from_unit == VolumeUnits.Milliliter:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == VolumeUnits.CentiLiter:
+        if from_unit == VolumeUnits.Centiliter:
             return ((value * 1e3) / 0.01)
         
-        if from_unit == VolumeUnits.DeciLiter:
+        if from_unit == VolumeUnits.Deciliter:
             return ((value * 1e3) / 0.1)
         
-        if from_unit == VolumeUnits.DecaLiter:
+        if from_unit == VolumeUnits.Decaliter:
             return ((value * 1e3) / 10.0)
         
-        if from_unit == VolumeUnits.HectoLiter:
+        if from_unit == VolumeUnits.Hectoliter:
             return ((value * 1e3) / 100.0)
         
-        if from_unit == VolumeUnits.KiloLiter:
+        if from_unit == VolumeUnits.Kiloliter:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == VolumeUnits.MegaLiter:
+        if from_unit == VolumeUnits.Megaliter:
             return ((value * 1e3) / 1000000.0)
         
-        if from_unit == VolumeUnits.HectoCubicMeter:
+        if from_unit == VolumeUnits.HectocubicMeter:
             return ((value) / 100.0)
         
-        if from_unit == VolumeUnits.KiloCubicMeter:
+        if from_unit == VolumeUnits.KilocubicMeter:
             return ((value) / 1000.0)
         
-        if from_unit == VolumeUnits.HectoCubicFoot:
+        if from_unit == VolumeUnits.HectocubicFoot:
             return ((value / 2.8316846592e-2) / 100.0)
         
-        if from_unit == VolumeUnits.KiloCubicFoot:
+        if from_unit == VolumeUnits.KilocubicFoot:
             return ((value / 2.8316846592e-2) / 1000.0)
         
-        if from_unit == VolumeUnits.MegaCubicFoot:
+        if from_unit == VolumeUnits.MegacubicFoot:
             return ((value / 2.8316846592e-2) / 1000000.0)
         
-        if from_unit == VolumeUnits.KiloImperialGallon:
+        if from_unit == VolumeUnits.KiloimperialGallon:
             return ((value / 0.00454609000000181429905810072407) / 1000.0)
         
-        if from_unit == VolumeUnits.MegaImperialGallon:
+        if from_unit == VolumeUnits.MegaimperialGallon:
             return ((value / 0.00454609000000181429905810072407) / 1000000.0)
         
-        if from_unit == VolumeUnits.DecaUsGallon:
+        if from_unit == VolumeUnits.DecausGallon:
             return ((value / 0.00378541) / 10.0)
         
-        if from_unit == VolumeUnits.DeciUsGallon:
+        if from_unit == VolumeUnits.DeciusGallon:
             return ((value / 0.00378541) / 0.1)
         
-        if from_unit == VolumeUnits.HectoUsGallon:
+        if from_unit == VolumeUnits.HectousGallon:
             return ((value / 0.00378541) / 100.0)
         
-        if from_unit == VolumeUnits.KiloUsGallon:
+        if from_unit == VolumeUnits.KilousGallon:
             return ((value / 0.00378541) / 1000.0)
         
-        if from_unit == VolumeUnits.MegaUsGallon:
+        if from_unit == VolumeUnits.MegausGallon:
             return ((value / 0.00378541) / 1000000.0)
         
         return None
@@ -657,67 +657,67 @@ class Volume:
         if to_unit == VolumeUnits.BoardFoot:
             return (value * 2.3597372158e-3)
         
-        if to_unit == VolumeUnits.NanoLiter:
+        if to_unit == VolumeUnits.Nanoliter:
             return ((value / 1e3) * 1e-09)
         
-        if to_unit == VolumeUnits.MicroLiter:
+        if to_unit == VolumeUnits.Microliter:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == VolumeUnits.MilliLiter:
+        if to_unit == VolumeUnits.Milliliter:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == VolumeUnits.CentiLiter:
+        if to_unit == VolumeUnits.Centiliter:
             return ((value / 1e3) * 0.01)
         
-        if to_unit == VolumeUnits.DeciLiter:
+        if to_unit == VolumeUnits.Deciliter:
             return ((value / 1e3) * 0.1)
         
-        if to_unit == VolumeUnits.DecaLiter:
+        if to_unit == VolumeUnits.Decaliter:
             return ((value / 1e3) * 10.0)
         
-        if to_unit == VolumeUnits.HectoLiter:
+        if to_unit == VolumeUnits.Hectoliter:
             return ((value / 1e3) * 100.0)
         
-        if to_unit == VolumeUnits.KiloLiter:
+        if to_unit == VolumeUnits.Kiloliter:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == VolumeUnits.MegaLiter:
+        if to_unit == VolumeUnits.Megaliter:
             return ((value / 1e3) * 1000000.0)
         
-        if to_unit == VolumeUnits.HectoCubicMeter:
+        if to_unit == VolumeUnits.HectocubicMeter:
             return ((value) * 100.0)
         
-        if to_unit == VolumeUnits.KiloCubicMeter:
+        if to_unit == VolumeUnits.KilocubicMeter:
             return ((value) * 1000.0)
         
-        if to_unit == VolumeUnits.HectoCubicFoot:
+        if to_unit == VolumeUnits.HectocubicFoot:
             return ((value * 2.8316846592e-2) * 100.0)
         
-        if to_unit == VolumeUnits.KiloCubicFoot:
+        if to_unit == VolumeUnits.KilocubicFoot:
             return ((value * 2.8316846592e-2) * 1000.0)
         
-        if to_unit == VolumeUnits.MegaCubicFoot:
+        if to_unit == VolumeUnits.MegacubicFoot:
             return ((value * 2.8316846592e-2) * 1000000.0)
         
-        if to_unit == VolumeUnits.KiloImperialGallon:
+        if to_unit == VolumeUnits.KiloimperialGallon:
             return ((value * 0.00454609000000181429905810072407) * 1000.0)
         
-        if to_unit == VolumeUnits.MegaImperialGallon:
+        if to_unit == VolumeUnits.MegaimperialGallon:
             return ((value * 0.00454609000000181429905810072407) * 1000000.0)
         
-        if to_unit == VolumeUnits.DecaUsGallon:
+        if to_unit == VolumeUnits.DecausGallon:
             return ((value * 0.00378541) * 10.0)
         
-        if to_unit == VolumeUnits.DeciUsGallon:
+        if to_unit == VolumeUnits.DeciusGallon:
             return ((value * 0.00378541) * 0.1)
         
-        if to_unit == VolumeUnits.HectoUsGallon:
+        if to_unit == VolumeUnits.HectousGallon:
             return ((value * 0.00378541) * 100.0)
         
-        if to_unit == VolumeUnits.KiloUsGallon:
+        if to_unit == VolumeUnits.KilousGallon:
             return ((value * 0.00378541) * 1000.0)
         
-        if to_unit == VolumeUnits.MegaUsGallon:
+        if to_unit == VolumeUnits.MegausGallon:
             return ((value * 0.00378541) * 1000000.0)
         
         return None
@@ -1209,318 +1209,318 @@ class Volume:
 
     
     @staticmethod
-    def from_nano_liters(nano_liters: float):
+    def from_nanoliters(nanoliters: float):
         """
-        Create a new instance of Volume from a value in nano_liters.
+        Create a new instance of Volume from a value in nanoliters.
 
         
 
-        :param meters: The Volume value in nano_liters.
-        :type nano_liters: float
+        :param meters: The Volume value in nanoliters.
+        :type nanoliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(nano_liters, VolumeUnits.NanoLiter)
+        return Volume(nanoliters, VolumeUnits.Nanoliter)
 
     
     @staticmethod
-    def from_micro_liters(micro_liters: float):
+    def from_microliters(microliters: float):
         """
-        Create a new instance of Volume from a value in micro_liters.
+        Create a new instance of Volume from a value in microliters.
 
         
 
-        :param meters: The Volume value in micro_liters.
-        :type micro_liters: float
+        :param meters: The Volume value in microliters.
+        :type microliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(micro_liters, VolumeUnits.MicroLiter)
+        return Volume(microliters, VolumeUnits.Microliter)
 
     
     @staticmethod
-    def from_milli_liters(milli_liters: float):
+    def from_milliliters(milliliters: float):
         """
-        Create a new instance of Volume from a value in milli_liters.
+        Create a new instance of Volume from a value in milliliters.
 
         
 
-        :param meters: The Volume value in milli_liters.
-        :type milli_liters: float
+        :param meters: The Volume value in milliliters.
+        :type milliliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(milli_liters, VolumeUnits.MilliLiter)
+        return Volume(milliliters, VolumeUnits.Milliliter)
 
     
     @staticmethod
-    def from_centi_liters(centi_liters: float):
+    def from_centiliters(centiliters: float):
         """
-        Create a new instance of Volume from a value in centi_liters.
+        Create a new instance of Volume from a value in centiliters.
 
         
 
-        :param meters: The Volume value in centi_liters.
-        :type centi_liters: float
+        :param meters: The Volume value in centiliters.
+        :type centiliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(centi_liters, VolumeUnits.CentiLiter)
+        return Volume(centiliters, VolumeUnits.Centiliter)
 
     
     @staticmethod
-    def from_deci_liters(deci_liters: float):
+    def from_deciliters(deciliters: float):
         """
-        Create a new instance of Volume from a value in deci_liters.
+        Create a new instance of Volume from a value in deciliters.
 
         
 
-        :param meters: The Volume value in deci_liters.
-        :type deci_liters: float
+        :param meters: The Volume value in deciliters.
+        :type deciliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(deci_liters, VolumeUnits.DeciLiter)
+        return Volume(deciliters, VolumeUnits.Deciliter)
 
     
     @staticmethod
-    def from_deca_liters(deca_liters: float):
+    def from_decaliters(decaliters: float):
         """
-        Create a new instance of Volume from a value in deca_liters.
+        Create a new instance of Volume from a value in decaliters.
 
         
 
-        :param meters: The Volume value in deca_liters.
-        :type deca_liters: float
+        :param meters: The Volume value in decaliters.
+        :type decaliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(deca_liters, VolumeUnits.DecaLiter)
+        return Volume(decaliters, VolumeUnits.Decaliter)
 
     
     @staticmethod
-    def from_hecto_liters(hecto_liters: float):
+    def from_hectoliters(hectoliters: float):
         """
-        Create a new instance of Volume from a value in hecto_liters.
+        Create a new instance of Volume from a value in hectoliters.
 
         
 
-        :param meters: The Volume value in hecto_liters.
-        :type hecto_liters: float
+        :param meters: The Volume value in hectoliters.
+        :type hectoliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(hecto_liters, VolumeUnits.HectoLiter)
+        return Volume(hectoliters, VolumeUnits.Hectoliter)
 
     
     @staticmethod
-    def from_kilo_liters(kilo_liters: float):
+    def from_kiloliters(kiloliters: float):
         """
-        Create a new instance of Volume from a value in kilo_liters.
+        Create a new instance of Volume from a value in kiloliters.
 
         
 
-        :param meters: The Volume value in kilo_liters.
-        :type kilo_liters: float
+        :param meters: The Volume value in kiloliters.
+        :type kiloliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(kilo_liters, VolumeUnits.KiloLiter)
+        return Volume(kiloliters, VolumeUnits.Kiloliter)
 
     
     @staticmethod
-    def from_mega_liters(mega_liters: float):
+    def from_megaliters(megaliters: float):
         """
-        Create a new instance of Volume from a value in mega_liters.
+        Create a new instance of Volume from a value in megaliters.
 
         
 
-        :param meters: The Volume value in mega_liters.
-        :type mega_liters: float
+        :param meters: The Volume value in megaliters.
+        :type megaliters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(mega_liters, VolumeUnits.MegaLiter)
+        return Volume(megaliters, VolumeUnits.Megaliter)
 
     
     @staticmethod
-    def from_hecto_cubic_meters(hecto_cubic_meters: float):
+    def from_hectocubic_meters(hectocubic_meters: float):
         """
-        Create a new instance of Volume from a value in hecto_cubic_meters.
+        Create a new instance of Volume from a value in hectocubic_meters.
 
         
 
-        :param meters: The Volume value in hecto_cubic_meters.
-        :type hecto_cubic_meters: float
+        :param meters: The Volume value in hectocubic_meters.
+        :type hectocubic_meters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(hecto_cubic_meters, VolumeUnits.HectoCubicMeter)
+        return Volume(hectocubic_meters, VolumeUnits.HectocubicMeter)
 
     
     @staticmethod
-    def from_kilo_cubic_meters(kilo_cubic_meters: float):
+    def from_kilocubic_meters(kilocubic_meters: float):
         """
-        Create a new instance of Volume from a value in kilo_cubic_meters.
+        Create a new instance of Volume from a value in kilocubic_meters.
 
         
 
-        :param meters: The Volume value in kilo_cubic_meters.
-        :type kilo_cubic_meters: float
+        :param meters: The Volume value in kilocubic_meters.
+        :type kilocubic_meters: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(kilo_cubic_meters, VolumeUnits.KiloCubicMeter)
+        return Volume(kilocubic_meters, VolumeUnits.KilocubicMeter)
 
     
     @staticmethod
-    def from_hecto_cubic_feet(hecto_cubic_feet: float):
+    def from_hectocubic_feet(hectocubic_feet: float):
         """
-        Create a new instance of Volume from a value in hecto_cubic_feet.
+        Create a new instance of Volume from a value in hectocubic_feet.
 
         
 
-        :param meters: The Volume value in hecto_cubic_feet.
-        :type hecto_cubic_feet: float
+        :param meters: The Volume value in hectocubic_feet.
+        :type hectocubic_feet: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(hecto_cubic_feet, VolumeUnits.HectoCubicFoot)
+        return Volume(hectocubic_feet, VolumeUnits.HectocubicFoot)
 
     
     @staticmethod
-    def from_kilo_cubic_feet(kilo_cubic_feet: float):
+    def from_kilocubic_feet(kilocubic_feet: float):
         """
-        Create a new instance of Volume from a value in kilo_cubic_feet.
+        Create a new instance of Volume from a value in kilocubic_feet.
 
         
 
-        :param meters: The Volume value in kilo_cubic_feet.
-        :type kilo_cubic_feet: float
+        :param meters: The Volume value in kilocubic_feet.
+        :type kilocubic_feet: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(kilo_cubic_feet, VolumeUnits.KiloCubicFoot)
+        return Volume(kilocubic_feet, VolumeUnits.KilocubicFoot)
 
     
     @staticmethod
-    def from_mega_cubic_feet(mega_cubic_feet: float):
+    def from_megacubic_feet(megacubic_feet: float):
         """
-        Create a new instance of Volume from a value in mega_cubic_feet.
+        Create a new instance of Volume from a value in megacubic_feet.
 
         
 
-        :param meters: The Volume value in mega_cubic_feet.
-        :type mega_cubic_feet: float
+        :param meters: The Volume value in megacubic_feet.
+        :type megacubic_feet: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(mega_cubic_feet, VolumeUnits.MegaCubicFoot)
+        return Volume(megacubic_feet, VolumeUnits.MegacubicFoot)
 
     
     @staticmethod
-    def from_kilo_imperial_gallons(kilo_imperial_gallons: float):
+    def from_kiloimperial_gallons(kiloimperial_gallons: float):
         """
-        Create a new instance of Volume from a value in kilo_imperial_gallons.
+        Create a new instance of Volume from a value in kiloimperial_gallons.
 
         
 
-        :param meters: The Volume value in kilo_imperial_gallons.
-        :type kilo_imperial_gallons: float
+        :param meters: The Volume value in kiloimperial_gallons.
+        :type kiloimperial_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(kilo_imperial_gallons, VolumeUnits.KiloImperialGallon)
+        return Volume(kiloimperial_gallons, VolumeUnits.KiloimperialGallon)
 
     
     @staticmethod
-    def from_mega_imperial_gallons(mega_imperial_gallons: float):
+    def from_megaimperial_gallons(megaimperial_gallons: float):
         """
-        Create a new instance of Volume from a value in mega_imperial_gallons.
+        Create a new instance of Volume from a value in megaimperial_gallons.
 
         
 
-        :param meters: The Volume value in mega_imperial_gallons.
-        :type mega_imperial_gallons: float
+        :param meters: The Volume value in megaimperial_gallons.
+        :type megaimperial_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(mega_imperial_gallons, VolumeUnits.MegaImperialGallon)
+        return Volume(megaimperial_gallons, VolumeUnits.MegaimperialGallon)
 
     
     @staticmethod
-    def from_deca_us_gallons(deca_us_gallons: float):
+    def from_decaus_gallons(decaus_gallons: float):
         """
-        Create a new instance of Volume from a value in deca_us_gallons.
+        Create a new instance of Volume from a value in decaus_gallons.
 
         
 
-        :param meters: The Volume value in deca_us_gallons.
-        :type deca_us_gallons: float
+        :param meters: The Volume value in decaus_gallons.
+        :type decaus_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(deca_us_gallons, VolumeUnits.DecaUsGallon)
+        return Volume(decaus_gallons, VolumeUnits.DecausGallon)
 
     
     @staticmethod
-    def from_deci_us_gallons(deci_us_gallons: float):
+    def from_decius_gallons(decius_gallons: float):
         """
-        Create a new instance of Volume from a value in deci_us_gallons.
+        Create a new instance of Volume from a value in decius_gallons.
 
         
 
-        :param meters: The Volume value in deci_us_gallons.
-        :type deci_us_gallons: float
+        :param meters: The Volume value in decius_gallons.
+        :type decius_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(deci_us_gallons, VolumeUnits.DeciUsGallon)
+        return Volume(decius_gallons, VolumeUnits.DeciusGallon)
 
     
     @staticmethod
-    def from_hecto_us_gallons(hecto_us_gallons: float):
+    def from_hectous_gallons(hectous_gallons: float):
         """
-        Create a new instance of Volume from a value in hecto_us_gallons.
+        Create a new instance of Volume from a value in hectous_gallons.
 
         
 
-        :param meters: The Volume value in hecto_us_gallons.
-        :type hecto_us_gallons: float
+        :param meters: The Volume value in hectous_gallons.
+        :type hectous_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(hecto_us_gallons, VolumeUnits.HectoUsGallon)
+        return Volume(hectous_gallons, VolumeUnits.HectousGallon)
 
     
     @staticmethod
-    def from_kilo_us_gallons(kilo_us_gallons: float):
+    def from_kilous_gallons(kilous_gallons: float):
         """
-        Create a new instance of Volume from a value in kilo_us_gallons.
+        Create a new instance of Volume from a value in kilous_gallons.
 
         
 
-        :param meters: The Volume value in kilo_us_gallons.
-        :type kilo_us_gallons: float
+        :param meters: The Volume value in kilous_gallons.
+        :type kilous_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(kilo_us_gallons, VolumeUnits.KiloUsGallon)
+        return Volume(kilous_gallons, VolumeUnits.KilousGallon)
 
     
     @staticmethod
-    def from_mega_us_gallons(mega_us_gallons: float):
+    def from_megaus_gallons(megaus_gallons: float):
         """
-        Create a new instance of Volume from a value in mega_us_gallons.
+        Create a new instance of Volume from a value in megaus_gallons.
 
         
 
-        :param meters: The Volume value in mega_us_gallons.
-        :type mega_us_gallons: float
+        :param meters: The Volume value in megaus_gallons.
+        :type megaus_gallons: float
         :return: A new instance of Volume.
         :rtype: Volume
         """
-        return Volume(mega_us_gallons, VolumeUnits.MegaUsGallon)
+        return Volume(megaus_gallons, VolumeUnits.MegausGallon)
 
     
     @property
@@ -1876,234 +1876,234 @@ class Volume:
 
     
     @property
-    def nano_liters(self) -> float:
+    def nanoliters(self) -> float:
         """
         
         """
-        if self.__nano_liters != None:
-            return self.__nano_liters
-        self.__nano_liters = self.__convert_from_base(VolumeUnits.NanoLiter)
-        return self.__nano_liters
+        if self.__nanoliters != None:
+            return self.__nanoliters
+        self.__nanoliters = self.__convert_from_base(VolumeUnits.Nanoliter)
+        return self.__nanoliters
 
     
     @property
-    def micro_liters(self) -> float:
+    def microliters(self) -> float:
         """
         
         """
-        if self.__micro_liters != None:
-            return self.__micro_liters
-        self.__micro_liters = self.__convert_from_base(VolumeUnits.MicroLiter)
-        return self.__micro_liters
+        if self.__microliters != None:
+            return self.__microliters
+        self.__microliters = self.__convert_from_base(VolumeUnits.Microliter)
+        return self.__microliters
 
     
     @property
-    def milli_liters(self) -> float:
+    def milliliters(self) -> float:
         """
         
         """
-        if self.__milli_liters != None:
-            return self.__milli_liters
-        self.__milli_liters = self.__convert_from_base(VolumeUnits.MilliLiter)
-        return self.__milli_liters
+        if self.__milliliters != None:
+            return self.__milliliters
+        self.__milliliters = self.__convert_from_base(VolumeUnits.Milliliter)
+        return self.__milliliters
 
     
     @property
-    def centi_liters(self) -> float:
+    def centiliters(self) -> float:
         """
         
         """
-        if self.__centi_liters != None:
-            return self.__centi_liters
-        self.__centi_liters = self.__convert_from_base(VolumeUnits.CentiLiter)
-        return self.__centi_liters
+        if self.__centiliters != None:
+            return self.__centiliters
+        self.__centiliters = self.__convert_from_base(VolumeUnits.Centiliter)
+        return self.__centiliters
 
     
     @property
-    def deci_liters(self) -> float:
+    def deciliters(self) -> float:
         """
         
         """
-        if self.__deci_liters != None:
-            return self.__deci_liters
-        self.__deci_liters = self.__convert_from_base(VolumeUnits.DeciLiter)
-        return self.__deci_liters
+        if self.__deciliters != None:
+            return self.__deciliters
+        self.__deciliters = self.__convert_from_base(VolumeUnits.Deciliter)
+        return self.__deciliters
 
     
     @property
-    def deca_liters(self) -> float:
+    def decaliters(self) -> float:
         """
         
         """
-        if self.__deca_liters != None:
-            return self.__deca_liters
-        self.__deca_liters = self.__convert_from_base(VolumeUnits.DecaLiter)
-        return self.__deca_liters
+        if self.__decaliters != None:
+            return self.__decaliters
+        self.__decaliters = self.__convert_from_base(VolumeUnits.Decaliter)
+        return self.__decaliters
 
     
     @property
-    def hecto_liters(self) -> float:
+    def hectoliters(self) -> float:
         """
         
         """
-        if self.__hecto_liters != None:
-            return self.__hecto_liters
-        self.__hecto_liters = self.__convert_from_base(VolumeUnits.HectoLiter)
-        return self.__hecto_liters
+        if self.__hectoliters != None:
+            return self.__hectoliters
+        self.__hectoliters = self.__convert_from_base(VolumeUnits.Hectoliter)
+        return self.__hectoliters
 
     
     @property
-    def kilo_liters(self) -> float:
+    def kiloliters(self) -> float:
         """
         
         """
-        if self.__kilo_liters != None:
-            return self.__kilo_liters
-        self.__kilo_liters = self.__convert_from_base(VolumeUnits.KiloLiter)
-        return self.__kilo_liters
+        if self.__kiloliters != None:
+            return self.__kiloliters
+        self.__kiloliters = self.__convert_from_base(VolumeUnits.Kiloliter)
+        return self.__kiloliters
 
     
     @property
-    def mega_liters(self) -> float:
+    def megaliters(self) -> float:
         """
         
         """
-        if self.__mega_liters != None:
-            return self.__mega_liters
-        self.__mega_liters = self.__convert_from_base(VolumeUnits.MegaLiter)
-        return self.__mega_liters
+        if self.__megaliters != None:
+            return self.__megaliters
+        self.__megaliters = self.__convert_from_base(VolumeUnits.Megaliter)
+        return self.__megaliters
 
     
     @property
-    def hecto_cubic_meters(self) -> float:
+    def hectocubic_meters(self) -> float:
         """
         
         """
-        if self.__hecto_cubic_meters != None:
-            return self.__hecto_cubic_meters
-        self.__hecto_cubic_meters = self.__convert_from_base(VolumeUnits.HectoCubicMeter)
-        return self.__hecto_cubic_meters
+        if self.__hectocubic_meters != None:
+            return self.__hectocubic_meters
+        self.__hectocubic_meters = self.__convert_from_base(VolumeUnits.HectocubicMeter)
+        return self.__hectocubic_meters
 
     
     @property
-    def kilo_cubic_meters(self) -> float:
+    def kilocubic_meters(self) -> float:
         """
         
         """
-        if self.__kilo_cubic_meters != None:
-            return self.__kilo_cubic_meters
-        self.__kilo_cubic_meters = self.__convert_from_base(VolumeUnits.KiloCubicMeter)
-        return self.__kilo_cubic_meters
+        if self.__kilocubic_meters != None:
+            return self.__kilocubic_meters
+        self.__kilocubic_meters = self.__convert_from_base(VolumeUnits.KilocubicMeter)
+        return self.__kilocubic_meters
 
     
     @property
-    def hecto_cubic_feet(self) -> float:
+    def hectocubic_feet(self) -> float:
         """
         
         """
-        if self.__hecto_cubic_feet != None:
-            return self.__hecto_cubic_feet
-        self.__hecto_cubic_feet = self.__convert_from_base(VolumeUnits.HectoCubicFoot)
-        return self.__hecto_cubic_feet
+        if self.__hectocubic_feet != None:
+            return self.__hectocubic_feet
+        self.__hectocubic_feet = self.__convert_from_base(VolumeUnits.HectocubicFoot)
+        return self.__hectocubic_feet
 
     
     @property
-    def kilo_cubic_feet(self) -> float:
+    def kilocubic_feet(self) -> float:
         """
         
         """
-        if self.__kilo_cubic_feet != None:
-            return self.__kilo_cubic_feet
-        self.__kilo_cubic_feet = self.__convert_from_base(VolumeUnits.KiloCubicFoot)
-        return self.__kilo_cubic_feet
+        if self.__kilocubic_feet != None:
+            return self.__kilocubic_feet
+        self.__kilocubic_feet = self.__convert_from_base(VolumeUnits.KilocubicFoot)
+        return self.__kilocubic_feet
 
     
     @property
-    def mega_cubic_feet(self) -> float:
+    def megacubic_feet(self) -> float:
         """
         
         """
-        if self.__mega_cubic_feet != None:
-            return self.__mega_cubic_feet
-        self.__mega_cubic_feet = self.__convert_from_base(VolumeUnits.MegaCubicFoot)
-        return self.__mega_cubic_feet
+        if self.__megacubic_feet != None:
+            return self.__megacubic_feet
+        self.__megacubic_feet = self.__convert_from_base(VolumeUnits.MegacubicFoot)
+        return self.__megacubic_feet
 
     
     @property
-    def kilo_imperial_gallons(self) -> float:
+    def kiloimperial_gallons(self) -> float:
         """
         
         """
-        if self.__kilo_imperial_gallons != None:
-            return self.__kilo_imperial_gallons
-        self.__kilo_imperial_gallons = self.__convert_from_base(VolumeUnits.KiloImperialGallon)
-        return self.__kilo_imperial_gallons
+        if self.__kiloimperial_gallons != None:
+            return self.__kiloimperial_gallons
+        self.__kiloimperial_gallons = self.__convert_from_base(VolumeUnits.KiloimperialGallon)
+        return self.__kiloimperial_gallons
 
     
     @property
-    def mega_imperial_gallons(self) -> float:
+    def megaimperial_gallons(self) -> float:
         """
         
         """
-        if self.__mega_imperial_gallons != None:
-            return self.__mega_imperial_gallons
-        self.__mega_imperial_gallons = self.__convert_from_base(VolumeUnits.MegaImperialGallon)
-        return self.__mega_imperial_gallons
+        if self.__megaimperial_gallons != None:
+            return self.__megaimperial_gallons
+        self.__megaimperial_gallons = self.__convert_from_base(VolumeUnits.MegaimperialGallon)
+        return self.__megaimperial_gallons
 
     
     @property
-    def deca_us_gallons(self) -> float:
+    def decaus_gallons(self) -> float:
         """
         
         """
-        if self.__deca_us_gallons != None:
-            return self.__deca_us_gallons
-        self.__deca_us_gallons = self.__convert_from_base(VolumeUnits.DecaUsGallon)
-        return self.__deca_us_gallons
+        if self.__decaus_gallons != None:
+            return self.__decaus_gallons
+        self.__decaus_gallons = self.__convert_from_base(VolumeUnits.DecausGallon)
+        return self.__decaus_gallons
 
     
     @property
-    def deci_us_gallons(self) -> float:
+    def decius_gallons(self) -> float:
         """
         
         """
-        if self.__deci_us_gallons != None:
-            return self.__deci_us_gallons
-        self.__deci_us_gallons = self.__convert_from_base(VolumeUnits.DeciUsGallon)
-        return self.__deci_us_gallons
+        if self.__decius_gallons != None:
+            return self.__decius_gallons
+        self.__decius_gallons = self.__convert_from_base(VolumeUnits.DeciusGallon)
+        return self.__decius_gallons
 
     
     @property
-    def hecto_us_gallons(self) -> float:
+    def hectous_gallons(self) -> float:
         """
         
         """
-        if self.__hecto_us_gallons != None:
-            return self.__hecto_us_gallons
-        self.__hecto_us_gallons = self.__convert_from_base(VolumeUnits.HectoUsGallon)
-        return self.__hecto_us_gallons
+        if self.__hectous_gallons != None:
+            return self.__hectous_gallons
+        self.__hectous_gallons = self.__convert_from_base(VolumeUnits.HectousGallon)
+        return self.__hectous_gallons
 
     
     @property
-    def kilo_us_gallons(self) -> float:
+    def kilous_gallons(self) -> float:
         """
         
         """
-        if self.__kilo_us_gallons != None:
-            return self.__kilo_us_gallons
-        self.__kilo_us_gallons = self.__convert_from_base(VolumeUnits.KiloUsGallon)
-        return self.__kilo_us_gallons
+        if self.__kilous_gallons != None:
+            return self.__kilous_gallons
+        self.__kilous_gallons = self.__convert_from_base(VolumeUnits.KilousGallon)
+        return self.__kilous_gallons
 
     
     @property
-    def mega_us_gallons(self) -> float:
+    def megaus_gallons(self) -> float:
         """
         
         """
-        if self.__mega_us_gallons != None:
-            return self.__mega_us_gallons
-        self.__mega_us_gallons = self.__convert_from_base(VolumeUnits.MegaUsGallon)
-        return self.__mega_us_gallons
+        if self.__megaus_gallons != None:
+            return self.__megaus_gallons
+        self.__megaus_gallons = self.__convert_from_base(VolumeUnits.MegausGallon)
+        return self.__megaus_gallons
 
     
     def to_string(self, unit: VolumeUnits = VolumeUnits.CubicMeter) -> string:
@@ -2209,68 +2209,68 @@ class Volume:
         if unit == VolumeUnits.BoardFoot:
             return f"""{self.board_feet} bf"""
         
-        if unit == VolumeUnits.NanoLiter:
-            return f"""{self.nano_liters} """
+        if unit == VolumeUnits.Nanoliter:
+            return f"""{self.nanoliters} """
         
-        if unit == VolumeUnits.MicroLiter:
-            return f"""{self.micro_liters} """
+        if unit == VolumeUnits.Microliter:
+            return f"""{self.microliters} """
         
-        if unit == VolumeUnits.MilliLiter:
-            return f"""{self.milli_liters} """
+        if unit == VolumeUnits.Milliliter:
+            return f"""{self.milliliters} """
         
-        if unit == VolumeUnits.CentiLiter:
-            return f"""{self.centi_liters} """
+        if unit == VolumeUnits.Centiliter:
+            return f"""{self.centiliters} """
         
-        if unit == VolumeUnits.DeciLiter:
-            return f"""{self.deci_liters} """
+        if unit == VolumeUnits.Deciliter:
+            return f"""{self.deciliters} """
         
-        if unit == VolumeUnits.DecaLiter:
-            return f"""{self.deca_liters} """
+        if unit == VolumeUnits.Decaliter:
+            return f"""{self.decaliters} """
         
-        if unit == VolumeUnits.HectoLiter:
-            return f"""{self.hecto_liters} """
+        if unit == VolumeUnits.Hectoliter:
+            return f"""{self.hectoliters} """
         
-        if unit == VolumeUnits.KiloLiter:
-            return f"""{self.kilo_liters} """
+        if unit == VolumeUnits.Kiloliter:
+            return f"""{self.kiloliters} """
         
-        if unit == VolumeUnits.MegaLiter:
-            return f"""{self.mega_liters} """
+        if unit == VolumeUnits.Megaliter:
+            return f"""{self.megaliters} """
         
-        if unit == VolumeUnits.HectoCubicMeter:
-            return f"""{self.hecto_cubic_meters} """
+        if unit == VolumeUnits.HectocubicMeter:
+            return f"""{self.hectocubic_meters} """
         
-        if unit == VolumeUnits.KiloCubicMeter:
-            return f"""{self.kilo_cubic_meters} """
+        if unit == VolumeUnits.KilocubicMeter:
+            return f"""{self.kilocubic_meters} """
         
-        if unit == VolumeUnits.HectoCubicFoot:
-            return f"""{self.hecto_cubic_feet} """
+        if unit == VolumeUnits.HectocubicFoot:
+            return f"""{self.hectocubic_feet} """
         
-        if unit == VolumeUnits.KiloCubicFoot:
-            return f"""{self.kilo_cubic_feet} """
+        if unit == VolumeUnits.KilocubicFoot:
+            return f"""{self.kilocubic_feet} """
         
-        if unit == VolumeUnits.MegaCubicFoot:
-            return f"""{self.mega_cubic_feet} """
+        if unit == VolumeUnits.MegacubicFoot:
+            return f"""{self.megacubic_feet} """
         
-        if unit == VolumeUnits.KiloImperialGallon:
-            return f"""{self.kilo_imperial_gallons} """
+        if unit == VolumeUnits.KiloimperialGallon:
+            return f"""{self.kiloimperial_gallons} """
         
-        if unit == VolumeUnits.MegaImperialGallon:
-            return f"""{self.mega_imperial_gallons} """
+        if unit == VolumeUnits.MegaimperialGallon:
+            return f"""{self.megaimperial_gallons} """
         
-        if unit == VolumeUnits.DecaUsGallon:
-            return f"""{self.deca_us_gallons} """
+        if unit == VolumeUnits.DecausGallon:
+            return f"""{self.decaus_gallons} """
         
-        if unit == VolumeUnits.DeciUsGallon:
-            return f"""{self.deci_us_gallons} """
+        if unit == VolumeUnits.DeciusGallon:
+            return f"""{self.decius_gallons} """
         
-        if unit == VolumeUnits.HectoUsGallon:
-            return f"""{self.hecto_us_gallons} """
+        if unit == VolumeUnits.HectousGallon:
+            return f"""{self.hectous_gallons} """
         
-        if unit == VolumeUnits.KiloUsGallon:
-            return f"""{self.kilo_us_gallons} """
+        if unit == VolumeUnits.KilousGallon:
+            return f"""{self.kilous_gallons} """
         
-        if unit == VolumeUnits.MegaUsGallon:
-            return f"""{self.mega_us_gallons} """
+        if unit == VolumeUnits.MegausGallon:
+            return f"""{self.megaus_gallons} """
         
         return f'{self.__value}'
 
@@ -2378,67 +2378,67 @@ class Volume:
         if unit_abbreviation == VolumeUnits.BoardFoot:
             return """bf"""
         
-        if unit_abbreviation == VolumeUnits.NanoLiter:
+        if unit_abbreviation == VolumeUnits.Nanoliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MicroLiter:
+        if unit_abbreviation == VolumeUnits.Microliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MilliLiter:
+        if unit_abbreviation == VolumeUnits.Milliliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.CentiLiter:
+        if unit_abbreviation == VolumeUnits.Centiliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.DeciLiter:
+        if unit_abbreviation == VolumeUnits.Deciliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.DecaLiter:
+        if unit_abbreviation == VolumeUnits.Decaliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.HectoLiter:
+        if unit_abbreviation == VolumeUnits.Hectoliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.KiloLiter:
+        if unit_abbreviation == VolumeUnits.Kiloliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MegaLiter:
+        if unit_abbreviation == VolumeUnits.Megaliter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.HectoCubicMeter:
+        if unit_abbreviation == VolumeUnits.HectocubicMeter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.KiloCubicMeter:
+        if unit_abbreviation == VolumeUnits.KilocubicMeter:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.HectoCubicFoot:
+        if unit_abbreviation == VolumeUnits.HectocubicFoot:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.KiloCubicFoot:
+        if unit_abbreviation == VolumeUnits.KilocubicFoot:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MegaCubicFoot:
+        if unit_abbreviation == VolumeUnits.MegacubicFoot:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.KiloImperialGallon:
+        if unit_abbreviation == VolumeUnits.KiloimperialGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MegaImperialGallon:
+        if unit_abbreviation == VolumeUnits.MegaimperialGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.DecaUsGallon:
+        if unit_abbreviation == VolumeUnits.DecausGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.DeciUsGallon:
+        if unit_abbreviation == VolumeUnits.DeciusGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.HectoUsGallon:
+        if unit_abbreviation == VolumeUnits.HectousGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.KiloUsGallon:
+        if unit_abbreviation == VolumeUnits.KilousGallon:
             return """"""
         
-        if unit_abbreviation == VolumeUnits.MegaUsGallon:
+        if unit_abbreviation == VolumeUnits.MegausGallon:
             return """"""
         
 

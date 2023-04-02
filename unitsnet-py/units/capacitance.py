@@ -13,32 +13,32 @@ class CapacitanceUnits(Enum):
             
         """
         
-        PicoFarad = 'pico_farad'
+        Picofarad = 'picofarad'
         """
             
         """
         
-        NanoFarad = 'nano_farad'
+        Nanofarad = 'nanofarad'
         """
             
         """
         
-        MicroFarad = 'micro_farad'
+        Microfarad = 'microfarad'
         """
             
         """
         
-        MilliFarad = 'milli_farad'
+        Millifarad = 'millifarad'
         """
             
         """
         
-        KiloFarad = 'kilo_farad'
+        Kilofarad = 'kilofarad'
         """
             
         """
         
-        MegaFarad = 'mega_farad'
+        Megafarad = 'megafarad'
         """
             
         """
@@ -59,17 +59,17 @@ class Capacitance:
         
         self.__farads = None
         
-        self.__pico_farads = None
+        self.__picofarads = None
         
-        self.__nano_farads = None
+        self.__nanofarads = None
         
-        self.__micro_farads = None
+        self.__microfarads = None
         
-        self.__milli_farads = None
+        self.__millifarads = None
         
-        self.__kilo_farads = None
+        self.__kilofarads = None
         
-        self.__mega_farads = None
+        self.__megafarads = None
         
 
     def __convert_from_base(self, from_unit: CapacitanceUnits) -> float:
@@ -78,22 +78,22 @@ class Capacitance:
         if from_unit == CapacitanceUnits.Farad:
             return (value)
         
-        if from_unit == CapacitanceUnits.PicoFarad:
+        if from_unit == CapacitanceUnits.Picofarad:
             return ((value) / 1e-12)
         
-        if from_unit == CapacitanceUnits.NanoFarad:
+        if from_unit == CapacitanceUnits.Nanofarad:
             return ((value) / 1e-09)
         
-        if from_unit == CapacitanceUnits.MicroFarad:
+        if from_unit == CapacitanceUnits.Microfarad:
             return ((value) / 1e-06)
         
-        if from_unit == CapacitanceUnits.MilliFarad:
+        if from_unit == CapacitanceUnits.Millifarad:
             return ((value) / 0.001)
         
-        if from_unit == CapacitanceUnits.KiloFarad:
+        if from_unit == CapacitanceUnits.Kilofarad:
             return ((value) / 1000.0)
         
-        if from_unit == CapacitanceUnits.MegaFarad:
+        if from_unit == CapacitanceUnits.Megafarad:
             return ((value) / 1000000.0)
         
         return None
@@ -104,22 +104,22 @@ class Capacitance:
         if to_unit == CapacitanceUnits.Farad:
             return (value)
         
-        if to_unit == CapacitanceUnits.PicoFarad:
+        if to_unit == CapacitanceUnits.Picofarad:
             return ((value) * 1e-12)
         
-        if to_unit == CapacitanceUnits.NanoFarad:
+        if to_unit == CapacitanceUnits.Nanofarad:
             return ((value) * 1e-09)
         
-        if to_unit == CapacitanceUnits.MicroFarad:
+        if to_unit == CapacitanceUnits.Microfarad:
             return ((value) * 1e-06)
         
-        if to_unit == CapacitanceUnits.MilliFarad:
+        if to_unit == CapacitanceUnits.Millifarad:
             return ((value) * 0.001)
         
-        if to_unit == CapacitanceUnits.KiloFarad:
+        if to_unit == CapacitanceUnits.Kilofarad:
             return ((value) * 1000.0)
         
-        if to_unit == CapacitanceUnits.MegaFarad:
+        if to_unit == CapacitanceUnits.Megafarad:
             return ((value) * 1000000.0)
         
         return None
@@ -146,93 +146,93 @@ class Capacitance:
 
     
     @staticmethod
-    def from_pico_farads(pico_farads: float):
+    def from_picofarads(picofarads: float):
         """
-        Create a new instance of Capacitance from a value in pico_farads.
+        Create a new instance of Capacitance from a value in picofarads.
 
         
 
-        :param meters: The Capacitance value in pico_farads.
-        :type pico_farads: float
+        :param meters: The Capacitance value in picofarads.
+        :type picofarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(pico_farads, CapacitanceUnits.PicoFarad)
+        return Capacitance(picofarads, CapacitanceUnits.Picofarad)
 
     
     @staticmethod
-    def from_nano_farads(nano_farads: float):
+    def from_nanofarads(nanofarads: float):
         """
-        Create a new instance of Capacitance from a value in nano_farads.
+        Create a new instance of Capacitance from a value in nanofarads.
 
         
 
-        :param meters: The Capacitance value in nano_farads.
-        :type nano_farads: float
+        :param meters: The Capacitance value in nanofarads.
+        :type nanofarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(nano_farads, CapacitanceUnits.NanoFarad)
+        return Capacitance(nanofarads, CapacitanceUnits.Nanofarad)
 
     
     @staticmethod
-    def from_micro_farads(micro_farads: float):
+    def from_microfarads(microfarads: float):
         """
-        Create a new instance of Capacitance from a value in micro_farads.
+        Create a new instance of Capacitance from a value in microfarads.
 
         
 
-        :param meters: The Capacitance value in micro_farads.
-        :type micro_farads: float
+        :param meters: The Capacitance value in microfarads.
+        :type microfarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(micro_farads, CapacitanceUnits.MicroFarad)
+        return Capacitance(microfarads, CapacitanceUnits.Microfarad)
 
     
     @staticmethod
-    def from_milli_farads(milli_farads: float):
+    def from_millifarads(millifarads: float):
         """
-        Create a new instance of Capacitance from a value in milli_farads.
+        Create a new instance of Capacitance from a value in millifarads.
 
         
 
-        :param meters: The Capacitance value in milli_farads.
-        :type milli_farads: float
+        :param meters: The Capacitance value in millifarads.
+        :type millifarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(milli_farads, CapacitanceUnits.MilliFarad)
+        return Capacitance(millifarads, CapacitanceUnits.Millifarad)
 
     
     @staticmethod
-    def from_kilo_farads(kilo_farads: float):
+    def from_kilofarads(kilofarads: float):
         """
-        Create a new instance of Capacitance from a value in kilo_farads.
+        Create a new instance of Capacitance from a value in kilofarads.
 
         
 
-        :param meters: The Capacitance value in kilo_farads.
-        :type kilo_farads: float
+        :param meters: The Capacitance value in kilofarads.
+        :type kilofarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(kilo_farads, CapacitanceUnits.KiloFarad)
+        return Capacitance(kilofarads, CapacitanceUnits.Kilofarad)
 
     
     @staticmethod
-    def from_mega_farads(mega_farads: float):
+    def from_megafarads(megafarads: float):
         """
-        Create a new instance of Capacitance from a value in mega_farads.
+        Create a new instance of Capacitance from a value in megafarads.
 
         
 
-        :param meters: The Capacitance value in mega_farads.
-        :type mega_farads: float
+        :param meters: The Capacitance value in megafarads.
+        :type megafarads: float
         :return: A new instance of Capacitance.
         :rtype: Capacitance
         """
-        return Capacitance(mega_farads, CapacitanceUnits.MegaFarad)
+        return Capacitance(megafarads, CapacitanceUnits.Megafarad)
 
     
     @property
@@ -247,69 +247,69 @@ class Capacitance:
 
     
     @property
-    def pico_farads(self) -> float:
+    def picofarads(self) -> float:
         """
         
         """
-        if self.__pico_farads != None:
-            return self.__pico_farads
-        self.__pico_farads = self.__convert_from_base(CapacitanceUnits.PicoFarad)
-        return self.__pico_farads
+        if self.__picofarads != None:
+            return self.__picofarads
+        self.__picofarads = self.__convert_from_base(CapacitanceUnits.Picofarad)
+        return self.__picofarads
 
     
     @property
-    def nano_farads(self) -> float:
+    def nanofarads(self) -> float:
         """
         
         """
-        if self.__nano_farads != None:
-            return self.__nano_farads
-        self.__nano_farads = self.__convert_from_base(CapacitanceUnits.NanoFarad)
-        return self.__nano_farads
+        if self.__nanofarads != None:
+            return self.__nanofarads
+        self.__nanofarads = self.__convert_from_base(CapacitanceUnits.Nanofarad)
+        return self.__nanofarads
 
     
     @property
-    def micro_farads(self) -> float:
+    def microfarads(self) -> float:
         """
         
         """
-        if self.__micro_farads != None:
-            return self.__micro_farads
-        self.__micro_farads = self.__convert_from_base(CapacitanceUnits.MicroFarad)
-        return self.__micro_farads
+        if self.__microfarads != None:
+            return self.__microfarads
+        self.__microfarads = self.__convert_from_base(CapacitanceUnits.Microfarad)
+        return self.__microfarads
 
     
     @property
-    def milli_farads(self) -> float:
+    def millifarads(self) -> float:
         """
         
         """
-        if self.__milli_farads != None:
-            return self.__milli_farads
-        self.__milli_farads = self.__convert_from_base(CapacitanceUnits.MilliFarad)
-        return self.__milli_farads
+        if self.__millifarads != None:
+            return self.__millifarads
+        self.__millifarads = self.__convert_from_base(CapacitanceUnits.Millifarad)
+        return self.__millifarads
 
     
     @property
-    def kilo_farads(self) -> float:
+    def kilofarads(self) -> float:
         """
         
         """
-        if self.__kilo_farads != None:
-            return self.__kilo_farads
-        self.__kilo_farads = self.__convert_from_base(CapacitanceUnits.KiloFarad)
-        return self.__kilo_farads
+        if self.__kilofarads != None:
+            return self.__kilofarads
+        self.__kilofarads = self.__convert_from_base(CapacitanceUnits.Kilofarad)
+        return self.__kilofarads
 
     
     @property
-    def mega_farads(self) -> float:
+    def megafarads(self) -> float:
         """
         
         """
-        if self.__mega_farads != None:
-            return self.__mega_farads
-        self.__mega_farads = self.__convert_from_base(CapacitanceUnits.MegaFarad)
-        return self.__mega_farads
+        if self.__megafarads != None:
+            return self.__megafarads
+        self.__megafarads = self.__convert_from_base(CapacitanceUnits.Megafarad)
+        return self.__megafarads
 
     
     def to_string(self, unit: CapacitanceUnits = CapacitanceUnits.Farad) -> string:
@@ -322,23 +322,23 @@ class Capacitance:
         if unit == CapacitanceUnits.Farad:
             return f"""{self.farads} F"""
         
-        if unit == CapacitanceUnits.PicoFarad:
-            return f"""{self.pico_farads} """
+        if unit == CapacitanceUnits.Picofarad:
+            return f"""{self.picofarads} """
         
-        if unit == CapacitanceUnits.NanoFarad:
-            return f"""{self.nano_farads} """
+        if unit == CapacitanceUnits.Nanofarad:
+            return f"""{self.nanofarads} """
         
-        if unit == CapacitanceUnits.MicroFarad:
-            return f"""{self.micro_farads} """
+        if unit == CapacitanceUnits.Microfarad:
+            return f"""{self.microfarads} """
         
-        if unit == CapacitanceUnits.MilliFarad:
-            return f"""{self.milli_farads} """
+        if unit == CapacitanceUnits.Millifarad:
+            return f"""{self.millifarads} """
         
-        if unit == CapacitanceUnits.KiloFarad:
-            return f"""{self.kilo_farads} """
+        if unit == CapacitanceUnits.Kilofarad:
+            return f"""{self.kilofarads} """
         
-        if unit == CapacitanceUnits.MegaFarad:
-            return f"""{self.mega_farads} """
+        if unit == CapacitanceUnits.Megafarad:
+            return f"""{self.megafarads} """
         
         return f'{self.__value}'
 
@@ -353,22 +353,22 @@ class Capacitance:
         if unit_abbreviation == CapacitanceUnits.Farad:
             return """F"""
         
-        if unit_abbreviation == CapacitanceUnits.PicoFarad:
+        if unit_abbreviation == CapacitanceUnits.Picofarad:
             return """"""
         
-        if unit_abbreviation == CapacitanceUnits.NanoFarad:
+        if unit_abbreviation == CapacitanceUnits.Nanofarad:
             return """"""
         
-        if unit_abbreviation == CapacitanceUnits.MicroFarad:
+        if unit_abbreviation == CapacitanceUnits.Microfarad:
             return """"""
         
-        if unit_abbreviation == CapacitanceUnits.MilliFarad:
+        if unit_abbreviation == CapacitanceUnits.Millifarad:
             return """"""
         
-        if unit_abbreviation == CapacitanceUnits.KiloFarad:
+        if unit_abbreviation == CapacitanceUnits.Kilofarad:
             return """"""
         
-        if unit_abbreviation == CapacitanceUnits.MegaFarad:
+        if unit_abbreviation == CapacitanceUnits.Megafarad:
             return """"""
         
 

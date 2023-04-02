@@ -63,32 +63,32 @@ class SpecificWeightUnits(Enum):
             
         """
         
-        KiloNewtonPerCubicMillimeter = 'kilo_newton_per_cubic_millimeter'
+        KilonewtonPerCubicMillimeter = 'kilonewton_per_cubic_millimeter'
         """
             
         """
         
-        KiloNewtonPerCubicCentimeter = 'kilo_newton_per_cubic_centimeter'
+        KilonewtonPerCubicCentimeter = 'kilonewton_per_cubic_centimeter'
         """
             
         """
         
-        KiloNewtonPerCubicMeter = 'kilo_newton_per_cubic_meter'
+        KilonewtonPerCubicMeter = 'kilonewton_per_cubic_meter'
         """
             
         """
         
-        MegaNewtonPerCubicMeter = 'mega_newton_per_cubic_meter'
+        MeganewtonPerCubicMeter = 'meganewton_per_cubic_meter'
         """
             
         """
         
-        KiloPoundForcePerCubicInch = 'kilo_pound_force_per_cubic_inch'
+        KilopoundForcePerCubicInch = 'kilopound_force_per_cubic_inch'
         """
             
         """
         
-        KiloPoundForcePerCubicFoot = 'kilo_pound_force_per_cubic_foot'
+        KilopoundForcePerCubicFoot = 'kilopound_force_per_cubic_foot'
         """
             
         """
@@ -129,17 +129,17 @@ class SpecificWeight:
         
         self.__tonnes_force_per_cubic_meter = None
         
-        self.__kilo_newtons_per_cubic_millimeter = None
+        self.__kilonewtons_per_cubic_millimeter = None
         
-        self.__kilo_newtons_per_cubic_centimeter = None
+        self.__kilonewtons_per_cubic_centimeter = None
         
-        self.__kilo_newtons_per_cubic_meter = None
+        self.__kilonewtons_per_cubic_meter = None
         
-        self.__mega_newtons_per_cubic_meter = None
+        self.__meganewtons_per_cubic_meter = None
         
-        self.__kilo_pounds_force_per_cubic_inch = None
+        self.__kilopounds_force_per_cubic_inch = None
         
-        self.__kilo_pounds_force_per_cubic_foot = None
+        self.__kilopounds_force_per_cubic_foot = None
         
 
     def __convert_from_base(self, from_unit: SpecificWeightUnits) -> float:
@@ -178,22 +178,22 @@ class SpecificWeight:
         if from_unit == SpecificWeightUnits.TonneForcePerCubicMeter:
             return (value / 9.80665e3)
         
-        if from_unit == SpecificWeightUnits.KiloNewtonPerCubicMillimeter:
+        if from_unit == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
             return ((value * 0.000000001) / 1000.0)
         
-        if from_unit == SpecificWeightUnits.KiloNewtonPerCubicCentimeter:
+        if from_unit == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
             return ((value * 0.000001) / 1000.0)
         
-        if from_unit == SpecificWeightUnits.KiloNewtonPerCubicMeter:
+        if from_unit == SpecificWeightUnits.KilonewtonPerCubicMeter:
             return ((value) / 1000.0)
         
-        if from_unit == SpecificWeightUnits.MegaNewtonPerCubicMeter:
+        if from_unit == SpecificWeightUnits.MeganewtonPerCubicMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == SpecificWeightUnits.KiloPoundForcePerCubicInch:
+        if from_unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
             return ((value / 2.714471375263134e5) / 1000.0)
         
-        if from_unit == SpecificWeightUnits.KiloPoundForcePerCubicFoot:
+        if from_unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
             return ((value / 1.570874638462462e2) / 1000.0)
         
         return None
@@ -234,22 +234,22 @@ class SpecificWeight:
         if to_unit == SpecificWeightUnits.TonneForcePerCubicMeter:
             return (value * 9.80665e3)
         
-        if to_unit == SpecificWeightUnits.KiloNewtonPerCubicMillimeter:
+        if to_unit == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
             return ((value * 1000000000) * 1000.0)
         
-        if to_unit == SpecificWeightUnits.KiloNewtonPerCubicCentimeter:
+        if to_unit == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
             return ((value * 1000000) * 1000.0)
         
-        if to_unit == SpecificWeightUnits.KiloNewtonPerCubicMeter:
+        if to_unit == SpecificWeightUnits.KilonewtonPerCubicMeter:
             return ((value) * 1000.0)
         
-        if to_unit == SpecificWeightUnits.MegaNewtonPerCubicMeter:
+        if to_unit == SpecificWeightUnits.MeganewtonPerCubicMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == SpecificWeightUnits.KiloPoundForcePerCubicInch:
+        if to_unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
             return ((value * 2.714471375263134e5) * 1000.0)
         
-        if to_unit == SpecificWeightUnits.KiloPoundForcePerCubicFoot:
+        if to_unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
             return ((value * 1.570874638462462e2) * 1000.0)
         
         return None
@@ -426,93 +426,93 @@ class SpecificWeight:
 
     
     @staticmethod
-    def from_kilo_newtons_per_cubic_millimeter(kilo_newtons_per_cubic_millimeter: float):
+    def from_kilonewtons_per_cubic_millimeter(kilonewtons_per_cubic_millimeter: float):
         """
-        Create a new instance of SpecificWeight from a value in kilo_newtons_per_cubic_millimeter.
+        Create a new instance of SpecificWeight from a value in kilonewtons_per_cubic_millimeter.
 
         
 
-        :param meters: The SpecificWeight value in kilo_newtons_per_cubic_millimeter.
-        :type kilo_newtons_per_cubic_millimeter: float
+        :param meters: The SpecificWeight value in kilonewtons_per_cubic_millimeter.
+        :type kilonewtons_per_cubic_millimeter: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(kilo_newtons_per_cubic_millimeter, SpecificWeightUnits.KiloNewtonPerCubicMillimeter)
+        return SpecificWeight(kilonewtons_per_cubic_millimeter, SpecificWeightUnits.KilonewtonPerCubicMillimeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_cubic_centimeter(kilo_newtons_per_cubic_centimeter: float):
+    def from_kilonewtons_per_cubic_centimeter(kilonewtons_per_cubic_centimeter: float):
         """
-        Create a new instance of SpecificWeight from a value in kilo_newtons_per_cubic_centimeter.
+        Create a new instance of SpecificWeight from a value in kilonewtons_per_cubic_centimeter.
 
         
 
-        :param meters: The SpecificWeight value in kilo_newtons_per_cubic_centimeter.
-        :type kilo_newtons_per_cubic_centimeter: float
+        :param meters: The SpecificWeight value in kilonewtons_per_cubic_centimeter.
+        :type kilonewtons_per_cubic_centimeter: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(kilo_newtons_per_cubic_centimeter, SpecificWeightUnits.KiloNewtonPerCubicCentimeter)
+        return SpecificWeight(kilonewtons_per_cubic_centimeter, SpecificWeightUnits.KilonewtonPerCubicCentimeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_cubic_meter(kilo_newtons_per_cubic_meter: float):
+    def from_kilonewtons_per_cubic_meter(kilonewtons_per_cubic_meter: float):
         """
-        Create a new instance of SpecificWeight from a value in kilo_newtons_per_cubic_meter.
+        Create a new instance of SpecificWeight from a value in kilonewtons_per_cubic_meter.
 
         
 
-        :param meters: The SpecificWeight value in kilo_newtons_per_cubic_meter.
-        :type kilo_newtons_per_cubic_meter: float
+        :param meters: The SpecificWeight value in kilonewtons_per_cubic_meter.
+        :type kilonewtons_per_cubic_meter: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(kilo_newtons_per_cubic_meter, SpecificWeightUnits.KiloNewtonPerCubicMeter)
+        return SpecificWeight(kilonewtons_per_cubic_meter, SpecificWeightUnits.KilonewtonPerCubicMeter)
 
     
     @staticmethod
-    def from_mega_newtons_per_cubic_meter(mega_newtons_per_cubic_meter: float):
+    def from_meganewtons_per_cubic_meter(meganewtons_per_cubic_meter: float):
         """
-        Create a new instance of SpecificWeight from a value in mega_newtons_per_cubic_meter.
+        Create a new instance of SpecificWeight from a value in meganewtons_per_cubic_meter.
 
         
 
-        :param meters: The SpecificWeight value in mega_newtons_per_cubic_meter.
-        :type mega_newtons_per_cubic_meter: float
+        :param meters: The SpecificWeight value in meganewtons_per_cubic_meter.
+        :type meganewtons_per_cubic_meter: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(mega_newtons_per_cubic_meter, SpecificWeightUnits.MegaNewtonPerCubicMeter)
+        return SpecificWeight(meganewtons_per_cubic_meter, SpecificWeightUnits.MeganewtonPerCubicMeter)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_cubic_inch(kilo_pounds_force_per_cubic_inch: float):
+    def from_kilopounds_force_per_cubic_inch(kilopounds_force_per_cubic_inch: float):
         """
-        Create a new instance of SpecificWeight from a value in kilo_pounds_force_per_cubic_inch.
+        Create a new instance of SpecificWeight from a value in kilopounds_force_per_cubic_inch.
 
         
 
-        :param meters: The SpecificWeight value in kilo_pounds_force_per_cubic_inch.
-        :type kilo_pounds_force_per_cubic_inch: float
+        :param meters: The SpecificWeight value in kilopounds_force_per_cubic_inch.
+        :type kilopounds_force_per_cubic_inch: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(kilo_pounds_force_per_cubic_inch, SpecificWeightUnits.KiloPoundForcePerCubicInch)
+        return SpecificWeight(kilopounds_force_per_cubic_inch, SpecificWeightUnits.KilopoundForcePerCubicInch)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_cubic_foot(kilo_pounds_force_per_cubic_foot: float):
+    def from_kilopounds_force_per_cubic_foot(kilopounds_force_per_cubic_foot: float):
         """
-        Create a new instance of SpecificWeight from a value in kilo_pounds_force_per_cubic_foot.
+        Create a new instance of SpecificWeight from a value in kilopounds_force_per_cubic_foot.
 
         
 
-        :param meters: The SpecificWeight value in kilo_pounds_force_per_cubic_foot.
-        :type kilo_pounds_force_per_cubic_foot: float
+        :param meters: The SpecificWeight value in kilopounds_force_per_cubic_foot.
+        :type kilopounds_force_per_cubic_foot: float
         :return: A new instance of SpecificWeight.
         :rtype: SpecificWeight
         """
-        return SpecificWeight(kilo_pounds_force_per_cubic_foot, SpecificWeightUnits.KiloPoundForcePerCubicFoot)
+        return SpecificWeight(kilopounds_force_per_cubic_foot, SpecificWeightUnits.KilopoundForcePerCubicFoot)
 
     
     @property
@@ -637,69 +637,69 @@ class SpecificWeight:
 
     
     @property
-    def kilo_newtons_per_cubic_millimeter(self) -> float:
+    def kilonewtons_per_cubic_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_cubic_millimeter != None:
-            return self.__kilo_newtons_per_cubic_millimeter
-        self.__kilo_newtons_per_cubic_millimeter = self.__convert_from_base(SpecificWeightUnits.KiloNewtonPerCubicMillimeter)
-        return self.__kilo_newtons_per_cubic_millimeter
+        if self.__kilonewtons_per_cubic_millimeter != None:
+            return self.__kilonewtons_per_cubic_millimeter
+        self.__kilonewtons_per_cubic_millimeter = self.__convert_from_base(SpecificWeightUnits.KilonewtonPerCubicMillimeter)
+        return self.__kilonewtons_per_cubic_millimeter
 
     
     @property
-    def kilo_newtons_per_cubic_centimeter(self) -> float:
+    def kilonewtons_per_cubic_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_cubic_centimeter != None:
-            return self.__kilo_newtons_per_cubic_centimeter
-        self.__kilo_newtons_per_cubic_centimeter = self.__convert_from_base(SpecificWeightUnits.KiloNewtonPerCubicCentimeter)
-        return self.__kilo_newtons_per_cubic_centimeter
+        if self.__kilonewtons_per_cubic_centimeter != None:
+            return self.__kilonewtons_per_cubic_centimeter
+        self.__kilonewtons_per_cubic_centimeter = self.__convert_from_base(SpecificWeightUnits.KilonewtonPerCubicCentimeter)
+        return self.__kilonewtons_per_cubic_centimeter
 
     
     @property
-    def kilo_newtons_per_cubic_meter(self) -> float:
+    def kilonewtons_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_cubic_meter != None:
-            return self.__kilo_newtons_per_cubic_meter
-        self.__kilo_newtons_per_cubic_meter = self.__convert_from_base(SpecificWeightUnits.KiloNewtonPerCubicMeter)
-        return self.__kilo_newtons_per_cubic_meter
+        if self.__kilonewtons_per_cubic_meter != None:
+            return self.__kilonewtons_per_cubic_meter
+        self.__kilonewtons_per_cubic_meter = self.__convert_from_base(SpecificWeightUnits.KilonewtonPerCubicMeter)
+        return self.__kilonewtons_per_cubic_meter
 
     
     @property
-    def mega_newtons_per_cubic_meter(self) -> float:
+    def meganewtons_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__mega_newtons_per_cubic_meter != None:
-            return self.__mega_newtons_per_cubic_meter
-        self.__mega_newtons_per_cubic_meter = self.__convert_from_base(SpecificWeightUnits.MegaNewtonPerCubicMeter)
-        return self.__mega_newtons_per_cubic_meter
+        if self.__meganewtons_per_cubic_meter != None:
+            return self.__meganewtons_per_cubic_meter
+        self.__meganewtons_per_cubic_meter = self.__convert_from_base(SpecificWeightUnits.MeganewtonPerCubicMeter)
+        return self.__meganewtons_per_cubic_meter
 
     
     @property
-    def kilo_pounds_force_per_cubic_inch(self) -> float:
+    def kilopounds_force_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_cubic_inch != None:
-            return self.__kilo_pounds_force_per_cubic_inch
-        self.__kilo_pounds_force_per_cubic_inch = self.__convert_from_base(SpecificWeightUnits.KiloPoundForcePerCubicInch)
-        return self.__kilo_pounds_force_per_cubic_inch
+        if self.__kilopounds_force_per_cubic_inch != None:
+            return self.__kilopounds_force_per_cubic_inch
+        self.__kilopounds_force_per_cubic_inch = self.__convert_from_base(SpecificWeightUnits.KilopoundForcePerCubicInch)
+        return self.__kilopounds_force_per_cubic_inch
 
     
     @property
-    def kilo_pounds_force_per_cubic_foot(self) -> float:
+    def kilopounds_force_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_cubic_foot != None:
-            return self.__kilo_pounds_force_per_cubic_foot
-        self.__kilo_pounds_force_per_cubic_foot = self.__convert_from_base(SpecificWeightUnits.KiloPoundForcePerCubicFoot)
-        return self.__kilo_pounds_force_per_cubic_foot
+        if self.__kilopounds_force_per_cubic_foot != None:
+            return self.__kilopounds_force_per_cubic_foot
+        self.__kilopounds_force_per_cubic_foot = self.__convert_from_base(SpecificWeightUnits.KilopoundForcePerCubicFoot)
+        return self.__kilopounds_force_per_cubic_foot
 
     
     def to_string(self, unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> string:
@@ -742,23 +742,23 @@ class SpecificWeight:
         if unit == SpecificWeightUnits.TonneForcePerCubicMeter:
             return f"""{self.tonnes_force_per_cubic_meter} tf/m³"""
         
-        if unit == SpecificWeightUnits.KiloNewtonPerCubicMillimeter:
-            return f"""{self.kilo_newtons_per_cubic_millimeter} """
+        if unit == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
+            return f"""{self.kilonewtons_per_cubic_millimeter} """
         
-        if unit == SpecificWeightUnits.KiloNewtonPerCubicCentimeter:
-            return f"""{self.kilo_newtons_per_cubic_centimeter} """
+        if unit == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
+            return f"""{self.kilonewtons_per_cubic_centimeter} """
         
-        if unit == SpecificWeightUnits.KiloNewtonPerCubicMeter:
-            return f"""{self.kilo_newtons_per_cubic_meter} """
+        if unit == SpecificWeightUnits.KilonewtonPerCubicMeter:
+            return f"""{self.kilonewtons_per_cubic_meter} """
         
-        if unit == SpecificWeightUnits.MegaNewtonPerCubicMeter:
-            return f"""{self.mega_newtons_per_cubic_meter} """
+        if unit == SpecificWeightUnits.MeganewtonPerCubicMeter:
+            return f"""{self.meganewtons_per_cubic_meter} """
         
-        if unit == SpecificWeightUnits.KiloPoundForcePerCubicInch:
-            return f"""{self.kilo_pounds_force_per_cubic_inch} """
+        if unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
+            return f"""{self.kilopounds_force_per_cubic_inch} """
         
-        if unit == SpecificWeightUnits.KiloPoundForcePerCubicFoot:
-            return f"""{self.kilo_pounds_force_per_cubic_foot} """
+        if unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
+            return f"""{self.kilopounds_force_per_cubic_foot} """
         
         return f'{self.__value}'
 
@@ -803,22 +803,22 @@ class SpecificWeight:
         if unit_abbreviation == SpecificWeightUnits.TonneForcePerCubicMeter:
             return """tf/m³"""
         
-        if unit_abbreviation == SpecificWeightUnits.KiloNewtonPerCubicMillimeter:
+        if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
             return """"""
         
-        if unit_abbreviation == SpecificWeightUnits.KiloNewtonPerCubicCentimeter:
+        if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
             return """"""
         
-        if unit_abbreviation == SpecificWeightUnits.KiloNewtonPerCubicMeter:
+        if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == SpecificWeightUnits.MegaNewtonPerCubicMeter:
+        if unit_abbreviation == SpecificWeightUnits.MeganewtonPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == SpecificWeightUnits.KiloPoundForcePerCubicInch:
+        if unit_abbreviation == SpecificWeightUnits.KilopoundForcePerCubicInch:
             return """"""
         
-        if unit_abbreviation == SpecificWeightUnits.KiloPoundForcePerCubicFoot:
+        if unit_abbreviation == SpecificWeightUnits.KilopoundForcePerCubicFoot:
             return """"""
         
 

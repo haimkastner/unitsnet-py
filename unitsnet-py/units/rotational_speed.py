@@ -33,42 +33,42 @@ class RotationalSpeedUnits(Enum):
             
         """
         
-        NanoRadianPerSecond = 'nano_radian_per_second'
+        NanoradianPerSecond = 'nanoradian_per_second'
         """
             
         """
         
-        MicroRadianPerSecond = 'micro_radian_per_second'
+        MicroradianPerSecond = 'microradian_per_second'
         """
             
         """
         
-        MilliRadianPerSecond = 'milli_radian_per_second'
+        MilliradianPerSecond = 'milliradian_per_second'
         """
             
         """
         
-        CentiRadianPerSecond = 'centi_radian_per_second'
+        CentiradianPerSecond = 'centiradian_per_second'
         """
             
         """
         
-        DeciRadianPerSecond = 'deci_radian_per_second'
+        DeciradianPerSecond = 'deciradian_per_second'
         """
             
         """
         
-        NanoDegreePerSecond = 'nano_degree_per_second'
+        NanodegreePerSecond = 'nanodegree_per_second'
         """
             
         """
         
-        MicroDegreePerSecond = 'micro_degree_per_second'
+        MicrodegreePerSecond = 'microdegree_per_second'
         """
             
         """
         
-        MilliDegreePerSecond = 'milli_degree_per_second'
+        MillidegreePerSecond = 'millidegree_per_second'
         """
             
         """
@@ -97,21 +97,21 @@ class RotationalSpeed:
         
         self.__revolutions_per_minute = None
         
-        self.__nano_radians_per_second = None
+        self.__nanoradians_per_second = None
         
-        self.__micro_radians_per_second = None
+        self.__microradians_per_second = None
         
-        self.__milli_radians_per_second = None
+        self.__milliradians_per_second = None
         
-        self.__centi_radians_per_second = None
+        self.__centiradians_per_second = None
         
-        self.__deci_radians_per_second = None
+        self.__deciradians_per_second = None
         
-        self.__nano_degrees_per_second = None
+        self.__nanodegrees_per_second = None
         
-        self.__micro_degrees_per_second = None
+        self.__microdegrees_per_second = None
         
-        self.__milli_degrees_per_second = None
+        self.__millidegrees_per_second = None
         
 
     def __convert_from_base(self, from_unit: RotationalSpeedUnits) -> float:
@@ -132,28 +132,28 @@ class RotationalSpeed:
         if from_unit == RotationalSpeedUnits.RevolutionPerMinute:
             return ((value / 6.2831853072) * 60)
         
-        if from_unit == RotationalSpeedUnits.NanoRadianPerSecond:
+        if from_unit == RotationalSpeedUnits.NanoradianPerSecond:
             return ((value) / 1e-09)
         
-        if from_unit == RotationalSpeedUnits.MicroRadianPerSecond:
+        if from_unit == RotationalSpeedUnits.MicroradianPerSecond:
             return ((value) / 1e-06)
         
-        if from_unit == RotationalSpeedUnits.MilliRadianPerSecond:
+        if from_unit == RotationalSpeedUnits.MilliradianPerSecond:
             return ((value) / 0.001)
         
-        if from_unit == RotationalSpeedUnits.CentiRadianPerSecond:
+        if from_unit == RotationalSpeedUnits.CentiradianPerSecond:
             return ((value) / 0.01)
         
-        if from_unit == RotationalSpeedUnits.DeciRadianPerSecond:
+        if from_unit == RotationalSpeedUnits.DeciradianPerSecond:
             return ((value) / 0.1)
         
-        if from_unit == RotationalSpeedUnits.NanoDegreePerSecond:
+        if from_unit == RotationalSpeedUnits.NanodegreePerSecond:
             return (((180 / math.pi) * value) / 1e-09)
         
-        if from_unit == RotationalSpeedUnits.MicroDegreePerSecond:
+        if from_unit == RotationalSpeedUnits.MicrodegreePerSecond:
             return (((180 / math.pi) * value) / 1e-06)
         
-        if from_unit == RotationalSpeedUnits.MilliDegreePerSecond:
+        if from_unit == RotationalSpeedUnits.MillidegreePerSecond:
             return (((180 / math.pi) * value) / 0.001)
         
         return None
@@ -176,28 +176,28 @@ class RotationalSpeed:
         if to_unit == RotationalSpeedUnits.RevolutionPerMinute:
             return ((value * 6.2831853072) / 60)
         
-        if to_unit == RotationalSpeedUnits.NanoRadianPerSecond:
+        if to_unit == RotationalSpeedUnits.NanoradianPerSecond:
             return ((value) * 1e-09)
         
-        if to_unit == RotationalSpeedUnits.MicroRadianPerSecond:
+        if to_unit == RotationalSpeedUnits.MicroradianPerSecond:
             return ((value) * 1e-06)
         
-        if to_unit == RotationalSpeedUnits.MilliRadianPerSecond:
+        if to_unit == RotationalSpeedUnits.MilliradianPerSecond:
             return ((value) * 0.001)
         
-        if to_unit == RotationalSpeedUnits.CentiRadianPerSecond:
+        if to_unit == RotationalSpeedUnits.CentiradianPerSecond:
             return ((value) * 0.01)
         
-        if to_unit == RotationalSpeedUnits.DeciRadianPerSecond:
+        if to_unit == RotationalSpeedUnits.DeciradianPerSecond:
             return ((value) * 0.1)
         
-        if to_unit == RotationalSpeedUnits.NanoDegreePerSecond:
+        if to_unit == RotationalSpeedUnits.NanodegreePerSecond:
             return (((math.pi / 180) * value) * 1e-09)
         
-        if to_unit == RotationalSpeedUnits.MicroDegreePerSecond:
+        if to_unit == RotationalSpeedUnits.MicrodegreePerSecond:
             return (((math.pi / 180) * value) * 1e-06)
         
-        if to_unit == RotationalSpeedUnits.MilliDegreePerSecond:
+        if to_unit == RotationalSpeedUnits.MillidegreePerSecond:
             return (((math.pi / 180) * value) * 0.001)
         
         return None
@@ -284,123 +284,123 @@ class RotationalSpeed:
 
     
     @staticmethod
-    def from_nano_radians_per_second(nano_radians_per_second: float):
+    def from_nanoradians_per_second(nanoradians_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in nano_radians_per_second.
+        Create a new instance of RotationalSpeed from a value in nanoradians_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in nano_radians_per_second.
-        :type nano_radians_per_second: float
+        :param meters: The RotationalSpeed value in nanoradians_per_second.
+        :type nanoradians_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(nano_radians_per_second, RotationalSpeedUnits.NanoRadianPerSecond)
+        return RotationalSpeed(nanoradians_per_second, RotationalSpeedUnits.NanoradianPerSecond)
 
     
     @staticmethod
-    def from_micro_radians_per_second(micro_radians_per_second: float):
+    def from_microradians_per_second(microradians_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in micro_radians_per_second.
+        Create a new instance of RotationalSpeed from a value in microradians_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in micro_radians_per_second.
-        :type micro_radians_per_second: float
+        :param meters: The RotationalSpeed value in microradians_per_second.
+        :type microradians_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(micro_radians_per_second, RotationalSpeedUnits.MicroRadianPerSecond)
+        return RotationalSpeed(microradians_per_second, RotationalSpeedUnits.MicroradianPerSecond)
 
     
     @staticmethod
-    def from_milli_radians_per_second(milli_radians_per_second: float):
+    def from_milliradians_per_second(milliradians_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in milli_radians_per_second.
+        Create a new instance of RotationalSpeed from a value in milliradians_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in milli_radians_per_second.
-        :type milli_radians_per_second: float
+        :param meters: The RotationalSpeed value in milliradians_per_second.
+        :type milliradians_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(milli_radians_per_second, RotationalSpeedUnits.MilliRadianPerSecond)
+        return RotationalSpeed(milliradians_per_second, RotationalSpeedUnits.MilliradianPerSecond)
 
     
     @staticmethod
-    def from_centi_radians_per_second(centi_radians_per_second: float):
+    def from_centiradians_per_second(centiradians_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in centi_radians_per_second.
+        Create a new instance of RotationalSpeed from a value in centiradians_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in centi_radians_per_second.
-        :type centi_radians_per_second: float
+        :param meters: The RotationalSpeed value in centiradians_per_second.
+        :type centiradians_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(centi_radians_per_second, RotationalSpeedUnits.CentiRadianPerSecond)
+        return RotationalSpeed(centiradians_per_second, RotationalSpeedUnits.CentiradianPerSecond)
 
     
     @staticmethod
-    def from_deci_radians_per_second(deci_radians_per_second: float):
+    def from_deciradians_per_second(deciradians_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in deci_radians_per_second.
+        Create a new instance of RotationalSpeed from a value in deciradians_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in deci_radians_per_second.
-        :type deci_radians_per_second: float
+        :param meters: The RotationalSpeed value in deciradians_per_second.
+        :type deciradians_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(deci_radians_per_second, RotationalSpeedUnits.DeciRadianPerSecond)
+        return RotationalSpeed(deciradians_per_second, RotationalSpeedUnits.DeciradianPerSecond)
 
     
     @staticmethod
-    def from_nano_degrees_per_second(nano_degrees_per_second: float):
+    def from_nanodegrees_per_second(nanodegrees_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in nano_degrees_per_second.
+        Create a new instance of RotationalSpeed from a value in nanodegrees_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in nano_degrees_per_second.
-        :type nano_degrees_per_second: float
+        :param meters: The RotationalSpeed value in nanodegrees_per_second.
+        :type nanodegrees_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(nano_degrees_per_second, RotationalSpeedUnits.NanoDegreePerSecond)
+        return RotationalSpeed(nanodegrees_per_second, RotationalSpeedUnits.NanodegreePerSecond)
 
     
     @staticmethod
-    def from_micro_degrees_per_second(micro_degrees_per_second: float):
+    def from_microdegrees_per_second(microdegrees_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in micro_degrees_per_second.
+        Create a new instance of RotationalSpeed from a value in microdegrees_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in micro_degrees_per_second.
-        :type micro_degrees_per_second: float
+        :param meters: The RotationalSpeed value in microdegrees_per_second.
+        :type microdegrees_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(micro_degrees_per_second, RotationalSpeedUnits.MicroDegreePerSecond)
+        return RotationalSpeed(microdegrees_per_second, RotationalSpeedUnits.MicrodegreePerSecond)
 
     
     @staticmethod
-    def from_milli_degrees_per_second(milli_degrees_per_second: float):
+    def from_millidegrees_per_second(millidegrees_per_second: float):
         """
-        Create a new instance of RotationalSpeed from a value in milli_degrees_per_second.
+        Create a new instance of RotationalSpeed from a value in millidegrees_per_second.
 
         
 
-        :param meters: The RotationalSpeed value in milli_degrees_per_second.
-        :type milli_degrees_per_second: float
+        :param meters: The RotationalSpeed value in millidegrees_per_second.
+        :type millidegrees_per_second: float
         :return: A new instance of RotationalSpeed.
         :rtype: RotationalSpeed
         """
-        return RotationalSpeed(milli_degrees_per_second, RotationalSpeedUnits.MilliDegreePerSecond)
+        return RotationalSpeed(millidegrees_per_second, RotationalSpeedUnits.MillidegreePerSecond)
 
     
     @property
@@ -459,91 +459,91 @@ class RotationalSpeed:
 
     
     @property
-    def nano_radians_per_second(self) -> float:
+    def nanoradians_per_second(self) -> float:
         """
         
         """
-        if self.__nano_radians_per_second != None:
-            return self.__nano_radians_per_second
-        self.__nano_radians_per_second = self.__convert_from_base(RotationalSpeedUnits.NanoRadianPerSecond)
-        return self.__nano_radians_per_second
+        if self.__nanoradians_per_second != None:
+            return self.__nanoradians_per_second
+        self.__nanoradians_per_second = self.__convert_from_base(RotationalSpeedUnits.NanoradianPerSecond)
+        return self.__nanoradians_per_second
 
     
     @property
-    def micro_radians_per_second(self) -> float:
+    def microradians_per_second(self) -> float:
         """
         
         """
-        if self.__micro_radians_per_second != None:
-            return self.__micro_radians_per_second
-        self.__micro_radians_per_second = self.__convert_from_base(RotationalSpeedUnits.MicroRadianPerSecond)
-        return self.__micro_radians_per_second
+        if self.__microradians_per_second != None:
+            return self.__microradians_per_second
+        self.__microradians_per_second = self.__convert_from_base(RotationalSpeedUnits.MicroradianPerSecond)
+        return self.__microradians_per_second
 
     
     @property
-    def milli_radians_per_second(self) -> float:
+    def milliradians_per_second(self) -> float:
         """
         
         """
-        if self.__milli_radians_per_second != None:
-            return self.__milli_radians_per_second
-        self.__milli_radians_per_second = self.__convert_from_base(RotationalSpeedUnits.MilliRadianPerSecond)
-        return self.__milli_radians_per_second
+        if self.__milliradians_per_second != None:
+            return self.__milliradians_per_second
+        self.__milliradians_per_second = self.__convert_from_base(RotationalSpeedUnits.MilliradianPerSecond)
+        return self.__milliradians_per_second
 
     
     @property
-    def centi_radians_per_second(self) -> float:
+    def centiradians_per_second(self) -> float:
         """
         
         """
-        if self.__centi_radians_per_second != None:
-            return self.__centi_radians_per_second
-        self.__centi_radians_per_second = self.__convert_from_base(RotationalSpeedUnits.CentiRadianPerSecond)
-        return self.__centi_radians_per_second
+        if self.__centiradians_per_second != None:
+            return self.__centiradians_per_second
+        self.__centiradians_per_second = self.__convert_from_base(RotationalSpeedUnits.CentiradianPerSecond)
+        return self.__centiradians_per_second
 
     
     @property
-    def deci_radians_per_second(self) -> float:
+    def deciradians_per_second(self) -> float:
         """
         
         """
-        if self.__deci_radians_per_second != None:
-            return self.__deci_radians_per_second
-        self.__deci_radians_per_second = self.__convert_from_base(RotationalSpeedUnits.DeciRadianPerSecond)
-        return self.__deci_radians_per_second
+        if self.__deciradians_per_second != None:
+            return self.__deciradians_per_second
+        self.__deciradians_per_second = self.__convert_from_base(RotationalSpeedUnits.DeciradianPerSecond)
+        return self.__deciradians_per_second
 
     
     @property
-    def nano_degrees_per_second(self) -> float:
+    def nanodegrees_per_second(self) -> float:
         """
         
         """
-        if self.__nano_degrees_per_second != None:
-            return self.__nano_degrees_per_second
-        self.__nano_degrees_per_second = self.__convert_from_base(RotationalSpeedUnits.NanoDegreePerSecond)
-        return self.__nano_degrees_per_second
+        if self.__nanodegrees_per_second != None:
+            return self.__nanodegrees_per_second
+        self.__nanodegrees_per_second = self.__convert_from_base(RotationalSpeedUnits.NanodegreePerSecond)
+        return self.__nanodegrees_per_second
 
     
     @property
-    def micro_degrees_per_second(self) -> float:
+    def microdegrees_per_second(self) -> float:
         """
         
         """
-        if self.__micro_degrees_per_second != None:
-            return self.__micro_degrees_per_second
-        self.__micro_degrees_per_second = self.__convert_from_base(RotationalSpeedUnits.MicroDegreePerSecond)
-        return self.__micro_degrees_per_second
+        if self.__microdegrees_per_second != None:
+            return self.__microdegrees_per_second
+        self.__microdegrees_per_second = self.__convert_from_base(RotationalSpeedUnits.MicrodegreePerSecond)
+        return self.__microdegrees_per_second
 
     
     @property
-    def milli_degrees_per_second(self) -> float:
+    def millidegrees_per_second(self) -> float:
         """
         
         """
-        if self.__milli_degrees_per_second != None:
-            return self.__milli_degrees_per_second
-        self.__milli_degrees_per_second = self.__convert_from_base(RotationalSpeedUnits.MilliDegreePerSecond)
-        return self.__milli_degrees_per_second
+        if self.__millidegrees_per_second != None:
+            return self.__millidegrees_per_second
+        self.__millidegrees_per_second = self.__convert_from_base(RotationalSpeedUnits.MillidegreePerSecond)
+        return self.__millidegrees_per_second
 
     
     def to_string(self, unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> string:
@@ -568,29 +568,29 @@ class RotationalSpeed:
         if unit == RotationalSpeedUnits.RevolutionPerMinute:
             return f"""{self.revolutions_per_minute} rpm"""
         
-        if unit == RotationalSpeedUnits.NanoRadianPerSecond:
-            return f"""{self.nano_radians_per_second} """
+        if unit == RotationalSpeedUnits.NanoradianPerSecond:
+            return f"""{self.nanoradians_per_second} """
         
-        if unit == RotationalSpeedUnits.MicroRadianPerSecond:
-            return f"""{self.micro_radians_per_second} """
+        if unit == RotationalSpeedUnits.MicroradianPerSecond:
+            return f"""{self.microradians_per_second} """
         
-        if unit == RotationalSpeedUnits.MilliRadianPerSecond:
-            return f"""{self.milli_radians_per_second} """
+        if unit == RotationalSpeedUnits.MilliradianPerSecond:
+            return f"""{self.milliradians_per_second} """
         
-        if unit == RotationalSpeedUnits.CentiRadianPerSecond:
-            return f"""{self.centi_radians_per_second} """
+        if unit == RotationalSpeedUnits.CentiradianPerSecond:
+            return f"""{self.centiradians_per_second} """
         
-        if unit == RotationalSpeedUnits.DeciRadianPerSecond:
-            return f"""{self.deci_radians_per_second} """
+        if unit == RotationalSpeedUnits.DeciradianPerSecond:
+            return f"""{self.deciradians_per_second} """
         
-        if unit == RotationalSpeedUnits.NanoDegreePerSecond:
-            return f"""{self.nano_degrees_per_second} """
+        if unit == RotationalSpeedUnits.NanodegreePerSecond:
+            return f"""{self.nanodegrees_per_second} """
         
-        if unit == RotationalSpeedUnits.MicroDegreePerSecond:
-            return f"""{self.micro_degrees_per_second} """
+        if unit == RotationalSpeedUnits.MicrodegreePerSecond:
+            return f"""{self.microdegrees_per_second} """
         
-        if unit == RotationalSpeedUnits.MilliDegreePerSecond:
-            return f"""{self.milli_degrees_per_second} """
+        if unit == RotationalSpeedUnits.MillidegreePerSecond:
+            return f"""{self.millidegrees_per_second} """
         
         return f'{self.__value}'
 
@@ -617,28 +617,28 @@ class RotationalSpeed:
         if unit_abbreviation == RotationalSpeedUnits.RevolutionPerMinute:
             return """rpm"""
         
-        if unit_abbreviation == RotationalSpeedUnits.NanoRadianPerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.NanoradianPerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.MicroRadianPerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.MicroradianPerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.MilliRadianPerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.MilliradianPerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.CentiRadianPerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.CentiradianPerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.DeciRadianPerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.DeciradianPerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.NanoDegreePerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.NanodegreePerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.MicroDegreePerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.MicrodegreePerSecond:
             return """"""
         
-        if unit_abbreviation == RotationalSpeedUnits.MilliDegreePerSecond:
+        if unit_abbreviation == RotationalSpeedUnits.MillidegreePerSecond:
             return """"""
         
 

@@ -28,12 +28,12 @@ class ElectricConductivityUnits(Enum):
             
         """
         
-        MicroSiemensPerCentimeter = 'micro_siemens_per_centimeter'
+        MicrosiemensPerCentimeter = 'microsiemens_per_centimeter'
         """
             
         """
         
-        MilliSiemensPerCentimeter = 'milli_siemens_per_centimeter'
+        MillisiemensPerCentimeter = 'millisiemens_per_centimeter'
         """
             
         """
@@ -60,9 +60,9 @@ class ElectricConductivity:
         
         self.__siemens_per_centimeter = None
         
-        self.__micro_siemens_per_centimeter = None
+        self.__microsiemens_per_centimeter = None
         
-        self.__milli_siemens_per_centimeter = None
+        self.__millisiemens_per_centimeter = None
         
 
     def __convert_from_base(self, from_unit: ElectricConductivityUnits) -> float:
@@ -80,10 +80,10 @@ class ElectricConductivity:
         if from_unit == ElectricConductivityUnits.SiemensPerCentimeter:
             return (value / 1e2)
         
-        if from_unit == ElectricConductivityUnits.MicroSiemensPerCentimeter:
+        if from_unit == ElectricConductivityUnits.MicrosiemensPerCentimeter:
             return ((value / 1e2) / 1e-06)
         
-        if from_unit == ElectricConductivityUnits.MilliSiemensPerCentimeter:
+        if from_unit == ElectricConductivityUnits.MillisiemensPerCentimeter:
             return ((value / 1e2) / 0.001)
         
         return None
@@ -103,10 +103,10 @@ class ElectricConductivity:
         if to_unit == ElectricConductivityUnits.SiemensPerCentimeter:
             return (value * 1e2)
         
-        if to_unit == ElectricConductivityUnits.MicroSiemensPerCentimeter:
+        if to_unit == ElectricConductivityUnits.MicrosiemensPerCentimeter:
             return ((value * 1e2) * 1e-06)
         
-        if to_unit == ElectricConductivityUnits.MilliSiemensPerCentimeter:
+        if to_unit == ElectricConductivityUnits.MillisiemensPerCentimeter:
             return ((value * 1e2) * 0.001)
         
         return None
@@ -178,33 +178,33 @@ class ElectricConductivity:
 
     
     @staticmethod
-    def from_micro_siemens_per_centimeter(micro_siemens_per_centimeter: float):
+    def from_microsiemens_per_centimeter(microsiemens_per_centimeter: float):
         """
-        Create a new instance of ElectricConductivity from a value in micro_siemens_per_centimeter.
+        Create a new instance of ElectricConductivity from a value in microsiemens_per_centimeter.
 
         
 
-        :param meters: The ElectricConductivity value in micro_siemens_per_centimeter.
-        :type micro_siemens_per_centimeter: float
+        :param meters: The ElectricConductivity value in microsiemens_per_centimeter.
+        :type microsiemens_per_centimeter: float
         :return: A new instance of ElectricConductivity.
         :rtype: ElectricConductivity
         """
-        return ElectricConductivity(micro_siemens_per_centimeter, ElectricConductivityUnits.MicroSiemensPerCentimeter)
+        return ElectricConductivity(microsiemens_per_centimeter, ElectricConductivityUnits.MicrosiemensPerCentimeter)
 
     
     @staticmethod
-    def from_milli_siemens_per_centimeter(milli_siemens_per_centimeter: float):
+    def from_millisiemens_per_centimeter(millisiemens_per_centimeter: float):
         """
-        Create a new instance of ElectricConductivity from a value in milli_siemens_per_centimeter.
+        Create a new instance of ElectricConductivity from a value in millisiemens_per_centimeter.
 
         
 
-        :param meters: The ElectricConductivity value in milli_siemens_per_centimeter.
-        :type milli_siemens_per_centimeter: float
+        :param meters: The ElectricConductivity value in millisiemens_per_centimeter.
+        :type millisiemens_per_centimeter: float
         :return: A new instance of ElectricConductivity.
         :rtype: ElectricConductivity
         """
-        return ElectricConductivity(milli_siemens_per_centimeter, ElectricConductivityUnits.MilliSiemensPerCentimeter)
+        return ElectricConductivity(millisiemens_per_centimeter, ElectricConductivityUnits.MillisiemensPerCentimeter)
 
     
     @property
@@ -252,25 +252,25 @@ class ElectricConductivity:
 
     
     @property
-    def micro_siemens_per_centimeter(self) -> float:
+    def microsiemens_per_centimeter(self) -> float:
         """
         
         """
-        if self.__micro_siemens_per_centimeter != None:
-            return self.__micro_siemens_per_centimeter
-        self.__micro_siemens_per_centimeter = self.__convert_from_base(ElectricConductivityUnits.MicroSiemensPerCentimeter)
-        return self.__micro_siemens_per_centimeter
+        if self.__microsiemens_per_centimeter != None:
+            return self.__microsiemens_per_centimeter
+        self.__microsiemens_per_centimeter = self.__convert_from_base(ElectricConductivityUnits.MicrosiemensPerCentimeter)
+        return self.__microsiemens_per_centimeter
 
     
     @property
-    def milli_siemens_per_centimeter(self) -> float:
+    def millisiemens_per_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_siemens_per_centimeter != None:
-            return self.__milli_siemens_per_centimeter
-        self.__milli_siemens_per_centimeter = self.__convert_from_base(ElectricConductivityUnits.MilliSiemensPerCentimeter)
-        return self.__milli_siemens_per_centimeter
+        if self.__millisiemens_per_centimeter != None:
+            return self.__millisiemens_per_centimeter
+        self.__millisiemens_per_centimeter = self.__convert_from_base(ElectricConductivityUnits.MillisiemensPerCentimeter)
+        return self.__millisiemens_per_centimeter
 
     
     def to_string(self, unit: ElectricConductivityUnits = ElectricConductivityUnits.SiemensPerMeter) -> string:
@@ -292,11 +292,11 @@ class ElectricConductivity:
         if unit == ElectricConductivityUnits.SiemensPerCentimeter:
             return f"""{self.siemens_per_centimeter} S/cm"""
         
-        if unit == ElectricConductivityUnits.MicroSiemensPerCentimeter:
-            return f"""{self.micro_siemens_per_centimeter} """
+        if unit == ElectricConductivityUnits.MicrosiemensPerCentimeter:
+            return f"""{self.microsiemens_per_centimeter} """
         
-        if unit == ElectricConductivityUnits.MilliSiemensPerCentimeter:
-            return f"""{self.milli_siemens_per_centimeter} """
+        if unit == ElectricConductivityUnits.MillisiemensPerCentimeter:
+            return f"""{self.millisiemens_per_centimeter} """
         
         return f'{self.__value}'
 
@@ -320,10 +320,10 @@ class ElectricConductivity:
         if unit_abbreviation == ElectricConductivityUnits.SiemensPerCentimeter:
             return """S/cm"""
         
-        if unit_abbreviation == ElectricConductivityUnits.MicroSiemensPerCentimeter:
+        if unit_abbreviation == ElectricConductivityUnits.MicrosiemensPerCentimeter:
             return """"""
         
-        if unit_abbreviation == ElectricConductivityUnits.MilliSiemensPerCentimeter:
+        if unit_abbreviation == ElectricConductivityUnits.MillisiemensPerCentimeter:
             return """"""
         
 

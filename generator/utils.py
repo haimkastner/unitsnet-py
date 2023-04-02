@@ -2,6 +2,7 @@ import requests
 import json
 import re
 
+
 def get_json_from_cdn(cdn_url):
     try:
         response = requests.get(
@@ -19,3 +20,7 @@ def get_json_from_cdn(cdn_url):
 def camel_to_snake(name):
     name = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", name).lower()
+
+
+def upper_to_lower_camelcase(s):
+    return s[:1].lower() + s[1:]

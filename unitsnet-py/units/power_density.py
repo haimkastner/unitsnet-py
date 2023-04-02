@@ -28,202 +28,202 @@ class PowerDensityUnits(Enum):
             
         """
         
-        PicoWattPerCubicMeter = 'pico_watt_per_cubic_meter'
+        PicowattPerCubicMeter = 'picowatt_per_cubic_meter'
         """
             
         """
         
-        NanoWattPerCubicMeter = 'nano_watt_per_cubic_meter'
+        NanowattPerCubicMeter = 'nanowatt_per_cubic_meter'
         """
             
         """
         
-        MicroWattPerCubicMeter = 'micro_watt_per_cubic_meter'
+        MicrowattPerCubicMeter = 'microwatt_per_cubic_meter'
         """
             
         """
         
-        MilliWattPerCubicMeter = 'milli_watt_per_cubic_meter'
+        MilliwattPerCubicMeter = 'milliwatt_per_cubic_meter'
         """
             
         """
         
-        DeciWattPerCubicMeter = 'deci_watt_per_cubic_meter'
+        DeciwattPerCubicMeter = 'deciwatt_per_cubic_meter'
         """
             
         """
         
-        DecaWattPerCubicMeter = 'deca_watt_per_cubic_meter'
+        DecawattPerCubicMeter = 'decawatt_per_cubic_meter'
         """
             
         """
         
-        KiloWattPerCubicMeter = 'kilo_watt_per_cubic_meter'
+        KilowattPerCubicMeter = 'kilowatt_per_cubic_meter'
         """
             
         """
         
-        MegaWattPerCubicMeter = 'mega_watt_per_cubic_meter'
+        MegawattPerCubicMeter = 'megawatt_per_cubic_meter'
         """
             
         """
         
-        GigaWattPerCubicMeter = 'giga_watt_per_cubic_meter'
+        GigawattPerCubicMeter = 'gigawatt_per_cubic_meter'
         """
             
         """
         
-        TeraWattPerCubicMeter = 'tera_watt_per_cubic_meter'
+        TerawattPerCubicMeter = 'terawatt_per_cubic_meter'
         """
             
         """
         
-        PicoWattPerCubicInch = 'pico_watt_per_cubic_inch'
+        PicowattPerCubicInch = 'picowatt_per_cubic_inch'
         """
             
         """
         
-        NanoWattPerCubicInch = 'nano_watt_per_cubic_inch'
+        NanowattPerCubicInch = 'nanowatt_per_cubic_inch'
         """
             
         """
         
-        MicroWattPerCubicInch = 'micro_watt_per_cubic_inch'
+        MicrowattPerCubicInch = 'microwatt_per_cubic_inch'
         """
             
         """
         
-        MilliWattPerCubicInch = 'milli_watt_per_cubic_inch'
+        MilliwattPerCubicInch = 'milliwatt_per_cubic_inch'
         """
             
         """
         
-        DeciWattPerCubicInch = 'deci_watt_per_cubic_inch'
+        DeciwattPerCubicInch = 'deciwatt_per_cubic_inch'
         """
             
         """
         
-        DecaWattPerCubicInch = 'deca_watt_per_cubic_inch'
+        DecawattPerCubicInch = 'decawatt_per_cubic_inch'
         """
             
         """
         
-        KiloWattPerCubicInch = 'kilo_watt_per_cubic_inch'
+        KilowattPerCubicInch = 'kilowatt_per_cubic_inch'
         """
             
         """
         
-        MegaWattPerCubicInch = 'mega_watt_per_cubic_inch'
+        MegawattPerCubicInch = 'megawatt_per_cubic_inch'
         """
             
         """
         
-        GigaWattPerCubicInch = 'giga_watt_per_cubic_inch'
+        GigawattPerCubicInch = 'gigawatt_per_cubic_inch'
         """
             
         """
         
-        TeraWattPerCubicInch = 'tera_watt_per_cubic_inch'
+        TerawattPerCubicInch = 'terawatt_per_cubic_inch'
         """
             
         """
         
-        PicoWattPerCubicFoot = 'pico_watt_per_cubic_foot'
+        PicowattPerCubicFoot = 'picowatt_per_cubic_foot'
         """
             
         """
         
-        NanoWattPerCubicFoot = 'nano_watt_per_cubic_foot'
+        NanowattPerCubicFoot = 'nanowatt_per_cubic_foot'
         """
             
         """
         
-        MicroWattPerCubicFoot = 'micro_watt_per_cubic_foot'
+        MicrowattPerCubicFoot = 'microwatt_per_cubic_foot'
         """
             
         """
         
-        MilliWattPerCubicFoot = 'milli_watt_per_cubic_foot'
+        MilliwattPerCubicFoot = 'milliwatt_per_cubic_foot'
         """
             
         """
         
-        DeciWattPerCubicFoot = 'deci_watt_per_cubic_foot'
+        DeciwattPerCubicFoot = 'deciwatt_per_cubic_foot'
         """
             
         """
         
-        DecaWattPerCubicFoot = 'deca_watt_per_cubic_foot'
+        DecawattPerCubicFoot = 'decawatt_per_cubic_foot'
         """
             
         """
         
-        KiloWattPerCubicFoot = 'kilo_watt_per_cubic_foot'
+        KilowattPerCubicFoot = 'kilowatt_per_cubic_foot'
         """
             
         """
         
-        MegaWattPerCubicFoot = 'mega_watt_per_cubic_foot'
+        MegawattPerCubicFoot = 'megawatt_per_cubic_foot'
         """
             
         """
         
-        GigaWattPerCubicFoot = 'giga_watt_per_cubic_foot'
+        GigawattPerCubicFoot = 'gigawatt_per_cubic_foot'
         """
             
         """
         
-        TeraWattPerCubicFoot = 'tera_watt_per_cubic_foot'
+        TerawattPerCubicFoot = 'terawatt_per_cubic_foot'
         """
             
         """
         
-        PicoWattPerLiter = 'pico_watt_per_liter'
+        PicowattPerLiter = 'picowatt_per_liter'
         """
             
         """
         
-        NanoWattPerLiter = 'nano_watt_per_liter'
+        NanowattPerLiter = 'nanowatt_per_liter'
         """
             
         """
         
-        MicroWattPerLiter = 'micro_watt_per_liter'
+        MicrowattPerLiter = 'microwatt_per_liter'
         """
             
         """
         
-        MilliWattPerLiter = 'milli_watt_per_liter'
+        MilliwattPerLiter = 'milliwatt_per_liter'
         """
             
         """
         
-        DeciWattPerLiter = 'deci_watt_per_liter'
+        DeciwattPerLiter = 'deciwatt_per_liter'
         """
             
         """
         
-        DecaWattPerLiter = 'deca_watt_per_liter'
+        DecawattPerLiter = 'decawatt_per_liter'
         """
             
         """
         
-        KiloWattPerLiter = 'kilo_watt_per_liter'
+        KilowattPerLiter = 'kilowatt_per_liter'
         """
             
         """
         
-        MegaWattPerLiter = 'mega_watt_per_liter'
+        MegawattPerLiter = 'megawatt_per_liter'
         """
             
         """
         
-        GigaWattPerLiter = 'giga_watt_per_liter'
+        GigawattPerLiter = 'gigawatt_per_liter'
         """
             
         """
         
-        TeraWattPerLiter = 'tera_watt_per_liter'
+        TerawattPerLiter = 'terawatt_per_liter'
         """
             
         """
@@ -250,85 +250,85 @@ class PowerDensity:
         
         self.__watts_per_liter = None
         
-        self.__pico_watts_per_cubic_meter = None
+        self.__picowatts_per_cubic_meter = None
         
-        self.__nano_watts_per_cubic_meter = None
+        self.__nanowatts_per_cubic_meter = None
         
-        self.__micro_watts_per_cubic_meter = None
+        self.__microwatts_per_cubic_meter = None
         
-        self.__milli_watts_per_cubic_meter = None
+        self.__milliwatts_per_cubic_meter = None
         
-        self.__deci_watts_per_cubic_meter = None
+        self.__deciwatts_per_cubic_meter = None
         
-        self.__deca_watts_per_cubic_meter = None
+        self.__decawatts_per_cubic_meter = None
         
-        self.__kilo_watts_per_cubic_meter = None
+        self.__kilowatts_per_cubic_meter = None
         
-        self.__mega_watts_per_cubic_meter = None
+        self.__megawatts_per_cubic_meter = None
         
-        self.__giga_watts_per_cubic_meter = None
+        self.__gigawatts_per_cubic_meter = None
         
-        self.__tera_watts_per_cubic_meter = None
+        self.__terawatts_per_cubic_meter = None
         
-        self.__pico_watts_per_cubic_inch = None
+        self.__picowatts_per_cubic_inch = None
         
-        self.__nano_watts_per_cubic_inch = None
+        self.__nanowatts_per_cubic_inch = None
         
-        self.__micro_watts_per_cubic_inch = None
+        self.__microwatts_per_cubic_inch = None
         
-        self.__milli_watts_per_cubic_inch = None
+        self.__milliwatts_per_cubic_inch = None
         
-        self.__deci_watts_per_cubic_inch = None
+        self.__deciwatts_per_cubic_inch = None
         
-        self.__deca_watts_per_cubic_inch = None
+        self.__decawatts_per_cubic_inch = None
         
-        self.__kilo_watts_per_cubic_inch = None
+        self.__kilowatts_per_cubic_inch = None
         
-        self.__mega_watts_per_cubic_inch = None
+        self.__megawatts_per_cubic_inch = None
         
-        self.__giga_watts_per_cubic_inch = None
+        self.__gigawatts_per_cubic_inch = None
         
-        self.__tera_watts_per_cubic_inch = None
+        self.__terawatts_per_cubic_inch = None
         
-        self.__pico_watts_per_cubic_foot = None
+        self.__picowatts_per_cubic_foot = None
         
-        self.__nano_watts_per_cubic_foot = None
+        self.__nanowatts_per_cubic_foot = None
         
-        self.__micro_watts_per_cubic_foot = None
+        self.__microwatts_per_cubic_foot = None
         
-        self.__milli_watts_per_cubic_foot = None
+        self.__milliwatts_per_cubic_foot = None
         
-        self.__deci_watts_per_cubic_foot = None
+        self.__deciwatts_per_cubic_foot = None
         
-        self.__deca_watts_per_cubic_foot = None
+        self.__decawatts_per_cubic_foot = None
         
-        self.__kilo_watts_per_cubic_foot = None
+        self.__kilowatts_per_cubic_foot = None
         
-        self.__mega_watts_per_cubic_foot = None
+        self.__megawatts_per_cubic_foot = None
         
-        self.__giga_watts_per_cubic_foot = None
+        self.__gigawatts_per_cubic_foot = None
         
-        self.__tera_watts_per_cubic_foot = None
+        self.__terawatts_per_cubic_foot = None
         
-        self.__pico_watts_per_liter = None
+        self.__picowatts_per_liter = None
         
-        self.__nano_watts_per_liter = None
+        self.__nanowatts_per_liter = None
         
-        self.__micro_watts_per_liter = None
+        self.__microwatts_per_liter = None
         
-        self.__milli_watts_per_liter = None
+        self.__milliwatts_per_liter = None
         
-        self.__deci_watts_per_liter = None
+        self.__deciwatts_per_liter = None
         
-        self.__deca_watts_per_liter = None
+        self.__decawatts_per_liter = None
         
-        self.__kilo_watts_per_liter = None
+        self.__kilowatts_per_liter = None
         
-        self.__mega_watts_per_liter = None
+        self.__megawatts_per_liter = None
         
-        self.__giga_watts_per_liter = None
+        self.__gigawatts_per_liter = None
         
-        self.__tera_watts_per_liter = None
+        self.__terawatts_per_liter = None
         
 
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:
@@ -346,124 +346,124 @@ class PowerDensity:
         if from_unit == PowerDensityUnits.WattPerLiter:
             return (value / 1.0e3)
         
-        if from_unit == PowerDensityUnits.PicoWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.PicowattPerCubicMeter:
             return ((value) / 1e-12)
         
-        if from_unit == PowerDensityUnits.NanoWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.NanowattPerCubicMeter:
             return ((value) / 1e-09)
         
-        if from_unit == PowerDensityUnits.MicroWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.MicrowattPerCubicMeter:
             return ((value) / 1e-06)
         
-        if from_unit == PowerDensityUnits.MilliWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.MilliwattPerCubicMeter:
             return ((value) / 0.001)
         
-        if from_unit == PowerDensityUnits.DeciWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.DeciwattPerCubicMeter:
             return ((value) / 0.1)
         
-        if from_unit == PowerDensityUnits.DecaWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.DecawattPerCubicMeter:
             return ((value) / 10.0)
         
-        if from_unit == PowerDensityUnits.KiloWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.KilowattPerCubicMeter:
             return ((value) / 1000.0)
         
-        if from_unit == PowerDensityUnits.MegaWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.MegawattPerCubicMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == PowerDensityUnits.GigaWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.GigawattPerCubicMeter:
             return ((value) / 1000000000.0)
         
-        if from_unit == PowerDensityUnits.TeraWattPerCubicMeter:
+        if from_unit == PowerDensityUnits.TerawattPerCubicMeter:
             return ((value) / 1000000000000.0)
         
-        if from_unit == PowerDensityUnits.PicoWattPerCubicInch:
+        if from_unit == PowerDensityUnits.PicowattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1e-12)
         
-        if from_unit == PowerDensityUnits.NanoWattPerCubicInch:
+        if from_unit == PowerDensityUnits.NanowattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1e-09)
         
-        if from_unit == PowerDensityUnits.MicroWattPerCubicInch:
+        if from_unit == PowerDensityUnits.MicrowattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1e-06)
         
-        if from_unit == PowerDensityUnits.MilliWattPerCubicInch:
+        if from_unit == PowerDensityUnits.MilliwattPerCubicInch:
             return ((value / 6.102374409473228e4) / 0.001)
         
-        if from_unit == PowerDensityUnits.DeciWattPerCubicInch:
+        if from_unit == PowerDensityUnits.DeciwattPerCubicInch:
             return ((value / 6.102374409473228e4) / 0.1)
         
-        if from_unit == PowerDensityUnits.DecaWattPerCubicInch:
+        if from_unit == PowerDensityUnits.DecawattPerCubicInch:
             return ((value / 6.102374409473228e4) / 10.0)
         
-        if from_unit == PowerDensityUnits.KiloWattPerCubicInch:
+        if from_unit == PowerDensityUnits.KilowattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1000.0)
         
-        if from_unit == PowerDensityUnits.MegaWattPerCubicInch:
+        if from_unit == PowerDensityUnits.MegawattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1000000.0)
         
-        if from_unit == PowerDensityUnits.GigaWattPerCubicInch:
+        if from_unit == PowerDensityUnits.GigawattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1000000000.0)
         
-        if from_unit == PowerDensityUnits.TeraWattPerCubicInch:
+        if from_unit == PowerDensityUnits.TerawattPerCubicInch:
             return ((value / 6.102374409473228e4) / 1000000000000.0)
         
-        if from_unit == PowerDensityUnits.PicoWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.PicowattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1e-12)
         
-        if from_unit == PowerDensityUnits.NanoWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.NanowattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1e-09)
         
-        if from_unit == PowerDensityUnits.MicroWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.MicrowattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1e-06)
         
-        if from_unit == PowerDensityUnits.MilliWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.MilliwattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 0.001)
         
-        if from_unit == PowerDensityUnits.DeciWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.DeciwattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 0.1)
         
-        if from_unit == PowerDensityUnits.DecaWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.DecawattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 10.0)
         
-        if from_unit == PowerDensityUnits.KiloWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.KilowattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1000.0)
         
-        if from_unit == PowerDensityUnits.MegaWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.MegawattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1000000.0)
         
-        if from_unit == PowerDensityUnits.GigaWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.GigawattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1000000000.0)
         
-        if from_unit == PowerDensityUnits.TeraWattPerCubicFoot:
+        if from_unit == PowerDensityUnits.TerawattPerCubicFoot:
             return ((value / 3.531466672148859e1) / 1000000000000.0)
         
-        if from_unit == PowerDensityUnits.PicoWattPerLiter:
+        if from_unit == PowerDensityUnits.PicowattPerLiter:
             return ((value / 1.0e3) / 1e-12)
         
-        if from_unit == PowerDensityUnits.NanoWattPerLiter:
+        if from_unit == PowerDensityUnits.NanowattPerLiter:
             return ((value / 1.0e3) / 1e-09)
         
-        if from_unit == PowerDensityUnits.MicroWattPerLiter:
+        if from_unit == PowerDensityUnits.MicrowattPerLiter:
             return ((value / 1.0e3) / 1e-06)
         
-        if from_unit == PowerDensityUnits.MilliWattPerLiter:
+        if from_unit == PowerDensityUnits.MilliwattPerLiter:
             return ((value / 1.0e3) / 0.001)
         
-        if from_unit == PowerDensityUnits.DeciWattPerLiter:
+        if from_unit == PowerDensityUnits.DeciwattPerLiter:
             return ((value / 1.0e3) / 0.1)
         
-        if from_unit == PowerDensityUnits.DecaWattPerLiter:
+        if from_unit == PowerDensityUnits.DecawattPerLiter:
             return ((value / 1.0e3) / 10.0)
         
-        if from_unit == PowerDensityUnits.KiloWattPerLiter:
+        if from_unit == PowerDensityUnits.KilowattPerLiter:
             return ((value / 1.0e3) / 1000.0)
         
-        if from_unit == PowerDensityUnits.MegaWattPerLiter:
+        if from_unit == PowerDensityUnits.MegawattPerLiter:
             return ((value / 1.0e3) / 1000000.0)
         
-        if from_unit == PowerDensityUnits.GigaWattPerLiter:
+        if from_unit == PowerDensityUnits.GigawattPerLiter:
             return ((value / 1.0e3) / 1000000000.0)
         
-        if from_unit == PowerDensityUnits.TeraWattPerLiter:
+        if from_unit == PowerDensityUnits.TerawattPerLiter:
             return ((value / 1.0e3) / 1000000000000.0)
         
         return None
@@ -483,124 +483,124 @@ class PowerDensity:
         if to_unit == PowerDensityUnits.WattPerLiter:
             return (value * 1.0e3)
         
-        if to_unit == PowerDensityUnits.PicoWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.PicowattPerCubicMeter:
             return ((value) * 1e-12)
         
-        if to_unit == PowerDensityUnits.NanoWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.NanowattPerCubicMeter:
             return ((value) * 1e-09)
         
-        if to_unit == PowerDensityUnits.MicroWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.MicrowattPerCubicMeter:
             return ((value) * 1e-06)
         
-        if to_unit == PowerDensityUnits.MilliWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.MilliwattPerCubicMeter:
             return ((value) * 0.001)
         
-        if to_unit == PowerDensityUnits.DeciWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.DeciwattPerCubicMeter:
             return ((value) * 0.1)
         
-        if to_unit == PowerDensityUnits.DecaWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.DecawattPerCubicMeter:
             return ((value) * 10.0)
         
-        if to_unit == PowerDensityUnits.KiloWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.KilowattPerCubicMeter:
             return ((value) * 1000.0)
         
-        if to_unit == PowerDensityUnits.MegaWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.MegawattPerCubicMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == PowerDensityUnits.GigaWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.GigawattPerCubicMeter:
             return ((value) * 1000000000.0)
         
-        if to_unit == PowerDensityUnits.TeraWattPerCubicMeter:
+        if to_unit == PowerDensityUnits.TerawattPerCubicMeter:
             return ((value) * 1000000000000.0)
         
-        if to_unit == PowerDensityUnits.PicoWattPerCubicInch:
+        if to_unit == PowerDensityUnits.PicowattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1e-12)
         
-        if to_unit == PowerDensityUnits.NanoWattPerCubicInch:
+        if to_unit == PowerDensityUnits.NanowattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1e-09)
         
-        if to_unit == PowerDensityUnits.MicroWattPerCubicInch:
+        if to_unit == PowerDensityUnits.MicrowattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1e-06)
         
-        if to_unit == PowerDensityUnits.MilliWattPerCubicInch:
+        if to_unit == PowerDensityUnits.MilliwattPerCubicInch:
             return ((value * 6.102374409473228e4) * 0.001)
         
-        if to_unit == PowerDensityUnits.DeciWattPerCubicInch:
+        if to_unit == PowerDensityUnits.DeciwattPerCubicInch:
             return ((value * 6.102374409473228e4) * 0.1)
         
-        if to_unit == PowerDensityUnits.DecaWattPerCubicInch:
+        if to_unit == PowerDensityUnits.DecawattPerCubicInch:
             return ((value * 6.102374409473228e4) * 10.0)
         
-        if to_unit == PowerDensityUnits.KiloWattPerCubicInch:
+        if to_unit == PowerDensityUnits.KilowattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1000.0)
         
-        if to_unit == PowerDensityUnits.MegaWattPerCubicInch:
+        if to_unit == PowerDensityUnits.MegawattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1000000.0)
         
-        if to_unit == PowerDensityUnits.GigaWattPerCubicInch:
+        if to_unit == PowerDensityUnits.GigawattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1000000000.0)
         
-        if to_unit == PowerDensityUnits.TeraWattPerCubicInch:
+        if to_unit == PowerDensityUnits.TerawattPerCubicInch:
             return ((value * 6.102374409473228e4) * 1000000000000.0)
         
-        if to_unit == PowerDensityUnits.PicoWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.PicowattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1e-12)
         
-        if to_unit == PowerDensityUnits.NanoWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.NanowattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1e-09)
         
-        if to_unit == PowerDensityUnits.MicroWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.MicrowattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1e-06)
         
-        if to_unit == PowerDensityUnits.MilliWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.MilliwattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 0.001)
         
-        if to_unit == PowerDensityUnits.DeciWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.DeciwattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 0.1)
         
-        if to_unit == PowerDensityUnits.DecaWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.DecawattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 10.0)
         
-        if to_unit == PowerDensityUnits.KiloWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.KilowattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1000.0)
         
-        if to_unit == PowerDensityUnits.MegaWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.MegawattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1000000.0)
         
-        if to_unit == PowerDensityUnits.GigaWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.GigawattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1000000000.0)
         
-        if to_unit == PowerDensityUnits.TeraWattPerCubicFoot:
+        if to_unit == PowerDensityUnits.TerawattPerCubicFoot:
             return ((value * 3.531466672148859e1) * 1000000000000.0)
         
-        if to_unit == PowerDensityUnits.PicoWattPerLiter:
+        if to_unit == PowerDensityUnits.PicowattPerLiter:
             return ((value * 1.0e3) * 1e-12)
         
-        if to_unit == PowerDensityUnits.NanoWattPerLiter:
+        if to_unit == PowerDensityUnits.NanowattPerLiter:
             return ((value * 1.0e3) * 1e-09)
         
-        if to_unit == PowerDensityUnits.MicroWattPerLiter:
+        if to_unit == PowerDensityUnits.MicrowattPerLiter:
             return ((value * 1.0e3) * 1e-06)
         
-        if to_unit == PowerDensityUnits.MilliWattPerLiter:
+        if to_unit == PowerDensityUnits.MilliwattPerLiter:
             return ((value * 1.0e3) * 0.001)
         
-        if to_unit == PowerDensityUnits.DeciWattPerLiter:
+        if to_unit == PowerDensityUnits.DeciwattPerLiter:
             return ((value * 1.0e3) * 0.1)
         
-        if to_unit == PowerDensityUnits.DecaWattPerLiter:
+        if to_unit == PowerDensityUnits.DecawattPerLiter:
             return ((value * 1.0e3) * 10.0)
         
-        if to_unit == PowerDensityUnits.KiloWattPerLiter:
+        if to_unit == PowerDensityUnits.KilowattPerLiter:
             return ((value * 1.0e3) * 1000.0)
         
-        if to_unit == PowerDensityUnits.MegaWattPerLiter:
+        if to_unit == PowerDensityUnits.MegawattPerLiter:
             return ((value * 1.0e3) * 1000000.0)
         
-        if to_unit == PowerDensityUnits.GigaWattPerLiter:
+        if to_unit == PowerDensityUnits.GigawattPerLiter:
             return ((value * 1.0e3) * 1000000000.0)
         
-        if to_unit == PowerDensityUnits.TeraWattPerLiter:
+        if to_unit == PowerDensityUnits.TerawattPerLiter:
             return ((value * 1.0e3) * 1000000000000.0)
         
         return None
@@ -672,603 +672,603 @@ class PowerDensity:
 
     
     @staticmethod
-    def from_pico_watts_per_cubic_meter(pico_watts_per_cubic_meter: float):
+    def from_picowatts_per_cubic_meter(picowatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in pico_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in picowatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in pico_watts_per_cubic_meter.
-        :type pico_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in picowatts_per_cubic_meter.
+        :type picowatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(pico_watts_per_cubic_meter, PowerDensityUnits.PicoWattPerCubicMeter)
+        return PowerDensity(picowatts_per_cubic_meter, PowerDensityUnits.PicowattPerCubicMeter)
 
     
     @staticmethod
-    def from_nano_watts_per_cubic_meter(nano_watts_per_cubic_meter: float):
+    def from_nanowatts_per_cubic_meter(nanowatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in nano_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in nanowatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in nano_watts_per_cubic_meter.
-        :type nano_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in nanowatts_per_cubic_meter.
+        :type nanowatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(nano_watts_per_cubic_meter, PowerDensityUnits.NanoWattPerCubicMeter)
+        return PowerDensity(nanowatts_per_cubic_meter, PowerDensityUnits.NanowattPerCubicMeter)
 
     
     @staticmethod
-    def from_micro_watts_per_cubic_meter(micro_watts_per_cubic_meter: float):
+    def from_microwatts_per_cubic_meter(microwatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in micro_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in microwatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in micro_watts_per_cubic_meter.
-        :type micro_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in microwatts_per_cubic_meter.
+        :type microwatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(micro_watts_per_cubic_meter, PowerDensityUnits.MicroWattPerCubicMeter)
+        return PowerDensity(microwatts_per_cubic_meter, PowerDensityUnits.MicrowattPerCubicMeter)
 
     
     @staticmethod
-    def from_milli_watts_per_cubic_meter(milli_watts_per_cubic_meter: float):
+    def from_milliwatts_per_cubic_meter(milliwatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in milli_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in milliwatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in milli_watts_per_cubic_meter.
-        :type milli_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in milliwatts_per_cubic_meter.
+        :type milliwatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(milli_watts_per_cubic_meter, PowerDensityUnits.MilliWattPerCubicMeter)
+        return PowerDensity(milliwatts_per_cubic_meter, PowerDensityUnits.MilliwattPerCubicMeter)
 
     
     @staticmethod
-    def from_deci_watts_per_cubic_meter(deci_watts_per_cubic_meter: float):
+    def from_deciwatts_per_cubic_meter(deciwatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in deci_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in deciwatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in deci_watts_per_cubic_meter.
-        :type deci_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in deciwatts_per_cubic_meter.
+        :type deciwatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deci_watts_per_cubic_meter, PowerDensityUnits.DeciWattPerCubicMeter)
+        return PowerDensity(deciwatts_per_cubic_meter, PowerDensityUnits.DeciwattPerCubicMeter)
 
     
     @staticmethod
-    def from_deca_watts_per_cubic_meter(deca_watts_per_cubic_meter: float):
+    def from_decawatts_per_cubic_meter(decawatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in deca_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in decawatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in deca_watts_per_cubic_meter.
-        :type deca_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in decawatts_per_cubic_meter.
+        :type decawatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deca_watts_per_cubic_meter, PowerDensityUnits.DecaWattPerCubicMeter)
+        return PowerDensity(decawatts_per_cubic_meter, PowerDensityUnits.DecawattPerCubicMeter)
 
     
     @staticmethod
-    def from_kilo_watts_per_cubic_meter(kilo_watts_per_cubic_meter: float):
+    def from_kilowatts_per_cubic_meter(kilowatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in kilo_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in kilowatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in kilo_watts_per_cubic_meter.
-        :type kilo_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in kilowatts_per_cubic_meter.
+        :type kilowatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(kilo_watts_per_cubic_meter, PowerDensityUnits.KiloWattPerCubicMeter)
+        return PowerDensity(kilowatts_per_cubic_meter, PowerDensityUnits.KilowattPerCubicMeter)
 
     
     @staticmethod
-    def from_mega_watts_per_cubic_meter(mega_watts_per_cubic_meter: float):
+    def from_megawatts_per_cubic_meter(megawatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in mega_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in megawatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in mega_watts_per_cubic_meter.
-        :type mega_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in megawatts_per_cubic_meter.
+        :type megawatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(mega_watts_per_cubic_meter, PowerDensityUnits.MegaWattPerCubicMeter)
+        return PowerDensity(megawatts_per_cubic_meter, PowerDensityUnits.MegawattPerCubicMeter)
 
     
     @staticmethod
-    def from_giga_watts_per_cubic_meter(giga_watts_per_cubic_meter: float):
+    def from_gigawatts_per_cubic_meter(gigawatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in giga_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in gigawatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in giga_watts_per_cubic_meter.
-        :type giga_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in gigawatts_per_cubic_meter.
+        :type gigawatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(giga_watts_per_cubic_meter, PowerDensityUnits.GigaWattPerCubicMeter)
+        return PowerDensity(gigawatts_per_cubic_meter, PowerDensityUnits.GigawattPerCubicMeter)
 
     
     @staticmethod
-    def from_tera_watts_per_cubic_meter(tera_watts_per_cubic_meter: float):
+    def from_terawatts_per_cubic_meter(terawatts_per_cubic_meter: float):
         """
-        Create a new instance of PowerDensity from a value in tera_watts_per_cubic_meter.
+        Create a new instance of PowerDensity from a value in terawatts_per_cubic_meter.
 
         
 
-        :param meters: The PowerDensity value in tera_watts_per_cubic_meter.
-        :type tera_watts_per_cubic_meter: float
+        :param meters: The PowerDensity value in terawatts_per_cubic_meter.
+        :type terawatts_per_cubic_meter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(tera_watts_per_cubic_meter, PowerDensityUnits.TeraWattPerCubicMeter)
+        return PowerDensity(terawatts_per_cubic_meter, PowerDensityUnits.TerawattPerCubicMeter)
 
     
     @staticmethod
-    def from_pico_watts_per_cubic_inch(pico_watts_per_cubic_inch: float):
+    def from_picowatts_per_cubic_inch(picowatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in pico_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in picowatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in pico_watts_per_cubic_inch.
-        :type pico_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in picowatts_per_cubic_inch.
+        :type picowatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(pico_watts_per_cubic_inch, PowerDensityUnits.PicoWattPerCubicInch)
+        return PowerDensity(picowatts_per_cubic_inch, PowerDensityUnits.PicowattPerCubicInch)
 
     
     @staticmethod
-    def from_nano_watts_per_cubic_inch(nano_watts_per_cubic_inch: float):
+    def from_nanowatts_per_cubic_inch(nanowatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in nano_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in nanowatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in nano_watts_per_cubic_inch.
-        :type nano_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in nanowatts_per_cubic_inch.
+        :type nanowatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(nano_watts_per_cubic_inch, PowerDensityUnits.NanoWattPerCubicInch)
+        return PowerDensity(nanowatts_per_cubic_inch, PowerDensityUnits.NanowattPerCubicInch)
 
     
     @staticmethod
-    def from_micro_watts_per_cubic_inch(micro_watts_per_cubic_inch: float):
+    def from_microwatts_per_cubic_inch(microwatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in micro_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in microwatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in micro_watts_per_cubic_inch.
-        :type micro_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in microwatts_per_cubic_inch.
+        :type microwatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(micro_watts_per_cubic_inch, PowerDensityUnits.MicroWattPerCubicInch)
+        return PowerDensity(microwatts_per_cubic_inch, PowerDensityUnits.MicrowattPerCubicInch)
 
     
     @staticmethod
-    def from_milli_watts_per_cubic_inch(milli_watts_per_cubic_inch: float):
+    def from_milliwatts_per_cubic_inch(milliwatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in milli_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in milliwatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in milli_watts_per_cubic_inch.
-        :type milli_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in milliwatts_per_cubic_inch.
+        :type milliwatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(milli_watts_per_cubic_inch, PowerDensityUnits.MilliWattPerCubicInch)
+        return PowerDensity(milliwatts_per_cubic_inch, PowerDensityUnits.MilliwattPerCubicInch)
 
     
     @staticmethod
-    def from_deci_watts_per_cubic_inch(deci_watts_per_cubic_inch: float):
+    def from_deciwatts_per_cubic_inch(deciwatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in deci_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in deciwatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in deci_watts_per_cubic_inch.
-        :type deci_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in deciwatts_per_cubic_inch.
+        :type deciwatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deci_watts_per_cubic_inch, PowerDensityUnits.DeciWattPerCubicInch)
+        return PowerDensity(deciwatts_per_cubic_inch, PowerDensityUnits.DeciwattPerCubicInch)
 
     
     @staticmethod
-    def from_deca_watts_per_cubic_inch(deca_watts_per_cubic_inch: float):
+    def from_decawatts_per_cubic_inch(decawatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in deca_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in decawatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in deca_watts_per_cubic_inch.
-        :type deca_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in decawatts_per_cubic_inch.
+        :type decawatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deca_watts_per_cubic_inch, PowerDensityUnits.DecaWattPerCubicInch)
+        return PowerDensity(decawatts_per_cubic_inch, PowerDensityUnits.DecawattPerCubicInch)
 
     
     @staticmethod
-    def from_kilo_watts_per_cubic_inch(kilo_watts_per_cubic_inch: float):
+    def from_kilowatts_per_cubic_inch(kilowatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in kilo_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in kilowatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in kilo_watts_per_cubic_inch.
-        :type kilo_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in kilowatts_per_cubic_inch.
+        :type kilowatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(kilo_watts_per_cubic_inch, PowerDensityUnits.KiloWattPerCubicInch)
+        return PowerDensity(kilowatts_per_cubic_inch, PowerDensityUnits.KilowattPerCubicInch)
 
     
     @staticmethod
-    def from_mega_watts_per_cubic_inch(mega_watts_per_cubic_inch: float):
+    def from_megawatts_per_cubic_inch(megawatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in mega_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in megawatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in mega_watts_per_cubic_inch.
-        :type mega_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in megawatts_per_cubic_inch.
+        :type megawatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(mega_watts_per_cubic_inch, PowerDensityUnits.MegaWattPerCubicInch)
+        return PowerDensity(megawatts_per_cubic_inch, PowerDensityUnits.MegawattPerCubicInch)
 
     
     @staticmethod
-    def from_giga_watts_per_cubic_inch(giga_watts_per_cubic_inch: float):
+    def from_gigawatts_per_cubic_inch(gigawatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in giga_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in gigawatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in giga_watts_per_cubic_inch.
-        :type giga_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in gigawatts_per_cubic_inch.
+        :type gigawatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(giga_watts_per_cubic_inch, PowerDensityUnits.GigaWattPerCubicInch)
+        return PowerDensity(gigawatts_per_cubic_inch, PowerDensityUnits.GigawattPerCubicInch)
 
     
     @staticmethod
-    def from_tera_watts_per_cubic_inch(tera_watts_per_cubic_inch: float):
+    def from_terawatts_per_cubic_inch(terawatts_per_cubic_inch: float):
         """
-        Create a new instance of PowerDensity from a value in tera_watts_per_cubic_inch.
+        Create a new instance of PowerDensity from a value in terawatts_per_cubic_inch.
 
         
 
-        :param meters: The PowerDensity value in tera_watts_per_cubic_inch.
-        :type tera_watts_per_cubic_inch: float
+        :param meters: The PowerDensity value in terawatts_per_cubic_inch.
+        :type terawatts_per_cubic_inch: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(tera_watts_per_cubic_inch, PowerDensityUnits.TeraWattPerCubicInch)
+        return PowerDensity(terawatts_per_cubic_inch, PowerDensityUnits.TerawattPerCubicInch)
 
     
     @staticmethod
-    def from_pico_watts_per_cubic_foot(pico_watts_per_cubic_foot: float):
+    def from_picowatts_per_cubic_foot(picowatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in pico_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in picowatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in pico_watts_per_cubic_foot.
-        :type pico_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in picowatts_per_cubic_foot.
+        :type picowatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(pico_watts_per_cubic_foot, PowerDensityUnits.PicoWattPerCubicFoot)
+        return PowerDensity(picowatts_per_cubic_foot, PowerDensityUnits.PicowattPerCubicFoot)
 
     
     @staticmethod
-    def from_nano_watts_per_cubic_foot(nano_watts_per_cubic_foot: float):
+    def from_nanowatts_per_cubic_foot(nanowatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in nano_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in nanowatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in nano_watts_per_cubic_foot.
-        :type nano_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in nanowatts_per_cubic_foot.
+        :type nanowatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(nano_watts_per_cubic_foot, PowerDensityUnits.NanoWattPerCubicFoot)
+        return PowerDensity(nanowatts_per_cubic_foot, PowerDensityUnits.NanowattPerCubicFoot)
 
     
     @staticmethod
-    def from_micro_watts_per_cubic_foot(micro_watts_per_cubic_foot: float):
+    def from_microwatts_per_cubic_foot(microwatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in micro_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in microwatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in micro_watts_per_cubic_foot.
-        :type micro_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in microwatts_per_cubic_foot.
+        :type microwatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(micro_watts_per_cubic_foot, PowerDensityUnits.MicroWattPerCubicFoot)
+        return PowerDensity(microwatts_per_cubic_foot, PowerDensityUnits.MicrowattPerCubicFoot)
 
     
     @staticmethod
-    def from_milli_watts_per_cubic_foot(milli_watts_per_cubic_foot: float):
+    def from_milliwatts_per_cubic_foot(milliwatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in milli_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in milliwatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in milli_watts_per_cubic_foot.
-        :type milli_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in milliwatts_per_cubic_foot.
+        :type milliwatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(milli_watts_per_cubic_foot, PowerDensityUnits.MilliWattPerCubicFoot)
+        return PowerDensity(milliwatts_per_cubic_foot, PowerDensityUnits.MilliwattPerCubicFoot)
 
     
     @staticmethod
-    def from_deci_watts_per_cubic_foot(deci_watts_per_cubic_foot: float):
+    def from_deciwatts_per_cubic_foot(deciwatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in deci_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in deciwatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in deci_watts_per_cubic_foot.
-        :type deci_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in deciwatts_per_cubic_foot.
+        :type deciwatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deci_watts_per_cubic_foot, PowerDensityUnits.DeciWattPerCubicFoot)
+        return PowerDensity(deciwatts_per_cubic_foot, PowerDensityUnits.DeciwattPerCubicFoot)
 
     
     @staticmethod
-    def from_deca_watts_per_cubic_foot(deca_watts_per_cubic_foot: float):
+    def from_decawatts_per_cubic_foot(decawatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in deca_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in decawatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in deca_watts_per_cubic_foot.
-        :type deca_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in decawatts_per_cubic_foot.
+        :type decawatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deca_watts_per_cubic_foot, PowerDensityUnits.DecaWattPerCubicFoot)
+        return PowerDensity(decawatts_per_cubic_foot, PowerDensityUnits.DecawattPerCubicFoot)
 
     
     @staticmethod
-    def from_kilo_watts_per_cubic_foot(kilo_watts_per_cubic_foot: float):
+    def from_kilowatts_per_cubic_foot(kilowatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in kilo_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in kilowatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in kilo_watts_per_cubic_foot.
-        :type kilo_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in kilowatts_per_cubic_foot.
+        :type kilowatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(kilo_watts_per_cubic_foot, PowerDensityUnits.KiloWattPerCubicFoot)
+        return PowerDensity(kilowatts_per_cubic_foot, PowerDensityUnits.KilowattPerCubicFoot)
 
     
     @staticmethod
-    def from_mega_watts_per_cubic_foot(mega_watts_per_cubic_foot: float):
+    def from_megawatts_per_cubic_foot(megawatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in mega_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in megawatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in mega_watts_per_cubic_foot.
-        :type mega_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in megawatts_per_cubic_foot.
+        :type megawatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(mega_watts_per_cubic_foot, PowerDensityUnits.MegaWattPerCubicFoot)
+        return PowerDensity(megawatts_per_cubic_foot, PowerDensityUnits.MegawattPerCubicFoot)
 
     
     @staticmethod
-    def from_giga_watts_per_cubic_foot(giga_watts_per_cubic_foot: float):
+    def from_gigawatts_per_cubic_foot(gigawatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in giga_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in gigawatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in giga_watts_per_cubic_foot.
-        :type giga_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in gigawatts_per_cubic_foot.
+        :type gigawatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(giga_watts_per_cubic_foot, PowerDensityUnits.GigaWattPerCubicFoot)
+        return PowerDensity(gigawatts_per_cubic_foot, PowerDensityUnits.GigawattPerCubicFoot)
 
     
     @staticmethod
-    def from_tera_watts_per_cubic_foot(tera_watts_per_cubic_foot: float):
+    def from_terawatts_per_cubic_foot(terawatts_per_cubic_foot: float):
         """
-        Create a new instance of PowerDensity from a value in tera_watts_per_cubic_foot.
+        Create a new instance of PowerDensity from a value in terawatts_per_cubic_foot.
 
         
 
-        :param meters: The PowerDensity value in tera_watts_per_cubic_foot.
-        :type tera_watts_per_cubic_foot: float
+        :param meters: The PowerDensity value in terawatts_per_cubic_foot.
+        :type terawatts_per_cubic_foot: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(tera_watts_per_cubic_foot, PowerDensityUnits.TeraWattPerCubicFoot)
+        return PowerDensity(terawatts_per_cubic_foot, PowerDensityUnits.TerawattPerCubicFoot)
 
     
     @staticmethod
-    def from_pico_watts_per_liter(pico_watts_per_liter: float):
+    def from_picowatts_per_liter(picowatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in pico_watts_per_liter.
+        Create a new instance of PowerDensity from a value in picowatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in pico_watts_per_liter.
-        :type pico_watts_per_liter: float
+        :param meters: The PowerDensity value in picowatts_per_liter.
+        :type picowatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(pico_watts_per_liter, PowerDensityUnits.PicoWattPerLiter)
+        return PowerDensity(picowatts_per_liter, PowerDensityUnits.PicowattPerLiter)
 
     
     @staticmethod
-    def from_nano_watts_per_liter(nano_watts_per_liter: float):
+    def from_nanowatts_per_liter(nanowatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in nano_watts_per_liter.
+        Create a new instance of PowerDensity from a value in nanowatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in nano_watts_per_liter.
-        :type nano_watts_per_liter: float
+        :param meters: The PowerDensity value in nanowatts_per_liter.
+        :type nanowatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(nano_watts_per_liter, PowerDensityUnits.NanoWattPerLiter)
+        return PowerDensity(nanowatts_per_liter, PowerDensityUnits.NanowattPerLiter)
 
     
     @staticmethod
-    def from_micro_watts_per_liter(micro_watts_per_liter: float):
+    def from_microwatts_per_liter(microwatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in micro_watts_per_liter.
+        Create a new instance of PowerDensity from a value in microwatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in micro_watts_per_liter.
-        :type micro_watts_per_liter: float
+        :param meters: The PowerDensity value in microwatts_per_liter.
+        :type microwatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(micro_watts_per_liter, PowerDensityUnits.MicroWattPerLiter)
+        return PowerDensity(microwatts_per_liter, PowerDensityUnits.MicrowattPerLiter)
 
     
     @staticmethod
-    def from_milli_watts_per_liter(milli_watts_per_liter: float):
+    def from_milliwatts_per_liter(milliwatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in milli_watts_per_liter.
+        Create a new instance of PowerDensity from a value in milliwatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in milli_watts_per_liter.
-        :type milli_watts_per_liter: float
+        :param meters: The PowerDensity value in milliwatts_per_liter.
+        :type milliwatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(milli_watts_per_liter, PowerDensityUnits.MilliWattPerLiter)
+        return PowerDensity(milliwatts_per_liter, PowerDensityUnits.MilliwattPerLiter)
 
     
     @staticmethod
-    def from_deci_watts_per_liter(deci_watts_per_liter: float):
+    def from_deciwatts_per_liter(deciwatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in deci_watts_per_liter.
+        Create a new instance of PowerDensity from a value in deciwatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in deci_watts_per_liter.
-        :type deci_watts_per_liter: float
+        :param meters: The PowerDensity value in deciwatts_per_liter.
+        :type deciwatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deci_watts_per_liter, PowerDensityUnits.DeciWattPerLiter)
+        return PowerDensity(deciwatts_per_liter, PowerDensityUnits.DeciwattPerLiter)
 
     
     @staticmethod
-    def from_deca_watts_per_liter(deca_watts_per_liter: float):
+    def from_decawatts_per_liter(decawatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in deca_watts_per_liter.
+        Create a new instance of PowerDensity from a value in decawatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in deca_watts_per_liter.
-        :type deca_watts_per_liter: float
+        :param meters: The PowerDensity value in decawatts_per_liter.
+        :type decawatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(deca_watts_per_liter, PowerDensityUnits.DecaWattPerLiter)
+        return PowerDensity(decawatts_per_liter, PowerDensityUnits.DecawattPerLiter)
 
     
     @staticmethod
-    def from_kilo_watts_per_liter(kilo_watts_per_liter: float):
+    def from_kilowatts_per_liter(kilowatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in kilo_watts_per_liter.
+        Create a new instance of PowerDensity from a value in kilowatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in kilo_watts_per_liter.
-        :type kilo_watts_per_liter: float
+        :param meters: The PowerDensity value in kilowatts_per_liter.
+        :type kilowatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(kilo_watts_per_liter, PowerDensityUnits.KiloWattPerLiter)
+        return PowerDensity(kilowatts_per_liter, PowerDensityUnits.KilowattPerLiter)
 
     
     @staticmethod
-    def from_mega_watts_per_liter(mega_watts_per_liter: float):
+    def from_megawatts_per_liter(megawatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in mega_watts_per_liter.
+        Create a new instance of PowerDensity from a value in megawatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in mega_watts_per_liter.
-        :type mega_watts_per_liter: float
+        :param meters: The PowerDensity value in megawatts_per_liter.
+        :type megawatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(mega_watts_per_liter, PowerDensityUnits.MegaWattPerLiter)
+        return PowerDensity(megawatts_per_liter, PowerDensityUnits.MegawattPerLiter)
 
     
     @staticmethod
-    def from_giga_watts_per_liter(giga_watts_per_liter: float):
+    def from_gigawatts_per_liter(gigawatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in giga_watts_per_liter.
+        Create a new instance of PowerDensity from a value in gigawatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in giga_watts_per_liter.
-        :type giga_watts_per_liter: float
+        :param meters: The PowerDensity value in gigawatts_per_liter.
+        :type gigawatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(giga_watts_per_liter, PowerDensityUnits.GigaWattPerLiter)
+        return PowerDensity(gigawatts_per_liter, PowerDensityUnits.GigawattPerLiter)
 
     
     @staticmethod
-    def from_tera_watts_per_liter(tera_watts_per_liter: float):
+    def from_terawatts_per_liter(terawatts_per_liter: float):
         """
-        Create a new instance of PowerDensity from a value in tera_watts_per_liter.
+        Create a new instance of PowerDensity from a value in terawatts_per_liter.
 
         
 
-        :param meters: The PowerDensity value in tera_watts_per_liter.
-        :type tera_watts_per_liter: float
+        :param meters: The PowerDensity value in terawatts_per_liter.
+        :type terawatts_per_liter: float
         :return: A new instance of PowerDensity.
         :rtype: PowerDensity
         """
-        return PowerDensity(tera_watts_per_liter, PowerDensityUnits.TeraWattPerLiter)
+        return PowerDensity(terawatts_per_liter, PowerDensityUnits.TerawattPerLiter)
 
     
     @property
@@ -1316,443 +1316,443 @@ class PowerDensity:
 
     
     @property
-    def pico_watts_per_cubic_meter(self) -> float:
+    def picowatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_cubic_meter != None:
-            return self.__pico_watts_per_cubic_meter
-        self.__pico_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.PicoWattPerCubicMeter)
-        return self.__pico_watts_per_cubic_meter
+        if self.__picowatts_per_cubic_meter != None:
+            return self.__picowatts_per_cubic_meter
+        self.__picowatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.PicowattPerCubicMeter)
+        return self.__picowatts_per_cubic_meter
 
     
     @property
-    def nano_watts_per_cubic_meter(self) -> float:
+    def nanowatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_cubic_meter != None:
-            return self.__nano_watts_per_cubic_meter
-        self.__nano_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.NanoWattPerCubicMeter)
-        return self.__nano_watts_per_cubic_meter
+        if self.__nanowatts_per_cubic_meter != None:
+            return self.__nanowatts_per_cubic_meter
+        self.__nanowatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.NanowattPerCubicMeter)
+        return self.__nanowatts_per_cubic_meter
 
     
     @property
-    def micro_watts_per_cubic_meter(self) -> float:
+    def microwatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_cubic_meter != None:
-            return self.__micro_watts_per_cubic_meter
-        self.__micro_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MicroWattPerCubicMeter)
-        return self.__micro_watts_per_cubic_meter
+        if self.__microwatts_per_cubic_meter != None:
+            return self.__microwatts_per_cubic_meter
+        self.__microwatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MicrowattPerCubicMeter)
+        return self.__microwatts_per_cubic_meter
 
     
     @property
-    def milli_watts_per_cubic_meter(self) -> float:
+    def milliwatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_cubic_meter != None:
-            return self.__milli_watts_per_cubic_meter
-        self.__milli_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MilliWattPerCubicMeter)
-        return self.__milli_watts_per_cubic_meter
+        if self.__milliwatts_per_cubic_meter != None:
+            return self.__milliwatts_per_cubic_meter
+        self.__milliwatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MilliwattPerCubicMeter)
+        return self.__milliwatts_per_cubic_meter
 
     
     @property
-    def deci_watts_per_cubic_meter(self) -> float:
+    def deciwatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__deci_watts_per_cubic_meter != None:
-            return self.__deci_watts_per_cubic_meter
-        self.__deci_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.DeciWattPerCubicMeter)
-        return self.__deci_watts_per_cubic_meter
+        if self.__deciwatts_per_cubic_meter != None:
+            return self.__deciwatts_per_cubic_meter
+        self.__deciwatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.DeciwattPerCubicMeter)
+        return self.__deciwatts_per_cubic_meter
 
     
     @property
-    def deca_watts_per_cubic_meter(self) -> float:
+    def decawatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__deca_watts_per_cubic_meter != None:
-            return self.__deca_watts_per_cubic_meter
-        self.__deca_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.DecaWattPerCubicMeter)
-        return self.__deca_watts_per_cubic_meter
+        if self.__decawatts_per_cubic_meter != None:
+            return self.__decawatts_per_cubic_meter
+        self.__decawatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.DecawattPerCubicMeter)
+        return self.__decawatts_per_cubic_meter
 
     
     @property
-    def kilo_watts_per_cubic_meter(self) -> float:
+    def kilowatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_cubic_meter != None:
-            return self.__kilo_watts_per_cubic_meter
-        self.__kilo_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.KiloWattPerCubicMeter)
-        return self.__kilo_watts_per_cubic_meter
+        if self.__kilowatts_per_cubic_meter != None:
+            return self.__kilowatts_per_cubic_meter
+        self.__kilowatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.KilowattPerCubicMeter)
+        return self.__kilowatts_per_cubic_meter
 
     
     @property
-    def mega_watts_per_cubic_meter(self) -> float:
+    def megawatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_cubic_meter != None:
-            return self.__mega_watts_per_cubic_meter
-        self.__mega_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MegaWattPerCubicMeter)
-        return self.__mega_watts_per_cubic_meter
+        if self.__megawatts_per_cubic_meter != None:
+            return self.__megawatts_per_cubic_meter
+        self.__megawatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.MegawattPerCubicMeter)
+        return self.__megawatts_per_cubic_meter
 
     
     @property
-    def giga_watts_per_cubic_meter(self) -> float:
+    def gigawatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_cubic_meter != None:
-            return self.__giga_watts_per_cubic_meter
-        self.__giga_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.GigaWattPerCubicMeter)
-        return self.__giga_watts_per_cubic_meter
+        if self.__gigawatts_per_cubic_meter != None:
+            return self.__gigawatts_per_cubic_meter
+        self.__gigawatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.GigawattPerCubicMeter)
+        return self.__gigawatts_per_cubic_meter
 
     
     @property
-    def tera_watts_per_cubic_meter(self) -> float:
+    def terawatts_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__tera_watts_per_cubic_meter != None:
-            return self.__tera_watts_per_cubic_meter
-        self.__tera_watts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.TeraWattPerCubicMeter)
-        return self.__tera_watts_per_cubic_meter
+        if self.__terawatts_per_cubic_meter != None:
+            return self.__terawatts_per_cubic_meter
+        self.__terawatts_per_cubic_meter = self.__convert_from_base(PowerDensityUnits.TerawattPerCubicMeter)
+        return self.__terawatts_per_cubic_meter
 
     
     @property
-    def pico_watts_per_cubic_inch(self) -> float:
+    def picowatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_cubic_inch != None:
-            return self.__pico_watts_per_cubic_inch
-        self.__pico_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.PicoWattPerCubicInch)
-        return self.__pico_watts_per_cubic_inch
+        if self.__picowatts_per_cubic_inch != None:
+            return self.__picowatts_per_cubic_inch
+        self.__picowatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.PicowattPerCubicInch)
+        return self.__picowatts_per_cubic_inch
 
     
     @property
-    def nano_watts_per_cubic_inch(self) -> float:
+    def nanowatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_cubic_inch != None:
-            return self.__nano_watts_per_cubic_inch
-        self.__nano_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.NanoWattPerCubicInch)
-        return self.__nano_watts_per_cubic_inch
+        if self.__nanowatts_per_cubic_inch != None:
+            return self.__nanowatts_per_cubic_inch
+        self.__nanowatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.NanowattPerCubicInch)
+        return self.__nanowatts_per_cubic_inch
 
     
     @property
-    def micro_watts_per_cubic_inch(self) -> float:
+    def microwatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_cubic_inch != None:
-            return self.__micro_watts_per_cubic_inch
-        self.__micro_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MicroWattPerCubicInch)
-        return self.__micro_watts_per_cubic_inch
+        if self.__microwatts_per_cubic_inch != None:
+            return self.__microwatts_per_cubic_inch
+        self.__microwatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MicrowattPerCubicInch)
+        return self.__microwatts_per_cubic_inch
 
     
     @property
-    def milli_watts_per_cubic_inch(self) -> float:
+    def milliwatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_cubic_inch != None:
-            return self.__milli_watts_per_cubic_inch
-        self.__milli_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MilliWattPerCubicInch)
-        return self.__milli_watts_per_cubic_inch
+        if self.__milliwatts_per_cubic_inch != None:
+            return self.__milliwatts_per_cubic_inch
+        self.__milliwatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MilliwattPerCubicInch)
+        return self.__milliwatts_per_cubic_inch
 
     
     @property
-    def deci_watts_per_cubic_inch(self) -> float:
+    def deciwatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__deci_watts_per_cubic_inch != None:
-            return self.__deci_watts_per_cubic_inch
-        self.__deci_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.DeciWattPerCubicInch)
-        return self.__deci_watts_per_cubic_inch
+        if self.__deciwatts_per_cubic_inch != None:
+            return self.__deciwatts_per_cubic_inch
+        self.__deciwatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.DeciwattPerCubicInch)
+        return self.__deciwatts_per_cubic_inch
 
     
     @property
-    def deca_watts_per_cubic_inch(self) -> float:
+    def decawatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__deca_watts_per_cubic_inch != None:
-            return self.__deca_watts_per_cubic_inch
-        self.__deca_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.DecaWattPerCubicInch)
-        return self.__deca_watts_per_cubic_inch
+        if self.__decawatts_per_cubic_inch != None:
+            return self.__decawatts_per_cubic_inch
+        self.__decawatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.DecawattPerCubicInch)
+        return self.__decawatts_per_cubic_inch
 
     
     @property
-    def kilo_watts_per_cubic_inch(self) -> float:
+    def kilowatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_cubic_inch != None:
-            return self.__kilo_watts_per_cubic_inch
-        self.__kilo_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.KiloWattPerCubicInch)
-        return self.__kilo_watts_per_cubic_inch
+        if self.__kilowatts_per_cubic_inch != None:
+            return self.__kilowatts_per_cubic_inch
+        self.__kilowatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.KilowattPerCubicInch)
+        return self.__kilowatts_per_cubic_inch
 
     
     @property
-    def mega_watts_per_cubic_inch(self) -> float:
+    def megawatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_cubic_inch != None:
-            return self.__mega_watts_per_cubic_inch
-        self.__mega_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MegaWattPerCubicInch)
-        return self.__mega_watts_per_cubic_inch
+        if self.__megawatts_per_cubic_inch != None:
+            return self.__megawatts_per_cubic_inch
+        self.__megawatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.MegawattPerCubicInch)
+        return self.__megawatts_per_cubic_inch
 
     
     @property
-    def giga_watts_per_cubic_inch(self) -> float:
+    def gigawatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_cubic_inch != None:
-            return self.__giga_watts_per_cubic_inch
-        self.__giga_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.GigaWattPerCubicInch)
-        return self.__giga_watts_per_cubic_inch
+        if self.__gigawatts_per_cubic_inch != None:
+            return self.__gigawatts_per_cubic_inch
+        self.__gigawatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.GigawattPerCubicInch)
+        return self.__gigawatts_per_cubic_inch
 
     
     @property
-    def tera_watts_per_cubic_inch(self) -> float:
+    def terawatts_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__tera_watts_per_cubic_inch != None:
-            return self.__tera_watts_per_cubic_inch
-        self.__tera_watts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.TeraWattPerCubicInch)
-        return self.__tera_watts_per_cubic_inch
+        if self.__terawatts_per_cubic_inch != None:
+            return self.__terawatts_per_cubic_inch
+        self.__terawatts_per_cubic_inch = self.__convert_from_base(PowerDensityUnits.TerawattPerCubicInch)
+        return self.__terawatts_per_cubic_inch
 
     
     @property
-    def pico_watts_per_cubic_foot(self) -> float:
+    def picowatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_cubic_foot != None:
-            return self.__pico_watts_per_cubic_foot
-        self.__pico_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.PicoWattPerCubicFoot)
-        return self.__pico_watts_per_cubic_foot
+        if self.__picowatts_per_cubic_foot != None:
+            return self.__picowatts_per_cubic_foot
+        self.__picowatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.PicowattPerCubicFoot)
+        return self.__picowatts_per_cubic_foot
 
     
     @property
-    def nano_watts_per_cubic_foot(self) -> float:
+    def nanowatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_cubic_foot != None:
-            return self.__nano_watts_per_cubic_foot
-        self.__nano_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.NanoWattPerCubicFoot)
-        return self.__nano_watts_per_cubic_foot
+        if self.__nanowatts_per_cubic_foot != None:
+            return self.__nanowatts_per_cubic_foot
+        self.__nanowatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.NanowattPerCubicFoot)
+        return self.__nanowatts_per_cubic_foot
 
     
     @property
-    def micro_watts_per_cubic_foot(self) -> float:
+    def microwatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_cubic_foot != None:
-            return self.__micro_watts_per_cubic_foot
-        self.__micro_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MicroWattPerCubicFoot)
-        return self.__micro_watts_per_cubic_foot
+        if self.__microwatts_per_cubic_foot != None:
+            return self.__microwatts_per_cubic_foot
+        self.__microwatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MicrowattPerCubicFoot)
+        return self.__microwatts_per_cubic_foot
 
     
     @property
-    def milli_watts_per_cubic_foot(self) -> float:
+    def milliwatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_cubic_foot != None:
-            return self.__milli_watts_per_cubic_foot
-        self.__milli_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MilliWattPerCubicFoot)
-        return self.__milli_watts_per_cubic_foot
+        if self.__milliwatts_per_cubic_foot != None:
+            return self.__milliwatts_per_cubic_foot
+        self.__milliwatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MilliwattPerCubicFoot)
+        return self.__milliwatts_per_cubic_foot
 
     
     @property
-    def deci_watts_per_cubic_foot(self) -> float:
+    def deciwatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__deci_watts_per_cubic_foot != None:
-            return self.__deci_watts_per_cubic_foot
-        self.__deci_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.DeciWattPerCubicFoot)
-        return self.__deci_watts_per_cubic_foot
+        if self.__deciwatts_per_cubic_foot != None:
+            return self.__deciwatts_per_cubic_foot
+        self.__deciwatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.DeciwattPerCubicFoot)
+        return self.__deciwatts_per_cubic_foot
 
     
     @property
-    def deca_watts_per_cubic_foot(self) -> float:
+    def decawatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__deca_watts_per_cubic_foot != None:
-            return self.__deca_watts_per_cubic_foot
-        self.__deca_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.DecaWattPerCubicFoot)
-        return self.__deca_watts_per_cubic_foot
+        if self.__decawatts_per_cubic_foot != None:
+            return self.__decawatts_per_cubic_foot
+        self.__decawatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.DecawattPerCubicFoot)
+        return self.__decawatts_per_cubic_foot
 
     
     @property
-    def kilo_watts_per_cubic_foot(self) -> float:
+    def kilowatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_cubic_foot != None:
-            return self.__kilo_watts_per_cubic_foot
-        self.__kilo_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.KiloWattPerCubicFoot)
-        return self.__kilo_watts_per_cubic_foot
+        if self.__kilowatts_per_cubic_foot != None:
+            return self.__kilowatts_per_cubic_foot
+        self.__kilowatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.KilowattPerCubicFoot)
+        return self.__kilowatts_per_cubic_foot
 
     
     @property
-    def mega_watts_per_cubic_foot(self) -> float:
+    def megawatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_cubic_foot != None:
-            return self.__mega_watts_per_cubic_foot
-        self.__mega_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MegaWattPerCubicFoot)
-        return self.__mega_watts_per_cubic_foot
+        if self.__megawatts_per_cubic_foot != None:
+            return self.__megawatts_per_cubic_foot
+        self.__megawatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.MegawattPerCubicFoot)
+        return self.__megawatts_per_cubic_foot
 
     
     @property
-    def giga_watts_per_cubic_foot(self) -> float:
+    def gigawatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_cubic_foot != None:
-            return self.__giga_watts_per_cubic_foot
-        self.__giga_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.GigaWattPerCubicFoot)
-        return self.__giga_watts_per_cubic_foot
+        if self.__gigawatts_per_cubic_foot != None:
+            return self.__gigawatts_per_cubic_foot
+        self.__gigawatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.GigawattPerCubicFoot)
+        return self.__gigawatts_per_cubic_foot
 
     
     @property
-    def tera_watts_per_cubic_foot(self) -> float:
+    def terawatts_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__tera_watts_per_cubic_foot != None:
-            return self.__tera_watts_per_cubic_foot
-        self.__tera_watts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.TeraWattPerCubicFoot)
-        return self.__tera_watts_per_cubic_foot
+        if self.__terawatts_per_cubic_foot != None:
+            return self.__terawatts_per_cubic_foot
+        self.__terawatts_per_cubic_foot = self.__convert_from_base(PowerDensityUnits.TerawattPerCubicFoot)
+        return self.__terawatts_per_cubic_foot
 
     
     @property
-    def pico_watts_per_liter(self) -> float:
+    def picowatts_per_liter(self) -> float:
         """
         
         """
-        if self.__pico_watts_per_liter != None:
-            return self.__pico_watts_per_liter
-        self.__pico_watts_per_liter = self.__convert_from_base(PowerDensityUnits.PicoWattPerLiter)
-        return self.__pico_watts_per_liter
+        if self.__picowatts_per_liter != None:
+            return self.__picowatts_per_liter
+        self.__picowatts_per_liter = self.__convert_from_base(PowerDensityUnits.PicowattPerLiter)
+        return self.__picowatts_per_liter
 
     
     @property
-    def nano_watts_per_liter(self) -> float:
+    def nanowatts_per_liter(self) -> float:
         """
         
         """
-        if self.__nano_watts_per_liter != None:
-            return self.__nano_watts_per_liter
-        self.__nano_watts_per_liter = self.__convert_from_base(PowerDensityUnits.NanoWattPerLiter)
-        return self.__nano_watts_per_liter
+        if self.__nanowatts_per_liter != None:
+            return self.__nanowatts_per_liter
+        self.__nanowatts_per_liter = self.__convert_from_base(PowerDensityUnits.NanowattPerLiter)
+        return self.__nanowatts_per_liter
 
     
     @property
-    def micro_watts_per_liter(self) -> float:
+    def microwatts_per_liter(self) -> float:
         """
         
         """
-        if self.__micro_watts_per_liter != None:
-            return self.__micro_watts_per_liter
-        self.__micro_watts_per_liter = self.__convert_from_base(PowerDensityUnits.MicroWattPerLiter)
-        return self.__micro_watts_per_liter
+        if self.__microwatts_per_liter != None:
+            return self.__microwatts_per_liter
+        self.__microwatts_per_liter = self.__convert_from_base(PowerDensityUnits.MicrowattPerLiter)
+        return self.__microwatts_per_liter
 
     
     @property
-    def milli_watts_per_liter(self) -> float:
+    def milliwatts_per_liter(self) -> float:
         """
         
         """
-        if self.__milli_watts_per_liter != None:
-            return self.__milli_watts_per_liter
-        self.__milli_watts_per_liter = self.__convert_from_base(PowerDensityUnits.MilliWattPerLiter)
-        return self.__milli_watts_per_liter
+        if self.__milliwatts_per_liter != None:
+            return self.__milliwatts_per_liter
+        self.__milliwatts_per_liter = self.__convert_from_base(PowerDensityUnits.MilliwattPerLiter)
+        return self.__milliwatts_per_liter
 
     
     @property
-    def deci_watts_per_liter(self) -> float:
+    def deciwatts_per_liter(self) -> float:
         """
         
         """
-        if self.__deci_watts_per_liter != None:
-            return self.__deci_watts_per_liter
-        self.__deci_watts_per_liter = self.__convert_from_base(PowerDensityUnits.DeciWattPerLiter)
-        return self.__deci_watts_per_liter
+        if self.__deciwatts_per_liter != None:
+            return self.__deciwatts_per_liter
+        self.__deciwatts_per_liter = self.__convert_from_base(PowerDensityUnits.DeciwattPerLiter)
+        return self.__deciwatts_per_liter
 
     
     @property
-    def deca_watts_per_liter(self) -> float:
+    def decawatts_per_liter(self) -> float:
         """
         
         """
-        if self.__deca_watts_per_liter != None:
-            return self.__deca_watts_per_liter
-        self.__deca_watts_per_liter = self.__convert_from_base(PowerDensityUnits.DecaWattPerLiter)
-        return self.__deca_watts_per_liter
+        if self.__decawatts_per_liter != None:
+            return self.__decawatts_per_liter
+        self.__decawatts_per_liter = self.__convert_from_base(PowerDensityUnits.DecawattPerLiter)
+        return self.__decawatts_per_liter
 
     
     @property
-    def kilo_watts_per_liter(self) -> float:
+    def kilowatts_per_liter(self) -> float:
         """
         
         """
-        if self.__kilo_watts_per_liter != None:
-            return self.__kilo_watts_per_liter
-        self.__kilo_watts_per_liter = self.__convert_from_base(PowerDensityUnits.KiloWattPerLiter)
-        return self.__kilo_watts_per_liter
+        if self.__kilowatts_per_liter != None:
+            return self.__kilowatts_per_liter
+        self.__kilowatts_per_liter = self.__convert_from_base(PowerDensityUnits.KilowattPerLiter)
+        return self.__kilowatts_per_liter
 
     
     @property
-    def mega_watts_per_liter(self) -> float:
+    def megawatts_per_liter(self) -> float:
         """
         
         """
-        if self.__mega_watts_per_liter != None:
-            return self.__mega_watts_per_liter
-        self.__mega_watts_per_liter = self.__convert_from_base(PowerDensityUnits.MegaWattPerLiter)
-        return self.__mega_watts_per_liter
+        if self.__megawatts_per_liter != None:
+            return self.__megawatts_per_liter
+        self.__megawatts_per_liter = self.__convert_from_base(PowerDensityUnits.MegawattPerLiter)
+        return self.__megawatts_per_liter
 
     
     @property
-    def giga_watts_per_liter(self) -> float:
+    def gigawatts_per_liter(self) -> float:
         """
         
         """
-        if self.__giga_watts_per_liter != None:
-            return self.__giga_watts_per_liter
-        self.__giga_watts_per_liter = self.__convert_from_base(PowerDensityUnits.GigaWattPerLiter)
-        return self.__giga_watts_per_liter
+        if self.__gigawatts_per_liter != None:
+            return self.__gigawatts_per_liter
+        self.__gigawatts_per_liter = self.__convert_from_base(PowerDensityUnits.GigawattPerLiter)
+        return self.__gigawatts_per_liter
 
     
     @property
-    def tera_watts_per_liter(self) -> float:
+    def terawatts_per_liter(self) -> float:
         """
         
         """
-        if self.__tera_watts_per_liter != None:
-            return self.__tera_watts_per_liter
-        self.__tera_watts_per_liter = self.__convert_from_base(PowerDensityUnits.TeraWattPerLiter)
-        return self.__tera_watts_per_liter
+        if self.__terawatts_per_liter != None:
+            return self.__terawatts_per_liter
+        self.__terawatts_per_liter = self.__convert_from_base(PowerDensityUnits.TerawattPerLiter)
+        return self.__terawatts_per_liter
 
     
     def to_string(self, unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> string:
@@ -1774,125 +1774,125 @@ class PowerDensity:
         if unit == PowerDensityUnits.WattPerLiter:
             return f"""{self.watts_per_liter} W/l"""
         
-        if unit == PowerDensityUnits.PicoWattPerCubicMeter:
-            return f"""{self.pico_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.PicowattPerCubicMeter:
+            return f"""{self.picowatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.NanoWattPerCubicMeter:
-            return f"""{self.nano_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.NanowattPerCubicMeter:
+            return f"""{self.nanowatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.MicroWattPerCubicMeter:
-            return f"""{self.micro_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.MicrowattPerCubicMeter:
+            return f"""{self.microwatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.MilliWattPerCubicMeter:
-            return f"""{self.milli_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.MilliwattPerCubicMeter:
+            return f"""{self.milliwatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.DeciWattPerCubicMeter:
-            return f"""{self.deci_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.DeciwattPerCubicMeter:
+            return f"""{self.deciwatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.DecaWattPerCubicMeter:
-            return f"""{self.deca_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.DecawattPerCubicMeter:
+            return f"""{self.decawatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.KiloWattPerCubicMeter:
-            return f"""{self.kilo_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.KilowattPerCubicMeter:
+            return f"""{self.kilowatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.MegaWattPerCubicMeter:
-            return f"""{self.mega_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.MegawattPerCubicMeter:
+            return f"""{self.megawatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.GigaWattPerCubicMeter:
-            return f"""{self.giga_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.GigawattPerCubicMeter:
+            return f"""{self.gigawatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.TeraWattPerCubicMeter:
-            return f"""{self.tera_watts_per_cubic_meter} """
+        if unit == PowerDensityUnits.TerawattPerCubicMeter:
+            return f"""{self.terawatts_per_cubic_meter} """
         
-        if unit == PowerDensityUnits.PicoWattPerCubicInch:
-            return f"""{self.pico_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.PicowattPerCubicInch:
+            return f"""{self.picowatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.NanoWattPerCubicInch:
-            return f"""{self.nano_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.NanowattPerCubicInch:
+            return f"""{self.nanowatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.MicroWattPerCubicInch:
-            return f"""{self.micro_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.MicrowattPerCubicInch:
+            return f"""{self.microwatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.MilliWattPerCubicInch:
-            return f"""{self.milli_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.MilliwattPerCubicInch:
+            return f"""{self.milliwatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.DeciWattPerCubicInch:
-            return f"""{self.deci_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.DeciwattPerCubicInch:
+            return f"""{self.deciwatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.DecaWattPerCubicInch:
-            return f"""{self.deca_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.DecawattPerCubicInch:
+            return f"""{self.decawatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.KiloWattPerCubicInch:
-            return f"""{self.kilo_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.KilowattPerCubicInch:
+            return f"""{self.kilowatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.MegaWattPerCubicInch:
-            return f"""{self.mega_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.MegawattPerCubicInch:
+            return f"""{self.megawatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.GigaWattPerCubicInch:
-            return f"""{self.giga_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.GigawattPerCubicInch:
+            return f"""{self.gigawatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.TeraWattPerCubicInch:
-            return f"""{self.tera_watts_per_cubic_inch} """
+        if unit == PowerDensityUnits.TerawattPerCubicInch:
+            return f"""{self.terawatts_per_cubic_inch} """
         
-        if unit == PowerDensityUnits.PicoWattPerCubicFoot:
-            return f"""{self.pico_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.PicowattPerCubicFoot:
+            return f"""{self.picowatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.NanoWattPerCubicFoot:
-            return f"""{self.nano_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.NanowattPerCubicFoot:
+            return f"""{self.nanowatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.MicroWattPerCubicFoot:
-            return f"""{self.micro_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.MicrowattPerCubicFoot:
+            return f"""{self.microwatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.MilliWattPerCubicFoot:
-            return f"""{self.milli_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.MilliwattPerCubicFoot:
+            return f"""{self.milliwatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.DeciWattPerCubicFoot:
-            return f"""{self.deci_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.DeciwattPerCubicFoot:
+            return f"""{self.deciwatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.DecaWattPerCubicFoot:
-            return f"""{self.deca_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.DecawattPerCubicFoot:
+            return f"""{self.decawatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.KiloWattPerCubicFoot:
-            return f"""{self.kilo_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.KilowattPerCubicFoot:
+            return f"""{self.kilowatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.MegaWattPerCubicFoot:
-            return f"""{self.mega_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.MegawattPerCubicFoot:
+            return f"""{self.megawatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.GigaWattPerCubicFoot:
-            return f"""{self.giga_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.GigawattPerCubicFoot:
+            return f"""{self.gigawatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.TeraWattPerCubicFoot:
-            return f"""{self.tera_watts_per_cubic_foot} """
+        if unit == PowerDensityUnits.TerawattPerCubicFoot:
+            return f"""{self.terawatts_per_cubic_foot} """
         
-        if unit == PowerDensityUnits.PicoWattPerLiter:
-            return f"""{self.pico_watts_per_liter} """
+        if unit == PowerDensityUnits.PicowattPerLiter:
+            return f"""{self.picowatts_per_liter} """
         
-        if unit == PowerDensityUnits.NanoWattPerLiter:
-            return f"""{self.nano_watts_per_liter} """
+        if unit == PowerDensityUnits.NanowattPerLiter:
+            return f"""{self.nanowatts_per_liter} """
         
-        if unit == PowerDensityUnits.MicroWattPerLiter:
-            return f"""{self.micro_watts_per_liter} """
+        if unit == PowerDensityUnits.MicrowattPerLiter:
+            return f"""{self.microwatts_per_liter} """
         
-        if unit == PowerDensityUnits.MilliWattPerLiter:
-            return f"""{self.milli_watts_per_liter} """
+        if unit == PowerDensityUnits.MilliwattPerLiter:
+            return f"""{self.milliwatts_per_liter} """
         
-        if unit == PowerDensityUnits.DeciWattPerLiter:
-            return f"""{self.deci_watts_per_liter} """
+        if unit == PowerDensityUnits.DeciwattPerLiter:
+            return f"""{self.deciwatts_per_liter} """
         
-        if unit == PowerDensityUnits.DecaWattPerLiter:
-            return f"""{self.deca_watts_per_liter} """
+        if unit == PowerDensityUnits.DecawattPerLiter:
+            return f"""{self.decawatts_per_liter} """
         
-        if unit == PowerDensityUnits.KiloWattPerLiter:
-            return f"""{self.kilo_watts_per_liter} """
+        if unit == PowerDensityUnits.KilowattPerLiter:
+            return f"""{self.kilowatts_per_liter} """
         
-        if unit == PowerDensityUnits.MegaWattPerLiter:
-            return f"""{self.mega_watts_per_liter} """
+        if unit == PowerDensityUnits.MegawattPerLiter:
+            return f"""{self.megawatts_per_liter} """
         
-        if unit == PowerDensityUnits.GigaWattPerLiter:
-            return f"""{self.giga_watts_per_liter} """
+        if unit == PowerDensityUnits.GigawattPerLiter:
+            return f"""{self.gigawatts_per_liter} """
         
-        if unit == PowerDensityUnits.TeraWattPerLiter:
-            return f"""{self.tera_watts_per_liter} """
+        if unit == PowerDensityUnits.TerawattPerLiter:
+            return f"""{self.terawatts_per_liter} """
         
         return f'{self.__value}'
 
@@ -1916,124 +1916,124 @@ class PowerDensity:
         if unit_abbreviation == PowerDensityUnits.WattPerLiter:
             return """W/l"""
         
-        if unit_abbreviation == PowerDensityUnits.PicoWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.PicowattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.NanoWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.NanowattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MicroWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MilliWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DeciWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DecaWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.DecawattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.KiloWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.KilowattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MegaWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.MegawattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.GigaWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.GigawattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.TeraWattPerCubicMeter:
+        if unit_abbreviation == PowerDensityUnits.TerawattPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.PicoWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.PicowattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.NanoWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.NanowattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MicroWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MilliWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DeciWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DecaWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.DecawattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.KiloWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.KilowattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MegaWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.MegawattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.GigaWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.GigawattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.TeraWattPerCubicInch:
+        if unit_abbreviation == PowerDensityUnits.TerawattPerCubicInch:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.PicoWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.PicowattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.NanoWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.NanowattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MicroWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MilliWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DeciWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DecaWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.DecawattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.KiloWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.KilowattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MegaWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.MegawattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.GigaWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.GigawattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.TeraWattPerCubicFoot:
+        if unit_abbreviation == PowerDensityUnits.TerawattPerCubicFoot:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.PicoWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.PicowattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.NanoWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.NanowattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MicroWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.MicrowattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MilliWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.MilliwattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DeciWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.DeciwattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.DecaWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.DecawattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.KiloWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.KilowattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.MegaWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.MegawattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.GigaWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.GigawattPerLiter:
             return """"""
         
-        if unit_abbreviation == PowerDensityUnits.TeraWattPerLiter:
+        if unit_abbreviation == PowerDensityUnits.TerawattPerLiter:
             return """"""
         
 

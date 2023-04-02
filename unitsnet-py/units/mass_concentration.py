@@ -93,162 +93,162 @@ class MassConcentrationUnits(Enum):
             
         """
         
-        KiloGramPerCubicMillimeter = 'kilo_gram_per_cubic_millimeter'
+        KilogramPerCubicMillimeter = 'kilogram_per_cubic_millimeter'
         """
             
         """
         
-        KiloGramPerCubicCentimeter = 'kilo_gram_per_cubic_centimeter'
+        KilogramPerCubicCentimeter = 'kilogram_per_cubic_centimeter'
         """
             
         """
         
-        KiloGramPerCubicMeter = 'kilo_gram_per_cubic_meter'
+        KilogramPerCubicMeter = 'kilogram_per_cubic_meter'
         """
             
         """
         
-        MilliGramPerCubicMeter = 'milli_gram_per_cubic_meter'
+        MilligramPerCubicMeter = 'milligram_per_cubic_meter'
         """
             
         """
         
-        MicroGramPerCubicMeter = 'micro_gram_per_cubic_meter'
+        MicrogramPerCubicMeter = 'microgram_per_cubic_meter'
         """
             
         """
         
-        PicoGramPerMicroliter = 'pico_gram_per_microliter'
+        PicogramPerMicroliter = 'picogram_per_microliter'
         """
             
         """
         
-        NanoGramPerMicroliter = 'nano_gram_per_microliter'
+        NanogramPerMicroliter = 'nanogram_per_microliter'
         """
             
         """
         
-        MicroGramPerMicroliter = 'micro_gram_per_microliter'
+        MicrogramPerMicroliter = 'microgram_per_microliter'
         """
             
         """
         
-        MilliGramPerMicroliter = 'milli_gram_per_microliter'
+        MilligramPerMicroliter = 'milligram_per_microliter'
         """
             
         """
         
-        CentiGramPerMicroliter = 'centi_gram_per_microliter'
+        CentigramPerMicroliter = 'centigram_per_microliter'
         """
             
         """
         
-        DeciGramPerMicroliter = 'deci_gram_per_microliter'
+        DecigramPerMicroliter = 'decigram_per_microliter'
         """
             
         """
         
-        PicoGramPerMilliliter = 'pico_gram_per_milliliter'
+        PicogramPerMilliliter = 'picogram_per_milliliter'
         """
             
         """
         
-        NanoGramPerMilliliter = 'nano_gram_per_milliliter'
+        NanogramPerMilliliter = 'nanogram_per_milliliter'
         """
             
         """
         
-        MicroGramPerMilliliter = 'micro_gram_per_milliliter'
+        MicrogramPerMilliliter = 'microgram_per_milliliter'
         """
             
         """
         
-        MilliGramPerMilliliter = 'milli_gram_per_milliliter'
+        MilligramPerMilliliter = 'milligram_per_milliliter'
         """
             
         """
         
-        CentiGramPerMilliliter = 'centi_gram_per_milliliter'
+        CentigramPerMilliliter = 'centigram_per_milliliter'
         """
             
         """
         
-        DeciGramPerMilliliter = 'deci_gram_per_milliliter'
+        DecigramPerMilliliter = 'decigram_per_milliliter'
         """
             
         """
         
-        PicoGramPerDeciliter = 'pico_gram_per_deciliter'
+        PicogramPerDeciliter = 'picogram_per_deciliter'
         """
             
         """
         
-        NanoGramPerDeciliter = 'nano_gram_per_deciliter'
+        NanogramPerDeciliter = 'nanogram_per_deciliter'
         """
             
         """
         
-        MicroGramPerDeciliter = 'micro_gram_per_deciliter'
+        MicrogramPerDeciliter = 'microgram_per_deciliter'
         """
             
         """
         
-        MilliGramPerDeciliter = 'milli_gram_per_deciliter'
+        MilligramPerDeciliter = 'milligram_per_deciliter'
         """
             
         """
         
-        CentiGramPerDeciliter = 'centi_gram_per_deciliter'
+        CentigramPerDeciliter = 'centigram_per_deciliter'
         """
             
         """
         
-        DeciGramPerDeciliter = 'deci_gram_per_deciliter'
+        DecigramPerDeciliter = 'decigram_per_deciliter'
         """
             
         """
         
-        PicoGramPerLiter = 'pico_gram_per_liter'
+        PicogramPerLiter = 'picogram_per_liter'
         """
             
         """
         
-        NanoGramPerLiter = 'nano_gram_per_liter'
+        NanogramPerLiter = 'nanogram_per_liter'
         """
             
         """
         
-        MicroGramPerLiter = 'micro_gram_per_liter'
+        MicrogramPerLiter = 'microgram_per_liter'
         """
             
         """
         
-        MilliGramPerLiter = 'milli_gram_per_liter'
+        MilligramPerLiter = 'milligram_per_liter'
         """
             
         """
         
-        CentiGramPerLiter = 'centi_gram_per_liter'
+        CentigramPerLiter = 'centigram_per_liter'
         """
             
         """
         
-        DeciGramPerLiter = 'deci_gram_per_liter'
+        DecigramPerLiter = 'decigram_per_liter'
         """
             
         """
         
-        KiloGramPerLiter = 'kilo_gram_per_liter'
+        KilogramPerLiter = 'kilogram_per_liter'
         """
             
         """
         
-        KiloPoundPerCubicInch = 'kilo_pound_per_cubic_inch'
+        KilopoundPerCubicInch = 'kilopound_per_cubic_inch'
         """
             
         """
         
-        KiloPoundPerCubicFoot = 'kilo_pound_per_cubic_foot'
+        KilopoundPerCubicFoot = 'kilopound_per_cubic_foot'
         """
             
         """
@@ -301,69 +301,69 @@ class MassConcentration:
         
         self.__pounds_per_imperial_gallon = None
         
-        self.__kilo_grams_per_cubic_millimeter = None
+        self.__kilograms_per_cubic_millimeter = None
         
-        self.__kilo_grams_per_cubic_centimeter = None
+        self.__kilograms_per_cubic_centimeter = None
         
-        self.__kilo_grams_per_cubic_meter = None
+        self.__kilograms_per_cubic_meter = None
         
-        self.__milli_grams_per_cubic_meter = None
+        self.__milligrams_per_cubic_meter = None
         
-        self.__micro_grams_per_cubic_meter = None
+        self.__micrograms_per_cubic_meter = None
         
-        self.__pico_grams_per_microliter = None
+        self.__picograms_per_microliter = None
         
-        self.__nano_grams_per_microliter = None
+        self.__nanograms_per_microliter = None
         
-        self.__micro_grams_per_microliter = None
+        self.__micrograms_per_microliter = None
         
-        self.__milli_grams_per_microliter = None
+        self.__milligrams_per_microliter = None
         
-        self.__centi_grams_per_microliter = None
+        self.__centigrams_per_microliter = None
         
-        self.__deci_grams_per_microliter = None
+        self.__decigrams_per_microliter = None
         
-        self.__pico_grams_per_milliliter = None
+        self.__picograms_per_milliliter = None
         
-        self.__nano_grams_per_milliliter = None
+        self.__nanograms_per_milliliter = None
         
-        self.__micro_grams_per_milliliter = None
+        self.__micrograms_per_milliliter = None
         
-        self.__milli_grams_per_milliliter = None
+        self.__milligrams_per_milliliter = None
         
-        self.__centi_grams_per_milliliter = None
+        self.__centigrams_per_milliliter = None
         
-        self.__deci_grams_per_milliliter = None
+        self.__decigrams_per_milliliter = None
         
-        self.__pico_grams_per_deciliter = None
+        self.__picograms_per_deciliter = None
         
-        self.__nano_grams_per_deciliter = None
+        self.__nanograms_per_deciliter = None
         
-        self.__micro_grams_per_deciliter = None
+        self.__micrograms_per_deciliter = None
         
-        self.__milli_grams_per_deciliter = None
+        self.__milligrams_per_deciliter = None
         
-        self.__centi_grams_per_deciliter = None
+        self.__centigrams_per_deciliter = None
         
-        self.__deci_grams_per_deciliter = None
+        self.__decigrams_per_deciliter = None
         
-        self.__pico_grams_per_liter = None
+        self.__picograms_per_liter = None
         
-        self.__nano_grams_per_liter = None
+        self.__nanograms_per_liter = None
         
-        self.__micro_grams_per_liter = None
+        self.__micrograms_per_liter = None
         
-        self.__milli_grams_per_liter = None
+        self.__milligrams_per_liter = None
         
-        self.__centi_grams_per_liter = None
+        self.__centigrams_per_liter = None
         
-        self.__deci_grams_per_liter = None
+        self.__decigrams_per_liter = None
         
-        self.__kilo_grams_per_liter = None
+        self.__kilograms_per_liter = None
         
-        self.__kilo_pounds_per_cubic_inch = None
+        self.__kilopounds_per_cubic_inch = None
         
-        self.__kilo_pounds_per_cubic_foot = None
+        self.__kilopounds_per_cubic_foot = None
         
 
     def __convert_from_base(self, from_unit: MassConcentrationUnits) -> float:
@@ -420,100 +420,100 @@ class MassConcentration:
         if from_unit == MassConcentrationUnits.PoundPerImperialGallon:
             return (value / 9.9776398e1)
         
-        if from_unit == MassConcentrationUnits.KiloGramPerCubicMillimeter:
+        if from_unit == MassConcentrationUnits.KilogramPerCubicMillimeter:
             return ((value * 1e-6) / 1000.0)
         
-        if from_unit == MassConcentrationUnits.KiloGramPerCubicCentimeter:
+        if from_unit == MassConcentrationUnits.KilogramPerCubicCentimeter:
             return ((value * 1e-3) / 1000.0)
         
-        if from_unit == MassConcentrationUnits.KiloGramPerCubicMeter:
+        if from_unit == MassConcentrationUnits.KilogramPerCubicMeter:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == MassConcentrationUnits.MilliGramPerCubicMeter:
+        if from_unit == MassConcentrationUnits.MilligramPerCubicMeter:
             return ((value * 1e3) / 0.001)
         
-        if from_unit == MassConcentrationUnits.MicroGramPerCubicMeter:
+        if from_unit == MassConcentrationUnits.MicrogramPerCubicMeter:
             return ((value * 1e3) / 1e-06)
         
-        if from_unit == MassConcentrationUnits.PicoGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.PicogramPerMicroliter:
             return ((value * 1e-6) / 1e-12)
         
-        if from_unit == MassConcentrationUnits.NanoGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.NanogramPerMicroliter:
             return ((value * 1e-6) / 1e-09)
         
-        if from_unit == MassConcentrationUnits.MicroGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.MicrogramPerMicroliter:
             return ((value * 1e-6) / 1e-06)
         
-        if from_unit == MassConcentrationUnits.MilliGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.MilligramPerMicroliter:
             return ((value * 1e-6) / 0.001)
         
-        if from_unit == MassConcentrationUnits.CentiGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.CentigramPerMicroliter:
             return ((value * 1e-6) / 0.01)
         
-        if from_unit == MassConcentrationUnits.DeciGramPerMicroliter:
+        if from_unit == MassConcentrationUnits.DecigramPerMicroliter:
             return ((value * 1e-6) / 0.1)
         
-        if from_unit == MassConcentrationUnits.PicoGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.PicogramPerMilliliter:
             return ((value * 1e-3) / 1e-12)
         
-        if from_unit == MassConcentrationUnits.NanoGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.NanogramPerMilliliter:
             return ((value * 1e-3) / 1e-09)
         
-        if from_unit == MassConcentrationUnits.MicroGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.MicrogramPerMilliliter:
             return ((value * 1e-3) / 1e-06)
         
-        if from_unit == MassConcentrationUnits.MilliGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.MilligramPerMilliliter:
             return ((value * 1e-3) / 0.001)
         
-        if from_unit == MassConcentrationUnits.CentiGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.CentigramPerMilliliter:
             return ((value * 1e-3) / 0.01)
         
-        if from_unit == MassConcentrationUnits.DeciGramPerMilliliter:
+        if from_unit == MassConcentrationUnits.DecigramPerMilliliter:
             return ((value * 1e-3) / 0.1)
         
-        if from_unit == MassConcentrationUnits.PicoGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.PicogramPerDeciliter:
             return ((value * 1e-1) / 1e-12)
         
-        if from_unit == MassConcentrationUnits.NanoGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.NanogramPerDeciliter:
             return ((value * 1e-1) / 1e-09)
         
-        if from_unit == MassConcentrationUnits.MicroGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.MicrogramPerDeciliter:
             return ((value * 1e-1) / 1e-06)
         
-        if from_unit == MassConcentrationUnits.MilliGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.MilligramPerDeciliter:
             return ((value * 1e-1) / 0.001)
         
-        if from_unit == MassConcentrationUnits.CentiGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.CentigramPerDeciliter:
             return ((value * 1e-1) / 0.01)
         
-        if from_unit == MassConcentrationUnits.DeciGramPerDeciliter:
+        if from_unit == MassConcentrationUnits.DecigramPerDeciliter:
             return ((value * 1e-1) / 0.1)
         
-        if from_unit == MassConcentrationUnits.PicoGramPerLiter:
+        if from_unit == MassConcentrationUnits.PicogramPerLiter:
             return ((value) / 1e-12)
         
-        if from_unit == MassConcentrationUnits.NanoGramPerLiter:
+        if from_unit == MassConcentrationUnits.NanogramPerLiter:
             return ((value) / 1e-09)
         
-        if from_unit == MassConcentrationUnits.MicroGramPerLiter:
+        if from_unit == MassConcentrationUnits.MicrogramPerLiter:
             return ((value) / 1e-06)
         
-        if from_unit == MassConcentrationUnits.MilliGramPerLiter:
+        if from_unit == MassConcentrationUnits.MilligramPerLiter:
             return ((value) / 0.001)
         
-        if from_unit == MassConcentrationUnits.CentiGramPerLiter:
+        if from_unit == MassConcentrationUnits.CentigramPerLiter:
             return ((value) / 0.01)
         
-        if from_unit == MassConcentrationUnits.DeciGramPerLiter:
+        if from_unit == MassConcentrationUnits.DecigramPerLiter:
             return ((value) / 0.1)
         
-        if from_unit == MassConcentrationUnits.KiloGramPerLiter:
+        if from_unit == MassConcentrationUnits.KilogramPerLiter:
             return ((value) / 1000.0)
         
-        if from_unit == MassConcentrationUnits.KiloPoundPerCubicInch:
+        if from_unit == MassConcentrationUnits.KilopoundPerCubicInch:
             return ((value * 3.6127298147753e-5) / 1000.0)
         
-        if from_unit == MassConcentrationUnits.KiloPoundPerCubicFoot:
+        if from_unit == MassConcentrationUnits.KilopoundPerCubicFoot:
             return ((value * 0.062427961) / 1000.0)
         
         return None
@@ -572,100 +572,100 @@ class MassConcentration:
         if to_unit == MassConcentrationUnits.PoundPerImperialGallon:
             return (value * 9.9776398e1)
         
-        if to_unit == MassConcentrationUnits.KiloGramPerCubicMillimeter:
+        if to_unit == MassConcentrationUnits.KilogramPerCubicMillimeter:
             return ((value / 1e-6) * 1000.0)
         
-        if to_unit == MassConcentrationUnits.KiloGramPerCubicCentimeter:
+        if to_unit == MassConcentrationUnits.KilogramPerCubicCentimeter:
             return ((value / 1e-3) * 1000.0)
         
-        if to_unit == MassConcentrationUnits.KiloGramPerCubicMeter:
+        if to_unit == MassConcentrationUnits.KilogramPerCubicMeter:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == MassConcentrationUnits.MilliGramPerCubicMeter:
+        if to_unit == MassConcentrationUnits.MilligramPerCubicMeter:
             return ((value / 1e3) * 0.001)
         
-        if to_unit == MassConcentrationUnits.MicroGramPerCubicMeter:
+        if to_unit == MassConcentrationUnits.MicrogramPerCubicMeter:
             return ((value / 1e3) * 1e-06)
         
-        if to_unit == MassConcentrationUnits.PicoGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.PicogramPerMicroliter:
             return ((value / 1e-6) * 1e-12)
         
-        if to_unit == MassConcentrationUnits.NanoGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.NanogramPerMicroliter:
             return ((value / 1e-6) * 1e-09)
         
-        if to_unit == MassConcentrationUnits.MicroGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.MicrogramPerMicroliter:
             return ((value / 1e-6) * 1e-06)
         
-        if to_unit == MassConcentrationUnits.MilliGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.MilligramPerMicroliter:
             return ((value / 1e-6) * 0.001)
         
-        if to_unit == MassConcentrationUnits.CentiGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.CentigramPerMicroliter:
             return ((value / 1e-6) * 0.01)
         
-        if to_unit == MassConcentrationUnits.DeciGramPerMicroliter:
+        if to_unit == MassConcentrationUnits.DecigramPerMicroliter:
             return ((value / 1e-6) * 0.1)
         
-        if to_unit == MassConcentrationUnits.PicoGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.PicogramPerMilliliter:
             return ((value / 1e-3) * 1e-12)
         
-        if to_unit == MassConcentrationUnits.NanoGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.NanogramPerMilliliter:
             return ((value / 1e-3) * 1e-09)
         
-        if to_unit == MassConcentrationUnits.MicroGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.MicrogramPerMilliliter:
             return ((value / 1e-3) * 1e-06)
         
-        if to_unit == MassConcentrationUnits.MilliGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.MilligramPerMilliliter:
             return ((value / 1e-3) * 0.001)
         
-        if to_unit == MassConcentrationUnits.CentiGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.CentigramPerMilliliter:
             return ((value / 1e-3) * 0.01)
         
-        if to_unit == MassConcentrationUnits.DeciGramPerMilliliter:
+        if to_unit == MassConcentrationUnits.DecigramPerMilliliter:
             return ((value / 1e-3) * 0.1)
         
-        if to_unit == MassConcentrationUnits.PicoGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.PicogramPerDeciliter:
             return ((value / 1e-1) * 1e-12)
         
-        if to_unit == MassConcentrationUnits.NanoGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.NanogramPerDeciliter:
             return ((value / 1e-1) * 1e-09)
         
-        if to_unit == MassConcentrationUnits.MicroGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.MicrogramPerDeciliter:
             return ((value / 1e-1) * 1e-06)
         
-        if to_unit == MassConcentrationUnits.MilliGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.MilligramPerDeciliter:
             return ((value / 1e-1) * 0.001)
         
-        if to_unit == MassConcentrationUnits.CentiGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.CentigramPerDeciliter:
             return ((value / 1e-1) * 0.01)
         
-        if to_unit == MassConcentrationUnits.DeciGramPerDeciliter:
+        if to_unit == MassConcentrationUnits.DecigramPerDeciliter:
             return ((value / 1e-1) * 0.1)
         
-        if to_unit == MassConcentrationUnits.PicoGramPerLiter:
+        if to_unit == MassConcentrationUnits.PicogramPerLiter:
             return ((value) * 1e-12)
         
-        if to_unit == MassConcentrationUnits.NanoGramPerLiter:
+        if to_unit == MassConcentrationUnits.NanogramPerLiter:
             return ((value) * 1e-09)
         
-        if to_unit == MassConcentrationUnits.MicroGramPerLiter:
+        if to_unit == MassConcentrationUnits.MicrogramPerLiter:
             return ((value) * 1e-06)
         
-        if to_unit == MassConcentrationUnits.MilliGramPerLiter:
+        if to_unit == MassConcentrationUnits.MilligramPerLiter:
             return ((value) * 0.001)
         
-        if to_unit == MassConcentrationUnits.CentiGramPerLiter:
+        if to_unit == MassConcentrationUnits.CentigramPerLiter:
             return ((value) * 0.01)
         
-        if to_unit == MassConcentrationUnits.DeciGramPerLiter:
+        if to_unit == MassConcentrationUnits.DecigramPerLiter:
             return ((value) * 0.1)
         
-        if to_unit == MassConcentrationUnits.KiloGramPerLiter:
+        if to_unit == MassConcentrationUnits.KilogramPerLiter:
             return ((value) * 1000.0)
         
-        if to_unit == MassConcentrationUnits.KiloPoundPerCubicInch:
+        if to_unit == MassConcentrationUnits.KilopoundPerCubicInch:
             return ((value / 3.6127298147753e-5) * 1000.0)
         
-        if to_unit == MassConcentrationUnits.KiloPoundPerCubicFoot:
+        if to_unit == MassConcentrationUnits.KilopoundPerCubicFoot:
             return ((value / 0.062427961) * 1000.0)
         
         return None
@@ -932,483 +932,483 @@ class MassConcentration:
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_millimeter(kilo_grams_per_cubic_millimeter: float):
+    def from_kilograms_per_cubic_millimeter(kilograms_per_cubic_millimeter: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_grams_per_cubic_millimeter.
+        Create a new instance of MassConcentration from a value in kilograms_per_cubic_millimeter.
 
         
 
-        :param meters: The MassConcentration value in kilo_grams_per_cubic_millimeter.
-        :type kilo_grams_per_cubic_millimeter: float
+        :param meters: The MassConcentration value in kilograms_per_cubic_millimeter.
+        :type kilograms_per_cubic_millimeter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_grams_per_cubic_millimeter, MassConcentrationUnits.KiloGramPerCubicMillimeter)
+        return MassConcentration(kilograms_per_cubic_millimeter, MassConcentrationUnits.KilogramPerCubicMillimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_centimeter(kilo_grams_per_cubic_centimeter: float):
+    def from_kilograms_per_cubic_centimeter(kilograms_per_cubic_centimeter: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_grams_per_cubic_centimeter.
+        Create a new instance of MassConcentration from a value in kilograms_per_cubic_centimeter.
 
         
 
-        :param meters: The MassConcentration value in kilo_grams_per_cubic_centimeter.
-        :type kilo_grams_per_cubic_centimeter: float
+        :param meters: The MassConcentration value in kilograms_per_cubic_centimeter.
+        :type kilograms_per_cubic_centimeter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_grams_per_cubic_centimeter, MassConcentrationUnits.KiloGramPerCubicCentimeter)
+        return MassConcentration(kilograms_per_cubic_centimeter, MassConcentrationUnits.KilogramPerCubicCentimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_cubic_meter(kilo_grams_per_cubic_meter: float):
+    def from_kilograms_per_cubic_meter(kilograms_per_cubic_meter: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_grams_per_cubic_meter.
+        Create a new instance of MassConcentration from a value in kilograms_per_cubic_meter.
 
         
 
-        :param meters: The MassConcentration value in kilo_grams_per_cubic_meter.
-        :type kilo_grams_per_cubic_meter: float
+        :param meters: The MassConcentration value in kilograms_per_cubic_meter.
+        :type kilograms_per_cubic_meter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_grams_per_cubic_meter, MassConcentrationUnits.KiloGramPerCubicMeter)
+        return MassConcentration(kilograms_per_cubic_meter, MassConcentrationUnits.KilogramPerCubicMeter)
 
     
     @staticmethod
-    def from_milli_grams_per_cubic_meter(milli_grams_per_cubic_meter: float):
+    def from_milligrams_per_cubic_meter(milligrams_per_cubic_meter: float):
         """
-        Create a new instance of MassConcentration from a value in milli_grams_per_cubic_meter.
+        Create a new instance of MassConcentration from a value in milligrams_per_cubic_meter.
 
         
 
-        :param meters: The MassConcentration value in milli_grams_per_cubic_meter.
-        :type milli_grams_per_cubic_meter: float
+        :param meters: The MassConcentration value in milligrams_per_cubic_meter.
+        :type milligrams_per_cubic_meter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(milli_grams_per_cubic_meter, MassConcentrationUnits.MilliGramPerCubicMeter)
+        return MassConcentration(milligrams_per_cubic_meter, MassConcentrationUnits.MilligramPerCubicMeter)
 
     
     @staticmethod
-    def from_micro_grams_per_cubic_meter(micro_grams_per_cubic_meter: float):
+    def from_micrograms_per_cubic_meter(micrograms_per_cubic_meter: float):
         """
-        Create a new instance of MassConcentration from a value in micro_grams_per_cubic_meter.
+        Create a new instance of MassConcentration from a value in micrograms_per_cubic_meter.
 
         
 
-        :param meters: The MassConcentration value in micro_grams_per_cubic_meter.
-        :type micro_grams_per_cubic_meter: float
+        :param meters: The MassConcentration value in micrograms_per_cubic_meter.
+        :type micrograms_per_cubic_meter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(micro_grams_per_cubic_meter, MassConcentrationUnits.MicroGramPerCubicMeter)
+        return MassConcentration(micrograms_per_cubic_meter, MassConcentrationUnits.MicrogramPerCubicMeter)
 
     
     @staticmethod
-    def from_pico_grams_per_microliter(pico_grams_per_microliter: float):
+    def from_picograms_per_microliter(picograms_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in pico_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in picograms_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in pico_grams_per_microliter.
-        :type pico_grams_per_microliter: float
+        :param meters: The MassConcentration value in picograms_per_microliter.
+        :type picograms_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(pico_grams_per_microliter, MassConcentrationUnits.PicoGramPerMicroliter)
+        return MassConcentration(picograms_per_microliter, MassConcentrationUnits.PicogramPerMicroliter)
 
     
     @staticmethod
-    def from_nano_grams_per_microliter(nano_grams_per_microliter: float):
+    def from_nanograms_per_microliter(nanograms_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in nano_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in nanograms_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in nano_grams_per_microliter.
-        :type nano_grams_per_microliter: float
+        :param meters: The MassConcentration value in nanograms_per_microliter.
+        :type nanograms_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(nano_grams_per_microliter, MassConcentrationUnits.NanoGramPerMicroliter)
+        return MassConcentration(nanograms_per_microliter, MassConcentrationUnits.NanogramPerMicroliter)
 
     
     @staticmethod
-    def from_micro_grams_per_microliter(micro_grams_per_microliter: float):
+    def from_micrograms_per_microliter(micrograms_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in micro_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in micrograms_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in micro_grams_per_microliter.
-        :type micro_grams_per_microliter: float
+        :param meters: The MassConcentration value in micrograms_per_microliter.
+        :type micrograms_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(micro_grams_per_microliter, MassConcentrationUnits.MicroGramPerMicroliter)
+        return MassConcentration(micrograms_per_microliter, MassConcentrationUnits.MicrogramPerMicroliter)
 
     
     @staticmethod
-    def from_milli_grams_per_microliter(milli_grams_per_microliter: float):
+    def from_milligrams_per_microliter(milligrams_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in milli_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in milligrams_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in milli_grams_per_microliter.
-        :type milli_grams_per_microliter: float
+        :param meters: The MassConcentration value in milligrams_per_microliter.
+        :type milligrams_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(milli_grams_per_microliter, MassConcentrationUnits.MilliGramPerMicroliter)
+        return MassConcentration(milligrams_per_microliter, MassConcentrationUnits.MilligramPerMicroliter)
 
     
     @staticmethod
-    def from_centi_grams_per_microliter(centi_grams_per_microliter: float):
+    def from_centigrams_per_microliter(centigrams_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in centi_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in centigrams_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in centi_grams_per_microliter.
-        :type centi_grams_per_microliter: float
+        :param meters: The MassConcentration value in centigrams_per_microliter.
+        :type centigrams_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(centi_grams_per_microliter, MassConcentrationUnits.CentiGramPerMicroliter)
+        return MassConcentration(centigrams_per_microliter, MassConcentrationUnits.CentigramPerMicroliter)
 
     
     @staticmethod
-    def from_deci_grams_per_microliter(deci_grams_per_microliter: float):
+    def from_decigrams_per_microliter(decigrams_per_microliter: float):
         """
-        Create a new instance of MassConcentration from a value in deci_grams_per_microliter.
+        Create a new instance of MassConcentration from a value in decigrams_per_microliter.
 
         
 
-        :param meters: The MassConcentration value in deci_grams_per_microliter.
-        :type deci_grams_per_microliter: float
+        :param meters: The MassConcentration value in decigrams_per_microliter.
+        :type decigrams_per_microliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(deci_grams_per_microliter, MassConcentrationUnits.DeciGramPerMicroliter)
+        return MassConcentration(decigrams_per_microliter, MassConcentrationUnits.DecigramPerMicroliter)
 
     
     @staticmethod
-    def from_pico_grams_per_milliliter(pico_grams_per_milliliter: float):
+    def from_picograms_per_milliliter(picograms_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in pico_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in picograms_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in pico_grams_per_milliliter.
-        :type pico_grams_per_milliliter: float
+        :param meters: The MassConcentration value in picograms_per_milliliter.
+        :type picograms_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(pico_grams_per_milliliter, MassConcentrationUnits.PicoGramPerMilliliter)
+        return MassConcentration(picograms_per_milliliter, MassConcentrationUnits.PicogramPerMilliliter)
 
     
     @staticmethod
-    def from_nano_grams_per_milliliter(nano_grams_per_milliliter: float):
+    def from_nanograms_per_milliliter(nanograms_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in nano_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in nanograms_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in nano_grams_per_milliliter.
-        :type nano_grams_per_milliliter: float
+        :param meters: The MassConcentration value in nanograms_per_milliliter.
+        :type nanograms_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(nano_grams_per_milliliter, MassConcentrationUnits.NanoGramPerMilliliter)
+        return MassConcentration(nanograms_per_milliliter, MassConcentrationUnits.NanogramPerMilliliter)
 
     
     @staticmethod
-    def from_micro_grams_per_milliliter(micro_grams_per_milliliter: float):
+    def from_micrograms_per_milliliter(micrograms_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in micro_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in micrograms_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in micro_grams_per_milliliter.
-        :type micro_grams_per_milliliter: float
+        :param meters: The MassConcentration value in micrograms_per_milliliter.
+        :type micrograms_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(micro_grams_per_milliliter, MassConcentrationUnits.MicroGramPerMilliliter)
+        return MassConcentration(micrograms_per_milliliter, MassConcentrationUnits.MicrogramPerMilliliter)
 
     
     @staticmethod
-    def from_milli_grams_per_milliliter(milli_grams_per_milliliter: float):
+    def from_milligrams_per_milliliter(milligrams_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in milli_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in milligrams_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in milli_grams_per_milliliter.
-        :type milli_grams_per_milliliter: float
+        :param meters: The MassConcentration value in milligrams_per_milliliter.
+        :type milligrams_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(milli_grams_per_milliliter, MassConcentrationUnits.MilliGramPerMilliliter)
+        return MassConcentration(milligrams_per_milliliter, MassConcentrationUnits.MilligramPerMilliliter)
 
     
     @staticmethod
-    def from_centi_grams_per_milliliter(centi_grams_per_milliliter: float):
+    def from_centigrams_per_milliliter(centigrams_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in centi_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in centigrams_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in centi_grams_per_milliliter.
-        :type centi_grams_per_milliliter: float
+        :param meters: The MassConcentration value in centigrams_per_milliliter.
+        :type centigrams_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(centi_grams_per_milliliter, MassConcentrationUnits.CentiGramPerMilliliter)
+        return MassConcentration(centigrams_per_milliliter, MassConcentrationUnits.CentigramPerMilliliter)
 
     
     @staticmethod
-    def from_deci_grams_per_milliliter(deci_grams_per_milliliter: float):
+    def from_decigrams_per_milliliter(decigrams_per_milliliter: float):
         """
-        Create a new instance of MassConcentration from a value in deci_grams_per_milliliter.
+        Create a new instance of MassConcentration from a value in decigrams_per_milliliter.
 
         
 
-        :param meters: The MassConcentration value in deci_grams_per_milliliter.
-        :type deci_grams_per_milliliter: float
+        :param meters: The MassConcentration value in decigrams_per_milliliter.
+        :type decigrams_per_milliliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(deci_grams_per_milliliter, MassConcentrationUnits.DeciGramPerMilliliter)
+        return MassConcentration(decigrams_per_milliliter, MassConcentrationUnits.DecigramPerMilliliter)
 
     
     @staticmethod
-    def from_pico_grams_per_deciliter(pico_grams_per_deciliter: float):
+    def from_picograms_per_deciliter(picograms_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in pico_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in picograms_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in pico_grams_per_deciliter.
-        :type pico_grams_per_deciliter: float
+        :param meters: The MassConcentration value in picograms_per_deciliter.
+        :type picograms_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(pico_grams_per_deciliter, MassConcentrationUnits.PicoGramPerDeciliter)
+        return MassConcentration(picograms_per_deciliter, MassConcentrationUnits.PicogramPerDeciliter)
 
     
     @staticmethod
-    def from_nano_grams_per_deciliter(nano_grams_per_deciliter: float):
+    def from_nanograms_per_deciliter(nanograms_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in nano_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in nanograms_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in nano_grams_per_deciliter.
-        :type nano_grams_per_deciliter: float
+        :param meters: The MassConcentration value in nanograms_per_deciliter.
+        :type nanograms_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(nano_grams_per_deciliter, MassConcentrationUnits.NanoGramPerDeciliter)
+        return MassConcentration(nanograms_per_deciliter, MassConcentrationUnits.NanogramPerDeciliter)
 
     
     @staticmethod
-    def from_micro_grams_per_deciliter(micro_grams_per_deciliter: float):
+    def from_micrograms_per_deciliter(micrograms_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in micro_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in micrograms_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in micro_grams_per_deciliter.
-        :type micro_grams_per_deciliter: float
+        :param meters: The MassConcentration value in micrograms_per_deciliter.
+        :type micrograms_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(micro_grams_per_deciliter, MassConcentrationUnits.MicroGramPerDeciliter)
+        return MassConcentration(micrograms_per_deciliter, MassConcentrationUnits.MicrogramPerDeciliter)
 
     
     @staticmethod
-    def from_milli_grams_per_deciliter(milli_grams_per_deciliter: float):
+    def from_milligrams_per_deciliter(milligrams_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in milli_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in milligrams_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in milli_grams_per_deciliter.
-        :type milli_grams_per_deciliter: float
+        :param meters: The MassConcentration value in milligrams_per_deciliter.
+        :type milligrams_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(milli_grams_per_deciliter, MassConcentrationUnits.MilliGramPerDeciliter)
+        return MassConcentration(milligrams_per_deciliter, MassConcentrationUnits.MilligramPerDeciliter)
 
     
     @staticmethod
-    def from_centi_grams_per_deciliter(centi_grams_per_deciliter: float):
+    def from_centigrams_per_deciliter(centigrams_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in centi_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in centigrams_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in centi_grams_per_deciliter.
-        :type centi_grams_per_deciliter: float
+        :param meters: The MassConcentration value in centigrams_per_deciliter.
+        :type centigrams_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(centi_grams_per_deciliter, MassConcentrationUnits.CentiGramPerDeciliter)
+        return MassConcentration(centigrams_per_deciliter, MassConcentrationUnits.CentigramPerDeciliter)
 
     
     @staticmethod
-    def from_deci_grams_per_deciliter(deci_grams_per_deciliter: float):
+    def from_decigrams_per_deciliter(decigrams_per_deciliter: float):
         """
-        Create a new instance of MassConcentration from a value in deci_grams_per_deciliter.
+        Create a new instance of MassConcentration from a value in decigrams_per_deciliter.
 
         
 
-        :param meters: The MassConcentration value in deci_grams_per_deciliter.
-        :type deci_grams_per_deciliter: float
+        :param meters: The MassConcentration value in decigrams_per_deciliter.
+        :type decigrams_per_deciliter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(deci_grams_per_deciliter, MassConcentrationUnits.DeciGramPerDeciliter)
+        return MassConcentration(decigrams_per_deciliter, MassConcentrationUnits.DecigramPerDeciliter)
 
     
     @staticmethod
-    def from_pico_grams_per_liter(pico_grams_per_liter: float):
+    def from_picograms_per_liter(picograms_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in pico_grams_per_liter.
+        Create a new instance of MassConcentration from a value in picograms_per_liter.
 
         
 
-        :param meters: The MassConcentration value in pico_grams_per_liter.
-        :type pico_grams_per_liter: float
+        :param meters: The MassConcentration value in picograms_per_liter.
+        :type picograms_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(pico_grams_per_liter, MassConcentrationUnits.PicoGramPerLiter)
+        return MassConcentration(picograms_per_liter, MassConcentrationUnits.PicogramPerLiter)
 
     
     @staticmethod
-    def from_nano_grams_per_liter(nano_grams_per_liter: float):
+    def from_nanograms_per_liter(nanograms_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in nano_grams_per_liter.
+        Create a new instance of MassConcentration from a value in nanograms_per_liter.
 
         
 
-        :param meters: The MassConcentration value in nano_grams_per_liter.
-        :type nano_grams_per_liter: float
+        :param meters: The MassConcentration value in nanograms_per_liter.
+        :type nanograms_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(nano_grams_per_liter, MassConcentrationUnits.NanoGramPerLiter)
+        return MassConcentration(nanograms_per_liter, MassConcentrationUnits.NanogramPerLiter)
 
     
     @staticmethod
-    def from_micro_grams_per_liter(micro_grams_per_liter: float):
+    def from_micrograms_per_liter(micrograms_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in micro_grams_per_liter.
+        Create a new instance of MassConcentration from a value in micrograms_per_liter.
 
         
 
-        :param meters: The MassConcentration value in micro_grams_per_liter.
-        :type micro_grams_per_liter: float
+        :param meters: The MassConcentration value in micrograms_per_liter.
+        :type micrograms_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(micro_grams_per_liter, MassConcentrationUnits.MicroGramPerLiter)
+        return MassConcentration(micrograms_per_liter, MassConcentrationUnits.MicrogramPerLiter)
 
     
     @staticmethod
-    def from_milli_grams_per_liter(milli_grams_per_liter: float):
+    def from_milligrams_per_liter(milligrams_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in milli_grams_per_liter.
+        Create a new instance of MassConcentration from a value in milligrams_per_liter.
 
         
 
-        :param meters: The MassConcentration value in milli_grams_per_liter.
-        :type milli_grams_per_liter: float
+        :param meters: The MassConcentration value in milligrams_per_liter.
+        :type milligrams_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(milli_grams_per_liter, MassConcentrationUnits.MilliGramPerLiter)
+        return MassConcentration(milligrams_per_liter, MassConcentrationUnits.MilligramPerLiter)
 
     
     @staticmethod
-    def from_centi_grams_per_liter(centi_grams_per_liter: float):
+    def from_centigrams_per_liter(centigrams_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in centi_grams_per_liter.
+        Create a new instance of MassConcentration from a value in centigrams_per_liter.
 
         
 
-        :param meters: The MassConcentration value in centi_grams_per_liter.
-        :type centi_grams_per_liter: float
+        :param meters: The MassConcentration value in centigrams_per_liter.
+        :type centigrams_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(centi_grams_per_liter, MassConcentrationUnits.CentiGramPerLiter)
+        return MassConcentration(centigrams_per_liter, MassConcentrationUnits.CentigramPerLiter)
 
     
     @staticmethod
-    def from_deci_grams_per_liter(deci_grams_per_liter: float):
+    def from_decigrams_per_liter(decigrams_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in deci_grams_per_liter.
+        Create a new instance of MassConcentration from a value in decigrams_per_liter.
 
         
 
-        :param meters: The MassConcentration value in deci_grams_per_liter.
-        :type deci_grams_per_liter: float
+        :param meters: The MassConcentration value in decigrams_per_liter.
+        :type decigrams_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(deci_grams_per_liter, MassConcentrationUnits.DeciGramPerLiter)
+        return MassConcentration(decigrams_per_liter, MassConcentrationUnits.DecigramPerLiter)
 
     
     @staticmethod
-    def from_kilo_grams_per_liter(kilo_grams_per_liter: float):
+    def from_kilograms_per_liter(kilograms_per_liter: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_grams_per_liter.
+        Create a new instance of MassConcentration from a value in kilograms_per_liter.
 
         
 
-        :param meters: The MassConcentration value in kilo_grams_per_liter.
-        :type kilo_grams_per_liter: float
+        :param meters: The MassConcentration value in kilograms_per_liter.
+        :type kilograms_per_liter: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_grams_per_liter, MassConcentrationUnits.KiloGramPerLiter)
+        return MassConcentration(kilograms_per_liter, MassConcentrationUnits.KilogramPerLiter)
 
     
     @staticmethod
-    def from_kilo_pounds_per_cubic_inch(kilo_pounds_per_cubic_inch: float):
+    def from_kilopounds_per_cubic_inch(kilopounds_per_cubic_inch: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_pounds_per_cubic_inch.
+        Create a new instance of MassConcentration from a value in kilopounds_per_cubic_inch.
 
         
 
-        :param meters: The MassConcentration value in kilo_pounds_per_cubic_inch.
-        :type kilo_pounds_per_cubic_inch: float
+        :param meters: The MassConcentration value in kilopounds_per_cubic_inch.
+        :type kilopounds_per_cubic_inch: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_pounds_per_cubic_inch, MassConcentrationUnits.KiloPoundPerCubicInch)
+        return MassConcentration(kilopounds_per_cubic_inch, MassConcentrationUnits.KilopoundPerCubicInch)
 
     
     @staticmethod
-    def from_kilo_pounds_per_cubic_foot(kilo_pounds_per_cubic_foot: float):
+    def from_kilopounds_per_cubic_foot(kilopounds_per_cubic_foot: float):
         """
-        Create a new instance of MassConcentration from a value in kilo_pounds_per_cubic_foot.
+        Create a new instance of MassConcentration from a value in kilopounds_per_cubic_foot.
 
         
 
-        :param meters: The MassConcentration value in kilo_pounds_per_cubic_foot.
-        :type kilo_pounds_per_cubic_foot: float
+        :param meters: The MassConcentration value in kilopounds_per_cubic_foot.
+        :type kilopounds_per_cubic_foot: float
         :return: A new instance of MassConcentration.
         :rtype: MassConcentration
         """
-        return MassConcentration(kilo_pounds_per_cubic_foot, MassConcentrationUnits.KiloPoundPerCubicFoot)
+        return MassConcentration(kilopounds_per_cubic_foot, MassConcentrationUnits.KilopoundPerCubicFoot)
 
     
     @property
@@ -1599,355 +1599,355 @@ class MassConcentration:
 
     
     @property
-    def kilo_grams_per_cubic_millimeter(self) -> float:
+    def kilograms_per_cubic_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_millimeter != None:
-            return self.__kilo_grams_per_cubic_millimeter
-        self.__kilo_grams_per_cubic_millimeter = self.__convert_from_base(MassConcentrationUnits.KiloGramPerCubicMillimeter)
-        return self.__kilo_grams_per_cubic_millimeter
+        if self.__kilograms_per_cubic_millimeter != None:
+            return self.__kilograms_per_cubic_millimeter
+        self.__kilograms_per_cubic_millimeter = self.__convert_from_base(MassConcentrationUnits.KilogramPerCubicMillimeter)
+        return self.__kilograms_per_cubic_millimeter
 
     
     @property
-    def kilo_grams_per_cubic_centimeter(self) -> float:
+    def kilograms_per_cubic_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_centimeter != None:
-            return self.__kilo_grams_per_cubic_centimeter
-        self.__kilo_grams_per_cubic_centimeter = self.__convert_from_base(MassConcentrationUnits.KiloGramPerCubicCentimeter)
-        return self.__kilo_grams_per_cubic_centimeter
+        if self.__kilograms_per_cubic_centimeter != None:
+            return self.__kilograms_per_cubic_centimeter
+        self.__kilograms_per_cubic_centimeter = self.__convert_from_base(MassConcentrationUnits.KilogramPerCubicCentimeter)
+        return self.__kilograms_per_cubic_centimeter
 
     
     @property
-    def kilo_grams_per_cubic_meter(self) -> float:
+    def kilograms_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_cubic_meter != None:
-            return self.__kilo_grams_per_cubic_meter
-        self.__kilo_grams_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.KiloGramPerCubicMeter)
-        return self.__kilo_grams_per_cubic_meter
+        if self.__kilograms_per_cubic_meter != None:
+            return self.__kilograms_per_cubic_meter
+        self.__kilograms_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.KilogramPerCubicMeter)
+        return self.__kilograms_per_cubic_meter
 
     
     @property
-    def milli_grams_per_cubic_meter(self) -> float:
+    def milligrams_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_cubic_meter != None:
-            return self.__milli_grams_per_cubic_meter
-        self.__milli_grams_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.MilliGramPerCubicMeter)
-        return self.__milli_grams_per_cubic_meter
+        if self.__milligrams_per_cubic_meter != None:
+            return self.__milligrams_per_cubic_meter
+        self.__milligrams_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.MilligramPerCubicMeter)
+        return self.__milligrams_per_cubic_meter
 
     
     @property
-    def micro_grams_per_cubic_meter(self) -> float:
+    def micrograms_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_cubic_meter != None:
-            return self.__micro_grams_per_cubic_meter
-        self.__micro_grams_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.MicroGramPerCubicMeter)
-        return self.__micro_grams_per_cubic_meter
+        if self.__micrograms_per_cubic_meter != None:
+            return self.__micrograms_per_cubic_meter
+        self.__micrograms_per_cubic_meter = self.__convert_from_base(MassConcentrationUnits.MicrogramPerCubicMeter)
+        return self.__micrograms_per_cubic_meter
 
     
     @property
-    def pico_grams_per_microliter(self) -> float:
+    def picograms_per_microliter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_microliter != None:
-            return self.__pico_grams_per_microliter
-        self.__pico_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.PicoGramPerMicroliter)
-        return self.__pico_grams_per_microliter
+        if self.__picograms_per_microliter != None:
+            return self.__picograms_per_microliter
+        self.__picograms_per_microliter = self.__convert_from_base(MassConcentrationUnits.PicogramPerMicroliter)
+        return self.__picograms_per_microliter
 
     
     @property
-    def nano_grams_per_microliter(self) -> float:
+    def nanograms_per_microliter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_microliter != None:
-            return self.__nano_grams_per_microliter
-        self.__nano_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.NanoGramPerMicroliter)
-        return self.__nano_grams_per_microliter
+        if self.__nanograms_per_microliter != None:
+            return self.__nanograms_per_microliter
+        self.__nanograms_per_microliter = self.__convert_from_base(MassConcentrationUnits.NanogramPerMicroliter)
+        return self.__nanograms_per_microliter
 
     
     @property
-    def micro_grams_per_microliter(self) -> float:
+    def micrograms_per_microliter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_microliter != None:
-            return self.__micro_grams_per_microliter
-        self.__micro_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.MicroGramPerMicroliter)
-        return self.__micro_grams_per_microliter
+        if self.__micrograms_per_microliter != None:
+            return self.__micrograms_per_microliter
+        self.__micrograms_per_microliter = self.__convert_from_base(MassConcentrationUnits.MicrogramPerMicroliter)
+        return self.__micrograms_per_microliter
 
     
     @property
-    def milli_grams_per_microliter(self) -> float:
+    def milligrams_per_microliter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_microliter != None:
-            return self.__milli_grams_per_microliter
-        self.__milli_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.MilliGramPerMicroliter)
-        return self.__milli_grams_per_microliter
+        if self.__milligrams_per_microliter != None:
+            return self.__milligrams_per_microliter
+        self.__milligrams_per_microliter = self.__convert_from_base(MassConcentrationUnits.MilligramPerMicroliter)
+        return self.__milligrams_per_microliter
 
     
     @property
-    def centi_grams_per_microliter(self) -> float:
+    def centigrams_per_microliter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_microliter != None:
-            return self.__centi_grams_per_microliter
-        self.__centi_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.CentiGramPerMicroliter)
-        return self.__centi_grams_per_microliter
+        if self.__centigrams_per_microliter != None:
+            return self.__centigrams_per_microliter
+        self.__centigrams_per_microliter = self.__convert_from_base(MassConcentrationUnits.CentigramPerMicroliter)
+        return self.__centigrams_per_microliter
 
     
     @property
-    def deci_grams_per_microliter(self) -> float:
+    def decigrams_per_microliter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_microliter != None:
-            return self.__deci_grams_per_microliter
-        self.__deci_grams_per_microliter = self.__convert_from_base(MassConcentrationUnits.DeciGramPerMicroliter)
-        return self.__deci_grams_per_microliter
+        if self.__decigrams_per_microliter != None:
+            return self.__decigrams_per_microliter
+        self.__decigrams_per_microliter = self.__convert_from_base(MassConcentrationUnits.DecigramPerMicroliter)
+        return self.__decigrams_per_microliter
 
     
     @property
-    def pico_grams_per_milliliter(self) -> float:
+    def picograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_milliliter != None:
-            return self.__pico_grams_per_milliliter
-        self.__pico_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.PicoGramPerMilliliter)
-        return self.__pico_grams_per_milliliter
+        if self.__picograms_per_milliliter != None:
+            return self.__picograms_per_milliliter
+        self.__picograms_per_milliliter = self.__convert_from_base(MassConcentrationUnits.PicogramPerMilliliter)
+        return self.__picograms_per_milliliter
 
     
     @property
-    def nano_grams_per_milliliter(self) -> float:
+    def nanograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_milliliter != None:
-            return self.__nano_grams_per_milliliter
-        self.__nano_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.NanoGramPerMilliliter)
-        return self.__nano_grams_per_milliliter
+        if self.__nanograms_per_milliliter != None:
+            return self.__nanograms_per_milliliter
+        self.__nanograms_per_milliliter = self.__convert_from_base(MassConcentrationUnits.NanogramPerMilliliter)
+        return self.__nanograms_per_milliliter
 
     
     @property
-    def micro_grams_per_milliliter(self) -> float:
+    def micrograms_per_milliliter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_milliliter != None:
-            return self.__micro_grams_per_milliliter
-        self.__micro_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.MicroGramPerMilliliter)
-        return self.__micro_grams_per_milliliter
+        if self.__micrograms_per_milliliter != None:
+            return self.__micrograms_per_milliliter
+        self.__micrograms_per_milliliter = self.__convert_from_base(MassConcentrationUnits.MicrogramPerMilliliter)
+        return self.__micrograms_per_milliliter
 
     
     @property
-    def milli_grams_per_milliliter(self) -> float:
+    def milligrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_milliliter != None:
-            return self.__milli_grams_per_milliliter
-        self.__milli_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.MilliGramPerMilliliter)
-        return self.__milli_grams_per_milliliter
+        if self.__milligrams_per_milliliter != None:
+            return self.__milligrams_per_milliliter
+        self.__milligrams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.MilligramPerMilliliter)
+        return self.__milligrams_per_milliliter
 
     
     @property
-    def centi_grams_per_milliliter(self) -> float:
+    def centigrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_milliliter != None:
-            return self.__centi_grams_per_milliliter
-        self.__centi_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.CentiGramPerMilliliter)
-        return self.__centi_grams_per_milliliter
+        if self.__centigrams_per_milliliter != None:
+            return self.__centigrams_per_milliliter
+        self.__centigrams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.CentigramPerMilliliter)
+        return self.__centigrams_per_milliliter
 
     
     @property
-    def deci_grams_per_milliliter(self) -> float:
+    def decigrams_per_milliliter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_milliliter != None:
-            return self.__deci_grams_per_milliliter
-        self.__deci_grams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.DeciGramPerMilliliter)
-        return self.__deci_grams_per_milliliter
+        if self.__decigrams_per_milliliter != None:
+            return self.__decigrams_per_milliliter
+        self.__decigrams_per_milliliter = self.__convert_from_base(MassConcentrationUnits.DecigramPerMilliliter)
+        return self.__decigrams_per_milliliter
 
     
     @property
-    def pico_grams_per_deciliter(self) -> float:
+    def picograms_per_deciliter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_deciliter != None:
-            return self.__pico_grams_per_deciliter
-        self.__pico_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.PicoGramPerDeciliter)
-        return self.__pico_grams_per_deciliter
+        if self.__picograms_per_deciliter != None:
+            return self.__picograms_per_deciliter
+        self.__picograms_per_deciliter = self.__convert_from_base(MassConcentrationUnits.PicogramPerDeciliter)
+        return self.__picograms_per_deciliter
 
     
     @property
-    def nano_grams_per_deciliter(self) -> float:
+    def nanograms_per_deciliter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_deciliter != None:
-            return self.__nano_grams_per_deciliter
-        self.__nano_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.NanoGramPerDeciliter)
-        return self.__nano_grams_per_deciliter
+        if self.__nanograms_per_deciliter != None:
+            return self.__nanograms_per_deciliter
+        self.__nanograms_per_deciliter = self.__convert_from_base(MassConcentrationUnits.NanogramPerDeciliter)
+        return self.__nanograms_per_deciliter
 
     
     @property
-    def micro_grams_per_deciliter(self) -> float:
+    def micrograms_per_deciliter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_deciliter != None:
-            return self.__micro_grams_per_deciliter
-        self.__micro_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.MicroGramPerDeciliter)
-        return self.__micro_grams_per_deciliter
+        if self.__micrograms_per_deciliter != None:
+            return self.__micrograms_per_deciliter
+        self.__micrograms_per_deciliter = self.__convert_from_base(MassConcentrationUnits.MicrogramPerDeciliter)
+        return self.__micrograms_per_deciliter
 
     
     @property
-    def milli_grams_per_deciliter(self) -> float:
+    def milligrams_per_deciliter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_deciliter != None:
-            return self.__milli_grams_per_deciliter
-        self.__milli_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.MilliGramPerDeciliter)
-        return self.__milli_grams_per_deciliter
+        if self.__milligrams_per_deciliter != None:
+            return self.__milligrams_per_deciliter
+        self.__milligrams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.MilligramPerDeciliter)
+        return self.__milligrams_per_deciliter
 
     
     @property
-    def centi_grams_per_deciliter(self) -> float:
+    def centigrams_per_deciliter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_deciliter != None:
-            return self.__centi_grams_per_deciliter
-        self.__centi_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.CentiGramPerDeciliter)
-        return self.__centi_grams_per_deciliter
+        if self.__centigrams_per_deciliter != None:
+            return self.__centigrams_per_deciliter
+        self.__centigrams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.CentigramPerDeciliter)
+        return self.__centigrams_per_deciliter
 
     
     @property
-    def deci_grams_per_deciliter(self) -> float:
+    def decigrams_per_deciliter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_deciliter != None:
-            return self.__deci_grams_per_deciliter
-        self.__deci_grams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.DeciGramPerDeciliter)
-        return self.__deci_grams_per_deciliter
+        if self.__decigrams_per_deciliter != None:
+            return self.__decigrams_per_deciliter
+        self.__decigrams_per_deciliter = self.__convert_from_base(MassConcentrationUnits.DecigramPerDeciliter)
+        return self.__decigrams_per_deciliter
 
     
     @property
-    def pico_grams_per_liter(self) -> float:
+    def picograms_per_liter(self) -> float:
         """
         
         """
-        if self.__pico_grams_per_liter != None:
-            return self.__pico_grams_per_liter
-        self.__pico_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.PicoGramPerLiter)
-        return self.__pico_grams_per_liter
+        if self.__picograms_per_liter != None:
+            return self.__picograms_per_liter
+        self.__picograms_per_liter = self.__convert_from_base(MassConcentrationUnits.PicogramPerLiter)
+        return self.__picograms_per_liter
 
     
     @property
-    def nano_grams_per_liter(self) -> float:
+    def nanograms_per_liter(self) -> float:
         """
         
         """
-        if self.__nano_grams_per_liter != None:
-            return self.__nano_grams_per_liter
-        self.__nano_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.NanoGramPerLiter)
-        return self.__nano_grams_per_liter
+        if self.__nanograms_per_liter != None:
+            return self.__nanograms_per_liter
+        self.__nanograms_per_liter = self.__convert_from_base(MassConcentrationUnits.NanogramPerLiter)
+        return self.__nanograms_per_liter
 
     
     @property
-    def micro_grams_per_liter(self) -> float:
+    def micrograms_per_liter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_liter != None:
-            return self.__micro_grams_per_liter
-        self.__micro_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.MicroGramPerLiter)
-        return self.__micro_grams_per_liter
+        if self.__micrograms_per_liter != None:
+            return self.__micrograms_per_liter
+        self.__micrograms_per_liter = self.__convert_from_base(MassConcentrationUnits.MicrogramPerLiter)
+        return self.__micrograms_per_liter
 
     
     @property
-    def milli_grams_per_liter(self) -> float:
+    def milligrams_per_liter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_liter != None:
-            return self.__milli_grams_per_liter
-        self.__milli_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.MilliGramPerLiter)
-        return self.__milli_grams_per_liter
+        if self.__milligrams_per_liter != None:
+            return self.__milligrams_per_liter
+        self.__milligrams_per_liter = self.__convert_from_base(MassConcentrationUnits.MilligramPerLiter)
+        return self.__milligrams_per_liter
 
     
     @property
-    def centi_grams_per_liter(self) -> float:
+    def centigrams_per_liter(self) -> float:
         """
         
         """
-        if self.__centi_grams_per_liter != None:
-            return self.__centi_grams_per_liter
-        self.__centi_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.CentiGramPerLiter)
-        return self.__centi_grams_per_liter
+        if self.__centigrams_per_liter != None:
+            return self.__centigrams_per_liter
+        self.__centigrams_per_liter = self.__convert_from_base(MassConcentrationUnits.CentigramPerLiter)
+        return self.__centigrams_per_liter
 
     
     @property
-    def deci_grams_per_liter(self) -> float:
+    def decigrams_per_liter(self) -> float:
         """
         
         """
-        if self.__deci_grams_per_liter != None:
-            return self.__deci_grams_per_liter
-        self.__deci_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.DeciGramPerLiter)
-        return self.__deci_grams_per_liter
+        if self.__decigrams_per_liter != None:
+            return self.__decigrams_per_liter
+        self.__decigrams_per_liter = self.__convert_from_base(MassConcentrationUnits.DecigramPerLiter)
+        return self.__decigrams_per_liter
 
     
     @property
-    def kilo_grams_per_liter(self) -> float:
+    def kilograms_per_liter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_liter != None:
-            return self.__kilo_grams_per_liter
-        self.__kilo_grams_per_liter = self.__convert_from_base(MassConcentrationUnits.KiloGramPerLiter)
-        return self.__kilo_grams_per_liter
+        if self.__kilograms_per_liter != None:
+            return self.__kilograms_per_liter
+        self.__kilograms_per_liter = self.__convert_from_base(MassConcentrationUnits.KilogramPerLiter)
+        return self.__kilograms_per_liter
 
     
     @property
-    def kilo_pounds_per_cubic_inch(self) -> float:
+    def kilopounds_per_cubic_inch(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_per_cubic_inch != None:
-            return self.__kilo_pounds_per_cubic_inch
-        self.__kilo_pounds_per_cubic_inch = self.__convert_from_base(MassConcentrationUnits.KiloPoundPerCubicInch)
-        return self.__kilo_pounds_per_cubic_inch
+        if self.__kilopounds_per_cubic_inch != None:
+            return self.__kilopounds_per_cubic_inch
+        self.__kilopounds_per_cubic_inch = self.__convert_from_base(MassConcentrationUnits.KilopoundPerCubicInch)
+        return self.__kilopounds_per_cubic_inch
 
     
     @property
-    def kilo_pounds_per_cubic_foot(self) -> float:
+    def kilopounds_per_cubic_foot(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_per_cubic_foot != None:
-            return self.__kilo_pounds_per_cubic_foot
-        self.__kilo_pounds_per_cubic_foot = self.__convert_from_base(MassConcentrationUnits.KiloPoundPerCubicFoot)
-        return self.__kilo_pounds_per_cubic_foot
+        if self.__kilopounds_per_cubic_foot != None:
+            return self.__kilopounds_per_cubic_foot
+        self.__kilopounds_per_cubic_foot = self.__convert_from_base(MassConcentrationUnits.KilopoundPerCubicFoot)
+        return self.__kilopounds_per_cubic_foot
 
     
     def to_string(self, unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> string:
@@ -2008,101 +2008,101 @@ class MassConcentration:
         if unit == MassConcentrationUnits.PoundPerImperialGallon:
             return f"""{self.pounds_per_imperial_gallon} ppg (imp.)"""
         
-        if unit == MassConcentrationUnits.KiloGramPerCubicMillimeter:
-            return f"""{self.kilo_grams_per_cubic_millimeter} """
+        if unit == MassConcentrationUnits.KilogramPerCubicMillimeter:
+            return f"""{self.kilograms_per_cubic_millimeter} """
         
-        if unit == MassConcentrationUnits.KiloGramPerCubicCentimeter:
-            return f"""{self.kilo_grams_per_cubic_centimeter} """
+        if unit == MassConcentrationUnits.KilogramPerCubicCentimeter:
+            return f"""{self.kilograms_per_cubic_centimeter} """
         
-        if unit == MassConcentrationUnits.KiloGramPerCubicMeter:
-            return f"""{self.kilo_grams_per_cubic_meter} """
+        if unit == MassConcentrationUnits.KilogramPerCubicMeter:
+            return f"""{self.kilograms_per_cubic_meter} """
         
-        if unit == MassConcentrationUnits.MilliGramPerCubicMeter:
-            return f"""{self.milli_grams_per_cubic_meter} """
+        if unit == MassConcentrationUnits.MilligramPerCubicMeter:
+            return f"""{self.milligrams_per_cubic_meter} """
         
-        if unit == MassConcentrationUnits.MicroGramPerCubicMeter:
-            return f"""{self.micro_grams_per_cubic_meter} """
+        if unit == MassConcentrationUnits.MicrogramPerCubicMeter:
+            return f"""{self.micrograms_per_cubic_meter} """
         
-        if unit == MassConcentrationUnits.PicoGramPerMicroliter:
-            return f"""{self.pico_grams_per_microliter} """
+        if unit == MassConcentrationUnits.PicogramPerMicroliter:
+            return f"""{self.picograms_per_microliter} """
         
-        if unit == MassConcentrationUnits.NanoGramPerMicroliter:
-            return f"""{self.nano_grams_per_microliter} """
+        if unit == MassConcentrationUnits.NanogramPerMicroliter:
+            return f"""{self.nanograms_per_microliter} """
         
-        if unit == MassConcentrationUnits.MicroGramPerMicroliter:
-            return f"""{self.micro_grams_per_microliter} """
+        if unit == MassConcentrationUnits.MicrogramPerMicroliter:
+            return f"""{self.micrograms_per_microliter} """
         
-        if unit == MassConcentrationUnits.MilliGramPerMicroliter:
-            return f"""{self.milli_grams_per_microliter} """
+        if unit == MassConcentrationUnits.MilligramPerMicroliter:
+            return f"""{self.milligrams_per_microliter} """
         
-        if unit == MassConcentrationUnits.CentiGramPerMicroliter:
-            return f"""{self.centi_grams_per_microliter} """
+        if unit == MassConcentrationUnits.CentigramPerMicroliter:
+            return f"""{self.centigrams_per_microliter} """
         
-        if unit == MassConcentrationUnits.DeciGramPerMicroliter:
-            return f"""{self.deci_grams_per_microliter} """
+        if unit == MassConcentrationUnits.DecigramPerMicroliter:
+            return f"""{self.decigrams_per_microliter} """
         
-        if unit == MassConcentrationUnits.PicoGramPerMilliliter:
-            return f"""{self.pico_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.PicogramPerMilliliter:
+            return f"""{self.picograms_per_milliliter} """
         
-        if unit == MassConcentrationUnits.NanoGramPerMilliliter:
-            return f"""{self.nano_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.NanogramPerMilliliter:
+            return f"""{self.nanograms_per_milliliter} """
         
-        if unit == MassConcentrationUnits.MicroGramPerMilliliter:
-            return f"""{self.micro_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.MicrogramPerMilliliter:
+            return f"""{self.micrograms_per_milliliter} """
         
-        if unit == MassConcentrationUnits.MilliGramPerMilliliter:
-            return f"""{self.milli_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.MilligramPerMilliliter:
+            return f"""{self.milligrams_per_milliliter} """
         
-        if unit == MassConcentrationUnits.CentiGramPerMilliliter:
-            return f"""{self.centi_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.CentigramPerMilliliter:
+            return f"""{self.centigrams_per_milliliter} """
         
-        if unit == MassConcentrationUnits.DeciGramPerMilliliter:
-            return f"""{self.deci_grams_per_milliliter} """
+        if unit == MassConcentrationUnits.DecigramPerMilliliter:
+            return f"""{self.decigrams_per_milliliter} """
         
-        if unit == MassConcentrationUnits.PicoGramPerDeciliter:
-            return f"""{self.pico_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.PicogramPerDeciliter:
+            return f"""{self.picograms_per_deciliter} """
         
-        if unit == MassConcentrationUnits.NanoGramPerDeciliter:
-            return f"""{self.nano_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.NanogramPerDeciliter:
+            return f"""{self.nanograms_per_deciliter} """
         
-        if unit == MassConcentrationUnits.MicroGramPerDeciliter:
-            return f"""{self.micro_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.MicrogramPerDeciliter:
+            return f"""{self.micrograms_per_deciliter} """
         
-        if unit == MassConcentrationUnits.MilliGramPerDeciliter:
-            return f"""{self.milli_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.MilligramPerDeciliter:
+            return f"""{self.milligrams_per_deciliter} """
         
-        if unit == MassConcentrationUnits.CentiGramPerDeciliter:
-            return f"""{self.centi_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.CentigramPerDeciliter:
+            return f"""{self.centigrams_per_deciliter} """
         
-        if unit == MassConcentrationUnits.DeciGramPerDeciliter:
-            return f"""{self.deci_grams_per_deciliter} """
+        if unit == MassConcentrationUnits.DecigramPerDeciliter:
+            return f"""{self.decigrams_per_deciliter} """
         
-        if unit == MassConcentrationUnits.PicoGramPerLiter:
-            return f"""{self.pico_grams_per_liter} """
+        if unit == MassConcentrationUnits.PicogramPerLiter:
+            return f"""{self.picograms_per_liter} """
         
-        if unit == MassConcentrationUnits.NanoGramPerLiter:
-            return f"""{self.nano_grams_per_liter} """
+        if unit == MassConcentrationUnits.NanogramPerLiter:
+            return f"""{self.nanograms_per_liter} """
         
-        if unit == MassConcentrationUnits.MicroGramPerLiter:
-            return f"""{self.micro_grams_per_liter} """
+        if unit == MassConcentrationUnits.MicrogramPerLiter:
+            return f"""{self.micrograms_per_liter} """
         
-        if unit == MassConcentrationUnits.MilliGramPerLiter:
-            return f"""{self.milli_grams_per_liter} """
+        if unit == MassConcentrationUnits.MilligramPerLiter:
+            return f"""{self.milligrams_per_liter} """
         
-        if unit == MassConcentrationUnits.CentiGramPerLiter:
-            return f"""{self.centi_grams_per_liter} """
+        if unit == MassConcentrationUnits.CentigramPerLiter:
+            return f"""{self.centigrams_per_liter} """
         
-        if unit == MassConcentrationUnits.DeciGramPerLiter:
-            return f"""{self.deci_grams_per_liter} """
+        if unit == MassConcentrationUnits.DecigramPerLiter:
+            return f"""{self.decigrams_per_liter} """
         
-        if unit == MassConcentrationUnits.KiloGramPerLiter:
-            return f"""{self.kilo_grams_per_liter} """
+        if unit == MassConcentrationUnits.KilogramPerLiter:
+            return f"""{self.kilograms_per_liter} """
         
-        if unit == MassConcentrationUnits.KiloPoundPerCubicInch:
-            return f"""{self.kilo_pounds_per_cubic_inch} """
+        if unit == MassConcentrationUnits.KilopoundPerCubicInch:
+            return f"""{self.kilopounds_per_cubic_inch} """
         
-        if unit == MassConcentrationUnits.KiloPoundPerCubicFoot:
-            return f"""{self.kilo_pounds_per_cubic_foot} """
+        if unit == MassConcentrationUnits.KilopoundPerCubicFoot:
+            return f"""{self.kilopounds_per_cubic_foot} """
         
         return f'{self.__value}'
 
@@ -2165,100 +2165,100 @@ class MassConcentration:
         if unit_abbreviation == MassConcentrationUnits.PoundPerImperialGallon:
             return """ppg (imp.)"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloGramPerCubicMillimeter:
+        if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicMillimeter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloGramPerCubicCentimeter:
+        if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicCentimeter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloGramPerCubicMeter:
+        if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MilliGramPerCubicMeter:
+        if unit_abbreviation == MassConcentrationUnits.MilligramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MicroGramPerCubicMeter:
+        if unit_abbreviation == MassConcentrationUnits.MicrogramPerCubicMeter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.PicoGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.PicogramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.NanoGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.NanogramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MicroGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.MicrogramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MilliGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.MilligramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.CentiGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.CentigramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.DeciGramPerMicroliter:
+        if unit_abbreviation == MassConcentrationUnits.DecigramPerMicroliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.PicoGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.PicogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.NanoGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.NanogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MicroGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.MicrogramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MilliGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.MilligramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.CentiGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.CentigramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.DeciGramPerMilliliter:
+        if unit_abbreviation == MassConcentrationUnits.DecigramPerMilliliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.PicoGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.PicogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.NanoGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.NanogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MicroGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.MicrogramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MilliGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.MilligramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.CentiGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.CentigramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.DeciGramPerDeciliter:
+        if unit_abbreviation == MassConcentrationUnits.DecigramPerDeciliter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.PicoGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.PicogramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.NanoGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.NanogramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MicroGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.MicrogramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.MilliGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.MilligramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.CentiGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.CentigramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.DeciGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.DecigramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloGramPerLiter:
+        if unit_abbreviation == MassConcentrationUnits.KilogramPerLiter:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloPoundPerCubicInch:
+        if unit_abbreviation == MassConcentrationUnits.KilopoundPerCubicInch:
             return """"""
         
-        if unit_abbreviation == MassConcentrationUnits.KiloPoundPerCubicFoot:
+        if unit_abbreviation == MassConcentrationUnits.KilopoundPerCubicFoot:
             return """"""
         
 

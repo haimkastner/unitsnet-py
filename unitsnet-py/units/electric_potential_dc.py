@@ -13,22 +13,22 @@ class ElectricPotentialDcUnits(Enum):
             
         """
         
-        MicroVoltDc = 'micro_volt_dc'
+        MicrovoltDc = 'microvolt_dc'
         """
             
         """
         
-        MilliVoltDc = 'milli_volt_dc'
+        MillivoltDc = 'millivolt_dc'
         """
             
         """
         
-        KiloVoltDc = 'kilo_volt_dc'
+        KilovoltDc = 'kilovolt_dc'
         """
             
         """
         
-        MegaVoltDc = 'mega_volt_dc'
+        MegavoltDc = 'megavolt_dc'
         """
             
         """
@@ -49,13 +49,13 @@ class ElectricPotentialDc:
         
         self.__volts_dc = None
         
-        self.__micro_volts_dc = None
+        self.__microvolts_dc = None
         
-        self.__milli_volts_dc = None
+        self.__millivolts_dc = None
         
-        self.__kilo_volts_dc = None
+        self.__kilovolts_dc = None
         
-        self.__mega_volts_dc = None
+        self.__megavolts_dc = None
         
 
     def __convert_from_base(self, from_unit: ElectricPotentialDcUnits) -> float:
@@ -64,16 +64,16 @@ class ElectricPotentialDc:
         if from_unit == ElectricPotentialDcUnits.VoltDc:
             return (value)
         
-        if from_unit == ElectricPotentialDcUnits.MicroVoltDc:
+        if from_unit == ElectricPotentialDcUnits.MicrovoltDc:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricPotentialDcUnits.MilliVoltDc:
+        if from_unit == ElectricPotentialDcUnits.MillivoltDc:
             return ((value) / 0.001)
         
-        if from_unit == ElectricPotentialDcUnits.KiloVoltDc:
+        if from_unit == ElectricPotentialDcUnits.KilovoltDc:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricPotentialDcUnits.MegaVoltDc:
+        if from_unit == ElectricPotentialDcUnits.MegavoltDc:
             return ((value) / 1000000.0)
         
         return None
@@ -84,16 +84,16 @@ class ElectricPotentialDc:
         if to_unit == ElectricPotentialDcUnits.VoltDc:
             return (value)
         
-        if to_unit == ElectricPotentialDcUnits.MicroVoltDc:
+        if to_unit == ElectricPotentialDcUnits.MicrovoltDc:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricPotentialDcUnits.MilliVoltDc:
+        if to_unit == ElectricPotentialDcUnits.MillivoltDc:
             return ((value) * 0.001)
         
-        if to_unit == ElectricPotentialDcUnits.KiloVoltDc:
+        if to_unit == ElectricPotentialDcUnits.KilovoltDc:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricPotentialDcUnits.MegaVoltDc:
+        if to_unit == ElectricPotentialDcUnits.MegavoltDc:
             return ((value) * 1000000.0)
         
         return None
@@ -120,63 +120,63 @@ class ElectricPotentialDc:
 
     
     @staticmethod
-    def from_micro_volts_dc(micro_volts_dc: float):
+    def from_microvolts_dc(microvolts_dc: float):
         """
-        Create a new instance of ElectricPotentialDc from a value in micro_volts_dc.
+        Create a new instance of ElectricPotentialDc from a value in microvolts_dc.
 
         
 
-        :param meters: The ElectricPotentialDc value in micro_volts_dc.
-        :type micro_volts_dc: float
+        :param meters: The ElectricPotentialDc value in microvolts_dc.
+        :type microvolts_dc: float
         :return: A new instance of ElectricPotentialDc.
         :rtype: ElectricPotentialDc
         """
-        return ElectricPotentialDc(micro_volts_dc, ElectricPotentialDcUnits.MicroVoltDc)
+        return ElectricPotentialDc(microvolts_dc, ElectricPotentialDcUnits.MicrovoltDc)
 
     
     @staticmethod
-    def from_milli_volts_dc(milli_volts_dc: float):
+    def from_millivolts_dc(millivolts_dc: float):
         """
-        Create a new instance of ElectricPotentialDc from a value in milli_volts_dc.
+        Create a new instance of ElectricPotentialDc from a value in millivolts_dc.
 
         
 
-        :param meters: The ElectricPotentialDc value in milli_volts_dc.
-        :type milli_volts_dc: float
+        :param meters: The ElectricPotentialDc value in millivolts_dc.
+        :type millivolts_dc: float
         :return: A new instance of ElectricPotentialDc.
         :rtype: ElectricPotentialDc
         """
-        return ElectricPotentialDc(milli_volts_dc, ElectricPotentialDcUnits.MilliVoltDc)
+        return ElectricPotentialDc(millivolts_dc, ElectricPotentialDcUnits.MillivoltDc)
 
     
     @staticmethod
-    def from_kilo_volts_dc(kilo_volts_dc: float):
+    def from_kilovolts_dc(kilovolts_dc: float):
         """
-        Create a new instance of ElectricPotentialDc from a value in kilo_volts_dc.
+        Create a new instance of ElectricPotentialDc from a value in kilovolts_dc.
 
         
 
-        :param meters: The ElectricPotentialDc value in kilo_volts_dc.
-        :type kilo_volts_dc: float
+        :param meters: The ElectricPotentialDc value in kilovolts_dc.
+        :type kilovolts_dc: float
         :return: A new instance of ElectricPotentialDc.
         :rtype: ElectricPotentialDc
         """
-        return ElectricPotentialDc(kilo_volts_dc, ElectricPotentialDcUnits.KiloVoltDc)
+        return ElectricPotentialDc(kilovolts_dc, ElectricPotentialDcUnits.KilovoltDc)
 
     
     @staticmethod
-    def from_mega_volts_dc(mega_volts_dc: float):
+    def from_megavolts_dc(megavolts_dc: float):
         """
-        Create a new instance of ElectricPotentialDc from a value in mega_volts_dc.
+        Create a new instance of ElectricPotentialDc from a value in megavolts_dc.
 
         
 
-        :param meters: The ElectricPotentialDc value in mega_volts_dc.
-        :type mega_volts_dc: float
+        :param meters: The ElectricPotentialDc value in megavolts_dc.
+        :type megavolts_dc: float
         :return: A new instance of ElectricPotentialDc.
         :rtype: ElectricPotentialDc
         """
-        return ElectricPotentialDc(mega_volts_dc, ElectricPotentialDcUnits.MegaVoltDc)
+        return ElectricPotentialDc(megavolts_dc, ElectricPotentialDcUnits.MegavoltDc)
 
     
     @property
@@ -191,47 +191,47 @@ class ElectricPotentialDc:
 
     
     @property
-    def micro_volts_dc(self) -> float:
+    def microvolts_dc(self) -> float:
         """
         
         """
-        if self.__micro_volts_dc != None:
-            return self.__micro_volts_dc
-        self.__micro_volts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MicroVoltDc)
-        return self.__micro_volts_dc
+        if self.__microvolts_dc != None:
+            return self.__microvolts_dc
+        self.__microvolts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MicrovoltDc)
+        return self.__microvolts_dc
 
     
     @property
-    def milli_volts_dc(self) -> float:
+    def millivolts_dc(self) -> float:
         """
         
         """
-        if self.__milli_volts_dc != None:
-            return self.__milli_volts_dc
-        self.__milli_volts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MilliVoltDc)
-        return self.__milli_volts_dc
+        if self.__millivolts_dc != None:
+            return self.__millivolts_dc
+        self.__millivolts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MillivoltDc)
+        return self.__millivolts_dc
 
     
     @property
-    def kilo_volts_dc(self) -> float:
+    def kilovolts_dc(self) -> float:
         """
         
         """
-        if self.__kilo_volts_dc != None:
-            return self.__kilo_volts_dc
-        self.__kilo_volts_dc = self.__convert_from_base(ElectricPotentialDcUnits.KiloVoltDc)
-        return self.__kilo_volts_dc
+        if self.__kilovolts_dc != None:
+            return self.__kilovolts_dc
+        self.__kilovolts_dc = self.__convert_from_base(ElectricPotentialDcUnits.KilovoltDc)
+        return self.__kilovolts_dc
 
     
     @property
-    def mega_volts_dc(self) -> float:
+    def megavolts_dc(self) -> float:
         """
         
         """
-        if self.__mega_volts_dc != None:
-            return self.__mega_volts_dc
-        self.__mega_volts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MegaVoltDc)
-        return self.__mega_volts_dc
+        if self.__megavolts_dc != None:
+            return self.__megavolts_dc
+        self.__megavolts_dc = self.__convert_from_base(ElectricPotentialDcUnits.MegavoltDc)
+        return self.__megavolts_dc
 
     
     def to_string(self, unit: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> string:
@@ -244,17 +244,17 @@ class ElectricPotentialDc:
         if unit == ElectricPotentialDcUnits.VoltDc:
             return f"""{self.volts_dc} Vdc"""
         
-        if unit == ElectricPotentialDcUnits.MicroVoltDc:
-            return f"""{self.micro_volts_dc} """
+        if unit == ElectricPotentialDcUnits.MicrovoltDc:
+            return f"""{self.microvolts_dc} """
         
-        if unit == ElectricPotentialDcUnits.MilliVoltDc:
-            return f"""{self.milli_volts_dc} """
+        if unit == ElectricPotentialDcUnits.MillivoltDc:
+            return f"""{self.millivolts_dc} """
         
-        if unit == ElectricPotentialDcUnits.KiloVoltDc:
-            return f"""{self.kilo_volts_dc} """
+        if unit == ElectricPotentialDcUnits.KilovoltDc:
+            return f"""{self.kilovolts_dc} """
         
-        if unit == ElectricPotentialDcUnits.MegaVoltDc:
-            return f"""{self.mega_volts_dc} """
+        if unit == ElectricPotentialDcUnits.MegavoltDc:
+            return f"""{self.megavolts_dc} """
         
         return f'{self.__value}'
 
@@ -269,16 +269,16 @@ class ElectricPotentialDc:
         if unit_abbreviation == ElectricPotentialDcUnits.VoltDc:
             return """Vdc"""
         
-        if unit_abbreviation == ElectricPotentialDcUnits.MicroVoltDc:
+        if unit_abbreviation == ElectricPotentialDcUnits.MicrovoltDc:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialDcUnits.MilliVoltDc:
+        if unit_abbreviation == ElectricPotentialDcUnits.MillivoltDc:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialDcUnits.KiloVoltDc:
+        if unit_abbreviation == ElectricPotentialDcUnits.KilovoltDc:
             return """"""
         
-        if unit_abbreviation == ElectricPotentialDcUnits.MegaVoltDc:
+        if unit_abbreviation == ElectricPotentialDcUnits.MegavoltDc:
             return """"""
         
 

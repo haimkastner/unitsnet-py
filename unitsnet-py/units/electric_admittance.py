@@ -13,17 +13,17 @@ class ElectricAdmittanceUnits(Enum):
             
         """
         
-        NanoSiemens = 'nano_siemens'
+        Nanosiemens = 'nanosiemens'
         """
             
         """
         
-        MicroSiemens = 'micro_siemens'
+        Microsiemens = 'microsiemens'
         """
             
         """
         
-        MilliSiemens = 'milli_siemens'
+        Millisiemens = 'millisiemens'
         """
             
         """
@@ -44,11 +44,11 @@ class ElectricAdmittance:
         
         self.__siemens = None
         
-        self.__nano_siemens = None
+        self.__nanosiemens = None
         
-        self.__micro_siemens = None
+        self.__microsiemens = None
         
-        self.__milli_siemens = None
+        self.__millisiemens = None
         
 
     def __convert_from_base(self, from_unit: ElectricAdmittanceUnits) -> float:
@@ -57,13 +57,13 @@ class ElectricAdmittance:
         if from_unit == ElectricAdmittanceUnits.Siemens:
             return (value)
         
-        if from_unit == ElectricAdmittanceUnits.NanoSiemens:
+        if from_unit == ElectricAdmittanceUnits.Nanosiemens:
             return ((value) / 1e-09)
         
-        if from_unit == ElectricAdmittanceUnits.MicroSiemens:
+        if from_unit == ElectricAdmittanceUnits.Microsiemens:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricAdmittanceUnits.MilliSiemens:
+        if from_unit == ElectricAdmittanceUnits.Millisiemens:
             return ((value) / 0.001)
         
         return None
@@ -74,13 +74,13 @@ class ElectricAdmittance:
         if to_unit == ElectricAdmittanceUnits.Siemens:
             return (value)
         
-        if to_unit == ElectricAdmittanceUnits.NanoSiemens:
+        if to_unit == ElectricAdmittanceUnits.Nanosiemens:
             return ((value) * 1e-09)
         
-        if to_unit == ElectricAdmittanceUnits.MicroSiemens:
+        if to_unit == ElectricAdmittanceUnits.Microsiemens:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricAdmittanceUnits.MilliSiemens:
+        if to_unit == ElectricAdmittanceUnits.Millisiemens:
             return ((value) * 0.001)
         
         return None
@@ -107,48 +107,48 @@ class ElectricAdmittance:
 
     
     @staticmethod
-    def from_nano_siemens(nano_siemens: float):
+    def from_nanosiemens(nanosiemens: float):
         """
-        Create a new instance of ElectricAdmittance from a value in nano_siemens.
+        Create a new instance of ElectricAdmittance from a value in nanosiemens.
 
         
 
-        :param meters: The ElectricAdmittance value in nano_siemens.
-        :type nano_siemens: float
+        :param meters: The ElectricAdmittance value in nanosiemens.
+        :type nanosiemens: float
         :return: A new instance of ElectricAdmittance.
         :rtype: ElectricAdmittance
         """
-        return ElectricAdmittance(nano_siemens, ElectricAdmittanceUnits.NanoSiemens)
+        return ElectricAdmittance(nanosiemens, ElectricAdmittanceUnits.Nanosiemens)
 
     
     @staticmethod
-    def from_micro_siemens(micro_siemens: float):
+    def from_microsiemens(microsiemens: float):
         """
-        Create a new instance of ElectricAdmittance from a value in micro_siemens.
+        Create a new instance of ElectricAdmittance from a value in microsiemens.
 
         
 
-        :param meters: The ElectricAdmittance value in micro_siemens.
-        :type micro_siemens: float
+        :param meters: The ElectricAdmittance value in microsiemens.
+        :type microsiemens: float
         :return: A new instance of ElectricAdmittance.
         :rtype: ElectricAdmittance
         """
-        return ElectricAdmittance(micro_siemens, ElectricAdmittanceUnits.MicroSiemens)
+        return ElectricAdmittance(microsiemens, ElectricAdmittanceUnits.Microsiemens)
 
     
     @staticmethod
-    def from_milli_siemens(milli_siemens: float):
+    def from_millisiemens(millisiemens: float):
         """
-        Create a new instance of ElectricAdmittance from a value in milli_siemens.
+        Create a new instance of ElectricAdmittance from a value in millisiemens.
 
         
 
-        :param meters: The ElectricAdmittance value in milli_siemens.
-        :type milli_siemens: float
+        :param meters: The ElectricAdmittance value in millisiemens.
+        :type millisiemens: float
         :return: A new instance of ElectricAdmittance.
         :rtype: ElectricAdmittance
         """
-        return ElectricAdmittance(milli_siemens, ElectricAdmittanceUnits.MilliSiemens)
+        return ElectricAdmittance(millisiemens, ElectricAdmittanceUnits.Millisiemens)
 
     
     @property
@@ -163,36 +163,36 @@ class ElectricAdmittance:
 
     
     @property
-    def nano_siemens(self) -> float:
+    def nanosiemens(self) -> float:
         """
         
         """
-        if self.__nano_siemens != None:
-            return self.__nano_siemens
-        self.__nano_siemens = self.__convert_from_base(ElectricAdmittanceUnits.NanoSiemens)
-        return self.__nano_siemens
+        if self.__nanosiemens != None:
+            return self.__nanosiemens
+        self.__nanosiemens = self.__convert_from_base(ElectricAdmittanceUnits.Nanosiemens)
+        return self.__nanosiemens
 
     
     @property
-    def micro_siemens(self) -> float:
+    def microsiemens(self) -> float:
         """
         
         """
-        if self.__micro_siemens != None:
-            return self.__micro_siemens
-        self.__micro_siemens = self.__convert_from_base(ElectricAdmittanceUnits.MicroSiemens)
-        return self.__micro_siemens
+        if self.__microsiemens != None:
+            return self.__microsiemens
+        self.__microsiemens = self.__convert_from_base(ElectricAdmittanceUnits.Microsiemens)
+        return self.__microsiemens
 
     
     @property
-    def milli_siemens(self) -> float:
+    def millisiemens(self) -> float:
         """
         
         """
-        if self.__milli_siemens != None:
-            return self.__milli_siemens
-        self.__milli_siemens = self.__convert_from_base(ElectricAdmittanceUnits.MilliSiemens)
-        return self.__milli_siemens
+        if self.__millisiemens != None:
+            return self.__millisiemens
+        self.__millisiemens = self.__convert_from_base(ElectricAdmittanceUnits.Millisiemens)
+        return self.__millisiemens
 
     
     def to_string(self, unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> string:
@@ -205,14 +205,14 @@ class ElectricAdmittance:
         if unit == ElectricAdmittanceUnits.Siemens:
             return f"""{self.siemens} S"""
         
-        if unit == ElectricAdmittanceUnits.NanoSiemens:
-            return f"""{self.nano_siemens} """
+        if unit == ElectricAdmittanceUnits.Nanosiemens:
+            return f"""{self.nanosiemens} """
         
-        if unit == ElectricAdmittanceUnits.MicroSiemens:
-            return f"""{self.micro_siemens} """
+        if unit == ElectricAdmittanceUnits.Microsiemens:
+            return f"""{self.microsiemens} """
         
-        if unit == ElectricAdmittanceUnits.MilliSiemens:
-            return f"""{self.milli_siemens} """
+        if unit == ElectricAdmittanceUnits.Millisiemens:
+            return f"""{self.millisiemens} """
         
         return f'{self.__value}'
 
@@ -227,13 +227,13 @@ class ElectricAdmittance:
         if unit_abbreviation == ElectricAdmittanceUnits.Siemens:
             return """S"""
         
-        if unit_abbreviation == ElectricAdmittanceUnits.NanoSiemens:
+        if unit_abbreviation == ElectricAdmittanceUnits.Nanosiemens:
             return """"""
         
-        if unit_abbreviation == ElectricAdmittanceUnits.MicroSiemens:
+        if unit_abbreviation == ElectricAdmittanceUnits.Microsiemens:
             return """"""
         
-        if unit_abbreviation == ElectricAdmittanceUnits.MilliSiemens:
+        if unit_abbreviation == ElectricAdmittanceUnits.Millisiemens:
             return """"""
         
 

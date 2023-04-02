@@ -23,7 +23,7 @@ class SpecificFuelConsumptionUnits(Enum):
             
         """
         
-        KiloGramPerKiloNewtonSecond = 'kilo_gram_per_kilo_newton_second'
+        KilogramPerKiloNewtonSecond = 'kilogram_per_kilo_newton_second'
         """
             
         """
@@ -48,7 +48,7 @@ class SpecificFuelConsumption:
         
         self.__grams_per_kilo_newton_second = None
         
-        self.__kilo_grams_per_kilo_newton_second = None
+        self.__kilograms_per_kilo_newton_second = None
         
 
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
@@ -63,7 +63,7 @@ class SpecificFuelConsumption:
         if from_unit == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
             return (value)
         
-        if from_unit == SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond:
+        if from_unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
             return ((value) / 1000.0)
         
         return None
@@ -80,7 +80,7 @@ class SpecificFuelConsumption:
         if to_unit == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
             return (value)
         
-        if to_unit == SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond:
+        if to_unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
             return ((value) * 1000.0)
         
         return None
@@ -137,18 +137,18 @@ class SpecificFuelConsumption:
 
     
     @staticmethod
-    def from_kilo_grams_per_kilo_newton_second(kilo_grams_per_kilo_newton_second: float):
+    def from_kilograms_per_kilo_newton_second(kilograms_per_kilo_newton_second: float):
         """
-        Create a new instance of SpecificFuelConsumption from a value in kilo_grams_per_kilo_newton_second.
+        Create a new instance of SpecificFuelConsumption from a value in kilograms_per_kilo_newton_second.
 
         
 
-        :param meters: The SpecificFuelConsumption value in kilo_grams_per_kilo_newton_second.
-        :type kilo_grams_per_kilo_newton_second: float
+        :param meters: The SpecificFuelConsumption value in kilograms_per_kilo_newton_second.
+        :type kilograms_per_kilo_newton_second: float
         :return: A new instance of SpecificFuelConsumption.
         :rtype: SpecificFuelConsumption
         """
-        return SpecificFuelConsumption(kilo_grams_per_kilo_newton_second, SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond)
+        return SpecificFuelConsumption(kilograms_per_kilo_newton_second, SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond)
 
     
     @property
@@ -185,14 +185,14 @@ class SpecificFuelConsumption:
 
     
     @property
-    def kilo_grams_per_kilo_newton_second(self) -> float:
+    def kilograms_per_kilo_newton_second(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_kilo_newton_second != None:
-            return self.__kilo_grams_per_kilo_newton_second
-        self.__kilo_grams_per_kilo_newton_second = self.__convert_from_base(SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond)
-        return self.__kilo_grams_per_kilo_newton_second
+        if self.__kilograms_per_kilo_newton_second != None:
+            return self.__kilograms_per_kilo_newton_second
+        self.__kilograms_per_kilo_newton_second = self.__convert_from_base(SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond)
+        return self.__kilograms_per_kilo_newton_second
 
     
     def to_string(self, unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> string:
@@ -211,8 +211,8 @@ class SpecificFuelConsumption:
         if unit == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
             return f"""{self.grams_per_kilo_newton_second} g/(kN�s)"""
         
-        if unit == SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond:
-            return f"""{self.kilo_grams_per_kilo_newton_second} """
+        if unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
+            return f"""{self.kilograms_per_kilo_newton_second} """
         
         return f'{self.__value}'
 
@@ -233,7 +233,7 @@ class SpecificFuelConsumption:
         if unit_abbreviation == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
             return """g/(kN�s)"""
         
-        if unit_abbreviation == SpecificFuelConsumptionUnits.KiloGramPerKiloNewtonSecond:
+        if unit_abbreviation == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
             return """"""
         
 

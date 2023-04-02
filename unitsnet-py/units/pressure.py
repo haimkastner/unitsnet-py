@@ -143,112 +143,112 @@ class PressureUnits(Enum):
             
         """
         
-        MicroPascal = 'micro_pascal'
+        Micropascal = 'micropascal'
         """
             
         """
         
-        MilliPascal = 'milli_pascal'
+        Millipascal = 'millipascal'
         """
             
         """
         
-        DecaPascal = 'deca_pascal'
+        Decapascal = 'decapascal'
         """
             
         """
         
-        HectoPascal = 'hecto_pascal'
+        Hectopascal = 'hectopascal'
         """
             
         """
         
-        KiloPascal = 'kilo_pascal'
+        Kilopascal = 'kilopascal'
         """
             
         """
         
-        MegaPascal = 'mega_pascal'
+        Megapascal = 'megapascal'
         """
             
         """
         
-        GigaPascal = 'giga_pascal'
+        Gigapascal = 'gigapascal'
         """
             
         """
         
-        MicroBar = 'micro_bar'
+        Microbar = 'microbar'
         """
             
         """
         
-        MilliBar = 'milli_bar'
+        Millibar = 'millibar'
         """
             
         """
         
-        CentiBar = 'centi_bar'
+        Centibar = 'centibar'
         """
             
         """
         
-        DeciBar = 'deci_bar'
+        Decibar = 'decibar'
         """
             
         """
         
-        KiloBar = 'kilo_bar'
+        Kilobar = 'kilobar'
         """
             
         """
         
-        MegaBar = 'mega_bar'
+        Megabar = 'megabar'
         """
             
         """
         
-        KiloNewtonPerSquareMeter = 'kilo_newton_per_square_meter'
+        KilonewtonPerSquareMeter = 'kilonewton_per_square_meter'
         """
             
         """
         
-        MegaNewtonPerSquareMeter = 'mega_newton_per_square_meter'
+        MeganewtonPerSquareMeter = 'meganewton_per_square_meter'
         """
             
         """
         
-        KiloNewtonPerSquareCentimeter = 'kilo_newton_per_square_centimeter'
+        KilonewtonPerSquareCentimeter = 'kilonewton_per_square_centimeter'
         """
             
         """
         
-        KiloNewtonPerSquareMillimeter = 'kilo_newton_per_square_millimeter'
+        KilonewtonPerSquareMillimeter = 'kilonewton_per_square_millimeter'
         """
             
         """
         
-        KiloPoundForcePerSquareInch = 'kilo_pound_force_per_square_inch'
+        KilopoundForcePerSquareInch = 'kilopound_force_per_square_inch'
         """
             
         """
         
-        KiloPoundForcePerSquareMil = 'kilo_pound_force_per_square_mil'
+        KilopoundForcePerSquareMil = 'kilopound_force_per_square_mil'
         """
             
         """
         
-        KiloPoundForcePerSquareFoot = 'kilo_pound_force_per_square_foot'
+        KilopoundForcePerSquareFoot = 'kilopound_force_per_square_foot'
         """
             
         """
         
-        MilliMeterOfWaterColumn = 'milli_meter_of_water_column'
+        MillimeterOfWaterColumn = 'millimeter_of_water_column'
         """
             
         """
         
-        CentiMeterOfWaterColumn = 'centi_meter_of_water_column'
+        CentimeterOfWaterColumn = 'centimeter_of_water_column'
         """
             
         """
@@ -321,49 +321,49 @@ class Pressure:
         
         self.__feet_of_elevation = None
         
-        self.__micro_pascals = None
+        self.__micropascals = None
         
-        self.__milli_pascals = None
+        self.__millipascals = None
         
-        self.__deca_pascals = None
+        self.__decapascals = None
         
-        self.__hecto_pascals = None
+        self.__hectopascals = None
         
-        self.__kilo_pascals = None
+        self.__kilopascals = None
         
-        self.__mega_pascals = None
+        self.__megapascals = None
         
-        self.__giga_pascals = None
+        self.__gigapascals = None
         
-        self.__micro_bars = None
+        self.__microbars = None
         
-        self.__milli_bars = None
+        self.__millibars = None
         
-        self.__centi_bars = None
+        self.__centibars = None
         
-        self.__deci_bars = None
+        self.__decibars = None
         
-        self.__kilo_bars = None
+        self.__kilobars = None
         
-        self.__mega_bars = None
+        self.__megabars = None
         
-        self.__kilo_newtons_per_square_meter = None
+        self.__kilonewtons_per_square_meter = None
         
-        self.__mega_newtons_per_square_meter = None
+        self.__meganewtons_per_square_meter = None
         
-        self.__kilo_newtons_per_square_centimeter = None
+        self.__kilonewtons_per_square_centimeter = None
         
-        self.__kilo_newtons_per_square_millimeter = None
+        self.__kilonewtons_per_square_millimeter = None
         
-        self.__kilo_pounds_force_per_square_inch = None
+        self.__kilopounds_force_per_square_inch = None
         
-        self.__kilo_pounds_force_per_square_mil = None
+        self.__kilopounds_force_per_square_mil = None
         
-        self.__kilo_pounds_force_per_square_foot = None
+        self.__kilopounds_force_per_square_foot = None
         
-        self.__milli_meters_of_water_column = None
+        self.__millimeters_of_water_column = None
         
-        self.__centi_meters_of_water_column = None
+        self.__centimeters_of_water_column = None
         
 
     def __convert_from_base(self, from_unit: PressureUnits) -> float:
@@ -450,70 +450,70 @@ class Pressure:
         if from_unit == PressureUnits.FootOfElevation:
             return ((1.0 - math.pow(value / 101325.0, 0.190284)) * 145366.45)
         
-        if from_unit == PressureUnits.MicroPascal:
+        if from_unit == PressureUnits.Micropascal:
             return ((value) / 1e-06)
         
-        if from_unit == PressureUnits.MilliPascal:
+        if from_unit == PressureUnits.Millipascal:
             return ((value) / 0.001)
         
-        if from_unit == PressureUnits.DecaPascal:
+        if from_unit == PressureUnits.Decapascal:
             return ((value) / 10.0)
         
-        if from_unit == PressureUnits.HectoPascal:
+        if from_unit == PressureUnits.Hectopascal:
             return ((value) / 100.0)
         
-        if from_unit == PressureUnits.KiloPascal:
+        if from_unit == PressureUnits.Kilopascal:
             return ((value) / 1000.0)
         
-        if from_unit == PressureUnits.MegaPascal:
+        if from_unit == PressureUnits.Megapascal:
             return ((value) / 1000000.0)
         
-        if from_unit == PressureUnits.GigaPascal:
+        if from_unit == PressureUnits.Gigapascal:
             return ((value) / 1000000000.0)
         
-        if from_unit == PressureUnits.MicroBar:
+        if from_unit == PressureUnits.Microbar:
             return ((value / 1e5) / 1e-06)
         
-        if from_unit == PressureUnits.MilliBar:
+        if from_unit == PressureUnits.Millibar:
             return ((value / 1e5) / 0.001)
         
-        if from_unit == PressureUnits.CentiBar:
+        if from_unit == PressureUnits.Centibar:
             return ((value / 1e5) / 0.01)
         
-        if from_unit == PressureUnits.DeciBar:
+        if from_unit == PressureUnits.Decibar:
             return ((value / 1e5) / 0.1)
         
-        if from_unit == PressureUnits.KiloBar:
+        if from_unit == PressureUnits.Kilobar:
             return ((value / 1e5) / 1000.0)
         
-        if from_unit == PressureUnits.MegaBar:
+        if from_unit == PressureUnits.Megabar:
             return ((value / 1e5) / 1000000.0)
         
-        if from_unit == PressureUnits.KiloNewtonPerSquareMeter:
+        if from_unit == PressureUnits.KilonewtonPerSquareMeter:
             return ((value) / 1000.0)
         
-        if from_unit == PressureUnits.MegaNewtonPerSquareMeter:
+        if from_unit == PressureUnits.MeganewtonPerSquareMeter:
             return ((value) / 1000000.0)
         
-        if from_unit == PressureUnits.KiloNewtonPerSquareCentimeter:
+        if from_unit == PressureUnits.KilonewtonPerSquareCentimeter:
             return ((value / 1e4) / 1000.0)
         
-        if from_unit == PressureUnits.KiloNewtonPerSquareMillimeter:
+        if from_unit == PressureUnits.KilonewtonPerSquareMillimeter:
             return ((value / 1e6) / 1000.0)
         
-        if from_unit == PressureUnits.KiloPoundForcePerSquareInch:
+        if from_unit == PressureUnits.KilopoundForcePerSquareInch:
             return ((value / 6.894757293168361e3) / 1000.0)
         
-        if from_unit == PressureUnits.KiloPoundForcePerSquareMil:
+        if from_unit == PressureUnits.KilopoundForcePerSquareMil:
             return ((value / 6.894757293168361e9) / 1000.0)
         
-        if from_unit == PressureUnits.KiloPoundForcePerSquareFoot:
+        if from_unit == PressureUnits.KilopoundForcePerSquareFoot:
             return ((value / 4.788025898033584e1) / 1000.0)
         
-        if from_unit == PressureUnits.MilliMeterOfWaterColumn:
+        if from_unit == PressureUnits.MillimeterOfWaterColumn:
             return ((value / 9.806650000000272e3) / 0.001)
         
-        if from_unit == PressureUnits.CentiMeterOfWaterColumn:
+        if from_unit == PressureUnits.CentimeterOfWaterColumn:
             return ((value / 9.806650000000272e3) / 0.01)
         
         return None
@@ -602,70 +602,70 @@ class Pressure:
         if to_unit == PressureUnits.FootOfElevation:
             return (math.pow(1.0 - (value / 145366.45), 5.2553026003237266401799415610351) * 101325.0)
         
-        if to_unit == PressureUnits.MicroPascal:
+        if to_unit == PressureUnits.Micropascal:
             return ((value) * 1e-06)
         
-        if to_unit == PressureUnits.MilliPascal:
+        if to_unit == PressureUnits.Millipascal:
             return ((value) * 0.001)
         
-        if to_unit == PressureUnits.DecaPascal:
+        if to_unit == PressureUnits.Decapascal:
             return ((value) * 10.0)
         
-        if to_unit == PressureUnits.HectoPascal:
+        if to_unit == PressureUnits.Hectopascal:
             return ((value) * 100.0)
         
-        if to_unit == PressureUnits.KiloPascal:
+        if to_unit == PressureUnits.Kilopascal:
             return ((value) * 1000.0)
         
-        if to_unit == PressureUnits.MegaPascal:
+        if to_unit == PressureUnits.Megapascal:
             return ((value) * 1000000.0)
         
-        if to_unit == PressureUnits.GigaPascal:
+        if to_unit == PressureUnits.Gigapascal:
             return ((value) * 1000000000.0)
         
-        if to_unit == PressureUnits.MicroBar:
+        if to_unit == PressureUnits.Microbar:
             return ((value * 1e5) * 1e-06)
         
-        if to_unit == PressureUnits.MilliBar:
+        if to_unit == PressureUnits.Millibar:
             return ((value * 1e5) * 0.001)
         
-        if to_unit == PressureUnits.CentiBar:
+        if to_unit == PressureUnits.Centibar:
             return ((value * 1e5) * 0.01)
         
-        if to_unit == PressureUnits.DeciBar:
+        if to_unit == PressureUnits.Decibar:
             return ((value * 1e5) * 0.1)
         
-        if to_unit == PressureUnits.KiloBar:
+        if to_unit == PressureUnits.Kilobar:
             return ((value * 1e5) * 1000.0)
         
-        if to_unit == PressureUnits.MegaBar:
+        if to_unit == PressureUnits.Megabar:
             return ((value * 1e5) * 1000000.0)
         
-        if to_unit == PressureUnits.KiloNewtonPerSquareMeter:
+        if to_unit == PressureUnits.KilonewtonPerSquareMeter:
             return ((value) * 1000.0)
         
-        if to_unit == PressureUnits.MegaNewtonPerSquareMeter:
+        if to_unit == PressureUnits.MeganewtonPerSquareMeter:
             return ((value) * 1000000.0)
         
-        if to_unit == PressureUnits.KiloNewtonPerSquareCentimeter:
+        if to_unit == PressureUnits.KilonewtonPerSquareCentimeter:
             return ((value * 1e4) * 1000.0)
         
-        if to_unit == PressureUnits.KiloNewtonPerSquareMillimeter:
+        if to_unit == PressureUnits.KilonewtonPerSquareMillimeter:
             return ((value * 1e6) * 1000.0)
         
-        if to_unit == PressureUnits.KiloPoundForcePerSquareInch:
+        if to_unit == PressureUnits.KilopoundForcePerSquareInch:
             return ((value * 6.894757293168361e3) * 1000.0)
         
-        if to_unit == PressureUnits.KiloPoundForcePerSquareMil:
+        if to_unit == PressureUnits.KilopoundForcePerSquareMil:
             return ((value * 6.894757293168361e9) * 1000.0)
         
-        if to_unit == PressureUnits.KiloPoundForcePerSquareFoot:
+        if to_unit == PressureUnits.KilopoundForcePerSquareFoot:
             return ((value * 4.788025898033584e1) * 1000.0)
         
-        if to_unit == PressureUnits.MilliMeterOfWaterColumn:
+        if to_unit == PressureUnits.MillimeterOfWaterColumn:
             return ((value * 9.806650000000272e3) * 0.001)
         
-        if to_unit == PressureUnits.CentiMeterOfWaterColumn:
+        if to_unit == PressureUnits.CentimeterOfWaterColumn:
             return ((value * 9.806650000000272e3) * 0.01)
         
         return None
@@ -1082,333 +1082,333 @@ class Pressure:
 
     
     @staticmethod
-    def from_micro_pascals(micro_pascals: float):
+    def from_micropascals(micropascals: float):
         """
-        Create a new instance of Pressure from a value in micro_pascals.
+        Create a new instance of Pressure from a value in micropascals.
 
         
 
-        :param meters: The Pressure value in micro_pascals.
-        :type micro_pascals: float
+        :param meters: The Pressure value in micropascals.
+        :type micropascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(micro_pascals, PressureUnits.MicroPascal)
+        return Pressure(micropascals, PressureUnits.Micropascal)
 
     
     @staticmethod
-    def from_milli_pascals(milli_pascals: float):
+    def from_millipascals(millipascals: float):
         """
-        Create a new instance of Pressure from a value in milli_pascals.
+        Create a new instance of Pressure from a value in millipascals.
 
         
 
-        :param meters: The Pressure value in milli_pascals.
-        :type milli_pascals: float
+        :param meters: The Pressure value in millipascals.
+        :type millipascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(milli_pascals, PressureUnits.MilliPascal)
+        return Pressure(millipascals, PressureUnits.Millipascal)
 
     
     @staticmethod
-    def from_deca_pascals(deca_pascals: float):
+    def from_decapascals(decapascals: float):
         """
-        Create a new instance of Pressure from a value in deca_pascals.
+        Create a new instance of Pressure from a value in decapascals.
 
         
 
-        :param meters: The Pressure value in deca_pascals.
-        :type deca_pascals: float
+        :param meters: The Pressure value in decapascals.
+        :type decapascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(deca_pascals, PressureUnits.DecaPascal)
+        return Pressure(decapascals, PressureUnits.Decapascal)
 
     
     @staticmethod
-    def from_hecto_pascals(hecto_pascals: float):
+    def from_hectopascals(hectopascals: float):
         """
-        Create a new instance of Pressure from a value in hecto_pascals.
+        Create a new instance of Pressure from a value in hectopascals.
 
         
 
-        :param meters: The Pressure value in hecto_pascals.
-        :type hecto_pascals: float
+        :param meters: The Pressure value in hectopascals.
+        :type hectopascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(hecto_pascals, PressureUnits.HectoPascal)
+        return Pressure(hectopascals, PressureUnits.Hectopascal)
 
     
     @staticmethod
-    def from_kilo_pascals(kilo_pascals: float):
+    def from_kilopascals(kilopascals: float):
         """
-        Create a new instance of Pressure from a value in kilo_pascals.
+        Create a new instance of Pressure from a value in kilopascals.
 
         
 
-        :param meters: The Pressure value in kilo_pascals.
-        :type kilo_pascals: float
+        :param meters: The Pressure value in kilopascals.
+        :type kilopascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_pascals, PressureUnits.KiloPascal)
+        return Pressure(kilopascals, PressureUnits.Kilopascal)
 
     
     @staticmethod
-    def from_mega_pascals(mega_pascals: float):
+    def from_megapascals(megapascals: float):
         """
-        Create a new instance of Pressure from a value in mega_pascals.
+        Create a new instance of Pressure from a value in megapascals.
 
         
 
-        :param meters: The Pressure value in mega_pascals.
-        :type mega_pascals: float
+        :param meters: The Pressure value in megapascals.
+        :type megapascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(mega_pascals, PressureUnits.MegaPascal)
+        return Pressure(megapascals, PressureUnits.Megapascal)
 
     
     @staticmethod
-    def from_giga_pascals(giga_pascals: float):
+    def from_gigapascals(gigapascals: float):
         """
-        Create a new instance of Pressure from a value in giga_pascals.
+        Create a new instance of Pressure from a value in gigapascals.
 
         
 
-        :param meters: The Pressure value in giga_pascals.
-        :type giga_pascals: float
+        :param meters: The Pressure value in gigapascals.
+        :type gigapascals: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(giga_pascals, PressureUnits.GigaPascal)
+        return Pressure(gigapascals, PressureUnits.Gigapascal)
 
     
     @staticmethod
-    def from_micro_bars(micro_bars: float):
+    def from_microbars(microbars: float):
         """
-        Create a new instance of Pressure from a value in micro_bars.
+        Create a new instance of Pressure from a value in microbars.
 
         
 
-        :param meters: The Pressure value in micro_bars.
-        :type micro_bars: float
+        :param meters: The Pressure value in microbars.
+        :type microbars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(micro_bars, PressureUnits.MicroBar)
+        return Pressure(microbars, PressureUnits.Microbar)
 
     
     @staticmethod
-    def from_milli_bars(milli_bars: float):
+    def from_millibars(millibars: float):
         """
-        Create a new instance of Pressure from a value in milli_bars.
+        Create a new instance of Pressure from a value in millibars.
 
         
 
-        :param meters: The Pressure value in milli_bars.
-        :type milli_bars: float
+        :param meters: The Pressure value in millibars.
+        :type millibars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(milli_bars, PressureUnits.MilliBar)
+        return Pressure(millibars, PressureUnits.Millibar)
 
     
     @staticmethod
-    def from_centi_bars(centi_bars: float):
+    def from_centibars(centibars: float):
         """
-        Create a new instance of Pressure from a value in centi_bars.
+        Create a new instance of Pressure from a value in centibars.
 
         
 
-        :param meters: The Pressure value in centi_bars.
-        :type centi_bars: float
+        :param meters: The Pressure value in centibars.
+        :type centibars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(centi_bars, PressureUnits.CentiBar)
+        return Pressure(centibars, PressureUnits.Centibar)
 
     
     @staticmethod
-    def from_deci_bars(deci_bars: float):
+    def from_decibars(decibars: float):
         """
-        Create a new instance of Pressure from a value in deci_bars.
+        Create a new instance of Pressure from a value in decibars.
 
         
 
-        :param meters: The Pressure value in deci_bars.
-        :type deci_bars: float
+        :param meters: The Pressure value in decibars.
+        :type decibars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(deci_bars, PressureUnits.DeciBar)
+        return Pressure(decibars, PressureUnits.Decibar)
 
     
     @staticmethod
-    def from_kilo_bars(kilo_bars: float):
+    def from_kilobars(kilobars: float):
         """
-        Create a new instance of Pressure from a value in kilo_bars.
+        Create a new instance of Pressure from a value in kilobars.
 
         
 
-        :param meters: The Pressure value in kilo_bars.
-        :type kilo_bars: float
+        :param meters: The Pressure value in kilobars.
+        :type kilobars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_bars, PressureUnits.KiloBar)
+        return Pressure(kilobars, PressureUnits.Kilobar)
 
     
     @staticmethod
-    def from_mega_bars(mega_bars: float):
+    def from_megabars(megabars: float):
         """
-        Create a new instance of Pressure from a value in mega_bars.
+        Create a new instance of Pressure from a value in megabars.
 
         
 
-        :param meters: The Pressure value in mega_bars.
-        :type mega_bars: float
+        :param meters: The Pressure value in megabars.
+        :type megabars: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(mega_bars, PressureUnits.MegaBar)
+        return Pressure(megabars, PressureUnits.Megabar)
 
     
     @staticmethod
-    def from_kilo_newtons_per_square_meter(kilo_newtons_per_square_meter: float):
+    def from_kilonewtons_per_square_meter(kilonewtons_per_square_meter: float):
         """
-        Create a new instance of Pressure from a value in kilo_newtons_per_square_meter.
+        Create a new instance of Pressure from a value in kilonewtons_per_square_meter.
 
         
 
-        :param meters: The Pressure value in kilo_newtons_per_square_meter.
-        :type kilo_newtons_per_square_meter: float
+        :param meters: The Pressure value in kilonewtons_per_square_meter.
+        :type kilonewtons_per_square_meter: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_newtons_per_square_meter, PressureUnits.KiloNewtonPerSquareMeter)
+        return Pressure(kilonewtons_per_square_meter, PressureUnits.KilonewtonPerSquareMeter)
 
     
     @staticmethod
-    def from_mega_newtons_per_square_meter(mega_newtons_per_square_meter: float):
+    def from_meganewtons_per_square_meter(meganewtons_per_square_meter: float):
         """
-        Create a new instance of Pressure from a value in mega_newtons_per_square_meter.
+        Create a new instance of Pressure from a value in meganewtons_per_square_meter.
 
         
 
-        :param meters: The Pressure value in mega_newtons_per_square_meter.
-        :type mega_newtons_per_square_meter: float
+        :param meters: The Pressure value in meganewtons_per_square_meter.
+        :type meganewtons_per_square_meter: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(mega_newtons_per_square_meter, PressureUnits.MegaNewtonPerSquareMeter)
+        return Pressure(meganewtons_per_square_meter, PressureUnits.MeganewtonPerSquareMeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_square_centimeter(kilo_newtons_per_square_centimeter: float):
+    def from_kilonewtons_per_square_centimeter(kilonewtons_per_square_centimeter: float):
         """
-        Create a new instance of Pressure from a value in kilo_newtons_per_square_centimeter.
+        Create a new instance of Pressure from a value in kilonewtons_per_square_centimeter.
 
         
 
-        :param meters: The Pressure value in kilo_newtons_per_square_centimeter.
-        :type kilo_newtons_per_square_centimeter: float
+        :param meters: The Pressure value in kilonewtons_per_square_centimeter.
+        :type kilonewtons_per_square_centimeter: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_newtons_per_square_centimeter, PressureUnits.KiloNewtonPerSquareCentimeter)
+        return Pressure(kilonewtons_per_square_centimeter, PressureUnits.KilonewtonPerSquareCentimeter)
 
     
     @staticmethod
-    def from_kilo_newtons_per_square_millimeter(kilo_newtons_per_square_millimeter: float):
+    def from_kilonewtons_per_square_millimeter(kilonewtons_per_square_millimeter: float):
         """
-        Create a new instance of Pressure from a value in kilo_newtons_per_square_millimeter.
+        Create a new instance of Pressure from a value in kilonewtons_per_square_millimeter.
 
         
 
-        :param meters: The Pressure value in kilo_newtons_per_square_millimeter.
-        :type kilo_newtons_per_square_millimeter: float
+        :param meters: The Pressure value in kilonewtons_per_square_millimeter.
+        :type kilonewtons_per_square_millimeter: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_newtons_per_square_millimeter, PressureUnits.KiloNewtonPerSquareMillimeter)
+        return Pressure(kilonewtons_per_square_millimeter, PressureUnits.KilonewtonPerSquareMillimeter)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_square_inch(kilo_pounds_force_per_square_inch: float):
+    def from_kilopounds_force_per_square_inch(kilopounds_force_per_square_inch: float):
         """
-        Create a new instance of Pressure from a value in kilo_pounds_force_per_square_inch.
+        Create a new instance of Pressure from a value in kilopounds_force_per_square_inch.
 
         
 
-        :param meters: The Pressure value in kilo_pounds_force_per_square_inch.
-        :type kilo_pounds_force_per_square_inch: float
+        :param meters: The Pressure value in kilopounds_force_per_square_inch.
+        :type kilopounds_force_per_square_inch: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_pounds_force_per_square_inch, PressureUnits.KiloPoundForcePerSquareInch)
+        return Pressure(kilopounds_force_per_square_inch, PressureUnits.KilopoundForcePerSquareInch)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_square_mil(kilo_pounds_force_per_square_mil: float):
+    def from_kilopounds_force_per_square_mil(kilopounds_force_per_square_mil: float):
         """
-        Create a new instance of Pressure from a value in kilo_pounds_force_per_square_mil.
+        Create a new instance of Pressure from a value in kilopounds_force_per_square_mil.
 
         
 
-        :param meters: The Pressure value in kilo_pounds_force_per_square_mil.
-        :type kilo_pounds_force_per_square_mil: float
+        :param meters: The Pressure value in kilopounds_force_per_square_mil.
+        :type kilopounds_force_per_square_mil: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_pounds_force_per_square_mil, PressureUnits.KiloPoundForcePerSquareMil)
+        return Pressure(kilopounds_force_per_square_mil, PressureUnits.KilopoundForcePerSquareMil)
 
     
     @staticmethod
-    def from_kilo_pounds_force_per_square_foot(kilo_pounds_force_per_square_foot: float):
+    def from_kilopounds_force_per_square_foot(kilopounds_force_per_square_foot: float):
         """
-        Create a new instance of Pressure from a value in kilo_pounds_force_per_square_foot.
+        Create a new instance of Pressure from a value in kilopounds_force_per_square_foot.
 
         
 
-        :param meters: The Pressure value in kilo_pounds_force_per_square_foot.
-        :type kilo_pounds_force_per_square_foot: float
+        :param meters: The Pressure value in kilopounds_force_per_square_foot.
+        :type kilopounds_force_per_square_foot: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(kilo_pounds_force_per_square_foot, PressureUnits.KiloPoundForcePerSquareFoot)
+        return Pressure(kilopounds_force_per_square_foot, PressureUnits.KilopoundForcePerSquareFoot)
 
     
     @staticmethod
-    def from_milli_meters_of_water_column(milli_meters_of_water_column: float):
+    def from_millimeters_of_water_column(millimeters_of_water_column: float):
         """
-        Create a new instance of Pressure from a value in milli_meters_of_water_column.
+        Create a new instance of Pressure from a value in millimeters_of_water_column.
 
         
 
-        :param meters: The Pressure value in milli_meters_of_water_column.
-        :type milli_meters_of_water_column: float
+        :param meters: The Pressure value in millimeters_of_water_column.
+        :type millimeters_of_water_column: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(milli_meters_of_water_column, PressureUnits.MilliMeterOfWaterColumn)
+        return Pressure(millimeters_of_water_column, PressureUnits.MillimeterOfWaterColumn)
 
     
     @staticmethod
-    def from_centi_meters_of_water_column(centi_meters_of_water_column: float):
+    def from_centimeters_of_water_column(centimeters_of_water_column: float):
         """
-        Create a new instance of Pressure from a value in centi_meters_of_water_column.
+        Create a new instance of Pressure from a value in centimeters_of_water_column.
 
         
 
-        :param meters: The Pressure value in centi_meters_of_water_column.
-        :type centi_meters_of_water_column: float
+        :param meters: The Pressure value in centimeters_of_water_column.
+        :type centimeters_of_water_column: float
         :return: A new instance of Pressure.
         :rtype: Pressure
         """
-        return Pressure(centi_meters_of_water_column, PressureUnits.CentiMeterOfWaterColumn)
+        return Pressure(centimeters_of_water_column, PressureUnits.CentimeterOfWaterColumn)
 
     
     @property
@@ -1709,245 +1709,245 @@ class Pressure:
 
     
     @property
-    def micro_pascals(self) -> float:
+    def micropascals(self) -> float:
         """
         
         """
-        if self.__micro_pascals != None:
-            return self.__micro_pascals
-        self.__micro_pascals = self.__convert_from_base(PressureUnits.MicroPascal)
-        return self.__micro_pascals
+        if self.__micropascals != None:
+            return self.__micropascals
+        self.__micropascals = self.__convert_from_base(PressureUnits.Micropascal)
+        return self.__micropascals
 
     
     @property
-    def milli_pascals(self) -> float:
+    def millipascals(self) -> float:
         """
         
         """
-        if self.__milli_pascals != None:
-            return self.__milli_pascals
-        self.__milli_pascals = self.__convert_from_base(PressureUnits.MilliPascal)
-        return self.__milli_pascals
+        if self.__millipascals != None:
+            return self.__millipascals
+        self.__millipascals = self.__convert_from_base(PressureUnits.Millipascal)
+        return self.__millipascals
 
     
     @property
-    def deca_pascals(self) -> float:
+    def decapascals(self) -> float:
         """
         
         """
-        if self.__deca_pascals != None:
-            return self.__deca_pascals
-        self.__deca_pascals = self.__convert_from_base(PressureUnits.DecaPascal)
-        return self.__deca_pascals
+        if self.__decapascals != None:
+            return self.__decapascals
+        self.__decapascals = self.__convert_from_base(PressureUnits.Decapascal)
+        return self.__decapascals
 
     
     @property
-    def hecto_pascals(self) -> float:
+    def hectopascals(self) -> float:
         """
         
         """
-        if self.__hecto_pascals != None:
-            return self.__hecto_pascals
-        self.__hecto_pascals = self.__convert_from_base(PressureUnits.HectoPascal)
-        return self.__hecto_pascals
+        if self.__hectopascals != None:
+            return self.__hectopascals
+        self.__hectopascals = self.__convert_from_base(PressureUnits.Hectopascal)
+        return self.__hectopascals
 
     
     @property
-    def kilo_pascals(self) -> float:
+    def kilopascals(self) -> float:
         """
         
         """
-        if self.__kilo_pascals != None:
-            return self.__kilo_pascals
-        self.__kilo_pascals = self.__convert_from_base(PressureUnits.KiloPascal)
-        return self.__kilo_pascals
+        if self.__kilopascals != None:
+            return self.__kilopascals
+        self.__kilopascals = self.__convert_from_base(PressureUnits.Kilopascal)
+        return self.__kilopascals
 
     
     @property
-    def mega_pascals(self) -> float:
+    def megapascals(self) -> float:
         """
         
         """
-        if self.__mega_pascals != None:
-            return self.__mega_pascals
-        self.__mega_pascals = self.__convert_from_base(PressureUnits.MegaPascal)
-        return self.__mega_pascals
+        if self.__megapascals != None:
+            return self.__megapascals
+        self.__megapascals = self.__convert_from_base(PressureUnits.Megapascal)
+        return self.__megapascals
 
     
     @property
-    def giga_pascals(self) -> float:
+    def gigapascals(self) -> float:
         """
         
         """
-        if self.__giga_pascals != None:
-            return self.__giga_pascals
-        self.__giga_pascals = self.__convert_from_base(PressureUnits.GigaPascal)
-        return self.__giga_pascals
+        if self.__gigapascals != None:
+            return self.__gigapascals
+        self.__gigapascals = self.__convert_from_base(PressureUnits.Gigapascal)
+        return self.__gigapascals
 
     
     @property
-    def micro_bars(self) -> float:
+    def microbars(self) -> float:
         """
         
         """
-        if self.__micro_bars != None:
-            return self.__micro_bars
-        self.__micro_bars = self.__convert_from_base(PressureUnits.MicroBar)
-        return self.__micro_bars
+        if self.__microbars != None:
+            return self.__microbars
+        self.__microbars = self.__convert_from_base(PressureUnits.Microbar)
+        return self.__microbars
 
     
     @property
-    def milli_bars(self) -> float:
+    def millibars(self) -> float:
         """
         
         """
-        if self.__milli_bars != None:
-            return self.__milli_bars
-        self.__milli_bars = self.__convert_from_base(PressureUnits.MilliBar)
-        return self.__milli_bars
+        if self.__millibars != None:
+            return self.__millibars
+        self.__millibars = self.__convert_from_base(PressureUnits.Millibar)
+        return self.__millibars
 
     
     @property
-    def centi_bars(self) -> float:
+    def centibars(self) -> float:
         """
         
         """
-        if self.__centi_bars != None:
-            return self.__centi_bars
-        self.__centi_bars = self.__convert_from_base(PressureUnits.CentiBar)
-        return self.__centi_bars
+        if self.__centibars != None:
+            return self.__centibars
+        self.__centibars = self.__convert_from_base(PressureUnits.Centibar)
+        return self.__centibars
 
     
     @property
-    def deci_bars(self) -> float:
+    def decibars(self) -> float:
         """
         
         """
-        if self.__deci_bars != None:
-            return self.__deci_bars
-        self.__deci_bars = self.__convert_from_base(PressureUnits.DeciBar)
-        return self.__deci_bars
+        if self.__decibars != None:
+            return self.__decibars
+        self.__decibars = self.__convert_from_base(PressureUnits.Decibar)
+        return self.__decibars
 
     
     @property
-    def kilo_bars(self) -> float:
+    def kilobars(self) -> float:
         """
         
         """
-        if self.__kilo_bars != None:
-            return self.__kilo_bars
-        self.__kilo_bars = self.__convert_from_base(PressureUnits.KiloBar)
-        return self.__kilo_bars
+        if self.__kilobars != None:
+            return self.__kilobars
+        self.__kilobars = self.__convert_from_base(PressureUnits.Kilobar)
+        return self.__kilobars
 
     
     @property
-    def mega_bars(self) -> float:
+    def megabars(self) -> float:
         """
         
         """
-        if self.__mega_bars != None:
-            return self.__mega_bars
-        self.__mega_bars = self.__convert_from_base(PressureUnits.MegaBar)
-        return self.__mega_bars
+        if self.__megabars != None:
+            return self.__megabars
+        self.__megabars = self.__convert_from_base(PressureUnits.Megabar)
+        return self.__megabars
 
     
     @property
-    def kilo_newtons_per_square_meter(self) -> float:
+    def kilonewtons_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_square_meter != None:
-            return self.__kilo_newtons_per_square_meter
-        self.__kilo_newtons_per_square_meter = self.__convert_from_base(PressureUnits.KiloNewtonPerSquareMeter)
-        return self.__kilo_newtons_per_square_meter
+        if self.__kilonewtons_per_square_meter != None:
+            return self.__kilonewtons_per_square_meter
+        self.__kilonewtons_per_square_meter = self.__convert_from_base(PressureUnits.KilonewtonPerSquareMeter)
+        return self.__kilonewtons_per_square_meter
 
     
     @property
-    def mega_newtons_per_square_meter(self) -> float:
+    def meganewtons_per_square_meter(self) -> float:
         """
         
         """
-        if self.__mega_newtons_per_square_meter != None:
-            return self.__mega_newtons_per_square_meter
-        self.__mega_newtons_per_square_meter = self.__convert_from_base(PressureUnits.MegaNewtonPerSquareMeter)
-        return self.__mega_newtons_per_square_meter
+        if self.__meganewtons_per_square_meter != None:
+            return self.__meganewtons_per_square_meter
+        self.__meganewtons_per_square_meter = self.__convert_from_base(PressureUnits.MeganewtonPerSquareMeter)
+        return self.__meganewtons_per_square_meter
 
     
     @property
-    def kilo_newtons_per_square_centimeter(self) -> float:
+    def kilonewtons_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_square_centimeter != None:
-            return self.__kilo_newtons_per_square_centimeter
-        self.__kilo_newtons_per_square_centimeter = self.__convert_from_base(PressureUnits.KiloNewtonPerSquareCentimeter)
-        return self.__kilo_newtons_per_square_centimeter
+        if self.__kilonewtons_per_square_centimeter != None:
+            return self.__kilonewtons_per_square_centimeter
+        self.__kilonewtons_per_square_centimeter = self.__convert_from_base(PressureUnits.KilonewtonPerSquareCentimeter)
+        return self.__kilonewtons_per_square_centimeter
 
     
     @property
-    def kilo_newtons_per_square_millimeter(self) -> float:
+    def kilonewtons_per_square_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_newtons_per_square_millimeter != None:
-            return self.__kilo_newtons_per_square_millimeter
-        self.__kilo_newtons_per_square_millimeter = self.__convert_from_base(PressureUnits.KiloNewtonPerSquareMillimeter)
-        return self.__kilo_newtons_per_square_millimeter
+        if self.__kilonewtons_per_square_millimeter != None:
+            return self.__kilonewtons_per_square_millimeter
+        self.__kilonewtons_per_square_millimeter = self.__convert_from_base(PressureUnits.KilonewtonPerSquareMillimeter)
+        return self.__kilonewtons_per_square_millimeter
 
     
     @property
-    def kilo_pounds_force_per_square_inch(self) -> float:
+    def kilopounds_force_per_square_inch(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_square_inch != None:
-            return self.__kilo_pounds_force_per_square_inch
-        self.__kilo_pounds_force_per_square_inch = self.__convert_from_base(PressureUnits.KiloPoundForcePerSquareInch)
-        return self.__kilo_pounds_force_per_square_inch
+        if self.__kilopounds_force_per_square_inch != None:
+            return self.__kilopounds_force_per_square_inch
+        self.__kilopounds_force_per_square_inch = self.__convert_from_base(PressureUnits.KilopoundForcePerSquareInch)
+        return self.__kilopounds_force_per_square_inch
 
     
     @property
-    def kilo_pounds_force_per_square_mil(self) -> float:
+    def kilopounds_force_per_square_mil(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_square_mil != None:
-            return self.__kilo_pounds_force_per_square_mil
-        self.__kilo_pounds_force_per_square_mil = self.__convert_from_base(PressureUnits.KiloPoundForcePerSquareMil)
-        return self.__kilo_pounds_force_per_square_mil
+        if self.__kilopounds_force_per_square_mil != None:
+            return self.__kilopounds_force_per_square_mil
+        self.__kilopounds_force_per_square_mil = self.__convert_from_base(PressureUnits.KilopoundForcePerSquareMil)
+        return self.__kilopounds_force_per_square_mil
 
     
     @property
-    def kilo_pounds_force_per_square_foot(self) -> float:
+    def kilopounds_force_per_square_foot(self) -> float:
         """
         
         """
-        if self.__kilo_pounds_force_per_square_foot != None:
-            return self.__kilo_pounds_force_per_square_foot
-        self.__kilo_pounds_force_per_square_foot = self.__convert_from_base(PressureUnits.KiloPoundForcePerSquareFoot)
-        return self.__kilo_pounds_force_per_square_foot
+        if self.__kilopounds_force_per_square_foot != None:
+            return self.__kilopounds_force_per_square_foot
+        self.__kilopounds_force_per_square_foot = self.__convert_from_base(PressureUnits.KilopoundForcePerSquareFoot)
+        return self.__kilopounds_force_per_square_foot
 
     
     @property
-    def milli_meters_of_water_column(self) -> float:
+    def millimeters_of_water_column(self) -> float:
         """
         
         """
-        if self.__milli_meters_of_water_column != None:
-            return self.__milli_meters_of_water_column
-        self.__milli_meters_of_water_column = self.__convert_from_base(PressureUnits.MilliMeterOfWaterColumn)
-        return self.__milli_meters_of_water_column
+        if self.__millimeters_of_water_column != None:
+            return self.__millimeters_of_water_column
+        self.__millimeters_of_water_column = self.__convert_from_base(PressureUnits.MillimeterOfWaterColumn)
+        return self.__millimeters_of_water_column
 
     
     @property
-    def centi_meters_of_water_column(self) -> float:
+    def centimeters_of_water_column(self) -> float:
         """
         
         """
-        if self.__centi_meters_of_water_column != None:
-            return self.__centi_meters_of_water_column
-        self.__centi_meters_of_water_column = self.__convert_from_base(PressureUnits.CentiMeterOfWaterColumn)
-        return self.__centi_meters_of_water_column
+        if self.__centimeters_of_water_column != None:
+            return self.__centimeters_of_water_column
+        self.__centimeters_of_water_column = self.__convert_from_base(PressureUnits.CentimeterOfWaterColumn)
+        return self.__centimeters_of_water_column
 
     
     def to_string(self, unit: PressureUnits = PressureUnits.Pascal) -> string:
@@ -2038,71 +2038,71 @@ class Pressure:
         if unit == PressureUnits.FootOfElevation:
             return f"""{self.feet_of_elevation} ft of elevation"""
         
-        if unit == PressureUnits.MicroPascal:
-            return f"""{self.micro_pascals} """
+        if unit == PressureUnits.Micropascal:
+            return f"""{self.micropascals} """
         
-        if unit == PressureUnits.MilliPascal:
-            return f"""{self.milli_pascals} """
+        if unit == PressureUnits.Millipascal:
+            return f"""{self.millipascals} """
         
-        if unit == PressureUnits.DecaPascal:
-            return f"""{self.deca_pascals} """
+        if unit == PressureUnits.Decapascal:
+            return f"""{self.decapascals} """
         
-        if unit == PressureUnits.HectoPascal:
-            return f"""{self.hecto_pascals} """
+        if unit == PressureUnits.Hectopascal:
+            return f"""{self.hectopascals} """
         
-        if unit == PressureUnits.KiloPascal:
-            return f"""{self.kilo_pascals} """
+        if unit == PressureUnits.Kilopascal:
+            return f"""{self.kilopascals} """
         
-        if unit == PressureUnits.MegaPascal:
-            return f"""{self.mega_pascals} """
+        if unit == PressureUnits.Megapascal:
+            return f"""{self.megapascals} """
         
-        if unit == PressureUnits.GigaPascal:
-            return f"""{self.giga_pascals} """
+        if unit == PressureUnits.Gigapascal:
+            return f"""{self.gigapascals} """
         
-        if unit == PressureUnits.MicroBar:
-            return f"""{self.micro_bars} """
+        if unit == PressureUnits.Microbar:
+            return f"""{self.microbars} """
         
-        if unit == PressureUnits.MilliBar:
-            return f"""{self.milli_bars} """
+        if unit == PressureUnits.Millibar:
+            return f"""{self.millibars} """
         
-        if unit == PressureUnits.CentiBar:
-            return f"""{self.centi_bars} """
+        if unit == PressureUnits.Centibar:
+            return f"""{self.centibars} """
         
-        if unit == PressureUnits.DeciBar:
-            return f"""{self.deci_bars} """
+        if unit == PressureUnits.Decibar:
+            return f"""{self.decibars} """
         
-        if unit == PressureUnits.KiloBar:
-            return f"""{self.kilo_bars} """
+        if unit == PressureUnits.Kilobar:
+            return f"""{self.kilobars} """
         
-        if unit == PressureUnits.MegaBar:
-            return f"""{self.mega_bars} """
+        if unit == PressureUnits.Megabar:
+            return f"""{self.megabars} """
         
-        if unit == PressureUnits.KiloNewtonPerSquareMeter:
-            return f"""{self.kilo_newtons_per_square_meter} """
+        if unit == PressureUnits.KilonewtonPerSquareMeter:
+            return f"""{self.kilonewtons_per_square_meter} """
         
-        if unit == PressureUnits.MegaNewtonPerSquareMeter:
-            return f"""{self.mega_newtons_per_square_meter} """
+        if unit == PressureUnits.MeganewtonPerSquareMeter:
+            return f"""{self.meganewtons_per_square_meter} """
         
-        if unit == PressureUnits.KiloNewtonPerSquareCentimeter:
-            return f"""{self.kilo_newtons_per_square_centimeter} """
+        if unit == PressureUnits.KilonewtonPerSquareCentimeter:
+            return f"""{self.kilonewtons_per_square_centimeter} """
         
-        if unit == PressureUnits.KiloNewtonPerSquareMillimeter:
-            return f"""{self.kilo_newtons_per_square_millimeter} """
+        if unit == PressureUnits.KilonewtonPerSquareMillimeter:
+            return f"""{self.kilonewtons_per_square_millimeter} """
         
-        if unit == PressureUnits.KiloPoundForcePerSquareInch:
-            return f"""{self.kilo_pounds_force_per_square_inch} """
+        if unit == PressureUnits.KilopoundForcePerSquareInch:
+            return f"""{self.kilopounds_force_per_square_inch} """
         
-        if unit == PressureUnits.KiloPoundForcePerSquareMil:
-            return f"""{self.kilo_pounds_force_per_square_mil} """
+        if unit == PressureUnits.KilopoundForcePerSquareMil:
+            return f"""{self.kilopounds_force_per_square_mil} """
         
-        if unit == PressureUnits.KiloPoundForcePerSquareFoot:
-            return f"""{self.kilo_pounds_force_per_square_foot} """
+        if unit == PressureUnits.KilopoundForcePerSquareFoot:
+            return f"""{self.kilopounds_force_per_square_foot} """
         
-        if unit == PressureUnits.MilliMeterOfWaterColumn:
-            return f"""{self.milli_meters_of_water_column} """
+        if unit == PressureUnits.MillimeterOfWaterColumn:
+            return f"""{self.millimeters_of_water_column} """
         
-        if unit == PressureUnits.CentiMeterOfWaterColumn:
-            return f"""{self.centi_meters_of_water_column} """
+        if unit == PressureUnits.CentimeterOfWaterColumn:
+            return f"""{self.centimeters_of_water_column} """
         
         return f'{self.__value}'
 
@@ -2195,70 +2195,70 @@ class Pressure:
         if unit_abbreviation == PressureUnits.FootOfElevation:
             return """ft of elevation"""
         
-        if unit_abbreviation == PressureUnits.MicroPascal:
+        if unit_abbreviation == PressureUnits.Micropascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MilliPascal:
+        if unit_abbreviation == PressureUnits.Millipascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.DecaPascal:
+        if unit_abbreviation == PressureUnits.Decapascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.HectoPascal:
+        if unit_abbreviation == PressureUnits.Hectopascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloPascal:
+        if unit_abbreviation == PressureUnits.Kilopascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MegaPascal:
+        if unit_abbreviation == PressureUnits.Megapascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.GigaPascal:
+        if unit_abbreviation == PressureUnits.Gigapascal:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MicroBar:
+        if unit_abbreviation == PressureUnits.Microbar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MilliBar:
+        if unit_abbreviation == PressureUnits.Millibar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.CentiBar:
+        if unit_abbreviation == PressureUnits.Centibar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.DeciBar:
+        if unit_abbreviation == PressureUnits.Decibar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloBar:
+        if unit_abbreviation == PressureUnits.Kilobar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MegaBar:
+        if unit_abbreviation == PressureUnits.Megabar:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloNewtonPerSquareMeter:
+        if unit_abbreviation == PressureUnits.KilonewtonPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MegaNewtonPerSquareMeter:
+        if unit_abbreviation == PressureUnits.MeganewtonPerSquareMeter:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloNewtonPerSquareCentimeter:
+        if unit_abbreviation == PressureUnits.KilonewtonPerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloNewtonPerSquareMillimeter:
+        if unit_abbreviation == PressureUnits.KilonewtonPerSquareMillimeter:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloPoundForcePerSquareInch:
+        if unit_abbreviation == PressureUnits.KilopoundForcePerSquareInch:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloPoundForcePerSquareMil:
+        if unit_abbreviation == PressureUnits.KilopoundForcePerSquareMil:
             return """"""
         
-        if unit_abbreviation == PressureUnits.KiloPoundForcePerSquareFoot:
+        if unit_abbreviation == PressureUnits.KilopoundForcePerSquareFoot:
             return """"""
         
-        if unit_abbreviation == PressureUnits.MilliMeterOfWaterColumn:
+        if unit_abbreviation == PressureUnits.MillimeterOfWaterColumn:
             return """"""
         
-        if unit_abbreviation == PressureUnits.CentiMeterOfWaterColumn:
+        if unit_abbreviation == PressureUnits.CentimeterOfWaterColumn:
             return """"""
         
 

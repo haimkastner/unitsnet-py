@@ -13,32 +13,32 @@ class ElectricResistanceUnits(Enum):
             
         """
         
-        MicroOhm = 'micro_ohm'
+        Microohm = 'microohm'
         """
             
         """
         
-        MilliOhm = 'milli_ohm'
+        Milliohm = 'milliohm'
         """
             
         """
         
-        KiloOhm = 'kilo_ohm'
+        Kiloohm = 'kiloohm'
         """
             
         """
         
-        MegaOhm = 'mega_ohm'
+        Megaohm = 'megaohm'
         """
             
         """
         
-        GigaOhm = 'giga_ohm'
+        Gigaohm = 'gigaohm'
         """
             
         """
         
-        TeraOhm = 'tera_ohm'
+        Teraohm = 'teraohm'
         """
             
         """
@@ -59,17 +59,17 @@ class ElectricResistance:
         
         self.__ohms = None
         
-        self.__micro_ohms = None
+        self.__microohms = None
         
-        self.__milli_ohms = None
+        self.__milliohms = None
         
-        self.__kilo_ohms = None
+        self.__kiloohms = None
         
-        self.__mega_ohms = None
+        self.__megaohms = None
         
-        self.__giga_ohms = None
+        self.__gigaohms = None
         
-        self.__tera_ohms = None
+        self.__teraohms = None
         
 
     def __convert_from_base(self, from_unit: ElectricResistanceUnits) -> float:
@@ -78,22 +78,22 @@ class ElectricResistance:
         if from_unit == ElectricResistanceUnits.Ohm:
             return (value)
         
-        if from_unit == ElectricResistanceUnits.MicroOhm:
+        if from_unit == ElectricResistanceUnits.Microohm:
             return ((value) / 1e-06)
         
-        if from_unit == ElectricResistanceUnits.MilliOhm:
+        if from_unit == ElectricResistanceUnits.Milliohm:
             return ((value) / 0.001)
         
-        if from_unit == ElectricResistanceUnits.KiloOhm:
+        if from_unit == ElectricResistanceUnits.Kiloohm:
             return ((value) / 1000.0)
         
-        if from_unit == ElectricResistanceUnits.MegaOhm:
+        if from_unit == ElectricResistanceUnits.Megaohm:
             return ((value) / 1000000.0)
         
-        if from_unit == ElectricResistanceUnits.GigaOhm:
+        if from_unit == ElectricResistanceUnits.Gigaohm:
             return ((value) / 1000000000.0)
         
-        if from_unit == ElectricResistanceUnits.TeraOhm:
+        if from_unit == ElectricResistanceUnits.Teraohm:
             return ((value) / 1000000000000.0)
         
         return None
@@ -104,22 +104,22 @@ class ElectricResistance:
         if to_unit == ElectricResistanceUnits.Ohm:
             return (value)
         
-        if to_unit == ElectricResistanceUnits.MicroOhm:
+        if to_unit == ElectricResistanceUnits.Microohm:
             return ((value) * 1e-06)
         
-        if to_unit == ElectricResistanceUnits.MilliOhm:
+        if to_unit == ElectricResistanceUnits.Milliohm:
             return ((value) * 0.001)
         
-        if to_unit == ElectricResistanceUnits.KiloOhm:
+        if to_unit == ElectricResistanceUnits.Kiloohm:
             return ((value) * 1000.0)
         
-        if to_unit == ElectricResistanceUnits.MegaOhm:
+        if to_unit == ElectricResistanceUnits.Megaohm:
             return ((value) * 1000000.0)
         
-        if to_unit == ElectricResistanceUnits.GigaOhm:
+        if to_unit == ElectricResistanceUnits.Gigaohm:
             return ((value) * 1000000000.0)
         
-        if to_unit == ElectricResistanceUnits.TeraOhm:
+        if to_unit == ElectricResistanceUnits.Teraohm:
             return ((value) * 1000000000000.0)
         
         return None
@@ -146,93 +146,93 @@ class ElectricResistance:
 
     
     @staticmethod
-    def from_micro_ohms(micro_ohms: float):
+    def from_microohms(microohms: float):
         """
-        Create a new instance of ElectricResistance from a value in micro_ohms.
+        Create a new instance of ElectricResistance from a value in microohms.
 
         
 
-        :param meters: The ElectricResistance value in micro_ohms.
-        :type micro_ohms: float
+        :param meters: The ElectricResistance value in microohms.
+        :type microohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(micro_ohms, ElectricResistanceUnits.MicroOhm)
+        return ElectricResistance(microohms, ElectricResistanceUnits.Microohm)
 
     
     @staticmethod
-    def from_milli_ohms(milli_ohms: float):
+    def from_milliohms(milliohms: float):
         """
-        Create a new instance of ElectricResistance from a value in milli_ohms.
+        Create a new instance of ElectricResistance from a value in milliohms.
 
         
 
-        :param meters: The ElectricResistance value in milli_ohms.
-        :type milli_ohms: float
+        :param meters: The ElectricResistance value in milliohms.
+        :type milliohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(milli_ohms, ElectricResistanceUnits.MilliOhm)
+        return ElectricResistance(milliohms, ElectricResistanceUnits.Milliohm)
 
     
     @staticmethod
-    def from_kilo_ohms(kilo_ohms: float):
+    def from_kiloohms(kiloohms: float):
         """
-        Create a new instance of ElectricResistance from a value in kilo_ohms.
+        Create a new instance of ElectricResistance from a value in kiloohms.
 
         
 
-        :param meters: The ElectricResistance value in kilo_ohms.
-        :type kilo_ohms: float
+        :param meters: The ElectricResistance value in kiloohms.
+        :type kiloohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(kilo_ohms, ElectricResistanceUnits.KiloOhm)
+        return ElectricResistance(kiloohms, ElectricResistanceUnits.Kiloohm)
 
     
     @staticmethod
-    def from_mega_ohms(mega_ohms: float):
+    def from_megaohms(megaohms: float):
         """
-        Create a new instance of ElectricResistance from a value in mega_ohms.
+        Create a new instance of ElectricResistance from a value in megaohms.
 
         
 
-        :param meters: The ElectricResistance value in mega_ohms.
-        :type mega_ohms: float
+        :param meters: The ElectricResistance value in megaohms.
+        :type megaohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(mega_ohms, ElectricResistanceUnits.MegaOhm)
+        return ElectricResistance(megaohms, ElectricResistanceUnits.Megaohm)
 
     
     @staticmethod
-    def from_giga_ohms(giga_ohms: float):
+    def from_gigaohms(gigaohms: float):
         """
-        Create a new instance of ElectricResistance from a value in giga_ohms.
+        Create a new instance of ElectricResistance from a value in gigaohms.
 
         
 
-        :param meters: The ElectricResistance value in giga_ohms.
-        :type giga_ohms: float
+        :param meters: The ElectricResistance value in gigaohms.
+        :type gigaohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(giga_ohms, ElectricResistanceUnits.GigaOhm)
+        return ElectricResistance(gigaohms, ElectricResistanceUnits.Gigaohm)
 
     
     @staticmethod
-    def from_tera_ohms(tera_ohms: float):
+    def from_teraohms(teraohms: float):
         """
-        Create a new instance of ElectricResistance from a value in tera_ohms.
+        Create a new instance of ElectricResistance from a value in teraohms.
 
         
 
-        :param meters: The ElectricResistance value in tera_ohms.
-        :type tera_ohms: float
+        :param meters: The ElectricResistance value in teraohms.
+        :type teraohms: float
         :return: A new instance of ElectricResistance.
         :rtype: ElectricResistance
         """
-        return ElectricResistance(tera_ohms, ElectricResistanceUnits.TeraOhm)
+        return ElectricResistance(teraohms, ElectricResistanceUnits.Teraohm)
 
     
     @property
@@ -247,69 +247,69 @@ class ElectricResistance:
 
     
     @property
-    def micro_ohms(self) -> float:
+    def microohms(self) -> float:
         """
         
         """
-        if self.__micro_ohms != None:
-            return self.__micro_ohms
-        self.__micro_ohms = self.__convert_from_base(ElectricResistanceUnits.MicroOhm)
-        return self.__micro_ohms
+        if self.__microohms != None:
+            return self.__microohms
+        self.__microohms = self.__convert_from_base(ElectricResistanceUnits.Microohm)
+        return self.__microohms
 
     
     @property
-    def milli_ohms(self) -> float:
+    def milliohms(self) -> float:
         """
         
         """
-        if self.__milli_ohms != None:
-            return self.__milli_ohms
-        self.__milli_ohms = self.__convert_from_base(ElectricResistanceUnits.MilliOhm)
-        return self.__milli_ohms
+        if self.__milliohms != None:
+            return self.__milliohms
+        self.__milliohms = self.__convert_from_base(ElectricResistanceUnits.Milliohm)
+        return self.__milliohms
 
     
     @property
-    def kilo_ohms(self) -> float:
+    def kiloohms(self) -> float:
         """
         
         """
-        if self.__kilo_ohms != None:
-            return self.__kilo_ohms
-        self.__kilo_ohms = self.__convert_from_base(ElectricResistanceUnits.KiloOhm)
-        return self.__kilo_ohms
+        if self.__kiloohms != None:
+            return self.__kiloohms
+        self.__kiloohms = self.__convert_from_base(ElectricResistanceUnits.Kiloohm)
+        return self.__kiloohms
 
     
     @property
-    def mega_ohms(self) -> float:
+    def megaohms(self) -> float:
         """
         
         """
-        if self.__mega_ohms != None:
-            return self.__mega_ohms
-        self.__mega_ohms = self.__convert_from_base(ElectricResistanceUnits.MegaOhm)
-        return self.__mega_ohms
+        if self.__megaohms != None:
+            return self.__megaohms
+        self.__megaohms = self.__convert_from_base(ElectricResistanceUnits.Megaohm)
+        return self.__megaohms
 
     
     @property
-    def giga_ohms(self) -> float:
+    def gigaohms(self) -> float:
         """
         
         """
-        if self.__giga_ohms != None:
-            return self.__giga_ohms
-        self.__giga_ohms = self.__convert_from_base(ElectricResistanceUnits.GigaOhm)
-        return self.__giga_ohms
+        if self.__gigaohms != None:
+            return self.__gigaohms
+        self.__gigaohms = self.__convert_from_base(ElectricResistanceUnits.Gigaohm)
+        return self.__gigaohms
 
     
     @property
-    def tera_ohms(self) -> float:
+    def teraohms(self) -> float:
         """
         
         """
-        if self.__tera_ohms != None:
-            return self.__tera_ohms
-        self.__tera_ohms = self.__convert_from_base(ElectricResistanceUnits.TeraOhm)
-        return self.__tera_ohms
+        if self.__teraohms != None:
+            return self.__teraohms
+        self.__teraohms = self.__convert_from_base(ElectricResistanceUnits.Teraohm)
+        return self.__teraohms
 
     
     def to_string(self, unit: ElectricResistanceUnits = ElectricResistanceUnits.Ohm) -> string:
@@ -322,23 +322,23 @@ class ElectricResistance:
         if unit == ElectricResistanceUnits.Ohm:
             return f"""{self.ohms} Ω"""
         
-        if unit == ElectricResistanceUnits.MicroOhm:
-            return f"""{self.micro_ohms} """
+        if unit == ElectricResistanceUnits.Microohm:
+            return f"""{self.microohms} """
         
-        if unit == ElectricResistanceUnits.MilliOhm:
-            return f"""{self.milli_ohms} """
+        if unit == ElectricResistanceUnits.Milliohm:
+            return f"""{self.milliohms} """
         
-        if unit == ElectricResistanceUnits.KiloOhm:
-            return f"""{self.kilo_ohms} """
+        if unit == ElectricResistanceUnits.Kiloohm:
+            return f"""{self.kiloohms} """
         
-        if unit == ElectricResistanceUnits.MegaOhm:
-            return f"""{self.mega_ohms} """
+        if unit == ElectricResistanceUnits.Megaohm:
+            return f"""{self.megaohms} """
         
-        if unit == ElectricResistanceUnits.GigaOhm:
-            return f"""{self.giga_ohms} """
+        if unit == ElectricResistanceUnits.Gigaohm:
+            return f"""{self.gigaohms} """
         
-        if unit == ElectricResistanceUnits.TeraOhm:
-            return f"""{self.tera_ohms} """
+        if unit == ElectricResistanceUnits.Teraohm:
+            return f"""{self.teraohms} """
         
         return f'{self.__value}'
 
@@ -353,22 +353,22 @@ class ElectricResistance:
         if unit_abbreviation == ElectricResistanceUnits.Ohm:
             return """Ω"""
         
-        if unit_abbreviation == ElectricResistanceUnits.MicroOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Microohm:
             return """"""
         
-        if unit_abbreviation == ElectricResistanceUnits.MilliOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Milliohm:
             return """"""
         
-        if unit_abbreviation == ElectricResistanceUnits.KiloOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Kiloohm:
             return """"""
         
-        if unit_abbreviation == ElectricResistanceUnits.MegaOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Megaohm:
             return """"""
         
-        if unit_abbreviation == ElectricResistanceUnits.GigaOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Gigaohm:
             return """"""
         
-        if unit_abbreviation == ElectricResistanceUnits.TeraOhm:
+        if unit_abbreviation == ElectricResistanceUnits.Teraohm:
             return """"""
         
 

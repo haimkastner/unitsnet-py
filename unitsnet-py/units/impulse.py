@@ -33,42 +33,42 @@ class ImpulseUnits(Enum):
             
         """
         
-        NanoNewtonSecond = 'nano_newton_second'
+        NanonewtonSecond = 'nanonewton_second'
         """
             
         """
         
-        MicroNewtonSecond = 'micro_newton_second'
+        MicronewtonSecond = 'micronewton_second'
         """
             
         """
         
-        MilliNewtonSecond = 'milli_newton_second'
+        MillinewtonSecond = 'millinewton_second'
         """
             
         """
         
-        CentiNewtonSecond = 'centi_newton_second'
+        CentinewtonSecond = 'centinewton_second'
         """
             
         """
         
-        DeciNewtonSecond = 'deci_newton_second'
+        DecinewtonSecond = 'decinewton_second'
         """
             
         """
         
-        DecaNewtonSecond = 'deca_newton_second'
+        DecanewtonSecond = 'decanewton_second'
         """
             
         """
         
-        KiloNewtonSecond = 'kilo_newton_second'
+        KilonewtonSecond = 'kilonewton_second'
         """
             
         """
         
-        MegaNewtonSecond = 'mega_newton_second'
+        MeganewtonSecond = 'meganewton_second'
         """
             
         """
@@ -97,21 +97,21 @@ class Impulse:
         
         self.__slug_feet_per_second = None
         
-        self.__nano_newton_seconds = None
+        self.__nanonewton_seconds = None
         
-        self.__micro_newton_seconds = None
+        self.__micronewton_seconds = None
         
-        self.__milli_newton_seconds = None
+        self.__millinewton_seconds = None
         
-        self.__centi_newton_seconds = None
+        self.__centinewton_seconds = None
         
-        self.__deci_newton_seconds = None
+        self.__decinewton_seconds = None
         
-        self.__deca_newton_seconds = None
+        self.__decanewton_seconds = None
         
-        self.__kilo_newton_seconds = None
+        self.__kilonewton_seconds = None
         
-        self.__mega_newton_seconds = None
+        self.__meganewton_seconds = None
         
 
     def __convert_from_base(self, from_unit: ImpulseUnits) -> float:
@@ -132,28 +132,28 @@ class Impulse:
         if from_unit == ImpulseUnits.SlugFootPerSecond:
             return (value * 0.224735720691)
         
-        if from_unit == ImpulseUnits.NanoNewtonSecond:
+        if from_unit == ImpulseUnits.NanonewtonSecond:
             return ((value) / 1e-09)
         
-        if from_unit == ImpulseUnits.MicroNewtonSecond:
+        if from_unit == ImpulseUnits.MicronewtonSecond:
             return ((value) / 1e-06)
         
-        if from_unit == ImpulseUnits.MilliNewtonSecond:
+        if from_unit == ImpulseUnits.MillinewtonSecond:
             return ((value) / 0.001)
         
-        if from_unit == ImpulseUnits.CentiNewtonSecond:
+        if from_unit == ImpulseUnits.CentinewtonSecond:
             return ((value) / 0.01)
         
-        if from_unit == ImpulseUnits.DeciNewtonSecond:
+        if from_unit == ImpulseUnits.DecinewtonSecond:
             return ((value) / 0.1)
         
-        if from_unit == ImpulseUnits.DecaNewtonSecond:
+        if from_unit == ImpulseUnits.DecanewtonSecond:
             return ((value) / 10.0)
         
-        if from_unit == ImpulseUnits.KiloNewtonSecond:
+        if from_unit == ImpulseUnits.KilonewtonSecond:
             return ((value) / 1000.0)
         
-        if from_unit == ImpulseUnits.MegaNewtonSecond:
+        if from_unit == ImpulseUnits.MeganewtonSecond:
             return ((value) / 1000000.0)
         
         return None
@@ -176,28 +176,28 @@ class Impulse:
         if to_unit == ImpulseUnits.SlugFootPerSecond:
             return (value / 0.224735720691)
         
-        if to_unit == ImpulseUnits.NanoNewtonSecond:
+        if to_unit == ImpulseUnits.NanonewtonSecond:
             return ((value) * 1e-09)
         
-        if to_unit == ImpulseUnits.MicroNewtonSecond:
+        if to_unit == ImpulseUnits.MicronewtonSecond:
             return ((value) * 1e-06)
         
-        if to_unit == ImpulseUnits.MilliNewtonSecond:
+        if to_unit == ImpulseUnits.MillinewtonSecond:
             return ((value) * 0.001)
         
-        if to_unit == ImpulseUnits.CentiNewtonSecond:
+        if to_unit == ImpulseUnits.CentinewtonSecond:
             return ((value) * 0.01)
         
-        if to_unit == ImpulseUnits.DeciNewtonSecond:
+        if to_unit == ImpulseUnits.DecinewtonSecond:
             return ((value) * 0.1)
         
-        if to_unit == ImpulseUnits.DecaNewtonSecond:
+        if to_unit == ImpulseUnits.DecanewtonSecond:
             return ((value) * 10.0)
         
-        if to_unit == ImpulseUnits.KiloNewtonSecond:
+        if to_unit == ImpulseUnits.KilonewtonSecond:
             return ((value) * 1000.0)
         
-        if to_unit == ImpulseUnits.MegaNewtonSecond:
+        if to_unit == ImpulseUnits.MeganewtonSecond:
             return ((value) * 1000000.0)
         
         return None
@@ -284,123 +284,123 @@ class Impulse:
 
     
     @staticmethod
-    def from_nano_newton_seconds(nano_newton_seconds: float):
+    def from_nanonewton_seconds(nanonewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in nano_newton_seconds.
+        Create a new instance of Impulse from a value in nanonewton_seconds.
 
         
 
-        :param meters: The Impulse value in nano_newton_seconds.
-        :type nano_newton_seconds: float
+        :param meters: The Impulse value in nanonewton_seconds.
+        :type nanonewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(nano_newton_seconds, ImpulseUnits.NanoNewtonSecond)
+        return Impulse(nanonewton_seconds, ImpulseUnits.NanonewtonSecond)
 
     
     @staticmethod
-    def from_micro_newton_seconds(micro_newton_seconds: float):
+    def from_micronewton_seconds(micronewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in micro_newton_seconds.
+        Create a new instance of Impulse from a value in micronewton_seconds.
 
         
 
-        :param meters: The Impulse value in micro_newton_seconds.
-        :type micro_newton_seconds: float
+        :param meters: The Impulse value in micronewton_seconds.
+        :type micronewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(micro_newton_seconds, ImpulseUnits.MicroNewtonSecond)
+        return Impulse(micronewton_seconds, ImpulseUnits.MicronewtonSecond)
 
     
     @staticmethod
-    def from_milli_newton_seconds(milli_newton_seconds: float):
+    def from_millinewton_seconds(millinewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in milli_newton_seconds.
+        Create a new instance of Impulse from a value in millinewton_seconds.
 
         
 
-        :param meters: The Impulse value in milli_newton_seconds.
-        :type milli_newton_seconds: float
+        :param meters: The Impulse value in millinewton_seconds.
+        :type millinewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(milli_newton_seconds, ImpulseUnits.MilliNewtonSecond)
+        return Impulse(millinewton_seconds, ImpulseUnits.MillinewtonSecond)
 
     
     @staticmethod
-    def from_centi_newton_seconds(centi_newton_seconds: float):
+    def from_centinewton_seconds(centinewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in centi_newton_seconds.
+        Create a new instance of Impulse from a value in centinewton_seconds.
 
         
 
-        :param meters: The Impulse value in centi_newton_seconds.
-        :type centi_newton_seconds: float
+        :param meters: The Impulse value in centinewton_seconds.
+        :type centinewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(centi_newton_seconds, ImpulseUnits.CentiNewtonSecond)
+        return Impulse(centinewton_seconds, ImpulseUnits.CentinewtonSecond)
 
     
     @staticmethod
-    def from_deci_newton_seconds(deci_newton_seconds: float):
+    def from_decinewton_seconds(decinewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in deci_newton_seconds.
+        Create a new instance of Impulse from a value in decinewton_seconds.
 
         
 
-        :param meters: The Impulse value in deci_newton_seconds.
-        :type deci_newton_seconds: float
+        :param meters: The Impulse value in decinewton_seconds.
+        :type decinewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(deci_newton_seconds, ImpulseUnits.DeciNewtonSecond)
+        return Impulse(decinewton_seconds, ImpulseUnits.DecinewtonSecond)
 
     
     @staticmethod
-    def from_deca_newton_seconds(deca_newton_seconds: float):
+    def from_decanewton_seconds(decanewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in deca_newton_seconds.
+        Create a new instance of Impulse from a value in decanewton_seconds.
 
         
 
-        :param meters: The Impulse value in deca_newton_seconds.
-        :type deca_newton_seconds: float
+        :param meters: The Impulse value in decanewton_seconds.
+        :type decanewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(deca_newton_seconds, ImpulseUnits.DecaNewtonSecond)
+        return Impulse(decanewton_seconds, ImpulseUnits.DecanewtonSecond)
 
     
     @staticmethod
-    def from_kilo_newton_seconds(kilo_newton_seconds: float):
+    def from_kilonewton_seconds(kilonewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in kilo_newton_seconds.
+        Create a new instance of Impulse from a value in kilonewton_seconds.
 
         
 
-        :param meters: The Impulse value in kilo_newton_seconds.
-        :type kilo_newton_seconds: float
+        :param meters: The Impulse value in kilonewton_seconds.
+        :type kilonewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(kilo_newton_seconds, ImpulseUnits.KiloNewtonSecond)
+        return Impulse(kilonewton_seconds, ImpulseUnits.KilonewtonSecond)
 
     
     @staticmethod
-    def from_mega_newton_seconds(mega_newton_seconds: float):
+    def from_meganewton_seconds(meganewton_seconds: float):
         """
-        Create a new instance of Impulse from a value in mega_newton_seconds.
+        Create a new instance of Impulse from a value in meganewton_seconds.
 
         
 
-        :param meters: The Impulse value in mega_newton_seconds.
-        :type mega_newton_seconds: float
+        :param meters: The Impulse value in meganewton_seconds.
+        :type meganewton_seconds: float
         :return: A new instance of Impulse.
         :rtype: Impulse
         """
-        return Impulse(mega_newton_seconds, ImpulseUnits.MegaNewtonSecond)
+        return Impulse(meganewton_seconds, ImpulseUnits.MeganewtonSecond)
 
     
     @property
@@ -459,91 +459,91 @@ class Impulse:
 
     
     @property
-    def nano_newton_seconds(self) -> float:
+    def nanonewton_seconds(self) -> float:
         """
         
         """
-        if self.__nano_newton_seconds != None:
-            return self.__nano_newton_seconds
-        self.__nano_newton_seconds = self.__convert_from_base(ImpulseUnits.NanoNewtonSecond)
-        return self.__nano_newton_seconds
+        if self.__nanonewton_seconds != None:
+            return self.__nanonewton_seconds
+        self.__nanonewton_seconds = self.__convert_from_base(ImpulseUnits.NanonewtonSecond)
+        return self.__nanonewton_seconds
 
     
     @property
-    def micro_newton_seconds(self) -> float:
+    def micronewton_seconds(self) -> float:
         """
         
         """
-        if self.__micro_newton_seconds != None:
-            return self.__micro_newton_seconds
-        self.__micro_newton_seconds = self.__convert_from_base(ImpulseUnits.MicroNewtonSecond)
-        return self.__micro_newton_seconds
+        if self.__micronewton_seconds != None:
+            return self.__micronewton_seconds
+        self.__micronewton_seconds = self.__convert_from_base(ImpulseUnits.MicronewtonSecond)
+        return self.__micronewton_seconds
 
     
     @property
-    def milli_newton_seconds(self) -> float:
+    def millinewton_seconds(self) -> float:
         """
         
         """
-        if self.__milli_newton_seconds != None:
-            return self.__milli_newton_seconds
-        self.__milli_newton_seconds = self.__convert_from_base(ImpulseUnits.MilliNewtonSecond)
-        return self.__milli_newton_seconds
+        if self.__millinewton_seconds != None:
+            return self.__millinewton_seconds
+        self.__millinewton_seconds = self.__convert_from_base(ImpulseUnits.MillinewtonSecond)
+        return self.__millinewton_seconds
 
     
     @property
-    def centi_newton_seconds(self) -> float:
+    def centinewton_seconds(self) -> float:
         """
         
         """
-        if self.__centi_newton_seconds != None:
-            return self.__centi_newton_seconds
-        self.__centi_newton_seconds = self.__convert_from_base(ImpulseUnits.CentiNewtonSecond)
-        return self.__centi_newton_seconds
+        if self.__centinewton_seconds != None:
+            return self.__centinewton_seconds
+        self.__centinewton_seconds = self.__convert_from_base(ImpulseUnits.CentinewtonSecond)
+        return self.__centinewton_seconds
 
     
     @property
-    def deci_newton_seconds(self) -> float:
+    def decinewton_seconds(self) -> float:
         """
         
         """
-        if self.__deci_newton_seconds != None:
-            return self.__deci_newton_seconds
-        self.__deci_newton_seconds = self.__convert_from_base(ImpulseUnits.DeciNewtonSecond)
-        return self.__deci_newton_seconds
+        if self.__decinewton_seconds != None:
+            return self.__decinewton_seconds
+        self.__decinewton_seconds = self.__convert_from_base(ImpulseUnits.DecinewtonSecond)
+        return self.__decinewton_seconds
 
     
     @property
-    def deca_newton_seconds(self) -> float:
+    def decanewton_seconds(self) -> float:
         """
         
         """
-        if self.__deca_newton_seconds != None:
-            return self.__deca_newton_seconds
-        self.__deca_newton_seconds = self.__convert_from_base(ImpulseUnits.DecaNewtonSecond)
-        return self.__deca_newton_seconds
+        if self.__decanewton_seconds != None:
+            return self.__decanewton_seconds
+        self.__decanewton_seconds = self.__convert_from_base(ImpulseUnits.DecanewtonSecond)
+        return self.__decanewton_seconds
 
     
     @property
-    def kilo_newton_seconds(self) -> float:
+    def kilonewton_seconds(self) -> float:
         """
         
         """
-        if self.__kilo_newton_seconds != None:
-            return self.__kilo_newton_seconds
-        self.__kilo_newton_seconds = self.__convert_from_base(ImpulseUnits.KiloNewtonSecond)
-        return self.__kilo_newton_seconds
+        if self.__kilonewton_seconds != None:
+            return self.__kilonewton_seconds
+        self.__kilonewton_seconds = self.__convert_from_base(ImpulseUnits.KilonewtonSecond)
+        return self.__kilonewton_seconds
 
     
     @property
-    def mega_newton_seconds(self) -> float:
+    def meganewton_seconds(self) -> float:
         """
         
         """
-        if self.__mega_newton_seconds != None:
-            return self.__mega_newton_seconds
-        self.__mega_newton_seconds = self.__convert_from_base(ImpulseUnits.MegaNewtonSecond)
-        return self.__mega_newton_seconds
+        if self.__meganewton_seconds != None:
+            return self.__meganewton_seconds
+        self.__meganewton_seconds = self.__convert_from_base(ImpulseUnits.MeganewtonSecond)
+        return self.__meganewton_seconds
 
     
     def to_string(self, unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> string:
@@ -568,29 +568,29 @@ class Impulse:
         if unit == ImpulseUnits.SlugFootPerSecond:
             return f"""{self.slug_feet_per_second} slug·ft/s"""
         
-        if unit == ImpulseUnits.NanoNewtonSecond:
-            return f"""{self.nano_newton_seconds} """
+        if unit == ImpulseUnits.NanonewtonSecond:
+            return f"""{self.nanonewton_seconds} """
         
-        if unit == ImpulseUnits.MicroNewtonSecond:
-            return f"""{self.micro_newton_seconds} """
+        if unit == ImpulseUnits.MicronewtonSecond:
+            return f"""{self.micronewton_seconds} """
         
-        if unit == ImpulseUnits.MilliNewtonSecond:
-            return f"""{self.milli_newton_seconds} """
+        if unit == ImpulseUnits.MillinewtonSecond:
+            return f"""{self.millinewton_seconds} """
         
-        if unit == ImpulseUnits.CentiNewtonSecond:
-            return f"""{self.centi_newton_seconds} """
+        if unit == ImpulseUnits.CentinewtonSecond:
+            return f"""{self.centinewton_seconds} """
         
-        if unit == ImpulseUnits.DeciNewtonSecond:
-            return f"""{self.deci_newton_seconds} """
+        if unit == ImpulseUnits.DecinewtonSecond:
+            return f"""{self.decinewton_seconds} """
         
-        if unit == ImpulseUnits.DecaNewtonSecond:
-            return f"""{self.deca_newton_seconds} """
+        if unit == ImpulseUnits.DecanewtonSecond:
+            return f"""{self.decanewton_seconds} """
         
-        if unit == ImpulseUnits.KiloNewtonSecond:
-            return f"""{self.kilo_newton_seconds} """
+        if unit == ImpulseUnits.KilonewtonSecond:
+            return f"""{self.kilonewton_seconds} """
         
-        if unit == ImpulseUnits.MegaNewtonSecond:
-            return f"""{self.mega_newton_seconds} """
+        if unit == ImpulseUnits.MeganewtonSecond:
+            return f"""{self.meganewton_seconds} """
         
         return f'{self.__value}'
 
@@ -617,28 +617,28 @@ class Impulse:
         if unit_abbreviation == ImpulseUnits.SlugFootPerSecond:
             return """slug·ft/s"""
         
-        if unit_abbreviation == ImpulseUnits.NanoNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.NanonewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.MicroNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.MicronewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.MilliNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.MillinewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.CentiNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.CentinewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.DeciNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.DecinewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.DecaNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.DecanewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.KiloNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.KilonewtonSecond:
             return """"""
         
-        if unit_abbreviation == ImpulseUnits.MegaNewtonSecond:
+        if unit_abbreviation == ImpulseUnits.MeganewtonSecond:
             return """"""
         
 

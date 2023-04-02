@@ -28,17 +28,17 @@ class IrradiationUnits(Enum):
             
         """
         
-        KiloJoulePerSquareMeter = 'kilo_joule_per_square_meter'
+        KilojoulePerSquareMeter = 'kilojoule_per_square_meter'
         """
             
         """
         
-        MilliJoulePerSquareCentimeter = 'milli_joule_per_square_centimeter'
+        MillijoulePerSquareCentimeter = 'millijoule_per_square_centimeter'
         """
             
         """
         
-        KiloWattHourPerSquareMeter = 'kilo_watt_hour_per_square_meter'
+        KilowattHourPerSquareMeter = 'kilowatt_hour_per_square_meter'
         """
             
         """
@@ -65,11 +65,11 @@ class Irradiation:
         
         self.__watt_hours_per_square_meter = None
         
-        self.__kilo_joules_per_square_meter = None
+        self.__kilojoules_per_square_meter = None
         
-        self.__milli_joules_per_square_centimeter = None
+        self.__millijoules_per_square_centimeter = None
         
-        self.__kilo_watt_hours_per_square_meter = None
+        self.__kilowatt_hours_per_square_meter = None
         
 
     def __convert_from_base(self, from_unit: IrradiationUnits) -> float:
@@ -87,13 +87,13 @@ class Irradiation:
         if from_unit == IrradiationUnits.WattHourPerSquareMeter:
             return (value / 3600)
         
-        if from_unit == IrradiationUnits.KiloJoulePerSquareMeter:
+        if from_unit == IrradiationUnits.KilojoulePerSquareMeter:
             return ((value) / 1000.0)
         
-        if from_unit == IrradiationUnits.MilliJoulePerSquareCentimeter:
+        if from_unit == IrradiationUnits.MillijoulePerSquareCentimeter:
             return ((value / 1e4) / 0.001)
         
-        if from_unit == IrradiationUnits.KiloWattHourPerSquareMeter:
+        if from_unit == IrradiationUnits.KilowattHourPerSquareMeter:
             return ((value / 3600) / 1000.0)
         
         return None
@@ -113,13 +113,13 @@ class Irradiation:
         if to_unit == IrradiationUnits.WattHourPerSquareMeter:
             return (value * 3600)
         
-        if to_unit == IrradiationUnits.KiloJoulePerSquareMeter:
+        if to_unit == IrradiationUnits.KilojoulePerSquareMeter:
             return ((value) * 1000.0)
         
-        if to_unit == IrradiationUnits.MilliJoulePerSquareCentimeter:
+        if to_unit == IrradiationUnits.MillijoulePerSquareCentimeter:
             return ((value * 1e4) * 0.001)
         
-        if to_unit == IrradiationUnits.KiloWattHourPerSquareMeter:
+        if to_unit == IrradiationUnits.KilowattHourPerSquareMeter:
             return ((value * 3600) * 1000.0)
         
         return None
@@ -191,48 +191,48 @@ class Irradiation:
 
     
     @staticmethod
-    def from_kilo_joules_per_square_meter(kilo_joules_per_square_meter: float):
+    def from_kilojoules_per_square_meter(kilojoules_per_square_meter: float):
         """
-        Create a new instance of Irradiation from a value in kilo_joules_per_square_meter.
+        Create a new instance of Irradiation from a value in kilojoules_per_square_meter.
 
         
 
-        :param meters: The Irradiation value in kilo_joules_per_square_meter.
-        :type kilo_joules_per_square_meter: float
+        :param meters: The Irradiation value in kilojoules_per_square_meter.
+        :type kilojoules_per_square_meter: float
         :return: A new instance of Irradiation.
         :rtype: Irradiation
         """
-        return Irradiation(kilo_joules_per_square_meter, IrradiationUnits.KiloJoulePerSquareMeter)
+        return Irradiation(kilojoules_per_square_meter, IrradiationUnits.KilojoulePerSquareMeter)
 
     
     @staticmethod
-    def from_milli_joules_per_square_centimeter(milli_joules_per_square_centimeter: float):
+    def from_millijoules_per_square_centimeter(millijoules_per_square_centimeter: float):
         """
-        Create a new instance of Irradiation from a value in milli_joules_per_square_centimeter.
+        Create a new instance of Irradiation from a value in millijoules_per_square_centimeter.
 
         
 
-        :param meters: The Irradiation value in milli_joules_per_square_centimeter.
-        :type milli_joules_per_square_centimeter: float
+        :param meters: The Irradiation value in millijoules_per_square_centimeter.
+        :type millijoules_per_square_centimeter: float
         :return: A new instance of Irradiation.
         :rtype: Irradiation
         """
-        return Irradiation(milli_joules_per_square_centimeter, IrradiationUnits.MilliJoulePerSquareCentimeter)
+        return Irradiation(millijoules_per_square_centimeter, IrradiationUnits.MillijoulePerSquareCentimeter)
 
     
     @staticmethod
-    def from_kilo_watt_hours_per_square_meter(kilo_watt_hours_per_square_meter: float):
+    def from_kilowatt_hours_per_square_meter(kilowatt_hours_per_square_meter: float):
         """
-        Create a new instance of Irradiation from a value in kilo_watt_hours_per_square_meter.
+        Create a new instance of Irradiation from a value in kilowatt_hours_per_square_meter.
 
         
 
-        :param meters: The Irradiation value in kilo_watt_hours_per_square_meter.
-        :type kilo_watt_hours_per_square_meter: float
+        :param meters: The Irradiation value in kilowatt_hours_per_square_meter.
+        :type kilowatt_hours_per_square_meter: float
         :return: A new instance of Irradiation.
         :rtype: Irradiation
         """
-        return Irradiation(kilo_watt_hours_per_square_meter, IrradiationUnits.KiloWattHourPerSquareMeter)
+        return Irradiation(kilowatt_hours_per_square_meter, IrradiationUnits.KilowattHourPerSquareMeter)
 
     
     @property
@@ -280,36 +280,36 @@ class Irradiation:
 
     
     @property
-    def kilo_joules_per_square_meter(self) -> float:
+    def kilojoules_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_joules_per_square_meter != None:
-            return self.__kilo_joules_per_square_meter
-        self.__kilo_joules_per_square_meter = self.__convert_from_base(IrradiationUnits.KiloJoulePerSquareMeter)
-        return self.__kilo_joules_per_square_meter
+        if self.__kilojoules_per_square_meter != None:
+            return self.__kilojoules_per_square_meter
+        self.__kilojoules_per_square_meter = self.__convert_from_base(IrradiationUnits.KilojoulePerSquareMeter)
+        return self.__kilojoules_per_square_meter
 
     
     @property
-    def milli_joules_per_square_centimeter(self) -> float:
+    def millijoules_per_square_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_joules_per_square_centimeter != None:
-            return self.__milli_joules_per_square_centimeter
-        self.__milli_joules_per_square_centimeter = self.__convert_from_base(IrradiationUnits.MilliJoulePerSquareCentimeter)
-        return self.__milli_joules_per_square_centimeter
+        if self.__millijoules_per_square_centimeter != None:
+            return self.__millijoules_per_square_centimeter
+        self.__millijoules_per_square_centimeter = self.__convert_from_base(IrradiationUnits.MillijoulePerSquareCentimeter)
+        return self.__millijoules_per_square_centimeter
 
     
     @property
-    def kilo_watt_hours_per_square_meter(self) -> float:
+    def kilowatt_hours_per_square_meter(self) -> float:
         """
         
         """
-        if self.__kilo_watt_hours_per_square_meter != None:
-            return self.__kilo_watt_hours_per_square_meter
-        self.__kilo_watt_hours_per_square_meter = self.__convert_from_base(IrradiationUnits.KiloWattHourPerSquareMeter)
-        return self.__kilo_watt_hours_per_square_meter
+        if self.__kilowatt_hours_per_square_meter != None:
+            return self.__kilowatt_hours_per_square_meter
+        self.__kilowatt_hours_per_square_meter = self.__convert_from_base(IrradiationUnits.KilowattHourPerSquareMeter)
+        return self.__kilowatt_hours_per_square_meter
 
     
     def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> string:
@@ -331,14 +331,14 @@ class Irradiation:
         if unit == IrradiationUnits.WattHourPerSquareMeter:
             return f"""{self.watt_hours_per_square_meter} Wh/m²"""
         
-        if unit == IrradiationUnits.KiloJoulePerSquareMeter:
-            return f"""{self.kilo_joules_per_square_meter} """
+        if unit == IrradiationUnits.KilojoulePerSquareMeter:
+            return f"""{self.kilojoules_per_square_meter} """
         
-        if unit == IrradiationUnits.MilliJoulePerSquareCentimeter:
-            return f"""{self.milli_joules_per_square_centimeter} """
+        if unit == IrradiationUnits.MillijoulePerSquareCentimeter:
+            return f"""{self.millijoules_per_square_centimeter} """
         
-        if unit == IrradiationUnits.KiloWattHourPerSquareMeter:
-            return f"""{self.kilo_watt_hours_per_square_meter} """
+        if unit == IrradiationUnits.KilowattHourPerSquareMeter:
+            return f"""{self.kilowatt_hours_per_square_meter} """
         
         return f'{self.__value}'
 
@@ -362,13 +362,13 @@ class Irradiation:
         if unit_abbreviation == IrradiationUnits.WattHourPerSquareMeter:
             return """Wh/m²"""
         
-        if unit_abbreviation == IrradiationUnits.KiloJoulePerSquareMeter:
+        if unit_abbreviation == IrradiationUnits.KilojoulePerSquareMeter:
             return """"""
         
-        if unit_abbreviation == IrradiationUnits.MilliJoulePerSquareCentimeter:
+        if unit_abbreviation == IrradiationUnits.MillijoulePerSquareCentimeter:
             return """"""
         
-        if unit_abbreviation == IrradiationUnits.KiloWattHourPerSquareMeter:
+        if unit_abbreviation == IrradiationUnits.KilowattHourPerSquareMeter:
             return """"""
         
 

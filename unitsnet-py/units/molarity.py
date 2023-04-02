@@ -23,42 +23,42 @@ class MolarityUnits(Enum):
             
         """
         
-        KiloMolePerCubicMeter = 'kilo_mole_per_cubic_meter'
+        KilomolePerCubicMeter = 'kilomole_per_cubic_meter'
         """
             
         """
         
-        FemtoMolePerLiter = 'femto_mole_per_liter'
+        FemtomolePerLiter = 'femtomole_per_liter'
         """
             
         """
         
-        PicoMolePerLiter = 'pico_mole_per_liter'
+        PicomolePerLiter = 'picomole_per_liter'
         """
             
         """
         
-        NanoMolePerLiter = 'nano_mole_per_liter'
+        NanomolePerLiter = 'nanomole_per_liter'
         """
             
         """
         
-        MicroMolePerLiter = 'micro_mole_per_liter'
+        MicromolePerLiter = 'micromole_per_liter'
         """
             
         """
         
-        MilliMolePerLiter = 'milli_mole_per_liter'
+        MillimolePerLiter = 'millimole_per_liter'
         """
             
         """
         
-        CentiMolePerLiter = 'centi_mole_per_liter'
+        CentimolePerLiter = 'centimole_per_liter'
         """
             
         """
         
-        DeciMolePerLiter = 'deci_mole_per_liter'
+        DecimolePerLiter = 'decimole_per_liter'
         """
             
         """
@@ -83,21 +83,21 @@ class Molarity:
         
         self.__pound_moles_per_cubic_foot = None
         
-        self.__kilo_moles_per_cubic_meter = None
+        self.__kilomoles_per_cubic_meter = None
         
-        self.__femto_moles_per_liter = None
+        self.__femtomoles_per_liter = None
         
-        self.__pico_moles_per_liter = None
+        self.__picomoles_per_liter = None
         
-        self.__nano_moles_per_liter = None
+        self.__nanomoles_per_liter = None
         
-        self.__micro_moles_per_liter = None
+        self.__micromoles_per_liter = None
         
-        self.__milli_moles_per_liter = None
+        self.__millimoles_per_liter = None
         
-        self.__centi_moles_per_liter = None
+        self.__centimoles_per_liter = None
         
-        self.__deci_moles_per_liter = None
+        self.__decimoles_per_liter = None
         
 
     def __convert_from_base(self, from_unit: MolarityUnits) -> float:
@@ -112,28 +112,28 @@ class Molarity:
         if from_unit == MolarityUnits.PoundMolePerCubicFoot:
             return (value * 6.2427960576144611956325455827221e-5)
         
-        if from_unit == MolarityUnits.KiloMolePerCubicMeter:
+        if from_unit == MolarityUnits.KilomolePerCubicMeter:
             return ((value) / 1000.0)
         
-        if from_unit == MolarityUnits.FemtoMolePerLiter:
+        if from_unit == MolarityUnits.FemtomolePerLiter:
             return ((value * 1e-3) / 1e-15)
         
-        if from_unit == MolarityUnits.PicoMolePerLiter:
+        if from_unit == MolarityUnits.PicomolePerLiter:
             return ((value * 1e-3) / 1e-12)
         
-        if from_unit == MolarityUnits.NanoMolePerLiter:
+        if from_unit == MolarityUnits.NanomolePerLiter:
             return ((value * 1e-3) / 1e-09)
         
-        if from_unit == MolarityUnits.MicroMolePerLiter:
+        if from_unit == MolarityUnits.MicromolePerLiter:
             return ((value * 1e-3) / 1e-06)
         
-        if from_unit == MolarityUnits.MilliMolePerLiter:
+        if from_unit == MolarityUnits.MillimolePerLiter:
             return ((value * 1e-3) / 0.001)
         
-        if from_unit == MolarityUnits.CentiMolePerLiter:
+        if from_unit == MolarityUnits.CentimolePerLiter:
             return ((value * 1e-3) / 0.01)
         
-        if from_unit == MolarityUnits.DeciMolePerLiter:
+        if from_unit == MolarityUnits.DecimolePerLiter:
             return ((value * 1e-3) / 0.1)
         
         return None
@@ -150,28 +150,28 @@ class Molarity:
         if to_unit == MolarityUnits.PoundMolePerCubicFoot:
             return (value / 6.2427960576144611956325455827221e-5)
         
-        if to_unit == MolarityUnits.KiloMolePerCubicMeter:
+        if to_unit == MolarityUnits.KilomolePerCubicMeter:
             return ((value) * 1000.0)
         
-        if to_unit == MolarityUnits.FemtoMolePerLiter:
+        if to_unit == MolarityUnits.FemtomolePerLiter:
             return ((value / 1e-3) * 1e-15)
         
-        if to_unit == MolarityUnits.PicoMolePerLiter:
+        if to_unit == MolarityUnits.PicomolePerLiter:
             return ((value / 1e-3) * 1e-12)
         
-        if to_unit == MolarityUnits.NanoMolePerLiter:
+        if to_unit == MolarityUnits.NanomolePerLiter:
             return ((value / 1e-3) * 1e-09)
         
-        if to_unit == MolarityUnits.MicroMolePerLiter:
+        if to_unit == MolarityUnits.MicromolePerLiter:
             return ((value / 1e-3) * 1e-06)
         
-        if to_unit == MolarityUnits.MilliMolePerLiter:
+        if to_unit == MolarityUnits.MillimolePerLiter:
             return ((value / 1e-3) * 0.001)
         
-        if to_unit == MolarityUnits.CentiMolePerLiter:
+        if to_unit == MolarityUnits.CentimolePerLiter:
             return ((value / 1e-3) * 0.01)
         
-        if to_unit == MolarityUnits.DeciMolePerLiter:
+        if to_unit == MolarityUnits.DecimolePerLiter:
             return ((value / 1e-3) * 0.1)
         
         return None
@@ -228,123 +228,123 @@ class Molarity:
 
     
     @staticmethod
-    def from_kilo_moles_per_cubic_meter(kilo_moles_per_cubic_meter: float):
+    def from_kilomoles_per_cubic_meter(kilomoles_per_cubic_meter: float):
         """
-        Create a new instance of Molarity from a value in kilo_moles_per_cubic_meter.
+        Create a new instance of Molarity from a value in kilomoles_per_cubic_meter.
 
         
 
-        :param meters: The Molarity value in kilo_moles_per_cubic_meter.
-        :type kilo_moles_per_cubic_meter: float
+        :param meters: The Molarity value in kilomoles_per_cubic_meter.
+        :type kilomoles_per_cubic_meter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(kilo_moles_per_cubic_meter, MolarityUnits.KiloMolePerCubicMeter)
+        return Molarity(kilomoles_per_cubic_meter, MolarityUnits.KilomolePerCubicMeter)
 
     
     @staticmethod
-    def from_femto_moles_per_liter(femto_moles_per_liter: float):
+    def from_femtomoles_per_liter(femtomoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in femto_moles_per_liter.
+        Create a new instance of Molarity from a value in femtomoles_per_liter.
 
         
 
-        :param meters: The Molarity value in femto_moles_per_liter.
-        :type femto_moles_per_liter: float
+        :param meters: The Molarity value in femtomoles_per_liter.
+        :type femtomoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(femto_moles_per_liter, MolarityUnits.FemtoMolePerLiter)
+        return Molarity(femtomoles_per_liter, MolarityUnits.FemtomolePerLiter)
 
     
     @staticmethod
-    def from_pico_moles_per_liter(pico_moles_per_liter: float):
+    def from_picomoles_per_liter(picomoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in pico_moles_per_liter.
+        Create a new instance of Molarity from a value in picomoles_per_liter.
 
         
 
-        :param meters: The Molarity value in pico_moles_per_liter.
-        :type pico_moles_per_liter: float
+        :param meters: The Molarity value in picomoles_per_liter.
+        :type picomoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(pico_moles_per_liter, MolarityUnits.PicoMolePerLiter)
+        return Molarity(picomoles_per_liter, MolarityUnits.PicomolePerLiter)
 
     
     @staticmethod
-    def from_nano_moles_per_liter(nano_moles_per_liter: float):
+    def from_nanomoles_per_liter(nanomoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in nano_moles_per_liter.
+        Create a new instance of Molarity from a value in nanomoles_per_liter.
 
         
 
-        :param meters: The Molarity value in nano_moles_per_liter.
-        :type nano_moles_per_liter: float
+        :param meters: The Molarity value in nanomoles_per_liter.
+        :type nanomoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(nano_moles_per_liter, MolarityUnits.NanoMolePerLiter)
+        return Molarity(nanomoles_per_liter, MolarityUnits.NanomolePerLiter)
 
     
     @staticmethod
-    def from_micro_moles_per_liter(micro_moles_per_liter: float):
+    def from_micromoles_per_liter(micromoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in micro_moles_per_liter.
+        Create a new instance of Molarity from a value in micromoles_per_liter.
 
         
 
-        :param meters: The Molarity value in micro_moles_per_liter.
-        :type micro_moles_per_liter: float
+        :param meters: The Molarity value in micromoles_per_liter.
+        :type micromoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(micro_moles_per_liter, MolarityUnits.MicroMolePerLiter)
+        return Molarity(micromoles_per_liter, MolarityUnits.MicromolePerLiter)
 
     
     @staticmethod
-    def from_milli_moles_per_liter(milli_moles_per_liter: float):
+    def from_millimoles_per_liter(millimoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in milli_moles_per_liter.
+        Create a new instance of Molarity from a value in millimoles_per_liter.
 
         
 
-        :param meters: The Molarity value in milli_moles_per_liter.
-        :type milli_moles_per_liter: float
+        :param meters: The Molarity value in millimoles_per_liter.
+        :type millimoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(milli_moles_per_liter, MolarityUnits.MilliMolePerLiter)
+        return Molarity(millimoles_per_liter, MolarityUnits.MillimolePerLiter)
 
     
     @staticmethod
-    def from_centi_moles_per_liter(centi_moles_per_liter: float):
+    def from_centimoles_per_liter(centimoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in centi_moles_per_liter.
+        Create a new instance of Molarity from a value in centimoles_per_liter.
 
         
 
-        :param meters: The Molarity value in centi_moles_per_liter.
-        :type centi_moles_per_liter: float
+        :param meters: The Molarity value in centimoles_per_liter.
+        :type centimoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(centi_moles_per_liter, MolarityUnits.CentiMolePerLiter)
+        return Molarity(centimoles_per_liter, MolarityUnits.CentimolePerLiter)
 
     
     @staticmethod
-    def from_deci_moles_per_liter(deci_moles_per_liter: float):
+    def from_decimoles_per_liter(decimoles_per_liter: float):
         """
-        Create a new instance of Molarity from a value in deci_moles_per_liter.
+        Create a new instance of Molarity from a value in decimoles_per_liter.
 
         
 
-        :param meters: The Molarity value in deci_moles_per_liter.
-        :type deci_moles_per_liter: float
+        :param meters: The Molarity value in decimoles_per_liter.
+        :type decimoles_per_liter: float
         :return: A new instance of Molarity.
         :rtype: Molarity
         """
-        return Molarity(deci_moles_per_liter, MolarityUnits.DeciMolePerLiter)
+        return Molarity(decimoles_per_liter, MolarityUnits.DecimolePerLiter)
 
     
     @property
@@ -381,91 +381,91 @@ class Molarity:
 
     
     @property
-    def kilo_moles_per_cubic_meter(self) -> float:
+    def kilomoles_per_cubic_meter(self) -> float:
         """
         
         """
-        if self.__kilo_moles_per_cubic_meter != None:
-            return self.__kilo_moles_per_cubic_meter
-        self.__kilo_moles_per_cubic_meter = self.__convert_from_base(MolarityUnits.KiloMolePerCubicMeter)
-        return self.__kilo_moles_per_cubic_meter
+        if self.__kilomoles_per_cubic_meter != None:
+            return self.__kilomoles_per_cubic_meter
+        self.__kilomoles_per_cubic_meter = self.__convert_from_base(MolarityUnits.KilomolePerCubicMeter)
+        return self.__kilomoles_per_cubic_meter
 
     
     @property
-    def femto_moles_per_liter(self) -> float:
+    def femtomoles_per_liter(self) -> float:
         """
         
         """
-        if self.__femto_moles_per_liter != None:
-            return self.__femto_moles_per_liter
-        self.__femto_moles_per_liter = self.__convert_from_base(MolarityUnits.FemtoMolePerLiter)
-        return self.__femto_moles_per_liter
+        if self.__femtomoles_per_liter != None:
+            return self.__femtomoles_per_liter
+        self.__femtomoles_per_liter = self.__convert_from_base(MolarityUnits.FemtomolePerLiter)
+        return self.__femtomoles_per_liter
 
     
     @property
-    def pico_moles_per_liter(self) -> float:
+    def picomoles_per_liter(self) -> float:
         """
         
         """
-        if self.__pico_moles_per_liter != None:
-            return self.__pico_moles_per_liter
-        self.__pico_moles_per_liter = self.__convert_from_base(MolarityUnits.PicoMolePerLiter)
-        return self.__pico_moles_per_liter
+        if self.__picomoles_per_liter != None:
+            return self.__picomoles_per_liter
+        self.__picomoles_per_liter = self.__convert_from_base(MolarityUnits.PicomolePerLiter)
+        return self.__picomoles_per_liter
 
     
     @property
-    def nano_moles_per_liter(self) -> float:
+    def nanomoles_per_liter(self) -> float:
         """
         
         """
-        if self.__nano_moles_per_liter != None:
-            return self.__nano_moles_per_liter
-        self.__nano_moles_per_liter = self.__convert_from_base(MolarityUnits.NanoMolePerLiter)
-        return self.__nano_moles_per_liter
+        if self.__nanomoles_per_liter != None:
+            return self.__nanomoles_per_liter
+        self.__nanomoles_per_liter = self.__convert_from_base(MolarityUnits.NanomolePerLiter)
+        return self.__nanomoles_per_liter
 
     
     @property
-    def micro_moles_per_liter(self) -> float:
+    def micromoles_per_liter(self) -> float:
         """
         
         """
-        if self.__micro_moles_per_liter != None:
-            return self.__micro_moles_per_liter
-        self.__micro_moles_per_liter = self.__convert_from_base(MolarityUnits.MicroMolePerLiter)
-        return self.__micro_moles_per_liter
+        if self.__micromoles_per_liter != None:
+            return self.__micromoles_per_liter
+        self.__micromoles_per_liter = self.__convert_from_base(MolarityUnits.MicromolePerLiter)
+        return self.__micromoles_per_liter
 
     
     @property
-    def milli_moles_per_liter(self) -> float:
+    def millimoles_per_liter(self) -> float:
         """
         
         """
-        if self.__milli_moles_per_liter != None:
-            return self.__milli_moles_per_liter
-        self.__milli_moles_per_liter = self.__convert_from_base(MolarityUnits.MilliMolePerLiter)
-        return self.__milli_moles_per_liter
+        if self.__millimoles_per_liter != None:
+            return self.__millimoles_per_liter
+        self.__millimoles_per_liter = self.__convert_from_base(MolarityUnits.MillimolePerLiter)
+        return self.__millimoles_per_liter
 
     
     @property
-    def centi_moles_per_liter(self) -> float:
+    def centimoles_per_liter(self) -> float:
         """
         
         """
-        if self.__centi_moles_per_liter != None:
-            return self.__centi_moles_per_liter
-        self.__centi_moles_per_liter = self.__convert_from_base(MolarityUnits.CentiMolePerLiter)
-        return self.__centi_moles_per_liter
+        if self.__centimoles_per_liter != None:
+            return self.__centimoles_per_liter
+        self.__centimoles_per_liter = self.__convert_from_base(MolarityUnits.CentimolePerLiter)
+        return self.__centimoles_per_liter
 
     
     @property
-    def deci_moles_per_liter(self) -> float:
+    def decimoles_per_liter(self) -> float:
         """
         
         """
-        if self.__deci_moles_per_liter != None:
-            return self.__deci_moles_per_liter
-        self.__deci_moles_per_liter = self.__convert_from_base(MolarityUnits.DeciMolePerLiter)
-        return self.__deci_moles_per_liter
+        if self.__decimoles_per_liter != None:
+            return self.__decimoles_per_liter
+        self.__decimoles_per_liter = self.__convert_from_base(MolarityUnits.DecimolePerLiter)
+        return self.__decimoles_per_liter
 
     
     def to_string(self, unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> string:
@@ -484,29 +484,29 @@ class Molarity:
         if unit == MolarityUnits.PoundMolePerCubicFoot:
             return f"""{self.pound_moles_per_cubic_foot} lbmol/ft³"""
         
-        if unit == MolarityUnits.KiloMolePerCubicMeter:
-            return f"""{self.kilo_moles_per_cubic_meter} """
+        if unit == MolarityUnits.KilomolePerCubicMeter:
+            return f"""{self.kilomoles_per_cubic_meter} """
         
-        if unit == MolarityUnits.FemtoMolePerLiter:
-            return f"""{self.femto_moles_per_liter} """
+        if unit == MolarityUnits.FemtomolePerLiter:
+            return f"""{self.femtomoles_per_liter} """
         
-        if unit == MolarityUnits.PicoMolePerLiter:
-            return f"""{self.pico_moles_per_liter} """
+        if unit == MolarityUnits.PicomolePerLiter:
+            return f"""{self.picomoles_per_liter} """
         
-        if unit == MolarityUnits.NanoMolePerLiter:
-            return f"""{self.nano_moles_per_liter} """
+        if unit == MolarityUnits.NanomolePerLiter:
+            return f"""{self.nanomoles_per_liter} """
         
-        if unit == MolarityUnits.MicroMolePerLiter:
-            return f"""{self.micro_moles_per_liter} """
+        if unit == MolarityUnits.MicromolePerLiter:
+            return f"""{self.micromoles_per_liter} """
         
-        if unit == MolarityUnits.MilliMolePerLiter:
-            return f"""{self.milli_moles_per_liter} """
+        if unit == MolarityUnits.MillimolePerLiter:
+            return f"""{self.millimoles_per_liter} """
         
-        if unit == MolarityUnits.CentiMolePerLiter:
-            return f"""{self.centi_moles_per_liter} """
+        if unit == MolarityUnits.CentimolePerLiter:
+            return f"""{self.centimoles_per_liter} """
         
-        if unit == MolarityUnits.DeciMolePerLiter:
-            return f"""{self.deci_moles_per_liter} """
+        if unit == MolarityUnits.DecimolePerLiter:
+            return f"""{self.decimoles_per_liter} """
         
         return f'{self.__value}'
 
@@ -527,28 +527,28 @@ class Molarity:
         if unit_abbreviation == MolarityUnits.PoundMolePerCubicFoot:
             return """lbmol/ft³"""
         
-        if unit_abbreviation == MolarityUnits.KiloMolePerCubicMeter:
+        if unit_abbreviation == MolarityUnits.KilomolePerCubicMeter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.FemtoMolePerLiter:
+        if unit_abbreviation == MolarityUnits.FemtomolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.PicoMolePerLiter:
+        if unit_abbreviation == MolarityUnits.PicomolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.NanoMolePerLiter:
+        if unit_abbreviation == MolarityUnits.NanomolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.MicroMolePerLiter:
+        if unit_abbreviation == MolarityUnits.MicromolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.MilliMolePerLiter:
+        if unit_abbreviation == MolarityUnits.MillimolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.CentiMolePerLiter:
+        if unit_abbreviation == MolarityUnits.CentimolePerLiter:
             return """"""
         
-        if unit_abbreviation == MolarityUnits.DeciMolePerLiter:
+        if unit_abbreviation == MolarityUnits.DecimolePerLiter:
             return """"""
         
 

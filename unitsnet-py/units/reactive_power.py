@@ -13,17 +13,17 @@ class ReactivePowerUnits(Enum):
             
         """
         
-        KiloVoltampereReactive = 'kilo_voltampere_reactive'
+        KilovoltampereReactive = 'kilovoltampere_reactive'
         """
             
         """
         
-        MegaVoltampereReactive = 'mega_voltampere_reactive'
+        MegavoltampereReactive = 'megavoltampere_reactive'
         """
             
         """
         
-        GigaVoltampereReactive = 'giga_voltampere_reactive'
+        GigavoltampereReactive = 'gigavoltampere_reactive'
         """
             
         """
@@ -44,11 +44,11 @@ class ReactivePower:
         
         self.__voltamperes_reactive = None
         
-        self.__kilo_voltamperes_reactive = None
+        self.__kilovoltamperes_reactive = None
         
-        self.__mega_voltamperes_reactive = None
+        self.__megavoltamperes_reactive = None
         
-        self.__giga_voltamperes_reactive = None
+        self.__gigavoltamperes_reactive = None
         
 
     def __convert_from_base(self, from_unit: ReactivePowerUnits) -> float:
@@ -57,13 +57,13 @@ class ReactivePower:
         if from_unit == ReactivePowerUnits.VoltampereReactive:
             return (value)
         
-        if from_unit == ReactivePowerUnits.KiloVoltampereReactive:
+        if from_unit == ReactivePowerUnits.KilovoltampereReactive:
             return ((value) / 1000.0)
         
-        if from_unit == ReactivePowerUnits.MegaVoltampereReactive:
+        if from_unit == ReactivePowerUnits.MegavoltampereReactive:
             return ((value) / 1000000.0)
         
-        if from_unit == ReactivePowerUnits.GigaVoltampereReactive:
+        if from_unit == ReactivePowerUnits.GigavoltampereReactive:
             return ((value) / 1000000000.0)
         
         return None
@@ -74,13 +74,13 @@ class ReactivePower:
         if to_unit == ReactivePowerUnits.VoltampereReactive:
             return (value)
         
-        if to_unit == ReactivePowerUnits.KiloVoltampereReactive:
+        if to_unit == ReactivePowerUnits.KilovoltampereReactive:
             return ((value) * 1000.0)
         
-        if to_unit == ReactivePowerUnits.MegaVoltampereReactive:
+        if to_unit == ReactivePowerUnits.MegavoltampereReactive:
             return ((value) * 1000000.0)
         
-        if to_unit == ReactivePowerUnits.GigaVoltampereReactive:
+        if to_unit == ReactivePowerUnits.GigavoltampereReactive:
             return ((value) * 1000000000.0)
         
         return None
@@ -107,48 +107,48 @@ class ReactivePower:
 
     
     @staticmethod
-    def from_kilo_voltamperes_reactive(kilo_voltamperes_reactive: float):
+    def from_kilovoltamperes_reactive(kilovoltamperes_reactive: float):
         """
-        Create a new instance of ReactivePower from a value in kilo_voltamperes_reactive.
+        Create a new instance of ReactivePower from a value in kilovoltamperes_reactive.
 
         
 
-        :param meters: The ReactivePower value in kilo_voltamperes_reactive.
-        :type kilo_voltamperes_reactive: float
+        :param meters: The ReactivePower value in kilovoltamperes_reactive.
+        :type kilovoltamperes_reactive: float
         :return: A new instance of ReactivePower.
         :rtype: ReactivePower
         """
-        return ReactivePower(kilo_voltamperes_reactive, ReactivePowerUnits.KiloVoltampereReactive)
+        return ReactivePower(kilovoltamperes_reactive, ReactivePowerUnits.KilovoltampereReactive)
 
     
     @staticmethod
-    def from_mega_voltamperes_reactive(mega_voltamperes_reactive: float):
+    def from_megavoltamperes_reactive(megavoltamperes_reactive: float):
         """
-        Create a new instance of ReactivePower from a value in mega_voltamperes_reactive.
+        Create a new instance of ReactivePower from a value in megavoltamperes_reactive.
 
         
 
-        :param meters: The ReactivePower value in mega_voltamperes_reactive.
-        :type mega_voltamperes_reactive: float
+        :param meters: The ReactivePower value in megavoltamperes_reactive.
+        :type megavoltamperes_reactive: float
         :return: A new instance of ReactivePower.
         :rtype: ReactivePower
         """
-        return ReactivePower(mega_voltamperes_reactive, ReactivePowerUnits.MegaVoltampereReactive)
+        return ReactivePower(megavoltamperes_reactive, ReactivePowerUnits.MegavoltampereReactive)
 
     
     @staticmethod
-    def from_giga_voltamperes_reactive(giga_voltamperes_reactive: float):
+    def from_gigavoltamperes_reactive(gigavoltamperes_reactive: float):
         """
-        Create a new instance of ReactivePower from a value in giga_voltamperes_reactive.
+        Create a new instance of ReactivePower from a value in gigavoltamperes_reactive.
 
         
 
-        :param meters: The ReactivePower value in giga_voltamperes_reactive.
-        :type giga_voltamperes_reactive: float
+        :param meters: The ReactivePower value in gigavoltamperes_reactive.
+        :type gigavoltamperes_reactive: float
         :return: A new instance of ReactivePower.
         :rtype: ReactivePower
         """
-        return ReactivePower(giga_voltamperes_reactive, ReactivePowerUnits.GigaVoltampereReactive)
+        return ReactivePower(gigavoltamperes_reactive, ReactivePowerUnits.GigavoltampereReactive)
 
     
     @property
@@ -163,36 +163,36 @@ class ReactivePower:
 
     
     @property
-    def kilo_voltamperes_reactive(self) -> float:
+    def kilovoltamperes_reactive(self) -> float:
         """
         
         """
-        if self.__kilo_voltamperes_reactive != None:
-            return self.__kilo_voltamperes_reactive
-        self.__kilo_voltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.KiloVoltampereReactive)
-        return self.__kilo_voltamperes_reactive
+        if self.__kilovoltamperes_reactive != None:
+            return self.__kilovoltamperes_reactive
+        self.__kilovoltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.KilovoltampereReactive)
+        return self.__kilovoltamperes_reactive
 
     
     @property
-    def mega_voltamperes_reactive(self) -> float:
+    def megavoltamperes_reactive(self) -> float:
         """
         
         """
-        if self.__mega_voltamperes_reactive != None:
-            return self.__mega_voltamperes_reactive
-        self.__mega_voltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.MegaVoltampereReactive)
-        return self.__mega_voltamperes_reactive
+        if self.__megavoltamperes_reactive != None:
+            return self.__megavoltamperes_reactive
+        self.__megavoltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.MegavoltampereReactive)
+        return self.__megavoltamperes_reactive
 
     
     @property
-    def giga_voltamperes_reactive(self) -> float:
+    def gigavoltamperes_reactive(self) -> float:
         """
         
         """
-        if self.__giga_voltamperes_reactive != None:
-            return self.__giga_voltamperes_reactive
-        self.__giga_voltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.GigaVoltampereReactive)
-        return self.__giga_voltamperes_reactive
+        if self.__gigavoltamperes_reactive != None:
+            return self.__gigavoltamperes_reactive
+        self.__gigavoltamperes_reactive = self.__convert_from_base(ReactivePowerUnits.GigavoltampereReactive)
+        return self.__gigavoltamperes_reactive
 
     
     def to_string(self, unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive) -> string:
@@ -205,14 +205,14 @@ class ReactivePower:
         if unit == ReactivePowerUnits.VoltampereReactive:
             return f"""{self.voltamperes_reactive} var"""
         
-        if unit == ReactivePowerUnits.KiloVoltampereReactive:
-            return f"""{self.kilo_voltamperes_reactive} """
+        if unit == ReactivePowerUnits.KilovoltampereReactive:
+            return f"""{self.kilovoltamperes_reactive} """
         
-        if unit == ReactivePowerUnits.MegaVoltampereReactive:
-            return f"""{self.mega_voltamperes_reactive} """
+        if unit == ReactivePowerUnits.MegavoltampereReactive:
+            return f"""{self.megavoltamperes_reactive} """
         
-        if unit == ReactivePowerUnits.GigaVoltampereReactive:
-            return f"""{self.giga_voltamperes_reactive} """
+        if unit == ReactivePowerUnits.GigavoltampereReactive:
+            return f"""{self.gigavoltamperes_reactive} """
         
         return f'{self.__value}'
 
@@ -227,13 +227,13 @@ class ReactivePower:
         if unit_abbreviation == ReactivePowerUnits.VoltampereReactive:
             return """var"""
         
-        if unit_abbreviation == ReactivePowerUnits.KiloVoltampereReactive:
+        if unit_abbreviation == ReactivePowerUnits.KilovoltampereReactive:
             return """"""
         
-        if unit_abbreviation == ReactivePowerUnits.MegaVoltampereReactive:
+        if unit_abbreviation == ReactivePowerUnits.MegavoltampereReactive:
             return """"""
         
-        if unit_abbreviation == ReactivePowerUnits.GigaVoltampereReactive:
+        if unit_abbreviation == ReactivePowerUnits.GigavoltampereReactive:
             return """"""
         
 

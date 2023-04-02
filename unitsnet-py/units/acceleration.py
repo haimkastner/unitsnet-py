@@ -43,37 +43,37 @@ class AccelerationUnits(Enum):
             
         """
         
-        NanoMeterPerSecondSquared = 'nano_meter_per_second_squared'
+        NanometerPerSecondSquared = 'nanometer_per_second_squared'
         """
             
         """
         
-        MicroMeterPerSecondSquared = 'micro_meter_per_second_squared'
+        MicrometerPerSecondSquared = 'micrometer_per_second_squared'
         """
             
         """
         
-        MilliMeterPerSecondSquared = 'milli_meter_per_second_squared'
+        MillimeterPerSecondSquared = 'millimeter_per_second_squared'
         """
             
         """
         
-        CentiMeterPerSecondSquared = 'centi_meter_per_second_squared'
+        CentimeterPerSecondSquared = 'centimeter_per_second_squared'
         """
             
         """
         
-        DeciMeterPerSecondSquared = 'deci_meter_per_second_squared'
+        DecimeterPerSecondSquared = 'decimeter_per_second_squared'
         """
             
         """
         
-        KiloMeterPerSecondSquared = 'kilo_meter_per_second_squared'
+        KilometerPerSecondSquared = 'kilometer_per_second_squared'
         """
             
         """
         
-        MilliStandardGravity = 'milli_standard_gravity'
+        MillistandardGravity = 'millistandard_gravity'
         """
             
         """
@@ -106,19 +106,19 @@ class Acceleration:
         
         self.__standard_gravity = None
         
-        self.__nano_meters_per_second_squared = None
+        self.__nanometers_per_second_squared = None
         
-        self.__micro_meters_per_second_squared = None
+        self.__micrometers_per_second_squared = None
         
-        self.__milli_meters_per_second_squared = None
+        self.__millimeters_per_second_squared = None
         
-        self.__centi_meters_per_second_squared = None
+        self.__centimeters_per_second_squared = None
         
-        self.__deci_meters_per_second_squared = None
+        self.__decimeters_per_second_squared = None
         
-        self.__kilo_meters_per_second_squared = None
+        self.__kilometers_per_second_squared = None
         
-        self.__milli_standard_gravity = None
+        self.__millistandard_gravity = None
         
 
     def __convert_from_base(self, from_unit: AccelerationUnits) -> float:
@@ -145,25 +145,25 @@ class Acceleration:
         if from_unit == AccelerationUnits.StandardGravity:
             return (value / 9.80665)
         
-        if from_unit == AccelerationUnits.NanoMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.NanometerPerSecondSquared:
             return ((value) / 1e-09)
         
-        if from_unit == AccelerationUnits.MicroMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.MicrometerPerSecondSquared:
             return ((value) / 1e-06)
         
-        if from_unit == AccelerationUnits.MilliMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.MillimeterPerSecondSquared:
             return ((value) / 0.001)
         
-        if from_unit == AccelerationUnits.CentiMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.CentimeterPerSecondSquared:
             return ((value) / 0.01)
         
-        if from_unit == AccelerationUnits.DeciMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.DecimeterPerSecondSquared:
             return ((value) / 0.1)
         
-        if from_unit == AccelerationUnits.KiloMeterPerSecondSquared:
+        if from_unit == AccelerationUnits.KilometerPerSecondSquared:
             return ((value) / 1000.0)
         
-        if from_unit == AccelerationUnits.MilliStandardGravity:
+        if from_unit == AccelerationUnits.MillistandardGravity:
             return ((value / 9.80665) / 0.001)
         
         return None
@@ -192,25 +192,25 @@ class Acceleration:
         if to_unit == AccelerationUnits.StandardGravity:
             return (value * 9.80665)
         
-        if to_unit == AccelerationUnits.NanoMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.NanometerPerSecondSquared:
             return ((value) * 1e-09)
         
-        if to_unit == AccelerationUnits.MicroMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.MicrometerPerSecondSquared:
             return ((value) * 1e-06)
         
-        if to_unit == AccelerationUnits.MilliMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.MillimeterPerSecondSquared:
             return ((value) * 0.001)
         
-        if to_unit == AccelerationUnits.CentiMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.CentimeterPerSecondSquared:
             return ((value) * 0.01)
         
-        if to_unit == AccelerationUnits.DeciMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.DecimeterPerSecondSquared:
             return ((value) * 0.1)
         
-        if to_unit == AccelerationUnits.KiloMeterPerSecondSquared:
+        if to_unit == AccelerationUnits.KilometerPerSecondSquared:
             return ((value) * 1000.0)
         
-        if to_unit == AccelerationUnits.MilliStandardGravity:
+        if to_unit == AccelerationUnits.MillistandardGravity:
             return ((value * 9.80665) * 0.001)
         
         return None
@@ -327,108 +327,108 @@ class Acceleration:
 
     
     @staticmethod
-    def from_nano_meters_per_second_squared(nano_meters_per_second_squared: float):
+    def from_nanometers_per_second_squared(nanometers_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in nano_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in nanometers_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in nano_meters_per_second_squared.
-        :type nano_meters_per_second_squared: float
+        :param meters: The Acceleration value in nanometers_per_second_squared.
+        :type nanometers_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(nano_meters_per_second_squared, AccelerationUnits.NanoMeterPerSecondSquared)
+        return Acceleration(nanometers_per_second_squared, AccelerationUnits.NanometerPerSecondSquared)
 
     
     @staticmethod
-    def from_micro_meters_per_second_squared(micro_meters_per_second_squared: float):
+    def from_micrometers_per_second_squared(micrometers_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in micro_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in micrometers_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in micro_meters_per_second_squared.
-        :type micro_meters_per_second_squared: float
+        :param meters: The Acceleration value in micrometers_per_second_squared.
+        :type micrometers_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(micro_meters_per_second_squared, AccelerationUnits.MicroMeterPerSecondSquared)
+        return Acceleration(micrometers_per_second_squared, AccelerationUnits.MicrometerPerSecondSquared)
 
     
     @staticmethod
-    def from_milli_meters_per_second_squared(milli_meters_per_second_squared: float):
+    def from_millimeters_per_second_squared(millimeters_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in milli_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in millimeters_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in milli_meters_per_second_squared.
-        :type milli_meters_per_second_squared: float
+        :param meters: The Acceleration value in millimeters_per_second_squared.
+        :type millimeters_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(milli_meters_per_second_squared, AccelerationUnits.MilliMeterPerSecondSquared)
+        return Acceleration(millimeters_per_second_squared, AccelerationUnits.MillimeterPerSecondSquared)
 
     
     @staticmethod
-    def from_centi_meters_per_second_squared(centi_meters_per_second_squared: float):
+    def from_centimeters_per_second_squared(centimeters_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in centi_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in centimeters_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in centi_meters_per_second_squared.
-        :type centi_meters_per_second_squared: float
+        :param meters: The Acceleration value in centimeters_per_second_squared.
+        :type centimeters_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(centi_meters_per_second_squared, AccelerationUnits.CentiMeterPerSecondSquared)
+        return Acceleration(centimeters_per_second_squared, AccelerationUnits.CentimeterPerSecondSquared)
 
     
     @staticmethod
-    def from_deci_meters_per_second_squared(deci_meters_per_second_squared: float):
+    def from_decimeters_per_second_squared(decimeters_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in deci_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in decimeters_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in deci_meters_per_second_squared.
-        :type deci_meters_per_second_squared: float
+        :param meters: The Acceleration value in decimeters_per_second_squared.
+        :type decimeters_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(deci_meters_per_second_squared, AccelerationUnits.DeciMeterPerSecondSquared)
+        return Acceleration(decimeters_per_second_squared, AccelerationUnits.DecimeterPerSecondSquared)
 
     
     @staticmethod
-    def from_kilo_meters_per_second_squared(kilo_meters_per_second_squared: float):
+    def from_kilometers_per_second_squared(kilometers_per_second_squared: float):
         """
-        Create a new instance of Acceleration from a value in kilo_meters_per_second_squared.
+        Create a new instance of Acceleration from a value in kilometers_per_second_squared.
 
         
 
-        :param meters: The Acceleration value in kilo_meters_per_second_squared.
-        :type kilo_meters_per_second_squared: float
+        :param meters: The Acceleration value in kilometers_per_second_squared.
+        :type kilometers_per_second_squared: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(kilo_meters_per_second_squared, AccelerationUnits.KiloMeterPerSecondSquared)
+        return Acceleration(kilometers_per_second_squared, AccelerationUnits.KilometerPerSecondSquared)
 
     
     @staticmethod
-    def from_milli_standard_gravity(milli_standard_gravity: float):
+    def from_millistandard_gravity(millistandard_gravity: float):
         """
-        Create a new instance of Acceleration from a value in milli_standard_gravity.
+        Create a new instance of Acceleration from a value in millistandard_gravity.
 
         
 
-        :param meters: The Acceleration value in milli_standard_gravity.
-        :type milli_standard_gravity: float
+        :param meters: The Acceleration value in millistandard_gravity.
+        :type millistandard_gravity: float
         :return: A new instance of Acceleration.
         :rtype: Acceleration
         """
-        return Acceleration(milli_standard_gravity, AccelerationUnits.MilliStandardGravity)
+        return Acceleration(millistandard_gravity, AccelerationUnits.MillistandardGravity)
 
     
     @property
@@ -509,80 +509,80 @@ class Acceleration:
 
     
     @property
-    def nano_meters_per_second_squared(self) -> float:
+    def nanometers_per_second_squared(self) -> float:
         """
         
         """
-        if self.__nano_meters_per_second_squared != None:
-            return self.__nano_meters_per_second_squared
-        self.__nano_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.NanoMeterPerSecondSquared)
-        return self.__nano_meters_per_second_squared
+        if self.__nanometers_per_second_squared != None:
+            return self.__nanometers_per_second_squared
+        self.__nanometers_per_second_squared = self.__convert_from_base(AccelerationUnits.NanometerPerSecondSquared)
+        return self.__nanometers_per_second_squared
 
     
     @property
-    def micro_meters_per_second_squared(self) -> float:
+    def micrometers_per_second_squared(self) -> float:
         """
         
         """
-        if self.__micro_meters_per_second_squared != None:
-            return self.__micro_meters_per_second_squared
-        self.__micro_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.MicroMeterPerSecondSquared)
-        return self.__micro_meters_per_second_squared
+        if self.__micrometers_per_second_squared != None:
+            return self.__micrometers_per_second_squared
+        self.__micrometers_per_second_squared = self.__convert_from_base(AccelerationUnits.MicrometerPerSecondSquared)
+        return self.__micrometers_per_second_squared
 
     
     @property
-    def milli_meters_per_second_squared(self) -> float:
+    def millimeters_per_second_squared(self) -> float:
         """
         
         """
-        if self.__milli_meters_per_second_squared != None:
-            return self.__milli_meters_per_second_squared
-        self.__milli_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.MilliMeterPerSecondSquared)
-        return self.__milli_meters_per_second_squared
+        if self.__millimeters_per_second_squared != None:
+            return self.__millimeters_per_second_squared
+        self.__millimeters_per_second_squared = self.__convert_from_base(AccelerationUnits.MillimeterPerSecondSquared)
+        return self.__millimeters_per_second_squared
 
     
     @property
-    def centi_meters_per_second_squared(self) -> float:
+    def centimeters_per_second_squared(self) -> float:
         """
         
         """
-        if self.__centi_meters_per_second_squared != None:
-            return self.__centi_meters_per_second_squared
-        self.__centi_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.CentiMeterPerSecondSquared)
-        return self.__centi_meters_per_second_squared
+        if self.__centimeters_per_second_squared != None:
+            return self.__centimeters_per_second_squared
+        self.__centimeters_per_second_squared = self.__convert_from_base(AccelerationUnits.CentimeterPerSecondSquared)
+        return self.__centimeters_per_second_squared
 
     
     @property
-    def deci_meters_per_second_squared(self) -> float:
+    def decimeters_per_second_squared(self) -> float:
         """
         
         """
-        if self.__deci_meters_per_second_squared != None:
-            return self.__deci_meters_per_second_squared
-        self.__deci_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.DeciMeterPerSecondSquared)
-        return self.__deci_meters_per_second_squared
+        if self.__decimeters_per_second_squared != None:
+            return self.__decimeters_per_second_squared
+        self.__decimeters_per_second_squared = self.__convert_from_base(AccelerationUnits.DecimeterPerSecondSquared)
+        return self.__decimeters_per_second_squared
 
     
     @property
-    def kilo_meters_per_second_squared(self) -> float:
+    def kilometers_per_second_squared(self) -> float:
         """
         
         """
-        if self.__kilo_meters_per_second_squared != None:
-            return self.__kilo_meters_per_second_squared
-        self.__kilo_meters_per_second_squared = self.__convert_from_base(AccelerationUnits.KiloMeterPerSecondSquared)
-        return self.__kilo_meters_per_second_squared
+        if self.__kilometers_per_second_squared != None:
+            return self.__kilometers_per_second_squared
+        self.__kilometers_per_second_squared = self.__convert_from_base(AccelerationUnits.KilometerPerSecondSquared)
+        return self.__kilometers_per_second_squared
 
     
     @property
-    def milli_standard_gravity(self) -> float:
+    def millistandard_gravity(self) -> float:
         """
         
         """
-        if self.__milli_standard_gravity != None:
-            return self.__milli_standard_gravity
-        self.__milli_standard_gravity = self.__convert_from_base(AccelerationUnits.MilliStandardGravity)
-        return self.__milli_standard_gravity
+        if self.__millistandard_gravity != None:
+            return self.__millistandard_gravity
+        self.__millistandard_gravity = self.__convert_from_base(AccelerationUnits.MillistandardGravity)
+        return self.__millistandard_gravity
 
     
     def to_string(self, unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> string:
@@ -613,26 +613,26 @@ class Acceleration:
         if unit == AccelerationUnits.StandardGravity:
             return f"""{self.standard_gravity} g"""
         
-        if unit == AccelerationUnits.NanoMeterPerSecondSquared:
-            return f"""{self.nano_meters_per_second_squared} """
+        if unit == AccelerationUnits.NanometerPerSecondSquared:
+            return f"""{self.nanometers_per_second_squared} """
         
-        if unit == AccelerationUnits.MicroMeterPerSecondSquared:
-            return f"""{self.micro_meters_per_second_squared} """
+        if unit == AccelerationUnits.MicrometerPerSecondSquared:
+            return f"""{self.micrometers_per_second_squared} """
         
-        if unit == AccelerationUnits.MilliMeterPerSecondSquared:
-            return f"""{self.milli_meters_per_second_squared} """
+        if unit == AccelerationUnits.MillimeterPerSecondSquared:
+            return f"""{self.millimeters_per_second_squared} """
         
-        if unit == AccelerationUnits.CentiMeterPerSecondSquared:
-            return f"""{self.centi_meters_per_second_squared} """
+        if unit == AccelerationUnits.CentimeterPerSecondSquared:
+            return f"""{self.centimeters_per_second_squared} """
         
-        if unit == AccelerationUnits.DeciMeterPerSecondSquared:
-            return f"""{self.deci_meters_per_second_squared} """
+        if unit == AccelerationUnits.DecimeterPerSecondSquared:
+            return f"""{self.decimeters_per_second_squared} """
         
-        if unit == AccelerationUnits.KiloMeterPerSecondSquared:
-            return f"""{self.kilo_meters_per_second_squared} """
+        if unit == AccelerationUnits.KilometerPerSecondSquared:
+            return f"""{self.kilometers_per_second_squared} """
         
-        if unit == AccelerationUnits.MilliStandardGravity:
-            return f"""{self.milli_standard_gravity} """
+        if unit == AccelerationUnits.MillistandardGravity:
+            return f"""{self.millistandard_gravity} """
         
         return f'{self.__value}'
 
@@ -665,25 +665,25 @@ class Acceleration:
         if unit_abbreviation == AccelerationUnits.StandardGravity:
             return """g"""
         
-        if unit_abbreviation == AccelerationUnits.NanoMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.NanometerPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.MicroMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.MicrometerPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.MilliMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.MillimeterPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.CentiMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.CentimeterPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.DeciMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.DecimeterPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.KiloMeterPerSecondSquared:
+        if unit_abbreviation == AccelerationUnits.KilometerPerSecondSquared:
             return """"""
         
-        if unit_abbreviation == AccelerationUnits.MilliStandardGravity:
+        if unit_abbreviation == AccelerationUnits.MillistandardGravity:
             return """"""
         
 

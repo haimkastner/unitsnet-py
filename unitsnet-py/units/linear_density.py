@@ -33,47 +33,47 @@ class LinearDensityUnits(Enum):
             
         """
         
-        MicroGramPerMillimeter = 'micro_gram_per_millimeter'
+        MicrogramPerMillimeter = 'microgram_per_millimeter'
         """
             
         """
         
-        MilliGramPerMillimeter = 'milli_gram_per_millimeter'
+        MilligramPerMillimeter = 'milligram_per_millimeter'
         """
             
         """
         
-        KiloGramPerMillimeter = 'kilo_gram_per_millimeter'
+        KilogramPerMillimeter = 'kilogram_per_millimeter'
         """
             
         """
         
-        MicroGramPerCentimeter = 'micro_gram_per_centimeter'
+        MicrogramPerCentimeter = 'microgram_per_centimeter'
         """
             
         """
         
-        MilliGramPerCentimeter = 'milli_gram_per_centimeter'
+        MilligramPerCentimeter = 'milligram_per_centimeter'
         """
             
         """
         
-        KiloGramPerCentimeter = 'kilo_gram_per_centimeter'
+        KilogramPerCentimeter = 'kilogram_per_centimeter'
         """
             
         """
         
-        MicroGramPerMeter = 'micro_gram_per_meter'
+        MicrogramPerMeter = 'microgram_per_meter'
         """
             
         """
         
-        MilliGramPerMeter = 'milli_gram_per_meter'
+        MilligramPerMeter = 'milligram_per_meter'
         """
             
         """
         
-        KiloGramPerMeter = 'kilo_gram_per_meter'
+        KilogramPerMeter = 'kilogram_per_meter'
         """
             
         """
@@ -102,23 +102,23 @@ class LinearDensity:
         
         self.__pounds_per_foot = None
         
-        self.__micro_grams_per_millimeter = None
+        self.__micrograms_per_millimeter = None
         
-        self.__milli_grams_per_millimeter = None
+        self.__milligrams_per_millimeter = None
         
-        self.__kilo_grams_per_millimeter = None
+        self.__kilograms_per_millimeter = None
         
-        self.__micro_grams_per_centimeter = None
+        self.__micrograms_per_centimeter = None
         
-        self.__milli_grams_per_centimeter = None
+        self.__milligrams_per_centimeter = None
         
-        self.__kilo_grams_per_centimeter = None
+        self.__kilograms_per_centimeter = None
         
-        self.__micro_grams_per_meter = None
+        self.__micrograms_per_meter = None
         
-        self.__milli_grams_per_meter = None
+        self.__milligrams_per_meter = None
         
-        self.__kilo_grams_per_meter = None
+        self.__kilograms_per_meter = None
         
 
     def __convert_from_base(self, from_unit: LinearDensityUnits) -> float:
@@ -139,31 +139,31 @@ class LinearDensity:
         if from_unit == LinearDensityUnits.PoundPerFoot:
             return (value / 1.48816394)
         
-        if from_unit == LinearDensityUnits.MicroGramPerMillimeter:
+        if from_unit == LinearDensityUnits.MicrogramPerMillimeter:
             return ((value) / 1e-06)
         
-        if from_unit == LinearDensityUnits.MilliGramPerMillimeter:
+        if from_unit == LinearDensityUnits.MilligramPerMillimeter:
             return ((value) / 0.001)
         
-        if from_unit == LinearDensityUnits.KiloGramPerMillimeter:
+        if from_unit == LinearDensityUnits.KilogramPerMillimeter:
             return ((value) / 1000.0)
         
-        if from_unit == LinearDensityUnits.MicroGramPerCentimeter:
+        if from_unit == LinearDensityUnits.MicrogramPerCentimeter:
             return ((value / 1e-1) / 1e-06)
         
-        if from_unit == LinearDensityUnits.MilliGramPerCentimeter:
+        if from_unit == LinearDensityUnits.MilligramPerCentimeter:
             return ((value / 1e-1) / 0.001)
         
-        if from_unit == LinearDensityUnits.KiloGramPerCentimeter:
+        if from_unit == LinearDensityUnits.KilogramPerCentimeter:
             return ((value / 1e-1) / 1000.0)
         
-        if from_unit == LinearDensityUnits.MicroGramPerMeter:
+        if from_unit == LinearDensityUnits.MicrogramPerMeter:
             return ((value / 1e-3) / 1e-06)
         
-        if from_unit == LinearDensityUnits.MilliGramPerMeter:
+        if from_unit == LinearDensityUnits.MilligramPerMeter:
             return ((value / 1e-3) / 0.001)
         
-        if from_unit == LinearDensityUnits.KiloGramPerMeter:
+        if from_unit == LinearDensityUnits.KilogramPerMeter:
             return ((value / 1e-3) / 1000.0)
         
         return None
@@ -186,31 +186,31 @@ class LinearDensity:
         if to_unit == LinearDensityUnits.PoundPerFoot:
             return (value * 1.48816394)
         
-        if to_unit == LinearDensityUnits.MicroGramPerMillimeter:
+        if to_unit == LinearDensityUnits.MicrogramPerMillimeter:
             return ((value) * 1e-06)
         
-        if to_unit == LinearDensityUnits.MilliGramPerMillimeter:
+        if to_unit == LinearDensityUnits.MilligramPerMillimeter:
             return ((value) * 0.001)
         
-        if to_unit == LinearDensityUnits.KiloGramPerMillimeter:
+        if to_unit == LinearDensityUnits.KilogramPerMillimeter:
             return ((value) * 1000.0)
         
-        if to_unit == LinearDensityUnits.MicroGramPerCentimeter:
+        if to_unit == LinearDensityUnits.MicrogramPerCentimeter:
             return ((value * 1e-1) * 1e-06)
         
-        if to_unit == LinearDensityUnits.MilliGramPerCentimeter:
+        if to_unit == LinearDensityUnits.MilligramPerCentimeter:
             return ((value * 1e-1) * 0.001)
         
-        if to_unit == LinearDensityUnits.KiloGramPerCentimeter:
+        if to_unit == LinearDensityUnits.KilogramPerCentimeter:
             return ((value * 1e-1) * 1000.0)
         
-        if to_unit == LinearDensityUnits.MicroGramPerMeter:
+        if to_unit == LinearDensityUnits.MicrogramPerMeter:
             return ((value * 1e-3) * 1e-06)
         
-        if to_unit == LinearDensityUnits.MilliGramPerMeter:
+        if to_unit == LinearDensityUnits.MilligramPerMeter:
             return ((value * 1e-3) * 0.001)
         
-        if to_unit == LinearDensityUnits.KiloGramPerMeter:
+        if to_unit == LinearDensityUnits.KilogramPerMeter:
             return ((value * 1e-3) * 1000.0)
         
         return None
@@ -297,138 +297,138 @@ class LinearDensity:
 
     
     @staticmethod
-    def from_micro_grams_per_millimeter(micro_grams_per_millimeter: float):
+    def from_micrograms_per_millimeter(micrograms_per_millimeter: float):
         """
-        Create a new instance of LinearDensity from a value in micro_grams_per_millimeter.
+        Create a new instance of LinearDensity from a value in micrograms_per_millimeter.
 
         
 
-        :param meters: The LinearDensity value in micro_grams_per_millimeter.
-        :type micro_grams_per_millimeter: float
+        :param meters: The LinearDensity value in micrograms_per_millimeter.
+        :type micrograms_per_millimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(micro_grams_per_millimeter, LinearDensityUnits.MicroGramPerMillimeter)
+        return LinearDensity(micrograms_per_millimeter, LinearDensityUnits.MicrogramPerMillimeter)
 
     
     @staticmethod
-    def from_milli_grams_per_millimeter(milli_grams_per_millimeter: float):
+    def from_milligrams_per_millimeter(milligrams_per_millimeter: float):
         """
-        Create a new instance of LinearDensity from a value in milli_grams_per_millimeter.
+        Create a new instance of LinearDensity from a value in milligrams_per_millimeter.
 
         
 
-        :param meters: The LinearDensity value in milli_grams_per_millimeter.
-        :type milli_grams_per_millimeter: float
+        :param meters: The LinearDensity value in milligrams_per_millimeter.
+        :type milligrams_per_millimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(milli_grams_per_millimeter, LinearDensityUnits.MilliGramPerMillimeter)
+        return LinearDensity(milligrams_per_millimeter, LinearDensityUnits.MilligramPerMillimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_millimeter(kilo_grams_per_millimeter: float):
+    def from_kilograms_per_millimeter(kilograms_per_millimeter: float):
         """
-        Create a new instance of LinearDensity from a value in kilo_grams_per_millimeter.
+        Create a new instance of LinearDensity from a value in kilograms_per_millimeter.
 
         
 
-        :param meters: The LinearDensity value in kilo_grams_per_millimeter.
-        :type kilo_grams_per_millimeter: float
+        :param meters: The LinearDensity value in kilograms_per_millimeter.
+        :type kilograms_per_millimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(kilo_grams_per_millimeter, LinearDensityUnits.KiloGramPerMillimeter)
+        return LinearDensity(kilograms_per_millimeter, LinearDensityUnits.KilogramPerMillimeter)
 
     
     @staticmethod
-    def from_micro_grams_per_centimeter(micro_grams_per_centimeter: float):
+    def from_micrograms_per_centimeter(micrograms_per_centimeter: float):
         """
-        Create a new instance of LinearDensity from a value in micro_grams_per_centimeter.
+        Create a new instance of LinearDensity from a value in micrograms_per_centimeter.
 
         
 
-        :param meters: The LinearDensity value in micro_grams_per_centimeter.
-        :type micro_grams_per_centimeter: float
+        :param meters: The LinearDensity value in micrograms_per_centimeter.
+        :type micrograms_per_centimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(micro_grams_per_centimeter, LinearDensityUnits.MicroGramPerCentimeter)
+        return LinearDensity(micrograms_per_centimeter, LinearDensityUnits.MicrogramPerCentimeter)
 
     
     @staticmethod
-    def from_milli_grams_per_centimeter(milli_grams_per_centimeter: float):
+    def from_milligrams_per_centimeter(milligrams_per_centimeter: float):
         """
-        Create a new instance of LinearDensity from a value in milli_grams_per_centimeter.
+        Create a new instance of LinearDensity from a value in milligrams_per_centimeter.
 
         
 
-        :param meters: The LinearDensity value in milli_grams_per_centimeter.
-        :type milli_grams_per_centimeter: float
+        :param meters: The LinearDensity value in milligrams_per_centimeter.
+        :type milligrams_per_centimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(milli_grams_per_centimeter, LinearDensityUnits.MilliGramPerCentimeter)
+        return LinearDensity(milligrams_per_centimeter, LinearDensityUnits.MilligramPerCentimeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_centimeter(kilo_grams_per_centimeter: float):
+    def from_kilograms_per_centimeter(kilograms_per_centimeter: float):
         """
-        Create a new instance of LinearDensity from a value in kilo_grams_per_centimeter.
+        Create a new instance of LinearDensity from a value in kilograms_per_centimeter.
 
         
 
-        :param meters: The LinearDensity value in kilo_grams_per_centimeter.
-        :type kilo_grams_per_centimeter: float
+        :param meters: The LinearDensity value in kilograms_per_centimeter.
+        :type kilograms_per_centimeter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(kilo_grams_per_centimeter, LinearDensityUnits.KiloGramPerCentimeter)
+        return LinearDensity(kilograms_per_centimeter, LinearDensityUnits.KilogramPerCentimeter)
 
     
     @staticmethod
-    def from_micro_grams_per_meter(micro_grams_per_meter: float):
+    def from_micrograms_per_meter(micrograms_per_meter: float):
         """
-        Create a new instance of LinearDensity from a value in micro_grams_per_meter.
+        Create a new instance of LinearDensity from a value in micrograms_per_meter.
 
         
 
-        :param meters: The LinearDensity value in micro_grams_per_meter.
-        :type micro_grams_per_meter: float
+        :param meters: The LinearDensity value in micrograms_per_meter.
+        :type micrograms_per_meter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(micro_grams_per_meter, LinearDensityUnits.MicroGramPerMeter)
+        return LinearDensity(micrograms_per_meter, LinearDensityUnits.MicrogramPerMeter)
 
     
     @staticmethod
-    def from_milli_grams_per_meter(milli_grams_per_meter: float):
+    def from_milligrams_per_meter(milligrams_per_meter: float):
         """
-        Create a new instance of LinearDensity from a value in milli_grams_per_meter.
+        Create a new instance of LinearDensity from a value in milligrams_per_meter.
 
         
 
-        :param meters: The LinearDensity value in milli_grams_per_meter.
-        :type milli_grams_per_meter: float
+        :param meters: The LinearDensity value in milligrams_per_meter.
+        :type milligrams_per_meter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(milli_grams_per_meter, LinearDensityUnits.MilliGramPerMeter)
+        return LinearDensity(milligrams_per_meter, LinearDensityUnits.MilligramPerMeter)
 
     
     @staticmethod
-    def from_kilo_grams_per_meter(kilo_grams_per_meter: float):
+    def from_kilograms_per_meter(kilograms_per_meter: float):
         """
-        Create a new instance of LinearDensity from a value in kilo_grams_per_meter.
+        Create a new instance of LinearDensity from a value in kilograms_per_meter.
 
         
 
-        :param meters: The LinearDensity value in kilo_grams_per_meter.
-        :type kilo_grams_per_meter: float
+        :param meters: The LinearDensity value in kilograms_per_meter.
+        :type kilograms_per_meter: float
         :return: A new instance of LinearDensity.
         :rtype: LinearDensity
         """
-        return LinearDensity(kilo_grams_per_meter, LinearDensityUnits.KiloGramPerMeter)
+        return LinearDensity(kilograms_per_meter, LinearDensityUnits.KilogramPerMeter)
 
     
     @property
@@ -487,102 +487,102 @@ class LinearDensity:
 
     
     @property
-    def micro_grams_per_millimeter(self) -> float:
+    def micrograms_per_millimeter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_millimeter != None:
-            return self.__micro_grams_per_millimeter
-        self.__micro_grams_per_millimeter = self.__convert_from_base(LinearDensityUnits.MicroGramPerMillimeter)
-        return self.__micro_grams_per_millimeter
+        if self.__micrograms_per_millimeter != None:
+            return self.__micrograms_per_millimeter
+        self.__micrograms_per_millimeter = self.__convert_from_base(LinearDensityUnits.MicrogramPerMillimeter)
+        return self.__micrograms_per_millimeter
 
     
     @property
-    def milli_grams_per_millimeter(self) -> float:
+    def milligrams_per_millimeter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_millimeter != None:
-            return self.__milli_grams_per_millimeter
-        self.__milli_grams_per_millimeter = self.__convert_from_base(LinearDensityUnits.MilliGramPerMillimeter)
-        return self.__milli_grams_per_millimeter
+        if self.__milligrams_per_millimeter != None:
+            return self.__milligrams_per_millimeter
+        self.__milligrams_per_millimeter = self.__convert_from_base(LinearDensityUnits.MilligramPerMillimeter)
+        return self.__milligrams_per_millimeter
 
     
     @property
-    def kilo_grams_per_millimeter(self) -> float:
+    def kilograms_per_millimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_millimeter != None:
-            return self.__kilo_grams_per_millimeter
-        self.__kilo_grams_per_millimeter = self.__convert_from_base(LinearDensityUnits.KiloGramPerMillimeter)
-        return self.__kilo_grams_per_millimeter
+        if self.__kilograms_per_millimeter != None:
+            return self.__kilograms_per_millimeter
+        self.__kilograms_per_millimeter = self.__convert_from_base(LinearDensityUnits.KilogramPerMillimeter)
+        return self.__kilograms_per_millimeter
 
     
     @property
-    def micro_grams_per_centimeter(self) -> float:
+    def micrograms_per_centimeter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_centimeter != None:
-            return self.__micro_grams_per_centimeter
-        self.__micro_grams_per_centimeter = self.__convert_from_base(LinearDensityUnits.MicroGramPerCentimeter)
-        return self.__micro_grams_per_centimeter
+        if self.__micrograms_per_centimeter != None:
+            return self.__micrograms_per_centimeter
+        self.__micrograms_per_centimeter = self.__convert_from_base(LinearDensityUnits.MicrogramPerCentimeter)
+        return self.__micrograms_per_centimeter
 
     
     @property
-    def milli_grams_per_centimeter(self) -> float:
+    def milligrams_per_centimeter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_centimeter != None:
-            return self.__milli_grams_per_centimeter
-        self.__milli_grams_per_centimeter = self.__convert_from_base(LinearDensityUnits.MilliGramPerCentimeter)
-        return self.__milli_grams_per_centimeter
+        if self.__milligrams_per_centimeter != None:
+            return self.__milligrams_per_centimeter
+        self.__milligrams_per_centimeter = self.__convert_from_base(LinearDensityUnits.MilligramPerCentimeter)
+        return self.__milligrams_per_centimeter
 
     
     @property
-    def kilo_grams_per_centimeter(self) -> float:
+    def kilograms_per_centimeter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_centimeter != None:
-            return self.__kilo_grams_per_centimeter
-        self.__kilo_grams_per_centimeter = self.__convert_from_base(LinearDensityUnits.KiloGramPerCentimeter)
-        return self.__kilo_grams_per_centimeter
+        if self.__kilograms_per_centimeter != None:
+            return self.__kilograms_per_centimeter
+        self.__kilograms_per_centimeter = self.__convert_from_base(LinearDensityUnits.KilogramPerCentimeter)
+        return self.__kilograms_per_centimeter
 
     
     @property
-    def micro_grams_per_meter(self) -> float:
+    def micrograms_per_meter(self) -> float:
         """
         
         """
-        if self.__micro_grams_per_meter != None:
-            return self.__micro_grams_per_meter
-        self.__micro_grams_per_meter = self.__convert_from_base(LinearDensityUnits.MicroGramPerMeter)
-        return self.__micro_grams_per_meter
+        if self.__micrograms_per_meter != None:
+            return self.__micrograms_per_meter
+        self.__micrograms_per_meter = self.__convert_from_base(LinearDensityUnits.MicrogramPerMeter)
+        return self.__micrograms_per_meter
 
     
     @property
-    def milli_grams_per_meter(self) -> float:
+    def milligrams_per_meter(self) -> float:
         """
         
         """
-        if self.__milli_grams_per_meter != None:
-            return self.__milli_grams_per_meter
-        self.__milli_grams_per_meter = self.__convert_from_base(LinearDensityUnits.MilliGramPerMeter)
-        return self.__milli_grams_per_meter
+        if self.__milligrams_per_meter != None:
+            return self.__milligrams_per_meter
+        self.__milligrams_per_meter = self.__convert_from_base(LinearDensityUnits.MilligramPerMeter)
+        return self.__milligrams_per_meter
 
     
     @property
-    def kilo_grams_per_meter(self) -> float:
+    def kilograms_per_meter(self) -> float:
         """
         
         """
-        if self.__kilo_grams_per_meter != None:
-            return self.__kilo_grams_per_meter
-        self.__kilo_grams_per_meter = self.__convert_from_base(LinearDensityUnits.KiloGramPerMeter)
-        return self.__kilo_grams_per_meter
+        if self.__kilograms_per_meter != None:
+            return self.__kilograms_per_meter
+        self.__kilograms_per_meter = self.__convert_from_base(LinearDensityUnits.KilogramPerMeter)
+        return self.__kilograms_per_meter
 
     
     def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> string:
@@ -607,32 +607,32 @@ class LinearDensity:
         if unit == LinearDensityUnits.PoundPerFoot:
             return f"""{self.pounds_per_foot} lb/ft"""
         
-        if unit == LinearDensityUnits.MicroGramPerMillimeter:
-            return f"""{self.micro_grams_per_millimeter} """
+        if unit == LinearDensityUnits.MicrogramPerMillimeter:
+            return f"""{self.micrograms_per_millimeter} """
         
-        if unit == LinearDensityUnits.MilliGramPerMillimeter:
-            return f"""{self.milli_grams_per_millimeter} """
+        if unit == LinearDensityUnits.MilligramPerMillimeter:
+            return f"""{self.milligrams_per_millimeter} """
         
-        if unit == LinearDensityUnits.KiloGramPerMillimeter:
-            return f"""{self.kilo_grams_per_millimeter} """
+        if unit == LinearDensityUnits.KilogramPerMillimeter:
+            return f"""{self.kilograms_per_millimeter} """
         
-        if unit == LinearDensityUnits.MicroGramPerCentimeter:
-            return f"""{self.micro_grams_per_centimeter} """
+        if unit == LinearDensityUnits.MicrogramPerCentimeter:
+            return f"""{self.micrograms_per_centimeter} """
         
-        if unit == LinearDensityUnits.MilliGramPerCentimeter:
-            return f"""{self.milli_grams_per_centimeter} """
+        if unit == LinearDensityUnits.MilligramPerCentimeter:
+            return f"""{self.milligrams_per_centimeter} """
         
-        if unit == LinearDensityUnits.KiloGramPerCentimeter:
-            return f"""{self.kilo_grams_per_centimeter} """
+        if unit == LinearDensityUnits.KilogramPerCentimeter:
+            return f"""{self.kilograms_per_centimeter} """
         
-        if unit == LinearDensityUnits.MicroGramPerMeter:
-            return f"""{self.micro_grams_per_meter} """
+        if unit == LinearDensityUnits.MicrogramPerMeter:
+            return f"""{self.micrograms_per_meter} """
         
-        if unit == LinearDensityUnits.MilliGramPerMeter:
-            return f"""{self.milli_grams_per_meter} """
+        if unit == LinearDensityUnits.MilligramPerMeter:
+            return f"""{self.milligrams_per_meter} """
         
-        if unit == LinearDensityUnits.KiloGramPerMeter:
-            return f"""{self.kilo_grams_per_meter} """
+        if unit == LinearDensityUnits.KilogramPerMeter:
+            return f"""{self.kilograms_per_meter} """
         
         return f'{self.__value}'
 
@@ -659,31 +659,31 @@ class LinearDensity:
         if unit_abbreviation == LinearDensityUnits.PoundPerFoot:
             return """lb/ft"""
         
-        if unit_abbreviation == LinearDensityUnits.MicroGramPerMillimeter:
+        if unit_abbreviation == LinearDensityUnits.MicrogramPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.MilliGramPerMillimeter:
+        if unit_abbreviation == LinearDensityUnits.MilligramPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.KiloGramPerMillimeter:
+        if unit_abbreviation == LinearDensityUnits.KilogramPerMillimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.MicroGramPerCentimeter:
+        if unit_abbreviation == LinearDensityUnits.MicrogramPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.MilliGramPerCentimeter:
+        if unit_abbreviation == LinearDensityUnits.MilligramPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.KiloGramPerCentimeter:
+        if unit_abbreviation == LinearDensityUnits.KilogramPerCentimeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.MicroGramPerMeter:
+        if unit_abbreviation == LinearDensityUnits.MicrogramPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.MilliGramPerMeter:
+        if unit_abbreviation == LinearDensityUnits.MilligramPerMeter:
             return """"""
         
-        if unit_abbreviation == LinearDensityUnits.KiloGramPerMeter:
+        if unit_abbreviation == LinearDensityUnits.KilogramPerMeter:
             return """"""
         
 
