@@ -5,6 +5,9 @@ description = "A better way to hold unit variables and easily convert to the des
 authors = ["Haim Kastner <haim.kastner@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "unitsnet-py" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,3 +17,4 @@ jinja2 = "^3.1.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
