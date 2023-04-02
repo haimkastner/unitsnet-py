@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "unitsnet"
-version = "0.1.5"
+version = "0.1.6"
 description = "A better way to hold unit variables and easily convert to the destination unit"
 repository = "https://github.com/haimkastner/unitsnet-py"
 authors = ["Haim Kastner <haim.kastner@gmail.com>"]
