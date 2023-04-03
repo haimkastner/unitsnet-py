@@ -26,10 +26,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: update_version
         run: |
-          old_version=$(poetry version | awk '{print $NF}')
+          old_version=$(poetry version | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $NF}')
           poetry version patch
-          version=$(poetry version | awk '{print $NF}')
-          sed -i 's/$old_version/$version/g' setup.py
+          version=$(poetry version | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $NF}')
+          sed -i 's|'$old_version'|'$version'|g' setup.py
           echo "VERSION=$version" >> $GITHUB_OUTPUT
 
       - name: Get version info
