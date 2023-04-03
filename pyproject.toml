@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "unitsnet_py"
-version = "0.1.23"
+version = "0.1.22"
 description = "A better way to hold unit variables and easily convert to the destination unit"
 repository = "https://github.com/haimkastner/unitsnet-py"
 authors = ["Haim Kastner <haim.kastner@gmail.com>"]
@@ -12,7 +12,6 @@ readme = "README.md"
 packages = [
     { include = "unitsnet_py" },
 ]
-keywords = ["conversion", "units-of-measure", "units", "quantities", "unit-converter", "converter", "unit", "measure", "measures", "measurement", "measurements"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
