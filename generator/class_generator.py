@@ -1,6 +1,7 @@
 import string
 from jinja2 import Template, StrictUndefined
 from utils import camel_to_snake, upper_to_lower_camelcase
+from templates import unit_class_template
 
 # The factor between unit and his prefix.
 prefixes_factor = {
@@ -21,10 +22,7 @@ prefixes_factor = {
     'Femto': 1e-15,
 }
 
-# Load jinja template for the python unit class
-template_str = ""
-with open("generator/unit_template.jinja2", "r") as f:
-    template_str = f.read()
+
 
 
 
@@ -126,7 +124,7 @@ def generate_unit_class(unit_definition):
     }
 
     # Create a Jinja2 template object
-    template = Template(template_str, undefined=StrictUndefined)
+    template = Template(unit_class_template, undefined=StrictUndefined)
 
     # Render the template with the data
     code = template.render(template_data)
