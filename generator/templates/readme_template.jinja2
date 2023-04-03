@@ -1,0 +1,86 @@
+# unitsnet-py
+
+The unitsnet-py package is a better way to hold unit variables and/or easily convert to the destination unit, it supports more than 100 units types with almost all possibles units kinds, also it supports pretty-printing, comparing & arithmetics methods, all of it in a very easy to use and understand API.
+
+The library is based on the great [Units.NET](https://github.com/angularsen/UnitsNet) project, and used their [definitions sources](https://github.com/angularsen/UnitsNet/tree/master/Common/UnitDefinitions) to generate the Python unit classes. 
+
+[![Build & Test Status](https://github.com/haimkastner/unitsnet-py/workflows/unitsnet-py/badge.svg?branch=main)](https://github.com/haimkastner/unitsnet-py/actions)
+
+
+###### The unitsnet-py package uses only pure Python, and has 0 packages as a dependencies
+
+
+Package available at https://pypi.org/project/unitsnet-py/
+
+
+> Similar package for JS/TS available in the NPM registry at https://www.npmjs.com/package/unitsnet-js 
+
+
+## Install via PyPi
+
+```bash 
+pip install unitsnet-py
+```
+
+## Uses Example
+
+```python
+from unitsnet_py import Angle, AngleUnits, Length, LengthUnits
+
+
+angle = Angle.from_degrees(180)
+# equals to
+angle = Angle(180, AngleUnits.Degree)
+
+print(angle.radians)  # 3.141592653589793
+print(angle.microradians)  # 3141592.65358979
+print(angle.gradians)  # 200
+print(angle.microdegrees)  # 180000000
+
+# Print the default unit to_string (The defualt for angle is degrees)
+print(angle.to_string())  # 180 °
+
+print(angle.to_string(AngleUnits.Degree))  # 180 °
+print(angle.to_string(AngleUnits.Radian))  # 3.141592653589793 rad
+
+# Additional methods
+
+length1 = Length.from_meters(10)
+length2 = Length.from_decimeters(100)
+length3 = Length.from_meters(3)
+
+# 'equals' method
+print(length1 == length2)  # True
+print(length1 == length3)  # False
+
+# 'compareTo' method
+print(length3 > length1)  # False
+print(length3 < length1)  # True
+print(length2 >= length1)  # True
+
+# Arithmetics methods
+results1 = length1 + length3
+results2 = length1 - length3
+results3 = length1 * length3
+results4 = length1 / length3
+results5 = length1 % length3
+results6 = length1 ** length3
+print(results1.to_string(LengthUnits.Meter))  # 13 m
+print(results2.to_string(LengthUnits.Meter))  # 7 m
+print(results3.to_string(LengthUnits.Meter))  # 30 m
+print(results4.to_string(LengthUnits.Meter))  # 3.3333333333333335 m
+print(results5.to_string(LengthUnits.Meter))  # 1 m
+print(results6.to_string(LengthUnits.Meter))  # 1000 m
+```
+
+### Supported units
+
+Currently, the package supports the following units:
+
+
+{% for method in methods %}
+- **{{ method.unit_name }}**
+    -   * {{ method.description }} 
+{% endfor %}
+
+

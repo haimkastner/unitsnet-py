@@ -6,7 +6,7 @@ def get_definitions(repo_owner_and_name):
     files_url = f"https://raw.githubusercontent.com/{repo_owner_and_name}/master/Common/UnitDefinitions"
 
     print("Fetching units files list...")
-    # directory_files = [{ 'name': 'Length.json'}]
+    # directory_files = [{ 'name': 'Length.json'}, { 'name': 'Angle.json'}]
                         
     directory_files = get_json_from_cdn(directory_url)
     
