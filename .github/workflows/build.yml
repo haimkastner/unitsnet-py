@@ -26,8 +26,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: update_version
         run: |
+          old_version=$(poetry version | awk '{print $NF}')
           poetry version patch
           version=$(poetry version | awk '{print $NF}')
+          sed -i 's/$old_version/$version/g' setup.py
           echo "VERSION=$version" >> $GITHUB_OUTPUT
 
       - name: Get version info
@@ -37,19 +39,10 @@ jobs:
           echo "BODY=$body" >> $GITHUB_OUTPUT
 
       - name: Commit and push version
-        if: github.ref == 'refs/heads/main'
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: Update to version ${{ steps.update_version.outputs.VERSION }} [skip-ci]
-      
-      - name: Generate setup
-        if: github.ref == 'refs/heads/main'
-        run: |
-          pip install poetry2setup
-          # The dependencies used only for the generate purpose, and not required as part of the package usage.
-          poetry remove jinja2
-          poetry2setup > setup.py
       
       - name: Publish release
         if: github.ref == 'refs/heads/main'

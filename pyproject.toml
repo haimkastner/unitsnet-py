@@ -12,6 +12,7 @@ readme = "README.md"
 packages = [
     { include = "unitsnet_py" },
 ]
+keywords = ["conversion", "units-of-measure", "units", "quantities", "unit-converter", "converter", "unit", "measure", "measures", "measurement", "measurements"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
