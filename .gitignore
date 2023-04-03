@@ -3,7 +3,7 @@
 
 # pip deps
 requirements.txt
-setup.py
+# setup.py
 .pypirc
 
 # Byte-compiled / optimized / DLL files

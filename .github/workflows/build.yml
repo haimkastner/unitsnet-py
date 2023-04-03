@@ -45,11 +45,11 @@ jobs:
       - name: Generate setup
         # if: github.ref == 'refs/heads/main'
         run: |
-          pip install poetry2setup
+          # pip install poetry2setup
           # The dependencies used only for the generate purpose, and not required as part of the package usage.
-          poetry remove jinja2
-          poetry2setup > setup.py
-          cat setup.py
+          # poetry remove jinja2
+          # poetry2setup > setup.py
+          # cat setup.py
       
       - name: Publish release
         # if: github.ref == 'refs/heads/main'
