@@ -1,7 +1,7 @@
 from jinja2 import Template, StrictUndefined
-from utils import camel_to_snake
 from templates import readme_template
-    
+
+
 def readme_generator(definitions: list):
     template_methods = []
 
@@ -16,7 +16,7 @@ def readme_generator(definitions: list):
         )
 
     template_data = {"methods": template_methods}
-    
+
     # Create a Jinja2 template object
     template = Template(readme_template, undefined=StrictUndefined)
 
@@ -26,4 +26,4 @@ def readme_generator(definitions: list):
     with open(f"README.md", "w", encoding="utf-8") as f:
         f.write(code)
 
-    print(f'[readme_generator] Generating main.py finished successfully')
+    print(f'[readme_generator] Generating "README.md" finished successfully')
