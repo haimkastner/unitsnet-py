@@ -1,7 +1,8 @@
 from jinja2 import Template, StrictUndefined
-from utils import camel_to_snake
+from common.utils import camel_to_snake
 from templates import export_classes_template
-    
+
+
 def export_generator(definitions: list):
     template_methods = []
 
@@ -16,7 +17,7 @@ def export_generator(definitions: list):
         )
 
     template_data = {"methods": template_methods}
-    
+
     # Create a Jinja2 template object
     template = Template(export_classes_template, undefined=StrictUndefined)
 
@@ -26,4 +27,4 @@ def export_generator(definitions: list):
     with open(f"unitsnet_py/__init__.py", "w", encoding="utf-8") as f:
         f.write(code)
 
-    print(f'[export_generator] Generating __init__.py finished successfully')
+    print(f'[export_generator] Generating "__init__.py" finished successfully')
