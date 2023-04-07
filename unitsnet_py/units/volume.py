@@ -70,7 +70,7 @@ class VolumeUnits(Enum):
         
         ImperialGallon = 'imperial_gallon'
         """
-            
+            The British imperial gallon (frequently called simply "gallon") is defined as exactly 4.54609 litres.
         """
         
         ImperialOunce = 'imperial_ounce'
@@ -80,7 +80,7 @@ class VolumeUnits(Enum):
         
         UsGallon = 'us_gallon'
         """
-            
+            The US liquid gallon (frequently called simply "gallon") is legally defined as 231 cubic inches, which is exactly 3.785411784 litres.
         """
         
         UsOunce = 'us_ounce'
@@ -434,13 +434,13 @@ class Volume:
             return (value / (1.6387 * 1e-5))
         
         if from_unit == VolumeUnits.ImperialGallon:
-            return (value / 0.00454609000000181429905810072407)
+            return (value / 0.00454609)
         
         if from_unit == VolumeUnits.ImperialOunce:
             return (value / 2.8413062499962901241875439064617e-5)
         
         if from_unit == VolumeUnits.UsGallon:
-            return (value / 0.00378541)
+            return (value / 0.003785411784)
         
         if from_unit == VolumeUnits.UsOunce:
             return (value / 2.957352956253760505068307980135e-5)
@@ -536,25 +536,25 @@ class Volume:
             return ((value / 2.8316846592e-2) / 1000000.0)
         
         if from_unit == VolumeUnits.KiloimperialGallon:
-            return ((value / 0.00454609000000181429905810072407) / 1000.0)
+            return ((value / 0.00454609) / 1000.0)
         
         if from_unit == VolumeUnits.MegaimperialGallon:
-            return ((value / 0.00454609000000181429905810072407) / 1000000.0)
+            return ((value / 0.00454609) / 1000000.0)
         
         if from_unit == VolumeUnits.DecausGallon:
-            return ((value / 0.00378541) / 10.0)
+            return ((value / 0.003785411784) / 10.0)
         
         if from_unit == VolumeUnits.DeciusGallon:
-            return ((value / 0.00378541) / 0.1)
+            return ((value / 0.003785411784) / 0.1)
         
         if from_unit == VolumeUnits.HectousGallon:
-            return ((value / 0.00378541) / 100.0)
+            return ((value / 0.003785411784) / 100.0)
         
         if from_unit == VolumeUnits.KilousGallon:
-            return ((value / 0.00378541) / 1000.0)
+            return ((value / 0.003785411784) / 1000.0)
         
         if from_unit == VolumeUnits.MegausGallon:
-            return ((value / 0.00378541) / 1000000.0)
+            return ((value / 0.003785411784) / 1000000.0)
         
         return None
 
@@ -598,13 +598,13 @@ class Volume:
             return (value * 1.6387 * 1e-5)
         
         if to_unit == VolumeUnits.ImperialGallon:
-            return (value * 0.00454609000000181429905810072407)
+            return (value * 0.00454609)
         
         if to_unit == VolumeUnits.ImperialOunce:
             return (value * 2.8413062499962901241875439064617e-5)
         
         if to_unit == VolumeUnits.UsGallon:
-            return (value * 0.00378541)
+            return (value * 0.003785411784)
         
         if to_unit == VolumeUnits.UsOunce:
             return (value * 2.957352956253760505068307980135e-5)
@@ -700,25 +700,25 @@ class Volume:
             return ((value * 2.8316846592e-2) * 1000000.0)
         
         if to_unit == VolumeUnits.KiloimperialGallon:
-            return ((value * 0.00454609000000181429905810072407) * 1000.0)
+            return ((value * 0.00454609) * 1000.0)
         
         if to_unit == VolumeUnits.MegaimperialGallon:
-            return ((value * 0.00454609000000181429905810072407) * 1000000.0)
+            return ((value * 0.00454609) * 1000000.0)
         
         if to_unit == VolumeUnits.DecausGallon:
-            return ((value * 0.00378541) * 10.0)
+            return ((value * 0.003785411784) * 10.0)
         
         if to_unit == VolumeUnits.DeciusGallon:
-            return ((value * 0.00378541) * 0.1)
+            return ((value * 0.003785411784) * 0.1)
         
         if to_unit == VolumeUnits.HectousGallon:
-            return ((value * 0.00378541) * 100.0)
+            return ((value * 0.003785411784) * 100.0)
         
         if to_unit == VolumeUnits.KilousGallon:
-            return ((value * 0.00378541) * 1000.0)
+            return ((value * 0.003785411784) * 1000.0)
         
         if to_unit == VolumeUnits.MegausGallon:
-            return ((value * 0.00378541) * 1000000.0)
+            return ((value * 0.003785411784) * 1000000.0)
         
         return None
 
@@ -913,7 +913,7 @@ class Volume:
         """
         Create a new instance of Volume from a value in imperial_gallons.
 
-        
+        The British imperial gallon (frequently called simply "gallon") is defined as exactly 4.54609 litres.
 
         :param meters: The Volume value in imperial_gallons.
         :type imperial_gallons: float
@@ -943,7 +943,7 @@ class Volume:
         """
         Create a new instance of Volume from a value in us_gallons.
 
-        
+        The US liquid gallon (frequently called simply "gallon") is legally defined as 231 cubic inches, which is exactly 3.785411784 litres.
 
         :param meters: The Volume value in us_gallons.
         :type us_gallons: float
@@ -1658,7 +1658,7 @@ class Volume:
     @property
     def imperial_gallons(self) -> float:
         """
-        
+        The British imperial gallon (frequently called simply "gallon") is defined as exactly 4.54609 litres.
         """
         if self.__imperial_gallons != None:
             return self.__imperial_gallons
@@ -1680,7 +1680,7 @@ class Volume:
     @property
     def us_gallons(self) -> float:
         """
-        
+        The US liquid gallon (frequently called simply "gallon") is legally defined as 231 cubic inches, which is exactly 3.785411784 litres.
         """
         if self.__us_gallons != None:
             return self.__us_gallons
