@@ -73,6 +73,16 @@ class MassUnits(Enum):
             Earth mass is a ratio unit to the mass of planet Earth.
         """
         
+        Femtogram = 'femtogram'
+        """
+            
+        """
+        
+        Picogram = 'picogram'
+        """
+            
+        """
+        
         Nanogram = 'nanogram'
         """
             
@@ -173,6 +183,10 @@ class Mass:
         
         self.__earth_masses = None
         
+        self.__femtograms = None
+        
+        self.__picograms = None
+        
         self.__nanograms = None
         
         self.__micrograms = None
@@ -239,6 +253,12 @@ class Mass:
         
         if from_unit == MassUnits.EarthMass:
             return (value / 5.9722e+24)
+        
+        if from_unit == MassUnits.Femtogram:
+            return ((value * 1e3) / 1e-15)
+        
+        if from_unit == MassUnits.Picogram:
+            return ((value * 1e3) / 1e-12)
         
         if from_unit == MassUnits.Nanogram:
             return ((value * 1e3) / 1e-09)
@@ -319,6 +339,12 @@ class Mass:
         
         if to_unit == MassUnits.EarthMass:
             return (value * 5.9722e+24)
+        
+        if to_unit == MassUnits.Femtogram:
+            return ((value / 1e3) * 1e-15)
+        
+        if to_unit == MassUnits.Picogram:
+            return ((value / 1e3) * 1e-12)
         
         if to_unit == MassUnits.Nanogram:
             return ((value / 1e3) * 1e-09)
@@ -557,6 +583,36 @@ class Mass:
         :rtype: Mass
         """
         return Mass(earth_masses, MassUnits.EarthMass)
+
+    
+    @staticmethod
+    def from_femtograms(femtograms: float):
+        """
+        Create a new instance of Mass from a value in femtograms.
+
+        
+
+        :param meters: The Mass value in femtograms.
+        :type femtograms: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(femtograms, MassUnits.Femtogram)
+
+    
+    @staticmethod
+    def from_picograms(picograms: float):
+        """
+        Create a new instance of Mass from a value in picograms.
+
+        
+
+        :param meters: The Mass value in picograms.
+        :type picograms: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(picograms, MassUnits.Picogram)
 
     
     @staticmethod
@@ -883,6 +939,28 @@ class Mass:
 
     
     @property
+    def femtograms(self) -> float:
+        """
+        
+        """
+        if self.__femtograms != None:
+            return self.__femtograms
+        self.__femtograms = self.__convert_from_base(MassUnits.Femtogram)
+        return self.__femtograms
+
+    
+    @property
+    def picograms(self) -> float:
+        """
+        
+        """
+        if self.__picograms != None:
+            return self.__picograms
+        self.__picograms = self.__convert_from_base(MassUnits.Picogram)
+        return self.__picograms
+
+    
+    @property
     def nanograms(self) -> float:
         """
         
@@ -1060,6 +1138,12 @@ class Mass:
         if unit == MassUnits.EarthMass:
             return f"""{self.earth_masses} em"""
         
+        if unit == MassUnits.Femtogram:
+            return f"""{self.femtograms} """
+        
+        if unit == MassUnits.Picogram:
+            return f"""{self.picograms} """
+        
         if unit == MassUnits.Nanogram:
             return f"""{self.nanograms} """
         
@@ -1144,6 +1228,12 @@ class Mass:
         
         if unit_abbreviation == MassUnits.EarthMass:
             return """em"""
+        
+        if unit_abbreviation == MassUnits.Femtogram:
+            return """"""
+        
+        if unit_abbreviation == MassUnits.Picogram:
+            return """"""
         
         if unit_abbreviation == MassUnits.Nanogram:
             return """"""
