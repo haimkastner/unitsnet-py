@@ -106,7 +106,7 @@ class ReciprocalLength:
             return (value / 1e3)
         
         if from_unit == ReciprocalLengthUnits.InverseMile:
-            return (value * 1609.34)
+            return (value * 1609.344)
         
         if from_unit == ReciprocalLengthUnits.InverseYard:
             return (value * 0.9144)
@@ -141,7 +141,7 @@ class ReciprocalLength:
             return (value * 1e3)
         
         if to_unit == ReciprocalLengthUnits.InverseMile:
-            return (value / 1609.34)
+            return (value / 1609.344)
         
         if to_unit == ReciprocalLengthUnits.InverseYard:
             return (value / 0.9144)
