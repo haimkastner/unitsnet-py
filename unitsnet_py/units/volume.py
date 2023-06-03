@@ -148,6 +148,11 @@ class VolumeUnits(Enum):
             
         """
         
+        ImperialQuart = 'imperial_quart'
+        """
+            
+        """
+        
         UsPint = 'us_pint'
         """
             
@@ -343,6 +348,8 @@ class Volume:
         
         self.__us_quarts = None
         
+        self.__imperial_quarts = None
+        
         self.__us_pints = None
         
         self.__acre_feet = None
@@ -480,6 +487,9 @@ class Volume:
         
         if from_unit == VolumeUnits.UsQuart:
             return (value / 9.46352946e-4)
+        
+        if from_unit == VolumeUnits.ImperialQuart:
+            return (value / 1.1365225e-3)
         
         if from_unit == VolumeUnits.UsPint:
             return (value / 4.73176473e-4)
@@ -644,6 +654,9 @@ class Volume:
         
         if to_unit == VolumeUnits.UsQuart:
             return (value * 9.46352946e-4)
+        
+        if to_unit == VolumeUnits.ImperialQuart:
+            return (value * 1.1365225e-3)
         
         if to_unit == VolumeUnits.UsPint:
             return (value * 4.73176473e-4)
@@ -1146,6 +1159,21 @@ class Volume:
         :rtype: Volume
         """
         return Volume(us_quarts, VolumeUnits.UsQuart)
+
+    
+    @staticmethod
+    def from_imperial_quarts(imperial_quarts: float):
+        """
+        Create a new instance of Volume from a value in imperial_quarts.
+
+        
+
+        :param meters: The Volume value in imperial_quarts.
+        :type imperial_quarts: float
+        :return: A new instance of Volume.
+        :rtype: Volume
+        """
+        return Volume(imperial_quarts, VolumeUnits.ImperialQuart)
 
     
     @staticmethod
@@ -1832,6 +1860,17 @@ class Volume:
 
     
     @property
+    def imperial_quarts(self) -> float:
+        """
+        
+        """
+        if self.__imperial_quarts != None:
+            return self.__imperial_quarts
+        self.__imperial_quarts = self.__convert_from_base(VolumeUnits.ImperialQuart)
+        return self.__imperial_quarts
+
+    
+    @property
     def us_pints(self) -> float:
         """
         
@@ -2197,6 +2236,9 @@ class Volume:
         if unit == VolumeUnits.UsQuart:
             return f"""{self.us_quarts} qt (U.S.)"""
         
+        if unit == VolumeUnits.ImperialQuart:
+            return f"""{self.imperial_quarts} qt (imp.)"""
+        
         if unit == VolumeUnits.UsPint:
             return f"""{self.us_pints} pt (U.S.)"""
         
@@ -2365,6 +2407,9 @@ class Volume:
         
         if unit_abbreviation == VolumeUnits.UsQuart:
             return """qt (U.S.)"""
+        
+        if unit_abbreviation == VolumeUnits.ImperialQuart:
+            return """qt (imp.)"""
         
         if unit_abbreviation == VolumeUnits.UsPint:
             return """pt (U.S.)"""
