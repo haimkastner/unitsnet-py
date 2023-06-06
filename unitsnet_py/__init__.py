@@ -1,3 +1,4 @@
+from .units.absorbed_dose_of_ionizing_radiation import AbsorbedDoseOfIonizingRadiation, AbsorbedDoseOfIonizingRadiationUnits
 from .units.acceleration import Acceleration, AccelerationUnits
 from .units.amount_of_substance import AmountOfSubstance, AmountOfSubstanceUnits
 from .units.amplitude_ratio import AmplitudeRatio, AmplitudeRatioUnits
@@ -120,6 +121,7 @@ from .units.warping_moment_of_inertia import WarpingMomentOfInertia, WarpingMome
 
 
 __all__ = [
+ 'AbsorbedDoseOfIonizingRadiation', 'AbsorbedDoseOfIonizingRadiationUnits',
  'Acceleration', 'AccelerationUnits',
  'AmountOfSubstance', 'AmountOfSubstanceUnits',
  'AmplitudeRatio', 'AmplitudeRatioUnits',
