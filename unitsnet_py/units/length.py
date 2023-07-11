@@ -173,6 +173,11 @@ class LengthUnits(Enum):
             
         """
         
+        Kilofoot = 'kilofoot'
+        """
+            
+        """
+        
         Kiloparsec = 'kiloparsec'
         """
             
@@ -272,6 +277,8 @@ class Length:
         self.__kilometers = None
         
         self.__megameters = None
+        
+        self.__kilofeet = None
         
         self.__kiloparsecs = None
         
@@ -383,6 +390,9 @@ class Length:
         
         if from_unit == LengthUnits.Megameter:
             return ((value) / 1000000.0)
+        
+        if from_unit == LengthUnits.Kilofoot:
+            return ((value / 0.3048) / 1000.0)
         
         if from_unit == LengthUnits.Kiloparsec:
             return ((value / 3.08567758128e16) / 1000.0)
@@ -499,6 +509,9 @@ class Length:
         
         if to_unit == LengthUnits.Megameter:
             return ((value) * 1000000.0)
+        
+        if to_unit == LengthUnits.Kilofoot:
+            return ((value * 0.3048) * 1000.0)
         
         if to_unit == LengthUnits.Kiloparsec:
             return ((value * 3.08567758128e16) * 1000.0)
@@ -1016,6 +1029,21 @@ class Length:
 
     
     @staticmethod
+    def from_kilofeet(kilofeet: float):
+        """
+        Create a new instance of Length from a value in kilofeet.
+
+        
+
+        :param meters: The Length value in kilofeet.
+        :type kilofeet: float
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length(kilofeet, LengthUnits.Kilofoot)
+
+    
+    @staticmethod
     def from_kiloparsecs(kiloparsecs: float):
         """
         Create a new instance of Length from a value in kiloparsecs.
@@ -1439,6 +1467,17 @@ class Length:
 
     
     @property
+    def kilofeet(self) -> float:
+        """
+        
+        """
+        if self.__kilofeet != None:
+            return self.__kilofeet
+        self.__kilofeet = self.__convert_from_base(LengthUnits.Kilofoot)
+        return self.__kilofeet
+
+    
+    @property
     def kiloparsecs(self) -> float:
         """
         
@@ -1588,6 +1627,9 @@ class Length:
         if unit == LengthUnits.Megameter:
             return f"""{self.megameters} """
         
+        if unit == LengthUnits.Kilofoot:
+            return f"""{self.kilofeet} """
+        
         if unit == LengthUnits.Kiloparsec:
             return f"""{self.kiloparsecs} """
         
@@ -1707,6 +1749,9 @@ class Length:
             return """"""
         
         if unit_abbreviation == LengthUnits.Megameter:
+            return """"""
+        
+        if unit_abbreviation == LengthUnits.Kilofoot:
             return """"""
         
         if unit_abbreviation == LengthUnits.Kiloparsec:
