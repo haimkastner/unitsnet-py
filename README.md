@@ -306,7 +306,7 @@ The package provides support for the following units:
     -   *In chemistry, the molar mass M is a physical property defined as the mass of a given substance (chemical element or chemical compound) divided by the amount of substance.*
 
 - **Molarity**
-    -   *Molar concentration, also called molarity, amount concentration or substance concentration, is a measure of the concentration of a solute in a solution, or of any chemical species, in terms of amount of substance in a given volume. *
+    -   *Molar concentration, also called molarity, amount concentration or substance concentration, is a measure of the concentration of a solute in a solution, or of any chemical species, in terms of amount of substance in a given volume.*
 
 - **Permeability**
     -   *In electromagnetism, permeability is the measure of the ability of a material to support the formation of a magnetic field within itself.*

@@ -38,6 +38,16 @@ class PressureChangeRateUnits(Enum):
             
         """
         
+        BarPerSecond = 'bar_per_second'
+        """
+            
+        """
+        
+        BarPerMinute = 'bar_per_minute'
+        """
+            
+        """
+        
         KilopascalPerSecond = 'kilopascal_per_second'
         """
             
@@ -78,6 +88,16 @@ class PressureChangeRateUnits(Enum):
             
         """
         
+        MillibarPerSecond = 'millibar_per_second'
+        """
+            
+        """
+        
+        MillibarPerMinute = 'millibar_per_minute'
+        """
+            
+        """
+        
 
 class PressureChangeRate:
     """
@@ -104,6 +124,10 @@ class PressureChangeRate:
         
         self.__pounds_force_per_square_inch_per_minute = None
         
+        self.__bars_per_second = None
+        
+        self.__bars_per_minute = None
+        
         self.__kilopascals_per_second = None
         
         self.__megapascals_per_second = None
@@ -119,6 +143,10 @@ class PressureChangeRate:
         self.__kilopounds_force_per_square_inch_per_minute = None
         
         self.__megapounds_force_per_square_inch_per_minute = None
+        
+        self.__millibars_per_second = None
+        
+        self.__millibars_per_minute = None
         
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:
@@ -141,6 +169,12 @@ class PressureChangeRate:
         
         if from_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return (value / 6.894757293168361e3 * 60)
+        
+        if from_unit == PressureChangeRateUnits.BarPerSecond:
+            return (value / 1e5)
+        
+        if from_unit == PressureChangeRateUnits.BarPerMinute:
+            return (value / 1e5 * 60)
         
         if from_unit == PressureChangeRateUnits.KilopascalPerSecond:
             return ((value) / 1000.0)
@@ -166,6 +200,12 @@ class PressureChangeRate:
         if from_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return ((value / 6.894757293168361e3 * 60) / 1000000.0)
         
+        if from_unit == PressureChangeRateUnits.MillibarPerSecond:
+            return ((value / 1e5) / 0.001)
+        
+        if from_unit == PressureChangeRateUnits.MillibarPerMinute:
+            return ((value / 1e5 * 60) / 0.001)
+        
         return None
 
 
@@ -188,6 +228,12 @@ class PressureChangeRate:
         
         if to_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return (value * 6.894757293168361e3 / 60)
+        
+        if to_unit == PressureChangeRateUnits.BarPerSecond:
+            return (value * 1e5)
+        
+        if to_unit == PressureChangeRateUnits.BarPerMinute:
+            return (value * 1e5 / 60)
         
         if to_unit == PressureChangeRateUnits.KilopascalPerSecond:
             return ((value) * 1000.0)
@@ -212,6 +258,12 @@ class PressureChangeRate:
         
         if to_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return ((value * 6.894757293168361e3 / 60) * 1000000.0)
+        
+        if to_unit == PressureChangeRateUnits.MillibarPerSecond:
+            return ((value * 1e5) * 0.001)
+        
+        if to_unit == PressureChangeRateUnits.MillibarPerMinute:
+            return ((value * 1e5 / 60) * 0.001)
         
         return None
 
@@ -309,6 +361,36 @@ class PressureChangeRate:
         :rtype: PressureChangeRate
         """
         return PressureChangeRate(pounds_force_per_square_inch_per_minute, PressureChangeRateUnits.PoundForcePerSquareInchPerMinute)
+
+    
+    @staticmethod
+    def from_bars_per_second(bars_per_second: float):
+        """
+        Create a new instance of PressureChangeRate from a value in bars_per_second.
+
+        
+
+        :param meters: The PressureChangeRate value in bars_per_second.
+        :type bars_per_second: float
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate(bars_per_second, PressureChangeRateUnits.BarPerSecond)
+
+    
+    @staticmethod
+    def from_bars_per_minute(bars_per_minute: float):
+        """
+        Create a new instance of PressureChangeRate from a value in bars_per_minute.
+
+        
+
+        :param meters: The PressureChangeRate value in bars_per_minute.
+        :type bars_per_minute: float
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate(bars_per_minute, PressureChangeRateUnits.BarPerMinute)
 
     
     @staticmethod
@@ -431,6 +513,36 @@ class PressureChangeRate:
         return PressureChangeRate(megapounds_force_per_square_inch_per_minute, PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute)
 
     
+    @staticmethod
+    def from_millibars_per_second(millibars_per_second: float):
+        """
+        Create a new instance of PressureChangeRate from a value in millibars_per_second.
+
+        
+
+        :param meters: The PressureChangeRate value in millibars_per_second.
+        :type millibars_per_second: float
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate(millibars_per_second, PressureChangeRateUnits.MillibarPerSecond)
+
+    
+    @staticmethod
+    def from_millibars_per_minute(millibars_per_minute: float):
+        """
+        Create a new instance of PressureChangeRate from a value in millibars_per_minute.
+
+        
+
+        :param meters: The PressureChangeRate value in millibars_per_minute.
+        :type millibars_per_minute: float
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate(millibars_per_minute, PressureChangeRateUnits.MillibarPerMinute)
+
+    
     @property
     def pascals_per_second(self) -> float:
         """
@@ -495,6 +607,28 @@ class PressureChangeRate:
             return self.__pounds_force_per_square_inch_per_minute
         self.__pounds_force_per_square_inch_per_minute = self.__convert_from_base(PressureChangeRateUnits.PoundForcePerSquareInchPerMinute)
         return self.__pounds_force_per_square_inch_per_minute
+
+    
+    @property
+    def bars_per_second(self) -> float:
+        """
+        
+        """
+        if self.__bars_per_second != None:
+            return self.__bars_per_second
+        self.__bars_per_second = self.__convert_from_base(PressureChangeRateUnits.BarPerSecond)
+        return self.__bars_per_second
+
+    
+    @property
+    def bars_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__bars_per_minute != None:
+            return self.__bars_per_minute
+        self.__bars_per_minute = self.__convert_from_base(PressureChangeRateUnits.BarPerMinute)
+        return self.__bars_per_minute
 
     
     @property
@@ -585,6 +719,28 @@ class PressureChangeRate:
         return self.__megapounds_force_per_square_inch_per_minute
 
     
+    @property
+    def millibars_per_second(self) -> float:
+        """
+        
+        """
+        if self.__millibars_per_second != None:
+            return self.__millibars_per_second
+        self.__millibars_per_second = self.__convert_from_base(PressureChangeRateUnits.MillibarPerSecond)
+        return self.__millibars_per_second
+
+    
+    @property
+    def millibars_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__millibars_per_minute != None:
+            return self.__millibars_per_minute
+        self.__millibars_per_minute = self.__convert_from_base(PressureChangeRateUnits.MillibarPerMinute)
+        return self.__millibars_per_minute
+
+    
     def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> string:
         """
         Format the PressureChangeRate to string.
@@ -610,6 +766,12 @@ class PressureChangeRate:
         if unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return f"""{self.pounds_force_per_square_inch_per_minute} psi/min"""
         
+        if unit == PressureChangeRateUnits.BarPerSecond:
+            return f"""{self.bars_per_second} bar/s"""
+        
+        if unit == PressureChangeRateUnits.BarPerMinute:
+            return f"""{self.bars_per_minute} bar/min"""
+        
         if unit == PressureChangeRateUnits.KilopascalPerSecond:
             return f"""{self.kilopascals_per_second} """
         
@@ -633,6 +795,12 @@ class PressureChangeRate:
         
         if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
             return f"""{self.megapounds_force_per_square_inch_per_minute} """
+        
+        if unit == PressureChangeRateUnits.MillibarPerSecond:
+            return f"""{self.millibars_per_second} """
+        
+        if unit == PressureChangeRateUnits.MillibarPerMinute:
+            return f"""{self.millibars_per_minute} """
         
         return f'{self.__value}'
 
@@ -662,6 +830,12 @@ class PressureChangeRate:
         if unit_abbreviation == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
             return """psi/min"""
         
+        if unit_abbreviation == PressureChangeRateUnits.BarPerSecond:
+            return """bar/s"""
+        
+        if unit_abbreviation == PressureChangeRateUnits.BarPerMinute:
+            return """bar/min"""
+        
         if unit_abbreviation == PressureChangeRateUnits.KilopascalPerSecond:
             return """"""
         
@@ -684,6 +858,12 @@ class PressureChangeRate:
             return """"""
         
         if unit_abbreviation == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
+            return """"""
+        
+        if unit_abbreviation == PressureChangeRateUnits.MillibarPerSecond:
+            return """"""
+        
+        if unit_abbreviation == PressureChangeRateUnits.MillibarPerMinute:
             return """"""
         
 
