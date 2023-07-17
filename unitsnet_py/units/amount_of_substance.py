@@ -18,6 +18,16 @@ class AmountOfSubstanceUnits(Enum):
             
         """
         
+        Femtomole = 'femtomole'
+        """
+            
+        """
+        
+        Picomole = 'picomole'
+        """
+            
+        """
+        
         Nanomole = 'nanomole'
         """
             
@@ -101,6 +111,10 @@ class AmountOfSubstance:
         
         self.__pound_moles = None
         
+        self.__femtomoles = None
+        
+        self.__picomoles = None
+        
         self.__nanomoles = None
         
         self.__micromoles = None
@@ -136,6 +150,12 @@ class AmountOfSubstance:
         
         if from_unit == AmountOfSubstanceUnits.PoundMole:
             return (value / 453.59237)
+        
+        if from_unit == AmountOfSubstanceUnits.Femtomole:
+            return ((value) / 1e-15)
+        
+        if from_unit == AmountOfSubstanceUnits.Picomole:
+            return ((value) / 1e-12)
         
         if from_unit == AmountOfSubstanceUnits.Nanomole:
             return ((value) / 1e-09)
@@ -186,6 +206,12 @@ class AmountOfSubstance:
         
         if to_unit == AmountOfSubstanceUnits.PoundMole:
             return (value * 453.59237)
+        
+        if to_unit == AmountOfSubstanceUnits.Femtomole:
+            return ((value) * 1e-15)
+        
+        if to_unit == AmountOfSubstanceUnits.Picomole:
+            return ((value) * 1e-12)
         
         if to_unit == AmountOfSubstanceUnits.Nanomole:
             return ((value) * 1e-09)
@@ -262,6 +288,36 @@ class AmountOfSubstance:
         :rtype: AmountOfSubstance
         """
         return AmountOfSubstance(pound_moles, AmountOfSubstanceUnits.PoundMole)
+
+    
+    @staticmethod
+    def from_femtomoles(femtomoles: float):
+        """
+        Create a new instance of AmountOfSubstance from a value in femtomoles.
+
+        
+
+        :param meters: The AmountOfSubstance value in femtomoles.
+        :type femtomoles: float
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
+        return AmountOfSubstance(femtomoles, AmountOfSubstanceUnits.Femtomole)
+
+    
+    @staticmethod
+    def from_picomoles(picomoles: float):
+        """
+        Create a new instance of AmountOfSubstance from a value in picomoles.
+
+        
+
+        :param meters: The AmountOfSubstance value in picomoles.
+        :type picomoles: float
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
+        return AmountOfSubstance(picomoles, AmountOfSubstanceUnits.Picomole)
 
     
     @staticmethod
@@ -482,6 +538,28 @@ class AmountOfSubstance:
 
     
     @property
+    def femtomoles(self) -> float:
+        """
+        
+        """
+        if self.__femtomoles != None:
+            return self.__femtomoles
+        self.__femtomoles = self.__convert_from_base(AmountOfSubstanceUnits.Femtomole)
+        return self.__femtomoles
+
+    
+    @property
+    def picomoles(self) -> float:
+        """
+        
+        """
+        if self.__picomoles != None:
+            return self.__picomoles
+        self.__picomoles = self.__convert_from_base(AmountOfSubstanceUnits.Picomole)
+        return self.__picomoles
+
+    
+    @property
     def nanomoles(self) -> float:
         """
         
@@ -637,6 +715,12 @@ class AmountOfSubstance:
         if unit == AmountOfSubstanceUnits.PoundMole:
             return f"""{self.pound_moles} lbmol"""
         
+        if unit == AmountOfSubstanceUnits.Femtomole:
+            return f"""{self.femtomoles} """
+        
+        if unit == AmountOfSubstanceUnits.Picomole:
+            return f"""{self.picomoles} """
+        
         if unit == AmountOfSubstanceUnits.Nanomole:
             return f"""{self.nanomoles} """
         
@@ -691,6 +775,12 @@ class AmountOfSubstance:
         
         if unit_abbreviation == AmountOfSubstanceUnits.PoundMole:
             return """lbmol"""
+        
+        if unit_abbreviation == AmountOfSubstanceUnits.Femtomole:
+            return """"""
+        
+        if unit_abbreviation == AmountOfSubstanceUnits.Picomole:
+            return """"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Nanomole:
             return """"""
