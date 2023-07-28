@@ -128,6 +128,16 @@ class LengthUnits(Enum):
             In radar-related subjects and in JTIDS, a data mile is a unit of distance equal to 6000 feet (1.8288 kilometres or 0.987 nautical miles).
         """
         
+        Femtometer = 'femtometer'
+        """
+            
+        """
+        
+        Picometer = 'picometer'
+        """
+            
+        """
+        
         Nanometer = 'nanometer'
         """
             
@@ -260,6 +270,10 @@ class Length:
         
         self.__data_miles = None
         
+        self.__femtometers = None
+        
+        self.__picometers = None
+        
         self.__nanometers = None
         
         self.__micrometers = None
@@ -363,6 +377,12 @@ class Length:
         
         if from_unit == LengthUnits.DataMile:
             return (value / 1828.8)
+        
+        if from_unit == LengthUnits.Femtometer:
+            return ((value) / 1e-15)
+        
+        if from_unit == LengthUnits.Picometer:
+            return ((value) / 1e-12)
         
         if from_unit == LengthUnits.Nanometer:
             return ((value) / 1e-09)
@@ -482,6 +502,12 @@ class Length:
         
         if to_unit == LengthUnits.DataMile:
             return (value * 1828.8)
+        
+        if to_unit == LengthUnits.Femtometer:
+            return ((value) * 1e-15)
+        
+        if to_unit == LengthUnits.Picometer:
+            return ((value) * 1e-12)
         
         if to_unit == LengthUnits.Nanometer:
             return ((value) * 1e-09)
@@ -891,6 +917,36 @@ class Length:
         :rtype: Length
         """
         return Length(data_miles, LengthUnits.DataMile)
+
+    
+    @staticmethod
+    def from_femtometers(femtometers: float):
+        """
+        Create a new instance of Length from a value in femtometers.
+
+        
+
+        :param meters: The Length value in femtometers.
+        :type femtometers: float
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length(femtometers, LengthUnits.Femtometer)
+
+    
+    @staticmethod
+    def from_picometers(picometers: float):
+        """
+        Create a new instance of Length from a value in picometers.
+
+        
+
+        :param meters: The Length value in picometers.
+        :type picometers: float
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length(picometers, LengthUnits.Picometer)
 
     
     @staticmethod
@@ -1368,6 +1424,28 @@ class Length:
 
     
     @property
+    def femtometers(self) -> float:
+        """
+        
+        """
+        if self.__femtometers != None:
+            return self.__femtometers
+        self.__femtometers = self.__convert_from_base(LengthUnits.Femtometer)
+        return self.__femtometers
+
+    
+    @property
+    def picometers(self) -> float:
+        """
+        
+        """
+        if self.__picometers != None:
+            return self.__picometers
+        self.__picometers = self.__convert_from_base(LengthUnits.Picometer)
+        return self.__picometers
+
+    
+    @property
     def nanometers(self) -> float:
         """
         
@@ -1600,6 +1678,12 @@ class Length:
         if unit == LengthUnits.DataMile:
             return f"""{self.data_miles} DM"""
         
+        if unit == LengthUnits.Femtometer:
+            return f"""{self.femtometers} """
+        
+        if unit == LengthUnits.Picometer:
+            return f"""{self.picometers} """
+        
         if unit == LengthUnits.Nanometer:
             return f"""{self.nanometers} """
         
@@ -1723,6 +1807,12 @@ class Length:
         
         if unit_abbreviation == LengthUnits.DataMile:
             return """DM"""
+        
+        if unit_abbreviation == LengthUnits.Femtometer:
+            return """"""
+        
+        if unit_abbreviation == LengthUnits.Picometer:
+            return """"""
         
         if unit_abbreviation == LengthUnits.Nanometer:
             return """"""
