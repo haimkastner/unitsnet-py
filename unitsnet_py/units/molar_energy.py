@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MolarEnergyUnits(Enum):
@@ -156,7 +155,7 @@ class MolarEnergy:
         return self.__megajoules_per_mole
 
     
-    def to_string(self, unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> string:
+    def to_string(self, unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> str:
         """
         Format the MolarEnergy to string.
         Note! the default format for MolarEnergy is JoulePerMole.
@@ -175,7 +174,7 @@ class MolarEnergy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> str:
         """
         Get MolarEnergy unit abbreviation.
         Note! the default abbreviation for MolarEnergy is JoulePerMole.

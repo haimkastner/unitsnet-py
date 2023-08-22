@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PowerDensityUnits(Enum):
@@ -1755,7 +1754,7 @@ class PowerDensity:
         return self.__terawatts_per_liter
 
     
-    def to_string(self, unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> string:
+    def to_string(self, unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> str:
         """
         Format the PowerDensity to string.
         Note! the default format for PowerDensity is WattPerCubicMeter.
@@ -1897,7 +1896,7 @@ class PowerDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> str:
         """
         Get PowerDensity unit abbreviation.
         Note! the default abbreviation for PowerDensity is WattPerCubicMeter.

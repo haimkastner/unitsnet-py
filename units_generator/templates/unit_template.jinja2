@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 {% if unit %}
 class {{ unit }}Units(Enum):
@@ -78,7 +77,7 @@ class {{ unit }}:
         return self.__{{ method.name }}
 
     {% endfor %}
-    def to_string(self, unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> string:
+    def to_string(self, unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> str:
         """
         Format the {{ unit }} to string.
         Note! the default format for {{ unit }} is {{ base_unit }}.
@@ -91,7 +90,7 @@ class {{ unit }}:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> str:
         """
         Get {{ unit }} unit abbreviation.
         Note! the default abbreviation for {{ unit }} is {{ base_unit }}.

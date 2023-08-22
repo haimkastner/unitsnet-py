@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class CapacitanceUnits(Enum):
@@ -312,7 +311,7 @@ class Capacitance:
         return self.__megafarads
 
     
-    def to_string(self, unit: CapacitanceUnits = CapacitanceUnits.Farad) -> string:
+    def to_string(self, unit: CapacitanceUnits = CapacitanceUnits.Farad) -> str:
         """
         Format the Capacitance to string.
         Note! the default format for Capacitance is Farad.
@@ -343,7 +342,7 @@ class Capacitance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: CapacitanceUnits = CapacitanceUnits.Farad) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: CapacitanceUnits = CapacitanceUnits.Farad) -> str:
         """
         Get Capacitance unit abbreviation.
         Note! the default abbreviation for Capacitance is Farad.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class KinematicViscosityUnits(Enum):
@@ -390,7 +389,7 @@ class KinematicViscosity:
         return self.__kilostokes
 
     
-    def to_string(self, unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> string:
+    def to_string(self, unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> str:
         """
         Format the KinematicViscosity to string.
         Note! the default format for KinematicViscosity is SquareMeterPerSecond.
@@ -427,7 +426,7 @@ class KinematicViscosity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> str:
         """
         Get KinematicViscosity unit abbreviation.
         Note! the default abbreviation for KinematicViscosity is SquareMeterPerSecond.

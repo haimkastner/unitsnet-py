@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricResistivityUnits(Enum):
@@ -585,7 +584,7 @@ class ElectricResistivity:
         return self.__megaohms_centimeter
 
     
-    def to_string(self, unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> string:
+    def to_string(self, unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> str:
         """
         Format the ElectricResistivity to string.
         Note! the default format for ElectricResistivity is OhmMeter.
@@ -637,7 +636,7 @@ class ElectricResistivity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> str:
         """
         Get ElectricResistivity unit abbreviation.
         Note! the default abbreviation for ElectricResistivity is OhmMeter.

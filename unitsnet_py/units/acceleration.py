@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AccelerationUnits(Enum):
@@ -585,7 +584,7 @@ class Acceleration:
         return self.__millistandard_gravity
 
     
-    def to_string(self, unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> string:
+    def to_string(self, unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> str:
         """
         Format the Acceleration to string.
         Note! the default format for Acceleration is MeterPerSecondSquared.
@@ -637,7 +636,7 @@ class Acceleration:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> str:
         """
         Get Acceleration unit abbreviation.
         Note! the default abbreviation for Acceleration is MeterPerSecondSquared.

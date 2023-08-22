@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassFlowUnits(Enum):
@@ -1326,7 +1325,7 @@ class MassFlow:
         return self.__megapounds_per_second
 
     
-    def to_string(self, unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> string:
+    def to_string(self, unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> str:
         """
         Format the MassFlow to string.
         Note! the default format for MassFlow is GramPerSecond.
@@ -1435,7 +1434,7 @@ class MassFlow:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassFlowUnits = MassFlowUnits.GramPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassFlowUnits = MassFlowUnits.GramPerSecond) -> str:
         """
         Get MassFlow unit abbreviation.
         Note! the default abbreviation for MassFlow is GramPerSecond.

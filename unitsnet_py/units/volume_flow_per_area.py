@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumeFlowPerAreaUnits(Enum):
@@ -117,7 +116,7 @@ class VolumeFlowPerArea:
         return self.__cubic_feet_per_minute_per_square_foot
 
     
-    def to_string(self, unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> string:
+    def to_string(self, unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> str:
         """
         Format the VolumeFlowPerArea to string.
         Note! the default format for VolumeFlowPerArea is CubicMeterPerSecondPerSquareMeter.
@@ -133,7 +132,7 @@ class VolumeFlowPerArea:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> str:
         """
         Get VolumeFlowPerArea unit abbreviation.
         Note! the default abbreviation for VolumeFlowPerArea is CubicMeterPerSecondPerSquareMeter.

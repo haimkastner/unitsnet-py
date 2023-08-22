@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SolidAngleUnits(Enum):
@@ -78,7 +77,7 @@ class SolidAngle:
         return self.__steradians
 
     
-    def to_string(self, unit: SolidAngleUnits = SolidAngleUnits.Steradian) -> string:
+    def to_string(self, unit: SolidAngleUnits = SolidAngleUnits.Steradian) -> str:
         """
         Format the SolidAngle to string.
         Note! the default format for SolidAngle is Steradian.
@@ -91,7 +90,7 @@ class SolidAngle:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SolidAngleUnits = SolidAngleUnits.Steradian) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SolidAngleUnits = SolidAngleUnits.Steradian) -> str:
         """
         Get SolidAngle unit abbreviation.
         Note! the default abbreviation for SolidAngle is Steradian.

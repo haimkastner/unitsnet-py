@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class EnergyUnits(Enum):
@@ -1521,7 +1520,7 @@ class Energy:
         return self.__decatherms_imperial
 
     
-    def to_string(self, unit: EnergyUnits = EnergyUnits.Joule) -> string:
+    def to_string(self, unit: EnergyUnits = EnergyUnits.Joule) -> str:
         """
         Format the Energy to string.
         Note! the default format for Energy is Joule.
@@ -1645,7 +1644,7 @@ class Energy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: EnergyUnits = EnergyUnits.Joule) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: EnergyUnits = EnergyUnits.Joule) -> str:
         """
         Get Energy unit abbreviation.
         Note! the default abbreviation for Energy is Joule.

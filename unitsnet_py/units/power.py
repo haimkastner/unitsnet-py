@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PowerUnits(Enum):
@@ -1053,7 +1052,7 @@ class Power:
         return self.__gigajoules_per_hour
 
     
-    def to_string(self, unit: PowerUnits = PowerUnits.Watt) -> string:
+    def to_string(self, unit: PowerUnits = PowerUnits.Watt) -> str:
         """
         Format the Power to string.
         Note! the default format for Power is Watt.
@@ -1141,7 +1140,7 @@ class Power:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PowerUnits = PowerUnits.Watt) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PowerUnits = PowerUnits.Watt) -> str:
         """
         Get Power unit abbreviation.
         Note! the default abbreviation for Power is Watt.

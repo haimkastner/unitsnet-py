@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AreaDensityUnits(Enum):
@@ -156,7 +155,7 @@ class AreaDensity:
         return self.__milligrams_per_square_meter
 
     
-    def to_string(self, unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> string:
+    def to_string(self, unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> str:
         """
         Format the AreaDensity to string.
         Note! the default format for AreaDensity is KilogramPerSquareMeter.
@@ -175,7 +174,7 @@ class AreaDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> str:
         """
         Get AreaDensity unit abbreviation.
         Note! the default abbreviation for AreaDensity is KilogramPerSquareMeter.

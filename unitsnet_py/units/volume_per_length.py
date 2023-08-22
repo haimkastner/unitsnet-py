@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumePerLengthUnits(Enum):
@@ -390,7 +389,7 @@ class VolumePerLength:
         return self.__imperial_gallons_per_mile
 
     
-    def to_string(self, unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> string:
+    def to_string(self, unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> str:
         """
         Format the VolumePerLength to string.
         Note! the default format for VolumePerLength is CubicMeterPerMeter.
@@ -427,7 +426,7 @@ class VolumePerLength:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> str:
         """
         Get VolumePerLength unit abbreviation.
         Note! the default abbreviation for VolumePerLength is CubicMeterPerMeter.

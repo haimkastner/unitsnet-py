@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LuminanceUnits(Enum):
@@ -429,7 +428,7 @@ class Luminance:
         return self.__kilocandelas_per_square_meter
 
     
-    def to_string(self, unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> string:
+    def to_string(self, unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> str:
         """
         Format the Luminance to string.
         Note! the default format for Luminance is CandelaPerSquareMeter.
@@ -469,7 +468,7 @@ class Luminance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> str:
         """
         Get Luminance unit abbreviation.
         Note! the default abbreviation for Luminance is CandelaPerSquareMeter.

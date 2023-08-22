@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LinearPowerDensityUnits(Enum):
@@ -1014,7 +1013,7 @@ class LinearPowerDensity:
         return self.__gigawatts_per_foot
 
     
-    def to_string(self, unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> string:
+    def to_string(self, unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> str:
         """
         Format the LinearPowerDensity to string.
         Note! the default format for LinearPowerDensity is WattPerMeter.
@@ -1099,7 +1098,7 @@ class LinearPowerDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> str:
         """
         Get LinearPowerDensity unit abbreviation.
         Note! the default abbreviation for LinearPowerDensity is WattPerMeter.

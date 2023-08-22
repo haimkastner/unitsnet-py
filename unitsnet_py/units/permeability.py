@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PermeabilityUnits(Enum):
@@ -78,7 +77,7 @@ class Permeability:
         return self.__henries_per_meter
 
     
-    def to_string(self, unit: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> string:
+    def to_string(self, unit: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> str:
         """
         Format the Permeability to string.
         Note! the default format for Permeability is HenryPerMeter.
@@ -91,7 +90,7 @@ class Permeability:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> str:
         """
         Get Permeability unit abbreviation.
         Note! the default abbreviation for Permeability is HenryPerMeter.

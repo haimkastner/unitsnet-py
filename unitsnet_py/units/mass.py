@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassUnits(Enum):
@@ -1092,7 +1091,7 @@ class Mass:
         return self.__megapounds
 
     
-    def to_string(self, unit: MassUnits = MassUnits.Kilogram) -> string:
+    def to_string(self, unit: MassUnits = MassUnits.Kilogram) -> str:
         """
         Format the Mass to string.
         Note! the default format for Mass is Kilogram.
@@ -1183,7 +1182,7 @@ class Mass:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassUnits = MassUnits.Kilogram) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassUnits = MassUnits.Kilogram) -> str:
         """
         Get Mass unit abbreviation.
         Note! the default abbreviation for Mass is Kilogram.

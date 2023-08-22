@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MagneticFluxUnits(Enum):
@@ -78,7 +77,7 @@ class MagneticFlux:
         return self.__webers
 
     
-    def to_string(self, unit: MagneticFluxUnits = MagneticFluxUnits.Weber) -> string:
+    def to_string(self, unit: MagneticFluxUnits = MagneticFluxUnits.Weber) -> str:
         """
         Format the MagneticFlux to string.
         Note! the default format for MagneticFlux is Weber.
@@ -91,7 +90,7 @@ class MagneticFlux:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MagneticFluxUnits = MagneticFluxUnits.Weber) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MagneticFluxUnits = MagneticFluxUnits.Weber) -> str:
         """
         Get MagneticFlux unit abbreviation.
         Note! the default abbreviation for MagneticFlux is Weber.

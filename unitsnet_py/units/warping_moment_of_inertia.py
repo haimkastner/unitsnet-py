@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class WarpingMomentOfInertiaUnits(Enum):
@@ -273,7 +272,7 @@ class WarpingMomentOfInertia:
         return self.__inches_to_the_sixth
 
     
-    def to_string(self, unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> string:
+    def to_string(self, unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> str:
         """
         Format the WarpingMomentOfInertia to string.
         Note! the default format for WarpingMomentOfInertia is MeterToTheSixth.
@@ -301,7 +300,7 @@ class WarpingMomentOfInertia:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> str:
         """
         Get WarpingMomentOfInertia unit abbreviation.
         Note! the default abbreviation for WarpingMomentOfInertia is MeterToTheSixth.

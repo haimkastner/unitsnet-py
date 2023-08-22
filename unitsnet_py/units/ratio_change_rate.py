@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class RatioChangeRateUnits(Enum):
@@ -117,7 +116,7 @@ class RatioChangeRate:
         return self.__decimal_fractions_per_second
 
     
-    def to_string(self, unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> string:
+    def to_string(self, unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> str:
         """
         Format the RatioChangeRate to string.
         Note! the default format for RatioChangeRate is DecimalFractionPerSecond.
@@ -133,7 +132,7 @@ class RatioChangeRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> str:
         """
         Get RatioChangeRate unit abbreviation.
         Note! the default abbreviation for RatioChangeRate is DecimalFractionPerSecond.

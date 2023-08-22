@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class JerkUnits(Enum):
@@ -468,7 +467,7 @@ class Jerk:
         return self.__millistandard_gravities_per_second
 
     
-    def to_string(self, unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> string:
+    def to_string(self, unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> str:
         """
         Format the Jerk to string.
         Note! the default format for Jerk is MeterPerSecondCubed.
@@ -511,7 +510,7 @@ class Jerk:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: JerkUnits = JerkUnits.MeterPerSecondCubed) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: JerkUnits = JerkUnits.MeterPerSecondCubed) -> str:
         """
         Get Jerk unit abbreviation.
         Note! the default abbreviation for Jerk is MeterPerSecondCubed.

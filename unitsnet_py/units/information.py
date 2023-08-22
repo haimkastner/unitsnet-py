@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class InformationUnits(Enum):
@@ -585,7 +584,7 @@ class Information:
         return self.__exabits
 
     
-    def to_string(self, unit: InformationUnits = InformationUnits.Bit) -> string:
+    def to_string(self, unit: InformationUnits = InformationUnits.Bit) -> str:
         """
         Format the Information to string.
         Note! the default format for Information is Bit.
@@ -637,7 +636,7 @@ class Information:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: InformationUnits = InformationUnits.Bit) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: InformationUnits = InformationUnits.Bit) -> str:
         """
         Get Information unit abbreviation.
         Note! the default abbreviation for Information is Bit.

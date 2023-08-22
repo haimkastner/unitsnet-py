@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class RelativeHumidityUnits(Enum):
@@ -78,7 +77,7 @@ class RelativeHumidity:
         return self.__percent
 
     
-    def to_string(self, unit: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> string:
+    def to_string(self, unit: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> str:
         """
         Format the RelativeHumidity to string.
         Note! the default format for RelativeHumidity is Percent.
@@ -91,7 +90,7 @@ class RelativeHumidity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> str:
         """
         Get RelativeHumidity unit abbreviation.
         Note! the default abbreviation for RelativeHumidity is Percent.

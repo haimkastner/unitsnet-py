@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ReciprocalAreaUnits(Enum):
@@ -468,7 +467,7 @@ class ReciprocalArea:
         return self.__inverse_square_inches
 
     
-    def to_string(self, unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> string:
+    def to_string(self, unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> str:
         """
         Format the ReciprocalArea to string.
         Note! the default format for ReciprocalArea is InverseSquareMeter.
@@ -511,7 +510,7 @@ class ReciprocalArea:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> str:
         """
         Get ReciprocalArea unit abbreviation.
         Note! the default abbreviation for ReciprocalArea is InverseSquareMeter.

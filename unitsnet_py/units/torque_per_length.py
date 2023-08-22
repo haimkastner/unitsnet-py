@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TorquePerLengthUnits(Enum):
@@ -858,7 +857,7 @@ class TorquePerLength:
         return self.__megapound_force_feet_per_foot
 
     
-    def to_string(self, unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> string:
+    def to_string(self, unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> str:
         """
         Format the TorquePerLength to string.
         Note! the default format for TorquePerLength is NewtonMeterPerMeter.
@@ -931,7 +930,7 @@ class TorquePerLength:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> str:
         """
         Get TorquePerLength unit abbreviation.
         Note! the default abbreviation for TorquePerLength is NewtonMeterPerMeter.

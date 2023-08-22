@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpecificFuelConsumptionUnits(Enum):
@@ -195,7 +194,7 @@ class SpecificFuelConsumption:
         return self.__kilograms_per_kilo_newton_second
 
     
-    def to_string(self, unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> string:
+    def to_string(self, unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> str:
         """
         Format the SpecificFuelConsumption to string.
         Note! the default format for SpecificFuelConsumption is GramPerKiloNewtonSecond.
@@ -217,7 +216,7 @@ class SpecificFuelConsumption:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> str:
         """
         Get SpecificFuelConsumption unit abbreviation.
         Note! the default abbreviation for SpecificFuelConsumption is GramPerKiloNewtonSecond.

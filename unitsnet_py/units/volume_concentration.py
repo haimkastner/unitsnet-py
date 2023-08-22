@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumeConcentrationUnits(Enum):
@@ -819,7 +818,7 @@ class VolumeConcentration:
         return self.__deciliters_per_mililiter
 
     
-    def to_string(self, unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> string:
+    def to_string(self, unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> str:
         """
         Format the VolumeConcentration to string.
         Note! the default format for VolumeConcentration is DecimalFraction.
@@ -889,7 +888,7 @@ class VolumeConcentration:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> str:
         """
         Get VolumeConcentration unit abbreviation.
         Note! the default abbreviation for VolumeConcentration is DecimalFraction.

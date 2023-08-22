@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ApparentPowerUnits(Enum):
@@ -273,7 +272,7 @@ class ApparentPower:
         return self.__gigavoltamperes
 
     
-    def to_string(self, unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> string:
+    def to_string(self, unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> str:
         """
         Format the ApparentPower to string.
         Note! the default format for ApparentPower is Voltampere.
@@ -301,7 +300,7 @@ class ApparentPower:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> str:
         """
         Get ApparentPower unit abbreviation.
         Note! the default abbreviation for ApparentPower is Voltampere.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MolarMassUnits(Enum):
@@ -546,7 +545,7 @@ class MolarMass:
         return self.__megapounds_per_mole
 
     
-    def to_string(self, unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> string:
+    def to_string(self, unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> str:
         """
         Format the MolarMass to string.
         Note! the default format for MolarMass is KilogramPerMole.
@@ -595,7 +594,7 @@ class MolarMass:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> str:
         """
         Get MolarMass unit abbreviation.
         Note! the default abbreviation for MolarMass is KilogramPerMole.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassFractionUnits(Enum):
@@ -975,7 +974,7 @@ class MassFraction:
         return self.__kilograms_per_kilogram
 
     
-    def to_string(self, unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> string:
+    def to_string(self, unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> str:
         """
         Format the MassFraction to string.
         Note! the default format for MassFraction is DecimalFraction.
@@ -1057,7 +1056,7 @@ class MassFraction:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassFractionUnits = MassFractionUnits.DecimalFraction) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassFractionUnits = MassFractionUnits.DecimalFraction) -> str:
         """
         Get MassFraction unit abbreviation.
         Note! the default abbreviation for MassFraction is DecimalFraction.

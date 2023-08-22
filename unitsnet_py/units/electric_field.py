@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricFieldUnits(Enum):
@@ -78,7 +77,7 @@ class ElectricField:
         return self.__volts_per_meter
 
     
-    def to_string(self, unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> string:
+    def to_string(self, unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> str:
         """
         Format the ElectricField to string.
         Note! the default format for ElectricField is VoltPerMeter.
@@ -91,7 +90,7 @@ class ElectricField:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> str:
         """
         Get ElectricField unit abbreviation.
         Note! the default abbreviation for ElectricField is VoltPerMeter.

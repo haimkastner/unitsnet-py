@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class DurationUnits(Enum):
@@ -468,7 +467,7 @@ class Duration:
         return self.__milliseconds
 
     
-    def to_string(self, unit: DurationUnits = DurationUnits.Second) -> string:
+    def to_string(self, unit: DurationUnits = DurationUnits.Second) -> str:
         """
         Format the Duration to string.
         Note! the default format for Duration is Second.
@@ -511,7 +510,7 @@ class Duration:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: DurationUnits = DurationUnits.Second) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: DurationUnits = DurationUnits.Second) -> str:
         """
         Get Duration unit abbreviation.
         Note! the default abbreviation for Duration is Second.

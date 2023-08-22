@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ScalarUnits(Enum):
@@ -78,7 +77,7 @@ class Scalar:
         return self.__amount
 
     
-    def to_string(self, unit: ScalarUnits = ScalarUnits.Amount) -> string:
+    def to_string(self, unit: ScalarUnits = ScalarUnits.Amount) -> str:
         """
         Format the Scalar to string.
         Note! the default format for Scalar is Amount.
@@ -91,7 +90,7 @@ class Scalar:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ScalarUnits = ScalarUnits.Amount) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ScalarUnits = ScalarUnits.Amount) -> str:
         """
         Get Scalar unit abbreviation.
         Note! the default abbreviation for Scalar is Amount.

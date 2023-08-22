@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricChargeDensityUnits(Enum):
@@ -78,7 +77,7 @@ class ElectricChargeDensity:
         return self.__coulombs_per_cubic_meter
 
     
-    def to_string(self, unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> string:
+    def to_string(self, unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> str:
         """
         Format the ElectricChargeDensity to string.
         Note! the default format for ElectricChargeDensity is CoulombPerCubicMeter.
@@ -91,7 +90,7 @@ class ElectricChargeDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> str:
         """
         Get ElectricChargeDensity unit abbreviation.
         Note! the default abbreviation for ElectricChargeDensity is CoulombPerCubicMeter.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class DensityUnits(Enum):
@@ -2028,7 +2027,7 @@ class Density:
         return self.__decigrams_per_milliliter
 
     
-    def to_string(self, unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> string:
+    def to_string(self, unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> str:
         """
         Format the Density to string.
         Note! the default format for Density is KilogramPerCubicMeter.
@@ -2191,7 +2190,7 @@ class Density:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> str:
         """
         Get Density unit abbreviation.
         Note! the default abbreviation for Density is KilogramPerCubicMeter.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumetricHeatCapacityUnits(Enum):
@@ -390,7 +389,7 @@ class VolumetricHeatCapacity:
         return self.__kilocalories_per_cubic_centimeter_degree_celsius
 
     
-    def to_string(self, unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> string:
+    def to_string(self, unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> str:
         """
         Format the VolumetricHeatCapacity to string.
         Note! the default format for VolumetricHeatCapacity is JoulePerCubicMeterKelvin.
@@ -427,7 +426,7 @@ class VolumetricHeatCapacity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> str:
         """
         Get VolumetricHeatCapacity unit abbreviation.
         Note! the default abbreviation for VolumetricHeatCapacity is JoulePerCubicMeterKelvin.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class FuelEfficiencyUnits(Enum):
@@ -195,7 +194,7 @@ class FuelEfficiency:
         return self.__kilometers_per_liters
 
     
-    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> string:
+    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> str:
         """
         Format the FuelEfficiency to string.
         Note! the default format for FuelEfficiency is LiterPer100Kilometers.
@@ -217,7 +216,7 @@ class FuelEfficiency:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> str:
         """
         Get FuelEfficiency unit abbreviation.
         Note! the default abbreviation for FuelEfficiency is LiterPer100Kilometers.

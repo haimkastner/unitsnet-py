@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ImpulseUnits(Enum):
@@ -546,7 +545,7 @@ class Impulse:
         return self.__meganewton_seconds
 
     
-    def to_string(self, unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> string:
+    def to_string(self, unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> str:
         """
         Format the Impulse to string.
         Note! the default format for Impulse is NewtonSecond.
@@ -595,7 +594,7 @@ class Impulse:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ImpulseUnits = ImpulseUnits.NewtonSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ImpulseUnits = ImpulseUnits.NewtonSecond) -> str:
         """
         Get Impulse unit abbreviation.
         Note! the default abbreviation for Impulse is NewtonSecond.

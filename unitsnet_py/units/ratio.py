@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class RatioUnits(Enum):
@@ -273,7 +272,7 @@ class Ratio:
         return self.__parts_per_trillion
 
     
-    def to_string(self, unit: RatioUnits = RatioUnits.DecimalFraction) -> string:
+    def to_string(self, unit: RatioUnits = RatioUnits.DecimalFraction) -> str:
         """
         Format the Ratio to string.
         Note! the default format for Ratio is DecimalFraction.
@@ -301,7 +300,7 @@ class Ratio:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: RatioUnits = RatioUnits.DecimalFraction) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: RatioUnits = RatioUnits.DecimalFraction) -> str:
         """
         Get Ratio unit abbreviation.
         Note! the default abbreviation for Ratio is DecimalFraction.

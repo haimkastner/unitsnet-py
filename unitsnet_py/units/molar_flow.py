@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MolarFlowUnits(Enum):
@@ -390,7 +389,7 @@ class MolarFlow:
         return self.__kilomoles_per_hour
 
     
-    def to_string(self, unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> string:
+    def to_string(self, unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> str:
         """
         Format the MolarFlow to string.
         Note! the default format for MolarFlow is MolePerSecond.
@@ -427,7 +426,7 @@ class MolarFlow:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> str:
         """
         Get MolarFlow unit abbreviation.
         Note! the default abbreviation for MolarFlow is MolePerSecond.

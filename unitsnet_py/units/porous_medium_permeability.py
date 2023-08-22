@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PorousMediumPermeabilityUnits(Enum):
@@ -234,7 +233,7 @@ class PorousMediumPermeability:
         return self.__millidarcys
 
     
-    def to_string(self, unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> string:
+    def to_string(self, unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> str:
         """
         Format the PorousMediumPermeability to string.
         Note! the default format for PorousMediumPermeability is SquareMeter.
@@ -259,7 +258,7 @@ class PorousMediumPermeability:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> str:
         """
         Get PorousMediumPermeability unit abbreviation.
         Note! the default abbreviation for PorousMediumPermeability is SquareMeter.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricConductanceUnits(Enum):
@@ -234,7 +233,7 @@ class ElectricConductance:
         return self.__kilosiemens
 
     
-    def to_string(self, unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> string:
+    def to_string(self, unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> str:
         """
         Format the ElectricConductance to string.
         Note! the default format for ElectricConductance is Siemens.
@@ -259,7 +258,7 @@ class ElectricConductance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> str:
         """
         Get ElectricConductance unit abbreviation.
         Note! the default abbreviation for ElectricConductance is Siemens.

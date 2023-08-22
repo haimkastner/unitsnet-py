@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AmountOfSubstanceUnits(Enum):
@@ -702,7 +701,7 @@ class AmountOfSubstance:
         return self.__kilopound_moles
 
     
-    def to_string(self, unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> string:
+    def to_string(self, unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> str:
         """
         Format the AmountOfSubstance to string.
         Note! the default format for AmountOfSubstance is Mole.
@@ -763,7 +762,7 @@ class AmountOfSubstance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> str:
         """
         Get AmountOfSubstance unit abbreviation.
         Note! the default abbreviation for AmountOfSubstance is Mole.

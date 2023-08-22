@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LeakRateUnits(Enum):
@@ -156,7 +155,7 @@ class LeakRate:
         return self.__torr_liters_per_second
 
     
-    def to_string(self, unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> string:
+    def to_string(self, unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> str:
         """
         Format the LeakRate to string.
         Note! the default format for LeakRate is PascalCubicMeterPerSecond.
@@ -175,7 +174,7 @@ class LeakRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> str:
         """
         Get LeakRate unit abbreviation.
         Note! the default abbreviation for LeakRate is PascalCubicMeterPerSecond.

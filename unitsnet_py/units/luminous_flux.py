@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LuminousFluxUnits(Enum):
@@ -78,7 +77,7 @@ class LuminousFlux:
         return self.__lumens
 
     
-    def to_string(self, unit: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> string:
+    def to_string(self, unit: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> str:
         """
         Format the LuminousFlux to string.
         Note! the default format for LuminousFlux is Lumen.
@@ -91,7 +90,7 @@ class LuminousFlux:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> str:
         """
         Get LuminousFlux unit abbreviation.
         Note! the default abbreviation for LuminousFlux is Lumen.

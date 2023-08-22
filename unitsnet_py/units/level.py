@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LevelUnits(Enum):
@@ -117,7 +116,7 @@ class Level:
         return self.__nepers
 
     
-    def to_string(self, unit: LevelUnits = LevelUnits.Decibel) -> string:
+    def to_string(self, unit: LevelUnits = LevelUnits.Decibel) -> str:
         """
         Format the Level to string.
         Note! the default format for Level is Decibel.
@@ -133,7 +132,7 @@ class Level:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LevelUnits = LevelUnits.Decibel) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LevelUnits = LevelUnits.Decibel) -> str:
         """
         Get Level unit abbreviation.
         Note! the default abbreviation for Level is Decibel.

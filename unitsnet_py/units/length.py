@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LengthUnits(Enum):
@@ -1599,7 +1598,7 @@ class Length:
         return self.__megalight_years
 
     
-    def to_string(self, unit: LengthUnits = LengthUnits.Meter) -> string:
+    def to_string(self, unit: LengthUnits = LengthUnits.Meter) -> str:
         """
         Format the Length to string.
         Note! the default format for Length is Meter.
@@ -1729,7 +1728,7 @@ class Length:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LengthUnits = LengthUnits.Meter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LengthUnits = LengthUnits.Meter) -> str:
         """
         Get Length unit abbreviation.
         Note! the default abbreviation for Length is Meter.

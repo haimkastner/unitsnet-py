@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpeedUnits(Enum):
@@ -1326,7 +1325,7 @@ class Speed:
         return self.__kilometers_per_hour
 
     
-    def to_string(self, unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> string:
+    def to_string(self, unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> str:
         """
         Format the Speed to string.
         Note! the default format for Speed is MeterPerSecond.
@@ -1435,7 +1434,7 @@ class Speed:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpeedUnits = SpeedUnits.MeterPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpeedUnits = SpeedUnits.MeterPerSecond) -> str:
         """
         Get Speed unit abbreviation.
         Note! the default abbreviation for Speed is MeterPerSecond.

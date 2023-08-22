@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class FrequencyUnits(Enum):
@@ -546,7 +545,7 @@ class Frequency:
         return self.__terahertz
 
     
-    def to_string(self, unit: FrequencyUnits = FrequencyUnits.Hertz) -> string:
+    def to_string(self, unit: FrequencyUnits = FrequencyUnits.Hertz) -> str:
         """
         Format the Frequency to string.
         Note! the default format for Frequency is Hertz.
@@ -595,7 +594,7 @@ class Frequency:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: FrequencyUnits = FrequencyUnits.Hertz) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: FrequencyUnits = FrequencyUnits.Hertz) -> str:
         """
         Get Frequency unit abbreviation.
         Note! the default abbreviation for Frequency is Hertz.

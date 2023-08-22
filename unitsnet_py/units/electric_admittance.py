@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricAdmittanceUnits(Enum):
@@ -195,7 +194,7 @@ class ElectricAdmittance:
         return self.__millisiemens
 
     
-    def to_string(self, unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> string:
+    def to_string(self, unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> str:
         """
         Format the ElectricAdmittance to string.
         Note! the default format for ElectricAdmittance is Siemens.
@@ -217,7 +216,7 @@ class ElectricAdmittance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> str:
         """
         Get ElectricAdmittance unit abbreviation.
         Note! the default abbreviation for ElectricAdmittance is Siemens.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class IrradianceUnits(Enum):
@@ -585,7 +584,7 @@ class Irradiance:
         return self.__megawatts_per_square_centimeter
 
     
-    def to_string(self, unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> string:
+    def to_string(self, unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> str:
         """
         Format the Irradiance to string.
         Note! the default format for Irradiance is WattPerSquareMeter.
@@ -637,7 +636,7 @@ class Irradiance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> str:
         """
         Get Irradiance unit abbreviation.
         Note! the default abbreviation for Irradiance is WattPerSquareMeter.
