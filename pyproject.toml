@@ -15,7 +15,7 @@ packages = [
 keywords = ["conversion", "units-of-measure", "units", "quantities", "unit-converter", "converter", "unit", "measure", "measures", "measurement", "measurements"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 jinja2 = "^3.1.2"
 
 
