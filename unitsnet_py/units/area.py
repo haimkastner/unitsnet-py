@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AreaUnits(Enum):
@@ -585,7 +584,7 @@ class Area:
         return self.__square_nautical_miles
 
     
-    def to_string(self, unit: AreaUnits = AreaUnits.SquareMeter) -> string:
+    def to_string(self, unit: AreaUnits = AreaUnits.SquareMeter) -> str:
         """
         Format the Area to string.
         Note! the default format for Area is SquareMeter.
@@ -637,7 +636,7 @@ class Area:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AreaUnits = AreaUnits.SquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AreaUnits = AreaUnits.SquareMeter) -> str:
         """
         Get Area unit abbreviation.
         Note! the default abbreviation for Area is SquareMeter.

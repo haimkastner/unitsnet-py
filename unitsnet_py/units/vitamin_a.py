@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VitaminAUnits(Enum):
@@ -78,7 +77,7 @@ class VitaminA:
         return self.__international_units
 
     
-    def to_string(self, unit: VitaminAUnits = VitaminAUnits.InternationalUnit) -> string:
+    def to_string(self, unit: VitaminAUnits = VitaminAUnits.InternationalUnit) -> str:
         """
         Format the VitaminA to string.
         Note! the default format for VitaminA is InternationalUnit.
@@ -91,7 +90,7 @@ class VitaminA:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VitaminAUnits = VitaminAUnits.InternationalUnit) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VitaminAUnits = VitaminAUnits.InternationalUnit) -> str:
         """
         Get VitaminA unit abbreviation.
         Note! the default abbreviation for VitaminA is InternationalUnit.

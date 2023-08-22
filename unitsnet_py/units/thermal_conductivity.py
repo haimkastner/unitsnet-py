@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ThermalConductivityUnits(Enum):
@@ -117,7 +116,7 @@ class ThermalConductivity:
         return self.__btus_per_hour_foot_fahrenheit
 
     
-    def to_string(self, unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> string:
+    def to_string(self, unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> str:
         """
         Format the ThermalConductivity to string.
         Note! the default format for ThermalConductivity is WattPerMeterKelvin.
@@ -133,7 +132,7 @@ class ThermalConductivity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> str:
         """
         Get ThermalConductivity unit abbreviation.
         Note! the default abbreviation for ThermalConductivity is WattPerMeterKelvin.

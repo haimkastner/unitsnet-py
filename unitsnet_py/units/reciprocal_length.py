@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ReciprocalLengthUnits(Enum):
@@ -429,7 +428,7 @@ class ReciprocalLength:
         return self.__inverse_microinches
 
     
-    def to_string(self, unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> string:
+    def to_string(self, unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> str:
         """
         Format the ReciprocalLength to string.
         Note! the default format for ReciprocalLength is InverseMeter.
@@ -469,7 +468,7 @@ class ReciprocalLength:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> str:
         """
         Get ReciprocalLength unit abbreviation.
         Note! the default abbreviation for ReciprocalLength is InverseMeter.

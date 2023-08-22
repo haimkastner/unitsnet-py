@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ForcePerLengthUnits(Enum):
@@ -1521,7 +1520,7 @@ class ForcePerLength:
         return self.__meganewtons_per_millimeter
 
     
-    def to_string(self, unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> string:
+    def to_string(self, unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> str:
         """
         Format the ForcePerLength to string.
         Note! the default format for ForcePerLength is NewtonPerMeter.
@@ -1645,7 +1644,7 @@ class ForcePerLength:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> str:
         """
         Get ForcePerLength unit abbreviation.
         Note! the default abbreviation for ForcePerLength is NewtonPerMeter.

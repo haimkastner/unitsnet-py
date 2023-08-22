@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TorqueUnits(Enum):
@@ -1014,7 +1013,7 @@ class Torque:
         return self.__megapound_force_feet
 
     
-    def to_string(self, unit: TorqueUnits = TorqueUnits.NewtonMeter) -> string:
+    def to_string(self, unit: TorqueUnits = TorqueUnits.NewtonMeter) -> str:
         """
         Format the Torque to string.
         Note! the default format for Torque is NewtonMeter.
@@ -1099,7 +1098,7 @@ class Torque:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TorqueUnits = TorqueUnits.NewtonMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TorqueUnits = TorqueUnits.NewtonMeter) -> str:
         """
         Get Torque unit abbreviation.
         Note! the default abbreviation for Torque is NewtonMeter.

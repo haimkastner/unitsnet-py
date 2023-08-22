@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ThermalResistanceUnits(Enum):
@@ -273,7 +272,7 @@ class ThermalResistance:
         return self.__hour_square_feet_degrees_fahrenheit_per_btu
 
     
-    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> string:
+    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> str:
         """
         Format the ThermalResistance to string.
         Note! the default format for ThermalResistance is SquareMeterKelvinPerKilowatt.
@@ -301,7 +300,7 @@ class ThermalResistance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> str:
         """
         Get ThermalResistance unit abbreviation.
         Note! the default abbreviation for ThermalResistance is SquareMeterKelvinPerKilowatt.

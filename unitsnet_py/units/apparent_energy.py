@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ApparentEnergyUnits(Enum):
@@ -156,7 +155,7 @@ class ApparentEnergy:
         return self.__megavoltampere_hours
 
     
-    def to_string(self, unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> string:
+    def to_string(self, unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> str:
         """
         Format the ApparentEnergy to string.
         Note! the default format for ApparentEnergy is VoltampereHour.
@@ -175,7 +174,7 @@ class ApparentEnergy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> str:
         """
         Get ApparentEnergy unit abbreviation.
         Note! the default abbreviation for ApparentEnergy is VoltampereHour.

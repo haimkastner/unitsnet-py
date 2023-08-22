@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricChargeUnits(Enum):
@@ -468,7 +467,7 @@ class ElectricCharge:
         return self.__megaampere_hours
 
     
-    def to_string(self, unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> string:
+    def to_string(self, unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> str:
         """
         Format the ElectricCharge to string.
         Note! the default format for ElectricCharge is Coulomb.
@@ -511,7 +510,7 @@ class ElectricCharge:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> str:
         """
         Get ElectricCharge unit abbreviation.
         Note! the default abbreviation for ElectricCharge is Coulomb.

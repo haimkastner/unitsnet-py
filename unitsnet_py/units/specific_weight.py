@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpecificWeightUnits(Enum):
@@ -702,7 +701,7 @@ class SpecificWeight:
         return self.__kilopounds_force_per_cubic_foot
 
     
-    def to_string(self, unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> string:
+    def to_string(self, unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> str:
         """
         Format the SpecificWeight to string.
         Note! the default format for SpecificWeight is NewtonPerCubicMeter.
@@ -763,7 +762,7 @@ class SpecificWeight:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> str:
         """
         Get SpecificWeight unit abbreviation.
         Note! the default abbreviation for SpecificWeight is NewtonPerCubicMeter.

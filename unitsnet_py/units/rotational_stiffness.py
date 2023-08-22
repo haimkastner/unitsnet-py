@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class RotationalStiffnessUnits(Enum):
@@ -1326,7 +1325,7 @@ class RotationalStiffness:
         return self.__meganewton_millimeters_per_radian
 
     
-    def to_string(self, unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> string:
+    def to_string(self, unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> str:
         """
         Format the RotationalStiffness to string.
         Note! the default format for RotationalStiffness is NewtonMeterPerRadian.
@@ -1435,7 +1434,7 @@ class RotationalStiffness:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> str:
         """
         Get RotationalStiffness unit abbreviation.
         Note! the default abbreviation for RotationalStiffness is NewtonMeterPerRadian.

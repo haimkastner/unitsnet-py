@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class EntropyUnits(Enum):
@@ -312,7 +311,7 @@ class Entropy:
         return self.__kilojoules_per_degree_celsius
 
     
-    def to_string(self, unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> string:
+    def to_string(self, unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> str:
         """
         Format the Entropy to string.
         Note! the default format for Entropy is JoulePerKelvin.
@@ -343,7 +342,7 @@ class Entropy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: EntropyUnits = EntropyUnits.JoulePerKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: EntropyUnits = EntropyUnits.JoulePerKelvin) -> str:
         """
         Get Entropy unit abbreviation.
         Note! the default abbreviation for Entropy is JoulePerKelvin.

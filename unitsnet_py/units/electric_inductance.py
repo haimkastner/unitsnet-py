@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricInductanceUnits(Enum):
@@ -234,7 +233,7 @@ class ElectricInductance:
         return self.__millihenries
 
     
-    def to_string(self, unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> string:
+    def to_string(self, unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> str:
         """
         Format the ElectricInductance to string.
         Note! the default format for ElectricInductance is Henry.
@@ -259,7 +258,7 @@ class ElectricInductance:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> str:
         """
         Get ElectricInductance unit abbreviation.
         Note! the default abbreviation for ElectricInductance is Henry.

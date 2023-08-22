@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class IrradiationUnits(Enum):
@@ -312,7 +311,7 @@ class Irradiation:
         return self.__kilowatt_hours_per_square_meter
 
     
-    def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> string:
+    def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> str:
         """
         Format the Irradiation to string.
         Note! the default format for Irradiation is JoulePerSquareMeter.
@@ -343,7 +342,7 @@ class Irradiation:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> str:
         """
         Get Irradiation unit abbreviation.
         Note! the default abbreviation for Irradiation is JoulePerSquareMeter.

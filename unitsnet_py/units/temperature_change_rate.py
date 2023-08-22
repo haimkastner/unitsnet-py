@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TemperatureChangeRateUnits(Enum):
@@ -429,7 +428,7 @@ class TemperatureChangeRate:
         return self.__kilodegrees_celsius_per_second
 
     
-    def to_string(self, unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> string:
+    def to_string(self, unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> str:
         """
         Format the TemperatureChangeRate to string.
         Note! the default format for TemperatureChangeRate is DegreeCelsiusPerSecond.
@@ -469,7 +468,7 @@ class TemperatureChangeRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> str:
         """
         Get TemperatureChangeRate unit abbreviation.
         Note! the default abbreviation for TemperatureChangeRate is DegreeCelsiusPerSecond.

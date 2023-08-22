@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class RotationalAccelerationUnits(Enum):
@@ -195,7 +194,7 @@ class RotationalAcceleration:
         return self.__revolutions_per_second_squared
 
     
-    def to_string(self, unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> string:
+    def to_string(self, unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> str:
         """
         Format the RotationalAcceleration to string.
         Note! the default format for RotationalAcceleration is RadianPerSecondSquared.
@@ -217,7 +216,7 @@ class RotationalAcceleration:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> str:
         """
         Get RotationalAcceleration unit abbreviation.
         Note! the default abbreviation for RotationalAcceleration is RadianPerSecondSquared.

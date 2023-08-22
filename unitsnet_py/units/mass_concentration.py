@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassConcentrationUnits(Enum):
@@ -1950,7 +1949,7 @@ class MassConcentration:
         return self.__kilopounds_per_cubic_foot
 
     
-    def to_string(self, unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> string:
+    def to_string(self, unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> str:
         """
         Format the MassConcentration to string.
         Note! the default format for MassConcentration is KilogramPerCubicMeter.
@@ -2107,7 +2106,7 @@ class MassConcentration:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> str:
         """
         Get MassConcentration unit abbreviation.
         Note! the default abbreviation for MassConcentration is KilogramPerCubicMeter.

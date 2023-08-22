@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MolarEntropyUnits(Enum):
@@ -156,7 +155,7 @@ class MolarEntropy:
         return self.__megajoules_per_mole_kelvin
 
     
-    def to_string(self, unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> string:
+    def to_string(self, unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> str:
         """
         Format the MolarEntropy to string.
         Note! the default format for MolarEntropy is JoulePerMoleKelvin.
@@ -175,7 +174,7 @@ class MolarEntropy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> str:
         """
         Get MolarEntropy unit abbreviation.
         Note! the default abbreviation for MolarEntropy is JoulePerMoleKelvin.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PermittivityUnits(Enum):
@@ -78,7 +77,7 @@ class Permittivity:
         return self.__farads_per_meter
 
     
-    def to_string(self, unit: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> string:
+    def to_string(self, unit: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> str:
         """
         Format the Permittivity to string.
         Note! the default format for Permittivity is FaradPerMeter.
@@ -91,7 +90,7 @@ class Permittivity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> str:
         """
         Get Permittivity unit abbreviation.
         Note! the default abbreviation for Permittivity is FaradPerMeter.

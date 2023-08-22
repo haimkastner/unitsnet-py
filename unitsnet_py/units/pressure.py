@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PressureUnits(Enum):
@@ -1950,7 +1949,7 @@ class Pressure:
         return self.__centimeters_of_water_column
 
     
-    def to_string(self, unit: PressureUnits = PressureUnits.Pascal) -> string:
+    def to_string(self, unit: PressureUnits = PressureUnits.Pascal) -> str:
         """
         Format the Pressure to string.
         Note! the default format for Pressure is Pascal.
@@ -2107,7 +2106,7 @@ class Pressure:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PressureUnits = PressureUnits.Pascal) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PressureUnits = PressureUnits.Pascal) -> str:
         """
         Get Pressure unit abbreviation.
         Note! the default abbreviation for Pressure is Pascal.

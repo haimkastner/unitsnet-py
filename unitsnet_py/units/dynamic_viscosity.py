@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class DynamicViscosityUnits(Enum):
@@ -429,7 +428,7 @@ class DynamicViscosity:
         return self.__centipoise
 
     
-    def to_string(self, unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> string:
+    def to_string(self, unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> str:
         """
         Format the DynamicViscosity to string.
         Note! the default format for DynamicViscosity is NewtonSecondPerMeterSquared.
@@ -469,7 +468,7 @@ class DynamicViscosity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> str:
         """
         Get DynamicViscosity unit abbreviation.
         Note! the default abbreviation for DynamicViscosity is NewtonSecondPerMeterSquared.

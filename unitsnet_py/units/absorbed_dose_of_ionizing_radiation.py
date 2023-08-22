@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AbsorbedDoseOfIonizingRadiationUnits(Enum):
@@ -663,7 +662,7 @@ class AbsorbedDoseOfIonizingRadiation:
         return self.__megarads
 
     
-    def to_string(self, unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> string:
+    def to_string(self, unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> str:
         """
         Format the AbsorbedDoseOfIonizingRadiation to string.
         Note! the default format for AbsorbedDoseOfIonizingRadiation is Gray.
@@ -721,7 +720,7 @@ class AbsorbedDoseOfIonizingRadiation:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> str:
         """
         Get AbsorbedDoseOfIonizingRadiation unit abbreviation.
         Note! the default abbreviation for AbsorbedDoseOfIonizingRadiation is Gray.

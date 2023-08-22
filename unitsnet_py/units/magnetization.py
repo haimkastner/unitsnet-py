@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MagnetizationUnits(Enum):
@@ -78,7 +77,7 @@ class Magnetization:
         return self.__amperes_per_meter
 
     
-    def to_string(self, unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> string:
+    def to_string(self, unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> str:
         """
         Format the Magnetization to string.
         Note! the default format for Magnetization is AmperePerMeter.
@@ -91,7 +90,7 @@ class Magnetization:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> str:
         """
         Get Magnetization unit abbreviation.
         Note! the default abbreviation for Magnetization is AmperePerMeter.

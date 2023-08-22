@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpecificEntropyUnits(Enum):
@@ -390,7 +389,7 @@ class SpecificEntropy:
         return self.__kilocalories_per_gram_kelvin
 
     
-    def to_string(self, unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> string:
+    def to_string(self, unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> str:
         """
         Format the SpecificEntropy to string.
         Note! the default format for SpecificEntropy is JoulePerKilogramKelvin.
@@ -427,7 +426,7 @@ class SpecificEntropy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> str:
         """
         Get SpecificEntropy unit abbreviation.
         Note! the default abbreviation for SpecificEntropy is JoulePerKilogramKelvin.

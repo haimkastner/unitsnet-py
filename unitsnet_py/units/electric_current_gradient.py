@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricCurrentGradientUnits(Enum):
@@ -312,7 +311,7 @@ class ElectricCurrentGradient:
         return self.__milliamperes_per_minute
 
     
-    def to_string(self, unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> string:
+    def to_string(self, unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> str:
         """
         Format the ElectricCurrentGradient to string.
         Note! the default format for ElectricCurrentGradient is AmperePerSecond.
@@ -343,7 +342,7 @@ class ElectricCurrentGradient:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> str:
         """
         Get ElectricCurrentGradient unit abbreviation.
         Note! the default abbreviation for ElectricCurrentGradient is AmperePerSecond.

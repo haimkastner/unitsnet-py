@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricPotentialDcUnits(Enum):
@@ -234,7 +233,7 @@ class ElectricPotentialDc:
         return self.__megavolts_dc
 
     
-    def to_string(self, unit: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> string:
+    def to_string(self, unit: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> str:
         """
         Format the ElectricPotentialDc to string.
         Note! the default format for ElectricPotentialDc is VoltDc.
@@ -259,7 +258,7 @@ class ElectricPotentialDc:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> str:
         """
         Get ElectricPotentialDc unit abbreviation.
         Note! the default abbreviation for ElectricPotentialDc is VoltDc.

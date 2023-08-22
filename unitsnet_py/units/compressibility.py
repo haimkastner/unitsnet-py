@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class CompressibilityUnits(Enum):
@@ -312,7 +311,7 @@ class Compressibility:
         return self.__inverse_pounds_force_per_square_inch
 
     
-    def to_string(self, unit: CompressibilityUnits = CompressibilityUnits.InversePascal) -> string:
+    def to_string(self, unit: CompressibilityUnits = CompressibilityUnits.InversePascal) -> str:
         """
         Format the Compressibility to string.
         Note! the default format for Compressibility is InversePascal.
@@ -343,7 +342,7 @@ class Compressibility:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: CompressibilityUnits = CompressibilityUnits.InversePascal) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: CompressibilityUnits = CompressibilityUnits.InversePascal) -> str:
         """
         Get Compressibility unit abbreviation.
         Note! the default abbreviation for Compressibility is InversePascal.

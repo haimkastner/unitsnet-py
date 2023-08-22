@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LuminosityUnits(Enum):
@@ -585,7 +584,7 @@ class Luminosity:
         return self.__petawatts
 
     
-    def to_string(self, unit: LuminosityUnits = LuminosityUnits.Watt) -> string:
+    def to_string(self, unit: LuminosityUnits = LuminosityUnits.Watt) -> str:
         """
         Format the Luminosity to string.
         Note! the default format for Luminosity is Watt.
@@ -637,7 +636,7 @@ class Luminosity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LuminosityUnits = LuminosityUnits.Watt) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LuminosityUnits = LuminosityUnits.Watt) -> str:
         """
         Get Luminosity unit abbreviation.
         Note! the default abbreviation for Luminosity is Watt.

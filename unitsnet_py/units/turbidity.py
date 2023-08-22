@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TurbidityUnits(Enum):
@@ -78,7 +77,7 @@ class Turbidity:
         return self.__ntu
 
     
-    def to_string(self, unit: TurbidityUnits = TurbidityUnits.NTU) -> string:
+    def to_string(self, unit: TurbidityUnits = TurbidityUnits.NTU) -> str:
         """
         Format the Turbidity to string.
         Note! the default format for Turbidity is NTU.
@@ -91,7 +90,7 @@ class Turbidity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TurbidityUnits = TurbidityUnits.NTU) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TurbidityUnits = TurbidityUnits.NTU) -> str:
         """
         Get Turbidity unit abbreviation.
         Note! the default abbreviation for Turbidity is NTU.

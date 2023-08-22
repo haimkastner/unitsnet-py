@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class BitRateUnits(Enum):
@@ -585,7 +584,7 @@ class BitRate:
         return self.__exabytes_per_second
 
     
-    def to_string(self, unit: BitRateUnits = BitRateUnits.BitPerSecond) -> string:
+    def to_string(self, unit: BitRateUnits = BitRateUnits.BitPerSecond) -> str:
         """
         Format the BitRate to string.
         Note! the default format for BitRate is BitPerSecond.
@@ -637,7 +636,7 @@ class BitRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: BitRateUnits = BitRateUnits.BitPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: BitRateUnits = BitRateUnits.BitPerSecond) -> str:
         """
         Get BitRate unit abbreviation.
         Note! the default abbreviation for BitRate is BitPerSecond.

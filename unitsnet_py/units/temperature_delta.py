@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TemperatureDeltaUnits(Enum):
@@ -390,7 +389,7 @@ class TemperatureDelta:
         return self.__millidegrees_celsius
 
     
-    def to_string(self, unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> string:
+    def to_string(self, unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> str:
         """
         Format the TemperatureDelta to string.
         Note! the default format for TemperatureDelta is Kelvin.
@@ -427,7 +426,7 @@ class TemperatureDelta:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> str:
         """
         Get TemperatureDelta unit abbreviation.
         Note! the default abbreviation for TemperatureDelta is Kelvin.

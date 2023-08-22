@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricCurrentDensityUnits(Enum):
@@ -156,7 +155,7 @@ class ElectricCurrentDensity:
         return self.__amperes_per_square_foot
 
     
-    def to_string(self, unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> string:
+    def to_string(self, unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> str:
         """
         Format the ElectricCurrentDensity to string.
         Note! the default format for ElectricCurrentDensity is AmperePerSquareMeter.
@@ -175,7 +174,7 @@ class ElectricCurrentDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> str:
         """
         Get ElectricCurrentDensity unit abbreviation.
         Note! the default abbreviation for ElectricCurrentDensity is AmperePerSquareMeter.

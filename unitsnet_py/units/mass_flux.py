@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassFluxUnits(Enum):
@@ -507,7 +506,7 @@ class MassFlux:
         return self.__kilograms_per_hour_per_square_millimeter
 
     
-    def to_string(self, unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> string:
+    def to_string(self, unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> str:
         """
         Format the MassFlux to string.
         Note! the default format for MassFlux is KilogramPerSecondPerSquareMeter.
@@ -553,7 +552,7 @@ class MassFlux:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> str:
         """
         Get MassFlux unit abbreviation.
         Note! the default abbreviation for MassFlux is KilogramPerSecondPerSquareMeter.

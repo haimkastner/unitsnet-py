@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class BrakeSpecificFuelConsumptionUnits(Enum):
@@ -156,7 +155,7 @@ class BrakeSpecificFuelConsumption:
         return self.__pounds_per_mechanical_horsepower_hour
 
     
-    def to_string(self, unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> string:
+    def to_string(self, unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> str:
         """
         Format the BrakeSpecificFuelConsumption to string.
         Note! the default format for BrakeSpecificFuelConsumption is KilogramPerJoule.
@@ -175,7 +174,7 @@ class BrakeSpecificFuelConsumption:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> str:
         """
         Get BrakeSpecificFuelConsumption unit abbreviation.
         Note! the default abbreviation for BrakeSpecificFuelConsumption is KilogramPerJoule.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MassMomentOfInertiaUnits(Enum):
@@ -1131,7 +1130,7 @@ class MassMomentOfInertia:
         return self.__megatonne_square_milimeters
 
     
-    def to_string(self, unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> string:
+    def to_string(self, unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> str:
         """
         Format the MassMomentOfInertia to string.
         Note! the default format for MassMomentOfInertia is KilogramSquareMeter.
@@ -1225,7 +1224,7 @@ class MassMomentOfInertia:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> str:
         """
         Get MassMomentOfInertia unit abbreviation.
         Note! the default abbreviation for MassMomentOfInertia is KilogramSquareMeter.

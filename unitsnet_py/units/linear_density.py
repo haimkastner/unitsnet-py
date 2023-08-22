@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class LinearDensityUnits(Enum):
@@ -585,7 +584,7 @@ class LinearDensity:
         return self.__kilograms_per_meter
 
     
-    def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> string:
+    def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> str:
         """
         Format the LinearDensity to string.
         Note! the default format for LinearDensity is KilogramPerMeter.
@@ -637,7 +636,7 @@ class LinearDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> str:
         """
         Get LinearDensity unit abbreviation.
         Note! the default abbreviation for LinearDensity is KilogramPerMeter.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class StandardVolumeFlowUnits(Enum):
@@ -390,7 +389,7 @@ class StandardVolumeFlow:
         return self.__standard_cubic_feet_per_hour
 
     
-    def to_string(self, unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> string:
+    def to_string(self, unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> str:
         """
         Format the StandardVolumeFlow to string.
         Note! the default format for StandardVolumeFlow is StandardCubicMeterPerSecond.
@@ -427,7 +426,7 @@ class StandardVolumeFlow:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> str:
         """
         Get StandardVolumeFlow unit abbreviation.
         Note! the default abbreviation for StandardVolumeFlow is StandardCubicMeterPerSecond.

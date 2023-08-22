@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ForceChangeRateUnits(Enum):
@@ -624,7 +623,7 @@ class ForceChangeRate:
         return self.__kilopounds_force_per_second
 
     
-    def to_string(self, unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> string:
+    def to_string(self, unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> str:
         """
         Format the ForceChangeRate to string.
         Note! the default format for ForceChangeRate is NewtonPerSecond.
@@ -679,7 +678,7 @@ class ForceChangeRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> str:
         """
         Get ForceChangeRate unit abbreviation.
         Note! the default abbreviation for ForceChangeRate is NewtonPerSecond.

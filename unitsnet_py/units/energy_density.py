@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class EnergyDensityUnits(Enum):
@@ -507,7 +506,7 @@ class EnergyDensity:
         return self.__petawatt_hours_per_cubic_meter
 
     
-    def to_string(self, unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> string:
+    def to_string(self, unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> str:
         """
         Format the EnergyDensity to string.
         Note! the default format for EnergyDensity is JoulePerCubicMeter.
@@ -553,7 +552,7 @@ class EnergyDensity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> str:
         """
         Get EnergyDensity unit abbreviation.
         Note! the default abbreviation for EnergyDensity is JoulePerCubicMeter.

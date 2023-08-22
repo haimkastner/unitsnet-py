@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ReactiveEnergyUnits(Enum):
@@ -156,7 +155,7 @@ class ReactiveEnergy:
         return self.__megavoltampere_reactive_hours
 
     
-    def to_string(self, unit: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour) -> string:
+    def to_string(self, unit: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour) -> str:
         """
         Format the ReactiveEnergy to string.
         Note! the default format for ReactiveEnergy is VoltampereReactiveHour.
@@ -175,7 +174,7 @@ class ReactiveEnergy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour) -> str:
         """
         Get ReactiveEnergy unit abbreviation.
         Note! the default abbreviation for ReactiveEnergy is VoltampereReactiveHour.

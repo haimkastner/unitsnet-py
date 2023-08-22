@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MolarityUnits(Enum):
@@ -468,7 +467,7 @@ class Molarity:
         return self.__decimoles_per_liter
 
     
-    def to_string(self, unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> string:
+    def to_string(self, unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> str:
         """
         Format the Molarity to string.
         Note! the default format for Molarity is MolePerCubicMeter.
@@ -511,7 +510,7 @@ class Molarity:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> str:
         """
         Get Molarity unit abbreviation.
         Note! the default abbreviation for Molarity is MolePerCubicMeter.

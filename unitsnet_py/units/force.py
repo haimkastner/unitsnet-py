@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ForceUnits(Enum):
@@ -624,7 +623,7 @@ class Force:
         return self.__kilopounds_force
 
     
-    def to_string(self, unit: ForceUnits = ForceUnits.Newton) -> string:
+    def to_string(self, unit: ForceUnits = ForceUnits.Newton) -> str:
         """
         Format the Force to string.
         Note! the default format for Force is Newton.
@@ -679,7 +678,7 @@ class Force:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ForceUnits = ForceUnits.Newton) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ForceUnits = ForceUnits.Newton) -> str:
         """
         Get Force unit abbreviation.
         Note! the default abbreviation for Force is Newton.

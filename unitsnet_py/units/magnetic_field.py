@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class MagneticFieldUnits(Enum):
@@ -273,7 +272,7 @@ class MagneticField:
         return self.__milligausses
 
     
-    def to_string(self, unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> string:
+    def to_string(self, unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> str:
         """
         Format the MagneticField to string.
         Note! the default format for MagneticField is Tesla.
@@ -301,7 +300,7 @@ class MagneticField:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> str:
         """
         Get MagneticField unit abbreviation.
         Note! the default abbreviation for MagneticField is Tesla.

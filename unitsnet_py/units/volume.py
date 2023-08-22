@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumeUnits(Enum):
@@ -2145,7 +2144,7 @@ class Volume:
         return self.__megaus_gallons
 
     
-    def to_string(self, unit: VolumeUnits = VolumeUnits.CubicMeter) -> string:
+    def to_string(self, unit: VolumeUnits = VolumeUnits.CubicMeter) -> str:
         """
         Format the Volume to string.
         Note! the default format for Volume is CubicMeter.
@@ -2317,7 +2316,7 @@ class Volume:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumeUnits = VolumeUnits.CubicMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumeUnits = VolumeUnits.CubicMeter) -> str:
         """
         Get Volume unit abbreviation.
         Note! the default abbreviation for Volume is CubicMeter.

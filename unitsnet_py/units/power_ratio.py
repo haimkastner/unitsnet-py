@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PowerRatioUnits(Enum):
@@ -117,7 +116,7 @@ class PowerRatio:
         return self.__decibel_milliwatts
 
     
-    def to_string(self, unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> string:
+    def to_string(self, unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> str:
         """
         Format the PowerRatio to string.
         Note! the default format for PowerRatio is DecibelWatt.
@@ -133,7 +132,7 @@ class PowerRatio:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> str:
         """
         Get PowerRatio unit abbreviation.
         Note! the default abbreviation for PowerRatio is DecibelWatt.

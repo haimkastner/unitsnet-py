@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class HeatFluxUnits(Enum):
@@ -741,7 +740,7 @@ class HeatFlux:
         return self.__kilocalories_per_second_square_centimeter
 
     
-    def to_string(self, unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> string:
+    def to_string(self, unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> str:
         """
         Format the HeatFlux to string.
         Note! the default format for HeatFlux is WattPerSquareMeter.
@@ -805,7 +804,7 @@ class HeatFlux:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> str:
         """
         Get HeatFlux unit abbreviation.
         Note! the default abbreviation for HeatFlux is WattPerSquareMeter.

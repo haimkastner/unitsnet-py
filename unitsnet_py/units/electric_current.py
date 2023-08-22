@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricCurrentUnits(Enum):
@@ -390,7 +389,7 @@ class ElectricCurrent:
         return self.__megaamperes
 
     
-    def to_string(self, unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> string:
+    def to_string(self, unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> str:
         """
         Format the ElectricCurrent to string.
         Note! the default format for ElectricCurrent is Ampere.
@@ -427,7 +426,7 @@ class ElectricCurrent:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> str:
         """
         Get ElectricCurrent unit abbreviation.
         Note! the default abbreviation for ElectricCurrent is Ampere.

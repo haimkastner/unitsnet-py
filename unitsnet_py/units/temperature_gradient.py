@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class TemperatureGradientUnits(Enum):
@@ -195,7 +194,7 @@ class TemperatureGradient:
         return self.__degrees_celcius_per_kilometer
 
     
-    def to_string(self, unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> string:
+    def to_string(self, unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> str:
         """
         Format the TemperatureGradient to string.
         Note! the default format for TemperatureGradient is KelvinPerMeter.
@@ -217,7 +216,7 @@ class TemperatureGradient:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> str:
         """
         Get TemperatureGradient unit abbreviation.
         Note! the default abbreviation for TemperatureGradient is KelvinPerMeter.

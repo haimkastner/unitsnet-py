@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpecificEnergyUnits(Enum):
@@ -1209,7 +1208,7 @@ class SpecificEnergy:
         return self.__gigawatt_hours_per_pound
 
     
-    def to_string(self, unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> string:
+    def to_string(self, unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> str:
         """
         Format the SpecificEnergy to string.
         Note! the default format for SpecificEnergy is JoulePerKilogram.
@@ -1309,7 +1308,7 @@ class SpecificEnergy:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> str:
         """
         Get SpecificEnergy unit abbreviation.
         Note! the default abbreviation for SpecificEnergy is JoulePerKilogram.

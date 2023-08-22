@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AngleUnits(Enum):
@@ -663,7 +662,7 @@ class Angle:
         return self.__millidegrees
 
     
-    def to_string(self, unit: AngleUnits = AngleUnits.Degree) -> string:
+    def to_string(self, unit: AngleUnits = AngleUnits.Degree) -> str:
         """
         Format the Angle to string.
         Note! the default format for Angle is Degree.
@@ -721,7 +720,7 @@ class Angle:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AngleUnits = AngleUnits.Degree) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AngleUnits = AngleUnits.Degree) -> str:
         """
         Get Angle unit abbreviation.
         Note! the default abbreviation for Angle is Degree.

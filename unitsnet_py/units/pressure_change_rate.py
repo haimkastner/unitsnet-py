@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class PressureChangeRateUnits(Enum):
@@ -741,7 +740,7 @@ class PressureChangeRate:
         return self.__millibars_per_minute
 
     
-    def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> string:
+    def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> str:
         """
         Format the PressureChangeRate to string.
         Note! the default format for PressureChangeRate is PascalPerSecond.
@@ -805,7 +804,7 @@ class PressureChangeRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> str:
         """
         Get PressureChangeRate unit abbreviation.
         Note! the default abbreviation for PressureChangeRate is PascalPerSecond.

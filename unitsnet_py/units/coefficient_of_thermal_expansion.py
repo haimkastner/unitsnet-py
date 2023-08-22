@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class CoefficientOfThermalExpansionUnits(Enum):
@@ -273,7 +272,7 @@ class CoefficientOfThermalExpansion:
         return self.__ppm_per_degree_fahrenheit
 
     
-    def to_string(self, unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> string:
+    def to_string(self, unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> str:
         """
         Format the CoefficientOfThermalExpansion to string.
         Note! the default format for CoefficientOfThermalExpansion is PerKelvin.
@@ -301,7 +300,7 @@ class CoefficientOfThermalExpansion:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> str:
         """
         Get CoefficientOfThermalExpansion unit abbreviation.
         Note! the default abbreviation for CoefficientOfThermalExpansion is PerKelvin.

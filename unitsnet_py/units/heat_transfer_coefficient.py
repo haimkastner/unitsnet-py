@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class HeatTransferCoefficientUnits(Enum):
@@ -234,7 +233,7 @@ class HeatTransferCoefficient:
         return self.__kilocalories_per_hour_square_meter_degree_celsius
 
     
-    def to_string(self, unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> string:
+    def to_string(self, unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> str:
         """
         Format the HeatTransferCoefficient to string.
         Note! the default format for HeatTransferCoefficient is WattPerSquareMeterKelvin.
@@ -259,7 +258,7 @@ class HeatTransferCoefficient:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> str:
         """
         Get HeatTransferCoefficient unit abbreviation.
         Note! the default abbreviation for HeatTransferCoefficient is WattPerSquareMeterKelvin.

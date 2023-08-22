@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class VolumeFlowUnits(Enum):
@@ -2652,7 +2651,7 @@ class VolumeFlow:
         return self.__megauk_gallons_per_second
 
     
-    def to_string(self, unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> string:
+    def to_string(self, unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> str:
         """
         Format the VolumeFlow to string.
         Note! the default format for VolumeFlow is CubicMeterPerSecond.
@@ -2863,7 +2862,7 @@ class VolumeFlow:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> str:
         """
         Get VolumeFlow unit abbreviation.
         Note! the default abbreviation for VolumeFlow is CubicMeterPerSecond.

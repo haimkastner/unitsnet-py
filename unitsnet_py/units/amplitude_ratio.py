@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AmplitudeRatioUnits(Enum):
@@ -195,7 +194,7 @@ class AmplitudeRatio:
         return self.__decibels_unloaded
 
     
-    def to_string(self, unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> string:
+    def to_string(self, unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> str:
         """
         Format the AmplitudeRatio to string.
         Note! the default format for AmplitudeRatio is DecibelVolt.
@@ -217,7 +216,7 @@ class AmplitudeRatio:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> str:
         """
         Get AmplitudeRatio unit abbreviation.
         Note! the default abbreviation for AmplitudeRatio is DecibelVolt.

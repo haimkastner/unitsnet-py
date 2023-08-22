@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class AreaMomentOfInertiaUnits(Enum):
@@ -273,7 +272,7 @@ class AreaMomentOfInertia:
         return self.__inches_to_the_fourth
 
     
-    def to_string(self, unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> string:
+    def to_string(self, unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> str:
         """
         Format the AreaMomentOfInertia to string.
         Note! the default format for AreaMomentOfInertia is MeterToTheFourth.
@@ -301,7 +300,7 @@ class AreaMomentOfInertia:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> str:
         """
         Get AreaMomentOfInertia unit abbreviation.
         Note! the default abbreviation for AreaMomentOfInertia is MeterToTheFourth.

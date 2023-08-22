@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class SpecificVolumeUnits(Enum):
@@ -156,7 +155,7 @@ class SpecificVolume:
         return self.__millicubic_meters_per_kilogram
 
     
-    def to_string(self, unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> string:
+    def to_string(self, unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> str:
         """
         Format the SpecificVolume to string.
         Note! the default format for SpecificVolume is CubicMeterPerKilogram.
@@ -175,7 +174,7 @@ class SpecificVolume:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> str:
         """
         Get SpecificVolume unit abbreviation.
         Note! the default abbreviation for SpecificVolume is CubicMeterPerKilogram.

@@ -1,6 +1,5 @@
 from enum import Enum
 import math
-import string
 
 
 class ElectricPotentialChangeRateUnits(Enum):
@@ -819,7 +818,7 @@ class ElectricPotentialChangeRate:
         return self.__megavolts_per_hours
 
     
-    def to_string(self, unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> string:
+    def to_string(self, unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> str:
         """
         Format the ElectricPotentialChangeRate to string.
         Note! the default format for ElectricPotentialChangeRate is VoltPerSecond.
@@ -889,7 +888,7 @@ class ElectricPotentialChangeRate:
         return f'{self.__value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> string:
+    def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> str:
         """
         Get ElectricPotentialChangeRate unit abbreviation.
         Note! the default abbreviation for ElectricPotentialChangeRate is VoltPerSecond.
