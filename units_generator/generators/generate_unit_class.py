@@ -1,7 +1,8 @@
+from typing import Dict, List
+
 from jinja2 import Template, StrictUndefined
-from common.utils import camel_to_snake, upper_to_lower_camelcase
+from common.utils import camel_to_snake, prefixes_factor, upper_to_lower_camelcase
 from templates import unit_class_template
-from common.utils import prefixes_factor
 
 
 def __format_formula(original_formula: str):
@@ -12,7 +13,7 @@ def __format_formula(original_formula: str):
     return f"({python_formula})"
 
 
-def __generate_prefixes(unit, prefixes) -> list:
+def __generate_prefixes(unit, prefixes) -> List[Dict]:
     prefixes_units = []
     for prefix in prefixes:
         prefix_factor = prefixes_factor.get(prefix)
@@ -49,7 +50,7 @@ def __generate_prefixes(unit, prefixes) -> list:
     return prefixes_units
 
 
-def __extant_unit_prefixes(units: list) -> list:
+def __extant_unit_prefixes(units: List) -> List:
     prefixes_units = []
 
     for unit in units:
@@ -62,7 +63,7 @@ def __extant_unit_prefixes(units: list) -> list:
     return prefixes_units
 
 
-def __get_unit_abbreviation(abbreviation: list) -> str:
+def __get_unit_abbreviation(abbreviation: List) -> str:
     us_abbreviation = next(
         filter(lambda x: x.get("Culture") == "en-US", abbreviation), None
     )

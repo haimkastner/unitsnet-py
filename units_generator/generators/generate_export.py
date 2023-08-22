@@ -1,9 +1,11 @@
+from typing import List
+
 from jinja2 import Template, StrictUndefined
 from common.utils import camel_to_snake
 from templates import export_classes_template
 
 
-def export_generator(definitions: list):
+def export_generator(definitions: List):
     template_methods = []
 
     for definition in definitions:
