@@ -1,9 +1,11 @@
+from typing import List
+
 from jinja2 import Template, StrictUndefined
 from common.utils import camel_to_snake
 from templates import export_classes_template
 
 
-def export_generator(definitions: list):
+def export_generator(definitions: List):
     template_methods = []
 
     for definition in definitions:
@@ -24,7 +26,7 @@ def export_generator(definitions: list):
     # Render the template with the data
     code = template.render(template_data)
 
-    with open(f"unitsnet_py/__init__.py", "w", encoding="utf-8") as f:
+    with open("unitsnet_py/__init__.py", "w", encoding="utf-8") as f:
         f.write(code)
 
-    print(f'[export_generator] Generating "__init__.py" finished successfully')
+    print('[export_generator] Generating "__init__.py" finished successfully')

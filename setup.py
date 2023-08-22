@@ -24,7 +24,7 @@ setup_kwargs = {
     'url': 'https://github.com/haimkastner/unitsnet-py',
     'packages': packages,
     'package_data': package_data,
-    'python_requires': '>=3.10,<4.0',
+    'python_requires': '>=3.8,<4.0',
 }
 
 

@@ -1,8 +1,10 @@
+from typing import List
+
 from jinja2 import Template, StrictUndefined
 from templates import readme_template
 
 
-def readme_generator(definitions: list):
+def readme_generator(definitions: List):
     template_methods = []
 
     for definition in definitions:
