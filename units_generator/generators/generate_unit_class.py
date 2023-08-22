@@ -1,11 +1,10 @@
-import string
 from jinja2 import Template, StrictUndefined
 from common.utils import camel_to_snake, upper_to_lower_camelcase
 from templates import unit_class_template
 from common.utils import prefixes_factor
 
 
-def __format_formula(original_formula: string):
+def __format_formula(original_formula: str):
     # Remove C# number types
     python_formula = original_formula.replace("d", "").replace("m", "")
     # Convert to python code
@@ -63,7 +62,7 @@ def __extant_unit_prefixes(units: list) -> list:
     return prefixes_units
 
 
-def __get_unit_abbreviation(abbreviation: list) -> string:
+def __get_unit_abbreviation(abbreviation: list) -> str:
     us_abbreviation = next(
         filter(lambda x: x.get("Culture") == "en-US", abbreviation), None
     )
