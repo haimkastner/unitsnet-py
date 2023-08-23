@@ -1,5 +1,6 @@
+import operator
 import unittest
-from unitsnet_py import Length, AngleUnits
+from unitsnet_py import Length, Mass
 
 
 class TestUnitComparing(unittest.TestCase):
@@ -24,6 +25,33 @@ class TestUnitComparing(unittest.TestCase):
 
     def test_bigger_or_equal(self):
         self.assertTrue(self.length1 >= self.length2)
+
+
+class TestComparingDifferentTypes(unittest.TestCase):
+    def test_not_equal(self):
+        mass = Mass.from_kilograms(10)
+        length = Length.from_meters(10)
+        self.assertFalse(mass == length)
+
+    def test_operator_raises_type_error(self):
+        mass = Mass.from_kilograms(1)
+        length = Length.from_meters(10)
+        operators = [
+            operator.lt,
+            operator.gt,
+            operator.le,
+            operator.ge,
+            operator.mod,
+            operator.add,
+            operator.sub,
+            operator.mul,
+            operator.truediv,
+            operator.pow,
+        ]
+        for op in operators:
+            with self.subTest(op=op):
+                with self.assertRaises(TypeError):
+                    op(mass, length)
 
 
 if __name__ == "__main__":
