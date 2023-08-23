@@ -71,6 +71,9 @@ class ElectricResistance:
         self.__teraohms = None
         
 
+    def convert(self, unit: ElectricResistanceUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ElectricResistanceUnits) -> float:
         value = self.__value
         
@@ -97,8 +100,6 @@ class ElectricResistance:
         
         return None
 
-	def to(self, unit: ElectricResistanceUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricResistanceUnits) -> float:
         

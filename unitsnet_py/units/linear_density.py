@@ -120,6 +120,9 @@ class LinearDensity:
         self.__kilograms_per_meter = None
         
 
+    def convert(self, unit: LinearDensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: LinearDensityUnits) -> float:
         value = self.__value
         
@@ -167,8 +170,6 @@ class LinearDensity:
         
         return None
 
-	def to(self, unit: LinearDensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LinearDensityUnits) -> float:
         

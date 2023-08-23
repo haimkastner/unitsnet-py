@@ -50,6 +50,9 @@ class ReactivePower:
         self.__gigavoltamperes_reactive = None
         
 
+    def convert(self, unit: ReactivePowerUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ReactivePowerUnits) -> float:
         value = self.__value
         
@@ -67,8 +70,6 @@ class ReactivePower:
         
         return None
 
-	def to(self, unit: ReactivePowerUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ReactivePowerUnits) -> float:
         

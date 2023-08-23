@@ -43,6 +43,9 @@ class ApparentEnergy:
         self.__megavoltampere_hours = None
         
 
+    def convert(self, unit: ApparentEnergyUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ApparentEnergyUnits) -> float:
         value = self.__value
         
@@ -57,8 +60,6 @@ class ApparentEnergy:
         
         return None
 
-	def to(self, unit: ApparentEnergyUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ApparentEnergyUnits) -> float:
         

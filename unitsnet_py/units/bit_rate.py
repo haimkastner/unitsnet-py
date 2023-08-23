@@ -120,6 +120,9 @@ class BitRate:
         self.__exabytes_per_second = None
         
 
+    def convert(self, unit: BitRateUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:
         value = self.__value
         
@@ -167,8 +170,6 @@ class BitRate:
         
         return None
 
-	def to(self, unit: BitRateUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: BitRateUnits) -> float:
         

@@ -29,6 +29,9 @@ class Magnetization:
         self.__amperes_per_meter = None
         
 
+    def convert(self, unit: MagnetizationUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MagnetizationUnits) -> float:
         value = self.__value
         
@@ -37,8 +40,6 @@ class Magnetization:
         
         return None
 
-	def to(self, unit: MagnetizationUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MagnetizationUnits) -> float:
         

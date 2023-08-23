@@ -50,6 +50,9 @@ class Illuminance:
         self.__megalux = None
         
 
+    def convert(self, unit: IlluminanceUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: IlluminanceUnits) -> float:
         value = self.__value
         
@@ -67,8 +70,6 @@ class Illuminance:
         
         return None
 
-	def to(self, unit: IlluminanceUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: IlluminanceUnits) -> float:
         

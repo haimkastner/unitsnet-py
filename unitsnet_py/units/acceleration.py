@@ -120,6 +120,9 @@ class Acceleration:
         self.__millistandard_gravity = None
         
 
+    def convert(self, unit: AccelerationUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: AccelerationUnits) -> float:
         value = self.__value
         
@@ -167,8 +170,6 @@ class Acceleration:
         
         return None
 
-	def to(self, unit: AccelerationUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: AccelerationUnits) -> float:
         

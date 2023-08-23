@@ -43,6 +43,9 @@ class LeakRate:
         self.__torr_liters_per_second = None
         
 
+    def convert(self, unit: LeakRateUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: LeakRateUnits) -> float:
         value = self.__value
         
@@ -57,8 +60,6 @@ class LeakRate:
         
         return None
 
-	def to(self, unit: LeakRateUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LeakRateUnits) -> float:
         

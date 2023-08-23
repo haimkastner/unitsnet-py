@@ -64,6 +64,9 @@ class CoefficientOfThermalExpansion:
         self.__ppm_per_degree_fahrenheit = None
         
 
+    def convert(self, unit: CoefficientOfThermalExpansionUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: CoefficientOfThermalExpansionUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class CoefficientOfThermalExpansion:
         
         return None
 
-	def to(self, unit: CoefficientOfThermalExpansionUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: CoefficientOfThermalExpansionUnits) -> float:
         

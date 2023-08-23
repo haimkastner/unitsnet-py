@@ -197,6 +197,9 @@ class LinearPowerDensity:
         self.__gigawatts_per_foot = None
         
 
+    def convert(self, unit: LinearPowerDensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: LinearPowerDensityUnits) -> float:
         value = self.__value
         
@@ -277,8 +280,6 @@ class LinearPowerDensity:
         
         return None
 
-	def to(self, unit: LinearPowerDensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LinearPowerDensityUnits) -> float:
         

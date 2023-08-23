@@ -36,6 +36,9 @@ class PowerRatio:
         self.__decibel_milliwatts = None
         
 
+    def convert(self, unit: PowerRatioUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: PowerRatioUnits) -> float:
         value = self.__value
         
@@ -47,8 +50,6 @@ class PowerRatio:
         
         return None
 
-	def to(self, unit: PowerRatioUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: PowerRatioUnits) -> float:
         

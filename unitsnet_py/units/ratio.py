@@ -64,6 +64,9 @@ class Ratio:
         self.__parts_per_trillion = None
         
 
+    def convert(self, unit: RatioUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: RatioUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class Ratio:
         
         return None
 
-	def to(self, unit: RatioUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: RatioUnits) -> float:
         

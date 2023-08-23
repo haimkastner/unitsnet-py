@@ -71,6 +71,9 @@ class ElectricCurrentGradient:
         self.__milliamperes_per_minute = None
         
 
+    def convert(self, unit: ElectricCurrentGradientUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ElectricCurrentGradientUnits) -> float:
         value = self.__value
         
@@ -97,8 +100,6 @@ class ElectricCurrentGradient:
         
         return None
 
-	def to(self, unit: ElectricCurrentGradientUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricCurrentGradientUnits) -> float:
         

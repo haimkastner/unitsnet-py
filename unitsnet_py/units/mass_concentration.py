@@ -365,6 +365,9 @@ class MassConcentration:
         self.__kilopounds_per_cubic_foot = None
         
 
+    def convert(self, unit: MassConcentrationUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MassConcentrationUnits) -> float:
         value = self.__value
         
@@ -517,8 +520,6 @@ class MassConcentration:
         
         return None
 
-	def to(self, unit: MassConcentrationUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MassConcentrationUnits) -> float:
         

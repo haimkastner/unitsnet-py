@@ -50,6 +50,9 @@ class SpecificFuelConsumption:
         self.__kilograms_per_kilo_newton_second = None
         
 
+    def convert(self, unit: SpecificFuelConsumptionUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
         value = self.__value
         
@@ -67,8 +70,6 @@ class SpecificFuelConsumption:
         
         return None
 
-	def to(self, unit: SpecificFuelConsumptionUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpecificFuelConsumptionUnits) -> float:
         

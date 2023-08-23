@@ -211,6 +211,9 @@ class Mass:
         self.__megapounds = None
         
 
+    def convert(self, unit: MassUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MassUnits) -> float:
         value = self.__value
         
@@ -297,8 +300,6 @@ class Mass:
         
         return None
 
-	def to(self, unit: MassUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MassUnits) -> float:
         

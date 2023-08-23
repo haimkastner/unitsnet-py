@@ -64,6 +64,9 @@ class ThermalResistance:
         self.__hour_square_feet_degrees_fahrenheit_per_btu = None
         
 
+    def convert(self, unit: ThermalResistanceUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ThermalResistanceUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class ThermalResistance:
         
         return None
 
-	def to(self, unit: ThermalResistanceUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ThermalResistanceUnits) -> float:
         

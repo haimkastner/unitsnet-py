@@ -43,6 +43,9 @@ class ReactiveEnergy:
         self.__megavoltampere_reactive_hours = None
         
 
+    def convert(self, unit: ReactiveEnergyUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ReactiveEnergyUnits) -> float:
         value = self.__value
         
@@ -57,8 +60,6 @@ class ReactiveEnergy:
         
         return None
 
-	def to(self, unit: ReactiveEnergyUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ReactiveEnergyUnits) -> float:
         

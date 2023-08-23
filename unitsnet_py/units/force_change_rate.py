@@ -127,6 +127,9 @@ class ForceChangeRate:
         self.__kilopounds_force_per_second = None
         
 
+    def convert(self, unit: ForceChangeRateUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ForceChangeRateUnits) -> float:
         value = self.__value
         
@@ -177,8 +180,6 @@ class ForceChangeRate:
         
         return None
 
-	def to(self, unit: ForceChangeRateUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ForceChangeRateUnits) -> float:
         

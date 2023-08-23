@@ -85,6 +85,9 @@ class MolarFlow:
         self.__kilomoles_per_hour = None
         
 
+    def convert(self, unit: MolarFlowUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MolarFlowUnits) -> float:
         value = self.__value
         
@@ -117,8 +120,6 @@ class MolarFlow:
         
         return None
 
-	def to(self, unit: MolarFlowUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MolarFlowUnits) -> float:
         

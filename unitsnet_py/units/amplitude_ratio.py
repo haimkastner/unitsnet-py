@@ -50,6 +50,9 @@ class AmplitudeRatio:
         self.__decibels_unloaded = None
         
 
+    def convert(self, unit: AmplitudeRatioUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: AmplitudeRatioUnits) -> float:
         value = self.__value
         
@@ -67,8 +70,6 @@ class AmplitudeRatio:
         
         return None
 
-	def to(self, unit: AmplitudeRatioUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: AmplitudeRatioUnits) -> float:
         

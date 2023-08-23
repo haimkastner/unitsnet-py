@@ -253,6 +253,9 @@ class RotationalStiffness:
         self.__meganewton_millimeters_per_radian = None
         
 
+    def convert(self, unit: RotationalStiffnessUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: RotationalStiffnessUnits) -> float:
         value = self.__value
         
@@ -357,8 +360,6 @@ class RotationalStiffness:
         
         return None
 
-	def to(self, unit: RotationalStiffnessUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: RotationalStiffnessUnits) -> float:
         

@@ -99,6 +99,9 @@ class Jerk:
         self.__millistandard_gravities_per_second = None
         
 
+    def convert(self, unit: JerkUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
         value = self.__value
         
@@ -137,8 +140,6 @@ class Jerk:
         
         return None
 
-	def to(self, unit: JerkUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: JerkUnits) -> float:
         

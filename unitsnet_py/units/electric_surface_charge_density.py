@@ -43,6 +43,9 @@ class ElectricSurfaceChargeDensity:
         self.__coulombs_per_square_inch = None
         
 
+    def convert(self, unit: ElectricSurfaceChargeDensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ElectricSurfaceChargeDensityUnits) -> float:
         value = self.__value
         
@@ -57,8 +60,6 @@ class ElectricSurfaceChargeDensity:
         
         return None
 
-	def to(self, unit: ElectricSurfaceChargeDensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricSurfaceChargeDensityUnits) -> float:
         

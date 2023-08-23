@@ -141,6 +141,9 @@ class SpecificWeight:
         self.__kilopounds_force_per_cubic_foot = None
         
 
+    def convert(self, unit: SpecificWeightUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: SpecificWeightUnits) -> float:
         value = self.__value
         
@@ -197,8 +200,6 @@ class SpecificWeight:
         
         return None
 
-	def to(self, unit: SpecificWeightUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpecificWeightUnits) -> float:
         

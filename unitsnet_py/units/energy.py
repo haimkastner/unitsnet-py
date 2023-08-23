@@ -288,6 +288,9 @@ class Energy:
         self.__decatherms_imperial = None
         
 
+    def convert(self, unit: EnergyUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:
         value = self.__value
         
@@ -407,8 +410,6 @@ class Energy:
         
         return None
 
-	def to(self, unit: EnergyUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: EnergyUnits) -> float:
         

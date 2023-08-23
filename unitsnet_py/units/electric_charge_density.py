@@ -29,6 +29,9 @@ class ElectricChargeDensity:
         self.__coulombs_per_cubic_meter = None
         
 
+    def convert(self, unit: ElectricChargeDensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ElectricChargeDensityUnits) -> float:
         value = self.__value
         
@@ -37,8 +40,6 @@ class ElectricChargeDensity:
         
         return None
 
-	def to(self, unit: ElectricChargeDensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricChargeDensityUnits) -> float:
         
