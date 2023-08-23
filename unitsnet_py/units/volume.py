@@ -400,6 +400,9 @@ class Volume:
         self.__megaus_gallons = None
         
 
+    def convert(self, unit: VolumeUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: VolumeUnits) -> float:
         value = self.__value
         
@@ -567,8 +570,6 @@ class Volume:
         
         return None
 
-	def to(self, unit: VolumeUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: VolumeUnits) -> float:
         

@@ -106,6 +106,9 @@ class MassFlux:
         self.__kilograms_per_hour_per_square_millimeter = None
         
 
+    def convert(self, unit: MassFluxUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MassFluxUnits) -> float:
         value = self.__value
         
@@ -147,8 +150,6 @@ class MassFlux:
         
         return None
 
-	def to(self, unit: MassFluxUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MassFluxUnits) -> float:
         

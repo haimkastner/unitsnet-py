@@ -113,6 +113,9 @@ class MolarMass:
         self.__megapounds_per_mole = None
         
 
+    def convert(self, unit: MolarMassUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:
         value = self.__value
         
@@ -157,8 +160,6 @@ class MolarMass:
         
         return None
 
-	def to(self, unit: MolarMassUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MolarMassUnits) -> float:
         

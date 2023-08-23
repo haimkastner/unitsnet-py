@@ -50,6 +50,9 @@ class FuelEfficiency:
         self.__kilometers_per_liters = None
         
 
+    def convert(self, unit: FuelEfficiencyUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: FuelEfficiencyUnits) -> float:
         value = self.__value
         
@@ -67,8 +70,6 @@ class FuelEfficiency:
         
         return None
 
-	def to(self, unit: FuelEfficiencyUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: FuelEfficiencyUnits) -> float:
         

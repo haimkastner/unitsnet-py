@@ -365,6 +365,9 @@ class Pressure:
         self.__centimeters_of_water_column = None
         
 
+    def convert(self, unit: PressureUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: PressureUnits) -> float:
         value = self.__value
         
@@ -517,8 +520,6 @@ class Pressure:
         
         return None
 
-	def to(self, unit: PressureUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: PressureUnits) -> float:
         

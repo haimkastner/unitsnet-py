@@ -36,6 +36,9 @@ class Level:
         self.__nepers = None
         
 
+    def convert(self, unit: LevelUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: LevelUnits) -> float:
         value = self.__value
         
@@ -47,8 +50,6 @@ class Level:
         
         return None
 
-	def to(self, unit: LevelUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LevelUnits) -> float:
         

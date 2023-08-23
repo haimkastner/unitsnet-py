@@ -43,6 +43,9 @@ class SpecificVolume:
         self.__millicubic_meters_per_kilogram = None
         
 
+    def convert(self, unit: SpecificVolumeUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: SpecificVolumeUnits) -> float:
         value = self.__value
         
@@ -57,8 +60,6 @@ class SpecificVolume:
         
         return None
 
-	def to(self, unit: SpecificVolumeUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpecificVolumeUnits) -> float:
         

@@ -36,6 +36,9 @@ class VolumeFlowPerArea:
         self.__cubic_feet_per_minute_per_square_foot = None
         
 
+    def convert(self, unit: VolumeFlowPerAreaUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: VolumeFlowPerAreaUnits) -> float:
         value = self.__value
         
@@ -47,8 +50,6 @@ class VolumeFlowPerArea:
         
         return None
 
-	def to(self, unit: VolumeFlowPerAreaUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: VolumeFlowPerAreaUnits) -> float:
         

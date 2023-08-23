@@ -92,6 +92,9 @@ class DynamicViscosity:
         self.__centipoise = None
         
 
+    def convert(self, unit: DynamicViscosityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: DynamicViscosityUnits) -> float:
         value = self.__value
         
@@ -127,8 +130,6 @@ class DynamicViscosity:
         
         return None
 
-	def to(self, unit: DynamicViscosityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: DynamicViscosityUnits) -> float:
         

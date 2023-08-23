@@ -29,6 +29,9 @@ class LuminousIntensity:
         self.__candela = None
         
 
+    def convert(self, unit: LuminousIntensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: LuminousIntensityUnits) -> float:
         value = self.__value
         
@@ -37,8 +40,6 @@ class LuminousIntensity:
         
         return None
 
-	def to(self, unit: LuminousIntensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LuminousIntensityUnits) -> float:
         

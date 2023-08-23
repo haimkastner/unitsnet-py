@@ -330,6 +330,9 @@ class PowerDensity:
         self.__terawatts_per_liter = None
         
 
+    def convert(self, unit: PowerDensityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:
         value = self.__value
         
@@ -467,8 +470,6 @@ class PowerDensity:
         
         return None
 
-	def to(self, unit: PowerDensityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: PowerDensityUnits) -> float:
         

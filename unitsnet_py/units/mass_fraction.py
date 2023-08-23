@@ -190,6 +190,9 @@ class MassFraction:
         self.__kilograms_per_kilogram = None
         
 
+    def convert(self, unit: MassFractionUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: MassFractionUnits) -> float:
         value = self.__value
         
@@ -267,8 +270,6 @@ class MassFraction:
         
         return None
 
-	def to(self, unit: MassFractionUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MassFractionUnits) -> float:
         

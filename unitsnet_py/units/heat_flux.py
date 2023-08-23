@@ -148,6 +148,9 @@ class HeatFlux:
         self.__kilocalories_per_second_square_centimeter = None
         
 
+    def convert(self, unit: HeatFluxUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: HeatFluxUnits) -> float:
         value = self.__value
         
@@ -207,8 +210,6 @@ class HeatFlux:
         
         return None
 
-	def to(self, unit: HeatFluxUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: HeatFluxUnits) -> float:
         

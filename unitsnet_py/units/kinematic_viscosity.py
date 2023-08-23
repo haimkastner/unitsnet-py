@@ -85,6 +85,9 @@ class KinematicViscosity:
         self.__kilostokes = None
         
 
+    def convert(self, unit: KinematicViscosityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: KinematicViscosityUnits) -> float:
         value = self.__value
         
@@ -117,8 +120,6 @@ class KinematicViscosity:
         
         return None
 
-	def to(self, unit: KinematicViscosityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: KinematicViscosityUnits) -> float:
         

@@ -120,6 +120,9 @@ class Area:
         self.__square_nautical_miles = None
         
 
+    def convert(self, unit: AreaUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: AreaUnits) -> float:
         value = self.__value
         
@@ -167,8 +170,6 @@ class Area:
         
         return None
 
-	def to(self, unit: AreaUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: AreaUnits) -> float:
         

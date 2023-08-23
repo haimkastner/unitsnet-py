@@ -71,6 +71,9 @@ class Compressibility:
         self.__inverse_pounds_force_per_square_inch = None
         
 
+    def convert(self, unit: CompressibilityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: CompressibilityUnits) -> float:
         value = self.__value
         
@@ -97,8 +100,6 @@ class Compressibility:
         
         return None
 
-	def to(self, unit: CompressibilityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: CompressibilityUnits) -> float:
         

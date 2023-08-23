@@ -64,6 +64,9 @@ class WarpingMomentOfInertia:
         self.__inches_to_the_sixth = None
         
 
+    def convert(self, unit: WarpingMomentOfInertiaUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: WarpingMomentOfInertiaUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class WarpingMomentOfInertia:
         
         return None
 
-	def to(self, unit: WarpingMomentOfInertiaUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: WarpingMomentOfInertiaUnits) -> float:
         

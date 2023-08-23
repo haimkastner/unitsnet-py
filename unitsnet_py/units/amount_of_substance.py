@@ -141,6 +141,9 @@ class AmountOfSubstance:
         self.__kilopound_moles = None
         
 
+    def convert(self, unit: AmountOfSubstanceUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
         value = self.__value
         
@@ -197,8 +200,6 @@ class AmountOfSubstance:
         
         return None
 
-	def to(self, unit: AmountOfSubstanceUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: AmountOfSubstanceUnits) -> float:
         

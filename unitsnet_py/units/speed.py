@@ -253,6 +253,9 @@ class Speed:
         self.__kilometers_per_hour = None
         
 
+    def convert(self, unit: SpeedUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
         value = self.__value
         
@@ -357,8 +360,6 @@ class Speed:
         
         return None
 
-	def to(self, unit: SpeedUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpeedUnits) -> float:
         

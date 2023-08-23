@@ -64,6 +64,9 @@ class ApparentPower:
         self.__gigavoltamperes = None
         
 
+    def convert(self, unit: ApparentPowerUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ApparentPowerUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class ApparentPower:
         
         return None
 
-	def to(self, unit: ApparentPowerUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ApparentPowerUnits) -> float:
         

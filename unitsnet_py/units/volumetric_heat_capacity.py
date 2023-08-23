@@ -85,6 +85,9 @@ class VolumetricHeatCapacity:
         self.__kilocalories_per_cubic_centimeter_degree_celsius = None
         
 
+    def convert(self, unit: VolumetricHeatCapacityUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:
         value = self.__value
         
@@ -117,8 +120,6 @@ class VolumetricHeatCapacity:
         
         return None
 
-	def to(self, unit: VolumetricHeatCapacityUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: VolumetricHeatCapacityUnits) -> float:
         

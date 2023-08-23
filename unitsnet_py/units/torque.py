@@ -197,6 +197,9 @@ class Torque:
         self.__megapound_force_feet = None
         
 
+    def convert(self, unit: TorqueUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: TorqueUnits) -> float:
         value = self.__value
         
@@ -277,8 +280,6 @@ class Torque:
         
         return None
 
-	def to(self, unit: TorqueUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: TorqueUnits) -> float:
         

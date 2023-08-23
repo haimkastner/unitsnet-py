@@ -64,6 +64,9 @@ class AreaMomentOfInertia:
         self.__inches_to_the_fourth = None
         
 
+    def convert(self, unit: AreaMomentOfInertiaUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: AreaMomentOfInertiaUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class AreaMomentOfInertia:
         
         return None
 
-	def to(self, unit: AreaMomentOfInertiaUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: AreaMomentOfInertiaUnits) -> float:
         

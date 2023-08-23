@@ -120,6 +120,9 @@ class Irradiance:
         self.__megawatts_per_square_centimeter = None
         
 
+    def convert(self, unit: IrradianceUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: IrradianceUnits) -> float:
         value = self.__value
         
@@ -167,8 +170,6 @@ class Irradiance:
         
         return None
 
-	def to(self, unit: IrradianceUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: IrradianceUnits) -> float:
         

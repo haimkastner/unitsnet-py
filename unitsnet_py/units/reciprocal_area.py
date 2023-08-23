@@ -99,6 +99,9 @@ class ReciprocalArea:
         self.__inverse_square_inches = None
         
 
+    def convert(self, unit: ReciprocalAreaUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ReciprocalAreaUnits) -> float:
         value = self.__value
         
@@ -137,8 +140,6 @@ class ReciprocalArea:
         
         return None
 
-	def to(self, unit: ReciprocalAreaUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ReciprocalAreaUnits) -> float:
         

@@ -64,6 +64,9 @@ class ElectricPotential:
         self.__megavolts = None
         
 
+    def convert(self, unit: ElectricPotentialUnits) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: ElectricPotentialUnits) -> float:
         value = self.__value
         
@@ -87,8 +90,6 @@ class ElectricPotential:
         
         return None
 
-	def to(self, unit: ElectricPotentialUnits) -> float:
-	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricPotentialUnits) -> float:
         
