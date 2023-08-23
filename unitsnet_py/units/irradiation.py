@@ -97,6 +97,8 @@ class Irradiation:
         
         return None
 
+	def to(self, unit: IrradiationUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: IrradiationUnits) -> float:
         

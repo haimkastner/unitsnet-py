@@ -47,6 +47,8 @@ class RatioChangeRate:
         
         return None
 
+	def to(self, unit: RatioChangeRateUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: RatioChangeRateUnits) -> float:
         

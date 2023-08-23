@@ -67,6 +67,8 @@ class SpecificFuelConsumption:
         
         return None
 
+	def to(self, unit: SpecificFuelConsumptionUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpecificFuelConsumptionUnits) -> float:
         

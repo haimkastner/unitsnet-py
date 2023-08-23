@@ -117,6 +117,8 @@ class VolumePerLength:
         
         return None
 
+	def to(self, unit: VolumePerLengthUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: VolumePerLengthUnits) -> float:
         

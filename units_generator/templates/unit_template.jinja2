@@ -29,6 +29,9 @@ class {{ unit }}:
         self.__{{ method.name }} = None
         {% endfor %}
 
+    def convert(self, unit: {{ unit }}Units) -> float:
+        return self.__convert_from_base(unit)
+
     def __convert_from_base(self, from_unit: {{ unit }}Units) -> float:
         value = self.__value
         {% for method in methods %}

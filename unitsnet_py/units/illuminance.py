@@ -67,6 +67,8 @@ class Illuminance:
         
         return None
 
+	def to(self, unit: IlluminanceUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: IlluminanceUnits) -> float:
         
