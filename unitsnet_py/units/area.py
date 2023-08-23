@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class AreaUnits(Enum):
         """
@@ -78,7 +81,7 @@ class AreaUnits(Enum):
         """
         
 
-class Area:
+class Area(AbstractMeasure):
     """
     Area is a quantity that expresses the extent of a two-dimensional surface or shape, or planar lamina, in the plane. Area can be understood as the amount of material with a given thickness that would be necessary to fashion a model of the shape, or the amount of paint necessary to cover the surface with a single coat.[1] It is the two-dimensional analog of the length of a curve (a one-dimensional concept) or the volume of a solid (a three-dimensional concept).
 
@@ -89,7 +92,7 @@ class Area:
     def __init__(self, value: float, from_unit: AreaUnits = AreaUnits.SquareMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__square_kilometers = None
         
@@ -121,7 +124,7 @@ class Area:
         
 
     def __convert_from_base(self, from_unit: AreaUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == AreaUnits.SquareKilometer:
             return (value / 1e6)
@@ -217,7 +220,7 @@ class Area:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -633,7 +636,7 @@ class Area:
         if unit == AreaUnits.SquareNauticalMile:
             return f"""{self.square_nautical_miles} nmi²"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: AreaUnits = AreaUnits.SquareMeter) -> str:
@@ -685,72 +688,3 @@ class Area:
         if unit_abbreviation == AreaUnits.SquareNauticalMile:
             return """nmi²"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for +: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for *: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for -: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for /: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for %: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for **: 'Area' and '{}'".format(type(other).__name__))
-        return Area(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for ==: 'Area' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for <: 'Area' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for >: 'Area' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for <=: 'Area' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Area):
-            raise TypeError("unsupported operand type(s) for >=: 'Area' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

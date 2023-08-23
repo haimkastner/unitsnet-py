@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class MagnetizationUnits(Enum):
         """
@@ -13,7 +16,7 @@ class MagnetizationUnits(Enum):
         """
         
 
-class Magnetization:
+class Magnetization(AbstractMeasure):
     """
     In classical electromagnetism, magnetization is the vector field that expresses the density of permanent or induced magnetic dipole moments in a magnetic material.
 
@@ -24,13 +27,13 @@ class Magnetization:
     def __init__(self, value: float, from_unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__amperes_per_meter = None
         
 
     def __convert_from_base(self, from_unit: MagnetizationUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == MagnetizationUnits.AmperePerMeter:
             return (value)
@@ -48,7 +51,7 @@ class Magnetization:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -87,7 +90,7 @@ class Magnetization:
         if unit == MagnetizationUnits.AmperePerMeter:
             return f"""{self.amperes_per_meter} A/m"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> str:
@@ -100,72 +103,3 @@ class Magnetization:
         if unit_abbreviation == MagnetizationUnits.AmperePerMeter:
             return """A/m"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for +: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for *: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for -: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for /: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for %: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for **: 'Magnetization' and '{}'".format(type(other).__name__))
-        return Magnetization(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for ==: 'Magnetization' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for <: 'Magnetization' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for >: 'Magnetization' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for <=: 'Magnetization' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Magnetization):
-            raise TypeError("unsupported operand type(s) for >=: 'Magnetization' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class EnergyUnits(Enum):
         """
@@ -198,7 +201,7 @@ class EnergyUnits(Enum):
         """
         
 
-class Energy:
+class Energy(AbstractMeasure):
     """
     The joule, symbol J, is a derived unit of energy, work, or amount of heat in the International System of Units. It is equal to the energy transferred (or work done) when applying a force of one newton through a distance of one metre (1 newton metre or N·m), or in passing an electric current of one ampere through a resistance of one ohm for one second. Many other units of energy are included. Please do not confuse this definition of the calorie with the one colloquially used by the food industry, the large calorie, which is equivalent to 1 kcal. Thermochemical definition of the calorie is used. For BTU, the IT definition is used.
 
@@ -209,7 +212,7 @@ class Energy:
     def __init__(self, value: float, from_unit: EnergyUnits = EnergyUnits.Joule):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules = None
         
@@ -289,7 +292,7 @@ class Energy:
         
 
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == EnergyUnits.Joule:
             return (value)
@@ -529,7 +532,7 @@ class Energy:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -1641,7 +1644,7 @@ class Energy:
         if unit == EnergyUnits.DecathermImperial:
             return f"""{self.decatherms_imperial} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: EnergyUnits = EnergyUnits.Joule) -> str:
@@ -1765,72 +1768,3 @@ class Energy:
         if unit_abbreviation == EnergyUnits.DecathermImperial:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for +: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for *: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for -: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for /: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for %: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for **: 'Energy' and '{}'".format(type(other).__name__))
-        return Energy(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for ==: 'Energy' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for <: 'Energy' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for >: 'Energy' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for <=: 'Energy' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Energy):
-            raise TypeError("unsupported operand type(s) for >=: 'Energy' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

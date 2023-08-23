@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class VolumetricHeatCapacityUnits(Enum):
         """
@@ -53,7 +56,7 @@ class VolumetricHeatCapacityUnits(Enum):
         """
         
 
-class VolumetricHeatCapacity:
+class VolumetricHeatCapacity(AbstractMeasure):
     """
     The volumetric heat capacity is the amount of energy that must be added, in the form of heat, to one unit of volume of the material in order to cause an increase of one unit in its temperature.
 
@@ -64,7 +67,7 @@ class VolumetricHeatCapacity:
     def __init__(self, value: float, from_unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules_per_cubic_meter_kelvin = None
         
@@ -86,7 +89,7 @@ class VolumetricHeatCapacity:
         
 
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin:
             return (value)
@@ -152,7 +155,7 @@ class VolumetricHeatCapacity:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -423,7 +426,7 @@ class VolumetricHeatCapacity:
         if unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
             return f"""{self.kilocalories_per_cubic_centimeter_degree_celsius} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> str:
@@ -460,72 +463,3 @@ class VolumetricHeatCapacity:
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for +: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for *: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for -: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for /: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for %: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for **: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return VolumetricHeatCapacity(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for ==: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for <: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for >: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for <=: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, VolumetricHeatCapacity):
-            raise TypeError("unsupported operand type(s) for >=: 'VolumetricHeatCapacity' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

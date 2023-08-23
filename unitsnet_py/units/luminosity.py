@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class LuminosityUnits(Enum):
         """
@@ -78,7 +81,7 @@ class LuminosityUnits(Enum):
         """
         
 
-class Luminosity:
+class Luminosity(AbstractMeasure):
     """
     Luminosity is an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object.
 
@@ -89,7 +92,7 @@ class Luminosity:
     def __init__(self, value: float, from_unit: LuminosityUnits = LuminosityUnits.Watt):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__watts = None
         
@@ -121,7 +124,7 @@ class Luminosity:
         
 
     def __convert_from_base(self, from_unit: LuminosityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == LuminosityUnits.Watt:
             return (value)
@@ -217,7 +220,7 @@ class Luminosity:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -633,7 +636,7 @@ class Luminosity:
         if unit == LuminosityUnits.Petawatt:
             return f"""{self.petawatts} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: LuminosityUnits = LuminosityUnits.Watt) -> str:
@@ -685,72 +688,3 @@ class Luminosity:
         if unit_abbreviation == LuminosityUnits.Petawatt:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for +: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for *: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for -: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for /: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for %: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for **: 'Luminosity' and '{}'".format(type(other).__name__))
-        return Luminosity(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for ==: 'Luminosity' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for <: 'Luminosity' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for >: 'Luminosity' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for <=: 'Luminosity' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Luminosity):
-            raise TypeError("unsupported operand type(s) for >=: 'Luminosity' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

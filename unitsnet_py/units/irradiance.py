@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class IrradianceUnits(Enum):
         """
@@ -78,7 +81,7 @@ class IrradianceUnits(Enum):
         """
         
 
-class Irradiance:
+class Irradiance(AbstractMeasure):
     """
     Irradiance is the intensity of ultraviolet (UV) or visible light incident on a surface.
 
@@ -89,7 +92,7 @@ class Irradiance:
     def __init__(self, value: float, from_unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__watts_per_square_meter = None
         
@@ -121,7 +124,7 @@ class Irradiance:
         
 
     def __convert_from_base(self, from_unit: IrradianceUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == IrradianceUnits.WattPerSquareMeter:
             return (value)
@@ -217,7 +220,7 @@ class Irradiance:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -633,7 +636,7 @@ class Irradiance:
         if unit == IrradianceUnits.MegawattPerSquareCentimeter:
             return f"""{self.megawatts_per_square_centimeter} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> str:
@@ -685,72 +688,3 @@ class Irradiance:
         if unit_abbreviation == IrradianceUnits.MegawattPerSquareCentimeter:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for +: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for *: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for -: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for /: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for %: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for **: 'Irradiance' and '{}'".format(type(other).__name__))
-        return Irradiance(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for ==: 'Irradiance' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for <: 'Irradiance' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for >: 'Irradiance' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for <=: 'Irradiance' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Irradiance):
-            raise TypeError("unsupported operand type(s) for >=: 'Irradiance' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ElectricPotentialUnits(Enum):
         """
@@ -38,7 +41,7 @@ class ElectricPotentialUnits(Enum):
         """
         
 
-class ElectricPotential:
+class ElectricPotential(AbstractMeasure):
     """
     In classical electromagnetism, the electric potential (a scalar quantity denoted by Φ, ΦE or V and also called the electric field potential or the electrostatic potential) at a point is the amount of electric potential energy that a unitary point charge would have when located at that point.
 
@@ -49,7 +52,7 @@ class ElectricPotential:
     def __init__(self, value: float, from_unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__volts = None
         
@@ -65,7 +68,7 @@ class ElectricPotential:
         
 
     def __convert_from_base(self, from_unit: ElectricPotentialUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ElectricPotentialUnits.Volt:
             return (value)
@@ -113,7 +116,7 @@ class ElectricPotential:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -297,7 +300,7 @@ class ElectricPotential:
         if unit == ElectricPotentialUnits.Megavolt:
             return f"""{self.megavolts} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialUnits = ElectricPotentialUnits.Volt) -> str:
@@ -325,72 +328,3 @@ class ElectricPotential:
         if unit_abbreviation == ElectricPotentialUnits.Megavolt:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for +: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for *: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for -: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for /: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for %: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for **: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return ElectricPotential(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for ==: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for <: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for >: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for <=: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ElectricPotential):
-            raise TypeError("unsupported operand type(s) for >=: 'ElectricPotential' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

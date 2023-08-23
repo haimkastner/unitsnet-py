@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class CompressibilityUnits(Enum):
         """
@@ -43,7 +46,7 @@ class CompressibilityUnits(Enum):
         """
         
 
-class Compressibility:
+class Compressibility(AbstractMeasure):
     """
     None
 
@@ -54,7 +57,7 @@ class Compressibility:
     def __init__(self, value: float, from_unit: CompressibilityUnits = CompressibilityUnits.InversePascal):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__inverse_pascals = None
         
@@ -72,7 +75,7 @@ class Compressibility:
         
 
     def __convert_from_base(self, from_unit: CompressibilityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == CompressibilityUnits.InversePascal:
             return (value)
@@ -126,7 +129,7 @@ class Compressibility:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -339,7 +342,7 @@ class Compressibility:
         if unit == CompressibilityUnits.InversePoundForcePerSquareInch:
             return f"""{self.inverse_pounds_force_per_square_inch} psi⁻¹"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: CompressibilityUnits = CompressibilityUnits.InversePascal) -> str:
@@ -370,72 +373,3 @@ class Compressibility:
         if unit_abbreviation == CompressibilityUnits.InversePoundForcePerSquareInch:
             return """psi⁻¹"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for +: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for *: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for -: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for /: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for %: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for **: 'Compressibility' and '{}'".format(type(other).__name__))
-        return Compressibility(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for ==: 'Compressibility' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for <: 'Compressibility' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for >: 'Compressibility' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for <=: 'Compressibility' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Compressibility):
-            raise TypeError("unsupported operand type(s) for >=: 'Compressibility' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

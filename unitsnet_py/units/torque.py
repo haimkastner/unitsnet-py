@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class TorqueUnits(Enum):
         """
@@ -133,7 +136,7 @@ class TorqueUnits(Enum):
         """
         
 
-class Torque:
+class Torque(AbstractMeasure):
     """
     Torque, moment or moment of force (see the terminology below), is the tendency of a force to rotate an object about an axis,[1] fulcrum, or pivot. Just as a force is a push or a pull, a torque can be thought of as a twist to an object. Mathematically, torque is defined as the cross product of the lever-arm distance and force, which tends to produce rotation. Loosely speaking, torque is a measure of the turning force on an object such as a bolt or a flywheel. For example, pushing or pulling the handle of a wrench connected to a nut or bolt produces a torque (turning force) that loosens or tightens the nut or bolt.
 
@@ -144,7 +147,7 @@ class Torque:
     def __init__(self, value: float, from_unit: TorqueUnits = TorqueUnits.NewtonMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__newton_millimeters = None
         
@@ -198,7 +201,7 @@ class Torque:
         
 
     def __convert_from_base(self, from_unit: TorqueUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == TorqueUnits.NewtonMillimeter:
             return (value * 1000)
@@ -360,7 +363,7 @@ class Torque:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -1095,7 +1098,7 @@ class Torque:
         if unit == TorqueUnits.MegapoundForceFoot:
             return f"""{self.megapound_force_feet} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: TorqueUnits = TorqueUnits.NewtonMeter) -> str:
@@ -1180,72 +1183,3 @@ class Torque:
         if unit_abbreviation == TorqueUnits.MegapoundForceFoot:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for +: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for *: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for -: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for /: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for %: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for **: 'Torque' and '{}'".format(type(other).__name__))
-        return Torque(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for ==: 'Torque' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for <: 'Torque' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for >: 'Torque' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for <=: 'Torque' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Torque):
-            raise TypeError("unsupported operand type(s) for >=: 'Torque' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

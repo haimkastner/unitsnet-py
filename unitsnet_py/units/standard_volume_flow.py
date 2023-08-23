@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class StandardVolumeFlowUnits(Enum):
         """
@@ -53,7 +56,7 @@ class StandardVolumeFlowUnits(Enum):
         """
         
 
-class StandardVolumeFlow:
+class StandardVolumeFlow(AbstractMeasure):
     """
     The molar flow rate of a gas corrected to standardized conditions of temperature and pressure thus representing a fixed number of moles of gas regardless of composition and actual flow conditions.
 
@@ -64,7 +67,7 @@ class StandardVolumeFlow:
     def __init__(self, value: float, from_unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__standard_cubic_meters_per_second = None
         
@@ -86,7 +89,7 @@ class StandardVolumeFlow:
         
 
     def __convert_from_base(self, from_unit: StandardVolumeFlowUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == StandardVolumeFlowUnits.StandardCubicMeterPerSecond:
             return (value)
@@ -152,7 +155,7 @@ class StandardVolumeFlow:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -423,7 +426,7 @@ class StandardVolumeFlow:
         if unit == StandardVolumeFlowUnits.StandardCubicFootPerHour:
             return f"""{self.standard_cubic_feet_per_hour} scfh"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> str:
@@ -460,72 +463,3 @@ class StandardVolumeFlow:
         if unit_abbreviation == StandardVolumeFlowUnits.StandardCubicFootPerHour:
             return """scfh"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for +: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for *: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for -: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for /: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for %: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for **: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return StandardVolumeFlow(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for ==: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for <: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for >: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for <=: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, StandardVolumeFlow):
-            raise TypeError("unsupported operand type(s) for >=: 'StandardVolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class SpecificVolumeUnits(Enum):
         """
@@ -23,7 +26,7 @@ class SpecificVolumeUnits(Enum):
         """
         
 
-class SpecificVolume:
+class SpecificVolume(AbstractMeasure):
     """
     In thermodynamics, the specific volume of a substance is the ratio of the substance's volume to its mass. It is the reciprocal of density and an intrinsic property of matter as well.
 
@@ -34,7 +37,7 @@ class SpecificVolume:
     def __init__(self, value: float, from_unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__cubic_meters_per_kilogram = None
         
@@ -44,7 +47,7 @@ class SpecificVolume:
         
 
     def __convert_from_base(self, from_unit: SpecificVolumeUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == SpecificVolumeUnits.CubicMeterPerKilogram:
             return (value)
@@ -74,7 +77,7 @@ class SpecificVolume:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -171,7 +174,7 @@ class SpecificVolume:
         if unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return f"""{self.millicubic_meters_per_kilogram} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> str:
@@ -190,72 +193,3 @@ class SpecificVolume:
         if unit_abbreviation == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for +: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for *: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for -: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for /: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for %: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for **: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return SpecificVolume(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for ==: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for <: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for >: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for <=: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, SpecificVolume):
-            raise TypeError("unsupported operand type(s) for >=: 'SpecificVolume' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

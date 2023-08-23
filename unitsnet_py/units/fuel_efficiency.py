@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class FuelEfficiencyUnits(Enum):
         """
@@ -28,7 +31,7 @@ class FuelEfficiencyUnits(Enum):
         """
         
 
-class FuelEfficiency:
+class FuelEfficiency(AbstractMeasure):
     """
     Fuel efficiency is a form of thermal efficiency, meaning the ratio from effort to result of a process that converts chemical potential energy contained in a carrier (fuel) into kinetic energy or work. Fuel economy is stated as "fuel consumption" in liters per 100 kilometers (L/100 km). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).
 
@@ -39,7 +42,7 @@ class FuelEfficiency:
     def __init__(self, value: float, from_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__liters_per100_kilometers = None
         
@@ -51,7 +54,7 @@ class FuelEfficiency:
         
 
     def __convert_from_base(self, from_unit: FuelEfficiencyUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == FuelEfficiencyUnits.LiterPer100Kilometers:
             return (value)
@@ -87,7 +90,7 @@ class FuelEfficiency:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -213,7 +216,7 @@ class FuelEfficiency:
         if unit == FuelEfficiencyUnits.KilometerPerLiter:
             return f"""{self.kilometers_per_liters} km/L"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> str:
@@ -235,72 +238,3 @@ class FuelEfficiency:
         if unit_abbreviation == FuelEfficiencyUnits.KilometerPerLiter:
             return """km/L"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for +: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for *: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for -: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for /: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for %: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for **: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return FuelEfficiency(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for ==: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for <: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for >: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for <=: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, FuelEfficiency):
-            raise TypeError("unsupported operand type(s) for >=: 'FuelEfficiency' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class AreaMomentOfInertiaUnits(Enum):
         """
@@ -38,7 +41,7 @@ class AreaMomentOfInertiaUnits(Enum):
         """
         
 
-class AreaMomentOfInertia:
+class AreaMomentOfInertia(AbstractMeasure):
     """
     A geometric property of an area that reflects how its points are distributed with regard to an axis.
 
@@ -49,7 +52,7 @@ class AreaMomentOfInertia:
     def __init__(self, value: float, from_unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__meters_to_the_fourth = None
         
@@ -65,7 +68,7 @@ class AreaMomentOfInertia:
         
 
     def __convert_from_base(self, from_unit: AreaMomentOfInertiaUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == AreaMomentOfInertiaUnits.MeterToTheFourth:
             return (value)
@@ -113,7 +116,7 @@ class AreaMomentOfInertia:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -297,7 +300,7 @@ class AreaMomentOfInertia:
         if unit == AreaMomentOfInertiaUnits.InchToTheFourth:
             return f"""{self.inches_to_the_fourth} in⁴"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> str:
@@ -325,72 +328,3 @@ class AreaMomentOfInertia:
         if unit_abbreviation == AreaMomentOfInertiaUnits.InchToTheFourth:
             return """in⁴"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for +: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for *: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for -: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for /: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for %: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for **: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return AreaMomentOfInertia(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for ==: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for <: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for >: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for <=: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, AreaMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for >=: 'AreaMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

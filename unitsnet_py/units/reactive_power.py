@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ReactivePowerUnits(Enum):
         """
@@ -28,7 +31,7 @@ class ReactivePowerUnits(Enum):
         """
         
 
-class ReactivePower:
+class ReactivePower(AbstractMeasure):
     """
     Volt-ampere reactive (var) is a unit by which reactive power is expressed in an AC electric power system. Reactive power exists in an AC circuit when the current and voltage are not in phase.
 
@@ -39,7 +42,7 @@ class ReactivePower:
     def __init__(self, value: float, from_unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__voltamperes_reactive = None
         
@@ -51,7 +54,7 @@ class ReactivePower:
         
 
     def __convert_from_base(self, from_unit: ReactivePowerUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ReactivePowerUnits.VoltampereReactive:
             return (value)
@@ -87,7 +90,7 @@ class ReactivePower:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -213,7 +216,7 @@ class ReactivePower:
         if unit == ReactivePowerUnits.GigavoltampereReactive:
             return f"""{self.gigavoltamperes_reactive} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive) -> str:
@@ -235,72 +238,3 @@ class ReactivePower:
         if unit_abbreviation == ReactivePowerUnits.GigavoltampereReactive:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for +: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for *: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for -: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for /: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for %: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for **: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return ReactivePower(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for ==: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for <: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for >: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for <=: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ReactivePower):
-            raise TypeError("unsupported operand type(s) for >=: 'ReactivePower' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

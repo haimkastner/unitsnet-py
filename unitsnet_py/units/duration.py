@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class DurationUnits(Enum):
         """
@@ -63,7 +66,7 @@ class DurationUnits(Enum):
         """
         
 
-class Duration:
+class Duration(AbstractMeasure):
     """
     Time is a dimension in which events can be ordered from the past through the present into the future, and also the measure of durations of events and the intervals between them.
 
@@ -74,7 +77,7 @@ class Duration:
     def __init__(self, value: float, from_unit: DurationUnits = DurationUnits.Second):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__years365 = None
         
@@ -100,7 +103,7 @@ class Duration:
         
 
     def __convert_from_base(self, from_unit: DurationUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == DurationUnits.Year365:
             return (value / (365 * 24 * 3600))
@@ -178,7 +181,7 @@ class Duration:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -507,7 +510,7 @@ class Duration:
         if unit == DurationUnits.Millisecond:
             return f"""{self.milliseconds} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: DurationUnits = DurationUnits.Second) -> str:
@@ -550,72 +553,3 @@ class Duration:
         if unit_abbreviation == DurationUnits.Millisecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for +: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for *: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for -: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for /: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for %: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for **: 'Duration' and '{}'".format(type(other).__name__))
-        return Duration(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for ==: 'Duration' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for <: 'Duration' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for >: 'Duration' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for <=: 'Duration' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError("unsupported operand type(s) for >=: 'Duration' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

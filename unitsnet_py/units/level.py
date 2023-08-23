@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class LevelUnits(Enum):
         """
@@ -18,7 +21,7 @@ class LevelUnits(Enum):
         """
         
 
-class Level:
+class Level(AbstractMeasure):
     """
     Level is the logarithm of the ratio of a quantity Q to a reference value of that quantity, Q₀, expressed in dimensionless units.
 
@@ -29,7 +32,7 @@ class Level:
     def __init__(self, value: float, from_unit: LevelUnits = LevelUnits.Decibel):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__decibels = None
         
@@ -37,7 +40,7 @@ class Level:
         
 
     def __convert_from_base(self, from_unit: LevelUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == LevelUnits.Decibel:
             return (value)
@@ -61,7 +64,7 @@ class Level:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -129,7 +132,7 @@ class Level:
         if unit == LevelUnits.Neper:
             return f"""{self.nepers} Np"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: LevelUnits = LevelUnits.Decibel) -> str:
@@ -145,72 +148,3 @@ class Level:
         if unit_abbreviation == LevelUnits.Neper:
             return """Np"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for +: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for *: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for -: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for /: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for %: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for **: 'Level' and '{}'".format(type(other).__name__))
-        return Level(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for ==: 'Level' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for <: 'Level' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for >: 'Level' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for <=: 'Level' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Level):
-            raise TypeError("unsupported operand type(s) for >=: 'Level' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

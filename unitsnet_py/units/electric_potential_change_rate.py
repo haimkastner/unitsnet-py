@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ElectricPotentialChangeRateUnits(Enum):
         """
@@ -108,7 +111,7 @@ class ElectricPotentialChangeRateUnits(Enum):
         """
         
 
-class ElectricPotentialChangeRate:
+class ElectricPotentialChangeRate(AbstractMeasure):
     """
     ElectricPotential change rate is the ratio of the electric potential change to the time during which the change occurred (value of electric potential changes per unit time).
 
@@ -119,7 +122,7 @@ class ElectricPotentialChangeRate:
     def __init__(self, value: float, from_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__volts_per_seconds = None
         
@@ -163,7 +166,7 @@ class ElectricPotentialChangeRate:
         
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ElectricPotentialChangeRateUnits.VoltPerSecond:
             return (value)
@@ -295,7 +298,7 @@ class ElectricPotentialChangeRate:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -885,7 +888,7 @@ class ElectricPotentialChangeRate:
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
             return f"""{self.megavolts_per_hours} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> str:
@@ -955,72 +958,3 @@ class ElectricPotentialChangeRate:
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerHour:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for +: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for *: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for -: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for /: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for %: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for **: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return ElectricPotentialChangeRate(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for ==: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for <: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for >: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for <=: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ElectricPotentialChangeRate):
-            raise TypeError("unsupported operand type(s) for >=: 'ElectricPotentialChangeRate' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

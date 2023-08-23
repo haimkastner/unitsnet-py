@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class VolumeFlowUnits(Enum):
         """
@@ -343,7 +346,7 @@ class VolumeFlowUnits(Enum):
         """
         
 
-class VolumeFlow:
+class VolumeFlow(AbstractMeasure):
     """
     In physics and engineering, in particular fluid dynamics and hydrometry, the volumetric flow rate, (also known as volume flow rate, rate of fluid flow or volume velocity) is the volume of fluid which passes through a given surface per unit time. The SI unit is m³/s (cubic meters per second). In US Customary Units and British Imperial Units, volumetric flow rate is often expressed as ft³/s (cubic feet per second). It is usually represented by the symbol Q.
 
@@ -354,7 +357,7 @@ class VolumeFlow:
     def __init__(self, value: float, from_unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__cubic_meters_per_second = None
         
@@ -492,7 +495,7 @@ class VolumeFlow:
         
 
     def __convert_from_base(self, from_unit: VolumeFlowUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == VolumeFlowUnits.CubicMeterPerSecond:
             return (value)
@@ -906,7 +909,7 @@ class VolumeFlow:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -2859,7 +2862,7 @@ class VolumeFlow:
         if unit == VolumeFlowUnits.MegaukGallonPerSecond:
             return f"""{self.megauk_gallons_per_second} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> str:
@@ -3070,72 +3073,3 @@ class VolumeFlow:
         if unit_abbreviation == VolumeFlowUnits.MegaukGallonPerSecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for +: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for *: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for -: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for /: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for %: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for **: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return VolumeFlow(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for ==: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for <: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for >: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for <=: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, VolumeFlow):
-            raise TypeError("unsupported operand type(s) for >=: 'VolumeFlow' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

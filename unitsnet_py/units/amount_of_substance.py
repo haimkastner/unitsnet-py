@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class AmountOfSubstanceUnits(Enum):
         """
@@ -93,7 +96,7 @@ class AmountOfSubstanceUnits(Enum):
         """
         
 
-class AmountOfSubstance:
+class AmountOfSubstance(AbstractMeasure):
     """
     Mole is the amount of substance containing Avagadro's Number (6.02 x 10 ^ 23) of real particles such as molecules,atoms, ions or radicals.
 
@@ -104,7 +107,7 @@ class AmountOfSubstance:
     def __init__(self, value: float, from_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__moles = None
         
@@ -142,7 +145,7 @@ class AmountOfSubstance:
         
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == AmountOfSubstanceUnits.Mole:
             return (value)
@@ -256,7 +259,7 @@ class AmountOfSubstance:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -759,7 +762,7 @@ class AmountOfSubstance:
         if unit == AmountOfSubstanceUnits.KilopoundMole:
             return f"""{self.kilopound_moles} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> str:
@@ -820,72 +823,3 @@ class AmountOfSubstance:
         if unit_abbreviation == AmountOfSubstanceUnits.KilopoundMole:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for +: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for *: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for -: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for /: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for %: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for **: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return AmountOfSubstance(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for ==: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for <: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for >: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for <=: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, AmountOfSubstance):
-            raise TypeError("unsupported operand type(s) for >=: 'AmountOfSubstance' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

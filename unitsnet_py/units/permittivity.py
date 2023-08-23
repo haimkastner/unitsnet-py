@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class PermittivityUnits(Enum):
         """
@@ -13,7 +16,7 @@ class PermittivityUnits(Enum):
         """
         
 
-class Permittivity:
+class Permittivity(AbstractMeasure):
     """
     In electromagnetism, permittivity is the measure of resistance that is encountered when forming an electric field in a particular medium.
 
@@ -24,13 +27,13 @@ class Permittivity:
     def __init__(self, value: float, from_unit: PermittivityUnits = PermittivityUnits.FaradPerMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__farads_per_meter = None
         
 
     def __convert_from_base(self, from_unit: PermittivityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == PermittivityUnits.FaradPerMeter:
             return (value)
@@ -48,7 +51,7 @@ class Permittivity:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -87,7 +90,7 @@ class Permittivity:
         if unit == PermittivityUnits.FaradPerMeter:
             return f"""{self.farads_per_meter} F/m"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> str:
@@ -100,72 +103,3 @@ class Permittivity:
         if unit_abbreviation == PermittivityUnits.FaradPerMeter:
             return """F/m"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for +: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for *: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for -: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for /: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for %: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for **: 'Permittivity' and '{}'".format(type(other).__name__))
-        return Permittivity(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for ==: 'Permittivity' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for <: 'Permittivity' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for >: 'Permittivity' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for <=: 'Permittivity' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Permittivity):
-            raise TypeError("unsupported operand type(s) for >=: 'Permittivity' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

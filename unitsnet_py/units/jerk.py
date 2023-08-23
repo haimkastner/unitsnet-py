@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class JerkUnits(Enum):
         """
@@ -63,7 +66,7 @@ class JerkUnits(Enum):
         """
         
 
-class Jerk:
+class Jerk(AbstractMeasure):
     """
     None
 
@@ -74,7 +77,7 @@ class Jerk:
     def __init__(self, value: float, from_unit: JerkUnits = JerkUnits.MeterPerSecondCubed):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__meters_per_second_cubed = None
         
@@ -100,7 +103,7 @@ class Jerk:
         
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == JerkUnits.MeterPerSecondCubed:
             return (value)
@@ -178,7 +181,7 @@ class Jerk:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -507,7 +510,7 @@ class Jerk:
         if unit == JerkUnits.MillistandardGravitiesPerSecond:
             return f"""{self.millistandard_gravities_per_second} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: JerkUnits = JerkUnits.MeterPerSecondCubed) -> str:
@@ -550,72 +553,3 @@ class Jerk:
         if unit_abbreviation == JerkUnits.MillistandardGravitiesPerSecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for +: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for *: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for -: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for /: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for %: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for **: 'Jerk' and '{}'".format(type(other).__name__))
-        return Jerk(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for ==: 'Jerk' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for <: 'Jerk' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for >: 'Jerk' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for <=: 'Jerk' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Jerk):
-            raise TypeError("unsupported operand type(s) for >=: 'Jerk' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

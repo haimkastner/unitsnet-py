@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ElectricSurfaceChargeDensityUnits(Enum):
         """
@@ -23,7 +26,7 @@ class ElectricSurfaceChargeDensityUnits(Enum):
         """
         
 
-class ElectricSurfaceChargeDensity:
+class ElectricSurfaceChargeDensity(AbstractMeasure):
     """
     In electromagnetism, surface charge density is a measure of the amount of electric charge per surface area.
 
@@ -34,7 +37,7 @@ class ElectricSurfaceChargeDensity:
     def __init__(self, value: float, from_unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__coulombs_per_square_meter = None
         
@@ -44,7 +47,7 @@ class ElectricSurfaceChargeDensity:
         
 
     def __convert_from_base(self, from_unit: ElectricSurfaceChargeDensityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter:
             return (value)
@@ -74,7 +77,7 @@ class ElectricSurfaceChargeDensity:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -171,7 +174,7 @@ class ElectricSurfaceChargeDensity:
         if unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareInch:
             return f"""{self.coulombs_per_square_inch} C/in²"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter) -> str:
@@ -190,72 +193,3 @@ class ElectricSurfaceChargeDensity:
         if unit_abbreviation == ElectricSurfaceChargeDensityUnits.CoulombPerSquareInch:
             return """C/in²"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for +: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for *: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for -: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for /: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for %: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for **: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return ElectricSurfaceChargeDensity(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for ==: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for <: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for >: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for <=: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ElectricSurfaceChargeDensity):
-            raise TypeError("unsupported operand type(s) for >=: 'ElectricSurfaceChargeDensity' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class LuminousFluxUnits(Enum):
         """
@@ -13,7 +16,7 @@ class LuminousFluxUnits(Enum):
         """
         
 
-class LuminousFlux:
+class LuminousFlux(AbstractMeasure):
     """
     In photometry, luminous flux or luminous power is the measure of the perceived power of light.
 
@@ -24,13 +27,13 @@ class LuminousFlux:
     def __init__(self, value: float, from_unit: LuminousFluxUnits = LuminousFluxUnits.Lumen):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__lumens = None
         
 
     def __convert_from_base(self, from_unit: LuminousFluxUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == LuminousFluxUnits.Lumen:
             return (value)
@@ -48,7 +51,7 @@ class LuminousFlux:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -87,7 +90,7 @@ class LuminousFlux:
         if unit == LuminousFluxUnits.Lumen:
             return f"""{self.lumens} lm"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> str:
@@ -100,72 +103,3 @@ class LuminousFlux:
         if unit_abbreviation == LuminousFluxUnits.Lumen:
             return """lm"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for +: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for *: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for -: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for /: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for %: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for **: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return LuminousFlux(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for ==: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for <: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for >: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for <=: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, LuminousFlux):
-            raise TypeError("unsupported operand type(s) for >=: 'LuminousFlux' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value
