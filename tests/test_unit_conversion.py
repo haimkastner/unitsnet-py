@@ -1,5 +1,9 @@
 import unittest
-from unitsnet_py import Angle
+from unitsnet_py import (
+    Angle,
+    Length,
+    LengthUnits,
+)
 
 
 class TestUnitConversion(unittest.TestCase):
@@ -26,6 +30,21 @@ class TestUnitConversion(unittest.TestCase):
     def test_convert_unit_prefix_to_base(self):
         angle = Angle.from_microradians(3141592.65358979)
         self.assertAlmostEqual(angle.degrees, 180, delta=0.00001)
+
+    def test_convert_to_specific_unit_enum(self):
+        param_list = [
+            (LengthUnits.Meter, LengthUnits.Centimeter, 'centimeters'),
+            (LengthUnits.Meter, LengthUnits.Kilometer, 'kilometers'),
+            (LengthUnits.Centimeter, LengthUnits.Kilofoot, 'kilofeet'),
+        ]
+        for item in param_list:
+            with self.subTest(item=item):
+                source, target, property_name = item
+                length = Length(1, source)
+                self.assertEqual(
+                    length.convert(target),
+                    getattr(length, property_name),
+                )
 
 
 if __name__ == "__main__":
