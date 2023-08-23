@@ -307,6 +307,8 @@ class MassMomentOfInertia:
         
         return None
 
+	def to(self, unit: MassMomentOfInertiaUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: MassMomentOfInertiaUnits) -> float:
         

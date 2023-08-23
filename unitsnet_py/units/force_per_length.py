@@ -407,6 +407,8 @@ class ForcePerLength:
         
         return None
 
+	def to(self, unit: ForcePerLengthUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ForcePerLengthUnits) -> float:
         

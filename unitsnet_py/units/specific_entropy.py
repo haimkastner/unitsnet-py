@@ -117,6 +117,8 @@ class SpecificEntropy:
         
         return None
 
+	def to(self, unit: SpecificEntropyUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: SpecificEntropyUnits) -> float:
         

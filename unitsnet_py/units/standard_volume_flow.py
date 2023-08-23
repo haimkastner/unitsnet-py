@@ -117,6 +117,8 @@ class StandardVolumeFlow:
         
         return None
 
+	def to(self, unit: StandardVolumeFlowUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: StandardVolumeFlowUnits) -> float:
         

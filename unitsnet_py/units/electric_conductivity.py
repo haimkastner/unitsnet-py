@@ -87,6 +87,8 @@ class ElectricConductivity:
         
         return None
 
+	def to(self, unit: ElectricConductivityUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: ElectricConductivityUnits) -> float:
         

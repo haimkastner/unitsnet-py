@@ -57,6 +57,8 @@ class LeakRate:
         
         return None
 
+	def to(self, unit: LeakRateUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: LeakRateUnits) -> float:
         

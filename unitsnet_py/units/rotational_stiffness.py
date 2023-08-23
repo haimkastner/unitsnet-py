@@ -357,6 +357,8 @@ class RotationalStiffness:
         
         return None
 
+	def to(self, unit: RotationalStiffnessUnits) -> float:
+	    return self.__convert_from_base(unit)
 
     def __convert_to_base(self, value: float, to_unit: RotationalStiffnessUnits) -> float:
         
