@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class PressureUnits(Enum):
         """
@@ -253,7 +256,7 @@ class PressureUnits(Enum):
         """
         
 
-class Pressure:
+class Pressure(AbstractMeasure):
     """
     Pressure (symbol: P or p) is the ratio of force to the area over which that force is distributed. Pressure is force per unit area applied in a direction perpendicular to the surface of an object. Gauge pressure (also spelled gage pressure)[a] is the pressure relative to the local atmospheric or ambient pressure. Pressure is measured in any unit of force divided by any unit of area. The SI unit of pressure is the newton per square metre, which is called the pascal (Pa) after the seventeenth-century philosopher and scientist Blaise Pascal. A pressure of 1 Pa is small; it approximately equals the pressure exerted by a dollar bill resting flat on a table. Everyday pressures are often stated in kilopascals (1 kPa = 1000 Pa).
 
@@ -264,7 +267,7 @@ class Pressure:
     def __init__(self, value: float, from_unit: PressureUnits = PressureUnits.Pascal):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__pascals = None
         
@@ -369,7 +372,7 @@ class Pressure:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: PressureUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == PressureUnits.Pascal:
             return (value)
@@ -675,7 +678,7 @@ class Pressure:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -2106,7 +2109,7 @@ class Pressure:
         if unit == PressureUnits.CentimeterOfWaterColumn:
             return f"""{self.centimeters_of_water_column} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: PressureUnits = PressureUnits.Pascal) -> str:
@@ -2263,72 +2266,3 @@ class Pressure:
         if unit_abbreviation == PressureUnits.CentimeterOfWaterColumn:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for +: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for *: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for -: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for /: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for %: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for **: 'Pressure' and '{}'".format(type(other).__name__))
-        return Pressure(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for ==: 'Pressure' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for <: 'Pressure' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for >: 'Pressure' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for <=: 'Pressure' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Pressure):
-            raise TypeError("unsupported operand type(s) for >=: 'Pressure' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class SpeedUnits(Enum):
         """
@@ -173,7 +176,7 @@ class SpeedUnits(Enum):
         """
         
 
-class Speed:
+class Speed(AbstractMeasure):
     """
     In everyday use and in kinematics, the speed of an object is the magnitude of its velocity (the rate of change of its position); it is thus a scalar quantity.[1] The average speed of an object in an interval of time is the distance travelled by the object divided by the duration of the interval;[2] the instantaneous speed is the limit of the average speed as the duration of the time interval approaches zero.
 
@@ -184,7 +187,7 @@ class Speed:
     def __init__(self, value: float, from_unit: SpeedUnits = SpeedUnits.MeterPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__meters_per_second = None
         
@@ -257,7 +260,7 @@ class Speed:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == SpeedUnits.MeterPerSecond:
             return (value)
@@ -467,7 +470,7 @@ class Speed:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -1434,7 +1437,7 @@ class Speed:
         if unit == SpeedUnits.KilometerPerHour:
             return f"""{self.kilometers_per_hour} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: SpeedUnits = SpeedUnits.MeterPerSecond) -> str:
@@ -1543,72 +1546,3 @@ class Speed:
         if unit_abbreviation == SpeedUnits.KilometerPerHour:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for +: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for *: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for -: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for /: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for %: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for **: 'Speed' and '{}'".format(type(other).__name__))
-        return Speed(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for ==: 'Speed' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for <: 'Speed' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for >: 'Speed' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for <=: 'Speed' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Speed):
-            raise TypeError("unsupported operand type(s) for >=: 'Speed' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

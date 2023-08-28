@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class MagneticFluxUnits(Enum):
         """
@@ -13,7 +16,7 @@ class MagneticFluxUnits(Enum):
         """
         
 
-class MagneticFlux:
+class MagneticFlux(AbstractMeasure):
     """
     In physics, specifically electromagnetism, the magnetic flux through a surface is the surface integral of the normal component of the magnetic field B passing through that surface.
 
@@ -24,7 +27,7 @@ class MagneticFlux:
     def __init__(self, value: float, from_unit: MagneticFluxUnits = MagneticFluxUnits.Weber):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__webers = None
         
@@ -33,7 +36,7 @@ class MagneticFlux:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: MagneticFluxUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == MagneticFluxUnits.Weber:
             return (value)
@@ -51,7 +54,7 @@ class MagneticFlux:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -90,7 +93,7 @@ class MagneticFlux:
         if unit == MagneticFluxUnits.Weber:
             return f"""{self.webers} Wb"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: MagneticFluxUnits = MagneticFluxUnits.Weber) -> str:
@@ -103,72 +106,3 @@ class MagneticFlux:
         if unit_abbreviation == MagneticFluxUnits.Weber:
             return """Wb"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for +: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for *: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for -: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for /: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for %: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for **: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return MagneticFlux(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for ==: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for <: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for >: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for <=: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, MagneticFlux):
-            raise TypeError("unsupported operand type(s) for >=: 'MagneticFlux' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

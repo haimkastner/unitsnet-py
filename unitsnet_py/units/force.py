@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ForceUnits(Enum):
         """
@@ -83,7 +86,7 @@ class ForceUnits(Enum):
         """
         
 
-class Force:
+class Force(AbstractMeasure):
     """
     In physics, a force is any influence that causes an object to undergo a certain change, either concerning its movement, direction, or geometrical construction. In other words, a force can cause an object with mass to change its velocity (which includes to begin moving from a state of rest), i.e., to accelerate, or a flexible object to deform, or both. Force can also be described by intuitive concepts such as a push or a pull. A force has both magnitude and direction, making it a vector quantity. It is measured in the SI unit of newtons and represented by the symbol F.
 
@@ -94,7 +97,7 @@ class Force:
     def __init__(self, value: float, from_unit: ForceUnits = ForceUnits.Newton):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__dyne = None
         
@@ -131,7 +134,7 @@ class Force:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: ForceUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ForceUnits.Dyn:
             return (value * 1e5)
@@ -233,7 +236,7 @@ class Force:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -678,7 +681,7 @@ class Force:
         if unit == ForceUnits.KilopoundForce:
             return f"""{self.kilopounds_force} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ForceUnits = ForceUnits.Newton) -> str:
@@ -733,72 +736,3 @@ class Force:
         if unit_abbreviation == ForceUnits.KilopoundForce:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for +: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for *: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for -: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for /: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for %: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for **: 'Force' and '{}'".format(type(other).__name__))
-        return Force(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for ==: 'Force' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for <: 'Force' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for >: 'Force' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for <=: 'Force' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Force):
-            raise TypeError("unsupported operand type(s) for >=: 'Force' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

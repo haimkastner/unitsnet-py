@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ElectricCurrentDensityUnits(Enum):
         """
@@ -23,7 +26,7 @@ class ElectricCurrentDensityUnits(Enum):
         """
         
 
-class ElectricCurrentDensity:
+class ElectricCurrentDensity(AbstractMeasure):
     """
     In electromagnetism, current density is the electric current per unit area of cross section.
 
@@ -34,7 +37,7 @@ class ElectricCurrentDensity:
     def __init__(self, value: float, from_unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__amperes_per_square_meter = None
         
@@ -47,7 +50,7 @@ class ElectricCurrentDensity:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentDensityUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ElectricCurrentDensityUnits.AmperePerSquareMeter:
             return (value)
@@ -77,7 +80,7 @@ class ElectricCurrentDensity:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -174,7 +177,7 @@ class ElectricCurrentDensity:
         if unit == ElectricCurrentDensityUnits.AmperePerSquareFoot:
             return f"""{self.amperes_per_square_foot} A/ft²"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> str:
@@ -193,72 +196,3 @@ class ElectricCurrentDensity:
         if unit_abbreviation == ElectricCurrentDensityUnits.AmperePerSquareFoot:
             return """A/ft²"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for +: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for *: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for -: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for /: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for %: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for **: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return ElectricCurrentDensity(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for ==: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for <: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for >: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for <=: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ElectricCurrentDensity):
-            raise TypeError("unsupported operand type(s) for >=: 'ElectricCurrentDensity' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

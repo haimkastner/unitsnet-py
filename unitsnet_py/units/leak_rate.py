@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class LeakRateUnits(Enum):
         """
@@ -23,7 +26,7 @@ class LeakRateUnits(Enum):
         """
         
 
-class LeakRate:
+class LeakRate(AbstractMeasure):
     """
     A leakage rate of QL = 1 Pa-m³/s is given when the pressure in a closed, evacuated container with a volume of 1 m³ rises by 1 Pa per second or when the pressure in the container drops by 1 Pa in the event of overpressure.
 
@@ -34,7 +37,7 @@ class LeakRate:
     def __init__(self, value: float, from_unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__pascal_cubic_meters_per_second = None
         
@@ -47,7 +50,7 @@ class LeakRate:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: LeakRateUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == LeakRateUnits.PascalCubicMeterPerSecond:
             return (value)
@@ -77,7 +80,7 @@ class LeakRate:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -174,7 +177,7 @@ class LeakRate:
         if unit == LeakRateUnits.TorrLiterPerSecond:
             return f"""{self.torr_liters_per_second} Torr·l/s"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> str:
@@ -193,72 +196,3 @@ class LeakRate:
         if unit_abbreviation == LeakRateUnits.TorrLiterPerSecond:
             return """Torr·l/s"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for +: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for *: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for -: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for /: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for %: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for **: 'LeakRate' and '{}'".format(type(other).__name__))
-        return LeakRate(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for ==: 'LeakRate' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for <: 'LeakRate' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for >: 'LeakRate' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for <=: 'LeakRate' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, LeakRate):
-            raise TypeError("unsupported operand type(s) for >=: 'LeakRate' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

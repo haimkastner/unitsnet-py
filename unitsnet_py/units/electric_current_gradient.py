@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class ElectricCurrentGradientUnits(Enum):
         """
@@ -43,7 +46,7 @@ class ElectricCurrentGradientUnits(Enum):
         """
         
 
-class ElectricCurrentGradient:
+class ElectricCurrentGradient(AbstractMeasure):
     """
     In electromagnetism, the current gradient describes how the current changes in time.
 
@@ -54,7 +57,7 @@ class ElectricCurrentGradient:
     def __init__(self, value: float, from_unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__amperes_per_second = None
         
@@ -75,7 +78,7 @@ class ElectricCurrentGradient:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentGradientUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == ElectricCurrentGradientUnits.AmperePerSecond:
             return (value)
@@ -129,7 +132,7 @@ class ElectricCurrentGradient:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -342,7 +345,7 @@ class ElectricCurrentGradient:
         if unit == ElectricCurrentGradientUnits.MilliamperePerMinute:
             return f"""{self.milliamperes_per_minute} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> str:
@@ -373,72 +376,3 @@ class ElectricCurrentGradient:
         if unit_abbreviation == ElectricCurrentGradientUnits.MilliamperePerMinute:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for +: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for *: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for -: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for /: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for %: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for **: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return ElectricCurrentGradient(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for ==: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for <: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for >: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for <=: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, ElectricCurrentGradient):
-            raise TypeError("unsupported operand type(s) for >=: 'ElectricCurrentGradient' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

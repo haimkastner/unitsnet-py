@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class BrakeSpecificFuelConsumptionUnits(Enum):
         """
@@ -23,7 +26,7 @@ class BrakeSpecificFuelConsumptionUnits(Enum):
         """
         
 
-class BrakeSpecificFuelConsumption:
+class BrakeSpecificFuelConsumption(AbstractMeasure):
     """
     Brake specific fuel consumption (BSFC) is a measure of the fuel efficiency of any prime mover that burns fuel and produces rotational, or shaft, power. It is typically used for comparing the efficiency of internal combustion engines with a shaft output.
 
@@ -34,7 +37,7 @@ class BrakeSpecificFuelConsumption:
     def __init__(self, value: float, from_unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__grams_per_kilo_watt_hour = None
         
@@ -47,7 +50,7 @@ class BrakeSpecificFuelConsumption:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: BrakeSpecificFuelConsumptionUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == BrakeSpecificFuelConsumptionUnits.GramPerKiloWattHour:
             return (value * 3.6e9)
@@ -77,7 +80,7 @@ class BrakeSpecificFuelConsumption:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -174,7 +177,7 @@ class BrakeSpecificFuelConsumption:
         if unit == BrakeSpecificFuelConsumptionUnits.PoundPerMechanicalHorsepowerHour:
             return f"""{self.pounds_per_mechanical_horsepower_hour} lb/hph"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> str:
@@ -193,72 +196,3 @@ class BrakeSpecificFuelConsumption:
         if unit_abbreviation == BrakeSpecificFuelConsumptionUnits.PoundPerMechanicalHorsepowerHour:
             return """lb/hph"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for +: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for *: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for -: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for /: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for %: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for **: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return BrakeSpecificFuelConsumption(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for ==: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for <: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for >: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for <=: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, BrakeSpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for >=: 'BrakeSpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

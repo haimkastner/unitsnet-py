@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class SpecificFuelConsumptionUnits(Enum):
         """
@@ -28,7 +31,7 @@ class SpecificFuelConsumptionUnits(Enum):
         """
         
 
-class SpecificFuelConsumption:
+class SpecificFuelConsumption(AbstractMeasure):
     """
     SFC is the fuel efficiency of an engine design with respect to thrust output
 
@@ -39,7 +42,7 @@ class SpecificFuelConsumption:
     def __init__(self, value: float, from_unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__pounds_mass_per_pound_force_hour = None
         
@@ -54,7 +57,7 @@ class SpecificFuelConsumption:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == SpecificFuelConsumptionUnits.PoundMassPerPoundForceHour:
             return (value / 28.33)
@@ -90,7 +93,7 @@ class SpecificFuelConsumption:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -216,7 +219,7 @@ class SpecificFuelConsumption:
         if unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
             return f"""{self.kilograms_per_kilo_newton_second} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> str:
@@ -238,72 +241,3 @@ class SpecificFuelConsumption:
         if unit_abbreviation == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for +: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for *: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for -: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for /: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for %: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for **: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return SpecificFuelConsumption(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for ==: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for <: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for >: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for <=: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, SpecificFuelConsumption):
-            raise TypeError("unsupported operand type(s) for >=: 'SpecificFuelConsumption' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

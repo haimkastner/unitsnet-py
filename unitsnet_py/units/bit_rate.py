@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class BitRateUnits(Enum):
         """
@@ -78,7 +81,7 @@ class BitRateUnits(Enum):
         """
         
 
-class BitRate:
+class BitRate(AbstractMeasure):
     """
     In telecommunications and computing, bit rate is the number of bits that are conveyed or processed per unit of time.
 
@@ -89,7 +92,7 @@ class BitRate:
     def __init__(self, value: float, from_unit: BitRateUnits = BitRateUnits.BitPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__bits_per_second = None
         
@@ -124,7 +127,7 @@ class BitRate:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == BitRateUnits.BitPerSecond:
             return (value)
@@ -220,7 +223,7 @@ class BitRate:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -636,7 +639,7 @@ class BitRate:
         if unit == BitRateUnits.ExabytePerSecond:
             return f"""{self.exabytes_per_second} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: BitRateUnits = BitRateUnits.BitPerSecond) -> str:
@@ -688,72 +691,3 @@ class BitRate:
         if unit_abbreviation == BitRateUnits.ExabytePerSecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for +: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for *: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for -: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for /: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for %: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for **: 'BitRate' and '{}'".format(type(other).__name__))
-        return BitRate(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for ==: 'BitRate' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for <: 'BitRate' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for >: 'BitRate' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for <=: 'BitRate' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, BitRate):
-            raise TypeError("unsupported operand type(s) for >=: 'BitRate' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

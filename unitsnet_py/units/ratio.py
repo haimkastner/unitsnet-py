@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class RatioUnits(Enum):
         """
@@ -38,7 +41,7 @@ class RatioUnits(Enum):
         """
         
 
-class Ratio:
+class Ratio(AbstractMeasure):
     """
     In mathematics, a ratio is a relationship between two numbers of the same kind (e.g., objects, persons, students, spoonfuls, units of whatever identical dimension), usually expressed as "a to b" or a:b, sometimes expressed arithmetically as a dimensionless quotient of the two that explicitly indicates how many times the first number contains the second (not necessarily an integer).
 
@@ -49,7 +52,7 @@ class Ratio:
     def __init__(self, value: float, from_unit: RatioUnits = RatioUnits.DecimalFraction):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__decimal_fractions = None
         
@@ -68,7 +71,7 @@ class Ratio:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: RatioUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == RatioUnits.DecimalFraction:
             return (value)
@@ -116,7 +119,7 @@ class Ratio:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -300,7 +303,7 @@ class Ratio:
         if unit == RatioUnits.PartPerTrillion:
             return f"""{self.parts_per_trillion} ppt"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: RatioUnits = RatioUnits.DecimalFraction) -> str:
@@ -328,72 +331,3 @@ class Ratio:
         if unit_abbreviation == RatioUnits.PartPerTrillion:
             return """ppt"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for +: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for *: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for -: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for /: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for %: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for **: 'Ratio' and '{}'".format(type(other).__name__))
-        return Ratio(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for ==: 'Ratio' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for <: 'Ratio' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for >: 'Ratio' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for <=: 'Ratio' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Ratio):
-            raise TypeError("unsupported operand type(s) for >=: 'Ratio' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

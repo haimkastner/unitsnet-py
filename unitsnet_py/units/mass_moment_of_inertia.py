@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class MassMomentOfInertiaUnits(Enum):
         """
@@ -148,7 +151,7 @@ class MassMomentOfInertiaUnits(Enum):
         """
         
 
-class MassMomentOfInertia:
+class MassMomentOfInertia(AbstractMeasure):
     """
     A property of body reflects how its mass is distributed with regard to an axis.
 
@@ -159,7 +162,7 @@ class MassMomentOfInertia:
     def __init__(self, value: float, from_unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__gram_square_meters = None
         
@@ -222,7 +225,7 @@ class MassMomentOfInertia:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: MassMomentOfInertiaUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == MassMomentOfInertiaUnits.GramSquareMeter:
             return (value * 1e3)
@@ -402,7 +405,7 @@ class MassMomentOfInertia:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -1224,7 +1227,7 @@ class MassMomentOfInertia:
         if unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
             return f"""{self.megatonne_square_milimeters} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> str:
@@ -1318,72 +1321,3 @@ class MassMomentOfInertia:
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for +: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for *: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for -: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for /: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for %: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for **: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return MassMomentOfInertia(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for ==: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for <: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for >: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for <=: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, MassMomentOfInertia):
-            raise TypeError("unsupported operand type(s) for >=: 'MassMomentOfInertia' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class LengthUnits(Enum):
         """
@@ -208,7 +211,7 @@ class LengthUnits(Enum):
         """
         
 
-class Length:
+class Length(AbstractMeasure):
     """
     Many different units of length have been used around the world. The main units in modern use are U.S. customary units in the United States and the Metric system elsewhere. British Imperial units are still used for some purposes in the United Kingdom and some other countries. The metric system is sub-divided into SI and non-SI units.
 
@@ -219,7 +222,7 @@ class Length:
     def __init__(self, value: float, from_unit: LengthUnits = LengthUnits.Meter):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__meters = None
         
@@ -306,7 +309,7 @@ class Length:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: LengthUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == LengthUnits.Meter:
             return (value)
@@ -558,7 +561,7 @@ class Length:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -1728,7 +1731,7 @@ class Length:
         if unit == LengthUnits.MegalightYear:
             return f"""{self.megalight_years} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: LengthUnits = LengthUnits.Meter) -> str:
@@ -1858,72 +1861,3 @@ class Length:
         if unit_abbreviation == LengthUnits.MegalightYear:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for +: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for *: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for -: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for /: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for %: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for **: 'Length' and '{}'".format(type(other).__name__))
-        return Length(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for ==: 'Length' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for <: 'Length' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for >: 'Length' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for <=: 'Length' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Length):
-            raise TypeError("unsupported operand type(s) for >=: 'Length' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

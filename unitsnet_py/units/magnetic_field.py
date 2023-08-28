@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class MagneticFieldUnits(Enum):
         """
@@ -38,7 +41,7 @@ class MagneticFieldUnits(Enum):
         """
         
 
-class MagneticField:
+class MagneticField(AbstractMeasure):
     """
     A magnetic field is a force field that is created by moving electric charges (electric currents) and magnetic dipoles, and exerts a force on other nearby moving charges and magnetic dipoles.
 
@@ -49,7 +52,7 @@ class MagneticField:
     def __init__(self, value: float, from_unit: MagneticFieldUnits = MagneticFieldUnits.Tesla):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__teslas = None
         
@@ -68,7 +71,7 @@ class MagneticField:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: MagneticFieldUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == MagneticFieldUnits.Tesla:
             return (value)
@@ -116,7 +119,7 @@ class MagneticField:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -300,7 +303,7 @@ class MagneticField:
         if unit == MagneticFieldUnits.Milligauss:
             return f"""{self.milligausses} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> str:
@@ -328,72 +331,3 @@ class MagneticField:
         if unit_abbreviation == MagneticFieldUnits.Milligauss:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for +: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for *: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for -: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for /: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for %: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for **: 'MagneticField' and '{}'".format(type(other).__name__))
-        return MagneticField(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for ==: 'MagneticField' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for <: 'MagneticField' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for >: 'MagneticField' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for <=: 'MagneticField' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, MagneticField):
-            raise TypeError("unsupported operand type(s) for >=: 'MagneticField' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

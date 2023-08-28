@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class RotationalSpeedUnits(Enum):
         """
@@ -73,7 +76,7 @@ class RotationalSpeedUnits(Enum):
         """
         
 
-class RotationalSpeed:
+class RotationalSpeed(AbstractMeasure):
     """
     Rotational speed (sometimes called speed of revolution) is the number of complete rotations, revolutions, cycles, or turns per time unit. Rotational speed is a cyclic frequency, measured in radians per second or in hertz in the SI System by scientists, or in revolutions per minute (rpm or min-1) or revolutions per second in everyday life. The symbol for rotational speed is ω (the Greek lowercase letter "omega").
 
@@ -84,7 +87,7 @@ class RotationalSpeed:
     def __init__(self, value: float, from_unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__radians_per_second = None
         
@@ -117,7 +120,7 @@ class RotationalSpeed:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: RotationalSpeedUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == RotationalSpeedUnits.RadianPerSecond:
             return (value)
@@ -207,7 +210,7 @@ class RotationalSpeed:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -594,7 +597,7 @@ class RotationalSpeed:
         if unit == RotationalSpeedUnits.MillidegreePerSecond:
             return f"""{self.millidegrees_per_second} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> str:
@@ -643,72 +646,3 @@ class RotationalSpeed:
         if unit_abbreviation == RotationalSpeedUnits.MillidegreePerSecond:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for +: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for *: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for -: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for /: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for %: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for **: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return RotationalSpeed(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for ==: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for <: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for >: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for <=: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, RotationalSpeed):
-            raise TypeError("unsupported operand type(s) for >=: 'RotationalSpeed' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

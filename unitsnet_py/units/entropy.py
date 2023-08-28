@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class EntropyUnits(Enum):
         """
@@ -43,7 +46,7 @@ class EntropyUnits(Enum):
         """
         
 
-class Entropy:
+class Entropy(AbstractMeasure):
     """
     Entropy is an important concept in the branch of science known as thermodynamics. The idea of "irreversibility" is central to the understanding of entropy.  It is often said that entropy is an expression of the disorder, or randomness of a system, or of our lack of information about it. Entropy is an extensive property. It has the dimension of energy divided by temperature, which has a unit of joules per kelvin (J/K) in the International System of Units
 
@@ -54,7 +57,7 @@ class Entropy:
     def __init__(self, value: float, from_unit: EntropyUnits = EntropyUnits.JoulePerKelvin):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules_per_kelvin = None
         
@@ -75,7 +78,7 @@ class Entropy:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: EntropyUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == EntropyUnits.JoulePerKelvin:
             return (value)
@@ -129,7 +132,7 @@ class Entropy:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -342,7 +345,7 @@ class Entropy:
         if unit == EntropyUnits.KilojoulePerDegreeCelsius:
             return f"""{self.kilojoules_per_degree_celsius} """
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: EntropyUnits = EntropyUnits.JoulePerKelvin) -> str:
@@ -373,72 +376,3 @@ class Entropy:
         if unit_abbreviation == EntropyUnits.KilojoulePerDegreeCelsius:
             return """"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for +: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for *: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for -: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for /: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for %: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for **: 'Entropy' and '{}'".format(type(other).__name__))
-        return Entropy(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for ==: 'Entropy' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for <: 'Entropy' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for >: 'Entropy' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for <=: 'Entropy' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, Entropy):
-            raise TypeError("unsupported operand type(s) for >=: 'Entropy' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value

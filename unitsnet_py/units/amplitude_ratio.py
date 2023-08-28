@@ -1,6 +1,9 @@
 from enum import Enum
 import math
 
+from ..abstract_unit import AbstractMeasure
+
+
 
 class AmplitudeRatioUnits(Enum):
         """
@@ -28,7 +31,7 @@ class AmplitudeRatioUnits(Enum):
         """
         
 
-class AmplitudeRatio:
+class AmplitudeRatio(AbstractMeasure):
     """
     The strength of a signal expressed in decibels (dB) relative to one volt RMS.
 
@@ -39,7 +42,7 @@ class AmplitudeRatio:
     def __init__(self, value: float, from_unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt):
         if math.isnan(value):
             raise ValueError('Invalid unit: value is NaN')
-        self.__value = self.__convert_to_base(value, from_unit)
+        self._value = self.__convert_to_base(value, from_unit)
         
         self.__decibel_volts = None
         
@@ -54,7 +57,7 @@ class AmplitudeRatio:
         return self.__convert_from_base(unit)
 
     def __convert_from_base(self, from_unit: AmplitudeRatioUnits) -> float:
-        value = self.__value
+        value = self._value
         
         if from_unit == AmplitudeRatioUnits.DecibelVolt:
             return (value)
@@ -90,7 +93,7 @@ class AmplitudeRatio:
 
     @property
     def base_value(self) -> float:
-        return self.__value
+        return self._value
 
     
     @staticmethod
@@ -216,7 +219,7 @@ class AmplitudeRatio:
         if unit == AmplitudeRatioUnits.DecibelUnloaded:
             return f"""{self.decibels_unloaded} dBu"""
         
-        return f'{self.__value}'
+        return f'{self._value}'
 
 
     def get_unit_abbreviation(self, unit_abbreviation: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> str:
@@ -238,72 +241,3 @@ class AmplitudeRatio:
         if unit_abbreviation == AmplitudeRatioUnits.DecibelUnloaded:
             return """dBu"""
         
-
-    def __str__(self):
-        return self.to_string()
-
-
-    def __add__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for +: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value + other.__value)
-
-
-    def __mul__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for *: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value * other.__value)
-
-
-    def __sub__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for -: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value - other.__value)
-
-
-    def __truediv__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for /: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value / other.__value)
-
-
-    def __mod__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for %: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value % other.__value)
-
-
-    def __pow__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for **: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return AmplitudeRatio(self.__value ** other.__value)
-
-
-    def __eq__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for ==: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return self.__value == other.__value
-
-
-    def __lt__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for <: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return self.__value < other.__value
-
-
-    def __gt__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for >: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return self.__value > other.__value
-
-
-    def __le__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for <=: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return self.__value <= other.__value
-
-
-    def __ge__(self, other):
-        if not isinstance(other, AmplitudeRatio):
-            raise TypeError("unsupported operand type(s) for >=: 'AmplitudeRatio' and '{}'".format(type(other).__name__))
-        return self.__value >= other.__value
