@@ -334,16 +334,16 @@ class Entropy(AbstractMeasure):
             return f"""{self.joules_per_degree_celsius} J/C"""
         
         if unit == EntropyUnits.KilojoulePerKelvin:
-            return f"""{self.kilojoules_per_kelvin} """
+            return f"""{self.kilojoules_per_kelvin} kJ/K"""
         
         if unit == EntropyUnits.MegajoulePerKelvin:
-            return f"""{self.megajoules_per_kelvin} """
+            return f"""{self.megajoules_per_kelvin} MJ/K"""
         
         if unit == EntropyUnits.KilocaloriePerKelvin:
-            return f"""{self.kilocalories_per_kelvin} """
+            return f"""{self.kilocalories_per_kelvin} kcal/K"""
         
         if unit == EntropyUnits.KilojoulePerDegreeCelsius:
-            return f"""{self.kilojoules_per_degree_celsius} """
+            return f"""{self.kilojoules_per_degree_celsius} kJ/C"""
         
         return f'{self._value}'
 
@@ -365,14 +365,14 @@ class Entropy(AbstractMeasure):
             return """J/C"""
         
         if unit_abbreviation == EntropyUnits.KilojoulePerKelvin:
-            return """"""
+            return """kJ/K"""
         
         if unit_abbreviation == EntropyUnits.MegajoulePerKelvin:
-            return """"""
+            return """MJ/K"""
         
         if unit_abbreviation == EntropyUnits.KilocaloriePerKelvin:
-            return """"""
+            return """kcal/K"""
         
         if unit_abbreviation == EntropyUnits.KilojoulePerDegreeCelsius:
-            return """"""
+            return """kJ/C"""
         

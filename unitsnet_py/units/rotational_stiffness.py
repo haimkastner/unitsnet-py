@@ -1360,82 +1360,82 @@ class RotationalStiffness(AbstractMeasure):
             return f"""{self.pound_force_feet_per_radian} lbf·ft/rad"""
         
         if unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
-            return f"""{self.kilonewton_meters_per_radian} """
+            return f"""{self.kilonewton_meters_per_radian} kN·m/rad"""
         
         if unit == RotationalStiffnessUnits.MeganewtonMeterPerRadian:
-            return f"""{self.meganewton_meters_per_radian} """
+            return f"""{self.meganewton_meters_per_radian} MN·m/rad"""
         
         if unit == RotationalStiffnessUnits.NanonewtonMillimeterPerDegree:
-            return f"""{self.nanonewton_millimeters_per_degree} """
+            return f"""{self.nanonewton_millimeters_per_degree} nN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.MicronewtonMillimeterPerDegree:
-            return f"""{self.micronewton_millimeters_per_degree} """
+            return f"""{self.micronewton_millimeters_per_degree} μN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.MillinewtonMillimeterPerDegree:
-            return f"""{self.millinewton_millimeters_per_degree} """
+            return f"""{self.millinewton_millimeters_per_degree} mN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.CentinewtonMillimeterPerDegree:
-            return f"""{self.centinewton_millimeters_per_degree} """
+            return f"""{self.centinewton_millimeters_per_degree} cN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.DecinewtonMillimeterPerDegree:
-            return f"""{self.decinewton_millimeters_per_degree} """
+            return f"""{self.decinewton_millimeters_per_degree} dN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.DecanewtonMillimeterPerDegree:
-            return f"""{self.decanewton_millimeters_per_degree} """
+            return f"""{self.decanewton_millimeters_per_degree} daN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.KilonewtonMillimeterPerDegree:
-            return f"""{self.kilonewton_millimeters_per_degree} """
+            return f"""{self.kilonewton_millimeters_per_degree} kN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.MeganewtonMillimeterPerDegree:
-            return f"""{self.meganewton_millimeters_per_degree} """
+            return f"""{self.meganewton_millimeters_per_degree} MN·mm/deg"""
         
         if unit == RotationalStiffnessUnits.NanonewtonMeterPerDegree:
-            return f"""{self.nanonewton_meters_per_degree} """
+            return f"""{self.nanonewton_meters_per_degree} nN·m/deg"""
         
         if unit == RotationalStiffnessUnits.MicronewtonMeterPerDegree:
-            return f"""{self.micronewton_meters_per_degree} """
+            return f"""{self.micronewton_meters_per_degree} μN·m/deg"""
         
         if unit == RotationalStiffnessUnits.MillinewtonMeterPerDegree:
-            return f"""{self.millinewton_meters_per_degree} """
+            return f"""{self.millinewton_meters_per_degree} mN·m/deg"""
         
         if unit == RotationalStiffnessUnits.CentinewtonMeterPerDegree:
-            return f"""{self.centinewton_meters_per_degree} """
+            return f"""{self.centinewton_meters_per_degree} cN·m/deg"""
         
         if unit == RotationalStiffnessUnits.DecinewtonMeterPerDegree:
-            return f"""{self.decinewton_meters_per_degree} """
+            return f"""{self.decinewton_meters_per_degree} dN·m/deg"""
         
         if unit == RotationalStiffnessUnits.DecanewtonMeterPerDegree:
-            return f"""{self.decanewton_meters_per_degree} """
+            return f"""{self.decanewton_meters_per_degree} daN·m/deg"""
         
         if unit == RotationalStiffnessUnits.KilonewtonMeterPerDegree:
-            return f"""{self.kilonewton_meters_per_degree} """
+            return f"""{self.kilonewton_meters_per_degree} kN·m/deg"""
         
         if unit == RotationalStiffnessUnits.MeganewtonMeterPerDegree:
-            return f"""{self.meganewton_meters_per_degree} """
+            return f"""{self.meganewton_meters_per_degree} MN·m/deg"""
         
         if unit == RotationalStiffnessUnits.NanonewtonMillimeterPerRadian:
-            return f"""{self.nanonewton_millimeters_per_radian} """
+            return f"""{self.nanonewton_millimeters_per_radian} nN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.MicronewtonMillimeterPerRadian:
-            return f"""{self.micronewton_millimeters_per_radian} """
+            return f"""{self.micronewton_millimeters_per_radian} μN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.MillinewtonMillimeterPerRadian:
-            return f"""{self.millinewton_millimeters_per_radian} """
+            return f"""{self.millinewton_millimeters_per_radian} mN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.CentinewtonMillimeterPerRadian:
-            return f"""{self.centinewton_millimeters_per_radian} """
+            return f"""{self.centinewton_millimeters_per_radian} cN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.DecinewtonMillimeterPerRadian:
-            return f"""{self.decinewton_millimeters_per_radian} """
+            return f"""{self.decinewton_millimeters_per_radian} dN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.DecanewtonMillimeterPerRadian:
-            return f"""{self.decanewton_millimeters_per_radian} """
+            return f"""{self.decanewton_millimeters_per_radian} daN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.KilonewtonMillimeterPerRadian:
-            return f"""{self.kilonewton_millimeters_per_radian} """
+            return f"""{self.kilonewton_millimeters_per_radian} kN·mm/rad"""
         
         if unit == RotationalStiffnessUnits.MeganewtonMillimeterPerRadian:
-            return f"""{self.meganewton_millimeters_per_radian} """
+            return f"""{self.meganewton_millimeters_per_radian} MN·mm/rad"""
         
         return f'{self._value}'
 
@@ -1469,80 +1469,80 @@ class RotationalStiffness(AbstractMeasure):
             return """lbf·ft/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
-            return """"""
+            return """kN·m/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MeganewtonMeterPerRadian:
-            return """"""
+            return """MN·m/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.NanonewtonMillimeterPerDegree:
-            return """"""
+            return """nN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MicronewtonMillimeterPerDegree:
-            return """"""
+            return """μN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MillinewtonMillimeterPerDegree:
-            return """"""
+            return """mN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.CentinewtonMillimeterPerDegree:
-            return """"""
+            return """cN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecinewtonMillimeterPerDegree:
-            return """"""
+            return """dN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecanewtonMillimeterPerDegree:
-            return """"""
+            return """daN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.KilonewtonMillimeterPerDegree:
-            return """"""
+            return """kN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MeganewtonMillimeterPerDegree:
-            return """"""
+            return """MN·mm/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.NanonewtonMeterPerDegree:
-            return """"""
+            return """nN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MicronewtonMeterPerDegree:
-            return """"""
+            return """μN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MillinewtonMeterPerDegree:
-            return """"""
+            return """mN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.CentinewtonMeterPerDegree:
-            return """"""
+            return """cN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecinewtonMeterPerDegree:
-            return """"""
+            return """dN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecanewtonMeterPerDegree:
-            return """"""
+            return """daN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.KilonewtonMeterPerDegree:
-            return """"""
+            return """kN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MeganewtonMeterPerDegree:
-            return """"""
+            return """MN·m/deg"""
         
         if unit_abbreviation == RotationalStiffnessUnits.NanonewtonMillimeterPerRadian:
-            return """"""
+            return """nN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MicronewtonMillimeterPerRadian:
-            return """"""
+            return """μN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MillinewtonMillimeterPerRadian:
-            return """"""
+            return """mN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.CentinewtonMillimeterPerRadian:
-            return """"""
+            return """cN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecinewtonMillimeterPerRadian:
-            return """"""
+            return """dN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.DecanewtonMillimeterPerRadian:
-            return """"""
+            return """daN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.KilonewtonMillimeterPerRadian:
-            return """"""
+            return """kN·mm/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.MeganewtonMillimeterPerRadian:
-            return """"""
+            return """MN·mm/rad"""
         

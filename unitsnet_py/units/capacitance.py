@@ -328,22 +328,22 @@ class Capacitance(AbstractMeasure):
             return f"""{self.farads} F"""
         
         if unit == CapacitanceUnits.Picofarad:
-            return f"""{self.picofarads} """
+            return f"""{self.picofarads} pF"""
         
         if unit == CapacitanceUnits.Nanofarad:
-            return f"""{self.nanofarads} """
+            return f"""{self.nanofarads} nF"""
         
         if unit == CapacitanceUnits.Microfarad:
-            return f"""{self.microfarads} """
+            return f"""{self.microfarads} μF"""
         
         if unit == CapacitanceUnits.Millifarad:
-            return f"""{self.millifarads} """
+            return f"""{self.millifarads} mF"""
         
         if unit == CapacitanceUnits.Kilofarad:
-            return f"""{self.kilofarads} """
+            return f"""{self.kilofarads} kF"""
         
         if unit == CapacitanceUnits.Megafarad:
-            return f"""{self.megafarads} """
+            return f"""{self.megafarads} MF"""
         
         return f'{self._value}'
 
@@ -359,20 +359,20 @@ class Capacitance(AbstractMeasure):
             return """F"""
         
         if unit_abbreviation == CapacitanceUnits.Picofarad:
-            return """"""
+            return """pF"""
         
         if unit_abbreviation == CapacitanceUnits.Nanofarad:
-            return """"""
+            return """nF"""
         
         if unit_abbreviation == CapacitanceUnits.Microfarad:
-            return """"""
+            return """μF"""
         
         if unit_abbreviation == CapacitanceUnits.Millifarad:
-            return """"""
+            return """mF"""
         
         if unit_abbreviation == CapacitanceUnits.Kilofarad:
-            return """"""
+            return """kF"""
         
         if unit_abbreviation == CapacitanceUnits.Megafarad:
-            return """"""
+            return """MF"""
         

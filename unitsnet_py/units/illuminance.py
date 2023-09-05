@@ -211,13 +211,13 @@ class Illuminance(AbstractMeasure):
             return f"""{self.lux} lx"""
         
         if unit == IlluminanceUnits.Millilux:
-            return f"""{self.millilux} """
+            return f"""{self.millilux} mlx"""
         
         if unit == IlluminanceUnits.Kilolux:
-            return f"""{self.kilolux} """
+            return f"""{self.kilolux} klx"""
         
         if unit == IlluminanceUnits.Megalux:
-            return f"""{self.megalux} """
+            return f"""{self.megalux} Mlx"""
         
         return f'{self._value}'
 
@@ -233,11 +233,11 @@ class Illuminance(AbstractMeasure):
             return """lx"""
         
         if unit_abbreviation == IlluminanceUnits.Millilux:
-            return """"""
+            return """mlx"""
         
         if unit_abbreviation == IlluminanceUnits.Kilolux:
-            return """"""
+            return """klx"""
         
         if unit_abbreviation == IlluminanceUnits.Megalux:
-            return """"""
+            return """Mlx"""
         

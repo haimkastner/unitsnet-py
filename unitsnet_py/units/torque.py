@@ -1072,34 +1072,34 @@ class Torque(AbstractMeasure):
             return f"""{self.tonne_force_meters} tf·m"""
         
         if unit == TorqueUnits.KilonewtonMillimeter:
-            return f"""{self.kilonewton_millimeters} """
+            return f"""{self.kilonewton_millimeters} kN·mm"""
         
         if unit == TorqueUnits.MeganewtonMillimeter:
-            return f"""{self.meganewton_millimeters} """
+            return f"""{self.meganewton_millimeters} MN·mm"""
         
         if unit == TorqueUnits.KilonewtonCentimeter:
-            return f"""{self.kilonewton_centimeters} """
+            return f"""{self.kilonewton_centimeters} kN·cm"""
         
         if unit == TorqueUnits.MeganewtonCentimeter:
-            return f"""{self.meganewton_centimeters} """
+            return f"""{self.meganewton_centimeters} MN·cm"""
         
         if unit == TorqueUnits.KilonewtonMeter:
-            return f"""{self.kilonewton_meters} """
+            return f"""{self.kilonewton_meters} kN·m"""
         
         if unit == TorqueUnits.MeganewtonMeter:
-            return f"""{self.meganewton_meters} """
+            return f"""{self.meganewton_meters} MN·m"""
         
         if unit == TorqueUnits.KilopoundForceInch:
-            return f"""{self.kilopound_force_inches} """
+            return f"""{self.kilopound_force_inches} klbf·in"""
         
         if unit == TorqueUnits.MegapoundForceInch:
-            return f"""{self.megapound_force_inches} """
+            return f"""{self.megapound_force_inches} Mlbf·in"""
         
         if unit == TorqueUnits.KilopoundForceFoot:
-            return f"""{self.kilopound_force_feet} """
+            return f"""{self.kilopound_force_feet} klbf·ft"""
         
         if unit == TorqueUnits.MegapoundForceFoot:
-            return f"""{self.megapound_force_feet} """
+            return f"""{self.megapound_force_feet} Mlbf·ft"""
         
         return f'{self._value}'
 
@@ -1157,32 +1157,32 @@ class Torque(AbstractMeasure):
             return """tf·m"""
         
         if unit_abbreviation == TorqueUnits.KilonewtonMillimeter:
-            return """"""
+            return """kN·mm"""
         
         if unit_abbreviation == TorqueUnits.MeganewtonMillimeter:
-            return """"""
+            return """MN·mm"""
         
         if unit_abbreviation == TorqueUnits.KilonewtonCentimeter:
-            return """"""
+            return """kN·cm"""
         
         if unit_abbreviation == TorqueUnits.MeganewtonCentimeter:
-            return """"""
+            return """MN·cm"""
         
         if unit_abbreviation == TorqueUnits.KilonewtonMeter:
-            return """"""
+            return """kN·m"""
         
         if unit_abbreviation == TorqueUnits.MeganewtonMeter:
-            return """"""
+            return """MN·m"""
         
         if unit_abbreviation == TorqueUnits.KilopoundForceInch:
-            return """"""
+            return """klbf·in"""
         
         if unit_abbreviation == TorqueUnits.MegapoundForceInch:
-            return """"""
+            return """Mlbf·in"""
         
         if unit_abbreviation == TorqueUnits.KilopoundForceFoot:
-            return """"""
+            return """klbf·ft"""
         
         if unit_abbreviation == TorqueUnits.MegapoundForceFoot:
-            return """"""
+            return """Mlbf·ft"""
         

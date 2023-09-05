@@ -904,34 +904,34 @@ class TorquePerLength(AbstractMeasure):
             return f"""{self.tonne_force_meters_per_meter} tf·m/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonMillimeterPerMeter:
-            return f"""{self.kilonewton_millimeters_per_meter} """
+            return f"""{self.kilonewton_millimeters_per_meter} kN·mm/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonMillimeterPerMeter:
-            return f"""{self.meganewton_millimeters_per_meter} """
+            return f"""{self.meganewton_millimeters_per_meter} MN·mm/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonCentimeterPerMeter:
-            return f"""{self.kilonewton_centimeters_per_meter} """
+            return f"""{self.kilonewton_centimeters_per_meter} kN·cm/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonCentimeterPerMeter:
-            return f"""{self.meganewton_centimeters_per_meter} """
+            return f"""{self.meganewton_centimeters_per_meter} MN·cm/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonMeterPerMeter:
-            return f"""{self.kilonewton_meters_per_meter} """
+            return f"""{self.kilonewton_meters_per_meter} kN·m/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonMeterPerMeter:
-            return f"""{self.meganewton_meters_per_meter} """
+            return f"""{self.meganewton_meters_per_meter} MN·m/m"""
         
         if unit == TorquePerLengthUnits.KilopoundForceInchPerFoot:
-            return f"""{self.kilopound_force_inches_per_foot} """
+            return f"""{self.kilopound_force_inches_per_foot} klbf·in/ft"""
         
         if unit == TorquePerLengthUnits.MegapoundForceInchPerFoot:
-            return f"""{self.megapound_force_inches_per_foot} """
+            return f"""{self.megapound_force_inches_per_foot} Mlbf·in/ft"""
         
         if unit == TorquePerLengthUnits.KilopoundForceFootPerFoot:
-            return f"""{self.kilopound_force_feet_per_foot} """
+            return f"""{self.kilopound_force_feet_per_foot} klbf·ft/ft"""
         
         if unit == TorquePerLengthUnits.MegapoundForceFootPerFoot:
-            return f"""{self.megapound_force_feet_per_foot} """
+            return f"""{self.megapound_force_feet_per_foot} Mlbf·ft/ft"""
         
         return f'{self._value}'
 
@@ -977,32 +977,32 @@ class TorquePerLength(AbstractMeasure):
             return """tf·m/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.KilonewtonMillimeterPerMeter:
-            return """"""
+            return """kN·mm/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.MeganewtonMillimeterPerMeter:
-            return """"""
+            return """MN·mm/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.KilonewtonCentimeterPerMeter:
-            return """"""
+            return """kN·cm/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.MeganewtonCentimeterPerMeter:
-            return """"""
+            return """MN·cm/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.KilonewtonMeterPerMeter:
-            return """"""
+            return """kN·m/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.MeganewtonMeterPerMeter:
-            return """"""
+            return """MN·m/m"""
         
         if unit_abbreviation == TorquePerLengthUnits.KilopoundForceInchPerFoot:
-            return """"""
+            return """klbf·in/ft"""
         
         if unit_abbreviation == TorquePerLengthUnits.MegapoundForceInchPerFoot:
-            return """"""
+            return """Mlbf·in/ft"""
         
         if unit_abbreviation == TorquePerLengthUnits.KilopoundForceFootPerFoot:
-            return """"""
+            return """klbf·ft/ft"""
         
         if unit_abbreviation == TorquePerLengthUnits.MegapoundForceFootPerFoot:
-            return """"""
+            return """Mlbf·ft/ft"""
         

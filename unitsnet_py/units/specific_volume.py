@@ -175,7 +175,7 @@ class SpecificVolume(AbstractMeasure):
             return f"""{self.cubic_feet_per_pound} ft³/lb"""
         
         if unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
-            return f"""{self.millicubic_meters_per_kilogram} """
+            return f"""{self.millicubic_meters_per_kilogram} mm³/kg"""
         
         return f'{self._value}'
 
@@ -194,5 +194,5 @@ class SpecificVolume(AbstractMeasure):
             return """ft³/lb"""
         
         if unit_abbreviation == SpecificVolumeUnits.MillicubicMeterPerKilogram:
-            return """"""
+            return """mm³/kg"""
         

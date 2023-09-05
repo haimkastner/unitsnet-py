@@ -43,3 +43,22 @@ prefixes_factor = {
     'Pico': 1e-12,
     'Femto': 1e-15,
 }
+
+
+prefixes_factor_abbreviation = {
+    'Exa': 'E',
+    'Peta': 'P',
+    'Tera': 'T',
+    'Giga': 'G',
+    'Mega': 'M',
+    'Kilo': 'k',
+    'Hecto': 'h',
+    'Deca': 'da',
+    'Deci': 'd',
+    'Centi': 'c',
+    'Milli': 'm',
+    'Micro': 'μ',
+    'Nano': 'n',
+    'Pico': 'p',
+    'Femto': 'f'
+}

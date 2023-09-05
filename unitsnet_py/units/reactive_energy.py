@@ -172,10 +172,10 @@ class ReactiveEnergy(AbstractMeasure):
             return f"""{self.voltampere_reactive_hours} varh"""
         
         if unit == ReactiveEnergyUnits.KilovoltampereReactiveHour:
-            return f"""{self.kilovoltampere_reactive_hours} """
+            return f"""{self.kilovoltampere_reactive_hours} kvarh"""
         
         if unit == ReactiveEnergyUnits.MegavoltampereReactiveHour:
-            return f"""{self.megavoltampere_reactive_hours} """
+            return f"""{self.megavoltampere_reactive_hours} Mvarh"""
         
         return f'{self._value}'
 
@@ -191,8 +191,8 @@ class ReactiveEnergy(AbstractMeasure):
             return """varh"""
         
         if unit_abbreviation == ReactiveEnergyUnits.KilovoltampereReactiveHour:
-            return """"""
+            return """kvarh"""
         
         if unit_abbreviation == ReactiveEnergyUnits.MegavoltampereReactiveHour:
-            return """"""
+            return """Mvarh"""
         

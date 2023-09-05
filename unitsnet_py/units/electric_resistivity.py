@@ -604,40 +604,40 @@ class ElectricResistivity(AbstractMeasure):
             return f"""{self.ohms_centimeter} Ω·cm"""
         
         if unit == ElectricResistivityUnits.PicoohmMeter:
-            return f"""{self.picoohm_meters} """
+            return f"""{self.picoohm_meters} pΩ·m"""
         
         if unit == ElectricResistivityUnits.NanoohmMeter:
-            return f"""{self.nanoohm_meters} """
+            return f"""{self.nanoohm_meters} nΩ·m"""
         
         if unit == ElectricResistivityUnits.MicroohmMeter:
-            return f"""{self.microohm_meters} """
+            return f"""{self.microohm_meters} μΩ·m"""
         
         if unit == ElectricResistivityUnits.MilliohmMeter:
-            return f"""{self.milliohm_meters} """
+            return f"""{self.milliohm_meters} mΩ·m"""
         
         if unit == ElectricResistivityUnits.KiloohmMeter:
-            return f"""{self.kiloohm_meters} """
+            return f"""{self.kiloohm_meters} kΩ·m"""
         
         if unit == ElectricResistivityUnits.MegaohmMeter:
-            return f"""{self.megaohm_meters} """
+            return f"""{self.megaohm_meters} MΩ·m"""
         
         if unit == ElectricResistivityUnits.PicoohmCentimeter:
-            return f"""{self.picoohms_centimeter} """
+            return f"""{self.picoohms_centimeter} pΩ·cm"""
         
         if unit == ElectricResistivityUnits.NanoohmCentimeter:
-            return f"""{self.nanoohms_centimeter} """
+            return f"""{self.nanoohms_centimeter} nΩ·cm"""
         
         if unit == ElectricResistivityUnits.MicroohmCentimeter:
-            return f"""{self.microohms_centimeter} """
+            return f"""{self.microohms_centimeter} μΩ·cm"""
         
         if unit == ElectricResistivityUnits.MilliohmCentimeter:
-            return f"""{self.milliohms_centimeter} """
+            return f"""{self.milliohms_centimeter} mΩ·cm"""
         
         if unit == ElectricResistivityUnits.KiloohmCentimeter:
-            return f"""{self.kiloohms_centimeter} """
+            return f"""{self.kiloohms_centimeter} kΩ·cm"""
         
         if unit == ElectricResistivityUnits.MegaohmCentimeter:
-            return f"""{self.megaohms_centimeter} """
+            return f"""{self.megaohms_centimeter} MΩ·cm"""
         
         return f'{self._value}'
 
@@ -656,38 +656,38 @@ class ElectricResistivity(AbstractMeasure):
             return """Ω·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.PicoohmMeter:
-            return """"""
+            return """pΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.NanoohmMeter:
-            return """"""
+            return """nΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.MicroohmMeter:
-            return """"""
+            return """μΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.MilliohmMeter:
-            return """"""
+            return """mΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.KiloohmMeter:
-            return """"""
+            return """kΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.MegaohmMeter:
-            return """"""
+            return """MΩ·m"""
         
         if unit_abbreviation == ElectricResistivityUnits.PicoohmCentimeter:
-            return """"""
+            return """pΩ·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.NanoohmCentimeter:
-            return """"""
+            return """nΩ·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.MicroohmCentimeter:
-            return """"""
+            return """μΩ·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.MilliohmCentimeter:
-            return """"""
+            return """mΩ·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.KiloohmCentimeter:
-            return """"""
+            return """kΩ·cm"""
         
         if unit_abbreviation == ElectricResistivityUnits.MegaohmCentimeter:
-            return """"""
+            return """MΩ·cm"""
         

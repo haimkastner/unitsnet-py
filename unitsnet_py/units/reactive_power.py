@@ -211,13 +211,13 @@ class ReactivePower(AbstractMeasure):
             return f"""{self.voltamperes_reactive} var"""
         
         if unit == ReactivePowerUnits.KilovoltampereReactive:
-            return f"""{self.kilovoltamperes_reactive} """
+            return f"""{self.kilovoltamperes_reactive} kvar"""
         
         if unit == ReactivePowerUnits.MegavoltampereReactive:
-            return f"""{self.megavoltamperes_reactive} """
+            return f"""{self.megavoltamperes_reactive} Mvar"""
         
         if unit == ReactivePowerUnits.GigavoltampereReactive:
-            return f"""{self.gigavoltamperes_reactive} """
+            return f"""{self.gigavoltamperes_reactive} Gvar"""
         
         return f'{self._value}'
 
@@ -233,11 +233,11 @@ class ReactivePower(AbstractMeasure):
             return """var"""
         
         if unit_abbreviation == ReactivePowerUnits.KilovoltampereReactive:
-            return """"""
+            return """kvar"""
         
         if unit_abbreviation == ReactivePowerUnits.MegavoltampereReactive:
-            return """"""
+            return """Mvar"""
         
         if unit_abbreviation == ReactivePowerUnits.GigavoltampereReactive:
-            return """"""
+            return """Gvar"""
         

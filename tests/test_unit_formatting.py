@@ -11,6 +11,7 @@ class TestUnitFormatting(unittest.TestCase):
         angle = Angle.from_degrees(180)
         self.assertEqual(angle.to_string(AngleUnits.Degree), "180 °")
         self.assertEqual(angle.to_string(AngleUnits.Radian), "3.141592653589793 rad")
+        self.assertEqual(angle.to_string(AngleUnits.Milliradian), "3141.592653589793 mrad")
 
 
 if __name__ == "__main__":

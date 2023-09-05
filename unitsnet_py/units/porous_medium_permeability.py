@@ -256,10 +256,10 @@ class PorousMediumPermeability(AbstractMeasure):
             return f"""{self.square_centimeters} cm²"""
         
         if unit == PorousMediumPermeabilityUnits.Microdarcy:
-            return f"""{self.microdarcys} """
+            return f"""{self.microdarcys} μD"""
         
         if unit == PorousMediumPermeabilityUnits.Millidarcy:
-            return f"""{self.millidarcys} """
+            return f"""{self.millidarcys} mD"""
         
         return f'{self._value}'
 
@@ -281,8 +281,8 @@ class PorousMediumPermeability(AbstractMeasure):
             return """cm²"""
         
         if unit_abbreviation == PorousMediumPermeabilityUnits.Microdarcy:
-            return """"""
+            return """μD"""
         
         if unit_abbreviation == PorousMediumPermeabilityUnits.Millidarcy:
-            return """"""
+            return """mD"""
         

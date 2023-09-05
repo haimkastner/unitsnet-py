@@ -250,16 +250,16 @@ class ElectricPotentialAc(AbstractMeasure):
             return f"""{self.volts_ac} Vac"""
         
         if unit == ElectricPotentialAcUnits.MicrovoltAc:
-            return f"""{self.microvolts_ac} """
+            return f"""{self.microvolts_ac} μVac"""
         
         if unit == ElectricPotentialAcUnits.MillivoltAc:
-            return f"""{self.millivolts_ac} """
+            return f"""{self.millivolts_ac} mVac"""
         
         if unit == ElectricPotentialAcUnits.KilovoltAc:
-            return f"""{self.kilovolts_ac} """
+            return f"""{self.kilovolts_ac} kVac"""
         
         if unit == ElectricPotentialAcUnits.MegavoltAc:
-            return f"""{self.megavolts_ac} """
+            return f"""{self.megavolts_ac} MVac"""
         
         return f'{self._value}'
 
@@ -275,14 +275,14 @@ class ElectricPotentialAc(AbstractMeasure):
             return """Vac"""
         
         if unit_abbreviation == ElectricPotentialAcUnits.MicrovoltAc:
-            return """"""
+            return """μVac"""
         
         if unit_abbreviation == ElectricPotentialAcUnits.MillivoltAc:
-            return """"""
+            return """mVac"""
         
         if unit_abbreviation == ElectricPotentialAcUnits.KilovoltAc:
-            return """"""
+            return """kVac"""
         
         if unit_abbreviation == ElectricPotentialAcUnits.MegavoltAc:
-            return """"""
+            return """MVac"""
         

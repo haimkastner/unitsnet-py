@@ -2773,97 +2773,97 @@ class VolumeFlow(AbstractMeasure):
             return f"""{self.cubic_centimeters_per_minute} cm³/min"""
         
         if unit == VolumeFlowUnits.MegausGallonPerDay:
-            return f"""{self.megaus_gallons_per_day} """
+            return f"""{self.megaus_gallons_per_day} Mgpd"""
         
         if unit == VolumeFlowUnits.NanoliterPerSecond:
-            return f"""{self.nanoliters_per_second} """
+            return f"""{self.nanoliters_per_second} nL/s"""
         
         if unit == VolumeFlowUnits.MicroliterPerSecond:
-            return f"""{self.microliters_per_second} """
+            return f"""{self.microliters_per_second} μL/s"""
         
         if unit == VolumeFlowUnits.MilliliterPerSecond:
-            return f"""{self.milliliters_per_second} """
+            return f"""{self.milliliters_per_second} mL/s"""
         
         if unit == VolumeFlowUnits.CentiliterPerSecond:
-            return f"""{self.centiliters_per_second} """
+            return f"""{self.centiliters_per_second} cL/s"""
         
         if unit == VolumeFlowUnits.DeciliterPerSecond:
-            return f"""{self.deciliters_per_second} """
+            return f"""{self.deciliters_per_second} dL/s"""
         
         if unit == VolumeFlowUnits.KiloliterPerSecond:
-            return f"""{self.kiloliters_per_second} """
+            return f"""{self.kiloliters_per_second} kL/s"""
         
         if unit == VolumeFlowUnits.MegaliterPerSecond:
-            return f"""{self.megaliters_per_second} """
+            return f"""{self.megaliters_per_second} ML/s"""
         
         if unit == VolumeFlowUnits.NanoliterPerMinute:
-            return f"""{self.nanoliters_per_minute} """
+            return f"""{self.nanoliters_per_minute} nL/min"""
         
         if unit == VolumeFlowUnits.MicroliterPerMinute:
-            return f"""{self.microliters_per_minute} """
+            return f"""{self.microliters_per_minute} μL/min"""
         
         if unit == VolumeFlowUnits.MilliliterPerMinute:
-            return f"""{self.milliliters_per_minute} """
+            return f"""{self.milliliters_per_minute} mL/min"""
         
         if unit == VolumeFlowUnits.CentiliterPerMinute:
-            return f"""{self.centiliters_per_minute} """
+            return f"""{self.centiliters_per_minute} cL/min"""
         
         if unit == VolumeFlowUnits.DeciliterPerMinute:
-            return f"""{self.deciliters_per_minute} """
+            return f"""{self.deciliters_per_minute} dL/min"""
         
         if unit == VolumeFlowUnits.KiloliterPerMinute:
-            return f"""{self.kiloliters_per_minute} """
+            return f"""{self.kiloliters_per_minute} kL/min"""
         
         if unit == VolumeFlowUnits.MegaliterPerMinute:
-            return f"""{self.megaliters_per_minute} """
+            return f"""{self.megaliters_per_minute} ML/min"""
         
         if unit == VolumeFlowUnits.NanoliterPerHour:
-            return f"""{self.nanoliters_per_hour} """
+            return f"""{self.nanoliters_per_hour} nL/h"""
         
         if unit == VolumeFlowUnits.MicroliterPerHour:
-            return f"""{self.microliters_per_hour} """
+            return f"""{self.microliters_per_hour} μL/h"""
         
         if unit == VolumeFlowUnits.MilliliterPerHour:
-            return f"""{self.milliliters_per_hour} """
+            return f"""{self.milliliters_per_hour} mL/h"""
         
         if unit == VolumeFlowUnits.CentiliterPerHour:
-            return f"""{self.centiliters_per_hour} """
+            return f"""{self.centiliters_per_hour} cL/h"""
         
         if unit == VolumeFlowUnits.DeciliterPerHour:
-            return f"""{self.deciliters_per_hour} """
+            return f"""{self.deciliters_per_hour} dL/h"""
         
         if unit == VolumeFlowUnits.KiloliterPerHour:
-            return f"""{self.kiloliters_per_hour} """
+            return f"""{self.kiloliters_per_hour} kL/h"""
         
         if unit == VolumeFlowUnits.MegaliterPerHour:
-            return f"""{self.megaliters_per_hour} """
+            return f"""{self.megaliters_per_hour} ML/h"""
         
         if unit == VolumeFlowUnits.NanoliterPerDay:
-            return f"""{self.nanoliters_per_day} """
+            return f"""{self.nanoliters_per_day} nl/day"""
         
         if unit == VolumeFlowUnits.MicroliterPerDay:
-            return f"""{self.microliters_per_day} """
+            return f"""{self.microliters_per_day} μl/day"""
         
         if unit == VolumeFlowUnits.MilliliterPerDay:
-            return f"""{self.milliliters_per_day} """
+            return f"""{self.milliliters_per_day} ml/day"""
         
         if unit == VolumeFlowUnits.CentiliterPerDay:
-            return f"""{self.centiliters_per_day} """
+            return f"""{self.centiliters_per_day} cl/day"""
         
         if unit == VolumeFlowUnits.DeciliterPerDay:
-            return f"""{self.deciliters_per_day} """
+            return f"""{self.deciliters_per_day} dl/day"""
         
         if unit == VolumeFlowUnits.KiloliterPerDay:
-            return f"""{self.kiloliters_per_day} """
+            return f"""{self.kiloliters_per_day} kl/day"""
         
         if unit == VolumeFlowUnits.MegaliterPerDay:
-            return f"""{self.megaliters_per_day} """
+            return f"""{self.megaliters_per_day} Ml/day"""
         
         if unit == VolumeFlowUnits.MegaukGallonPerDay:
-            return f"""{self.megauk_gallons_per_day} """
+            return f"""{self.megauk_gallons_per_day} Mgal (U. K.)/d"""
         
         if unit == VolumeFlowUnits.MegaukGallonPerSecond:
-            return f"""{self.megauk_gallons_per_second} """
+            return f"""{self.megauk_gallons_per_second} Mgal (imp.)/s"""
         
         return f'{self._value}'
 
@@ -2984,95 +2984,95 @@ class VolumeFlow(AbstractMeasure):
             return """cm³/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MegausGallonPerDay:
-            return """"""
+            return """Mgpd"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerSecond:
-            return """"""
+            return """nL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerSecond:
-            return """"""
+            return """μL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerSecond:
-            return """"""
+            return """mL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerSecond:
-            return """"""
+            return """cL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerSecond:
-            return """"""
+            return """dL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerSecond:
-            return """"""
+            return """kL/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerSecond:
-            return """"""
+            return """ML/s"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerMinute:
-            return """"""
+            return """nL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerMinute:
-            return """"""
+            return """μL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerMinute:
-            return """"""
+            return """mL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerMinute:
-            return """"""
+            return """cL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerMinute:
-            return """"""
+            return """dL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerMinute:
-            return """"""
+            return """kL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerMinute:
-            return """"""
+            return """ML/min"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerHour:
-            return """"""
+            return """nL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerHour:
-            return """"""
+            return """μL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerHour:
-            return """"""
+            return """mL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerHour:
-            return """"""
+            return """cL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerHour:
-            return """"""
+            return """dL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerHour:
-            return """"""
+            return """kL/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerHour:
-            return """"""
+            return """ML/h"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerDay:
-            return """"""
+            return """nl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerDay:
-            return """"""
+            return """μl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerDay:
-            return """"""
+            return """ml/day"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerDay:
-            return """"""
+            return """cl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerDay:
-            return """"""
+            return """dl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerDay:
-            return """"""
+            return """kl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerDay:
-            return """"""
+            return """Ml/day"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaukGallonPerDay:
-            return """"""
+            return """Mgal (U. K.)/d"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaukGallonPerSecond:
-            return """"""
+            return """Mgal (imp.)/s"""
         

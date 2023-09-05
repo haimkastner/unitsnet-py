@@ -844,52 +844,52 @@ class ElectricPotentialChangeRate(AbstractMeasure):
             return f"""{self.volts_per_hours} V/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
-            return f"""{self.microvolts_per_seconds} """
+            return f"""{self.microvolts_per_seconds} μV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
-            return f"""{self.millivolts_per_seconds} """
+            return f"""{self.millivolts_per_seconds} mV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
-            return f"""{self.kilovolts_per_seconds} """
+            return f"""{self.kilovolts_per_seconds} kV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
-            return f"""{self.megavolts_per_seconds} """
+            return f"""{self.megavolts_per_seconds} MV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
-            return f"""{self.microvolts_per_microseconds} """
+            return f"""{self.microvolts_per_microseconds} μV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
-            return f"""{self.millivolts_per_microseconds} """
+            return f"""{self.millivolts_per_microseconds} mV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
-            return f"""{self.kilovolts_per_microseconds} """
+            return f"""{self.kilovolts_per_microseconds} kV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
-            return f"""{self.megavolts_per_microseconds} """
+            return f"""{self.megavolts_per_microseconds} MV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
-            return f"""{self.microvolts_per_minutes} """
+            return f"""{self.microvolts_per_minutes} μV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
-            return f"""{self.millivolts_per_minutes} """
+            return f"""{self.millivolts_per_minutes} mV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
-            return f"""{self.kilovolts_per_minutes} """
+            return f"""{self.kilovolts_per_minutes} kV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
-            return f"""{self.megavolts_per_minutes} """
+            return f"""{self.megavolts_per_minutes} MV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
-            return f"""{self.microvolts_per_hours} """
+            return f"""{self.microvolts_per_hours} μV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerHour:
-            return f"""{self.millivolts_per_hours} """
+            return f"""{self.millivolts_per_hours} mV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerHour:
-            return f"""{self.kilovolts_per_hours} """
+            return f"""{self.kilovolts_per_hours} kV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
-            return f"""{self.megavolts_per_hours} """
+            return f"""{self.megavolts_per_hours} MV/h"""
         
         return f'{self._value}'
 
@@ -914,50 +914,50 @@ class ElectricPotentialChangeRate(AbstractMeasure):
             return """V/h"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
-            return """"""
+            return """μV/s"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
-            return """"""
+            return """mV/s"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
-            return """"""
+            return """kV/s"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
-            return """"""
+            return """MV/s"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
-            return """"""
+            return """μV/μs"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
-            return """"""
+            return """mV/μs"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
-            return """"""
+            return """kV/μs"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
-            return """"""
+            return """MV/μs"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
-            return """"""
+            return """μV/min"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
-            return """"""
+            return """mV/min"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
-            return """"""
+            return """kV/min"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
-            return """"""
+            return """MV/min"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
-            return """"""
+            return """μV/h"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MillivoltPerHour:
-            return """"""
+            return """mV/h"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.KilovoltPerHour:
-            return """"""
+            return """kV/h"""
         
         if unit_abbreviation == ElectricPotentialChangeRateUnits.MegavoltPerHour:
-            return """"""
+            return """MV/h"""
         

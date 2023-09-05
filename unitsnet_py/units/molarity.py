@@ -490,28 +490,28 @@ class Molarity(AbstractMeasure):
             return f"""{self.pound_moles_per_cubic_foot} lbmol/ft³"""
         
         if unit == MolarityUnits.KilomolePerCubicMeter:
-            return f"""{self.kilomoles_per_cubic_meter} """
+            return f"""{self.kilomoles_per_cubic_meter} kmol/m³"""
         
         if unit == MolarityUnits.FemtomolePerLiter:
-            return f"""{self.femtomoles_per_liter} """
+            return f"""{self.femtomoles_per_liter} fmol/L"""
         
         if unit == MolarityUnits.PicomolePerLiter:
-            return f"""{self.picomoles_per_liter} """
+            return f"""{self.picomoles_per_liter} pmol/L"""
         
         if unit == MolarityUnits.NanomolePerLiter:
-            return f"""{self.nanomoles_per_liter} """
+            return f"""{self.nanomoles_per_liter} nmol/L"""
         
         if unit == MolarityUnits.MicromolePerLiter:
-            return f"""{self.micromoles_per_liter} """
+            return f"""{self.micromoles_per_liter} μmol/L"""
         
         if unit == MolarityUnits.MillimolePerLiter:
-            return f"""{self.millimoles_per_liter} """
+            return f"""{self.millimoles_per_liter} mmol/L"""
         
         if unit == MolarityUnits.CentimolePerLiter:
-            return f"""{self.centimoles_per_liter} """
+            return f"""{self.centimoles_per_liter} cmol/L"""
         
         if unit == MolarityUnits.DecimolePerLiter:
-            return f"""{self.decimoles_per_liter} """
+            return f"""{self.decimoles_per_liter} dmol/L"""
         
         return f'{self._value}'
 
@@ -533,26 +533,26 @@ class Molarity(AbstractMeasure):
             return """lbmol/ft³"""
         
         if unit_abbreviation == MolarityUnits.KilomolePerCubicMeter:
-            return """"""
+            return """kmol/m³"""
         
         if unit_abbreviation == MolarityUnits.FemtomolePerLiter:
-            return """"""
+            return """fmol/L"""
         
         if unit_abbreviation == MolarityUnits.PicomolePerLiter:
-            return """"""
+            return """pmol/L"""
         
         if unit_abbreviation == MolarityUnits.NanomolePerLiter:
-            return """"""
+            return """nmol/L"""
         
         if unit_abbreviation == MolarityUnits.MicromolePerLiter:
-            return """"""
+            return """μmol/L"""
         
         if unit_abbreviation == MolarityUnits.MillimolePerLiter:
-            return """"""
+            return """mmol/L"""
         
         if unit_abbreviation == MolarityUnits.CentimolePerLiter:
-            return """"""
+            return """cmol/L"""
         
         if unit_abbreviation == MolarityUnits.DecimolePerLiter:
-            return """"""
+            return """dmol/L"""
         

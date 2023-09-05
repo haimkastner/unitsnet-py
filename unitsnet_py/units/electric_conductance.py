@@ -250,16 +250,16 @@ class ElectricConductance(AbstractMeasure):
             return f"""{self.siemens} S"""
         
         if unit == ElectricConductanceUnits.Nanosiemens:
-            return f"""{self.nanosiemens} """
+            return f"""{self.nanosiemens} nS"""
         
         if unit == ElectricConductanceUnits.Microsiemens:
-            return f"""{self.microsiemens} """
+            return f"""{self.microsiemens} μS"""
         
         if unit == ElectricConductanceUnits.Millisiemens:
-            return f"""{self.millisiemens} """
+            return f"""{self.millisiemens} mS"""
         
         if unit == ElectricConductanceUnits.Kilosiemens:
-            return f"""{self.kilosiemens} """
+            return f"""{self.kilosiemens} kS"""
         
         return f'{self._value}'
 
@@ -275,14 +275,14 @@ class ElectricConductance(AbstractMeasure):
             return """S"""
         
         if unit_abbreviation == ElectricConductanceUnits.Nanosiemens:
-            return """"""
+            return """nS"""
         
         if unit_abbreviation == ElectricConductanceUnits.Microsiemens:
-            return """"""
+            return """μS"""
         
         if unit_abbreviation == ElectricConductanceUnits.Millisiemens:
-            return """"""
+            return """mS"""
         
         if unit_abbreviation == ElectricConductanceUnits.Kilosiemens:
-            return """"""
+            return """kS"""
         

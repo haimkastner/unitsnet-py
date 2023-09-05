@@ -1249,67 +1249,67 @@ class SpecificEnergy(AbstractMeasure):
             return f"""{self.btu_per_pound} btu/lb"""
         
         if unit == SpecificEnergyUnits.KilojoulePerKilogram:
-            return f"""{self.kilojoules_per_kilogram} """
+            return f"""{self.kilojoules_per_kilogram} kJ/kg"""
         
         if unit == SpecificEnergyUnits.MegajoulePerKilogram:
-            return f"""{self.megajoules_per_kilogram} """
+            return f"""{self.megajoules_per_kilogram} MJ/kg"""
         
         if unit == SpecificEnergyUnits.KilocaloriePerGram:
-            return f"""{self.kilocalories_per_gram} """
+            return f"""{self.kilocalories_per_gram} kcal/g"""
         
         if unit == SpecificEnergyUnits.KilowattHourPerKilogram:
-            return f"""{self.kilowatt_hours_per_kilogram} """
+            return f"""{self.kilowatt_hours_per_kilogram} kWh/kg"""
         
         if unit == SpecificEnergyUnits.MegawattHourPerKilogram:
-            return f"""{self.megawatt_hours_per_kilogram} """
+            return f"""{self.megawatt_hours_per_kilogram} MWh/kg"""
         
         if unit == SpecificEnergyUnits.GigawattHourPerKilogram:
-            return f"""{self.gigawatt_hours_per_kilogram} """
+            return f"""{self.gigawatt_hours_per_kilogram} GWh/kg"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerKilogram:
-            return f"""{self.kilowatt_days_per_kilogram} """
+            return f"""{self.kilowatt_days_per_kilogram} kWd/kg"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerKilogram:
-            return f"""{self.megawatt_days_per_kilogram} """
+            return f"""{self.megawatt_days_per_kilogram} MWd/kg"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerKilogram:
-            return f"""{self.gigawatt_days_per_kilogram} """
+            return f"""{self.gigawatt_days_per_kilogram} GWd/kg"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerKilogram:
-            return f"""{self.terawatt_days_per_kilogram} """
+            return f"""{self.terawatt_days_per_kilogram} TWd/kg"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerTonne:
-            return f"""{self.kilowatt_days_per_tonne} """
+            return f"""{self.kilowatt_days_per_tonne} kWd/t"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerTonne:
-            return f"""{self.megawatt_days_per_tonne} """
+            return f"""{self.megawatt_days_per_tonne} MWd/t"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerTonne:
-            return f"""{self.gigawatt_days_per_tonne} """
+            return f"""{self.gigawatt_days_per_tonne} GWd/t"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerTonne:
-            return f"""{self.terawatt_days_per_tonne} """
+            return f"""{self.terawatt_days_per_tonne} TWd/t"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerShortTon:
-            return f"""{self.kilowatt_days_per_short_ton} """
+            return f"""{self.kilowatt_days_per_short_ton} kWd/ST"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerShortTon:
-            return f"""{self.megawatt_days_per_short_ton} """
+            return f"""{self.megawatt_days_per_short_ton} MWd/ST"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerShortTon:
-            return f"""{self.gigawatt_days_per_short_ton} """
+            return f"""{self.gigawatt_days_per_short_ton} GWd/ST"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerShortTon:
-            return f"""{self.terawatt_days_per_short_ton} """
+            return f"""{self.terawatt_days_per_short_ton} TWd/ST"""
         
         if unit == SpecificEnergyUnits.KilowattHourPerPound:
-            return f"""{self.kilowatt_hours_per_pound} """
+            return f"""{self.kilowatt_hours_per_pound} kWh/lbs"""
         
         if unit == SpecificEnergyUnits.MegawattHourPerPound:
-            return f"""{self.megawatt_hours_per_pound} """
+            return f"""{self.megawatt_hours_per_pound} MWh/lbs"""
         
         if unit == SpecificEnergyUnits.GigawattHourPerPound:
-            return f"""{self.gigawatt_hours_per_pound} """
+            return f"""{self.gigawatt_hours_per_pound} GWh/lbs"""
         
         return f'{self._value}'
 
@@ -1349,65 +1349,65 @@ class SpecificEnergy(AbstractMeasure):
             return """btu/lb"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilojoulePerKilogram:
-            return """"""
+            return """kJ/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegajoulePerKilogram:
-            return """"""
+            return """MJ/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilocaloriePerGram:
-            return """"""
+            return """kcal/g"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilowattHourPerKilogram:
-            return """"""
+            return """kWh/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegawattHourPerKilogram:
-            return """"""
+            return """MWh/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.GigawattHourPerKilogram:
-            return """"""
+            return """GWh/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerKilogram:
-            return """"""
+            return """kWd/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerKilogram:
-            return """"""
+            return """MWd/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerKilogram:
-            return """"""
+            return """GWd/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerKilogram:
-            return """"""
+            return """TWd/kg"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerTonne:
-            return """"""
+            return """kWd/t"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerTonne:
-            return """"""
+            return """MWd/t"""
         
         if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerTonne:
-            return """"""
+            return """GWd/t"""
         
         if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerTonne:
-            return """"""
+            return """TWd/t"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilowattDayPerShortTon:
-            return """"""
+            return """kWd/ST"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegawattDayPerShortTon:
-            return """"""
+            return """MWd/ST"""
         
         if unit_abbreviation == SpecificEnergyUnits.GigawattDayPerShortTon:
-            return """"""
+            return """GWd/ST"""
         
         if unit_abbreviation == SpecificEnergyUnits.TerawattDayPerShortTon:
-            return """"""
+            return """TWd/ST"""
         
         if unit_abbreviation == SpecificEnergyUnits.KilowattHourPerPound:
-            return """"""
+            return """kWh/lbs"""
         
         if unit_abbreviation == SpecificEnergyUnits.MegawattHourPerPound:
-            return """"""
+            return """MWh/lbs"""
         
         if unit_abbreviation == SpecificEnergyUnits.GigawattHourPerPound:
-            return """"""
+            return """GWh/lbs"""
         

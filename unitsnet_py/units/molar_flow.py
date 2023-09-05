@@ -421,13 +421,13 @@ class MolarFlow(AbstractMeasure):
             return f"""{self.pound_moles_per_hour} lbmol/h"""
         
         if unit == MolarFlowUnits.KilomolePerSecond:
-            return f"""{self.kilomoles_per_second} """
+            return f"""{self.kilomoles_per_second} kmol/s"""
         
         if unit == MolarFlowUnits.KilomolePerMinute:
-            return f"""{self.kilomoles_per_minute} """
+            return f"""{self.kilomoles_per_minute} kmol/min"""
         
         if unit == MolarFlowUnits.KilomolePerHour:
-            return f"""{self.kilomoles_per_hour} """
+            return f"""{self.kilomoles_per_hour} kkmol/h"""
         
         return f'{self._value}'
 
@@ -458,11 +458,11 @@ class MolarFlow(AbstractMeasure):
             return """lbmol/h"""
         
         if unit_abbreviation == MolarFlowUnits.KilomolePerSecond:
-            return """"""
+            return """kmol/s"""
         
         if unit_abbreviation == MolarFlowUnits.KilomolePerMinute:
-            return """"""
+            return """kmol/min"""
         
         if unit_abbreviation == MolarFlowUnits.KilomolePerHour:
-            return """"""
+            return """kkmol/h"""
         

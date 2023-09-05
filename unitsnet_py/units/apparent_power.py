@@ -289,19 +289,19 @@ class ApparentPower(AbstractMeasure):
             return f"""{self.voltamperes} VA"""
         
         if unit == ApparentPowerUnits.Microvoltampere:
-            return f"""{self.microvoltamperes} """
+            return f"""{self.microvoltamperes} μVA"""
         
         if unit == ApparentPowerUnits.Millivoltampere:
-            return f"""{self.millivoltamperes} """
+            return f"""{self.millivoltamperes} mVA"""
         
         if unit == ApparentPowerUnits.Kilovoltampere:
-            return f"""{self.kilovoltamperes} """
+            return f"""{self.kilovoltamperes} kVA"""
         
         if unit == ApparentPowerUnits.Megavoltampere:
-            return f"""{self.megavoltamperes} """
+            return f"""{self.megavoltamperes} MVA"""
         
         if unit == ApparentPowerUnits.Gigavoltampere:
-            return f"""{self.gigavoltamperes} """
+            return f"""{self.gigavoltamperes} GVA"""
         
         return f'{self._value}'
 
@@ -317,17 +317,17 @@ class ApparentPower(AbstractMeasure):
             return """VA"""
         
         if unit_abbreviation == ApparentPowerUnits.Microvoltampere:
-            return """"""
+            return """μVA"""
         
         if unit_abbreviation == ApparentPowerUnits.Millivoltampere:
-            return """"""
+            return """mVA"""
         
         if unit_abbreviation == ApparentPowerUnits.Kilovoltampere:
-            return """"""
+            return """kVA"""
         
         if unit_abbreviation == ApparentPowerUnits.Megavoltampere:
-            return """"""
+            return """MVA"""
         
         if unit_abbreviation == ApparentPowerUnits.Gigavoltampere:
-            return """"""
+            return """GVA"""
         

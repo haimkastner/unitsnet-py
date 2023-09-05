@@ -1684,52 +1684,52 @@ class Length(AbstractMeasure):
             return f"""{self.data_miles} DM"""
         
         if unit == LengthUnits.Femtometer:
-            return f"""{self.femtometers} """
+            return f"""{self.femtometers} fm"""
         
         if unit == LengthUnits.Picometer:
-            return f"""{self.picometers} """
+            return f"""{self.picometers} pm"""
         
         if unit == LengthUnits.Nanometer:
-            return f"""{self.nanometers} """
+            return f"""{self.nanometers} nm"""
         
         if unit == LengthUnits.Micrometer:
-            return f"""{self.micrometers} """
+            return f"""{self.micrometers} μm"""
         
         if unit == LengthUnits.Millimeter:
-            return f"""{self.millimeters} """
+            return f"""{self.millimeters} mm"""
         
         if unit == LengthUnits.Centimeter:
-            return f"""{self.centimeters} """
+            return f"""{self.centimeters} cm"""
         
         if unit == LengthUnits.Decimeter:
-            return f"""{self.decimeters} """
+            return f"""{self.decimeters} dm"""
         
         if unit == LengthUnits.Decameter:
-            return f"""{self.decameters} """
+            return f"""{self.decameters} dam"""
         
         if unit == LengthUnits.Hectometer:
-            return f"""{self.hectometers} """
+            return f"""{self.hectometers} hm"""
         
         if unit == LengthUnits.Kilometer:
-            return f"""{self.kilometers} """
+            return f"""{self.kilometers} km"""
         
         if unit == LengthUnits.Megameter:
-            return f"""{self.megameters} """
+            return f"""{self.megameters} Mm"""
         
         if unit == LengthUnits.Kilofoot:
-            return f"""{self.kilofeet} """
+            return f"""{self.kilofeet} kft"""
         
         if unit == LengthUnits.Kiloparsec:
-            return f"""{self.kiloparsecs} """
+            return f"""{self.kiloparsecs} kpc"""
         
         if unit == LengthUnits.Megaparsec:
-            return f"""{self.megaparsecs} """
+            return f"""{self.megaparsecs} Mpc"""
         
         if unit == LengthUnits.KilolightYear:
-            return f"""{self.kilolight_years} """
+            return f"""{self.kilolight_years} kly"""
         
         if unit == LengthUnits.MegalightYear:
-            return f"""{self.megalight_years} """
+            return f"""{self.megalight_years} Mly"""
         
         return f'{self._value}'
 
@@ -1814,50 +1814,50 @@ class Length(AbstractMeasure):
             return """DM"""
         
         if unit_abbreviation == LengthUnits.Femtometer:
-            return """"""
+            return """fm"""
         
         if unit_abbreviation == LengthUnits.Picometer:
-            return """"""
+            return """pm"""
         
         if unit_abbreviation == LengthUnits.Nanometer:
-            return """"""
+            return """nm"""
         
         if unit_abbreviation == LengthUnits.Micrometer:
-            return """"""
+            return """μm"""
         
         if unit_abbreviation == LengthUnits.Millimeter:
-            return """"""
+            return """mm"""
         
         if unit_abbreviation == LengthUnits.Centimeter:
-            return """"""
+            return """cm"""
         
         if unit_abbreviation == LengthUnits.Decimeter:
-            return """"""
+            return """dm"""
         
         if unit_abbreviation == LengthUnits.Decameter:
-            return """"""
+            return """dam"""
         
         if unit_abbreviation == LengthUnits.Hectometer:
-            return """"""
+            return """hm"""
         
         if unit_abbreviation == LengthUnits.Kilometer:
-            return """"""
+            return """km"""
         
         if unit_abbreviation == LengthUnits.Megameter:
-            return """"""
+            return """Mm"""
         
         if unit_abbreviation == LengthUnits.Kilofoot:
-            return """"""
+            return """kft"""
         
         if unit_abbreviation == LengthUnits.Kiloparsec:
-            return """"""
+            return """kpc"""
         
         if unit_abbreviation == LengthUnits.Megaparsec:
-            return """"""
+            return """Mpc"""
         
         if unit_abbreviation == LengthUnits.KilolightYear:
-            return """"""
+            return """kly"""
         
         if unit_abbreviation == LengthUnits.MegalightYear:
-            return """"""
+            return """Mly"""
         

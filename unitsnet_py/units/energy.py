@@ -1570,82 +1570,82 @@ class Energy(AbstractMeasure):
             return f"""{self.horsepower_hours} hp·h"""
         
         if unit == EnergyUnits.Millijoule:
-            return f"""{self.millijoules} """
+            return f"""{self.millijoules} mJ"""
         
         if unit == EnergyUnits.Kilojoule:
-            return f"""{self.kilojoules} """
+            return f"""{self.kilojoules} kJ"""
         
         if unit == EnergyUnits.Megajoule:
-            return f"""{self.megajoules} """
+            return f"""{self.megajoules} MJ"""
         
         if unit == EnergyUnits.Gigajoule:
-            return f"""{self.gigajoules} """
+            return f"""{self.gigajoules} GJ"""
         
         if unit == EnergyUnits.Terajoule:
-            return f"""{self.terajoules} """
+            return f"""{self.terajoules} TJ"""
         
         if unit == EnergyUnits.Petajoule:
-            return f"""{self.petajoules} """
+            return f"""{self.petajoules} PJ"""
         
         if unit == EnergyUnits.Kilocalorie:
-            return f"""{self.kilocalories} """
+            return f"""{self.kilocalories} kcal"""
         
         if unit == EnergyUnits.Megacalorie:
-            return f"""{self.megacalories} """
+            return f"""{self.megacalories} Mcal"""
         
         if unit == EnergyUnits.KilobritishThermalUnit:
-            return f"""{self.kilobritish_thermal_units} """
+            return f"""{self.kilobritish_thermal_units} kBTU"""
         
         if unit == EnergyUnits.MegabritishThermalUnit:
-            return f"""{self.megabritish_thermal_units} """
+            return f"""{self.megabritish_thermal_units} MBTU"""
         
         if unit == EnergyUnits.GigabritishThermalUnit:
-            return f"""{self.gigabritish_thermal_units} """
+            return f"""{self.gigabritish_thermal_units} GBTU"""
         
         if unit == EnergyUnits.KiloelectronVolt:
-            return f"""{self.kiloelectron_volts} """
+            return f"""{self.kiloelectron_volts} keV"""
         
         if unit == EnergyUnits.MegaelectronVolt:
-            return f"""{self.megaelectron_volts} """
+            return f"""{self.megaelectron_volts} MeV"""
         
         if unit == EnergyUnits.GigaelectronVolt:
-            return f"""{self.gigaelectron_volts} """
+            return f"""{self.gigaelectron_volts} GeV"""
         
         if unit == EnergyUnits.TeraelectronVolt:
-            return f"""{self.teraelectron_volts} """
+            return f"""{self.teraelectron_volts} TeV"""
         
         if unit == EnergyUnits.KilowattHour:
-            return f"""{self.kilowatt_hours} """
+            return f"""{self.kilowatt_hours} kWh"""
         
         if unit == EnergyUnits.MegawattHour:
-            return f"""{self.megawatt_hours} """
+            return f"""{self.megawatt_hours} MWh"""
         
         if unit == EnergyUnits.GigawattHour:
-            return f"""{self.gigawatt_hours} """
+            return f"""{self.gigawatt_hours} GWh"""
         
         if unit == EnergyUnits.TerawattHour:
-            return f"""{self.terawatt_hours} """
+            return f"""{self.terawatt_hours} TWh"""
         
         if unit == EnergyUnits.KilowattDay:
-            return f"""{self.kilowatt_days} """
+            return f"""{self.kilowatt_days} kWd"""
         
         if unit == EnergyUnits.MegawattDay:
-            return f"""{self.megawatt_days} """
+            return f"""{self.megawatt_days} MWd"""
         
         if unit == EnergyUnits.GigawattDay:
-            return f"""{self.gigawatt_days} """
+            return f"""{self.gigawatt_days} GWd"""
         
         if unit == EnergyUnits.TerawattDay:
-            return f"""{self.terawatt_days} """
+            return f"""{self.terawatt_days} TWd"""
         
         if unit == EnergyUnits.DecathermEc:
-            return f"""{self.decatherms_ec} """
+            return f"""{self.decatherms_ec} dath (E.C.)"""
         
         if unit == EnergyUnits.DecathermUs:
-            return f"""{self.decatherms_us} """
+            return f"""{self.decatherms_us} dath (U.S.)"""
         
         if unit == EnergyUnits.DecathermImperial:
-            return f"""{self.decatherms_imperial} """
+            return f"""{self.decatherms_imperial} dath (imp.)"""
         
         return f'{self._value}'
 
@@ -1694,80 +1694,80 @@ class Energy(AbstractMeasure):
             return """hp·h"""
         
         if unit_abbreviation == EnergyUnits.Millijoule:
-            return """"""
+            return """mJ"""
         
         if unit_abbreviation == EnergyUnits.Kilojoule:
-            return """"""
+            return """kJ"""
         
         if unit_abbreviation == EnergyUnits.Megajoule:
-            return """"""
+            return """MJ"""
         
         if unit_abbreviation == EnergyUnits.Gigajoule:
-            return """"""
+            return """GJ"""
         
         if unit_abbreviation == EnergyUnits.Terajoule:
-            return """"""
+            return """TJ"""
         
         if unit_abbreviation == EnergyUnits.Petajoule:
-            return """"""
+            return """PJ"""
         
         if unit_abbreviation == EnergyUnits.Kilocalorie:
-            return """"""
+            return """kcal"""
         
         if unit_abbreviation == EnergyUnits.Megacalorie:
-            return """"""
+            return """Mcal"""
         
         if unit_abbreviation == EnergyUnits.KilobritishThermalUnit:
-            return """"""
+            return """kBTU"""
         
         if unit_abbreviation == EnergyUnits.MegabritishThermalUnit:
-            return """"""
+            return """MBTU"""
         
         if unit_abbreviation == EnergyUnits.GigabritishThermalUnit:
-            return """"""
+            return """GBTU"""
         
         if unit_abbreviation == EnergyUnits.KiloelectronVolt:
-            return """"""
+            return """keV"""
         
         if unit_abbreviation == EnergyUnits.MegaelectronVolt:
-            return """"""
+            return """MeV"""
         
         if unit_abbreviation == EnergyUnits.GigaelectronVolt:
-            return """"""
+            return """GeV"""
         
         if unit_abbreviation == EnergyUnits.TeraelectronVolt:
-            return """"""
+            return """TeV"""
         
         if unit_abbreviation == EnergyUnits.KilowattHour:
-            return """"""
+            return """kWh"""
         
         if unit_abbreviation == EnergyUnits.MegawattHour:
-            return """"""
+            return """MWh"""
         
         if unit_abbreviation == EnergyUnits.GigawattHour:
-            return """"""
+            return """GWh"""
         
         if unit_abbreviation == EnergyUnits.TerawattHour:
-            return """"""
+            return """TWh"""
         
         if unit_abbreviation == EnergyUnits.KilowattDay:
-            return """"""
+            return """kWd"""
         
         if unit_abbreviation == EnergyUnits.MegawattDay:
-            return """"""
+            return """MWd"""
         
         if unit_abbreviation == EnergyUnits.GigawattDay:
-            return """"""
+            return """GWd"""
         
         if unit_abbreviation == EnergyUnits.TerawattDay:
-            return """"""
+            return """TWd"""
         
         if unit_abbreviation == EnergyUnits.DecathermEc:
-            return """"""
+            return """dath (E.C.)"""
         
         if unit_abbreviation == EnergyUnits.DecathermUs:
-            return """"""
+            return """dath (U.S.)"""
         
         if unit_abbreviation == EnergyUnits.DecathermImperial:
-            return """"""
+            return """dath (imp.)"""
         

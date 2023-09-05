@@ -406,28 +406,28 @@ class ElectricCurrent(AbstractMeasure):
             return f"""{self.amperes} A"""
         
         if unit == ElectricCurrentUnits.Femtoampere:
-            return f"""{self.femtoamperes} """
+            return f"""{self.femtoamperes} fA"""
         
         if unit == ElectricCurrentUnits.Picoampere:
-            return f"""{self.picoamperes} """
+            return f"""{self.picoamperes} pA"""
         
         if unit == ElectricCurrentUnits.Nanoampere:
-            return f"""{self.nanoamperes} """
+            return f"""{self.nanoamperes} nA"""
         
         if unit == ElectricCurrentUnits.Microampere:
-            return f"""{self.microamperes} """
+            return f"""{self.microamperes} μA"""
         
         if unit == ElectricCurrentUnits.Milliampere:
-            return f"""{self.milliamperes} """
+            return f"""{self.milliamperes} mA"""
         
         if unit == ElectricCurrentUnits.Centiampere:
-            return f"""{self.centiamperes} """
+            return f"""{self.centiamperes} cA"""
         
         if unit == ElectricCurrentUnits.Kiloampere:
-            return f"""{self.kiloamperes} """
+            return f"""{self.kiloamperes} kA"""
         
         if unit == ElectricCurrentUnits.Megaampere:
-            return f"""{self.megaamperes} """
+            return f"""{self.megaamperes} MA"""
         
         return f'{self._value}'
 
@@ -443,26 +443,26 @@ class ElectricCurrent(AbstractMeasure):
             return """A"""
         
         if unit_abbreviation == ElectricCurrentUnits.Femtoampere:
-            return """"""
+            return """fA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Picoampere:
-            return """"""
+            return """pA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Nanoampere:
-            return """"""
+            return """nA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Microampere:
-            return """"""
+            return """μA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Milliampere:
-            return """"""
+            return """mA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Centiampere:
-            return """"""
+            return """cA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Kiloampere:
-            return """"""
+            return """kA"""
         
         if unit_abbreviation == ElectricCurrentUnits.Megaampere:
-            return """"""
+            return """MA"""
         

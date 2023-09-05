@@ -1144,46 +1144,46 @@ class Mass(AbstractMeasure):
             return f"""{self.earth_masses} em"""
         
         if unit == MassUnits.Femtogram:
-            return f"""{self.femtograms} """
+            return f"""{self.femtograms} fg"""
         
         if unit == MassUnits.Picogram:
-            return f"""{self.picograms} """
+            return f"""{self.picograms} pg"""
         
         if unit == MassUnits.Nanogram:
-            return f"""{self.nanograms} """
+            return f"""{self.nanograms} ng"""
         
         if unit == MassUnits.Microgram:
-            return f"""{self.micrograms} """
+            return f"""{self.micrograms} μg"""
         
         if unit == MassUnits.Milligram:
-            return f"""{self.milligrams} """
+            return f"""{self.milligrams} mg"""
         
         if unit == MassUnits.Centigram:
-            return f"""{self.centigrams} """
+            return f"""{self.centigrams} cg"""
         
         if unit == MassUnits.Decigram:
-            return f"""{self.decigrams} """
+            return f"""{self.decigrams} dg"""
         
         if unit == MassUnits.Decagram:
-            return f"""{self.decagrams} """
+            return f"""{self.decagrams} dag"""
         
         if unit == MassUnits.Hectogram:
-            return f"""{self.hectograms} """
+            return f"""{self.hectograms} hg"""
         
         if unit == MassUnits.Kilogram:
-            return f"""{self.kilograms} """
+            return f"""{self.kilograms} kg"""
         
         if unit == MassUnits.Kilotonne:
-            return f"""{self.kilotonnes} """
+            return f"""{self.kilotonnes} kt"""
         
         if unit == MassUnits.Megatonne:
-            return f"""{self.megatonnes} """
+            return f"""{self.megatonnes} Mt"""
         
         if unit == MassUnits.Kilopound:
-            return f"""{self.kilopounds} """
+            return f"""{self.kilopounds} klb"""
         
         if unit == MassUnits.Megapound:
-            return f"""{self.megapounds} """
+            return f"""{self.megapounds} Mlb"""
         
         return f'{self._value}'
 
@@ -1235,44 +1235,44 @@ class Mass(AbstractMeasure):
             return """em"""
         
         if unit_abbreviation == MassUnits.Femtogram:
-            return """"""
+            return """fg"""
         
         if unit_abbreviation == MassUnits.Picogram:
-            return """"""
+            return """pg"""
         
         if unit_abbreviation == MassUnits.Nanogram:
-            return """"""
+            return """ng"""
         
         if unit_abbreviation == MassUnits.Microgram:
-            return """"""
+            return """μg"""
         
         if unit_abbreviation == MassUnits.Milligram:
-            return """"""
+            return """mg"""
         
         if unit_abbreviation == MassUnits.Centigram:
-            return """"""
+            return """cg"""
         
         if unit_abbreviation == MassUnits.Decigram:
-            return """"""
+            return """dg"""
         
         if unit_abbreviation == MassUnits.Decagram:
-            return """"""
+            return """dag"""
         
         if unit_abbreviation == MassUnits.Hectogram:
-            return """"""
+            return """hg"""
         
         if unit_abbreviation == MassUnits.Kilogram:
-            return """"""
+            return """kg"""
         
         if unit_abbreviation == MassUnits.Kilotonne:
-            return """"""
+            return """kt"""
         
         if unit_abbreviation == MassUnits.Megatonne:
-            return """"""
+            return """Mt"""
         
         if unit_abbreviation == MassUnits.Kilopound:
-            return """"""
+            return """klb"""
         
         if unit_abbreviation == MassUnits.Megapound:
-            return """"""
+            return """Mlb"""
         

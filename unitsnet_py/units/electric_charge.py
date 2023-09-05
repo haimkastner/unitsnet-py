@@ -487,31 +487,31 @@ class ElectricCharge(AbstractMeasure):
             return f"""{self.ampere_hours} A-h"""
         
         if unit == ElectricChargeUnits.Picocoulomb:
-            return f"""{self.picocoulombs} """
+            return f"""{self.picocoulombs} pC"""
         
         if unit == ElectricChargeUnits.Nanocoulomb:
-            return f"""{self.nanocoulombs} """
+            return f"""{self.nanocoulombs} nC"""
         
         if unit == ElectricChargeUnits.Microcoulomb:
-            return f"""{self.microcoulombs} """
+            return f"""{self.microcoulombs} μC"""
         
         if unit == ElectricChargeUnits.Millicoulomb:
-            return f"""{self.millicoulombs} """
+            return f"""{self.millicoulombs} mC"""
         
         if unit == ElectricChargeUnits.Kilocoulomb:
-            return f"""{self.kilocoulombs} """
+            return f"""{self.kilocoulombs} kC"""
         
         if unit == ElectricChargeUnits.Megacoulomb:
-            return f"""{self.megacoulombs} """
+            return f"""{self.megacoulombs} MC"""
         
         if unit == ElectricChargeUnits.MilliampereHour:
-            return f"""{self.milliampere_hours} """
+            return f"""{self.milliampere_hours} mA-h"""
         
         if unit == ElectricChargeUnits.KiloampereHour:
-            return f"""{self.kiloampere_hours} """
+            return f"""{self.kiloampere_hours} kA-h"""
         
         if unit == ElectricChargeUnits.MegaampereHour:
-            return f"""{self.megaampere_hours} """
+            return f"""{self.megaampere_hours} MA-h"""
         
         return f'{self._value}'
 
@@ -530,29 +530,29 @@ class ElectricCharge(AbstractMeasure):
             return """A-h"""
         
         if unit_abbreviation == ElectricChargeUnits.Picocoulomb:
-            return """"""
+            return """pC"""
         
         if unit_abbreviation == ElectricChargeUnits.Nanocoulomb:
-            return """"""
+            return """nC"""
         
         if unit_abbreviation == ElectricChargeUnits.Microcoulomb:
-            return """"""
+            return """μC"""
         
         if unit_abbreviation == ElectricChargeUnits.Millicoulomb:
-            return """"""
+            return """mC"""
         
         if unit_abbreviation == ElectricChargeUnits.Kilocoulomb:
-            return """"""
+            return """kC"""
         
         if unit_abbreviation == ElectricChargeUnits.Megacoulomb:
-            return """"""
+            return """MC"""
         
         if unit_abbreviation == ElectricChargeUnits.MilliampereHour:
-            return """"""
+            return """mA-h"""
         
         if unit_abbreviation == ElectricChargeUnits.KiloampereHour:
-            return """"""
+            return """kA-h"""
         
         if unit_abbreviation == ElectricChargeUnits.MegaampereHour:
-            return """"""
+            return """MA-h"""
         

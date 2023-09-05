@@ -538,22 +538,22 @@ class MassFlux(AbstractMeasure):
             return f"""{self.grams_per_hour_per_square_millimeter} g·h⁻¹·mm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareMeter:
-            return f"""{self.kilograms_per_second_per_square_meter} """
+            return f"""{self.kilograms_per_second_per_square_meter} kg·s⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
-            return f"""{self.kilograms_per_second_per_square_centimeter} """
+            return f"""{self.kilograms_per_second_per_square_centimeter} kg·s⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
-            return f"""{self.kilograms_per_second_per_square_millimeter} """
+            return f"""{self.kilograms_per_second_per_square_millimeter} kg·s⁻¹·mm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareMeter:
-            return f"""{self.kilograms_per_hour_per_square_meter} """
+            return f"""{self.kilograms_per_hour_per_square_meter} kg·h⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
-            return f"""{self.kilograms_per_hour_per_square_centimeter} """
+            return f"""{self.kilograms_per_hour_per_square_centimeter} kg·h⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
-            return f"""{self.kilograms_per_hour_per_square_millimeter} """
+            return f"""{self.kilograms_per_hour_per_square_millimeter} kg·h⁻¹·mm⁻²"""
         
         return f'{self._value}'
 
@@ -584,20 +584,20 @@ class MassFlux(AbstractMeasure):
             return """g·h⁻¹·mm⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareMeter:
-            return """"""
+            return """kg·s⁻¹·m⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
-            return """"""
+            return """kg·s⁻¹·cm⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
-            return """"""
+            return """kg·s⁻¹·mm⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareMeter:
-            return """"""
+            return """kg·h⁻¹·m⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
-            return """"""
+            return """kg·h⁻¹·cm⁻²"""
         
         if unit_abbreviation == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
-            return """"""
+            return """kg·h⁻¹·mm⁻²"""
         

@@ -172,10 +172,10 @@ class ApparentEnergy(AbstractMeasure):
             return f"""{self.voltampere_hours} VAh"""
         
         if unit == ApparentEnergyUnits.KilovoltampereHour:
-            return f"""{self.kilovoltampere_hours} """
+            return f"""{self.kilovoltampere_hours} kVAh"""
         
         if unit == ApparentEnergyUnits.MegavoltampereHour:
-            return f"""{self.megavoltampere_hours} """
+            return f"""{self.megavoltampere_hours} MVAh"""
         
         return f'{self._value}'
 
@@ -191,8 +191,8 @@ class ApparentEnergy(AbstractMeasure):
             return """VAh"""
         
         if unit_abbreviation == ApparentEnergyUnits.KilovoltampereHour:
-            return """"""
+            return """kVAh"""
         
         if unit_abbreviation == ApparentEnergyUnits.MegavoltampereHour:
-            return """"""
+            return """MVAh"""
         

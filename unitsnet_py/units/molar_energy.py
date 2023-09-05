@@ -172,10 +172,10 @@ class MolarEnergy(AbstractMeasure):
             return f"""{self.joules_per_mole} J/mol"""
         
         if unit == MolarEnergyUnits.KilojoulePerMole:
-            return f"""{self.kilojoules_per_mole} """
+            return f"""{self.kilojoules_per_mole} kJ/mol"""
         
         if unit == MolarEnergyUnits.MegajoulePerMole:
-            return f"""{self.megajoules_per_mole} """
+            return f"""{self.megajoules_per_mole} MJ/mol"""
         
         return f'{self._value}'
 
@@ -191,8 +191,8 @@ class MolarEnergy(AbstractMeasure):
             return """J/mol"""
         
         if unit_abbreviation == MolarEnergyUnits.KilojoulePerMole:
-            return """"""
+            return """kJ/mol"""
         
         if unit_abbreviation == MolarEnergyUnits.MegajoulePerMole:
-            return """"""
+            return """MJ/mol"""
         

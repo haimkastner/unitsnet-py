@@ -664,22 +664,22 @@ class Force(AbstractMeasure):
             return f"""{self.short_tons_force} tf (short)"""
         
         if unit == ForceUnits.Micronewton:
-            return f"""{self.micronewtons} """
+            return f"""{self.micronewtons} μN"""
         
         if unit == ForceUnits.Millinewton:
-            return f"""{self.millinewtons} """
+            return f"""{self.millinewtons} mN"""
         
         if unit == ForceUnits.Decanewton:
-            return f"""{self.decanewtons} """
+            return f"""{self.decanewtons} daN"""
         
         if unit == ForceUnits.Kilonewton:
-            return f"""{self.kilonewtons} """
+            return f"""{self.kilonewtons} kN"""
         
         if unit == ForceUnits.Meganewton:
-            return f"""{self.meganewtons} """
+            return f"""{self.meganewtons} MN"""
         
         if unit == ForceUnits.KilopoundForce:
-            return f"""{self.kilopounds_force} """
+            return f"""{self.kilopounds_force} klbf"""
         
         return f'{self._value}'
 
@@ -719,20 +719,20 @@ class Force(AbstractMeasure):
             return """tf (short)"""
         
         if unit_abbreviation == ForceUnits.Micronewton:
-            return """"""
+            return """μN"""
         
         if unit_abbreviation == ForceUnits.Millinewton:
-            return """"""
+            return """mN"""
         
         if unit_abbreviation == ForceUnits.Decanewton:
-            return """"""
+            return """daN"""
         
         if unit_abbreviation == ForceUnits.Kilonewton:
-            return """"""
+            return """kN"""
         
         if unit_abbreviation == ForceUnits.Meganewton:
-            return """"""
+            return """MN"""
         
         if unit_abbreviation == ForceUnits.KilopoundForce:
-            return """"""
+            return """klbf"""
         

@@ -454,22 +454,22 @@ class Luminance(AbstractMeasure):
             return f"""{self.nits} nt"""
         
         if unit == LuminanceUnits.NanocandelaPerSquareMeter:
-            return f"""{self.nanocandelas_per_square_meter} """
+            return f"""{self.nanocandelas_per_square_meter} nCd/m²"""
         
         if unit == LuminanceUnits.MicrocandelaPerSquareMeter:
-            return f"""{self.microcandelas_per_square_meter} """
+            return f"""{self.microcandelas_per_square_meter} μCd/m²"""
         
         if unit == LuminanceUnits.MillicandelaPerSquareMeter:
-            return f"""{self.millicandelas_per_square_meter} """
+            return f"""{self.millicandelas_per_square_meter} mCd/m²"""
         
         if unit == LuminanceUnits.CenticandelaPerSquareMeter:
-            return f"""{self.centicandelas_per_square_meter} """
+            return f"""{self.centicandelas_per_square_meter} cCd/m²"""
         
         if unit == LuminanceUnits.DecicandelaPerSquareMeter:
-            return f"""{self.decicandelas_per_square_meter} """
+            return f"""{self.decicandelas_per_square_meter} dCd/m²"""
         
         if unit == LuminanceUnits.KilocandelaPerSquareMeter:
-            return f"""{self.kilocandelas_per_square_meter} """
+            return f"""{self.kilocandelas_per_square_meter} kCd/m²"""
         
         return f'{self._value}'
 
@@ -494,20 +494,20 @@ class Luminance(AbstractMeasure):
             return """nt"""
         
         if unit_abbreviation == LuminanceUnits.NanocandelaPerSquareMeter:
-            return """"""
+            return """nCd/m²"""
         
         if unit_abbreviation == LuminanceUnits.MicrocandelaPerSquareMeter:
-            return """"""
+            return """μCd/m²"""
         
         if unit_abbreviation == LuminanceUnits.MillicandelaPerSquareMeter:
-            return """"""
+            return """mCd/m²"""
         
         if unit_abbreviation == LuminanceUnits.CenticandelaPerSquareMeter:
-            return """"""
+            return """cCd/m²"""
         
         if unit_abbreviation == LuminanceUnits.DecicandelaPerSquareMeter:
-            return """"""
+            return """dCd/m²"""
         
         if unit_abbreviation == LuminanceUnits.KilocandelaPerSquareMeter:
-            return """"""
+            return """kCd/m²"""
         

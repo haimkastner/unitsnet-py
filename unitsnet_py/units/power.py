@@ -1090,58 +1090,58 @@ class Power(AbstractMeasure):
             return f"""{self.joules_per_hour} J/h"""
         
         if unit == PowerUnits.Femtowatt:
-            return f"""{self.femtowatts} """
+            return f"""{self.femtowatts} fW"""
         
         if unit == PowerUnits.Picowatt:
-            return f"""{self.picowatts} """
+            return f"""{self.picowatts} pW"""
         
         if unit == PowerUnits.Nanowatt:
-            return f"""{self.nanowatts} """
+            return f"""{self.nanowatts} nW"""
         
         if unit == PowerUnits.Microwatt:
-            return f"""{self.microwatts} """
+            return f"""{self.microwatts} μW"""
         
         if unit == PowerUnits.Milliwatt:
-            return f"""{self.milliwatts} """
+            return f"""{self.milliwatts} mW"""
         
         if unit == PowerUnits.Deciwatt:
-            return f"""{self.deciwatts} """
+            return f"""{self.deciwatts} dW"""
         
         if unit == PowerUnits.Decawatt:
-            return f"""{self.decawatts} """
+            return f"""{self.decawatts} daW"""
         
         if unit == PowerUnits.Kilowatt:
-            return f"""{self.kilowatts} """
+            return f"""{self.kilowatts} kW"""
         
         if unit == PowerUnits.Megawatt:
-            return f"""{self.megawatts} """
+            return f"""{self.megawatts} MW"""
         
         if unit == PowerUnits.Gigawatt:
-            return f"""{self.gigawatts} """
+            return f"""{self.gigawatts} GW"""
         
         if unit == PowerUnits.Terawatt:
-            return f"""{self.terawatts} """
+            return f"""{self.terawatts} TW"""
         
         if unit == PowerUnits.Petawatt:
-            return f"""{self.petawatts} """
+            return f"""{self.petawatts} PW"""
         
         if unit == PowerUnits.KilobritishThermalUnitPerHour:
-            return f"""{self.kilobritish_thermal_units_per_hour} """
+            return f"""{self.kilobritish_thermal_units_per_hour} kBtu/h"""
         
         if unit == PowerUnits.MegabritishThermalUnitPerHour:
-            return f"""{self.megabritish_thermal_units_per_hour} """
+            return f"""{self.megabritish_thermal_units_per_hour} MBtu/h"""
         
         if unit == PowerUnits.MillijoulePerHour:
-            return f"""{self.millijoules_per_hour} """
+            return f"""{self.millijoules_per_hour} mJ/h"""
         
         if unit == PowerUnits.KilojoulePerHour:
-            return f"""{self.kilojoules_per_hour} """
+            return f"""{self.kilojoules_per_hour} kJ/h"""
         
         if unit == PowerUnits.MegajoulePerHour:
-            return f"""{self.megajoules_per_hour} """
+            return f"""{self.megajoules_per_hour} MJ/h"""
         
         if unit == PowerUnits.GigajoulePerHour:
-            return f"""{self.gigajoules_per_hour} """
+            return f"""{self.gigajoules_per_hour} GJ/h"""
         
         return f'{self._value}'
 
@@ -1178,56 +1178,56 @@ class Power(AbstractMeasure):
             return """J/h"""
         
         if unit_abbreviation == PowerUnits.Femtowatt:
-            return """"""
+            return """fW"""
         
         if unit_abbreviation == PowerUnits.Picowatt:
-            return """"""
+            return """pW"""
         
         if unit_abbreviation == PowerUnits.Nanowatt:
-            return """"""
+            return """nW"""
         
         if unit_abbreviation == PowerUnits.Microwatt:
-            return """"""
+            return """μW"""
         
         if unit_abbreviation == PowerUnits.Milliwatt:
-            return """"""
+            return """mW"""
         
         if unit_abbreviation == PowerUnits.Deciwatt:
-            return """"""
+            return """dW"""
         
         if unit_abbreviation == PowerUnits.Decawatt:
-            return """"""
+            return """daW"""
         
         if unit_abbreviation == PowerUnits.Kilowatt:
-            return """"""
+            return """kW"""
         
         if unit_abbreviation == PowerUnits.Megawatt:
-            return """"""
+            return """MW"""
         
         if unit_abbreviation == PowerUnits.Gigawatt:
-            return """"""
+            return """GW"""
         
         if unit_abbreviation == PowerUnits.Terawatt:
-            return """"""
+            return """TW"""
         
         if unit_abbreviation == PowerUnits.Petawatt:
-            return """"""
+            return """PW"""
         
         if unit_abbreviation == PowerUnits.KilobritishThermalUnitPerHour:
-            return """"""
+            return """kBtu/h"""
         
         if unit_abbreviation == PowerUnits.MegabritishThermalUnitPerHour:
-            return """"""
+            return """MBtu/h"""
         
         if unit_abbreviation == PowerUnits.MillijoulePerHour:
-            return """"""
+            return """mJ/h"""
         
         if unit_abbreviation == PowerUnits.KilojoulePerHour:
-            return """"""
+            return """kJ/h"""
         
         if unit_abbreviation == PowerUnits.MegajoulePerHour:
-            return """"""
+            return """MJ/h"""
         
         if unit_abbreviation == PowerUnits.GigajoulePerHour:
-            return """"""
+            return """GJ/h"""
         

@@ -412,22 +412,22 @@ class KinematicViscosity(AbstractMeasure):
             return f"""{self.square_feet_per_second} ft²/s"""
         
         if unit == KinematicViscosityUnits.Nanostokes:
-            return f"""{self.nanostokes} """
+            return f"""{self.nanostokes} nSt"""
         
         if unit == KinematicViscosityUnits.Microstokes:
-            return f"""{self.microstokes} """
+            return f"""{self.microstokes} μSt"""
         
         if unit == KinematicViscosityUnits.Millistokes:
-            return f"""{self.millistokes} """
+            return f"""{self.millistokes} mSt"""
         
         if unit == KinematicViscosityUnits.Centistokes:
-            return f"""{self.centistokes} """
+            return f"""{self.centistokes} cSt"""
         
         if unit == KinematicViscosityUnits.Decistokes:
-            return f"""{self.decistokes} """
+            return f"""{self.decistokes} dSt"""
         
         if unit == KinematicViscosityUnits.Kilostokes:
-            return f"""{self.kilostokes} """
+            return f"""{self.kilostokes} kSt"""
         
         return f'{self._value}'
 
@@ -449,20 +449,20 @@ class KinematicViscosity(AbstractMeasure):
             return """ft²/s"""
         
         if unit_abbreviation == KinematicViscosityUnits.Nanostokes:
-            return """"""
+            return """nSt"""
         
         if unit_abbreviation == KinematicViscosityUnits.Microstokes:
-            return """"""
+            return """μSt"""
         
         if unit_abbreviation == KinematicViscosityUnits.Millistokes:
-            return """"""
+            return """mSt"""
         
         if unit_abbreviation == KinematicViscosityUnits.Centistokes:
-            return """"""
+            return """cSt"""
         
         if unit_abbreviation == KinematicViscosityUnits.Decistokes:
-            return """"""
+            return """dSt"""
         
         if unit_abbreviation == KinematicViscosityUnits.Kilostokes:
-            return """"""
+            return """kSt"""
         

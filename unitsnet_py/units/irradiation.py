@@ -337,13 +337,13 @@ class Irradiation(AbstractMeasure):
             return f"""{self.watt_hours_per_square_meter} Wh/m²"""
         
         if unit == IrradiationUnits.KilojoulePerSquareMeter:
-            return f"""{self.kilojoules_per_square_meter} """
+            return f"""{self.kilojoules_per_square_meter} kJ/m²"""
         
         if unit == IrradiationUnits.MillijoulePerSquareCentimeter:
-            return f"""{self.millijoules_per_square_centimeter} """
+            return f"""{self.millijoules_per_square_centimeter} mJ/cm²"""
         
         if unit == IrradiationUnits.KilowattHourPerSquareMeter:
-            return f"""{self.kilowatt_hours_per_square_meter} """
+            return f"""{self.kilowatt_hours_per_square_meter} kWh/m²"""
         
         return f'{self._value}'
 
@@ -368,11 +368,11 @@ class Irradiation(AbstractMeasure):
             return """Wh/m²"""
         
         if unit_abbreviation == IrradiationUnits.KilojoulePerSquareMeter:
-            return """"""
+            return """kJ/m²"""
         
         if unit_abbreviation == IrradiationUnits.MillijoulePerSquareCentimeter:
-            return """"""
+            return """mJ/cm²"""
         
         if unit_abbreviation == IrradiationUnits.KilowattHourPerSquareMeter:
-            return """"""
+            return """kWh/m²"""
         

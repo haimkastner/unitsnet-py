@@ -619,25 +619,25 @@ class Acceleration(AbstractMeasure):
             return f"""{self.standard_gravity} g"""
         
         if unit == AccelerationUnits.NanometerPerSecondSquared:
-            return f"""{self.nanometers_per_second_squared} """
+            return f"""{self.nanometers_per_second_squared} nm/s²"""
         
         if unit == AccelerationUnits.MicrometerPerSecondSquared:
-            return f"""{self.micrometers_per_second_squared} """
+            return f"""{self.micrometers_per_second_squared} μm/s²"""
         
         if unit == AccelerationUnits.MillimeterPerSecondSquared:
-            return f"""{self.millimeters_per_second_squared} """
+            return f"""{self.millimeters_per_second_squared} mm/s²"""
         
         if unit == AccelerationUnits.CentimeterPerSecondSquared:
-            return f"""{self.centimeters_per_second_squared} """
+            return f"""{self.centimeters_per_second_squared} cm/s²"""
         
         if unit == AccelerationUnits.DecimeterPerSecondSquared:
-            return f"""{self.decimeters_per_second_squared} """
+            return f"""{self.decimeters_per_second_squared} dm/s²"""
         
         if unit == AccelerationUnits.KilometerPerSecondSquared:
-            return f"""{self.kilometers_per_second_squared} """
+            return f"""{self.kilometers_per_second_squared} km/s²"""
         
         if unit == AccelerationUnits.MillistandardGravity:
-            return f"""{self.millistandard_gravity} """
+            return f"""{self.millistandard_gravity} mg"""
         
         return f'{self._value}'
 
@@ -671,23 +671,23 @@ class Acceleration(AbstractMeasure):
             return """g"""
         
         if unit_abbreviation == AccelerationUnits.NanometerPerSecondSquared:
-            return """"""
+            return """nm/s²"""
         
         if unit_abbreviation == AccelerationUnits.MicrometerPerSecondSquared:
-            return """"""
+            return """μm/s²"""
         
         if unit_abbreviation == AccelerationUnits.MillimeterPerSecondSquared:
-            return """"""
+            return """mm/s²"""
         
         if unit_abbreviation == AccelerationUnits.CentimeterPerSecondSquared:
-            return """"""
+            return """cm/s²"""
         
         if unit_abbreviation == AccelerationUnits.DecimeterPerSecondSquared:
-            return """"""
+            return """dm/s²"""
         
         if unit_abbreviation == AccelerationUnits.KilometerPerSecondSquared:
-            return """"""
+            return """km/s²"""
         
         if unit_abbreviation == AccelerationUnits.MillistandardGravity:
-            return """"""
+            return """mg"""
         

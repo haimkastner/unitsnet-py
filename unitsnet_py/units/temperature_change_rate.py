@@ -448,28 +448,28 @@ class TemperatureChangeRate(AbstractMeasure):
             return f"""{self.degrees_celsius_per_minute} °C/min"""
         
         if unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
-            return f"""{self.nanodegrees_celsius_per_second} """
+            return f"""{self.nanodegrees_celsius_per_second} n°C/s"""
         
         if unit == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
-            return f"""{self.microdegrees_celsius_per_second} """
+            return f"""{self.microdegrees_celsius_per_second} μ°C/s"""
         
         if unit == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
-            return f"""{self.millidegrees_celsius_per_second} """
+            return f"""{self.millidegrees_celsius_per_second} m°C/s"""
         
         if unit == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
-            return f"""{self.centidegrees_celsius_per_second} """
+            return f"""{self.centidegrees_celsius_per_second} c°C/s"""
         
         if unit == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
-            return f"""{self.decidegrees_celsius_per_second} """
+            return f"""{self.decidegrees_celsius_per_second} d°C/s"""
         
         if unit == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
-            return f"""{self.decadegrees_celsius_per_second} """
+            return f"""{self.decadegrees_celsius_per_second} da°C/s"""
         
         if unit == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
-            return f"""{self.hectodegrees_celsius_per_second} """
+            return f"""{self.hectodegrees_celsius_per_second} h°C/s"""
         
         if unit == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
-            return f"""{self.kilodegrees_celsius_per_second} """
+            return f"""{self.kilodegrees_celsius_per_second} k°C/s"""
         
         return f'{self._value}'
 
@@ -488,26 +488,26 @@ class TemperatureChangeRate(AbstractMeasure):
             return """°C/min"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
-            return """"""
+            return """n°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
-            return """"""
+            return """μ°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
-            return """"""
+            return """m°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
-            return """"""
+            return """c°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
-            return """"""
+            return """d°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
-            return """"""
+            return """da°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
-            return """"""
+            return """h°C/s"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
-            return """"""
+            return """k°C/s"""
         

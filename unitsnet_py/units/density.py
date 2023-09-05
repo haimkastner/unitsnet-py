@@ -2119,79 +2119,79 @@ class Density(AbstractMeasure):
             return f"""{self.slugs_per_cubic_inch} slug/in³"""
         
         if unit == DensityUnits.KilogramPerCubicMillimeter:
-            return f"""{self.kilograms_per_cubic_millimeter} """
+            return f"""{self.kilograms_per_cubic_millimeter} kg/mm³"""
         
         if unit == DensityUnits.KilogramPerCubicCentimeter:
-            return f"""{self.kilograms_per_cubic_centimeter} """
+            return f"""{self.kilograms_per_cubic_centimeter} kg/cm³"""
         
         if unit == DensityUnits.KilogramPerCubicMeter:
-            return f"""{self.kilograms_per_cubic_meter} """
+            return f"""{self.kilograms_per_cubic_meter} kg/m³"""
         
         if unit == DensityUnits.MilligramPerCubicMeter:
-            return f"""{self.milligrams_per_cubic_meter} """
+            return f"""{self.milligrams_per_cubic_meter} mg/m³"""
         
         if unit == DensityUnits.MicrogramPerCubicMeter:
-            return f"""{self.micrograms_per_cubic_meter} """
+            return f"""{self.micrograms_per_cubic_meter} μg/m³"""
         
         if unit == DensityUnits.KilopoundPerCubicInch:
-            return f"""{self.kilopounds_per_cubic_inch} """
+            return f"""{self.kilopounds_per_cubic_inch} klb/in³"""
         
         if unit == DensityUnits.KilopoundPerCubicFoot:
-            return f"""{self.kilopounds_per_cubic_foot} """
+            return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
         
         if unit == DensityUnits.PicogramPerLiter:
-            return f"""{self.picograms_per_liter} """
+            return f"""{self.picograms_per_liter} pg/L"""
         
         if unit == DensityUnits.NanogramPerLiter:
-            return f"""{self.nanograms_per_liter} """
+            return f"""{self.nanograms_per_liter} ng/L"""
         
         if unit == DensityUnits.MicrogramPerLiter:
-            return f"""{self.micrograms_per_liter} """
+            return f"""{self.micrograms_per_liter} μg/L"""
         
         if unit == DensityUnits.MilligramPerLiter:
-            return f"""{self.milligrams_per_liter} """
+            return f"""{self.milligrams_per_liter} mg/L"""
         
         if unit == DensityUnits.CentigramPerLiter:
-            return f"""{self.centigrams_per_liter} """
+            return f"""{self.centigrams_per_liter} cg/L"""
         
         if unit == DensityUnits.DecigramPerLiter:
-            return f"""{self.decigrams_per_liter} """
+            return f"""{self.decigrams_per_liter} dg/L"""
         
         if unit == DensityUnits.PicogramPerDeciliter:
-            return f"""{self.picograms_per_deci_liter} """
+            return f"""{self.picograms_per_deci_liter} pg/dl"""
         
         if unit == DensityUnits.NanogramPerDeciliter:
-            return f"""{self.nanograms_per_deci_liter} """
+            return f"""{self.nanograms_per_deci_liter} ng/dl"""
         
         if unit == DensityUnits.MicrogramPerDeciliter:
-            return f"""{self.micrograms_per_deci_liter} """
+            return f"""{self.micrograms_per_deci_liter} μg/dl"""
         
         if unit == DensityUnits.MilligramPerDeciliter:
-            return f"""{self.milligrams_per_deci_liter} """
+            return f"""{self.milligrams_per_deci_liter} mg/dl"""
         
         if unit == DensityUnits.CentigramPerDeciliter:
-            return f"""{self.centigrams_per_deci_liter} """
+            return f"""{self.centigrams_per_deci_liter} cg/dl"""
         
         if unit == DensityUnits.DecigramPerDeciliter:
-            return f"""{self.decigrams_per_deci_liter} """
+            return f"""{self.decigrams_per_deci_liter} dg/dl"""
         
         if unit == DensityUnits.PicogramPerMilliliter:
-            return f"""{self.picograms_per_milliliter} """
+            return f"""{self.picograms_per_milliliter} pg/ml"""
         
         if unit == DensityUnits.NanogramPerMilliliter:
-            return f"""{self.nanograms_per_milliliter} """
+            return f"""{self.nanograms_per_milliliter} ng/ml"""
         
         if unit == DensityUnits.MicrogramPerMilliliter:
-            return f"""{self.micrograms_per_milliliter} """
+            return f"""{self.micrograms_per_milliliter} μg/ml"""
         
         if unit == DensityUnits.MilligramPerMilliliter:
-            return f"""{self.milligrams_per_milliliter} """
+            return f"""{self.milligrams_per_milliliter} mg/ml"""
         
         if unit == DensityUnits.CentigramPerMilliliter:
-            return f"""{self.centigrams_per_milliliter} """
+            return f"""{self.centigrams_per_milliliter} cg/ml"""
         
         if unit == DensityUnits.DecigramPerMilliliter:
-            return f"""{self.decigrams_per_milliliter} """
+            return f"""{self.decigrams_per_milliliter} dg/ml"""
         
         return f'{self._value}'
 
@@ -2282,77 +2282,77 @@ class Density(AbstractMeasure):
             return """slug/in³"""
         
         if unit_abbreviation == DensityUnits.KilogramPerCubicMillimeter:
-            return """"""
+            return """kg/mm³"""
         
         if unit_abbreviation == DensityUnits.KilogramPerCubicCentimeter:
-            return """"""
+            return """kg/cm³"""
         
         if unit_abbreviation == DensityUnits.KilogramPerCubicMeter:
-            return """"""
+            return """kg/m³"""
         
         if unit_abbreviation == DensityUnits.MilligramPerCubicMeter:
-            return """"""
+            return """mg/m³"""
         
         if unit_abbreviation == DensityUnits.MicrogramPerCubicMeter:
-            return """"""
+            return """μg/m³"""
         
         if unit_abbreviation == DensityUnits.KilopoundPerCubicInch:
-            return """"""
+            return """klb/in³"""
         
         if unit_abbreviation == DensityUnits.KilopoundPerCubicFoot:
-            return """"""
+            return """klb/ft³"""
         
         if unit_abbreviation == DensityUnits.PicogramPerLiter:
-            return """"""
+            return """pg/L"""
         
         if unit_abbreviation == DensityUnits.NanogramPerLiter:
-            return """"""
+            return """ng/L"""
         
         if unit_abbreviation == DensityUnits.MicrogramPerLiter:
-            return """"""
+            return """μg/L"""
         
         if unit_abbreviation == DensityUnits.MilligramPerLiter:
-            return """"""
+            return """mg/L"""
         
         if unit_abbreviation == DensityUnits.CentigramPerLiter:
-            return """"""
+            return """cg/L"""
         
         if unit_abbreviation == DensityUnits.DecigramPerLiter:
-            return """"""
+            return """dg/L"""
         
         if unit_abbreviation == DensityUnits.PicogramPerDeciliter:
-            return """"""
+            return """pg/dl"""
         
         if unit_abbreviation == DensityUnits.NanogramPerDeciliter:
-            return """"""
+            return """ng/dl"""
         
         if unit_abbreviation == DensityUnits.MicrogramPerDeciliter:
-            return """"""
+            return """μg/dl"""
         
         if unit_abbreviation == DensityUnits.MilligramPerDeciliter:
-            return """"""
+            return """mg/dl"""
         
         if unit_abbreviation == DensityUnits.CentigramPerDeciliter:
-            return """"""
+            return """cg/dl"""
         
         if unit_abbreviation == DensityUnits.DecigramPerDeciliter:
-            return """"""
+            return """dg/dl"""
         
         if unit_abbreviation == DensityUnits.PicogramPerMilliliter:
-            return """"""
+            return """pg/ml"""
         
         if unit_abbreviation == DensityUnits.NanogramPerMilliliter:
-            return """"""
+            return """ng/ml"""
         
         if unit_abbreviation == DensityUnits.MicrogramPerMilliliter:
-            return """"""
+            return """μg/ml"""
         
         if unit_abbreviation == DensityUnits.MilligramPerMilliliter:
-            return """"""
+            return """mg/ml"""
         
         if unit_abbreviation == DensityUnits.CentigramPerMilliliter:
-            return """"""
+            return """cg/ml"""
         
         if unit_abbreviation == DensityUnits.DecigramPerMilliliter:
-            return """"""
+            return """dg/ml"""
         

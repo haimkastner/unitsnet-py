@@ -292,16 +292,16 @@ class MagneticField(AbstractMeasure):
             return f"""{self.gausses} G"""
         
         if unit == MagneticFieldUnits.Nanotesla:
-            return f"""{self.nanoteslas} """
+            return f"""{self.nanoteslas} nT"""
         
         if unit == MagneticFieldUnits.Microtesla:
-            return f"""{self.microteslas} """
+            return f"""{self.microteslas} μT"""
         
         if unit == MagneticFieldUnits.Millitesla:
-            return f"""{self.milliteslas} """
+            return f"""{self.milliteslas} mT"""
         
         if unit == MagneticFieldUnits.Milligauss:
-            return f"""{self.milligausses} """
+            return f"""{self.milligausses} mG"""
         
         return f'{self._value}'
 
@@ -320,14 +320,14 @@ class MagneticField(AbstractMeasure):
             return """G"""
         
         if unit_abbreviation == MagneticFieldUnits.Nanotesla:
-            return """"""
+            return """nT"""
         
         if unit_abbreviation == MagneticFieldUnits.Microtesla:
-            return """"""
+            return """μT"""
         
         if unit_abbreviation == MagneticFieldUnits.Millitesla:
-            return """"""
+            return """mT"""
         
         if unit_abbreviation == MagneticFieldUnits.Milligauss:
-            return """"""
+            return """mG"""
         

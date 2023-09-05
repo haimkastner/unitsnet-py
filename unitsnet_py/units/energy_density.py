@@ -526,34 +526,34 @@ class EnergyDensity(AbstractMeasure):
             return f"""{self.watt_hours_per_cubic_meter} Wh/m³"""
         
         if unit == EnergyDensityUnits.KilojoulePerCubicMeter:
-            return f"""{self.kilojoules_per_cubic_meter} """
+            return f"""{self.kilojoules_per_cubic_meter} kJ/m³"""
         
         if unit == EnergyDensityUnits.MegajoulePerCubicMeter:
-            return f"""{self.megajoules_per_cubic_meter} """
+            return f"""{self.megajoules_per_cubic_meter} MJ/m³"""
         
         if unit == EnergyDensityUnits.GigajoulePerCubicMeter:
-            return f"""{self.gigajoules_per_cubic_meter} """
+            return f"""{self.gigajoules_per_cubic_meter} GJ/m³"""
         
         if unit == EnergyDensityUnits.TerajoulePerCubicMeter:
-            return f"""{self.terajoules_per_cubic_meter} """
+            return f"""{self.terajoules_per_cubic_meter} TJ/m³"""
         
         if unit == EnergyDensityUnits.PetajoulePerCubicMeter:
-            return f"""{self.petajoules_per_cubic_meter} """
+            return f"""{self.petajoules_per_cubic_meter} PJ/m³"""
         
         if unit == EnergyDensityUnits.KilowattHourPerCubicMeter:
-            return f"""{self.kilowatt_hours_per_cubic_meter} """
+            return f"""{self.kilowatt_hours_per_cubic_meter} kWh/m³"""
         
         if unit == EnergyDensityUnits.MegawattHourPerCubicMeter:
-            return f"""{self.megawatt_hours_per_cubic_meter} """
+            return f"""{self.megawatt_hours_per_cubic_meter} MWh/m³"""
         
         if unit == EnergyDensityUnits.GigawattHourPerCubicMeter:
-            return f"""{self.gigawatt_hours_per_cubic_meter} """
+            return f"""{self.gigawatt_hours_per_cubic_meter} GWh/m³"""
         
         if unit == EnergyDensityUnits.TerawattHourPerCubicMeter:
-            return f"""{self.terawatt_hours_per_cubic_meter} """
+            return f"""{self.terawatt_hours_per_cubic_meter} TWh/m³"""
         
         if unit == EnergyDensityUnits.PetawattHourPerCubicMeter:
-            return f"""{self.petawatt_hours_per_cubic_meter} """
+            return f"""{self.petawatt_hours_per_cubic_meter} PWh/m³"""
         
         return f'{self._value}'
 
@@ -572,32 +572,32 @@ class EnergyDensity(AbstractMeasure):
             return """Wh/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.KilojoulePerCubicMeter:
-            return """"""
+            return """kJ/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.MegajoulePerCubicMeter:
-            return """"""
+            return """MJ/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.GigajoulePerCubicMeter:
-            return """"""
+            return """GJ/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.TerajoulePerCubicMeter:
-            return """"""
+            return """TJ/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.PetajoulePerCubicMeter:
-            return """"""
+            return """PJ/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.KilowattHourPerCubicMeter:
-            return """"""
+            return """kWh/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.MegawattHourPerCubicMeter:
-            return """"""
+            return """MWh/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.GigawattHourPerCubicMeter:
-            return """"""
+            return """GWh/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.TerawattHourPerCubicMeter:
-            return """"""
+            return """TWh/m³"""
         
         if unit_abbreviation == EnergyDensityUnits.PetawattHourPerCubicMeter:
-            return """"""
+            return """PWh/m³"""
         

@@ -787,25 +787,25 @@ class HeatFlux(AbstractMeasure):
             return f"""{self.pounds_per_second_cubed} lb/s³"""
         
         if unit == HeatFluxUnits.NanowattPerSquareMeter:
-            return f"""{self.nanowatts_per_square_meter} """
+            return f"""{self.nanowatts_per_square_meter} nW/m²"""
         
         if unit == HeatFluxUnits.MicrowattPerSquareMeter:
-            return f"""{self.microwatts_per_square_meter} """
+            return f"""{self.microwatts_per_square_meter} μW/m²"""
         
         if unit == HeatFluxUnits.MilliwattPerSquareMeter:
-            return f"""{self.milliwatts_per_square_meter} """
+            return f"""{self.milliwatts_per_square_meter} mW/m²"""
         
         if unit == HeatFluxUnits.CentiwattPerSquareMeter:
-            return f"""{self.centiwatts_per_square_meter} """
+            return f"""{self.centiwatts_per_square_meter} cW/m²"""
         
         if unit == HeatFluxUnits.DeciwattPerSquareMeter:
-            return f"""{self.deciwatts_per_square_meter} """
+            return f"""{self.deciwatts_per_square_meter} dW/m²"""
         
         if unit == HeatFluxUnits.KilowattPerSquareMeter:
-            return f"""{self.kilowatts_per_square_meter} """
+            return f"""{self.kilowatts_per_square_meter} kW/m²"""
         
         if unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return f"""{self.kilocalories_per_second_square_centimeter} """
+            return f"""{self.kilocalories_per_second_square_centimeter} kcal/s·cm²"""
         
         return f'{self._value}'
 
@@ -851,23 +851,23 @@ class HeatFlux(AbstractMeasure):
             return """lb/s³"""
         
         if unit_abbreviation == HeatFluxUnits.NanowattPerSquareMeter:
-            return """"""
+            return """nW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.MicrowattPerSquareMeter:
-            return """"""
+            return """μW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.MilliwattPerSquareMeter:
-            return """"""
+            return """mW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.CentiwattPerSquareMeter:
-            return """"""
+            return """cW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.DeciwattPerSquareMeter:
-            return """"""
+            return """dW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.KilowattPerSquareMeter:
-            return """"""
+            return """kW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return """"""
+            return """kcal/s·cm²"""
         

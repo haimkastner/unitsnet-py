@@ -2044,70 +2044,70 @@ class Pressure(AbstractMeasure):
             return f"""{self.feet_of_elevation} ft of elevation"""
         
         if unit == PressureUnits.Micropascal:
-            return f"""{self.micropascals} """
+            return f"""{self.micropascals} μPa"""
         
         if unit == PressureUnits.Millipascal:
-            return f"""{self.millipascals} """
+            return f"""{self.millipascals} mPa"""
         
         if unit == PressureUnits.Decapascal:
-            return f"""{self.decapascals} """
+            return f"""{self.decapascals} daPa"""
         
         if unit == PressureUnits.Hectopascal:
-            return f"""{self.hectopascals} """
+            return f"""{self.hectopascals} hPa"""
         
         if unit == PressureUnits.Kilopascal:
-            return f"""{self.kilopascals} """
+            return f"""{self.kilopascals} kPa"""
         
         if unit == PressureUnits.Megapascal:
-            return f"""{self.megapascals} """
+            return f"""{self.megapascals} MPa"""
         
         if unit == PressureUnits.Gigapascal:
-            return f"""{self.gigapascals} """
+            return f"""{self.gigapascals} GPa"""
         
         if unit == PressureUnits.Microbar:
-            return f"""{self.microbars} """
+            return f"""{self.microbars} μbar"""
         
         if unit == PressureUnits.Millibar:
-            return f"""{self.millibars} """
+            return f"""{self.millibars} mbar"""
         
         if unit == PressureUnits.Centibar:
-            return f"""{self.centibars} """
+            return f"""{self.centibars} cbar"""
         
         if unit == PressureUnits.Decibar:
-            return f"""{self.decibars} """
+            return f"""{self.decibars} dbar"""
         
         if unit == PressureUnits.Kilobar:
-            return f"""{self.kilobars} """
+            return f"""{self.kilobars} kbar"""
         
         if unit == PressureUnits.Megabar:
-            return f"""{self.megabars} """
+            return f"""{self.megabars} Mbar"""
         
         if unit == PressureUnits.KilonewtonPerSquareMeter:
-            return f"""{self.kilonewtons_per_square_meter} """
+            return f"""{self.kilonewtons_per_square_meter} kN/m²"""
         
         if unit == PressureUnits.MeganewtonPerSquareMeter:
-            return f"""{self.meganewtons_per_square_meter} """
+            return f"""{self.meganewtons_per_square_meter} MN/m²"""
         
         if unit == PressureUnits.KilonewtonPerSquareCentimeter:
-            return f"""{self.kilonewtons_per_square_centimeter} """
+            return f"""{self.kilonewtons_per_square_centimeter} kN/cm²"""
         
         if unit == PressureUnits.KilonewtonPerSquareMillimeter:
-            return f"""{self.kilonewtons_per_square_millimeter} """
+            return f"""{self.kilonewtons_per_square_millimeter} kN/mm²"""
         
         if unit == PressureUnits.KilopoundForcePerSquareInch:
-            return f"""{self.kilopounds_force_per_square_inch} """
+            return f"""{self.kilopounds_force_per_square_inch} kpsi"""
         
         if unit == PressureUnits.KilopoundForcePerSquareMil:
-            return f"""{self.kilopounds_force_per_square_mil} """
+            return f"""{self.kilopounds_force_per_square_mil} klb/mil²"""
         
         if unit == PressureUnits.KilopoundForcePerSquareFoot:
-            return f"""{self.kilopounds_force_per_square_foot} """
+            return f"""{self.kilopounds_force_per_square_foot} klb/ft²"""
         
         if unit == PressureUnits.MillimeterOfWaterColumn:
-            return f"""{self.millimeters_of_water_column} """
+            return f"""{self.millimeters_of_water_column} mmH₂O"""
         
         if unit == PressureUnits.CentimeterOfWaterColumn:
-            return f"""{self.centimeters_of_water_column} """
+            return f"""{self.centimeters_of_water_column} cmH₂O"""
         
         return f'{self._value}'
 
@@ -2201,68 +2201,68 @@ class Pressure(AbstractMeasure):
             return """ft of elevation"""
         
         if unit_abbreviation == PressureUnits.Micropascal:
-            return """"""
+            return """μPa"""
         
         if unit_abbreviation == PressureUnits.Millipascal:
-            return """"""
+            return """mPa"""
         
         if unit_abbreviation == PressureUnits.Decapascal:
-            return """"""
+            return """daPa"""
         
         if unit_abbreviation == PressureUnits.Hectopascal:
-            return """"""
+            return """hPa"""
         
         if unit_abbreviation == PressureUnits.Kilopascal:
-            return """"""
+            return """kPa"""
         
         if unit_abbreviation == PressureUnits.Megapascal:
-            return """"""
+            return """MPa"""
         
         if unit_abbreviation == PressureUnits.Gigapascal:
-            return """"""
+            return """GPa"""
         
         if unit_abbreviation == PressureUnits.Microbar:
-            return """"""
+            return """μbar"""
         
         if unit_abbreviation == PressureUnits.Millibar:
-            return """"""
+            return """mbar"""
         
         if unit_abbreviation == PressureUnits.Centibar:
-            return """"""
+            return """cbar"""
         
         if unit_abbreviation == PressureUnits.Decibar:
-            return """"""
+            return """dbar"""
         
         if unit_abbreviation == PressureUnits.Kilobar:
-            return """"""
+            return """kbar"""
         
         if unit_abbreviation == PressureUnits.Megabar:
-            return """"""
+            return """Mbar"""
         
         if unit_abbreviation == PressureUnits.KilonewtonPerSquareMeter:
-            return """"""
+            return """kN/m²"""
         
         if unit_abbreviation == PressureUnits.MeganewtonPerSquareMeter:
-            return """"""
+            return """MN/m²"""
         
         if unit_abbreviation == PressureUnits.KilonewtonPerSquareCentimeter:
-            return """"""
+            return """kN/cm²"""
         
         if unit_abbreviation == PressureUnits.KilonewtonPerSquareMillimeter:
-            return """"""
+            return """kN/mm²"""
         
         if unit_abbreviation == PressureUnits.KilopoundForcePerSquareInch:
-            return """"""
+            return """kpsi"""
         
         if unit_abbreviation == PressureUnits.KilopoundForcePerSquareMil:
-            return """"""
+            return """klb/mil²"""
         
         if unit_abbreviation == PressureUnits.KilopoundForcePerSquareFoot:
-            return """"""
+            return """klb/ft²"""
         
         if unit_abbreviation == PressureUnits.MillimeterOfWaterColumn:
-            return """"""
+            return """mmH₂O"""
         
         if unit_abbreviation == PressureUnits.CentimeterOfWaterColumn:
-            return """"""
+            return """cmH₂O"""
         

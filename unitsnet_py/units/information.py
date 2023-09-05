@@ -604,40 +604,40 @@ class Information(AbstractMeasure):
             return f"""{self.bits} b"""
         
         if unit == InformationUnits.Kilobyte:
-            return f"""{self.kilobytes} """
+            return f"""{self.kilobytes} kB"""
         
         if unit == InformationUnits.Megabyte:
-            return f"""{self.megabytes} """
+            return f"""{self.megabytes} MB"""
         
         if unit == InformationUnits.Gigabyte:
-            return f"""{self.gigabytes} """
+            return f"""{self.gigabytes} GB"""
         
         if unit == InformationUnits.Terabyte:
-            return f"""{self.terabytes} """
+            return f"""{self.terabytes} TB"""
         
         if unit == InformationUnits.Petabyte:
-            return f"""{self.petabytes} """
+            return f"""{self.petabytes} PB"""
         
         if unit == InformationUnits.Exabyte:
-            return f"""{self.exabytes} """
+            return f"""{self.exabytes} EB"""
         
         if unit == InformationUnits.Kilobit:
-            return f"""{self.kilobits} """
+            return f"""{self.kilobits} kb"""
         
         if unit == InformationUnits.Megabit:
-            return f"""{self.megabits} """
+            return f"""{self.megabits} Mb"""
         
         if unit == InformationUnits.Gigabit:
-            return f"""{self.gigabits} """
+            return f"""{self.gigabits} Gb"""
         
         if unit == InformationUnits.Terabit:
-            return f"""{self.terabits} """
+            return f"""{self.terabits} Tb"""
         
         if unit == InformationUnits.Petabit:
-            return f"""{self.petabits} """
+            return f"""{self.petabits} Pb"""
         
         if unit == InformationUnits.Exabit:
-            return f"""{self.exabits} """
+            return f"""{self.exabits} Eb"""
         
         return f'{self._value}'
 
@@ -656,38 +656,38 @@ class Information(AbstractMeasure):
             return """b"""
         
         if unit_abbreviation == InformationUnits.Kilobyte:
-            return """"""
+            return """kB"""
         
         if unit_abbreviation == InformationUnits.Megabyte:
-            return """"""
+            return """MB"""
         
         if unit_abbreviation == InformationUnits.Gigabyte:
-            return """"""
+            return """GB"""
         
         if unit_abbreviation == InformationUnits.Terabyte:
-            return """"""
+            return """TB"""
         
         if unit_abbreviation == InformationUnits.Petabyte:
-            return """"""
+            return """PB"""
         
         if unit_abbreviation == InformationUnits.Exabyte:
-            return """"""
+            return """EB"""
         
         if unit_abbreviation == InformationUnits.Kilobit:
-            return """"""
+            return """kb"""
         
         if unit_abbreviation == InformationUnits.Megabit:
-            return """"""
+            return """Mb"""
         
         if unit_abbreviation == InformationUnits.Gigabit:
-            return """"""
+            return """Gb"""
         
         if unit_abbreviation == InformationUnits.Terabit:
-            return """"""
+            return """Tb"""
         
         if unit_abbreviation == InformationUnits.Petabit:
-            return """"""
+            return """Pb"""
         
         if unit_abbreviation == InformationUnits.Exabit:
-            return """"""
+            return """Eb"""
         

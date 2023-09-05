@@ -604,40 +604,40 @@ class BitRate(AbstractMeasure):
             return f"""{self.bytes_per_second} B/s"""
         
         if unit == BitRateUnits.KilobitPerSecond:
-            return f"""{self.kilobits_per_second} """
+            return f"""{self.kilobits_per_second} kbit/s"""
         
         if unit == BitRateUnits.MegabitPerSecond:
-            return f"""{self.megabits_per_second} """
+            return f"""{self.megabits_per_second} Mbit/s"""
         
         if unit == BitRateUnits.GigabitPerSecond:
-            return f"""{self.gigabits_per_second} """
+            return f"""{self.gigabits_per_second} Gbit/s"""
         
         if unit == BitRateUnits.TerabitPerSecond:
-            return f"""{self.terabits_per_second} """
+            return f"""{self.terabits_per_second} Tbit/s"""
         
         if unit == BitRateUnits.PetabitPerSecond:
-            return f"""{self.petabits_per_second} """
+            return f"""{self.petabits_per_second} Pbit/s"""
         
         if unit == BitRateUnits.ExabitPerSecond:
-            return f"""{self.exabits_per_second} """
+            return f"""{self.exabits_per_second} Ebit/s"""
         
         if unit == BitRateUnits.KilobytePerSecond:
-            return f"""{self.kilobytes_per_second} """
+            return f"""{self.kilobytes_per_second} kB/s"""
         
         if unit == BitRateUnits.MegabytePerSecond:
-            return f"""{self.megabytes_per_second} """
+            return f"""{self.megabytes_per_second} MB/s"""
         
         if unit == BitRateUnits.GigabytePerSecond:
-            return f"""{self.gigabytes_per_second} """
+            return f"""{self.gigabytes_per_second} GB/s"""
         
         if unit == BitRateUnits.TerabytePerSecond:
-            return f"""{self.terabytes_per_second} """
+            return f"""{self.terabytes_per_second} TB/s"""
         
         if unit == BitRateUnits.PetabytePerSecond:
-            return f"""{self.petabytes_per_second} """
+            return f"""{self.petabytes_per_second} PB/s"""
         
         if unit == BitRateUnits.ExabytePerSecond:
-            return f"""{self.exabytes_per_second} """
+            return f"""{self.exabytes_per_second} EB/s"""
         
         return f'{self._value}'
 
@@ -656,38 +656,38 @@ class BitRate(AbstractMeasure):
             return """B/s"""
         
         if unit_abbreviation == BitRateUnits.KilobitPerSecond:
-            return """"""
+            return """kbit/s"""
         
         if unit_abbreviation == BitRateUnits.MegabitPerSecond:
-            return """"""
+            return """Mbit/s"""
         
         if unit_abbreviation == BitRateUnits.GigabitPerSecond:
-            return """"""
+            return """Gbit/s"""
         
         if unit_abbreviation == BitRateUnits.TerabitPerSecond:
-            return """"""
+            return """Tbit/s"""
         
         if unit_abbreviation == BitRateUnits.PetabitPerSecond:
-            return """"""
+            return """Pbit/s"""
         
         if unit_abbreviation == BitRateUnits.ExabitPerSecond:
-            return """"""
+            return """Ebit/s"""
         
         if unit_abbreviation == BitRateUnits.KilobytePerSecond:
-            return """"""
+            return """kB/s"""
         
         if unit_abbreviation == BitRateUnits.MegabytePerSecond:
-            return """"""
+            return """MB/s"""
         
         if unit_abbreviation == BitRateUnits.GigabytePerSecond:
-            return """"""
+            return """GB/s"""
         
         if unit_abbreviation == BitRateUnits.TerabytePerSecond:
-            return """"""
+            return """TB/s"""
         
         if unit_abbreviation == BitRateUnits.PetabytePerSecond:
-            return """"""
+            return """PB/s"""
         
         if unit_abbreviation == BitRateUnits.ExabytePerSecond:
-            return """"""
+            return """EB/s"""
         

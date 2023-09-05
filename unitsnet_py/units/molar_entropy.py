@@ -172,10 +172,10 @@ class MolarEntropy(AbstractMeasure):
             return f"""{self.joules_per_mole_kelvin} J/(mol*K)"""
         
         if unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
-            return f"""{self.kilojoules_per_mole_kelvin} """
+            return f"""{self.kilojoules_per_mole_kelvin} kJ/(mol*K)"""
         
         if unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
-            return f"""{self.megajoules_per_mole_kelvin} """
+            return f"""{self.megajoules_per_mole_kelvin} MJ/(mol*K)"""
         
         return f'{self._value}'
 
@@ -191,8 +191,8 @@ class MolarEntropy(AbstractMeasure):
             return """J/(mol*K)"""
         
         if unit_abbreviation == MolarEntropyUnits.KilojoulePerMoleKelvin:
-            return """"""
+            return """kJ/(mol*K)"""
         
         if unit_abbreviation == MolarEntropyUnits.MegajoulePerMoleKelvin:
-            return """"""
+            return """MJ/(mol*K)"""
         

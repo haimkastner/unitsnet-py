@@ -580,22 +580,22 @@ class Frequency(AbstractMeasure):
             return f"""{self.b_units} B Units"""
         
         if unit == FrequencyUnits.Microhertz:
-            return f"""{self.microhertz} """
+            return f"""{self.microhertz} μHz"""
         
         if unit == FrequencyUnits.Millihertz:
-            return f"""{self.millihertz} """
+            return f"""{self.millihertz} mHz"""
         
         if unit == FrequencyUnits.Kilohertz:
-            return f"""{self.kilohertz} """
+            return f"""{self.kilohertz} kHz"""
         
         if unit == FrequencyUnits.Megahertz:
-            return f"""{self.megahertz} """
+            return f"""{self.megahertz} MHz"""
         
         if unit == FrequencyUnits.Gigahertz:
-            return f"""{self.gigahertz} """
+            return f"""{self.gigahertz} GHz"""
         
         if unit == FrequencyUnits.Terahertz:
-            return f"""{self.terahertz} """
+            return f"""{self.terahertz} THz"""
         
         return f'{self._value}'
 
@@ -629,20 +629,20 @@ class Frequency(AbstractMeasure):
             return """B Units"""
         
         if unit_abbreviation == FrequencyUnits.Microhertz:
-            return """"""
+            return """μHz"""
         
         if unit_abbreviation == FrequencyUnits.Millihertz:
-            return """"""
+            return """mHz"""
         
         if unit_abbreviation == FrequencyUnits.Kilohertz:
-            return """"""
+            return """kHz"""
         
         if unit_abbreviation == FrequencyUnits.Megahertz:
-            return """"""
+            return """MHz"""
         
         if unit_abbreviation == FrequencyUnits.Gigahertz:
-            return """"""
+            return """GHz"""
         
         if unit_abbreviation == FrequencyUnits.Terahertz:
-            return """"""
+            return """THz"""
         
