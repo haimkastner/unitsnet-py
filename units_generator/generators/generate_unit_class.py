@@ -20,8 +20,6 @@ def __generate_prefixes(unit, prefixes) -> List[Dict]:
         prefix_factor_abbreviation = prefixes_factor_abbreviation.get(prefix)
         if not prefix_factor:
             continue
-        if not prefix_factor_abbreviation:
-            continue
         # Build the prefix formula based on the original unit formula.
         from_unit_prefix_to_base_formula = (
             f'({unit.get("FromUnitToBaseFunc")}) * {prefix_factor}'
