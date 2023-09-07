@@ -256,10 +256,10 @@ class RotationalStiffnessPerLength(AbstractMeasure):
             return f"""{self.kilopound_force_feet_per_degrees_per_feet} kipf·ft/°/ft"""
         
         if unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
-            return f"""{self.kilonewton_meters_per_radian_per_meter} """
+            return f"""{self.kilonewton_meters_per_radian_per_meter} kN·m/rad/m"""
         
         if unit == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
-            return f"""{self.meganewton_meters_per_radian_per_meter} """
+            return f"""{self.meganewton_meters_per_radian_per_meter} MN·m/rad/m"""
         
         return f'{self._value}'
 
@@ -281,8 +281,8 @@ class RotationalStiffnessPerLength(AbstractMeasure):
             return """kipf·ft/°/ft"""
         
         if unit_abbreviation == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
-            return """"""
+            return """kN·m/rad/m"""
         
         if unit_abbreviation == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
-            return """"""
+            return """MN·m/rad/m"""
         

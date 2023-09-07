@@ -604,40 +604,40 @@ class Luminosity(AbstractMeasure):
             return f"""{self.solar_luminosities} L⊙"""
         
         if unit == LuminosityUnits.Femtowatt:
-            return f"""{self.femtowatts} """
+            return f"""{self.femtowatts} fW"""
         
         if unit == LuminosityUnits.Picowatt:
-            return f"""{self.picowatts} """
+            return f"""{self.picowatts} pW"""
         
         if unit == LuminosityUnits.Nanowatt:
-            return f"""{self.nanowatts} """
+            return f"""{self.nanowatts} nW"""
         
         if unit == LuminosityUnits.Microwatt:
-            return f"""{self.microwatts} """
+            return f"""{self.microwatts} μW"""
         
         if unit == LuminosityUnits.Milliwatt:
-            return f"""{self.milliwatts} """
+            return f"""{self.milliwatts} mW"""
         
         if unit == LuminosityUnits.Deciwatt:
-            return f"""{self.deciwatts} """
+            return f"""{self.deciwatts} dW"""
         
         if unit == LuminosityUnits.Decawatt:
-            return f"""{self.decawatts} """
+            return f"""{self.decawatts} daW"""
         
         if unit == LuminosityUnits.Kilowatt:
-            return f"""{self.kilowatts} """
+            return f"""{self.kilowatts} kW"""
         
         if unit == LuminosityUnits.Megawatt:
-            return f"""{self.megawatts} """
+            return f"""{self.megawatts} MW"""
         
         if unit == LuminosityUnits.Gigawatt:
-            return f"""{self.gigawatts} """
+            return f"""{self.gigawatts} GW"""
         
         if unit == LuminosityUnits.Terawatt:
-            return f"""{self.terawatts} """
+            return f"""{self.terawatts} TW"""
         
         if unit == LuminosityUnits.Petawatt:
-            return f"""{self.petawatts} """
+            return f"""{self.petawatts} PW"""
         
         return f'{self._value}'
 
@@ -656,38 +656,38 @@ class Luminosity(AbstractMeasure):
             return """L⊙"""
         
         if unit_abbreviation == LuminosityUnits.Femtowatt:
-            return """"""
+            return """fW"""
         
         if unit_abbreviation == LuminosityUnits.Picowatt:
-            return """"""
+            return """pW"""
         
         if unit_abbreviation == LuminosityUnits.Nanowatt:
-            return """"""
+            return """nW"""
         
         if unit_abbreviation == LuminosityUnits.Microwatt:
-            return """"""
+            return """μW"""
         
         if unit_abbreviation == LuminosityUnits.Milliwatt:
-            return """"""
+            return """mW"""
         
         if unit_abbreviation == LuminosityUnits.Deciwatt:
-            return """"""
+            return """dW"""
         
         if unit_abbreviation == LuminosityUnits.Decawatt:
-            return """"""
+            return """daW"""
         
         if unit_abbreviation == LuminosityUnits.Kilowatt:
-            return """"""
+            return """kW"""
         
         if unit_abbreviation == LuminosityUnits.Megawatt:
-            return """"""
+            return """MW"""
         
         if unit_abbreviation == LuminosityUnits.Gigawatt:
-            return """"""
+            return """GW"""
         
         if unit_abbreviation == LuminosityUnits.Terawatt:
-            return """"""
+            return """TW"""
         
         if unit_abbreviation == LuminosityUnits.Petawatt:
-            return """"""
+            return """PW"""
         

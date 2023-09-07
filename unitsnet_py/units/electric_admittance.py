@@ -211,13 +211,13 @@ class ElectricAdmittance(AbstractMeasure):
             return f"""{self.siemens} S"""
         
         if unit == ElectricAdmittanceUnits.Nanosiemens:
-            return f"""{self.nanosiemens} """
+            return f"""{self.nanosiemens} nS"""
         
         if unit == ElectricAdmittanceUnits.Microsiemens:
-            return f"""{self.microsiemens} """
+            return f"""{self.microsiemens} μS"""
         
         if unit == ElectricAdmittanceUnits.Millisiemens:
-            return f"""{self.millisiemens} """
+            return f"""{self.millisiemens} mS"""
         
         return f'{self._value}'
 
@@ -233,11 +233,11 @@ class ElectricAdmittance(AbstractMeasure):
             return """S"""
         
         if unit_abbreviation == ElectricAdmittanceUnits.Nanosiemens:
-            return """"""
+            return """nS"""
         
         if unit_abbreviation == ElectricAdmittanceUnits.Microsiemens:
-            return """"""
+            return """μS"""
         
         if unit_abbreviation == ElectricAdmittanceUnits.Millisiemens:
-            return """"""
+            return """mS"""
         

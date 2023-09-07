@@ -328,22 +328,22 @@ class ElectricResistance(AbstractMeasure):
             return f"""{self.ohms} Ω"""
         
         if unit == ElectricResistanceUnits.Microohm:
-            return f"""{self.microohms} """
+            return f"""{self.microohms} μΩ"""
         
         if unit == ElectricResistanceUnits.Milliohm:
-            return f"""{self.milliohms} """
+            return f"""{self.milliohms} mΩ"""
         
         if unit == ElectricResistanceUnits.Kiloohm:
-            return f"""{self.kiloohms} """
+            return f"""{self.kiloohms} kΩ"""
         
         if unit == ElectricResistanceUnits.Megaohm:
-            return f"""{self.megaohms} """
+            return f"""{self.megaohms} MΩ"""
         
         if unit == ElectricResistanceUnits.Gigaohm:
-            return f"""{self.gigaohms} """
+            return f"""{self.gigaohms} GΩ"""
         
         if unit == ElectricResistanceUnits.Teraohm:
-            return f"""{self.teraohms} """
+            return f"""{self.teraohms} TΩ"""
         
         return f'{self._value}'
 
@@ -359,20 +359,20 @@ class ElectricResistance(AbstractMeasure):
             return """Ω"""
         
         if unit_abbreviation == ElectricResistanceUnits.Microohm:
-            return """"""
+            return """μΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Milliohm:
-            return """"""
+            return """mΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Kiloohm:
-            return """"""
+            return """kΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Megaohm:
-            return """"""
+            return """MΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Gigaohm:
-            return """"""
+            return """GΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Teraohm:
-            return """"""
+            return """TΩ"""
         

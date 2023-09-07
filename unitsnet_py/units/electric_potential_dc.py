@@ -250,16 +250,16 @@ class ElectricPotentialDc(AbstractMeasure):
             return f"""{self.volts_dc} Vdc"""
         
         if unit == ElectricPotentialDcUnits.MicrovoltDc:
-            return f"""{self.microvolts_dc} """
+            return f"""{self.microvolts_dc} μVdc"""
         
         if unit == ElectricPotentialDcUnits.MillivoltDc:
-            return f"""{self.millivolts_dc} """
+            return f"""{self.millivolts_dc} mVdc"""
         
         if unit == ElectricPotentialDcUnits.KilovoltDc:
-            return f"""{self.kilovolts_dc} """
+            return f"""{self.kilovolts_dc} kVdc"""
         
         if unit == ElectricPotentialDcUnits.MegavoltDc:
-            return f"""{self.megavolts_dc} """
+            return f"""{self.megavolts_dc} MVdc"""
         
         return f'{self._value}'
 
@@ -275,14 +275,14 @@ class ElectricPotentialDc(AbstractMeasure):
             return """Vdc"""
         
         if unit_abbreviation == ElectricPotentialDcUnits.MicrovoltDc:
-            return """"""
+            return """μVdc"""
         
         if unit_abbreviation == ElectricPotentialDcUnits.MillivoltDc:
-            return """"""
+            return """mVdc"""
         
         if unit_abbreviation == ElectricPotentialDcUnits.KilovoltDc:
-            return """"""
+            return """kVdc"""
         
         if unit_abbreviation == ElectricPotentialDcUnits.MegavoltDc:
-            return """"""
+            return """MVdc"""
         

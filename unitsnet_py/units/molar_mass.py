@@ -568,34 +568,34 @@ class MolarMass(AbstractMeasure):
             return f"""{self.pounds_per_mole} lb/mol"""
         
         if unit == MolarMassUnits.NanogramPerMole:
-            return f"""{self.nanograms_per_mole} """
+            return f"""{self.nanograms_per_mole} ng/mol"""
         
         if unit == MolarMassUnits.MicrogramPerMole:
-            return f"""{self.micrograms_per_mole} """
+            return f"""{self.micrograms_per_mole} μg/mol"""
         
         if unit == MolarMassUnits.MilligramPerMole:
-            return f"""{self.milligrams_per_mole} """
+            return f"""{self.milligrams_per_mole} mg/mol"""
         
         if unit == MolarMassUnits.CentigramPerMole:
-            return f"""{self.centigrams_per_mole} """
+            return f"""{self.centigrams_per_mole} cg/mol"""
         
         if unit == MolarMassUnits.DecigramPerMole:
-            return f"""{self.decigrams_per_mole} """
+            return f"""{self.decigrams_per_mole} dg/mol"""
         
         if unit == MolarMassUnits.DecagramPerMole:
-            return f"""{self.decagrams_per_mole} """
+            return f"""{self.decagrams_per_mole} dag/mol"""
         
         if unit == MolarMassUnits.HectogramPerMole:
-            return f"""{self.hectograms_per_mole} """
+            return f"""{self.hectograms_per_mole} hg/mol"""
         
         if unit == MolarMassUnits.KilogramPerMole:
-            return f"""{self.kilograms_per_mole} """
+            return f"""{self.kilograms_per_mole} kg/mol"""
         
         if unit == MolarMassUnits.KilopoundPerMole:
-            return f"""{self.kilopounds_per_mole} """
+            return f"""{self.kilopounds_per_mole} klb/mol"""
         
         if unit == MolarMassUnits.MegapoundPerMole:
-            return f"""{self.megapounds_per_mole} """
+            return f"""{self.megapounds_per_mole} Mlb/mol"""
         
         return f'{self._value}'
 
@@ -617,32 +617,32 @@ class MolarMass(AbstractMeasure):
             return """lb/mol"""
         
         if unit_abbreviation == MolarMassUnits.NanogramPerMole:
-            return """"""
+            return """ng/mol"""
         
         if unit_abbreviation == MolarMassUnits.MicrogramPerMole:
-            return """"""
+            return """μg/mol"""
         
         if unit_abbreviation == MolarMassUnits.MilligramPerMole:
-            return """"""
+            return """mg/mol"""
         
         if unit_abbreviation == MolarMassUnits.CentigramPerMole:
-            return """"""
+            return """cg/mol"""
         
         if unit_abbreviation == MolarMassUnits.DecigramPerMole:
-            return """"""
+            return """dg/mol"""
         
         if unit_abbreviation == MolarMassUnits.DecagramPerMole:
-            return """"""
+            return """dag/mol"""
         
         if unit_abbreviation == MolarMassUnits.HectogramPerMole:
-            return """"""
+            return """hg/mol"""
         
         if unit_abbreviation == MolarMassUnits.KilogramPerMole:
-            return """"""
+            return """kg/mol"""
         
         if unit_abbreviation == MolarMassUnits.KilopoundPerMole:
-            return """"""
+            return """klb/mol"""
         
         if unit_abbreviation == MolarMassUnits.MegapoundPerMole:
-            return """"""
+            return """Mlb/mol"""
         

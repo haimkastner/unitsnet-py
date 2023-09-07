@@ -1393,49 +1393,49 @@ class Speed(AbstractMeasure):
             return f"""{self.mach} M"""
         
         if unit == SpeedUnits.NanometerPerSecond:
-            return f"""{self.nanometers_per_second} """
+            return f"""{self.nanometers_per_second} nm/s"""
         
         if unit == SpeedUnits.MicrometerPerSecond:
-            return f"""{self.micrometers_per_second} """
+            return f"""{self.micrometers_per_second} μm/s"""
         
         if unit == SpeedUnits.MillimeterPerSecond:
-            return f"""{self.millimeters_per_second} """
+            return f"""{self.millimeters_per_second} mm/s"""
         
         if unit == SpeedUnits.CentimeterPerSecond:
-            return f"""{self.centimeters_per_second} """
+            return f"""{self.centimeters_per_second} cm/s"""
         
         if unit == SpeedUnits.DecimeterPerSecond:
-            return f"""{self.decimeters_per_second} """
+            return f"""{self.decimeters_per_second} dm/s"""
         
         if unit == SpeedUnits.KilometerPerSecond:
-            return f"""{self.kilometers_per_second} """
+            return f"""{self.kilometers_per_second} km/s"""
         
         if unit == SpeedUnits.NanometerPerMinute:
-            return f"""{self.nanometers_per_minutes} """
+            return f"""{self.nanometers_per_minutes} nm/min"""
         
         if unit == SpeedUnits.MicrometerPerMinute:
-            return f"""{self.micrometers_per_minutes} """
+            return f"""{self.micrometers_per_minutes} μm/min"""
         
         if unit == SpeedUnits.MillimeterPerMinute:
-            return f"""{self.millimeters_per_minutes} """
+            return f"""{self.millimeters_per_minutes} mm/min"""
         
         if unit == SpeedUnits.CentimeterPerMinute:
-            return f"""{self.centimeters_per_minutes} """
+            return f"""{self.centimeters_per_minutes} cm/min"""
         
         if unit == SpeedUnits.DecimeterPerMinute:
-            return f"""{self.decimeters_per_minutes} """
+            return f"""{self.decimeters_per_minutes} dm/min"""
         
         if unit == SpeedUnits.KilometerPerMinute:
-            return f"""{self.kilometers_per_minutes} """
+            return f"""{self.kilometers_per_minutes} km/min"""
         
         if unit == SpeedUnits.MillimeterPerHour:
-            return f"""{self.millimeters_per_hour} """
+            return f"""{self.millimeters_per_hour} mm/h"""
         
         if unit == SpeedUnits.CentimeterPerHour:
-            return f"""{self.centimeters_per_hour} """
+            return f"""{self.centimeters_per_hour} cm/h"""
         
         if unit == SpeedUnits.KilometerPerHour:
-            return f"""{self.kilometers_per_hour} """
+            return f"""{self.kilometers_per_hour} km/h"""
         
         return f'{self._value}'
 
@@ -1502,47 +1502,47 @@ class Speed(AbstractMeasure):
             return """M"""
         
         if unit_abbreviation == SpeedUnits.NanometerPerSecond:
-            return """"""
+            return """nm/s"""
         
         if unit_abbreviation == SpeedUnits.MicrometerPerSecond:
-            return """"""
+            return """μm/s"""
         
         if unit_abbreviation == SpeedUnits.MillimeterPerSecond:
-            return """"""
+            return """mm/s"""
         
         if unit_abbreviation == SpeedUnits.CentimeterPerSecond:
-            return """"""
+            return """cm/s"""
         
         if unit_abbreviation == SpeedUnits.DecimeterPerSecond:
-            return """"""
+            return """dm/s"""
         
         if unit_abbreviation == SpeedUnits.KilometerPerSecond:
-            return """"""
+            return """km/s"""
         
         if unit_abbreviation == SpeedUnits.NanometerPerMinute:
-            return """"""
+            return """nm/min"""
         
         if unit_abbreviation == SpeedUnits.MicrometerPerMinute:
-            return """"""
+            return """μm/min"""
         
         if unit_abbreviation == SpeedUnits.MillimeterPerMinute:
-            return """"""
+            return """mm/min"""
         
         if unit_abbreviation == SpeedUnits.CentimeterPerMinute:
-            return """"""
+            return """cm/min"""
         
         if unit_abbreviation == SpeedUnits.DecimeterPerMinute:
-            return """"""
+            return """dm/min"""
         
         if unit_abbreviation == SpeedUnits.KilometerPerMinute:
-            return """"""
+            return """km/min"""
         
         if unit_abbreviation == SpeedUnits.MillimeterPerHour:
-            return """"""
+            return """mm/h"""
         
         if unit_abbreviation == SpeedUnits.CentimeterPerHour:
-            return """"""
+            return """cm/h"""
         
         if unit_abbreviation == SpeedUnits.KilometerPerHour:
-            return """"""
+            return """km/h"""
         

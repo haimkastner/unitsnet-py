@@ -748,22 +748,22 @@ class SpecificWeight(AbstractMeasure):
             return f"""{self.tonnes_force_per_cubic_meter} tf/m³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
-            return f"""{self.kilonewtons_per_cubic_millimeter} """
+            return f"""{self.kilonewtons_per_cubic_millimeter} kN/mm³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
-            return f"""{self.kilonewtons_per_cubic_centimeter} """
+            return f"""{self.kilonewtons_per_cubic_centimeter} kN/cm³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicMeter:
-            return f"""{self.kilonewtons_per_cubic_meter} """
+            return f"""{self.kilonewtons_per_cubic_meter} kN/m³"""
         
         if unit == SpecificWeightUnits.MeganewtonPerCubicMeter:
-            return f"""{self.meganewtons_per_cubic_meter} """
+            return f"""{self.meganewtons_per_cubic_meter} MN/m³"""
         
         if unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
-            return f"""{self.kilopounds_force_per_cubic_inch} """
+            return f"""{self.kilopounds_force_per_cubic_inch} klbf/in³"""
         
         if unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
-            return f"""{self.kilopounds_force_per_cubic_foot} """
+            return f"""{self.kilopounds_force_per_cubic_foot} klbf/ft³"""
         
         return f'{self._value}'
 
@@ -809,20 +809,20 @@ class SpecificWeight(AbstractMeasure):
             return """tf/m³"""
         
         if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
-            return """"""
+            return """kN/mm³"""
         
         if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
-            return """"""
+            return """kN/cm³"""
         
         if unit_abbreviation == SpecificWeightUnits.KilonewtonPerCubicMeter:
-            return """"""
+            return """kN/m³"""
         
         if unit_abbreviation == SpecificWeightUnits.MeganewtonPerCubicMeter:
-            return """"""
+            return """MN/m³"""
         
         if unit_abbreviation == SpecificWeightUnits.KilopoundForcePerCubicInch:
-            return """"""
+            return """klbf/in³"""
         
         if unit_abbreviation == SpecificWeightUnits.KilopoundForcePerCubicFoot:
-            return """"""
+            return """klbf/ft³"""
         

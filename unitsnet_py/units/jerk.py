@@ -493,25 +493,25 @@ class Jerk(AbstractMeasure):
             return f"""{self.standard_gravities_per_second} g/s"""
         
         if unit == JerkUnits.NanometerPerSecondCubed:
-            return f"""{self.nanometers_per_second_cubed} """
+            return f"""{self.nanometers_per_second_cubed} nm/s³"""
         
         if unit == JerkUnits.MicrometerPerSecondCubed:
-            return f"""{self.micrometers_per_second_cubed} """
+            return f"""{self.micrometers_per_second_cubed} μm/s³"""
         
         if unit == JerkUnits.MillimeterPerSecondCubed:
-            return f"""{self.millimeters_per_second_cubed} """
+            return f"""{self.millimeters_per_second_cubed} mm/s³"""
         
         if unit == JerkUnits.CentimeterPerSecondCubed:
-            return f"""{self.centimeters_per_second_cubed} """
+            return f"""{self.centimeters_per_second_cubed} cm/s³"""
         
         if unit == JerkUnits.DecimeterPerSecondCubed:
-            return f"""{self.decimeters_per_second_cubed} """
+            return f"""{self.decimeters_per_second_cubed} dm/s³"""
         
         if unit == JerkUnits.KilometerPerSecondCubed:
-            return f"""{self.kilometers_per_second_cubed} """
+            return f"""{self.kilometers_per_second_cubed} km/s³"""
         
         if unit == JerkUnits.MillistandardGravitiesPerSecond:
-            return f"""{self.millistandard_gravities_per_second} """
+            return f"""{self.millistandard_gravities_per_second} mg/s"""
         
         return f'{self._value}'
 
@@ -536,23 +536,23 @@ class Jerk(AbstractMeasure):
             return """g/s"""
         
         if unit_abbreviation == JerkUnits.NanometerPerSecondCubed:
-            return """"""
+            return """nm/s³"""
         
         if unit_abbreviation == JerkUnits.MicrometerPerSecondCubed:
-            return """"""
+            return """μm/s³"""
         
         if unit_abbreviation == JerkUnits.MillimeterPerSecondCubed:
-            return """"""
+            return """mm/s³"""
         
         if unit_abbreviation == JerkUnits.CentimeterPerSecondCubed:
-            return """"""
+            return """cm/s³"""
         
         if unit_abbreviation == JerkUnits.DecimeterPerSecondCubed:
-            return """"""
+            return """dm/s³"""
         
         if unit_abbreviation == JerkUnits.KilometerPerSecondCubed:
-            return """"""
+            return """km/s³"""
         
         if unit_abbreviation == JerkUnits.MillistandardGravitiesPerSecond:
-            return """"""
+            return """mg/s"""
         

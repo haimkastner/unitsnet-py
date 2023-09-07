@@ -649,37 +649,37 @@ class ForceChangeRate(AbstractMeasure):
             return f"""{self.pounds_force_per_second} lbf/s"""
         
         if unit == ForceChangeRateUnits.DecanewtonPerMinute:
-            return f"""{self.decanewtons_per_minute} """
+            return f"""{self.decanewtons_per_minute} daN/min"""
         
         if unit == ForceChangeRateUnits.KilonewtonPerMinute:
-            return f"""{self.kilonewtons_per_minute} """
+            return f"""{self.kilonewtons_per_minute} kN/min"""
         
         if unit == ForceChangeRateUnits.NanonewtonPerSecond:
-            return f"""{self.nanonewtons_per_second} """
+            return f"""{self.nanonewtons_per_second} nN/s"""
         
         if unit == ForceChangeRateUnits.MicronewtonPerSecond:
-            return f"""{self.micronewtons_per_second} """
+            return f"""{self.micronewtons_per_second} μN/s"""
         
         if unit == ForceChangeRateUnits.MillinewtonPerSecond:
-            return f"""{self.millinewtons_per_second} """
+            return f"""{self.millinewtons_per_second} mN/s"""
         
         if unit == ForceChangeRateUnits.CentinewtonPerSecond:
-            return f"""{self.centinewtons_per_second} """
+            return f"""{self.centinewtons_per_second} cN/s"""
         
         if unit == ForceChangeRateUnits.DecinewtonPerSecond:
-            return f"""{self.decinewtons_per_second} """
+            return f"""{self.decinewtons_per_second} dN/s"""
         
         if unit == ForceChangeRateUnits.DecanewtonPerSecond:
-            return f"""{self.decanewtons_per_second} """
+            return f"""{self.decanewtons_per_second} daN/s"""
         
         if unit == ForceChangeRateUnits.KilonewtonPerSecond:
-            return f"""{self.kilonewtons_per_second} """
+            return f"""{self.kilonewtons_per_second} kN/s"""
         
         if unit == ForceChangeRateUnits.KilopoundForcePerMinute:
-            return f"""{self.kilopounds_force_per_minute} """
+            return f"""{self.kilopounds_force_per_minute} klbf/min"""
         
         if unit == ForceChangeRateUnits.KilopoundForcePerSecond:
-            return f"""{self.kilopounds_force_per_second} """
+            return f"""{self.kilopounds_force_per_second} klbf/s"""
         
         return f'{self._value}'
 
@@ -704,35 +704,35 @@ class ForceChangeRate(AbstractMeasure):
             return """lbf/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.DecanewtonPerMinute:
-            return """"""
+            return """daN/min"""
         
         if unit_abbreviation == ForceChangeRateUnits.KilonewtonPerMinute:
-            return """"""
+            return """kN/min"""
         
         if unit_abbreviation == ForceChangeRateUnits.NanonewtonPerSecond:
-            return """"""
+            return """nN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.MicronewtonPerSecond:
-            return """"""
+            return """μN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.MillinewtonPerSecond:
-            return """"""
+            return """mN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.CentinewtonPerSecond:
-            return """"""
+            return """cN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.DecinewtonPerSecond:
-            return """"""
+            return """dN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.DecanewtonPerSecond:
-            return """"""
+            return """daN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.KilonewtonPerSecond:
-            return """"""
+            return """kN/s"""
         
         if unit_abbreviation == ForceChangeRateUnits.KilopoundForcePerMinute:
-            return """"""
+            return """klbf/min"""
         
         if unit_abbreviation == ForceChangeRateUnits.KilopoundForcePerSecond:
-            return """"""
+            return """klbf/s"""
         

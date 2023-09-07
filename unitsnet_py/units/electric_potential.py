@@ -289,19 +289,19 @@ class ElectricPotential(AbstractMeasure):
             return f"""{self.volts} V"""
         
         if unit == ElectricPotentialUnits.Nanovolt:
-            return f"""{self.nanovolts} """
+            return f"""{self.nanovolts} nV"""
         
         if unit == ElectricPotentialUnits.Microvolt:
-            return f"""{self.microvolts} """
+            return f"""{self.microvolts} μV"""
         
         if unit == ElectricPotentialUnits.Millivolt:
-            return f"""{self.millivolts} """
+            return f"""{self.millivolts} mV"""
         
         if unit == ElectricPotentialUnits.Kilovolt:
-            return f"""{self.kilovolts} """
+            return f"""{self.kilovolts} kV"""
         
         if unit == ElectricPotentialUnits.Megavolt:
-            return f"""{self.megavolts} """
+            return f"""{self.megavolts} MV"""
         
         return f'{self._value}'
 
@@ -317,17 +317,17 @@ class ElectricPotential(AbstractMeasure):
             return """V"""
         
         if unit_abbreviation == ElectricPotentialUnits.Nanovolt:
-            return """"""
+            return """nV"""
         
         if unit_abbreviation == ElectricPotentialUnits.Microvolt:
-            return """"""
+            return """μV"""
         
         if unit_abbreviation == ElectricPotentialUnits.Millivolt:
-            return """"""
+            return """mV"""
         
         if unit_abbreviation == ElectricPotentialUnits.Kilovolt:
-            return """"""
+            return """kV"""
         
         if unit_abbreviation == ElectricPotentialUnits.Megavolt:
-            return """"""
+            return """MV"""
         

@@ -1780,124 +1780,124 @@ class PowerDensity(AbstractMeasure):
             return f"""{self.watts_per_liter} W/l"""
         
         if unit == PowerDensityUnits.PicowattPerCubicMeter:
-            return f"""{self.picowatts_per_cubic_meter} """
+            return f"""{self.picowatts_per_cubic_meter} pW/m³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicMeter:
-            return f"""{self.nanowatts_per_cubic_meter} """
+            return f"""{self.nanowatts_per_cubic_meter} nW/m³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicMeter:
-            return f"""{self.microwatts_per_cubic_meter} """
+            return f"""{self.microwatts_per_cubic_meter} μW/m³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicMeter:
-            return f"""{self.milliwatts_per_cubic_meter} """
+            return f"""{self.milliwatts_per_cubic_meter} mW/m³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicMeter:
-            return f"""{self.deciwatts_per_cubic_meter} """
+            return f"""{self.deciwatts_per_cubic_meter} dW/m³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicMeter:
-            return f"""{self.decawatts_per_cubic_meter} """
+            return f"""{self.decawatts_per_cubic_meter} daW/m³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicMeter:
-            return f"""{self.kilowatts_per_cubic_meter} """
+            return f"""{self.kilowatts_per_cubic_meter} kW/m³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicMeter:
-            return f"""{self.megawatts_per_cubic_meter} """
+            return f"""{self.megawatts_per_cubic_meter} MW/m³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicMeter:
-            return f"""{self.gigawatts_per_cubic_meter} """
+            return f"""{self.gigawatts_per_cubic_meter} GW/m³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicMeter:
-            return f"""{self.terawatts_per_cubic_meter} """
+            return f"""{self.terawatts_per_cubic_meter} TW/m³"""
         
         if unit == PowerDensityUnits.PicowattPerCubicInch:
-            return f"""{self.picowatts_per_cubic_inch} """
+            return f"""{self.picowatts_per_cubic_inch} pW/in³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicInch:
-            return f"""{self.nanowatts_per_cubic_inch} """
+            return f"""{self.nanowatts_per_cubic_inch} nW/in³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicInch:
-            return f"""{self.microwatts_per_cubic_inch} """
+            return f"""{self.microwatts_per_cubic_inch} μW/in³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicInch:
-            return f"""{self.milliwatts_per_cubic_inch} """
+            return f"""{self.milliwatts_per_cubic_inch} mW/in³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicInch:
-            return f"""{self.deciwatts_per_cubic_inch} """
+            return f"""{self.deciwatts_per_cubic_inch} dW/in³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicInch:
-            return f"""{self.decawatts_per_cubic_inch} """
+            return f"""{self.decawatts_per_cubic_inch} daW/in³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicInch:
-            return f"""{self.kilowatts_per_cubic_inch} """
+            return f"""{self.kilowatts_per_cubic_inch} kW/in³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicInch:
-            return f"""{self.megawatts_per_cubic_inch} """
+            return f"""{self.megawatts_per_cubic_inch} MW/in³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicInch:
-            return f"""{self.gigawatts_per_cubic_inch} """
+            return f"""{self.gigawatts_per_cubic_inch} GW/in³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicInch:
-            return f"""{self.terawatts_per_cubic_inch} """
+            return f"""{self.terawatts_per_cubic_inch} TW/in³"""
         
         if unit == PowerDensityUnits.PicowattPerCubicFoot:
-            return f"""{self.picowatts_per_cubic_foot} """
+            return f"""{self.picowatts_per_cubic_foot} pW/ft³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicFoot:
-            return f"""{self.nanowatts_per_cubic_foot} """
+            return f"""{self.nanowatts_per_cubic_foot} nW/ft³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicFoot:
-            return f"""{self.microwatts_per_cubic_foot} """
+            return f"""{self.microwatts_per_cubic_foot} μW/ft³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicFoot:
-            return f"""{self.milliwatts_per_cubic_foot} """
+            return f"""{self.milliwatts_per_cubic_foot} mW/ft³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicFoot:
-            return f"""{self.deciwatts_per_cubic_foot} """
+            return f"""{self.deciwatts_per_cubic_foot} dW/ft³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicFoot:
-            return f"""{self.decawatts_per_cubic_foot} """
+            return f"""{self.decawatts_per_cubic_foot} daW/ft³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicFoot:
-            return f"""{self.kilowatts_per_cubic_foot} """
+            return f"""{self.kilowatts_per_cubic_foot} kW/ft³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicFoot:
-            return f"""{self.megawatts_per_cubic_foot} """
+            return f"""{self.megawatts_per_cubic_foot} MW/ft³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicFoot:
-            return f"""{self.gigawatts_per_cubic_foot} """
+            return f"""{self.gigawatts_per_cubic_foot} GW/ft³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicFoot:
-            return f"""{self.terawatts_per_cubic_foot} """
+            return f"""{self.terawatts_per_cubic_foot} TW/ft³"""
         
         if unit == PowerDensityUnits.PicowattPerLiter:
-            return f"""{self.picowatts_per_liter} """
+            return f"""{self.picowatts_per_liter} pW/l"""
         
         if unit == PowerDensityUnits.NanowattPerLiter:
-            return f"""{self.nanowatts_per_liter} """
+            return f"""{self.nanowatts_per_liter} nW/l"""
         
         if unit == PowerDensityUnits.MicrowattPerLiter:
-            return f"""{self.microwatts_per_liter} """
+            return f"""{self.microwatts_per_liter} μW/l"""
         
         if unit == PowerDensityUnits.MilliwattPerLiter:
-            return f"""{self.milliwatts_per_liter} """
+            return f"""{self.milliwatts_per_liter} mW/l"""
         
         if unit == PowerDensityUnits.DeciwattPerLiter:
-            return f"""{self.deciwatts_per_liter} """
+            return f"""{self.deciwatts_per_liter} dW/l"""
         
         if unit == PowerDensityUnits.DecawattPerLiter:
-            return f"""{self.decawatts_per_liter} """
+            return f"""{self.decawatts_per_liter} daW/l"""
         
         if unit == PowerDensityUnits.KilowattPerLiter:
-            return f"""{self.kilowatts_per_liter} """
+            return f"""{self.kilowatts_per_liter} kW/l"""
         
         if unit == PowerDensityUnits.MegawattPerLiter:
-            return f"""{self.megawatts_per_liter} """
+            return f"""{self.megawatts_per_liter} MW/l"""
         
         if unit == PowerDensityUnits.GigawattPerLiter:
-            return f"""{self.gigawatts_per_liter} """
+            return f"""{self.gigawatts_per_liter} GW/l"""
         
         if unit == PowerDensityUnits.TerawattPerLiter:
-            return f"""{self.terawatts_per_liter} """
+            return f"""{self.terawatts_per_liter} TW/l"""
         
         return f'{self._value}'
 
@@ -1922,122 +1922,122 @@ class PowerDensity(AbstractMeasure):
             return """W/l"""
         
         if unit_abbreviation == PowerDensityUnits.PicowattPerCubicMeter:
-            return """"""
+            return """pW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.NanowattPerCubicMeter:
-            return """"""
+            return """nW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicMeter:
-            return """"""
+            return """μW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicMeter:
-            return """"""
+            return """mW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicMeter:
-            return """"""
+            return """dW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.DecawattPerCubicMeter:
-            return """"""
+            return """daW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.KilowattPerCubicMeter:
-            return """"""
+            return """kW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.MegawattPerCubicMeter:
-            return """"""
+            return """MW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.GigawattPerCubicMeter:
-            return """"""
+            return """GW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.TerawattPerCubicMeter:
-            return """"""
+            return """TW/m³"""
         
         if unit_abbreviation == PowerDensityUnits.PicowattPerCubicInch:
-            return """"""
+            return """pW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.NanowattPerCubicInch:
-            return """"""
+            return """nW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicInch:
-            return """"""
+            return """μW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicInch:
-            return """"""
+            return """mW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicInch:
-            return """"""
+            return """dW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.DecawattPerCubicInch:
-            return """"""
+            return """daW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.KilowattPerCubicInch:
-            return """"""
+            return """kW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.MegawattPerCubicInch:
-            return """"""
+            return """MW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.GigawattPerCubicInch:
-            return """"""
+            return """GW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.TerawattPerCubicInch:
-            return """"""
+            return """TW/in³"""
         
         if unit_abbreviation == PowerDensityUnits.PicowattPerCubicFoot:
-            return """"""
+            return """pW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.NanowattPerCubicFoot:
-            return """"""
+            return """nW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.MicrowattPerCubicFoot:
-            return """"""
+            return """μW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.MilliwattPerCubicFoot:
-            return """"""
+            return """mW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.DeciwattPerCubicFoot:
-            return """"""
+            return """dW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.DecawattPerCubicFoot:
-            return """"""
+            return """daW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.KilowattPerCubicFoot:
-            return """"""
+            return """kW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.MegawattPerCubicFoot:
-            return """"""
+            return """MW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.GigawattPerCubicFoot:
-            return """"""
+            return """GW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.TerawattPerCubicFoot:
-            return """"""
+            return """TW/ft³"""
         
         if unit_abbreviation == PowerDensityUnits.PicowattPerLiter:
-            return """"""
+            return """pW/l"""
         
         if unit_abbreviation == PowerDensityUnits.NanowattPerLiter:
-            return """"""
+            return """nW/l"""
         
         if unit_abbreviation == PowerDensityUnits.MicrowattPerLiter:
-            return """"""
+            return """μW/l"""
         
         if unit_abbreviation == PowerDensityUnits.MilliwattPerLiter:
-            return """"""
+            return """mW/l"""
         
         if unit_abbreviation == PowerDensityUnits.DeciwattPerLiter:
-            return """"""
+            return """dW/l"""
         
         if unit_abbreviation == PowerDensityUnits.DecawattPerLiter:
-            return """"""
+            return """daW/l"""
         
         if unit_abbreviation == PowerDensityUnits.KilowattPerLiter:
-            return """"""
+            return """kW/l"""
         
         if unit_abbreviation == PowerDensityUnits.MegawattPerLiter:
-            return """"""
+            return """MW/l"""
         
         if unit_abbreviation == PowerDensityUnits.GigawattPerLiter:
-            return """"""
+            return """GW/l"""
         
         if unit_abbreviation == PowerDensityUnits.TerawattPerLiter:
-            return """"""
+            return """TW/l"""
         

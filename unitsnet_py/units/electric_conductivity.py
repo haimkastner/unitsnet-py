@@ -298,10 +298,10 @@ class ElectricConductivity(AbstractMeasure):
             return f"""{self.siemens_per_centimeter} S/cm"""
         
         if unit == ElectricConductivityUnits.MicrosiemensPerCentimeter:
-            return f"""{self.microsiemens_per_centimeter} """
+            return f"""{self.microsiemens_per_centimeter} μS/cm"""
         
         if unit == ElectricConductivityUnits.MillisiemensPerCentimeter:
-            return f"""{self.millisiemens_per_centimeter} """
+            return f"""{self.millisiemens_per_centimeter} mS/cm"""
         
         return f'{self._value}'
 
@@ -326,8 +326,8 @@ class ElectricConductivity(AbstractMeasure):
             return """S/cm"""
         
         if unit_abbreviation == ElectricConductivityUnits.MicrosiemensPerCentimeter:
-            return """"""
+            return """μS/cm"""
         
         if unit_abbreviation == ElectricConductivityUnits.MillisiemensPerCentimeter:
-            return """"""
+            return """mS/cm"""
         

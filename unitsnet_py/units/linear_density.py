@@ -613,31 +613,31 @@ class LinearDensity(AbstractMeasure):
             return f"""{self.pounds_per_foot} lb/ft"""
         
         if unit == LinearDensityUnits.MicrogramPerMillimeter:
-            return f"""{self.micrograms_per_millimeter} """
+            return f"""{self.micrograms_per_millimeter} μg/mm"""
         
         if unit == LinearDensityUnits.MilligramPerMillimeter:
-            return f"""{self.milligrams_per_millimeter} """
+            return f"""{self.milligrams_per_millimeter} mg/mm"""
         
         if unit == LinearDensityUnits.KilogramPerMillimeter:
-            return f"""{self.kilograms_per_millimeter} """
+            return f"""{self.kilograms_per_millimeter} kg/mm"""
         
         if unit == LinearDensityUnits.MicrogramPerCentimeter:
-            return f"""{self.micrograms_per_centimeter} """
+            return f"""{self.micrograms_per_centimeter} μg/cm"""
         
         if unit == LinearDensityUnits.MilligramPerCentimeter:
-            return f"""{self.milligrams_per_centimeter} """
+            return f"""{self.milligrams_per_centimeter} mg/cm"""
         
         if unit == LinearDensityUnits.KilogramPerCentimeter:
-            return f"""{self.kilograms_per_centimeter} """
+            return f"""{self.kilograms_per_centimeter} kg/cm"""
         
         if unit == LinearDensityUnits.MicrogramPerMeter:
-            return f"""{self.micrograms_per_meter} """
+            return f"""{self.micrograms_per_meter} μg/m"""
         
         if unit == LinearDensityUnits.MilligramPerMeter:
-            return f"""{self.milligrams_per_meter} """
+            return f"""{self.milligrams_per_meter} mg/m"""
         
         if unit == LinearDensityUnits.KilogramPerMeter:
-            return f"""{self.kilograms_per_meter} """
+            return f"""{self.kilograms_per_meter} kg/m"""
         
         return f'{self._value}'
 
@@ -665,29 +665,29 @@ class LinearDensity(AbstractMeasure):
             return """lb/ft"""
         
         if unit_abbreviation == LinearDensityUnits.MicrogramPerMillimeter:
-            return """"""
+            return """μg/mm"""
         
         if unit_abbreviation == LinearDensityUnits.MilligramPerMillimeter:
-            return """"""
+            return """mg/mm"""
         
         if unit_abbreviation == LinearDensityUnits.KilogramPerMillimeter:
-            return """"""
+            return """kg/mm"""
         
         if unit_abbreviation == LinearDensityUnits.MicrogramPerCentimeter:
-            return """"""
+            return """μg/cm"""
         
         if unit_abbreviation == LinearDensityUnits.MilligramPerCentimeter:
-            return """"""
+            return """mg/cm"""
         
         if unit_abbreviation == LinearDensityUnits.KilogramPerCentimeter:
-            return """"""
+            return """kg/cm"""
         
         if unit_abbreviation == LinearDensityUnits.MicrogramPerMeter:
-            return """"""
+            return """μg/m"""
         
         if unit_abbreviation == LinearDensityUnits.MilligramPerMeter:
-            return """"""
+            return """mg/m"""
         
         if unit_abbreviation == LinearDensityUnits.KilogramPerMeter:
-            return """"""
+            return """kg/m"""
         

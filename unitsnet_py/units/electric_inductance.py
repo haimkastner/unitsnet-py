@@ -250,16 +250,16 @@ class ElectricInductance(AbstractMeasure):
             return f"""{self.henries} H"""
         
         if unit == ElectricInductanceUnits.Picohenry:
-            return f"""{self.picohenries} """
+            return f"""{self.picohenries} pH"""
         
         if unit == ElectricInductanceUnits.Nanohenry:
-            return f"""{self.nanohenries} """
+            return f"""{self.nanohenries} nH"""
         
         if unit == ElectricInductanceUnits.Microhenry:
-            return f"""{self.microhenries} """
+            return f"""{self.microhenries} μH"""
         
         if unit == ElectricInductanceUnits.Millihenry:
-            return f"""{self.millihenries} """
+            return f"""{self.millihenries} mH"""
         
         return f'{self._value}'
 
@@ -275,14 +275,14 @@ class ElectricInductance(AbstractMeasure):
             return """H"""
         
         if unit_abbreviation == ElectricInductanceUnits.Picohenry:
-            return """"""
+            return """pH"""
         
         if unit_abbreviation == ElectricInductanceUnits.Nanohenry:
-            return """"""
+            return """nH"""
         
         if unit_abbreviation == ElectricInductanceUnits.Microhenry:
-            return """"""
+            return """μH"""
         
         if unit_abbreviation == ElectricInductanceUnits.Millihenry:
-            return """"""
+            return """mH"""
         

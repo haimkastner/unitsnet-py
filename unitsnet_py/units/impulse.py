@@ -574,28 +574,28 @@ class Impulse(AbstractMeasure):
             return f"""{self.slug_feet_per_second} slug·ft/s"""
         
         if unit == ImpulseUnits.NanonewtonSecond:
-            return f"""{self.nanonewton_seconds} """
+            return f"""{self.nanonewton_seconds} nN·s"""
         
         if unit == ImpulseUnits.MicronewtonSecond:
-            return f"""{self.micronewton_seconds} """
+            return f"""{self.micronewton_seconds} μN·s"""
         
         if unit == ImpulseUnits.MillinewtonSecond:
-            return f"""{self.millinewton_seconds} """
+            return f"""{self.millinewton_seconds} mN·s"""
         
         if unit == ImpulseUnits.CentinewtonSecond:
-            return f"""{self.centinewton_seconds} """
+            return f"""{self.centinewton_seconds} cN·s"""
         
         if unit == ImpulseUnits.DecinewtonSecond:
-            return f"""{self.decinewton_seconds} """
+            return f"""{self.decinewton_seconds} dN·s"""
         
         if unit == ImpulseUnits.DecanewtonSecond:
-            return f"""{self.decanewton_seconds} """
+            return f"""{self.decanewton_seconds} daN·s"""
         
         if unit == ImpulseUnits.KilonewtonSecond:
-            return f"""{self.kilonewton_seconds} """
+            return f"""{self.kilonewton_seconds} kN·s"""
         
         if unit == ImpulseUnits.MeganewtonSecond:
-            return f"""{self.meganewton_seconds} """
+            return f"""{self.meganewton_seconds} MN·s"""
         
         return f'{self._value}'
 
@@ -623,26 +623,26 @@ class Impulse(AbstractMeasure):
             return """slug·ft/s"""
         
         if unit_abbreviation == ImpulseUnits.NanonewtonSecond:
-            return """"""
+            return """nN·s"""
         
         if unit_abbreviation == ImpulseUnits.MicronewtonSecond:
-            return """"""
+            return """μN·s"""
         
         if unit_abbreviation == ImpulseUnits.MillinewtonSecond:
-            return """"""
+            return """mN·s"""
         
         if unit_abbreviation == ImpulseUnits.CentinewtonSecond:
-            return """"""
+            return """cN·s"""
         
         if unit_abbreviation == ImpulseUnits.DecinewtonSecond:
-            return """"""
+            return """dN·s"""
         
         if unit_abbreviation == ImpulseUnits.DecanewtonSecond:
-            return """"""
+            return """daN·s"""
         
         if unit_abbreviation == ImpulseUnits.KilonewtonSecond:
-            return """"""
+            return """kN·s"""
         
         if unit_abbreviation == ImpulseUnits.MeganewtonSecond:
-            return """"""
+            return """MN·s"""
         

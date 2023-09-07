@@ -463,13 +463,13 @@ class DynamicViscosity(AbstractMeasure):
             return f"""{self.pounds_per_foot_second} lb/ft·s"""
         
         if unit == DynamicViscosityUnits.MillipascalSecond:
-            return f"""{self.millipascal_seconds} """
+            return f"""{self.millipascal_seconds} mPa·s"""
         
         if unit == DynamicViscosityUnits.MicropascalSecond:
-            return f"""{self.micropascal_seconds} """
+            return f"""{self.micropascal_seconds} μPa·s"""
         
         if unit == DynamicViscosityUnits.Centipoise:
-            return f"""{self.centipoise} """
+            return f"""{self.centipoise} cP"""
         
         return f'{self._value}'
 
@@ -503,11 +503,11 @@ class DynamicViscosity(AbstractMeasure):
             return """lb/ft·s"""
         
         if unit_abbreviation == DynamicViscosityUnits.MillipascalSecond:
-            return """"""
+            return """mPa·s"""
         
         if unit_abbreviation == DynamicViscosityUnits.MicropascalSecond:
-            return """"""
+            return """μPa·s"""
         
         if unit_abbreviation == DynamicViscosityUnits.Centipoise:
-            return """"""
+            return """cP"""
         

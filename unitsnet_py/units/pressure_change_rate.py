@@ -778,34 +778,34 @@ class PressureChangeRate(AbstractMeasure):
             return f"""{self.bars_per_minute} bar/min"""
         
         if unit == PressureChangeRateUnits.KilopascalPerSecond:
-            return f"""{self.kilopascals_per_second} """
+            return f"""{self.kilopascals_per_second} kPa/s"""
         
         if unit == PressureChangeRateUnits.MegapascalPerSecond:
-            return f"""{self.megapascals_per_second} """
+            return f"""{self.megapascals_per_second} MPa/s"""
         
         if unit == PressureChangeRateUnits.KilopascalPerMinute:
-            return f"""{self.kilopascals_per_minute} """
+            return f"""{self.kilopascals_per_minute} kPa/min"""
         
         if unit == PressureChangeRateUnits.MegapascalPerMinute:
-            return f"""{self.megapascals_per_minute} """
+            return f"""{self.megapascals_per_minute} MPa/min"""
         
         if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
-            return f"""{self.kilopounds_force_per_square_inch_per_second} """
+            return f"""{self.kilopounds_force_per_square_inch_per_second} kpsi/s"""
         
         if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
-            return f"""{self.megapounds_force_per_square_inch_per_second} """
+            return f"""{self.megapounds_force_per_square_inch_per_second} Mpsi/s"""
         
         if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
-            return f"""{self.kilopounds_force_per_square_inch_per_minute} """
+            return f"""{self.kilopounds_force_per_square_inch_per_minute} kpsi/min"""
         
         if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
-            return f"""{self.megapounds_force_per_square_inch_per_minute} """
+            return f"""{self.megapounds_force_per_square_inch_per_minute} Mpsi/min"""
         
         if unit == PressureChangeRateUnits.MillibarPerSecond:
-            return f"""{self.millibars_per_second} """
+            return f"""{self.millibars_per_second} mbar/s"""
         
         if unit == PressureChangeRateUnits.MillibarPerMinute:
-            return f"""{self.millibars_per_minute} """
+            return f"""{self.millibars_per_minute} mbar/min"""
         
         return f'{self._value}'
 
@@ -842,32 +842,32 @@ class PressureChangeRate(AbstractMeasure):
             return """bar/min"""
         
         if unit_abbreviation == PressureChangeRateUnits.KilopascalPerSecond:
-            return """"""
+            return """kPa/s"""
         
         if unit_abbreviation == PressureChangeRateUnits.MegapascalPerSecond:
-            return """"""
+            return """MPa/s"""
         
         if unit_abbreviation == PressureChangeRateUnits.KilopascalPerMinute:
-            return """"""
+            return """kPa/min"""
         
         if unit_abbreviation == PressureChangeRateUnits.MegapascalPerMinute:
-            return """"""
+            return """MPa/min"""
         
         if unit_abbreviation == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
-            return """"""
+            return """kpsi/s"""
         
         if unit_abbreviation == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
-            return """"""
+            return """Mpsi/s"""
         
         if unit_abbreviation == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
-            return """"""
+            return """kpsi/min"""
         
         if unit_abbreviation == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
-            return """"""
+            return """Mpsi/min"""
         
         if unit_abbreviation == PressureChangeRateUnits.MillibarPerSecond:
-            return """"""
+            return """mbar/s"""
         
         if unit_abbreviation == PressureChangeRateUnits.MillibarPerMinute:
-            return """"""
+            return """mbar/min"""
         

@@ -604,40 +604,40 @@ class Irradiance(AbstractMeasure):
             return f"""{self.watts_per_square_centimeter} W/cm²"""
         
         if unit == IrradianceUnits.PicowattPerSquareMeter:
-            return f"""{self.picowatts_per_square_meter} """
+            return f"""{self.picowatts_per_square_meter} pW/m²"""
         
         if unit == IrradianceUnits.NanowattPerSquareMeter:
-            return f"""{self.nanowatts_per_square_meter} """
+            return f"""{self.nanowatts_per_square_meter} nW/m²"""
         
         if unit == IrradianceUnits.MicrowattPerSquareMeter:
-            return f"""{self.microwatts_per_square_meter} """
+            return f"""{self.microwatts_per_square_meter} μW/m²"""
         
         if unit == IrradianceUnits.MilliwattPerSquareMeter:
-            return f"""{self.milliwatts_per_square_meter} """
+            return f"""{self.milliwatts_per_square_meter} mW/m²"""
         
         if unit == IrradianceUnits.KilowattPerSquareMeter:
-            return f"""{self.kilowatts_per_square_meter} """
+            return f"""{self.kilowatts_per_square_meter} kW/m²"""
         
         if unit == IrradianceUnits.MegawattPerSquareMeter:
-            return f"""{self.megawatts_per_square_meter} """
+            return f"""{self.megawatts_per_square_meter} MW/m²"""
         
         if unit == IrradianceUnits.PicowattPerSquareCentimeter:
-            return f"""{self.picowatts_per_square_centimeter} """
+            return f"""{self.picowatts_per_square_centimeter} pW/cm²"""
         
         if unit == IrradianceUnits.NanowattPerSquareCentimeter:
-            return f"""{self.nanowatts_per_square_centimeter} """
+            return f"""{self.nanowatts_per_square_centimeter} nW/cm²"""
         
         if unit == IrradianceUnits.MicrowattPerSquareCentimeter:
-            return f"""{self.microwatts_per_square_centimeter} """
+            return f"""{self.microwatts_per_square_centimeter} μW/cm²"""
         
         if unit == IrradianceUnits.MilliwattPerSquareCentimeter:
-            return f"""{self.milliwatts_per_square_centimeter} """
+            return f"""{self.milliwatts_per_square_centimeter} mW/cm²"""
         
         if unit == IrradianceUnits.KilowattPerSquareCentimeter:
-            return f"""{self.kilowatts_per_square_centimeter} """
+            return f"""{self.kilowatts_per_square_centimeter} kW/cm²"""
         
         if unit == IrradianceUnits.MegawattPerSquareCentimeter:
-            return f"""{self.megawatts_per_square_centimeter} """
+            return f"""{self.megawatts_per_square_centimeter} MW/cm²"""
         
         return f'{self._value}'
 
@@ -656,38 +656,38 @@ class Irradiance(AbstractMeasure):
             return """W/cm²"""
         
         if unit_abbreviation == IrradianceUnits.PicowattPerSquareMeter:
-            return """"""
+            return """pW/m²"""
         
         if unit_abbreviation == IrradianceUnits.NanowattPerSquareMeter:
-            return """"""
+            return """nW/m²"""
         
         if unit_abbreviation == IrradianceUnits.MicrowattPerSquareMeter:
-            return """"""
+            return """μW/m²"""
         
         if unit_abbreviation == IrradianceUnits.MilliwattPerSquareMeter:
-            return """"""
+            return """mW/m²"""
         
         if unit_abbreviation == IrradianceUnits.KilowattPerSquareMeter:
-            return """"""
+            return """kW/m²"""
         
         if unit_abbreviation == IrradianceUnits.MegawattPerSquareMeter:
-            return """"""
+            return """MW/m²"""
         
         if unit_abbreviation == IrradianceUnits.PicowattPerSquareCentimeter:
-            return """"""
+            return """pW/cm²"""
         
         if unit_abbreviation == IrradianceUnits.NanowattPerSquareCentimeter:
-            return """"""
+            return """nW/cm²"""
         
         if unit_abbreviation == IrradianceUnits.MicrowattPerSquareCentimeter:
-            return """"""
+            return """μW/cm²"""
         
         if unit_abbreviation == IrradianceUnits.MilliwattPerSquareCentimeter:
-            return """"""
+            return """mW/cm²"""
         
         if unit_abbreviation == IrradianceUnits.KilowattPerSquareCentimeter:
-            return """"""
+            return """kW/cm²"""
         
         if unit_abbreviation == IrradianceUnits.MegawattPerSquareCentimeter:
-            return """"""
+            return """MW/cm²"""
         

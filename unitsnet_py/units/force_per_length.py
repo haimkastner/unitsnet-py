@@ -1576,76 +1576,76 @@ class ForcePerLength(AbstractMeasure):
             return f"""{self.kilopounds_force_per_inch} kipf/in"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerMeter:
-            return f"""{self.nanonewtons_per_meter} """
+            return f"""{self.nanonewtons_per_meter} nN/m"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerMeter:
-            return f"""{self.micronewtons_per_meter} """
+            return f"""{self.micronewtons_per_meter} μN/m"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerMeter:
-            return f"""{self.millinewtons_per_meter} """
+            return f"""{self.millinewtons_per_meter} mN/m"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerMeter:
-            return f"""{self.centinewtons_per_meter} """
+            return f"""{self.centinewtons_per_meter} cN/m"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerMeter:
-            return f"""{self.decinewtons_per_meter} """
+            return f"""{self.decinewtons_per_meter} dN/m"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerMeter:
-            return f"""{self.decanewtons_per_meter} """
+            return f"""{self.decanewtons_per_meter} daN/m"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerMeter:
-            return f"""{self.kilonewtons_per_meter} """
+            return f"""{self.kilonewtons_per_meter} kN/m"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerMeter:
-            return f"""{self.meganewtons_per_meter} """
+            return f"""{self.meganewtons_per_meter} MN/m"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerCentimeter:
-            return f"""{self.nanonewtons_per_centimeter} """
+            return f"""{self.nanonewtons_per_centimeter} nN/cm"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerCentimeter:
-            return f"""{self.micronewtons_per_centimeter} """
+            return f"""{self.micronewtons_per_centimeter} μN/cm"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerCentimeter:
-            return f"""{self.millinewtons_per_centimeter} """
+            return f"""{self.millinewtons_per_centimeter} mN/cm"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerCentimeter:
-            return f"""{self.centinewtons_per_centimeter} """
+            return f"""{self.centinewtons_per_centimeter} cN/cm"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerCentimeter:
-            return f"""{self.decinewtons_per_centimeter} """
+            return f"""{self.decinewtons_per_centimeter} dN/cm"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerCentimeter:
-            return f"""{self.decanewtons_per_centimeter} """
+            return f"""{self.decanewtons_per_centimeter} daN/cm"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerCentimeter:
-            return f"""{self.kilonewtons_per_centimeter} """
+            return f"""{self.kilonewtons_per_centimeter} kN/cm"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerCentimeter:
-            return f"""{self.meganewtons_per_centimeter} """
+            return f"""{self.meganewtons_per_centimeter} MN/cm"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerMillimeter:
-            return f"""{self.nanonewtons_per_millimeter} """
+            return f"""{self.nanonewtons_per_millimeter} nN/mm"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerMillimeter:
-            return f"""{self.micronewtons_per_millimeter} """
+            return f"""{self.micronewtons_per_millimeter} μN/mm"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerMillimeter:
-            return f"""{self.millinewtons_per_millimeter} """
+            return f"""{self.millinewtons_per_millimeter} mN/mm"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerMillimeter:
-            return f"""{self.centinewtons_per_millimeter} """
+            return f"""{self.centinewtons_per_millimeter} cN/mm"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerMillimeter:
-            return f"""{self.decinewtons_per_millimeter} """
+            return f"""{self.decinewtons_per_millimeter} dN/mm"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerMillimeter:
-            return f"""{self.decanewtons_per_millimeter} """
+            return f"""{self.decanewtons_per_millimeter} daN/mm"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerMillimeter:
-            return f"""{self.kilonewtons_per_millimeter} """
+            return f"""{self.kilonewtons_per_millimeter} kN/mm"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerMillimeter:
-            return f"""{self.meganewtons_per_millimeter} """
+            return f"""{self.meganewtons_per_millimeter} MN/mm"""
         
         return f'{self._value}'
 
@@ -1700,74 +1700,74 @@ class ForcePerLength(AbstractMeasure):
             return """kipf/in"""
         
         if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerMeter:
-            return """"""
+            return """nN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerMeter:
-            return """"""
+            return """μN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerMeter:
-            return """"""
+            return """mN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerMeter:
-            return """"""
+            return """cN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerMeter:
-            return """"""
+            return """dN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerMeter:
-            return """"""
+            return """daN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerMeter:
-            return """"""
+            return """kN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerMeter:
-            return """"""
+            return """MN/m"""
         
         if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerCentimeter:
-            return """"""
+            return """nN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerCentimeter:
-            return """"""
+            return """μN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerCentimeter:
-            return """"""
+            return """mN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerCentimeter:
-            return """"""
+            return """cN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerCentimeter:
-            return """"""
+            return """dN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerCentimeter:
-            return """"""
+            return """daN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerCentimeter:
-            return """"""
+            return """kN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerCentimeter:
-            return """"""
+            return """MN/cm"""
         
         if unit_abbreviation == ForcePerLengthUnits.NanonewtonPerMillimeter:
-            return """"""
+            return """nN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MicronewtonPerMillimeter:
-            return """"""
+            return """μN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MillinewtonPerMillimeter:
-            return """"""
+            return """mN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.CentinewtonPerMillimeter:
-            return """"""
+            return """cN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecinewtonPerMillimeter:
-            return """"""
+            return """dN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.DecanewtonPerMillimeter:
-            return """"""
+            return """daN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.KilonewtonPerMillimeter:
-            return """"""
+            return """kN/mm"""
         
         if unit_abbreviation == ForcePerLengthUnits.MeganewtonPerMillimeter:
-            return """"""
+            return """MN/mm"""
         

@@ -427,7 +427,7 @@ class TemperatureDelta(AbstractMeasure):
             return f"""{self.degrees_roemer} ∆°Rø"""
         
         if unit == TemperatureDeltaUnits.MillidegreeCelsius:
-            return f"""{self.millidegrees_celsius} """
+            return f"""{self.millidegrees_celsius} m∆°C"""
         
         return f'{self._value}'
 
@@ -464,5 +464,5 @@ class TemperatureDelta(AbstractMeasure):
             return """∆°Rø"""
         
         if unit_abbreviation == TemperatureDeltaUnits.MillidegreeCelsius:
-            return """"""
+            return """m∆°C"""
         

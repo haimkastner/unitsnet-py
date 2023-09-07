@@ -415,19 +415,19 @@ class SpecificEntropy(AbstractMeasure):
             return f"""{self.btus_per_pound_fahrenheit} BTU/lb·°F"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
-            return f"""{self.kilojoules_per_kilogram_kelvin} """
+            return f"""{self.kilojoules_per_kilogram_kelvin} kJ/kg.K"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
-            return f"""{self.megajoules_per_kilogram_kelvin} """
+            return f"""{self.megajoules_per_kilogram_kelvin} MJ/kg.K"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
-            return f"""{self.kilojoules_per_kilogram_degree_celsius} """
+            return f"""{self.kilojoules_per_kilogram_degree_celsius} kJ/kg.C"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
-            return f"""{self.megajoules_per_kilogram_degree_celsius} """
+            return f"""{self.megajoules_per_kilogram_degree_celsius} MJ/kg.C"""
         
         if unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
-            return f"""{self.kilocalories_per_gram_kelvin} """
+            return f"""{self.kilocalories_per_gram_kelvin} kcal/g.K"""
         
         return f'{self._value}'
 
@@ -452,17 +452,17 @@ class SpecificEntropy(AbstractMeasure):
             return """BTU/lb·°F"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
-            return """"""
+            return """kJ/kg.K"""
         
         if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
-            return """"""
+            return """MJ/kg.K"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
-            return """"""
+            return """kJ/kg.C"""
         
         if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
-            return """"""
+            return """MJ/kg.C"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilocaloriePerGramKelvin:
-            return """"""
+            return """kcal/g.K"""
         

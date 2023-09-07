@@ -574,28 +574,28 @@ class RotationalSpeed(AbstractMeasure):
             return f"""{self.revolutions_per_minute} rpm"""
         
         if unit == RotationalSpeedUnits.NanoradianPerSecond:
-            return f"""{self.nanoradians_per_second} """
+            return f"""{self.nanoradians_per_second} nrad/s"""
         
         if unit == RotationalSpeedUnits.MicroradianPerSecond:
-            return f"""{self.microradians_per_second} """
+            return f"""{self.microradians_per_second} μrad/s"""
         
         if unit == RotationalSpeedUnits.MilliradianPerSecond:
-            return f"""{self.milliradians_per_second} """
+            return f"""{self.milliradians_per_second} mrad/s"""
         
         if unit == RotationalSpeedUnits.CentiradianPerSecond:
-            return f"""{self.centiradians_per_second} """
+            return f"""{self.centiradians_per_second} crad/s"""
         
         if unit == RotationalSpeedUnits.DeciradianPerSecond:
-            return f"""{self.deciradians_per_second} """
+            return f"""{self.deciradians_per_second} drad/s"""
         
         if unit == RotationalSpeedUnits.NanodegreePerSecond:
-            return f"""{self.nanodegrees_per_second} """
+            return f"""{self.nanodegrees_per_second} n°/s"""
         
         if unit == RotationalSpeedUnits.MicrodegreePerSecond:
-            return f"""{self.microdegrees_per_second} """
+            return f"""{self.microdegrees_per_second} μ°/s"""
         
         if unit == RotationalSpeedUnits.MillidegreePerSecond:
-            return f"""{self.millidegrees_per_second} """
+            return f"""{self.millidegrees_per_second} m°/s"""
         
         return f'{self._value}'
 
@@ -623,26 +623,26 @@ class RotationalSpeed(AbstractMeasure):
             return """rpm"""
         
         if unit_abbreviation == RotationalSpeedUnits.NanoradianPerSecond:
-            return """"""
+            return """nrad/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.MicroradianPerSecond:
-            return """"""
+            return """μrad/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.MilliradianPerSecond:
-            return """"""
+            return """mrad/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.CentiradianPerSecond:
-            return """"""
+            return """crad/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.DeciradianPerSecond:
-            return """"""
+            return """drad/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.NanodegreePerSecond:
-            return """"""
+            return """n°/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.MicrodegreePerSecond:
-            return """"""
+            return """μ°/s"""
         
         if unit_abbreviation == RotationalSpeedUnits.MillidegreePerSecond:
-            return """"""
+            return """m°/s"""
         

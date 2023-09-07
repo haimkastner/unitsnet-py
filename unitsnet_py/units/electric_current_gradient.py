@@ -340,10 +340,10 @@ class ElectricCurrentGradient(AbstractMeasure):
             return f"""{self.amperes_per_nanosecond} A/ns"""
         
         if unit == ElectricCurrentGradientUnits.MilliamperePerSecond:
-            return f"""{self.milliamperes_per_second} """
+            return f"""{self.milliamperes_per_second} mA/s"""
         
         if unit == ElectricCurrentGradientUnits.MilliamperePerMinute:
-            return f"""{self.milliamperes_per_minute} """
+            return f"""{self.milliamperes_per_minute} mA/min"""
         
         return f'{self._value}'
 
@@ -371,8 +371,8 @@ class ElectricCurrentGradient(AbstractMeasure):
             return """A/ns"""
         
         if unit_abbreviation == ElectricCurrentGradientUnits.MilliamperePerSecond:
-            return """"""
+            return """mA/s"""
         
         if unit_abbreviation == ElectricCurrentGradientUnits.MilliamperePerMinute:
-            return """"""
+            return """mA/min"""
         

@@ -1042,64 +1042,64 @@ class LinearPowerDensity(AbstractMeasure):
             return f"""{self.watts_per_foot} W/ft"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerMeter:
-            return f"""{self.milliwatts_per_meter} """
+            return f"""{self.milliwatts_per_meter} mW/m"""
         
         if unit == LinearPowerDensityUnits.KilowattPerMeter:
-            return f"""{self.kilowatts_per_meter} """
+            return f"""{self.kilowatts_per_meter} kW/m"""
         
         if unit == LinearPowerDensityUnits.MegawattPerMeter:
-            return f"""{self.megawatts_per_meter} """
+            return f"""{self.megawatts_per_meter} MW/m"""
         
         if unit == LinearPowerDensityUnits.GigawattPerMeter:
-            return f"""{self.gigawatts_per_meter} """
+            return f"""{self.gigawatts_per_meter} GW/m"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerCentimeter:
-            return f"""{self.milliwatts_per_centimeter} """
+            return f"""{self.milliwatts_per_centimeter} mW/cm"""
         
         if unit == LinearPowerDensityUnits.KilowattPerCentimeter:
-            return f"""{self.kilowatts_per_centimeter} """
+            return f"""{self.kilowatts_per_centimeter} kW/cm"""
         
         if unit == LinearPowerDensityUnits.MegawattPerCentimeter:
-            return f"""{self.megawatts_per_centimeter} """
+            return f"""{self.megawatts_per_centimeter} MW/cm"""
         
         if unit == LinearPowerDensityUnits.GigawattPerCentimeter:
-            return f"""{self.gigawatts_per_centimeter} """
+            return f"""{self.gigawatts_per_centimeter} GW/cm"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerMillimeter:
-            return f"""{self.milliwatts_per_millimeter} """
+            return f"""{self.milliwatts_per_millimeter} mW/mm"""
         
         if unit == LinearPowerDensityUnits.KilowattPerMillimeter:
-            return f"""{self.kilowatts_per_millimeter} """
+            return f"""{self.kilowatts_per_millimeter} kW/mm"""
         
         if unit == LinearPowerDensityUnits.MegawattPerMillimeter:
-            return f"""{self.megawatts_per_millimeter} """
+            return f"""{self.megawatts_per_millimeter} MW/mm"""
         
         if unit == LinearPowerDensityUnits.GigawattPerMillimeter:
-            return f"""{self.gigawatts_per_millimeter} """
+            return f"""{self.gigawatts_per_millimeter} GW/mm"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerInch:
-            return f"""{self.milliwatts_per_inch} """
+            return f"""{self.milliwatts_per_inch} mW/in"""
         
         if unit == LinearPowerDensityUnits.KilowattPerInch:
-            return f"""{self.kilowatts_per_inch} """
+            return f"""{self.kilowatts_per_inch} kW/in"""
         
         if unit == LinearPowerDensityUnits.MegawattPerInch:
-            return f"""{self.megawatts_per_inch} """
+            return f"""{self.megawatts_per_inch} MW/in"""
         
         if unit == LinearPowerDensityUnits.GigawattPerInch:
-            return f"""{self.gigawatts_per_inch} """
+            return f"""{self.gigawatts_per_inch} GW/in"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerFoot:
-            return f"""{self.milliwatts_per_foot} """
+            return f"""{self.milliwatts_per_foot} mW/ft"""
         
         if unit == LinearPowerDensityUnits.KilowattPerFoot:
-            return f"""{self.kilowatts_per_foot} """
+            return f"""{self.kilowatts_per_foot} kW/ft"""
         
         if unit == LinearPowerDensityUnits.MegawattPerFoot:
-            return f"""{self.megawatts_per_foot} """
+            return f"""{self.megawatts_per_foot} MW/ft"""
         
         if unit == LinearPowerDensityUnits.GigawattPerFoot:
-            return f"""{self.gigawatts_per_foot} """
+            return f"""{self.gigawatts_per_foot} GW/ft"""
         
         return f'{self._value}'
 
@@ -1127,62 +1127,62 @@ class LinearPowerDensity(AbstractMeasure):
             return """W/ft"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerMeter:
-            return """"""
+            return """mW/m"""
         
         if unit_abbreviation == LinearPowerDensityUnits.KilowattPerMeter:
-            return """"""
+            return """kW/m"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MegawattPerMeter:
-            return """"""
+            return """MW/m"""
         
         if unit_abbreviation == LinearPowerDensityUnits.GigawattPerMeter:
-            return """"""
+            return """GW/m"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerCentimeter:
-            return """"""
+            return """mW/cm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.KilowattPerCentimeter:
-            return """"""
+            return """kW/cm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MegawattPerCentimeter:
-            return """"""
+            return """MW/cm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.GigawattPerCentimeter:
-            return """"""
+            return """GW/cm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerMillimeter:
-            return """"""
+            return """mW/mm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.KilowattPerMillimeter:
-            return """"""
+            return """kW/mm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MegawattPerMillimeter:
-            return """"""
+            return """MW/mm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.GigawattPerMillimeter:
-            return """"""
+            return """GW/mm"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerInch:
-            return """"""
+            return """mW/in"""
         
         if unit_abbreviation == LinearPowerDensityUnits.KilowattPerInch:
-            return """"""
+            return """kW/in"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MegawattPerInch:
-            return """"""
+            return """MW/in"""
         
         if unit_abbreviation == LinearPowerDensityUnits.GigawattPerInch:
-            return """"""
+            return """GW/in"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MilliwattPerFoot:
-            return """"""
+            return """mW/ft"""
         
         if unit_abbreviation == LinearPowerDensityUnits.KilowattPerFoot:
-            return """"""
+            return """kW/ft"""
         
         if unit_abbreviation == LinearPowerDensityUnits.MegawattPerFoot:
-            return """"""
+            return """MW/ft"""
         
         if unit_abbreviation == LinearPowerDensityUnits.GigawattPerFoot:
-            return """"""
+            return """GW/ft"""
         

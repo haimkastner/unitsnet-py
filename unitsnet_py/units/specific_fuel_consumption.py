@@ -217,7 +217,7 @@ class SpecificFuelConsumption(AbstractMeasure):
             return f"""{self.grams_per_kilo_newton_second} g/(kN�s)"""
         
         if unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
-            return f"""{self.kilograms_per_kilo_newton_second} """
+            return f"""{self.kilograms_per_kilo_newton_second} kg/(kN�s)"""
         
         return f'{self._value}'
 
@@ -239,5 +239,5 @@ class SpecificFuelConsumption(AbstractMeasure):
             return """g/(kN�s)"""
         
         if unit_abbreviation == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
-            return """"""
+            return """kg/(kN�s)"""
         

@@ -721,49 +721,49 @@ class AmountOfSubstance(AbstractMeasure):
             return f"""{self.pound_moles} lbmol"""
         
         if unit == AmountOfSubstanceUnits.Femtomole:
-            return f"""{self.femtomoles} """
+            return f"""{self.femtomoles} fmol"""
         
         if unit == AmountOfSubstanceUnits.Picomole:
-            return f"""{self.picomoles} """
+            return f"""{self.picomoles} pmol"""
         
         if unit == AmountOfSubstanceUnits.Nanomole:
-            return f"""{self.nanomoles} """
+            return f"""{self.nanomoles} nmol"""
         
         if unit == AmountOfSubstanceUnits.Micromole:
-            return f"""{self.micromoles} """
+            return f"""{self.micromoles} μmol"""
         
         if unit == AmountOfSubstanceUnits.Millimole:
-            return f"""{self.millimoles} """
+            return f"""{self.millimoles} mmol"""
         
         if unit == AmountOfSubstanceUnits.Centimole:
-            return f"""{self.centimoles} """
+            return f"""{self.centimoles} cmol"""
         
         if unit == AmountOfSubstanceUnits.Decimole:
-            return f"""{self.decimoles} """
+            return f"""{self.decimoles} dmol"""
         
         if unit == AmountOfSubstanceUnits.Kilomole:
-            return f"""{self.kilomoles} """
+            return f"""{self.kilomoles} kmol"""
         
         if unit == AmountOfSubstanceUnits.Megamole:
-            return f"""{self.megamoles} """
+            return f"""{self.megamoles} Mmol"""
         
         if unit == AmountOfSubstanceUnits.NanopoundMole:
-            return f"""{self.nanopound_moles} """
+            return f"""{self.nanopound_moles} nlbmol"""
         
         if unit == AmountOfSubstanceUnits.MicropoundMole:
-            return f"""{self.micropound_moles} """
+            return f"""{self.micropound_moles} μlbmol"""
         
         if unit == AmountOfSubstanceUnits.MillipoundMole:
-            return f"""{self.millipound_moles} """
+            return f"""{self.millipound_moles} mlbmol"""
         
         if unit == AmountOfSubstanceUnits.CentipoundMole:
-            return f"""{self.centipound_moles} """
+            return f"""{self.centipound_moles} clbmol"""
         
         if unit == AmountOfSubstanceUnits.DecipoundMole:
-            return f"""{self.decipound_moles} """
+            return f"""{self.decipound_moles} dlbmol"""
         
         if unit == AmountOfSubstanceUnits.KilopoundMole:
-            return f"""{self.kilopound_moles} """
+            return f"""{self.kilopound_moles} klbmol"""
         
         return f'{self._value}'
 
@@ -782,47 +782,47 @@ class AmountOfSubstance(AbstractMeasure):
             return """lbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Femtomole:
-            return """"""
+            return """fmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Picomole:
-            return """"""
+            return """pmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Nanomole:
-            return """"""
+            return """nmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Micromole:
-            return """"""
+            return """μmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Millimole:
-            return """"""
+            return """mmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Centimole:
-            return """"""
+            return """cmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Decimole:
-            return """"""
+            return """dmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Kilomole:
-            return """"""
+            return """kmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.Megamole:
-            return """"""
+            return """Mmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.NanopoundMole:
-            return """"""
+            return """nlbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.MicropoundMole:
-            return """"""
+            return """μlbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.MillipoundMole:
-            return """"""
+            return """mlbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.CentipoundMole:
-            return """"""
+            return """clbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.DecipoundMole:
-            return """"""
+            return """dlbmol"""
         
         if unit_abbreviation == AmountOfSubstanceUnits.KilopoundMole:
-            return """"""
+            return """klbmol"""
         

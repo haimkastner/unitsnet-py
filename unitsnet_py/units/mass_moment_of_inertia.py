@@ -1180,52 +1180,52 @@ class MassMomentOfInertia(AbstractMeasure):
             return f"""{self.slug_square_inches} slug·in²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareMeter:
-            return f"""{self.milligram_square_meters} """
+            return f"""{self.milligram_square_meters} mg·m²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareMeter:
-            return f"""{self.kilogram_square_meters} """
+            return f"""{self.kilogram_square_meters} kg·m²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareDecimeter:
-            return f"""{self.milligram_square_decimeters} """
+            return f"""{self.milligram_square_decimeters} mg·dm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareDecimeter:
-            return f"""{self.kilogram_square_decimeters} """
+            return f"""{self.kilogram_square_decimeters} kg·dm²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareCentimeter:
-            return f"""{self.milligram_square_centimeters} """
+            return f"""{self.milligram_square_centimeters} mg·cm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareCentimeter:
-            return f"""{self.kilogram_square_centimeters} """
+            return f"""{self.kilogram_square_centimeters} kg·cm²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareMillimeter:
-            return f"""{self.milligram_square_millimeters} """
+            return f"""{self.milligram_square_millimeters} mg·mm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareMillimeter:
-            return f"""{self.kilogram_square_millimeters} """
+            return f"""{self.kilogram_square_millimeters} kg·mm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareMeter:
-            return f"""{self.kilotonne_square_meters} """
+            return f"""{self.kilotonne_square_meters} kt·m²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareMeter:
-            return f"""{self.megatonne_square_meters} """
+            return f"""{self.megatonne_square_meters} Mt·m²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareDecimeter:
-            return f"""{self.kilotonne_square_decimeters} """
+            return f"""{self.kilotonne_square_decimeters} kt·dm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareDecimeter:
-            return f"""{self.megatonne_square_decimeters} """
+            return f"""{self.megatonne_square_decimeters} Mt·dm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareCentimeter:
-            return f"""{self.kilotonne_square_centimeters} """
+            return f"""{self.kilotonne_square_centimeters} kt·cm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
-            return f"""{self.megatonne_square_centimeters} """
+            return f"""{self.megatonne_square_centimeters} Mt·cm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
-            return f"""{self.kilotonne_square_milimeters} """
+            return f"""{self.kilotonne_square_milimeters} kt·mm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
-            return f"""{self.megatonne_square_milimeters} """
+            return f"""{self.megatonne_square_milimeters} Mt·mm²"""
         
         return f'{self._value}'
 
@@ -1274,50 +1274,50 @@ class MassMomentOfInertia(AbstractMeasure):
             return """slug·in²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MilligramSquareMeter:
-            return """"""
+            return """mg·m²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilogramSquareMeter:
-            return """"""
+            return """kg·m²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MilligramSquareDecimeter:
-            return """"""
+            return """mg·dm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilogramSquareDecimeter:
-            return """"""
+            return """kg·dm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MilligramSquareCentimeter:
-            return """"""
+            return """mg·cm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilogramSquareCentimeter:
-            return """"""
+            return """kg·cm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MilligramSquareMillimeter:
-            return """"""
+            return """mg·mm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilogramSquareMillimeter:
-            return """"""
+            return """kg·mm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareMeter:
-            return """"""
+            return """kt·m²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareMeter:
-            return """"""
+            return """Mt·m²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareDecimeter:
-            return """"""
+            return """kt·dm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareDecimeter:
-            return """"""
+            return """Mt·dm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareCentimeter:
-            return """"""
+            return """kt·cm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
-            return """"""
+            return """Mt·cm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
-            return """"""
+            return """kt·mm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
-            return """"""
+            return """Mt·mm²"""
         

@@ -1375,67 +1375,67 @@ class MassFlow(AbstractMeasure):
             return f"""{self.short_tons_per_hour} short tn/h"""
         
         if unit == MassFlowUnits.NanogramPerSecond:
-            return f"""{self.nanograms_per_second} """
+            return f"""{self.nanograms_per_second} ng/s"""
         
         if unit == MassFlowUnits.MicrogramPerSecond:
-            return f"""{self.micrograms_per_second} """
+            return f"""{self.micrograms_per_second} μg/s"""
         
         if unit == MassFlowUnits.MilligramPerSecond:
-            return f"""{self.milligrams_per_second} """
+            return f"""{self.milligrams_per_second} mg/s"""
         
         if unit == MassFlowUnits.CentigramPerSecond:
-            return f"""{self.centigrams_per_second} """
+            return f"""{self.centigrams_per_second} cg/s"""
         
         if unit == MassFlowUnits.DecigramPerSecond:
-            return f"""{self.decigrams_per_second} """
+            return f"""{self.decigrams_per_second} dg/s"""
         
         if unit == MassFlowUnits.DecagramPerSecond:
-            return f"""{self.decagrams_per_second} """
+            return f"""{self.decagrams_per_second} dag/s"""
         
         if unit == MassFlowUnits.HectogramPerSecond:
-            return f"""{self.hectograms_per_second} """
+            return f"""{self.hectograms_per_second} hg/s"""
         
         if unit == MassFlowUnits.KilogramPerSecond:
-            return f"""{self.kilograms_per_second} """
+            return f"""{self.kilograms_per_second} kg/s"""
         
         if unit == MassFlowUnits.NanogramPerDay:
-            return f"""{self.nanograms_per_day} """
+            return f"""{self.nanograms_per_day} ng/d"""
         
         if unit == MassFlowUnits.MicrogramPerDay:
-            return f"""{self.micrograms_per_day} """
+            return f"""{self.micrograms_per_day} μg/d"""
         
         if unit == MassFlowUnits.MilligramPerDay:
-            return f"""{self.milligrams_per_day} """
+            return f"""{self.milligrams_per_day} mg/d"""
         
         if unit == MassFlowUnits.CentigramPerDay:
-            return f"""{self.centigrams_per_day} """
+            return f"""{self.centigrams_per_day} cg/d"""
         
         if unit == MassFlowUnits.DecigramPerDay:
-            return f"""{self.decigrams_per_day} """
+            return f"""{self.decigrams_per_day} dg/d"""
         
         if unit == MassFlowUnits.DecagramPerDay:
-            return f"""{self.decagrams_per_day} """
+            return f"""{self.decagrams_per_day} dag/d"""
         
         if unit == MassFlowUnits.HectogramPerDay:
-            return f"""{self.hectograms_per_day} """
+            return f"""{self.hectograms_per_day} hg/d"""
         
         if unit == MassFlowUnits.KilogramPerDay:
-            return f"""{self.kilograms_per_day} """
+            return f"""{self.kilograms_per_day} kg/d"""
         
         if unit == MassFlowUnits.MegagramPerDay:
-            return f"""{self.megagrams_per_day} """
+            return f"""{self.megagrams_per_day} Mg/d"""
         
         if unit == MassFlowUnits.MegapoundPerDay:
-            return f"""{self.megapounds_per_day} """
+            return f"""{self.megapounds_per_day} Mlb/d"""
         
         if unit == MassFlowUnits.MegapoundPerHour:
-            return f"""{self.megapounds_per_hour} """
+            return f"""{self.megapounds_per_hour} Mlb/h"""
         
         if unit == MassFlowUnits.MegapoundPerMinute:
-            return f"""{self.megapounds_per_minute} """
+            return f"""{self.megapounds_per_minute} Mlb/min"""
         
         if unit == MassFlowUnits.MegapoundPerSecond:
-            return f"""{self.megapounds_per_second} """
+            return f"""{self.megapounds_per_second} Mlb/s"""
         
         return f'{self._value}'
 
@@ -1484,65 +1484,65 @@ class MassFlow(AbstractMeasure):
             return """short tn/h"""
         
         if unit_abbreviation == MassFlowUnits.NanogramPerSecond:
-            return """"""
+            return """ng/s"""
         
         if unit_abbreviation == MassFlowUnits.MicrogramPerSecond:
-            return """"""
+            return """μg/s"""
         
         if unit_abbreviation == MassFlowUnits.MilligramPerSecond:
-            return """"""
+            return """mg/s"""
         
         if unit_abbreviation == MassFlowUnits.CentigramPerSecond:
-            return """"""
+            return """cg/s"""
         
         if unit_abbreviation == MassFlowUnits.DecigramPerSecond:
-            return """"""
+            return """dg/s"""
         
         if unit_abbreviation == MassFlowUnits.DecagramPerSecond:
-            return """"""
+            return """dag/s"""
         
         if unit_abbreviation == MassFlowUnits.HectogramPerSecond:
-            return """"""
+            return """hg/s"""
         
         if unit_abbreviation == MassFlowUnits.KilogramPerSecond:
-            return """"""
+            return """kg/s"""
         
         if unit_abbreviation == MassFlowUnits.NanogramPerDay:
-            return """"""
+            return """ng/d"""
         
         if unit_abbreviation == MassFlowUnits.MicrogramPerDay:
-            return """"""
+            return """μg/d"""
         
         if unit_abbreviation == MassFlowUnits.MilligramPerDay:
-            return """"""
+            return """mg/d"""
         
         if unit_abbreviation == MassFlowUnits.CentigramPerDay:
-            return """"""
+            return """cg/d"""
         
         if unit_abbreviation == MassFlowUnits.DecigramPerDay:
-            return """"""
+            return """dg/d"""
         
         if unit_abbreviation == MassFlowUnits.DecagramPerDay:
-            return """"""
+            return """dag/d"""
         
         if unit_abbreviation == MassFlowUnits.HectogramPerDay:
-            return """"""
+            return """hg/d"""
         
         if unit_abbreviation == MassFlowUnits.KilogramPerDay:
-            return """"""
+            return """kg/d"""
         
         if unit_abbreviation == MassFlowUnits.MegagramPerDay:
-            return """"""
+            return """Mg/d"""
         
         if unit_abbreviation == MassFlowUnits.MegapoundPerDay:
-            return """"""
+            return """Mlb/d"""
         
         if unit_abbreviation == MassFlowUnits.MegapoundPerHour:
-            return """"""
+            return """Mlb/h"""
         
         if unit_abbreviation == MassFlowUnits.MegapoundPerMinute:
-            return """"""
+            return """Mlb/min"""
         
         if unit_abbreviation == MassFlowUnits.MegapoundPerSecond:
-            return """"""
+            return """Mlb/s"""
         

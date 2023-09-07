@@ -505,13 +505,13 @@ class Duration(AbstractMeasure):
             return f"""{self.julian_years} jyr"""
         
         if unit == DurationUnits.Nanosecond:
-            return f"""{self.nanoseconds} """
+            return f"""{self.nanoseconds} ns"""
         
         if unit == DurationUnits.Microsecond:
-            return f"""{self.microseconds} """
+            return f"""{self.microseconds} μs"""
         
         if unit == DurationUnits.Millisecond:
-            return f"""{self.milliseconds} """
+            return f"""{self.milliseconds} ms"""
         
         return f'{self._value}'
 
@@ -548,11 +548,11 @@ class Duration(AbstractMeasure):
             return """jyr"""
         
         if unit_abbreviation == DurationUnits.Nanosecond:
-            return """"""
+            return """ns"""
         
         if unit_abbreviation == DurationUnits.Microsecond:
-            return """"""
+            return """μs"""
         
         if unit_abbreviation == DurationUnits.Millisecond:
-            return """"""
+            return """ms"""
         

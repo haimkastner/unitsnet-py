@@ -1,7 +1,7 @@
 from typing import Dict, List
 
 from jinja2 import Template, StrictUndefined
-from common.utils import camel_to_snake, prefixes_factor, upper_to_lower_camelcase
+from common.utils import camel_to_snake, prefixes_factor, prefixes_factor_abbreviation, upper_to_lower_camelcase
 from templates import unit_class_template
 
 
@@ -17,6 +17,7 @@ def __generate_prefixes(unit, prefixes) -> List[Dict]:
     prefixes_units = []
     for prefix in prefixes:
         prefix_factor = prefixes_factor.get(prefix)
+        prefix_factor_abbreviation = prefixes_factor_abbreviation.get(prefix)
         if not prefix_factor:
             continue
         # Build the prefix formula based on the original unit formula.
@@ -41,7 +42,9 @@ def __generate_prefixes(unit, prefixes) -> List[Dict]:
                 "Localization": [
                     {
                         "Culture": "en-US",
-                        "Abbreviations": [""],
+                        "Abbreviations": [
+                            f"{prefix_factor_abbreviation}{__get_unit_abbreviation(unit.get('Localization'))}"
+                        ],
                     }
                 ],
             }

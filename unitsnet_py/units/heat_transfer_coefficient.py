@@ -259,7 +259,7 @@ class HeatTransferCoefficient(AbstractMeasure):
             return f"""{self.calories_per_hour_square_meter_degree_celsius} kcal/h·m²·°C"""
         
         if unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{self.kilocalories_per_hour_square_meter_degree_celsius} """
+            return f"""{self.kilocalories_per_hour_square_meter_degree_celsius} kkcal/h·m²·°C"""
         
         return f'{self._value}'
 
@@ -284,5 +284,5 @@ class HeatTransferCoefficient(AbstractMeasure):
             return """kcal/h·m²·°C"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return """"""
+            return """kkcal/h·m²·°C"""
         

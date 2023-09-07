@@ -1012,52 +1012,52 @@ class MassFraction(AbstractMeasure):
             return f"""{self.parts_per_trillion} ppt"""
         
         if unit == MassFractionUnits.NanogramPerGram:
-            return f"""{self.nanograms_per_gram} """
+            return f"""{self.nanograms_per_gram} ng/g"""
         
         if unit == MassFractionUnits.MicrogramPerGram:
-            return f"""{self.micrograms_per_gram} """
+            return f"""{self.micrograms_per_gram} μg/g"""
         
         if unit == MassFractionUnits.MilligramPerGram:
-            return f"""{self.milligrams_per_gram} """
+            return f"""{self.milligrams_per_gram} mg/g"""
         
         if unit == MassFractionUnits.CentigramPerGram:
-            return f"""{self.centigrams_per_gram} """
+            return f"""{self.centigrams_per_gram} cg/g"""
         
         if unit == MassFractionUnits.DecigramPerGram:
-            return f"""{self.decigrams_per_gram} """
+            return f"""{self.decigrams_per_gram} dg/g"""
         
         if unit == MassFractionUnits.DecagramPerGram:
-            return f"""{self.decagrams_per_gram} """
+            return f"""{self.decagrams_per_gram} dag/g"""
         
         if unit == MassFractionUnits.HectogramPerGram:
-            return f"""{self.hectograms_per_gram} """
+            return f"""{self.hectograms_per_gram} hg/g"""
         
         if unit == MassFractionUnits.KilogramPerGram:
-            return f"""{self.kilograms_per_gram} """
+            return f"""{self.kilograms_per_gram} kg/g"""
         
         if unit == MassFractionUnits.NanogramPerKilogram:
-            return f"""{self.nanograms_per_kilogram} """
+            return f"""{self.nanograms_per_kilogram} ng/kg"""
         
         if unit == MassFractionUnits.MicrogramPerKilogram:
-            return f"""{self.micrograms_per_kilogram} """
+            return f"""{self.micrograms_per_kilogram} μg/kg"""
         
         if unit == MassFractionUnits.MilligramPerKilogram:
-            return f"""{self.milligrams_per_kilogram} """
+            return f"""{self.milligrams_per_kilogram} mg/kg"""
         
         if unit == MassFractionUnits.CentigramPerKilogram:
-            return f"""{self.centigrams_per_kilogram} """
+            return f"""{self.centigrams_per_kilogram} cg/kg"""
         
         if unit == MassFractionUnits.DecigramPerKilogram:
-            return f"""{self.decigrams_per_kilogram} """
+            return f"""{self.decigrams_per_kilogram} dg/kg"""
         
         if unit == MassFractionUnits.DecagramPerKilogram:
-            return f"""{self.decagrams_per_kilogram} """
+            return f"""{self.decagrams_per_kilogram} dag/kg"""
         
         if unit == MassFractionUnits.HectogramPerKilogram:
-            return f"""{self.hectograms_per_kilogram} """
+            return f"""{self.hectograms_per_kilogram} hg/kg"""
         
         if unit == MassFractionUnits.KilogramPerKilogram:
-            return f"""{self.kilograms_per_kilogram} """
+            return f"""{self.kilograms_per_kilogram} kg/kg"""
         
         return f'{self._value}'
 
@@ -1094,50 +1094,50 @@ class MassFraction(AbstractMeasure):
             return """ppt"""
         
         if unit_abbreviation == MassFractionUnits.NanogramPerGram:
-            return """"""
+            return """ng/g"""
         
         if unit_abbreviation == MassFractionUnits.MicrogramPerGram:
-            return """"""
+            return """μg/g"""
         
         if unit_abbreviation == MassFractionUnits.MilligramPerGram:
-            return """"""
+            return """mg/g"""
         
         if unit_abbreviation == MassFractionUnits.CentigramPerGram:
-            return """"""
+            return """cg/g"""
         
         if unit_abbreviation == MassFractionUnits.DecigramPerGram:
-            return """"""
+            return """dg/g"""
         
         if unit_abbreviation == MassFractionUnits.DecagramPerGram:
-            return """"""
+            return """dag/g"""
         
         if unit_abbreviation == MassFractionUnits.HectogramPerGram:
-            return """"""
+            return """hg/g"""
         
         if unit_abbreviation == MassFractionUnits.KilogramPerGram:
-            return """"""
+            return """kg/g"""
         
         if unit_abbreviation == MassFractionUnits.NanogramPerKilogram:
-            return """"""
+            return """ng/kg"""
         
         if unit_abbreviation == MassFractionUnits.MicrogramPerKilogram:
-            return """"""
+            return """μg/kg"""
         
         if unit_abbreviation == MassFractionUnits.MilligramPerKilogram:
-            return """"""
+            return """mg/kg"""
         
         if unit_abbreviation == MassFractionUnits.CentigramPerKilogram:
-            return """"""
+            return """cg/kg"""
         
         if unit_abbreviation == MassFractionUnits.DecigramPerKilogram:
-            return """"""
+            return """dg/kg"""
         
         if unit_abbreviation == MassFractionUnits.DecagramPerKilogram:
-            return """"""
+            return """dag/kg"""
         
         if unit_abbreviation == MassFractionUnits.HectogramPerKilogram:
-            return """"""
+            return """hg/kg"""
         
         if unit_abbreviation == MassFractionUnits.KilogramPerKilogram:
-            return """"""
+            return """kg/kg"""
         

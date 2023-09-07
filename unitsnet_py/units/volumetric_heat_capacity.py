@@ -415,19 +415,19 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return f"""{self.btus_per_cubic_foot_degree_fahrenheit} BTU/ft³·°F"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
-            return f"""{self.kilojoules_per_cubic_meter_kelvin} """
+            return f"""{self.kilojoules_per_cubic_meter_kelvin} kJ/m³·K"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
-            return f"""{self.megajoules_per_cubic_meter_kelvin} """
+            return f"""{self.megajoules_per_cubic_meter_kelvin} MJ/m³·K"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
-            return f"""{self.kilojoules_per_cubic_meter_degree_celsius} """
+            return f"""{self.kilojoules_per_cubic_meter_degree_celsius} kJ/m³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
-            return f"""{self.megajoules_per_cubic_meter_degree_celsius} """
+            return f"""{self.megajoules_per_cubic_meter_degree_celsius} MJ/m³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{self.kilocalories_per_cubic_centimeter_degree_celsius} """
+            return f"""{self.kilocalories_per_cubic_centimeter_degree_celsius} kcal/cm³·°C"""
         
         return f'{self._value}'
 
@@ -452,17 +452,17 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return """BTU/ft³·°F"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
-            return """"""
+            return """kJ/m³·K"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
-            return """"""
+            return """MJ/m³·K"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
-            return """"""
+            return """kJ/m³·°C"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
-            return """"""
+            return """MJ/m³·°C"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return """"""
+            return """kcal/cm³·°C"""
         

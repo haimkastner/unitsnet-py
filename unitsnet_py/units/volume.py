@@ -2257,67 +2257,67 @@ class Volume(AbstractMeasure):
             return f"""{self.board_feet} bf"""
         
         if unit == VolumeUnits.Nanoliter:
-            return f"""{self.nanoliters} """
+            return f"""{self.nanoliters} nl"""
         
         if unit == VolumeUnits.Microliter:
-            return f"""{self.microliters} """
+            return f"""{self.microliters} μl"""
         
         if unit == VolumeUnits.Milliliter:
-            return f"""{self.milliliters} """
+            return f"""{self.milliliters} ml"""
         
         if unit == VolumeUnits.Centiliter:
-            return f"""{self.centiliters} """
+            return f"""{self.centiliters} cl"""
         
         if unit == VolumeUnits.Deciliter:
-            return f"""{self.deciliters} """
+            return f"""{self.deciliters} dl"""
         
         if unit == VolumeUnits.Decaliter:
-            return f"""{self.decaliters} """
+            return f"""{self.decaliters} dal"""
         
         if unit == VolumeUnits.Hectoliter:
-            return f"""{self.hectoliters} """
+            return f"""{self.hectoliters} hl"""
         
         if unit == VolumeUnits.Kiloliter:
-            return f"""{self.kiloliters} """
+            return f"""{self.kiloliters} kl"""
         
         if unit == VolumeUnits.Megaliter:
-            return f"""{self.megaliters} """
+            return f"""{self.megaliters} Ml"""
         
         if unit == VolumeUnits.HectocubicMeter:
-            return f"""{self.hectocubic_meters} """
+            return f"""{self.hectocubic_meters} hm³"""
         
         if unit == VolumeUnits.KilocubicMeter:
-            return f"""{self.kilocubic_meters} """
+            return f"""{self.kilocubic_meters} km³"""
         
         if unit == VolumeUnits.HectocubicFoot:
-            return f"""{self.hectocubic_feet} """
+            return f"""{self.hectocubic_feet} hft³"""
         
         if unit == VolumeUnits.KilocubicFoot:
-            return f"""{self.kilocubic_feet} """
+            return f"""{self.kilocubic_feet} kft³"""
         
         if unit == VolumeUnits.MegacubicFoot:
-            return f"""{self.megacubic_feet} """
+            return f"""{self.megacubic_feet} Mft³"""
         
         if unit == VolumeUnits.KiloimperialGallon:
-            return f"""{self.kiloimperial_gallons} """
+            return f"""{self.kiloimperial_gallons} kgal (imp.)"""
         
         if unit == VolumeUnits.MegaimperialGallon:
-            return f"""{self.megaimperial_gallons} """
+            return f"""{self.megaimperial_gallons} Mgal (imp.)"""
         
         if unit == VolumeUnits.DecausGallon:
-            return f"""{self.decaus_gallons} """
+            return f"""{self.decaus_gallons} dagal (U.S.)"""
         
         if unit == VolumeUnits.DeciusGallon:
-            return f"""{self.decius_gallons} """
+            return f"""{self.decius_gallons} dgal (U.S.)"""
         
         if unit == VolumeUnits.HectousGallon:
-            return f"""{self.hectous_gallons} """
+            return f"""{self.hectous_gallons} hgal (U.S.)"""
         
         if unit == VolumeUnits.KilousGallon:
-            return f"""{self.kilous_gallons} """
+            return f"""{self.kilous_gallons} kgal (U.S.)"""
         
         if unit == VolumeUnits.MegausGallon:
-            return f"""{self.megaus_gallons} """
+            return f"""{self.megaus_gallons} Mgal (U.S.)"""
         
         return f'{self._value}'
 
@@ -2429,65 +2429,65 @@ class Volume(AbstractMeasure):
             return """bf"""
         
         if unit_abbreviation == VolumeUnits.Nanoliter:
-            return """"""
+            return """nl"""
         
         if unit_abbreviation == VolumeUnits.Microliter:
-            return """"""
+            return """μl"""
         
         if unit_abbreviation == VolumeUnits.Milliliter:
-            return """"""
+            return """ml"""
         
         if unit_abbreviation == VolumeUnits.Centiliter:
-            return """"""
+            return """cl"""
         
         if unit_abbreviation == VolumeUnits.Deciliter:
-            return """"""
+            return """dl"""
         
         if unit_abbreviation == VolumeUnits.Decaliter:
-            return """"""
+            return """dal"""
         
         if unit_abbreviation == VolumeUnits.Hectoliter:
-            return """"""
+            return """hl"""
         
         if unit_abbreviation == VolumeUnits.Kiloliter:
-            return """"""
+            return """kl"""
         
         if unit_abbreviation == VolumeUnits.Megaliter:
-            return """"""
+            return """Ml"""
         
         if unit_abbreviation == VolumeUnits.HectocubicMeter:
-            return """"""
+            return """hm³"""
         
         if unit_abbreviation == VolumeUnits.KilocubicMeter:
-            return """"""
+            return """km³"""
         
         if unit_abbreviation == VolumeUnits.HectocubicFoot:
-            return """"""
+            return """hft³"""
         
         if unit_abbreviation == VolumeUnits.KilocubicFoot:
-            return """"""
+            return """kft³"""
         
         if unit_abbreviation == VolumeUnits.MegacubicFoot:
-            return """"""
+            return """Mft³"""
         
         if unit_abbreviation == VolumeUnits.KiloimperialGallon:
-            return """"""
+            return """kgal (imp.)"""
         
         if unit_abbreviation == VolumeUnits.MegaimperialGallon:
-            return """"""
+            return """Mgal (imp.)"""
         
         if unit_abbreviation == VolumeUnits.DecausGallon:
-            return """"""
+            return """dagal (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.DeciusGallon:
-            return """"""
+            return """dgal (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.HectousGallon:
-            return """"""
+            return """hgal (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.KilousGallon:
-            return """"""
+            return """kgal (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.MegausGallon:
-            return """"""
+            return """Mgal (U.S.)"""
         

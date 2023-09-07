@@ -700,28 +700,28 @@ class Angle(AbstractMeasure):
             return f"""{self.tilt} sin(θ)"""
         
         if unit == AngleUnits.Nanoradian:
-            return f"""{self.nanoradians} """
+            return f"""{self.nanoradians} nrad"""
         
         if unit == AngleUnits.Microradian:
-            return f"""{self.microradians} """
+            return f"""{self.microradians} μrad"""
         
         if unit == AngleUnits.Milliradian:
-            return f"""{self.milliradians} """
+            return f"""{self.milliradians} mrad"""
         
         if unit == AngleUnits.Centiradian:
-            return f"""{self.centiradians} """
+            return f"""{self.centiradians} crad"""
         
         if unit == AngleUnits.Deciradian:
-            return f"""{self.deciradians} """
+            return f"""{self.deciradians} drad"""
         
         if unit == AngleUnits.Nanodegree:
-            return f"""{self.nanodegrees} """
+            return f"""{self.nanodegrees} n°"""
         
         if unit == AngleUnits.Microdegree:
-            return f"""{self.microdegrees} """
+            return f"""{self.microdegrees} μ°"""
         
         if unit == AngleUnits.Millidegree:
-            return f"""{self.millidegrees} """
+            return f"""{self.millidegrees} m°"""
         
         return f'{self._value}'
 
@@ -758,26 +758,26 @@ class Angle(AbstractMeasure):
             return """sin(θ)"""
         
         if unit_abbreviation == AngleUnits.Nanoradian:
-            return """"""
+            return """nrad"""
         
         if unit_abbreviation == AngleUnits.Microradian:
-            return """"""
+            return """μrad"""
         
         if unit_abbreviation == AngleUnits.Milliradian:
-            return """"""
+            return """mrad"""
         
         if unit_abbreviation == AngleUnits.Centiradian:
-            return """"""
+            return """crad"""
         
         if unit_abbreviation == AngleUnits.Deciradian:
-            return """"""
+            return """drad"""
         
         if unit_abbreviation == AngleUnits.Nanodegree:
-            return """"""
+            return """n°"""
         
         if unit_abbreviation == AngleUnits.Microdegree:
-            return """"""
+            return """μ°"""
         
         if unit_abbreviation == AngleUnits.Millidegree:
-            return """"""
+            return """m°"""
         

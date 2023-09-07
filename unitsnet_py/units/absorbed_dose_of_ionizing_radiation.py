@@ -682,46 +682,46 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
             return f"""{self.rads} rad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Femtogray:
-            return f"""{self.femtograys} """
+            return f"""{self.femtograys} fGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Picogray:
-            return f"""{self.picograys} """
+            return f"""{self.picograys} pGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Nanogray:
-            return f"""{self.nanograys} """
+            return f"""{self.nanograys} nGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Microgray:
-            return f"""{self.micrograys} """
+            return f"""{self.micrograys} μGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Milligray:
-            return f"""{self.milligrays} """
+            return f"""{self.milligrays} mGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
-            return f"""{self.centigrays} """
+            return f"""{self.centigrays} cGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
-            return f"""{self.kilograys} """
+            return f"""{self.kilograys} kGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Megagray:
-            return f"""{self.megagrays} """
+            return f"""{self.megagrays} MGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Gigagray:
-            return f"""{self.gigagrays} """
+            return f"""{self.gigagrays} GGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Teragray:
-            return f"""{self.teragrays} """
+            return f"""{self.teragrays} TGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Petagray:
-            return f"""{self.petagrays} """
+            return f"""{self.petagrays} PGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Millirad:
-            return f"""{self.millirads} """
+            return f"""{self.millirads} mrad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Kilorad:
-            return f"""{self.kilorads} """
+            return f"""{self.kilorads} krad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Megarad:
-            return f"""{self.megarads} """
+            return f"""{self.megarads} Mrad"""
         
         return f'{self._value}'
 
@@ -740,44 +740,44 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
             return """rad"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Femtogray:
-            return """"""
+            return """fGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Picogray:
-            return """"""
+            return """pGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Nanogray:
-            return """"""
+            return """nGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Microgray:
-            return """"""
+            return """μGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Milligray:
-            return """"""
+            return """mGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
-            return """"""
+            return """cGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
-            return """"""
+            return """kGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Megagray:
-            return """"""
+            return """MGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Gigagray:
-            return """"""
+            return """GGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Teragray:
-            return """"""
+            return """TGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Petagray:
-            return """"""
+            return """PGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Millirad:
-            return """"""
+            return """mrad"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Kilorad:
-            return """"""
+            return """krad"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Megarad:
-            return """"""
+            return """Mrad"""
         

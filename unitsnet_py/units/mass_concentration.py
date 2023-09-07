@@ -2014,100 +2014,100 @@ class MassConcentration(AbstractMeasure):
             return f"""{self.pounds_per_imperial_gallon} ppg (imp.)"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicMillimeter:
-            return f"""{self.kilograms_per_cubic_millimeter} """
+            return f"""{self.kilograms_per_cubic_millimeter} kg/mm³"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicCentimeter:
-            return f"""{self.kilograms_per_cubic_centimeter} """
+            return f"""{self.kilograms_per_cubic_centimeter} kg/cm³"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicMeter:
-            return f"""{self.kilograms_per_cubic_meter} """
+            return f"""{self.kilograms_per_cubic_meter} kg/m³"""
         
         if unit == MassConcentrationUnits.MilligramPerCubicMeter:
-            return f"""{self.milligrams_per_cubic_meter} """
+            return f"""{self.milligrams_per_cubic_meter} mg/m³"""
         
         if unit == MassConcentrationUnits.MicrogramPerCubicMeter:
-            return f"""{self.micrograms_per_cubic_meter} """
+            return f"""{self.micrograms_per_cubic_meter} μg/m³"""
         
         if unit == MassConcentrationUnits.PicogramPerMicroliter:
-            return f"""{self.picograms_per_microliter} """
+            return f"""{self.picograms_per_microliter} pg/μL"""
         
         if unit == MassConcentrationUnits.NanogramPerMicroliter:
-            return f"""{self.nanograms_per_microliter} """
+            return f"""{self.nanograms_per_microliter} ng/μL"""
         
         if unit == MassConcentrationUnits.MicrogramPerMicroliter:
-            return f"""{self.micrograms_per_microliter} """
+            return f"""{self.micrograms_per_microliter} μg/μL"""
         
         if unit == MassConcentrationUnits.MilligramPerMicroliter:
-            return f"""{self.milligrams_per_microliter} """
+            return f"""{self.milligrams_per_microliter} mg/μL"""
         
         if unit == MassConcentrationUnits.CentigramPerMicroliter:
-            return f"""{self.centigrams_per_microliter} """
+            return f"""{self.centigrams_per_microliter} cg/μL"""
         
         if unit == MassConcentrationUnits.DecigramPerMicroliter:
-            return f"""{self.decigrams_per_microliter} """
+            return f"""{self.decigrams_per_microliter} dg/μL"""
         
         if unit == MassConcentrationUnits.PicogramPerMilliliter:
-            return f"""{self.picograms_per_milliliter} """
+            return f"""{self.picograms_per_milliliter} pg/mL"""
         
         if unit == MassConcentrationUnits.NanogramPerMilliliter:
-            return f"""{self.nanograms_per_milliliter} """
+            return f"""{self.nanograms_per_milliliter} ng/mL"""
         
         if unit == MassConcentrationUnits.MicrogramPerMilliliter:
-            return f"""{self.micrograms_per_milliliter} """
+            return f"""{self.micrograms_per_milliliter} μg/mL"""
         
         if unit == MassConcentrationUnits.MilligramPerMilliliter:
-            return f"""{self.milligrams_per_milliliter} """
+            return f"""{self.milligrams_per_milliliter} mg/mL"""
         
         if unit == MassConcentrationUnits.CentigramPerMilliliter:
-            return f"""{self.centigrams_per_milliliter} """
+            return f"""{self.centigrams_per_milliliter} cg/mL"""
         
         if unit == MassConcentrationUnits.DecigramPerMilliliter:
-            return f"""{self.decigrams_per_milliliter} """
+            return f"""{self.decigrams_per_milliliter} dg/mL"""
         
         if unit == MassConcentrationUnits.PicogramPerDeciliter:
-            return f"""{self.picograms_per_deciliter} """
+            return f"""{self.picograms_per_deciliter} pg/dL"""
         
         if unit == MassConcentrationUnits.NanogramPerDeciliter:
-            return f"""{self.nanograms_per_deciliter} """
+            return f"""{self.nanograms_per_deciliter} ng/dL"""
         
         if unit == MassConcentrationUnits.MicrogramPerDeciliter:
-            return f"""{self.micrograms_per_deciliter} """
+            return f"""{self.micrograms_per_deciliter} μg/dL"""
         
         if unit == MassConcentrationUnits.MilligramPerDeciliter:
-            return f"""{self.milligrams_per_deciliter} """
+            return f"""{self.milligrams_per_deciliter} mg/dL"""
         
         if unit == MassConcentrationUnits.CentigramPerDeciliter:
-            return f"""{self.centigrams_per_deciliter} """
+            return f"""{self.centigrams_per_deciliter} cg/dL"""
         
         if unit == MassConcentrationUnits.DecigramPerDeciliter:
-            return f"""{self.decigrams_per_deciliter} """
+            return f"""{self.decigrams_per_deciliter} dg/dL"""
         
         if unit == MassConcentrationUnits.PicogramPerLiter:
-            return f"""{self.picograms_per_liter} """
+            return f"""{self.picograms_per_liter} pg/L"""
         
         if unit == MassConcentrationUnits.NanogramPerLiter:
-            return f"""{self.nanograms_per_liter} """
+            return f"""{self.nanograms_per_liter} ng/L"""
         
         if unit == MassConcentrationUnits.MicrogramPerLiter:
-            return f"""{self.micrograms_per_liter} """
+            return f"""{self.micrograms_per_liter} μg/L"""
         
         if unit == MassConcentrationUnits.MilligramPerLiter:
-            return f"""{self.milligrams_per_liter} """
+            return f"""{self.milligrams_per_liter} mg/L"""
         
         if unit == MassConcentrationUnits.CentigramPerLiter:
-            return f"""{self.centigrams_per_liter} """
+            return f"""{self.centigrams_per_liter} cg/L"""
         
         if unit == MassConcentrationUnits.DecigramPerLiter:
-            return f"""{self.decigrams_per_liter} """
+            return f"""{self.decigrams_per_liter} dg/L"""
         
         if unit == MassConcentrationUnits.KilogramPerLiter:
-            return f"""{self.kilograms_per_liter} """
+            return f"""{self.kilograms_per_liter} kg/L"""
         
         if unit == MassConcentrationUnits.KilopoundPerCubicInch:
-            return f"""{self.kilopounds_per_cubic_inch} """
+            return f"""{self.kilopounds_per_cubic_inch} klb/in³"""
         
         if unit == MassConcentrationUnits.KilopoundPerCubicFoot:
-            return f"""{self.kilopounds_per_cubic_foot} """
+            return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
         
         return f'{self._value}'
 
@@ -2171,98 +2171,98 @@ class MassConcentration(AbstractMeasure):
             return """ppg (imp.)"""
         
         if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicMillimeter:
-            return """"""
+            return """kg/mm³"""
         
         if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicCentimeter:
-            return """"""
+            return """kg/cm³"""
         
         if unit_abbreviation == MassConcentrationUnits.KilogramPerCubicMeter:
-            return """"""
+            return """kg/m³"""
         
         if unit_abbreviation == MassConcentrationUnits.MilligramPerCubicMeter:
-            return """"""
+            return """mg/m³"""
         
         if unit_abbreviation == MassConcentrationUnits.MicrogramPerCubicMeter:
-            return """"""
+            return """μg/m³"""
         
         if unit_abbreviation == MassConcentrationUnits.PicogramPerMicroliter:
-            return """"""
+            return """pg/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.NanogramPerMicroliter:
-            return """"""
+            return """ng/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.MicrogramPerMicroliter:
-            return """"""
+            return """μg/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.MilligramPerMicroliter:
-            return """"""
+            return """mg/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.CentigramPerMicroliter:
-            return """"""
+            return """cg/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.DecigramPerMicroliter:
-            return """"""
+            return """dg/μL"""
         
         if unit_abbreviation == MassConcentrationUnits.PicogramPerMilliliter:
-            return """"""
+            return """pg/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.NanogramPerMilliliter:
-            return """"""
+            return """ng/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.MicrogramPerMilliliter:
-            return """"""
+            return """μg/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.MilligramPerMilliliter:
-            return """"""
+            return """mg/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.CentigramPerMilliliter:
-            return """"""
+            return """cg/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.DecigramPerMilliliter:
-            return """"""
+            return """dg/mL"""
         
         if unit_abbreviation == MassConcentrationUnits.PicogramPerDeciliter:
-            return """"""
+            return """pg/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.NanogramPerDeciliter:
-            return """"""
+            return """ng/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.MicrogramPerDeciliter:
-            return """"""
+            return """μg/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.MilligramPerDeciliter:
-            return """"""
+            return """mg/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.CentigramPerDeciliter:
-            return """"""
+            return """cg/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.DecigramPerDeciliter:
-            return """"""
+            return """dg/dL"""
         
         if unit_abbreviation == MassConcentrationUnits.PicogramPerLiter:
-            return """"""
+            return """pg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.NanogramPerLiter:
-            return """"""
+            return """ng/L"""
         
         if unit_abbreviation == MassConcentrationUnits.MicrogramPerLiter:
-            return """"""
+            return """μg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.MilligramPerLiter:
-            return """"""
+            return """mg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.CentigramPerLiter:
-            return """"""
+            return """cg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.DecigramPerLiter:
-            return """"""
+            return """dg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.KilogramPerLiter:
-            return """"""
+            return """kg/L"""
         
         if unit_abbreviation == MassConcentrationUnits.KilopoundPerCubicInch:
-            return """"""
+            return """klb/in³"""
         
         if unit_abbreviation == MassConcentrationUnits.KilopoundPerCubicFoot:
-            return """"""
+            return """klb/ft³"""
         

@@ -856,40 +856,40 @@ class VolumeConcentration(AbstractMeasure):
             return f"""{self.parts_per_trillion} ppt"""
         
         if unit == VolumeConcentrationUnits.PicolitersPerLiter:
-            return f"""{self.picoliters_per_liter} """
+            return f"""{self.picoliters_per_liter} pL/L"""
         
         if unit == VolumeConcentrationUnits.NanolitersPerLiter:
-            return f"""{self.nanoliters_per_liter} """
+            return f"""{self.nanoliters_per_liter} nL/L"""
         
         if unit == VolumeConcentrationUnits.MicrolitersPerLiter:
-            return f"""{self.microliters_per_liter} """
+            return f"""{self.microliters_per_liter} μL/L"""
         
         if unit == VolumeConcentrationUnits.MillilitersPerLiter:
-            return f"""{self.milliliters_per_liter} """
+            return f"""{self.milliliters_per_liter} mL/L"""
         
         if unit == VolumeConcentrationUnits.CentilitersPerLiter:
-            return f"""{self.centiliters_per_liter} """
+            return f"""{self.centiliters_per_liter} cL/L"""
         
         if unit == VolumeConcentrationUnits.DecilitersPerLiter:
-            return f"""{self.deciliters_per_liter} """
+            return f"""{self.deciliters_per_liter} dL/L"""
         
         if unit == VolumeConcentrationUnits.PicolitersPerMililiter:
-            return f"""{self.picoliters_per_mililiter} """
+            return f"""{self.picoliters_per_mililiter} pL/mL"""
         
         if unit == VolumeConcentrationUnits.NanolitersPerMililiter:
-            return f"""{self.nanoliters_per_mililiter} """
+            return f"""{self.nanoliters_per_mililiter} nL/mL"""
         
         if unit == VolumeConcentrationUnits.MicrolitersPerMililiter:
-            return f"""{self.microliters_per_mililiter} """
+            return f"""{self.microliters_per_mililiter} μL/mL"""
         
         if unit == VolumeConcentrationUnits.MillilitersPerMililiter:
-            return f"""{self.milliliters_per_mililiter} """
+            return f"""{self.milliliters_per_mililiter} mL/mL"""
         
         if unit == VolumeConcentrationUnits.CentilitersPerMililiter:
-            return f"""{self.centiliters_per_mililiter} """
+            return f"""{self.centiliters_per_mililiter} cL/mL"""
         
         if unit == VolumeConcentrationUnits.DecilitersPerMililiter:
-            return f"""{self.deciliters_per_mililiter} """
+            return f"""{self.deciliters_per_mililiter} dL/mL"""
         
         return f'{self._value}'
 
@@ -926,38 +926,38 @@ class VolumeConcentration(AbstractMeasure):
             return """ppt"""
         
         if unit_abbreviation == VolumeConcentrationUnits.PicolitersPerLiter:
-            return """"""
+            return """pL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.NanolitersPerLiter:
-            return """"""
+            return """nL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.MicrolitersPerLiter:
-            return """"""
+            return """μL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.MillilitersPerLiter:
-            return """"""
+            return """mL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.CentilitersPerLiter:
-            return """"""
+            return """cL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.DecilitersPerLiter:
-            return """"""
+            return """dL/L"""
         
         if unit_abbreviation == VolumeConcentrationUnits.PicolitersPerMililiter:
-            return """"""
+            return """pL/mL"""
         
         if unit_abbreviation == VolumeConcentrationUnits.NanolitersPerMililiter:
-            return """"""
+            return """nL/mL"""
         
         if unit_abbreviation == VolumeConcentrationUnits.MicrolitersPerMililiter:
-            return """"""
+            return """μL/mL"""
         
         if unit_abbreviation == VolumeConcentrationUnits.MillilitersPerMililiter:
-            return """"""
+            return """mL/mL"""
         
         if unit_abbreviation == VolumeConcentrationUnits.CentilitersPerMililiter:
-            return """"""
+            return """cL/mL"""
         
         if unit_abbreviation == VolumeConcentrationUnits.DecilitersPerMililiter:
-            return """"""
+            return """dL/mL"""
         
