@@ -240,8 +240,10 @@ class PowerDensity(AbstractMeasure):
         from_unit (PowerDensityUnits): The PowerDensity unit to create from, The default unit is WattPerCubicMeter
     """
     def __init__(self, value: float, from_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__watts_per_cubic_meter = None

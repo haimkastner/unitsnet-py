@@ -50,8 +50,10 @@ class ThermalResistance(AbstractMeasure):
         from_unit (ThermalResistanceUnits): The ThermalResistance unit to create from, The default unit is SquareMeterKelvinPerKilowatt
     """
     def __init__(self, value: float, from_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__square_meter_kelvins_per_kilowatt = None

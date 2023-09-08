@@ -35,8 +35,10 @@ class MolarEntropy(AbstractMeasure):
         from_unit (MolarEntropyUnits): The MolarEntropy unit to create from, The default unit is JoulePerMoleKelvin
     """
     def __init__(self, value: float, from_unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules_per_mole_kelvin = None

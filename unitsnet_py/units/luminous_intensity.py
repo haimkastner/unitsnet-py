@@ -25,8 +25,10 @@ class LuminousIntensity(AbstractMeasure):
         from_unit (LuminousIntensityUnits): The LuminousIntensity unit to create from, The default unit is Candela
     """
     def __init__(self, value: float, from_unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__candela = None

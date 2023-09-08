@@ -85,8 +85,10 @@ class Frequency(AbstractMeasure):
         from_unit (FrequencyUnits): The Frequency unit to create from, The default unit is Hertz
     """
     def __init__(self, value: float, from_unit: FrequencyUnits = FrequencyUnits.Hertz):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__hertz = None

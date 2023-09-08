@@ -45,8 +45,10 @@ class HeatTransferCoefficient(AbstractMeasure):
         from_unit (HeatTransferCoefficientUnits): The HeatTransferCoefficient unit to create from, The default unit is WattPerSquareMeterKelvin
     """
     def __init__(self, value: float, from_unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__watts_per_square_meter_kelvin = None
