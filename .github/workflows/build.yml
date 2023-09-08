@@ -39,6 +39,7 @@ jobs:
           echo "BODY=$body" >> $GITHUB_OUTPUT
 
       - name: Commit and push version
+        if: github.ref == 'refs/heads/main'
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
