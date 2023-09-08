@@ -65,8 +65,10 @@ class VolumetricHeatCapacity(AbstractMeasure):
         from_unit (VolumetricHeatCapacityUnits): The VolumetricHeatCapacity unit to create from, The default unit is JoulePerCubicMeterKelvin
     """
     def __init__(self, value: float, from_unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules_per_cubic_meter_kelvin = None

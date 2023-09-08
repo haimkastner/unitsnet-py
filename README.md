@@ -85,6 +85,22 @@ print(results3.to_string(LengthUnits.Meter))  # 30 m
 print(results4.to_string(LengthUnits.Meter))  # 3.3333333333333335 m
 print(results5.to_string(LengthUnits.Meter))  # 1 m
 print(results6.to_string(LengthUnits.Meter))  # 1000 m
+
+# Complex objects
+
+# Any object supports arithmetic operations can be used as well as unit
+# see numpay array example:
+import numpy as np
+
+np_array = np.array([[2, 4, 6], [7, 8, 9]])
+
+np_array_length = Length.from_kilometers(np_array)
+print(np_array_length.meters) # [[2000. 4000. 6000.][7000. 8000. 9000.]]
+
+np_array_double_length = np_array_length + np_array_length
+print(np_array_double_length.kilometers) # [[ 4.  8. 12.][14. 16. 18.]]
+print(np_array_double_length.meters) # [[ 4000.  8000. 12000.][14000. 16000. 18000.]]
+
 ```
 
 ### Supported units

@@ -210,8 +210,10 @@ class Energy(AbstractMeasure):
         from_unit (EnergyUnits): The Energy unit to create from, The default unit is Joule
     """
     def __init__(self, value: float, from_unit: EnergyUnits = EnergyUnits.Joule):
-        if math.isnan(value):
-            raise ValueError('Invalid unit: value is NaN')
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
+        # operations, but they are not a nunber, see #14 
+        # if math.isnan(value):
+        #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__joules = None
