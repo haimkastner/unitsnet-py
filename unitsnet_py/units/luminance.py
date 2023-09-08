@@ -70,8 +70,8 @@ class Luminance(AbstractMeasure):
         from_unit (LuminanceUnits): The Luminance unit to create from, The default unit is CandelaPerSquareMeter
     """
     def __init__(self, value: float, from_unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter):
-        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
-        # operations, but they are not a nunber, see #14 
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all arithmetic 
+        # operations, but they are not a number, see #14 
         # if math.isnan(value):
         #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)

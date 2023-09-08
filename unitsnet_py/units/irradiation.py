@@ -55,8 +55,8 @@ class Irradiation(AbstractMeasure):
         from_unit (IrradiationUnits): The Irradiation unit to create from, The default unit is JoulePerSquareMeter
     """
     def __init__(self, value: float, from_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter):
-        # Do not validate type, to allow working with numpay arrays and similar objects who supports all artimatic 
-        # operations, but they are not a nunber, see #14 
+        # Do not validate type, to allow working with numpay arrays and similar objects who supports all arithmetic 
+        # operations, but they are not a number, see #14 
         # if math.isnan(value):
         #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
