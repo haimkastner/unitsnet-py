@@ -70,6 +70,16 @@ class EnergyUnits(Enum):
             
         """
         
+        Nanojoule = 'nanojoule'
+        """
+            
+        """
+        
+        Microjoule = 'microjoule'
+        """
+            
+        """
+        
         Millijoule = 'millijoule'
         """
             
@@ -240,6 +250,10 @@ class Energy(AbstractMeasure):
         
         self.__horsepower_hours = None
         
+        self.__nanojoules = None
+        
+        self.__microjoules = None
+        
         self.__millijoules = None
         
         self.__kilojoules = None
@@ -334,6 +348,12 @@ class Energy(AbstractMeasure):
         
         if from_unit == EnergyUnits.HorsepowerHour:
             return (value / 2.6845195377e6)
+        
+        if from_unit == EnergyUnits.Nanojoule:
+            return ((value) / 1e-09)
+        
+        if from_unit == EnergyUnits.Microjoule:
+            return ((value) / 1e-06)
         
         if from_unit == EnergyUnits.Millijoule:
             return ((value) / 0.001)
@@ -453,6 +473,12 @@ class Energy(AbstractMeasure):
         
         if to_unit == EnergyUnits.HorsepowerHour:
             return (value * 2.6845195377e6)
+        
+        if to_unit == EnergyUnits.Nanojoule:
+            return ((value) * 1e-09)
+        
+        if to_unit == EnergyUnits.Microjoule:
+            return ((value) * 1e-06)
         
         if to_unit == EnergyUnits.Millijoule:
             return ((value) * 0.001)
@@ -718,6 +744,36 @@ class Energy(AbstractMeasure):
         :rtype: Energy
         """
         return Energy(horsepower_hours, EnergyUnits.HorsepowerHour)
+
+    
+    @staticmethod
+    def from_nanojoules(nanojoules: float):
+        """
+        Create a new instance of Energy from a value in nanojoules.
+
+        
+
+        :param meters: The Energy value in nanojoules.
+        :type nanojoules: float
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
+        return Energy(nanojoules, EnergyUnits.Nanojoule)
+
+    
+    @staticmethod
+    def from_microjoules(microjoules: float):
+        """
+        Create a new instance of Energy from a value in microjoules.
+
+        
+
+        :param meters: The Energy value in microjoules.
+        :type microjoules: float
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
+        return Energy(microjoules, EnergyUnits.Microjoule)
 
     
     @staticmethod
@@ -1243,6 +1299,28 @@ class Energy(AbstractMeasure):
 
     
     @property
+    def nanojoules(self) -> float:
+        """
+        
+        """
+        if self.__nanojoules != None:
+            return self.__nanojoules
+        self.__nanojoules = self.__convert_from_base(EnergyUnits.Nanojoule)
+        return self.__nanojoules
+
+    
+    @property
+    def microjoules(self) -> float:
+        """
+        
+        """
+        if self.__microjoules != None:
+            return self.__microjoules
+        self.__microjoules = self.__convert_from_base(EnergyUnits.Microjoule)
+        return self.__microjoules
+
+    
+    @property
     def millijoules(self) -> float:
         """
         
@@ -1571,6 +1649,12 @@ class Energy(AbstractMeasure):
         if unit == EnergyUnits.HorsepowerHour:
             return f"""{self.horsepower_hours} hp·h"""
         
+        if unit == EnergyUnits.Nanojoule:
+            return f"""{self.nanojoules} nJ"""
+        
+        if unit == EnergyUnits.Microjoule:
+            return f"""{self.microjoules} μJ"""
+        
         if unit == EnergyUnits.Millijoule:
             return f"""{self.millijoules} mJ"""
         
@@ -1694,6 +1778,12 @@ class Energy(AbstractMeasure):
         
         if unit_abbreviation == EnergyUnits.HorsepowerHour:
             return """hp·h"""
+        
+        if unit_abbreviation == EnergyUnits.Nanojoule:
+            return """nJ"""
+        
+        if unit_abbreviation == EnergyUnits.Microjoule:
+            return """μJ"""
         
         if unit_abbreviation == EnergyUnits.Millijoule:
             return """mJ"""
