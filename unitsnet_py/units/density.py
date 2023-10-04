@@ -175,6 +175,11 @@ class DensityUnits(Enum):
             
         """
         
+        FemtogramPerLiter = 'femtogram_per_liter'
+        """
+            
+        """
+        
         PicogramPerLiter = 'picogram_per_liter'
         """
             
@@ -205,6 +210,11 @@ class DensityUnits(Enum):
             
         """
         
+        FemtogramPerDeciliter = 'femtogram_per_deciliter'
+        """
+            
+        """
+        
         PicogramPerDeciliter = 'picogram_per_deciliter'
         """
             
@@ -231,6 +241,11 @@ class DensityUnits(Enum):
         """
         
         DecigramPerDeciliter = 'decigram_per_deciliter'
+        """
+            
+        """
+        
+        FemtogramPerMilliliter = 'femtogram_per_milliliter'
         """
             
         """
@@ -347,6 +362,8 @@ class Density(AbstractMeasure):
         
         self.__kilopounds_per_cubic_foot = None
         
+        self.__femtograms_per_liter = None
+        
         self.__picograms_per_liter = None
         
         self.__nanograms_per_liter = None
@@ -359,6 +376,8 @@ class Density(AbstractMeasure):
         
         self.__decigrams_per_liter = None
         
+        self.__femtograms_per_deci_liter = None
+        
         self.__picograms_per_deci_liter = None
         
         self.__nanograms_per_deci_liter = None
@@ -370,6 +389,8 @@ class Density(AbstractMeasure):
         self.__centigrams_per_deci_liter = None
         
         self.__decigrams_per_deci_liter = None
+        
+        self.__femtograms_per_milliliter = None
         
         self.__picograms_per_milliliter = None
         
@@ -489,6 +510,9 @@ class Density(AbstractMeasure):
         if from_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value * 0.062427961) / 1000.0)
         
+        if from_unit == DensityUnits.FemtogramPerLiter:
+            return ((value * 1) / 1e-15)
+        
         if from_unit == DensityUnits.PicogramPerLiter:
             return ((value * 1) / 1e-12)
         
@@ -507,6 +531,9 @@ class Density(AbstractMeasure):
         if from_unit == DensityUnits.DecigramPerLiter:
             return ((value * 1) / 0.1)
         
+        if from_unit == DensityUnits.FemtogramPerDeciliter:
+            return ((value * 1e-1) / 1e-15)
+        
         if from_unit == DensityUnits.PicogramPerDeciliter:
             return ((value * 1e-1) / 1e-12)
         
@@ -524,6 +551,9 @@ class Density(AbstractMeasure):
         
         if from_unit == DensityUnits.DecigramPerDeciliter:
             return ((value * 1e-1) / 0.1)
+        
+        if from_unit == DensityUnits.FemtogramPerMilliliter:
+            return ((value * 1e-3) / 1e-15)
         
         if from_unit == DensityUnits.PicogramPerMilliliter:
             return ((value * 1e-3) / 1e-12)
@@ -647,6 +677,9 @@ class Density(AbstractMeasure):
         if to_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value / 0.062427961) * 1000.0)
         
+        if to_unit == DensityUnits.FemtogramPerLiter:
+            return ((value / 1) * 1e-15)
+        
         if to_unit == DensityUnits.PicogramPerLiter:
             return ((value / 1) * 1e-12)
         
@@ -665,6 +698,9 @@ class Density(AbstractMeasure):
         if to_unit == DensityUnits.DecigramPerLiter:
             return ((value / 1) * 0.1)
         
+        if to_unit == DensityUnits.FemtogramPerDeciliter:
+            return ((value / 1e-1) * 1e-15)
+        
         if to_unit == DensityUnits.PicogramPerDeciliter:
             return ((value / 1e-1) * 1e-12)
         
@@ -682,6 +718,9 @@ class Density(AbstractMeasure):
         
         if to_unit == DensityUnits.DecigramPerDeciliter:
             return ((value / 1e-1) * 0.1)
+        
+        if to_unit == DensityUnits.FemtogramPerMilliliter:
+            return ((value / 1e-3) * 1e-15)
         
         if to_unit == DensityUnits.PicogramPerMilliliter:
             return ((value / 1e-3) * 1e-12)
@@ -1205,6 +1244,21 @@ class Density(AbstractMeasure):
 
     
     @staticmethod
+    def from_femtograms_per_liter(femtograms_per_liter: float):
+        """
+        Create a new instance of Density from a value in femtograms_per_liter.
+
+        
+
+        :param meters: The Density value in femtograms_per_liter.
+        :type femtograms_per_liter: float
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(femtograms_per_liter, DensityUnits.FemtogramPerLiter)
+
+    
+    @staticmethod
     def from_picograms_per_liter(picograms_per_liter: float):
         """
         Create a new instance of Density from a value in picograms_per_liter.
@@ -1295,6 +1349,21 @@ class Density(AbstractMeasure):
 
     
     @staticmethod
+    def from_femtograms_per_deci_liter(femtograms_per_deci_liter: float):
+        """
+        Create a new instance of Density from a value in femtograms_per_deci_liter.
+
+        
+
+        :param meters: The Density value in femtograms_per_deci_liter.
+        :type femtograms_per_deci_liter: float
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(femtograms_per_deci_liter, DensityUnits.FemtogramPerDeciliter)
+
+    
+    @staticmethod
     def from_picograms_per_deci_liter(picograms_per_deci_liter: float):
         """
         Create a new instance of Density from a value in picograms_per_deci_liter.
@@ -1382,6 +1451,21 @@ class Density(AbstractMeasure):
         :rtype: Density
         """
         return Density(decigrams_per_deci_liter, DensityUnits.DecigramPerDeciliter)
+
+    
+    @staticmethod
+    def from_femtograms_per_milliliter(femtograms_per_milliliter: float):
+        """
+        Create a new instance of Density from a value in femtograms_per_milliliter.
+
+        
+
+        :param meters: The Density value in femtograms_per_milliliter.
+        :type femtograms_per_milliliter: float
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(femtograms_per_milliliter, DensityUnits.FemtogramPerMilliliter)
 
     
     @staticmethod
@@ -1838,6 +1922,17 @@ class Density(AbstractMeasure):
 
     
     @property
+    def femtograms_per_liter(self) -> float:
+        """
+        
+        """
+        if self.__femtograms_per_liter != None:
+            return self.__femtograms_per_liter
+        self.__femtograms_per_liter = self.__convert_from_base(DensityUnits.FemtogramPerLiter)
+        return self.__femtograms_per_liter
+
+    
+    @property
     def picograms_per_liter(self) -> float:
         """
         
@@ -1904,6 +1999,17 @@ class Density(AbstractMeasure):
 
     
     @property
+    def femtograms_per_deci_liter(self) -> float:
+        """
+        
+        """
+        if self.__femtograms_per_deci_liter != None:
+            return self.__femtograms_per_deci_liter
+        self.__femtograms_per_deci_liter = self.__convert_from_base(DensityUnits.FemtogramPerDeciliter)
+        return self.__femtograms_per_deci_liter
+
+    
+    @property
     def picograms_per_deci_liter(self) -> float:
         """
         
@@ -1967,6 +2073,17 @@ class Density(AbstractMeasure):
             return self.__decigrams_per_deci_liter
         self.__decigrams_per_deci_liter = self.__convert_from_base(DensityUnits.DecigramPerDeciliter)
         return self.__decigrams_per_deci_liter
+
+    
+    @property
+    def femtograms_per_milliliter(self) -> float:
+        """
+        
+        """
+        if self.__femtograms_per_milliliter != None:
+            return self.__femtograms_per_milliliter
+        self.__femtograms_per_milliliter = self.__convert_from_base(DensityUnits.FemtogramPerMilliliter)
+        return self.__femtograms_per_milliliter
 
     
     @property
@@ -2141,6 +2258,9 @@ class Density(AbstractMeasure):
         if unit == DensityUnits.KilopoundPerCubicFoot:
             return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
         
+        if unit == DensityUnits.FemtogramPerLiter:
+            return f"""{self.femtograms_per_liter} fg/L"""
+        
         if unit == DensityUnits.PicogramPerLiter:
             return f"""{self.picograms_per_liter} pg/L"""
         
@@ -2159,6 +2279,9 @@ class Density(AbstractMeasure):
         if unit == DensityUnits.DecigramPerLiter:
             return f"""{self.decigrams_per_liter} dg/L"""
         
+        if unit == DensityUnits.FemtogramPerDeciliter:
+            return f"""{self.femtograms_per_deci_liter} fg/dl"""
+        
         if unit == DensityUnits.PicogramPerDeciliter:
             return f"""{self.picograms_per_deci_liter} pg/dl"""
         
@@ -2176,6 +2299,9 @@ class Density(AbstractMeasure):
         
         if unit == DensityUnits.DecigramPerDeciliter:
             return f"""{self.decigrams_per_deci_liter} dg/dl"""
+        
+        if unit == DensityUnits.FemtogramPerMilliliter:
+            return f"""{self.femtograms_per_milliliter} fg/ml"""
         
         if unit == DensityUnits.PicogramPerMilliliter:
             return f"""{self.picograms_per_milliliter} pg/ml"""
@@ -2304,6 +2430,9 @@ class Density(AbstractMeasure):
         if unit_abbreviation == DensityUnits.KilopoundPerCubicFoot:
             return """klb/ft³"""
         
+        if unit_abbreviation == DensityUnits.FemtogramPerLiter:
+            return """fg/L"""
+        
         if unit_abbreviation == DensityUnits.PicogramPerLiter:
             return """pg/L"""
         
@@ -2322,6 +2451,9 @@ class Density(AbstractMeasure):
         if unit_abbreviation == DensityUnits.DecigramPerLiter:
             return """dg/L"""
         
+        if unit_abbreviation == DensityUnits.FemtogramPerDeciliter:
+            return """fg/dl"""
+        
         if unit_abbreviation == DensityUnits.PicogramPerDeciliter:
             return """pg/dl"""
         
@@ -2339,6 +2471,9 @@ class Density(AbstractMeasure):
         
         if unit_abbreviation == DensityUnits.DecigramPerDeciliter:
             return """dg/dl"""
+        
+        if unit_abbreviation == DensityUnits.FemtogramPerMilliliter:
+            return """fg/ml"""
         
         if unit_abbreviation == DensityUnits.PicogramPerMilliliter:
             return """pg/ml"""
