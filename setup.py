@@ -13,6 +13,7 @@ package_data = \
 setup_kwargs = {
     'name': 'unitsnet-py',
     'version': '0.1.65',
+    'license': 'MIT',
     'keywords': 'conversion, units-of-measure, units, quantities, unit-converter, converter, unit, measure, measures, measurement, measurements',
     'description': 'A better way to hold unit variables and easily convert to the destination unit',
     'long_description': long_description,
