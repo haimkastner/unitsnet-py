@@ -35,6 +35,11 @@ class DensityUnits(Enum):
             
         """
         
+        PoundPerCubicYard = 'pound_per_cubic_yard'
+        """
+            
+        """
+        
         TonnePerCubicMillimeter = 'tonne_per_cubic_millimeter'
         """
             
@@ -175,6 +180,11 @@ class DensityUnits(Enum):
             
         """
         
+        KilopoundPerCubicYard = 'kilopound_per_cubic_yard'
+        """
+            
+        """
+        
         FemtogramPerLiter = 'femtogram_per_liter'
         """
             
@@ -306,6 +316,8 @@ class Density(AbstractMeasure):
         
         self.__pounds_per_cubic_foot = None
         
+        self.__pounds_per_cubic_yard = None
+        
         self.__tonnes_per_cubic_millimeter = None
         
         self.__tonnes_per_cubic_centimeter = None
@@ -361,6 +373,8 @@ class Density(AbstractMeasure):
         self.__kilopounds_per_cubic_inch = None
         
         self.__kilopounds_per_cubic_foot = None
+        
+        self.__kilopounds_per_cubic_yard = None
         
         self.__femtograms_per_liter = None
         
@@ -425,6 +439,9 @@ class Density(AbstractMeasure):
         
         if from_unit == DensityUnits.PoundPerCubicFoot:
             return (value * 0.062427961)
+        
+        if from_unit == DensityUnits.PoundPerCubicYard:
+            return (value * 1.685554936)
         
         if from_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value * 1e-12)
@@ -510,6 +527,9 @@ class Density(AbstractMeasure):
         if from_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value * 0.062427961) / 1000.0)
         
+        if from_unit == DensityUnits.KilopoundPerCubicYard:
+            return ((value * 1.685554936) / 1000.0)
+        
         if from_unit == DensityUnits.FemtogramPerLiter:
             return ((value * 1) / 1e-15)
         
@@ -592,6 +612,9 @@ class Density(AbstractMeasure):
         
         if to_unit == DensityUnits.PoundPerCubicFoot:
             return (value / 0.062427961)
+        
+        if to_unit == DensityUnits.PoundPerCubicYard:
+            return (value / 1.685554936)
         
         if to_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value / 1e-12)
@@ -676,6 +699,9 @@ class Density(AbstractMeasure):
         
         if to_unit == DensityUnits.KilopoundPerCubicFoot:
             return ((value / 0.062427961) * 1000.0)
+        
+        if to_unit == DensityUnits.KilopoundPerCubicYard:
+            return ((value / 1.685554936) * 1000.0)
         
         if to_unit == DensityUnits.FemtogramPerLiter:
             return ((value / 1) * 1e-15)
@@ -821,6 +847,21 @@ class Density(AbstractMeasure):
         :rtype: Density
         """
         return Density(pounds_per_cubic_foot, DensityUnits.PoundPerCubicFoot)
+
+    
+    @staticmethod
+    def from_pounds_per_cubic_yard(pounds_per_cubic_yard: float):
+        """
+        Create a new instance of Density from a value in pounds_per_cubic_yard.
+
+        
+
+        :param meters: The Density value in pounds_per_cubic_yard.
+        :type pounds_per_cubic_yard: float
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(pounds_per_cubic_yard, DensityUnits.PoundPerCubicYard)
 
     
     @staticmethod
@@ -1244,6 +1285,21 @@ class Density(AbstractMeasure):
 
     
     @staticmethod
+    def from_kilopounds_per_cubic_yard(kilopounds_per_cubic_yard: float):
+        """
+        Create a new instance of Density from a value in kilopounds_per_cubic_yard.
+
+        
+
+        :param meters: The Density value in kilopounds_per_cubic_yard.
+        :type kilopounds_per_cubic_yard: float
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(kilopounds_per_cubic_yard, DensityUnits.KilopoundPerCubicYard)
+
+    
+    @staticmethod
     def from_femtograms_per_liter(femtograms_per_liter: float):
         """
         Create a new instance of Density from a value in femtograms_per_liter.
@@ -1614,6 +1670,17 @@ class Density(AbstractMeasure):
 
     
     @property
+    def pounds_per_cubic_yard(self) -> float:
+        """
+        
+        """
+        if self.__pounds_per_cubic_yard != None:
+            return self.__pounds_per_cubic_yard
+        self.__pounds_per_cubic_yard = self.__convert_from_base(DensityUnits.PoundPerCubicYard)
+        return self.__pounds_per_cubic_yard
+
+    
+    @property
     def tonnes_per_cubic_millimeter(self) -> float:
         """
         
@@ -1922,6 +1989,17 @@ class Density(AbstractMeasure):
 
     
     @property
+    def kilopounds_per_cubic_yard(self) -> float:
+        """
+        
+        """
+        if self.__kilopounds_per_cubic_yard != None:
+            return self.__kilopounds_per_cubic_yard
+        self.__kilopounds_per_cubic_yard = self.__convert_from_base(DensityUnits.KilopoundPerCubicYard)
+        return self.__kilopounds_per_cubic_yard
+
+    
+    @property
     def femtograms_per_liter(self) -> float:
         """
         
@@ -2174,6 +2252,9 @@ class Density(AbstractMeasure):
         if unit == DensityUnits.PoundPerCubicFoot:
             return f"""{self.pounds_per_cubic_foot} lb/ft³"""
         
+        if unit == DensityUnits.PoundPerCubicYard:
+            return f"""{self.pounds_per_cubic_yard} lb/yd³"""
+        
         if unit == DensityUnits.TonnePerCubicMillimeter:
             return f"""{self.tonnes_per_cubic_millimeter} t/mm³"""
         
@@ -2257,6 +2338,9 @@ class Density(AbstractMeasure):
         
         if unit == DensityUnits.KilopoundPerCubicFoot:
             return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
+        
+        if unit == DensityUnits.KilopoundPerCubicYard:
+            return f"""{self.kilopounds_per_cubic_yard} klb/yd³"""
         
         if unit == DensityUnits.FemtogramPerLiter:
             return f"""{self.femtograms_per_liter} fg/L"""
@@ -2346,6 +2430,9 @@ class Density(AbstractMeasure):
         if unit_abbreviation == DensityUnits.PoundPerCubicFoot:
             return """lb/ft³"""
         
+        if unit_abbreviation == DensityUnits.PoundPerCubicYard:
+            return """lb/yd³"""
+        
         if unit_abbreviation == DensityUnits.TonnePerCubicMillimeter:
             return """t/mm³"""
         
@@ -2429,6 +2516,9 @@ class Density(AbstractMeasure):
         
         if unit_abbreviation == DensityUnits.KilopoundPerCubicFoot:
             return """klb/ft³"""
+        
+        if unit_abbreviation == DensityUnits.KilopoundPerCubicYard:
+            return """klb/yd³"""
         
         if unit_abbreviation == DensityUnits.FemtogramPerLiter:
             return """fg/L"""
