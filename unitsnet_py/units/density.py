@@ -37,7 +37,7 @@ class DensityUnits(Enum):
         
         PoundPerCubicYard = 'pound_per_cubic_yard'
         """
-            
+            Calculated from the definition of <a href="https://en.wikipedia.org/wiki/Pound_(mass)">pound</a> and <a href="https://en.wikipedia.org/wiki/Yard">yard</a> compared to metric kilogram and meter.
         """
         
         TonnePerCubicMillimeter = 'tonne_per_cubic_millimeter'
@@ -441,7 +441,7 @@ class Density(AbstractMeasure):
             return (value * 0.062427961)
         
         if from_unit == DensityUnits.PoundPerCubicYard:
-            return (value * 1.685554936)
+            return (value * (0.45359237 / 0.9144 / 0.9144 / 0.9144))
         
         if from_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value * 1e-12)
@@ -528,7 +528,7 @@ class Density(AbstractMeasure):
             return ((value * 0.062427961) / 1000.0)
         
         if from_unit == DensityUnits.KilopoundPerCubicYard:
-            return ((value * 1.685554936) / 1000.0)
+            return ((value * (0.45359237 / 0.9144 / 0.9144 / 0.9144)) / 1000.0)
         
         if from_unit == DensityUnits.FemtogramPerLiter:
             return ((value * 1) / 1e-15)
@@ -614,7 +614,7 @@ class Density(AbstractMeasure):
             return (value / 0.062427961)
         
         if to_unit == DensityUnits.PoundPerCubicYard:
-            return (value / 1.685554936)
+            return (value / (0.45359237 / 0.9144 / 0.9144 / 0.9144))
         
         if to_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value / 1e-12)
@@ -701,7 +701,7 @@ class Density(AbstractMeasure):
             return ((value / 0.062427961) * 1000.0)
         
         if to_unit == DensityUnits.KilopoundPerCubicYard:
-            return ((value / 1.685554936) * 1000.0)
+            return ((value / (0.45359237 / 0.9144 / 0.9144 / 0.9144)) * 1000.0)
         
         if to_unit == DensityUnits.FemtogramPerLiter:
             return ((value / 1) * 1e-15)
@@ -854,7 +854,7 @@ class Density(AbstractMeasure):
         """
         Create a new instance of Density from a value in pounds_per_cubic_yard.
 
-        
+        Calculated from the definition of <a href="https://en.wikipedia.org/wiki/Pound_(mass)">pound</a> and <a href="https://en.wikipedia.org/wiki/Yard">yard</a> compared to metric kilogram and meter.
 
         :param meters: The Density value in pounds_per_cubic_yard.
         :type pounds_per_cubic_yard: float
@@ -1672,7 +1672,7 @@ class Density(AbstractMeasure):
     @property
     def pounds_per_cubic_yard(self) -> float:
         """
-        
+        Calculated from the definition of <a href="https://en.wikipedia.org/wiki/Pound_(mass)">pound</a> and <a href="https://en.wikipedia.org/wiki/Yard">yard</a> compared to metric kilogram and meter.
         """
         if self.__pounds_per_cubic_yard != None:
             return self.__pounds_per_cubic_yard
