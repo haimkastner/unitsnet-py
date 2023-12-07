@@ -441,7 +441,7 @@ class Density(AbstractMeasure):
             return (value * 0.062427961)
         
         if from_unit == DensityUnits.PoundPerCubicYard:
-            return (value * (0.45359237 / 0.9144 / 0.9144 / 0.9144))
+            return (value / (0.45359237 / 0.9144 / 0.9144 / 0.9144))
         
         if from_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value * 1e-12)
@@ -528,7 +528,7 @@ class Density(AbstractMeasure):
             return ((value * 0.062427961) / 1000.0)
         
         if from_unit == DensityUnits.KilopoundPerCubicYard:
-            return ((value * (0.45359237 / 0.9144 / 0.9144 / 0.9144)) / 1000.0)
+            return ((value / (0.45359237 / 0.9144 / 0.9144 / 0.9144)) / 1000.0)
         
         if from_unit == DensityUnits.FemtogramPerLiter:
             return ((value * 1) / 1e-15)
@@ -614,7 +614,7 @@ class Density(AbstractMeasure):
             return (value / 0.062427961)
         
         if to_unit == DensityUnits.PoundPerCubicYard:
-            return (value / (0.45359237 / 0.9144 / 0.9144 / 0.9144))
+            return (value * (0.45359237 / 0.9144 / 0.9144 / 0.9144))
         
         if to_unit == DensityUnits.TonnePerCubicMillimeter:
             return (value / 1e-12)
@@ -701,7 +701,7 @@ class Density(AbstractMeasure):
             return ((value / 0.062427961) * 1000.0)
         
         if to_unit == DensityUnits.KilopoundPerCubicYard:
-            return ((value / (0.45359237 / 0.9144 / 0.9144 / 0.9144)) * 1000.0)
+            return ((value * (0.45359237 / 0.9144 / 0.9144 / 0.9144)) * 1000.0)
         
         if to_unit == DensityUnits.FemtogramPerLiter:
             return ((value / 1) * 1e-15)
