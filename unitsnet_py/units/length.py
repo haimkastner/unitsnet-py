@@ -190,6 +190,11 @@ class LengthUnits(Enum):
             
         """
         
+        Kiloyard = 'kiloyard'
+        """
+            
+        """
+        
         Kilofoot = 'kilofoot'
         """
             
@@ -302,6 +307,8 @@ class Length(AbstractMeasure):
         self.__megameters = None
         
         self.__gigameters = None
+        
+        self.__kiloyards = None
         
         self.__kilofeet = None
         
@@ -427,6 +434,9 @@ class Length(AbstractMeasure):
         
         if from_unit == LengthUnits.Gigameter:
             return ((value) / 1000000000.0)
+        
+        if from_unit == LengthUnits.Kiloyard:
+            return ((value / 0.9144) / 1000.0)
         
         if from_unit == LengthUnits.Kilofoot:
             return ((value / 0.3048) / 1000.0)
@@ -555,6 +565,9 @@ class Length(AbstractMeasure):
         
         if to_unit == LengthUnits.Gigameter:
             return ((value) * 1000000000.0)
+        
+        if to_unit == LengthUnits.Kiloyard:
+            return ((value * 0.9144) * 1000.0)
         
         if to_unit == LengthUnits.Kilofoot:
             return ((value * 0.3048) * 1000.0)
@@ -1120,6 +1133,21 @@ class Length(AbstractMeasure):
 
     
     @staticmethod
+    def from_kiloyards(kiloyards: float):
+        """
+        Create a new instance of Length from a value in kiloyards.
+
+        
+
+        :param meters: The Length value in kiloyards.
+        :type kiloyards: float
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length(kiloyards, LengthUnits.Kiloyard)
+
+    
+    @staticmethod
     def from_kilofeet(kilofeet: float):
         """
         Create a new instance of Length from a value in kilofeet.
@@ -1591,6 +1619,17 @@ class Length(AbstractMeasure):
 
     
     @property
+    def kiloyards(self) -> float:
+        """
+        
+        """
+        if self.__kiloyards != None:
+            return self.__kiloyards
+        self.__kiloyards = self.__convert_from_base(LengthUnits.Kiloyard)
+        return self.__kiloyards
+
+    
+    @property
     def kilofeet(self) -> float:
         """
         
@@ -1760,6 +1799,9 @@ class Length(AbstractMeasure):
         if unit == LengthUnits.Gigameter:
             return f"""{self.gigameters} Gm"""
         
+        if unit == LengthUnits.Kiloyard:
+            return f"""{self.kiloyards} kyd"""
+        
         if unit == LengthUnits.Kilofoot:
             return f"""{self.kilofeet} kft"""
         
@@ -1892,6 +1934,9 @@ class Length(AbstractMeasure):
         
         if unit_abbreviation == LengthUnits.Gigameter:
             return """Gm"""
+        
+        if unit_abbreviation == LengthUnits.Kiloyard:
+            return """kyd"""
         
         if unit_abbreviation == LengthUnits.Kilofoot:
             return """kft"""
