@@ -68,6 +68,7 @@ from .units.mass_flow import MassFlow, MassFlowUnits
 from .units.mass_flux import MassFlux, MassFluxUnits
 from .units.mass_fraction import MassFraction, MassFractionUnits
 from .units.mass_moment_of_inertia import MassMomentOfInertia, MassMomentOfInertiaUnits
+from .units.molality import Molality, MolalityUnits
 from .units.molar_energy import MolarEnergy, MolarEnergyUnits
 from .units.molar_entropy import MolarEntropy, MolarEntropyUnits
 from .units.molar_flow import MolarFlow, MolarFlowUnits
@@ -191,6 +192,7 @@ __all__ = [
  'MassFlux', 'MassFluxUnits',
  'MassFraction', 'MassFractionUnits',
  'MassMomentOfInertia', 'MassMomentOfInertiaUnits',
+ 'Molality', 'MolalityUnits',
  'MolarEnergy', 'MolarEnergyUnits',
  'MolarEntropy', 'MolarEntropyUnits',
  'MolarFlow', 'MolarFlowUnits',

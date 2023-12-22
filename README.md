@@ -318,6 +318,9 @@ The package provides support for the following units:
 - **MassMomentOfInertia**
     -   *A property of body reflects how its mass is distributed with regard to an axis.*
 
+- **Molality**
+    -   *Molality is a measure of the amount of solute in a solution relative to a given mass of solvent.*
+
 - **MolarEnergy**
     -   *Molar energy is the amount of energy stored in 1 mole of a substance.*
 
