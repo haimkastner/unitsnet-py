@@ -82,6 +82,7 @@ from .units.power_density import PowerDensity, PowerDensityUnits
 from .units.power_ratio import PowerRatio, PowerRatioUnits
 from .units.pressure import Pressure, PressureUnits
 from .units.pressure_change_rate import PressureChangeRate, PressureChangeRateUnits
+from .units.radioactivity import Radioactivity, RadioactivityUnits
 from .units.ratio import Ratio, RatioUnits
 from .units.ratio_change_rate import RatioChangeRate, RatioChangeRateUnits
 from .units.reactive_energy import ReactiveEnergy, ReactiveEnergyUnits
@@ -206,6 +207,7 @@ __all__ = [
  'PowerRatio', 'PowerRatioUnits',
  'Pressure', 'PressureUnits',
  'PressureChangeRate', 'PressureChangeRateUnits',
+ 'Radioactivity', 'RadioactivityUnits',
  'Ratio', 'RatioUnits',
  'RatioChangeRate', 'RatioChangeRateUnits',
  'ReactiveEnergy', 'ReactiveEnergyUnits',
