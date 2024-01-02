@@ -360,6 +360,9 @@ The package provides support for the following units:
 - **PressureChangeRate**
     -   *Pressure change rate is the ratio of the pressure change to the time during which the change occurred (value of pressure changes per unit time).*
 
+- **RadiationExposure**
+    -   *Radiation exposure is a measure of the ionization of air due to ionizing radiation from photons.*
+
 - **Radioactivity**
     -   *Amount of ionizing radiation released when an element spontaneously emits energy as a result of the radioactive decay of an unstable atom per unit time.*
 
