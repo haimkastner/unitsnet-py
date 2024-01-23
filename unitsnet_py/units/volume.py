@@ -445,7 +445,7 @@ class Volume(AbstractMeasure):
             return (value / 2.8316846592e-2)
         
         if from_unit == VolumeUnits.CubicInch:
-            return (value / (1.6387 * 1e-5))
+            return (value / 1.6387064e-5)
         
         if from_unit == VolumeUnits.ImperialGallon:
             return (value / 0.00454609)
@@ -612,7 +612,7 @@ class Volume(AbstractMeasure):
             return (value * 2.8316846592e-2)
         
         if to_unit == VolumeUnits.CubicInch:
-            return (value * 1.6387 * 1e-5)
+            return (value * 1.6387064e-5)
         
         if to_unit == VolumeUnits.ImperialGallon:
             return (value * 0.00454609)
