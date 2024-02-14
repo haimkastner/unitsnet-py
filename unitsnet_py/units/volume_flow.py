@@ -220,6 +220,16 @@ class VolumeFlowUnits(Enum):
             
         """
         
+        DecaliterPerSecond = 'decaliter_per_second'
+        """
+            
+        """
+        
+        HectoliterPerSecond = 'hectoliter_per_second'
+        """
+            
+        """
+        
         KiloliterPerSecond = 'kiloliter_per_second'
         """
             
@@ -251,6 +261,16 @@ class VolumeFlowUnits(Enum):
         """
         
         DeciliterPerMinute = 'deciliter_per_minute'
+        """
+            
+        """
+        
+        DecaliterPerMinute = 'decaliter_per_minute'
+        """
+            
+        """
+        
+        HectoliterPerMinute = 'hectoliter_per_minute'
         """
             
         """
@@ -290,6 +310,16 @@ class VolumeFlowUnits(Enum):
             
         """
         
+        DecaliterPerHour = 'decaliter_per_hour'
+        """
+            
+        """
+        
+        HectoliterPerHour = 'hectoliter_per_hour'
+        """
+            
+        """
+        
         KiloliterPerHour = 'kiloliter_per_hour'
         """
             
@@ -321,6 +351,16 @@ class VolumeFlowUnits(Enum):
         """
         
         DeciliterPerDay = 'deciliter_per_day'
+        """
+            
+        """
+        
+        DecaliterPerDay = 'decaliter_per_day'
+        """
+            
+        """
+        
+        HectoliterPerDay = 'hectoliter_per_day'
         """
             
         """
@@ -445,6 +485,10 @@ class VolumeFlow(AbstractMeasure):
         
         self.__deciliters_per_second = None
         
+        self.__decaliters_per_second = None
+        
+        self.__hectoliters_per_second = None
+        
         self.__kiloliters_per_second = None
         
         self.__megaliters_per_second = None
@@ -458,6 +502,10 @@ class VolumeFlow(AbstractMeasure):
         self.__centiliters_per_minute = None
         
         self.__deciliters_per_minute = None
+        
+        self.__decaliters_per_minute = None
+        
+        self.__hectoliters_per_minute = None
         
         self.__kiloliters_per_minute = None
         
@@ -473,6 +521,10 @@ class VolumeFlow(AbstractMeasure):
         
         self.__deciliters_per_hour = None
         
+        self.__decaliters_per_hour = None
+        
+        self.__hectoliters_per_hour = None
+        
         self.__kiloliters_per_hour = None
         
         self.__megaliters_per_hour = None
@@ -486,6 +538,10 @@ class VolumeFlow(AbstractMeasure):
         self.__centiliters_per_day = None
         
         self.__deciliters_per_day = None
+        
+        self.__decaliters_per_day = None
+        
+        self.__hectoliters_per_day = None
         
         self.__kiloliters_per_day = None
         
@@ -628,6 +684,12 @@ class VolumeFlow(AbstractMeasure):
         if from_unit == VolumeFlowUnits.DeciliterPerSecond:
             return ((value * 1000) / 0.1)
         
+        if from_unit == VolumeFlowUnits.DecaliterPerSecond:
+            return ((value * 1000) / 10.0)
+        
+        if from_unit == VolumeFlowUnits.HectoliterPerSecond:
+            return ((value * 1000) / 100.0)
+        
         if from_unit == VolumeFlowUnits.KiloliterPerSecond:
             return ((value * 1000) / 1000.0)
         
@@ -648,6 +710,12 @@ class VolumeFlow(AbstractMeasure):
         
         if from_unit == VolumeFlowUnits.DeciliterPerMinute:
             return ((value * 60000.00000) / 0.1)
+        
+        if from_unit == VolumeFlowUnits.DecaliterPerMinute:
+            return ((value * 60000.00000) / 10.0)
+        
+        if from_unit == VolumeFlowUnits.HectoliterPerMinute:
+            return ((value * 60000.00000) / 100.0)
         
         if from_unit == VolumeFlowUnits.KiloliterPerMinute:
             return ((value * 60000.00000) / 1000.0)
@@ -670,6 +738,12 @@ class VolumeFlow(AbstractMeasure):
         if from_unit == VolumeFlowUnits.DeciliterPerHour:
             return ((value * 3600000.000) / 0.1)
         
+        if from_unit == VolumeFlowUnits.DecaliterPerHour:
+            return ((value * 3600000.000) / 10.0)
+        
+        if from_unit == VolumeFlowUnits.HectoliterPerHour:
+            return ((value * 3600000.000) / 100.0)
+        
         if from_unit == VolumeFlowUnits.KiloliterPerHour:
             return ((value * 3600000.000) / 1000.0)
         
@@ -690,6 +764,12 @@ class VolumeFlow(AbstractMeasure):
         
         if from_unit == VolumeFlowUnits.DeciliterPerDay:
             return ((value * 86400000) / 0.1)
+        
+        if from_unit == VolumeFlowUnits.DecaliterPerDay:
+            return ((value * 86400000) / 10.0)
+        
+        if from_unit == VolumeFlowUnits.HectoliterPerDay:
+            return ((value * 86400000) / 100.0)
         
         if from_unit == VolumeFlowUnits.KiloliterPerDay:
             return ((value * 86400000) / 1000.0)
@@ -834,6 +914,12 @@ class VolumeFlow(AbstractMeasure):
         if to_unit == VolumeFlowUnits.DeciliterPerSecond:
             return ((value / 1000) * 0.1)
         
+        if to_unit == VolumeFlowUnits.DecaliterPerSecond:
+            return ((value / 1000) * 10.0)
+        
+        if to_unit == VolumeFlowUnits.HectoliterPerSecond:
+            return ((value / 1000) * 100.0)
+        
         if to_unit == VolumeFlowUnits.KiloliterPerSecond:
             return ((value / 1000) * 1000.0)
         
@@ -854,6 +940,12 @@ class VolumeFlow(AbstractMeasure):
         
         if to_unit == VolumeFlowUnits.DeciliterPerMinute:
             return ((value / 60000.00000) * 0.1)
+        
+        if to_unit == VolumeFlowUnits.DecaliterPerMinute:
+            return ((value / 60000.00000) * 10.0)
+        
+        if to_unit == VolumeFlowUnits.HectoliterPerMinute:
+            return ((value / 60000.00000) * 100.0)
         
         if to_unit == VolumeFlowUnits.KiloliterPerMinute:
             return ((value / 60000.00000) * 1000.0)
@@ -876,6 +968,12 @@ class VolumeFlow(AbstractMeasure):
         if to_unit == VolumeFlowUnits.DeciliterPerHour:
             return ((value / 3600000.000) * 0.1)
         
+        if to_unit == VolumeFlowUnits.DecaliterPerHour:
+            return ((value / 3600000.000) * 10.0)
+        
+        if to_unit == VolumeFlowUnits.HectoliterPerHour:
+            return ((value / 3600000.000) * 100.0)
+        
         if to_unit == VolumeFlowUnits.KiloliterPerHour:
             return ((value / 3600000.000) * 1000.0)
         
@@ -896,6 +994,12 @@ class VolumeFlow(AbstractMeasure):
         
         if to_unit == VolumeFlowUnits.DeciliterPerDay:
             return ((value / 86400000) * 0.1)
+        
+        if to_unit == VolumeFlowUnits.DecaliterPerDay:
+            return ((value / 86400000) * 10.0)
+        
+        if to_unit == VolumeFlowUnits.HectoliterPerDay:
+            return ((value / 86400000) * 100.0)
         
         if to_unit == VolumeFlowUnits.KiloliterPerDay:
             return ((value / 86400000) * 1000.0)
@@ -1548,6 +1652,36 @@ class VolumeFlow(AbstractMeasure):
 
     
     @staticmethod
+    def from_decaliters_per_second(decaliters_per_second: float):
+        """
+        Create a new instance of VolumeFlow from a value in decaliters_per_second.
+
+        
+
+        :param meters: The VolumeFlow value in decaliters_per_second.
+        :type decaliters_per_second: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(decaliters_per_second, VolumeFlowUnits.DecaliterPerSecond)
+
+    
+    @staticmethod
+    def from_hectoliters_per_second(hectoliters_per_second: float):
+        """
+        Create a new instance of VolumeFlow from a value in hectoliters_per_second.
+
+        
+
+        :param meters: The VolumeFlow value in hectoliters_per_second.
+        :type hectoliters_per_second: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(hectoliters_per_second, VolumeFlowUnits.HectoliterPerSecond)
+
+    
+    @staticmethod
     def from_kiloliters_per_second(kiloliters_per_second: float):
         """
         Create a new instance of VolumeFlow from a value in kiloliters_per_second.
@@ -1650,6 +1784,36 @@ class VolumeFlow(AbstractMeasure):
         :rtype: VolumeFlow
         """
         return VolumeFlow(deciliters_per_minute, VolumeFlowUnits.DeciliterPerMinute)
+
+    
+    @staticmethod
+    def from_decaliters_per_minute(decaliters_per_minute: float):
+        """
+        Create a new instance of VolumeFlow from a value in decaliters_per_minute.
+
+        
+
+        :param meters: The VolumeFlow value in decaliters_per_minute.
+        :type decaliters_per_minute: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(decaliters_per_minute, VolumeFlowUnits.DecaliterPerMinute)
+
+    
+    @staticmethod
+    def from_hectoliters_per_minute(hectoliters_per_minute: float):
+        """
+        Create a new instance of VolumeFlow from a value in hectoliters_per_minute.
+
+        
+
+        :param meters: The VolumeFlow value in hectoliters_per_minute.
+        :type hectoliters_per_minute: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(hectoliters_per_minute, VolumeFlowUnits.HectoliterPerMinute)
 
     
     @staticmethod
@@ -1758,6 +1922,36 @@ class VolumeFlow(AbstractMeasure):
 
     
     @staticmethod
+    def from_decaliters_per_hour(decaliters_per_hour: float):
+        """
+        Create a new instance of VolumeFlow from a value in decaliters_per_hour.
+
+        
+
+        :param meters: The VolumeFlow value in decaliters_per_hour.
+        :type decaliters_per_hour: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(decaliters_per_hour, VolumeFlowUnits.DecaliterPerHour)
+
+    
+    @staticmethod
+    def from_hectoliters_per_hour(hectoliters_per_hour: float):
+        """
+        Create a new instance of VolumeFlow from a value in hectoliters_per_hour.
+
+        
+
+        :param meters: The VolumeFlow value in hectoliters_per_hour.
+        :type hectoliters_per_hour: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(hectoliters_per_hour, VolumeFlowUnits.HectoliterPerHour)
+
+    
+    @staticmethod
     def from_kiloliters_per_hour(kiloliters_per_hour: float):
         """
         Create a new instance of VolumeFlow from a value in kiloliters_per_hour.
@@ -1860,6 +2054,36 @@ class VolumeFlow(AbstractMeasure):
         :rtype: VolumeFlow
         """
         return VolumeFlow(deciliters_per_day, VolumeFlowUnits.DeciliterPerDay)
+
+    
+    @staticmethod
+    def from_decaliters_per_day(decaliters_per_day: float):
+        """
+        Create a new instance of VolumeFlow from a value in decaliters_per_day.
+
+        
+
+        :param meters: The VolumeFlow value in decaliters_per_day.
+        :type decaliters_per_day: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(decaliters_per_day, VolumeFlowUnits.DecaliterPerDay)
+
+    
+    @staticmethod
+    def from_hectoliters_per_day(hectoliters_per_day: float):
+        """
+        Create a new instance of VolumeFlow from a value in hectoliters_per_day.
+
+        
+
+        :param meters: The VolumeFlow value in hectoliters_per_day.
+        :type hectoliters_per_day: float
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(hectoliters_per_day, VolumeFlowUnits.HectoliterPerDay)
 
     
     @staticmethod
@@ -2385,6 +2609,28 @@ class VolumeFlow(AbstractMeasure):
 
     
     @property
+    def decaliters_per_second(self) -> float:
+        """
+        
+        """
+        if self.__decaliters_per_second != None:
+            return self.__decaliters_per_second
+        self.__decaliters_per_second = self.__convert_from_base(VolumeFlowUnits.DecaliterPerSecond)
+        return self.__decaliters_per_second
+
+    
+    @property
+    def hectoliters_per_second(self) -> float:
+        """
+        
+        """
+        if self.__hectoliters_per_second != None:
+            return self.__hectoliters_per_second
+        self.__hectoliters_per_second = self.__convert_from_base(VolumeFlowUnits.HectoliterPerSecond)
+        return self.__hectoliters_per_second
+
+    
+    @property
     def kiloliters_per_second(self) -> float:
         """
         
@@ -2459,6 +2705,28 @@ class VolumeFlow(AbstractMeasure):
             return self.__deciliters_per_minute
         self.__deciliters_per_minute = self.__convert_from_base(VolumeFlowUnits.DeciliterPerMinute)
         return self.__deciliters_per_minute
+
+    
+    @property
+    def decaliters_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__decaliters_per_minute != None:
+            return self.__decaliters_per_minute
+        self.__decaliters_per_minute = self.__convert_from_base(VolumeFlowUnits.DecaliterPerMinute)
+        return self.__decaliters_per_minute
+
+    
+    @property
+    def hectoliters_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__hectoliters_per_minute != None:
+            return self.__hectoliters_per_minute
+        self.__hectoliters_per_minute = self.__convert_from_base(VolumeFlowUnits.HectoliterPerMinute)
+        return self.__hectoliters_per_minute
 
     
     @property
@@ -2539,6 +2807,28 @@ class VolumeFlow(AbstractMeasure):
 
     
     @property
+    def decaliters_per_hour(self) -> float:
+        """
+        
+        """
+        if self.__decaliters_per_hour != None:
+            return self.__decaliters_per_hour
+        self.__decaliters_per_hour = self.__convert_from_base(VolumeFlowUnits.DecaliterPerHour)
+        return self.__decaliters_per_hour
+
+    
+    @property
+    def hectoliters_per_hour(self) -> float:
+        """
+        
+        """
+        if self.__hectoliters_per_hour != None:
+            return self.__hectoliters_per_hour
+        self.__hectoliters_per_hour = self.__convert_from_base(VolumeFlowUnits.HectoliterPerHour)
+        return self.__hectoliters_per_hour
+
+    
+    @property
     def kiloliters_per_hour(self) -> float:
         """
         
@@ -2613,6 +2903,28 @@ class VolumeFlow(AbstractMeasure):
             return self.__deciliters_per_day
         self.__deciliters_per_day = self.__convert_from_base(VolumeFlowUnits.DeciliterPerDay)
         return self.__deciliters_per_day
+
+    
+    @property
+    def decaliters_per_day(self) -> float:
+        """
+        
+        """
+        if self.__decaliters_per_day != None:
+            return self.__decaliters_per_day
+        self.__decaliters_per_day = self.__convert_from_base(VolumeFlowUnits.DecaliterPerDay)
+        return self.__decaliters_per_day
+
+    
+    @property
+    def hectoliters_per_day(self) -> float:
+        """
+        
+        """
+        if self.__hectoliters_per_day != None:
+            return self.__hectoliters_per_day
+        self.__hectoliters_per_day = self.__convert_from_base(VolumeFlowUnits.HectoliterPerDay)
+        return self.__hectoliters_per_day
 
     
     @property
@@ -2792,6 +3104,12 @@ class VolumeFlow(AbstractMeasure):
         if unit == VolumeFlowUnits.DeciliterPerSecond:
             return f"""{self.deciliters_per_second} dL/s"""
         
+        if unit == VolumeFlowUnits.DecaliterPerSecond:
+            return f"""{self.decaliters_per_second} daL/s"""
+        
+        if unit == VolumeFlowUnits.HectoliterPerSecond:
+            return f"""{self.hectoliters_per_second} hL/s"""
+        
         if unit == VolumeFlowUnits.KiloliterPerSecond:
             return f"""{self.kiloliters_per_second} kL/s"""
         
@@ -2812,6 +3130,12 @@ class VolumeFlow(AbstractMeasure):
         
         if unit == VolumeFlowUnits.DeciliterPerMinute:
             return f"""{self.deciliters_per_minute} dL/min"""
+        
+        if unit == VolumeFlowUnits.DecaliterPerMinute:
+            return f"""{self.decaliters_per_minute} daL/min"""
+        
+        if unit == VolumeFlowUnits.HectoliterPerMinute:
+            return f"""{self.hectoliters_per_minute} hL/min"""
         
         if unit == VolumeFlowUnits.KiloliterPerMinute:
             return f"""{self.kiloliters_per_minute} kL/min"""
@@ -2834,6 +3158,12 @@ class VolumeFlow(AbstractMeasure):
         if unit == VolumeFlowUnits.DeciliterPerHour:
             return f"""{self.deciliters_per_hour} dL/h"""
         
+        if unit == VolumeFlowUnits.DecaliterPerHour:
+            return f"""{self.decaliters_per_hour} daL/h"""
+        
+        if unit == VolumeFlowUnits.HectoliterPerHour:
+            return f"""{self.hectoliters_per_hour} hL/h"""
+        
         if unit == VolumeFlowUnits.KiloliterPerHour:
             return f"""{self.kiloliters_per_hour} kL/h"""
         
@@ -2854,6 +3184,12 @@ class VolumeFlow(AbstractMeasure):
         
         if unit == VolumeFlowUnits.DeciliterPerDay:
             return f"""{self.deciliters_per_day} dl/day"""
+        
+        if unit == VolumeFlowUnits.DecaliterPerDay:
+            return f"""{self.decaliters_per_day} dal/day"""
+        
+        if unit == VolumeFlowUnits.HectoliterPerDay:
+            return f"""{self.hectoliters_per_day} hl/day"""
         
         if unit == VolumeFlowUnits.KiloliterPerDay:
             return f"""{self.kiloliters_per_day} kl/day"""
@@ -3003,6 +3339,12 @@ class VolumeFlow(AbstractMeasure):
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerSecond:
             return """dL/s"""
         
+        if unit_abbreviation == VolumeFlowUnits.DecaliterPerSecond:
+            return """daL/s"""
+        
+        if unit_abbreviation == VolumeFlowUnits.HectoliterPerSecond:
+            return """hL/s"""
+        
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerSecond:
             return """kL/s"""
         
@@ -3023,6 +3365,12 @@ class VolumeFlow(AbstractMeasure):
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerMinute:
             return """dL/min"""
+        
+        if unit_abbreviation == VolumeFlowUnits.DecaliterPerMinute:
+            return """daL/min"""
+        
+        if unit_abbreviation == VolumeFlowUnits.HectoliterPerMinute:
+            return """hL/min"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerMinute:
             return """kL/min"""
@@ -3045,6 +3393,12 @@ class VolumeFlow(AbstractMeasure):
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerHour:
             return """dL/h"""
         
+        if unit_abbreviation == VolumeFlowUnits.DecaliterPerHour:
+            return """daL/h"""
+        
+        if unit_abbreviation == VolumeFlowUnits.HectoliterPerHour:
+            return """hL/h"""
+        
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerHour:
             return """kL/h"""
         
@@ -3065,6 +3419,12 @@ class VolumeFlow(AbstractMeasure):
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerDay:
             return """dl/day"""
+        
+        if unit_abbreviation == VolumeFlowUnits.DecaliterPerDay:
+            return """dal/day"""
+        
+        if unit_abbreviation == VolumeFlowUnits.HectoliterPerDay:
+            return """hl/day"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerDay:
             return """kl/day"""
