@@ -17,10 +17,7 @@ The library is built on top of the [Units.NET](https://github.com/angularsen/Uni
 
 Package is available on PyPI at https://pypi.org/project/unitsnet-py/
 
-> The package for C# is available in the Nuget registry at https://www.nuget.org/packages/UnitsNet/
->
-> And a similar package for JavaScript/TypeScript is available in the NPM registry at https://www.npmjs.com/package/unitsnet-js.
-
+[Units.NET on other platforms](#unitsnet-on-other-platforms)
 
 ## Install via PyPi
 
@@ -480,4 +477,14 @@ The package provides support for the following units:
 - **WarpingMomentOfInertia**
     -   *A geometric property of an area that is used to determine the warping stress.*
 
+
+
+### Units.NET on other platforms
+
+Get the same strongly typed units on other platforms, based on the same [unit definitions](/Common/UnitDefinitions).
+
+| Language                   | Name        | Package                                           | Repository                                           | Maintainers  |
+|----------------------------|-------------|---------------------------------------------------|------------------------------------------------------|--------------|
+| C#                         | UnitsNet    | [nuget](https://www.nuget.org/packages/UnitsNet/) | [github](https://github.com/angularsen/UnitsNet)     | @angularsen  |
+| JavaScript /<br>TypeScript | unitsnet-js | [npm](https://www.npmjs.com/package/unitsnet-js)  | [github](https://github.com/haimkastner/unitsnet-js) | @haimkastner |
 
