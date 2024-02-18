@@ -30,6 +30,11 @@ class IrradiationUnits(Enum):
             
         """
         
+        BtuPerSquareFoot = 'btu_per_square_foot'
+        """
+            
+        """
+        
         KilojoulePerSquareMeter = 'kilojoule_per_square_meter'
         """
             
@@ -41,6 +46,11 @@ class IrradiationUnits(Enum):
         """
         
         KilowattHourPerSquareMeter = 'kilowatt_hour_per_square_meter'
+        """
+            
+        """
+        
+        KilobtuPerSquareFoot = 'kilobtu_per_square_foot'
         """
             
         """
@@ -69,11 +79,15 @@ class Irradiation(AbstractMeasure):
         
         self.__watt_hours_per_square_meter = None
         
+        self.__btus_per_square_foot = None
+        
         self.__kilojoules_per_square_meter = None
         
         self.__millijoules_per_square_centimeter = None
         
         self.__kilowatt_hours_per_square_meter = None
+        
+        self.__kilobtus_per_square_foot = None
         
 
     def convert(self, unit: IrradiationUnits) -> float:
@@ -94,6 +108,9 @@ class Irradiation(AbstractMeasure):
         if from_unit == IrradiationUnits.WattHourPerSquareMeter:
             return (value / 3600)
         
+        if from_unit == IrradiationUnits.BtuPerSquareFoot:
+            return (value / (52752792631 / 4645152))
+        
         if from_unit == IrradiationUnits.KilojoulePerSquareMeter:
             return ((value) / 1000.0)
         
@@ -102,6 +119,9 @@ class Irradiation(AbstractMeasure):
         
         if from_unit == IrradiationUnits.KilowattHourPerSquareMeter:
             return ((value / 3600) / 1000.0)
+        
+        if from_unit == IrradiationUnits.KilobtuPerSquareFoot:
+            return ((value / (52752792631 / 4645152)) / 1000.0)
         
         return None
 
@@ -120,6 +140,9 @@ class Irradiation(AbstractMeasure):
         if to_unit == IrradiationUnits.WattHourPerSquareMeter:
             return (value * 3600)
         
+        if to_unit == IrradiationUnits.BtuPerSquareFoot:
+            return (value * (52752792631 / 4645152))
+        
         if to_unit == IrradiationUnits.KilojoulePerSquareMeter:
             return ((value) * 1000.0)
         
@@ -128,6 +151,9 @@ class Irradiation(AbstractMeasure):
         
         if to_unit == IrradiationUnits.KilowattHourPerSquareMeter:
             return ((value * 3600) * 1000.0)
+        
+        if to_unit == IrradiationUnits.KilobtuPerSquareFoot:
+            return ((value * (52752792631 / 4645152)) * 1000.0)
         
         return None
 
@@ -198,6 +224,21 @@ class Irradiation(AbstractMeasure):
 
     
     @staticmethod
+    def from_btus_per_square_foot(btus_per_square_foot: float):
+        """
+        Create a new instance of Irradiation from a value in btus_per_square_foot.
+
+        
+
+        :param meters: The Irradiation value in btus_per_square_foot.
+        :type btus_per_square_foot: float
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
+        return Irradiation(btus_per_square_foot, IrradiationUnits.BtuPerSquareFoot)
+
+    
+    @staticmethod
     def from_kilojoules_per_square_meter(kilojoules_per_square_meter: float):
         """
         Create a new instance of Irradiation from a value in kilojoules_per_square_meter.
@@ -240,6 +281,21 @@ class Irradiation(AbstractMeasure):
         :rtype: Irradiation
         """
         return Irradiation(kilowatt_hours_per_square_meter, IrradiationUnits.KilowattHourPerSquareMeter)
+
+    
+    @staticmethod
+    def from_kilobtus_per_square_foot(kilobtus_per_square_foot: float):
+        """
+        Create a new instance of Irradiation from a value in kilobtus_per_square_foot.
+
+        
+
+        :param meters: The Irradiation value in kilobtus_per_square_foot.
+        :type kilobtus_per_square_foot: float
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
+        return Irradiation(kilobtus_per_square_foot, IrradiationUnits.KilobtuPerSquareFoot)
 
     
     @property
@@ -287,6 +343,17 @@ class Irradiation(AbstractMeasure):
 
     
     @property
+    def btus_per_square_foot(self) -> float:
+        """
+        
+        """
+        if self.__btus_per_square_foot != None:
+            return self.__btus_per_square_foot
+        self.__btus_per_square_foot = self.__convert_from_base(IrradiationUnits.BtuPerSquareFoot)
+        return self.__btus_per_square_foot
+
+    
+    @property
     def kilojoules_per_square_meter(self) -> float:
         """
         
@@ -319,6 +386,17 @@ class Irradiation(AbstractMeasure):
         return self.__kilowatt_hours_per_square_meter
 
     
+    @property
+    def kilobtus_per_square_foot(self) -> float:
+        """
+        
+        """
+        if self.__kilobtus_per_square_foot != None:
+            return self.__kilobtus_per_square_foot
+        self.__kilobtus_per_square_foot = self.__convert_from_base(IrradiationUnits.KilobtuPerSquareFoot)
+        return self.__kilobtus_per_square_foot
+
+    
     def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> str:
         """
         Format the Irradiation to string.
@@ -338,6 +416,9 @@ class Irradiation(AbstractMeasure):
         if unit == IrradiationUnits.WattHourPerSquareMeter:
             return f"""{self.watt_hours_per_square_meter} Wh/m²"""
         
+        if unit == IrradiationUnits.BtuPerSquareFoot:
+            return f"""{self.btus_per_square_foot} Btu/ft²"""
+        
         if unit == IrradiationUnits.KilojoulePerSquareMeter:
             return f"""{self.kilojoules_per_square_meter} kJ/m²"""
         
@@ -346,6 +427,9 @@ class Irradiation(AbstractMeasure):
         
         if unit == IrradiationUnits.KilowattHourPerSquareMeter:
             return f"""{self.kilowatt_hours_per_square_meter} kWh/m²"""
+        
+        if unit == IrradiationUnits.KilobtuPerSquareFoot:
+            return f"""{self.kilobtus_per_square_foot} kBtu/ft²"""
         
         return f'{self._value}'
 
@@ -369,6 +453,9 @@ class Irradiation(AbstractMeasure):
         if unit_abbreviation == IrradiationUnits.WattHourPerSquareMeter:
             return """Wh/m²"""
         
+        if unit_abbreviation == IrradiationUnits.BtuPerSquareFoot:
+            return """Btu/ft²"""
+        
         if unit_abbreviation == IrradiationUnits.KilojoulePerSquareMeter:
             return """kJ/m²"""
         
@@ -377,4 +464,7 @@ class Irradiation(AbstractMeasure):
         
         if unit_abbreviation == IrradiationUnits.KilowattHourPerSquareMeter:
             return """kWh/m²"""
+        
+        if unit_abbreviation == IrradiationUnits.KilobtuPerSquareFoot:
+            return """kBtu/ft²"""
         
