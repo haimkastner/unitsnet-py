@@ -7,15 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
       - name: Generate units
         run: |
-          pip install poetry
-          poetry export -f requirements.txt > requirements.txt
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
           python units_generator/generate_package.py
 
       - name: Test units
@@ -26,9 +24,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: update_version
         run: |
-          old_version=$(poetry version | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $NF}')
-          poetry version patch
-          version=$(poetry version | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $NF}')
+
+          old_version=$(python setup.py --version)
+          IFS='.' read -ra parts <<< "$old_version" 
+          version="${parts[0]}.${parts[1]}.$((parts[2]+1))"
           sed -i 's|'$old_version'|'$version'|g' setup.py
           echo "VERSION=$version" >> $GITHUB_OUTPUT
 
