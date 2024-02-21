@@ -2,7 +2,7 @@
 from setuptools import setup
 from pathlib import Path
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()
+long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 packages = \
 ['unitsnet_py', 'unitsnet_py.units']
@@ -26,6 +26,7 @@ setup_kwargs = {
     'packages': packages,
     'package_data': package_data,
     'python_requires': '>=3.8,<4.0',
+    'install_requires': []
 }
 
 
