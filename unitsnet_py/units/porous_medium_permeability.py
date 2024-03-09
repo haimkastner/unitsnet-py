@@ -10,31 +10,44 @@ class PorousMediumPermeabilityUnits(Enum):
             PorousMediumPermeabilityUnits enumeration
         """
         
-        Darcy = 'darcy'
+        Darcy = 'Darcy'
         """
             
         """
         
-        SquareMeter = 'square_meter'
+        SquareMeter = 'SquareMeter'
         """
             
         """
         
-        SquareCentimeter = 'square_centimeter'
+        SquareCentimeter = 'SquareCentimeter'
         """
             
         """
         
-        Microdarcy = 'microdarcy'
+        Microdarcy = 'Microdarcy'
         """
             
         """
         
-        Millidarcy = 'millidarcy'
+        Millidarcy = 'Millidarcy'
         """
             
         """
         
+
+class PorousMediumPermeabilityDto:
+    def __init__(self, value: float, unit: PorousMediumPermeabilityUnits):
+        self.value: float = value
+        self.unit: PorousMediumPermeabilityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PorousMediumPermeabilityDto(value=data["value"], unit=PorousMediumPermeabilityUnits(data["unit"]))
+
 
 class PorousMediumPermeability(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class PorousMediumPermeability(AbstractMeasure):
 
     def convert(self, unit: PorousMediumPermeabilityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> PorousMediumPermeabilityDto:
+        return PorousMediumPermeabilityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(porous_medium_permeability_dto: PorousMediumPermeabilityDto):
+        return PorousMediumPermeability(porous_medium_permeability_dto.value, porous_medium_permeability_dto.unit)
 
     def __convert_from_base(self, from_unit: PorousMediumPermeabilityUnits) -> float:
         value = self._value

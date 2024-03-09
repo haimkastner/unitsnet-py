@@ -10,76 +10,89 @@ class InformationUnits(Enum):
             InformationUnits enumeration
         """
         
-        Byte = 'byte'
+        Byte = 'Byte'
         """
             
         """
         
-        Bit = 'bit'
+        Bit = 'Bit'
         """
             
         """
         
-        Kilobyte = 'kilobyte'
+        Kilobyte = 'Kilobyte'
         """
             
         """
         
-        Megabyte = 'megabyte'
+        Megabyte = 'Megabyte'
         """
             
         """
         
-        Gigabyte = 'gigabyte'
+        Gigabyte = 'Gigabyte'
         """
             
         """
         
-        Terabyte = 'terabyte'
+        Terabyte = 'Terabyte'
         """
             
         """
         
-        Petabyte = 'petabyte'
+        Petabyte = 'Petabyte'
         """
             
         """
         
-        Exabyte = 'exabyte'
+        Exabyte = 'Exabyte'
         """
             
         """
         
-        Kilobit = 'kilobit'
+        Kilobit = 'Kilobit'
         """
             
         """
         
-        Megabit = 'megabit'
+        Megabit = 'Megabit'
         """
             
         """
         
-        Gigabit = 'gigabit'
+        Gigabit = 'Gigabit'
         """
             
         """
         
-        Terabit = 'terabit'
+        Terabit = 'Terabit'
         """
             
         """
         
-        Petabit = 'petabit'
+        Petabit = 'Petabit'
         """
             
         """
         
-        Exabit = 'exabit'
+        Exabit = 'Exabit'
         """
             
         """
         
+
+class InformationDto:
+    def __init__(self, value: float, unit: InformationUnits):
+        self.value: float = value
+        self.unit: InformationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return InformationDto(value=data["value"], unit=InformationUnits(data["unit"]))
+
 
 class Information(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class Information(AbstractMeasure):
 
     def convert(self, unit: InformationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: InformationUnits = InformationUnits.Bit) -> InformationDto:
+        return InformationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(information_dto: InformationDto):
+        return Information(information_dto.value, information_dto.unit)
 
     def __convert_from_base(self, from_unit: InformationUnits) -> float:
         value = self._value

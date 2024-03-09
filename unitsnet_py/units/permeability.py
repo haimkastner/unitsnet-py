@@ -10,11 +10,24 @@ class PermeabilityUnits(Enum):
             PermeabilityUnits enumeration
         """
         
-        HenryPerMeter = 'henry_per_meter'
+        HenryPerMeter = 'HenryPerMeter'
         """
             
         """
         
+
+class PermeabilityDto:
+    def __init__(self, value: float, unit: PermeabilityUnits):
+        self.value: float = value
+        self.unit: PermeabilityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PermeabilityDto(value=data["value"], unit=PermeabilityUnits(data["unit"]))
+
 
 class Permeability(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class Permeability(AbstractMeasure):
 
     def convert(self, unit: PermeabilityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> PermeabilityDto:
+        return PermeabilityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(permeability_dto: PermeabilityDto):
+        return Permeability(permeability_dto.value, permeability_dto.unit)
 
     def __convert_from_base(self, from_unit: PermeabilityUnits) -> float:
         value = self._value

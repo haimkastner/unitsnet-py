@@ -10,26 +10,39 @@ class RotationalAccelerationUnits(Enum):
             RotationalAccelerationUnits enumeration
         """
         
-        RadianPerSecondSquared = 'radian_per_second_squared'
+        RadianPerSecondSquared = 'RadianPerSecondSquared'
         """
             
         """
         
-        DegreePerSecondSquared = 'degree_per_second_squared'
+        DegreePerSecondSquared = 'DegreePerSecondSquared'
         """
             
         """
         
-        RevolutionPerMinutePerSecond = 'revolution_per_minute_per_second'
+        RevolutionPerMinutePerSecond = 'RevolutionPerMinutePerSecond'
         """
             
         """
         
-        RevolutionPerSecondSquared = 'revolution_per_second_squared'
+        RevolutionPerSecondSquared = 'RevolutionPerSecondSquared'
         """
             
         """
         
+
+class RotationalAccelerationDto:
+    def __init__(self, value: float, unit: RotationalAccelerationUnits):
+        self.value: float = value
+        self.unit: RotationalAccelerationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RotationalAccelerationDto(value=data["value"], unit=RotationalAccelerationUnits(data["unit"]))
+
 
 class RotationalAcceleration(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class RotationalAcceleration(AbstractMeasure):
 
     def convert(self, unit: RotationalAccelerationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> RotationalAccelerationDto:
+        return RotationalAccelerationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(rotational_acceleration_dto: RotationalAccelerationDto):
+        return RotationalAcceleration(rotational_acceleration_dto.value, rotational_acceleration_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalAccelerationUnits) -> float:
         value = self._value

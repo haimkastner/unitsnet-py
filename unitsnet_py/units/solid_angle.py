@@ -10,11 +10,24 @@ class SolidAngleUnits(Enum):
             SolidAngleUnits enumeration
         """
         
-        Steradian = 'steradian'
+        Steradian = 'Steradian'
         """
             
         """
         
+
+class SolidAngleDto:
+    def __init__(self, value: float, unit: SolidAngleUnits):
+        self.value: float = value
+        self.unit: SolidAngleUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SolidAngleDto(value=data["value"], unit=SolidAngleUnits(data["unit"]))
+
 
 class SolidAngle(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class SolidAngle(AbstractMeasure):
 
     def convert(self, unit: SolidAngleUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SolidAngleUnits = SolidAngleUnits.Steradian) -> SolidAngleDto:
+        return SolidAngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(solid_angle_dto: SolidAngleDto):
+        return SolidAngle(solid_angle_dto.value, solid_angle_dto.unit)
 
     def __convert_from_base(self, from_unit: SolidAngleUnits) -> float:
         value = self._value

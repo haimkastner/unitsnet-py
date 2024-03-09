@@ -10,36 +10,49 @@ class MagneticFieldUnits(Enum):
             MagneticFieldUnits enumeration
         """
         
-        Tesla = 'tesla'
+        Tesla = 'Tesla'
         """
             
         """
         
-        Gauss = 'gauss'
+        Gauss = 'Gauss'
         """
             
         """
         
-        Nanotesla = 'nanotesla'
+        Nanotesla = 'Nanotesla'
         """
             
         """
         
-        Microtesla = 'microtesla'
+        Microtesla = 'Microtesla'
         """
             
         """
         
-        Millitesla = 'millitesla'
+        Millitesla = 'Millitesla'
         """
             
         """
         
-        Milligauss = 'milligauss'
+        Milligauss = 'Milligauss'
         """
             
         """
         
+
+class MagneticFieldDto:
+    def __init__(self, value: float, unit: MagneticFieldUnits):
+        self.value: float = value
+        self.unit: MagneticFieldUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MagneticFieldDto(value=data["value"], unit=MagneticFieldUnits(data["unit"]))
+
 
 class MagneticField(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class MagneticField(AbstractMeasure):
 
     def convert(self, unit: MagneticFieldUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> MagneticFieldDto:
+        return MagneticFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(magnetic_field_dto: MagneticFieldDto):
+        return MagneticField(magnetic_field_dto.value, magnetic_field_dto.unit)
 
     def __convert_from_base(self, from_unit: MagneticFieldUnits) -> float:
         value = self._value

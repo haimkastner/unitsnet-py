@@ -10,51 +10,64 @@ class TemperatureDeltaUnits(Enum):
             TemperatureDeltaUnits enumeration
         """
         
-        Kelvin = 'kelvin'
+        Kelvin = 'Kelvin'
         """
             
         """
         
-        DegreeCelsius = 'degree_celsius'
+        DegreeCelsius = 'DegreeCelsius'
         """
             
         """
         
-        DegreeDelisle = 'degree_delisle'
+        DegreeDelisle = 'DegreeDelisle'
         """
             
         """
         
-        DegreeFahrenheit = 'degree_fahrenheit'
+        DegreeFahrenheit = 'DegreeFahrenheit'
         """
             
         """
         
-        DegreeNewton = 'degree_newton'
+        DegreeNewton = 'DegreeNewton'
         """
             
         """
         
-        DegreeRankine = 'degree_rankine'
+        DegreeRankine = 'DegreeRankine'
         """
             
         """
         
-        DegreeReaumur = 'degree_reaumur'
+        DegreeReaumur = 'DegreeReaumur'
         """
             
         """
         
-        DegreeRoemer = 'degree_roemer'
+        DegreeRoemer = 'DegreeRoemer'
         """
             
         """
         
-        MillidegreeCelsius = 'millidegree_celsius'
+        MillidegreeCelsius = 'MillidegreeCelsius'
         """
             
         """
         
+
+class TemperatureDeltaDto:
+    def __init__(self, value: float, unit: TemperatureDeltaUnits):
+        self.value: float = value
+        self.unit: TemperatureDeltaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TemperatureDeltaDto(value=data["value"], unit=TemperatureDeltaUnits(data["unit"]))
+
 
 class TemperatureDelta(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class TemperatureDelta(AbstractMeasure):
 
     def convert(self, unit: TemperatureDeltaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> TemperatureDeltaDto:
+        return TemperatureDeltaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(temperature_delta_dto: TemperatureDeltaDto):
+        return TemperatureDelta(temperature_delta_dto.value, temperature_delta_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureDeltaUnits) -> float:
         value = self._value

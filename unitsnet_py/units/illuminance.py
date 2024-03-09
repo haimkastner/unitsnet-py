@@ -10,26 +10,39 @@ class IlluminanceUnits(Enum):
             IlluminanceUnits enumeration
         """
         
-        Lux = 'lux'
+        Lux = 'Lux'
         """
             
         """
         
-        Millilux = 'millilux'
+        Millilux = 'Millilux'
         """
             
         """
         
-        Kilolux = 'kilolux'
+        Kilolux = 'Kilolux'
         """
             
         """
         
-        Megalux = 'megalux'
+        Megalux = 'Megalux'
         """
             
         """
         
+
+class IlluminanceDto:
+    def __init__(self, value: float, unit: IlluminanceUnits):
+        self.value: float = value
+        self.unit: IlluminanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return IlluminanceDto(value=data["value"], unit=IlluminanceUnits(data["unit"]))
+
 
 class Illuminance(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class Illuminance(AbstractMeasure):
 
     def convert(self, unit: IlluminanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: IlluminanceUnits = IlluminanceUnits.Lux) -> IlluminanceDto:
+        return IlluminanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(illuminance_dto: IlluminanceDto):
+        return Illuminance(illuminance_dto.value, illuminance_dto.unit)
 
     def __convert_from_base(self, from_unit: IlluminanceUnits) -> float:
         value = self._value

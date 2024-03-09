@@ -10,146 +10,159 @@ class MassMomentOfInertiaUnits(Enum):
             MassMomentOfInertiaUnits enumeration
         """
         
-        GramSquareMeter = 'gram_square_meter'
+        GramSquareMeter = 'GramSquareMeter'
         """
             
         """
         
-        GramSquareDecimeter = 'gram_square_decimeter'
+        GramSquareDecimeter = 'GramSquareDecimeter'
         """
             
         """
         
-        GramSquareCentimeter = 'gram_square_centimeter'
+        GramSquareCentimeter = 'GramSquareCentimeter'
         """
             
         """
         
-        GramSquareMillimeter = 'gram_square_millimeter'
+        GramSquareMillimeter = 'GramSquareMillimeter'
         """
             
         """
         
-        TonneSquareMeter = 'tonne_square_meter'
+        TonneSquareMeter = 'TonneSquareMeter'
         """
             
         """
         
-        TonneSquareDecimeter = 'tonne_square_decimeter'
+        TonneSquareDecimeter = 'TonneSquareDecimeter'
         """
             
         """
         
-        TonneSquareCentimeter = 'tonne_square_centimeter'
+        TonneSquareCentimeter = 'TonneSquareCentimeter'
         """
             
         """
         
-        TonneSquareMilimeter = 'tonne_square_milimeter'
+        TonneSquareMilimeter = 'TonneSquareMilimeter'
         """
             
         """
         
-        PoundSquareFoot = 'pound_square_foot'
+        PoundSquareFoot = 'PoundSquareFoot'
         """
             
         """
         
-        PoundSquareInch = 'pound_square_inch'
+        PoundSquareInch = 'PoundSquareInch'
         """
             
         """
         
-        SlugSquareFoot = 'slug_square_foot'
+        SlugSquareFoot = 'SlugSquareFoot'
         """
             
         """
         
-        SlugSquareInch = 'slug_square_inch'
+        SlugSquareInch = 'SlugSquareInch'
         """
             
         """
         
-        MilligramSquareMeter = 'milligram_square_meter'
+        MilligramSquareMeter = 'MilligramSquareMeter'
         """
             
         """
         
-        KilogramSquareMeter = 'kilogram_square_meter'
+        KilogramSquareMeter = 'KilogramSquareMeter'
         """
             
         """
         
-        MilligramSquareDecimeter = 'milligram_square_decimeter'
+        MilligramSquareDecimeter = 'MilligramSquareDecimeter'
         """
             
         """
         
-        KilogramSquareDecimeter = 'kilogram_square_decimeter'
+        KilogramSquareDecimeter = 'KilogramSquareDecimeter'
         """
             
         """
         
-        MilligramSquareCentimeter = 'milligram_square_centimeter'
+        MilligramSquareCentimeter = 'MilligramSquareCentimeter'
         """
             
         """
         
-        KilogramSquareCentimeter = 'kilogram_square_centimeter'
+        KilogramSquareCentimeter = 'KilogramSquareCentimeter'
         """
             
         """
         
-        MilligramSquareMillimeter = 'milligram_square_millimeter'
+        MilligramSquareMillimeter = 'MilligramSquareMillimeter'
         """
             
         """
         
-        KilogramSquareMillimeter = 'kilogram_square_millimeter'
+        KilogramSquareMillimeter = 'KilogramSquareMillimeter'
         """
             
         """
         
-        KilotonneSquareMeter = 'kilotonne_square_meter'
+        KilotonneSquareMeter = 'KilotonneSquareMeter'
         """
             
         """
         
-        MegatonneSquareMeter = 'megatonne_square_meter'
+        MegatonneSquareMeter = 'MegatonneSquareMeter'
         """
             
         """
         
-        KilotonneSquareDecimeter = 'kilotonne_square_decimeter'
+        KilotonneSquareDecimeter = 'KilotonneSquareDecimeter'
         """
             
         """
         
-        MegatonneSquareDecimeter = 'megatonne_square_decimeter'
+        MegatonneSquareDecimeter = 'MegatonneSquareDecimeter'
         """
             
         """
         
-        KilotonneSquareCentimeter = 'kilotonne_square_centimeter'
+        KilotonneSquareCentimeter = 'KilotonneSquareCentimeter'
         """
             
         """
         
-        MegatonneSquareCentimeter = 'megatonne_square_centimeter'
+        MegatonneSquareCentimeter = 'MegatonneSquareCentimeter'
         """
             
         """
         
-        KilotonneSquareMilimeter = 'kilotonne_square_milimeter'
+        KilotonneSquareMilimeter = 'KilotonneSquareMilimeter'
         """
             
         """
         
-        MegatonneSquareMilimeter = 'megatonne_square_milimeter'
+        MegatonneSquareMilimeter = 'MegatonneSquareMilimeter'
         """
             
         """
         
+
+class MassMomentOfInertiaDto:
+    def __init__(self, value: float, unit: MassMomentOfInertiaUnits):
+        self.value: float = value
+        self.unit: MassMomentOfInertiaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MassMomentOfInertiaDto(value=data["value"], unit=MassMomentOfInertiaUnits(data["unit"]))
+
 
 class MassMomentOfInertia(AbstractMeasure):
     """
@@ -225,6 +238,13 @@ class MassMomentOfInertia(AbstractMeasure):
 
     def convert(self, unit: MassMomentOfInertiaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> MassMomentOfInertiaDto:
+        return MassMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(mass_moment_of_inertia_dto: MassMomentOfInertiaDto):
+        return MassMomentOfInertia(mass_moment_of_inertia_dto.value, mass_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: MassMomentOfInertiaUnits) -> float:
         value = self._value

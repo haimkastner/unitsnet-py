@@ -10,51 +10,64 @@ class SpecificEntropyUnits(Enum):
             SpecificEntropyUnits enumeration
         """
         
-        JoulePerKilogramKelvin = 'joule_per_kilogram_kelvin'
+        JoulePerKilogramKelvin = 'JoulePerKilogramKelvin'
         """
             
         """
         
-        JoulePerKilogramDegreeCelsius = 'joule_per_kilogram_degree_celsius'
+        JoulePerKilogramDegreeCelsius = 'JoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        CaloriePerGramKelvin = 'calorie_per_gram_kelvin'
+        CaloriePerGramKelvin = 'CaloriePerGramKelvin'
         """
             
         """
         
-        BtuPerPoundFahrenheit = 'btu_per_pound_fahrenheit'
+        BtuPerPoundFahrenheit = 'BtuPerPoundFahrenheit'
         """
             
         """
         
-        KilojoulePerKilogramKelvin = 'kilojoule_per_kilogram_kelvin'
+        KilojoulePerKilogramKelvin = 'KilojoulePerKilogramKelvin'
         """
             
         """
         
-        MegajoulePerKilogramKelvin = 'megajoule_per_kilogram_kelvin'
+        MegajoulePerKilogramKelvin = 'MegajoulePerKilogramKelvin'
         """
             
         """
         
-        KilojoulePerKilogramDegreeCelsius = 'kilojoule_per_kilogram_degree_celsius'
+        KilojoulePerKilogramDegreeCelsius = 'KilojoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        MegajoulePerKilogramDegreeCelsius = 'megajoule_per_kilogram_degree_celsius'
+        MegajoulePerKilogramDegreeCelsius = 'MegajoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        KilocaloriePerGramKelvin = 'kilocalorie_per_gram_kelvin'
+        KilocaloriePerGramKelvin = 'KilocaloriePerGramKelvin'
         """
             
         """
         
+
+class SpecificEntropyDto:
+    def __init__(self, value: float, unit: SpecificEntropyUnits):
+        self.value: float = value
+        self.unit: SpecificEntropyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SpecificEntropyDto(value=data["value"], unit=SpecificEntropyUnits(data["unit"]))
+
 
 class SpecificEntropy(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class SpecificEntropy(AbstractMeasure):
 
     def convert(self, unit: SpecificEntropyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> SpecificEntropyDto:
+        return SpecificEntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(specific_entropy_dto: SpecificEntropyDto):
+        return SpecificEntropy(specific_entropy_dto.value, specific_entropy_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificEntropyUnits) -> float:
         value = self._value

@@ -10,86 +10,99 @@ class AbsorbedDoseOfIonizingRadiationUnits(Enum):
             AbsorbedDoseOfIonizingRadiationUnits enumeration
         """
         
-        Gray = 'gray'
+        Gray = 'Gray'
         """
             The gray is the unit of ionizing radiation dose in the SI, defined as the absorption of one joule of radiation energy per kilogram of matter.
         """
         
-        Rad = 'rad'
+        Rad = 'Rad'
         """
             The rad is a unit of absorbed radiation dose, defined as 1 rad = 0.01 Gy = 0.01 J/kg.
         """
         
-        Femtogray = 'femtogray'
+        Femtogray = 'Femtogray'
         """
             
         """
         
-        Picogray = 'picogray'
+        Picogray = 'Picogray'
         """
             
         """
         
-        Nanogray = 'nanogray'
+        Nanogray = 'Nanogray'
         """
             
         """
         
-        Microgray = 'microgray'
+        Microgray = 'Microgray'
         """
             
         """
         
-        Milligray = 'milligray'
+        Milligray = 'Milligray'
         """
             
         """
         
-        Centigray = 'centigray'
+        Centigray = 'Centigray'
         """
             
         """
         
-        Kilogray = 'kilogray'
+        Kilogray = 'Kilogray'
         """
             
         """
         
-        Megagray = 'megagray'
+        Megagray = 'Megagray'
         """
             
         """
         
-        Gigagray = 'gigagray'
+        Gigagray = 'Gigagray'
         """
             
         """
         
-        Teragray = 'teragray'
+        Teragray = 'Teragray'
         """
             
         """
         
-        Petagray = 'petagray'
+        Petagray = 'Petagray'
         """
             
         """
         
-        Millirad = 'millirad'
+        Millirad = 'Millirad'
         """
             
         """
         
-        Kilorad = 'kilorad'
+        Kilorad = 'Kilorad'
         """
             
         """
         
-        Megarad = 'megarad'
+        Megarad = 'Megarad'
         """
             
         """
         
+
+class AbsorbedDoseOfIonizingRadiationDto:
+    def __init__(self, value: float, unit: AbsorbedDoseOfIonizingRadiationUnits):
+        self.value: float = value
+        self.unit: AbsorbedDoseOfIonizingRadiationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AbsorbedDoseOfIonizingRadiationDto(value=data["value"], unit=AbsorbedDoseOfIonizingRadiationUnits(data["unit"]))
+
 
 class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
     """
@@ -141,6 +154,13 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
 
     def convert(self, unit: AbsorbedDoseOfIonizingRadiationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> AbsorbedDoseOfIonizingRadiationDto:
+        return AbsorbedDoseOfIonizingRadiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(absorbed_dose_of_ionizing_radiation_dto: AbsorbedDoseOfIonizingRadiationDto):
+        return AbsorbedDoseOfIonizingRadiation(absorbed_dose_of_ionizing_radiation_dto.value, absorbed_dose_of_ionizing_radiation_dto.unit)
 
     def __convert_from_base(self, from_unit: AbsorbedDoseOfIonizingRadiationUnits) -> float:
         value = self._value

@@ -10,41 +10,54 @@ class CapacitanceUnits(Enum):
             CapacitanceUnits enumeration
         """
         
-        Farad = 'farad'
+        Farad = 'Farad'
         """
             
         """
         
-        Picofarad = 'picofarad'
+        Picofarad = 'Picofarad'
         """
             
         """
         
-        Nanofarad = 'nanofarad'
+        Nanofarad = 'Nanofarad'
         """
             
         """
         
-        Microfarad = 'microfarad'
+        Microfarad = 'Microfarad'
         """
             
         """
         
-        Millifarad = 'millifarad'
+        Millifarad = 'Millifarad'
         """
             
         """
         
-        Kilofarad = 'kilofarad'
+        Kilofarad = 'Kilofarad'
         """
             
         """
         
-        Megafarad = 'megafarad'
+        Megafarad = 'Megafarad'
         """
             
         """
         
+
+class CapacitanceDto:
+    def __init__(self, value: float, unit: CapacitanceUnits):
+        self.value: float = value
+        self.unit: CapacitanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return CapacitanceDto(value=data["value"], unit=CapacitanceUnits(data["unit"]))
+
 
 class Capacitance(AbstractMeasure):
     """
@@ -78,6 +91,13 @@ class Capacitance(AbstractMeasure):
 
     def convert(self, unit: CapacitanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: CapacitanceUnits = CapacitanceUnits.Farad) -> CapacitanceDto:
+        return CapacitanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(capacitance_dto: CapacitanceDto):
+        return Capacitance(capacitance_dto.value, capacitance_dto.unit)
 
     def __convert_from_base(self, from_unit: CapacitanceUnits) -> float:
         value = self._value

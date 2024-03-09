@@ -10,21 +10,34 @@ class MolarEntropyUnits(Enum):
             MolarEntropyUnits enumeration
         """
         
-        JoulePerMoleKelvin = 'joule_per_mole_kelvin'
+        JoulePerMoleKelvin = 'JoulePerMoleKelvin'
         """
             
         """
         
-        KilojoulePerMoleKelvin = 'kilojoule_per_mole_kelvin'
+        KilojoulePerMoleKelvin = 'KilojoulePerMoleKelvin'
         """
             
         """
         
-        MegajoulePerMoleKelvin = 'megajoule_per_mole_kelvin'
+        MegajoulePerMoleKelvin = 'MegajoulePerMoleKelvin'
         """
             
         """
         
+
+class MolarEntropyDto:
+    def __init__(self, value: float, unit: MolarEntropyUnits):
+        self.value: float = value
+        self.unit: MolarEntropyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarEntropyDto(value=data["value"], unit=MolarEntropyUnits(data["unit"]))
+
 
 class MolarEntropy(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class MolarEntropy(AbstractMeasure):
 
     def convert(self, unit: MolarEntropyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> MolarEntropyDto:
+        return MolarEntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molar_entropy_dto: MolarEntropyDto):
+        return MolarEntropy(molar_entropy_dto.value, molar_entropy_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarEntropyUnits) -> float:
         value = self._value

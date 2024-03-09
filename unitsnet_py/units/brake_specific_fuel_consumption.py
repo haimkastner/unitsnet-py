@@ -10,21 +10,34 @@ class BrakeSpecificFuelConsumptionUnits(Enum):
             BrakeSpecificFuelConsumptionUnits enumeration
         """
         
-        GramPerKiloWattHour = 'gram_per_kilo_watt_hour'
+        GramPerKiloWattHour = 'GramPerKiloWattHour'
         """
             
         """
         
-        KilogramPerJoule = 'kilogram_per_joule'
+        KilogramPerJoule = 'KilogramPerJoule'
         """
             
         """
         
-        PoundPerMechanicalHorsepowerHour = 'pound_per_mechanical_horsepower_hour'
+        PoundPerMechanicalHorsepowerHour = 'PoundPerMechanicalHorsepowerHour'
         """
             The pound per horse power hour uses mechanical horse power and the imperial pound
         """
         
+
+class BrakeSpecificFuelConsumptionDto:
+    def __init__(self, value: float, unit: BrakeSpecificFuelConsumptionUnits):
+        self.value: float = value
+        self.unit: BrakeSpecificFuelConsumptionUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return BrakeSpecificFuelConsumptionDto(value=data["value"], unit=BrakeSpecificFuelConsumptionUnits(data["unit"]))
+
 
 class BrakeSpecificFuelConsumption(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class BrakeSpecificFuelConsumption(AbstractMeasure):
 
     def convert(self, unit: BrakeSpecificFuelConsumptionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> BrakeSpecificFuelConsumptionDto:
+        return BrakeSpecificFuelConsumptionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(brake_specific_fuel_consumption_dto: BrakeSpecificFuelConsumptionDto):
+        return BrakeSpecificFuelConsumption(brake_specific_fuel_consumption_dto.value, brake_specific_fuel_consumption_dto.unit)
 
     def __convert_from_base(self, from_unit: BrakeSpecificFuelConsumptionUnits) -> float:
         value = self._value

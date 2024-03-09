@@ -10,71 +10,84 @@ class ImpulseUnits(Enum):
             ImpulseUnits enumeration
         """
         
-        KilogramMeterPerSecond = 'kilogram_meter_per_second'
+        KilogramMeterPerSecond = 'KilogramMeterPerSecond'
         """
             
         """
         
-        NewtonSecond = 'newton_second'
+        NewtonSecond = 'NewtonSecond'
         """
             
         """
         
-        PoundFootPerSecond = 'pound_foot_per_second'
+        PoundFootPerSecond = 'PoundFootPerSecond'
         """
             
         """
         
-        PoundForceSecond = 'pound_force_second'
+        PoundForceSecond = 'PoundForceSecond'
         """
             
         """
         
-        SlugFootPerSecond = 'slug_foot_per_second'
+        SlugFootPerSecond = 'SlugFootPerSecond'
         """
             
         """
         
-        NanonewtonSecond = 'nanonewton_second'
+        NanonewtonSecond = 'NanonewtonSecond'
         """
             
         """
         
-        MicronewtonSecond = 'micronewton_second'
+        MicronewtonSecond = 'MicronewtonSecond'
         """
             
         """
         
-        MillinewtonSecond = 'millinewton_second'
+        MillinewtonSecond = 'MillinewtonSecond'
         """
             
         """
         
-        CentinewtonSecond = 'centinewton_second'
+        CentinewtonSecond = 'CentinewtonSecond'
         """
             
         """
         
-        DecinewtonSecond = 'decinewton_second'
+        DecinewtonSecond = 'DecinewtonSecond'
         """
             
         """
         
-        DecanewtonSecond = 'decanewton_second'
+        DecanewtonSecond = 'DecanewtonSecond'
         """
             
         """
         
-        KilonewtonSecond = 'kilonewton_second'
+        KilonewtonSecond = 'KilonewtonSecond'
         """
             
         """
         
-        MeganewtonSecond = 'meganewton_second'
+        MeganewtonSecond = 'MeganewtonSecond'
         """
             
         """
         
+
+class ImpulseDto:
+    def __init__(self, value: float, unit: ImpulseUnits):
+        self.value: float = value
+        self.unit: ImpulseUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ImpulseDto(value=data["value"], unit=ImpulseUnits(data["unit"]))
+
 
 class Impulse(AbstractMeasure):
     """
@@ -120,6 +133,13 @@ class Impulse(AbstractMeasure):
 
     def convert(self, unit: ImpulseUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> ImpulseDto:
+        return ImpulseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(impulse_dto: ImpulseDto):
+        return Impulse(impulse_dto.value, impulse_dto.unit)
 
     def __convert_from_base(self, from_unit: ImpulseUnits) -> float:
         value = self._value

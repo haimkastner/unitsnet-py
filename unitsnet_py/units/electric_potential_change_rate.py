@@ -10,106 +10,119 @@ class ElectricPotentialChangeRateUnits(Enum):
             ElectricPotentialChangeRateUnits enumeration
         """
         
-        VoltPerSecond = 'volt_per_second'
+        VoltPerSecond = 'VoltPerSecond'
         """
             
         """
         
-        VoltPerMicrosecond = 'volt_per_microsecond'
+        VoltPerMicrosecond = 'VoltPerMicrosecond'
         """
             
         """
         
-        VoltPerMinute = 'volt_per_minute'
+        VoltPerMinute = 'VoltPerMinute'
         """
             
         """
         
-        VoltPerHour = 'volt_per_hour'
+        VoltPerHour = 'VoltPerHour'
         """
             
         """
         
-        MicrovoltPerSecond = 'microvolt_per_second'
+        MicrovoltPerSecond = 'MicrovoltPerSecond'
         """
             
         """
         
-        MillivoltPerSecond = 'millivolt_per_second'
+        MillivoltPerSecond = 'MillivoltPerSecond'
         """
             
         """
         
-        KilovoltPerSecond = 'kilovolt_per_second'
+        KilovoltPerSecond = 'KilovoltPerSecond'
         """
             
         """
         
-        MegavoltPerSecond = 'megavolt_per_second'
+        MegavoltPerSecond = 'MegavoltPerSecond'
         """
             
         """
         
-        MicrovoltPerMicrosecond = 'microvolt_per_microsecond'
+        MicrovoltPerMicrosecond = 'MicrovoltPerMicrosecond'
         """
             
         """
         
-        MillivoltPerMicrosecond = 'millivolt_per_microsecond'
+        MillivoltPerMicrosecond = 'MillivoltPerMicrosecond'
         """
             
         """
         
-        KilovoltPerMicrosecond = 'kilovolt_per_microsecond'
+        KilovoltPerMicrosecond = 'KilovoltPerMicrosecond'
         """
             
         """
         
-        MegavoltPerMicrosecond = 'megavolt_per_microsecond'
+        MegavoltPerMicrosecond = 'MegavoltPerMicrosecond'
         """
             
         """
         
-        MicrovoltPerMinute = 'microvolt_per_minute'
+        MicrovoltPerMinute = 'MicrovoltPerMinute'
         """
             
         """
         
-        MillivoltPerMinute = 'millivolt_per_minute'
+        MillivoltPerMinute = 'MillivoltPerMinute'
         """
             
         """
         
-        KilovoltPerMinute = 'kilovolt_per_minute'
+        KilovoltPerMinute = 'KilovoltPerMinute'
         """
             
         """
         
-        MegavoltPerMinute = 'megavolt_per_minute'
+        MegavoltPerMinute = 'MegavoltPerMinute'
         """
             
         """
         
-        MicrovoltPerHour = 'microvolt_per_hour'
+        MicrovoltPerHour = 'MicrovoltPerHour'
         """
             
         """
         
-        MillivoltPerHour = 'millivolt_per_hour'
+        MillivoltPerHour = 'MillivoltPerHour'
         """
             
         """
         
-        KilovoltPerHour = 'kilovolt_per_hour'
+        KilovoltPerHour = 'KilovoltPerHour'
         """
             
         """
         
-        MegavoltPerHour = 'megavolt_per_hour'
+        MegavoltPerHour = 'MegavoltPerHour'
         """
             
         """
         
+
+class ElectricPotentialChangeRateDto:
+    def __init__(self, value: float, unit: ElectricPotentialChangeRateUnits):
+        self.value: float = value
+        self.unit: ElectricPotentialChangeRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricPotentialChangeRateDto(value=data["value"], unit=ElectricPotentialChangeRateUnits(data["unit"]))
+
 
 class ElectricPotentialChangeRate(AbstractMeasure):
     """
@@ -169,6 +182,13 @@ class ElectricPotentialChangeRate(AbstractMeasure):
 
     def convert(self, unit: ElectricPotentialChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> ElectricPotentialChangeRateDto:
+        return ElectricPotentialChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_potential_change_rate_dto: ElectricPotentialChangeRateDto):
+        return ElectricPotentialChangeRate(electric_potential_change_rate_dto.value, electric_potential_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
         value = self._value

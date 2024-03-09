@@ -10,36 +10,49 @@ class ThermalResistanceUnits(Enum):
             ThermalResistanceUnits enumeration
         """
         
-        SquareMeterKelvinPerKilowatt = 'square_meter_kelvin_per_kilowatt'
+        SquareMeterKelvinPerKilowatt = 'SquareMeterKelvinPerKilowatt'
         """
             
         """
         
-        SquareMeterKelvinPerWatt = 'square_meter_kelvin_per_watt'
+        SquareMeterKelvinPerWatt = 'SquareMeterKelvinPerWatt'
         """
             
         """
         
-        SquareMeterDegreeCelsiusPerWatt = 'square_meter_degree_celsius_per_watt'
+        SquareMeterDegreeCelsiusPerWatt = 'SquareMeterDegreeCelsiusPerWatt'
         """
             
         """
         
-        SquareCentimeterKelvinPerWatt = 'square_centimeter_kelvin_per_watt'
+        SquareCentimeterKelvinPerWatt = 'SquareCentimeterKelvinPerWatt'
         """
             
         """
         
-        SquareCentimeterHourDegreeCelsiusPerKilocalorie = 'square_centimeter_hour_degree_celsius_per_kilocalorie'
+        SquareCentimeterHourDegreeCelsiusPerKilocalorie = 'SquareCentimeterHourDegreeCelsiusPerKilocalorie'
         """
             
         """
         
-        HourSquareFeetDegreeFahrenheitPerBtu = 'hour_square_feet_degree_fahrenheit_per_btu'
+        HourSquareFeetDegreeFahrenheitPerBtu = 'HourSquareFeetDegreeFahrenheitPerBtu'
         """
             
         """
         
+
+class ThermalResistanceDto:
+    def __init__(self, value: float, unit: ThermalResistanceUnits):
+        self.value: float = value
+        self.unit: ThermalResistanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ThermalResistanceDto(value=data["value"], unit=ThermalResistanceUnits(data["unit"]))
+
 
 class ThermalResistance(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class ThermalResistance(AbstractMeasure):
 
     def convert(self, unit: ThermalResistanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> ThermalResistanceDto:
+        return ThermalResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(thermal_resistance_dto: ThermalResistanceDto):
+        return ThermalResistance(thermal_resistance_dto.value, thermal_resistance_dto.unit)
 
     def __convert_from_base(self, from_unit: ThermalResistanceUnits) -> float:
         value = self._value

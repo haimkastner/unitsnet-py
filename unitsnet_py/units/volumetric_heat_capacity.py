@@ -10,51 +10,64 @@ class VolumetricHeatCapacityUnits(Enum):
             VolumetricHeatCapacityUnits enumeration
         """
         
-        JoulePerCubicMeterKelvin = 'joule_per_cubic_meter_kelvin'
+        JoulePerCubicMeterKelvin = 'JoulePerCubicMeterKelvin'
         """
             
         """
         
-        JoulePerCubicMeterDegreeCelsius = 'joule_per_cubic_meter_degree_celsius'
+        JoulePerCubicMeterDegreeCelsius = 'JoulePerCubicMeterDegreeCelsius'
         """
             
         """
         
-        CaloriePerCubicCentimeterDegreeCelsius = 'calorie_per_cubic_centimeter_degree_celsius'
+        CaloriePerCubicCentimeterDegreeCelsius = 'CaloriePerCubicCentimeterDegreeCelsius'
         """
             
         """
         
-        BtuPerCubicFootDegreeFahrenheit = 'btu_per_cubic_foot_degree_fahrenheit'
+        BtuPerCubicFootDegreeFahrenheit = 'BtuPerCubicFootDegreeFahrenheit'
         """
             
         """
         
-        KilojoulePerCubicMeterKelvin = 'kilojoule_per_cubic_meter_kelvin'
+        KilojoulePerCubicMeterKelvin = 'KilojoulePerCubicMeterKelvin'
         """
             
         """
         
-        MegajoulePerCubicMeterKelvin = 'megajoule_per_cubic_meter_kelvin'
+        MegajoulePerCubicMeterKelvin = 'MegajoulePerCubicMeterKelvin'
         """
             
         """
         
-        KilojoulePerCubicMeterDegreeCelsius = 'kilojoule_per_cubic_meter_degree_celsius'
+        KilojoulePerCubicMeterDegreeCelsius = 'KilojoulePerCubicMeterDegreeCelsius'
         """
             
         """
         
-        MegajoulePerCubicMeterDegreeCelsius = 'megajoule_per_cubic_meter_degree_celsius'
+        MegajoulePerCubicMeterDegreeCelsius = 'MegajoulePerCubicMeterDegreeCelsius'
         """
             
         """
         
-        KilocaloriePerCubicCentimeterDegreeCelsius = 'kilocalorie_per_cubic_centimeter_degree_celsius'
+        KilocaloriePerCubicCentimeterDegreeCelsius = 'KilocaloriePerCubicCentimeterDegreeCelsius'
         """
             
         """
         
+
+class VolumetricHeatCapacityDto:
+    def __init__(self, value: float, unit: VolumetricHeatCapacityUnits):
+        self.value: float = value
+        self.unit: VolumetricHeatCapacityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VolumetricHeatCapacityDto(value=data["value"], unit=VolumetricHeatCapacityUnits(data["unit"]))
+
 
 class VolumetricHeatCapacity(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class VolumetricHeatCapacity(AbstractMeasure):
 
     def convert(self, unit: VolumetricHeatCapacityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> VolumetricHeatCapacityDto:
+        return VolumetricHeatCapacityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(volumetric_heat_capacity_dto: VolumetricHeatCapacityDto):
+        return VolumetricHeatCapacity(volumetric_heat_capacity_dto.value, volumetric_heat_capacity_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:
         value = self._value

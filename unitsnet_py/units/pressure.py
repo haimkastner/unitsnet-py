@@ -10,251 +10,264 @@ class PressureUnits(Enum):
             PressureUnits enumeration
         """
         
-        Pascal = 'pascal'
+        Pascal = 'Pascal'
         """
             
         """
         
-        Atmosphere = 'atmosphere'
+        Atmosphere = 'Atmosphere'
         """
             
         """
         
-        Bar = 'bar'
+        Bar = 'Bar'
         """
             
         """
         
-        KilogramForcePerSquareMeter = 'kilogram_force_per_square_meter'
+        KilogramForcePerSquareMeter = 'KilogramForcePerSquareMeter'
         """
             
         """
         
-        KilogramForcePerSquareCentimeter = 'kilogram_force_per_square_centimeter'
+        KilogramForcePerSquareCentimeter = 'KilogramForcePerSquareCentimeter'
         """
             
         """
         
-        KilogramForcePerSquareMillimeter = 'kilogram_force_per_square_millimeter'
+        KilogramForcePerSquareMillimeter = 'KilogramForcePerSquareMillimeter'
         """
             
         """
         
-        NewtonPerSquareMeter = 'newton_per_square_meter'
+        NewtonPerSquareMeter = 'NewtonPerSquareMeter'
         """
             
         """
         
-        NewtonPerSquareCentimeter = 'newton_per_square_centimeter'
+        NewtonPerSquareCentimeter = 'NewtonPerSquareCentimeter'
         """
             
         """
         
-        NewtonPerSquareMillimeter = 'newton_per_square_millimeter'
+        NewtonPerSquareMillimeter = 'NewtonPerSquareMillimeter'
         """
             
         """
         
-        TechnicalAtmosphere = 'technical_atmosphere'
+        TechnicalAtmosphere = 'TechnicalAtmosphere'
         """
             
         """
         
-        Torr = 'torr'
+        Torr = 'Torr'
         """
             
         """
         
-        PoundForcePerSquareInch = 'pound_force_per_square_inch'
+        PoundForcePerSquareInch = 'PoundForcePerSquareInch'
         """
             
         """
         
-        PoundForcePerSquareMil = 'pound_force_per_square_mil'
+        PoundForcePerSquareMil = 'PoundForcePerSquareMil'
         """
             
         """
         
-        PoundForcePerSquareFoot = 'pound_force_per_square_foot'
+        PoundForcePerSquareFoot = 'PoundForcePerSquareFoot'
         """
             
         """
         
-        TonneForcePerSquareMillimeter = 'tonne_force_per_square_millimeter'
+        TonneForcePerSquareMillimeter = 'TonneForcePerSquareMillimeter'
         """
             
         """
         
-        TonneForcePerSquareMeter = 'tonne_force_per_square_meter'
+        TonneForcePerSquareMeter = 'TonneForcePerSquareMeter'
         """
             
         """
         
-        MeterOfHead = 'meter_of_head'
+        MeterOfHead = 'MeterOfHead'
         """
             
         """
         
-        TonneForcePerSquareCentimeter = 'tonne_force_per_square_centimeter'
+        TonneForcePerSquareCentimeter = 'TonneForcePerSquareCentimeter'
         """
             
         """
         
-        FootOfHead = 'foot_of_head'
+        FootOfHead = 'FootOfHead'
         """
             
         """
         
-        MillimeterOfMercury = 'millimeter_of_mercury'
+        MillimeterOfMercury = 'MillimeterOfMercury'
         """
             
         """
         
-        InchOfMercury = 'inch_of_mercury'
+        InchOfMercury = 'InchOfMercury'
         """
             
         """
         
-        DynePerSquareCentimeter = 'dyne_per_square_centimeter'
+        DynePerSquareCentimeter = 'DynePerSquareCentimeter'
         """
             
         """
         
-        PoundPerInchSecondSquared = 'pound_per_inch_second_squared'
+        PoundPerInchSecondSquared = 'PoundPerInchSecondSquared'
         """
             
         """
         
-        MeterOfWaterColumn = 'meter_of_water_column'
+        MeterOfWaterColumn = 'MeterOfWaterColumn'
         """
             
         """
         
-        InchOfWaterColumn = 'inch_of_water_column'
+        InchOfWaterColumn = 'InchOfWaterColumn'
         """
             
         """
         
-        MeterOfElevation = 'meter_of_elevation'
+        MeterOfElevation = 'MeterOfElevation'
         """
             
         """
         
-        FootOfElevation = 'foot_of_elevation'
+        FootOfElevation = 'FootOfElevation'
         """
             
         """
         
-        Micropascal = 'micropascal'
+        Micropascal = 'Micropascal'
         """
             
         """
         
-        Millipascal = 'millipascal'
+        Millipascal = 'Millipascal'
         """
             
         """
         
-        Decapascal = 'decapascal'
+        Decapascal = 'Decapascal'
         """
             
         """
         
-        Hectopascal = 'hectopascal'
+        Hectopascal = 'Hectopascal'
         """
             
         """
         
-        Kilopascal = 'kilopascal'
+        Kilopascal = 'Kilopascal'
         """
             
         """
         
-        Megapascal = 'megapascal'
+        Megapascal = 'Megapascal'
         """
             
         """
         
-        Gigapascal = 'gigapascal'
+        Gigapascal = 'Gigapascal'
         """
             
         """
         
-        Microbar = 'microbar'
+        Microbar = 'Microbar'
         """
             
         """
         
-        Millibar = 'millibar'
+        Millibar = 'Millibar'
         """
             
         """
         
-        Centibar = 'centibar'
+        Centibar = 'Centibar'
         """
             
         """
         
-        Decibar = 'decibar'
+        Decibar = 'Decibar'
         """
             
         """
         
-        Kilobar = 'kilobar'
+        Kilobar = 'Kilobar'
         """
             
         """
         
-        Megabar = 'megabar'
+        Megabar = 'Megabar'
         """
             
         """
         
-        KilonewtonPerSquareMeter = 'kilonewton_per_square_meter'
+        KilonewtonPerSquareMeter = 'KilonewtonPerSquareMeter'
         """
             
         """
         
-        MeganewtonPerSquareMeter = 'meganewton_per_square_meter'
+        MeganewtonPerSquareMeter = 'MeganewtonPerSquareMeter'
         """
             
         """
         
-        KilonewtonPerSquareCentimeter = 'kilonewton_per_square_centimeter'
+        KilonewtonPerSquareCentimeter = 'KilonewtonPerSquareCentimeter'
         """
             
         """
         
-        KilonewtonPerSquareMillimeter = 'kilonewton_per_square_millimeter'
+        KilonewtonPerSquareMillimeter = 'KilonewtonPerSquareMillimeter'
         """
             
         """
         
-        KilopoundForcePerSquareInch = 'kilopound_force_per_square_inch'
+        KilopoundForcePerSquareInch = 'KilopoundForcePerSquareInch'
         """
             
         """
         
-        KilopoundForcePerSquareMil = 'kilopound_force_per_square_mil'
+        KilopoundForcePerSquareMil = 'KilopoundForcePerSquareMil'
         """
             
         """
         
-        KilopoundForcePerSquareFoot = 'kilopound_force_per_square_foot'
+        KilopoundForcePerSquareFoot = 'KilopoundForcePerSquareFoot'
         """
             
         """
         
-        MillimeterOfWaterColumn = 'millimeter_of_water_column'
+        MillimeterOfWaterColumn = 'MillimeterOfWaterColumn'
         """
             
         """
         
-        CentimeterOfWaterColumn = 'centimeter_of_water_column'
+        CentimeterOfWaterColumn = 'CentimeterOfWaterColumn'
         """
             
         """
         
+
+class PressureDto:
+    def __init__(self, value: float, unit: PressureUnits):
+        self.value: float = value
+        self.unit: PressureUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PressureDto(value=data["value"], unit=PressureUnits(data["unit"]))
+
 
 class Pressure(AbstractMeasure):
     """
@@ -372,6 +385,13 @@ class Pressure(AbstractMeasure):
 
     def convert(self, unit: PressureUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PressureUnits = PressureUnits.Pascal) -> PressureDto:
+        return PressureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(pressure_dto: PressureDto):
+        return Pressure(pressure_dto.value, pressure_dto.unit)
 
     def __convert_from_base(self, from_unit: PressureUnits) -> float:
         value = self._value

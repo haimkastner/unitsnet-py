@@ -10,96 +10,109 @@ class PressureChangeRateUnits(Enum):
             PressureChangeRateUnits enumeration
         """
         
-        PascalPerSecond = 'pascal_per_second'
+        PascalPerSecond = 'PascalPerSecond'
         """
             
         """
         
-        PascalPerMinute = 'pascal_per_minute'
+        PascalPerMinute = 'PascalPerMinute'
         """
             
         """
         
-        MillimeterOfMercuryPerSecond = 'millimeter_of_mercury_per_second'
+        MillimeterOfMercuryPerSecond = 'MillimeterOfMercuryPerSecond'
         """
             
         """
         
-        AtmospherePerSecond = 'atmosphere_per_second'
+        AtmospherePerSecond = 'AtmospherePerSecond'
         """
             
         """
         
-        PoundForcePerSquareInchPerSecond = 'pound_force_per_square_inch_per_second'
+        PoundForcePerSquareInchPerSecond = 'PoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        PoundForcePerSquareInchPerMinute = 'pound_force_per_square_inch_per_minute'
+        PoundForcePerSquareInchPerMinute = 'PoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        BarPerSecond = 'bar_per_second'
+        BarPerSecond = 'BarPerSecond'
         """
             
         """
         
-        BarPerMinute = 'bar_per_minute'
+        BarPerMinute = 'BarPerMinute'
         """
             
         """
         
-        KilopascalPerSecond = 'kilopascal_per_second'
+        KilopascalPerSecond = 'KilopascalPerSecond'
         """
             
         """
         
-        MegapascalPerSecond = 'megapascal_per_second'
+        MegapascalPerSecond = 'MegapascalPerSecond'
         """
             
         """
         
-        KilopascalPerMinute = 'kilopascal_per_minute'
+        KilopascalPerMinute = 'KilopascalPerMinute'
         """
             
         """
         
-        MegapascalPerMinute = 'megapascal_per_minute'
+        MegapascalPerMinute = 'MegapascalPerMinute'
         """
             
         """
         
-        KilopoundForcePerSquareInchPerSecond = 'kilopound_force_per_square_inch_per_second'
+        KilopoundForcePerSquareInchPerSecond = 'KilopoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        MegapoundForcePerSquareInchPerSecond = 'megapound_force_per_square_inch_per_second'
+        MegapoundForcePerSquareInchPerSecond = 'MegapoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        KilopoundForcePerSquareInchPerMinute = 'kilopound_force_per_square_inch_per_minute'
+        KilopoundForcePerSquareInchPerMinute = 'KilopoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        MegapoundForcePerSquareInchPerMinute = 'megapound_force_per_square_inch_per_minute'
+        MegapoundForcePerSquareInchPerMinute = 'MegapoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        MillibarPerSecond = 'millibar_per_second'
+        MillibarPerSecond = 'MillibarPerSecond'
         """
             
         """
         
-        MillibarPerMinute = 'millibar_per_minute'
+        MillibarPerMinute = 'MillibarPerMinute'
         """
             
         """
         
+
+class PressureChangeRateDto:
+    def __init__(self, value: float, unit: PressureChangeRateUnits):
+        self.value: float = value
+        self.unit: PressureChangeRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PressureChangeRateDto(value=data["value"], unit=PressureChangeRateUnits(data["unit"]))
+
 
 class PressureChangeRate(AbstractMeasure):
     """
@@ -155,6 +168,13 @@ class PressureChangeRate(AbstractMeasure):
 
     def convert(self, unit: PressureChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> PressureChangeRateDto:
+        return PressureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(pressure_change_rate_dto: PressureChangeRateDto):
+        return PressureChangeRate(pressure_change_rate_dto.value, pressure_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:
         value = self._value

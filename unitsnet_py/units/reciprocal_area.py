@@ -10,61 +10,74 @@ class ReciprocalAreaUnits(Enum):
             ReciprocalAreaUnits enumeration
         """
         
-        InverseSquareMeter = 'inverse_square_meter'
+        InverseSquareMeter = 'InverseSquareMeter'
         """
             
         """
         
-        InverseSquareKilometer = 'inverse_square_kilometer'
+        InverseSquareKilometer = 'InverseSquareKilometer'
         """
             
         """
         
-        InverseSquareDecimeter = 'inverse_square_decimeter'
+        InverseSquareDecimeter = 'InverseSquareDecimeter'
         """
             
         """
         
-        InverseSquareCentimeter = 'inverse_square_centimeter'
+        InverseSquareCentimeter = 'InverseSquareCentimeter'
         """
             
         """
         
-        InverseSquareMillimeter = 'inverse_square_millimeter'
+        InverseSquareMillimeter = 'InverseSquareMillimeter'
         """
             
         """
         
-        InverseSquareMicrometer = 'inverse_square_micrometer'
+        InverseSquareMicrometer = 'InverseSquareMicrometer'
         """
             
         """
         
-        InverseSquareMile = 'inverse_square_mile'
+        InverseSquareMile = 'InverseSquareMile'
         """
             
         """
         
-        InverseSquareYard = 'inverse_square_yard'
+        InverseSquareYard = 'InverseSquareYard'
         """
             
         """
         
-        InverseSquareFoot = 'inverse_square_foot'
+        InverseSquareFoot = 'InverseSquareFoot'
         """
             
         """
         
-        InverseUsSurveySquareFoot = 'inverse_us_survey_square_foot'
+        InverseUsSurveySquareFoot = 'InverseUsSurveySquareFoot'
         """
             
         """
         
-        InverseSquareInch = 'inverse_square_inch'
+        InverseSquareInch = 'InverseSquareInch'
         """
             
         """
         
+
+class ReciprocalAreaDto:
+    def __init__(self, value: float, unit: ReciprocalAreaUnits):
+        self.value: float = value
+        self.unit: ReciprocalAreaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ReciprocalAreaDto(value=data["value"], unit=ReciprocalAreaUnits(data["unit"]))
+
 
 class ReciprocalArea(AbstractMeasure):
     """
@@ -106,6 +119,13 @@ class ReciprocalArea(AbstractMeasure):
 
     def convert(self, unit: ReciprocalAreaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> ReciprocalAreaDto:
+        return ReciprocalAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(reciprocal_area_dto: ReciprocalAreaDto):
+        return ReciprocalArea(reciprocal_area_dto.value, reciprocal_area_dto.unit)
 
     def __convert_from_base(self, from_unit: ReciprocalAreaUnits) -> float:
         value = self._value

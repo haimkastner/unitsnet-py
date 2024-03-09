@@ -10,106 +10,119 @@ class VolumeConcentrationUnits(Enum):
             VolumeConcentrationUnits enumeration
         """
         
-        DecimalFraction = 'decimal_fraction'
+        DecimalFraction = 'DecimalFraction'
         """
             
         """
         
-        LitersPerLiter = 'liters_per_liter'
+        LitersPerLiter = 'LitersPerLiter'
         """
             
         """
         
-        LitersPerMililiter = 'liters_per_mililiter'
+        LitersPerMililiter = 'LitersPerMililiter'
         """
             
         """
         
-        Percent = 'percent'
+        Percent = 'Percent'
         """
             
         """
         
-        PartPerThousand = 'part_per_thousand'
+        PartPerThousand = 'PartPerThousand'
         """
             
         """
         
-        PartPerMillion = 'part_per_million'
+        PartPerMillion = 'PartPerMillion'
         """
             
         """
         
-        PartPerBillion = 'part_per_billion'
+        PartPerBillion = 'PartPerBillion'
         """
             
         """
         
-        PartPerTrillion = 'part_per_trillion'
+        PartPerTrillion = 'PartPerTrillion'
         """
             
         """
         
-        PicolitersPerLiter = 'picoliters_per_liter'
+        PicolitersPerLiter = 'PicolitersPerLiter'
         """
             
         """
         
-        NanolitersPerLiter = 'nanoliters_per_liter'
+        NanolitersPerLiter = 'NanolitersPerLiter'
         """
             
         """
         
-        MicrolitersPerLiter = 'microliters_per_liter'
+        MicrolitersPerLiter = 'MicrolitersPerLiter'
         """
             
         """
         
-        MillilitersPerLiter = 'milliliters_per_liter'
+        MillilitersPerLiter = 'MillilitersPerLiter'
         """
             
         """
         
-        CentilitersPerLiter = 'centiliters_per_liter'
+        CentilitersPerLiter = 'CentilitersPerLiter'
         """
             
         """
         
-        DecilitersPerLiter = 'deciliters_per_liter'
+        DecilitersPerLiter = 'DecilitersPerLiter'
         """
             
         """
         
-        PicolitersPerMililiter = 'picoliters_per_mililiter'
+        PicolitersPerMililiter = 'PicolitersPerMililiter'
         """
             
         """
         
-        NanolitersPerMililiter = 'nanoliters_per_mililiter'
+        NanolitersPerMililiter = 'NanolitersPerMililiter'
         """
             
         """
         
-        MicrolitersPerMililiter = 'microliters_per_mililiter'
+        MicrolitersPerMililiter = 'MicrolitersPerMililiter'
         """
             
         """
         
-        MillilitersPerMililiter = 'milliliters_per_mililiter'
+        MillilitersPerMililiter = 'MillilitersPerMililiter'
         """
             
         """
         
-        CentilitersPerMililiter = 'centiliters_per_mililiter'
+        CentilitersPerMililiter = 'CentilitersPerMililiter'
         """
             
         """
         
-        DecilitersPerMililiter = 'deciliters_per_mililiter'
+        DecilitersPerMililiter = 'DecilitersPerMililiter'
         """
             
         """
         
+
+class VolumeConcentrationDto:
+    def __init__(self, value: float, unit: VolumeConcentrationUnits):
+        self.value: float = value
+        self.unit: VolumeConcentrationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VolumeConcentrationDto(value=data["value"], unit=VolumeConcentrationUnits(data["unit"]))
+
 
 class VolumeConcentration(AbstractMeasure):
     """
@@ -169,6 +182,13 @@ class VolumeConcentration(AbstractMeasure):
 
     def convert(self, unit: VolumeConcentrationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> VolumeConcentrationDto:
+        return VolumeConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(volume_concentration_dto: VolumeConcentrationDto):
+        return VolumeConcentration(volume_concentration_dto.value, volume_concentration_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeConcentrationUnits) -> float:
         value = self._value

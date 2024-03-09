@@ -10,171 +10,184 @@ class SpeedUnits(Enum):
             SpeedUnits enumeration
         """
         
-        MeterPerSecond = 'meter_per_second'
+        MeterPerSecond = 'MeterPerSecond'
         """
             
         """
         
-        MeterPerMinute = 'meter_per_minute'
+        MeterPerMinute = 'MeterPerMinute'
         """
             
         """
         
-        MeterPerHour = 'meter_per_hour'
+        MeterPerHour = 'MeterPerHour'
         """
             
         """
         
-        FootPerSecond = 'foot_per_second'
+        FootPerSecond = 'FootPerSecond'
         """
             
         """
         
-        FootPerMinute = 'foot_per_minute'
+        FootPerMinute = 'FootPerMinute'
         """
             
         """
         
-        FootPerHour = 'foot_per_hour'
+        FootPerHour = 'FootPerHour'
         """
             
         """
         
-        UsSurveyFootPerSecond = 'us_survey_foot_per_second'
+        UsSurveyFootPerSecond = 'UsSurveyFootPerSecond'
         """
             
         """
         
-        UsSurveyFootPerMinute = 'us_survey_foot_per_minute'
+        UsSurveyFootPerMinute = 'UsSurveyFootPerMinute'
         """
             
         """
         
-        UsSurveyFootPerHour = 'us_survey_foot_per_hour'
+        UsSurveyFootPerHour = 'UsSurveyFootPerHour'
         """
             
         """
         
-        InchPerSecond = 'inch_per_second'
+        InchPerSecond = 'InchPerSecond'
         """
             
         """
         
-        InchPerMinute = 'inch_per_minute'
+        InchPerMinute = 'InchPerMinute'
         """
             
         """
         
-        InchPerHour = 'inch_per_hour'
+        InchPerHour = 'InchPerHour'
         """
             
         """
         
-        YardPerSecond = 'yard_per_second'
+        YardPerSecond = 'YardPerSecond'
         """
             
         """
         
-        YardPerMinute = 'yard_per_minute'
+        YardPerMinute = 'YardPerMinute'
         """
             
         """
         
-        YardPerHour = 'yard_per_hour'
+        YardPerHour = 'YardPerHour'
         """
             
         """
         
-        Knot = 'knot'
+        Knot = 'Knot'
         """
             The knot, by definition, is a unit of speed equals to 1 nautical mile per hour, which is exactly 1852.000 metres per hour. The length of the internationally agreed nautical mile is 1852 m. The US adopted the international definition in 1954, the UK adopted the international nautical mile definition in 1970.
         """
         
-        MilePerHour = 'mile_per_hour'
+        MilePerHour = 'MilePerHour'
         """
             
         """
         
-        Mach = 'mach'
+        Mach = 'Mach'
         """
             
         """
         
-        NanometerPerSecond = 'nanometer_per_second'
+        NanometerPerSecond = 'NanometerPerSecond'
         """
             
         """
         
-        MicrometerPerSecond = 'micrometer_per_second'
+        MicrometerPerSecond = 'MicrometerPerSecond'
         """
             
         """
         
-        MillimeterPerSecond = 'millimeter_per_second'
+        MillimeterPerSecond = 'MillimeterPerSecond'
         """
             
         """
         
-        CentimeterPerSecond = 'centimeter_per_second'
+        CentimeterPerSecond = 'CentimeterPerSecond'
         """
             
         """
         
-        DecimeterPerSecond = 'decimeter_per_second'
+        DecimeterPerSecond = 'DecimeterPerSecond'
         """
             
         """
         
-        KilometerPerSecond = 'kilometer_per_second'
+        KilometerPerSecond = 'KilometerPerSecond'
         """
             
         """
         
-        NanometerPerMinute = 'nanometer_per_minute'
+        NanometerPerMinute = 'NanometerPerMinute'
         """
             
         """
         
-        MicrometerPerMinute = 'micrometer_per_minute'
+        MicrometerPerMinute = 'MicrometerPerMinute'
         """
             
         """
         
-        MillimeterPerMinute = 'millimeter_per_minute'
+        MillimeterPerMinute = 'MillimeterPerMinute'
         """
             
         """
         
-        CentimeterPerMinute = 'centimeter_per_minute'
+        CentimeterPerMinute = 'CentimeterPerMinute'
         """
             
         """
         
-        DecimeterPerMinute = 'decimeter_per_minute'
+        DecimeterPerMinute = 'DecimeterPerMinute'
         """
             
         """
         
-        KilometerPerMinute = 'kilometer_per_minute'
+        KilometerPerMinute = 'KilometerPerMinute'
         """
             
         """
         
-        MillimeterPerHour = 'millimeter_per_hour'
+        MillimeterPerHour = 'MillimeterPerHour'
         """
             
         """
         
-        CentimeterPerHour = 'centimeter_per_hour'
+        CentimeterPerHour = 'CentimeterPerHour'
         """
             
         """
         
-        KilometerPerHour = 'kilometer_per_hour'
+        KilometerPerHour = 'KilometerPerHour'
         """
             
         """
         
+
+class SpeedDto:
+    def __init__(self, value: float, unit: SpeedUnits):
+        self.value: float = value
+        self.unit: SpeedUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SpeedDto(value=data["value"], unit=SpeedUnits(data["unit"]))
+
 
 class Speed(AbstractMeasure):
     """
@@ -260,6 +273,13 @@ class Speed(AbstractMeasure):
 
     def convert(self, unit: SpeedUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> SpeedDto:
+        return SpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(speed_dto: SpeedDto):
+        return Speed(speed_dto.value, speed_dto.unit)
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
         value = self._value

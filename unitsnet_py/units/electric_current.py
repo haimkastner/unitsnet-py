@@ -10,51 +10,64 @@ class ElectricCurrentUnits(Enum):
             ElectricCurrentUnits enumeration
         """
         
-        Ampere = 'ampere'
+        Ampere = 'Ampere'
         """
             
         """
         
-        Femtoampere = 'femtoampere'
+        Femtoampere = 'Femtoampere'
         """
             
         """
         
-        Picoampere = 'picoampere'
+        Picoampere = 'Picoampere'
         """
             
         """
         
-        Nanoampere = 'nanoampere'
+        Nanoampere = 'Nanoampere'
         """
             
         """
         
-        Microampere = 'microampere'
+        Microampere = 'Microampere'
         """
             
         """
         
-        Milliampere = 'milliampere'
+        Milliampere = 'Milliampere'
         """
             
         """
         
-        Centiampere = 'centiampere'
+        Centiampere = 'Centiampere'
         """
             
         """
         
-        Kiloampere = 'kiloampere'
+        Kiloampere = 'Kiloampere'
         """
             
         """
         
-        Megaampere = 'megaampere'
+        Megaampere = 'Megaampere'
         """
             
         """
         
+
+class ElectricCurrentDto:
+    def __init__(self, value: float, unit: ElectricCurrentUnits):
+        self.value: float = value
+        self.unit: ElectricCurrentUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricCurrentDto(value=data["value"], unit=ElectricCurrentUnits(data["unit"]))
+
 
 class ElectricCurrent(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class ElectricCurrent(AbstractMeasure):
 
     def convert(self, unit: ElectricCurrentUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> ElectricCurrentDto:
+        return ElectricCurrentDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_current_dto: ElectricCurrentDto):
+        return ElectricCurrent(electric_current_dto.value, electric_current_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentUnits) -> float:
         value = self._value

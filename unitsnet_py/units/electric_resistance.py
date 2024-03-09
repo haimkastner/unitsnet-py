@@ -10,41 +10,54 @@ class ElectricResistanceUnits(Enum):
             ElectricResistanceUnits enumeration
         """
         
-        Ohm = 'ohm'
+        Ohm = 'Ohm'
         """
             
         """
         
-        Microohm = 'microohm'
+        Microohm = 'Microohm'
         """
             
         """
         
-        Milliohm = 'milliohm'
+        Milliohm = 'Milliohm'
         """
             
         """
         
-        Kiloohm = 'kiloohm'
+        Kiloohm = 'Kiloohm'
         """
             
         """
         
-        Megaohm = 'megaohm'
+        Megaohm = 'Megaohm'
         """
             
         """
         
-        Gigaohm = 'gigaohm'
+        Gigaohm = 'Gigaohm'
         """
             
         """
         
-        Teraohm = 'teraohm'
+        Teraohm = 'Teraohm'
         """
             
         """
         
+
+class ElectricResistanceDto:
+    def __init__(self, value: float, unit: ElectricResistanceUnits):
+        self.value: float = value
+        self.unit: ElectricResistanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricResistanceDto(value=data["value"], unit=ElectricResistanceUnits(data["unit"]))
+
 
 class ElectricResistance(AbstractMeasure):
     """
@@ -78,6 +91,13 @@ class ElectricResistance(AbstractMeasure):
 
     def convert(self, unit: ElectricResistanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricResistanceUnits = ElectricResistanceUnits.Ohm) -> ElectricResistanceDto:
+        return ElectricResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_resistance_dto: ElectricResistanceDto):
+        return ElectricResistance(electric_resistance_dto.value, electric_resistance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricResistanceUnits) -> float:
         value = self._value

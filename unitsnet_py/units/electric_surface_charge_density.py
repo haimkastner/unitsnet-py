@@ -10,21 +10,34 @@ class ElectricSurfaceChargeDensityUnits(Enum):
             ElectricSurfaceChargeDensityUnits enumeration
         """
         
-        CoulombPerSquareMeter = 'coulomb_per_square_meter'
+        CoulombPerSquareMeter = 'CoulombPerSquareMeter'
         """
             
         """
         
-        CoulombPerSquareCentimeter = 'coulomb_per_square_centimeter'
+        CoulombPerSquareCentimeter = 'CoulombPerSquareCentimeter'
         """
             
         """
         
-        CoulombPerSquareInch = 'coulomb_per_square_inch'
+        CoulombPerSquareInch = 'CoulombPerSquareInch'
         """
             
         """
         
+
+class ElectricSurfaceChargeDensityDto:
+    def __init__(self, value: float, unit: ElectricSurfaceChargeDensityUnits):
+        self.value: float = value
+        self.unit: ElectricSurfaceChargeDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricSurfaceChargeDensityDto(value=data["value"], unit=ElectricSurfaceChargeDensityUnits(data["unit"]))
+
 
 class ElectricSurfaceChargeDensity(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class ElectricSurfaceChargeDensity(AbstractMeasure):
 
     def convert(self, unit: ElectricSurfaceChargeDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter) -> ElectricSurfaceChargeDensityDto:
+        return ElectricSurfaceChargeDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_surface_charge_density_dto: ElectricSurfaceChargeDensityDto):
+        return ElectricSurfaceChargeDensity(electric_surface_charge_density_dto.value, electric_surface_charge_density_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricSurfaceChargeDensityUnits) -> float:
         value = self._value

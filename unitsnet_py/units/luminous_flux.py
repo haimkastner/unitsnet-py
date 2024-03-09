@@ -10,11 +10,24 @@ class LuminousFluxUnits(Enum):
             LuminousFluxUnits enumeration
         """
         
-        Lumen = 'lumen'
+        Lumen = 'Lumen'
         """
             
         """
         
+
+class LuminousFluxDto:
+    def __init__(self, value: float, unit: LuminousFluxUnits):
+        self.value: float = value
+        self.unit: LuminousFluxUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LuminousFluxDto(value=data["value"], unit=LuminousFluxUnits(data["unit"]))
+
 
 class LuminousFlux(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class LuminousFlux(AbstractMeasure):
 
     def convert(self, unit: LuminousFluxUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> LuminousFluxDto:
+        return LuminousFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(luminous_flux_dto: LuminousFluxDto):
+        return LuminousFlux(luminous_flux_dto.value, luminous_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminousFluxUnits) -> float:
         value = self._value

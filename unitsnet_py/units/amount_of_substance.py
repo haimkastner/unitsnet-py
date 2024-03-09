@@ -10,91 +10,104 @@ class AmountOfSubstanceUnits(Enum):
             AmountOfSubstanceUnits enumeration
         """
         
-        Mole = 'mole'
+        Mole = 'Mole'
         """
             
         """
         
-        PoundMole = 'pound_mole'
+        PoundMole = 'PoundMole'
         """
             
         """
         
-        Femtomole = 'femtomole'
+        Femtomole = 'Femtomole'
         """
             
         """
         
-        Picomole = 'picomole'
+        Picomole = 'Picomole'
         """
             
         """
         
-        Nanomole = 'nanomole'
+        Nanomole = 'Nanomole'
         """
             
         """
         
-        Micromole = 'micromole'
+        Micromole = 'Micromole'
         """
             
         """
         
-        Millimole = 'millimole'
+        Millimole = 'Millimole'
         """
             
         """
         
-        Centimole = 'centimole'
+        Centimole = 'Centimole'
         """
             
         """
         
-        Decimole = 'decimole'
+        Decimole = 'Decimole'
         """
             
         """
         
-        Kilomole = 'kilomole'
+        Kilomole = 'Kilomole'
         """
             
         """
         
-        Megamole = 'megamole'
+        Megamole = 'Megamole'
         """
             
         """
         
-        NanopoundMole = 'nanopound_mole'
+        NanopoundMole = 'NanopoundMole'
         """
             
         """
         
-        MicropoundMole = 'micropound_mole'
+        MicropoundMole = 'MicropoundMole'
         """
             
         """
         
-        MillipoundMole = 'millipound_mole'
+        MillipoundMole = 'MillipoundMole'
         """
             
         """
         
-        CentipoundMole = 'centipound_mole'
+        CentipoundMole = 'CentipoundMole'
         """
             
         """
         
-        DecipoundMole = 'decipound_mole'
+        DecipoundMole = 'DecipoundMole'
         """
             
         """
         
-        KilopoundMole = 'kilopound_mole'
+        KilopoundMole = 'KilopoundMole'
         """
             
         """
         
+
+class AmountOfSubstanceDto:
+    def __init__(self, value: float, unit: AmountOfSubstanceUnits):
+        self.value: float = value
+        self.unit: AmountOfSubstanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AmountOfSubstanceDto(value=data["value"], unit=AmountOfSubstanceUnits(data["unit"]))
+
 
 class AmountOfSubstance(AbstractMeasure):
     """
@@ -148,6 +161,13 @@ class AmountOfSubstance(AbstractMeasure):
 
     def convert(self, unit: AmountOfSubstanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> AmountOfSubstanceDto:
+        return AmountOfSubstanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(amount_of_substance_dto: AmountOfSubstanceDto):
+        return AmountOfSubstance(amount_of_substance_dto.value, amount_of_substance_dto.unit)
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
         value = self._value

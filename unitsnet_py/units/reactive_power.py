@@ -10,26 +10,39 @@ class ReactivePowerUnits(Enum):
             ReactivePowerUnits enumeration
         """
         
-        VoltampereReactive = 'voltampere_reactive'
+        VoltampereReactive = 'VoltampereReactive'
         """
             
         """
         
-        KilovoltampereReactive = 'kilovoltampere_reactive'
+        KilovoltampereReactive = 'KilovoltampereReactive'
         """
             
         """
         
-        MegavoltampereReactive = 'megavoltampere_reactive'
+        MegavoltampereReactive = 'MegavoltampereReactive'
         """
             
         """
         
-        GigavoltampereReactive = 'gigavoltampere_reactive'
+        GigavoltampereReactive = 'GigavoltampereReactive'
         """
             
         """
         
+
+class ReactivePowerDto:
+    def __init__(self, value: float, unit: ReactivePowerUnits):
+        self.value: float = value
+        self.unit: ReactivePowerUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ReactivePowerDto(value=data["value"], unit=ReactivePowerUnits(data["unit"]))
+
 
 class ReactivePower(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class ReactivePower(AbstractMeasure):
 
     def convert(self, unit: ReactivePowerUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive) -> ReactivePowerDto:
+        return ReactivePowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(reactive_power_dto: ReactivePowerDto):
+        return ReactivePower(reactive_power_dto.value, reactive_power_dto.unit)
 
     def __convert_from_base(self, from_unit: ReactivePowerUnits) -> float:
         value = self._value

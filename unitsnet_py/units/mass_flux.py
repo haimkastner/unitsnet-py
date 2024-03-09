@@ -10,66 +10,79 @@ class MassFluxUnits(Enum):
             MassFluxUnits enumeration
         """
         
-        GramPerSecondPerSquareMeter = 'gram_per_second_per_square_meter'
+        GramPerSecondPerSquareMeter = 'GramPerSecondPerSquareMeter'
         """
             
         """
         
-        GramPerSecondPerSquareCentimeter = 'gram_per_second_per_square_centimeter'
+        GramPerSecondPerSquareCentimeter = 'GramPerSecondPerSquareCentimeter'
         """
             
         """
         
-        GramPerSecondPerSquareMillimeter = 'gram_per_second_per_square_millimeter'
+        GramPerSecondPerSquareMillimeter = 'GramPerSecondPerSquareMillimeter'
         """
             
         """
         
-        GramPerHourPerSquareMeter = 'gram_per_hour_per_square_meter'
+        GramPerHourPerSquareMeter = 'GramPerHourPerSquareMeter'
         """
             
         """
         
-        GramPerHourPerSquareCentimeter = 'gram_per_hour_per_square_centimeter'
+        GramPerHourPerSquareCentimeter = 'GramPerHourPerSquareCentimeter'
         """
             
         """
         
-        GramPerHourPerSquareMillimeter = 'gram_per_hour_per_square_millimeter'
+        GramPerHourPerSquareMillimeter = 'GramPerHourPerSquareMillimeter'
         """
             
         """
         
-        KilogramPerSecondPerSquareMeter = 'kilogram_per_second_per_square_meter'
+        KilogramPerSecondPerSquareMeter = 'KilogramPerSecondPerSquareMeter'
         """
             
         """
         
-        KilogramPerSecondPerSquareCentimeter = 'kilogram_per_second_per_square_centimeter'
+        KilogramPerSecondPerSquareCentimeter = 'KilogramPerSecondPerSquareCentimeter'
         """
             
         """
         
-        KilogramPerSecondPerSquareMillimeter = 'kilogram_per_second_per_square_millimeter'
+        KilogramPerSecondPerSquareMillimeter = 'KilogramPerSecondPerSquareMillimeter'
         """
             
         """
         
-        KilogramPerHourPerSquareMeter = 'kilogram_per_hour_per_square_meter'
+        KilogramPerHourPerSquareMeter = 'KilogramPerHourPerSquareMeter'
         """
             
         """
         
-        KilogramPerHourPerSquareCentimeter = 'kilogram_per_hour_per_square_centimeter'
+        KilogramPerHourPerSquareCentimeter = 'KilogramPerHourPerSquareCentimeter'
         """
             
         """
         
-        KilogramPerHourPerSquareMillimeter = 'kilogram_per_hour_per_square_millimeter'
+        KilogramPerHourPerSquareMillimeter = 'KilogramPerHourPerSquareMillimeter'
         """
             
         """
         
+
+class MassFluxDto:
+    def __init__(self, value: float, unit: MassFluxUnits):
+        self.value: float = value
+        self.unit: MassFluxUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MassFluxDto(value=data["value"], unit=MassFluxUnits(data["unit"]))
+
 
 class MassFlux(AbstractMeasure):
     """
@@ -113,6 +126,13 @@ class MassFlux(AbstractMeasure):
 
     def convert(self, unit: MassFluxUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> MassFluxDto:
+        return MassFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(mass_flux_dto: MassFluxDto):
+        return MassFlux(mass_flux_dto.value, mass_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFluxUnits) -> float:
         value = self._value

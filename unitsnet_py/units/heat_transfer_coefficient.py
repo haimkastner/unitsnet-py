@@ -10,31 +10,44 @@ class HeatTransferCoefficientUnits(Enum):
             HeatTransferCoefficientUnits enumeration
         """
         
-        WattPerSquareMeterKelvin = 'watt_per_square_meter_kelvin'
+        WattPerSquareMeterKelvin = 'WattPerSquareMeterKelvin'
         """
             
         """
         
-        WattPerSquareMeterCelsius = 'watt_per_square_meter_celsius'
+        WattPerSquareMeterCelsius = 'WattPerSquareMeterCelsius'
         """
             
         """
         
-        BtuPerHourSquareFootDegreeFahrenheit = 'btu_per_hour_square_foot_degree_fahrenheit'
+        BtuPerHourSquareFootDegreeFahrenheit = 'BtuPerHourSquareFootDegreeFahrenheit'
         """
             
         """
         
-        CaloriePerHourSquareMeterDegreeCelsius = 'calorie_per_hour_square_meter_degree_celsius'
+        CaloriePerHourSquareMeterDegreeCelsius = 'CaloriePerHourSquareMeterDegreeCelsius'
         """
             
         """
         
-        KilocaloriePerHourSquareMeterDegreeCelsius = 'kilocalorie_per_hour_square_meter_degree_celsius'
+        KilocaloriePerHourSquareMeterDegreeCelsius = 'KilocaloriePerHourSquareMeterDegreeCelsius'
         """
             
         """
         
+
+class HeatTransferCoefficientDto:
+    def __init__(self, value: float, unit: HeatTransferCoefficientUnits):
+        self.value: float = value
+        self.unit: HeatTransferCoefficientUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return HeatTransferCoefficientDto(value=data["value"], unit=HeatTransferCoefficientUnits(data["unit"]))
+
 
 class HeatTransferCoefficient(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class HeatTransferCoefficient(AbstractMeasure):
 
     def convert(self, unit: HeatTransferCoefficientUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> HeatTransferCoefficientDto:
+        return HeatTransferCoefficientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(heat_transfer_coefficient_dto: HeatTransferCoefficientDto):
+        return HeatTransferCoefficient(heat_transfer_coefficient_dto.value, heat_transfer_coefficient_dto.unit)
 
     def __convert_from_base(self, from_unit: HeatTransferCoefficientUnits) -> float:
         value = self._value

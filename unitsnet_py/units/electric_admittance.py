@@ -10,26 +10,39 @@ class ElectricAdmittanceUnits(Enum):
             ElectricAdmittanceUnits enumeration
         """
         
-        Siemens = 'siemens'
+        Siemens = 'Siemens'
         """
             
         """
         
-        Nanosiemens = 'nanosiemens'
+        Nanosiemens = 'Nanosiemens'
         """
             
         """
         
-        Microsiemens = 'microsiemens'
+        Microsiemens = 'Microsiemens'
         """
             
         """
         
-        Millisiemens = 'millisiemens'
+        Millisiemens = 'Millisiemens'
         """
             
         """
         
+
+class ElectricAdmittanceDto:
+    def __init__(self, value: float, unit: ElectricAdmittanceUnits):
+        self.value: float = value
+        self.unit: ElectricAdmittanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricAdmittanceDto(value=data["value"], unit=ElectricAdmittanceUnits(data["unit"]))
+
 
 class ElectricAdmittance(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class ElectricAdmittance(AbstractMeasure):
 
     def convert(self, unit: ElectricAdmittanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> ElectricAdmittanceDto:
+        return ElectricAdmittanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_admittance_dto: ElectricAdmittanceDto):
+        return ElectricAdmittance(electric_admittance_dto.value, electric_admittance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricAdmittanceUnits) -> float:
         value = self._value

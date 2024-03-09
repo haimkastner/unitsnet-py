@@ -10,11 +10,24 @@ class MagnetizationUnits(Enum):
             MagnetizationUnits enumeration
         """
         
-        AmperePerMeter = 'ampere_per_meter'
+        AmperePerMeter = 'AmperePerMeter'
         """
             
         """
         
+
+class MagnetizationDto:
+    def __init__(self, value: float, unit: MagnetizationUnits):
+        self.value: float = value
+        self.unit: MagnetizationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MagnetizationDto(value=data["value"], unit=MagnetizationUnits(data["unit"]))
+
 
 class Magnetization(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class Magnetization(AbstractMeasure):
 
     def convert(self, unit: MagnetizationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> MagnetizationDto:
+        return MagnetizationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(magnetization_dto: MagnetizationDto):
+        return Magnetization(magnetization_dto.value, magnetization_dto.unit)
 
     def __convert_from_base(self, from_unit: MagnetizationUnits) -> float:
         value = self._value

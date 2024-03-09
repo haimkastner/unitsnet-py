@@ -10,21 +10,34 @@ class AreaDensityUnits(Enum):
             AreaDensityUnits enumeration
         """
         
-        KilogramPerSquareMeter = 'kilogram_per_square_meter'
+        KilogramPerSquareMeter = 'KilogramPerSquareMeter'
         """
             
         """
         
-        GramPerSquareMeter = 'gram_per_square_meter'
+        GramPerSquareMeter = 'GramPerSquareMeter'
         """
             Also known as grammage for paper industry. In fiber industry used with abbreviation 'gsm'.
         """
         
-        MilligramPerSquareMeter = 'milligram_per_square_meter'
+        MilligramPerSquareMeter = 'MilligramPerSquareMeter'
         """
             
         """
         
+
+class AreaDensityDto:
+    def __init__(self, value: float, unit: AreaDensityUnits):
+        self.value: float = value
+        self.unit: AreaDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AreaDensityDto(value=data["value"], unit=AreaDensityUnits(data["unit"]))
+
 
 class AreaDensity(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class AreaDensity(AbstractMeasure):
 
     def convert(self, unit: AreaDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> AreaDensityDto:
+        return AreaDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(area_density_dto: AreaDensityDto):
+        return AreaDensity(area_density_dto.value, area_density_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaDensityUnits) -> float:
         value = self._value

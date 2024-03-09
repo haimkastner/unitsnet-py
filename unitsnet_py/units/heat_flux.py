@@ -10,96 +10,109 @@ class HeatFluxUnits(Enum):
             HeatFluxUnits enumeration
         """
         
-        WattPerSquareMeter = 'watt_per_square_meter'
+        WattPerSquareMeter = 'WattPerSquareMeter'
         """
             
         """
         
-        WattPerSquareInch = 'watt_per_square_inch'
+        WattPerSquareInch = 'WattPerSquareInch'
         """
             
         """
         
-        WattPerSquareFoot = 'watt_per_square_foot'
+        WattPerSquareFoot = 'WattPerSquareFoot'
         """
             
         """
         
-        BtuPerSecondSquareInch = 'btu_per_second_square_inch'
+        BtuPerSecondSquareInch = 'BtuPerSecondSquareInch'
         """
             
         """
         
-        BtuPerSecondSquareFoot = 'btu_per_second_square_foot'
+        BtuPerSecondSquareFoot = 'BtuPerSecondSquareFoot'
         """
             
         """
         
-        BtuPerMinuteSquareFoot = 'btu_per_minute_square_foot'
+        BtuPerMinuteSquareFoot = 'BtuPerMinuteSquareFoot'
         """
             
         """
         
-        BtuPerHourSquareFoot = 'btu_per_hour_square_foot'
+        BtuPerHourSquareFoot = 'BtuPerHourSquareFoot'
         """
             
         """
         
-        CaloriePerSecondSquareCentimeter = 'calorie_per_second_square_centimeter'
+        CaloriePerSecondSquareCentimeter = 'CaloriePerSecondSquareCentimeter'
         """
             
         """
         
-        KilocaloriePerHourSquareMeter = 'kilocalorie_per_hour_square_meter'
+        KilocaloriePerHourSquareMeter = 'KilocaloriePerHourSquareMeter'
         """
             
         """
         
-        PoundForcePerFootSecond = 'pound_force_per_foot_second'
+        PoundForcePerFootSecond = 'PoundForcePerFootSecond'
         """
             
         """
         
-        PoundPerSecondCubed = 'pound_per_second_cubed'
+        PoundPerSecondCubed = 'PoundPerSecondCubed'
         """
             
         """
         
-        NanowattPerSquareMeter = 'nanowatt_per_square_meter'
+        NanowattPerSquareMeter = 'NanowattPerSquareMeter'
         """
             
         """
         
-        MicrowattPerSquareMeter = 'microwatt_per_square_meter'
+        MicrowattPerSquareMeter = 'MicrowattPerSquareMeter'
         """
             
         """
         
-        MilliwattPerSquareMeter = 'milliwatt_per_square_meter'
+        MilliwattPerSquareMeter = 'MilliwattPerSquareMeter'
         """
             
         """
         
-        CentiwattPerSquareMeter = 'centiwatt_per_square_meter'
+        CentiwattPerSquareMeter = 'CentiwattPerSquareMeter'
         """
             
         """
         
-        DeciwattPerSquareMeter = 'deciwatt_per_square_meter'
+        DeciwattPerSquareMeter = 'DeciwattPerSquareMeter'
         """
             
         """
         
-        KilowattPerSquareMeter = 'kilowatt_per_square_meter'
+        KilowattPerSquareMeter = 'KilowattPerSquareMeter'
         """
             
         """
         
-        KilocaloriePerSecondSquareCentimeter = 'kilocalorie_per_second_square_centimeter'
+        KilocaloriePerSecondSquareCentimeter = 'KilocaloriePerSecondSquareCentimeter'
         """
             
         """
         
+
+class HeatFluxDto:
+    def __init__(self, value: float, unit: HeatFluxUnits):
+        self.value: float = value
+        self.unit: HeatFluxUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return HeatFluxDto(value=data["value"], unit=HeatFluxUnits(data["unit"]))
+
 
 class HeatFlux(AbstractMeasure):
     """
@@ -155,6 +168,13 @@ class HeatFlux(AbstractMeasure):
 
     def convert(self, unit: HeatFluxUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> HeatFluxDto:
+        return HeatFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(heat_flux_dto: HeatFluxDto):
+        return HeatFlux(heat_flux_dto.value, heat_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: HeatFluxUnits) -> float:
         value = self._value

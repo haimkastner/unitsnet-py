@@ -10,11 +10,24 @@ class ElectricChargeDensityUnits(Enum):
             ElectricChargeDensityUnits enumeration
         """
         
-        CoulombPerCubicMeter = 'coulomb_per_cubic_meter'
+        CoulombPerCubicMeter = 'CoulombPerCubicMeter'
         """
             
         """
         
+
+class ElectricChargeDensityDto:
+    def __init__(self, value: float, unit: ElectricChargeDensityUnits):
+        self.value: float = value
+        self.unit: ElectricChargeDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricChargeDensityDto(value=data["value"], unit=ElectricChargeDensityUnits(data["unit"]))
+
 
 class ElectricChargeDensity(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class ElectricChargeDensity(AbstractMeasure):
 
     def convert(self, unit: ElectricChargeDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> ElectricChargeDensityDto:
+        return ElectricChargeDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_charge_density_dto: ElectricChargeDensityDto):
+        return ElectricChargeDensity(electric_charge_density_dto.value, electric_charge_density_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricChargeDensityUnits) -> float:
         value = self._value

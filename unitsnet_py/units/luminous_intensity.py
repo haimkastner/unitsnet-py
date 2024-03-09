@@ -10,11 +10,24 @@ class LuminousIntensityUnits(Enum):
             LuminousIntensityUnits enumeration
         """
         
-        Candela = 'candela'
+        Candela = 'Candela'
         """
             
         """
         
+
+class LuminousIntensityDto:
+    def __init__(self, value: float, unit: LuminousIntensityUnits):
+        self.value: float = value
+        self.unit: LuminousIntensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LuminousIntensityDto(value=data["value"], unit=LuminousIntensityUnits(data["unit"]))
+
 
 class LuminousIntensity(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class LuminousIntensity(AbstractMeasure):
 
     def convert(self, unit: LuminousIntensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela) -> LuminousIntensityDto:
+        return LuminousIntensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(luminous_intensity_dto: LuminousIntensityDto):
+        return LuminousIntensity(luminous_intensity_dto.value, luminous_intensity_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminousIntensityUnits) -> float:
         value = self._value

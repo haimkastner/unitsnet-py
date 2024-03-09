@@ -10,36 +10,49 @@ class AreaMomentOfInertiaUnits(Enum):
             AreaMomentOfInertiaUnits enumeration
         """
         
-        MeterToTheFourth = 'meter_to_the_fourth'
+        MeterToTheFourth = 'MeterToTheFourth'
         """
             
         """
         
-        DecimeterToTheFourth = 'decimeter_to_the_fourth'
+        DecimeterToTheFourth = 'DecimeterToTheFourth'
         """
             
         """
         
-        CentimeterToTheFourth = 'centimeter_to_the_fourth'
+        CentimeterToTheFourth = 'CentimeterToTheFourth'
         """
             
         """
         
-        MillimeterToTheFourth = 'millimeter_to_the_fourth'
+        MillimeterToTheFourth = 'MillimeterToTheFourth'
         """
             
         """
         
-        FootToTheFourth = 'foot_to_the_fourth'
+        FootToTheFourth = 'FootToTheFourth'
         """
             
         """
         
-        InchToTheFourth = 'inch_to_the_fourth'
+        InchToTheFourth = 'InchToTheFourth'
         """
             
         """
         
+
+class AreaMomentOfInertiaDto:
+    def __init__(self, value: float, unit: AreaMomentOfInertiaUnits):
+        self.value: float = value
+        self.unit: AreaMomentOfInertiaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AreaMomentOfInertiaDto(value=data["value"], unit=AreaMomentOfInertiaUnits(data["unit"]))
+
 
 class AreaMomentOfInertia(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class AreaMomentOfInertia(AbstractMeasure):
 
     def convert(self, unit: AreaMomentOfInertiaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> AreaMomentOfInertiaDto:
+        return AreaMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(area_moment_of_inertia_dto: AreaMomentOfInertiaDto):
+        return AreaMomentOfInertia(area_moment_of_inertia_dto.value, area_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaMomentOfInertiaUnits) -> float:
         value = self._value

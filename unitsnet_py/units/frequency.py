@@ -10,71 +10,84 @@ class FrequencyUnits(Enum):
             FrequencyUnits enumeration
         """
         
-        Hertz = 'hertz'
+        Hertz = 'Hertz'
         """
             
         """
         
-        RadianPerSecond = 'radian_per_second'
+        RadianPerSecond = 'RadianPerSecond'
         """
             
         """
         
-        CyclePerMinute = 'cycle_per_minute'
+        CyclePerMinute = 'CyclePerMinute'
         """
             
         """
         
-        CyclePerHour = 'cycle_per_hour'
+        CyclePerHour = 'CyclePerHour'
         """
             
         """
         
-        BeatPerMinute = 'beat_per_minute'
+        BeatPerMinute = 'BeatPerMinute'
         """
             
         """
         
-        PerSecond = 'per_second'
+        PerSecond = 'PerSecond'
         """
             
         """
         
-        BUnit = 'b_unit'
+        BUnit = 'BUnit'
         """
             
         """
         
-        Microhertz = 'microhertz'
+        Microhertz = 'Microhertz'
         """
             
         """
         
-        Millihertz = 'millihertz'
+        Millihertz = 'Millihertz'
         """
             
         """
         
-        Kilohertz = 'kilohertz'
+        Kilohertz = 'Kilohertz'
         """
             
         """
         
-        Megahertz = 'megahertz'
+        Megahertz = 'Megahertz'
         """
             
         """
         
-        Gigahertz = 'gigahertz'
+        Gigahertz = 'Gigahertz'
         """
             
         """
         
-        Terahertz = 'terahertz'
+        Terahertz = 'Terahertz'
         """
             
         """
         
+
+class FrequencyDto:
+    def __init__(self, value: float, unit: FrequencyUnits):
+        self.value: float = value
+        self.unit: FrequencyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return FrequencyDto(value=data["value"], unit=FrequencyUnits(data["unit"]))
+
 
 class Frequency(AbstractMeasure):
     """
@@ -120,6 +133,13 @@ class Frequency(AbstractMeasure):
 
     def convert(self, unit: FrequencyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: FrequencyUnits = FrequencyUnits.Hertz) -> FrequencyDto:
+        return FrequencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(frequency_dto: FrequencyDto):
+        return Frequency(frequency_dto.value, frequency_dto.unit)
 
     def __convert_from_base(self, from_unit: FrequencyUnits) -> float:
         value = self._value

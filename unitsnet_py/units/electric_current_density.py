@@ -10,21 +10,34 @@ class ElectricCurrentDensityUnits(Enum):
             ElectricCurrentDensityUnits enumeration
         """
         
-        AmperePerSquareMeter = 'ampere_per_square_meter'
+        AmperePerSquareMeter = 'AmperePerSquareMeter'
         """
             
         """
         
-        AmperePerSquareInch = 'ampere_per_square_inch'
+        AmperePerSquareInch = 'AmperePerSquareInch'
         """
             
         """
         
-        AmperePerSquareFoot = 'ampere_per_square_foot'
+        AmperePerSquareFoot = 'AmperePerSquareFoot'
         """
             
         """
         
+
+class ElectricCurrentDensityDto:
+    def __init__(self, value: float, unit: ElectricCurrentDensityUnits):
+        self.value: float = value
+        self.unit: ElectricCurrentDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricCurrentDensityDto(value=data["value"], unit=ElectricCurrentDensityUnits(data["unit"]))
+
 
 class ElectricCurrentDensity(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class ElectricCurrentDensity(AbstractMeasure):
 
     def convert(self, unit: ElectricCurrentDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> ElectricCurrentDensityDto:
+        return ElectricCurrentDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_current_density_dto: ElectricCurrentDensityDto):
+        return ElectricCurrentDensity(electric_current_density_dto.value, electric_current_density_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentDensityUnits) -> float:
         value = self._value

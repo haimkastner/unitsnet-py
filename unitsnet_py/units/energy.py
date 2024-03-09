@@ -10,206 +10,219 @@ class EnergyUnits(Enum):
             EnergyUnits enumeration
         """
         
-        Joule = 'joule'
+        Joule = 'Joule'
         """
             
         """
         
-        Calorie = 'calorie'
+        Calorie = 'Calorie'
         """
             
         """
         
-        BritishThermalUnit = 'british_thermal_unit'
+        BritishThermalUnit = 'BritishThermalUnit'
         """
             
         """
         
-        ElectronVolt = 'electron_volt'
+        ElectronVolt = 'ElectronVolt'
         """
             
         """
         
-        FootPound = 'foot_pound'
+        FootPound = 'FootPound'
         """
             
         """
         
-        Erg = 'erg'
+        Erg = 'Erg'
         """
             
         """
         
-        WattHour = 'watt_hour'
+        WattHour = 'WattHour'
         """
             
         """
         
-        WattDay = 'watt_day'
+        WattDay = 'WattDay'
         """
             
         """
         
-        ThermEc = 'therm_ec'
+        ThermEc = 'ThermEc'
         """
             
         """
         
-        ThermUs = 'therm_us'
+        ThermUs = 'ThermUs'
         """
             
         """
         
-        ThermImperial = 'therm_imperial'
+        ThermImperial = 'ThermImperial'
         """
             
         """
         
-        HorsepowerHour = 'horsepower_hour'
+        HorsepowerHour = 'HorsepowerHour'
         """
             
         """
         
-        Nanojoule = 'nanojoule'
+        Nanojoule = 'Nanojoule'
         """
             
         """
         
-        Microjoule = 'microjoule'
+        Microjoule = 'Microjoule'
         """
             
         """
         
-        Millijoule = 'millijoule'
+        Millijoule = 'Millijoule'
         """
             
         """
         
-        Kilojoule = 'kilojoule'
+        Kilojoule = 'Kilojoule'
         """
             
         """
         
-        Megajoule = 'megajoule'
+        Megajoule = 'Megajoule'
         """
             
         """
         
-        Gigajoule = 'gigajoule'
+        Gigajoule = 'Gigajoule'
         """
             
         """
         
-        Terajoule = 'terajoule'
+        Terajoule = 'Terajoule'
         """
             
         """
         
-        Petajoule = 'petajoule'
+        Petajoule = 'Petajoule'
         """
             
         """
         
-        Kilocalorie = 'kilocalorie'
+        Kilocalorie = 'Kilocalorie'
         """
             
         """
         
-        Megacalorie = 'megacalorie'
+        Megacalorie = 'Megacalorie'
         """
             
         """
         
-        KilobritishThermalUnit = 'kilobritish_thermal_unit'
+        KilobritishThermalUnit = 'KilobritishThermalUnit'
         """
             
         """
         
-        MegabritishThermalUnit = 'megabritish_thermal_unit'
+        MegabritishThermalUnit = 'MegabritishThermalUnit'
         """
             
         """
         
-        GigabritishThermalUnit = 'gigabritish_thermal_unit'
+        GigabritishThermalUnit = 'GigabritishThermalUnit'
         """
             
         """
         
-        KiloelectronVolt = 'kiloelectron_volt'
+        KiloelectronVolt = 'KiloelectronVolt'
         """
             
         """
         
-        MegaelectronVolt = 'megaelectron_volt'
+        MegaelectronVolt = 'MegaelectronVolt'
         """
             
         """
         
-        GigaelectronVolt = 'gigaelectron_volt'
+        GigaelectronVolt = 'GigaelectronVolt'
         """
             
         """
         
-        TeraelectronVolt = 'teraelectron_volt'
+        TeraelectronVolt = 'TeraelectronVolt'
         """
             
         """
         
-        KilowattHour = 'kilowatt_hour'
+        KilowattHour = 'KilowattHour'
         """
             
         """
         
-        MegawattHour = 'megawatt_hour'
+        MegawattHour = 'MegawattHour'
         """
             
         """
         
-        GigawattHour = 'gigawatt_hour'
+        GigawattHour = 'GigawattHour'
         """
             
         """
         
-        TerawattHour = 'terawatt_hour'
+        TerawattHour = 'TerawattHour'
         """
             
         """
         
-        KilowattDay = 'kilowatt_day'
+        KilowattDay = 'KilowattDay'
         """
             
         """
         
-        MegawattDay = 'megawatt_day'
+        MegawattDay = 'MegawattDay'
         """
             
         """
         
-        GigawattDay = 'gigawatt_day'
+        GigawattDay = 'GigawattDay'
         """
             
         """
         
-        TerawattDay = 'terawatt_day'
+        TerawattDay = 'TerawattDay'
         """
             
         """
         
-        DecathermEc = 'decatherm_ec'
+        DecathermEc = 'DecathermEc'
         """
             
         """
         
-        DecathermUs = 'decatherm_us'
+        DecathermUs = 'DecathermUs'
         """
             
         """
         
-        DecathermImperial = 'decatherm_imperial'
+        DecathermImperial = 'DecathermImperial'
         """
             
         """
         
+
+class EnergyDto:
+    def __init__(self, value: float, unit: EnergyUnits):
+        self.value: float = value
+        self.unit: EnergyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return EnergyDto(value=data["value"], unit=EnergyUnits(data["unit"]))
+
 
 class Energy(AbstractMeasure):
     """
@@ -309,6 +322,13 @@ class Energy(AbstractMeasure):
 
     def convert(self, unit: EnergyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: EnergyUnits = EnergyUnits.Joule) -> EnergyDto:
+        return EnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(energy_dto: EnergyDto):
+        return Energy(energy_dto.value, energy_dto.unit)
 
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:
         value = self._value

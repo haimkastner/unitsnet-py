@@ -10,36 +10,49 @@ class CoefficientOfThermalExpansionUnits(Enum):
             CoefficientOfThermalExpansionUnits enumeration
         """
         
-        PerKelvin = 'per_kelvin'
+        PerKelvin = 'PerKelvin'
         """
             
         """
         
-        PerDegreeCelsius = 'per_degree_celsius'
+        PerDegreeCelsius = 'PerDegreeCelsius'
         """
             
         """
         
-        PerDegreeFahrenheit = 'per_degree_fahrenheit'
+        PerDegreeFahrenheit = 'PerDegreeFahrenheit'
         """
             
         """
         
-        PpmPerKelvin = 'ppm_per_kelvin'
+        PpmPerKelvin = 'PpmPerKelvin'
         """
             
         """
         
-        PpmPerDegreeCelsius = 'ppm_per_degree_celsius'
+        PpmPerDegreeCelsius = 'PpmPerDegreeCelsius'
         """
             
         """
         
-        PpmPerDegreeFahrenheit = 'ppm_per_degree_fahrenheit'
+        PpmPerDegreeFahrenheit = 'PpmPerDegreeFahrenheit'
         """
             
         """
         
+
+class CoefficientOfThermalExpansionDto:
+    def __init__(self, value: float, unit: CoefficientOfThermalExpansionUnits):
+        self.value: float = value
+        self.unit: CoefficientOfThermalExpansionUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return CoefficientOfThermalExpansionDto(value=data["value"], unit=CoefficientOfThermalExpansionUnits(data["unit"]))
+
 
 class CoefficientOfThermalExpansion(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class CoefficientOfThermalExpansion(AbstractMeasure):
 
     def convert(self, unit: CoefficientOfThermalExpansionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> CoefficientOfThermalExpansionDto:
+        return CoefficientOfThermalExpansionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(coefficient_of_thermal_expansion_dto: CoefficientOfThermalExpansionDto):
+        return CoefficientOfThermalExpansion(coefficient_of_thermal_expansion_dto.value, coefficient_of_thermal_expansion_dto.unit)
 
     def __convert_from_base(self, from_unit: CoefficientOfThermalExpansionUnits) -> float:
         value = self._value

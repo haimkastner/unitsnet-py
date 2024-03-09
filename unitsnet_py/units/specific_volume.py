@@ -10,21 +10,34 @@ class SpecificVolumeUnits(Enum):
             SpecificVolumeUnits enumeration
         """
         
-        CubicMeterPerKilogram = 'cubic_meter_per_kilogram'
+        CubicMeterPerKilogram = 'CubicMeterPerKilogram'
         """
             
         """
         
-        CubicFootPerPound = 'cubic_foot_per_pound'
+        CubicFootPerPound = 'CubicFootPerPound'
         """
             
         """
         
-        MillicubicMeterPerKilogram = 'millicubic_meter_per_kilogram'
+        MillicubicMeterPerKilogram = 'MillicubicMeterPerKilogram'
         """
             
         """
         
+
+class SpecificVolumeDto:
+    def __init__(self, value: float, unit: SpecificVolumeUnits):
+        self.value: float = value
+        self.unit: SpecificVolumeUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SpecificVolumeDto(value=data["value"], unit=SpecificVolumeUnits(data["unit"]))
+
 
 class SpecificVolume(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class SpecificVolume(AbstractMeasure):
 
     def convert(self, unit: SpecificVolumeUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> SpecificVolumeDto:
+        return SpecificVolumeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(specific_volume_dto: SpecificVolumeDto):
+        return SpecificVolume(specific_volume_dto.value, specific_volume_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificVolumeUnits) -> float:
         value = self._value

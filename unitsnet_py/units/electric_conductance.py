@@ -10,31 +10,44 @@ class ElectricConductanceUnits(Enum):
             ElectricConductanceUnits enumeration
         """
         
-        Siemens = 'siemens'
+        Siemens = 'Siemens'
         """
             
         """
         
-        Nanosiemens = 'nanosiemens'
+        Nanosiemens = 'Nanosiemens'
         """
             
         """
         
-        Microsiemens = 'microsiemens'
+        Microsiemens = 'Microsiemens'
         """
             
         """
         
-        Millisiemens = 'millisiemens'
+        Millisiemens = 'Millisiemens'
         """
             
         """
         
-        Kilosiemens = 'kilosiemens'
+        Kilosiemens = 'Kilosiemens'
         """
             
         """
         
+
+class ElectricConductanceDto:
+    def __init__(self, value: float, unit: ElectricConductanceUnits):
+        self.value: float = value
+        self.unit: ElectricConductanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricConductanceDto(value=data["value"], unit=ElectricConductanceUnits(data["unit"]))
+
 
 class ElectricConductance(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class ElectricConductance(AbstractMeasure):
 
     def convert(self, unit: ElectricConductanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> ElectricConductanceDto:
+        return ElectricConductanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_conductance_dto: ElectricConductanceDto):
+        return ElectricConductance(electric_conductance_dto.value, electric_conductance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricConductanceUnits) -> float:
         value = self._value

@@ -10,51 +10,64 @@ class StandardVolumeFlowUnits(Enum):
             StandardVolumeFlowUnits enumeration
         """
         
-        StandardCubicMeterPerSecond = 'standard_cubic_meter_per_second'
+        StandardCubicMeterPerSecond = 'StandardCubicMeterPerSecond'
         """
             
         """
         
-        StandardCubicMeterPerMinute = 'standard_cubic_meter_per_minute'
+        StandardCubicMeterPerMinute = 'StandardCubicMeterPerMinute'
         """
             
         """
         
-        StandardCubicMeterPerHour = 'standard_cubic_meter_per_hour'
+        StandardCubicMeterPerHour = 'StandardCubicMeterPerHour'
         """
             
         """
         
-        StandardCubicMeterPerDay = 'standard_cubic_meter_per_day'
+        StandardCubicMeterPerDay = 'StandardCubicMeterPerDay'
         """
             
         """
         
-        StandardCubicCentimeterPerMinute = 'standard_cubic_centimeter_per_minute'
+        StandardCubicCentimeterPerMinute = 'StandardCubicCentimeterPerMinute'
         """
             
         """
         
-        StandardLiterPerMinute = 'standard_liter_per_minute'
+        StandardLiterPerMinute = 'StandardLiterPerMinute'
         """
             
         """
         
-        StandardCubicFootPerSecond = 'standard_cubic_foot_per_second'
+        StandardCubicFootPerSecond = 'StandardCubicFootPerSecond'
         """
             
         """
         
-        StandardCubicFootPerMinute = 'standard_cubic_foot_per_minute'
+        StandardCubicFootPerMinute = 'StandardCubicFootPerMinute'
         """
             
         """
         
-        StandardCubicFootPerHour = 'standard_cubic_foot_per_hour'
+        StandardCubicFootPerHour = 'StandardCubicFootPerHour'
         """
             
         """
         
+
+class StandardVolumeFlowDto:
+    def __init__(self, value: float, unit: StandardVolumeFlowUnits):
+        self.value: float = value
+        self.unit: StandardVolumeFlowUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return StandardVolumeFlowDto(value=data["value"], unit=StandardVolumeFlowUnits(data["unit"]))
+
 
 class StandardVolumeFlow(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class StandardVolumeFlow(AbstractMeasure):
 
     def convert(self, unit: StandardVolumeFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> StandardVolumeFlowDto:
+        return StandardVolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(standard_volume_flow_dto: StandardVolumeFlowDto):
+        return StandardVolumeFlow(standard_volume_flow_dto.value, standard_volume_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: StandardVolumeFlowUnits) -> float:
         value = self._value

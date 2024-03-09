@@ -10,26 +10,39 @@ class AmplitudeRatioUnits(Enum):
             AmplitudeRatioUnits enumeration
         """
         
-        DecibelVolt = 'decibel_volt'
+        DecibelVolt = 'DecibelVolt'
         """
             
         """
         
-        DecibelMicrovolt = 'decibel_microvolt'
+        DecibelMicrovolt = 'DecibelMicrovolt'
         """
             
         """
         
-        DecibelMillivolt = 'decibel_millivolt'
+        DecibelMillivolt = 'DecibelMillivolt'
         """
             
         """
         
-        DecibelUnloaded = 'decibel_unloaded'
+        DecibelUnloaded = 'DecibelUnloaded'
         """
             
         """
         
+
+class AmplitudeRatioDto:
+    def __init__(self, value: float, unit: AmplitudeRatioUnits):
+        self.value: float = value
+        self.unit: AmplitudeRatioUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AmplitudeRatioDto(value=data["value"], unit=AmplitudeRatioUnits(data["unit"]))
+
 
 class AmplitudeRatio(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class AmplitudeRatio(AbstractMeasure):
 
     def convert(self, unit: AmplitudeRatioUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> AmplitudeRatioDto:
+        return AmplitudeRatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(amplitude_ratio_dto: AmplitudeRatioDto):
+        return AmplitudeRatio(amplitude_ratio_dto.value, amplitude_ratio_dto.unit)
 
     def __convert_from_base(self, from_unit: AmplitudeRatioUnits) -> float:
         value = self._value

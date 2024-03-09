@@ -10,41 +10,54 @@ class ElectricCurrentGradientUnits(Enum):
             ElectricCurrentGradientUnits enumeration
         """
         
-        AmperePerSecond = 'ampere_per_second'
+        AmperePerSecond = 'AmperePerSecond'
         """
             
         """
         
-        AmperePerMinute = 'ampere_per_minute'
+        AmperePerMinute = 'AmperePerMinute'
         """
             
         """
         
-        AmperePerMillisecond = 'ampere_per_millisecond'
+        AmperePerMillisecond = 'AmperePerMillisecond'
         """
             
         """
         
-        AmperePerMicrosecond = 'ampere_per_microsecond'
+        AmperePerMicrosecond = 'AmperePerMicrosecond'
         """
             
         """
         
-        AmperePerNanosecond = 'ampere_per_nanosecond'
+        AmperePerNanosecond = 'AmperePerNanosecond'
         """
             
         """
         
-        MilliamperePerSecond = 'milliampere_per_second'
+        MilliamperePerSecond = 'MilliamperePerSecond'
         """
             
         """
         
-        MilliamperePerMinute = 'milliampere_per_minute'
+        MilliamperePerMinute = 'MilliamperePerMinute'
         """
             
         """
         
+
+class ElectricCurrentGradientDto:
+    def __init__(self, value: float, unit: ElectricCurrentGradientUnits):
+        self.value: float = value
+        self.unit: ElectricCurrentGradientUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricCurrentGradientDto(value=data["value"], unit=ElectricCurrentGradientUnits(data["unit"]))
+
 
 class ElectricCurrentGradient(AbstractMeasure):
     """
@@ -78,6 +91,13 @@ class ElectricCurrentGradient(AbstractMeasure):
 
     def convert(self, unit: ElectricCurrentGradientUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> ElectricCurrentGradientDto:
+        return ElectricCurrentGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_current_gradient_dto: ElectricCurrentGradientDto):
+        return ElectricCurrentGradient(electric_current_gradient_dto.value, electric_current_gradient_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentGradientUnits) -> float:
         value = self._value

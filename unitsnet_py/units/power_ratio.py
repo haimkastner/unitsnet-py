@@ -10,16 +10,29 @@ class PowerRatioUnits(Enum):
             PowerRatioUnits enumeration
         """
         
-        DecibelWatt = 'decibel_watt'
+        DecibelWatt = 'DecibelWatt'
         """
             
         """
         
-        DecibelMilliwatt = 'decibel_milliwatt'
+        DecibelMilliwatt = 'DecibelMilliwatt'
         """
             
         """
         
+
+class PowerRatioDto:
+    def __init__(self, value: float, unit: PowerRatioUnits):
+        self.value: float = value
+        self.unit: PowerRatioUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PowerRatioDto(value=data["value"], unit=PowerRatioUnits(data["unit"]))
+
 
 class PowerRatio(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class PowerRatio(AbstractMeasure):
 
     def convert(self, unit: PowerRatioUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> PowerRatioDto:
+        return PowerRatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(power_ratio_dto: PowerRatioDto):
+        return PowerRatio(power_ratio_dto.value, power_ratio_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerRatioUnits) -> float:
         value = self._value

@@ -10,26 +10,39 @@ class TemperatureGradientUnits(Enum):
             TemperatureGradientUnits enumeration
         """
         
-        KelvinPerMeter = 'kelvin_per_meter'
+        KelvinPerMeter = 'KelvinPerMeter'
         """
             
         """
         
-        DegreeCelsiusPerMeter = 'degree_celsius_per_meter'
+        DegreeCelsiusPerMeter = 'DegreeCelsiusPerMeter'
         """
             
         """
         
-        DegreeFahrenheitPerFoot = 'degree_fahrenheit_per_foot'
+        DegreeFahrenheitPerFoot = 'DegreeFahrenheitPerFoot'
         """
             
         """
         
-        DegreeCelsiusPerKilometer = 'degree_celsius_per_kilometer'
+        DegreeCelsiusPerKilometer = 'DegreeCelsiusPerKilometer'
         """
             
         """
         
+
+class TemperatureGradientDto:
+    def __init__(self, value: float, unit: TemperatureGradientUnits):
+        self.value: float = value
+        self.unit: TemperatureGradientUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TemperatureGradientDto(value=data["value"], unit=TemperatureGradientUnits(data["unit"]))
+
 
 class TemperatureGradient(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class TemperatureGradient(AbstractMeasure):
 
     def convert(self, unit: TemperatureGradientUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> TemperatureGradientDto:
+        return TemperatureGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(temperature_gradient_dto: TemperatureGradientDto):
+        return TemperatureGradient(temperature_gradient_dto.value, temperature_gradient_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureGradientUnits) -> float:
         value = self._value

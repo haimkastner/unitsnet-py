@@ -10,276 +10,289 @@ class VolumeUnits(Enum):
             VolumeUnits enumeration
         """
         
-        Liter = 'liter'
+        Liter = 'Liter'
         """
             
         """
         
-        CubicMeter = 'cubic_meter'
+        CubicMeter = 'CubicMeter'
         """
             
         """
         
-        CubicKilometer = 'cubic_kilometer'
+        CubicKilometer = 'CubicKilometer'
         """
             
         """
         
-        CubicHectometer = 'cubic_hectometer'
+        CubicHectometer = 'CubicHectometer'
         """
             
         """
         
-        CubicDecimeter = 'cubic_decimeter'
+        CubicDecimeter = 'CubicDecimeter'
         """
             
         """
         
-        CubicCentimeter = 'cubic_centimeter'
+        CubicCentimeter = 'CubicCentimeter'
         """
             
         """
         
-        CubicMillimeter = 'cubic_millimeter'
+        CubicMillimeter = 'CubicMillimeter'
         """
             
         """
         
-        CubicMicrometer = 'cubic_micrometer'
+        CubicMicrometer = 'CubicMicrometer'
         """
             
         """
         
-        CubicMile = 'cubic_mile'
+        CubicMile = 'CubicMile'
         """
             
         """
         
-        CubicYard = 'cubic_yard'
+        CubicYard = 'CubicYard'
         """
             
         """
         
-        CubicFoot = 'cubic_foot'
+        CubicFoot = 'CubicFoot'
         """
             
         """
         
-        CubicInch = 'cubic_inch'
+        CubicInch = 'CubicInch'
         """
             
         """
         
-        ImperialGallon = 'imperial_gallon'
+        ImperialGallon = 'ImperialGallon'
         """
             The British imperial gallon (frequently called simply "gallon") is defined as exactly 4.54609 litres.
         """
         
-        ImperialOunce = 'imperial_ounce'
+        ImperialOunce = 'ImperialOunce'
         """
             
         """
         
-        UsGallon = 'us_gallon'
+        UsGallon = 'UsGallon'
         """
             The US liquid gallon (frequently called simply "gallon") is legally defined as 231 cubic inches, which is exactly 3.785411784 litres.
         """
         
-        UsOunce = 'us_ounce'
+        UsOunce = 'UsOunce'
         """
             
         """
         
-        UsTablespoon = 'us_tablespoon'
+        UsTablespoon = 'UsTablespoon'
         """
             
         """
         
-        AuTablespoon = 'au_tablespoon'
+        AuTablespoon = 'AuTablespoon'
         """
             
         """
         
-        UkTablespoon = 'uk_tablespoon'
+        UkTablespoon = 'UkTablespoon'
         """
             
         """
         
-        MetricTeaspoon = 'metric_teaspoon'
+        MetricTeaspoon = 'MetricTeaspoon'
         """
             
         """
         
-        UsTeaspoon = 'us_teaspoon'
+        UsTeaspoon = 'UsTeaspoon'
         """
             
         """
         
-        MetricCup = 'metric_cup'
+        MetricCup = 'MetricCup'
         """
             
         """
         
-        UsCustomaryCup = 'us_customary_cup'
+        UsCustomaryCup = 'UsCustomaryCup'
         """
             
         """
         
-        UsLegalCup = 'us_legal_cup'
+        UsLegalCup = 'UsLegalCup'
         """
             
         """
         
-        OilBarrel = 'oil_barrel'
+        OilBarrel = 'OilBarrel'
         """
             
         """
         
-        UsBeerBarrel = 'us_beer_barrel'
+        UsBeerBarrel = 'UsBeerBarrel'
         """
             
         """
         
-        ImperialBeerBarrel = 'imperial_beer_barrel'
+        ImperialBeerBarrel = 'ImperialBeerBarrel'
         """
             
         """
         
-        UsQuart = 'us_quart'
+        UsQuart = 'UsQuart'
         """
             
         """
         
-        ImperialQuart = 'imperial_quart'
+        ImperialQuart = 'ImperialQuart'
         """
             
         """
         
-        UsPint = 'us_pint'
+        UsPint = 'UsPint'
         """
             
         """
         
-        AcreFoot = 'acre_foot'
+        AcreFoot = 'AcreFoot'
         """
             
         """
         
-        ImperialPint = 'imperial_pint'
+        ImperialPint = 'ImperialPint'
         """
             
         """
         
-        BoardFoot = 'board_foot'
+        BoardFoot = 'BoardFoot'
         """
             
         """
         
-        Nanoliter = 'nanoliter'
+        Nanoliter = 'Nanoliter'
         """
             
         """
         
-        Microliter = 'microliter'
+        Microliter = 'Microliter'
         """
             
         """
         
-        Milliliter = 'milliliter'
+        Milliliter = 'Milliliter'
         """
             
         """
         
-        Centiliter = 'centiliter'
+        Centiliter = 'Centiliter'
         """
             
         """
         
-        Deciliter = 'deciliter'
+        Deciliter = 'Deciliter'
         """
             
         """
         
-        Decaliter = 'decaliter'
+        Decaliter = 'Decaliter'
         """
             
         """
         
-        Hectoliter = 'hectoliter'
+        Hectoliter = 'Hectoliter'
         """
             
         """
         
-        Kiloliter = 'kiloliter'
+        Kiloliter = 'Kiloliter'
         """
             
         """
         
-        Megaliter = 'megaliter'
+        Megaliter = 'Megaliter'
         """
             
         """
         
-        HectocubicMeter = 'hectocubic_meter'
+        HectocubicMeter = 'HectocubicMeter'
         """
             
         """
         
-        KilocubicMeter = 'kilocubic_meter'
+        KilocubicMeter = 'KilocubicMeter'
         """
             
         """
         
-        HectocubicFoot = 'hectocubic_foot'
+        HectocubicFoot = 'HectocubicFoot'
         """
             
         """
         
-        KilocubicFoot = 'kilocubic_foot'
+        KilocubicFoot = 'KilocubicFoot'
         """
             
         """
         
-        MegacubicFoot = 'megacubic_foot'
+        MegacubicFoot = 'MegacubicFoot'
         """
             
         """
         
-        KiloimperialGallon = 'kiloimperial_gallon'
+        KiloimperialGallon = 'KiloimperialGallon'
         """
             
         """
         
-        MegaimperialGallon = 'megaimperial_gallon'
+        MegaimperialGallon = 'MegaimperialGallon'
         """
             
         """
         
-        DecausGallon = 'decaus_gallon'
+        DecausGallon = 'DecausGallon'
         """
             
         """
         
-        DeciusGallon = 'decius_gallon'
+        DeciusGallon = 'DeciusGallon'
         """
             
         """
         
-        HectousGallon = 'hectous_gallon'
+        HectousGallon = 'HectousGallon'
         """
             
         """
         
-        KilousGallon = 'kilous_gallon'
+        KilousGallon = 'KilousGallon'
         """
             
         """
         
-        MegausGallon = 'megaus_gallon'
+        MegausGallon = 'MegausGallon'
         """
             
         """
         
+
+class VolumeDto:
+    def __init__(self, value: float, unit: VolumeUnits):
+        self.value: float = value
+        self.unit: VolumeUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VolumeDto(value=data["value"], unit=VolumeUnits(data["unit"]))
+
 
 class Volume(AbstractMeasure):
     """
@@ -407,6 +420,13 @@ class Volume(AbstractMeasure):
 
     def convert(self, unit: VolumeUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumeUnits = VolumeUnits.CubicMeter) -> VolumeDto:
+        return VolumeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(volume_dto: VolumeDto):
+        return Volume(volume_dto.value, volume_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeUnits) -> float:
         value = self._value

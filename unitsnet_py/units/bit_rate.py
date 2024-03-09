@@ -10,76 +10,89 @@ class BitRateUnits(Enum):
             BitRateUnits enumeration
         """
         
-        BitPerSecond = 'bit_per_second'
+        BitPerSecond = 'BitPerSecond'
         """
             
         """
         
-        BytePerSecond = 'byte_per_second'
+        BytePerSecond = 'BytePerSecond'
         """
             
         """
         
-        KilobitPerSecond = 'kilobit_per_second'
+        KilobitPerSecond = 'KilobitPerSecond'
         """
             
         """
         
-        MegabitPerSecond = 'megabit_per_second'
+        MegabitPerSecond = 'MegabitPerSecond'
         """
             
         """
         
-        GigabitPerSecond = 'gigabit_per_second'
+        GigabitPerSecond = 'GigabitPerSecond'
         """
             
         """
         
-        TerabitPerSecond = 'terabit_per_second'
+        TerabitPerSecond = 'TerabitPerSecond'
         """
             
         """
         
-        PetabitPerSecond = 'petabit_per_second'
+        PetabitPerSecond = 'PetabitPerSecond'
         """
             
         """
         
-        ExabitPerSecond = 'exabit_per_second'
+        ExabitPerSecond = 'ExabitPerSecond'
         """
             
         """
         
-        KilobytePerSecond = 'kilobyte_per_second'
+        KilobytePerSecond = 'KilobytePerSecond'
         """
             
         """
         
-        MegabytePerSecond = 'megabyte_per_second'
+        MegabytePerSecond = 'MegabytePerSecond'
         """
             
         """
         
-        GigabytePerSecond = 'gigabyte_per_second'
+        GigabytePerSecond = 'GigabytePerSecond'
         """
             
         """
         
-        TerabytePerSecond = 'terabyte_per_second'
+        TerabytePerSecond = 'TerabytePerSecond'
         """
             
         """
         
-        PetabytePerSecond = 'petabyte_per_second'
+        PetabytePerSecond = 'PetabytePerSecond'
         """
             
         """
         
-        ExabytePerSecond = 'exabyte_per_second'
+        ExabytePerSecond = 'ExabytePerSecond'
         """
             
         """
         
+
+class BitRateDto:
+    def __init__(self, value: float, unit: BitRateUnits):
+        self.value: float = value
+        self.unit: BitRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return BitRateDto(value=data["value"], unit=BitRateUnits(data["unit"]))
+
 
 class BitRate(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class BitRate(AbstractMeasure):
 
     def convert(self, unit: BitRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: BitRateUnits = BitRateUnits.BitPerSecond) -> BitRateDto:
+        return BitRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(bit_rate_dto: BitRateDto):
+        return BitRate(bit_rate_dto.value, bit_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:
         value = self._value

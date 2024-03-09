@@ -10,16 +10,29 @@ class RatioChangeRateUnits(Enum):
             RatioChangeRateUnits enumeration
         """
         
-        PercentPerSecond = 'percent_per_second'
+        PercentPerSecond = 'PercentPerSecond'
         """
             
         """
         
-        DecimalFractionPerSecond = 'decimal_fraction_per_second'
+        DecimalFractionPerSecond = 'DecimalFractionPerSecond'
         """
             
         """
         
+
+class RatioChangeRateDto:
+    def __init__(self, value: float, unit: RatioChangeRateUnits):
+        self.value: float = value
+        self.unit: RatioChangeRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RatioChangeRateDto(value=data["value"], unit=RatioChangeRateUnits(data["unit"]))
+
 
 class RatioChangeRate(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class RatioChangeRate(AbstractMeasure):
 
     def convert(self, unit: RatioChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> RatioChangeRateDto:
+        return RatioChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(ratio_change_rate_dto: RatioChangeRateDto):
+        return RatioChangeRate(ratio_change_rate_dto.value, ratio_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: RatioChangeRateUnits) -> float:
         value = self._value

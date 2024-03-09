@@ -10,11 +10,24 @@ class ElectricFieldUnits(Enum):
             ElectricFieldUnits enumeration
         """
         
-        VoltPerMeter = 'volt_per_meter'
+        VoltPerMeter = 'VoltPerMeter'
         """
             
         """
         
+
+class ElectricFieldDto:
+    def __init__(self, value: float, unit: ElectricFieldUnits):
+        self.value: float = value
+        self.unit: ElectricFieldUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricFieldDto(value=data["value"], unit=ElectricFieldUnits(data["unit"]))
+
 
 class ElectricField(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class ElectricField(AbstractMeasure):
 
     def convert(self, unit: ElectricFieldUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> ElectricFieldDto:
+        return ElectricFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_field_dto: ElectricFieldDto):
+        return ElectricField(electric_field_dto.value, electric_field_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricFieldUnits) -> float:
         value = self._value

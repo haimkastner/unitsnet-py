@@ -10,16 +10,29 @@ class LevelUnits(Enum):
             LevelUnits enumeration
         """
         
-        Decibel = 'decibel'
+        Decibel = 'Decibel'
         """
             
         """
         
-        Neper = 'neper'
+        Neper = 'Neper'
         """
             
         """
         
+
+class LevelDto:
+    def __init__(self, value: float, unit: LevelUnits):
+        self.value: float = value
+        self.unit: LevelUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LevelDto(value=data["value"], unit=LevelUnits(data["unit"]))
+
 
 class Level(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class Level(AbstractMeasure):
 
     def convert(self, unit: LevelUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LevelUnits = LevelUnits.Decibel) -> LevelDto:
+        return LevelDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(level_dto: LevelDto):
+        return Level(level_dto.value, level_dto.unit)
 
     def __convert_from_base(self, from_unit: LevelUnits) -> float:
         value = self._value

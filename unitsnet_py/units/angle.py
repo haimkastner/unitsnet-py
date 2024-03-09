@@ -10,86 +10,99 @@ class AngleUnits(Enum):
             AngleUnits enumeration
         """
         
-        Radian = 'radian'
+        Radian = 'Radian'
         """
             
         """
         
-        Degree = 'degree'
+        Degree = 'Degree'
         """
             
         """
         
-        Arcminute = 'arcminute'
+        Arcminute = 'Arcminute'
         """
             
         """
         
-        Arcsecond = 'arcsecond'
+        Arcsecond = 'Arcsecond'
         """
             
         """
         
-        Gradian = 'gradian'
+        Gradian = 'Gradian'
         """
             
         """
         
-        NatoMil = 'nato_mil'
+        NatoMil = 'NatoMil'
         """
             
         """
         
-        Revolution = 'revolution'
+        Revolution = 'Revolution'
         """
             
         """
         
-        Tilt = 'tilt'
+        Tilt = 'Tilt'
         """
             
         """
         
-        Nanoradian = 'nanoradian'
+        Nanoradian = 'Nanoradian'
         """
             
         """
         
-        Microradian = 'microradian'
+        Microradian = 'Microradian'
         """
             
         """
         
-        Milliradian = 'milliradian'
+        Milliradian = 'Milliradian'
         """
             
         """
         
-        Centiradian = 'centiradian'
+        Centiradian = 'Centiradian'
         """
             
         """
         
-        Deciradian = 'deciradian'
+        Deciradian = 'Deciradian'
         """
             
         """
         
-        Nanodegree = 'nanodegree'
+        Nanodegree = 'Nanodegree'
         """
             
         """
         
-        Microdegree = 'microdegree'
+        Microdegree = 'Microdegree'
         """
             
         """
         
-        Millidegree = 'millidegree'
+        Millidegree = 'Millidegree'
         """
             
         """
         
+
+class AngleDto:
+    def __init__(self, value: float, unit: AngleUnits):
+        self.value: float = value
+        self.unit: AngleUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AngleDto(value=data["value"], unit=AngleUnits(data["unit"]))
+
 
 class Angle(AbstractMeasure):
     """
@@ -141,6 +154,13 @@ class Angle(AbstractMeasure):
 
     def convert(self, unit: AngleUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AngleUnits = AngleUnits.Degree) -> AngleDto:
+        return AngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(angle_dto: AngleDto):
+        return Angle(angle_dto.value, angle_dto.unit)
 
     def __convert_from_base(self, from_unit: AngleUnits) -> float:
         value = self._value

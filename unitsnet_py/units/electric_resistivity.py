@@ -10,76 +10,89 @@ class ElectricResistivityUnits(Enum):
             ElectricResistivityUnits enumeration
         """
         
-        OhmMeter = 'ohm_meter'
+        OhmMeter = 'OhmMeter'
         """
             
         """
         
-        OhmCentimeter = 'ohm_centimeter'
+        OhmCentimeter = 'OhmCentimeter'
         """
             
         """
         
-        PicoohmMeter = 'picoohm_meter'
+        PicoohmMeter = 'PicoohmMeter'
         """
             
         """
         
-        NanoohmMeter = 'nanoohm_meter'
+        NanoohmMeter = 'NanoohmMeter'
         """
             
         """
         
-        MicroohmMeter = 'microohm_meter'
+        MicroohmMeter = 'MicroohmMeter'
         """
             
         """
         
-        MilliohmMeter = 'milliohm_meter'
+        MilliohmMeter = 'MilliohmMeter'
         """
             
         """
         
-        KiloohmMeter = 'kiloohm_meter'
+        KiloohmMeter = 'KiloohmMeter'
         """
             
         """
         
-        MegaohmMeter = 'megaohm_meter'
+        MegaohmMeter = 'MegaohmMeter'
         """
             
         """
         
-        PicoohmCentimeter = 'picoohm_centimeter'
+        PicoohmCentimeter = 'PicoohmCentimeter'
         """
             
         """
         
-        NanoohmCentimeter = 'nanoohm_centimeter'
+        NanoohmCentimeter = 'NanoohmCentimeter'
         """
             
         """
         
-        MicroohmCentimeter = 'microohm_centimeter'
+        MicroohmCentimeter = 'MicroohmCentimeter'
         """
             
         """
         
-        MilliohmCentimeter = 'milliohm_centimeter'
+        MilliohmCentimeter = 'MilliohmCentimeter'
         """
             
         """
         
-        KiloohmCentimeter = 'kiloohm_centimeter'
+        KiloohmCentimeter = 'KiloohmCentimeter'
         """
             
         """
         
-        MegaohmCentimeter = 'megaohm_centimeter'
+        MegaohmCentimeter = 'MegaohmCentimeter'
         """
             
         """
         
+
+class ElectricResistivityDto:
+    def __init__(self, value: float, unit: ElectricResistivityUnits):
+        self.value: float = value
+        self.unit: ElectricResistivityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricResistivityDto(value=data["value"], unit=ElectricResistivityUnits(data["unit"]))
+
 
 class ElectricResistivity(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class ElectricResistivity(AbstractMeasure):
 
     def convert(self, unit: ElectricResistivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> ElectricResistivityDto:
+        return ElectricResistivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_resistivity_dto: ElectricResistivityDto):
+        return ElectricResistivity(electric_resistivity_dto.value, electric_resistivity_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricResistivityUnits) -> float:
         value = self._value

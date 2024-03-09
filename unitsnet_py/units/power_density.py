@@ -10,226 +10,239 @@ class PowerDensityUnits(Enum):
             PowerDensityUnits enumeration
         """
         
-        WattPerCubicMeter = 'watt_per_cubic_meter'
+        WattPerCubicMeter = 'WattPerCubicMeter'
         """
             
         """
         
-        WattPerCubicInch = 'watt_per_cubic_inch'
+        WattPerCubicInch = 'WattPerCubicInch'
         """
             
         """
         
-        WattPerCubicFoot = 'watt_per_cubic_foot'
+        WattPerCubicFoot = 'WattPerCubicFoot'
         """
             
         """
         
-        WattPerLiter = 'watt_per_liter'
+        WattPerLiter = 'WattPerLiter'
         """
             
         """
         
-        PicowattPerCubicMeter = 'picowatt_per_cubic_meter'
+        PicowattPerCubicMeter = 'PicowattPerCubicMeter'
         """
             
         """
         
-        NanowattPerCubicMeter = 'nanowatt_per_cubic_meter'
+        NanowattPerCubicMeter = 'NanowattPerCubicMeter'
         """
             
         """
         
-        MicrowattPerCubicMeter = 'microwatt_per_cubic_meter'
+        MicrowattPerCubicMeter = 'MicrowattPerCubicMeter'
         """
             
         """
         
-        MilliwattPerCubicMeter = 'milliwatt_per_cubic_meter'
+        MilliwattPerCubicMeter = 'MilliwattPerCubicMeter'
         """
             
         """
         
-        DeciwattPerCubicMeter = 'deciwatt_per_cubic_meter'
+        DeciwattPerCubicMeter = 'DeciwattPerCubicMeter'
         """
             
         """
         
-        DecawattPerCubicMeter = 'decawatt_per_cubic_meter'
+        DecawattPerCubicMeter = 'DecawattPerCubicMeter'
         """
             
         """
         
-        KilowattPerCubicMeter = 'kilowatt_per_cubic_meter'
+        KilowattPerCubicMeter = 'KilowattPerCubicMeter'
         """
             
         """
         
-        MegawattPerCubicMeter = 'megawatt_per_cubic_meter'
+        MegawattPerCubicMeter = 'MegawattPerCubicMeter'
         """
             
         """
         
-        GigawattPerCubicMeter = 'gigawatt_per_cubic_meter'
+        GigawattPerCubicMeter = 'GigawattPerCubicMeter'
         """
             
         """
         
-        TerawattPerCubicMeter = 'terawatt_per_cubic_meter'
+        TerawattPerCubicMeter = 'TerawattPerCubicMeter'
         """
             
         """
         
-        PicowattPerCubicInch = 'picowatt_per_cubic_inch'
+        PicowattPerCubicInch = 'PicowattPerCubicInch'
         """
             
         """
         
-        NanowattPerCubicInch = 'nanowatt_per_cubic_inch'
+        NanowattPerCubicInch = 'NanowattPerCubicInch'
         """
             
         """
         
-        MicrowattPerCubicInch = 'microwatt_per_cubic_inch'
+        MicrowattPerCubicInch = 'MicrowattPerCubicInch'
         """
             
         """
         
-        MilliwattPerCubicInch = 'milliwatt_per_cubic_inch'
+        MilliwattPerCubicInch = 'MilliwattPerCubicInch'
         """
             
         """
         
-        DeciwattPerCubicInch = 'deciwatt_per_cubic_inch'
+        DeciwattPerCubicInch = 'DeciwattPerCubicInch'
         """
             
         """
         
-        DecawattPerCubicInch = 'decawatt_per_cubic_inch'
+        DecawattPerCubicInch = 'DecawattPerCubicInch'
         """
             
         """
         
-        KilowattPerCubicInch = 'kilowatt_per_cubic_inch'
+        KilowattPerCubicInch = 'KilowattPerCubicInch'
         """
             
         """
         
-        MegawattPerCubicInch = 'megawatt_per_cubic_inch'
+        MegawattPerCubicInch = 'MegawattPerCubicInch'
         """
             
         """
         
-        GigawattPerCubicInch = 'gigawatt_per_cubic_inch'
+        GigawattPerCubicInch = 'GigawattPerCubicInch'
         """
             
         """
         
-        TerawattPerCubicInch = 'terawatt_per_cubic_inch'
+        TerawattPerCubicInch = 'TerawattPerCubicInch'
         """
             
         """
         
-        PicowattPerCubicFoot = 'picowatt_per_cubic_foot'
+        PicowattPerCubicFoot = 'PicowattPerCubicFoot'
         """
             
         """
         
-        NanowattPerCubicFoot = 'nanowatt_per_cubic_foot'
+        NanowattPerCubicFoot = 'NanowattPerCubicFoot'
         """
             
         """
         
-        MicrowattPerCubicFoot = 'microwatt_per_cubic_foot'
+        MicrowattPerCubicFoot = 'MicrowattPerCubicFoot'
         """
             
         """
         
-        MilliwattPerCubicFoot = 'milliwatt_per_cubic_foot'
+        MilliwattPerCubicFoot = 'MilliwattPerCubicFoot'
         """
             
         """
         
-        DeciwattPerCubicFoot = 'deciwatt_per_cubic_foot'
+        DeciwattPerCubicFoot = 'DeciwattPerCubicFoot'
         """
             
         """
         
-        DecawattPerCubicFoot = 'decawatt_per_cubic_foot'
+        DecawattPerCubicFoot = 'DecawattPerCubicFoot'
         """
             
         """
         
-        KilowattPerCubicFoot = 'kilowatt_per_cubic_foot'
+        KilowattPerCubicFoot = 'KilowattPerCubicFoot'
         """
             
         """
         
-        MegawattPerCubicFoot = 'megawatt_per_cubic_foot'
+        MegawattPerCubicFoot = 'MegawattPerCubicFoot'
         """
             
         """
         
-        GigawattPerCubicFoot = 'gigawatt_per_cubic_foot'
+        GigawattPerCubicFoot = 'GigawattPerCubicFoot'
         """
             
         """
         
-        TerawattPerCubicFoot = 'terawatt_per_cubic_foot'
+        TerawattPerCubicFoot = 'TerawattPerCubicFoot'
         """
             
         """
         
-        PicowattPerLiter = 'picowatt_per_liter'
+        PicowattPerLiter = 'PicowattPerLiter'
         """
             
         """
         
-        NanowattPerLiter = 'nanowatt_per_liter'
+        NanowattPerLiter = 'NanowattPerLiter'
         """
             
         """
         
-        MicrowattPerLiter = 'microwatt_per_liter'
+        MicrowattPerLiter = 'MicrowattPerLiter'
         """
             
         """
         
-        MilliwattPerLiter = 'milliwatt_per_liter'
+        MilliwattPerLiter = 'MilliwattPerLiter'
         """
             
         """
         
-        DeciwattPerLiter = 'deciwatt_per_liter'
+        DeciwattPerLiter = 'DeciwattPerLiter'
         """
             
         """
         
-        DecawattPerLiter = 'decawatt_per_liter'
+        DecawattPerLiter = 'DecawattPerLiter'
         """
             
         """
         
-        KilowattPerLiter = 'kilowatt_per_liter'
+        KilowattPerLiter = 'KilowattPerLiter'
         """
             
         """
         
-        MegawattPerLiter = 'megawatt_per_liter'
+        MegawattPerLiter = 'MegawattPerLiter'
         """
             
         """
         
-        GigawattPerLiter = 'gigawatt_per_liter'
+        GigawattPerLiter = 'GigawattPerLiter'
         """
             
         """
         
-        TerawattPerLiter = 'terawatt_per_liter'
+        TerawattPerLiter = 'TerawattPerLiter'
         """
             
         """
         
+
+class PowerDensityDto:
+    def __init__(self, value: float, unit: PowerDensityUnits):
+        self.value: float = value
+        self.unit: PowerDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PowerDensityDto(value=data["value"], unit=PowerDensityUnits(data["unit"]))
+
 
 class PowerDensity(AbstractMeasure):
     """
@@ -337,6 +350,13 @@ class PowerDensity(AbstractMeasure):
 
     def convert(self, unit: PowerDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> PowerDensityDto:
+        return PowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(power_density_dto: PowerDensityDto):
+        return PowerDensity(power_density_dto.value, power_density_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:
         value = self._value

@@ -10,21 +10,34 @@ class LeakRateUnits(Enum):
             LeakRateUnits enumeration
         """
         
-        PascalCubicMeterPerSecond = 'pascal_cubic_meter_per_second'
+        PascalCubicMeterPerSecond = 'PascalCubicMeterPerSecond'
         """
             
         """
         
-        MillibarLiterPerSecond = 'millibar_liter_per_second'
+        MillibarLiterPerSecond = 'MillibarLiterPerSecond'
         """
             
         """
         
-        TorrLiterPerSecond = 'torr_liter_per_second'
+        TorrLiterPerSecond = 'TorrLiterPerSecond'
         """
             
         """
         
+
+class LeakRateDto:
+    def __init__(self, value: float, unit: LeakRateUnits):
+        self.value: float = value
+        self.unit: LeakRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LeakRateDto(value=data["value"], unit=LeakRateUnits(data["unit"]))
+
 
 class LeakRate(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class LeakRate(AbstractMeasure):
 
     def convert(self, unit: LeakRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> LeakRateDto:
+        return LeakRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(leak_rate_dto: LeakRateDto):
+        return LeakRate(leak_rate_dto.value, leak_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: LeakRateUnits) -> float:
         value = self._value

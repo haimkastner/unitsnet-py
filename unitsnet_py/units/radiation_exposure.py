@@ -10,46 +10,59 @@ class RadiationExposureUnits(Enum):
             RadiationExposureUnits enumeration
         """
         
-        CoulombPerKilogram = 'coulomb_per_kilogram'
+        CoulombPerKilogram = 'CoulombPerKilogram'
         """
             
         """
         
-        Roentgen = 'roentgen'
+        Roentgen = 'Roentgen'
         """
             
         """
         
-        PicocoulombPerKilogram = 'picocoulomb_per_kilogram'
+        PicocoulombPerKilogram = 'PicocoulombPerKilogram'
         """
             
         """
         
-        NanocoulombPerKilogram = 'nanocoulomb_per_kilogram'
+        NanocoulombPerKilogram = 'NanocoulombPerKilogram'
         """
             
         """
         
-        MicrocoulombPerKilogram = 'microcoulomb_per_kilogram'
+        MicrocoulombPerKilogram = 'MicrocoulombPerKilogram'
         """
             
         """
         
-        MillicoulombPerKilogram = 'millicoulomb_per_kilogram'
+        MillicoulombPerKilogram = 'MillicoulombPerKilogram'
         """
             
         """
         
-        Microroentgen = 'microroentgen'
+        Microroentgen = 'Microroentgen'
         """
             
         """
         
-        Milliroentgen = 'milliroentgen'
+        Milliroentgen = 'Milliroentgen'
         """
             
         """
         
+
+class RadiationExposureDto:
+    def __init__(self, value: float, unit: RadiationExposureUnits):
+        self.value: float = value
+        self.unit: RadiationExposureUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RadiationExposureDto(value=data["value"], unit=RadiationExposureUnits(data["unit"]))
+
 
 class RadiationExposure(AbstractMeasure):
     """
@@ -85,6 +98,13 @@ class RadiationExposure(AbstractMeasure):
 
     def convert(self, unit: RadiationExposureUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RadiationExposureUnits = RadiationExposureUnits.CoulombPerKilogram) -> RadiationExposureDto:
+        return RadiationExposureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(radiation_exposure_dto: RadiationExposureDto):
+        return RadiationExposure(radiation_exposure_dto.value, radiation_exposure_dto.unit)
 
     def __convert_from_base(self, from_unit: RadiationExposureUnits) -> float:
         value = self._value

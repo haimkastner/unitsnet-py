@@ -10,41 +10,54 @@ class CompressibilityUnits(Enum):
             CompressibilityUnits enumeration
         """
         
-        InversePascal = 'inverse_pascal'
+        InversePascal = 'InversePascal'
         """
             
         """
         
-        InverseKilopascal = 'inverse_kilopascal'
+        InverseKilopascal = 'InverseKilopascal'
         """
             
         """
         
-        InverseMegapascal = 'inverse_megapascal'
+        InverseMegapascal = 'InverseMegapascal'
         """
             
         """
         
-        InverseAtmosphere = 'inverse_atmosphere'
+        InverseAtmosphere = 'InverseAtmosphere'
         """
             
         """
         
-        InverseMillibar = 'inverse_millibar'
+        InverseMillibar = 'InverseMillibar'
         """
             
         """
         
-        InverseBar = 'inverse_bar'
+        InverseBar = 'InverseBar'
         """
             
         """
         
-        InversePoundForcePerSquareInch = 'inverse_pound_force_per_square_inch'
+        InversePoundForcePerSquareInch = 'InversePoundForcePerSquareInch'
         """
             
         """
         
+
+class CompressibilityDto:
+    def __init__(self, value: float, unit: CompressibilityUnits):
+        self.value: float = value
+        self.unit: CompressibilityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return CompressibilityDto(value=data["value"], unit=CompressibilityUnits(data["unit"]))
+
 
 class Compressibility(AbstractMeasure):
     """
@@ -78,6 +91,13 @@ class Compressibility(AbstractMeasure):
 
     def convert(self, unit: CompressibilityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: CompressibilityUnits = CompressibilityUnits.InversePascal) -> CompressibilityDto:
+        return CompressibilityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(compressibility_dto: CompressibilityDto):
+        return Compressibility(compressibility_dto.value, compressibility_dto.unit)
 
     def __convert_from_base(self, from_unit: CompressibilityUnits) -> float:
         value = self._value

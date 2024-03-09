@@ -10,71 +10,84 @@ class RotationalSpeedUnits(Enum):
             RotationalSpeedUnits enumeration
         """
         
-        RadianPerSecond = 'radian_per_second'
+        RadianPerSecond = 'RadianPerSecond'
         """
             
         """
         
-        DegreePerSecond = 'degree_per_second'
+        DegreePerSecond = 'DegreePerSecond'
         """
             
         """
         
-        DegreePerMinute = 'degree_per_minute'
+        DegreePerMinute = 'DegreePerMinute'
         """
             
         """
         
-        RevolutionPerSecond = 'revolution_per_second'
+        RevolutionPerSecond = 'RevolutionPerSecond'
         """
             
         """
         
-        RevolutionPerMinute = 'revolution_per_minute'
+        RevolutionPerMinute = 'RevolutionPerMinute'
         """
             
         """
         
-        NanoradianPerSecond = 'nanoradian_per_second'
+        NanoradianPerSecond = 'NanoradianPerSecond'
         """
             
         """
         
-        MicroradianPerSecond = 'microradian_per_second'
+        MicroradianPerSecond = 'MicroradianPerSecond'
         """
             
         """
         
-        MilliradianPerSecond = 'milliradian_per_second'
+        MilliradianPerSecond = 'MilliradianPerSecond'
         """
             
         """
         
-        CentiradianPerSecond = 'centiradian_per_second'
+        CentiradianPerSecond = 'CentiradianPerSecond'
         """
             
         """
         
-        DeciradianPerSecond = 'deciradian_per_second'
+        DeciradianPerSecond = 'DeciradianPerSecond'
         """
             
         """
         
-        NanodegreePerSecond = 'nanodegree_per_second'
+        NanodegreePerSecond = 'NanodegreePerSecond'
         """
             
         """
         
-        MicrodegreePerSecond = 'microdegree_per_second'
+        MicrodegreePerSecond = 'MicrodegreePerSecond'
         """
             
         """
         
-        MillidegreePerSecond = 'millidegree_per_second'
+        MillidegreePerSecond = 'MillidegreePerSecond'
         """
             
         """
         
+
+class RotationalSpeedDto:
+    def __init__(self, value: float, unit: RotationalSpeedUnits):
+        self.value: float = value
+        self.unit: RotationalSpeedUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RotationalSpeedDto(value=data["value"], unit=RotationalSpeedUnits(data["unit"]))
+
 
 class RotationalSpeed(AbstractMeasure):
     """
@@ -120,6 +133,13 @@ class RotationalSpeed(AbstractMeasure):
 
     def convert(self, unit: RotationalSpeedUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> RotationalSpeedDto:
+        return RotationalSpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(rotational_speed_dto: RotationalSpeedDto):
+        return RotationalSpeed(rotational_speed_dto.value, rotational_speed_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalSpeedUnits) -> float:
         value = self._value

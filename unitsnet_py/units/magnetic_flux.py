@@ -10,11 +10,24 @@ class MagneticFluxUnits(Enum):
             MagneticFluxUnits enumeration
         """
         
-        Weber = 'weber'
+        Weber = 'Weber'
         """
             
         """
         
+
+class MagneticFluxDto:
+    def __init__(self, value: float, unit: MagneticFluxUnits):
+        self.value: float = value
+        self.unit: MagneticFluxUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MagneticFluxDto(value=data["value"], unit=MagneticFluxUnits(data["unit"]))
+
 
 class MagneticFlux(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class MagneticFlux(AbstractMeasure):
 
     def convert(self, unit: MagneticFluxUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MagneticFluxUnits = MagneticFluxUnits.Weber) -> MagneticFluxDto:
+        return MagneticFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(magnetic_flux_dto: MagneticFluxDto):
+        return MagneticFlux(magnetic_flux_dto.value, magnetic_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: MagneticFluxUnits) -> float:
         value = self._value

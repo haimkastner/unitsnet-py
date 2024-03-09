@@ -10,76 +10,89 @@ class AreaUnits(Enum):
             AreaUnits enumeration
         """
         
-        SquareKilometer = 'square_kilometer'
+        SquareKilometer = 'SquareKilometer'
         """
             
         """
         
-        SquareMeter = 'square_meter'
+        SquareMeter = 'SquareMeter'
         """
             
         """
         
-        SquareDecimeter = 'square_decimeter'
+        SquareDecimeter = 'SquareDecimeter'
         """
             
         """
         
-        SquareCentimeter = 'square_centimeter'
+        SquareCentimeter = 'SquareCentimeter'
         """
             
         """
         
-        SquareMillimeter = 'square_millimeter'
+        SquareMillimeter = 'SquareMillimeter'
         """
             
         """
         
-        SquareMicrometer = 'square_micrometer'
+        SquareMicrometer = 'SquareMicrometer'
         """
             
         """
         
-        SquareMile = 'square_mile'
+        SquareMile = 'SquareMile'
         """
             The statute mile was standardised between the British Commonwealth and the United States by an international agreement in 1959, when it was formally redefined with respect to SI units as exactly 1,609.344 metres.
         """
         
-        SquareYard = 'square_yard'
+        SquareYard = 'SquareYard'
         """
             The yard (symbol: yd) is an English unit of length in both the British imperial and US customary systems of measurement equalling 3 feet (or 36 inches). Since 1959 the yard has been by international agreement standardized as exactly 0.9144 meter. A distance of 1,760 yards is equal to 1 mile.
         """
         
-        SquareFoot = 'square_foot'
+        SquareFoot = 'SquareFoot'
         """
             
         """
         
-        UsSurveySquareFoot = 'us_survey_square_foot'
+        UsSurveySquareFoot = 'UsSurveySquareFoot'
         """
             In the United States, the foot was defined as 12 inches, with the inch being defined by the Mendenhall Order of 1893 as 39.37 inches = 1 m. This makes a U.S. survey foot exactly 1200/3937 meters.
         """
         
-        SquareInch = 'square_inch'
+        SquareInch = 'SquareInch'
         """
             
         """
         
-        Acre = 'acre'
+        Acre = 'Acre'
         """
             Based upon the international yard and pound agreement of 1959, an acre may be declared as exactly 4,046.8564224 square metres.
         """
         
-        Hectare = 'hectare'
+        Hectare = 'Hectare'
         """
             
         """
         
-        SquareNauticalMile = 'square_nautical_mile'
+        SquareNauticalMile = 'SquareNauticalMile'
         """
             
         """
         
+
+class AreaDto:
+    def __init__(self, value: float, unit: AreaUnits):
+        self.value: float = value
+        self.unit: AreaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AreaDto(value=data["value"], unit=AreaUnits(data["unit"]))
+
 
 class Area(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class Area(AbstractMeasure):
 
     def convert(self, unit: AreaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AreaUnits = AreaUnits.SquareMeter) -> AreaDto:
+        return AreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(area_dto: AreaDto):
+        return Area(area_dto.value, area_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaUnits) -> float:
         value = self._value

@@ -10,76 +10,89 @@ class LuminosityUnits(Enum):
             LuminosityUnits enumeration
         """
         
-        Watt = 'watt'
+        Watt = 'Watt'
         """
             
         """
         
-        SolarLuminosity = 'solar_luminosity'
+        SolarLuminosity = 'SolarLuminosity'
         """
             
         """
         
-        Femtowatt = 'femtowatt'
+        Femtowatt = 'Femtowatt'
         """
             
         """
         
-        Picowatt = 'picowatt'
+        Picowatt = 'Picowatt'
         """
             
         """
         
-        Nanowatt = 'nanowatt'
+        Nanowatt = 'Nanowatt'
         """
             
         """
         
-        Microwatt = 'microwatt'
+        Microwatt = 'Microwatt'
         """
             
         """
         
-        Milliwatt = 'milliwatt'
+        Milliwatt = 'Milliwatt'
         """
             
         """
         
-        Deciwatt = 'deciwatt'
+        Deciwatt = 'Deciwatt'
         """
             
         """
         
-        Decawatt = 'decawatt'
+        Decawatt = 'Decawatt'
         """
             
         """
         
-        Kilowatt = 'kilowatt'
+        Kilowatt = 'Kilowatt'
         """
             
         """
         
-        Megawatt = 'megawatt'
+        Megawatt = 'Megawatt'
         """
             
         """
         
-        Gigawatt = 'gigawatt'
+        Gigawatt = 'Gigawatt'
         """
             
         """
         
-        Terawatt = 'terawatt'
+        Terawatt = 'Terawatt'
         """
             
         """
         
-        Petawatt = 'petawatt'
+        Petawatt = 'Petawatt'
         """
             
         """
         
+
+class LuminosityDto:
+    def __init__(self, value: float, unit: LuminosityUnits):
+        self.value: float = value
+        self.unit: LuminosityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LuminosityDto(value=data["value"], unit=LuminosityUnits(data["unit"]))
+
 
 class Luminosity(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class Luminosity(AbstractMeasure):
 
     def convert(self, unit: LuminosityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LuminosityUnits = LuminosityUnits.Watt) -> LuminosityDto:
+        return LuminosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(luminosity_dto: LuminosityDto):
+        return Luminosity(luminosity_dto.value, luminosity_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminosityUnits) -> float:
         value = self._value

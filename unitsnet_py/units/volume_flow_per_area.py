@@ -10,16 +10,29 @@ class VolumeFlowPerAreaUnits(Enum):
             VolumeFlowPerAreaUnits enumeration
         """
         
-        CubicMeterPerSecondPerSquareMeter = 'cubic_meter_per_second_per_square_meter'
+        CubicMeterPerSecondPerSquareMeter = 'CubicMeterPerSecondPerSquareMeter'
         """
             
         """
         
-        CubicFootPerMinutePerSquareFoot = 'cubic_foot_per_minute_per_square_foot'
+        CubicFootPerMinutePerSquareFoot = 'CubicFootPerMinutePerSquareFoot'
         """
             
         """
         
+
+class VolumeFlowPerAreaDto:
+    def __init__(self, value: float, unit: VolumeFlowPerAreaUnits):
+        self.value: float = value
+        self.unit: VolumeFlowPerAreaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VolumeFlowPerAreaDto(value=data["value"], unit=VolumeFlowPerAreaUnits(data["unit"]))
+
 
 class VolumeFlowPerArea(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class VolumeFlowPerArea(AbstractMeasure):
 
     def convert(self, unit: VolumeFlowPerAreaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> VolumeFlowPerAreaDto:
+        return VolumeFlowPerAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(volume_flow_per_area_dto: VolumeFlowPerAreaDto):
+        return VolumeFlowPerArea(volume_flow_per_area_dto.value, volume_flow_per_area_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeFlowPerAreaUnits) -> float:
         value = self._value

@@ -10,36 +10,49 @@ class RadiationEquivalentDoseUnits(Enum):
             RadiationEquivalentDoseUnits enumeration
         """
         
-        Sievert = 'sievert'
+        Sievert = 'Sievert'
         """
             The sievert is a unit in the International System of Units (SI) intended to represent the stochastic health risk of ionizing radiation, which is defined as the probability of causing radiation-induced cancer and genetic damage.
         """
         
-        RoentgenEquivalentMan = 'roentgen_equivalent_man'
+        RoentgenEquivalentMan = 'RoentgenEquivalentMan'
         """
             
         """
         
-        Nanosievert = 'nanosievert'
+        Nanosievert = 'Nanosievert'
         """
             
         """
         
-        Microsievert = 'microsievert'
+        Microsievert = 'Microsievert'
         """
             
         """
         
-        Millisievert = 'millisievert'
+        Millisievert = 'Millisievert'
         """
             
         """
         
-        MilliroentgenEquivalentMan = 'milliroentgen_equivalent_man'
+        MilliroentgenEquivalentMan = 'MilliroentgenEquivalentMan'
         """
             
         """
         
+
+class RadiationEquivalentDoseDto:
+    def __init__(self, value: float, unit: RadiationEquivalentDoseUnits):
+        self.value: float = value
+        self.unit: RadiationEquivalentDoseUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RadiationEquivalentDoseDto(value=data["value"], unit=RadiationEquivalentDoseUnits(data["unit"]))
+
 
 class RadiationEquivalentDose(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class RadiationEquivalentDose(AbstractMeasure):
 
     def convert(self, unit: RadiationEquivalentDoseUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert) -> RadiationEquivalentDoseDto:
+        return RadiationEquivalentDoseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(radiation_equivalent_dose_dto: RadiationEquivalentDoseDto):
+        return RadiationEquivalentDose(radiation_equivalent_dose_dto.value, radiation_equivalent_dose_dto.unit)
 
     def __convert_from_base(self, from_unit: RadiationEquivalentDoseUnits) -> float:
         value = self._value

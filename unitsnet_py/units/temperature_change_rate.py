@@ -10,56 +10,69 @@ class TemperatureChangeRateUnits(Enum):
             TemperatureChangeRateUnits enumeration
         """
         
-        DegreeCelsiusPerSecond = 'degree_celsius_per_second'
+        DegreeCelsiusPerSecond = 'DegreeCelsiusPerSecond'
         """
             
         """
         
-        DegreeCelsiusPerMinute = 'degree_celsius_per_minute'
+        DegreeCelsiusPerMinute = 'DegreeCelsiusPerMinute'
         """
             
         """
         
-        NanodegreeCelsiusPerSecond = 'nanodegree_celsius_per_second'
+        NanodegreeCelsiusPerSecond = 'NanodegreeCelsiusPerSecond'
         """
             
         """
         
-        MicrodegreeCelsiusPerSecond = 'microdegree_celsius_per_second'
+        MicrodegreeCelsiusPerSecond = 'MicrodegreeCelsiusPerSecond'
         """
             
         """
         
-        MillidegreeCelsiusPerSecond = 'millidegree_celsius_per_second'
+        MillidegreeCelsiusPerSecond = 'MillidegreeCelsiusPerSecond'
         """
             
         """
         
-        CentidegreeCelsiusPerSecond = 'centidegree_celsius_per_second'
+        CentidegreeCelsiusPerSecond = 'CentidegreeCelsiusPerSecond'
         """
             
         """
         
-        DecidegreeCelsiusPerSecond = 'decidegree_celsius_per_second'
+        DecidegreeCelsiusPerSecond = 'DecidegreeCelsiusPerSecond'
         """
             
         """
         
-        DecadegreeCelsiusPerSecond = 'decadegree_celsius_per_second'
+        DecadegreeCelsiusPerSecond = 'DecadegreeCelsiusPerSecond'
         """
             
         """
         
-        HectodegreeCelsiusPerSecond = 'hectodegree_celsius_per_second'
+        HectodegreeCelsiusPerSecond = 'HectodegreeCelsiusPerSecond'
         """
             
         """
         
-        KilodegreeCelsiusPerSecond = 'kilodegree_celsius_per_second'
+        KilodegreeCelsiusPerSecond = 'KilodegreeCelsiusPerSecond'
         """
             
         """
         
+
+class TemperatureChangeRateDto:
+    def __init__(self, value: float, unit: TemperatureChangeRateUnits):
+        self.value: float = value
+        self.unit: TemperatureChangeRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TemperatureChangeRateDto(value=data["value"], unit=TemperatureChangeRateUnits(data["unit"]))
+
 
 class TemperatureChangeRate(AbstractMeasure):
     """
@@ -99,6 +112,13 @@ class TemperatureChangeRate(AbstractMeasure):
 
     def convert(self, unit: TemperatureChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> TemperatureChangeRateDto:
+        return TemperatureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(temperature_change_rate_dto: TemperatureChangeRateDto):
+        return TemperatureChangeRate(temperature_change_rate_dto.value, temperature_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureChangeRateUnits) -> float:
         value = self._value

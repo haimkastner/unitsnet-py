@@ -10,61 +10,74 @@ class ElectricChargeUnits(Enum):
             ElectricChargeUnits enumeration
         """
         
-        Coulomb = 'coulomb'
+        Coulomb = 'Coulomb'
         """
             
         """
         
-        AmpereHour = 'ampere_hour'
+        AmpereHour = 'AmpereHour'
         """
             
         """
         
-        Picocoulomb = 'picocoulomb'
+        Picocoulomb = 'Picocoulomb'
         """
             
         """
         
-        Nanocoulomb = 'nanocoulomb'
+        Nanocoulomb = 'Nanocoulomb'
         """
             
         """
         
-        Microcoulomb = 'microcoulomb'
+        Microcoulomb = 'Microcoulomb'
         """
             
         """
         
-        Millicoulomb = 'millicoulomb'
+        Millicoulomb = 'Millicoulomb'
         """
             
         """
         
-        Kilocoulomb = 'kilocoulomb'
+        Kilocoulomb = 'Kilocoulomb'
         """
             
         """
         
-        Megacoulomb = 'megacoulomb'
+        Megacoulomb = 'Megacoulomb'
         """
             
         """
         
-        MilliampereHour = 'milliampere_hour'
+        MilliampereHour = 'MilliampereHour'
         """
             
         """
         
-        KiloampereHour = 'kiloampere_hour'
+        KiloampereHour = 'KiloampereHour'
         """
             
         """
         
-        MegaampereHour = 'megaampere_hour'
+        MegaampereHour = 'MegaampereHour'
         """
             
         """
         
+
+class ElectricChargeDto:
+    def __init__(self, value: float, unit: ElectricChargeUnits):
+        self.value: float = value
+        self.unit: ElectricChargeUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricChargeDto(value=data["value"], unit=ElectricChargeUnits(data["unit"]))
+
 
 class ElectricCharge(AbstractMeasure):
     """
@@ -106,6 +119,13 @@ class ElectricCharge(AbstractMeasure):
 
     def convert(self, unit: ElectricChargeUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> ElectricChargeDto:
+        return ElectricChargeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_charge_dto: ElectricChargeDto):
+        return ElectricCharge(electric_charge_dto.value, electric_charge_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricChargeUnits) -> float:
         value = self._value

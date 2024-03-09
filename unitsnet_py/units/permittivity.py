@@ -10,11 +10,24 @@ class PermittivityUnits(Enum):
             PermittivityUnits enumeration
         """
         
-        FaradPerMeter = 'farad_per_meter'
+        FaradPerMeter = 'FaradPerMeter'
         """
             
         """
         
+
+class PermittivityDto:
+    def __init__(self, value: float, unit: PermittivityUnits):
+        self.value: float = value
+        self.unit: PermittivityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PermittivityDto(value=data["value"], unit=PermittivityUnits(data["unit"]))
+
 
 class Permittivity(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class Permittivity(AbstractMeasure):
 
     def convert(self, unit: PermittivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> PermittivityDto:
+        return PermittivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(permittivity_dto: PermittivityDto):
+        return Permittivity(permittivity_dto.value, permittivity_dto.unit)
 
     def __convert_from_base(self, from_unit: PermittivityUnits) -> float:
         value = self._value

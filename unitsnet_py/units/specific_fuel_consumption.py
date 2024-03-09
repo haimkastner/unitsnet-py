@@ -10,26 +10,39 @@ class SpecificFuelConsumptionUnits(Enum):
             SpecificFuelConsumptionUnits enumeration
         """
         
-        PoundMassPerPoundForceHour = 'pound_mass_per_pound_force_hour'
+        PoundMassPerPoundForceHour = 'PoundMassPerPoundForceHour'
         """
             
         """
         
-        KilogramPerKilogramForceHour = 'kilogram_per_kilogram_force_hour'
+        KilogramPerKilogramForceHour = 'KilogramPerKilogramForceHour'
         """
             
         """
         
-        GramPerKiloNewtonSecond = 'gram_per_kilo_newton_second'
+        GramPerKiloNewtonSecond = 'GramPerKiloNewtonSecond'
         """
             
         """
         
-        KilogramPerKiloNewtonSecond = 'kilogram_per_kilo_newton_second'
+        KilogramPerKiloNewtonSecond = 'KilogramPerKiloNewtonSecond'
         """
             
         """
         
+
+class SpecificFuelConsumptionDto:
+    def __init__(self, value: float, unit: SpecificFuelConsumptionUnits):
+        self.value: float = value
+        self.unit: SpecificFuelConsumptionUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SpecificFuelConsumptionDto(value=data["value"], unit=SpecificFuelConsumptionUnits(data["unit"]))
+
 
 class SpecificFuelConsumption(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class SpecificFuelConsumption(AbstractMeasure):
 
     def convert(self, unit: SpecificFuelConsumptionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> SpecificFuelConsumptionDto:
+        return SpecificFuelConsumptionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(specific_fuel_consumption_dto: SpecificFuelConsumptionDto):
+        return SpecificFuelConsumption(specific_fuel_consumption_dto.value, specific_fuel_consumption_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
         value = self._value

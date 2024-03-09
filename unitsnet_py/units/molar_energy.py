@@ -10,21 +10,34 @@ class MolarEnergyUnits(Enum):
             MolarEnergyUnits enumeration
         """
         
-        JoulePerMole = 'joule_per_mole'
+        JoulePerMole = 'JoulePerMole'
         """
             
         """
         
-        KilojoulePerMole = 'kilojoule_per_mole'
+        KilojoulePerMole = 'KilojoulePerMole'
         """
             
         """
         
-        MegajoulePerMole = 'megajoule_per_mole'
+        MegajoulePerMole = 'MegajoulePerMole'
         """
             
         """
         
+
+class MolarEnergyDto:
+    def __init__(self, value: float, unit: MolarEnergyUnits):
+        self.value: float = value
+        self.unit: MolarEnergyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarEnergyDto(value=data["value"], unit=MolarEnergyUnits(data["unit"]))
+
 
 class MolarEnergy(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class MolarEnergy(AbstractMeasure):
 
     def convert(self, unit: MolarEnergyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> MolarEnergyDto:
+        return MolarEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molar_energy_dto: MolarEnergyDto):
+        return MolarEnergy(molar_energy_dto.value, molar_energy_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarEnergyUnits) -> float:
         value = self._value

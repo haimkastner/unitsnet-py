@@ -10,136 +10,149 @@ class PowerUnits(Enum):
             PowerUnits enumeration
         """
         
-        Watt = 'watt'
+        Watt = 'Watt'
         """
             
         """
         
-        MechanicalHorsepower = 'mechanical_horsepower'
+        MechanicalHorsepower = 'MechanicalHorsepower'
         """
             
         """
         
-        MetricHorsepower = 'metric_horsepower'
+        MetricHorsepower = 'MetricHorsepower'
         """
             
         """
         
-        ElectricalHorsepower = 'electrical_horsepower'
+        ElectricalHorsepower = 'ElectricalHorsepower'
         """
             
         """
         
-        BoilerHorsepower = 'boiler_horsepower'
+        BoilerHorsepower = 'BoilerHorsepower'
         """
             
         """
         
-        HydraulicHorsepower = 'hydraulic_horsepower'
+        HydraulicHorsepower = 'HydraulicHorsepower'
         """
             
         """
         
-        BritishThermalUnitPerHour = 'british_thermal_unit_per_hour'
+        BritishThermalUnitPerHour = 'BritishThermalUnitPerHour'
         """
             
         """
         
-        JoulePerHour = 'joule_per_hour'
+        JoulePerHour = 'JoulePerHour'
         """
             
         """
         
-        Femtowatt = 'femtowatt'
+        Femtowatt = 'Femtowatt'
         """
             
         """
         
-        Picowatt = 'picowatt'
+        Picowatt = 'Picowatt'
         """
             
         """
         
-        Nanowatt = 'nanowatt'
+        Nanowatt = 'Nanowatt'
         """
             
         """
         
-        Microwatt = 'microwatt'
+        Microwatt = 'Microwatt'
         """
             
         """
         
-        Milliwatt = 'milliwatt'
+        Milliwatt = 'Milliwatt'
         """
             
         """
         
-        Deciwatt = 'deciwatt'
+        Deciwatt = 'Deciwatt'
         """
             
         """
         
-        Decawatt = 'decawatt'
+        Decawatt = 'Decawatt'
         """
             
         """
         
-        Kilowatt = 'kilowatt'
+        Kilowatt = 'Kilowatt'
         """
             
         """
         
-        Megawatt = 'megawatt'
+        Megawatt = 'Megawatt'
         """
             
         """
         
-        Gigawatt = 'gigawatt'
+        Gigawatt = 'Gigawatt'
         """
             
         """
         
-        Terawatt = 'terawatt'
+        Terawatt = 'Terawatt'
         """
             
         """
         
-        Petawatt = 'petawatt'
+        Petawatt = 'Petawatt'
         """
             
         """
         
-        KilobritishThermalUnitPerHour = 'kilobritish_thermal_unit_per_hour'
+        KilobritishThermalUnitPerHour = 'KilobritishThermalUnitPerHour'
         """
             
         """
         
-        MegabritishThermalUnitPerHour = 'megabritish_thermal_unit_per_hour'
+        MegabritishThermalUnitPerHour = 'MegabritishThermalUnitPerHour'
         """
             
         """
         
-        MillijoulePerHour = 'millijoule_per_hour'
+        MillijoulePerHour = 'MillijoulePerHour'
         """
             
         """
         
-        KilojoulePerHour = 'kilojoule_per_hour'
+        KilojoulePerHour = 'KilojoulePerHour'
         """
             
         """
         
-        MegajoulePerHour = 'megajoule_per_hour'
+        MegajoulePerHour = 'MegajoulePerHour'
         """
             
         """
         
-        GigajoulePerHour = 'gigajoule_per_hour'
+        GigajoulePerHour = 'GigajoulePerHour'
         """
             
         """
         
+
+class PowerDto:
+    def __init__(self, value: float, unit: PowerUnits):
+        self.value: float = value
+        self.unit: PowerUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return PowerDto(value=data["value"], unit=PowerUnits(data["unit"]))
+
 
 class Power(AbstractMeasure):
     """
@@ -211,6 +224,13 @@ class Power(AbstractMeasure):
 
     def convert(self, unit: PowerUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerUnits = PowerUnits.Watt) -> PowerDto:
+        return PowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(power_dto: PowerDto):
+        return Power(power_dto.value, power_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerUnits) -> float:
         value = self._value

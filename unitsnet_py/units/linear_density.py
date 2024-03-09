@@ -10,76 +10,89 @@ class LinearDensityUnits(Enum):
             LinearDensityUnits enumeration
         """
         
-        GramPerMillimeter = 'gram_per_millimeter'
+        GramPerMillimeter = 'GramPerMillimeter'
         """
             
         """
         
-        GramPerCentimeter = 'gram_per_centimeter'
+        GramPerCentimeter = 'GramPerCentimeter'
         """
             
         """
         
-        GramPerMeter = 'gram_per_meter'
+        GramPerMeter = 'GramPerMeter'
         """
             
         """
         
-        PoundPerInch = 'pound_per_inch'
+        PoundPerInch = 'PoundPerInch'
         """
             
         """
         
-        PoundPerFoot = 'pound_per_foot'
+        PoundPerFoot = 'PoundPerFoot'
         """
             
         """
         
-        MicrogramPerMillimeter = 'microgram_per_millimeter'
+        MicrogramPerMillimeter = 'MicrogramPerMillimeter'
         """
             
         """
         
-        MilligramPerMillimeter = 'milligram_per_millimeter'
+        MilligramPerMillimeter = 'MilligramPerMillimeter'
         """
             
         """
         
-        KilogramPerMillimeter = 'kilogram_per_millimeter'
+        KilogramPerMillimeter = 'KilogramPerMillimeter'
         """
             
         """
         
-        MicrogramPerCentimeter = 'microgram_per_centimeter'
+        MicrogramPerCentimeter = 'MicrogramPerCentimeter'
         """
             
         """
         
-        MilligramPerCentimeter = 'milligram_per_centimeter'
+        MilligramPerCentimeter = 'MilligramPerCentimeter'
         """
             
         """
         
-        KilogramPerCentimeter = 'kilogram_per_centimeter'
+        KilogramPerCentimeter = 'KilogramPerCentimeter'
         """
             
         """
         
-        MicrogramPerMeter = 'microgram_per_meter'
+        MicrogramPerMeter = 'MicrogramPerMeter'
         """
             
         """
         
-        MilligramPerMeter = 'milligram_per_meter'
+        MilligramPerMeter = 'MilligramPerMeter'
         """
             
         """
         
-        KilogramPerMeter = 'kilogram_per_meter'
+        KilogramPerMeter = 'KilogramPerMeter'
         """
             
         """
         
+
+class LinearDensityDto:
+    def __init__(self, value: float, unit: LinearDensityUnits):
+        self.value: float = value
+        self.unit: LinearDensityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LinearDensityDto(value=data["value"], unit=LinearDensityUnits(data["unit"]))
+
 
 class LinearDensity(AbstractMeasure):
     """
@@ -127,6 +140,13 @@ class LinearDensity(AbstractMeasure):
 
     def convert(self, unit: LinearDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> LinearDensityDto:
+        return LinearDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(linear_density_dto: LinearDensityDto):
+        return LinearDensity(linear_density_dto.value, linear_density_dto.unit)
 
     def __convert_from_base(self, from_unit: LinearDensityUnits) -> float:
         value = self._value

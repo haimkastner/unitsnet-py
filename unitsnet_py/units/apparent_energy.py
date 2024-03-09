@@ -10,21 +10,34 @@ class ApparentEnergyUnits(Enum):
             ApparentEnergyUnits enumeration
         """
         
-        VoltampereHour = 'voltampere_hour'
+        VoltampereHour = 'VoltampereHour'
         """
             
         """
         
-        KilovoltampereHour = 'kilovoltampere_hour'
+        KilovoltampereHour = 'KilovoltampereHour'
         """
             
         """
         
-        MegavoltampereHour = 'megavoltampere_hour'
+        MegavoltampereHour = 'MegavoltampereHour'
         """
             
         """
         
+
+class ApparentEnergyDto:
+    def __init__(self, value: float, unit: ApparentEnergyUnits):
+        self.value: float = value
+        self.unit: ApparentEnergyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ApparentEnergyDto(value=data["value"], unit=ApparentEnergyUnits(data["unit"]))
+
 
 class ApparentEnergy(AbstractMeasure):
     """
@@ -50,6 +63,13 @@ class ApparentEnergy(AbstractMeasure):
 
     def convert(self, unit: ApparentEnergyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> ApparentEnergyDto:
+        return ApparentEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(apparent_energy_dto: ApparentEnergyDto):
+        return ApparentEnergy(apparent_energy_dto.value, apparent_energy_dto.unit)
 
     def __convert_from_base(self, from_unit: ApparentEnergyUnits) -> float:
         value = self._value

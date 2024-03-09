@@ -10,31 +10,44 @@ class RotationalStiffnessPerLengthUnits(Enum):
             RotationalStiffnessPerLengthUnits enumeration
         """
         
-        NewtonMeterPerRadianPerMeter = 'newton_meter_per_radian_per_meter'
+        NewtonMeterPerRadianPerMeter = 'NewtonMeterPerRadianPerMeter'
         """
             
         """
         
-        PoundForceFootPerDegreesPerFoot = 'pound_force_foot_per_degrees_per_foot'
+        PoundForceFootPerDegreesPerFoot = 'PoundForceFootPerDegreesPerFoot'
         """
             
         """
         
-        KilopoundForceFootPerDegreesPerFoot = 'kilopound_force_foot_per_degrees_per_foot'
+        KilopoundForceFootPerDegreesPerFoot = 'KilopoundForceFootPerDegreesPerFoot'
         """
             
         """
         
-        KilonewtonMeterPerRadianPerMeter = 'kilonewton_meter_per_radian_per_meter'
+        KilonewtonMeterPerRadianPerMeter = 'KilonewtonMeterPerRadianPerMeter'
         """
             
         """
         
-        MeganewtonMeterPerRadianPerMeter = 'meganewton_meter_per_radian_per_meter'
+        MeganewtonMeterPerRadianPerMeter = 'MeganewtonMeterPerRadianPerMeter'
         """
             
         """
         
+
+class RotationalStiffnessPerLengthDto:
+    def __init__(self, value: float, unit: RotationalStiffnessPerLengthUnits):
+        self.value: float = value
+        self.unit: RotationalStiffnessPerLengthUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RotationalStiffnessPerLengthDto(value=data["value"], unit=RotationalStiffnessPerLengthUnits(data["unit"]))
+
 
 class RotationalStiffnessPerLength(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class RotationalStiffnessPerLength(AbstractMeasure):
 
     def convert(self, unit: RotationalStiffnessPerLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter) -> RotationalStiffnessPerLengthDto:
+        return RotationalStiffnessPerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(rotational_stiffness_per_length_dto: RotationalStiffnessPerLengthDto):
+        return RotationalStiffnessPerLength(rotational_stiffness_per_length_dto.value, rotational_stiffness_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalStiffnessPerLengthUnits) -> float:
         value = self._value

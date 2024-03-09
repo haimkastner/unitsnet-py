@@ -10,61 +10,74 @@ class DurationUnits(Enum):
             DurationUnits enumeration
         """
         
-        Year365 = 'year365'
+        Year365 = 'Year365'
         """
             
         """
         
-        Month30 = 'month30'
+        Month30 = 'Month30'
         """
             
         """
         
-        Week = 'week'
+        Week = 'Week'
         """
             
         """
         
-        Day = 'day'
+        Day = 'Day'
         """
             
         """
         
-        Hour = 'hour'
+        Hour = 'Hour'
         """
             
         """
         
-        Minute = 'minute'
+        Minute = 'Minute'
         """
             
         """
         
-        Second = 'second'
+        Second = 'Second'
         """
             
         """
         
-        JulianYear = 'julian_year'
+        JulianYear = 'JulianYear'
         """
             
         """
         
-        Nanosecond = 'nanosecond'
+        Nanosecond = 'Nanosecond'
         """
             
         """
         
-        Microsecond = 'microsecond'
+        Microsecond = 'Microsecond'
         """
             
         """
         
-        Millisecond = 'millisecond'
+        Millisecond = 'Millisecond'
         """
             
         """
         
+
+class DurationDto:
+    def __init__(self, value: float, unit: DurationUnits):
+        self.value: float = value
+        self.unit: DurationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return DurationDto(value=data["value"], unit=DurationUnits(data["unit"]))
+
 
 class Duration(AbstractMeasure):
     """
@@ -106,6 +119,13 @@ class Duration(AbstractMeasure):
 
     def convert(self, unit: DurationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: DurationUnits = DurationUnits.Second) -> DurationDto:
+        return DurationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(duration_dto: DurationDto):
+        return Duration(duration_dto.value, duration_dto.unit)
 
     def __convert_from_base(self, from_unit: DurationUnits) -> float:
         value = self._value

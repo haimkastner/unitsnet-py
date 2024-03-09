@@ -10,16 +10,29 @@ class MolalityUnits(Enum):
             MolalityUnits enumeration
         """
         
-        MolePerKilogram = 'mole_per_kilogram'
+        MolePerKilogram = 'MolePerKilogram'
         """
             
         """
         
-        MolePerGram = 'mole_per_gram'
+        MolePerGram = 'MolePerGram'
         """
             
         """
         
+
+class MolalityDto:
+    def __init__(self, value: float, unit: MolalityUnits):
+        self.value: float = value
+        self.unit: MolalityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolalityDto(value=data["value"], unit=MolalityUnits(data["unit"]))
+
 
 class Molality(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class Molality(AbstractMeasure):
 
     def convert(self, unit: MolalityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolalityUnits = MolalityUnits.MolePerKilogram) -> MolalityDto:
+        return MolalityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molality_dto: MolalityDto):
+        return Molality(molality_dto.value, molality_dto.unit)
 
     def __convert_from_base(self, from_unit: MolalityUnits) -> float:
         value = self._value

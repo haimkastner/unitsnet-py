@@ -10,81 +10,94 @@ class ForceChangeRateUnits(Enum):
             ForceChangeRateUnits enumeration
         """
         
-        NewtonPerMinute = 'newton_per_minute'
+        NewtonPerMinute = 'NewtonPerMinute'
         """
             
         """
         
-        NewtonPerSecond = 'newton_per_second'
+        NewtonPerSecond = 'NewtonPerSecond'
         """
             
         """
         
-        PoundForcePerMinute = 'pound_force_per_minute'
+        PoundForcePerMinute = 'PoundForcePerMinute'
         """
             
         """
         
-        PoundForcePerSecond = 'pound_force_per_second'
+        PoundForcePerSecond = 'PoundForcePerSecond'
         """
             
         """
         
-        DecanewtonPerMinute = 'decanewton_per_minute'
+        DecanewtonPerMinute = 'DecanewtonPerMinute'
         """
             
         """
         
-        KilonewtonPerMinute = 'kilonewton_per_minute'
+        KilonewtonPerMinute = 'KilonewtonPerMinute'
         """
             
         """
         
-        NanonewtonPerSecond = 'nanonewton_per_second'
+        NanonewtonPerSecond = 'NanonewtonPerSecond'
         """
             
         """
         
-        MicronewtonPerSecond = 'micronewton_per_second'
+        MicronewtonPerSecond = 'MicronewtonPerSecond'
         """
             
         """
         
-        MillinewtonPerSecond = 'millinewton_per_second'
+        MillinewtonPerSecond = 'MillinewtonPerSecond'
         """
             
         """
         
-        CentinewtonPerSecond = 'centinewton_per_second'
+        CentinewtonPerSecond = 'CentinewtonPerSecond'
         """
             
         """
         
-        DecinewtonPerSecond = 'decinewton_per_second'
+        DecinewtonPerSecond = 'DecinewtonPerSecond'
         """
             
         """
         
-        DecanewtonPerSecond = 'decanewton_per_second'
+        DecanewtonPerSecond = 'DecanewtonPerSecond'
         """
             
         """
         
-        KilonewtonPerSecond = 'kilonewton_per_second'
+        KilonewtonPerSecond = 'KilonewtonPerSecond'
         """
             
         """
         
-        KilopoundForcePerMinute = 'kilopound_force_per_minute'
+        KilopoundForcePerMinute = 'KilopoundForcePerMinute'
         """
             
         """
         
-        KilopoundForcePerSecond = 'kilopound_force_per_second'
+        KilopoundForcePerSecond = 'KilopoundForcePerSecond'
         """
             
         """
         
+
+class ForceChangeRateDto:
+    def __init__(self, value: float, unit: ForceChangeRateUnits):
+        self.value: float = value
+        self.unit: ForceChangeRateUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ForceChangeRateDto(value=data["value"], unit=ForceChangeRateUnits(data["unit"]))
+
 
 class ForceChangeRate(AbstractMeasure):
     """
@@ -134,6 +147,13 @@ class ForceChangeRate(AbstractMeasure):
 
     def convert(self, unit: ForceChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> ForceChangeRateDto:
+        return ForceChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(force_change_rate_dto: ForceChangeRateDto):
+        return ForceChangeRate(force_change_rate_dto.value, force_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: ForceChangeRateUnits) -> float:
         value = self._value

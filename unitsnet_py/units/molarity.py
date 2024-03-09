@@ -10,61 +10,74 @@ class MolarityUnits(Enum):
             MolarityUnits enumeration
         """
         
-        MolePerCubicMeter = 'mole_per_cubic_meter'
+        MolePerCubicMeter = 'MolePerCubicMeter'
         """
             
         """
         
-        MolePerLiter = 'mole_per_liter'
+        MolePerLiter = 'MolePerLiter'
         """
             
         """
         
-        PoundMolePerCubicFoot = 'pound_mole_per_cubic_foot'
+        PoundMolePerCubicFoot = 'PoundMolePerCubicFoot'
         """
             
         """
         
-        KilomolePerCubicMeter = 'kilomole_per_cubic_meter'
+        KilomolePerCubicMeter = 'KilomolePerCubicMeter'
         """
             
         """
         
-        FemtomolePerLiter = 'femtomole_per_liter'
+        FemtomolePerLiter = 'FemtomolePerLiter'
         """
             
         """
         
-        PicomolePerLiter = 'picomole_per_liter'
+        PicomolePerLiter = 'PicomolePerLiter'
         """
             
         """
         
-        NanomolePerLiter = 'nanomole_per_liter'
+        NanomolePerLiter = 'NanomolePerLiter'
         """
             
         """
         
-        MicromolePerLiter = 'micromole_per_liter'
+        MicromolePerLiter = 'MicromolePerLiter'
         """
             
         """
         
-        MillimolePerLiter = 'millimole_per_liter'
+        MillimolePerLiter = 'MillimolePerLiter'
         """
             
         """
         
-        CentimolePerLiter = 'centimole_per_liter'
+        CentimolePerLiter = 'CentimolePerLiter'
         """
             
         """
         
-        DecimolePerLiter = 'decimole_per_liter'
+        DecimolePerLiter = 'DecimolePerLiter'
         """
             
         """
         
+
+class MolarityDto:
+    def __init__(self, value: float, unit: MolarityUnits):
+        self.value: float = value
+        self.unit: MolarityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarityDto(value=data["value"], unit=MolarityUnits(data["unit"]))
+
 
 class Molarity(AbstractMeasure):
     """
@@ -106,6 +119,13 @@ class Molarity(AbstractMeasure):
 
     def convert(self, unit: MolarityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> MolarityDto:
+        return MolarityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molarity_dto: MolarityDto):
+        return Molarity(molarity_dto.value, molarity_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarityUnits) -> float:
         value = self._value

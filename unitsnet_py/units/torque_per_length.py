@@ -10,111 +10,124 @@ class TorquePerLengthUnits(Enum):
             TorquePerLengthUnits enumeration
         """
         
-        NewtonMillimeterPerMeter = 'newton_millimeter_per_meter'
+        NewtonMillimeterPerMeter = 'NewtonMillimeterPerMeter'
         """
             
         """
         
-        NewtonCentimeterPerMeter = 'newton_centimeter_per_meter'
+        NewtonCentimeterPerMeter = 'NewtonCentimeterPerMeter'
         """
             
         """
         
-        NewtonMeterPerMeter = 'newton_meter_per_meter'
+        NewtonMeterPerMeter = 'NewtonMeterPerMeter'
         """
             
         """
         
-        PoundForceInchPerFoot = 'pound_force_inch_per_foot'
+        PoundForceInchPerFoot = 'PoundForceInchPerFoot'
         """
             
         """
         
-        PoundForceFootPerFoot = 'pound_force_foot_per_foot'
+        PoundForceFootPerFoot = 'PoundForceFootPerFoot'
         """
             
         """
         
-        KilogramForceMillimeterPerMeter = 'kilogram_force_millimeter_per_meter'
+        KilogramForceMillimeterPerMeter = 'KilogramForceMillimeterPerMeter'
         """
             
         """
         
-        KilogramForceCentimeterPerMeter = 'kilogram_force_centimeter_per_meter'
+        KilogramForceCentimeterPerMeter = 'KilogramForceCentimeterPerMeter'
         """
             
         """
         
-        KilogramForceMeterPerMeter = 'kilogram_force_meter_per_meter'
+        KilogramForceMeterPerMeter = 'KilogramForceMeterPerMeter'
         """
             
         """
         
-        TonneForceMillimeterPerMeter = 'tonne_force_millimeter_per_meter'
+        TonneForceMillimeterPerMeter = 'TonneForceMillimeterPerMeter'
         """
             
         """
         
-        TonneForceCentimeterPerMeter = 'tonne_force_centimeter_per_meter'
+        TonneForceCentimeterPerMeter = 'TonneForceCentimeterPerMeter'
         """
             
         """
         
-        TonneForceMeterPerMeter = 'tonne_force_meter_per_meter'
+        TonneForceMeterPerMeter = 'TonneForceMeterPerMeter'
         """
             
         """
         
-        KilonewtonMillimeterPerMeter = 'kilonewton_millimeter_per_meter'
+        KilonewtonMillimeterPerMeter = 'KilonewtonMillimeterPerMeter'
         """
             
         """
         
-        MeganewtonMillimeterPerMeter = 'meganewton_millimeter_per_meter'
+        MeganewtonMillimeterPerMeter = 'MeganewtonMillimeterPerMeter'
         """
             
         """
         
-        KilonewtonCentimeterPerMeter = 'kilonewton_centimeter_per_meter'
+        KilonewtonCentimeterPerMeter = 'KilonewtonCentimeterPerMeter'
         """
             
         """
         
-        MeganewtonCentimeterPerMeter = 'meganewton_centimeter_per_meter'
+        MeganewtonCentimeterPerMeter = 'MeganewtonCentimeterPerMeter'
         """
             
         """
         
-        KilonewtonMeterPerMeter = 'kilonewton_meter_per_meter'
+        KilonewtonMeterPerMeter = 'KilonewtonMeterPerMeter'
         """
             
         """
         
-        MeganewtonMeterPerMeter = 'meganewton_meter_per_meter'
+        MeganewtonMeterPerMeter = 'MeganewtonMeterPerMeter'
         """
             
         """
         
-        KilopoundForceInchPerFoot = 'kilopound_force_inch_per_foot'
+        KilopoundForceInchPerFoot = 'KilopoundForceInchPerFoot'
         """
             
         """
         
-        MegapoundForceInchPerFoot = 'megapound_force_inch_per_foot'
+        MegapoundForceInchPerFoot = 'MegapoundForceInchPerFoot'
         """
             
         """
         
-        KilopoundForceFootPerFoot = 'kilopound_force_foot_per_foot'
+        KilopoundForceFootPerFoot = 'KilopoundForceFootPerFoot'
         """
             
         """
         
-        MegapoundForceFootPerFoot = 'megapound_force_foot_per_foot'
+        MegapoundForceFootPerFoot = 'MegapoundForceFootPerFoot'
         """
             
         """
         
+
+class TorquePerLengthDto:
+    def __init__(self, value: float, unit: TorquePerLengthUnits):
+        self.value: float = value
+        self.unit: TorquePerLengthUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TorquePerLengthDto(value=data["value"], unit=TorquePerLengthUnits(data["unit"]))
+
 
 class TorquePerLength(AbstractMeasure):
     """
@@ -176,6 +189,13 @@ class TorquePerLength(AbstractMeasure):
 
     def convert(self, unit: TorquePerLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> TorquePerLengthDto:
+        return TorquePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(torque_per_length_dto: TorquePerLengthDto):
+        return TorquePerLength(torque_per_length_dto.value, torque_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: TorquePerLengthUnits) -> float:
         value = self._value

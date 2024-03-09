@@ -10,31 +10,44 @@ class ElectricPotentialDcUnits(Enum):
             ElectricPotentialDcUnits enumeration
         """
         
-        VoltDc = 'volt_dc'
+        VoltDc = 'VoltDc'
         """
             
         """
         
-        MicrovoltDc = 'microvolt_dc'
+        MicrovoltDc = 'MicrovoltDc'
         """
             
         """
         
-        MillivoltDc = 'millivolt_dc'
+        MillivoltDc = 'MillivoltDc'
         """
             
         """
         
-        KilovoltDc = 'kilovolt_dc'
+        KilovoltDc = 'KilovoltDc'
         """
             
         """
         
-        MegavoltDc = 'megavolt_dc'
+        MegavoltDc = 'MegavoltDc'
         """
             
         """
         
+
+class ElectricPotentialDcDto:
+    def __init__(self, value: float, unit: ElectricPotentialDcUnits):
+        self.value: float = value
+        self.unit: ElectricPotentialDcUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricPotentialDcDto(value=data["value"], unit=ElectricPotentialDcUnits(data["unit"]))
+
 
 class ElectricPotentialDc(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class ElectricPotentialDc(AbstractMeasure):
 
     def convert(self, unit: ElectricPotentialDcUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricPotentialDcUnits = ElectricPotentialDcUnits.VoltDc) -> ElectricPotentialDcDto:
+        return ElectricPotentialDcDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_potential_dc_dto: ElectricPotentialDcDto):
+        return ElectricPotentialDc(electric_potential_dc_dto.value, electric_potential_dc_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricPotentialDcUnits) -> float:
         value = self._value

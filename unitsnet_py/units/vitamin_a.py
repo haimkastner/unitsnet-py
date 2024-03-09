@@ -10,11 +10,24 @@ class VitaminAUnits(Enum):
             VitaminAUnits enumeration
         """
         
-        InternationalUnit = 'international_unit'
+        InternationalUnit = 'InternationalUnit'
         """
             
         """
         
+
+class VitaminADto:
+    def __init__(self, value: float, unit: VitaminAUnits):
+        self.value: float = value
+        self.unit: VitaminAUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VitaminADto(value=data["value"], unit=VitaminAUnits(data["unit"]))
+
 
 class VitaminA(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class VitaminA(AbstractMeasure):
 
     def convert(self, unit: VitaminAUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VitaminAUnits = VitaminAUnits.InternationalUnit) -> VitaminADto:
+        return VitaminADto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(vitamin_a_dto: VitaminADto):
+        return VitaminA(vitamin_a_dto.value, vitamin_a_dto.unit)
 
     def __convert_from_base(self, from_unit: VitaminAUnits) -> float:
         value = self._value

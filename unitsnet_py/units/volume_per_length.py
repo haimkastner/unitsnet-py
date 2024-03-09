@@ -10,51 +10,64 @@ class VolumePerLengthUnits(Enum):
             VolumePerLengthUnits enumeration
         """
         
-        CubicMeterPerMeter = 'cubic_meter_per_meter'
+        CubicMeterPerMeter = 'CubicMeterPerMeter'
         """
             
         """
         
-        LiterPerMeter = 'liter_per_meter'
+        LiterPerMeter = 'LiterPerMeter'
         """
             
         """
         
-        LiterPerKilometer = 'liter_per_kilometer'
+        LiterPerKilometer = 'LiterPerKilometer'
         """
             
         """
         
-        LiterPerMillimeter = 'liter_per_millimeter'
+        LiterPerMillimeter = 'LiterPerMillimeter'
         """
             
         """
         
-        OilBarrelPerFoot = 'oil_barrel_per_foot'
+        OilBarrelPerFoot = 'OilBarrelPerFoot'
         """
             
         """
         
-        CubicYardPerFoot = 'cubic_yard_per_foot'
+        CubicYardPerFoot = 'CubicYardPerFoot'
         """
             
         """
         
-        CubicYardPerUsSurveyFoot = 'cubic_yard_per_us_survey_foot'
+        CubicYardPerUsSurveyFoot = 'CubicYardPerUsSurveyFoot'
         """
             
         """
         
-        UsGallonPerMile = 'us_gallon_per_mile'
+        UsGallonPerMile = 'UsGallonPerMile'
         """
             
         """
         
-        ImperialGallonPerMile = 'imperial_gallon_per_mile'
+        ImperialGallonPerMile = 'ImperialGallonPerMile'
         """
             
         """
         
+
+class VolumePerLengthDto:
+    def __init__(self, value: float, unit: VolumePerLengthUnits):
+        self.value: float = value
+        self.unit: VolumePerLengthUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return VolumePerLengthDto(value=data["value"], unit=VolumePerLengthUnits(data["unit"]))
+
 
 class VolumePerLength(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class VolumePerLength(AbstractMeasure):
 
     def convert(self, unit: VolumePerLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> VolumePerLengthDto:
+        return VolumePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(volume_per_length_dto: VolumePerLengthDto):
+        return VolumePerLength(volume_per_length_dto.value, volume_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumePerLengthUnits) -> float:
         value = self._value

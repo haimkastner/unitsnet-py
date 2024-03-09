@@ -10,31 +10,44 @@ class ElectricInductanceUnits(Enum):
             ElectricInductanceUnits enumeration
         """
         
-        Henry = 'henry'
+        Henry = 'Henry'
         """
             
         """
         
-        Picohenry = 'picohenry'
+        Picohenry = 'Picohenry'
         """
             
         """
         
-        Nanohenry = 'nanohenry'
+        Nanohenry = 'Nanohenry'
         """
             
         """
         
-        Microhenry = 'microhenry'
+        Microhenry = 'Microhenry'
         """
             
         """
         
-        Millihenry = 'millihenry'
+        Millihenry = 'Millihenry'
         """
             
         """
         
+
+class ElectricInductanceDto:
+    def __init__(self, value: float, unit: ElectricInductanceUnits):
+        self.value: float = value
+        self.unit: ElectricInductanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricInductanceDto(value=data["value"], unit=ElectricInductanceUnits(data["unit"]))
+
 
 class ElectricInductance(AbstractMeasure):
     """
@@ -64,6 +77,13 @@ class ElectricInductance(AbstractMeasure):
 
     def convert(self, unit: ElectricInductanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> ElectricInductanceDto:
+        return ElectricInductanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_inductance_dto: ElectricInductanceDto):
+        return ElectricInductance(electric_inductance_dto.value, electric_inductance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricInductanceUnits) -> float:
         value = self._value

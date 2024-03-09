@@ -10,41 +10,54 @@ class EntropyUnits(Enum):
             EntropyUnits enumeration
         """
         
-        JoulePerKelvin = 'joule_per_kelvin'
+        JoulePerKelvin = 'JoulePerKelvin'
         """
             
         """
         
-        CaloriePerKelvin = 'calorie_per_kelvin'
+        CaloriePerKelvin = 'CaloriePerKelvin'
         """
             
         """
         
-        JoulePerDegreeCelsius = 'joule_per_degree_celsius'
+        JoulePerDegreeCelsius = 'JoulePerDegreeCelsius'
         """
             
         """
         
-        KilojoulePerKelvin = 'kilojoule_per_kelvin'
+        KilojoulePerKelvin = 'KilojoulePerKelvin'
         """
             
         """
         
-        MegajoulePerKelvin = 'megajoule_per_kelvin'
+        MegajoulePerKelvin = 'MegajoulePerKelvin'
         """
             
         """
         
-        KilocaloriePerKelvin = 'kilocalorie_per_kelvin'
+        KilocaloriePerKelvin = 'KilocaloriePerKelvin'
         """
             
         """
         
-        KilojoulePerDegreeCelsius = 'kilojoule_per_degree_celsius'
+        KilojoulePerDegreeCelsius = 'KilojoulePerDegreeCelsius'
         """
             
         """
         
+
+class EntropyDto:
+    def __init__(self, value: float, unit: EntropyUnits):
+        self.value: float = value
+        self.unit: EntropyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return EntropyDto(value=data["value"], unit=EntropyUnits(data["unit"]))
+
 
 class Entropy(AbstractMeasure):
     """
@@ -78,6 +91,13 @@ class Entropy(AbstractMeasure):
 
     def convert(self, unit: EntropyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> EntropyDto:
+        return EntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(entropy_dto: EntropyDto):
+        return Entropy(entropy_dto.value, entropy_dto.unit)
 
     def __convert_from_base(self, from_unit: EntropyUnits) -> float:
         value = self._value

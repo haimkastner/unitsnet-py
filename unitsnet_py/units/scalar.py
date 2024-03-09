@@ -10,11 +10,24 @@ class ScalarUnits(Enum):
             ScalarUnits enumeration
         """
         
-        Amount = 'amount'
+        Amount = 'Amount'
         """
             
         """
         
+
+class ScalarDto:
+    def __init__(self, value: float, unit: ScalarUnits):
+        self.value: float = value
+        self.unit: ScalarUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ScalarDto(value=data["value"], unit=ScalarUnits(data["unit"]))
+
 
 class Scalar(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class Scalar(AbstractMeasure):
 
     def convert(self, unit: ScalarUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ScalarUnits = ScalarUnits.Amount) -> ScalarDto:
+        return ScalarDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(scalar_dto: ScalarDto):
+        return Scalar(scalar_dto.value, scalar_dto.unit)
 
     def __convert_from_base(self, from_unit: ScalarUnits) -> float:
         value = self._value

@@ -10,51 +10,64 @@ class MolarFlowUnits(Enum):
             MolarFlowUnits enumeration
         """
         
-        MolePerSecond = 'mole_per_second'
+        MolePerSecond = 'MolePerSecond'
         """
             
         """
         
-        MolePerMinute = 'mole_per_minute'
+        MolePerMinute = 'MolePerMinute'
         """
             
         """
         
-        MolePerHour = 'mole_per_hour'
+        MolePerHour = 'MolePerHour'
         """
             
         """
         
-        PoundMolePerSecond = 'pound_mole_per_second'
+        PoundMolePerSecond = 'PoundMolePerSecond'
         """
             
         """
         
-        PoundMolePerMinute = 'pound_mole_per_minute'
+        PoundMolePerMinute = 'PoundMolePerMinute'
         """
             
         """
         
-        PoundMolePerHour = 'pound_mole_per_hour'
+        PoundMolePerHour = 'PoundMolePerHour'
         """
             
         """
         
-        KilomolePerSecond = 'kilomole_per_second'
+        KilomolePerSecond = 'KilomolePerSecond'
         """
             
         """
         
-        KilomolePerMinute = 'kilomole_per_minute'
+        KilomolePerMinute = 'KilomolePerMinute'
         """
             
         """
         
-        KilomolePerHour = 'kilomole_per_hour'
+        KilomolePerHour = 'KilomolePerHour'
         """
             
         """
         
+
+class MolarFlowDto:
+    def __init__(self, value: float, unit: MolarFlowUnits):
+        self.value: float = value
+        self.unit: MolarFlowUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarFlowDto(value=data["value"], unit=MolarFlowUnits(data["unit"]))
+
 
 class MolarFlow(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class MolarFlow(AbstractMeasure):
 
     def convert(self, unit: MolarFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> MolarFlowDto:
+        return MolarFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molar_flow_dto: MolarFlowDto):
+        return MolarFlow(molar_flow_dto.value, molar_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarFlowUnits) -> float:
         value = self._value

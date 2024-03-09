@@ -10,11 +10,24 @@ class RelativeHumidityUnits(Enum):
             RelativeHumidityUnits enumeration
         """
         
-        Percent = 'percent'
+        Percent = 'Percent'
         """
             
         """
         
+
+class RelativeHumidityDto:
+    def __init__(self, value: float, unit: RelativeHumidityUnits):
+        self.value: float = value
+        self.unit: RelativeHumidityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RelativeHumidityDto(value=data["value"], unit=RelativeHumidityUnits(data["unit"]))
+
 
 class RelativeHumidity(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class RelativeHumidity(AbstractMeasure):
 
     def convert(self, unit: RelativeHumidityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> RelativeHumidityDto:
+        return RelativeHumidityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(relative_humidity_dto: RelativeHumidityDto):
+        return RelativeHumidity(relative_humidity_dto.value, relative_humidity_dto.unit)
 
     def __convert_from_base(self, from_unit: RelativeHumidityUnits) -> float:
         value = self._value

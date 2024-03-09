@@ -10,36 +10,49 @@ class ElectricConductivityUnits(Enum):
             ElectricConductivityUnits enumeration
         """
         
-        SiemensPerMeter = 'siemens_per_meter'
+        SiemensPerMeter = 'SiemensPerMeter'
         """
             
         """
         
-        SiemensPerInch = 'siemens_per_inch'
+        SiemensPerInch = 'SiemensPerInch'
         """
             
         """
         
-        SiemensPerFoot = 'siemens_per_foot'
+        SiemensPerFoot = 'SiemensPerFoot'
         """
             
         """
         
-        SiemensPerCentimeter = 'siemens_per_centimeter'
+        SiemensPerCentimeter = 'SiemensPerCentimeter'
         """
             
         """
         
-        MicrosiemensPerCentimeter = 'microsiemens_per_centimeter'
+        MicrosiemensPerCentimeter = 'MicrosiemensPerCentimeter'
         """
             
         """
         
-        MillisiemensPerCentimeter = 'millisiemens_per_centimeter'
+        MillisiemensPerCentimeter = 'MillisiemensPerCentimeter'
         """
             
         """
         
+
+class ElectricConductivityDto:
+    def __init__(self, value: float, unit: ElectricConductivityUnits):
+        self.value: float = value
+        self.unit: ElectricConductivityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricConductivityDto(value=data["value"], unit=ElectricConductivityUnits(data["unit"]))
+
 
 class ElectricConductivity(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class ElectricConductivity(AbstractMeasure):
 
     def convert(self, unit: ElectricConductivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricConductivityUnits = ElectricConductivityUnits.SiemensPerMeter) -> ElectricConductivityDto:
+        return ElectricConductivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_conductivity_dto: ElectricConductivityDto):
+        return ElectricConductivity(electric_conductivity_dto.value, electric_conductivity_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricConductivityUnits) -> float:
         value = self._value

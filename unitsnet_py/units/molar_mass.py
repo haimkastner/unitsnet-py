@@ -10,71 +10,84 @@ class MolarMassUnits(Enum):
             MolarMassUnits enumeration
         """
         
-        GramPerMole = 'gram_per_mole'
+        GramPerMole = 'GramPerMole'
         """
             
         """
         
-        KilogramPerKilomole = 'kilogram_per_kilomole'
+        KilogramPerKilomole = 'KilogramPerKilomole'
         """
             
         """
         
-        PoundPerMole = 'pound_per_mole'
+        PoundPerMole = 'PoundPerMole'
         """
             
         """
         
-        NanogramPerMole = 'nanogram_per_mole'
+        NanogramPerMole = 'NanogramPerMole'
         """
             
         """
         
-        MicrogramPerMole = 'microgram_per_mole'
+        MicrogramPerMole = 'MicrogramPerMole'
         """
             
         """
         
-        MilligramPerMole = 'milligram_per_mole'
+        MilligramPerMole = 'MilligramPerMole'
         """
             
         """
         
-        CentigramPerMole = 'centigram_per_mole'
+        CentigramPerMole = 'CentigramPerMole'
         """
             
         """
         
-        DecigramPerMole = 'decigram_per_mole'
+        DecigramPerMole = 'DecigramPerMole'
         """
             
         """
         
-        DecagramPerMole = 'decagram_per_mole'
+        DecagramPerMole = 'DecagramPerMole'
         """
             
         """
         
-        HectogramPerMole = 'hectogram_per_mole'
+        HectogramPerMole = 'HectogramPerMole'
         """
             
         """
         
-        KilogramPerMole = 'kilogram_per_mole'
+        KilogramPerMole = 'KilogramPerMole'
         """
             
         """
         
-        KilopoundPerMole = 'kilopound_per_mole'
+        KilopoundPerMole = 'KilopoundPerMole'
         """
             
         """
         
-        MegapoundPerMole = 'megapound_per_mole'
+        MegapoundPerMole = 'MegapoundPerMole'
         """
             
         """
         
+
+class MolarMassDto:
+    def __init__(self, value: float, unit: MolarMassUnits):
+        self.value: float = value
+        self.unit: MolarMassUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarMassDto(value=data["value"], unit=MolarMassUnits(data["unit"]))
+
 
 class MolarMass(AbstractMeasure):
     """
@@ -120,6 +133,13 @@ class MolarMass(AbstractMeasure):
 
     def convert(self, unit: MolarMassUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> MolarMassDto:
+        return MolarMassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molar_mass_dto: MolarMassDto):
+        return MolarMass(molar_mass_dto.value, molar_mass_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:
         value = self._value

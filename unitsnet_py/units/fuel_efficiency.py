@@ -10,26 +10,39 @@ class FuelEfficiencyUnits(Enum):
             FuelEfficiencyUnits enumeration
         """
         
-        LiterPer100Kilometers = 'liter_per100_kilometers'
+        LiterPer100Kilometers = 'LiterPer100Kilometers'
         """
             
         """
         
-        MilePerUsGallon = 'mile_per_us_gallon'
+        MilePerUsGallon = 'MilePerUsGallon'
         """
             
         """
         
-        MilePerUkGallon = 'mile_per_uk_gallon'
+        MilePerUkGallon = 'MilePerUkGallon'
         """
             
         """
         
-        KilometerPerLiter = 'kilometer_per_liter'
+        KilometerPerLiter = 'KilometerPerLiter'
         """
             
         """
         
+
+class FuelEfficiencyDto:
+    def __init__(self, value: float, unit: FuelEfficiencyUnits):
+        self.value: float = value
+        self.unit: FuelEfficiencyUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return FuelEfficiencyDto(value=data["value"], unit=FuelEfficiencyUnits(data["unit"]))
+
 
 class FuelEfficiency(AbstractMeasure):
     """
@@ -57,6 +70,13 @@ class FuelEfficiency(AbstractMeasure):
 
     def convert(self, unit: FuelEfficiencyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> FuelEfficiencyDto:
+        return FuelEfficiencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(fuel_efficiency_dto: FuelEfficiencyDto):
+        return FuelEfficiency(fuel_efficiency_dto.value, fuel_efficiency_dto.unit)
 
     def __convert_from_base(self, from_unit: FuelEfficiencyUnits) -> float:
         value = self._value

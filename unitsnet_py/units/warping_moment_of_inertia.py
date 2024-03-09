@@ -10,36 +10,49 @@ class WarpingMomentOfInertiaUnits(Enum):
             WarpingMomentOfInertiaUnits enumeration
         """
         
-        MeterToTheSixth = 'meter_to_the_sixth'
+        MeterToTheSixth = 'MeterToTheSixth'
         """
             
         """
         
-        DecimeterToTheSixth = 'decimeter_to_the_sixth'
+        DecimeterToTheSixth = 'DecimeterToTheSixth'
         """
             
         """
         
-        CentimeterToTheSixth = 'centimeter_to_the_sixth'
+        CentimeterToTheSixth = 'CentimeterToTheSixth'
         """
             
         """
         
-        MillimeterToTheSixth = 'millimeter_to_the_sixth'
+        MillimeterToTheSixth = 'MillimeterToTheSixth'
         """
             
         """
         
-        FootToTheSixth = 'foot_to_the_sixth'
+        FootToTheSixth = 'FootToTheSixth'
         """
             
         """
         
-        InchToTheSixth = 'inch_to_the_sixth'
+        InchToTheSixth = 'InchToTheSixth'
         """
             
         """
         
+
+class WarpingMomentOfInertiaDto:
+    def __init__(self, value: float, unit: WarpingMomentOfInertiaUnits):
+        self.value: float = value
+        self.unit: WarpingMomentOfInertiaUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return WarpingMomentOfInertiaDto(value=data["value"], unit=WarpingMomentOfInertiaUnits(data["unit"]))
+
 
 class WarpingMomentOfInertia(AbstractMeasure):
     """
@@ -71,6 +84,13 @@ class WarpingMomentOfInertia(AbstractMeasure):
 
     def convert(self, unit: WarpingMomentOfInertiaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> WarpingMomentOfInertiaDto:
+        return WarpingMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(warping_moment_of_inertia_dto: WarpingMomentOfInertiaDto):
+        return WarpingMomentOfInertia(warping_moment_of_inertia_dto.value, warping_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: WarpingMomentOfInertiaUnits) -> float:
         value = self._value

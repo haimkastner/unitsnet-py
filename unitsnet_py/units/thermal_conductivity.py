@@ -10,16 +10,29 @@ class ThermalConductivityUnits(Enum):
             ThermalConductivityUnits enumeration
         """
         
-        WattPerMeterKelvin = 'watt_per_meter_kelvin'
+        WattPerMeterKelvin = 'WattPerMeterKelvin'
         """
             
         """
         
-        BtuPerHourFootFahrenheit = 'btu_per_hour_foot_fahrenheit'
+        BtuPerHourFootFahrenheit = 'BtuPerHourFootFahrenheit'
         """
             
         """
         
+
+class ThermalConductivityDto:
+    def __init__(self, value: float, unit: ThermalConductivityUnits):
+        self.value: float = value
+        self.unit: ThermalConductivityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ThermalConductivityDto(value=data["value"], unit=ThermalConductivityUnits(data["unit"]))
+
 
 class ThermalConductivity(AbstractMeasure):
     """
@@ -43,6 +56,13 @@ class ThermalConductivity(AbstractMeasure):
 
     def convert(self, unit: ThermalConductivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> ThermalConductivityDto:
+        return ThermalConductivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(thermal_conductivity_dto: ThermalConductivityDto):
+        return ThermalConductivity(thermal_conductivity_dto.value, thermal_conductivity_dto.unit)
 
     def __convert_from_base(self, from_unit: ThermalConductivityUnits) -> float:
         value = self._value

@@ -10,56 +10,69 @@ class ReciprocalLengthUnits(Enum):
             ReciprocalLengthUnits enumeration
         """
         
-        InverseMeter = 'inverse_meter'
+        InverseMeter = 'InverseMeter'
         """
             
         """
         
-        InverseCentimeter = 'inverse_centimeter'
+        InverseCentimeter = 'InverseCentimeter'
         """
             
         """
         
-        InverseMillimeter = 'inverse_millimeter'
+        InverseMillimeter = 'InverseMillimeter'
         """
             
         """
         
-        InverseMile = 'inverse_mile'
+        InverseMile = 'InverseMile'
         """
             
         """
         
-        InverseYard = 'inverse_yard'
+        InverseYard = 'InverseYard'
         """
             
         """
         
-        InverseFoot = 'inverse_foot'
+        InverseFoot = 'InverseFoot'
         """
             
         """
         
-        InverseUsSurveyFoot = 'inverse_us_survey_foot'
+        InverseUsSurveyFoot = 'InverseUsSurveyFoot'
         """
             
         """
         
-        InverseInch = 'inverse_inch'
+        InverseInch = 'InverseInch'
         """
             
         """
         
-        InverseMil = 'inverse_mil'
+        InverseMil = 'InverseMil'
         """
             
         """
         
-        InverseMicroinch = 'inverse_microinch'
+        InverseMicroinch = 'InverseMicroinch'
         """
             
         """
         
+
+class ReciprocalLengthDto:
+    def __init__(self, value: float, unit: ReciprocalLengthUnits):
+        self.value: float = value
+        self.unit: ReciprocalLengthUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ReciprocalLengthDto(value=data["value"], unit=ReciprocalLengthUnits(data["unit"]))
+
 
 class ReciprocalLength(AbstractMeasure):
     """
@@ -99,6 +112,13 @@ class ReciprocalLength(AbstractMeasure):
 
     def convert(self, unit: ReciprocalLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> ReciprocalLengthDto:
+        return ReciprocalLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(reciprocal_length_dto: ReciprocalLengthDto):
+        return ReciprocalLength(reciprocal_length_dto.value, reciprocal_length_dto.unit)
 
     def __convert_from_base(self, from_unit: ReciprocalLengthUnits) -> float:
         value = self._value

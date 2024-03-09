@@ -10,61 +10,74 @@ class JerkUnits(Enum):
             JerkUnits enumeration
         """
         
-        MeterPerSecondCubed = 'meter_per_second_cubed'
+        MeterPerSecondCubed = 'MeterPerSecondCubed'
         """
             
         """
         
-        InchPerSecondCubed = 'inch_per_second_cubed'
+        InchPerSecondCubed = 'InchPerSecondCubed'
         """
             
         """
         
-        FootPerSecondCubed = 'foot_per_second_cubed'
+        FootPerSecondCubed = 'FootPerSecondCubed'
         """
             
         """
         
-        StandardGravitiesPerSecond = 'standard_gravities_per_second'
+        StandardGravitiesPerSecond = 'StandardGravitiesPerSecond'
         """
             
         """
         
-        NanometerPerSecondCubed = 'nanometer_per_second_cubed'
+        NanometerPerSecondCubed = 'NanometerPerSecondCubed'
         """
             
         """
         
-        MicrometerPerSecondCubed = 'micrometer_per_second_cubed'
+        MicrometerPerSecondCubed = 'MicrometerPerSecondCubed'
         """
             
         """
         
-        MillimeterPerSecondCubed = 'millimeter_per_second_cubed'
+        MillimeterPerSecondCubed = 'MillimeterPerSecondCubed'
         """
             
         """
         
-        CentimeterPerSecondCubed = 'centimeter_per_second_cubed'
+        CentimeterPerSecondCubed = 'CentimeterPerSecondCubed'
         """
             
         """
         
-        DecimeterPerSecondCubed = 'decimeter_per_second_cubed'
+        DecimeterPerSecondCubed = 'DecimeterPerSecondCubed'
         """
             
         """
         
-        KilometerPerSecondCubed = 'kilometer_per_second_cubed'
+        KilometerPerSecondCubed = 'KilometerPerSecondCubed'
         """
             
         """
         
-        MillistandardGravitiesPerSecond = 'millistandard_gravities_per_second'
+        MillistandardGravitiesPerSecond = 'MillistandardGravitiesPerSecond'
         """
             
         """
         
+
+class JerkDto:
+    def __init__(self, value: float, unit: JerkUnits):
+        self.value: float = value
+        self.unit: JerkUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return JerkDto(value=data["value"], unit=JerkUnits(data["unit"]))
+
 
 class Jerk(AbstractMeasure):
     """
@@ -106,6 +119,13 @@ class Jerk(AbstractMeasure):
 
     def convert(self, unit: JerkUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> JerkDto:
+        return JerkDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(jerk_dto: JerkDto):
+        return Jerk(jerk_dto.value, jerk_dto.unit)
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
         value = self._value

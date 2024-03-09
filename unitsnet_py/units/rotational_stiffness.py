@@ -10,171 +10,184 @@ class RotationalStiffnessUnits(Enum):
             RotationalStiffnessUnits enumeration
         """
         
-        NewtonMeterPerRadian = 'newton_meter_per_radian'
+        NewtonMeterPerRadian = 'NewtonMeterPerRadian'
         """
             
         """
         
-        PoundForceFootPerDegrees = 'pound_force_foot_per_degrees'
+        PoundForceFootPerDegrees = 'PoundForceFootPerDegrees'
         """
             
         """
         
-        KilopoundForceFootPerDegrees = 'kilopound_force_foot_per_degrees'
+        KilopoundForceFootPerDegrees = 'KilopoundForceFootPerDegrees'
         """
             
         """
         
-        NewtonMillimeterPerDegree = 'newton_millimeter_per_degree'
+        NewtonMillimeterPerDegree = 'NewtonMillimeterPerDegree'
         """
             
         """
         
-        NewtonMeterPerDegree = 'newton_meter_per_degree'
+        NewtonMeterPerDegree = 'NewtonMeterPerDegree'
         """
             
         """
         
-        NewtonMillimeterPerRadian = 'newton_millimeter_per_radian'
+        NewtonMillimeterPerRadian = 'NewtonMillimeterPerRadian'
         """
             
         """
         
-        PoundForceFeetPerRadian = 'pound_force_feet_per_radian'
+        PoundForceFeetPerRadian = 'PoundForceFeetPerRadian'
         """
             
         """
         
-        KilonewtonMeterPerRadian = 'kilonewton_meter_per_radian'
+        KilonewtonMeterPerRadian = 'KilonewtonMeterPerRadian'
         """
             
         """
         
-        MeganewtonMeterPerRadian = 'meganewton_meter_per_radian'
+        MeganewtonMeterPerRadian = 'MeganewtonMeterPerRadian'
         """
             
         """
         
-        NanonewtonMillimeterPerDegree = 'nanonewton_millimeter_per_degree'
+        NanonewtonMillimeterPerDegree = 'NanonewtonMillimeterPerDegree'
         """
             
         """
         
-        MicronewtonMillimeterPerDegree = 'micronewton_millimeter_per_degree'
+        MicronewtonMillimeterPerDegree = 'MicronewtonMillimeterPerDegree'
         """
             
         """
         
-        MillinewtonMillimeterPerDegree = 'millinewton_millimeter_per_degree'
+        MillinewtonMillimeterPerDegree = 'MillinewtonMillimeterPerDegree'
         """
             
         """
         
-        CentinewtonMillimeterPerDegree = 'centinewton_millimeter_per_degree'
+        CentinewtonMillimeterPerDegree = 'CentinewtonMillimeterPerDegree'
         """
             
         """
         
-        DecinewtonMillimeterPerDegree = 'decinewton_millimeter_per_degree'
+        DecinewtonMillimeterPerDegree = 'DecinewtonMillimeterPerDegree'
         """
             
         """
         
-        DecanewtonMillimeterPerDegree = 'decanewton_millimeter_per_degree'
+        DecanewtonMillimeterPerDegree = 'DecanewtonMillimeterPerDegree'
         """
             
         """
         
-        KilonewtonMillimeterPerDegree = 'kilonewton_millimeter_per_degree'
+        KilonewtonMillimeterPerDegree = 'KilonewtonMillimeterPerDegree'
         """
             
         """
         
-        MeganewtonMillimeterPerDegree = 'meganewton_millimeter_per_degree'
+        MeganewtonMillimeterPerDegree = 'MeganewtonMillimeterPerDegree'
         """
             
         """
         
-        NanonewtonMeterPerDegree = 'nanonewton_meter_per_degree'
+        NanonewtonMeterPerDegree = 'NanonewtonMeterPerDegree'
         """
             
         """
         
-        MicronewtonMeterPerDegree = 'micronewton_meter_per_degree'
+        MicronewtonMeterPerDegree = 'MicronewtonMeterPerDegree'
         """
             
         """
         
-        MillinewtonMeterPerDegree = 'millinewton_meter_per_degree'
+        MillinewtonMeterPerDegree = 'MillinewtonMeterPerDegree'
         """
             
         """
         
-        CentinewtonMeterPerDegree = 'centinewton_meter_per_degree'
+        CentinewtonMeterPerDegree = 'CentinewtonMeterPerDegree'
         """
             
         """
         
-        DecinewtonMeterPerDegree = 'decinewton_meter_per_degree'
+        DecinewtonMeterPerDegree = 'DecinewtonMeterPerDegree'
         """
             
         """
         
-        DecanewtonMeterPerDegree = 'decanewton_meter_per_degree'
+        DecanewtonMeterPerDegree = 'DecanewtonMeterPerDegree'
         """
             
         """
         
-        KilonewtonMeterPerDegree = 'kilonewton_meter_per_degree'
+        KilonewtonMeterPerDegree = 'KilonewtonMeterPerDegree'
         """
             
         """
         
-        MeganewtonMeterPerDegree = 'meganewton_meter_per_degree'
+        MeganewtonMeterPerDegree = 'MeganewtonMeterPerDegree'
         """
             
         """
         
-        NanonewtonMillimeterPerRadian = 'nanonewton_millimeter_per_radian'
+        NanonewtonMillimeterPerRadian = 'NanonewtonMillimeterPerRadian'
         """
             
         """
         
-        MicronewtonMillimeterPerRadian = 'micronewton_millimeter_per_radian'
+        MicronewtonMillimeterPerRadian = 'MicronewtonMillimeterPerRadian'
         """
             
         """
         
-        MillinewtonMillimeterPerRadian = 'millinewton_millimeter_per_radian'
+        MillinewtonMillimeterPerRadian = 'MillinewtonMillimeterPerRadian'
         """
             
         """
         
-        CentinewtonMillimeterPerRadian = 'centinewton_millimeter_per_radian'
+        CentinewtonMillimeterPerRadian = 'CentinewtonMillimeterPerRadian'
         """
             
         """
         
-        DecinewtonMillimeterPerRadian = 'decinewton_millimeter_per_radian'
+        DecinewtonMillimeterPerRadian = 'DecinewtonMillimeterPerRadian'
         """
             
         """
         
-        DecanewtonMillimeterPerRadian = 'decanewton_millimeter_per_radian'
+        DecanewtonMillimeterPerRadian = 'DecanewtonMillimeterPerRadian'
         """
             
         """
         
-        KilonewtonMillimeterPerRadian = 'kilonewton_millimeter_per_radian'
+        KilonewtonMillimeterPerRadian = 'KilonewtonMillimeterPerRadian'
         """
             
         """
         
-        MeganewtonMillimeterPerRadian = 'meganewton_millimeter_per_radian'
+        MeganewtonMillimeterPerRadian = 'MeganewtonMillimeterPerRadian'
         """
             
         """
         
+
+class RotationalStiffnessDto:
+    def __init__(self, value: float, unit: RotationalStiffnessUnits):
+        self.value: float = value
+        self.unit: RotationalStiffnessUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RotationalStiffnessDto(value=data["value"], unit=RotationalStiffnessUnits(data["unit"]))
+
 
 class RotationalStiffness(AbstractMeasure):
     """
@@ -260,6 +273,13 @@ class RotationalStiffness(AbstractMeasure):
 
     def convert(self, unit: RotationalStiffnessUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> RotationalStiffnessDto:
+        return RotationalStiffnessDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(rotational_stiffness_dto: RotationalStiffnessDto):
+        return RotationalStiffness(rotational_stiffness_dto.value, rotational_stiffness_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalStiffnessUnits) -> float:
         value = self._value

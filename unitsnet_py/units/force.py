@@ -10,81 +10,94 @@ class ForceUnits(Enum):
             ForceUnits enumeration
         """
         
-        Dyn = 'dyn'
+        Dyn = 'Dyn'
         """
             One dyne is equal to 10 micronewtons, 10e−5 N or to 10 nsn (nanosthenes) in the old metre–tonne–second system of units.
         """
         
-        KilogramForce = 'kilogram_force'
+        KilogramForce = 'KilogramForce'
         """
             The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
         """
         
-        TonneForce = 'tonne_force'
+        TonneForce = 'TonneForce'
         """
             The tonne-force, metric ton-force, megagram-force, and megapond (Mp) are each 1000 kilograms-force.
         """
         
-        Newton = 'newton'
+        Newton = 'Newton'
         """
             The newton (symbol: N) is the unit of force in the International System of Units (SI). It is defined as 1 kg⋅m/s2, the force which gives a mass of 1 kilogram an acceleration of 1 metre per second per second.
         """
         
-        KiloPond = 'kilo_pond'
+        KiloPond = 'KiloPond'
         """
             The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
         """
         
-        Poundal = 'poundal'
+        Poundal = 'Poundal'
         """
             The poundal is defined as the force necessary to accelerate 1 pound-mass at 1 foot per second per second. 1 pdl = 0.138254954376 N exactly.
         """
         
-        PoundForce = 'pound_force'
+        PoundForce = 'PoundForce'
         """
             The standard values of acceleration of the standard gravitational field (gn) and the international avoirdupois pound (lb) result in a pound-force equal to 4.4482216152605 N.
         """
         
-        OunceForce = 'ounce_force'
+        OunceForce = 'OunceForce'
         """
             An ounce-force is 1⁄16 of a pound-force, or about 0.2780139 newtons.
         """
         
-        ShortTonForce = 'short_ton_force'
+        ShortTonForce = 'ShortTonForce'
         """
             The short ton-force is a unit of force equal to 2,000 pounds-force (907.18474 kgf), that is most commonly used in the United States – known there simply as the ton or US ton.
         """
         
-        Micronewton = 'micronewton'
+        Micronewton = 'Micronewton'
         """
             
         """
         
-        Millinewton = 'millinewton'
+        Millinewton = 'Millinewton'
         """
             
         """
         
-        Decanewton = 'decanewton'
+        Decanewton = 'Decanewton'
         """
             
         """
         
-        Kilonewton = 'kilonewton'
+        Kilonewton = 'Kilonewton'
         """
             
         """
         
-        Meganewton = 'meganewton'
+        Meganewton = 'Meganewton'
         """
             
         """
         
-        KilopoundForce = 'kilopound_force'
+        KilopoundForce = 'KilopoundForce'
         """
             
         """
         
+
+class ForceDto:
+    def __init__(self, value: float, unit: ForceUnits):
+        self.value: float = value
+        self.unit: ForceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ForceDto(value=data["value"], unit=ForceUnits(data["unit"]))
+
 
 class Force(AbstractMeasure):
     """
@@ -134,6 +147,13 @@ class Force(AbstractMeasure):
 
     def convert(self, unit: ForceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ForceUnits = ForceUnits.Newton) -> ForceDto:
+        return ForceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(force_dto: ForceDto):
+        return Force(force_dto.value, force_dto.unit)
 
     def __convert_from_base(self, from_unit: ForceUnits) -> float:
         value = self._value

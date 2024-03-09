@@ -10,56 +10,69 @@ class LuminanceUnits(Enum):
             LuminanceUnits enumeration
         """
         
-        CandelaPerSquareMeter = 'candela_per_square_meter'
+        CandelaPerSquareMeter = 'CandelaPerSquareMeter'
         """
             
         """
         
-        CandelaPerSquareFoot = 'candela_per_square_foot'
+        CandelaPerSquareFoot = 'CandelaPerSquareFoot'
         """
             
         """
         
-        CandelaPerSquareInch = 'candela_per_square_inch'
+        CandelaPerSquareInch = 'CandelaPerSquareInch'
         """
             
         """
         
-        Nit = 'nit'
+        Nit = 'Nit'
         """
             
         """
         
-        NanocandelaPerSquareMeter = 'nanocandela_per_square_meter'
+        NanocandelaPerSquareMeter = 'NanocandelaPerSquareMeter'
         """
             
         """
         
-        MicrocandelaPerSquareMeter = 'microcandela_per_square_meter'
+        MicrocandelaPerSquareMeter = 'MicrocandelaPerSquareMeter'
         """
             
         """
         
-        MillicandelaPerSquareMeter = 'millicandela_per_square_meter'
+        MillicandelaPerSquareMeter = 'MillicandelaPerSquareMeter'
         """
             
         """
         
-        CenticandelaPerSquareMeter = 'centicandela_per_square_meter'
+        CenticandelaPerSquareMeter = 'CenticandelaPerSquareMeter'
         """
             
         """
         
-        DecicandelaPerSquareMeter = 'decicandela_per_square_meter'
+        DecicandelaPerSquareMeter = 'DecicandelaPerSquareMeter'
         """
             
         """
         
-        KilocandelaPerSquareMeter = 'kilocandela_per_square_meter'
+        KilocandelaPerSquareMeter = 'KilocandelaPerSquareMeter'
         """
             
         """
         
+
+class LuminanceDto:
+    def __init__(self, value: float, unit: LuminanceUnits):
+        self.value: float = value
+        self.unit: LuminanceUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return LuminanceDto(value=data["value"], unit=LuminanceUnits(data["unit"]))
+
 
 class Luminance(AbstractMeasure):
     """
@@ -99,6 +112,13 @@ class Luminance(AbstractMeasure):
 
     def convert(self, unit: LuminanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> LuminanceDto:
+        return LuminanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(luminance_dto: LuminanceDto):
+        return Luminance(luminance_dto.value, luminance_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminanceUnits) -> float:
         value = self._value

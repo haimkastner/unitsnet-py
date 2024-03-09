@@ -10,171 +10,184 @@ class MassFlowUnits(Enum):
             MassFlowUnits enumeration
         """
         
-        GramPerSecond = 'gram_per_second'
+        GramPerSecond = 'GramPerSecond'
         """
             
         """
         
-        GramPerDay = 'gram_per_day'
+        GramPerDay = 'GramPerDay'
         """
             
         """
         
-        GramPerHour = 'gram_per_hour'
+        GramPerHour = 'GramPerHour'
         """
             
         """
         
-        KilogramPerHour = 'kilogram_per_hour'
+        KilogramPerHour = 'KilogramPerHour'
         """
             
         """
         
-        KilogramPerMinute = 'kilogram_per_minute'
+        KilogramPerMinute = 'KilogramPerMinute'
         """
             
         """
         
-        TonnePerHour = 'tonne_per_hour'
+        TonnePerHour = 'TonnePerHour'
         """
             
         """
         
-        PoundPerDay = 'pound_per_day'
+        PoundPerDay = 'PoundPerDay'
         """
             
         """
         
-        PoundPerHour = 'pound_per_hour'
+        PoundPerHour = 'PoundPerHour'
         """
             
         """
         
-        PoundPerMinute = 'pound_per_minute'
+        PoundPerMinute = 'PoundPerMinute'
         """
             
         """
         
-        PoundPerSecond = 'pound_per_second'
+        PoundPerSecond = 'PoundPerSecond'
         """
             
         """
         
-        TonnePerDay = 'tonne_per_day'
+        TonnePerDay = 'TonnePerDay'
         """
             
         """
         
-        ShortTonPerHour = 'short_ton_per_hour'
+        ShortTonPerHour = 'ShortTonPerHour'
         """
             
         """
         
-        NanogramPerSecond = 'nanogram_per_second'
+        NanogramPerSecond = 'NanogramPerSecond'
         """
             
         """
         
-        MicrogramPerSecond = 'microgram_per_second'
+        MicrogramPerSecond = 'MicrogramPerSecond'
         """
             
         """
         
-        MilligramPerSecond = 'milligram_per_second'
+        MilligramPerSecond = 'MilligramPerSecond'
         """
             
         """
         
-        CentigramPerSecond = 'centigram_per_second'
+        CentigramPerSecond = 'CentigramPerSecond'
         """
             
         """
         
-        DecigramPerSecond = 'decigram_per_second'
+        DecigramPerSecond = 'DecigramPerSecond'
         """
             
         """
         
-        DecagramPerSecond = 'decagram_per_second'
+        DecagramPerSecond = 'DecagramPerSecond'
         """
             
         """
         
-        HectogramPerSecond = 'hectogram_per_second'
+        HectogramPerSecond = 'HectogramPerSecond'
         """
             
         """
         
-        KilogramPerSecond = 'kilogram_per_second'
+        KilogramPerSecond = 'KilogramPerSecond'
         """
             
         """
         
-        NanogramPerDay = 'nanogram_per_day'
+        NanogramPerDay = 'NanogramPerDay'
         """
             
         """
         
-        MicrogramPerDay = 'microgram_per_day'
+        MicrogramPerDay = 'MicrogramPerDay'
         """
             
         """
         
-        MilligramPerDay = 'milligram_per_day'
+        MilligramPerDay = 'MilligramPerDay'
         """
             
         """
         
-        CentigramPerDay = 'centigram_per_day'
+        CentigramPerDay = 'CentigramPerDay'
         """
             
         """
         
-        DecigramPerDay = 'decigram_per_day'
+        DecigramPerDay = 'DecigramPerDay'
         """
             
         """
         
-        DecagramPerDay = 'decagram_per_day'
+        DecagramPerDay = 'DecagramPerDay'
         """
             
         """
         
-        HectogramPerDay = 'hectogram_per_day'
+        HectogramPerDay = 'HectogramPerDay'
         """
             
         """
         
-        KilogramPerDay = 'kilogram_per_day'
+        KilogramPerDay = 'KilogramPerDay'
         """
             
         """
         
-        MegagramPerDay = 'megagram_per_day'
+        MegagramPerDay = 'MegagramPerDay'
         """
             
         """
         
-        MegapoundPerDay = 'megapound_per_day'
+        MegapoundPerDay = 'MegapoundPerDay'
         """
             
         """
         
-        MegapoundPerHour = 'megapound_per_hour'
+        MegapoundPerHour = 'MegapoundPerHour'
         """
             
         """
         
-        MegapoundPerMinute = 'megapound_per_minute'
+        MegapoundPerMinute = 'MegapoundPerMinute'
         """
             
         """
         
-        MegapoundPerSecond = 'megapound_per_second'
+        MegapoundPerSecond = 'MegapoundPerSecond'
         """
             
         """
         
+
+class MassFlowDto:
+    def __init__(self, value: float, unit: MassFlowUnits):
+        self.value: float = value
+        self.unit: MassFlowUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MassFlowDto(value=data["value"], unit=MassFlowUnits(data["unit"]))
+
 
 class MassFlow(AbstractMeasure):
     """
@@ -260,6 +273,13 @@ class MassFlow(AbstractMeasure):
 
     def convert(self, unit: MassFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> MassFlowDto:
+        return MassFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(mass_flow_dto: MassFlowDto):
+        return MassFlow(mass_flow_dto.value, mass_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFlowUnits) -> float:
         value = self._value

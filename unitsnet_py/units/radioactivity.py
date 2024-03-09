@@ -10,151 +10,164 @@ class RadioactivityUnits(Enum):
             RadioactivityUnits enumeration
         """
         
-        Becquerel = 'becquerel'
+        Becquerel = 'Becquerel'
         """
             Activity of a quantity of radioactive material in which one nucleus decays per second.
         """
         
-        Curie = 'curie'
+        Curie = 'Curie'
         """
             
         """
         
-        Rutherford = 'rutherford'
+        Rutherford = 'Rutherford'
         """
             Activity of a quantity of radioactive material in which one million nuclei decay per second.
         """
         
-        Picobecquerel = 'picobecquerel'
+        Picobecquerel = 'Picobecquerel'
         """
             
         """
         
-        Nanobecquerel = 'nanobecquerel'
+        Nanobecquerel = 'Nanobecquerel'
         """
             
         """
         
-        Microbecquerel = 'microbecquerel'
+        Microbecquerel = 'Microbecquerel'
         """
             
         """
         
-        Millibecquerel = 'millibecquerel'
+        Millibecquerel = 'Millibecquerel'
         """
             
         """
         
-        Kilobecquerel = 'kilobecquerel'
+        Kilobecquerel = 'Kilobecquerel'
         """
             
         """
         
-        Megabecquerel = 'megabecquerel'
+        Megabecquerel = 'Megabecquerel'
         """
             
         """
         
-        Gigabecquerel = 'gigabecquerel'
+        Gigabecquerel = 'Gigabecquerel'
         """
             
         """
         
-        Terabecquerel = 'terabecquerel'
+        Terabecquerel = 'Terabecquerel'
         """
             
         """
         
-        Petabecquerel = 'petabecquerel'
+        Petabecquerel = 'Petabecquerel'
         """
             
         """
         
-        Exabecquerel = 'exabecquerel'
+        Exabecquerel = 'Exabecquerel'
         """
             
         """
         
-        Picocurie = 'picocurie'
+        Picocurie = 'Picocurie'
         """
             
         """
         
-        Nanocurie = 'nanocurie'
+        Nanocurie = 'Nanocurie'
         """
             
         """
         
-        Microcurie = 'microcurie'
+        Microcurie = 'Microcurie'
         """
             
         """
         
-        Millicurie = 'millicurie'
+        Millicurie = 'Millicurie'
         """
             
         """
         
-        Kilocurie = 'kilocurie'
+        Kilocurie = 'Kilocurie'
         """
             
         """
         
-        Megacurie = 'megacurie'
+        Megacurie = 'Megacurie'
         """
             
         """
         
-        Gigacurie = 'gigacurie'
+        Gigacurie = 'Gigacurie'
         """
             
         """
         
-        Teracurie = 'teracurie'
+        Teracurie = 'Teracurie'
         """
             
         """
         
-        Picorutherford = 'picorutherford'
+        Picorutherford = 'Picorutherford'
         """
             
         """
         
-        Nanorutherford = 'nanorutherford'
+        Nanorutherford = 'Nanorutherford'
         """
             
         """
         
-        Microrutherford = 'microrutherford'
+        Microrutherford = 'Microrutherford'
         """
             
         """
         
-        Millirutherford = 'millirutherford'
+        Millirutherford = 'Millirutherford'
         """
             
         """
         
-        Kilorutherford = 'kilorutherford'
+        Kilorutherford = 'Kilorutherford'
         """
             
         """
         
-        Megarutherford = 'megarutherford'
+        Megarutherford = 'Megarutherford'
         """
             
         """
         
-        Gigarutherford = 'gigarutherford'
+        Gigarutherford = 'Gigarutherford'
         """
             
         """
         
-        Terarutherford = 'terarutherford'
+        Terarutherford = 'Terarutherford'
         """
             
         """
         
+
+class RadioactivityDto:
+    def __init__(self, value: float, unit: RadioactivityUnits):
+        self.value: float = value
+        self.unit: RadioactivityUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return RadioactivityDto(value=data["value"], unit=RadioactivityUnits(data["unit"]))
+
 
 class Radioactivity(AbstractMeasure):
     """
@@ -232,6 +245,13 @@ class Radioactivity(AbstractMeasure):
 
     def convert(self, unit: RadioactivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RadioactivityUnits = RadioactivityUnits.Becquerel) -> RadioactivityDto:
+        return RadioactivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(radioactivity_dto: RadioactivityDto):
+        return Radioactivity(radioactivity_dto.value, radioactivity_dto.unit)
 
     def __convert_from_base(self, from_unit: RadioactivityUnits) -> float:
         value = self._value

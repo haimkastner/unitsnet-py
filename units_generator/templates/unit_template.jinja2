@@ -10,11 +10,24 @@ class {{ unit }}Units(Enum):
             {{ unit }}Units enumeration
         """
         {% for method in methods %}
-        {{ method.unit }} = '{{ method.unit_value }}'
+        {{ method.unit }} = '{{ method.unit }}'
         """
             {{ method.description }}
         """
         {% endfor %}
+
+class {{ unit }}Dto:
+    def __init__(self, value: float, unit: {{ unit }}Units):
+        self.value: float = value
+        self.unit: {{ unit }}Units = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return {{ unit }}Dto(value=data["value"], unit={{ unit }}Units(data["unit"]))
+
 {% endif %}
 class {{ unit }}(AbstractMeasure):
     """
@@ -36,6 +49,13 @@ class {{ unit }}(AbstractMeasure):
 
     def convert(self, unit: {{ unit }}Units) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> {{ unit }}Dto:
+        return {{ unit }}Dto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto({{ unit_camel_case }}_dto: {{ unit }}Dto):
+        return {{ unit }}({{ unit_camel_case }}_dto.value, {{ unit_camel_case }}_dto.unit)
 
     def __convert_from_base(self, from_unit: {{ unit }}Units) -> float:
         value = self._value

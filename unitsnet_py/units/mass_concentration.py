@@ -10,251 +10,264 @@ class MassConcentrationUnits(Enum):
             MassConcentrationUnits enumeration
         """
         
-        GramPerCubicMillimeter = 'gram_per_cubic_millimeter'
+        GramPerCubicMillimeter = 'GramPerCubicMillimeter'
         """
             
         """
         
-        GramPerCubicCentimeter = 'gram_per_cubic_centimeter'
+        GramPerCubicCentimeter = 'GramPerCubicCentimeter'
         """
             
         """
         
-        GramPerCubicMeter = 'gram_per_cubic_meter'
+        GramPerCubicMeter = 'GramPerCubicMeter'
         """
             
         """
         
-        GramPerMicroliter = 'gram_per_microliter'
+        GramPerMicroliter = 'GramPerMicroliter'
         """
             
         """
         
-        GramPerMilliliter = 'gram_per_milliliter'
+        GramPerMilliliter = 'GramPerMilliliter'
         """
             
         """
         
-        GramPerDeciliter = 'gram_per_deciliter'
+        GramPerDeciliter = 'GramPerDeciliter'
         """
             
         """
         
-        GramPerLiter = 'gram_per_liter'
+        GramPerLiter = 'GramPerLiter'
         """
             
         """
         
-        TonnePerCubicMillimeter = 'tonne_per_cubic_millimeter'
+        TonnePerCubicMillimeter = 'TonnePerCubicMillimeter'
         """
             
         """
         
-        TonnePerCubicCentimeter = 'tonne_per_cubic_centimeter'
+        TonnePerCubicCentimeter = 'TonnePerCubicCentimeter'
         """
             
         """
         
-        TonnePerCubicMeter = 'tonne_per_cubic_meter'
+        TonnePerCubicMeter = 'TonnePerCubicMeter'
         """
             
         """
         
-        PoundPerCubicInch = 'pound_per_cubic_inch'
+        PoundPerCubicInch = 'PoundPerCubicInch'
         """
             
         """
         
-        PoundPerCubicFoot = 'pound_per_cubic_foot'
+        PoundPerCubicFoot = 'PoundPerCubicFoot'
         """
             
         """
         
-        SlugPerCubicFoot = 'slug_per_cubic_foot'
+        SlugPerCubicFoot = 'SlugPerCubicFoot'
         """
             
         """
         
-        PoundPerUSGallon = 'pound_per_us_gallon'
+        PoundPerUSGallon = 'PoundPerUSGallon'
         """
             
         """
         
-        OuncePerUSGallon = 'ounce_per_us_gallon'
+        OuncePerUSGallon = 'OuncePerUSGallon'
         """
             
         """
         
-        OuncePerImperialGallon = 'ounce_per_imperial_gallon'
+        OuncePerImperialGallon = 'OuncePerImperialGallon'
         """
             
         """
         
-        PoundPerImperialGallon = 'pound_per_imperial_gallon'
+        PoundPerImperialGallon = 'PoundPerImperialGallon'
         """
             
         """
         
-        KilogramPerCubicMillimeter = 'kilogram_per_cubic_millimeter'
+        KilogramPerCubicMillimeter = 'KilogramPerCubicMillimeter'
         """
             
         """
         
-        KilogramPerCubicCentimeter = 'kilogram_per_cubic_centimeter'
+        KilogramPerCubicCentimeter = 'KilogramPerCubicCentimeter'
         """
             
         """
         
-        KilogramPerCubicMeter = 'kilogram_per_cubic_meter'
+        KilogramPerCubicMeter = 'KilogramPerCubicMeter'
         """
             
         """
         
-        MilligramPerCubicMeter = 'milligram_per_cubic_meter'
+        MilligramPerCubicMeter = 'MilligramPerCubicMeter'
         """
             
         """
         
-        MicrogramPerCubicMeter = 'microgram_per_cubic_meter'
+        MicrogramPerCubicMeter = 'MicrogramPerCubicMeter'
         """
             
         """
         
-        PicogramPerMicroliter = 'picogram_per_microliter'
+        PicogramPerMicroliter = 'PicogramPerMicroliter'
         """
             
         """
         
-        NanogramPerMicroliter = 'nanogram_per_microliter'
+        NanogramPerMicroliter = 'NanogramPerMicroliter'
         """
             
         """
         
-        MicrogramPerMicroliter = 'microgram_per_microliter'
+        MicrogramPerMicroliter = 'MicrogramPerMicroliter'
         """
             
         """
         
-        MilligramPerMicroliter = 'milligram_per_microliter'
+        MilligramPerMicroliter = 'MilligramPerMicroliter'
         """
             
         """
         
-        CentigramPerMicroliter = 'centigram_per_microliter'
+        CentigramPerMicroliter = 'CentigramPerMicroliter'
         """
             
         """
         
-        DecigramPerMicroliter = 'decigram_per_microliter'
+        DecigramPerMicroliter = 'DecigramPerMicroliter'
         """
             
         """
         
-        PicogramPerMilliliter = 'picogram_per_milliliter'
+        PicogramPerMilliliter = 'PicogramPerMilliliter'
         """
             
         """
         
-        NanogramPerMilliliter = 'nanogram_per_milliliter'
+        NanogramPerMilliliter = 'NanogramPerMilliliter'
         """
             
         """
         
-        MicrogramPerMilliliter = 'microgram_per_milliliter'
+        MicrogramPerMilliliter = 'MicrogramPerMilliliter'
         """
             
         """
         
-        MilligramPerMilliliter = 'milligram_per_milliliter'
+        MilligramPerMilliliter = 'MilligramPerMilliliter'
         """
             
         """
         
-        CentigramPerMilliliter = 'centigram_per_milliliter'
+        CentigramPerMilliliter = 'CentigramPerMilliliter'
         """
             
         """
         
-        DecigramPerMilliliter = 'decigram_per_milliliter'
+        DecigramPerMilliliter = 'DecigramPerMilliliter'
         """
             
         """
         
-        PicogramPerDeciliter = 'picogram_per_deciliter'
+        PicogramPerDeciliter = 'PicogramPerDeciliter'
         """
             
         """
         
-        NanogramPerDeciliter = 'nanogram_per_deciliter'
+        NanogramPerDeciliter = 'NanogramPerDeciliter'
         """
             
         """
         
-        MicrogramPerDeciliter = 'microgram_per_deciliter'
+        MicrogramPerDeciliter = 'MicrogramPerDeciliter'
         """
             
         """
         
-        MilligramPerDeciliter = 'milligram_per_deciliter'
+        MilligramPerDeciliter = 'MilligramPerDeciliter'
         """
             
         """
         
-        CentigramPerDeciliter = 'centigram_per_deciliter'
+        CentigramPerDeciliter = 'CentigramPerDeciliter'
         """
             
         """
         
-        DecigramPerDeciliter = 'decigram_per_deciliter'
+        DecigramPerDeciliter = 'DecigramPerDeciliter'
         """
             
         """
         
-        PicogramPerLiter = 'picogram_per_liter'
+        PicogramPerLiter = 'PicogramPerLiter'
         """
             
         """
         
-        NanogramPerLiter = 'nanogram_per_liter'
+        NanogramPerLiter = 'NanogramPerLiter'
         """
             
         """
         
-        MicrogramPerLiter = 'microgram_per_liter'
+        MicrogramPerLiter = 'MicrogramPerLiter'
         """
             
         """
         
-        MilligramPerLiter = 'milligram_per_liter'
+        MilligramPerLiter = 'MilligramPerLiter'
         """
             
         """
         
-        CentigramPerLiter = 'centigram_per_liter'
+        CentigramPerLiter = 'CentigramPerLiter'
         """
             
         """
         
-        DecigramPerLiter = 'decigram_per_liter'
+        DecigramPerLiter = 'DecigramPerLiter'
         """
             
         """
         
-        KilogramPerLiter = 'kilogram_per_liter'
+        KilogramPerLiter = 'KilogramPerLiter'
         """
             
         """
         
-        KilopoundPerCubicInch = 'kilopound_per_cubic_inch'
+        KilopoundPerCubicInch = 'KilopoundPerCubicInch'
         """
             
         """
         
-        KilopoundPerCubicFoot = 'kilopound_per_cubic_foot'
+        KilopoundPerCubicFoot = 'KilopoundPerCubicFoot'
         """
             
         """
         
+
+class MassConcentrationDto:
+    def __init__(self, value: float, unit: MassConcentrationUnits):
+        self.value: float = value
+        self.unit: MassConcentrationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MassConcentrationDto(value=data["value"], unit=MassConcentrationUnits(data["unit"]))
+
 
 class MassConcentration(AbstractMeasure):
     """
@@ -372,6 +385,13 @@ class MassConcentration(AbstractMeasure):
 
     def convert(self, unit: MassConcentrationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> MassConcentrationDto:
+        return MassConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(mass_concentration_dto: MassConcentrationDto):
+        return MassConcentration(mass_concentration_dto.value, mass_concentration_dto.unit)
 
     def __convert_from_base(self, from_unit: MassConcentrationUnits) -> float:
         value = self._value

@@ -10,51 +10,64 @@ class IrradiationUnits(Enum):
             IrradiationUnits enumeration
         """
         
-        JoulePerSquareMeter = 'joule_per_square_meter'
+        JoulePerSquareMeter = 'JoulePerSquareMeter'
         """
             
         """
         
-        JoulePerSquareCentimeter = 'joule_per_square_centimeter'
+        JoulePerSquareCentimeter = 'JoulePerSquareCentimeter'
         """
             
         """
         
-        JoulePerSquareMillimeter = 'joule_per_square_millimeter'
+        JoulePerSquareMillimeter = 'JoulePerSquareMillimeter'
         """
             
         """
         
-        WattHourPerSquareMeter = 'watt_hour_per_square_meter'
+        WattHourPerSquareMeter = 'WattHourPerSquareMeter'
         """
             
         """
         
-        BtuPerSquareFoot = 'btu_per_square_foot'
+        BtuPerSquareFoot = 'BtuPerSquareFoot'
         """
             
         """
         
-        KilojoulePerSquareMeter = 'kilojoule_per_square_meter'
+        KilojoulePerSquareMeter = 'KilojoulePerSquareMeter'
         """
             
         """
         
-        MillijoulePerSquareCentimeter = 'millijoule_per_square_centimeter'
+        MillijoulePerSquareCentimeter = 'MillijoulePerSquareCentimeter'
         """
             
         """
         
-        KilowattHourPerSquareMeter = 'kilowatt_hour_per_square_meter'
+        KilowattHourPerSquareMeter = 'KilowattHourPerSquareMeter'
         """
             
         """
         
-        KilobtuPerSquareFoot = 'kilobtu_per_square_foot'
+        KilobtuPerSquareFoot = 'KilobtuPerSquareFoot'
         """
             
         """
         
+
+class IrradiationDto:
+    def __init__(self, value: float, unit: IrradiationUnits):
+        self.value: float = value
+        self.unit: IrradiationUnits = unit
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return IrradiationDto(value=data["value"], unit=IrradiationUnits(data["unit"]))
+
 
 class Irradiation(AbstractMeasure):
     """
@@ -92,6 +105,13 @@ class Irradiation(AbstractMeasure):
 
     def convert(self, unit: IrradiationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> IrradiationDto:
+        return IrradiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(irradiation_dto: IrradiationDto):
+        return Irradiation(irradiation_dto.value, irradiation_dto.unit)
 
     def __convert_from_base(self, from_unit: IrradiationUnits) -> float:
         value = self._value
