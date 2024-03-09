@@ -10,21 +10,55 @@ class AreaDensityUnits(Enum):
             AreaDensityUnits enumeration
         """
         
-        KilogramPerSquareMeter = 'kilogram_per_square_meter'
+        KilogramPerSquareMeter = 'KilogramPerSquareMeter'
         """
             
         """
         
-        GramPerSquareMeter = 'gram_per_square_meter'
+        GramPerSquareMeter = 'GramPerSquareMeter'
         """
             Also known as grammage for paper industry. In fiber industry used with abbreviation 'gsm'.
         """
         
-        MilligramPerSquareMeter = 'milligram_per_square_meter'
+        MilligramPerSquareMeter = 'MilligramPerSquareMeter'
         """
             
         """
         
+
+class AreaDensityDto:
+    """
+    A DTO representation of a AreaDensity
+
+    Attributes:
+        value (float): The value of the AreaDensity.
+        unit (AreaDensityUnits): The specific unit that the AreaDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: AreaDensityUnits):
+        """
+        Create a new DTO representation of a AreaDensity
+
+        Parameters:
+            value (float): The value of the AreaDensity.
+            unit (AreaDensityUnits): The specific unit that the AreaDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the AreaDensity
+        """
+        self.unit: AreaDensityUnits = unit
+        """
+        The specific unit that the AreaDensity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AreaDensityDto(value=data["value"], unit=AreaDensityUnits(data["unit"]))
+
 
 class AreaDensity(AbstractMeasure):
     """
@@ -50,6 +84,29 @@ class AreaDensity(AbstractMeasure):
 
     def convert(self, unit: AreaDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> AreaDensityDto:
+        """
+        Get a new instance of AreaDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific AreaDensity unit to store the AreaDensity value in the DTO representation.
+        :type hold_in_unit: AreaDensityUnits
+        :return: A new instance of AreaDensityDto.
+        :rtype: AreaDensityDto
+        """
+        return AreaDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(area_density_dto: AreaDensityDto):
+        """
+        Obtain a new instance of AreaDensity from a DTO unit object.
+
+        :param area_density_dto: The AreaDensity DTO representation.
+        :type area_density_dto: AreaDensityDto
+        :return: A new instance of AreaDensity.
+        :rtype: AreaDensity
+        """
+        return AreaDensity(area_density_dto.value, area_density_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaDensityUnits) -> float:
         value = self._value

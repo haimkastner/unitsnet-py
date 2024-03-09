@@ -10,51 +10,85 @@ class KinematicViscosityUnits(Enum):
             KinematicViscosityUnits enumeration
         """
         
-        SquareMeterPerSecond = 'square_meter_per_second'
+        SquareMeterPerSecond = 'SquareMeterPerSecond'
         """
             
         """
         
-        Stokes = 'stokes'
+        Stokes = 'Stokes'
         """
             
         """
         
-        SquareFootPerSecond = 'square_foot_per_second'
+        SquareFootPerSecond = 'SquareFootPerSecond'
         """
             
         """
         
-        Nanostokes = 'nanostokes'
+        Nanostokes = 'Nanostokes'
         """
             
         """
         
-        Microstokes = 'microstokes'
+        Microstokes = 'Microstokes'
         """
             
         """
         
-        Millistokes = 'millistokes'
+        Millistokes = 'Millistokes'
         """
             
         """
         
-        Centistokes = 'centistokes'
+        Centistokes = 'Centistokes'
         """
             
         """
         
-        Decistokes = 'decistokes'
+        Decistokes = 'Decistokes'
         """
             
         """
         
-        Kilostokes = 'kilostokes'
+        Kilostokes = 'Kilostokes'
         """
             
         """
         
+
+class KinematicViscosityDto:
+    """
+    A DTO representation of a KinematicViscosity
+
+    Attributes:
+        value (float): The value of the KinematicViscosity.
+        unit (KinematicViscosityUnits): The specific unit that the KinematicViscosity value is representing.
+    """
+
+    def __init__(self, value: float, unit: KinematicViscosityUnits):
+        """
+        Create a new DTO representation of a KinematicViscosity
+
+        Parameters:
+            value (float): The value of the KinematicViscosity.
+            unit (KinematicViscosityUnits): The specific unit that the KinematicViscosity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the KinematicViscosity
+        """
+        self.unit: KinematicViscosityUnits = unit
+        """
+        The specific unit that the KinematicViscosity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return KinematicViscosityDto(value=data["value"], unit=KinematicViscosityUnits(data["unit"]))
+
 
 class KinematicViscosity(AbstractMeasure):
     """
@@ -92,6 +126,29 @@ class KinematicViscosity(AbstractMeasure):
 
     def convert(self, unit: KinematicViscosityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> KinematicViscosityDto:
+        """
+        Get a new instance of KinematicViscosity DTO representing the current unit.
+
+        :param hold_in_unit: The specific KinematicViscosity unit to store the KinematicViscosity value in the DTO representation.
+        :type hold_in_unit: KinematicViscosityUnits
+        :return: A new instance of KinematicViscosityDto.
+        :rtype: KinematicViscosityDto
+        """
+        return KinematicViscosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(kinematic_viscosity_dto: KinematicViscosityDto):
+        """
+        Obtain a new instance of KinematicViscosity from a DTO unit object.
+
+        :param kinematic_viscosity_dto: The KinematicViscosity DTO representation.
+        :type kinematic_viscosity_dto: KinematicViscosityDto
+        :return: A new instance of KinematicViscosity.
+        :rtype: KinematicViscosity
+        """
+        return KinematicViscosity(kinematic_viscosity_dto.value, kinematic_viscosity_dto.unit)
 
     def __convert_from_base(self, from_unit: KinematicViscosityUnits) -> float:
         value = self._value

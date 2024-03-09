@@ -10,61 +10,95 @@ class MolarityUnits(Enum):
             MolarityUnits enumeration
         """
         
-        MolePerCubicMeter = 'mole_per_cubic_meter'
+        MolePerCubicMeter = 'MolePerCubicMeter'
         """
             
         """
         
-        MolePerLiter = 'mole_per_liter'
+        MolePerLiter = 'MolePerLiter'
         """
             
         """
         
-        PoundMolePerCubicFoot = 'pound_mole_per_cubic_foot'
+        PoundMolePerCubicFoot = 'PoundMolePerCubicFoot'
         """
             
         """
         
-        KilomolePerCubicMeter = 'kilomole_per_cubic_meter'
+        KilomolePerCubicMeter = 'KilomolePerCubicMeter'
         """
             
         """
         
-        FemtomolePerLiter = 'femtomole_per_liter'
+        FemtomolePerLiter = 'FemtomolePerLiter'
         """
             
         """
         
-        PicomolePerLiter = 'picomole_per_liter'
+        PicomolePerLiter = 'PicomolePerLiter'
         """
             
         """
         
-        NanomolePerLiter = 'nanomole_per_liter'
+        NanomolePerLiter = 'NanomolePerLiter'
         """
             
         """
         
-        MicromolePerLiter = 'micromole_per_liter'
+        MicromolePerLiter = 'MicromolePerLiter'
         """
             
         """
         
-        MillimolePerLiter = 'millimole_per_liter'
+        MillimolePerLiter = 'MillimolePerLiter'
         """
             
         """
         
-        CentimolePerLiter = 'centimole_per_liter'
+        CentimolePerLiter = 'CentimolePerLiter'
         """
             
         """
         
-        DecimolePerLiter = 'decimole_per_liter'
+        DecimolePerLiter = 'DecimolePerLiter'
         """
             
         """
         
+
+class MolarityDto:
+    """
+    A DTO representation of a Molarity
+
+    Attributes:
+        value (float): The value of the Molarity.
+        unit (MolarityUnits): The specific unit that the Molarity value is representing.
+    """
+
+    def __init__(self, value: float, unit: MolarityUnits):
+        """
+        Create a new DTO representation of a Molarity
+
+        Parameters:
+            value (float): The value of the Molarity.
+            unit (MolarityUnits): The specific unit that the Molarity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Molarity
+        """
+        self.unit: MolarityUnits = unit
+        """
+        The specific unit that the Molarity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MolarityDto(value=data["value"], unit=MolarityUnits(data["unit"]))
+
 
 class Molarity(AbstractMeasure):
     """
@@ -106,6 +140,29 @@ class Molarity(AbstractMeasure):
 
     def convert(self, unit: MolarityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> MolarityDto:
+        """
+        Get a new instance of Molarity DTO representing the current unit.
+
+        :param hold_in_unit: The specific Molarity unit to store the Molarity value in the DTO representation.
+        :type hold_in_unit: MolarityUnits
+        :return: A new instance of MolarityDto.
+        :rtype: MolarityDto
+        """
+        return MolarityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(molarity_dto: MolarityDto):
+        """
+        Obtain a new instance of Molarity from a DTO unit object.
+
+        :param molarity_dto: The Molarity DTO representation.
+        :type molarity_dto: MolarityDto
+        :return: A new instance of Molarity.
+        :rtype: Molarity
+        """
+        return Molarity(molarity_dto.value, molarity_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarityUnits) -> float:
         value = self._value

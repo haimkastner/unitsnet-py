@@ -10,26 +10,60 @@ class SpecificFuelConsumptionUnits(Enum):
             SpecificFuelConsumptionUnits enumeration
         """
         
-        PoundMassPerPoundForceHour = 'pound_mass_per_pound_force_hour'
+        PoundMassPerPoundForceHour = 'PoundMassPerPoundForceHour'
         """
             
         """
         
-        KilogramPerKilogramForceHour = 'kilogram_per_kilogram_force_hour'
+        KilogramPerKilogramForceHour = 'KilogramPerKilogramForceHour'
         """
             
         """
         
-        GramPerKiloNewtonSecond = 'gram_per_kilo_newton_second'
+        GramPerKiloNewtonSecond = 'GramPerKiloNewtonSecond'
         """
             
         """
         
-        KilogramPerKiloNewtonSecond = 'kilogram_per_kilo_newton_second'
+        KilogramPerKiloNewtonSecond = 'KilogramPerKiloNewtonSecond'
         """
             
         """
         
+
+class SpecificFuelConsumptionDto:
+    """
+    A DTO representation of a SpecificFuelConsumption
+
+    Attributes:
+        value (float): The value of the SpecificFuelConsumption.
+        unit (SpecificFuelConsumptionUnits): The specific unit that the SpecificFuelConsumption value is representing.
+    """
+
+    def __init__(self, value: float, unit: SpecificFuelConsumptionUnits):
+        """
+        Create a new DTO representation of a SpecificFuelConsumption
+
+        Parameters:
+            value (float): The value of the SpecificFuelConsumption.
+            unit (SpecificFuelConsumptionUnits): The specific unit that the SpecificFuelConsumption value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the SpecificFuelConsumption
+        """
+        self.unit: SpecificFuelConsumptionUnits = unit
+        """
+        The specific unit that the SpecificFuelConsumption value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SpecificFuelConsumptionDto(value=data["value"], unit=SpecificFuelConsumptionUnits(data["unit"]))
+
 
 class SpecificFuelConsumption(AbstractMeasure):
     """
@@ -57,6 +91,29 @@ class SpecificFuelConsumption(AbstractMeasure):
 
     def convert(self, unit: SpecificFuelConsumptionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> SpecificFuelConsumptionDto:
+        """
+        Get a new instance of SpecificFuelConsumption DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificFuelConsumption unit to store the SpecificFuelConsumption value in the DTO representation.
+        :type hold_in_unit: SpecificFuelConsumptionUnits
+        :return: A new instance of SpecificFuelConsumptionDto.
+        :rtype: SpecificFuelConsumptionDto
+        """
+        return SpecificFuelConsumptionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(specific_fuel_consumption_dto: SpecificFuelConsumptionDto):
+        """
+        Obtain a new instance of SpecificFuelConsumption from a DTO unit object.
+
+        :param specific_fuel_consumption_dto: The SpecificFuelConsumption DTO representation.
+        :type specific_fuel_consumption_dto: SpecificFuelConsumptionDto
+        :return: A new instance of SpecificFuelConsumption.
+        :rtype: SpecificFuelConsumption
+        """
+        return SpecificFuelConsumption(specific_fuel_consumption_dto.value, specific_fuel_consumption_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
         value = self._value

@@ -10,61 +10,95 @@ class DurationUnits(Enum):
             DurationUnits enumeration
         """
         
-        Year365 = 'year365'
+        Year365 = 'Year365'
         """
             
         """
         
-        Month30 = 'month30'
+        Month30 = 'Month30'
         """
             
         """
         
-        Week = 'week'
+        Week = 'Week'
         """
             
         """
         
-        Day = 'day'
+        Day = 'Day'
         """
             
         """
         
-        Hour = 'hour'
+        Hour = 'Hour'
         """
             
         """
         
-        Minute = 'minute'
+        Minute = 'Minute'
         """
             
         """
         
-        Second = 'second'
+        Second = 'Second'
         """
             
         """
         
-        JulianYear = 'julian_year'
+        JulianYear = 'JulianYear'
         """
             
         """
         
-        Nanosecond = 'nanosecond'
+        Nanosecond = 'Nanosecond'
         """
             
         """
         
-        Microsecond = 'microsecond'
+        Microsecond = 'Microsecond'
         """
             
         """
         
-        Millisecond = 'millisecond'
+        Millisecond = 'Millisecond'
         """
             
         """
         
+
+class DurationDto:
+    """
+    A DTO representation of a Duration
+
+    Attributes:
+        value (float): The value of the Duration.
+        unit (DurationUnits): The specific unit that the Duration value is representing.
+    """
+
+    def __init__(self, value: float, unit: DurationUnits):
+        """
+        Create a new DTO representation of a Duration
+
+        Parameters:
+            value (float): The value of the Duration.
+            unit (DurationUnits): The specific unit that the Duration value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Duration
+        """
+        self.unit: DurationUnits = unit
+        """
+        The specific unit that the Duration value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return DurationDto(value=data["value"], unit=DurationUnits(data["unit"]))
+
 
 class Duration(AbstractMeasure):
     """
@@ -106,6 +140,29 @@ class Duration(AbstractMeasure):
 
     def convert(self, unit: DurationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: DurationUnits = DurationUnits.Second) -> DurationDto:
+        """
+        Get a new instance of Duration DTO representing the current unit.
+
+        :param hold_in_unit: The specific Duration unit to store the Duration value in the DTO representation.
+        :type hold_in_unit: DurationUnits
+        :return: A new instance of DurationDto.
+        :rtype: DurationDto
+        """
+        return DurationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(duration_dto: DurationDto):
+        """
+        Obtain a new instance of Duration from a DTO unit object.
+
+        :param duration_dto: The Duration DTO representation.
+        :type duration_dto: DurationDto
+        :return: A new instance of Duration.
+        :rtype: Duration
+        """
+        return Duration(duration_dto.value, duration_dto.unit)
 
     def __convert_from_base(self, from_unit: DurationUnits) -> float:
         value = self._value

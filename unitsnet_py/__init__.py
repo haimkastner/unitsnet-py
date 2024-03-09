@@ -1,252 +1,252 @@
-from .units.absorbed_dose_of_ionizing_radiation import AbsorbedDoseOfIonizingRadiation, AbsorbedDoseOfIonizingRadiationUnits
-from .units.acceleration import Acceleration, AccelerationUnits
-from .units.amount_of_substance import AmountOfSubstance, AmountOfSubstanceUnits
-from .units.amplitude_ratio import AmplitudeRatio, AmplitudeRatioUnits
-from .units.angle import Angle, AngleUnits
-from .units.apparent_energy import ApparentEnergy, ApparentEnergyUnits
-from .units.apparent_power import ApparentPower, ApparentPowerUnits
-from .units.area import Area, AreaUnits
-from .units.area_density import AreaDensity, AreaDensityUnits
-from .units.area_moment_of_inertia import AreaMomentOfInertia, AreaMomentOfInertiaUnits
-from .units.bit_rate import BitRate, BitRateUnits
-from .units.brake_specific_fuel_consumption import BrakeSpecificFuelConsumption, BrakeSpecificFuelConsumptionUnits
-from .units.capacitance import Capacitance, CapacitanceUnits
-from .units.coefficient_of_thermal_expansion import CoefficientOfThermalExpansion, CoefficientOfThermalExpansionUnits
-from .units.compressibility import Compressibility, CompressibilityUnits
-from .units.density import Density, DensityUnits
-from .units.duration import Duration, DurationUnits
-from .units.dynamic_viscosity import DynamicViscosity, DynamicViscosityUnits
-from .units.electric_admittance import ElectricAdmittance, ElectricAdmittanceUnits
-from .units.electric_charge import ElectricCharge, ElectricChargeUnits
-from .units.electric_charge_density import ElectricChargeDensity, ElectricChargeDensityUnits
-from .units.electric_conductance import ElectricConductance, ElectricConductanceUnits
-from .units.electric_conductivity import ElectricConductivity, ElectricConductivityUnits
-from .units.electric_current import ElectricCurrent, ElectricCurrentUnits
-from .units.electric_current_density import ElectricCurrentDensity, ElectricCurrentDensityUnits
-from .units.electric_current_gradient import ElectricCurrentGradient, ElectricCurrentGradientUnits
-from .units.electric_field import ElectricField, ElectricFieldUnits
-from .units.electric_inductance import ElectricInductance, ElectricInductanceUnits
-from .units.electric_potential import ElectricPotential, ElectricPotentialUnits
-from .units.electric_potential_ac import ElectricPotentialAc, ElectricPotentialAcUnits
-from .units.electric_potential_change_rate import ElectricPotentialChangeRate, ElectricPotentialChangeRateUnits
-from .units.electric_potential_dc import ElectricPotentialDc, ElectricPotentialDcUnits
-from .units.electric_resistance import ElectricResistance, ElectricResistanceUnits
-from .units.electric_resistivity import ElectricResistivity, ElectricResistivityUnits
-from .units.electric_surface_charge_density import ElectricSurfaceChargeDensity, ElectricSurfaceChargeDensityUnits
-from .units.energy import Energy, EnergyUnits
-from .units.energy_density import EnergyDensity, EnergyDensityUnits
-from .units.entropy import Entropy, EntropyUnits
-from .units.force import Force, ForceUnits
-from .units.force_change_rate import ForceChangeRate, ForceChangeRateUnits
-from .units.force_per_length import ForcePerLength, ForcePerLengthUnits
-from .units.frequency import Frequency, FrequencyUnits
-from .units.fuel_efficiency import FuelEfficiency, FuelEfficiencyUnits
-from .units.heat_flux import HeatFlux, HeatFluxUnits
-from .units.heat_transfer_coefficient import HeatTransferCoefficient, HeatTransferCoefficientUnits
-from .units.illuminance import Illuminance, IlluminanceUnits
-from .units.impulse import Impulse, ImpulseUnits
-from .units.information import Information, InformationUnits
-from .units.irradiance import Irradiance, IrradianceUnits
-from .units.irradiation import Irradiation, IrradiationUnits
-from .units.jerk import Jerk, JerkUnits
-from .units.kinematic_viscosity import KinematicViscosity, KinematicViscosityUnits
-from .units.leak_rate import LeakRate, LeakRateUnits
-from .units.length import Length, LengthUnits
-from .units.level import Level, LevelUnits
-from .units.linear_density import LinearDensity, LinearDensityUnits
-from .units.linear_power_density import LinearPowerDensity, LinearPowerDensityUnits
-from .units.luminance import Luminance, LuminanceUnits
-from .units.luminosity import Luminosity, LuminosityUnits
-from .units.luminous_flux import LuminousFlux, LuminousFluxUnits
-from .units.luminous_intensity import LuminousIntensity, LuminousIntensityUnits
-from .units.magnetic_field import MagneticField, MagneticFieldUnits
-from .units.magnetic_flux import MagneticFlux, MagneticFluxUnits
-from .units.magnetization import Magnetization, MagnetizationUnits
-from .units.mass import Mass, MassUnits
-from .units.mass_concentration import MassConcentration, MassConcentrationUnits
-from .units.mass_flow import MassFlow, MassFlowUnits
-from .units.mass_flux import MassFlux, MassFluxUnits
-from .units.mass_fraction import MassFraction, MassFractionUnits
-from .units.mass_moment_of_inertia import MassMomentOfInertia, MassMomentOfInertiaUnits
-from .units.molality import Molality, MolalityUnits
-from .units.molar_energy import MolarEnergy, MolarEnergyUnits
-from .units.molar_entropy import MolarEntropy, MolarEntropyUnits
-from .units.molar_flow import MolarFlow, MolarFlowUnits
-from .units.molar_mass import MolarMass, MolarMassUnits
-from .units.molarity import Molarity, MolarityUnits
-from .units.permeability import Permeability, PermeabilityUnits
-from .units.permittivity import Permittivity, PermittivityUnits
-from .units.porous_medium_permeability import PorousMediumPermeability, PorousMediumPermeabilityUnits
-from .units.power import Power, PowerUnits
-from .units.power_density import PowerDensity, PowerDensityUnits
-from .units.power_ratio import PowerRatio, PowerRatioUnits
-from .units.pressure import Pressure, PressureUnits
-from .units.pressure_change_rate import PressureChangeRate, PressureChangeRateUnits
-from .units.radiation_equivalent_dose import RadiationEquivalentDose, RadiationEquivalentDoseUnits
-from .units.radiation_exposure import RadiationExposure, RadiationExposureUnits
-from .units.radioactivity import Radioactivity, RadioactivityUnits
-from .units.ratio import Ratio, RatioUnits
-from .units.ratio_change_rate import RatioChangeRate, RatioChangeRateUnits
-from .units.reactive_energy import ReactiveEnergy, ReactiveEnergyUnits
-from .units.reactive_power import ReactivePower, ReactivePowerUnits
-from .units.reciprocal_area import ReciprocalArea, ReciprocalAreaUnits
-from .units.reciprocal_length import ReciprocalLength, ReciprocalLengthUnits
-from .units.relative_humidity import RelativeHumidity, RelativeHumidityUnits
-from .units.rotational_acceleration import RotationalAcceleration, RotationalAccelerationUnits
-from .units.rotational_speed import RotationalSpeed, RotationalSpeedUnits
-from .units.rotational_stiffness import RotationalStiffness, RotationalStiffnessUnits
-from .units.rotational_stiffness_per_length import RotationalStiffnessPerLength, RotationalStiffnessPerLengthUnits
-from .units.scalar import Scalar, ScalarUnits
-from .units.solid_angle import SolidAngle, SolidAngleUnits
-from .units.specific_energy import SpecificEnergy, SpecificEnergyUnits
-from .units.specific_entropy import SpecificEntropy, SpecificEntropyUnits
-from .units.specific_fuel_consumption import SpecificFuelConsumption, SpecificFuelConsumptionUnits
-from .units.specific_volume import SpecificVolume, SpecificVolumeUnits
-from .units.specific_weight import SpecificWeight, SpecificWeightUnits
-from .units.speed import Speed, SpeedUnits
-from .units.standard_volume_flow import StandardVolumeFlow, StandardVolumeFlowUnits
-from .units.temperature import Temperature, TemperatureUnits
-from .units.temperature_change_rate import TemperatureChangeRate, TemperatureChangeRateUnits
-from .units.temperature_delta import TemperatureDelta, TemperatureDeltaUnits
-from .units.temperature_gradient import TemperatureGradient, TemperatureGradientUnits
-from .units.thermal_conductivity import ThermalConductivity, ThermalConductivityUnits
-from .units.thermal_resistance import ThermalResistance, ThermalResistanceUnits
-from .units.torque import Torque, TorqueUnits
-from .units.torque_per_length import TorquePerLength, TorquePerLengthUnits
-from .units.turbidity import Turbidity, TurbidityUnits
-from .units.vitamin_a import VitaminA, VitaminAUnits
-from .units.volume import Volume, VolumeUnits
-from .units.volume_concentration import VolumeConcentration, VolumeConcentrationUnits
-from .units.volume_flow import VolumeFlow, VolumeFlowUnits
-from .units.volume_flow_per_area import VolumeFlowPerArea, VolumeFlowPerAreaUnits
-from .units.volume_per_length import VolumePerLength, VolumePerLengthUnits
-from .units.volumetric_heat_capacity import VolumetricHeatCapacity, VolumetricHeatCapacityUnits
-from .units.warping_moment_of_inertia import WarpingMomentOfInertia, WarpingMomentOfInertiaUnits
+from .units.absorbed_dose_of_ionizing_radiation import AbsorbedDoseOfIonizingRadiation, AbsorbedDoseOfIonizingRadiationUnits, AbsorbedDoseOfIonizingRadiationDto
+from .units.acceleration import Acceleration, AccelerationUnits, AccelerationDto
+from .units.amount_of_substance import AmountOfSubstance, AmountOfSubstanceUnits, AmountOfSubstanceDto
+from .units.amplitude_ratio import AmplitudeRatio, AmplitudeRatioUnits, AmplitudeRatioDto
+from .units.angle import Angle, AngleUnits, AngleDto
+from .units.apparent_energy import ApparentEnergy, ApparentEnergyUnits, ApparentEnergyDto
+from .units.apparent_power import ApparentPower, ApparentPowerUnits, ApparentPowerDto
+from .units.area import Area, AreaUnits, AreaDto
+from .units.area_density import AreaDensity, AreaDensityUnits, AreaDensityDto
+from .units.area_moment_of_inertia import AreaMomentOfInertia, AreaMomentOfInertiaUnits, AreaMomentOfInertiaDto
+from .units.bit_rate import BitRate, BitRateUnits, BitRateDto
+from .units.brake_specific_fuel_consumption import BrakeSpecificFuelConsumption, BrakeSpecificFuelConsumptionUnits, BrakeSpecificFuelConsumptionDto
+from .units.capacitance import Capacitance, CapacitanceUnits, CapacitanceDto
+from .units.coefficient_of_thermal_expansion import CoefficientOfThermalExpansion, CoefficientOfThermalExpansionUnits, CoefficientOfThermalExpansionDto
+from .units.compressibility import Compressibility, CompressibilityUnits, CompressibilityDto
+from .units.density import Density, DensityUnits, DensityDto
+from .units.duration import Duration, DurationUnits, DurationDto
+from .units.dynamic_viscosity import DynamicViscosity, DynamicViscosityUnits, DynamicViscosityDto
+from .units.electric_admittance import ElectricAdmittance, ElectricAdmittanceUnits, ElectricAdmittanceDto
+from .units.electric_charge import ElectricCharge, ElectricChargeUnits, ElectricChargeDto
+from .units.electric_charge_density import ElectricChargeDensity, ElectricChargeDensityUnits, ElectricChargeDensityDto
+from .units.electric_conductance import ElectricConductance, ElectricConductanceUnits, ElectricConductanceDto
+from .units.electric_conductivity import ElectricConductivity, ElectricConductivityUnits, ElectricConductivityDto
+from .units.electric_current import ElectricCurrent, ElectricCurrentUnits, ElectricCurrentDto
+from .units.electric_current_density import ElectricCurrentDensity, ElectricCurrentDensityUnits, ElectricCurrentDensityDto
+from .units.electric_current_gradient import ElectricCurrentGradient, ElectricCurrentGradientUnits, ElectricCurrentGradientDto
+from .units.electric_field import ElectricField, ElectricFieldUnits, ElectricFieldDto
+from .units.electric_inductance import ElectricInductance, ElectricInductanceUnits, ElectricInductanceDto
+from .units.electric_potential import ElectricPotential, ElectricPotentialUnits, ElectricPotentialDto
+from .units.electric_potential_ac import ElectricPotentialAc, ElectricPotentialAcUnits, ElectricPotentialAcDto
+from .units.electric_potential_change_rate import ElectricPotentialChangeRate, ElectricPotentialChangeRateUnits, ElectricPotentialChangeRateDto
+from .units.electric_potential_dc import ElectricPotentialDc, ElectricPotentialDcUnits, ElectricPotentialDcDto
+from .units.electric_resistance import ElectricResistance, ElectricResistanceUnits, ElectricResistanceDto
+from .units.electric_resistivity import ElectricResistivity, ElectricResistivityUnits, ElectricResistivityDto
+from .units.electric_surface_charge_density import ElectricSurfaceChargeDensity, ElectricSurfaceChargeDensityUnits, ElectricSurfaceChargeDensityDto
+from .units.energy import Energy, EnergyUnits, EnergyDto
+from .units.energy_density import EnergyDensity, EnergyDensityUnits, EnergyDensityDto
+from .units.entropy import Entropy, EntropyUnits, EntropyDto
+from .units.force import Force, ForceUnits, ForceDto
+from .units.force_change_rate import ForceChangeRate, ForceChangeRateUnits, ForceChangeRateDto
+from .units.force_per_length import ForcePerLength, ForcePerLengthUnits, ForcePerLengthDto
+from .units.frequency import Frequency, FrequencyUnits, FrequencyDto
+from .units.fuel_efficiency import FuelEfficiency, FuelEfficiencyUnits, FuelEfficiencyDto
+from .units.heat_flux import HeatFlux, HeatFluxUnits, HeatFluxDto
+from .units.heat_transfer_coefficient import HeatTransferCoefficient, HeatTransferCoefficientUnits, HeatTransferCoefficientDto
+from .units.illuminance import Illuminance, IlluminanceUnits, IlluminanceDto
+from .units.impulse import Impulse, ImpulseUnits, ImpulseDto
+from .units.information import Information, InformationUnits, InformationDto
+from .units.irradiance import Irradiance, IrradianceUnits, IrradianceDto
+from .units.irradiation import Irradiation, IrradiationUnits, IrradiationDto
+from .units.jerk import Jerk, JerkUnits, JerkDto
+from .units.kinematic_viscosity import KinematicViscosity, KinematicViscosityUnits, KinematicViscosityDto
+from .units.leak_rate import LeakRate, LeakRateUnits, LeakRateDto
+from .units.length import Length, LengthUnits, LengthDto
+from .units.level import Level, LevelUnits, LevelDto
+from .units.linear_density import LinearDensity, LinearDensityUnits, LinearDensityDto
+from .units.linear_power_density import LinearPowerDensity, LinearPowerDensityUnits, LinearPowerDensityDto
+from .units.luminance import Luminance, LuminanceUnits, LuminanceDto
+from .units.luminosity import Luminosity, LuminosityUnits, LuminosityDto
+from .units.luminous_flux import LuminousFlux, LuminousFluxUnits, LuminousFluxDto
+from .units.luminous_intensity import LuminousIntensity, LuminousIntensityUnits, LuminousIntensityDto
+from .units.magnetic_field import MagneticField, MagneticFieldUnits, MagneticFieldDto
+from .units.magnetic_flux import MagneticFlux, MagneticFluxUnits, MagneticFluxDto
+from .units.magnetization import Magnetization, MagnetizationUnits, MagnetizationDto
+from .units.mass import Mass, MassUnits, MassDto
+from .units.mass_concentration import MassConcentration, MassConcentrationUnits, MassConcentrationDto
+from .units.mass_flow import MassFlow, MassFlowUnits, MassFlowDto
+from .units.mass_flux import MassFlux, MassFluxUnits, MassFluxDto
+from .units.mass_fraction import MassFraction, MassFractionUnits, MassFractionDto
+from .units.mass_moment_of_inertia import MassMomentOfInertia, MassMomentOfInertiaUnits, MassMomentOfInertiaDto
+from .units.molality import Molality, MolalityUnits, MolalityDto
+from .units.molar_energy import MolarEnergy, MolarEnergyUnits, MolarEnergyDto
+from .units.molar_entropy import MolarEntropy, MolarEntropyUnits, MolarEntropyDto
+from .units.molar_flow import MolarFlow, MolarFlowUnits, MolarFlowDto
+from .units.molar_mass import MolarMass, MolarMassUnits, MolarMassDto
+from .units.molarity import Molarity, MolarityUnits, MolarityDto
+from .units.permeability import Permeability, PermeabilityUnits, PermeabilityDto
+from .units.permittivity import Permittivity, PermittivityUnits, PermittivityDto
+from .units.porous_medium_permeability import PorousMediumPermeability, PorousMediumPermeabilityUnits, PorousMediumPermeabilityDto
+from .units.power import Power, PowerUnits, PowerDto
+from .units.power_density import PowerDensity, PowerDensityUnits, PowerDensityDto
+from .units.power_ratio import PowerRatio, PowerRatioUnits, PowerRatioDto
+from .units.pressure import Pressure, PressureUnits, PressureDto
+from .units.pressure_change_rate import PressureChangeRate, PressureChangeRateUnits, PressureChangeRateDto
+from .units.radiation_equivalent_dose import RadiationEquivalentDose, RadiationEquivalentDoseUnits, RadiationEquivalentDoseDto
+from .units.radiation_exposure import RadiationExposure, RadiationExposureUnits, RadiationExposureDto
+from .units.radioactivity import Radioactivity, RadioactivityUnits, RadioactivityDto
+from .units.ratio import Ratio, RatioUnits, RatioDto
+from .units.ratio_change_rate import RatioChangeRate, RatioChangeRateUnits, RatioChangeRateDto
+from .units.reactive_energy import ReactiveEnergy, ReactiveEnergyUnits, ReactiveEnergyDto
+from .units.reactive_power import ReactivePower, ReactivePowerUnits, ReactivePowerDto
+from .units.reciprocal_area import ReciprocalArea, ReciprocalAreaUnits, ReciprocalAreaDto
+from .units.reciprocal_length import ReciprocalLength, ReciprocalLengthUnits, ReciprocalLengthDto
+from .units.relative_humidity import RelativeHumidity, RelativeHumidityUnits, RelativeHumidityDto
+from .units.rotational_acceleration import RotationalAcceleration, RotationalAccelerationUnits, RotationalAccelerationDto
+from .units.rotational_speed import RotationalSpeed, RotationalSpeedUnits, RotationalSpeedDto
+from .units.rotational_stiffness import RotationalStiffness, RotationalStiffnessUnits, RotationalStiffnessDto
+from .units.rotational_stiffness_per_length import RotationalStiffnessPerLength, RotationalStiffnessPerLengthUnits, RotationalStiffnessPerLengthDto
+from .units.scalar import Scalar, ScalarUnits, ScalarDto
+from .units.solid_angle import SolidAngle, SolidAngleUnits, SolidAngleDto
+from .units.specific_energy import SpecificEnergy, SpecificEnergyUnits, SpecificEnergyDto
+from .units.specific_entropy import SpecificEntropy, SpecificEntropyUnits, SpecificEntropyDto
+from .units.specific_fuel_consumption import SpecificFuelConsumption, SpecificFuelConsumptionUnits, SpecificFuelConsumptionDto
+from .units.specific_volume import SpecificVolume, SpecificVolumeUnits, SpecificVolumeDto
+from .units.specific_weight import SpecificWeight, SpecificWeightUnits, SpecificWeightDto
+from .units.speed import Speed, SpeedUnits, SpeedDto
+from .units.standard_volume_flow import StandardVolumeFlow, StandardVolumeFlowUnits, StandardVolumeFlowDto
+from .units.temperature import Temperature, TemperatureUnits, TemperatureDto
+from .units.temperature_change_rate import TemperatureChangeRate, TemperatureChangeRateUnits, TemperatureChangeRateDto
+from .units.temperature_delta import TemperatureDelta, TemperatureDeltaUnits, TemperatureDeltaDto
+from .units.temperature_gradient import TemperatureGradient, TemperatureGradientUnits, TemperatureGradientDto
+from .units.thermal_conductivity import ThermalConductivity, ThermalConductivityUnits, ThermalConductivityDto
+from .units.thermal_resistance import ThermalResistance, ThermalResistanceUnits, ThermalResistanceDto
+from .units.torque import Torque, TorqueUnits, TorqueDto
+from .units.torque_per_length import TorquePerLength, TorquePerLengthUnits, TorquePerLengthDto
+from .units.turbidity import Turbidity, TurbidityUnits, TurbidityDto
+from .units.vitamin_a import VitaminA, VitaminAUnits, VitaminADto
+from .units.volume import Volume, VolumeUnits, VolumeDto
+from .units.volume_concentration import VolumeConcentration, VolumeConcentrationUnits, VolumeConcentrationDto
+from .units.volume_flow import VolumeFlow, VolumeFlowUnits, VolumeFlowDto
+from .units.volume_flow_per_area import VolumeFlowPerArea, VolumeFlowPerAreaUnits, VolumeFlowPerAreaDto
+from .units.volume_per_length import VolumePerLength, VolumePerLengthUnits, VolumePerLengthDto
+from .units.volumetric_heat_capacity import VolumetricHeatCapacity, VolumetricHeatCapacityUnits, VolumetricHeatCapacityDto
+from .units.warping_moment_of_inertia import WarpingMomentOfInertia, WarpingMomentOfInertiaUnits, WarpingMomentOfInertiaDto
 
 
 __all__ = [
- 'AbsorbedDoseOfIonizingRadiation', 'AbsorbedDoseOfIonizingRadiationUnits',
- 'Acceleration', 'AccelerationUnits',
- 'AmountOfSubstance', 'AmountOfSubstanceUnits',
- 'AmplitudeRatio', 'AmplitudeRatioUnits',
- 'Angle', 'AngleUnits',
- 'ApparentEnergy', 'ApparentEnergyUnits',
- 'ApparentPower', 'ApparentPowerUnits',
- 'Area', 'AreaUnits',
- 'AreaDensity', 'AreaDensityUnits',
- 'AreaMomentOfInertia', 'AreaMomentOfInertiaUnits',
- 'BitRate', 'BitRateUnits',
- 'BrakeSpecificFuelConsumption', 'BrakeSpecificFuelConsumptionUnits',
- 'Capacitance', 'CapacitanceUnits',
- 'CoefficientOfThermalExpansion', 'CoefficientOfThermalExpansionUnits',
- 'Compressibility', 'CompressibilityUnits',
- 'Density', 'DensityUnits',
- 'Duration', 'DurationUnits',
- 'DynamicViscosity', 'DynamicViscosityUnits',
- 'ElectricAdmittance', 'ElectricAdmittanceUnits',
- 'ElectricCharge', 'ElectricChargeUnits',
- 'ElectricChargeDensity', 'ElectricChargeDensityUnits',
- 'ElectricConductance', 'ElectricConductanceUnits',
- 'ElectricConductivity', 'ElectricConductivityUnits',
- 'ElectricCurrent', 'ElectricCurrentUnits',
- 'ElectricCurrentDensity', 'ElectricCurrentDensityUnits',
- 'ElectricCurrentGradient', 'ElectricCurrentGradientUnits',
- 'ElectricField', 'ElectricFieldUnits',
- 'ElectricInductance', 'ElectricInductanceUnits',
- 'ElectricPotential', 'ElectricPotentialUnits',
- 'ElectricPotentialAc', 'ElectricPotentialAcUnits',
- 'ElectricPotentialChangeRate', 'ElectricPotentialChangeRateUnits',
- 'ElectricPotentialDc', 'ElectricPotentialDcUnits',
- 'ElectricResistance', 'ElectricResistanceUnits',
- 'ElectricResistivity', 'ElectricResistivityUnits',
- 'ElectricSurfaceChargeDensity', 'ElectricSurfaceChargeDensityUnits',
- 'Energy', 'EnergyUnits',
- 'EnergyDensity', 'EnergyDensityUnits',
- 'Entropy', 'EntropyUnits',
- 'Force', 'ForceUnits',
- 'ForceChangeRate', 'ForceChangeRateUnits',
- 'ForcePerLength', 'ForcePerLengthUnits',
- 'Frequency', 'FrequencyUnits',
- 'FuelEfficiency', 'FuelEfficiencyUnits',
- 'HeatFlux', 'HeatFluxUnits',
- 'HeatTransferCoefficient', 'HeatTransferCoefficientUnits',
- 'Illuminance', 'IlluminanceUnits',
- 'Impulse', 'ImpulseUnits',
- 'Information', 'InformationUnits',
- 'Irradiance', 'IrradianceUnits',
- 'Irradiation', 'IrradiationUnits',
- 'Jerk', 'JerkUnits',
- 'KinematicViscosity', 'KinematicViscosityUnits',
- 'LeakRate', 'LeakRateUnits',
- 'Length', 'LengthUnits',
- 'Level', 'LevelUnits',
- 'LinearDensity', 'LinearDensityUnits',
- 'LinearPowerDensity', 'LinearPowerDensityUnits',
- 'Luminance', 'LuminanceUnits',
- 'Luminosity', 'LuminosityUnits',
- 'LuminousFlux', 'LuminousFluxUnits',
- 'LuminousIntensity', 'LuminousIntensityUnits',
- 'MagneticField', 'MagneticFieldUnits',
- 'MagneticFlux', 'MagneticFluxUnits',
- 'Magnetization', 'MagnetizationUnits',
- 'Mass', 'MassUnits',
- 'MassConcentration', 'MassConcentrationUnits',
- 'MassFlow', 'MassFlowUnits',
- 'MassFlux', 'MassFluxUnits',
- 'MassFraction', 'MassFractionUnits',
- 'MassMomentOfInertia', 'MassMomentOfInertiaUnits',
- 'Molality', 'MolalityUnits',
- 'MolarEnergy', 'MolarEnergyUnits',
- 'MolarEntropy', 'MolarEntropyUnits',
- 'MolarFlow', 'MolarFlowUnits',
- 'MolarMass', 'MolarMassUnits',
- 'Molarity', 'MolarityUnits',
- 'Permeability', 'PermeabilityUnits',
- 'Permittivity', 'PermittivityUnits',
- 'PorousMediumPermeability', 'PorousMediumPermeabilityUnits',
- 'Power', 'PowerUnits',
- 'PowerDensity', 'PowerDensityUnits',
- 'PowerRatio', 'PowerRatioUnits',
- 'Pressure', 'PressureUnits',
- 'PressureChangeRate', 'PressureChangeRateUnits',
- 'RadiationEquivalentDose', 'RadiationEquivalentDoseUnits',
- 'RadiationExposure', 'RadiationExposureUnits',
- 'Radioactivity', 'RadioactivityUnits',
- 'Ratio', 'RatioUnits',
- 'RatioChangeRate', 'RatioChangeRateUnits',
- 'ReactiveEnergy', 'ReactiveEnergyUnits',
- 'ReactivePower', 'ReactivePowerUnits',
- 'ReciprocalArea', 'ReciprocalAreaUnits',
- 'ReciprocalLength', 'ReciprocalLengthUnits',
- 'RelativeHumidity', 'RelativeHumidityUnits',
- 'RotationalAcceleration', 'RotationalAccelerationUnits',
- 'RotationalSpeed', 'RotationalSpeedUnits',
- 'RotationalStiffness', 'RotationalStiffnessUnits',
- 'RotationalStiffnessPerLength', 'RotationalStiffnessPerLengthUnits',
- 'Scalar', 'ScalarUnits',
- 'SolidAngle', 'SolidAngleUnits',
- 'SpecificEnergy', 'SpecificEnergyUnits',
- 'SpecificEntropy', 'SpecificEntropyUnits',
- 'SpecificFuelConsumption', 'SpecificFuelConsumptionUnits',
- 'SpecificVolume', 'SpecificVolumeUnits',
- 'SpecificWeight', 'SpecificWeightUnits',
- 'Speed', 'SpeedUnits',
- 'StandardVolumeFlow', 'StandardVolumeFlowUnits',
- 'Temperature', 'TemperatureUnits',
- 'TemperatureChangeRate', 'TemperatureChangeRateUnits',
- 'TemperatureDelta', 'TemperatureDeltaUnits',
- 'TemperatureGradient', 'TemperatureGradientUnits',
- 'ThermalConductivity', 'ThermalConductivityUnits',
- 'ThermalResistance', 'ThermalResistanceUnits',
- 'Torque', 'TorqueUnits',
- 'TorquePerLength', 'TorquePerLengthUnits',
- 'Turbidity', 'TurbidityUnits',
- 'VitaminA', 'VitaminAUnits',
- 'Volume', 'VolumeUnits',
- 'VolumeConcentration', 'VolumeConcentrationUnits',
- 'VolumeFlow', 'VolumeFlowUnits',
- 'VolumeFlowPerArea', 'VolumeFlowPerAreaUnits',
- 'VolumePerLength', 'VolumePerLengthUnits',
- 'VolumetricHeatCapacity', 'VolumetricHeatCapacityUnits',
- 'WarpingMomentOfInertia', 'WarpingMomentOfInertiaUnits',
+ 'AbsorbedDoseOfIonizingRadiation', 'AbsorbedDoseOfIonizingRadiationUnits', 'AbsorbedDoseOfIonizingRadiationDto',
+ 'Acceleration', 'AccelerationUnits', 'AccelerationDto',
+ 'AmountOfSubstance', 'AmountOfSubstanceUnits', 'AmountOfSubstanceDto',
+ 'AmplitudeRatio', 'AmplitudeRatioUnits', 'AmplitudeRatioDto',
+ 'Angle', 'AngleUnits', 'AngleDto',
+ 'ApparentEnergy', 'ApparentEnergyUnits', 'ApparentEnergyDto',
+ 'ApparentPower', 'ApparentPowerUnits', 'ApparentPowerDto',
+ 'Area', 'AreaUnits', 'AreaDto',
+ 'AreaDensity', 'AreaDensityUnits', 'AreaDensityDto',
+ 'AreaMomentOfInertia', 'AreaMomentOfInertiaUnits', 'AreaMomentOfInertiaDto',
+ 'BitRate', 'BitRateUnits', 'BitRateDto',
+ 'BrakeSpecificFuelConsumption', 'BrakeSpecificFuelConsumptionUnits', 'BrakeSpecificFuelConsumptionDto',
+ 'Capacitance', 'CapacitanceUnits', 'CapacitanceDto',
+ 'CoefficientOfThermalExpansion', 'CoefficientOfThermalExpansionUnits', 'CoefficientOfThermalExpansionDto',
+ 'Compressibility', 'CompressibilityUnits', 'CompressibilityDto',
+ 'Density', 'DensityUnits', 'DensityDto',
+ 'Duration', 'DurationUnits', 'DurationDto',
+ 'DynamicViscosity', 'DynamicViscosityUnits', 'DynamicViscosityDto',
+ 'ElectricAdmittance', 'ElectricAdmittanceUnits', 'ElectricAdmittanceDto',
+ 'ElectricCharge', 'ElectricChargeUnits', 'ElectricChargeDto',
+ 'ElectricChargeDensity', 'ElectricChargeDensityUnits', 'ElectricChargeDensityDto',
+ 'ElectricConductance', 'ElectricConductanceUnits', 'ElectricConductanceDto',
+ 'ElectricConductivity', 'ElectricConductivityUnits', 'ElectricConductivityDto',
+ 'ElectricCurrent', 'ElectricCurrentUnits', 'ElectricCurrentDto',
+ 'ElectricCurrentDensity', 'ElectricCurrentDensityUnits', 'ElectricCurrentDensityDto',
+ 'ElectricCurrentGradient', 'ElectricCurrentGradientUnits', 'ElectricCurrentGradientDto',
+ 'ElectricField', 'ElectricFieldUnits', 'ElectricFieldDto',
+ 'ElectricInductance', 'ElectricInductanceUnits', 'ElectricInductanceDto',
+ 'ElectricPotential', 'ElectricPotentialUnits', 'ElectricPotentialDto',
+ 'ElectricPotentialAc', 'ElectricPotentialAcUnits', 'ElectricPotentialAcDto',
+ 'ElectricPotentialChangeRate', 'ElectricPotentialChangeRateUnits', 'ElectricPotentialChangeRateDto',
+ 'ElectricPotentialDc', 'ElectricPotentialDcUnits', 'ElectricPotentialDcDto',
+ 'ElectricResistance', 'ElectricResistanceUnits', 'ElectricResistanceDto',
+ 'ElectricResistivity', 'ElectricResistivityUnits', 'ElectricResistivityDto',
+ 'ElectricSurfaceChargeDensity', 'ElectricSurfaceChargeDensityUnits', 'ElectricSurfaceChargeDensityDto',
+ 'Energy', 'EnergyUnits', 'EnergyDto',
+ 'EnergyDensity', 'EnergyDensityUnits', 'EnergyDensityDto',
+ 'Entropy', 'EntropyUnits', 'EntropyDto',
+ 'Force', 'ForceUnits', 'ForceDto',
+ 'ForceChangeRate', 'ForceChangeRateUnits', 'ForceChangeRateDto',
+ 'ForcePerLength', 'ForcePerLengthUnits', 'ForcePerLengthDto',
+ 'Frequency', 'FrequencyUnits', 'FrequencyDto',
+ 'FuelEfficiency', 'FuelEfficiencyUnits', 'FuelEfficiencyDto',
+ 'HeatFlux', 'HeatFluxUnits', 'HeatFluxDto',
+ 'HeatTransferCoefficient', 'HeatTransferCoefficientUnits', 'HeatTransferCoefficientDto',
+ 'Illuminance', 'IlluminanceUnits', 'IlluminanceDto',
+ 'Impulse', 'ImpulseUnits', 'ImpulseDto',
+ 'Information', 'InformationUnits', 'InformationDto',
+ 'Irradiance', 'IrradianceUnits', 'IrradianceDto',
+ 'Irradiation', 'IrradiationUnits', 'IrradiationDto',
+ 'Jerk', 'JerkUnits', 'JerkDto',
+ 'KinematicViscosity', 'KinematicViscosityUnits', 'KinematicViscosityDto',
+ 'LeakRate', 'LeakRateUnits', 'LeakRateDto',
+ 'Length', 'LengthUnits', 'LengthDto',
+ 'Level', 'LevelUnits', 'LevelDto',
+ 'LinearDensity', 'LinearDensityUnits', 'LinearDensityDto',
+ 'LinearPowerDensity', 'LinearPowerDensityUnits', 'LinearPowerDensityDto',
+ 'Luminance', 'LuminanceUnits', 'LuminanceDto',
+ 'Luminosity', 'LuminosityUnits', 'LuminosityDto',
+ 'LuminousFlux', 'LuminousFluxUnits', 'LuminousFluxDto',
+ 'LuminousIntensity', 'LuminousIntensityUnits', 'LuminousIntensityDto',
+ 'MagneticField', 'MagneticFieldUnits', 'MagneticFieldDto',
+ 'MagneticFlux', 'MagneticFluxUnits', 'MagneticFluxDto',
+ 'Magnetization', 'MagnetizationUnits', 'MagnetizationDto',
+ 'Mass', 'MassUnits', 'MassDto',
+ 'MassConcentration', 'MassConcentrationUnits', 'MassConcentrationDto',
+ 'MassFlow', 'MassFlowUnits', 'MassFlowDto',
+ 'MassFlux', 'MassFluxUnits', 'MassFluxDto',
+ 'MassFraction', 'MassFractionUnits', 'MassFractionDto',
+ 'MassMomentOfInertia', 'MassMomentOfInertiaUnits', 'MassMomentOfInertiaDto',
+ 'Molality', 'MolalityUnits', 'MolalityDto',
+ 'MolarEnergy', 'MolarEnergyUnits', 'MolarEnergyDto',
+ 'MolarEntropy', 'MolarEntropyUnits', 'MolarEntropyDto',
+ 'MolarFlow', 'MolarFlowUnits', 'MolarFlowDto',
+ 'MolarMass', 'MolarMassUnits', 'MolarMassDto',
+ 'Molarity', 'MolarityUnits', 'MolarityDto',
+ 'Permeability', 'PermeabilityUnits', 'PermeabilityDto',
+ 'Permittivity', 'PermittivityUnits', 'PermittivityDto',
+ 'PorousMediumPermeability', 'PorousMediumPermeabilityUnits', 'PorousMediumPermeabilityDto',
+ 'Power', 'PowerUnits', 'PowerDto',
+ 'PowerDensity', 'PowerDensityUnits', 'PowerDensityDto',
+ 'PowerRatio', 'PowerRatioUnits', 'PowerRatioDto',
+ 'Pressure', 'PressureUnits', 'PressureDto',
+ 'PressureChangeRate', 'PressureChangeRateUnits', 'PressureChangeRateDto',
+ 'RadiationEquivalentDose', 'RadiationEquivalentDoseUnits', 'RadiationEquivalentDoseDto',
+ 'RadiationExposure', 'RadiationExposureUnits', 'RadiationExposureDto',
+ 'Radioactivity', 'RadioactivityUnits', 'RadioactivityDto',
+ 'Ratio', 'RatioUnits', 'RatioDto',
+ 'RatioChangeRate', 'RatioChangeRateUnits', 'RatioChangeRateDto',
+ 'ReactiveEnergy', 'ReactiveEnergyUnits', 'ReactiveEnergyDto',
+ 'ReactivePower', 'ReactivePowerUnits', 'ReactivePowerDto',
+ 'ReciprocalArea', 'ReciprocalAreaUnits', 'ReciprocalAreaDto',
+ 'ReciprocalLength', 'ReciprocalLengthUnits', 'ReciprocalLengthDto',
+ 'RelativeHumidity', 'RelativeHumidityUnits', 'RelativeHumidityDto',
+ 'RotationalAcceleration', 'RotationalAccelerationUnits', 'RotationalAccelerationDto',
+ 'RotationalSpeed', 'RotationalSpeedUnits', 'RotationalSpeedDto',
+ 'RotationalStiffness', 'RotationalStiffnessUnits', 'RotationalStiffnessDto',
+ 'RotationalStiffnessPerLength', 'RotationalStiffnessPerLengthUnits', 'RotationalStiffnessPerLengthDto',
+ 'Scalar', 'ScalarUnits', 'ScalarDto',
+ 'SolidAngle', 'SolidAngleUnits', 'SolidAngleDto',
+ 'SpecificEnergy', 'SpecificEnergyUnits', 'SpecificEnergyDto',
+ 'SpecificEntropy', 'SpecificEntropyUnits', 'SpecificEntropyDto',
+ 'SpecificFuelConsumption', 'SpecificFuelConsumptionUnits', 'SpecificFuelConsumptionDto',
+ 'SpecificVolume', 'SpecificVolumeUnits', 'SpecificVolumeDto',
+ 'SpecificWeight', 'SpecificWeightUnits', 'SpecificWeightDto',
+ 'Speed', 'SpeedUnits', 'SpeedDto',
+ 'StandardVolumeFlow', 'StandardVolumeFlowUnits', 'StandardVolumeFlowDto',
+ 'Temperature', 'TemperatureUnits', 'TemperatureDto',
+ 'TemperatureChangeRate', 'TemperatureChangeRateUnits', 'TemperatureChangeRateDto',
+ 'TemperatureDelta', 'TemperatureDeltaUnits', 'TemperatureDeltaDto',
+ 'TemperatureGradient', 'TemperatureGradientUnits', 'TemperatureGradientDto',
+ 'ThermalConductivity', 'ThermalConductivityUnits', 'ThermalConductivityDto',
+ 'ThermalResistance', 'ThermalResistanceUnits', 'ThermalResistanceDto',
+ 'Torque', 'TorqueUnits', 'TorqueDto',
+ 'TorquePerLength', 'TorquePerLengthUnits', 'TorquePerLengthDto',
+ 'Turbidity', 'TurbidityUnits', 'TurbidityDto',
+ 'VitaminA', 'VitaminAUnits', 'VitaminADto',
+ 'Volume', 'VolumeUnits', 'VolumeDto',
+ 'VolumeConcentration', 'VolumeConcentrationUnits', 'VolumeConcentrationDto',
+ 'VolumeFlow', 'VolumeFlowUnits', 'VolumeFlowDto',
+ 'VolumeFlowPerArea', 'VolumeFlowPerAreaUnits', 'VolumeFlowPerAreaDto',
+ 'VolumePerLength', 'VolumePerLengthUnits', 'VolumePerLengthDto',
+ 'VolumetricHeatCapacity', 'VolumetricHeatCapacityUnits', 'VolumetricHeatCapacityDto',
+ 'WarpingMomentOfInertia', 'WarpingMomentOfInertiaUnits', 'WarpingMomentOfInertiaDto',
 ]

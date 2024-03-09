@@ -10,26 +10,60 @@ class ElectricAdmittanceUnits(Enum):
             ElectricAdmittanceUnits enumeration
         """
         
-        Siemens = 'siemens'
+        Siemens = 'Siemens'
         """
             
         """
         
-        Nanosiemens = 'nanosiemens'
+        Nanosiemens = 'Nanosiemens'
         """
             
         """
         
-        Microsiemens = 'microsiemens'
+        Microsiemens = 'Microsiemens'
         """
             
         """
         
-        Millisiemens = 'millisiemens'
+        Millisiemens = 'Millisiemens'
         """
             
         """
         
+
+class ElectricAdmittanceDto:
+    """
+    A DTO representation of a ElectricAdmittance
+
+    Attributes:
+        value (float): The value of the ElectricAdmittance.
+        unit (ElectricAdmittanceUnits): The specific unit that the ElectricAdmittance value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricAdmittanceUnits):
+        """
+        Create a new DTO representation of a ElectricAdmittance
+
+        Parameters:
+            value (float): The value of the ElectricAdmittance.
+            unit (ElectricAdmittanceUnits): The specific unit that the ElectricAdmittance value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricAdmittance
+        """
+        self.unit: ElectricAdmittanceUnits = unit
+        """
+        The specific unit that the ElectricAdmittance value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricAdmittanceDto(value=data["value"], unit=ElectricAdmittanceUnits(data["unit"]))
+
 
 class ElectricAdmittance(AbstractMeasure):
     """
@@ -57,6 +91,29 @@ class ElectricAdmittance(AbstractMeasure):
 
     def convert(self, unit: ElectricAdmittanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> ElectricAdmittanceDto:
+        """
+        Get a new instance of ElectricAdmittance DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricAdmittance unit to store the ElectricAdmittance value in the DTO representation.
+        :type hold_in_unit: ElectricAdmittanceUnits
+        :return: A new instance of ElectricAdmittanceDto.
+        :rtype: ElectricAdmittanceDto
+        """
+        return ElectricAdmittanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_admittance_dto: ElectricAdmittanceDto):
+        """
+        Obtain a new instance of ElectricAdmittance from a DTO unit object.
+
+        :param electric_admittance_dto: The ElectricAdmittance DTO representation.
+        :type electric_admittance_dto: ElectricAdmittanceDto
+        :return: A new instance of ElectricAdmittance.
+        :rtype: ElectricAdmittance
+        """
+        return ElectricAdmittance(electric_admittance_dto.value, electric_admittance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricAdmittanceUnits) -> float:
         value = self._value

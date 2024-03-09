@@ -10,56 +10,90 @@ class TemperatureUnits(Enum):
             TemperatureUnits enumeration
         """
         
-        Kelvin = 'kelvin'
+        Kelvin = 'Kelvin'
         """
             
         """
         
-        DegreeCelsius = 'degree_celsius'
+        DegreeCelsius = 'DegreeCelsius'
         """
             
         """
         
-        MillidegreeCelsius = 'millidegree_celsius'
+        MillidegreeCelsius = 'MillidegreeCelsius'
         """
             
         """
         
-        DegreeDelisle = 'degree_delisle'
+        DegreeDelisle = 'DegreeDelisle'
         """
             
         """
         
-        DegreeFahrenheit = 'degree_fahrenheit'
+        DegreeFahrenheit = 'DegreeFahrenheit'
         """
             
         """
         
-        DegreeNewton = 'degree_newton'
+        DegreeNewton = 'DegreeNewton'
         """
             
         """
         
-        DegreeRankine = 'degree_rankine'
+        DegreeRankine = 'DegreeRankine'
         """
             
         """
         
-        DegreeReaumur = 'degree_reaumur'
+        DegreeReaumur = 'DegreeReaumur'
         """
             
         """
         
-        DegreeRoemer = 'degree_roemer'
+        DegreeRoemer = 'DegreeRoemer'
         """
             
         """
         
-        SolarTemperature = 'solar_temperature'
+        SolarTemperature = 'SolarTemperature'
         """
             
         """
         
+
+class TemperatureDto:
+    """
+    A DTO representation of a Temperature
+
+    Attributes:
+        value (float): The value of the Temperature.
+        unit (TemperatureUnits): The specific unit that the Temperature value is representing.
+    """
+
+    def __init__(self, value: float, unit: TemperatureUnits):
+        """
+        Create a new DTO representation of a Temperature
+
+        Parameters:
+            value (float): The value of the Temperature.
+            unit (TemperatureUnits): The specific unit that the Temperature value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Temperature
+        """
+        self.unit: TemperatureUnits = unit
+        """
+        The specific unit that the Temperature value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TemperatureDto(value=data["value"], unit=TemperatureUnits(data["unit"]))
+
 
 class Temperature(AbstractMeasure):
     """
@@ -99,6 +133,29 @@ class Temperature(AbstractMeasure):
 
     def convert(self, unit: TemperatureUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureUnits = TemperatureUnits.Kelvin) -> TemperatureDto:
+        """
+        Get a new instance of Temperature DTO representing the current unit.
+
+        :param hold_in_unit: The specific Temperature unit to store the Temperature value in the DTO representation.
+        :type hold_in_unit: TemperatureUnits
+        :return: A new instance of TemperatureDto.
+        :rtype: TemperatureDto
+        """
+        return TemperatureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(temperature_dto: TemperatureDto):
+        """
+        Obtain a new instance of Temperature from a DTO unit object.
+
+        :param temperature_dto: The Temperature DTO representation.
+        :type temperature_dto: TemperatureDto
+        :return: A new instance of Temperature.
+        :rtype: Temperature
+        """
+        return Temperature(temperature_dto.value, temperature_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureUnits) -> float:
         value = self._value

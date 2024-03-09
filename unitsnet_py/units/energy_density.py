@@ -10,66 +10,100 @@ class EnergyDensityUnits(Enum):
             EnergyDensityUnits enumeration
         """
         
-        JoulePerCubicMeter = 'joule_per_cubic_meter'
+        JoulePerCubicMeter = 'JoulePerCubicMeter'
         """
             
         """
         
-        WattHourPerCubicMeter = 'watt_hour_per_cubic_meter'
+        WattHourPerCubicMeter = 'WattHourPerCubicMeter'
         """
             
         """
         
-        KilojoulePerCubicMeter = 'kilojoule_per_cubic_meter'
+        KilojoulePerCubicMeter = 'KilojoulePerCubicMeter'
         """
             
         """
         
-        MegajoulePerCubicMeter = 'megajoule_per_cubic_meter'
+        MegajoulePerCubicMeter = 'MegajoulePerCubicMeter'
         """
             
         """
         
-        GigajoulePerCubicMeter = 'gigajoule_per_cubic_meter'
+        GigajoulePerCubicMeter = 'GigajoulePerCubicMeter'
         """
             
         """
         
-        TerajoulePerCubicMeter = 'terajoule_per_cubic_meter'
+        TerajoulePerCubicMeter = 'TerajoulePerCubicMeter'
         """
             
         """
         
-        PetajoulePerCubicMeter = 'petajoule_per_cubic_meter'
+        PetajoulePerCubicMeter = 'PetajoulePerCubicMeter'
         """
             
         """
         
-        KilowattHourPerCubicMeter = 'kilowatt_hour_per_cubic_meter'
+        KilowattHourPerCubicMeter = 'KilowattHourPerCubicMeter'
         """
             
         """
         
-        MegawattHourPerCubicMeter = 'megawatt_hour_per_cubic_meter'
+        MegawattHourPerCubicMeter = 'MegawattHourPerCubicMeter'
         """
             
         """
         
-        GigawattHourPerCubicMeter = 'gigawatt_hour_per_cubic_meter'
+        GigawattHourPerCubicMeter = 'GigawattHourPerCubicMeter'
         """
             
         """
         
-        TerawattHourPerCubicMeter = 'terawatt_hour_per_cubic_meter'
+        TerawattHourPerCubicMeter = 'TerawattHourPerCubicMeter'
         """
             
         """
         
-        PetawattHourPerCubicMeter = 'petawatt_hour_per_cubic_meter'
+        PetawattHourPerCubicMeter = 'PetawattHourPerCubicMeter'
         """
             
         """
         
+
+class EnergyDensityDto:
+    """
+    A DTO representation of a EnergyDensity
+
+    Attributes:
+        value (float): The value of the EnergyDensity.
+        unit (EnergyDensityUnits): The specific unit that the EnergyDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: EnergyDensityUnits):
+        """
+        Create a new DTO representation of a EnergyDensity
+
+        Parameters:
+            value (float): The value of the EnergyDensity.
+            unit (EnergyDensityUnits): The specific unit that the EnergyDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the EnergyDensity
+        """
+        self.unit: EnergyDensityUnits = unit
+        """
+        The specific unit that the EnergyDensity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return EnergyDensityDto(value=data["value"], unit=EnergyDensityUnits(data["unit"]))
+
 
 class EnergyDensity(AbstractMeasure):
     """
@@ -113,6 +147,29 @@ class EnergyDensity(AbstractMeasure):
 
     def convert(self, unit: EnergyDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> EnergyDensityDto:
+        """
+        Get a new instance of EnergyDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific EnergyDensity unit to store the EnergyDensity value in the DTO representation.
+        :type hold_in_unit: EnergyDensityUnits
+        :return: A new instance of EnergyDensityDto.
+        :rtype: EnergyDensityDto
+        """
+        return EnergyDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(energy_density_dto: EnergyDensityDto):
+        """
+        Obtain a new instance of EnergyDensity from a DTO unit object.
+
+        :param energy_density_dto: The EnergyDensity DTO representation.
+        :type energy_density_dto: EnergyDensityDto
+        :return: A new instance of EnergyDensity.
+        :rtype: EnergyDensity
+        """
+        return EnergyDensity(energy_density_dto.value, energy_density_dto.unit)
 
     def __convert_from_base(self, from_unit: EnergyDensityUnits) -> float:
         value = self._value

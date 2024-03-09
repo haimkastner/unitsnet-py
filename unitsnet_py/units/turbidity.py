@@ -10,11 +10,45 @@ class TurbidityUnits(Enum):
             TurbidityUnits enumeration
         """
         
-        NTU = 'ntu'
+        NTU = 'NTU'
         """
             
         """
         
+
+class TurbidityDto:
+    """
+    A DTO representation of a Turbidity
+
+    Attributes:
+        value (float): The value of the Turbidity.
+        unit (TurbidityUnits): The specific unit that the Turbidity value is representing.
+    """
+
+    def __init__(self, value: float, unit: TurbidityUnits):
+        """
+        Create a new DTO representation of a Turbidity
+
+        Parameters:
+            value (float): The value of the Turbidity.
+            unit (TurbidityUnits): The specific unit that the Turbidity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Turbidity
+        """
+        self.unit: TurbidityUnits = unit
+        """
+        The specific unit that the Turbidity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TurbidityDto(value=data["value"], unit=TurbidityUnits(data["unit"]))
+
 
 class Turbidity(AbstractMeasure):
     """
@@ -36,6 +70,29 @@ class Turbidity(AbstractMeasure):
 
     def convert(self, unit: TurbidityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TurbidityUnits = TurbidityUnits.NTU) -> TurbidityDto:
+        """
+        Get a new instance of Turbidity DTO representing the current unit.
+
+        :param hold_in_unit: The specific Turbidity unit to store the Turbidity value in the DTO representation.
+        :type hold_in_unit: TurbidityUnits
+        :return: A new instance of TurbidityDto.
+        :rtype: TurbidityDto
+        """
+        return TurbidityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(turbidity_dto: TurbidityDto):
+        """
+        Obtain a new instance of Turbidity from a DTO unit object.
+
+        :param turbidity_dto: The Turbidity DTO representation.
+        :type turbidity_dto: TurbidityDto
+        :return: A new instance of Turbidity.
+        :rtype: Turbidity
+        """
+        return Turbidity(turbidity_dto.value, turbidity_dto.unit)
 
     def __convert_from_base(self, from_unit: TurbidityUnits) -> float:
         value = self._value

@@ -10,21 +10,55 @@ class BrakeSpecificFuelConsumptionUnits(Enum):
             BrakeSpecificFuelConsumptionUnits enumeration
         """
         
-        GramPerKiloWattHour = 'gram_per_kilo_watt_hour'
+        GramPerKiloWattHour = 'GramPerKiloWattHour'
         """
             
         """
         
-        KilogramPerJoule = 'kilogram_per_joule'
+        KilogramPerJoule = 'KilogramPerJoule'
         """
             
         """
         
-        PoundPerMechanicalHorsepowerHour = 'pound_per_mechanical_horsepower_hour'
+        PoundPerMechanicalHorsepowerHour = 'PoundPerMechanicalHorsepowerHour'
         """
             The pound per horse power hour uses mechanical horse power and the imperial pound
         """
         
+
+class BrakeSpecificFuelConsumptionDto:
+    """
+    A DTO representation of a BrakeSpecificFuelConsumption
+
+    Attributes:
+        value (float): The value of the BrakeSpecificFuelConsumption.
+        unit (BrakeSpecificFuelConsumptionUnits): The specific unit that the BrakeSpecificFuelConsumption value is representing.
+    """
+
+    def __init__(self, value: float, unit: BrakeSpecificFuelConsumptionUnits):
+        """
+        Create a new DTO representation of a BrakeSpecificFuelConsumption
+
+        Parameters:
+            value (float): The value of the BrakeSpecificFuelConsumption.
+            unit (BrakeSpecificFuelConsumptionUnits): The specific unit that the BrakeSpecificFuelConsumption value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the BrakeSpecificFuelConsumption
+        """
+        self.unit: BrakeSpecificFuelConsumptionUnits = unit
+        """
+        The specific unit that the BrakeSpecificFuelConsumption value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return BrakeSpecificFuelConsumptionDto(value=data["value"], unit=BrakeSpecificFuelConsumptionUnits(data["unit"]))
+
 
 class BrakeSpecificFuelConsumption(AbstractMeasure):
     """
@@ -50,6 +84,29 @@ class BrakeSpecificFuelConsumption(AbstractMeasure):
 
     def convert(self, unit: BrakeSpecificFuelConsumptionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> BrakeSpecificFuelConsumptionDto:
+        """
+        Get a new instance of BrakeSpecificFuelConsumption DTO representing the current unit.
+
+        :param hold_in_unit: The specific BrakeSpecificFuelConsumption unit to store the BrakeSpecificFuelConsumption value in the DTO representation.
+        :type hold_in_unit: BrakeSpecificFuelConsumptionUnits
+        :return: A new instance of BrakeSpecificFuelConsumptionDto.
+        :rtype: BrakeSpecificFuelConsumptionDto
+        """
+        return BrakeSpecificFuelConsumptionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(brake_specific_fuel_consumption_dto: BrakeSpecificFuelConsumptionDto):
+        """
+        Obtain a new instance of BrakeSpecificFuelConsumption from a DTO unit object.
+
+        :param brake_specific_fuel_consumption_dto: The BrakeSpecificFuelConsumption DTO representation.
+        :type brake_specific_fuel_consumption_dto: BrakeSpecificFuelConsumptionDto
+        :return: A new instance of BrakeSpecificFuelConsumption.
+        :rtype: BrakeSpecificFuelConsumption
+        """
+        return BrakeSpecificFuelConsumption(brake_specific_fuel_consumption_dto.value, brake_specific_fuel_consumption_dto.unit)
 
     def __convert_from_base(self, from_unit: BrakeSpecificFuelConsumptionUnits) -> float:
         value = self._value

@@ -10,36 +10,70 @@ class ApparentPowerUnits(Enum):
             ApparentPowerUnits enumeration
         """
         
-        Voltampere = 'voltampere'
+        Voltampere = 'Voltampere'
         """
             
         """
         
-        Microvoltampere = 'microvoltampere'
+        Microvoltampere = 'Microvoltampere'
         """
             
         """
         
-        Millivoltampere = 'millivoltampere'
+        Millivoltampere = 'Millivoltampere'
         """
             
         """
         
-        Kilovoltampere = 'kilovoltampere'
+        Kilovoltampere = 'Kilovoltampere'
         """
             
         """
         
-        Megavoltampere = 'megavoltampere'
+        Megavoltampere = 'Megavoltampere'
         """
             
         """
         
-        Gigavoltampere = 'gigavoltampere'
+        Gigavoltampere = 'Gigavoltampere'
         """
             
         """
         
+
+class ApparentPowerDto:
+    """
+    A DTO representation of a ApparentPower
+
+    Attributes:
+        value (float): The value of the ApparentPower.
+        unit (ApparentPowerUnits): The specific unit that the ApparentPower value is representing.
+    """
+
+    def __init__(self, value: float, unit: ApparentPowerUnits):
+        """
+        Create a new DTO representation of a ApparentPower
+
+        Parameters:
+            value (float): The value of the ApparentPower.
+            unit (ApparentPowerUnits): The specific unit that the ApparentPower value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ApparentPower
+        """
+        self.unit: ApparentPowerUnits = unit
+        """
+        The specific unit that the ApparentPower value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ApparentPowerDto(value=data["value"], unit=ApparentPowerUnits(data["unit"]))
+
 
 class ApparentPower(AbstractMeasure):
     """
@@ -71,6 +105,29 @@ class ApparentPower(AbstractMeasure):
 
     def convert(self, unit: ApparentPowerUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> ApparentPowerDto:
+        """
+        Get a new instance of ApparentPower DTO representing the current unit.
+
+        :param hold_in_unit: The specific ApparentPower unit to store the ApparentPower value in the DTO representation.
+        :type hold_in_unit: ApparentPowerUnits
+        :return: A new instance of ApparentPowerDto.
+        :rtype: ApparentPowerDto
+        """
+        return ApparentPowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(apparent_power_dto: ApparentPowerDto):
+        """
+        Obtain a new instance of ApparentPower from a DTO unit object.
+
+        :param apparent_power_dto: The ApparentPower DTO representation.
+        :type apparent_power_dto: ApparentPowerDto
+        :return: A new instance of ApparentPower.
+        :rtype: ApparentPower
+        """
+        return ApparentPower(apparent_power_dto.value, apparent_power_dto.unit)
 
     def __convert_from_base(self, from_unit: ApparentPowerUnits) -> float:
         value = self._value

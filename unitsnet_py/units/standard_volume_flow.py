@@ -10,51 +10,85 @@ class StandardVolumeFlowUnits(Enum):
             StandardVolumeFlowUnits enumeration
         """
         
-        StandardCubicMeterPerSecond = 'standard_cubic_meter_per_second'
+        StandardCubicMeterPerSecond = 'StandardCubicMeterPerSecond'
         """
             
         """
         
-        StandardCubicMeterPerMinute = 'standard_cubic_meter_per_minute'
+        StandardCubicMeterPerMinute = 'StandardCubicMeterPerMinute'
         """
             
         """
         
-        StandardCubicMeterPerHour = 'standard_cubic_meter_per_hour'
+        StandardCubicMeterPerHour = 'StandardCubicMeterPerHour'
         """
             
         """
         
-        StandardCubicMeterPerDay = 'standard_cubic_meter_per_day'
+        StandardCubicMeterPerDay = 'StandardCubicMeterPerDay'
         """
             
         """
         
-        StandardCubicCentimeterPerMinute = 'standard_cubic_centimeter_per_minute'
+        StandardCubicCentimeterPerMinute = 'StandardCubicCentimeterPerMinute'
         """
             
         """
         
-        StandardLiterPerMinute = 'standard_liter_per_minute'
+        StandardLiterPerMinute = 'StandardLiterPerMinute'
         """
             
         """
         
-        StandardCubicFootPerSecond = 'standard_cubic_foot_per_second'
+        StandardCubicFootPerSecond = 'StandardCubicFootPerSecond'
         """
             
         """
         
-        StandardCubicFootPerMinute = 'standard_cubic_foot_per_minute'
+        StandardCubicFootPerMinute = 'StandardCubicFootPerMinute'
         """
             
         """
         
-        StandardCubicFootPerHour = 'standard_cubic_foot_per_hour'
+        StandardCubicFootPerHour = 'StandardCubicFootPerHour'
         """
             
         """
         
+
+class StandardVolumeFlowDto:
+    """
+    A DTO representation of a StandardVolumeFlow
+
+    Attributes:
+        value (float): The value of the StandardVolumeFlow.
+        unit (StandardVolumeFlowUnits): The specific unit that the StandardVolumeFlow value is representing.
+    """
+
+    def __init__(self, value: float, unit: StandardVolumeFlowUnits):
+        """
+        Create a new DTO representation of a StandardVolumeFlow
+
+        Parameters:
+            value (float): The value of the StandardVolumeFlow.
+            unit (StandardVolumeFlowUnits): The specific unit that the StandardVolumeFlow value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the StandardVolumeFlow
+        """
+        self.unit: StandardVolumeFlowUnits = unit
+        """
+        The specific unit that the StandardVolumeFlow value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return StandardVolumeFlowDto(value=data["value"], unit=StandardVolumeFlowUnits(data["unit"]))
+
 
 class StandardVolumeFlow(AbstractMeasure):
     """
@@ -92,6 +126,29 @@ class StandardVolumeFlow(AbstractMeasure):
 
     def convert(self, unit: StandardVolumeFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> StandardVolumeFlowDto:
+        """
+        Get a new instance of StandardVolumeFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific StandardVolumeFlow unit to store the StandardVolumeFlow value in the DTO representation.
+        :type hold_in_unit: StandardVolumeFlowUnits
+        :return: A new instance of StandardVolumeFlowDto.
+        :rtype: StandardVolumeFlowDto
+        """
+        return StandardVolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(standard_volume_flow_dto: StandardVolumeFlowDto):
+        """
+        Obtain a new instance of StandardVolumeFlow from a DTO unit object.
+
+        :param standard_volume_flow_dto: The StandardVolumeFlow DTO representation.
+        :type standard_volume_flow_dto: StandardVolumeFlowDto
+        :return: A new instance of StandardVolumeFlow.
+        :rtype: StandardVolumeFlow
+        """
+        return StandardVolumeFlow(standard_volume_flow_dto.value, standard_volume_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: StandardVolumeFlowUnits) -> float:
         value = self._value

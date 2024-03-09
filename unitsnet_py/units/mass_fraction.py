@@ -10,126 +10,160 @@ class MassFractionUnits(Enum):
             MassFractionUnits enumeration
         """
         
-        DecimalFraction = 'decimal_fraction'
+        DecimalFraction = 'DecimalFraction'
         """
             
         """
         
-        GramPerGram = 'gram_per_gram'
+        GramPerGram = 'GramPerGram'
         """
             
         """
         
-        GramPerKilogram = 'gram_per_kilogram'
+        GramPerKilogram = 'GramPerKilogram'
         """
             
         """
         
-        Percent = 'percent'
+        Percent = 'Percent'
         """
             
         """
         
-        PartPerThousand = 'part_per_thousand'
+        PartPerThousand = 'PartPerThousand'
         """
             
         """
         
-        PartPerMillion = 'part_per_million'
+        PartPerMillion = 'PartPerMillion'
         """
             
         """
         
-        PartPerBillion = 'part_per_billion'
+        PartPerBillion = 'PartPerBillion'
         """
             
         """
         
-        PartPerTrillion = 'part_per_trillion'
+        PartPerTrillion = 'PartPerTrillion'
         """
             
         """
         
-        NanogramPerGram = 'nanogram_per_gram'
+        NanogramPerGram = 'NanogramPerGram'
         """
             
         """
         
-        MicrogramPerGram = 'microgram_per_gram'
+        MicrogramPerGram = 'MicrogramPerGram'
         """
             
         """
         
-        MilligramPerGram = 'milligram_per_gram'
+        MilligramPerGram = 'MilligramPerGram'
         """
             
         """
         
-        CentigramPerGram = 'centigram_per_gram'
+        CentigramPerGram = 'CentigramPerGram'
         """
             
         """
         
-        DecigramPerGram = 'decigram_per_gram'
+        DecigramPerGram = 'DecigramPerGram'
         """
             
         """
         
-        DecagramPerGram = 'decagram_per_gram'
+        DecagramPerGram = 'DecagramPerGram'
         """
             
         """
         
-        HectogramPerGram = 'hectogram_per_gram'
+        HectogramPerGram = 'HectogramPerGram'
         """
             
         """
         
-        KilogramPerGram = 'kilogram_per_gram'
+        KilogramPerGram = 'KilogramPerGram'
         """
             
         """
         
-        NanogramPerKilogram = 'nanogram_per_kilogram'
+        NanogramPerKilogram = 'NanogramPerKilogram'
         """
             
         """
         
-        MicrogramPerKilogram = 'microgram_per_kilogram'
+        MicrogramPerKilogram = 'MicrogramPerKilogram'
         """
             
         """
         
-        MilligramPerKilogram = 'milligram_per_kilogram'
+        MilligramPerKilogram = 'MilligramPerKilogram'
         """
             
         """
         
-        CentigramPerKilogram = 'centigram_per_kilogram'
+        CentigramPerKilogram = 'CentigramPerKilogram'
         """
             
         """
         
-        DecigramPerKilogram = 'decigram_per_kilogram'
+        DecigramPerKilogram = 'DecigramPerKilogram'
         """
             
         """
         
-        DecagramPerKilogram = 'decagram_per_kilogram'
+        DecagramPerKilogram = 'DecagramPerKilogram'
         """
             
         """
         
-        HectogramPerKilogram = 'hectogram_per_kilogram'
+        HectogramPerKilogram = 'HectogramPerKilogram'
         """
             
         """
         
-        KilogramPerKilogram = 'kilogram_per_kilogram'
+        KilogramPerKilogram = 'KilogramPerKilogram'
         """
             
         """
         
+
+class MassFractionDto:
+    """
+    A DTO representation of a MassFraction
+
+    Attributes:
+        value (float): The value of the MassFraction.
+        unit (MassFractionUnits): The specific unit that the MassFraction value is representing.
+    """
+
+    def __init__(self, value: float, unit: MassFractionUnits):
+        """
+        Create a new DTO representation of a MassFraction
+
+        Parameters:
+            value (float): The value of the MassFraction.
+            unit (MassFractionUnits): The specific unit that the MassFraction value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the MassFraction
+        """
+        self.unit: MassFractionUnits = unit
+        """
+        The specific unit that the MassFraction value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return MassFractionDto(value=data["value"], unit=MassFractionUnits(data["unit"]))
+
 
 class MassFraction(AbstractMeasure):
     """
@@ -197,6 +231,29 @@ class MassFraction(AbstractMeasure):
 
     def convert(self, unit: MassFractionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> MassFractionDto:
+        """
+        Get a new instance of MassFraction DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassFraction unit to store the MassFraction value in the DTO representation.
+        :type hold_in_unit: MassFractionUnits
+        :return: A new instance of MassFractionDto.
+        :rtype: MassFractionDto
+        """
+        return MassFractionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(mass_fraction_dto: MassFractionDto):
+        """
+        Obtain a new instance of MassFraction from a DTO unit object.
+
+        :param mass_fraction_dto: The MassFraction DTO representation.
+        :type mass_fraction_dto: MassFractionDto
+        :return: A new instance of MassFraction.
+        :rtype: MassFraction
+        """
+        return MassFraction(mass_fraction_dto.value, mass_fraction_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFractionUnits) -> float:
         value = self._value

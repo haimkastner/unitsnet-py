@@ -10,56 +10,90 @@ class DynamicViscosityUnits(Enum):
             DynamicViscosityUnits enumeration
         """
         
-        NewtonSecondPerMeterSquared = 'newton_second_per_meter_squared'
+        NewtonSecondPerMeterSquared = 'NewtonSecondPerMeterSquared'
         """
             
         """
         
-        PascalSecond = 'pascal_second'
+        PascalSecond = 'PascalSecond'
         """
             
         """
         
-        Poise = 'poise'
+        Poise = 'Poise'
         """
             
         """
         
-        Reyn = 'reyn'
+        Reyn = 'Reyn'
         """
             
         """
         
-        PoundForceSecondPerSquareInch = 'pound_force_second_per_square_inch'
+        PoundForceSecondPerSquareInch = 'PoundForceSecondPerSquareInch'
         """
             
         """
         
-        PoundForceSecondPerSquareFoot = 'pound_force_second_per_square_foot'
+        PoundForceSecondPerSquareFoot = 'PoundForceSecondPerSquareFoot'
         """
             
         """
         
-        PoundPerFootSecond = 'pound_per_foot_second'
+        PoundPerFootSecond = 'PoundPerFootSecond'
         """
             
         """
         
-        MillipascalSecond = 'millipascal_second'
+        MillipascalSecond = 'MillipascalSecond'
         """
             
         """
         
-        MicropascalSecond = 'micropascal_second'
+        MicropascalSecond = 'MicropascalSecond'
         """
             
         """
         
-        Centipoise = 'centipoise'
+        Centipoise = 'Centipoise'
         """
             
         """
         
+
+class DynamicViscosityDto:
+    """
+    A DTO representation of a DynamicViscosity
+
+    Attributes:
+        value (float): The value of the DynamicViscosity.
+        unit (DynamicViscosityUnits): The specific unit that the DynamicViscosity value is representing.
+    """
+
+    def __init__(self, value: float, unit: DynamicViscosityUnits):
+        """
+        Create a new DTO representation of a DynamicViscosity
+
+        Parameters:
+            value (float): The value of the DynamicViscosity.
+            unit (DynamicViscosityUnits): The specific unit that the DynamicViscosity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the DynamicViscosity
+        """
+        self.unit: DynamicViscosityUnits = unit
+        """
+        The specific unit that the DynamicViscosity value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return DynamicViscosityDto(value=data["value"], unit=DynamicViscosityUnits(data["unit"]))
+
 
 class DynamicViscosity(AbstractMeasure):
     """
@@ -99,6 +133,29 @@ class DynamicViscosity(AbstractMeasure):
 
     def convert(self, unit: DynamicViscosityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> DynamicViscosityDto:
+        """
+        Get a new instance of DynamicViscosity DTO representing the current unit.
+
+        :param hold_in_unit: The specific DynamicViscosity unit to store the DynamicViscosity value in the DTO representation.
+        :type hold_in_unit: DynamicViscosityUnits
+        :return: A new instance of DynamicViscosityDto.
+        :rtype: DynamicViscosityDto
+        """
+        return DynamicViscosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(dynamic_viscosity_dto: DynamicViscosityDto):
+        """
+        Obtain a new instance of DynamicViscosity from a DTO unit object.
+
+        :param dynamic_viscosity_dto: The DynamicViscosity DTO representation.
+        :type dynamic_viscosity_dto: DynamicViscosityDto
+        :return: A new instance of DynamicViscosity.
+        :rtype: DynamicViscosity
+        """
+        return DynamicViscosity(dynamic_viscosity_dto.value, dynamic_viscosity_dto.unit)
 
     def __convert_from_base(self, from_unit: DynamicViscosityUnits) -> float:
         value = self._value

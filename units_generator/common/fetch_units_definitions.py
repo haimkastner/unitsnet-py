@@ -16,26 +16,27 @@ def get_definitions(repo_owner_and_name):
         definition = get_json_from_cdn(f"{files_url}/{name}")
 
         for unit in definition["Units"]:
-            markAsDeprecated = False
-            pluralName = unit.get("PluralName")
-            obsoleteText = unit.get("ObsoleteText")
-            if obsoleteText:
+            mark_as_deprecated = False
+            unit_name = unit.get("Name")
+            plural_name = unit.get("PluralName")
+            obsolete_text = unit.get("ObsoleteText")
+            if obsolete_text:
                 print(
-                    f'[get_definitions] Unit {name}.{pluralName} marked as obsolete, message: "{obsoleteText}"'
+                    f'[get_definitions] Unit {unit_name}.{plural_name} marked as obsolete, message: "{obsolete_text}"'
                 )
-                markAsDeprecated = True
+                mark_as_deprecated = True
 
             if unit.get("SkipConversionGeneration"):
                 print(
-                    f"[get_definitions] Unit {name}.{pluralName} marked to be ignored"
+                    f"[get_definitions] Unit {unit_name}.{plural_name} marked to be ignored"
                 )
-                markAsDeprecated = True
+                mark_as_deprecated = True
 
-            unit["Deprecated"] = markAsDeprecated
+            unit["Deprecated"] = mark_as_deprecated
 
         definitions.append(definition)
 
-        print(f"[get_definitions] Unit {name}.{pluralName} successfully fetched")
+        print(f"[get_definitions] Unit {name} successfully fetched")
 
     print("[get_definitions] Fetching units definitions finished successfully")
 

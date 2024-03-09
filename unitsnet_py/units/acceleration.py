@@ -10,76 +10,110 @@ class AccelerationUnits(Enum):
             AccelerationUnits enumeration
         """
         
-        MeterPerSecondSquared = 'meter_per_second_squared'
+        MeterPerSecondSquared = 'MeterPerSecondSquared'
         """
             
         """
         
-        InchPerSecondSquared = 'inch_per_second_squared'
+        InchPerSecondSquared = 'InchPerSecondSquared'
         """
             
         """
         
-        FootPerSecondSquared = 'foot_per_second_squared'
+        FootPerSecondSquared = 'FootPerSecondSquared'
         """
             
         """
         
-        KnotPerSecond = 'knot_per_second'
+        KnotPerSecond = 'KnotPerSecond'
         """
             
         """
         
-        KnotPerMinute = 'knot_per_minute'
+        KnotPerMinute = 'KnotPerMinute'
         """
             
         """
         
-        KnotPerHour = 'knot_per_hour'
+        KnotPerHour = 'KnotPerHour'
         """
             
         """
         
-        StandardGravity = 'standard_gravity'
+        StandardGravity = 'StandardGravity'
         """
             
         """
         
-        NanometerPerSecondSquared = 'nanometer_per_second_squared'
+        NanometerPerSecondSquared = 'NanometerPerSecondSquared'
         """
             
         """
         
-        MicrometerPerSecondSquared = 'micrometer_per_second_squared'
+        MicrometerPerSecondSquared = 'MicrometerPerSecondSquared'
         """
             
         """
         
-        MillimeterPerSecondSquared = 'millimeter_per_second_squared'
+        MillimeterPerSecondSquared = 'MillimeterPerSecondSquared'
         """
             
         """
         
-        CentimeterPerSecondSquared = 'centimeter_per_second_squared'
+        CentimeterPerSecondSquared = 'CentimeterPerSecondSquared'
         """
             
         """
         
-        DecimeterPerSecondSquared = 'decimeter_per_second_squared'
+        DecimeterPerSecondSquared = 'DecimeterPerSecondSquared'
         """
             
         """
         
-        KilometerPerSecondSquared = 'kilometer_per_second_squared'
+        KilometerPerSecondSquared = 'KilometerPerSecondSquared'
         """
             
         """
         
-        MillistandardGravity = 'millistandard_gravity'
+        MillistandardGravity = 'MillistandardGravity'
         """
             
         """
         
+
+class AccelerationDto:
+    """
+    A DTO representation of a Acceleration
+
+    Attributes:
+        value (float): The value of the Acceleration.
+        unit (AccelerationUnits): The specific unit that the Acceleration value is representing.
+    """
+
+    def __init__(self, value: float, unit: AccelerationUnits):
+        """
+        Create a new DTO representation of a Acceleration
+
+        Parameters:
+            value (float): The value of the Acceleration.
+            unit (AccelerationUnits): The specific unit that the Acceleration value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Acceleration
+        """
+        self.unit: AccelerationUnits = unit
+        """
+        The specific unit that the Acceleration value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return AccelerationDto(value=data["value"], unit=AccelerationUnits(data["unit"]))
+
 
 class Acceleration(AbstractMeasure):
     """
@@ -127,6 +161,29 @@ class Acceleration(AbstractMeasure):
 
     def convert(self, unit: AccelerationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> AccelerationDto:
+        """
+        Get a new instance of Acceleration DTO representing the current unit.
+
+        :param hold_in_unit: The specific Acceleration unit to store the Acceleration value in the DTO representation.
+        :type hold_in_unit: AccelerationUnits
+        :return: A new instance of AccelerationDto.
+        :rtype: AccelerationDto
+        """
+        return AccelerationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(acceleration_dto: AccelerationDto):
+        """
+        Obtain a new instance of Acceleration from a DTO unit object.
+
+        :param acceleration_dto: The Acceleration DTO representation.
+        :type acceleration_dto: AccelerationDto
+        :return: A new instance of Acceleration.
+        :rtype: Acceleration
+        """
+        return Acceleration(acceleration_dto.value, acceleration_dto.unit)
 
     def __convert_from_base(self, from_unit: AccelerationUnits) -> float:
         value = self._value

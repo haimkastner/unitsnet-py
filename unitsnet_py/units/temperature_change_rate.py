@@ -10,56 +10,90 @@ class TemperatureChangeRateUnits(Enum):
             TemperatureChangeRateUnits enumeration
         """
         
-        DegreeCelsiusPerSecond = 'degree_celsius_per_second'
+        DegreeCelsiusPerSecond = 'DegreeCelsiusPerSecond'
         """
             
         """
         
-        DegreeCelsiusPerMinute = 'degree_celsius_per_minute'
+        DegreeCelsiusPerMinute = 'DegreeCelsiusPerMinute'
         """
             
         """
         
-        NanodegreeCelsiusPerSecond = 'nanodegree_celsius_per_second'
+        NanodegreeCelsiusPerSecond = 'NanodegreeCelsiusPerSecond'
         """
             
         """
         
-        MicrodegreeCelsiusPerSecond = 'microdegree_celsius_per_second'
+        MicrodegreeCelsiusPerSecond = 'MicrodegreeCelsiusPerSecond'
         """
             
         """
         
-        MillidegreeCelsiusPerSecond = 'millidegree_celsius_per_second'
+        MillidegreeCelsiusPerSecond = 'MillidegreeCelsiusPerSecond'
         """
             
         """
         
-        CentidegreeCelsiusPerSecond = 'centidegree_celsius_per_second'
+        CentidegreeCelsiusPerSecond = 'CentidegreeCelsiusPerSecond'
         """
             
         """
         
-        DecidegreeCelsiusPerSecond = 'decidegree_celsius_per_second'
+        DecidegreeCelsiusPerSecond = 'DecidegreeCelsiusPerSecond'
         """
             
         """
         
-        DecadegreeCelsiusPerSecond = 'decadegree_celsius_per_second'
+        DecadegreeCelsiusPerSecond = 'DecadegreeCelsiusPerSecond'
         """
             
         """
         
-        HectodegreeCelsiusPerSecond = 'hectodegree_celsius_per_second'
+        HectodegreeCelsiusPerSecond = 'HectodegreeCelsiusPerSecond'
         """
             
         """
         
-        KilodegreeCelsiusPerSecond = 'kilodegree_celsius_per_second'
+        KilodegreeCelsiusPerSecond = 'KilodegreeCelsiusPerSecond'
         """
             
         """
         
+
+class TemperatureChangeRateDto:
+    """
+    A DTO representation of a TemperatureChangeRate
+
+    Attributes:
+        value (float): The value of the TemperatureChangeRate.
+        unit (TemperatureChangeRateUnits): The specific unit that the TemperatureChangeRate value is representing.
+    """
+
+    def __init__(self, value: float, unit: TemperatureChangeRateUnits):
+        """
+        Create a new DTO representation of a TemperatureChangeRate
+
+        Parameters:
+            value (float): The value of the TemperatureChangeRate.
+            unit (TemperatureChangeRateUnits): The specific unit that the TemperatureChangeRate value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the TemperatureChangeRate
+        """
+        self.unit: TemperatureChangeRateUnits = unit
+        """
+        The specific unit that the TemperatureChangeRate value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return TemperatureChangeRateDto(value=data["value"], unit=TemperatureChangeRateUnits(data["unit"]))
+
 
 class TemperatureChangeRate(AbstractMeasure):
     """
@@ -99,6 +133,29 @@ class TemperatureChangeRate(AbstractMeasure):
 
     def convert(self, unit: TemperatureChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> TemperatureChangeRateDto:
+        """
+        Get a new instance of TemperatureChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureChangeRate unit to store the TemperatureChangeRate value in the DTO representation.
+        :type hold_in_unit: TemperatureChangeRateUnits
+        :return: A new instance of TemperatureChangeRateDto.
+        :rtype: TemperatureChangeRateDto
+        """
+        return TemperatureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(temperature_change_rate_dto: TemperatureChangeRateDto):
+        """
+        Obtain a new instance of TemperatureChangeRate from a DTO unit object.
+
+        :param temperature_change_rate_dto: The TemperatureChangeRate DTO representation.
+        :type temperature_change_rate_dto: TemperatureChangeRateDto
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(temperature_change_rate_dto.value, temperature_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureChangeRateUnits) -> float:
         value = self._value

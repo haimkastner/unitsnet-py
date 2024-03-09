@@ -10,41 +10,75 @@ class CapacitanceUnits(Enum):
             CapacitanceUnits enumeration
         """
         
-        Farad = 'farad'
+        Farad = 'Farad'
         """
             
         """
         
-        Picofarad = 'picofarad'
+        Picofarad = 'Picofarad'
         """
             
         """
         
-        Nanofarad = 'nanofarad'
+        Nanofarad = 'Nanofarad'
         """
             
         """
         
-        Microfarad = 'microfarad'
+        Microfarad = 'Microfarad'
         """
             
         """
         
-        Millifarad = 'millifarad'
+        Millifarad = 'Millifarad'
         """
             
         """
         
-        Kilofarad = 'kilofarad'
+        Kilofarad = 'Kilofarad'
         """
             
         """
         
-        Megafarad = 'megafarad'
+        Megafarad = 'Megafarad'
         """
             
         """
         
+
+class CapacitanceDto:
+    """
+    A DTO representation of a Capacitance
+
+    Attributes:
+        value (float): The value of the Capacitance.
+        unit (CapacitanceUnits): The specific unit that the Capacitance value is representing.
+    """
+
+    def __init__(self, value: float, unit: CapacitanceUnits):
+        """
+        Create a new DTO representation of a Capacitance
+
+        Parameters:
+            value (float): The value of the Capacitance.
+            unit (CapacitanceUnits): The specific unit that the Capacitance value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Capacitance
+        """
+        self.unit: CapacitanceUnits = unit
+        """
+        The specific unit that the Capacitance value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return CapacitanceDto(value=data["value"], unit=CapacitanceUnits(data["unit"]))
+
 
 class Capacitance(AbstractMeasure):
     """
@@ -78,6 +112,29 @@ class Capacitance(AbstractMeasure):
 
     def convert(self, unit: CapacitanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: CapacitanceUnits = CapacitanceUnits.Farad) -> CapacitanceDto:
+        """
+        Get a new instance of Capacitance DTO representing the current unit.
+
+        :param hold_in_unit: The specific Capacitance unit to store the Capacitance value in the DTO representation.
+        :type hold_in_unit: CapacitanceUnits
+        :return: A new instance of CapacitanceDto.
+        :rtype: CapacitanceDto
+        """
+        return CapacitanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(capacitance_dto: CapacitanceDto):
+        """
+        Obtain a new instance of Capacitance from a DTO unit object.
+
+        :param capacitance_dto: The Capacitance DTO representation.
+        :type capacitance_dto: CapacitanceDto
+        :return: A new instance of Capacitance.
+        :rtype: Capacitance
+        """
+        return Capacitance(capacitance_dto.value, capacitance_dto.unit)
 
     def __convert_from_base(self, from_unit: CapacitanceUnits) -> float:
         value = self._value

@@ -10,31 +10,65 @@ class ElectricInductanceUnits(Enum):
             ElectricInductanceUnits enumeration
         """
         
-        Henry = 'henry'
+        Henry = 'Henry'
         """
             
         """
         
-        Picohenry = 'picohenry'
+        Picohenry = 'Picohenry'
         """
             
         """
         
-        Nanohenry = 'nanohenry'
+        Nanohenry = 'Nanohenry'
         """
             
         """
         
-        Microhenry = 'microhenry'
+        Microhenry = 'Microhenry'
         """
             
         """
         
-        Millihenry = 'millihenry'
+        Millihenry = 'Millihenry'
         """
             
         """
         
+
+class ElectricInductanceDto:
+    """
+    A DTO representation of a ElectricInductance
+
+    Attributes:
+        value (float): The value of the ElectricInductance.
+        unit (ElectricInductanceUnits): The specific unit that the ElectricInductance value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricInductanceUnits):
+        """
+        Create a new DTO representation of a ElectricInductance
+
+        Parameters:
+            value (float): The value of the ElectricInductance.
+            unit (ElectricInductanceUnits): The specific unit that the ElectricInductance value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricInductance
+        """
+        self.unit: ElectricInductanceUnits = unit
+        """
+        The specific unit that the ElectricInductance value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ElectricInductanceDto(value=data["value"], unit=ElectricInductanceUnits(data["unit"]))
+
 
 class ElectricInductance(AbstractMeasure):
     """
@@ -64,6 +98,29 @@ class ElectricInductance(AbstractMeasure):
 
     def convert(self, unit: ElectricInductanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> ElectricInductanceDto:
+        """
+        Get a new instance of ElectricInductance DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricInductance unit to store the ElectricInductance value in the DTO representation.
+        :type hold_in_unit: ElectricInductanceUnits
+        :return: A new instance of ElectricInductanceDto.
+        :rtype: ElectricInductanceDto
+        """
+        return ElectricInductanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(electric_inductance_dto: ElectricInductanceDto):
+        """
+        Obtain a new instance of ElectricInductance from a DTO unit object.
+
+        :param electric_inductance_dto: The ElectricInductance DTO representation.
+        :type electric_inductance_dto: ElectricInductanceDto
+        :return: A new instance of ElectricInductance.
+        :rtype: ElectricInductance
+        """
+        return ElectricInductance(electric_inductance_dto.value, electric_inductance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricInductanceUnits) -> float:
         value = self._value

@@ -10,11 +10,45 @@ class SolidAngleUnits(Enum):
             SolidAngleUnits enumeration
         """
         
-        Steradian = 'steradian'
+        Steradian = 'Steradian'
         """
             
         """
         
+
+class SolidAngleDto:
+    """
+    A DTO representation of a SolidAngle
+
+    Attributes:
+        value (float): The value of the SolidAngle.
+        unit (SolidAngleUnits): The specific unit that the SolidAngle value is representing.
+    """
+
+    def __init__(self, value: float, unit: SolidAngleUnits):
+        """
+        Create a new DTO representation of a SolidAngle
+
+        Parameters:
+            value (float): The value of the SolidAngle.
+            unit (SolidAngleUnits): The specific unit that the SolidAngle value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the SolidAngle
+        """
+        self.unit: SolidAngleUnits = unit
+        """
+        The specific unit that the SolidAngle value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return SolidAngleDto(value=data["value"], unit=SolidAngleUnits(data["unit"]))
+
 
 class SolidAngle(AbstractMeasure):
     """
@@ -36,6 +70,29 @@ class SolidAngle(AbstractMeasure):
 
     def convert(self, unit: SolidAngleUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SolidAngleUnits = SolidAngleUnits.Steradian) -> SolidAngleDto:
+        """
+        Get a new instance of SolidAngle DTO representing the current unit.
+
+        :param hold_in_unit: The specific SolidAngle unit to store the SolidAngle value in the DTO representation.
+        :type hold_in_unit: SolidAngleUnits
+        :return: A new instance of SolidAngleDto.
+        :rtype: SolidAngleDto
+        """
+        return SolidAngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(solid_angle_dto: SolidAngleDto):
+        """
+        Obtain a new instance of SolidAngle from a DTO unit object.
+
+        :param solid_angle_dto: The SolidAngle DTO representation.
+        :type solid_angle_dto: SolidAngleDto
+        :return: A new instance of SolidAngle.
+        :rtype: SolidAngle
+        """
+        return SolidAngle(solid_angle_dto.value, solid_angle_dto.unit)
 
     def __convert_from_base(self, from_unit: SolidAngleUnits) -> float:
         value = self._value

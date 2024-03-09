@@ -10,71 +10,105 @@ class ImpulseUnits(Enum):
             ImpulseUnits enumeration
         """
         
-        KilogramMeterPerSecond = 'kilogram_meter_per_second'
+        KilogramMeterPerSecond = 'KilogramMeterPerSecond'
         """
             
         """
         
-        NewtonSecond = 'newton_second'
+        NewtonSecond = 'NewtonSecond'
         """
             
         """
         
-        PoundFootPerSecond = 'pound_foot_per_second'
+        PoundFootPerSecond = 'PoundFootPerSecond'
         """
             
         """
         
-        PoundForceSecond = 'pound_force_second'
+        PoundForceSecond = 'PoundForceSecond'
         """
             
         """
         
-        SlugFootPerSecond = 'slug_foot_per_second'
+        SlugFootPerSecond = 'SlugFootPerSecond'
         """
             
         """
         
-        NanonewtonSecond = 'nanonewton_second'
+        NanonewtonSecond = 'NanonewtonSecond'
         """
             
         """
         
-        MicronewtonSecond = 'micronewton_second'
+        MicronewtonSecond = 'MicronewtonSecond'
         """
             
         """
         
-        MillinewtonSecond = 'millinewton_second'
+        MillinewtonSecond = 'MillinewtonSecond'
         """
             
         """
         
-        CentinewtonSecond = 'centinewton_second'
+        CentinewtonSecond = 'CentinewtonSecond'
         """
             
         """
         
-        DecinewtonSecond = 'decinewton_second'
+        DecinewtonSecond = 'DecinewtonSecond'
         """
             
         """
         
-        DecanewtonSecond = 'decanewton_second'
+        DecanewtonSecond = 'DecanewtonSecond'
         """
             
         """
         
-        KilonewtonSecond = 'kilonewton_second'
+        KilonewtonSecond = 'KilonewtonSecond'
         """
             
         """
         
-        MeganewtonSecond = 'meganewton_second'
+        MeganewtonSecond = 'MeganewtonSecond'
         """
             
         """
         
+
+class ImpulseDto:
+    """
+    A DTO representation of a Impulse
+
+    Attributes:
+        value (float): The value of the Impulse.
+        unit (ImpulseUnits): The specific unit that the Impulse value is representing.
+    """
+
+    def __init__(self, value: float, unit: ImpulseUnits):
+        """
+        Create a new DTO representation of a Impulse
+
+        Parameters:
+            value (float): The value of the Impulse.
+            unit (ImpulseUnits): The specific unit that the Impulse value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Impulse
+        """
+        self.unit: ImpulseUnits = unit
+        """
+        The specific unit that the Impulse value is representing
+        """
+
+    def to_json(self):
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        return ImpulseDto(value=data["value"], unit=ImpulseUnits(data["unit"]))
+
 
 class Impulse(AbstractMeasure):
     """
@@ -120,6 +154,29 @@ class Impulse(AbstractMeasure):
 
     def convert(self, unit: ImpulseUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> ImpulseDto:
+        """
+        Get a new instance of Impulse DTO representing the current unit.
+
+        :param hold_in_unit: The specific Impulse unit to store the Impulse value in the DTO representation.
+        :type hold_in_unit: ImpulseUnits
+        :return: A new instance of ImpulseDto.
+        :rtype: ImpulseDto
+        """
+        return ImpulseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+
+    @staticmethod
+    def from_dto(impulse_dto: ImpulseDto):
+        """
+        Obtain a new instance of Impulse from a DTO unit object.
+
+        :param impulse_dto: The Impulse DTO representation.
+        :type impulse_dto: ImpulseDto
+        :return: A new instance of Impulse.
+        :rtype: Impulse
+        """
+        return Impulse(impulse_dto.value, impulse_dto.unit)
 
     def __convert_from_base(self, from_unit: ImpulseUnits) -> float:
         value = self._value
