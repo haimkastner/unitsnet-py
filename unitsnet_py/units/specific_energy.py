@@ -162,9 +162,30 @@ class SpecificEnergyUnits(Enum):
         
 
 class SpecificEnergyDto:
+    """
+    A DTO representation of a SpecificEnergy
+
+    Attributes:
+        value (float): The value of the SpecificEnergy.
+        unit (SpecificEnergyUnits): The specific unit that the SpecificEnergy value is representing.
+    """
+
     def __init__(self, value: float, unit: SpecificEnergyUnits):
+        """
+        Create a new DTO representation of a SpecificEnergy
+
+        Parameters:
+            value (float): The value of the SpecificEnergy.
+            unit (SpecificEnergyUnits): The specific unit that the SpecificEnergy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the SpecificEnergy
+        """
         self.unit: SpecificEnergyUnits = unit
+        """
+        The specific unit that the SpecificEnergy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -254,10 +275,26 @@ class SpecificEnergy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> SpecificEnergyDto:
+        """
+        Get a new instance of SpecificEnergy DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEnergy unit to store the SpecificEnergy value in the DTO representation.
+        :type hold_in_unit: SpecificEnergyUnits
+        :return: A new instance of SpecificEnergyDto.
+        :rtype: SpecificEnergyDto
+        """
         return SpecificEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(specific_energy_dto: SpecificEnergyDto):
+        """
+        Obtain a new instance of SpecificEnergy from a DTO unit object.
+
+        :param specific_energy_dto: The SpecificEnergy DTO representation.
+        :type specific_energy_dto: SpecificEnergyDto
+        :return: A new instance of SpecificEnergy.
+        :rtype: SpecificEnergy
+        """
         return SpecificEnergy(specific_energy_dto.value, specific_energy_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificEnergyUnits) -> float:

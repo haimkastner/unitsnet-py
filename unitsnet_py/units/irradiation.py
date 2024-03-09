@@ -57,9 +57,30 @@ class IrradiationUnits(Enum):
         
 
 class IrradiationDto:
+    """
+    A DTO representation of a Irradiation
+
+    Attributes:
+        value (float): The value of the Irradiation.
+        unit (IrradiationUnits): The specific unit that the Irradiation value is representing.
+    """
+
     def __init__(self, value: float, unit: IrradiationUnits):
+        """
+        Create a new DTO representation of a Irradiation
+
+        Parameters:
+            value (float): The value of the Irradiation.
+            unit (IrradiationUnits): The specific unit that the Irradiation value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Irradiation
+        """
         self.unit: IrradiationUnits = unit
+        """
+        The specific unit that the Irradiation value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class Irradiation(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> IrradiationDto:
+        """
+        Get a new instance of Irradiation DTO representing the current unit.
+
+        :param hold_in_unit: The specific Irradiation unit to store the Irradiation value in the DTO representation.
+        :type hold_in_unit: IrradiationUnits
+        :return: A new instance of IrradiationDto.
+        :rtype: IrradiationDto
+        """
         return IrradiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(irradiation_dto: IrradiationDto):
+        """
+        Obtain a new instance of Irradiation from a DTO unit object.
+
+        :param irradiation_dto: The Irradiation DTO representation.
+        :type irradiation_dto: IrradiationDto
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
         return Irradiation(irradiation_dto.value, irradiation_dto.unit)
 
     def __convert_from_base(self, from_unit: IrradiationUnits) -> float:

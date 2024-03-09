@@ -82,9 +82,30 @@ class BitRateUnits(Enum):
         
 
 class BitRateDto:
+    """
+    A DTO representation of a BitRate
+
+    Attributes:
+        value (float): The value of the BitRate.
+        unit (BitRateUnits): The specific unit that the BitRate value is representing.
+    """
+
     def __init__(self, value: float, unit: BitRateUnits):
+        """
+        Create a new DTO representation of a BitRate
+
+        Parameters:
+            value (float): The value of the BitRate.
+            unit (BitRateUnits): The specific unit that the BitRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the BitRate
+        """
         self.unit: BitRateUnits = unit
+        """
+        The specific unit that the BitRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -142,10 +163,26 @@ class BitRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: BitRateUnits = BitRateUnits.BitPerSecond) -> BitRateDto:
+        """
+        Get a new instance of BitRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific BitRate unit to store the BitRate value in the DTO representation.
+        :type hold_in_unit: BitRateUnits
+        :return: A new instance of BitRateDto.
+        :rtype: BitRateDto
+        """
         return BitRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(bit_rate_dto: BitRateDto):
+        """
+        Obtain a new instance of BitRate from a DTO unit object.
+
+        :param bit_rate_dto: The BitRate DTO representation.
+        :type bit_rate_dto: BitRateDto
+        :return: A new instance of BitRate.
+        :rtype: BitRate
+        """
         return BitRate(bit_rate_dto.value, bit_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:

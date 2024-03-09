@@ -157,9 +157,30 @@ class RadioactivityUnits(Enum):
         
 
 class RadioactivityDto:
+    """
+    A DTO representation of a Radioactivity
+
+    Attributes:
+        value (float): The value of the Radioactivity.
+        unit (RadioactivityUnits): The specific unit that the Radioactivity value is representing.
+    """
+
     def __init__(self, value: float, unit: RadioactivityUnits):
+        """
+        Create a new DTO representation of a Radioactivity
+
+        Parameters:
+            value (float): The value of the Radioactivity.
+            unit (RadioactivityUnits): The specific unit that the Radioactivity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Radioactivity
+        """
         self.unit: RadioactivityUnits = unit
+        """
+        The specific unit that the Radioactivity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -247,10 +268,26 @@ class Radioactivity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RadioactivityUnits = RadioactivityUnits.Becquerel) -> RadioactivityDto:
+        """
+        Get a new instance of Radioactivity DTO representing the current unit.
+
+        :param hold_in_unit: The specific Radioactivity unit to store the Radioactivity value in the DTO representation.
+        :type hold_in_unit: RadioactivityUnits
+        :return: A new instance of RadioactivityDto.
+        :rtype: RadioactivityDto
+        """
         return RadioactivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(radioactivity_dto: RadioactivityDto):
+        """
+        Obtain a new instance of Radioactivity from a DTO unit object.
+
+        :param radioactivity_dto: The Radioactivity DTO representation.
+        :type radioactivity_dto: RadioactivityDto
+        :return: A new instance of Radioactivity.
+        :rtype: Radioactivity
+        """
         return Radioactivity(radioactivity_dto.value, radioactivity_dto.unit)
 
     def __convert_from_base(self, from_unit: RadioactivityUnits) -> float:

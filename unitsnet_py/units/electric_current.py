@@ -57,9 +57,30 @@ class ElectricCurrentUnits(Enum):
         
 
 class ElectricCurrentDto:
+    """
+    A DTO representation of a ElectricCurrent
+
+    Attributes:
+        value (float): The value of the ElectricCurrent.
+        unit (ElectricCurrentUnits): The specific unit that the ElectricCurrent value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricCurrentUnits):
+        """
+        Create a new DTO representation of a ElectricCurrent
+
+        Parameters:
+            value (float): The value of the ElectricCurrent.
+            unit (ElectricCurrentUnits): The specific unit that the ElectricCurrent value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricCurrent
+        """
         self.unit: ElectricCurrentUnits = unit
+        """
+        The specific unit that the ElectricCurrent value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class ElectricCurrent(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> ElectricCurrentDto:
+        """
+        Get a new instance of ElectricCurrent DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCurrent unit to store the ElectricCurrent value in the DTO representation.
+        :type hold_in_unit: ElectricCurrentUnits
+        :return: A new instance of ElectricCurrentDto.
+        :rtype: ElectricCurrentDto
+        """
         return ElectricCurrentDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_current_dto: ElectricCurrentDto):
+        """
+        Obtain a new instance of ElectricCurrent from a DTO unit object.
+
+        :param electric_current_dto: The ElectricCurrent DTO representation.
+        :type electric_current_dto: ElectricCurrentDto
+        :return: A new instance of ElectricCurrent.
+        :rtype: ElectricCurrent
+        """
         return ElectricCurrent(electric_current_dto.value, electric_current_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentUnits) -> float:

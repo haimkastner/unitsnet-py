@@ -47,9 +47,30 @@ class ElectricResistanceUnits(Enum):
         
 
 class ElectricResistanceDto:
+    """
+    A DTO representation of a ElectricResistance
+
+    Attributes:
+        value (float): The value of the ElectricResistance.
+        unit (ElectricResistanceUnits): The specific unit that the ElectricResistance value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricResistanceUnits):
+        """
+        Create a new DTO representation of a ElectricResistance
+
+        Parameters:
+            value (float): The value of the ElectricResistance.
+            unit (ElectricResistanceUnits): The specific unit that the ElectricResistance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricResistance
+        """
         self.unit: ElectricResistanceUnits = unit
+        """
+        The specific unit that the ElectricResistance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -93,10 +114,26 @@ class ElectricResistance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricResistanceUnits = ElectricResistanceUnits.Ohm) -> ElectricResistanceDto:
+        """
+        Get a new instance of ElectricResistance DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricResistance unit to store the ElectricResistance value in the DTO representation.
+        :type hold_in_unit: ElectricResistanceUnits
+        :return: A new instance of ElectricResistanceDto.
+        :rtype: ElectricResistanceDto
+        """
         return ElectricResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_resistance_dto: ElectricResistanceDto):
+        """
+        Obtain a new instance of ElectricResistance from a DTO unit object.
+
+        :param electric_resistance_dto: The ElectricResistance DTO representation.
+        :type electric_resistance_dto: ElectricResistanceDto
+        :return: A new instance of ElectricResistance.
+        :rtype: ElectricResistance
+        """
         return ElectricResistance(electric_resistance_dto.value, electric_resistance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricResistanceUnits) -> float:

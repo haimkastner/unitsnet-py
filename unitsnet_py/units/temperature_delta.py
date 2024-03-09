@@ -57,9 +57,30 @@ class TemperatureDeltaUnits(Enum):
         
 
 class TemperatureDeltaDto:
+    """
+    A DTO representation of a TemperatureDelta
+
+    Attributes:
+        value (float): The value of the TemperatureDelta.
+        unit (TemperatureDeltaUnits): The specific unit that the TemperatureDelta value is representing.
+    """
+
     def __init__(self, value: float, unit: TemperatureDeltaUnits):
+        """
+        Create a new DTO representation of a TemperatureDelta
+
+        Parameters:
+            value (float): The value of the TemperatureDelta.
+            unit (TemperatureDeltaUnits): The specific unit that the TemperatureDelta value is representing.
+        """
         self.value: float = value
+        """
+        The value of the TemperatureDelta
+        """
         self.unit: TemperatureDeltaUnits = unit
+        """
+        The specific unit that the TemperatureDelta value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class TemperatureDelta(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> TemperatureDeltaDto:
+        """
+        Get a new instance of TemperatureDelta DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureDelta unit to store the TemperatureDelta value in the DTO representation.
+        :type hold_in_unit: TemperatureDeltaUnits
+        :return: A new instance of TemperatureDeltaDto.
+        :rtype: TemperatureDeltaDto
+        """
         return TemperatureDeltaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(temperature_delta_dto: TemperatureDeltaDto):
+        """
+        Obtain a new instance of TemperatureDelta from a DTO unit object.
+
+        :param temperature_delta_dto: The TemperatureDelta DTO representation.
+        :type temperature_delta_dto: TemperatureDeltaDto
+        :return: A new instance of TemperatureDelta.
+        :rtype: TemperatureDelta
+        """
         return TemperatureDelta(temperature_delta_dto.value, temperature_delta_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureDeltaUnits) -> float:

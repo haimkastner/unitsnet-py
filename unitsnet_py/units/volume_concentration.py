@@ -112,9 +112,30 @@ class VolumeConcentrationUnits(Enum):
         
 
 class VolumeConcentrationDto:
+    """
+    A DTO representation of a VolumeConcentration
+
+    Attributes:
+        value (float): The value of the VolumeConcentration.
+        unit (VolumeConcentrationUnits): The specific unit that the VolumeConcentration value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumeConcentrationUnits):
+        """
+        Create a new DTO representation of a VolumeConcentration
+
+        Parameters:
+            value (float): The value of the VolumeConcentration.
+            unit (VolumeConcentrationUnits): The specific unit that the VolumeConcentration value is representing.
+        """
         self.value: float = value
+        """
+        The value of the VolumeConcentration
+        """
         self.unit: VolumeConcentrationUnits = unit
+        """
+        The specific unit that the VolumeConcentration value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -184,10 +205,26 @@ class VolumeConcentration(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> VolumeConcentrationDto:
+        """
+        Get a new instance of VolumeConcentration DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumeConcentration unit to store the VolumeConcentration value in the DTO representation.
+        :type hold_in_unit: VolumeConcentrationUnits
+        :return: A new instance of VolumeConcentrationDto.
+        :rtype: VolumeConcentrationDto
+        """
         return VolumeConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volume_concentration_dto: VolumeConcentrationDto):
+        """
+        Obtain a new instance of VolumeConcentration from a DTO unit object.
+
+        :param volume_concentration_dto: The VolumeConcentration DTO representation.
+        :type volume_concentration_dto: VolumeConcentrationDto
+        :return: A new instance of VolumeConcentration.
+        :rtype: VolumeConcentration
+        """
         return VolumeConcentration(volume_concentration_dto.value, volume_concentration_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeConcentrationUnits) -> float:

@@ -97,9 +97,30 @@ class SpecificWeightUnits(Enum):
         
 
 class SpecificWeightDto:
+    """
+    A DTO representation of a SpecificWeight
+
+    Attributes:
+        value (float): The value of the SpecificWeight.
+        unit (SpecificWeightUnits): The specific unit that the SpecificWeight value is representing.
+    """
+
     def __init__(self, value: float, unit: SpecificWeightUnits):
+        """
+        Create a new DTO representation of a SpecificWeight
+
+        Parameters:
+            value (float): The value of the SpecificWeight.
+            unit (SpecificWeightUnits): The specific unit that the SpecificWeight value is representing.
+        """
         self.value: float = value
+        """
+        The value of the SpecificWeight
+        """
         self.unit: SpecificWeightUnits = unit
+        """
+        The specific unit that the SpecificWeight value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -163,10 +184,26 @@ class SpecificWeight(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> SpecificWeightDto:
+        """
+        Get a new instance of SpecificWeight DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificWeight unit to store the SpecificWeight value in the DTO representation.
+        :type hold_in_unit: SpecificWeightUnits
+        :return: A new instance of SpecificWeightDto.
+        :rtype: SpecificWeightDto
+        """
         return SpecificWeightDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(specific_weight_dto: SpecificWeightDto):
+        """
+        Obtain a new instance of SpecificWeight from a DTO unit object.
+
+        :param specific_weight_dto: The SpecificWeight DTO representation.
+        :type specific_weight_dto: SpecificWeightDto
+        :return: A new instance of SpecificWeight.
+        :rtype: SpecificWeight
+        """
         return SpecificWeight(specific_weight_dto.value, specific_weight_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificWeightUnits) -> float:

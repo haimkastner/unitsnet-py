@@ -387,9 +387,30 @@ class VolumeFlowUnits(Enum):
         
 
 class VolumeFlowDto:
+    """
+    A DTO representation of a VolumeFlow
+
+    Attributes:
+        value (float): The value of the VolumeFlow.
+        unit (VolumeFlowUnits): The specific unit that the VolumeFlow value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumeFlowUnits):
+        """
+        Create a new DTO representation of a VolumeFlow
+
+        Parameters:
+            value (float): The value of the VolumeFlow.
+            unit (VolumeFlowUnits): The specific unit that the VolumeFlow value is representing.
+        """
         self.value: float = value
+        """
+        The value of the VolumeFlow
+        """
         self.unit: VolumeFlowUnits = unit
+        """
+        The specific unit that the VolumeFlow value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -569,10 +590,26 @@ class VolumeFlow(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> VolumeFlowDto:
+        """
+        Get a new instance of VolumeFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlow unit to store the VolumeFlow value in the DTO representation.
+        :type hold_in_unit: VolumeFlowUnits
+        :return: A new instance of VolumeFlowDto.
+        :rtype: VolumeFlowDto
+        """
         return VolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volume_flow_dto: VolumeFlowDto):
+        """
+        Obtain a new instance of VolumeFlow from a DTO unit object.
+
+        :param volume_flow_dto: The VolumeFlow DTO representation.
+        :type volume_flow_dto: VolumeFlowDto
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
         return VolumeFlow(volume_flow_dto.value, volume_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeFlowUnits) -> float:

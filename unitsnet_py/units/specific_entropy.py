@@ -57,9 +57,30 @@ class SpecificEntropyUnits(Enum):
         
 
 class SpecificEntropyDto:
+    """
+    A DTO representation of a SpecificEntropy
+
+    Attributes:
+        value (float): The value of the SpecificEntropy.
+        unit (SpecificEntropyUnits): The specific unit that the SpecificEntropy value is representing.
+    """
+
     def __init__(self, value: float, unit: SpecificEntropyUnits):
+        """
+        Create a new DTO representation of a SpecificEntropy
+
+        Parameters:
+            value (float): The value of the SpecificEntropy.
+            unit (SpecificEntropyUnits): The specific unit that the SpecificEntropy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the SpecificEntropy
+        """
         self.unit: SpecificEntropyUnits = unit
+        """
+        The specific unit that the SpecificEntropy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class SpecificEntropy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> SpecificEntropyDto:
+        """
+        Get a new instance of SpecificEntropy DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEntropy unit to store the SpecificEntropy value in the DTO representation.
+        :type hold_in_unit: SpecificEntropyUnits
+        :return: A new instance of SpecificEntropyDto.
+        :rtype: SpecificEntropyDto
+        """
         return SpecificEntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(specific_entropy_dto: SpecificEntropyDto):
+        """
+        Obtain a new instance of SpecificEntropy from a DTO unit object.
+
+        :param specific_entropy_dto: The SpecificEntropy DTO representation.
+        :type specific_entropy_dto: SpecificEntropyDto
+        :return: A new instance of SpecificEntropy.
+        :rtype: SpecificEntropy
+        """
         return SpecificEntropy(specific_entropy_dto.value, specific_entropy_dto.unit)
 
     def __convert_from_base(self, from_unit: SpecificEntropyUnits) -> float:

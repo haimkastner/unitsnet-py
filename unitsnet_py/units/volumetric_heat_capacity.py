@@ -57,9 +57,30 @@ class VolumetricHeatCapacityUnits(Enum):
         
 
 class VolumetricHeatCapacityDto:
+    """
+    A DTO representation of a VolumetricHeatCapacity
+
+    Attributes:
+        value (float): The value of the VolumetricHeatCapacity.
+        unit (VolumetricHeatCapacityUnits): The specific unit that the VolumetricHeatCapacity value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumetricHeatCapacityUnits):
+        """
+        Create a new DTO representation of a VolumetricHeatCapacity
+
+        Parameters:
+            value (float): The value of the VolumetricHeatCapacity.
+            unit (VolumetricHeatCapacityUnits): The specific unit that the VolumetricHeatCapacity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the VolumetricHeatCapacity
+        """
         self.unit: VolumetricHeatCapacityUnits = unit
+        """
+        The specific unit that the VolumetricHeatCapacity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class VolumetricHeatCapacity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> VolumetricHeatCapacityDto:
+        """
+        Get a new instance of VolumetricHeatCapacity DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumetricHeatCapacity unit to store the VolumetricHeatCapacity value in the DTO representation.
+        :type hold_in_unit: VolumetricHeatCapacityUnits
+        :return: A new instance of VolumetricHeatCapacityDto.
+        :rtype: VolumetricHeatCapacityDto
+        """
         return VolumetricHeatCapacityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volumetric_heat_capacity_dto: VolumetricHeatCapacityDto):
+        """
+        Obtain a new instance of VolumetricHeatCapacity from a DTO unit object.
+
+        :param volumetric_heat_capacity_dto: The VolumetricHeatCapacity DTO representation.
+        :type volumetric_heat_capacity_dto: VolumetricHeatCapacityDto
+        :return: A new instance of VolumetricHeatCapacity.
+        :rtype: VolumetricHeatCapacity
+        """
         return VolumetricHeatCapacity(volumetric_heat_capacity_dto.value, volumetric_heat_capacity_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:

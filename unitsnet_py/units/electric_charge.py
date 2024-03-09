@@ -67,9 +67,30 @@ class ElectricChargeUnits(Enum):
         
 
 class ElectricChargeDto:
+    """
+    A DTO representation of a ElectricCharge
+
+    Attributes:
+        value (float): The value of the ElectricCharge.
+        unit (ElectricChargeUnits): The specific unit that the ElectricCharge value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricChargeUnits):
+        """
+        Create a new DTO representation of a ElectricCharge
+
+        Parameters:
+            value (float): The value of the ElectricCharge.
+            unit (ElectricChargeUnits): The specific unit that the ElectricCharge value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricCharge
+        """
         self.unit: ElectricChargeUnits = unit
+        """
+        The specific unit that the ElectricCharge value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -121,10 +142,26 @@ class ElectricCharge(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> ElectricChargeDto:
+        """
+        Get a new instance of ElectricCharge DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCharge unit to store the ElectricCharge value in the DTO representation.
+        :type hold_in_unit: ElectricChargeUnits
+        :return: A new instance of ElectricChargeDto.
+        :rtype: ElectricChargeDto
+        """
         return ElectricChargeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_charge_dto: ElectricChargeDto):
+        """
+        Obtain a new instance of ElectricCharge from a DTO unit object.
+
+        :param electric_charge_dto: The ElectricCharge DTO representation.
+        :type electric_charge_dto: ElectricChargeDto
+        :return: A new instance of ElectricCharge.
+        :rtype: ElectricCharge
+        """
         return ElectricCharge(electric_charge_dto.value, electric_charge_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricChargeUnits) -> float:

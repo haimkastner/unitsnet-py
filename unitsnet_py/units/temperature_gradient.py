@@ -32,9 +32,30 @@ class TemperatureGradientUnits(Enum):
         
 
 class TemperatureGradientDto:
+    """
+    A DTO representation of a TemperatureGradient
+
+    Attributes:
+        value (float): The value of the TemperatureGradient.
+        unit (TemperatureGradientUnits): The specific unit that the TemperatureGradient value is representing.
+    """
+
     def __init__(self, value: float, unit: TemperatureGradientUnits):
+        """
+        Create a new DTO representation of a TemperatureGradient
+
+        Parameters:
+            value (float): The value of the TemperatureGradient.
+            unit (TemperatureGradientUnits): The specific unit that the TemperatureGradient value is representing.
+        """
         self.value: float = value
+        """
+        The value of the TemperatureGradient
+        """
         self.unit: TemperatureGradientUnits = unit
+        """
+        The specific unit that the TemperatureGradient value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -72,10 +93,26 @@ class TemperatureGradient(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> TemperatureGradientDto:
+        """
+        Get a new instance of TemperatureGradient DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureGradient unit to store the TemperatureGradient value in the DTO representation.
+        :type hold_in_unit: TemperatureGradientUnits
+        :return: A new instance of TemperatureGradientDto.
+        :rtype: TemperatureGradientDto
+        """
         return TemperatureGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(temperature_gradient_dto: TemperatureGradientDto):
+        """
+        Obtain a new instance of TemperatureGradient from a DTO unit object.
+
+        :param temperature_gradient_dto: The TemperatureGradient DTO representation.
+        :type temperature_gradient_dto: TemperatureGradientDto
+        :return: A new instance of TemperatureGradient.
+        :rtype: TemperatureGradient
+        """
         return TemperatureGradient(temperature_gradient_dto.value, temperature_gradient_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureGradientUnits) -> float:

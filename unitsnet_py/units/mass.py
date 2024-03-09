@@ -147,9 +147,30 @@ class MassUnits(Enum):
         
 
 class MassDto:
+    """
+    A DTO representation of a Mass
+
+    Attributes:
+        value (float): The value of the Mass.
+        unit (MassUnits): The specific unit that the Mass value is representing.
+    """
+
     def __init__(self, value: float, unit: MassUnits):
+        """
+        Create a new DTO representation of a Mass
+
+        Parameters:
+            value (float): The value of the Mass.
+            unit (MassUnits): The specific unit that the Mass value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Mass
+        """
         self.unit: MassUnits = unit
+        """
+        The specific unit that the Mass value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -233,10 +254,26 @@ class Mass(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassUnits = MassUnits.Kilogram) -> MassDto:
+        """
+        Get a new instance of Mass DTO representing the current unit.
+
+        :param hold_in_unit: The specific Mass unit to store the Mass value in the DTO representation.
+        :type hold_in_unit: MassUnits
+        :return: A new instance of MassDto.
+        :rtype: MassDto
+        """
         return MassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_dto: MassDto):
+        """
+        Obtain a new instance of Mass from a DTO unit object.
+
+        :param mass_dto: The Mass DTO representation.
+        :type mass_dto: MassDto
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
         return Mass(mass_dto.value, mass_dto.unit)
 
     def __convert_from_base(self, from_unit: MassUnits) -> float:

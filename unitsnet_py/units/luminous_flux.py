@@ -17,9 +17,30 @@ class LuminousFluxUnits(Enum):
         
 
 class LuminousFluxDto:
+    """
+    A DTO representation of a LuminousFlux
+
+    Attributes:
+        value (float): The value of the LuminousFlux.
+        unit (LuminousFluxUnits): The specific unit that the LuminousFlux value is representing.
+    """
+
     def __init__(self, value: float, unit: LuminousFluxUnits):
+        """
+        Create a new DTO representation of a LuminousFlux
+
+        Parameters:
+            value (float): The value of the LuminousFlux.
+            unit (LuminousFluxUnits): The specific unit that the LuminousFlux value is representing.
+        """
         self.value: float = value
+        """
+        The value of the LuminousFlux
+        """
         self.unit: LuminousFluxUnits = unit
+        """
+        The specific unit that the LuminousFlux value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class LuminousFlux(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> LuminousFluxDto:
+        """
+        Get a new instance of LuminousFlux DTO representing the current unit.
+
+        :param hold_in_unit: The specific LuminousFlux unit to store the LuminousFlux value in the DTO representation.
+        :type hold_in_unit: LuminousFluxUnits
+        :return: A new instance of LuminousFluxDto.
+        :rtype: LuminousFluxDto
+        """
         return LuminousFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(luminous_flux_dto: LuminousFluxDto):
+        """
+        Obtain a new instance of LuminousFlux from a DTO unit object.
+
+        :param luminous_flux_dto: The LuminousFlux DTO representation.
+        :type luminous_flux_dto: LuminousFluxDto
+        :return: A new instance of LuminousFlux.
+        :rtype: LuminousFlux
+        """
         return LuminousFlux(luminous_flux_dto.value, luminous_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminousFluxUnits) -> float:

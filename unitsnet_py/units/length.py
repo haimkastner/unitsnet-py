@@ -222,9 +222,30 @@ class LengthUnits(Enum):
         
 
 class LengthDto:
+    """
+    A DTO representation of a Length
+
+    Attributes:
+        value (float): The value of the Length.
+        unit (LengthUnits): The specific unit that the Length value is representing.
+    """
+
     def __init__(self, value: float, unit: LengthUnits):
+        """
+        Create a new DTO representation of a Length
+
+        Parameters:
+            value (float): The value of the Length.
+            unit (LengthUnits): The specific unit that the Length value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Length
+        """
         self.unit: LengthUnits = unit
+        """
+        The specific unit that the Length value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -338,10 +359,26 @@ class Length(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LengthUnits = LengthUnits.Meter) -> LengthDto:
+        """
+        Get a new instance of Length DTO representing the current unit.
+
+        :param hold_in_unit: The specific Length unit to store the Length value in the DTO representation.
+        :type hold_in_unit: LengthUnits
+        :return: A new instance of LengthDto.
+        :rtype: LengthDto
+        """
         return LengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(length_dto: LengthDto):
+        """
+        Obtain a new instance of Length from a DTO unit object.
+
+        :param length_dto: The Length DTO representation.
+        :type length_dto: LengthDto
+        :return: A new instance of Length.
+        :rtype: Length
+        """
         return Length(length_dto.value, length_dto.unit)
 
     def __convert_from_base(self, from_unit: LengthUnits) -> float:

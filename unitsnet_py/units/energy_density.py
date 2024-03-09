@@ -72,9 +72,30 @@ class EnergyDensityUnits(Enum):
         
 
 class EnergyDensityDto:
+    """
+    A DTO representation of a EnergyDensity
+
+    Attributes:
+        value (float): The value of the EnergyDensity.
+        unit (EnergyDensityUnits): The specific unit that the EnergyDensity value is representing.
+    """
+
     def __init__(self, value: float, unit: EnergyDensityUnits):
+        """
+        Create a new DTO representation of a EnergyDensity
+
+        Parameters:
+            value (float): The value of the EnergyDensity.
+            unit (EnergyDensityUnits): The specific unit that the EnergyDensity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the EnergyDensity
+        """
         self.unit: EnergyDensityUnits = unit
+        """
+        The specific unit that the EnergyDensity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -128,10 +149,26 @@ class EnergyDensity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> EnergyDensityDto:
+        """
+        Get a new instance of EnergyDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific EnergyDensity unit to store the EnergyDensity value in the DTO representation.
+        :type hold_in_unit: EnergyDensityUnits
+        :return: A new instance of EnergyDensityDto.
+        :rtype: EnergyDensityDto
+        """
         return EnergyDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(energy_density_dto: EnergyDensityDto):
+        """
+        Obtain a new instance of EnergyDensity from a DTO unit object.
+
+        :param energy_density_dto: The EnergyDensity DTO representation.
+        :type energy_density_dto: EnergyDensityDto
+        :return: A new instance of EnergyDensity.
+        :rtype: EnergyDensity
+        """
         return EnergyDensity(energy_density_dto.value, energy_density_dto.unit)
 
     def __convert_from_base(self, from_unit: EnergyDensityUnits) -> float:

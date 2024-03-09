@@ -72,9 +72,30 @@ class MassFluxUnits(Enum):
         
 
 class MassFluxDto:
+    """
+    A DTO representation of a MassFlux
+
+    Attributes:
+        value (float): The value of the MassFlux.
+        unit (MassFluxUnits): The specific unit that the MassFlux value is representing.
+    """
+
     def __init__(self, value: float, unit: MassFluxUnits):
+        """
+        Create a new DTO representation of a MassFlux
+
+        Parameters:
+            value (float): The value of the MassFlux.
+            unit (MassFluxUnits): The specific unit that the MassFlux value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MassFlux
+        """
         self.unit: MassFluxUnits = unit
+        """
+        The specific unit that the MassFlux value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -128,10 +149,26 @@ class MassFlux(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> MassFluxDto:
+        """
+        Get a new instance of MassFlux DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassFlux unit to store the MassFlux value in the DTO representation.
+        :type hold_in_unit: MassFluxUnits
+        :return: A new instance of MassFluxDto.
+        :rtype: MassFluxDto
+        """
         return MassFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_flux_dto: MassFluxDto):
+        """
+        Obtain a new instance of MassFlux from a DTO unit object.
+
+        :param mass_flux_dto: The MassFlux DTO representation.
+        :type mass_flux_dto: MassFluxDto
+        :return: A new instance of MassFlux.
+        :rtype: MassFlux
+        """
         return MassFlux(mass_flux_dto.value, mass_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFluxUnits) -> float:

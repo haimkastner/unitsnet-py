@@ -37,9 +37,30 @@ class ElectricConductanceUnits(Enum):
         
 
 class ElectricConductanceDto:
+    """
+    A DTO representation of a ElectricConductance
+
+    Attributes:
+        value (float): The value of the ElectricConductance.
+        unit (ElectricConductanceUnits): The specific unit that the ElectricConductance value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricConductanceUnits):
+        """
+        Create a new DTO representation of a ElectricConductance
+
+        Parameters:
+            value (float): The value of the ElectricConductance.
+            unit (ElectricConductanceUnits): The specific unit that the ElectricConductance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricConductance
+        """
         self.unit: ElectricConductanceUnits = unit
+        """
+        The specific unit that the ElectricConductance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -79,10 +100,26 @@ class ElectricConductance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> ElectricConductanceDto:
+        """
+        Get a new instance of ElectricConductance DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricConductance unit to store the ElectricConductance value in the DTO representation.
+        :type hold_in_unit: ElectricConductanceUnits
+        :return: A new instance of ElectricConductanceDto.
+        :rtype: ElectricConductanceDto
+        """
         return ElectricConductanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_conductance_dto: ElectricConductanceDto):
+        """
+        Obtain a new instance of ElectricConductance from a DTO unit object.
+
+        :param electric_conductance_dto: The ElectricConductance DTO representation.
+        :type electric_conductance_dto: ElectricConductanceDto
+        :return: A new instance of ElectricConductance.
+        :rtype: ElectricConductance
+        """
         return ElectricConductance(electric_conductance_dto.value, electric_conductance_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricConductanceUnits) -> float:

@@ -87,9 +87,30 @@ class ForceChangeRateUnits(Enum):
         
 
 class ForceChangeRateDto:
+    """
+    A DTO representation of a ForceChangeRate
+
+    Attributes:
+        value (float): The value of the ForceChangeRate.
+        unit (ForceChangeRateUnits): The specific unit that the ForceChangeRate value is representing.
+    """
+
     def __init__(self, value: float, unit: ForceChangeRateUnits):
+        """
+        Create a new DTO representation of a ForceChangeRate
+
+        Parameters:
+            value (float): The value of the ForceChangeRate.
+            unit (ForceChangeRateUnits): The specific unit that the ForceChangeRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ForceChangeRate
+        """
         self.unit: ForceChangeRateUnits = unit
+        """
+        The specific unit that the ForceChangeRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -149,10 +170,26 @@ class ForceChangeRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> ForceChangeRateDto:
+        """
+        Get a new instance of ForceChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific ForceChangeRate unit to store the ForceChangeRate value in the DTO representation.
+        :type hold_in_unit: ForceChangeRateUnits
+        :return: A new instance of ForceChangeRateDto.
+        :rtype: ForceChangeRateDto
+        """
         return ForceChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(force_change_rate_dto: ForceChangeRateDto):
+        """
+        Obtain a new instance of ForceChangeRate from a DTO unit object.
+
+        :param force_change_rate_dto: The ForceChangeRate DTO representation.
+        :type force_change_rate_dto: ForceChangeRateDto
+        :return: A new instance of ForceChangeRate.
+        :rtype: ForceChangeRate
+        """
         return ForceChangeRate(force_change_rate_dto.value, force_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: ForceChangeRateUnits) -> float:

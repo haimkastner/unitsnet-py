@@ -22,9 +22,30 @@ class VolumeFlowPerAreaUnits(Enum):
         
 
 class VolumeFlowPerAreaDto:
+    """
+    A DTO representation of a VolumeFlowPerArea
+
+    Attributes:
+        value (float): The value of the VolumeFlowPerArea.
+        unit (VolumeFlowPerAreaUnits): The specific unit that the VolumeFlowPerArea value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumeFlowPerAreaUnits):
+        """
+        Create a new DTO representation of a VolumeFlowPerArea
+
+        Parameters:
+            value (float): The value of the VolumeFlowPerArea.
+            unit (VolumeFlowPerAreaUnits): The specific unit that the VolumeFlowPerArea value is representing.
+        """
         self.value: float = value
+        """
+        The value of the VolumeFlowPerArea
+        """
         self.unit: VolumeFlowPerAreaUnits = unit
+        """
+        The specific unit that the VolumeFlowPerArea value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -58,10 +79,26 @@ class VolumeFlowPerArea(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> VolumeFlowPerAreaDto:
+        """
+        Get a new instance of VolumeFlowPerArea DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlowPerArea unit to store the VolumeFlowPerArea value in the DTO representation.
+        :type hold_in_unit: VolumeFlowPerAreaUnits
+        :return: A new instance of VolumeFlowPerAreaDto.
+        :rtype: VolumeFlowPerAreaDto
+        """
         return VolumeFlowPerAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volume_flow_per_area_dto: VolumeFlowPerAreaDto):
+        """
+        Obtain a new instance of VolumeFlowPerArea from a DTO unit object.
+
+        :param volume_flow_per_area_dto: The VolumeFlowPerArea DTO representation.
+        :type volume_flow_per_area_dto: VolumeFlowPerAreaDto
+        :return: A new instance of VolumeFlowPerArea.
+        :rtype: VolumeFlowPerArea
+        """
         return VolumeFlowPerArea(volume_flow_per_area_dto.value, volume_flow_per_area_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeFlowPerAreaUnits) -> float:

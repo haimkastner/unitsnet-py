@@ -57,9 +57,30 @@ class VolumePerLengthUnits(Enum):
         
 
 class VolumePerLengthDto:
+    """
+    A DTO representation of a VolumePerLength
+
+    Attributes:
+        value (float): The value of the VolumePerLength.
+        unit (VolumePerLengthUnits): The specific unit that the VolumePerLength value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumePerLengthUnits):
+        """
+        Create a new DTO representation of a VolumePerLength
+
+        Parameters:
+            value (float): The value of the VolumePerLength.
+            unit (VolumePerLengthUnits): The specific unit that the VolumePerLength value is representing.
+        """
         self.value: float = value
+        """
+        The value of the VolumePerLength
+        """
         self.unit: VolumePerLengthUnits = unit
+        """
+        The specific unit that the VolumePerLength value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class VolumePerLength(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> VolumePerLengthDto:
+        """
+        Get a new instance of VolumePerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumePerLength unit to store the VolumePerLength value in the DTO representation.
+        :type hold_in_unit: VolumePerLengthUnits
+        :return: A new instance of VolumePerLengthDto.
+        :rtype: VolumePerLengthDto
+        """
         return VolumePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volume_per_length_dto: VolumePerLengthDto):
+        """
+        Obtain a new instance of VolumePerLength from a DTO unit object.
+
+        :param volume_per_length_dto: The VolumePerLength DTO representation.
+        :type volume_per_length_dto: VolumePerLengthDto
+        :return: A new instance of VolumePerLength.
+        :rtype: VolumePerLength
+        """
         return VolumePerLength(volume_per_length_dto.value, volume_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumePerLengthUnits) -> float:

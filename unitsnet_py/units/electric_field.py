@@ -17,9 +17,30 @@ class ElectricFieldUnits(Enum):
         
 
 class ElectricFieldDto:
+    """
+    A DTO representation of a ElectricField
+
+    Attributes:
+        value (float): The value of the ElectricField.
+        unit (ElectricFieldUnits): The specific unit that the ElectricField value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricFieldUnits):
+        """
+        Create a new DTO representation of a ElectricField
+
+        Parameters:
+            value (float): The value of the ElectricField.
+            unit (ElectricFieldUnits): The specific unit that the ElectricField value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricField
+        """
         self.unit: ElectricFieldUnits = unit
+        """
+        The specific unit that the ElectricField value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class ElectricField(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> ElectricFieldDto:
+        """
+        Get a new instance of ElectricField DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricField unit to store the ElectricField value in the DTO representation.
+        :type hold_in_unit: ElectricFieldUnits
+        :return: A new instance of ElectricFieldDto.
+        :rtype: ElectricFieldDto
+        """
         return ElectricFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_field_dto: ElectricFieldDto):
+        """
+        Obtain a new instance of ElectricField from a DTO unit object.
+
+        :param electric_field_dto: The ElectricField DTO representation.
+        :type electric_field_dto: ElectricFieldDto
+        :return: A new instance of ElectricField.
+        :rtype: ElectricField
+        """
         return ElectricField(electric_field_dto.value, electric_field_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricFieldUnits) -> float:

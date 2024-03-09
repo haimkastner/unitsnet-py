@@ -32,9 +32,30 @@ class RotationalAccelerationUnits(Enum):
         
 
 class RotationalAccelerationDto:
+    """
+    A DTO representation of a RotationalAcceleration
+
+    Attributes:
+        value (float): The value of the RotationalAcceleration.
+        unit (RotationalAccelerationUnits): The specific unit that the RotationalAcceleration value is representing.
+    """
+
     def __init__(self, value: float, unit: RotationalAccelerationUnits):
+        """
+        Create a new DTO representation of a RotationalAcceleration
+
+        Parameters:
+            value (float): The value of the RotationalAcceleration.
+            unit (RotationalAccelerationUnits): The specific unit that the RotationalAcceleration value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RotationalAcceleration
+        """
         self.unit: RotationalAccelerationUnits = unit
+        """
+        The specific unit that the RotationalAcceleration value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -72,10 +93,26 @@ class RotationalAcceleration(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> RotationalAccelerationDto:
+        """
+        Get a new instance of RotationalAcceleration DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalAcceleration unit to store the RotationalAcceleration value in the DTO representation.
+        :type hold_in_unit: RotationalAccelerationUnits
+        :return: A new instance of RotationalAccelerationDto.
+        :rtype: RotationalAccelerationDto
+        """
         return RotationalAccelerationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(rotational_acceleration_dto: RotationalAccelerationDto):
+        """
+        Obtain a new instance of RotationalAcceleration from a DTO unit object.
+
+        :param rotational_acceleration_dto: The RotationalAcceleration DTO representation.
+        :type rotational_acceleration_dto: RotationalAccelerationDto
+        :return: A new instance of RotationalAcceleration.
+        :rtype: RotationalAcceleration
+        """
         return RotationalAcceleration(rotational_acceleration_dto.value, rotational_acceleration_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalAccelerationUnits) -> float:

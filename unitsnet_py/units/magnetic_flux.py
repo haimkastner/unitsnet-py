@@ -17,9 +17,30 @@ class MagneticFluxUnits(Enum):
         
 
 class MagneticFluxDto:
+    """
+    A DTO representation of a MagneticFlux
+
+    Attributes:
+        value (float): The value of the MagneticFlux.
+        unit (MagneticFluxUnits): The specific unit that the MagneticFlux value is representing.
+    """
+
     def __init__(self, value: float, unit: MagneticFluxUnits):
+        """
+        Create a new DTO representation of a MagneticFlux
+
+        Parameters:
+            value (float): The value of the MagneticFlux.
+            unit (MagneticFluxUnits): The specific unit that the MagneticFlux value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MagneticFlux
+        """
         self.unit: MagneticFluxUnits = unit
+        """
+        The specific unit that the MagneticFlux value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class MagneticFlux(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MagneticFluxUnits = MagneticFluxUnits.Weber) -> MagneticFluxDto:
+        """
+        Get a new instance of MagneticFlux DTO representing the current unit.
+
+        :param hold_in_unit: The specific MagneticFlux unit to store the MagneticFlux value in the DTO representation.
+        :type hold_in_unit: MagneticFluxUnits
+        :return: A new instance of MagneticFluxDto.
+        :rtype: MagneticFluxDto
+        """
         return MagneticFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(magnetic_flux_dto: MagneticFluxDto):
+        """
+        Obtain a new instance of MagneticFlux from a DTO unit object.
+
+        :param magnetic_flux_dto: The MagneticFlux DTO representation.
+        :type magnetic_flux_dto: MagneticFluxDto
+        :return: A new instance of MagneticFlux.
+        :rtype: MagneticFlux
+        """
         return MagneticFlux(magnetic_flux_dto.value, magnetic_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: MagneticFluxUnits) -> float:

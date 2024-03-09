@@ -57,9 +57,30 @@ class MolarFlowUnits(Enum):
         
 
 class MolarFlowDto:
+    """
+    A DTO representation of a MolarFlow
+
+    Attributes:
+        value (float): The value of the MolarFlow.
+        unit (MolarFlowUnits): The specific unit that the MolarFlow value is representing.
+    """
+
     def __init__(self, value: float, unit: MolarFlowUnits):
+        """
+        Create a new DTO representation of a MolarFlow
+
+        Parameters:
+            value (float): The value of the MolarFlow.
+            unit (MolarFlowUnits): The specific unit that the MolarFlow value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MolarFlow
+        """
         self.unit: MolarFlowUnits = unit
+        """
+        The specific unit that the MolarFlow value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class MolarFlow(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> MolarFlowDto:
+        """
+        Get a new instance of MolarFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific MolarFlow unit to store the MolarFlow value in the DTO representation.
+        :type hold_in_unit: MolarFlowUnits
+        :return: A new instance of MolarFlowDto.
+        :rtype: MolarFlowDto
+        """
         return MolarFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(molar_flow_dto: MolarFlowDto):
+        """
+        Obtain a new instance of MolarFlow from a DTO unit object.
+
+        :param molar_flow_dto: The MolarFlow DTO representation.
+        :type molar_flow_dto: MolarFlowDto
+        :return: A new instance of MolarFlow.
+        :rtype: MolarFlow
+        """
         return MolarFlow(molar_flow_dto.value, molar_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarFlowUnits) -> float:

@@ -67,9 +67,30 @@ class MolarityUnits(Enum):
         
 
 class MolarityDto:
+    """
+    A DTO representation of a Molarity
+
+    Attributes:
+        value (float): The value of the Molarity.
+        unit (MolarityUnits): The specific unit that the Molarity value is representing.
+    """
+
     def __init__(self, value: float, unit: MolarityUnits):
+        """
+        Create a new DTO representation of a Molarity
+
+        Parameters:
+            value (float): The value of the Molarity.
+            unit (MolarityUnits): The specific unit that the Molarity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Molarity
+        """
         self.unit: MolarityUnits = unit
+        """
+        The specific unit that the Molarity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -121,10 +142,26 @@ class Molarity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> MolarityDto:
+        """
+        Get a new instance of Molarity DTO representing the current unit.
+
+        :param hold_in_unit: The specific Molarity unit to store the Molarity value in the DTO representation.
+        :type hold_in_unit: MolarityUnits
+        :return: A new instance of MolarityDto.
+        :rtype: MolarityDto
+        """
         return MolarityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(molarity_dto: MolarityDto):
+        """
+        Obtain a new instance of Molarity from a DTO unit object.
+
+        :param molarity_dto: The Molarity DTO representation.
+        :type molarity_dto: MolarityDto
+        :return: A new instance of Molarity.
+        :rtype: Molarity
+        """
         return Molarity(molarity_dto.value, molarity_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarityUnits) -> float:

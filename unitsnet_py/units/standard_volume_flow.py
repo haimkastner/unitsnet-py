@@ -57,9 +57,30 @@ class StandardVolumeFlowUnits(Enum):
         
 
 class StandardVolumeFlowDto:
+    """
+    A DTO representation of a StandardVolumeFlow
+
+    Attributes:
+        value (float): The value of the StandardVolumeFlow.
+        unit (StandardVolumeFlowUnits): The specific unit that the StandardVolumeFlow value is representing.
+    """
+
     def __init__(self, value: float, unit: StandardVolumeFlowUnits):
+        """
+        Create a new DTO representation of a StandardVolumeFlow
+
+        Parameters:
+            value (float): The value of the StandardVolumeFlow.
+            unit (StandardVolumeFlowUnits): The specific unit that the StandardVolumeFlow value is representing.
+        """
         self.value: float = value
+        """
+        The value of the StandardVolumeFlow
+        """
         self.unit: StandardVolumeFlowUnits = unit
+        """
+        The specific unit that the StandardVolumeFlow value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class StandardVolumeFlow(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> StandardVolumeFlowDto:
+        """
+        Get a new instance of StandardVolumeFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific StandardVolumeFlow unit to store the StandardVolumeFlow value in the DTO representation.
+        :type hold_in_unit: StandardVolumeFlowUnits
+        :return: A new instance of StandardVolumeFlowDto.
+        :rtype: StandardVolumeFlowDto
+        """
         return StandardVolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(standard_volume_flow_dto: StandardVolumeFlowDto):
+        """
+        Obtain a new instance of StandardVolumeFlow from a DTO unit object.
+
+        :param standard_volume_flow_dto: The StandardVolumeFlow DTO representation.
+        :type standard_volume_flow_dto: StandardVolumeFlowDto
+        :return: A new instance of StandardVolumeFlow.
+        :rtype: StandardVolumeFlow
+        """
         return StandardVolumeFlow(standard_volume_flow_dto.value, standard_volume_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: StandardVolumeFlowUnits) -> float:

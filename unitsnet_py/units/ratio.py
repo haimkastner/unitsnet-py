@@ -42,9 +42,30 @@ class RatioUnits(Enum):
         
 
 class RatioDto:
+    """
+    A DTO representation of a Ratio
+
+    Attributes:
+        value (float): The value of the Ratio.
+        unit (RatioUnits): The specific unit that the Ratio value is representing.
+    """
+
     def __init__(self, value: float, unit: RatioUnits):
+        """
+        Create a new DTO representation of a Ratio
+
+        Parameters:
+            value (float): The value of the Ratio.
+            unit (RatioUnits): The specific unit that the Ratio value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Ratio
+        """
         self.unit: RatioUnits = unit
+        """
+        The specific unit that the Ratio value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class Ratio(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RatioUnits = RatioUnits.DecimalFraction) -> RatioDto:
+        """
+        Get a new instance of Ratio DTO representing the current unit.
+
+        :param hold_in_unit: The specific Ratio unit to store the Ratio value in the DTO representation.
+        :type hold_in_unit: RatioUnits
+        :return: A new instance of RatioDto.
+        :rtype: RatioDto
+        """
         return RatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(ratio_dto: RatioDto):
+        """
+        Obtain a new instance of Ratio from a DTO unit object.
+
+        :param ratio_dto: The Ratio DTO representation.
+        :type ratio_dto: RatioDto
+        :return: A new instance of Ratio.
+        :rtype: Ratio
+        """
         return Ratio(ratio_dto.value, ratio_dto.unit)
 
     def __convert_from_base(self, from_unit: RatioUnits) -> float:

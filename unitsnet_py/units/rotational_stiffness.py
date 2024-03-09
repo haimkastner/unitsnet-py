@@ -177,9 +177,30 @@ class RotationalStiffnessUnits(Enum):
         
 
 class RotationalStiffnessDto:
+    """
+    A DTO representation of a RotationalStiffness
+
+    Attributes:
+        value (float): The value of the RotationalStiffness.
+        unit (RotationalStiffnessUnits): The specific unit that the RotationalStiffness value is representing.
+    """
+
     def __init__(self, value: float, unit: RotationalStiffnessUnits):
+        """
+        Create a new DTO representation of a RotationalStiffness
+
+        Parameters:
+            value (float): The value of the RotationalStiffness.
+            unit (RotationalStiffnessUnits): The specific unit that the RotationalStiffness value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RotationalStiffness
+        """
         self.unit: RotationalStiffnessUnits = unit
+        """
+        The specific unit that the RotationalStiffness value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -275,10 +296,26 @@ class RotationalStiffness(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> RotationalStiffnessDto:
+        """
+        Get a new instance of RotationalStiffness DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffness unit to store the RotationalStiffness value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessUnits
+        :return: A new instance of RotationalStiffnessDto.
+        :rtype: RotationalStiffnessDto
+        """
         return RotationalStiffnessDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(rotational_stiffness_dto: RotationalStiffnessDto):
+        """
+        Obtain a new instance of RotationalStiffness from a DTO unit object.
+
+        :param rotational_stiffness_dto: The RotationalStiffness DTO representation.
+        :type rotational_stiffness_dto: RotationalStiffnessDto
+        :return: A new instance of RotationalStiffness.
+        :rtype: RotationalStiffness
+        """
         return RotationalStiffness(rotational_stiffness_dto.value, rotational_stiffness_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalStiffnessUnits) -> float:

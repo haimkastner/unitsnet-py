@@ -82,9 +82,30 @@ class AreaUnits(Enum):
         
 
 class AreaDto:
+    """
+    A DTO representation of a Area
+
+    Attributes:
+        value (float): The value of the Area.
+        unit (AreaUnits): The specific unit that the Area value is representing.
+    """
+
     def __init__(self, value: float, unit: AreaUnits):
+        """
+        Create a new DTO representation of a Area
+
+        Parameters:
+            value (float): The value of the Area.
+            unit (AreaUnits): The specific unit that the Area value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Area
+        """
         self.unit: AreaUnits = unit
+        """
+        The specific unit that the Area value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -142,10 +163,26 @@ class Area(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: AreaUnits = AreaUnits.SquareMeter) -> AreaDto:
+        """
+        Get a new instance of Area DTO representing the current unit.
+
+        :param hold_in_unit: The specific Area unit to store the Area value in the DTO representation.
+        :type hold_in_unit: AreaUnits
+        :return: A new instance of AreaDto.
+        :rtype: AreaDto
+        """
         return AreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(area_dto: AreaDto):
+        """
+        Obtain a new instance of Area from a DTO unit object.
+
+        :param area_dto: The Area DTO representation.
+        :type area_dto: AreaDto
+        :return: A new instance of Area.
+        :rtype: Area
+        """
         return Area(area_dto.value, area_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaUnits) -> float:

@@ -62,9 +62,30 @@ class ReciprocalLengthUnits(Enum):
         
 
 class ReciprocalLengthDto:
+    """
+    A DTO representation of a ReciprocalLength
+
+    Attributes:
+        value (float): The value of the ReciprocalLength.
+        unit (ReciprocalLengthUnits): The specific unit that the ReciprocalLength value is representing.
+    """
+
     def __init__(self, value: float, unit: ReciprocalLengthUnits):
+        """
+        Create a new DTO representation of a ReciprocalLength
+
+        Parameters:
+            value (float): The value of the ReciprocalLength.
+            unit (ReciprocalLengthUnits): The specific unit that the ReciprocalLength value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ReciprocalLength
+        """
         self.unit: ReciprocalLengthUnits = unit
+        """
+        The specific unit that the ReciprocalLength value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -114,10 +135,26 @@ class ReciprocalLength(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> ReciprocalLengthDto:
+        """
+        Get a new instance of ReciprocalLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific ReciprocalLength unit to store the ReciprocalLength value in the DTO representation.
+        :type hold_in_unit: ReciprocalLengthUnits
+        :return: A new instance of ReciprocalLengthDto.
+        :rtype: ReciprocalLengthDto
+        """
         return ReciprocalLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(reciprocal_length_dto: ReciprocalLengthDto):
+        """
+        Obtain a new instance of ReciprocalLength from a DTO unit object.
+
+        :param reciprocal_length_dto: The ReciprocalLength DTO representation.
+        :type reciprocal_length_dto: ReciprocalLengthDto
+        :return: A new instance of ReciprocalLength.
+        :rtype: ReciprocalLength
+        """
         return ReciprocalLength(reciprocal_length_dto.value, reciprocal_length_dto.unit)
 
     def __convert_from_base(self, from_unit: ReciprocalLengthUnits) -> float:

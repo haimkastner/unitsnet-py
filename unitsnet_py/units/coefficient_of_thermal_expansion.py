@@ -42,9 +42,30 @@ class CoefficientOfThermalExpansionUnits(Enum):
         
 
 class CoefficientOfThermalExpansionDto:
+    """
+    A DTO representation of a CoefficientOfThermalExpansion
+
+    Attributes:
+        value (float): The value of the CoefficientOfThermalExpansion.
+        unit (CoefficientOfThermalExpansionUnits): The specific unit that the CoefficientOfThermalExpansion value is representing.
+    """
+
     def __init__(self, value: float, unit: CoefficientOfThermalExpansionUnits):
+        """
+        Create a new DTO representation of a CoefficientOfThermalExpansion
+
+        Parameters:
+            value (float): The value of the CoefficientOfThermalExpansion.
+            unit (CoefficientOfThermalExpansionUnits): The specific unit that the CoefficientOfThermalExpansion value is representing.
+        """
         self.value: float = value
+        """
+        The value of the CoefficientOfThermalExpansion
+        """
         self.unit: CoefficientOfThermalExpansionUnits = unit
+        """
+        The specific unit that the CoefficientOfThermalExpansion value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class CoefficientOfThermalExpansion(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> CoefficientOfThermalExpansionDto:
+        """
+        Get a new instance of CoefficientOfThermalExpansion DTO representing the current unit.
+
+        :param hold_in_unit: The specific CoefficientOfThermalExpansion unit to store the CoefficientOfThermalExpansion value in the DTO representation.
+        :type hold_in_unit: CoefficientOfThermalExpansionUnits
+        :return: A new instance of CoefficientOfThermalExpansionDto.
+        :rtype: CoefficientOfThermalExpansionDto
+        """
         return CoefficientOfThermalExpansionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(coefficient_of_thermal_expansion_dto: CoefficientOfThermalExpansionDto):
+        """
+        Obtain a new instance of CoefficientOfThermalExpansion from a DTO unit object.
+
+        :param coefficient_of_thermal_expansion_dto: The CoefficientOfThermalExpansion DTO representation.
+        :type coefficient_of_thermal_expansion_dto: CoefficientOfThermalExpansionDto
+        :return: A new instance of CoefficientOfThermalExpansion.
+        :rtype: CoefficientOfThermalExpansion
+        """
         return CoefficientOfThermalExpansion(coefficient_of_thermal_expansion_dto.value, coefficient_of_thermal_expansion_dto.unit)
 
     def __convert_from_base(self, from_unit: CoefficientOfThermalExpansionUnits) -> float:

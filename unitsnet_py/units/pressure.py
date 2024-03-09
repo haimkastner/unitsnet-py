@@ -257,9 +257,30 @@ class PressureUnits(Enum):
         
 
 class PressureDto:
+    """
+    A DTO representation of a Pressure
+
+    Attributes:
+        value (float): The value of the Pressure.
+        unit (PressureUnits): The specific unit that the Pressure value is representing.
+    """
+
     def __init__(self, value: float, unit: PressureUnits):
+        """
+        Create a new DTO representation of a Pressure
+
+        Parameters:
+            value (float): The value of the Pressure.
+            unit (PressureUnits): The specific unit that the Pressure value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Pressure
+        """
         self.unit: PressureUnits = unit
+        """
+        The specific unit that the Pressure value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -387,10 +408,26 @@ class Pressure(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PressureUnits = PressureUnits.Pascal) -> PressureDto:
+        """
+        Get a new instance of Pressure DTO representing the current unit.
+
+        :param hold_in_unit: The specific Pressure unit to store the Pressure value in the DTO representation.
+        :type hold_in_unit: PressureUnits
+        :return: A new instance of PressureDto.
+        :rtype: PressureDto
+        """
         return PressureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(pressure_dto: PressureDto):
+        """
+        Obtain a new instance of Pressure from a DTO unit object.
+
+        :param pressure_dto: The Pressure DTO representation.
+        :type pressure_dto: PressureDto
+        :return: A new instance of Pressure.
+        :rtype: Pressure
+        """
         return Pressure(pressure_dto.value, pressure_dto.unit)
 
     def __convert_from_base(self, from_unit: PressureUnits) -> float:

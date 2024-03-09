@@ -82,9 +82,30 @@ class LuminosityUnits(Enum):
         
 
 class LuminosityDto:
+    """
+    A DTO representation of a Luminosity
+
+    Attributes:
+        value (float): The value of the Luminosity.
+        unit (LuminosityUnits): The specific unit that the Luminosity value is representing.
+    """
+
     def __init__(self, value: float, unit: LuminosityUnits):
+        """
+        Create a new DTO representation of a Luminosity
+
+        Parameters:
+            value (float): The value of the Luminosity.
+            unit (LuminosityUnits): The specific unit that the Luminosity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Luminosity
+        """
         self.unit: LuminosityUnits = unit
+        """
+        The specific unit that the Luminosity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -142,10 +163,26 @@ class Luminosity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LuminosityUnits = LuminosityUnits.Watt) -> LuminosityDto:
+        """
+        Get a new instance of Luminosity DTO representing the current unit.
+
+        :param hold_in_unit: The specific Luminosity unit to store the Luminosity value in the DTO representation.
+        :type hold_in_unit: LuminosityUnits
+        :return: A new instance of LuminosityDto.
+        :rtype: LuminosityDto
+        """
         return LuminosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(luminosity_dto: LuminosityDto):
+        """
+        Obtain a new instance of Luminosity from a DTO unit object.
+
+        :param luminosity_dto: The Luminosity DTO representation.
+        :type luminosity_dto: LuminosityDto
+        :return: A new instance of Luminosity.
+        :rtype: Luminosity
+        """
         return Luminosity(luminosity_dto.value, luminosity_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminosityUnits) -> float:

@@ -77,9 +77,30 @@ class ImpulseUnits(Enum):
         
 
 class ImpulseDto:
+    """
+    A DTO representation of a Impulse
+
+    Attributes:
+        value (float): The value of the Impulse.
+        unit (ImpulseUnits): The specific unit that the Impulse value is representing.
+    """
+
     def __init__(self, value: float, unit: ImpulseUnits):
+        """
+        Create a new DTO representation of a Impulse
+
+        Parameters:
+            value (float): The value of the Impulse.
+            unit (ImpulseUnits): The specific unit that the Impulse value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Impulse
+        """
         self.unit: ImpulseUnits = unit
+        """
+        The specific unit that the Impulse value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -135,10 +156,26 @@ class Impulse(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> ImpulseDto:
+        """
+        Get a new instance of Impulse DTO representing the current unit.
+
+        :param hold_in_unit: The specific Impulse unit to store the Impulse value in the DTO representation.
+        :type hold_in_unit: ImpulseUnits
+        :return: A new instance of ImpulseDto.
+        :rtype: ImpulseDto
+        """
         return ImpulseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(impulse_dto: ImpulseDto):
+        """
+        Obtain a new instance of Impulse from a DTO unit object.
+
+        :param impulse_dto: The Impulse DTO representation.
+        :type impulse_dto: ImpulseDto
+        :return: A new instance of Impulse.
+        :rtype: Impulse
+        """
         return Impulse(impulse_dto.value, impulse_dto.unit)
 
     def __convert_from_base(self, from_unit: ImpulseUnits) -> float:

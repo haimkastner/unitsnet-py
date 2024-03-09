@@ -152,9 +152,30 @@ class MassMomentOfInertiaUnits(Enum):
         
 
 class MassMomentOfInertiaDto:
+    """
+    A DTO representation of a MassMomentOfInertia
+
+    Attributes:
+        value (float): The value of the MassMomentOfInertia.
+        unit (MassMomentOfInertiaUnits): The specific unit that the MassMomentOfInertia value is representing.
+    """
+
     def __init__(self, value: float, unit: MassMomentOfInertiaUnits):
+        """
+        Create a new DTO representation of a MassMomentOfInertia
+
+        Parameters:
+            value (float): The value of the MassMomentOfInertia.
+            unit (MassMomentOfInertiaUnits): The specific unit that the MassMomentOfInertia value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MassMomentOfInertia
+        """
         self.unit: MassMomentOfInertiaUnits = unit
+        """
+        The specific unit that the MassMomentOfInertia value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -240,10 +261,26 @@ class MassMomentOfInertia(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> MassMomentOfInertiaDto:
+        """
+        Get a new instance of MassMomentOfInertia DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassMomentOfInertia unit to store the MassMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: MassMomentOfInertiaUnits
+        :return: A new instance of MassMomentOfInertiaDto.
+        :rtype: MassMomentOfInertiaDto
+        """
         return MassMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_moment_of_inertia_dto: MassMomentOfInertiaDto):
+        """
+        Obtain a new instance of MassMomentOfInertia from a DTO unit object.
+
+        :param mass_moment_of_inertia_dto: The MassMomentOfInertia DTO representation.
+        :type mass_moment_of_inertia_dto: MassMomentOfInertiaDto
+        :return: A new instance of MassMomentOfInertia.
+        :rtype: MassMomentOfInertia
+        """
         return MassMomentOfInertia(mass_moment_of_inertia_dto.value, mass_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: MassMomentOfInertiaUnits) -> float:

@@ -37,9 +37,30 @@ class HeatTransferCoefficientUnits(Enum):
         
 
 class HeatTransferCoefficientDto:
+    """
+    A DTO representation of a HeatTransferCoefficient
+
+    Attributes:
+        value (float): The value of the HeatTransferCoefficient.
+        unit (HeatTransferCoefficientUnits): The specific unit that the HeatTransferCoefficient value is representing.
+    """
+
     def __init__(self, value: float, unit: HeatTransferCoefficientUnits):
+        """
+        Create a new DTO representation of a HeatTransferCoefficient
+
+        Parameters:
+            value (float): The value of the HeatTransferCoefficient.
+            unit (HeatTransferCoefficientUnits): The specific unit that the HeatTransferCoefficient value is representing.
+        """
         self.value: float = value
+        """
+        The value of the HeatTransferCoefficient
+        """
         self.unit: HeatTransferCoefficientUnits = unit
+        """
+        The specific unit that the HeatTransferCoefficient value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -79,10 +100,26 @@ class HeatTransferCoefficient(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> HeatTransferCoefficientDto:
+        """
+        Get a new instance of HeatTransferCoefficient DTO representing the current unit.
+
+        :param hold_in_unit: The specific HeatTransferCoefficient unit to store the HeatTransferCoefficient value in the DTO representation.
+        :type hold_in_unit: HeatTransferCoefficientUnits
+        :return: A new instance of HeatTransferCoefficientDto.
+        :rtype: HeatTransferCoefficientDto
+        """
         return HeatTransferCoefficientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(heat_transfer_coefficient_dto: HeatTransferCoefficientDto):
+        """
+        Obtain a new instance of HeatTransferCoefficient from a DTO unit object.
+
+        :param heat_transfer_coefficient_dto: The HeatTransferCoefficient DTO representation.
+        :type heat_transfer_coefficient_dto: HeatTransferCoefficientDto
+        :return: A new instance of HeatTransferCoefficient.
+        :rtype: HeatTransferCoefficient
+        """
         return HeatTransferCoefficient(heat_transfer_coefficient_dto.value, heat_transfer_coefficient_dto.unit)
 
     def __convert_from_base(self, from_unit: HeatTransferCoefficientUnits) -> float:

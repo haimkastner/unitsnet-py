@@ -22,9 +22,30 @@ class PowerRatioUnits(Enum):
         
 
 class PowerRatioDto:
+    """
+    A DTO representation of a PowerRatio
+
+    Attributes:
+        value (float): The value of the PowerRatio.
+        unit (PowerRatioUnits): The specific unit that the PowerRatio value is representing.
+    """
+
     def __init__(self, value: float, unit: PowerRatioUnits):
+        """
+        Create a new DTO representation of a PowerRatio
+
+        Parameters:
+            value (float): The value of the PowerRatio.
+            unit (PowerRatioUnits): The specific unit that the PowerRatio value is representing.
+        """
         self.value: float = value
+        """
+        The value of the PowerRatio
+        """
         self.unit: PowerRatioUnits = unit
+        """
+        The specific unit that the PowerRatio value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -58,10 +79,26 @@ class PowerRatio(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> PowerRatioDto:
+        """
+        Get a new instance of PowerRatio DTO representing the current unit.
+
+        :param hold_in_unit: The specific PowerRatio unit to store the PowerRatio value in the DTO representation.
+        :type hold_in_unit: PowerRatioUnits
+        :return: A new instance of PowerRatioDto.
+        :rtype: PowerRatioDto
+        """
         return PowerRatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(power_ratio_dto: PowerRatioDto):
+        """
+        Obtain a new instance of PowerRatio from a DTO unit object.
+
+        :param power_ratio_dto: The PowerRatio DTO representation.
+        :type power_ratio_dto: PowerRatioDto
+        :return: A new instance of PowerRatio.
+        :rtype: PowerRatio
+        """
         return PowerRatio(power_ratio_dto.value, power_ratio_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerRatioUnits) -> float:

@@ -92,9 +92,30 @@ class AngleUnits(Enum):
         
 
 class AngleDto:
+    """
+    A DTO representation of a Angle
+
+    Attributes:
+        value (float): The value of the Angle.
+        unit (AngleUnits): The specific unit that the Angle value is representing.
+    """
+
     def __init__(self, value: float, unit: AngleUnits):
+        """
+        Create a new DTO representation of a Angle
+
+        Parameters:
+            value (float): The value of the Angle.
+            unit (AngleUnits): The specific unit that the Angle value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Angle
+        """
         self.unit: AngleUnits = unit
+        """
+        The specific unit that the Angle value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -156,10 +177,26 @@ class Angle(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: AngleUnits = AngleUnits.Degree) -> AngleDto:
+        """
+        Get a new instance of Angle DTO representing the current unit.
+
+        :param hold_in_unit: The specific Angle unit to store the Angle value in the DTO representation.
+        :type hold_in_unit: AngleUnits
+        :return: A new instance of AngleDto.
+        :rtype: AngleDto
+        """
         return AngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(angle_dto: AngleDto):
+        """
+        Obtain a new instance of Angle from a DTO unit object.
+
+        :param angle_dto: The Angle DTO representation.
+        :type angle_dto: AngleDto
+        :return: A new instance of Angle.
+        :rtype: Angle
+        """
         return Angle(angle_dto.value, angle_dto.unit)
 
     def __convert_from_base(self, from_unit: AngleUnits) -> float:

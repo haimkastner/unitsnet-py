@@ -232,9 +232,30 @@ class PowerDensityUnits(Enum):
         
 
 class PowerDensityDto:
+    """
+    A DTO representation of a PowerDensity
+
+    Attributes:
+        value (float): The value of the PowerDensity.
+        unit (PowerDensityUnits): The specific unit that the PowerDensity value is representing.
+    """
+
     def __init__(self, value: float, unit: PowerDensityUnits):
+        """
+        Create a new DTO representation of a PowerDensity
+
+        Parameters:
+            value (float): The value of the PowerDensity.
+            unit (PowerDensityUnits): The specific unit that the PowerDensity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the PowerDensity
+        """
         self.unit: PowerDensityUnits = unit
+        """
+        The specific unit that the PowerDensity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -352,10 +373,26 @@ class PowerDensity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> PowerDensityDto:
+        """
+        Get a new instance of PowerDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific PowerDensity unit to store the PowerDensity value in the DTO representation.
+        :type hold_in_unit: PowerDensityUnits
+        :return: A new instance of PowerDensityDto.
+        :rtype: PowerDensityDto
+        """
         return PowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(power_density_dto: PowerDensityDto):
+        """
+        Obtain a new instance of PowerDensity from a DTO unit object.
+
+        :param power_density_dto: The PowerDensity DTO representation.
+        :type power_density_dto: PowerDensityDto
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
         return PowerDensity(power_density_dto.value, power_density_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:

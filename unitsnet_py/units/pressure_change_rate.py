@@ -102,9 +102,30 @@ class PressureChangeRateUnits(Enum):
         
 
 class PressureChangeRateDto:
+    """
+    A DTO representation of a PressureChangeRate
+
+    Attributes:
+        value (float): The value of the PressureChangeRate.
+        unit (PressureChangeRateUnits): The specific unit that the PressureChangeRate value is representing.
+    """
+
     def __init__(self, value: float, unit: PressureChangeRateUnits):
+        """
+        Create a new DTO representation of a PressureChangeRate
+
+        Parameters:
+            value (float): The value of the PressureChangeRate.
+            unit (PressureChangeRateUnits): The specific unit that the PressureChangeRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the PressureChangeRate
+        """
         self.unit: PressureChangeRateUnits = unit
+        """
+        The specific unit that the PressureChangeRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -170,10 +191,26 @@ class PressureChangeRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> PressureChangeRateDto:
+        """
+        Get a new instance of PressureChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific PressureChangeRate unit to store the PressureChangeRate value in the DTO representation.
+        :type hold_in_unit: PressureChangeRateUnits
+        :return: A new instance of PressureChangeRateDto.
+        :rtype: PressureChangeRateDto
+        """
         return PressureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(pressure_change_rate_dto: PressureChangeRateDto):
+        """
+        Obtain a new instance of PressureChangeRate from a DTO unit object.
+
+        :param pressure_change_rate_dto: The PressureChangeRate DTO representation.
+        :type pressure_change_rate_dto: PressureChangeRateDto
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
         return PressureChangeRate(pressure_change_rate_dto.value, pressure_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:

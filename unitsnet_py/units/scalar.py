@@ -17,9 +17,30 @@ class ScalarUnits(Enum):
         
 
 class ScalarDto:
+    """
+    A DTO representation of a Scalar
+
+    Attributes:
+        value (float): The value of the Scalar.
+        unit (ScalarUnits): The specific unit that the Scalar value is representing.
+    """
+
     def __init__(self, value: float, unit: ScalarUnits):
+        """
+        Create a new DTO representation of a Scalar
+
+        Parameters:
+            value (float): The value of the Scalar.
+            unit (ScalarUnits): The specific unit that the Scalar value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Scalar
+        """
         self.unit: ScalarUnits = unit
+        """
+        The specific unit that the Scalar value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class Scalar(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ScalarUnits = ScalarUnits.Amount) -> ScalarDto:
+        """
+        Get a new instance of Scalar DTO representing the current unit.
+
+        :param hold_in_unit: The specific Scalar unit to store the Scalar value in the DTO representation.
+        :type hold_in_unit: ScalarUnits
+        :return: A new instance of ScalarDto.
+        :rtype: ScalarDto
+        """
         return ScalarDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(scalar_dto: ScalarDto):
+        """
+        Obtain a new instance of Scalar from a DTO unit object.
+
+        :param scalar_dto: The Scalar DTO representation.
+        :type scalar_dto: ScalarDto
+        :return: A new instance of Scalar.
+        :rtype: Scalar
+        """
         return Scalar(scalar_dto.value, scalar_dto.unit)
 
     def __convert_from_base(self, from_unit: ScalarUnits) -> float:

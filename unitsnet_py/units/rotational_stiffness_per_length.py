@@ -37,9 +37,30 @@ class RotationalStiffnessPerLengthUnits(Enum):
         
 
 class RotationalStiffnessPerLengthDto:
+    """
+    A DTO representation of a RotationalStiffnessPerLength
+
+    Attributes:
+        value (float): The value of the RotationalStiffnessPerLength.
+        unit (RotationalStiffnessPerLengthUnits): The specific unit that the RotationalStiffnessPerLength value is representing.
+    """
+
     def __init__(self, value: float, unit: RotationalStiffnessPerLengthUnits):
+        """
+        Create a new DTO representation of a RotationalStiffnessPerLength
+
+        Parameters:
+            value (float): The value of the RotationalStiffnessPerLength.
+            unit (RotationalStiffnessPerLengthUnits): The specific unit that the RotationalStiffnessPerLength value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RotationalStiffnessPerLength
+        """
         self.unit: RotationalStiffnessPerLengthUnits = unit
+        """
+        The specific unit that the RotationalStiffnessPerLength value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -79,10 +100,26 @@ class RotationalStiffnessPerLength(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter) -> RotationalStiffnessPerLengthDto:
+        """
+        Get a new instance of RotationalStiffnessPerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffnessPerLength unit to store the RotationalStiffnessPerLength value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessPerLengthUnits
+        :return: A new instance of RotationalStiffnessPerLengthDto.
+        :rtype: RotationalStiffnessPerLengthDto
+        """
         return RotationalStiffnessPerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(rotational_stiffness_per_length_dto: RotationalStiffnessPerLengthDto):
+        """
+        Obtain a new instance of RotationalStiffnessPerLength from a DTO unit object.
+
+        :param rotational_stiffness_per_length_dto: The RotationalStiffnessPerLength DTO representation.
+        :type rotational_stiffness_per_length_dto: RotationalStiffnessPerLengthDto
+        :return: A new instance of RotationalStiffnessPerLength.
+        :rtype: RotationalStiffnessPerLength
+        """
         return RotationalStiffnessPerLength(rotational_stiffness_per_length_dto.value, rotational_stiffness_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalStiffnessPerLengthUnits) -> float:

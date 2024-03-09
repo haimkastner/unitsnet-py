@@ -82,9 +82,30 @@ class IrradianceUnits(Enum):
         
 
 class IrradianceDto:
+    """
+    A DTO representation of a Irradiance
+
+    Attributes:
+        value (float): The value of the Irradiance.
+        unit (IrradianceUnits): The specific unit that the Irradiance value is representing.
+    """
+
     def __init__(self, value: float, unit: IrradianceUnits):
+        """
+        Create a new DTO representation of a Irradiance
+
+        Parameters:
+            value (float): The value of the Irradiance.
+            unit (IrradianceUnits): The specific unit that the Irradiance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Irradiance
+        """
         self.unit: IrradianceUnits = unit
+        """
+        The specific unit that the Irradiance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -142,10 +163,26 @@ class Irradiance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> IrradianceDto:
+        """
+        Get a new instance of Irradiance DTO representing the current unit.
+
+        :param hold_in_unit: The specific Irradiance unit to store the Irradiance value in the DTO representation.
+        :type hold_in_unit: IrradianceUnits
+        :return: A new instance of IrradianceDto.
+        :rtype: IrradianceDto
+        """
         return IrradianceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(irradiance_dto: IrradianceDto):
+        """
+        Obtain a new instance of Irradiance from a DTO unit object.
+
+        :param irradiance_dto: The Irradiance DTO representation.
+        :type irradiance_dto: IrradianceDto
+        :return: A new instance of Irradiance.
+        :rtype: Irradiance
+        """
         return Irradiance(irradiance_dto.value, irradiance_dto.unit)
 
     def __convert_from_base(self, from_unit: IrradianceUnits) -> float:

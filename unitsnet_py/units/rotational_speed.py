@@ -77,9 +77,30 @@ class RotationalSpeedUnits(Enum):
         
 
 class RotationalSpeedDto:
+    """
+    A DTO representation of a RotationalSpeed
+
+    Attributes:
+        value (float): The value of the RotationalSpeed.
+        unit (RotationalSpeedUnits): The specific unit that the RotationalSpeed value is representing.
+    """
+
     def __init__(self, value: float, unit: RotationalSpeedUnits):
+        """
+        Create a new DTO representation of a RotationalSpeed
+
+        Parameters:
+            value (float): The value of the RotationalSpeed.
+            unit (RotationalSpeedUnits): The specific unit that the RotationalSpeed value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RotationalSpeed
+        """
         self.unit: RotationalSpeedUnits = unit
+        """
+        The specific unit that the RotationalSpeed value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -135,10 +156,26 @@ class RotationalSpeed(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> RotationalSpeedDto:
+        """
+        Get a new instance of RotationalSpeed DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalSpeed unit to store the RotationalSpeed value in the DTO representation.
+        :type hold_in_unit: RotationalSpeedUnits
+        :return: A new instance of RotationalSpeedDto.
+        :rtype: RotationalSpeedDto
+        """
         return RotationalSpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(rotational_speed_dto: RotationalSpeedDto):
+        """
+        Obtain a new instance of RotationalSpeed from a DTO unit object.
+
+        :param rotational_speed_dto: The RotationalSpeed DTO representation.
+        :type rotational_speed_dto: RotationalSpeedDto
+        :return: A new instance of RotationalSpeed.
+        :rtype: RotationalSpeed
+        """
         return RotationalSpeed(rotational_speed_dto.value, rotational_speed_dto.unit)
 
     def __convert_from_base(self, from_unit: RotationalSpeedUnits) -> float:

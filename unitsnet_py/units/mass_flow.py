@@ -177,9 +177,30 @@ class MassFlowUnits(Enum):
         
 
 class MassFlowDto:
+    """
+    A DTO representation of a MassFlow
+
+    Attributes:
+        value (float): The value of the MassFlow.
+        unit (MassFlowUnits): The specific unit that the MassFlow value is representing.
+    """
+
     def __init__(self, value: float, unit: MassFlowUnits):
+        """
+        Create a new DTO representation of a MassFlow
+
+        Parameters:
+            value (float): The value of the MassFlow.
+            unit (MassFlowUnits): The specific unit that the MassFlow value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MassFlow
+        """
         self.unit: MassFlowUnits = unit
+        """
+        The specific unit that the MassFlow value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -275,10 +296,26 @@ class MassFlow(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> MassFlowDto:
+        """
+        Get a new instance of MassFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassFlow unit to store the MassFlow value in the DTO representation.
+        :type hold_in_unit: MassFlowUnits
+        :return: A new instance of MassFlowDto.
+        :rtype: MassFlowDto
+        """
         return MassFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_flow_dto: MassFlowDto):
+        """
+        Obtain a new instance of MassFlow from a DTO unit object.
+
+        :param mass_flow_dto: The MassFlow DTO representation.
+        :type mass_flow_dto: MassFlowDto
+        :return: A new instance of MassFlow.
+        :rtype: MassFlow
+        """
         return MassFlow(mass_flow_dto.value, mass_flow_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFlowUnits) -> float:

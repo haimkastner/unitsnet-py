@@ -77,9 +77,30 @@ class MolarMassUnits(Enum):
         
 
 class MolarMassDto:
+    """
+    A DTO representation of a MolarMass
+
+    Attributes:
+        value (float): The value of the MolarMass.
+        unit (MolarMassUnits): The specific unit that the MolarMass value is representing.
+    """
+
     def __init__(self, value: float, unit: MolarMassUnits):
+        """
+        Create a new DTO representation of a MolarMass
+
+        Parameters:
+            value (float): The value of the MolarMass.
+            unit (MolarMassUnits): The specific unit that the MolarMass value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MolarMass
+        """
         self.unit: MolarMassUnits = unit
+        """
+        The specific unit that the MolarMass value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -135,10 +156,26 @@ class MolarMass(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> MolarMassDto:
+        """
+        Get a new instance of MolarMass DTO representing the current unit.
+
+        :param hold_in_unit: The specific MolarMass unit to store the MolarMass value in the DTO representation.
+        :type hold_in_unit: MolarMassUnits
+        :return: A new instance of MolarMassDto.
+        :rtype: MolarMassDto
+        """
         return MolarMassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(molar_mass_dto: MolarMassDto):
+        """
+        Obtain a new instance of MolarMass from a DTO unit object.
+
+        :param molar_mass_dto: The MolarMass DTO representation.
+        :type molar_mass_dto: MolarMassDto
+        :return: A new instance of MolarMass.
+        :rtype: MolarMass
+        """
         return MolarMass(molar_mass_dto.value, molar_mass_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:

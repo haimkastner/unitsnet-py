@@ -17,9 +17,30 @@ class MagnetizationUnits(Enum):
         
 
 class MagnetizationDto:
+    """
+    A DTO representation of a Magnetization
+
+    Attributes:
+        value (float): The value of the Magnetization.
+        unit (MagnetizationUnits): The specific unit that the Magnetization value is representing.
+    """
+
     def __init__(self, value: float, unit: MagnetizationUnits):
+        """
+        Create a new DTO representation of a Magnetization
+
+        Parameters:
+            value (float): The value of the Magnetization.
+            unit (MagnetizationUnits): The specific unit that the Magnetization value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Magnetization
+        """
         self.unit: MagnetizationUnits = unit
+        """
+        The specific unit that the Magnetization value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class Magnetization(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> MagnetizationDto:
+        """
+        Get a new instance of Magnetization DTO representing the current unit.
+
+        :param hold_in_unit: The specific Magnetization unit to store the Magnetization value in the DTO representation.
+        :type hold_in_unit: MagnetizationUnits
+        :return: A new instance of MagnetizationDto.
+        :rtype: MagnetizationDto
+        """
         return MagnetizationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(magnetization_dto: MagnetizationDto):
+        """
+        Obtain a new instance of Magnetization from a DTO unit object.
+
+        :param magnetization_dto: The Magnetization DTO representation.
+        :type magnetization_dto: MagnetizationDto
+        :return: A new instance of Magnetization.
+        :rtype: Magnetization
+        """
         return Magnetization(magnetization_dto.value, magnetization_dto.unit)
 
     def __convert_from_base(self, from_unit: MagnetizationUnits) -> float:

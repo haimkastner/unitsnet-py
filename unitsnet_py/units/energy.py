@@ -212,9 +212,30 @@ class EnergyUnits(Enum):
         
 
 class EnergyDto:
+    """
+    A DTO representation of a Energy
+
+    Attributes:
+        value (float): The value of the Energy.
+        unit (EnergyUnits): The specific unit that the Energy value is representing.
+    """
+
     def __init__(self, value: float, unit: EnergyUnits):
+        """
+        Create a new DTO representation of a Energy
+
+        Parameters:
+            value (float): The value of the Energy.
+            unit (EnergyUnits): The specific unit that the Energy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Energy
+        """
         self.unit: EnergyUnits = unit
+        """
+        The specific unit that the Energy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -324,10 +345,26 @@ class Energy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: EnergyUnits = EnergyUnits.Joule) -> EnergyDto:
+        """
+        Get a new instance of Energy DTO representing the current unit.
+
+        :param hold_in_unit: The specific Energy unit to store the Energy value in the DTO representation.
+        :type hold_in_unit: EnergyUnits
+        :return: A new instance of EnergyDto.
+        :rtype: EnergyDto
+        """
         return EnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(energy_dto: EnergyDto):
+        """
+        Obtain a new instance of Energy from a DTO unit object.
+
+        :param energy_dto: The Energy DTO representation.
+        :type energy_dto: EnergyDto
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
         return Energy(energy_dto.value, energy_dto.unit)
 
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:

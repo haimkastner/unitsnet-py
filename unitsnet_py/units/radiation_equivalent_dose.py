@@ -42,9 +42,30 @@ class RadiationEquivalentDoseUnits(Enum):
         
 
 class RadiationEquivalentDoseDto:
+    """
+    A DTO representation of a RadiationEquivalentDose
+
+    Attributes:
+        value (float): The value of the RadiationEquivalentDose.
+        unit (RadiationEquivalentDoseUnits): The specific unit that the RadiationEquivalentDose value is representing.
+    """
+
     def __init__(self, value: float, unit: RadiationEquivalentDoseUnits):
+        """
+        Create a new DTO representation of a RadiationEquivalentDose
+
+        Parameters:
+            value (float): The value of the RadiationEquivalentDose.
+            unit (RadiationEquivalentDoseUnits): The specific unit that the RadiationEquivalentDose value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RadiationEquivalentDose
+        """
         self.unit: RadiationEquivalentDoseUnits = unit
+        """
+        The specific unit that the RadiationEquivalentDose value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class RadiationEquivalentDose(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert) -> RadiationEquivalentDoseDto:
+        """
+        Get a new instance of RadiationEquivalentDose DTO representing the current unit.
+
+        :param hold_in_unit: The specific RadiationEquivalentDose unit to store the RadiationEquivalentDose value in the DTO representation.
+        :type hold_in_unit: RadiationEquivalentDoseUnits
+        :return: A new instance of RadiationEquivalentDoseDto.
+        :rtype: RadiationEquivalentDoseDto
+        """
         return RadiationEquivalentDoseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(radiation_equivalent_dose_dto: RadiationEquivalentDoseDto):
+        """
+        Obtain a new instance of RadiationEquivalentDose from a DTO unit object.
+
+        :param radiation_equivalent_dose_dto: The RadiationEquivalentDose DTO representation.
+        :type radiation_equivalent_dose_dto: RadiationEquivalentDoseDto
+        :return: A new instance of RadiationEquivalentDose.
+        :rtype: RadiationEquivalentDose
+        """
         return RadiationEquivalentDose(radiation_equivalent_dose_dto.value, radiation_equivalent_dose_dto.unit)
 
     def __convert_from_base(self, from_unit: RadiationEquivalentDoseUnits) -> float:

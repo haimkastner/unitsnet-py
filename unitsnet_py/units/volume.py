@@ -282,9 +282,30 @@ class VolumeUnits(Enum):
         
 
 class VolumeDto:
+    """
+    A DTO representation of a Volume
+
+    Attributes:
+        value (float): The value of the Volume.
+        unit (VolumeUnits): The specific unit that the Volume value is representing.
+    """
+
     def __init__(self, value: float, unit: VolumeUnits):
+        """
+        Create a new DTO representation of a Volume
+
+        Parameters:
+            value (float): The value of the Volume.
+            unit (VolumeUnits): The specific unit that the Volume value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Volume
+        """
         self.unit: VolumeUnits = unit
+        """
+        The specific unit that the Volume value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -422,10 +443,26 @@ class Volume(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: VolumeUnits = VolumeUnits.CubicMeter) -> VolumeDto:
+        """
+        Get a new instance of Volume DTO representing the current unit.
+
+        :param hold_in_unit: The specific Volume unit to store the Volume value in the DTO representation.
+        :type hold_in_unit: VolumeUnits
+        :return: A new instance of VolumeDto.
+        :rtype: VolumeDto
+        """
         return VolumeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(volume_dto: VolumeDto):
+        """
+        Obtain a new instance of Volume from a DTO unit object.
+
+        :param volume_dto: The Volume DTO representation.
+        :type volume_dto: VolumeDto
+        :return: A new instance of Volume.
+        :rtype: Volume
+        """
         return Volume(volume_dto.value, volume_dto.unit)
 
     def __convert_from_base(self, from_unit: VolumeUnits) -> float:

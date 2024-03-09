@@ -17,9 +17,30 @@ class {{ unit }}Units(Enum):
         {% endfor %}
 
 class {{ unit }}Dto:
+    """
+    A DTO representation of a {{ unit }}
+
+    Attributes:
+        value (float): The value of the {{ unit }}.
+        unit ({{ unit }}Units): The specific unit that the {{ unit }} value is representing.
+    """
+
     def __init__(self, value: float, unit: {{ unit }}Units):
+        """
+        Create a new DTO representation of a {{ unit }}
+
+        Parameters:
+            value (float): The value of the {{ unit }}.
+            unit ({{ unit }}Units): The specific unit that the {{ unit }} value is representing.
+        """
         self.value: float = value
+        """
+        The value of the {{ unit }}
+        """
         self.unit: {{ unit }}Units = unit
+        """
+        The specific unit that the {{ unit }} value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -51,10 +72,26 @@ class {{ unit }}(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> {{ unit }}Dto:
+        """
+        Get a new instance of {{ unit }} DTO representing the current unit.
+
+        :param hold_in_unit: The specific {{ unit }} unit to store the {{ unit }} value in the DTO representation.
+        :type hold_in_unit: {{ unit }}Units
+        :return: A new instance of {{ unit }}Dto.
+        :rtype: {{ unit }}Dto
+        """
         return {{ unit }}Dto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto({{ unit_camel_case }}_dto: {{ unit }}Dto):
+        """
+        Obtain a new instance of {{ unit }} from a DTO unit object.
+
+        :param {{ unit_camel_case }}_dto: The {{ unit }} DTO representation.
+        :type {{ unit_camel_case }}_dto: {{ unit }}Dto
+        :return: A new instance of {{ unit }}.
+        :rtype: {{ unit }}
+        """
         return {{ unit }}({{ unit_camel_case }}_dto.value, {{ unit_camel_case }}_dto.unit)
 
     def __convert_from_base(self, from_unit: {{ unit }}Units) -> float:

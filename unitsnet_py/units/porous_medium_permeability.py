@@ -37,9 +37,30 @@ class PorousMediumPermeabilityUnits(Enum):
         
 
 class PorousMediumPermeabilityDto:
+    """
+    A DTO representation of a PorousMediumPermeability
+
+    Attributes:
+        value (float): The value of the PorousMediumPermeability.
+        unit (PorousMediumPermeabilityUnits): The specific unit that the PorousMediumPermeability value is representing.
+    """
+
     def __init__(self, value: float, unit: PorousMediumPermeabilityUnits):
+        """
+        Create a new DTO representation of a PorousMediumPermeability
+
+        Parameters:
+            value (float): The value of the PorousMediumPermeability.
+            unit (PorousMediumPermeabilityUnits): The specific unit that the PorousMediumPermeability value is representing.
+        """
         self.value: float = value
+        """
+        The value of the PorousMediumPermeability
+        """
         self.unit: PorousMediumPermeabilityUnits = unit
+        """
+        The specific unit that the PorousMediumPermeability value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -79,10 +100,26 @@ class PorousMediumPermeability(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> PorousMediumPermeabilityDto:
+        """
+        Get a new instance of PorousMediumPermeability DTO representing the current unit.
+
+        :param hold_in_unit: The specific PorousMediumPermeability unit to store the PorousMediumPermeability value in the DTO representation.
+        :type hold_in_unit: PorousMediumPermeabilityUnits
+        :return: A new instance of PorousMediumPermeabilityDto.
+        :rtype: PorousMediumPermeabilityDto
+        """
         return PorousMediumPermeabilityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(porous_medium_permeability_dto: PorousMediumPermeabilityDto):
+        """
+        Obtain a new instance of PorousMediumPermeability from a DTO unit object.
+
+        :param porous_medium_permeability_dto: The PorousMediumPermeability DTO representation.
+        :type porous_medium_permeability_dto: PorousMediumPermeabilityDto
+        :return: A new instance of PorousMediumPermeability.
+        :rtype: PorousMediumPermeability
+        """
         return PorousMediumPermeability(porous_medium_permeability_dto.value, porous_medium_permeability_dto.unit)
 
     def __convert_from_base(self, from_unit: PorousMediumPermeabilityUnits) -> float:

@@ -42,9 +42,30 @@ class ThermalResistanceUnits(Enum):
         
 
 class ThermalResistanceDto:
+    """
+    A DTO representation of a ThermalResistance
+
+    Attributes:
+        value (float): The value of the ThermalResistance.
+        unit (ThermalResistanceUnits): The specific unit that the ThermalResistance value is representing.
+    """
+
     def __init__(self, value: float, unit: ThermalResistanceUnits):
+        """
+        Create a new DTO representation of a ThermalResistance
+
+        Parameters:
+            value (float): The value of the ThermalResistance.
+            unit (ThermalResistanceUnits): The specific unit that the ThermalResistance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ThermalResistance
+        """
         self.unit: ThermalResistanceUnits = unit
+        """
+        The specific unit that the ThermalResistance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class ThermalResistance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> ThermalResistanceDto:
+        """
+        Get a new instance of ThermalResistance DTO representing the current unit.
+
+        :param hold_in_unit: The specific ThermalResistance unit to store the ThermalResistance value in the DTO representation.
+        :type hold_in_unit: ThermalResistanceUnits
+        :return: A new instance of ThermalResistanceDto.
+        :rtype: ThermalResistanceDto
+        """
         return ThermalResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(thermal_resistance_dto: ThermalResistanceDto):
+        """
+        Obtain a new instance of ThermalResistance from a DTO unit object.
+
+        :param thermal_resistance_dto: The ThermalResistance DTO representation.
+        :type thermal_resistance_dto: ThermalResistanceDto
+        :return: A new instance of ThermalResistance.
+        :rtype: ThermalResistance
+        """
         return ThermalResistance(thermal_resistance_dto.value, thermal_resistance_dto.unit)
 
     def __convert_from_base(self, from_unit: ThermalResistanceUnits) -> float:

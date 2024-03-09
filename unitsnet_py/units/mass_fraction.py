@@ -132,9 +132,30 @@ class MassFractionUnits(Enum):
         
 
 class MassFractionDto:
+    """
+    A DTO representation of a MassFraction
+
+    Attributes:
+        value (float): The value of the MassFraction.
+        unit (MassFractionUnits): The specific unit that the MassFraction value is representing.
+    """
+
     def __init__(self, value: float, unit: MassFractionUnits):
+        """
+        Create a new DTO representation of a MassFraction
+
+        Parameters:
+            value (float): The value of the MassFraction.
+            unit (MassFractionUnits): The specific unit that the MassFraction value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MassFraction
+        """
         self.unit: MassFractionUnits = unit
+        """
+        The specific unit that the MassFraction value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -212,10 +233,26 @@ class MassFraction(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> MassFractionDto:
+        """
+        Get a new instance of MassFraction DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassFraction unit to store the MassFraction value in the DTO representation.
+        :type hold_in_unit: MassFractionUnits
+        :return: A new instance of MassFractionDto.
+        :rtype: MassFractionDto
+        """
         return MassFractionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_fraction_dto: MassFractionDto):
+        """
+        Obtain a new instance of MassFraction from a DTO unit object.
+
+        :param mass_fraction_dto: The MassFraction DTO representation.
+        :type mass_fraction_dto: MassFractionDto
+        :return: A new instance of MassFraction.
+        :rtype: MassFraction
+        """
         return MassFraction(mass_fraction_dto.value, mass_fraction_dto.unit)
 
     def __convert_from_base(self, from_unit: MassFractionUnits) -> float:

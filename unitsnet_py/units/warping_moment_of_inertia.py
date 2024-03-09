@@ -42,9 +42,30 @@ class WarpingMomentOfInertiaUnits(Enum):
         
 
 class WarpingMomentOfInertiaDto:
+    """
+    A DTO representation of a WarpingMomentOfInertia
+
+    Attributes:
+        value (float): The value of the WarpingMomentOfInertia.
+        unit (WarpingMomentOfInertiaUnits): The specific unit that the WarpingMomentOfInertia value is representing.
+    """
+
     def __init__(self, value: float, unit: WarpingMomentOfInertiaUnits):
+        """
+        Create a new DTO representation of a WarpingMomentOfInertia
+
+        Parameters:
+            value (float): The value of the WarpingMomentOfInertia.
+            unit (WarpingMomentOfInertiaUnits): The specific unit that the WarpingMomentOfInertia value is representing.
+        """
         self.value: float = value
+        """
+        The value of the WarpingMomentOfInertia
+        """
         self.unit: WarpingMomentOfInertiaUnits = unit
+        """
+        The specific unit that the WarpingMomentOfInertia value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class WarpingMomentOfInertia(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> WarpingMomentOfInertiaDto:
+        """
+        Get a new instance of WarpingMomentOfInertia DTO representing the current unit.
+
+        :param hold_in_unit: The specific WarpingMomentOfInertia unit to store the WarpingMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: WarpingMomentOfInertiaUnits
+        :return: A new instance of WarpingMomentOfInertiaDto.
+        :rtype: WarpingMomentOfInertiaDto
+        """
         return WarpingMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(warping_moment_of_inertia_dto: WarpingMomentOfInertiaDto):
+        """
+        Obtain a new instance of WarpingMomentOfInertia from a DTO unit object.
+
+        :param warping_moment_of_inertia_dto: The WarpingMomentOfInertia DTO representation.
+        :type warping_moment_of_inertia_dto: WarpingMomentOfInertiaDto
+        :return: A new instance of WarpingMomentOfInertia.
+        :rtype: WarpingMomentOfInertia
+        """
         return WarpingMomentOfInertia(warping_moment_of_inertia_dto.value, warping_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: WarpingMomentOfInertiaUnits) -> float:

@@ -57,9 +57,30 @@ class KinematicViscosityUnits(Enum):
         
 
 class KinematicViscosityDto:
+    """
+    A DTO representation of a KinematicViscosity
+
+    Attributes:
+        value (float): The value of the KinematicViscosity.
+        unit (KinematicViscosityUnits): The specific unit that the KinematicViscosity value is representing.
+    """
+
     def __init__(self, value: float, unit: KinematicViscosityUnits):
+        """
+        Create a new DTO representation of a KinematicViscosity
+
+        Parameters:
+            value (float): The value of the KinematicViscosity.
+            unit (KinematicViscosityUnits): The specific unit that the KinematicViscosity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the KinematicViscosity
+        """
         self.unit: KinematicViscosityUnits = unit
+        """
+        The specific unit that the KinematicViscosity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -107,10 +128,26 @@ class KinematicViscosity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> KinematicViscosityDto:
+        """
+        Get a new instance of KinematicViscosity DTO representing the current unit.
+
+        :param hold_in_unit: The specific KinematicViscosity unit to store the KinematicViscosity value in the DTO representation.
+        :type hold_in_unit: KinematicViscosityUnits
+        :return: A new instance of KinematicViscosityDto.
+        :rtype: KinematicViscosityDto
+        """
         return KinematicViscosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(kinematic_viscosity_dto: KinematicViscosityDto):
+        """
+        Obtain a new instance of KinematicViscosity from a DTO unit object.
+
+        :param kinematic_viscosity_dto: The KinematicViscosity DTO representation.
+        :type kinematic_viscosity_dto: KinematicViscosityDto
+        :return: A new instance of KinematicViscosity.
+        :rtype: KinematicViscosity
+        """
         return KinematicViscosity(kinematic_viscosity_dto.value, kinematic_viscosity_dto.unit)
 
     def __convert_from_base(self, from_unit: KinematicViscosityUnits) -> float:

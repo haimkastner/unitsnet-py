@@ -67,9 +67,30 @@ class ReciprocalAreaUnits(Enum):
         
 
 class ReciprocalAreaDto:
+    """
+    A DTO representation of a ReciprocalArea
+
+    Attributes:
+        value (float): The value of the ReciprocalArea.
+        unit (ReciprocalAreaUnits): The specific unit that the ReciprocalArea value is representing.
+    """
+
     def __init__(self, value: float, unit: ReciprocalAreaUnits):
+        """
+        Create a new DTO representation of a ReciprocalArea
+
+        Parameters:
+            value (float): The value of the ReciprocalArea.
+            unit (ReciprocalAreaUnits): The specific unit that the ReciprocalArea value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ReciprocalArea
+        """
         self.unit: ReciprocalAreaUnits = unit
+        """
+        The specific unit that the ReciprocalArea value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -121,10 +142,26 @@ class ReciprocalArea(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> ReciprocalAreaDto:
+        """
+        Get a new instance of ReciprocalArea DTO representing the current unit.
+
+        :param hold_in_unit: The specific ReciprocalArea unit to store the ReciprocalArea value in the DTO representation.
+        :type hold_in_unit: ReciprocalAreaUnits
+        :return: A new instance of ReciprocalAreaDto.
+        :rtype: ReciprocalAreaDto
+        """
         return ReciprocalAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(reciprocal_area_dto: ReciprocalAreaDto):
+        """
+        Obtain a new instance of ReciprocalArea from a DTO unit object.
+
+        :param reciprocal_area_dto: The ReciprocalArea DTO representation.
+        :type reciprocal_area_dto: ReciprocalAreaDto
+        :return: A new instance of ReciprocalArea.
+        :rtype: ReciprocalArea
+        """
         return ReciprocalArea(reciprocal_area_dto.value, reciprocal_area_dto.unit)
 
     def __convert_from_base(self, from_unit: ReciprocalAreaUnits) -> float:

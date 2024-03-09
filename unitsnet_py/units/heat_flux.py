@@ -102,9 +102,30 @@ class HeatFluxUnits(Enum):
         
 
 class HeatFluxDto:
+    """
+    A DTO representation of a HeatFlux
+
+    Attributes:
+        value (float): The value of the HeatFlux.
+        unit (HeatFluxUnits): The specific unit that the HeatFlux value is representing.
+    """
+
     def __init__(self, value: float, unit: HeatFluxUnits):
+        """
+        Create a new DTO representation of a HeatFlux
+
+        Parameters:
+            value (float): The value of the HeatFlux.
+            unit (HeatFluxUnits): The specific unit that the HeatFlux value is representing.
+        """
         self.value: float = value
+        """
+        The value of the HeatFlux
+        """
         self.unit: HeatFluxUnits = unit
+        """
+        The specific unit that the HeatFlux value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -170,10 +191,26 @@ class HeatFlux(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> HeatFluxDto:
+        """
+        Get a new instance of HeatFlux DTO representing the current unit.
+
+        :param hold_in_unit: The specific HeatFlux unit to store the HeatFlux value in the DTO representation.
+        :type hold_in_unit: HeatFluxUnits
+        :return: A new instance of HeatFluxDto.
+        :rtype: HeatFluxDto
+        """
         return HeatFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(heat_flux_dto: HeatFluxDto):
+        """
+        Obtain a new instance of HeatFlux from a DTO unit object.
+
+        :param heat_flux_dto: The HeatFlux DTO representation.
+        :type heat_flux_dto: HeatFluxDto
+        :return: A new instance of HeatFlux.
+        :rtype: HeatFlux
+        """
         return HeatFlux(heat_flux_dto.value, heat_flux_dto.unit)
 
     def __convert_from_base(self, from_unit: HeatFluxUnits) -> float:

@@ -47,9 +47,30 @@ class EntropyUnits(Enum):
         
 
 class EntropyDto:
+    """
+    A DTO representation of a Entropy
+
+    Attributes:
+        value (float): The value of the Entropy.
+        unit (EntropyUnits): The specific unit that the Entropy value is representing.
+    """
+
     def __init__(self, value: float, unit: EntropyUnits):
+        """
+        Create a new DTO representation of a Entropy
+
+        Parameters:
+            value (float): The value of the Entropy.
+            unit (EntropyUnits): The specific unit that the Entropy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Entropy
+        """
         self.unit: EntropyUnits = unit
+        """
+        The specific unit that the Entropy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -93,10 +114,26 @@ class Entropy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> EntropyDto:
+        """
+        Get a new instance of Entropy DTO representing the current unit.
+
+        :param hold_in_unit: The specific Entropy unit to store the Entropy value in the DTO representation.
+        :type hold_in_unit: EntropyUnits
+        :return: A new instance of EntropyDto.
+        :rtype: EntropyDto
+        """
         return EntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(entropy_dto: EntropyDto):
+        """
+        Obtain a new instance of Entropy from a DTO unit object.
+
+        :param entropy_dto: The Entropy DTO representation.
+        :type entropy_dto: EntropyDto
+        :return: A new instance of Entropy.
+        :rtype: Entropy
+        """
         return Entropy(entropy_dto.value, entropy_dto.unit)
 
     def __convert_from_base(self, from_unit: EntropyUnits) -> float:

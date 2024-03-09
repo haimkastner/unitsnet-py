@@ -42,9 +42,30 @@ class MagneticFieldUnits(Enum):
         
 
 class MagneticFieldDto:
+    """
+    A DTO representation of a MagneticField
+
+    Attributes:
+        value (float): The value of the MagneticField.
+        unit (MagneticFieldUnits): The specific unit that the MagneticField value is representing.
+    """
+
     def __init__(self, value: float, unit: MagneticFieldUnits):
+        """
+        Create a new DTO representation of a MagneticField
+
+        Parameters:
+            value (float): The value of the MagneticField.
+            unit (MagneticFieldUnits): The specific unit that the MagneticField value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MagneticField
+        """
         self.unit: MagneticFieldUnits = unit
+        """
+        The specific unit that the MagneticField value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class MagneticField(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> MagneticFieldDto:
+        """
+        Get a new instance of MagneticField DTO representing the current unit.
+
+        :param hold_in_unit: The specific MagneticField unit to store the MagneticField value in the DTO representation.
+        :type hold_in_unit: MagneticFieldUnits
+        :return: A new instance of MagneticFieldDto.
+        :rtype: MagneticFieldDto
+        """
         return MagneticFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(magnetic_field_dto: MagneticFieldDto):
+        """
+        Obtain a new instance of MagneticField from a DTO unit object.
+
+        :param magnetic_field_dto: The MagneticField DTO representation.
+        :type magnetic_field_dto: MagneticFieldDto
+        :return: A new instance of MagneticField.
+        :rtype: MagneticField
+        """
         return MagneticField(magnetic_field_dto.value, magnetic_field_dto.unit)
 
     def __convert_from_base(self, from_unit: MagneticFieldUnits) -> float:

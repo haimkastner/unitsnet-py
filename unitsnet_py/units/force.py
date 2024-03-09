@@ -87,9 +87,30 @@ class ForceUnits(Enum):
         
 
 class ForceDto:
+    """
+    A DTO representation of a Force
+
+    Attributes:
+        value (float): The value of the Force.
+        unit (ForceUnits): The specific unit that the Force value is representing.
+    """
+
     def __init__(self, value: float, unit: ForceUnits):
+        """
+        Create a new DTO representation of a Force
+
+        Parameters:
+            value (float): The value of the Force.
+            unit (ForceUnits): The specific unit that the Force value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Force
+        """
         self.unit: ForceUnits = unit
+        """
+        The specific unit that the Force value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -149,10 +170,26 @@ class Force(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ForceUnits = ForceUnits.Newton) -> ForceDto:
+        """
+        Get a new instance of Force DTO representing the current unit.
+
+        :param hold_in_unit: The specific Force unit to store the Force value in the DTO representation.
+        :type hold_in_unit: ForceUnits
+        :return: A new instance of ForceDto.
+        :rtype: ForceDto
+        """
         return ForceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(force_dto: ForceDto):
+        """
+        Obtain a new instance of Force from a DTO unit object.
+
+        :param force_dto: The Force DTO representation.
+        :type force_dto: ForceDto
+        :return: A new instance of Force.
+        :rtype: Force
+        """
         return Force(force_dto.value, force_dto.unit)
 
     def __convert_from_base(self, from_unit: ForceUnits) -> float:

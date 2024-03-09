@@ -42,9 +42,30 @@ class AreaMomentOfInertiaUnits(Enum):
         
 
 class AreaMomentOfInertiaDto:
+    """
+    A DTO representation of a AreaMomentOfInertia
+
+    Attributes:
+        value (float): The value of the AreaMomentOfInertia.
+        unit (AreaMomentOfInertiaUnits): The specific unit that the AreaMomentOfInertia value is representing.
+    """
+
     def __init__(self, value: float, unit: AreaMomentOfInertiaUnits):
+        """
+        Create a new DTO representation of a AreaMomentOfInertia
+
+        Parameters:
+            value (float): The value of the AreaMomentOfInertia.
+            unit (AreaMomentOfInertiaUnits): The specific unit that the AreaMomentOfInertia value is representing.
+        """
         self.value: float = value
+        """
+        The value of the AreaMomentOfInertia
+        """
         self.unit: AreaMomentOfInertiaUnits = unit
+        """
+        The specific unit that the AreaMomentOfInertia value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class AreaMomentOfInertia(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> AreaMomentOfInertiaDto:
+        """
+        Get a new instance of AreaMomentOfInertia DTO representing the current unit.
+
+        :param hold_in_unit: The specific AreaMomentOfInertia unit to store the AreaMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: AreaMomentOfInertiaUnits
+        :return: A new instance of AreaMomentOfInertiaDto.
+        :rtype: AreaMomentOfInertiaDto
+        """
         return AreaMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(area_moment_of_inertia_dto: AreaMomentOfInertiaDto):
+        """
+        Obtain a new instance of AreaMomentOfInertia from a DTO unit object.
+
+        :param area_moment_of_inertia_dto: The AreaMomentOfInertia DTO representation.
+        :type area_moment_of_inertia_dto: AreaMomentOfInertiaDto
+        :return: A new instance of AreaMomentOfInertia.
+        :rtype: AreaMomentOfInertia
+        """
         return AreaMomentOfInertia(area_moment_of_inertia_dto.value, area_moment_of_inertia_dto.unit)
 
     def __convert_from_base(self, from_unit: AreaMomentOfInertiaUnits) -> float:

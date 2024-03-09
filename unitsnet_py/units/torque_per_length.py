@@ -117,9 +117,30 @@ class TorquePerLengthUnits(Enum):
         
 
 class TorquePerLengthDto:
+    """
+    A DTO representation of a TorquePerLength
+
+    Attributes:
+        value (float): The value of the TorquePerLength.
+        unit (TorquePerLengthUnits): The specific unit that the TorquePerLength value is representing.
+    """
+
     def __init__(self, value: float, unit: TorquePerLengthUnits):
+        """
+        Create a new DTO representation of a TorquePerLength
+
+        Parameters:
+            value (float): The value of the TorquePerLength.
+            unit (TorquePerLengthUnits): The specific unit that the TorquePerLength value is representing.
+        """
         self.value: float = value
+        """
+        The value of the TorquePerLength
+        """
         self.unit: TorquePerLengthUnits = unit
+        """
+        The specific unit that the TorquePerLength value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -191,10 +212,26 @@ class TorquePerLength(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> TorquePerLengthDto:
+        """
+        Get a new instance of TorquePerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific TorquePerLength unit to store the TorquePerLength value in the DTO representation.
+        :type hold_in_unit: TorquePerLengthUnits
+        :return: A new instance of TorquePerLengthDto.
+        :rtype: TorquePerLengthDto
+        """
         return TorquePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(torque_per_length_dto: TorquePerLengthDto):
+        """
+        Obtain a new instance of TorquePerLength from a DTO unit object.
+
+        :param torque_per_length_dto: The TorquePerLength DTO representation.
+        :type torque_per_length_dto: TorquePerLengthDto
+        :return: A new instance of TorquePerLength.
+        :rtype: TorquePerLength
+        """
         return TorquePerLength(torque_per_length_dto.value, torque_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: TorquePerLengthUnits) -> float:

@@ -97,9 +97,30 @@ class AmountOfSubstanceUnits(Enum):
         
 
 class AmountOfSubstanceDto:
+    """
+    A DTO representation of a AmountOfSubstance
+
+    Attributes:
+        value (float): The value of the AmountOfSubstance.
+        unit (AmountOfSubstanceUnits): The specific unit that the AmountOfSubstance value is representing.
+    """
+
     def __init__(self, value: float, unit: AmountOfSubstanceUnits):
+        """
+        Create a new DTO representation of a AmountOfSubstance
+
+        Parameters:
+            value (float): The value of the AmountOfSubstance.
+            unit (AmountOfSubstanceUnits): The specific unit that the AmountOfSubstance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the AmountOfSubstance
+        """
         self.unit: AmountOfSubstanceUnits = unit
+        """
+        The specific unit that the AmountOfSubstance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -163,10 +184,26 @@ class AmountOfSubstance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> AmountOfSubstanceDto:
+        """
+        Get a new instance of AmountOfSubstance DTO representing the current unit.
+
+        :param hold_in_unit: The specific AmountOfSubstance unit to store the AmountOfSubstance value in the DTO representation.
+        :type hold_in_unit: AmountOfSubstanceUnits
+        :return: A new instance of AmountOfSubstanceDto.
+        :rtype: AmountOfSubstanceDto
+        """
         return AmountOfSubstanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(amount_of_substance_dto: AmountOfSubstanceDto):
+        """
+        Obtain a new instance of AmountOfSubstance from a DTO unit object.
+
+        :param amount_of_substance_dto: The AmountOfSubstance DTO representation.
+        :type amount_of_substance_dto: AmountOfSubstanceDto
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
         return AmountOfSubstance(amount_of_substance_dto.value, amount_of_substance_dto.unit)
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:

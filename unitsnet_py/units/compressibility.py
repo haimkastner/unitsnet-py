@@ -47,9 +47,30 @@ class CompressibilityUnits(Enum):
         
 
 class CompressibilityDto:
+    """
+    A DTO representation of a Compressibility
+
+    Attributes:
+        value (float): The value of the Compressibility.
+        unit (CompressibilityUnits): The specific unit that the Compressibility value is representing.
+    """
+
     def __init__(self, value: float, unit: CompressibilityUnits):
+        """
+        Create a new DTO representation of a Compressibility
+
+        Parameters:
+            value (float): The value of the Compressibility.
+            unit (CompressibilityUnits): The specific unit that the Compressibility value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Compressibility
+        """
         self.unit: CompressibilityUnits = unit
+        """
+        The specific unit that the Compressibility value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -93,10 +114,26 @@ class Compressibility(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: CompressibilityUnits = CompressibilityUnits.InversePascal) -> CompressibilityDto:
+        """
+        Get a new instance of Compressibility DTO representing the current unit.
+
+        :param hold_in_unit: The specific Compressibility unit to store the Compressibility value in the DTO representation.
+        :type hold_in_unit: CompressibilityUnits
+        :return: A new instance of CompressibilityDto.
+        :rtype: CompressibilityDto
+        """
         return CompressibilityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(compressibility_dto: CompressibilityDto):
+        """
+        Obtain a new instance of Compressibility from a DTO unit object.
+
+        :param compressibility_dto: The Compressibility DTO representation.
+        :type compressibility_dto: CompressibilityDto
+        :return: A new instance of Compressibility.
+        :rtype: Compressibility
+        """
         return Compressibility(compressibility_dto.value, compressibility_dto.unit)
 
     def __convert_from_base(self, from_unit: CompressibilityUnits) -> float:

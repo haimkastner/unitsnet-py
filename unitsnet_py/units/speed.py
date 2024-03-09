@@ -177,9 +177,30 @@ class SpeedUnits(Enum):
         
 
 class SpeedDto:
+    """
+    A DTO representation of a Speed
+
+    Attributes:
+        value (float): The value of the Speed.
+        unit (SpeedUnits): The specific unit that the Speed value is representing.
+    """
+
     def __init__(self, value: float, unit: SpeedUnits):
+        """
+        Create a new DTO representation of a Speed
+
+        Parameters:
+            value (float): The value of the Speed.
+            unit (SpeedUnits): The specific unit that the Speed value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Speed
+        """
         self.unit: SpeedUnits = unit
+        """
+        The specific unit that the Speed value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -275,10 +296,26 @@ class Speed(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> SpeedDto:
+        """
+        Get a new instance of Speed DTO representing the current unit.
+
+        :param hold_in_unit: The specific Speed unit to store the Speed value in the DTO representation.
+        :type hold_in_unit: SpeedUnits
+        :return: A new instance of SpeedDto.
+        :rtype: SpeedDto
+        """
         return SpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(speed_dto: SpeedDto):
+        """
+        Obtain a new instance of Speed from a DTO unit object.
+
+        :param speed_dto: The Speed DTO representation.
+        :type speed_dto: SpeedDto
+        :return: A new instance of Speed.
+        :rtype: Speed
+        """
         return Speed(speed_dto.value, speed_dto.unit)
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:

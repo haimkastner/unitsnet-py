@@ -22,9 +22,30 @@ class RatioChangeRateUnits(Enum):
         
 
 class RatioChangeRateDto:
+    """
+    A DTO representation of a RatioChangeRate
+
+    Attributes:
+        value (float): The value of the RatioChangeRate.
+        unit (RatioChangeRateUnits): The specific unit that the RatioChangeRate value is representing.
+    """
+
     def __init__(self, value: float, unit: RatioChangeRateUnits):
+        """
+        Create a new DTO representation of a RatioChangeRate
+
+        Parameters:
+            value (float): The value of the RatioChangeRate.
+            unit (RatioChangeRateUnits): The specific unit that the RatioChangeRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the RatioChangeRate
+        """
         self.unit: RatioChangeRateUnits = unit
+        """
+        The specific unit that the RatioChangeRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -58,10 +79,26 @@ class RatioChangeRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> RatioChangeRateDto:
+        """
+        Get a new instance of RatioChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific RatioChangeRate unit to store the RatioChangeRate value in the DTO representation.
+        :type hold_in_unit: RatioChangeRateUnits
+        :return: A new instance of RatioChangeRateDto.
+        :rtype: RatioChangeRateDto
+        """
         return RatioChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(ratio_change_rate_dto: RatioChangeRateDto):
+        """
+        Obtain a new instance of RatioChangeRate from a DTO unit object.
+
+        :param ratio_change_rate_dto: The RatioChangeRate DTO representation.
+        :type ratio_change_rate_dto: RatioChangeRateDto
+        :return: A new instance of RatioChangeRate.
+        :rtype: RatioChangeRate
+        """
         return RatioChangeRate(ratio_change_rate_dto.value, ratio_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: RatioChangeRateUnits) -> float:

@@ -257,9 +257,30 @@ class MassConcentrationUnits(Enum):
         
 
 class MassConcentrationDto:
+    """
+    A DTO representation of a MassConcentration
+
+    Attributes:
+        value (float): The value of the MassConcentration.
+        unit (MassConcentrationUnits): The specific unit that the MassConcentration value is representing.
+    """
+
     def __init__(self, value: float, unit: MassConcentrationUnits):
+        """
+        Create a new DTO representation of a MassConcentration
+
+        Parameters:
+            value (float): The value of the MassConcentration.
+            unit (MassConcentrationUnits): The specific unit that the MassConcentration value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MassConcentration
+        """
         self.unit: MassConcentrationUnits = unit
+        """
+        The specific unit that the MassConcentration value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -387,10 +408,26 @@ class MassConcentration(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> MassConcentrationDto:
+        """
+        Get a new instance of MassConcentration DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassConcentration unit to store the MassConcentration value in the DTO representation.
+        :type hold_in_unit: MassConcentrationUnits
+        :return: A new instance of MassConcentrationDto.
+        :rtype: MassConcentrationDto
+        """
         return MassConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(mass_concentration_dto: MassConcentrationDto):
+        """
+        Obtain a new instance of MassConcentration from a DTO unit object.
+
+        :param mass_concentration_dto: The MassConcentration DTO representation.
+        :type mass_concentration_dto: MassConcentrationDto
+        :return: A new instance of MassConcentration.
+        :rtype: MassConcentration
+        """
         return MassConcentration(mass_concentration_dto.value, mass_concentration_dto.unit)
 
     def __convert_from_base(self, from_unit: MassConcentrationUnits) -> float:

@@ -62,9 +62,30 @@ class TemperatureChangeRateUnits(Enum):
         
 
 class TemperatureChangeRateDto:
+    """
+    A DTO representation of a TemperatureChangeRate
+
+    Attributes:
+        value (float): The value of the TemperatureChangeRate.
+        unit (TemperatureChangeRateUnits): The specific unit that the TemperatureChangeRate value is representing.
+    """
+
     def __init__(self, value: float, unit: TemperatureChangeRateUnits):
+        """
+        Create a new DTO representation of a TemperatureChangeRate
+
+        Parameters:
+            value (float): The value of the TemperatureChangeRate.
+            unit (TemperatureChangeRateUnits): The specific unit that the TemperatureChangeRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the TemperatureChangeRate
+        """
         self.unit: TemperatureChangeRateUnits = unit
+        """
+        The specific unit that the TemperatureChangeRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -114,10 +135,26 @@ class TemperatureChangeRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> TemperatureChangeRateDto:
+        """
+        Get a new instance of TemperatureChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureChangeRate unit to store the TemperatureChangeRate value in the DTO representation.
+        :type hold_in_unit: TemperatureChangeRateUnits
+        :return: A new instance of TemperatureChangeRateDto.
+        :rtype: TemperatureChangeRateDto
+        """
         return TemperatureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(temperature_change_rate_dto: TemperatureChangeRateDto):
+        """
+        Obtain a new instance of TemperatureChangeRate from a DTO unit object.
+
+        :param temperature_change_rate_dto: The TemperatureChangeRate DTO representation.
+        :type temperature_change_rate_dto: TemperatureChangeRateDto
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
         return TemperatureChangeRate(temperature_change_rate_dto.value, temperature_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: TemperatureChangeRateUnits) -> float:

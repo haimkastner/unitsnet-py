@@ -42,9 +42,30 @@ class ElectricPotentialUnits(Enum):
         
 
 class ElectricPotentialDto:
+    """
+    A DTO representation of a ElectricPotential
+
+    Attributes:
+        value (float): The value of the ElectricPotential.
+        unit (ElectricPotentialUnits): The specific unit that the ElectricPotential value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricPotentialUnits):
+        """
+        Create a new DTO representation of a ElectricPotential
+
+        Parameters:
+            value (float): The value of the ElectricPotential.
+            unit (ElectricPotentialUnits): The specific unit that the ElectricPotential value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricPotential
+        """
         self.unit: ElectricPotentialUnits = unit
+        """
+        The specific unit that the ElectricPotential value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -86,10 +107,26 @@ class ElectricPotential(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt) -> ElectricPotentialDto:
+        """
+        Get a new instance of ElectricPotential DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotential unit to store the ElectricPotential value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialUnits
+        :return: A new instance of ElectricPotentialDto.
+        :rtype: ElectricPotentialDto
+        """
         return ElectricPotentialDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_potential_dto: ElectricPotentialDto):
+        """
+        Obtain a new instance of ElectricPotential from a DTO unit object.
+
+        :param electric_potential_dto: The ElectricPotential DTO representation.
+        :type electric_potential_dto: ElectricPotentialDto
+        :return: A new instance of ElectricPotential.
+        :rtype: ElectricPotential
+        """
         return ElectricPotential(electric_potential_dto.value, electric_potential_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricPotentialUnits) -> float:

@@ -32,9 +32,30 @@ class AmplitudeRatioUnits(Enum):
         
 
 class AmplitudeRatioDto:
+    """
+    A DTO representation of a AmplitudeRatio
+
+    Attributes:
+        value (float): The value of the AmplitudeRatio.
+        unit (AmplitudeRatioUnits): The specific unit that the AmplitudeRatio value is representing.
+    """
+
     def __init__(self, value: float, unit: AmplitudeRatioUnits):
+        """
+        Create a new DTO representation of a AmplitudeRatio
+
+        Parameters:
+            value (float): The value of the AmplitudeRatio.
+            unit (AmplitudeRatioUnits): The specific unit that the AmplitudeRatio value is representing.
+        """
         self.value: float = value
+        """
+        The value of the AmplitudeRatio
+        """
         self.unit: AmplitudeRatioUnits = unit
+        """
+        The specific unit that the AmplitudeRatio value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -72,10 +93,26 @@ class AmplitudeRatio(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> AmplitudeRatioDto:
+        """
+        Get a new instance of AmplitudeRatio DTO representing the current unit.
+
+        :param hold_in_unit: The specific AmplitudeRatio unit to store the AmplitudeRatio value in the DTO representation.
+        :type hold_in_unit: AmplitudeRatioUnits
+        :return: A new instance of AmplitudeRatioDto.
+        :rtype: AmplitudeRatioDto
+        """
         return AmplitudeRatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(amplitude_ratio_dto: AmplitudeRatioDto):
+        """
+        Obtain a new instance of AmplitudeRatio from a DTO unit object.
+
+        :param amplitude_ratio_dto: The AmplitudeRatio DTO representation.
+        :type amplitude_ratio_dto: AmplitudeRatioDto
+        :return: A new instance of AmplitudeRatio.
+        :rtype: AmplitudeRatio
+        """
         return AmplitudeRatio(amplitude_ratio_dto.value, amplitude_ratio_dto.unit)
 
     def __convert_from_base(self, from_unit: AmplitudeRatioUnits) -> float:

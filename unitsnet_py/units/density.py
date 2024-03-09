@@ -292,9 +292,30 @@ class DensityUnits(Enum):
         
 
 class DensityDto:
+    """
+    A DTO representation of a Density
+
+    Attributes:
+        value (float): The value of the Density.
+        unit (DensityUnits): The specific unit that the Density value is representing.
+    """
+
     def __init__(self, value: float, unit: DensityUnits):
+        """
+        Create a new DTO representation of a Density
+
+        Parameters:
+            value (float): The value of the Density.
+            unit (DensityUnits): The specific unit that the Density value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Density
+        """
         self.unit: DensityUnits = unit
+        """
+        The specific unit that the Density value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -436,10 +457,26 @@ class Density(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> DensityDto:
+        """
+        Get a new instance of Density DTO representing the current unit.
+
+        :param hold_in_unit: The specific Density unit to store the Density value in the DTO representation.
+        :type hold_in_unit: DensityUnits
+        :return: A new instance of DensityDto.
+        :rtype: DensityDto
+        """
         return DensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(density_dto: DensityDto):
+        """
+        Obtain a new instance of Density from a DTO unit object.
+
+        :param density_dto: The Density DTO representation.
+        :type density_dto: DensityDto
+        :return: A new instance of Density.
+        :rtype: Density
+        """
         return Density(density_dto.value, density_dto.unit)
 
     def __convert_from_base(self, from_unit: DensityUnits) -> float:

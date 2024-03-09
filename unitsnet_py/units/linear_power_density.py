@@ -137,9 +137,30 @@ class LinearPowerDensityUnits(Enum):
         
 
 class LinearPowerDensityDto:
+    """
+    A DTO representation of a LinearPowerDensity
+
+    Attributes:
+        value (float): The value of the LinearPowerDensity.
+        unit (LinearPowerDensityUnits): The specific unit that the LinearPowerDensity value is representing.
+    """
+
     def __init__(self, value: float, unit: LinearPowerDensityUnits):
+        """
+        Create a new DTO representation of a LinearPowerDensity
+
+        Parameters:
+            value (float): The value of the LinearPowerDensity.
+            unit (LinearPowerDensityUnits): The specific unit that the LinearPowerDensity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the LinearPowerDensity
+        """
         self.unit: LinearPowerDensityUnits = unit
+        """
+        The specific unit that the LinearPowerDensity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -219,10 +240,26 @@ class LinearPowerDensity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> LinearPowerDensityDto:
+        """
+        Get a new instance of LinearPowerDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific LinearPowerDensity unit to store the LinearPowerDensity value in the DTO representation.
+        :type hold_in_unit: LinearPowerDensityUnits
+        :return: A new instance of LinearPowerDensityDto.
+        :rtype: LinearPowerDensityDto
+        """
         return LinearPowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(linear_power_density_dto: LinearPowerDensityDto):
+        """
+        Obtain a new instance of LinearPowerDensity from a DTO unit object.
+
+        :param linear_power_density_dto: The LinearPowerDensity DTO representation.
+        :type linear_power_density_dto: LinearPowerDensityDto
+        :return: A new instance of LinearPowerDensity.
+        :rtype: LinearPowerDensity
+        """
         return LinearPowerDensity(linear_power_density_dto.value, linear_power_density_dto.unit)
 
     def __convert_from_base(self, from_unit: LinearPowerDensityUnits) -> float:

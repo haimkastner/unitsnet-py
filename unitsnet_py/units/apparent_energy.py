@@ -27,9 +27,30 @@ class ApparentEnergyUnits(Enum):
         
 
 class ApparentEnergyDto:
+    """
+    A DTO representation of a ApparentEnergy
+
+    Attributes:
+        value (float): The value of the ApparentEnergy.
+        unit (ApparentEnergyUnits): The specific unit that the ApparentEnergy value is representing.
+    """
+
     def __init__(self, value: float, unit: ApparentEnergyUnits):
+        """
+        Create a new DTO representation of a ApparentEnergy
+
+        Parameters:
+            value (float): The value of the ApparentEnergy.
+            unit (ApparentEnergyUnits): The specific unit that the ApparentEnergy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ApparentEnergy
+        """
         self.unit: ApparentEnergyUnits = unit
+        """
+        The specific unit that the ApparentEnergy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -65,10 +86,26 @@ class ApparentEnergy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> ApparentEnergyDto:
+        """
+        Get a new instance of ApparentEnergy DTO representing the current unit.
+
+        :param hold_in_unit: The specific ApparentEnergy unit to store the ApparentEnergy value in the DTO representation.
+        :type hold_in_unit: ApparentEnergyUnits
+        :return: A new instance of ApparentEnergyDto.
+        :rtype: ApparentEnergyDto
+        """
         return ApparentEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(apparent_energy_dto: ApparentEnergyDto):
+        """
+        Obtain a new instance of ApparentEnergy from a DTO unit object.
+
+        :param apparent_energy_dto: The ApparentEnergy DTO representation.
+        :type apparent_energy_dto: ApparentEnergyDto
+        :return: A new instance of ApparentEnergy.
+        :rtype: ApparentEnergy
+        """
         return ApparentEnergy(apparent_energy_dto.value, apparent_energy_dto.unit)
 
     def __convert_from_base(self, from_unit: ApparentEnergyUnits) -> float:

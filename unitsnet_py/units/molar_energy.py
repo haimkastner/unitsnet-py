@@ -27,9 +27,30 @@ class MolarEnergyUnits(Enum):
         
 
 class MolarEnergyDto:
+    """
+    A DTO representation of a MolarEnergy
+
+    Attributes:
+        value (float): The value of the MolarEnergy.
+        unit (MolarEnergyUnits): The specific unit that the MolarEnergy value is representing.
+    """
+
     def __init__(self, value: float, unit: MolarEnergyUnits):
+        """
+        Create a new DTO representation of a MolarEnergy
+
+        Parameters:
+            value (float): The value of the MolarEnergy.
+            unit (MolarEnergyUnits): The specific unit that the MolarEnergy value is representing.
+        """
         self.value: float = value
+        """
+        The value of the MolarEnergy
+        """
         self.unit: MolarEnergyUnits = unit
+        """
+        The specific unit that the MolarEnergy value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -65,10 +86,26 @@ class MolarEnergy(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> MolarEnergyDto:
+        """
+        Get a new instance of MolarEnergy DTO representing the current unit.
+
+        :param hold_in_unit: The specific MolarEnergy unit to store the MolarEnergy value in the DTO representation.
+        :type hold_in_unit: MolarEnergyUnits
+        :return: A new instance of MolarEnergyDto.
+        :rtype: MolarEnergyDto
+        """
         return MolarEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(molar_energy_dto: MolarEnergyDto):
+        """
+        Obtain a new instance of MolarEnergy from a DTO unit object.
+
+        :param molar_energy_dto: The MolarEnergy DTO representation.
+        :type molar_energy_dto: MolarEnergyDto
+        :return: A new instance of MolarEnergy.
+        :rtype: MolarEnergy
+        """
         return MolarEnergy(molar_energy_dto.value, molar_energy_dto.unit)
 
     def __convert_from_base(self, from_unit: MolarEnergyUnits) -> float:

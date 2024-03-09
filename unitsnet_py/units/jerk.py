@@ -67,9 +67,30 @@ class JerkUnits(Enum):
         
 
 class JerkDto:
+    """
+    A DTO representation of a Jerk
+
+    Attributes:
+        value (float): The value of the Jerk.
+        unit (JerkUnits): The specific unit that the Jerk value is representing.
+    """
+
     def __init__(self, value: float, unit: JerkUnits):
+        """
+        Create a new DTO representation of a Jerk
+
+        Parameters:
+            value (float): The value of the Jerk.
+            unit (JerkUnits): The specific unit that the Jerk value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Jerk
+        """
         self.unit: JerkUnits = unit
+        """
+        The specific unit that the Jerk value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -121,10 +142,26 @@ class Jerk(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> JerkDto:
+        """
+        Get a new instance of Jerk DTO representing the current unit.
+
+        :param hold_in_unit: The specific Jerk unit to store the Jerk value in the DTO representation.
+        :type hold_in_unit: JerkUnits
+        :return: A new instance of JerkDto.
+        :rtype: JerkDto
+        """
         return JerkDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(jerk_dto: JerkDto):
+        """
+        Obtain a new instance of Jerk from a DTO unit object.
+
+        :param jerk_dto: The Jerk DTO representation.
+        :type jerk_dto: JerkDto
+        :return: A new instance of Jerk.
+        :rtype: Jerk
+        """
         return Jerk(jerk_dto.value, jerk_dto.unit)
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:

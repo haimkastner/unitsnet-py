@@ -142,9 +142,30 @@ class PowerUnits(Enum):
         
 
 class PowerDto:
+    """
+    A DTO representation of a Power
+
+    Attributes:
+        value (float): The value of the Power.
+        unit (PowerUnits): The specific unit that the Power value is representing.
+    """
+
     def __init__(self, value: float, unit: PowerUnits):
+        """
+        Create a new DTO representation of a Power
+
+        Parameters:
+            value (float): The value of the Power.
+            unit (PowerUnits): The specific unit that the Power value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Power
+        """
         self.unit: PowerUnits = unit
+        """
+        The specific unit that the Power value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -226,10 +247,26 @@ class Power(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: PowerUnits = PowerUnits.Watt) -> PowerDto:
+        """
+        Get a new instance of Power DTO representing the current unit.
+
+        :param hold_in_unit: The specific Power unit to store the Power value in the DTO representation.
+        :type hold_in_unit: PowerUnits
+        :return: A new instance of PowerDto.
+        :rtype: PowerDto
+        """
         return PowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(power_dto: PowerDto):
+        """
+        Obtain a new instance of Power from a DTO unit object.
+
+        :param power_dto: The Power DTO representation.
+        :type power_dto: PowerDto
+        :return: A new instance of Power.
+        :rtype: Power
+        """
         return Power(power_dto.value, power_dto.unit)
 
     def __convert_from_base(self, from_unit: PowerUnits) -> float:

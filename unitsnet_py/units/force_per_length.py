@@ -202,9 +202,30 @@ class ForcePerLengthUnits(Enum):
         
 
 class ForcePerLengthDto:
+    """
+    A DTO representation of a ForcePerLength
+
+    Attributes:
+        value (float): The value of the ForcePerLength.
+        unit (ForcePerLengthUnits): The specific unit that the ForcePerLength value is representing.
+    """
+
     def __init__(self, value: float, unit: ForcePerLengthUnits):
+        """
+        Create a new DTO representation of a ForcePerLength
+
+        Parameters:
+            value (float): The value of the ForcePerLength.
+            unit (ForcePerLengthUnits): The specific unit that the ForcePerLength value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ForcePerLength
+        """
         self.unit: ForcePerLengthUnits = unit
+        """
+        The specific unit that the ForcePerLength value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -310,10 +331,26 @@ class ForcePerLength(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> ForcePerLengthDto:
+        """
+        Get a new instance of ForcePerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific ForcePerLength unit to store the ForcePerLength value in the DTO representation.
+        :type hold_in_unit: ForcePerLengthUnits
+        :return: A new instance of ForcePerLengthDto.
+        :rtype: ForcePerLengthDto
+        """
         return ForcePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(force_per_length_dto: ForcePerLengthDto):
+        """
+        Obtain a new instance of ForcePerLength from a DTO unit object.
+
+        :param force_per_length_dto: The ForcePerLength DTO representation.
+        :type force_per_length_dto: ForcePerLengthDto
+        :return: A new instance of ForcePerLength.
+        :rtype: ForcePerLength
+        """
         return ForcePerLength(force_per_length_dto.value, force_per_length_dto.unit)
 
     def __convert_from_base(self, from_unit: ForcePerLengthUnits) -> float:

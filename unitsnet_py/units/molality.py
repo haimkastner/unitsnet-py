@@ -22,9 +22,30 @@ class MolalityUnits(Enum):
         
 
 class MolalityDto:
+    """
+    A DTO representation of a Molality
+
+    Attributes:
+        value (float): The value of the Molality.
+        unit (MolalityUnits): The specific unit that the Molality value is representing.
+    """
+
     def __init__(self, value: float, unit: MolalityUnits):
+        """
+        Create a new DTO representation of a Molality
+
+        Parameters:
+            value (float): The value of the Molality.
+            unit (MolalityUnits): The specific unit that the Molality value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Molality
+        """
         self.unit: MolalityUnits = unit
+        """
+        The specific unit that the Molality value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -58,10 +79,26 @@ class Molality(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: MolalityUnits = MolalityUnits.MolePerKilogram) -> MolalityDto:
+        """
+        Get a new instance of Molality DTO representing the current unit.
+
+        :param hold_in_unit: The specific Molality unit to store the Molality value in the DTO representation.
+        :type hold_in_unit: MolalityUnits
+        :return: A new instance of MolalityDto.
+        :rtype: MolalityDto
+        """
         return MolalityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(molality_dto: MolalityDto):
+        """
+        Obtain a new instance of Molality from a DTO unit object.
+
+        :param molality_dto: The Molality DTO representation.
+        :type molality_dto: MolalityDto
+        :return: A new instance of Molality.
+        :rtype: Molality
+        """
         return Molality(molality_dto.value, molality_dto.unit)
 
     def __convert_from_base(self, from_unit: MolalityUnits) -> float:

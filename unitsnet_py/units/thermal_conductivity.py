@@ -22,9 +22,30 @@ class ThermalConductivityUnits(Enum):
         
 
 class ThermalConductivityDto:
+    """
+    A DTO representation of a ThermalConductivity
+
+    Attributes:
+        value (float): The value of the ThermalConductivity.
+        unit (ThermalConductivityUnits): The specific unit that the ThermalConductivity value is representing.
+    """
+
     def __init__(self, value: float, unit: ThermalConductivityUnits):
+        """
+        Create a new DTO representation of a ThermalConductivity
+
+        Parameters:
+            value (float): The value of the ThermalConductivity.
+            unit (ThermalConductivityUnits): The specific unit that the ThermalConductivity value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ThermalConductivity
+        """
         self.unit: ThermalConductivityUnits = unit
+        """
+        The specific unit that the ThermalConductivity value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -58,10 +79,26 @@ class ThermalConductivity(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> ThermalConductivityDto:
+        """
+        Get a new instance of ThermalConductivity DTO representing the current unit.
+
+        :param hold_in_unit: The specific ThermalConductivity unit to store the ThermalConductivity value in the DTO representation.
+        :type hold_in_unit: ThermalConductivityUnits
+        :return: A new instance of ThermalConductivityDto.
+        :rtype: ThermalConductivityDto
+        """
         return ThermalConductivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(thermal_conductivity_dto: ThermalConductivityDto):
+        """
+        Obtain a new instance of ThermalConductivity from a DTO unit object.
+
+        :param thermal_conductivity_dto: The ThermalConductivity DTO representation.
+        :type thermal_conductivity_dto: ThermalConductivityDto
+        :return: A new instance of ThermalConductivity.
+        :rtype: ThermalConductivity
+        """
         return ThermalConductivity(thermal_conductivity_dto.value, thermal_conductivity_dto.unit)
 
     def __convert_from_base(self, from_unit: ThermalConductivityUnits) -> float:

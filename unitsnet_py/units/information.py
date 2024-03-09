@@ -82,9 +82,30 @@ class InformationUnits(Enum):
         
 
 class InformationDto:
+    """
+    A DTO representation of a Information
+
+    Attributes:
+        value (float): The value of the Information.
+        unit (InformationUnits): The specific unit that the Information value is representing.
+    """
+
     def __init__(self, value: float, unit: InformationUnits):
+        """
+        Create a new DTO representation of a Information
+
+        Parameters:
+            value (float): The value of the Information.
+            unit (InformationUnits): The specific unit that the Information value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Information
+        """
         self.unit: InformationUnits = unit
+        """
+        The specific unit that the Information value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -142,10 +163,26 @@ class Information(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: InformationUnits = InformationUnits.Bit) -> InformationDto:
+        """
+        Get a new instance of Information DTO representing the current unit.
+
+        :param hold_in_unit: The specific Information unit to store the Information value in the DTO representation.
+        :type hold_in_unit: InformationUnits
+        :return: A new instance of InformationDto.
+        :rtype: InformationDto
+        """
         return InformationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(information_dto: InformationDto):
+        """
+        Obtain a new instance of Information from a DTO unit object.
+
+        :param information_dto: The Information DTO representation.
+        :type information_dto: InformationDto
+        :return: A new instance of Information.
+        :rtype: Information
+        """
         return Information(information_dto.value, information_dto.unit)
 
     def __convert_from_base(self, from_unit: InformationUnits) -> float:

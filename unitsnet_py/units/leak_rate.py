@@ -27,9 +27,30 @@ class LeakRateUnits(Enum):
         
 
 class LeakRateDto:
+    """
+    A DTO representation of a LeakRate
+
+    Attributes:
+        value (float): The value of the LeakRate.
+        unit (LeakRateUnits): The specific unit that the LeakRate value is representing.
+    """
+
     def __init__(self, value: float, unit: LeakRateUnits):
+        """
+        Create a new DTO representation of a LeakRate
+
+        Parameters:
+            value (float): The value of the LeakRate.
+            unit (LeakRateUnits): The specific unit that the LeakRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the LeakRate
+        """
         self.unit: LeakRateUnits = unit
+        """
+        The specific unit that the LeakRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -65,10 +86,26 @@ class LeakRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> LeakRateDto:
+        """
+        Get a new instance of LeakRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific LeakRate unit to store the LeakRate value in the DTO representation.
+        :type hold_in_unit: LeakRateUnits
+        :return: A new instance of LeakRateDto.
+        :rtype: LeakRateDto
+        """
         return LeakRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(leak_rate_dto: LeakRateDto):
+        """
+        Obtain a new instance of LeakRate from a DTO unit object.
+
+        :param leak_rate_dto: The LeakRate DTO representation.
+        :type leak_rate_dto: LeakRateDto
+        :return: A new instance of LeakRate.
+        :rtype: LeakRate
+        """
         return LeakRate(leak_rate_dto.value, leak_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: LeakRateUnits) -> float:

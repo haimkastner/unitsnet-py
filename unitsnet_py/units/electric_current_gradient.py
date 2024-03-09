@@ -47,9 +47,30 @@ class ElectricCurrentGradientUnits(Enum):
         
 
 class ElectricCurrentGradientDto:
+    """
+    A DTO representation of a ElectricCurrentGradient
+
+    Attributes:
+        value (float): The value of the ElectricCurrentGradient.
+        unit (ElectricCurrentGradientUnits): The specific unit that the ElectricCurrentGradient value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricCurrentGradientUnits):
+        """
+        Create a new DTO representation of a ElectricCurrentGradient
+
+        Parameters:
+            value (float): The value of the ElectricCurrentGradient.
+            unit (ElectricCurrentGradientUnits): The specific unit that the ElectricCurrentGradient value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricCurrentGradient
+        """
         self.unit: ElectricCurrentGradientUnits = unit
+        """
+        The specific unit that the ElectricCurrentGradient value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -93,10 +114,26 @@ class ElectricCurrentGradient(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> ElectricCurrentGradientDto:
+        """
+        Get a new instance of ElectricCurrentGradient DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCurrentGradient unit to store the ElectricCurrentGradient value in the DTO representation.
+        :type hold_in_unit: ElectricCurrentGradientUnits
+        :return: A new instance of ElectricCurrentGradientDto.
+        :rtype: ElectricCurrentGradientDto
+        """
         return ElectricCurrentGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_current_gradient_dto: ElectricCurrentGradientDto):
+        """
+        Obtain a new instance of ElectricCurrentGradient from a DTO unit object.
+
+        :param electric_current_gradient_dto: The ElectricCurrentGradient DTO representation.
+        :type electric_current_gradient_dto: ElectricCurrentGradientDto
+        :return: A new instance of ElectricCurrentGradient.
+        :rtype: ElectricCurrentGradient
+        """
         return ElectricCurrentGradient(electric_current_gradient_dto.value, electric_current_gradient_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricCurrentGradientUnits) -> float:

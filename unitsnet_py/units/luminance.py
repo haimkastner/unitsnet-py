@@ -62,9 +62,30 @@ class LuminanceUnits(Enum):
         
 
 class LuminanceDto:
+    """
+    A DTO representation of a Luminance
+
+    Attributes:
+        value (float): The value of the Luminance.
+        unit (LuminanceUnits): The specific unit that the Luminance value is representing.
+    """
+
     def __init__(self, value: float, unit: LuminanceUnits):
+        """
+        Create a new DTO representation of a Luminance
+
+        Parameters:
+            value (float): The value of the Luminance.
+            unit (LuminanceUnits): The specific unit that the Luminance value is representing.
+        """
         self.value: float = value
+        """
+        The value of the Luminance
+        """
         self.unit: LuminanceUnits = unit
+        """
+        The specific unit that the Luminance value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -114,10 +135,26 @@ class Luminance(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> LuminanceDto:
+        """
+        Get a new instance of Luminance DTO representing the current unit.
+
+        :param hold_in_unit: The specific Luminance unit to store the Luminance value in the DTO representation.
+        :type hold_in_unit: LuminanceUnits
+        :return: A new instance of LuminanceDto.
+        :rtype: LuminanceDto
+        """
         return LuminanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(luminance_dto: LuminanceDto):
+        """
+        Obtain a new instance of Luminance from a DTO unit object.
+
+        :param luminance_dto: The Luminance DTO representation.
+        :type luminance_dto: LuminanceDto
+        :return: A new instance of Luminance.
+        :rtype: Luminance
+        """
         return Luminance(luminance_dto.value, luminance_dto.unit)
 
     def __convert_from_base(self, from_unit: LuminanceUnits) -> float:

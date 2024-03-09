@@ -112,9 +112,30 @@ class ElectricPotentialChangeRateUnits(Enum):
         
 
 class ElectricPotentialChangeRateDto:
+    """
+    A DTO representation of a ElectricPotentialChangeRate
+
+    Attributes:
+        value (float): The value of the ElectricPotentialChangeRate.
+        unit (ElectricPotentialChangeRateUnits): The specific unit that the ElectricPotentialChangeRate value is representing.
+    """
+
     def __init__(self, value: float, unit: ElectricPotentialChangeRateUnits):
+        """
+        Create a new DTO representation of a ElectricPotentialChangeRate
+
+        Parameters:
+            value (float): The value of the ElectricPotentialChangeRate.
+            unit (ElectricPotentialChangeRateUnits): The specific unit that the ElectricPotentialChangeRate value is representing.
+        """
         self.value: float = value
+        """
+        The value of the ElectricPotentialChangeRate
+        """
         self.unit: ElectricPotentialChangeRateUnits = unit
+        """
+        The specific unit that the ElectricPotentialChangeRate value is representing
+        """
 
     def to_json(self):
         return {"value": self.value, "unit": self.unit.value}
@@ -184,10 +205,26 @@ class ElectricPotentialChangeRate(AbstractMeasure):
         return self.__convert_from_base(unit)
 
     def to_dto(self, hold_in_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> ElectricPotentialChangeRateDto:
+        """
+        Get a new instance of ElectricPotentialChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotentialChangeRate unit to store the ElectricPotentialChangeRate value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialChangeRateUnits
+        :return: A new instance of ElectricPotentialChangeRateDto.
+        :rtype: ElectricPotentialChangeRateDto
+        """
         return ElectricPotentialChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
 
     @staticmethod
     def from_dto(electric_potential_change_rate_dto: ElectricPotentialChangeRateDto):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate from a DTO unit object.
+
+        :param electric_potential_change_rate_dto: The ElectricPotentialChangeRate DTO representation.
+        :type electric_potential_change_rate_dto: ElectricPotentialChangeRateDto
+        :return: A new instance of ElectricPotentialChangeRate.
+        :rtype: ElectricPotentialChangeRate
+        """
         return ElectricPotentialChangeRate(electric_potential_change_rate_dto.value, electric_potential_change_rate_dto.unit)
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
