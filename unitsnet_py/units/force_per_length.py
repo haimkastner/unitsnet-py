@@ -10,196 +10,246 @@ class ForcePerLengthUnits(Enum):
             ForcePerLengthUnits enumeration
         """
         
-        NewtonPerMeter = 'newton_per_meter'
+        NewtonPerMeter = 'NewtonPerMeter'
         """
             
         """
         
-        NewtonPerCentimeter = 'newton_per_centimeter'
+        NewtonPerCentimeter = 'NewtonPerCentimeter'
         """
             
         """
         
-        NewtonPerMillimeter = 'newton_per_millimeter'
+        NewtonPerMillimeter = 'NewtonPerMillimeter'
         """
             
         """
         
-        KilogramForcePerMeter = 'kilogram_force_per_meter'
+        KilogramForcePerMeter = 'KilogramForcePerMeter'
         """
             
         """
         
-        KilogramForcePerCentimeter = 'kilogram_force_per_centimeter'
+        KilogramForcePerCentimeter = 'KilogramForcePerCentimeter'
         """
             
         """
         
-        KilogramForcePerMillimeter = 'kilogram_force_per_millimeter'
+        KilogramForcePerMillimeter = 'KilogramForcePerMillimeter'
         """
             
         """
         
-        TonneForcePerMeter = 'tonne_force_per_meter'
+        TonneForcePerMeter = 'TonneForcePerMeter'
         """
             
         """
         
-        TonneForcePerCentimeter = 'tonne_force_per_centimeter'
+        TonneForcePerCentimeter = 'TonneForcePerCentimeter'
         """
             
         """
         
-        TonneForcePerMillimeter = 'tonne_force_per_millimeter'
+        TonneForcePerMillimeter = 'TonneForcePerMillimeter'
         """
             
         """
         
-        PoundForcePerFoot = 'pound_force_per_foot'
+        PoundForcePerFoot = 'PoundForcePerFoot'
         """
             
         """
         
-        PoundForcePerInch = 'pound_force_per_inch'
+        PoundForcePerInch = 'PoundForcePerInch'
         """
             
         """
         
-        PoundForcePerYard = 'pound_force_per_yard'
+        PoundForcePerYard = 'PoundForcePerYard'
         """
             
         """
         
-        KilopoundForcePerFoot = 'kilopound_force_per_foot'
+        KilopoundForcePerFoot = 'KilopoundForcePerFoot'
         """
             
         """
         
-        KilopoundForcePerInch = 'kilopound_force_per_inch'
+        KilopoundForcePerInch = 'KilopoundForcePerInch'
         """
             
         """
         
-        NanonewtonPerMeter = 'nanonewton_per_meter'
+        NanonewtonPerMeter = 'NanonewtonPerMeter'
         """
             
         """
         
-        MicronewtonPerMeter = 'micronewton_per_meter'
+        MicronewtonPerMeter = 'MicronewtonPerMeter'
         """
             
         """
         
-        MillinewtonPerMeter = 'millinewton_per_meter'
+        MillinewtonPerMeter = 'MillinewtonPerMeter'
         """
             
         """
         
-        CentinewtonPerMeter = 'centinewton_per_meter'
+        CentinewtonPerMeter = 'CentinewtonPerMeter'
         """
             
         """
         
-        DecinewtonPerMeter = 'decinewton_per_meter'
+        DecinewtonPerMeter = 'DecinewtonPerMeter'
         """
             
         """
         
-        DecanewtonPerMeter = 'decanewton_per_meter'
+        DecanewtonPerMeter = 'DecanewtonPerMeter'
         """
             
         """
         
-        KilonewtonPerMeter = 'kilonewton_per_meter'
+        KilonewtonPerMeter = 'KilonewtonPerMeter'
         """
             
         """
         
-        MeganewtonPerMeter = 'meganewton_per_meter'
+        MeganewtonPerMeter = 'MeganewtonPerMeter'
         """
             
         """
         
-        NanonewtonPerCentimeter = 'nanonewton_per_centimeter'
+        NanonewtonPerCentimeter = 'NanonewtonPerCentimeter'
         """
             
         """
         
-        MicronewtonPerCentimeter = 'micronewton_per_centimeter'
+        MicronewtonPerCentimeter = 'MicronewtonPerCentimeter'
         """
             
         """
         
-        MillinewtonPerCentimeter = 'millinewton_per_centimeter'
+        MillinewtonPerCentimeter = 'MillinewtonPerCentimeter'
         """
             
         """
         
-        CentinewtonPerCentimeter = 'centinewton_per_centimeter'
+        CentinewtonPerCentimeter = 'CentinewtonPerCentimeter'
         """
             
         """
         
-        DecinewtonPerCentimeter = 'decinewton_per_centimeter'
+        DecinewtonPerCentimeter = 'DecinewtonPerCentimeter'
         """
             
         """
         
-        DecanewtonPerCentimeter = 'decanewton_per_centimeter'
+        DecanewtonPerCentimeter = 'DecanewtonPerCentimeter'
         """
             
         """
         
-        KilonewtonPerCentimeter = 'kilonewton_per_centimeter'
+        KilonewtonPerCentimeter = 'KilonewtonPerCentimeter'
         """
             
         """
         
-        MeganewtonPerCentimeter = 'meganewton_per_centimeter'
+        MeganewtonPerCentimeter = 'MeganewtonPerCentimeter'
         """
             
         """
         
-        NanonewtonPerMillimeter = 'nanonewton_per_millimeter'
+        NanonewtonPerMillimeter = 'NanonewtonPerMillimeter'
         """
             
         """
         
-        MicronewtonPerMillimeter = 'micronewton_per_millimeter'
+        MicronewtonPerMillimeter = 'MicronewtonPerMillimeter'
         """
             
         """
         
-        MillinewtonPerMillimeter = 'millinewton_per_millimeter'
+        MillinewtonPerMillimeter = 'MillinewtonPerMillimeter'
         """
             
         """
         
-        CentinewtonPerMillimeter = 'centinewton_per_millimeter'
+        CentinewtonPerMillimeter = 'CentinewtonPerMillimeter'
         """
             
         """
         
-        DecinewtonPerMillimeter = 'decinewton_per_millimeter'
+        DecinewtonPerMillimeter = 'DecinewtonPerMillimeter'
         """
             
         """
         
-        DecanewtonPerMillimeter = 'decanewton_per_millimeter'
+        DecanewtonPerMillimeter = 'DecanewtonPerMillimeter'
         """
             
         """
         
-        KilonewtonPerMillimeter = 'kilonewton_per_millimeter'
+        KilonewtonPerMillimeter = 'KilonewtonPerMillimeter'
         """
             
         """
         
-        MeganewtonPerMillimeter = 'meganewton_per_millimeter'
+        MeganewtonPerMillimeter = 'MeganewtonPerMillimeter'
         """
             
         """
         
+
+class ForcePerLengthDto:
+    """
+    A DTO representation of a ForcePerLength
+
+    Attributes:
+        value (float): The value of the ForcePerLength.
+        unit (ForcePerLengthUnits): The specific unit that the ForcePerLength value is representing.
+    """
+
+    def __init__(self, value: float, unit: ForcePerLengthUnits):
+        """
+        Create a new DTO representation of a ForcePerLength
+
+        Parameters:
+            value (float): The value of the ForcePerLength.
+            unit (ForcePerLengthUnits): The specific unit that the ForcePerLength value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ForcePerLength
+        """
+        self.unit: ForcePerLengthUnits = unit
+        """
+        The specific unit that the ForcePerLength value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ForcePerLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents ForcePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ForcePerLength DTO from a json representation.
+
+        :param data: The ForcePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerMeter"}
+        :return: A new instance of ForcePerLengthDto.
+        :rtype: ForcePerLengthDto
+        """
+        return ForcePerLengthDto(value=data["value"], unit=ForcePerLengthUnits(data["unit"]))
+
 
 class ForcePerLength(AbstractMeasure):
     """
@@ -295,6 +345,54 @@ class ForcePerLength(AbstractMeasure):
 
     def convert(self, unit: ForcePerLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> ForcePerLengthDto:
+        """
+        Get a new instance of ForcePerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific ForcePerLength unit to store the ForcePerLength value in the DTO representation.
+        :type hold_in_unit: ForcePerLengthUnits
+        :return: A new instance of ForcePerLengthDto.
+        :rtype: ForcePerLengthDto
+        """
+        return ForcePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter):
+        """
+        Get a ForcePerLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ForcePerLength unit to store the ForcePerLength value in the DTO representation.
+        :type hold_in_unit: ForcePerLengthUnits
+        :return: JSON object represents ForcePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(force_per_length_dto: ForcePerLengthDto):
+        """
+        Obtain a new instance of ForcePerLength from a DTO unit object.
+
+        :param force_per_length_dto: The ForcePerLength DTO representation.
+        :type force_per_length_dto: ForcePerLengthDto
+        :return: A new instance of ForcePerLength.
+        :rtype: ForcePerLength
+        """
+        return ForcePerLength(force_per_length_dto.value, force_per_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ForcePerLength from a DTO unit json representation.
+
+        :param data: The ForcePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerMeter"}
+        :return: A new instance of ForcePerLength.
+        :rtype: ForcePerLength
+        """
+        return ForcePerLength.from_dto(ForcePerLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ForcePerLengthUnits) -> float:
         value = self._value

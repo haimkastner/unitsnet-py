@@ -10,381 +10,431 @@ class VolumeFlowUnits(Enum):
             VolumeFlowUnits enumeration
         """
         
-        CubicMeterPerSecond = 'cubic_meter_per_second'
+        CubicMeterPerSecond = 'CubicMeterPerSecond'
         """
             
         """
         
-        CubicMeterPerMinute = 'cubic_meter_per_minute'
+        CubicMeterPerMinute = 'CubicMeterPerMinute'
         """
             
         """
         
-        CubicMeterPerHour = 'cubic_meter_per_hour'
+        CubicMeterPerHour = 'CubicMeterPerHour'
         """
             
         """
         
-        CubicMeterPerDay = 'cubic_meter_per_day'
+        CubicMeterPerDay = 'CubicMeterPerDay'
         """
             
         """
         
-        CubicFootPerSecond = 'cubic_foot_per_second'
+        CubicFootPerSecond = 'CubicFootPerSecond'
         """
             
         """
         
-        CubicFootPerMinute = 'cubic_foot_per_minute'
+        CubicFootPerMinute = 'CubicFootPerMinute'
         """
             
         """
         
-        CubicFootPerHour = 'cubic_foot_per_hour'
+        CubicFootPerHour = 'CubicFootPerHour'
         """
             
         """
         
-        CubicYardPerSecond = 'cubic_yard_per_second'
+        CubicYardPerSecond = 'CubicYardPerSecond'
         """
             
         """
         
-        CubicYardPerMinute = 'cubic_yard_per_minute'
+        CubicYardPerMinute = 'CubicYardPerMinute'
         """
             
         """
         
-        CubicYardPerHour = 'cubic_yard_per_hour'
+        CubicYardPerHour = 'CubicYardPerHour'
         """
             
         """
         
-        CubicYardPerDay = 'cubic_yard_per_day'
+        CubicYardPerDay = 'CubicYardPerDay'
         """
             
         """
         
-        MillionUsGallonPerDay = 'million_us_gallon_per_day'
+        MillionUsGallonPerDay = 'MillionUsGallonPerDay'
         """
             
         """
         
-        UsGallonPerDay = 'us_gallon_per_day'
+        UsGallonPerDay = 'UsGallonPerDay'
         """
             
         """
         
-        LiterPerSecond = 'liter_per_second'
+        LiterPerSecond = 'LiterPerSecond'
         """
             
         """
         
-        LiterPerMinute = 'liter_per_minute'
+        LiterPerMinute = 'LiterPerMinute'
         """
             
         """
         
-        LiterPerHour = 'liter_per_hour'
+        LiterPerHour = 'LiterPerHour'
         """
             
         """
         
-        LiterPerDay = 'liter_per_day'
+        LiterPerDay = 'LiterPerDay'
         """
             
         """
         
-        UsGallonPerSecond = 'us_gallon_per_second'
+        UsGallonPerSecond = 'UsGallonPerSecond'
         """
             
         """
         
-        UsGallonPerMinute = 'us_gallon_per_minute'
+        UsGallonPerMinute = 'UsGallonPerMinute'
         """
             
         """
         
-        UkGallonPerDay = 'uk_gallon_per_day'
+        UkGallonPerDay = 'UkGallonPerDay'
         """
             
         """
         
-        UkGallonPerHour = 'uk_gallon_per_hour'
+        UkGallonPerHour = 'UkGallonPerHour'
         """
             
         """
         
-        UkGallonPerMinute = 'uk_gallon_per_minute'
+        UkGallonPerMinute = 'UkGallonPerMinute'
         """
             
         """
         
-        UkGallonPerSecond = 'uk_gallon_per_second'
+        UkGallonPerSecond = 'UkGallonPerSecond'
         """
             
         """
         
-        KilousGallonPerMinute = 'kilous_gallon_per_minute'
+        KilousGallonPerMinute = 'KilousGallonPerMinute'
         """
             
         """
         
-        UsGallonPerHour = 'us_gallon_per_hour'
+        UsGallonPerHour = 'UsGallonPerHour'
         """
             
         """
         
-        CubicDecimeterPerMinute = 'cubic_decimeter_per_minute'
+        CubicDecimeterPerMinute = 'CubicDecimeterPerMinute'
         """
             
         """
         
-        OilBarrelPerDay = 'oil_barrel_per_day'
+        OilBarrelPerDay = 'OilBarrelPerDay'
         """
             
         """
         
-        OilBarrelPerMinute = 'oil_barrel_per_minute'
+        OilBarrelPerMinute = 'OilBarrelPerMinute'
         """
             
         """
         
-        OilBarrelPerHour = 'oil_barrel_per_hour'
+        OilBarrelPerHour = 'OilBarrelPerHour'
         """
             
         """
         
-        OilBarrelPerSecond = 'oil_barrel_per_second'
+        OilBarrelPerSecond = 'OilBarrelPerSecond'
         """
             
         """
         
-        CubicMillimeterPerSecond = 'cubic_millimeter_per_second'
+        CubicMillimeterPerSecond = 'CubicMillimeterPerSecond'
         """
             
         """
         
-        AcreFootPerSecond = 'acre_foot_per_second'
+        AcreFootPerSecond = 'AcreFootPerSecond'
         """
             
         """
         
-        AcreFootPerMinute = 'acre_foot_per_minute'
+        AcreFootPerMinute = 'AcreFootPerMinute'
         """
             
         """
         
-        AcreFootPerHour = 'acre_foot_per_hour'
+        AcreFootPerHour = 'AcreFootPerHour'
         """
             
         """
         
-        AcreFootPerDay = 'acre_foot_per_day'
+        AcreFootPerDay = 'AcreFootPerDay'
         """
             
         """
         
-        CubicCentimeterPerMinute = 'cubic_centimeter_per_minute'
+        CubicCentimeterPerMinute = 'CubicCentimeterPerMinute'
         """
             
         """
         
-        MegausGallonPerDay = 'megaus_gallon_per_day'
+        MegausGallonPerDay = 'MegausGallonPerDay'
         """
             
         """
         
-        NanoliterPerSecond = 'nanoliter_per_second'
+        NanoliterPerSecond = 'NanoliterPerSecond'
         """
             
         """
         
-        MicroliterPerSecond = 'microliter_per_second'
+        MicroliterPerSecond = 'MicroliterPerSecond'
         """
             
         """
         
-        MilliliterPerSecond = 'milliliter_per_second'
+        MilliliterPerSecond = 'MilliliterPerSecond'
         """
             
         """
         
-        CentiliterPerSecond = 'centiliter_per_second'
+        CentiliterPerSecond = 'CentiliterPerSecond'
         """
             
         """
         
-        DeciliterPerSecond = 'deciliter_per_second'
+        DeciliterPerSecond = 'DeciliterPerSecond'
         """
             
         """
         
-        DecaliterPerSecond = 'decaliter_per_second'
+        DecaliterPerSecond = 'DecaliterPerSecond'
         """
             
         """
         
-        HectoliterPerSecond = 'hectoliter_per_second'
+        HectoliterPerSecond = 'HectoliterPerSecond'
         """
             
         """
         
-        KiloliterPerSecond = 'kiloliter_per_second'
+        KiloliterPerSecond = 'KiloliterPerSecond'
         """
             
         """
         
-        MegaliterPerSecond = 'megaliter_per_second'
+        MegaliterPerSecond = 'MegaliterPerSecond'
         """
             
         """
         
-        NanoliterPerMinute = 'nanoliter_per_minute'
+        NanoliterPerMinute = 'NanoliterPerMinute'
         """
             
         """
         
-        MicroliterPerMinute = 'microliter_per_minute'
+        MicroliterPerMinute = 'MicroliterPerMinute'
         """
             
         """
         
-        MilliliterPerMinute = 'milliliter_per_minute'
+        MilliliterPerMinute = 'MilliliterPerMinute'
         """
             
         """
         
-        CentiliterPerMinute = 'centiliter_per_minute'
+        CentiliterPerMinute = 'CentiliterPerMinute'
         """
             
         """
         
-        DeciliterPerMinute = 'deciliter_per_minute'
+        DeciliterPerMinute = 'DeciliterPerMinute'
         """
             
         """
         
-        DecaliterPerMinute = 'decaliter_per_minute'
+        DecaliterPerMinute = 'DecaliterPerMinute'
         """
             
         """
         
-        HectoliterPerMinute = 'hectoliter_per_minute'
+        HectoliterPerMinute = 'HectoliterPerMinute'
         """
             
         """
         
-        KiloliterPerMinute = 'kiloliter_per_minute'
+        KiloliterPerMinute = 'KiloliterPerMinute'
         """
             
         """
         
-        MegaliterPerMinute = 'megaliter_per_minute'
+        MegaliterPerMinute = 'MegaliterPerMinute'
         """
             
         """
         
-        NanoliterPerHour = 'nanoliter_per_hour'
+        NanoliterPerHour = 'NanoliterPerHour'
         """
             
         """
         
-        MicroliterPerHour = 'microliter_per_hour'
+        MicroliterPerHour = 'MicroliterPerHour'
         """
             
         """
         
-        MilliliterPerHour = 'milliliter_per_hour'
+        MilliliterPerHour = 'MilliliterPerHour'
         """
             
         """
         
-        CentiliterPerHour = 'centiliter_per_hour'
+        CentiliterPerHour = 'CentiliterPerHour'
         """
             
         """
         
-        DeciliterPerHour = 'deciliter_per_hour'
+        DeciliterPerHour = 'DeciliterPerHour'
         """
             
         """
         
-        DecaliterPerHour = 'decaliter_per_hour'
+        DecaliterPerHour = 'DecaliterPerHour'
         """
             
         """
         
-        HectoliterPerHour = 'hectoliter_per_hour'
+        HectoliterPerHour = 'HectoliterPerHour'
         """
             
         """
         
-        KiloliterPerHour = 'kiloliter_per_hour'
+        KiloliterPerHour = 'KiloliterPerHour'
         """
             
         """
         
-        MegaliterPerHour = 'megaliter_per_hour'
+        MegaliterPerHour = 'MegaliterPerHour'
         """
             
         """
         
-        NanoliterPerDay = 'nanoliter_per_day'
+        NanoliterPerDay = 'NanoliterPerDay'
         """
             
         """
         
-        MicroliterPerDay = 'microliter_per_day'
+        MicroliterPerDay = 'MicroliterPerDay'
         """
             
         """
         
-        MilliliterPerDay = 'milliliter_per_day'
+        MilliliterPerDay = 'MilliliterPerDay'
         """
             
         """
         
-        CentiliterPerDay = 'centiliter_per_day'
+        CentiliterPerDay = 'CentiliterPerDay'
         """
             
         """
         
-        DeciliterPerDay = 'deciliter_per_day'
+        DeciliterPerDay = 'DeciliterPerDay'
         """
             
         """
         
-        DecaliterPerDay = 'decaliter_per_day'
+        DecaliterPerDay = 'DecaliterPerDay'
         """
             
         """
         
-        HectoliterPerDay = 'hectoliter_per_day'
+        HectoliterPerDay = 'HectoliterPerDay'
         """
             
         """
         
-        KiloliterPerDay = 'kiloliter_per_day'
+        KiloliterPerDay = 'KiloliterPerDay'
         """
             
         """
         
-        MegaliterPerDay = 'megaliter_per_day'
+        MegaliterPerDay = 'MegaliterPerDay'
         """
             
         """
         
-        MegaukGallonPerDay = 'megauk_gallon_per_day'
+        MegaukGallonPerDay = 'MegaukGallonPerDay'
         """
             
         """
         
-        MegaukGallonPerSecond = 'megauk_gallon_per_second'
+        MegaukGallonPerSecond = 'MegaukGallonPerSecond'
         """
             
         """
         
+
+class VolumeFlowDto:
+    """
+    A DTO representation of a VolumeFlow
+
+    Attributes:
+        value (float): The value of the VolumeFlow.
+        unit (VolumeFlowUnits): The specific unit that the VolumeFlow value is representing.
+    """
+
+    def __init__(self, value: float, unit: VolumeFlowUnits):
+        """
+        Create a new DTO representation of a VolumeFlow
+
+        Parameters:
+            value (float): The value of the VolumeFlow.
+            unit (VolumeFlowUnits): The specific unit that the VolumeFlow value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the VolumeFlow
+        """
+        self.unit: VolumeFlowUnits = unit
+        """
+        The specific unit that the VolumeFlow value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a VolumeFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of VolumeFlow DTO from a json representation.
+
+        :param data: The VolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecond"}
+        :return: A new instance of VolumeFlowDto.
+        :rtype: VolumeFlowDto
+        """
+        return VolumeFlowDto(value=data["value"], unit=VolumeFlowUnits(data["unit"]))
+
 
 class VolumeFlow(AbstractMeasure):
     """
@@ -554,6 +604,54 @@ class VolumeFlow(AbstractMeasure):
 
     def convert(self, unit: VolumeFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> VolumeFlowDto:
+        """
+        Get a new instance of VolumeFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlow unit to store the VolumeFlow value in the DTO representation.
+        :type hold_in_unit: VolumeFlowUnits
+        :return: A new instance of VolumeFlowDto.
+        :rtype: VolumeFlowDto
+        """
+        return VolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond):
+        """
+        Get a VolumeFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlow unit to store the VolumeFlow value in the DTO representation.
+        :type hold_in_unit: VolumeFlowUnits
+        :return: JSON object represents VolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(volume_flow_dto: VolumeFlowDto):
+        """
+        Obtain a new instance of VolumeFlow from a DTO unit object.
+
+        :param volume_flow_dto: The VolumeFlow DTO representation.
+        :type volume_flow_dto: VolumeFlowDto
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow(volume_flow_dto.value, volume_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumeFlow from a DTO unit json representation.
+
+        :param data: The VolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecond"}
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow.from_dto(VolumeFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeFlowUnits) -> float:
         value = self._value

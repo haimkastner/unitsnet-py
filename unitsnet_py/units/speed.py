@@ -10,171 +10,221 @@ class SpeedUnits(Enum):
             SpeedUnits enumeration
         """
         
-        MeterPerSecond = 'meter_per_second'
+        MeterPerSecond = 'MeterPerSecond'
         """
             
         """
         
-        MeterPerMinute = 'meter_per_minute'
+        MeterPerMinute = 'MeterPerMinute'
         """
             
         """
         
-        MeterPerHour = 'meter_per_hour'
+        MeterPerHour = 'MeterPerHour'
         """
             
         """
         
-        FootPerSecond = 'foot_per_second'
+        FootPerSecond = 'FootPerSecond'
         """
             
         """
         
-        FootPerMinute = 'foot_per_minute'
+        FootPerMinute = 'FootPerMinute'
         """
             
         """
         
-        FootPerHour = 'foot_per_hour'
+        FootPerHour = 'FootPerHour'
         """
             
         """
         
-        UsSurveyFootPerSecond = 'us_survey_foot_per_second'
+        UsSurveyFootPerSecond = 'UsSurveyFootPerSecond'
         """
             
         """
         
-        UsSurveyFootPerMinute = 'us_survey_foot_per_minute'
+        UsSurveyFootPerMinute = 'UsSurveyFootPerMinute'
         """
             
         """
         
-        UsSurveyFootPerHour = 'us_survey_foot_per_hour'
+        UsSurveyFootPerHour = 'UsSurveyFootPerHour'
         """
             
         """
         
-        InchPerSecond = 'inch_per_second'
+        InchPerSecond = 'InchPerSecond'
         """
             
         """
         
-        InchPerMinute = 'inch_per_minute'
+        InchPerMinute = 'InchPerMinute'
         """
             
         """
         
-        InchPerHour = 'inch_per_hour'
+        InchPerHour = 'InchPerHour'
         """
             
         """
         
-        YardPerSecond = 'yard_per_second'
+        YardPerSecond = 'YardPerSecond'
         """
             
         """
         
-        YardPerMinute = 'yard_per_minute'
+        YardPerMinute = 'YardPerMinute'
         """
             
         """
         
-        YardPerHour = 'yard_per_hour'
+        YardPerHour = 'YardPerHour'
         """
             
         """
         
-        Knot = 'knot'
+        Knot = 'Knot'
         """
             The knot, by definition, is a unit of speed equals to 1 nautical mile per hour, which is exactly 1852.000 metres per hour. The length of the internationally agreed nautical mile is 1852 m. The US adopted the international definition in 1954, the UK adopted the international nautical mile definition in 1970.
         """
         
-        MilePerHour = 'mile_per_hour'
+        MilePerHour = 'MilePerHour'
         """
             
         """
         
-        Mach = 'mach'
+        Mach = 'Mach'
         """
             
         """
         
-        NanometerPerSecond = 'nanometer_per_second'
+        NanometerPerSecond = 'NanometerPerSecond'
         """
             
         """
         
-        MicrometerPerSecond = 'micrometer_per_second'
+        MicrometerPerSecond = 'MicrometerPerSecond'
         """
             
         """
         
-        MillimeterPerSecond = 'millimeter_per_second'
+        MillimeterPerSecond = 'MillimeterPerSecond'
         """
             
         """
         
-        CentimeterPerSecond = 'centimeter_per_second'
+        CentimeterPerSecond = 'CentimeterPerSecond'
         """
             
         """
         
-        DecimeterPerSecond = 'decimeter_per_second'
+        DecimeterPerSecond = 'DecimeterPerSecond'
         """
             
         """
         
-        KilometerPerSecond = 'kilometer_per_second'
+        KilometerPerSecond = 'KilometerPerSecond'
         """
             
         """
         
-        NanometerPerMinute = 'nanometer_per_minute'
+        NanometerPerMinute = 'NanometerPerMinute'
         """
             
         """
         
-        MicrometerPerMinute = 'micrometer_per_minute'
+        MicrometerPerMinute = 'MicrometerPerMinute'
         """
             
         """
         
-        MillimeterPerMinute = 'millimeter_per_minute'
+        MillimeterPerMinute = 'MillimeterPerMinute'
         """
             
         """
         
-        CentimeterPerMinute = 'centimeter_per_minute'
+        CentimeterPerMinute = 'CentimeterPerMinute'
         """
             
         """
         
-        DecimeterPerMinute = 'decimeter_per_minute'
+        DecimeterPerMinute = 'DecimeterPerMinute'
         """
             
         """
         
-        KilometerPerMinute = 'kilometer_per_minute'
+        KilometerPerMinute = 'KilometerPerMinute'
         """
             
         """
         
-        MillimeterPerHour = 'millimeter_per_hour'
+        MillimeterPerHour = 'MillimeterPerHour'
         """
             
         """
         
-        CentimeterPerHour = 'centimeter_per_hour'
+        CentimeterPerHour = 'CentimeterPerHour'
         """
             
         """
         
-        KilometerPerHour = 'kilometer_per_hour'
+        KilometerPerHour = 'KilometerPerHour'
         """
             
         """
         
+
+class SpeedDto:
+    """
+    A DTO representation of a Speed
+
+    Attributes:
+        value (float): The value of the Speed.
+        unit (SpeedUnits): The specific unit that the Speed value is representing.
+    """
+
+    def __init__(self, value: float, unit: SpeedUnits):
+        """
+        Create a new DTO representation of a Speed
+
+        Parameters:
+            value (float): The value of the Speed.
+            unit (SpeedUnits): The specific unit that the Speed value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Speed
+        """
+        self.unit: SpeedUnits = unit
+        """
+        The specific unit that the Speed value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Speed DTO JSON object representing the current unit.
+
+        :return: JSON object represents Speed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Speed DTO from a json representation.
+
+        :param data: The Speed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecond"}
+        :return: A new instance of SpeedDto.
+        :rtype: SpeedDto
+        """
+        return SpeedDto(value=data["value"], unit=SpeedUnits(data["unit"]))
+
 
 class Speed(AbstractMeasure):
     """
@@ -260,6 +310,54 @@ class Speed(AbstractMeasure):
 
     def convert(self, unit: SpeedUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> SpeedDto:
+        """
+        Get a new instance of Speed DTO representing the current unit.
+
+        :param hold_in_unit: The specific Speed unit to store the Speed value in the DTO representation.
+        :type hold_in_unit: SpeedUnits
+        :return: A new instance of SpeedDto.
+        :rtype: SpeedDto
+        """
+        return SpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpeedUnits = SpeedUnits.MeterPerSecond):
+        """
+        Get a Speed DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Speed unit to store the Speed value in the DTO representation.
+        :type hold_in_unit: SpeedUnits
+        :return: JSON object represents Speed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(speed_dto: SpeedDto):
+        """
+        Obtain a new instance of Speed from a DTO unit object.
+
+        :param speed_dto: The Speed DTO representation.
+        :type speed_dto: SpeedDto
+        :return: A new instance of Speed.
+        :rtype: Speed
+        """
+        return Speed(speed_dto.value, speed_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Speed from a DTO unit json representation.
+
+        :param data: The Speed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecond"}
+        :return: A new instance of Speed.
+        :rtype: Speed
+        """
+        return Speed.from_dto(SpeedDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
         value = self._value

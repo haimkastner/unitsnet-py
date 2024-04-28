@@ -10,71 +10,121 @@ class FrequencyUnits(Enum):
             FrequencyUnits enumeration
         """
         
-        Hertz = 'hertz'
+        Hertz = 'Hertz'
         """
             
         """
         
-        RadianPerSecond = 'radian_per_second'
+        RadianPerSecond = 'RadianPerSecond'
         """
             
         """
         
-        CyclePerMinute = 'cycle_per_minute'
+        CyclePerMinute = 'CyclePerMinute'
         """
             
         """
         
-        CyclePerHour = 'cycle_per_hour'
+        CyclePerHour = 'CyclePerHour'
         """
             
         """
         
-        BeatPerMinute = 'beat_per_minute'
+        BeatPerMinute = 'BeatPerMinute'
         """
             
         """
         
-        PerSecond = 'per_second'
+        PerSecond = 'PerSecond'
         """
             
         """
         
-        BUnit = 'b_unit'
+        BUnit = 'BUnit'
         """
             
         """
         
-        Microhertz = 'microhertz'
+        Microhertz = 'Microhertz'
         """
             
         """
         
-        Millihertz = 'millihertz'
+        Millihertz = 'Millihertz'
         """
             
         """
         
-        Kilohertz = 'kilohertz'
+        Kilohertz = 'Kilohertz'
         """
             
         """
         
-        Megahertz = 'megahertz'
+        Megahertz = 'Megahertz'
         """
             
         """
         
-        Gigahertz = 'gigahertz'
+        Gigahertz = 'Gigahertz'
         """
             
         """
         
-        Terahertz = 'terahertz'
+        Terahertz = 'Terahertz'
         """
             
         """
         
+
+class FrequencyDto:
+    """
+    A DTO representation of a Frequency
+
+    Attributes:
+        value (float): The value of the Frequency.
+        unit (FrequencyUnits): The specific unit that the Frequency value is representing.
+    """
+
+    def __init__(self, value: float, unit: FrequencyUnits):
+        """
+        Create a new DTO representation of a Frequency
+
+        Parameters:
+            value (float): The value of the Frequency.
+            unit (FrequencyUnits): The specific unit that the Frequency value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Frequency
+        """
+        self.unit: FrequencyUnits = unit
+        """
+        The specific unit that the Frequency value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Frequency DTO JSON object representing the current unit.
+
+        :return: JSON object represents Frequency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Hertz"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Frequency DTO from a json representation.
+
+        :param data: The Frequency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Hertz"}
+        :return: A new instance of FrequencyDto.
+        :rtype: FrequencyDto
+        """
+        return FrequencyDto(value=data["value"], unit=FrequencyUnits(data["unit"]))
+
 
 class Frequency(AbstractMeasure):
     """
@@ -120,6 +170,54 @@ class Frequency(AbstractMeasure):
 
     def convert(self, unit: FrequencyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: FrequencyUnits = FrequencyUnits.Hertz) -> FrequencyDto:
+        """
+        Get a new instance of Frequency DTO representing the current unit.
+
+        :param hold_in_unit: The specific Frequency unit to store the Frequency value in the DTO representation.
+        :type hold_in_unit: FrequencyUnits
+        :return: A new instance of FrequencyDto.
+        :rtype: FrequencyDto
+        """
+        return FrequencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: FrequencyUnits = FrequencyUnits.Hertz):
+        """
+        Get a Frequency DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Frequency unit to store the Frequency value in the DTO representation.
+        :type hold_in_unit: FrequencyUnits
+        :return: JSON object represents Frequency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Hertz"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(frequency_dto: FrequencyDto):
+        """
+        Obtain a new instance of Frequency from a DTO unit object.
+
+        :param frequency_dto: The Frequency DTO representation.
+        :type frequency_dto: FrequencyDto
+        :return: A new instance of Frequency.
+        :rtype: Frequency
+        """
+        return Frequency(frequency_dto.value, frequency_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Frequency from a DTO unit json representation.
+
+        :param data: The Frequency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Hertz"}
+        :return: A new instance of Frequency.
+        :rtype: Frequency
+        """
+        return Frequency.from_dto(FrequencyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: FrequencyUnits) -> float:
         value = self._value

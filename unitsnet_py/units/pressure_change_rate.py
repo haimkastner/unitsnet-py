@@ -10,96 +10,146 @@ class PressureChangeRateUnits(Enum):
             PressureChangeRateUnits enumeration
         """
         
-        PascalPerSecond = 'pascal_per_second'
+        PascalPerSecond = 'PascalPerSecond'
         """
             
         """
         
-        PascalPerMinute = 'pascal_per_minute'
+        PascalPerMinute = 'PascalPerMinute'
         """
             
         """
         
-        MillimeterOfMercuryPerSecond = 'millimeter_of_mercury_per_second'
+        MillimeterOfMercuryPerSecond = 'MillimeterOfMercuryPerSecond'
         """
             
         """
         
-        AtmospherePerSecond = 'atmosphere_per_second'
+        AtmospherePerSecond = 'AtmospherePerSecond'
         """
             
         """
         
-        PoundForcePerSquareInchPerSecond = 'pound_force_per_square_inch_per_second'
+        PoundForcePerSquareInchPerSecond = 'PoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        PoundForcePerSquareInchPerMinute = 'pound_force_per_square_inch_per_minute'
+        PoundForcePerSquareInchPerMinute = 'PoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        BarPerSecond = 'bar_per_second'
+        BarPerSecond = 'BarPerSecond'
         """
             
         """
         
-        BarPerMinute = 'bar_per_minute'
+        BarPerMinute = 'BarPerMinute'
         """
             
         """
         
-        KilopascalPerSecond = 'kilopascal_per_second'
+        KilopascalPerSecond = 'KilopascalPerSecond'
         """
             
         """
         
-        MegapascalPerSecond = 'megapascal_per_second'
+        MegapascalPerSecond = 'MegapascalPerSecond'
         """
             
         """
         
-        KilopascalPerMinute = 'kilopascal_per_minute'
+        KilopascalPerMinute = 'KilopascalPerMinute'
         """
             
         """
         
-        MegapascalPerMinute = 'megapascal_per_minute'
+        MegapascalPerMinute = 'MegapascalPerMinute'
         """
             
         """
         
-        KilopoundForcePerSquareInchPerSecond = 'kilopound_force_per_square_inch_per_second'
+        KilopoundForcePerSquareInchPerSecond = 'KilopoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        MegapoundForcePerSquareInchPerSecond = 'megapound_force_per_square_inch_per_second'
+        MegapoundForcePerSquareInchPerSecond = 'MegapoundForcePerSquareInchPerSecond'
         """
             
         """
         
-        KilopoundForcePerSquareInchPerMinute = 'kilopound_force_per_square_inch_per_minute'
+        KilopoundForcePerSquareInchPerMinute = 'KilopoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        MegapoundForcePerSquareInchPerMinute = 'megapound_force_per_square_inch_per_minute'
+        MegapoundForcePerSquareInchPerMinute = 'MegapoundForcePerSquareInchPerMinute'
         """
             
         """
         
-        MillibarPerSecond = 'millibar_per_second'
+        MillibarPerSecond = 'MillibarPerSecond'
         """
             
         """
         
-        MillibarPerMinute = 'millibar_per_minute'
+        MillibarPerMinute = 'MillibarPerMinute'
         """
             
         """
         
+
+class PressureChangeRateDto:
+    """
+    A DTO representation of a PressureChangeRate
+
+    Attributes:
+        value (float): The value of the PressureChangeRate.
+        unit (PressureChangeRateUnits): The specific unit that the PressureChangeRate value is representing.
+    """
+
+    def __init__(self, value: float, unit: PressureChangeRateUnits):
+        """
+        Create a new DTO representation of a PressureChangeRate
+
+        Parameters:
+            value (float): The value of the PressureChangeRate.
+            unit (PressureChangeRateUnits): The specific unit that the PressureChangeRate value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the PressureChangeRate
+        """
+        self.unit: PressureChangeRateUnits = unit
+        """
+        The specific unit that the PressureChangeRate value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a PressureChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents PressureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of PressureChangeRate DTO from a json representation.
+
+        :param data: The PressureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalPerSecond"}
+        :return: A new instance of PressureChangeRateDto.
+        :rtype: PressureChangeRateDto
+        """
+        return PressureChangeRateDto(value=data["value"], unit=PressureChangeRateUnits(data["unit"]))
+
 
 class PressureChangeRate(AbstractMeasure):
     """
@@ -155,6 +205,54 @@ class PressureChangeRate(AbstractMeasure):
 
     def convert(self, unit: PressureChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> PressureChangeRateDto:
+        """
+        Get a new instance of PressureChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific PressureChangeRate unit to store the PressureChangeRate value in the DTO representation.
+        :type hold_in_unit: PressureChangeRateUnits
+        :return: A new instance of PressureChangeRateDto.
+        :rtype: PressureChangeRateDto
+        """
+        return PressureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond):
+        """
+        Get a PressureChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific PressureChangeRate unit to store the PressureChangeRate value in the DTO representation.
+        :type hold_in_unit: PressureChangeRateUnits
+        :return: JSON object represents PressureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(pressure_change_rate_dto: PressureChangeRateDto):
+        """
+        Obtain a new instance of PressureChangeRate from a DTO unit object.
+
+        :param pressure_change_rate_dto: The PressureChangeRate DTO representation.
+        :type pressure_change_rate_dto: PressureChangeRateDto
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate(pressure_change_rate_dto.value, pressure_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of PressureChangeRate from a DTO unit json representation.
+
+        :param data: The PressureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalPerSecond"}
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate.from_dto(PressureChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:
         value = self._value

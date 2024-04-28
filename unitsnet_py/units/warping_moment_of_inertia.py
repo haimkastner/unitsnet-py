@@ -10,36 +10,86 @@ class WarpingMomentOfInertiaUnits(Enum):
             WarpingMomentOfInertiaUnits enumeration
         """
         
-        MeterToTheSixth = 'meter_to_the_sixth'
+        MeterToTheSixth = 'MeterToTheSixth'
         """
             
         """
         
-        DecimeterToTheSixth = 'decimeter_to_the_sixth'
+        DecimeterToTheSixth = 'DecimeterToTheSixth'
         """
             
         """
         
-        CentimeterToTheSixth = 'centimeter_to_the_sixth'
+        CentimeterToTheSixth = 'CentimeterToTheSixth'
         """
             
         """
         
-        MillimeterToTheSixth = 'millimeter_to_the_sixth'
+        MillimeterToTheSixth = 'MillimeterToTheSixth'
         """
             
         """
         
-        FootToTheSixth = 'foot_to_the_sixth'
+        FootToTheSixth = 'FootToTheSixth'
         """
             
         """
         
-        InchToTheSixth = 'inch_to_the_sixth'
+        InchToTheSixth = 'InchToTheSixth'
         """
             
         """
         
+
+class WarpingMomentOfInertiaDto:
+    """
+    A DTO representation of a WarpingMomentOfInertia
+
+    Attributes:
+        value (float): The value of the WarpingMomentOfInertia.
+        unit (WarpingMomentOfInertiaUnits): The specific unit that the WarpingMomentOfInertia value is representing.
+    """
+
+    def __init__(self, value: float, unit: WarpingMomentOfInertiaUnits):
+        """
+        Create a new DTO representation of a WarpingMomentOfInertia
+
+        Parameters:
+            value (float): The value of the WarpingMomentOfInertia.
+            unit (WarpingMomentOfInertiaUnits): The specific unit that the WarpingMomentOfInertia value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the WarpingMomentOfInertia
+        """
+        self.unit: WarpingMomentOfInertiaUnits = unit
+        """
+        The specific unit that the WarpingMomentOfInertia value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a WarpingMomentOfInertia DTO JSON object representing the current unit.
+
+        :return: JSON object represents WarpingMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterToTheSixth"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of WarpingMomentOfInertia DTO from a json representation.
+
+        :param data: The WarpingMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterToTheSixth"}
+        :return: A new instance of WarpingMomentOfInertiaDto.
+        :rtype: WarpingMomentOfInertiaDto
+        """
+        return WarpingMomentOfInertiaDto(value=data["value"], unit=WarpingMomentOfInertiaUnits(data["unit"]))
+
 
 class WarpingMomentOfInertia(AbstractMeasure):
     """
@@ -71,6 +121,54 @@ class WarpingMomentOfInertia(AbstractMeasure):
 
     def convert(self, unit: WarpingMomentOfInertiaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> WarpingMomentOfInertiaDto:
+        """
+        Get a new instance of WarpingMomentOfInertia DTO representing the current unit.
+
+        :param hold_in_unit: The specific WarpingMomentOfInertia unit to store the WarpingMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: WarpingMomentOfInertiaUnits
+        :return: A new instance of WarpingMomentOfInertiaDto.
+        :rtype: WarpingMomentOfInertiaDto
+        """
+        return WarpingMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth):
+        """
+        Get a WarpingMomentOfInertia DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific WarpingMomentOfInertia unit to store the WarpingMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: WarpingMomentOfInertiaUnits
+        :return: JSON object represents WarpingMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterToTheSixth"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(warping_moment_of_inertia_dto: WarpingMomentOfInertiaDto):
+        """
+        Obtain a new instance of WarpingMomentOfInertia from a DTO unit object.
+
+        :param warping_moment_of_inertia_dto: The WarpingMomentOfInertia DTO representation.
+        :type warping_moment_of_inertia_dto: WarpingMomentOfInertiaDto
+        :return: A new instance of WarpingMomentOfInertia.
+        :rtype: WarpingMomentOfInertia
+        """
+        return WarpingMomentOfInertia(warping_moment_of_inertia_dto.value, warping_moment_of_inertia_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of WarpingMomentOfInertia from a DTO unit json representation.
+
+        :param data: The WarpingMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterToTheSixth"}
+        :return: A new instance of WarpingMomentOfInertia.
+        :rtype: WarpingMomentOfInertia
+        """
+        return WarpingMomentOfInertia.from_dto(WarpingMomentOfInertiaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: WarpingMomentOfInertiaUnits) -> float:
         value = self._value

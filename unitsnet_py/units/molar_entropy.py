@@ -10,21 +10,71 @@ class MolarEntropyUnits(Enum):
             MolarEntropyUnits enumeration
         """
         
-        JoulePerMoleKelvin = 'joule_per_mole_kelvin'
+        JoulePerMoleKelvin = 'JoulePerMoleKelvin'
         """
             
         """
         
-        KilojoulePerMoleKelvin = 'kilojoule_per_mole_kelvin'
+        KilojoulePerMoleKelvin = 'KilojoulePerMoleKelvin'
         """
             
         """
         
-        MegajoulePerMoleKelvin = 'megajoule_per_mole_kelvin'
+        MegajoulePerMoleKelvin = 'MegajoulePerMoleKelvin'
         """
             
         """
         
+
+class MolarEntropyDto:
+    """
+    A DTO representation of a MolarEntropy
+
+    Attributes:
+        value (float): The value of the MolarEntropy.
+        unit (MolarEntropyUnits): The specific unit that the MolarEntropy value is representing.
+    """
+
+    def __init__(self, value: float, unit: MolarEntropyUnits):
+        """
+        Create a new DTO representation of a MolarEntropy
+
+        Parameters:
+            value (float): The value of the MolarEntropy.
+            unit (MolarEntropyUnits): The specific unit that the MolarEntropy value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the MolarEntropy
+        """
+        self.unit: MolarEntropyUnits = unit
+        """
+        The specific unit that the MolarEntropy value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a MolarEntropy DTO JSON object representing the current unit.
+
+        :return: JSON object represents MolarEntropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerMoleKelvin"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of MolarEntropy DTO from a json representation.
+
+        :param data: The MolarEntropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerMoleKelvin"}
+        :return: A new instance of MolarEntropyDto.
+        :rtype: MolarEntropyDto
+        """
+        return MolarEntropyDto(value=data["value"], unit=MolarEntropyUnits(data["unit"]))
+
 
 class MolarEntropy(AbstractMeasure):
     """
@@ -50,6 +100,54 @@ class MolarEntropy(AbstractMeasure):
 
     def convert(self, unit: MolarEntropyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> MolarEntropyDto:
+        """
+        Get a new instance of MolarEntropy DTO representing the current unit.
+
+        :param hold_in_unit: The specific MolarEntropy unit to store the MolarEntropy value in the DTO representation.
+        :type hold_in_unit: MolarEntropyUnits
+        :return: A new instance of MolarEntropyDto.
+        :rtype: MolarEntropyDto
+        """
+        return MolarEntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin):
+        """
+        Get a MolarEntropy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MolarEntropy unit to store the MolarEntropy value in the DTO representation.
+        :type hold_in_unit: MolarEntropyUnits
+        :return: JSON object represents MolarEntropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerMoleKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(molar_entropy_dto: MolarEntropyDto):
+        """
+        Obtain a new instance of MolarEntropy from a DTO unit object.
+
+        :param molar_entropy_dto: The MolarEntropy DTO representation.
+        :type molar_entropy_dto: MolarEntropyDto
+        :return: A new instance of MolarEntropy.
+        :rtype: MolarEntropy
+        """
+        return MolarEntropy(molar_entropy_dto.value, molar_entropy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MolarEntropy from a DTO unit json representation.
+
+        :param data: The MolarEntropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerMoleKelvin"}
+        :return: A new instance of MolarEntropy.
+        :rtype: MolarEntropy
+        """
+        return MolarEntropy.from_dto(MolarEntropyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolarEntropyUnits) -> float:
         value = self._value

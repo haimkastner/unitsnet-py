@@ -10,21 +10,71 @@ class ElectricSurfaceChargeDensityUnits(Enum):
             ElectricSurfaceChargeDensityUnits enumeration
         """
         
-        CoulombPerSquareMeter = 'coulomb_per_square_meter'
+        CoulombPerSquareMeter = 'CoulombPerSquareMeter'
         """
             
         """
         
-        CoulombPerSquareCentimeter = 'coulomb_per_square_centimeter'
+        CoulombPerSquareCentimeter = 'CoulombPerSquareCentimeter'
         """
             
         """
         
-        CoulombPerSquareInch = 'coulomb_per_square_inch'
+        CoulombPerSquareInch = 'CoulombPerSquareInch'
         """
             
         """
         
+
+class ElectricSurfaceChargeDensityDto:
+    """
+    A DTO representation of a ElectricSurfaceChargeDensity
+
+    Attributes:
+        value (float): The value of the ElectricSurfaceChargeDensity.
+        unit (ElectricSurfaceChargeDensityUnits): The specific unit that the ElectricSurfaceChargeDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricSurfaceChargeDensityUnits):
+        """
+        Create a new DTO representation of a ElectricSurfaceChargeDensity
+
+        Parameters:
+            value (float): The value of the ElectricSurfaceChargeDensity.
+            unit (ElectricSurfaceChargeDensityUnits): The specific unit that the ElectricSurfaceChargeDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricSurfaceChargeDensity
+        """
+        self.unit: ElectricSurfaceChargeDensityUnits = unit
+        """
+        The specific unit that the ElectricSurfaceChargeDensity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricSurfaceChargeDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricSurfaceChargeDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerSquareMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricSurfaceChargeDensity DTO from a json representation.
+
+        :param data: The ElectricSurfaceChargeDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerSquareMeter"}
+        :return: A new instance of ElectricSurfaceChargeDensityDto.
+        :rtype: ElectricSurfaceChargeDensityDto
+        """
+        return ElectricSurfaceChargeDensityDto(value=data["value"], unit=ElectricSurfaceChargeDensityUnits(data["unit"]))
+
 
 class ElectricSurfaceChargeDensity(AbstractMeasure):
     """
@@ -50,6 +100,54 @@ class ElectricSurfaceChargeDensity(AbstractMeasure):
 
     def convert(self, unit: ElectricSurfaceChargeDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter) -> ElectricSurfaceChargeDensityDto:
+        """
+        Get a new instance of ElectricSurfaceChargeDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricSurfaceChargeDensity unit to store the ElectricSurfaceChargeDensity value in the DTO representation.
+        :type hold_in_unit: ElectricSurfaceChargeDensityUnits
+        :return: A new instance of ElectricSurfaceChargeDensityDto.
+        :rtype: ElectricSurfaceChargeDensityDto
+        """
+        return ElectricSurfaceChargeDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter):
+        """
+        Get a ElectricSurfaceChargeDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricSurfaceChargeDensity unit to store the ElectricSurfaceChargeDensity value in the DTO representation.
+        :type hold_in_unit: ElectricSurfaceChargeDensityUnits
+        :return: JSON object represents ElectricSurfaceChargeDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_surface_charge_density_dto: ElectricSurfaceChargeDensityDto):
+        """
+        Obtain a new instance of ElectricSurfaceChargeDensity from a DTO unit object.
+
+        :param electric_surface_charge_density_dto: The ElectricSurfaceChargeDensity DTO representation.
+        :type electric_surface_charge_density_dto: ElectricSurfaceChargeDensityDto
+        :return: A new instance of ElectricSurfaceChargeDensity.
+        :rtype: ElectricSurfaceChargeDensity
+        """
+        return ElectricSurfaceChargeDensity(electric_surface_charge_density_dto.value, electric_surface_charge_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricSurfaceChargeDensity from a DTO unit json representation.
+
+        :param data: The ElectricSurfaceChargeDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerSquareMeter"}
+        :return: A new instance of ElectricSurfaceChargeDensity.
+        :rtype: ElectricSurfaceChargeDensity
+        """
+        return ElectricSurfaceChargeDensity.from_dto(ElectricSurfaceChargeDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricSurfaceChargeDensityUnits) -> float:
         value = self._value

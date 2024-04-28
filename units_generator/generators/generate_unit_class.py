@@ -111,6 +111,7 @@ def unit_class_generator(unit_definition):
 
     template_data = {
         "unit": unit_name,
+        "unit_camel_case": camel_to_snake(unit_name),
         "base_unit": unit_definition.get("BaseUnit"),
         "description": unit_definition.get("XmlDocSummary"),
         "methods": template_methods,

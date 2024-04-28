@@ -10,51 +10,101 @@ class SpecificEntropyUnits(Enum):
             SpecificEntropyUnits enumeration
         """
         
-        JoulePerKilogramKelvin = 'joule_per_kilogram_kelvin'
+        JoulePerKilogramKelvin = 'JoulePerKilogramKelvin'
         """
             
         """
         
-        JoulePerKilogramDegreeCelsius = 'joule_per_kilogram_degree_celsius'
+        JoulePerKilogramDegreeCelsius = 'JoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        CaloriePerGramKelvin = 'calorie_per_gram_kelvin'
+        CaloriePerGramKelvin = 'CaloriePerGramKelvin'
         """
             
         """
         
-        BtuPerPoundFahrenheit = 'btu_per_pound_fahrenheit'
+        BtuPerPoundFahrenheit = 'BtuPerPoundFahrenheit'
         """
             
         """
         
-        KilojoulePerKilogramKelvin = 'kilojoule_per_kilogram_kelvin'
+        KilojoulePerKilogramKelvin = 'KilojoulePerKilogramKelvin'
         """
             
         """
         
-        MegajoulePerKilogramKelvin = 'megajoule_per_kilogram_kelvin'
+        MegajoulePerKilogramKelvin = 'MegajoulePerKilogramKelvin'
         """
             
         """
         
-        KilojoulePerKilogramDegreeCelsius = 'kilojoule_per_kilogram_degree_celsius'
+        KilojoulePerKilogramDegreeCelsius = 'KilojoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        MegajoulePerKilogramDegreeCelsius = 'megajoule_per_kilogram_degree_celsius'
+        MegajoulePerKilogramDegreeCelsius = 'MegajoulePerKilogramDegreeCelsius'
         """
             
         """
         
-        KilocaloriePerGramKelvin = 'kilocalorie_per_gram_kelvin'
+        KilocaloriePerGramKelvin = 'KilocaloriePerGramKelvin'
         """
             
         """
         
+
+class SpecificEntropyDto:
+    """
+    A DTO representation of a SpecificEntropy
+
+    Attributes:
+        value (float): The value of the SpecificEntropy.
+        unit (SpecificEntropyUnits): The specific unit that the SpecificEntropy value is representing.
+    """
+
+    def __init__(self, value: float, unit: SpecificEntropyUnits):
+        """
+        Create a new DTO representation of a SpecificEntropy
+
+        Parameters:
+            value (float): The value of the SpecificEntropy.
+            unit (SpecificEntropyUnits): The specific unit that the SpecificEntropy value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the SpecificEntropy
+        """
+        self.unit: SpecificEntropyUnits = unit
+        """
+        The specific unit that the SpecificEntropy value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a SpecificEntropy DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificEntropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogramKelvin"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of SpecificEntropy DTO from a json representation.
+
+        :param data: The SpecificEntropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogramKelvin"}
+        :return: A new instance of SpecificEntropyDto.
+        :rtype: SpecificEntropyDto
+        """
+        return SpecificEntropyDto(value=data["value"], unit=SpecificEntropyUnits(data["unit"]))
+
 
 class SpecificEntropy(AbstractMeasure):
     """
@@ -92,6 +142,54 @@ class SpecificEntropy(AbstractMeasure):
 
     def convert(self, unit: SpecificEntropyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> SpecificEntropyDto:
+        """
+        Get a new instance of SpecificEntropy DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEntropy unit to store the SpecificEntropy value in the DTO representation.
+        :type hold_in_unit: SpecificEntropyUnits
+        :return: A new instance of SpecificEntropyDto.
+        :rtype: SpecificEntropyDto
+        """
+        return SpecificEntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin):
+        """
+        Get a SpecificEntropy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEntropy unit to store the SpecificEntropy value in the DTO representation.
+        :type hold_in_unit: SpecificEntropyUnits
+        :return: JSON object represents SpecificEntropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogramKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(specific_entropy_dto: SpecificEntropyDto):
+        """
+        Obtain a new instance of SpecificEntropy from a DTO unit object.
+
+        :param specific_entropy_dto: The SpecificEntropy DTO representation.
+        :type specific_entropy_dto: SpecificEntropyDto
+        :return: A new instance of SpecificEntropy.
+        :rtype: SpecificEntropy
+        """
+        return SpecificEntropy(specific_entropy_dto.value, specific_entropy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificEntropy from a DTO unit json representation.
+
+        :param data: The SpecificEntropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogramKelvin"}
+        :return: A new instance of SpecificEntropy.
+        :rtype: SpecificEntropy
+        """
+        return SpecificEntropy.from_dto(SpecificEntropyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificEntropyUnits) -> float:
         value = self._value

@@ -10,86 +10,136 @@ class AngleUnits(Enum):
             AngleUnits enumeration
         """
         
-        Radian = 'radian'
+        Radian = 'Radian'
         """
             
         """
         
-        Degree = 'degree'
+        Degree = 'Degree'
         """
             
         """
         
-        Arcminute = 'arcminute'
+        Arcminute = 'Arcminute'
         """
             
         """
         
-        Arcsecond = 'arcsecond'
+        Arcsecond = 'Arcsecond'
         """
             
         """
         
-        Gradian = 'gradian'
+        Gradian = 'Gradian'
         """
             
         """
         
-        NatoMil = 'nato_mil'
+        NatoMil = 'NatoMil'
         """
             
         """
         
-        Revolution = 'revolution'
+        Revolution = 'Revolution'
         """
             
         """
         
-        Tilt = 'tilt'
+        Tilt = 'Tilt'
         """
             
         """
         
-        Nanoradian = 'nanoradian'
+        Nanoradian = 'Nanoradian'
         """
             
         """
         
-        Microradian = 'microradian'
+        Microradian = 'Microradian'
         """
             
         """
         
-        Milliradian = 'milliradian'
+        Milliradian = 'Milliradian'
         """
             
         """
         
-        Centiradian = 'centiradian'
+        Centiradian = 'Centiradian'
         """
             
         """
         
-        Deciradian = 'deciradian'
+        Deciradian = 'Deciradian'
         """
             
         """
         
-        Nanodegree = 'nanodegree'
+        Nanodegree = 'Nanodegree'
         """
             
         """
         
-        Microdegree = 'microdegree'
+        Microdegree = 'Microdegree'
         """
             
         """
         
-        Millidegree = 'millidegree'
+        Millidegree = 'Millidegree'
         """
             
         """
         
+
+class AngleDto:
+    """
+    A DTO representation of a Angle
+
+    Attributes:
+        value (float): The value of the Angle.
+        unit (AngleUnits): The specific unit that the Angle value is representing.
+    """
+
+    def __init__(self, value: float, unit: AngleUnits):
+        """
+        Create a new DTO representation of a Angle
+
+        Parameters:
+            value (float): The value of the Angle.
+            unit (AngleUnits): The specific unit that the Angle value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Angle
+        """
+        self.unit: AngleUnits = unit
+        """
+        The specific unit that the Angle value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Angle DTO JSON object representing the current unit.
+
+        :return: JSON object represents Angle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Degree"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Angle DTO from a json representation.
+
+        :param data: The Angle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Degree"}
+        :return: A new instance of AngleDto.
+        :rtype: AngleDto
+        """
+        return AngleDto(value=data["value"], unit=AngleUnits(data["unit"]))
+
 
 class Angle(AbstractMeasure):
     """
@@ -141,6 +191,54 @@ class Angle(AbstractMeasure):
 
     def convert(self, unit: AngleUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AngleUnits = AngleUnits.Degree) -> AngleDto:
+        """
+        Get a new instance of Angle DTO representing the current unit.
+
+        :param hold_in_unit: The specific Angle unit to store the Angle value in the DTO representation.
+        :type hold_in_unit: AngleUnits
+        :return: A new instance of AngleDto.
+        :rtype: AngleDto
+        """
+        return AngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AngleUnits = AngleUnits.Degree):
+        """
+        Get a Angle DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Angle unit to store the Angle value in the DTO representation.
+        :type hold_in_unit: AngleUnits
+        :return: JSON object represents Angle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Degree"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(angle_dto: AngleDto):
+        """
+        Obtain a new instance of Angle from a DTO unit object.
+
+        :param angle_dto: The Angle DTO representation.
+        :type angle_dto: AngleDto
+        :return: A new instance of Angle.
+        :rtype: Angle
+        """
+        return Angle(angle_dto.value, angle_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Angle from a DTO unit json representation.
+
+        :param data: The Angle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Degree"}
+        :return: A new instance of Angle.
+        :rtype: Angle
+        """
+        return Angle.from_dto(AngleDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AngleUnits) -> float:
         value = self._value

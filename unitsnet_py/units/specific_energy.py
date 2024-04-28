@@ -10,156 +10,206 @@ class SpecificEnergyUnits(Enum):
             SpecificEnergyUnits enumeration
         """
         
-        JoulePerKilogram = 'joule_per_kilogram'
+        JoulePerKilogram = 'JoulePerKilogram'
         """
             
         """
         
-        MegaJoulePerTonne = 'mega_joule_per_tonne'
+        MegaJoulePerTonne = 'MegaJoulePerTonne'
         """
             
         """
         
-        CaloriePerGram = 'calorie_per_gram'
+        CaloriePerGram = 'CaloriePerGram'
         """
             
         """
         
-        WattHourPerKilogram = 'watt_hour_per_kilogram'
+        WattHourPerKilogram = 'WattHourPerKilogram'
         """
             
         """
         
-        WattDayPerKilogram = 'watt_day_per_kilogram'
+        WattDayPerKilogram = 'WattDayPerKilogram'
         """
             
         """
         
-        WattDayPerTonne = 'watt_day_per_tonne'
+        WattDayPerTonne = 'WattDayPerTonne'
         """
             
         """
         
-        WattDayPerShortTon = 'watt_day_per_short_ton'
+        WattDayPerShortTon = 'WattDayPerShortTon'
         """
             
         """
         
-        WattHourPerPound = 'watt_hour_per_pound'
+        WattHourPerPound = 'WattHourPerPound'
         """
             
         """
         
-        BtuPerPound = 'btu_per_pound'
+        BtuPerPound = 'BtuPerPound'
         """
             
         """
         
-        KilojoulePerKilogram = 'kilojoule_per_kilogram'
+        KilojoulePerKilogram = 'KilojoulePerKilogram'
         """
             
         """
         
-        MegajoulePerKilogram = 'megajoule_per_kilogram'
+        MegajoulePerKilogram = 'MegajoulePerKilogram'
         """
             
         """
         
-        KilocaloriePerGram = 'kilocalorie_per_gram'
+        KilocaloriePerGram = 'KilocaloriePerGram'
         """
             
         """
         
-        KilowattHourPerKilogram = 'kilowatt_hour_per_kilogram'
+        KilowattHourPerKilogram = 'KilowattHourPerKilogram'
         """
             
         """
         
-        MegawattHourPerKilogram = 'megawatt_hour_per_kilogram'
+        MegawattHourPerKilogram = 'MegawattHourPerKilogram'
         """
             
         """
         
-        GigawattHourPerKilogram = 'gigawatt_hour_per_kilogram'
+        GigawattHourPerKilogram = 'GigawattHourPerKilogram'
         """
             
         """
         
-        KilowattDayPerKilogram = 'kilowatt_day_per_kilogram'
+        KilowattDayPerKilogram = 'KilowattDayPerKilogram'
         """
             
         """
         
-        MegawattDayPerKilogram = 'megawatt_day_per_kilogram'
+        MegawattDayPerKilogram = 'MegawattDayPerKilogram'
         """
             
         """
         
-        GigawattDayPerKilogram = 'gigawatt_day_per_kilogram'
+        GigawattDayPerKilogram = 'GigawattDayPerKilogram'
         """
             
         """
         
-        TerawattDayPerKilogram = 'terawatt_day_per_kilogram'
+        TerawattDayPerKilogram = 'TerawattDayPerKilogram'
         """
             
         """
         
-        KilowattDayPerTonne = 'kilowatt_day_per_tonne'
+        KilowattDayPerTonne = 'KilowattDayPerTonne'
         """
             
         """
         
-        MegawattDayPerTonne = 'megawatt_day_per_tonne'
+        MegawattDayPerTonne = 'MegawattDayPerTonne'
         """
             
         """
         
-        GigawattDayPerTonne = 'gigawatt_day_per_tonne'
+        GigawattDayPerTonne = 'GigawattDayPerTonne'
         """
             
         """
         
-        TerawattDayPerTonne = 'terawatt_day_per_tonne'
+        TerawattDayPerTonne = 'TerawattDayPerTonne'
         """
             
         """
         
-        KilowattDayPerShortTon = 'kilowatt_day_per_short_ton'
+        KilowattDayPerShortTon = 'KilowattDayPerShortTon'
         """
             
         """
         
-        MegawattDayPerShortTon = 'megawatt_day_per_short_ton'
+        MegawattDayPerShortTon = 'MegawattDayPerShortTon'
         """
             
         """
         
-        GigawattDayPerShortTon = 'gigawatt_day_per_short_ton'
+        GigawattDayPerShortTon = 'GigawattDayPerShortTon'
         """
             
         """
         
-        TerawattDayPerShortTon = 'terawatt_day_per_short_ton'
+        TerawattDayPerShortTon = 'TerawattDayPerShortTon'
         """
             
         """
         
-        KilowattHourPerPound = 'kilowatt_hour_per_pound'
+        KilowattHourPerPound = 'KilowattHourPerPound'
         """
             
         """
         
-        MegawattHourPerPound = 'megawatt_hour_per_pound'
+        MegawattHourPerPound = 'MegawattHourPerPound'
         """
             
         """
         
-        GigawattHourPerPound = 'gigawatt_hour_per_pound'
+        GigawattHourPerPound = 'GigawattHourPerPound'
         """
             
         """
         
+
+class SpecificEnergyDto:
+    """
+    A DTO representation of a SpecificEnergy
+
+    Attributes:
+        value (float): The value of the SpecificEnergy.
+        unit (SpecificEnergyUnits): The specific unit that the SpecificEnergy value is representing.
+    """
+
+    def __init__(self, value: float, unit: SpecificEnergyUnits):
+        """
+        Create a new DTO representation of a SpecificEnergy
+
+        Parameters:
+            value (float): The value of the SpecificEnergy.
+            unit (SpecificEnergyUnits): The specific unit that the SpecificEnergy value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the SpecificEnergy
+        """
+        self.unit: SpecificEnergyUnits = unit
+        """
+        The specific unit that the SpecificEnergy value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a SpecificEnergy DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogram"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of SpecificEnergy DTO from a json representation.
+
+        :param data: The SpecificEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogram"}
+        :return: A new instance of SpecificEnergyDto.
+        :rtype: SpecificEnergyDto
+        """
+        return SpecificEnergyDto(value=data["value"], unit=SpecificEnergyUnits(data["unit"]))
+
 
 class SpecificEnergy(AbstractMeasure):
     """
@@ -239,6 +289,54 @@ class SpecificEnergy(AbstractMeasure):
 
     def convert(self, unit: SpecificEnergyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> SpecificEnergyDto:
+        """
+        Get a new instance of SpecificEnergy DTO representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEnergy unit to store the SpecificEnergy value in the DTO representation.
+        :type hold_in_unit: SpecificEnergyUnits
+        :return: A new instance of SpecificEnergyDto.
+        :rtype: SpecificEnergyDto
+        """
+        return SpecificEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram):
+        """
+        Get a SpecificEnergy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEnergy unit to store the SpecificEnergy value in the DTO representation.
+        :type hold_in_unit: SpecificEnergyUnits
+        :return: JSON object represents SpecificEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(specific_energy_dto: SpecificEnergyDto):
+        """
+        Obtain a new instance of SpecificEnergy from a DTO unit object.
+
+        :param specific_energy_dto: The SpecificEnergy DTO representation.
+        :type specific_energy_dto: SpecificEnergyDto
+        :return: A new instance of SpecificEnergy.
+        :rtype: SpecificEnergy
+        """
+        return SpecificEnergy(specific_energy_dto.value, specific_energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificEnergy from a DTO unit json representation.
+
+        :param data: The SpecificEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogram"}
+        :return: A new instance of SpecificEnergy.
+        :rtype: SpecificEnergy
+        """
+        return SpecificEnergy.from_dto(SpecificEnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificEnergyUnits) -> float:
         value = self._value

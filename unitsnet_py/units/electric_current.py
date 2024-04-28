@@ -10,51 +10,101 @@ class ElectricCurrentUnits(Enum):
             ElectricCurrentUnits enumeration
         """
         
-        Ampere = 'ampere'
+        Ampere = 'Ampere'
         """
             
         """
         
-        Femtoampere = 'femtoampere'
+        Femtoampere = 'Femtoampere'
         """
             
         """
         
-        Picoampere = 'picoampere'
+        Picoampere = 'Picoampere'
         """
             
         """
         
-        Nanoampere = 'nanoampere'
+        Nanoampere = 'Nanoampere'
         """
             
         """
         
-        Microampere = 'microampere'
+        Microampere = 'Microampere'
         """
             
         """
         
-        Milliampere = 'milliampere'
+        Milliampere = 'Milliampere'
         """
             
         """
         
-        Centiampere = 'centiampere'
+        Centiampere = 'Centiampere'
         """
             
         """
         
-        Kiloampere = 'kiloampere'
+        Kiloampere = 'Kiloampere'
         """
             
         """
         
-        Megaampere = 'megaampere'
+        Megaampere = 'Megaampere'
         """
             
         """
         
+
+class ElectricCurrentDto:
+    """
+    A DTO representation of a ElectricCurrent
+
+    Attributes:
+        value (float): The value of the ElectricCurrent.
+        unit (ElectricCurrentUnits): The specific unit that the ElectricCurrent value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricCurrentUnits):
+        """
+        Create a new DTO representation of a ElectricCurrent
+
+        Parameters:
+            value (float): The value of the ElectricCurrent.
+            unit (ElectricCurrentUnits): The specific unit that the ElectricCurrent value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricCurrent
+        """
+        self.unit: ElectricCurrentUnits = unit
+        """
+        The specific unit that the ElectricCurrent value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricCurrent DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricCurrent DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Ampere"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricCurrent DTO from a json representation.
+
+        :param data: The ElectricCurrent DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Ampere"}
+        :return: A new instance of ElectricCurrentDto.
+        :rtype: ElectricCurrentDto
+        """
+        return ElectricCurrentDto(value=data["value"], unit=ElectricCurrentUnits(data["unit"]))
+
 
 class ElectricCurrent(AbstractMeasure):
     """
@@ -92,6 +142,54 @@ class ElectricCurrent(AbstractMeasure):
 
     def convert(self, unit: ElectricCurrentUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> ElectricCurrentDto:
+        """
+        Get a new instance of ElectricCurrent DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCurrent unit to store the ElectricCurrent value in the DTO representation.
+        :type hold_in_unit: ElectricCurrentUnits
+        :return: A new instance of ElectricCurrentDto.
+        :rtype: ElectricCurrentDto
+        """
+        return ElectricCurrentDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere):
+        """
+        Get a ElectricCurrent DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCurrent unit to store the ElectricCurrent value in the DTO representation.
+        :type hold_in_unit: ElectricCurrentUnits
+        :return: JSON object represents ElectricCurrent DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Ampere"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_current_dto: ElectricCurrentDto):
+        """
+        Obtain a new instance of ElectricCurrent from a DTO unit object.
+
+        :param electric_current_dto: The ElectricCurrent DTO representation.
+        :type electric_current_dto: ElectricCurrentDto
+        :return: A new instance of ElectricCurrent.
+        :rtype: ElectricCurrent
+        """
+        return ElectricCurrent(electric_current_dto.value, electric_current_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricCurrent from a DTO unit json representation.
+
+        :param data: The ElectricCurrent DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Ampere"}
+        :return: A new instance of ElectricCurrent.
+        :rtype: ElectricCurrent
+        """
+        return ElectricCurrent.from_dto(ElectricCurrentDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricCurrentUnits) -> float:
         value = self._value

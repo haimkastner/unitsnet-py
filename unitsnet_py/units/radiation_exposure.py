@@ -10,46 +10,96 @@ class RadiationExposureUnits(Enum):
             RadiationExposureUnits enumeration
         """
         
-        CoulombPerKilogram = 'coulomb_per_kilogram'
+        CoulombPerKilogram = 'CoulombPerKilogram'
         """
             
         """
         
-        Roentgen = 'roentgen'
+        Roentgen = 'Roentgen'
         """
             
         """
         
-        PicocoulombPerKilogram = 'picocoulomb_per_kilogram'
+        PicocoulombPerKilogram = 'PicocoulombPerKilogram'
         """
             
         """
         
-        NanocoulombPerKilogram = 'nanocoulomb_per_kilogram'
+        NanocoulombPerKilogram = 'NanocoulombPerKilogram'
         """
             
         """
         
-        MicrocoulombPerKilogram = 'microcoulomb_per_kilogram'
+        MicrocoulombPerKilogram = 'MicrocoulombPerKilogram'
         """
             
         """
         
-        MillicoulombPerKilogram = 'millicoulomb_per_kilogram'
+        MillicoulombPerKilogram = 'MillicoulombPerKilogram'
         """
             
         """
         
-        Microroentgen = 'microroentgen'
+        Microroentgen = 'Microroentgen'
         """
             
         """
         
-        Milliroentgen = 'milliroentgen'
+        Milliroentgen = 'Milliroentgen'
         """
             
         """
         
+
+class RadiationExposureDto:
+    """
+    A DTO representation of a RadiationExposure
+
+    Attributes:
+        value (float): The value of the RadiationExposure.
+        unit (RadiationExposureUnits): The specific unit that the RadiationExposure value is representing.
+    """
+
+    def __init__(self, value: float, unit: RadiationExposureUnits):
+        """
+        Create a new DTO representation of a RadiationExposure
+
+        Parameters:
+            value (float): The value of the RadiationExposure.
+            unit (RadiationExposureUnits): The specific unit that the RadiationExposure value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the RadiationExposure
+        """
+        self.unit: RadiationExposureUnits = unit
+        """
+        The specific unit that the RadiationExposure value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a RadiationExposure DTO JSON object representing the current unit.
+
+        :return: JSON object represents RadiationExposure DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerKilogram"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of RadiationExposure DTO from a json representation.
+
+        :param data: The RadiationExposure DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerKilogram"}
+        :return: A new instance of RadiationExposureDto.
+        :rtype: RadiationExposureDto
+        """
+        return RadiationExposureDto(value=data["value"], unit=RadiationExposureUnits(data["unit"]))
+
 
 class RadiationExposure(AbstractMeasure):
     """
@@ -85,6 +135,54 @@ class RadiationExposure(AbstractMeasure):
 
     def convert(self, unit: RadiationExposureUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RadiationExposureUnits = RadiationExposureUnits.CoulombPerKilogram) -> RadiationExposureDto:
+        """
+        Get a new instance of RadiationExposure DTO representing the current unit.
+
+        :param hold_in_unit: The specific RadiationExposure unit to store the RadiationExposure value in the DTO representation.
+        :type hold_in_unit: RadiationExposureUnits
+        :return: A new instance of RadiationExposureDto.
+        :rtype: RadiationExposureDto
+        """
+        return RadiationExposureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RadiationExposureUnits = RadiationExposureUnits.CoulombPerKilogram):
+        """
+        Get a RadiationExposure DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RadiationExposure unit to store the RadiationExposure value in the DTO representation.
+        :type hold_in_unit: RadiationExposureUnits
+        :return: JSON object represents RadiationExposure DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerKilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(radiation_exposure_dto: RadiationExposureDto):
+        """
+        Obtain a new instance of RadiationExposure from a DTO unit object.
+
+        :param radiation_exposure_dto: The RadiationExposure DTO representation.
+        :type radiation_exposure_dto: RadiationExposureDto
+        :return: A new instance of RadiationExposure.
+        :rtype: RadiationExposure
+        """
+        return RadiationExposure(radiation_exposure_dto.value, radiation_exposure_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RadiationExposure from a DTO unit json representation.
+
+        :param data: The RadiationExposure DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerKilogram"}
+        :return: A new instance of RadiationExposure.
+        :rtype: RadiationExposure
+        """
+        return RadiationExposure.from_dto(RadiationExposureDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RadiationExposureUnits) -> float:
         value = self._value

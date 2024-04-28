@@ -10,106 +10,156 @@ class ElectricPotentialChangeRateUnits(Enum):
             ElectricPotentialChangeRateUnits enumeration
         """
         
-        VoltPerSecond = 'volt_per_second'
+        VoltPerSecond = 'VoltPerSecond'
         """
             
         """
         
-        VoltPerMicrosecond = 'volt_per_microsecond'
+        VoltPerMicrosecond = 'VoltPerMicrosecond'
         """
             
         """
         
-        VoltPerMinute = 'volt_per_minute'
+        VoltPerMinute = 'VoltPerMinute'
         """
             
         """
         
-        VoltPerHour = 'volt_per_hour'
+        VoltPerHour = 'VoltPerHour'
         """
             
         """
         
-        MicrovoltPerSecond = 'microvolt_per_second'
+        MicrovoltPerSecond = 'MicrovoltPerSecond'
         """
             
         """
         
-        MillivoltPerSecond = 'millivolt_per_second'
+        MillivoltPerSecond = 'MillivoltPerSecond'
         """
             
         """
         
-        KilovoltPerSecond = 'kilovolt_per_second'
+        KilovoltPerSecond = 'KilovoltPerSecond'
         """
             
         """
         
-        MegavoltPerSecond = 'megavolt_per_second'
+        MegavoltPerSecond = 'MegavoltPerSecond'
         """
             
         """
         
-        MicrovoltPerMicrosecond = 'microvolt_per_microsecond'
+        MicrovoltPerMicrosecond = 'MicrovoltPerMicrosecond'
         """
             
         """
         
-        MillivoltPerMicrosecond = 'millivolt_per_microsecond'
+        MillivoltPerMicrosecond = 'MillivoltPerMicrosecond'
         """
             
         """
         
-        KilovoltPerMicrosecond = 'kilovolt_per_microsecond'
+        KilovoltPerMicrosecond = 'KilovoltPerMicrosecond'
         """
             
         """
         
-        MegavoltPerMicrosecond = 'megavolt_per_microsecond'
+        MegavoltPerMicrosecond = 'MegavoltPerMicrosecond'
         """
             
         """
         
-        MicrovoltPerMinute = 'microvolt_per_minute'
+        MicrovoltPerMinute = 'MicrovoltPerMinute'
         """
             
         """
         
-        MillivoltPerMinute = 'millivolt_per_minute'
+        MillivoltPerMinute = 'MillivoltPerMinute'
         """
             
         """
         
-        KilovoltPerMinute = 'kilovolt_per_minute'
+        KilovoltPerMinute = 'KilovoltPerMinute'
         """
             
         """
         
-        MegavoltPerMinute = 'megavolt_per_minute'
+        MegavoltPerMinute = 'MegavoltPerMinute'
         """
             
         """
         
-        MicrovoltPerHour = 'microvolt_per_hour'
+        MicrovoltPerHour = 'MicrovoltPerHour'
         """
             
         """
         
-        MillivoltPerHour = 'millivolt_per_hour'
+        MillivoltPerHour = 'MillivoltPerHour'
         """
             
         """
         
-        KilovoltPerHour = 'kilovolt_per_hour'
+        KilovoltPerHour = 'KilovoltPerHour'
         """
             
         """
         
-        MegavoltPerHour = 'megavolt_per_hour'
+        MegavoltPerHour = 'MegavoltPerHour'
         """
             
         """
         
+
+class ElectricPotentialChangeRateDto:
+    """
+    A DTO representation of a ElectricPotentialChangeRate
+
+    Attributes:
+        value (float): The value of the ElectricPotentialChangeRate.
+        unit (ElectricPotentialChangeRateUnits): The specific unit that the ElectricPotentialChangeRate value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricPotentialChangeRateUnits):
+        """
+        Create a new DTO representation of a ElectricPotentialChangeRate
+
+        Parameters:
+            value (float): The value of the ElectricPotentialChangeRate.
+            unit (ElectricPotentialChangeRateUnits): The specific unit that the ElectricPotentialChangeRate value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricPotentialChangeRate
+        """
+        self.unit: ElectricPotentialChangeRateUnits = unit
+        """
+        The specific unit that the ElectricPotentialChangeRate value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricPotentialChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricPotentialChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate DTO from a json representation.
+
+        :param data: The ElectricPotentialChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerSecond"}
+        :return: A new instance of ElectricPotentialChangeRateDto.
+        :rtype: ElectricPotentialChangeRateDto
+        """
+        return ElectricPotentialChangeRateDto(value=data["value"], unit=ElectricPotentialChangeRateUnits(data["unit"]))
+
 
 class ElectricPotentialChangeRate(AbstractMeasure):
     """
@@ -169,6 +219,54 @@ class ElectricPotentialChangeRate(AbstractMeasure):
 
     def convert(self, unit: ElectricPotentialChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> ElectricPotentialChangeRateDto:
+        """
+        Get a new instance of ElectricPotentialChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotentialChangeRate unit to store the ElectricPotentialChangeRate value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialChangeRateUnits
+        :return: A new instance of ElectricPotentialChangeRateDto.
+        :rtype: ElectricPotentialChangeRateDto
+        """
+        return ElectricPotentialChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond):
+        """
+        Get a ElectricPotentialChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotentialChangeRate unit to store the ElectricPotentialChangeRate value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialChangeRateUnits
+        :return: JSON object represents ElectricPotentialChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_potential_change_rate_dto: ElectricPotentialChangeRateDto):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate from a DTO unit object.
+
+        :param electric_potential_change_rate_dto: The ElectricPotentialChangeRate DTO representation.
+        :type electric_potential_change_rate_dto: ElectricPotentialChangeRateDto
+        :return: A new instance of ElectricPotentialChangeRate.
+        :rtype: ElectricPotentialChangeRate
+        """
+        return ElectricPotentialChangeRate(electric_potential_change_rate_dto.value, electric_potential_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate from a DTO unit json representation.
+
+        :param data: The ElectricPotentialChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerSecond"}
+        :return: A new instance of ElectricPotentialChangeRate.
+        :rtype: ElectricPotentialChangeRate
+        """
+        return ElectricPotentialChangeRate.from_dto(ElectricPotentialChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
         value = self._value

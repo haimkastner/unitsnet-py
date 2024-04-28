@@ -10,16 +10,66 @@ class PowerRatioUnits(Enum):
             PowerRatioUnits enumeration
         """
         
-        DecibelWatt = 'decibel_watt'
+        DecibelWatt = 'DecibelWatt'
         """
             
         """
         
-        DecibelMilliwatt = 'decibel_milliwatt'
+        DecibelMilliwatt = 'DecibelMilliwatt'
         """
             
         """
         
+
+class PowerRatioDto:
+    """
+    A DTO representation of a PowerRatio
+
+    Attributes:
+        value (float): The value of the PowerRatio.
+        unit (PowerRatioUnits): The specific unit that the PowerRatio value is representing.
+    """
+
+    def __init__(self, value: float, unit: PowerRatioUnits):
+        """
+        Create a new DTO representation of a PowerRatio
+
+        Parameters:
+            value (float): The value of the PowerRatio.
+            unit (PowerRatioUnits): The specific unit that the PowerRatio value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the PowerRatio
+        """
+        self.unit: PowerRatioUnits = unit
+        """
+        The specific unit that the PowerRatio value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a PowerRatio DTO JSON object representing the current unit.
+
+        :return: JSON object represents PowerRatio DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecibelWatt"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of PowerRatio DTO from a json representation.
+
+        :param data: The PowerRatio DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecibelWatt"}
+        :return: A new instance of PowerRatioDto.
+        :rtype: PowerRatioDto
+        """
+        return PowerRatioDto(value=data["value"], unit=PowerRatioUnits(data["unit"]))
+
 
 class PowerRatio(AbstractMeasure):
     """
@@ -43,6 +93,54 @@ class PowerRatio(AbstractMeasure):
 
     def convert(self, unit: PowerRatioUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> PowerRatioDto:
+        """
+        Get a new instance of PowerRatio DTO representing the current unit.
+
+        :param hold_in_unit: The specific PowerRatio unit to store the PowerRatio value in the DTO representation.
+        :type hold_in_unit: PowerRatioUnits
+        :return: A new instance of PowerRatioDto.
+        :rtype: PowerRatioDto
+        """
+        return PowerRatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt):
+        """
+        Get a PowerRatio DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific PowerRatio unit to store the PowerRatio value in the DTO representation.
+        :type hold_in_unit: PowerRatioUnits
+        :return: JSON object represents PowerRatio DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecibelWatt"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(power_ratio_dto: PowerRatioDto):
+        """
+        Obtain a new instance of PowerRatio from a DTO unit object.
+
+        :param power_ratio_dto: The PowerRatio DTO representation.
+        :type power_ratio_dto: PowerRatioDto
+        :return: A new instance of PowerRatio.
+        :rtype: PowerRatio
+        """
+        return PowerRatio(power_ratio_dto.value, power_ratio_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of PowerRatio from a DTO unit json representation.
+
+        :param data: The PowerRatio DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecibelWatt"}
+        :return: A new instance of PowerRatio.
+        :rtype: PowerRatio
+        """
+        return PowerRatio.from_dto(PowerRatioDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PowerRatioUnits) -> float:
         value = self._value

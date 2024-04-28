@@ -10,106 +10,156 @@ class VolumeConcentrationUnits(Enum):
             VolumeConcentrationUnits enumeration
         """
         
-        DecimalFraction = 'decimal_fraction'
+        DecimalFraction = 'DecimalFraction'
         """
             
         """
         
-        LitersPerLiter = 'liters_per_liter'
+        LitersPerLiter = 'LitersPerLiter'
         """
             
         """
         
-        LitersPerMililiter = 'liters_per_mililiter'
+        LitersPerMililiter = 'LitersPerMililiter'
         """
             
         """
         
-        Percent = 'percent'
+        Percent = 'Percent'
         """
             
         """
         
-        PartPerThousand = 'part_per_thousand'
+        PartPerThousand = 'PartPerThousand'
         """
             
         """
         
-        PartPerMillion = 'part_per_million'
+        PartPerMillion = 'PartPerMillion'
         """
             
         """
         
-        PartPerBillion = 'part_per_billion'
+        PartPerBillion = 'PartPerBillion'
         """
             
         """
         
-        PartPerTrillion = 'part_per_trillion'
+        PartPerTrillion = 'PartPerTrillion'
         """
             
         """
         
-        PicolitersPerLiter = 'picoliters_per_liter'
+        PicolitersPerLiter = 'PicolitersPerLiter'
         """
             
         """
         
-        NanolitersPerLiter = 'nanoliters_per_liter'
+        NanolitersPerLiter = 'NanolitersPerLiter'
         """
             
         """
         
-        MicrolitersPerLiter = 'microliters_per_liter'
+        MicrolitersPerLiter = 'MicrolitersPerLiter'
         """
             
         """
         
-        MillilitersPerLiter = 'milliliters_per_liter'
+        MillilitersPerLiter = 'MillilitersPerLiter'
         """
             
         """
         
-        CentilitersPerLiter = 'centiliters_per_liter'
+        CentilitersPerLiter = 'CentilitersPerLiter'
         """
             
         """
         
-        DecilitersPerLiter = 'deciliters_per_liter'
+        DecilitersPerLiter = 'DecilitersPerLiter'
         """
             
         """
         
-        PicolitersPerMililiter = 'picoliters_per_mililiter'
+        PicolitersPerMililiter = 'PicolitersPerMililiter'
         """
             
         """
         
-        NanolitersPerMililiter = 'nanoliters_per_mililiter'
+        NanolitersPerMililiter = 'NanolitersPerMililiter'
         """
             
         """
         
-        MicrolitersPerMililiter = 'microliters_per_mililiter'
+        MicrolitersPerMililiter = 'MicrolitersPerMililiter'
         """
             
         """
         
-        MillilitersPerMililiter = 'milliliters_per_mililiter'
+        MillilitersPerMililiter = 'MillilitersPerMililiter'
         """
             
         """
         
-        CentilitersPerMililiter = 'centiliters_per_mililiter'
+        CentilitersPerMililiter = 'CentilitersPerMililiter'
         """
             
         """
         
-        DecilitersPerMililiter = 'deciliters_per_mililiter'
+        DecilitersPerMililiter = 'DecilitersPerMililiter'
         """
             
         """
         
+
+class VolumeConcentrationDto:
+    """
+    A DTO representation of a VolumeConcentration
+
+    Attributes:
+        value (float): The value of the VolumeConcentration.
+        unit (VolumeConcentrationUnits): The specific unit that the VolumeConcentration value is representing.
+    """
+
+    def __init__(self, value: float, unit: VolumeConcentrationUnits):
+        """
+        Create a new DTO representation of a VolumeConcentration
+
+        Parameters:
+            value (float): The value of the VolumeConcentration.
+            unit (VolumeConcentrationUnits): The specific unit that the VolumeConcentration value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the VolumeConcentration
+        """
+        self.unit: VolumeConcentrationUnits = unit
+        """
+        The specific unit that the VolumeConcentration value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a VolumeConcentration DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumeConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of VolumeConcentration DTO from a json representation.
+
+        :param data: The VolumeConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of VolumeConcentrationDto.
+        :rtype: VolumeConcentrationDto
+        """
+        return VolumeConcentrationDto(value=data["value"], unit=VolumeConcentrationUnits(data["unit"]))
+
 
 class VolumeConcentration(AbstractMeasure):
     """
@@ -169,6 +219,54 @@ class VolumeConcentration(AbstractMeasure):
 
     def convert(self, unit: VolumeConcentrationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> VolumeConcentrationDto:
+        """
+        Get a new instance of VolumeConcentration DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumeConcentration unit to store the VolumeConcentration value in the DTO representation.
+        :type hold_in_unit: VolumeConcentrationUnits
+        :return: A new instance of VolumeConcentrationDto.
+        :rtype: VolumeConcentrationDto
+        """
+        return VolumeConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction):
+        """
+        Get a VolumeConcentration DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumeConcentration unit to store the VolumeConcentration value in the DTO representation.
+        :type hold_in_unit: VolumeConcentrationUnits
+        :return: JSON object represents VolumeConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(volume_concentration_dto: VolumeConcentrationDto):
+        """
+        Obtain a new instance of VolumeConcentration from a DTO unit object.
+
+        :param volume_concentration_dto: The VolumeConcentration DTO representation.
+        :type volume_concentration_dto: VolumeConcentrationDto
+        :return: A new instance of VolumeConcentration.
+        :rtype: VolumeConcentration
+        """
+        return VolumeConcentration(volume_concentration_dto.value, volume_concentration_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumeConcentration from a DTO unit json representation.
+
+        :param data: The VolumeConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of VolumeConcentration.
+        :rtype: VolumeConcentration
+        """
+        return VolumeConcentration.from_dto(VolumeConcentrationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeConcentrationUnits) -> float:
         value = self._value

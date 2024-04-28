@@ -10,171 +10,221 @@ class RotationalStiffnessUnits(Enum):
             RotationalStiffnessUnits enumeration
         """
         
-        NewtonMeterPerRadian = 'newton_meter_per_radian'
+        NewtonMeterPerRadian = 'NewtonMeterPerRadian'
         """
             
         """
         
-        PoundForceFootPerDegrees = 'pound_force_foot_per_degrees'
+        PoundForceFootPerDegrees = 'PoundForceFootPerDegrees'
         """
             
         """
         
-        KilopoundForceFootPerDegrees = 'kilopound_force_foot_per_degrees'
+        KilopoundForceFootPerDegrees = 'KilopoundForceFootPerDegrees'
         """
             
         """
         
-        NewtonMillimeterPerDegree = 'newton_millimeter_per_degree'
+        NewtonMillimeterPerDegree = 'NewtonMillimeterPerDegree'
         """
             
         """
         
-        NewtonMeterPerDegree = 'newton_meter_per_degree'
+        NewtonMeterPerDegree = 'NewtonMeterPerDegree'
         """
             
         """
         
-        NewtonMillimeterPerRadian = 'newton_millimeter_per_radian'
+        NewtonMillimeterPerRadian = 'NewtonMillimeterPerRadian'
         """
             
         """
         
-        PoundForceFeetPerRadian = 'pound_force_feet_per_radian'
+        PoundForceFeetPerRadian = 'PoundForceFeetPerRadian'
         """
             
         """
         
-        KilonewtonMeterPerRadian = 'kilonewton_meter_per_radian'
+        KilonewtonMeterPerRadian = 'KilonewtonMeterPerRadian'
         """
             
         """
         
-        MeganewtonMeterPerRadian = 'meganewton_meter_per_radian'
+        MeganewtonMeterPerRadian = 'MeganewtonMeterPerRadian'
         """
             
         """
         
-        NanonewtonMillimeterPerDegree = 'nanonewton_millimeter_per_degree'
+        NanonewtonMillimeterPerDegree = 'NanonewtonMillimeterPerDegree'
         """
             
         """
         
-        MicronewtonMillimeterPerDegree = 'micronewton_millimeter_per_degree'
+        MicronewtonMillimeterPerDegree = 'MicronewtonMillimeterPerDegree'
         """
             
         """
         
-        MillinewtonMillimeterPerDegree = 'millinewton_millimeter_per_degree'
+        MillinewtonMillimeterPerDegree = 'MillinewtonMillimeterPerDegree'
         """
             
         """
         
-        CentinewtonMillimeterPerDegree = 'centinewton_millimeter_per_degree'
+        CentinewtonMillimeterPerDegree = 'CentinewtonMillimeterPerDegree'
         """
             
         """
         
-        DecinewtonMillimeterPerDegree = 'decinewton_millimeter_per_degree'
+        DecinewtonMillimeterPerDegree = 'DecinewtonMillimeterPerDegree'
         """
             
         """
         
-        DecanewtonMillimeterPerDegree = 'decanewton_millimeter_per_degree'
+        DecanewtonMillimeterPerDegree = 'DecanewtonMillimeterPerDegree'
         """
             
         """
         
-        KilonewtonMillimeterPerDegree = 'kilonewton_millimeter_per_degree'
+        KilonewtonMillimeterPerDegree = 'KilonewtonMillimeterPerDegree'
         """
             
         """
         
-        MeganewtonMillimeterPerDegree = 'meganewton_millimeter_per_degree'
+        MeganewtonMillimeterPerDegree = 'MeganewtonMillimeterPerDegree'
         """
             
         """
         
-        NanonewtonMeterPerDegree = 'nanonewton_meter_per_degree'
+        NanonewtonMeterPerDegree = 'NanonewtonMeterPerDegree'
         """
             
         """
         
-        MicronewtonMeterPerDegree = 'micronewton_meter_per_degree'
+        MicronewtonMeterPerDegree = 'MicronewtonMeterPerDegree'
         """
             
         """
         
-        MillinewtonMeterPerDegree = 'millinewton_meter_per_degree'
+        MillinewtonMeterPerDegree = 'MillinewtonMeterPerDegree'
         """
             
         """
         
-        CentinewtonMeterPerDegree = 'centinewton_meter_per_degree'
+        CentinewtonMeterPerDegree = 'CentinewtonMeterPerDegree'
         """
             
         """
         
-        DecinewtonMeterPerDegree = 'decinewton_meter_per_degree'
+        DecinewtonMeterPerDegree = 'DecinewtonMeterPerDegree'
         """
             
         """
         
-        DecanewtonMeterPerDegree = 'decanewton_meter_per_degree'
+        DecanewtonMeterPerDegree = 'DecanewtonMeterPerDegree'
         """
             
         """
         
-        KilonewtonMeterPerDegree = 'kilonewton_meter_per_degree'
+        KilonewtonMeterPerDegree = 'KilonewtonMeterPerDegree'
         """
             
         """
         
-        MeganewtonMeterPerDegree = 'meganewton_meter_per_degree'
+        MeganewtonMeterPerDegree = 'MeganewtonMeterPerDegree'
         """
             
         """
         
-        NanonewtonMillimeterPerRadian = 'nanonewton_millimeter_per_radian'
+        NanonewtonMillimeterPerRadian = 'NanonewtonMillimeterPerRadian'
         """
             
         """
         
-        MicronewtonMillimeterPerRadian = 'micronewton_millimeter_per_radian'
+        MicronewtonMillimeterPerRadian = 'MicronewtonMillimeterPerRadian'
         """
             
         """
         
-        MillinewtonMillimeterPerRadian = 'millinewton_millimeter_per_radian'
+        MillinewtonMillimeterPerRadian = 'MillinewtonMillimeterPerRadian'
         """
             
         """
         
-        CentinewtonMillimeterPerRadian = 'centinewton_millimeter_per_radian'
+        CentinewtonMillimeterPerRadian = 'CentinewtonMillimeterPerRadian'
         """
             
         """
         
-        DecinewtonMillimeterPerRadian = 'decinewton_millimeter_per_radian'
+        DecinewtonMillimeterPerRadian = 'DecinewtonMillimeterPerRadian'
         """
             
         """
         
-        DecanewtonMillimeterPerRadian = 'decanewton_millimeter_per_radian'
+        DecanewtonMillimeterPerRadian = 'DecanewtonMillimeterPerRadian'
         """
             
         """
         
-        KilonewtonMillimeterPerRadian = 'kilonewton_millimeter_per_radian'
+        KilonewtonMillimeterPerRadian = 'KilonewtonMillimeterPerRadian'
         """
             
         """
         
-        MeganewtonMillimeterPerRadian = 'meganewton_millimeter_per_radian'
+        MeganewtonMillimeterPerRadian = 'MeganewtonMillimeterPerRadian'
         """
             
         """
         
+
+class RotationalStiffnessDto:
+    """
+    A DTO representation of a RotationalStiffness
+
+    Attributes:
+        value (float): The value of the RotationalStiffness.
+        unit (RotationalStiffnessUnits): The specific unit that the RotationalStiffness value is representing.
+    """
+
+    def __init__(self, value: float, unit: RotationalStiffnessUnits):
+        """
+        Create a new DTO representation of a RotationalStiffness
+
+        Parameters:
+            value (float): The value of the RotationalStiffness.
+            unit (RotationalStiffnessUnits): The specific unit that the RotationalStiffness value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the RotationalStiffness
+        """
+        self.unit: RotationalStiffnessUnits = unit
+        """
+        The specific unit that the RotationalStiffness value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a RotationalStiffness DTO JSON object representing the current unit.
+
+        :return: JSON object represents RotationalStiffness DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of RotationalStiffness DTO from a json representation.
+
+        :param data: The RotationalStiffness DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        :return: A new instance of RotationalStiffnessDto.
+        :rtype: RotationalStiffnessDto
+        """
+        return RotationalStiffnessDto(value=data["value"], unit=RotationalStiffnessUnits(data["unit"]))
+
 
 class RotationalStiffness(AbstractMeasure):
     """
@@ -260,6 +310,54 @@ class RotationalStiffness(AbstractMeasure):
 
     def convert(self, unit: RotationalStiffnessUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian) -> RotationalStiffnessDto:
+        """
+        Get a new instance of RotationalStiffness DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffness unit to store the RotationalStiffness value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessUnits
+        :return: A new instance of RotationalStiffnessDto.
+        :rtype: RotationalStiffnessDto
+        """
+        return RotationalStiffnessDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian):
+        """
+        Get a RotationalStiffness DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffness unit to store the RotationalStiffness value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessUnits
+        :return: JSON object represents RotationalStiffness DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(rotational_stiffness_dto: RotationalStiffnessDto):
+        """
+        Obtain a new instance of RotationalStiffness from a DTO unit object.
+
+        :param rotational_stiffness_dto: The RotationalStiffness DTO representation.
+        :type rotational_stiffness_dto: RotationalStiffnessDto
+        :return: A new instance of RotationalStiffness.
+        :rtype: RotationalStiffness
+        """
+        return RotationalStiffness(rotational_stiffness_dto.value, rotational_stiffness_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RotationalStiffness from a DTO unit json representation.
+
+        :param data: The RotationalStiffness DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        :return: A new instance of RotationalStiffness.
+        :rtype: RotationalStiffness
+        """
+        return RotationalStiffness.from_dto(RotationalStiffnessDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RotationalStiffnessUnits) -> float:
         value = self._value

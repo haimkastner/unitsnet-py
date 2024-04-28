@@ -10,76 +10,126 @@ class IrradianceUnits(Enum):
             IrradianceUnits enumeration
         """
         
-        WattPerSquareMeter = 'watt_per_square_meter'
+        WattPerSquareMeter = 'WattPerSquareMeter'
         """
             
         """
         
-        WattPerSquareCentimeter = 'watt_per_square_centimeter'
+        WattPerSquareCentimeter = 'WattPerSquareCentimeter'
         """
             
         """
         
-        PicowattPerSquareMeter = 'picowatt_per_square_meter'
+        PicowattPerSquareMeter = 'PicowattPerSquareMeter'
         """
             
         """
         
-        NanowattPerSquareMeter = 'nanowatt_per_square_meter'
+        NanowattPerSquareMeter = 'NanowattPerSquareMeter'
         """
             
         """
         
-        MicrowattPerSquareMeter = 'microwatt_per_square_meter'
+        MicrowattPerSquareMeter = 'MicrowattPerSquareMeter'
         """
             
         """
         
-        MilliwattPerSquareMeter = 'milliwatt_per_square_meter'
+        MilliwattPerSquareMeter = 'MilliwattPerSquareMeter'
         """
             
         """
         
-        KilowattPerSquareMeter = 'kilowatt_per_square_meter'
+        KilowattPerSquareMeter = 'KilowattPerSquareMeter'
         """
             
         """
         
-        MegawattPerSquareMeter = 'megawatt_per_square_meter'
+        MegawattPerSquareMeter = 'MegawattPerSquareMeter'
         """
             
         """
         
-        PicowattPerSquareCentimeter = 'picowatt_per_square_centimeter'
+        PicowattPerSquareCentimeter = 'PicowattPerSquareCentimeter'
         """
             
         """
         
-        NanowattPerSquareCentimeter = 'nanowatt_per_square_centimeter'
+        NanowattPerSquareCentimeter = 'NanowattPerSquareCentimeter'
         """
             
         """
         
-        MicrowattPerSquareCentimeter = 'microwatt_per_square_centimeter'
+        MicrowattPerSquareCentimeter = 'MicrowattPerSquareCentimeter'
         """
             
         """
         
-        MilliwattPerSquareCentimeter = 'milliwatt_per_square_centimeter'
+        MilliwattPerSquareCentimeter = 'MilliwattPerSquareCentimeter'
         """
             
         """
         
-        KilowattPerSquareCentimeter = 'kilowatt_per_square_centimeter'
+        KilowattPerSquareCentimeter = 'KilowattPerSquareCentimeter'
         """
             
         """
         
-        MegawattPerSquareCentimeter = 'megawatt_per_square_centimeter'
+        MegawattPerSquareCentimeter = 'MegawattPerSquareCentimeter'
         """
             
         """
         
+
+class IrradianceDto:
+    """
+    A DTO representation of a Irradiance
+
+    Attributes:
+        value (float): The value of the Irradiance.
+        unit (IrradianceUnits): The specific unit that the Irradiance value is representing.
+    """
+
+    def __init__(self, value: float, unit: IrradianceUnits):
+        """
+        Create a new DTO representation of a Irradiance
+
+        Parameters:
+            value (float): The value of the Irradiance.
+            unit (IrradianceUnits): The specific unit that the Irradiance value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Irradiance
+        """
+        self.unit: IrradianceUnits = unit
+        """
+        The specific unit that the Irradiance value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Irradiance DTO JSON object representing the current unit.
+
+        :return: JSON object represents Irradiance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Irradiance DTO from a json representation.
+
+        :param data: The Irradiance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeter"}
+        :return: A new instance of IrradianceDto.
+        :rtype: IrradianceDto
+        """
+        return IrradianceDto(value=data["value"], unit=IrradianceUnits(data["unit"]))
+
 
 class Irradiance(AbstractMeasure):
     """
@@ -127,6 +177,54 @@ class Irradiance(AbstractMeasure):
 
     def convert(self, unit: IrradianceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> IrradianceDto:
+        """
+        Get a new instance of Irradiance DTO representing the current unit.
+
+        :param hold_in_unit: The specific Irradiance unit to store the Irradiance value in the DTO representation.
+        :type hold_in_unit: IrradianceUnits
+        :return: A new instance of IrradianceDto.
+        :rtype: IrradianceDto
+        """
+        return IrradianceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter):
+        """
+        Get a Irradiance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Irradiance unit to store the Irradiance value in the DTO representation.
+        :type hold_in_unit: IrradianceUnits
+        :return: JSON object represents Irradiance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(irradiance_dto: IrradianceDto):
+        """
+        Obtain a new instance of Irradiance from a DTO unit object.
+
+        :param irradiance_dto: The Irradiance DTO representation.
+        :type irradiance_dto: IrradianceDto
+        :return: A new instance of Irradiance.
+        :rtype: Irradiance
+        """
+        return Irradiance(irradiance_dto.value, irradiance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Irradiance from a DTO unit json representation.
+
+        :param data: The Irradiance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeter"}
+        :return: A new instance of Irradiance.
+        :rtype: Irradiance
+        """
+        return Irradiance.from_dto(IrradianceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: IrradianceUnits) -> float:
         value = self._value

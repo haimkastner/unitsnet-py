@@ -10,91 +10,141 @@ class AmountOfSubstanceUnits(Enum):
             AmountOfSubstanceUnits enumeration
         """
         
-        Mole = 'mole'
+        Mole = 'Mole'
         """
             
         """
         
-        PoundMole = 'pound_mole'
+        PoundMole = 'PoundMole'
         """
             
         """
         
-        Femtomole = 'femtomole'
+        Femtomole = 'Femtomole'
         """
             
         """
         
-        Picomole = 'picomole'
+        Picomole = 'Picomole'
         """
             
         """
         
-        Nanomole = 'nanomole'
+        Nanomole = 'Nanomole'
         """
             
         """
         
-        Micromole = 'micromole'
+        Micromole = 'Micromole'
         """
             
         """
         
-        Millimole = 'millimole'
+        Millimole = 'Millimole'
         """
             
         """
         
-        Centimole = 'centimole'
+        Centimole = 'Centimole'
         """
             
         """
         
-        Decimole = 'decimole'
+        Decimole = 'Decimole'
         """
             
         """
         
-        Kilomole = 'kilomole'
+        Kilomole = 'Kilomole'
         """
             
         """
         
-        Megamole = 'megamole'
+        Megamole = 'Megamole'
         """
             
         """
         
-        NanopoundMole = 'nanopound_mole'
+        NanopoundMole = 'NanopoundMole'
         """
             
         """
         
-        MicropoundMole = 'micropound_mole'
+        MicropoundMole = 'MicropoundMole'
         """
             
         """
         
-        MillipoundMole = 'millipound_mole'
+        MillipoundMole = 'MillipoundMole'
         """
             
         """
         
-        CentipoundMole = 'centipound_mole'
+        CentipoundMole = 'CentipoundMole'
         """
             
         """
         
-        DecipoundMole = 'decipound_mole'
+        DecipoundMole = 'DecipoundMole'
         """
             
         """
         
-        KilopoundMole = 'kilopound_mole'
+        KilopoundMole = 'KilopoundMole'
         """
             
         """
         
+
+class AmountOfSubstanceDto:
+    """
+    A DTO representation of a AmountOfSubstance
+
+    Attributes:
+        value (float): The value of the AmountOfSubstance.
+        unit (AmountOfSubstanceUnits): The specific unit that the AmountOfSubstance value is representing.
+    """
+
+    def __init__(self, value: float, unit: AmountOfSubstanceUnits):
+        """
+        Create a new DTO representation of a AmountOfSubstance
+
+        Parameters:
+            value (float): The value of the AmountOfSubstance.
+            unit (AmountOfSubstanceUnits): The specific unit that the AmountOfSubstance value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the AmountOfSubstance
+        """
+        self.unit: AmountOfSubstanceUnits = unit
+        """
+        The specific unit that the AmountOfSubstance value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a AmountOfSubstance DTO JSON object representing the current unit.
+
+        :return: JSON object represents AmountOfSubstance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Mole"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of AmountOfSubstance DTO from a json representation.
+
+        :param data: The AmountOfSubstance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Mole"}
+        :return: A new instance of AmountOfSubstanceDto.
+        :rtype: AmountOfSubstanceDto
+        """
+        return AmountOfSubstanceDto(value=data["value"], unit=AmountOfSubstanceUnits(data["unit"]))
+
 
 class AmountOfSubstance(AbstractMeasure):
     """
@@ -148,6 +198,54 @@ class AmountOfSubstance(AbstractMeasure):
 
     def convert(self, unit: AmountOfSubstanceUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> AmountOfSubstanceDto:
+        """
+        Get a new instance of AmountOfSubstance DTO representing the current unit.
+
+        :param hold_in_unit: The specific AmountOfSubstance unit to store the AmountOfSubstance value in the DTO representation.
+        :type hold_in_unit: AmountOfSubstanceUnits
+        :return: A new instance of AmountOfSubstanceDto.
+        :rtype: AmountOfSubstanceDto
+        """
+        return AmountOfSubstanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole):
+        """
+        Get a AmountOfSubstance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AmountOfSubstance unit to store the AmountOfSubstance value in the DTO representation.
+        :type hold_in_unit: AmountOfSubstanceUnits
+        :return: JSON object represents AmountOfSubstance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Mole"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(amount_of_substance_dto: AmountOfSubstanceDto):
+        """
+        Obtain a new instance of AmountOfSubstance from a DTO unit object.
+
+        :param amount_of_substance_dto: The AmountOfSubstance DTO representation.
+        :type amount_of_substance_dto: AmountOfSubstanceDto
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
+        return AmountOfSubstance(amount_of_substance_dto.value, amount_of_substance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AmountOfSubstance from a DTO unit json representation.
+
+        :param data: The AmountOfSubstance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Mole"}
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
+        return AmountOfSubstance.from_dto(AmountOfSubstanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
         value = self._value

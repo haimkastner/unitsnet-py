@@ -10,61 +10,111 @@ class JerkUnits(Enum):
             JerkUnits enumeration
         """
         
-        MeterPerSecondCubed = 'meter_per_second_cubed'
+        MeterPerSecondCubed = 'MeterPerSecondCubed'
         """
             
         """
         
-        InchPerSecondCubed = 'inch_per_second_cubed'
+        InchPerSecondCubed = 'InchPerSecondCubed'
         """
             
         """
         
-        FootPerSecondCubed = 'foot_per_second_cubed'
+        FootPerSecondCubed = 'FootPerSecondCubed'
         """
             
         """
         
-        StandardGravitiesPerSecond = 'standard_gravities_per_second'
+        StandardGravitiesPerSecond = 'StandardGravitiesPerSecond'
         """
             
         """
         
-        NanometerPerSecondCubed = 'nanometer_per_second_cubed'
+        NanometerPerSecondCubed = 'NanometerPerSecondCubed'
         """
             
         """
         
-        MicrometerPerSecondCubed = 'micrometer_per_second_cubed'
+        MicrometerPerSecondCubed = 'MicrometerPerSecondCubed'
         """
             
         """
         
-        MillimeterPerSecondCubed = 'millimeter_per_second_cubed'
+        MillimeterPerSecondCubed = 'MillimeterPerSecondCubed'
         """
             
         """
         
-        CentimeterPerSecondCubed = 'centimeter_per_second_cubed'
+        CentimeterPerSecondCubed = 'CentimeterPerSecondCubed'
         """
             
         """
         
-        DecimeterPerSecondCubed = 'decimeter_per_second_cubed'
+        DecimeterPerSecondCubed = 'DecimeterPerSecondCubed'
         """
             
         """
         
-        KilometerPerSecondCubed = 'kilometer_per_second_cubed'
+        KilometerPerSecondCubed = 'KilometerPerSecondCubed'
         """
             
         """
         
-        MillistandardGravitiesPerSecond = 'millistandard_gravities_per_second'
+        MillistandardGravitiesPerSecond = 'MillistandardGravitiesPerSecond'
         """
             
         """
         
+
+class JerkDto:
+    """
+    A DTO representation of a Jerk
+
+    Attributes:
+        value (float): The value of the Jerk.
+        unit (JerkUnits): The specific unit that the Jerk value is representing.
+    """
+
+    def __init__(self, value: float, unit: JerkUnits):
+        """
+        Create a new DTO representation of a Jerk
+
+        Parameters:
+            value (float): The value of the Jerk.
+            unit (JerkUnits): The specific unit that the Jerk value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Jerk
+        """
+        self.unit: JerkUnits = unit
+        """
+        The specific unit that the Jerk value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Jerk DTO JSON object representing the current unit.
+
+        :return: JSON object represents Jerk DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecondCubed"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Jerk DTO from a json representation.
+
+        :param data: The Jerk DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecondCubed"}
+        :return: A new instance of JerkDto.
+        :rtype: JerkDto
+        """
+        return JerkDto(value=data["value"], unit=JerkUnits(data["unit"]))
+
 
 class Jerk(AbstractMeasure):
     """
@@ -106,6 +156,54 @@ class Jerk(AbstractMeasure):
 
     def convert(self, unit: JerkUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> JerkDto:
+        """
+        Get a new instance of Jerk DTO representing the current unit.
+
+        :param hold_in_unit: The specific Jerk unit to store the Jerk value in the DTO representation.
+        :type hold_in_unit: JerkUnits
+        :return: A new instance of JerkDto.
+        :rtype: JerkDto
+        """
+        return JerkDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: JerkUnits = JerkUnits.MeterPerSecondCubed):
+        """
+        Get a Jerk DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Jerk unit to store the Jerk value in the DTO representation.
+        :type hold_in_unit: JerkUnits
+        :return: JSON object represents Jerk DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecondCubed"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(jerk_dto: JerkDto):
+        """
+        Obtain a new instance of Jerk from a DTO unit object.
+
+        :param jerk_dto: The Jerk DTO representation.
+        :type jerk_dto: JerkDto
+        :return: A new instance of Jerk.
+        :rtype: Jerk
+        """
+        return Jerk(jerk_dto.value, jerk_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Jerk from a DTO unit json representation.
+
+        :param data: The Jerk DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecondCubed"}
+        :return: A new instance of Jerk.
+        :rtype: Jerk
+        """
+        return Jerk.from_dto(JerkDto.from_json(data))
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
         value = self._value

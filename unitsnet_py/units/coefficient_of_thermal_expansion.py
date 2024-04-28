@@ -10,36 +10,86 @@ class CoefficientOfThermalExpansionUnits(Enum):
             CoefficientOfThermalExpansionUnits enumeration
         """
         
-        PerKelvin = 'per_kelvin'
+        PerKelvin = 'PerKelvin'
         """
             
         """
         
-        PerDegreeCelsius = 'per_degree_celsius'
+        PerDegreeCelsius = 'PerDegreeCelsius'
         """
             
         """
         
-        PerDegreeFahrenheit = 'per_degree_fahrenheit'
+        PerDegreeFahrenheit = 'PerDegreeFahrenheit'
         """
             
         """
         
-        PpmPerKelvin = 'ppm_per_kelvin'
+        PpmPerKelvin = 'PpmPerKelvin'
         """
             
         """
         
-        PpmPerDegreeCelsius = 'ppm_per_degree_celsius'
+        PpmPerDegreeCelsius = 'PpmPerDegreeCelsius'
         """
             
         """
         
-        PpmPerDegreeFahrenheit = 'ppm_per_degree_fahrenheit'
+        PpmPerDegreeFahrenheit = 'PpmPerDegreeFahrenheit'
         """
             
         """
         
+
+class CoefficientOfThermalExpansionDto:
+    """
+    A DTO representation of a CoefficientOfThermalExpansion
+
+    Attributes:
+        value (float): The value of the CoefficientOfThermalExpansion.
+        unit (CoefficientOfThermalExpansionUnits): The specific unit that the CoefficientOfThermalExpansion value is representing.
+    """
+
+    def __init__(self, value: float, unit: CoefficientOfThermalExpansionUnits):
+        """
+        Create a new DTO representation of a CoefficientOfThermalExpansion
+
+        Parameters:
+            value (float): The value of the CoefficientOfThermalExpansion.
+            unit (CoefficientOfThermalExpansionUnits): The specific unit that the CoefficientOfThermalExpansion value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the CoefficientOfThermalExpansion
+        """
+        self.unit: CoefficientOfThermalExpansionUnits = unit
+        """
+        The specific unit that the CoefficientOfThermalExpansion value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a CoefficientOfThermalExpansion DTO JSON object representing the current unit.
+
+        :return: JSON object represents CoefficientOfThermalExpansion DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PerKelvin"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of CoefficientOfThermalExpansion DTO from a json representation.
+
+        :param data: The CoefficientOfThermalExpansion DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PerKelvin"}
+        :return: A new instance of CoefficientOfThermalExpansionDto.
+        :rtype: CoefficientOfThermalExpansionDto
+        """
+        return CoefficientOfThermalExpansionDto(value=data["value"], unit=CoefficientOfThermalExpansionUnits(data["unit"]))
+
 
 class CoefficientOfThermalExpansion(AbstractMeasure):
     """
@@ -71,6 +121,54 @@ class CoefficientOfThermalExpansion(AbstractMeasure):
 
     def convert(self, unit: CoefficientOfThermalExpansionUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> CoefficientOfThermalExpansionDto:
+        """
+        Get a new instance of CoefficientOfThermalExpansion DTO representing the current unit.
+
+        :param hold_in_unit: The specific CoefficientOfThermalExpansion unit to store the CoefficientOfThermalExpansion value in the DTO representation.
+        :type hold_in_unit: CoefficientOfThermalExpansionUnits
+        :return: A new instance of CoefficientOfThermalExpansionDto.
+        :rtype: CoefficientOfThermalExpansionDto
+        """
+        return CoefficientOfThermalExpansionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin):
+        """
+        Get a CoefficientOfThermalExpansion DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific CoefficientOfThermalExpansion unit to store the CoefficientOfThermalExpansion value in the DTO representation.
+        :type hold_in_unit: CoefficientOfThermalExpansionUnits
+        :return: JSON object represents CoefficientOfThermalExpansion DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PerKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(coefficient_of_thermal_expansion_dto: CoefficientOfThermalExpansionDto):
+        """
+        Obtain a new instance of CoefficientOfThermalExpansion from a DTO unit object.
+
+        :param coefficient_of_thermal_expansion_dto: The CoefficientOfThermalExpansion DTO representation.
+        :type coefficient_of_thermal_expansion_dto: CoefficientOfThermalExpansionDto
+        :return: A new instance of CoefficientOfThermalExpansion.
+        :rtype: CoefficientOfThermalExpansion
+        """
+        return CoefficientOfThermalExpansion(coefficient_of_thermal_expansion_dto.value, coefficient_of_thermal_expansion_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of CoefficientOfThermalExpansion from a DTO unit json representation.
+
+        :param data: The CoefficientOfThermalExpansion DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PerKelvin"}
+        :return: A new instance of CoefficientOfThermalExpansion.
+        :rtype: CoefficientOfThermalExpansion
+        """
+        return CoefficientOfThermalExpansion.from_dto(CoefficientOfThermalExpansionDto.from_json(data))
 
     def __convert_from_base(self, from_unit: CoefficientOfThermalExpansionUnits) -> float:
         value = self._value

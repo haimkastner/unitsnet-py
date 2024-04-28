@@ -10,76 +10,126 @@ class ElectricResistivityUnits(Enum):
             ElectricResistivityUnits enumeration
         """
         
-        OhmMeter = 'ohm_meter'
+        OhmMeter = 'OhmMeter'
         """
             
         """
         
-        OhmCentimeter = 'ohm_centimeter'
+        OhmCentimeter = 'OhmCentimeter'
         """
             
         """
         
-        PicoohmMeter = 'picoohm_meter'
+        PicoohmMeter = 'PicoohmMeter'
         """
             
         """
         
-        NanoohmMeter = 'nanoohm_meter'
+        NanoohmMeter = 'NanoohmMeter'
         """
             
         """
         
-        MicroohmMeter = 'microohm_meter'
+        MicroohmMeter = 'MicroohmMeter'
         """
             
         """
         
-        MilliohmMeter = 'milliohm_meter'
+        MilliohmMeter = 'MilliohmMeter'
         """
             
         """
         
-        KiloohmMeter = 'kiloohm_meter'
+        KiloohmMeter = 'KiloohmMeter'
         """
             
         """
         
-        MegaohmMeter = 'megaohm_meter'
+        MegaohmMeter = 'MegaohmMeter'
         """
             
         """
         
-        PicoohmCentimeter = 'picoohm_centimeter'
+        PicoohmCentimeter = 'PicoohmCentimeter'
         """
             
         """
         
-        NanoohmCentimeter = 'nanoohm_centimeter'
+        NanoohmCentimeter = 'NanoohmCentimeter'
         """
             
         """
         
-        MicroohmCentimeter = 'microohm_centimeter'
+        MicroohmCentimeter = 'MicroohmCentimeter'
         """
             
         """
         
-        MilliohmCentimeter = 'milliohm_centimeter'
+        MilliohmCentimeter = 'MilliohmCentimeter'
         """
             
         """
         
-        KiloohmCentimeter = 'kiloohm_centimeter'
+        KiloohmCentimeter = 'KiloohmCentimeter'
         """
             
         """
         
-        MegaohmCentimeter = 'megaohm_centimeter'
+        MegaohmCentimeter = 'MegaohmCentimeter'
         """
             
         """
         
+
+class ElectricResistivityDto:
+    """
+    A DTO representation of a ElectricResistivity
+
+    Attributes:
+        value (float): The value of the ElectricResistivity.
+        unit (ElectricResistivityUnits): The specific unit that the ElectricResistivity value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricResistivityUnits):
+        """
+        Create a new DTO representation of a ElectricResistivity
+
+        Parameters:
+            value (float): The value of the ElectricResistivity.
+            unit (ElectricResistivityUnits): The specific unit that the ElectricResistivity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricResistivity
+        """
+        self.unit: ElectricResistivityUnits = unit
+        """
+        The specific unit that the ElectricResistivity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricResistivity DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricResistivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "OhmMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricResistivity DTO from a json representation.
+
+        :param data: The ElectricResistivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "OhmMeter"}
+        :return: A new instance of ElectricResistivityDto.
+        :rtype: ElectricResistivityDto
+        """
+        return ElectricResistivityDto(value=data["value"], unit=ElectricResistivityUnits(data["unit"]))
+
 
 class ElectricResistivity(AbstractMeasure):
     """
@@ -127,6 +177,54 @@ class ElectricResistivity(AbstractMeasure):
 
     def convert(self, unit: ElectricResistivityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> ElectricResistivityDto:
+        """
+        Get a new instance of ElectricResistivity DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricResistivity unit to store the ElectricResistivity value in the DTO representation.
+        :type hold_in_unit: ElectricResistivityUnits
+        :return: A new instance of ElectricResistivityDto.
+        :rtype: ElectricResistivityDto
+        """
+        return ElectricResistivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter):
+        """
+        Get a ElectricResistivity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricResistivity unit to store the ElectricResistivity value in the DTO representation.
+        :type hold_in_unit: ElectricResistivityUnits
+        :return: JSON object represents ElectricResistivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "OhmMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_resistivity_dto: ElectricResistivityDto):
+        """
+        Obtain a new instance of ElectricResistivity from a DTO unit object.
+
+        :param electric_resistivity_dto: The ElectricResistivity DTO representation.
+        :type electric_resistivity_dto: ElectricResistivityDto
+        :return: A new instance of ElectricResistivity.
+        :rtype: ElectricResistivity
+        """
+        return ElectricResistivity(electric_resistivity_dto.value, electric_resistivity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricResistivity from a DTO unit json representation.
+
+        :param data: The ElectricResistivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "OhmMeter"}
+        :return: A new instance of ElectricResistivity.
+        :rtype: ElectricResistivity
+        """
+        return ElectricResistivity.from_dto(ElectricResistivityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricResistivityUnits) -> float:
         value = self._value

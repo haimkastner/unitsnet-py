@@ -10,141 +10,191 @@ class MassUnits(Enum):
             MassUnits enumeration
         """
         
-        Gram = 'gram'
+        Gram = 'Gram'
         """
             
         """
         
-        Tonne = 'tonne'
+        Tonne = 'Tonne'
         """
             
         """
         
-        ShortTon = 'short_ton'
+        ShortTon = 'ShortTon'
         """
             The short ton is a unit of mass equal to 2,000 pounds (907.18474 kg), that is most commonly used in the United States – known there simply as the ton.
         """
         
-        LongTon = 'long_ton'
+        LongTon = 'LongTon'
         """
             Long ton (weight ton or Imperial ton) is a unit of mass equal to 2,240 pounds (1,016 kg) and is the name for the unit called the "ton" in the avoirdupois or Imperial system of measurements that was used in the United Kingdom and several other Commonwealth countries before metrication.
         """
         
-        Pound = 'pound'
+        Pound = 'Pound'
         """
             The pound or pound-mass (abbreviations: lb, lbm) is a unit of mass used in the imperial, United States customary and other systems of measurement. A number of different definitions have been used, the most common today being the international avoirdupois pound which is legally defined as exactly 0.45359237 kilograms, and which is divided into 16 avoirdupois ounces.
         """
         
-        Ounce = 'ounce'
+        Ounce = 'Ounce'
         """
             The international avoirdupois ounce (abbreviated oz) is defined as exactly 28.349523125 g under the international yard and pound agreement of 1959, signed by the United States and countries of the Commonwealth of Nations. 16 oz make up an avoirdupois pound.
         """
         
-        Slug = 'slug'
+        Slug = 'Slug'
         """
             The slug (abbreviation slug) is a unit of mass that is accelerated by 1 ft/s² when a force of one pound (lbf) is exerted on it.
         """
         
-        Stone = 'stone'
+        Stone = 'Stone'
         """
             The stone (abbreviation st) is a unit of mass equal to 14 pounds avoirdupois (about 6.35 kilograms) used in Great Britain and Ireland for measuring human body weight.
         """
         
-        ShortHundredweight = 'short_hundredweight'
+        ShortHundredweight = 'ShortHundredweight'
         """
             The short hundredweight (abbreviation cwt) is a unit of mass equal to 100 pounds in US and Canada. In British English, the short hundredweight is referred to as the "cental".
         """
         
-        LongHundredweight = 'long_hundredweight'
+        LongHundredweight = 'LongHundredweight'
         """
             The long or imperial hundredweight (abbreviation cwt) is a unit of mass equal to 112 pounds in US and Canada.
         """
         
-        Grain = 'grain'
+        Grain = 'Grain'
         """
             A grain is a unit of measurement of mass, and in the troy weight, avoirdupois, and Apothecaries' system, equal to exactly 64.79891 milligrams.
         """
         
-        SolarMass = 'solar_mass'
+        SolarMass = 'SolarMass'
         """
             Solar mass is a ratio unit to the mass of the solar system star, the sun.
         """
         
-        EarthMass = 'earth_mass'
+        EarthMass = 'EarthMass'
         """
             Earth mass is a ratio unit to the mass of planet Earth.
         """
         
-        Femtogram = 'femtogram'
+        Femtogram = 'Femtogram'
         """
             
         """
         
-        Picogram = 'picogram'
+        Picogram = 'Picogram'
         """
             
         """
         
-        Nanogram = 'nanogram'
+        Nanogram = 'Nanogram'
         """
             
         """
         
-        Microgram = 'microgram'
+        Microgram = 'Microgram'
         """
             
         """
         
-        Milligram = 'milligram'
+        Milligram = 'Milligram'
         """
             
         """
         
-        Centigram = 'centigram'
+        Centigram = 'Centigram'
         """
             
         """
         
-        Decigram = 'decigram'
+        Decigram = 'Decigram'
         """
             
         """
         
-        Decagram = 'decagram'
+        Decagram = 'Decagram'
         """
             
         """
         
-        Hectogram = 'hectogram'
+        Hectogram = 'Hectogram'
         """
             
         """
         
-        Kilogram = 'kilogram'
+        Kilogram = 'Kilogram'
         """
             
         """
         
-        Kilotonne = 'kilotonne'
+        Kilotonne = 'Kilotonne'
         """
             
         """
         
-        Megatonne = 'megatonne'
+        Megatonne = 'Megatonne'
         """
             
         """
         
-        Kilopound = 'kilopound'
+        Kilopound = 'Kilopound'
         """
             
         """
         
-        Megapound = 'megapound'
+        Megapound = 'Megapound'
         """
             
         """
         
+
+class MassDto:
+    """
+    A DTO representation of a Mass
+
+    Attributes:
+        value (float): The value of the Mass.
+        unit (MassUnits): The specific unit that the Mass value is representing.
+    """
+
+    def __init__(self, value: float, unit: MassUnits):
+        """
+        Create a new DTO representation of a Mass
+
+        Parameters:
+            value (float): The value of the Mass.
+            unit (MassUnits): The specific unit that the Mass value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Mass
+        """
+        self.unit: MassUnits = unit
+        """
+        The specific unit that the Mass value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Mass DTO JSON object representing the current unit.
+
+        :return: JSON object represents Mass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kilogram"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Mass DTO from a json representation.
+
+        :param data: The Mass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kilogram"}
+        :return: A new instance of MassDto.
+        :rtype: MassDto
+        """
+        return MassDto(value=data["value"], unit=MassUnits(data["unit"]))
+
 
 class Mass(AbstractMeasure):
     """
@@ -218,6 +268,54 @@ class Mass(AbstractMeasure):
 
     def convert(self, unit: MassUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassUnits = MassUnits.Kilogram) -> MassDto:
+        """
+        Get a new instance of Mass DTO representing the current unit.
+
+        :param hold_in_unit: The specific Mass unit to store the Mass value in the DTO representation.
+        :type hold_in_unit: MassUnits
+        :return: A new instance of MassDto.
+        :rtype: MassDto
+        """
+        return MassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassUnits = MassUnits.Kilogram):
+        """
+        Get a Mass DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Mass unit to store the Mass value in the DTO representation.
+        :type hold_in_unit: MassUnits
+        :return: JSON object represents Mass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(mass_dto: MassDto):
+        """
+        Obtain a new instance of Mass from a DTO unit object.
+
+        :param mass_dto: The Mass DTO representation.
+        :type mass_dto: MassDto
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(mass_dto.value, mass_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Mass from a DTO unit json representation.
+
+        :param data: The Mass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kilogram"}
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass.from_dto(MassDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassUnits) -> float:
         value = self._value

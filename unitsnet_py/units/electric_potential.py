@@ -10,36 +10,86 @@ class ElectricPotentialUnits(Enum):
             ElectricPotentialUnits enumeration
         """
         
-        Volt = 'volt'
+        Volt = 'Volt'
         """
             
         """
         
-        Nanovolt = 'nanovolt'
+        Nanovolt = 'Nanovolt'
         """
             
         """
         
-        Microvolt = 'microvolt'
+        Microvolt = 'Microvolt'
         """
             
         """
         
-        Millivolt = 'millivolt'
+        Millivolt = 'Millivolt'
         """
             
         """
         
-        Kilovolt = 'kilovolt'
+        Kilovolt = 'Kilovolt'
         """
             
         """
         
-        Megavolt = 'megavolt'
+        Megavolt = 'Megavolt'
         """
             
         """
         
+
+class ElectricPotentialDto:
+    """
+    A DTO representation of a ElectricPotential
+
+    Attributes:
+        value (float): The value of the ElectricPotential.
+        unit (ElectricPotentialUnits): The specific unit that the ElectricPotential value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricPotentialUnits):
+        """
+        Create a new DTO representation of a ElectricPotential
+
+        Parameters:
+            value (float): The value of the ElectricPotential.
+            unit (ElectricPotentialUnits): The specific unit that the ElectricPotential value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricPotential
+        """
+        self.unit: ElectricPotentialUnits = unit
+        """
+        The specific unit that the ElectricPotential value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricPotential DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricPotential DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Volt"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricPotential DTO from a json representation.
+
+        :param data: The ElectricPotential DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Volt"}
+        :return: A new instance of ElectricPotentialDto.
+        :rtype: ElectricPotentialDto
+        """
+        return ElectricPotentialDto(value=data["value"], unit=ElectricPotentialUnits(data["unit"]))
+
 
 class ElectricPotential(AbstractMeasure):
     """
@@ -71,6 +121,54 @@ class ElectricPotential(AbstractMeasure):
 
     def convert(self, unit: ElectricPotentialUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt) -> ElectricPotentialDto:
+        """
+        Get a new instance of ElectricPotential DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotential unit to store the ElectricPotential value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialUnits
+        :return: A new instance of ElectricPotentialDto.
+        :rtype: ElectricPotentialDto
+        """
+        return ElectricPotentialDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt):
+        """
+        Get a ElectricPotential DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotential unit to store the ElectricPotential value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialUnits
+        :return: JSON object represents ElectricPotential DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Volt"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_potential_dto: ElectricPotentialDto):
+        """
+        Obtain a new instance of ElectricPotential from a DTO unit object.
+
+        :param electric_potential_dto: The ElectricPotential DTO representation.
+        :type electric_potential_dto: ElectricPotentialDto
+        :return: A new instance of ElectricPotential.
+        :rtype: ElectricPotential
+        """
+        return ElectricPotential(electric_potential_dto.value, electric_potential_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricPotential from a DTO unit json representation.
+
+        :param data: The ElectricPotential DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Volt"}
+        :return: A new instance of ElectricPotential.
+        :rtype: ElectricPotential
+        """
+        return ElectricPotential.from_dto(ElectricPotentialDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricPotentialUnits) -> float:
         value = self._value

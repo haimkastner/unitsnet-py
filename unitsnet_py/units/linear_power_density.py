@@ -10,131 +10,181 @@ class LinearPowerDensityUnits(Enum):
             LinearPowerDensityUnits enumeration
         """
         
-        WattPerMeter = 'watt_per_meter'
+        WattPerMeter = 'WattPerMeter'
         """
             
         """
         
-        WattPerCentimeter = 'watt_per_centimeter'
+        WattPerCentimeter = 'WattPerCentimeter'
         """
             
         """
         
-        WattPerMillimeter = 'watt_per_millimeter'
+        WattPerMillimeter = 'WattPerMillimeter'
         """
             
         """
         
-        WattPerInch = 'watt_per_inch'
+        WattPerInch = 'WattPerInch'
         """
             
         """
         
-        WattPerFoot = 'watt_per_foot'
+        WattPerFoot = 'WattPerFoot'
         """
             
         """
         
-        MilliwattPerMeter = 'milliwatt_per_meter'
+        MilliwattPerMeter = 'MilliwattPerMeter'
         """
             
         """
         
-        KilowattPerMeter = 'kilowatt_per_meter'
+        KilowattPerMeter = 'KilowattPerMeter'
         """
             
         """
         
-        MegawattPerMeter = 'megawatt_per_meter'
+        MegawattPerMeter = 'MegawattPerMeter'
         """
             
         """
         
-        GigawattPerMeter = 'gigawatt_per_meter'
+        GigawattPerMeter = 'GigawattPerMeter'
         """
             
         """
         
-        MilliwattPerCentimeter = 'milliwatt_per_centimeter'
+        MilliwattPerCentimeter = 'MilliwattPerCentimeter'
         """
             
         """
         
-        KilowattPerCentimeter = 'kilowatt_per_centimeter'
+        KilowattPerCentimeter = 'KilowattPerCentimeter'
         """
             
         """
         
-        MegawattPerCentimeter = 'megawatt_per_centimeter'
+        MegawattPerCentimeter = 'MegawattPerCentimeter'
         """
             
         """
         
-        GigawattPerCentimeter = 'gigawatt_per_centimeter'
+        GigawattPerCentimeter = 'GigawattPerCentimeter'
         """
             
         """
         
-        MilliwattPerMillimeter = 'milliwatt_per_millimeter'
+        MilliwattPerMillimeter = 'MilliwattPerMillimeter'
         """
             
         """
         
-        KilowattPerMillimeter = 'kilowatt_per_millimeter'
+        KilowattPerMillimeter = 'KilowattPerMillimeter'
         """
             
         """
         
-        MegawattPerMillimeter = 'megawatt_per_millimeter'
+        MegawattPerMillimeter = 'MegawattPerMillimeter'
         """
             
         """
         
-        GigawattPerMillimeter = 'gigawatt_per_millimeter'
+        GigawattPerMillimeter = 'GigawattPerMillimeter'
         """
             
         """
         
-        MilliwattPerInch = 'milliwatt_per_inch'
+        MilliwattPerInch = 'MilliwattPerInch'
         """
             
         """
         
-        KilowattPerInch = 'kilowatt_per_inch'
+        KilowattPerInch = 'KilowattPerInch'
         """
             
         """
         
-        MegawattPerInch = 'megawatt_per_inch'
+        MegawattPerInch = 'MegawattPerInch'
         """
             
         """
         
-        GigawattPerInch = 'gigawatt_per_inch'
+        GigawattPerInch = 'GigawattPerInch'
         """
             
         """
         
-        MilliwattPerFoot = 'milliwatt_per_foot'
+        MilliwattPerFoot = 'MilliwattPerFoot'
         """
             
         """
         
-        KilowattPerFoot = 'kilowatt_per_foot'
+        KilowattPerFoot = 'KilowattPerFoot'
         """
             
         """
         
-        MegawattPerFoot = 'megawatt_per_foot'
+        MegawattPerFoot = 'MegawattPerFoot'
         """
             
         """
         
-        GigawattPerFoot = 'gigawatt_per_foot'
+        GigawattPerFoot = 'GigawattPerFoot'
         """
             
         """
         
+
+class LinearPowerDensityDto:
+    """
+    A DTO representation of a LinearPowerDensity
+
+    Attributes:
+        value (float): The value of the LinearPowerDensity.
+        unit (LinearPowerDensityUnits): The specific unit that the LinearPowerDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: LinearPowerDensityUnits):
+        """
+        Create a new DTO representation of a LinearPowerDensity
+
+        Parameters:
+            value (float): The value of the LinearPowerDensity.
+            unit (LinearPowerDensityUnits): The specific unit that the LinearPowerDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the LinearPowerDensity
+        """
+        self.unit: LinearPowerDensityUnits = unit
+        """
+        The specific unit that the LinearPowerDensity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a LinearPowerDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents LinearPowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of LinearPowerDensity DTO from a json representation.
+
+        :param data: The LinearPowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeter"}
+        :return: A new instance of LinearPowerDensityDto.
+        :rtype: LinearPowerDensityDto
+        """
+        return LinearPowerDensityDto(value=data["value"], unit=LinearPowerDensityUnits(data["unit"]))
+
 
 class LinearPowerDensity(AbstractMeasure):
     """
@@ -204,6 +254,54 @@ class LinearPowerDensity(AbstractMeasure):
 
     def convert(self, unit: LinearPowerDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> LinearPowerDensityDto:
+        """
+        Get a new instance of LinearPowerDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific LinearPowerDensity unit to store the LinearPowerDensity value in the DTO representation.
+        :type hold_in_unit: LinearPowerDensityUnits
+        :return: A new instance of LinearPowerDensityDto.
+        :rtype: LinearPowerDensityDto
+        """
+        return LinearPowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter):
+        """
+        Get a LinearPowerDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LinearPowerDensity unit to store the LinearPowerDensity value in the DTO representation.
+        :type hold_in_unit: LinearPowerDensityUnits
+        :return: JSON object represents LinearPowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(linear_power_density_dto: LinearPowerDensityDto):
+        """
+        Obtain a new instance of LinearPowerDensity from a DTO unit object.
+
+        :param linear_power_density_dto: The LinearPowerDensity DTO representation.
+        :type linear_power_density_dto: LinearPowerDensityDto
+        :return: A new instance of LinearPowerDensity.
+        :rtype: LinearPowerDensity
+        """
+        return LinearPowerDensity(linear_power_density_dto.value, linear_power_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LinearPowerDensity from a DTO unit json representation.
+
+        :param data: The LinearPowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeter"}
+        :return: A new instance of LinearPowerDensity.
+        :rtype: LinearPowerDensity
+        """
+        return LinearPowerDensity.from_dto(LinearPowerDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LinearPowerDensityUnits) -> float:
         value = self._value

@@ -10,76 +10,126 @@ class InformationUnits(Enum):
             InformationUnits enumeration
         """
         
-        Byte = 'byte'
+        Byte = 'Byte'
         """
             
         """
         
-        Bit = 'bit'
+        Bit = 'Bit'
         """
             
         """
         
-        Kilobyte = 'kilobyte'
+        Kilobyte = 'Kilobyte'
         """
             
         """
         
-        Megabyte = 'megabyte'
+        Megabyte = 'Megabyte'
         """
             
         """
         
-        Gigabyte = 'gigabyte'
+        Gigabyte = 'Gigabyte'
         """
             
         """
         
-        Terabyte = 'terabyte'
+        Terabyte = 'Terabyte'
         """
             
         """
         
-        Petabyte = 'petabyte'
+        Petabyte = 'Petabyte'
         """
             
         """
         
-        Exabyte = 'exabyte'
+        Exabyte = 'Exabyte'
         """
             
         """
         
-        Kilobit = 'kilobit'
+        Kilobit = 'Kilobit'
         """
             
         """
         
-        Megabit = 'megabit'
+        Megabit = 'Megabit'
         """
             
         """
         
-        Gigabit = 'gigabit'
+        Gigabit = 'Gigabit'
         """
             
         """
         
-        Terabit = 'terabit'
+        Terabit = 'Terabit'
         """
             
         """
         
-        Petabit = 'petabit'
+        Petabit = 'Petabit'
         """
             
         """
         
-        Exabit = 'exabit'
+        Exabit = 'Exabit'
         """
             
         """
         
+
+class InformationDto:
+    """
+    A DTO representation of a Information
+
+    Attributes:
+        value (float): The value of the Information.
+        unit (InformationUnits): The specific unit that the Information value is representing.
+    """
+
+    def __init__(self, value: float, unit: InformationUnits):
+        """
+        Create a new DTO representation of a Information
+
+        Parameters:
+            value (float): The value of the Information.
+            unit (InformationUnits): The specific unit that the Information value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Information
+        """
+        self.unit: InformationUnits = unit
+        """
+        The specific unit that the Information value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Information DTO JSON object representing the current unit.
+
+        :return: JSON object represents Information DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Bit"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Information DTO from a json representation.
+
+        :param data: The Information DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Bit"}
+        :return: A new instance of InformationDto.
+        :rtype: InformationDto
+        """
+        return InformationDto(value=data["value"], unit=InformationUnits(data["unit"]))
+
 
 class Information(AbstractMeasure):
     """
@@ -127,6 +177,54 @@ class Information(AbstractMeasure):
 
     def convert(self, unit: InformationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: InformationUnits = InformationUnits.Bit) -> InformationDto:
+        """
+        Get a new instance of Information DTO representing the current unit.
+
+        :param hold_in_unit: The specific Information unit to store the Information value in the DTO representation.
+        :type hold_in_unit: InformationUnits
+        :return: A new instance of InformationDto.
+        :rtype: InformationDto
+        """
+        return InformationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: InformationUnits = InformationUnits.Bit):
+        """
+        Get a Information DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Information unit to store the Information value in the DTO representation.
+        :type hold_in_unit: InformationUnits
+        :return: JSON object represents Information DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Bit"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(information_dto: InformationDto):
+        """
+        Obtain a new instance of Information from a DTO unit object.
+
+        :param information_dto: The Information DTO representation.
+        :type information_dto: InformationDto
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(information_dto.value, information_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Information from a DTO unit json representation.
+
+        :param data: The Information DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Bit"}
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information.from_dto(InformationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: InformationUnits) -> float:
         value = self._value

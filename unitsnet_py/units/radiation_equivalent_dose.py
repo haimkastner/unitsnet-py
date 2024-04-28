@@ -10,36 +10,86 @@ class RadiationEquivalentDoseUnits(Enum):
             RadiationEquivalentDoseUnits enumeration
         """
         
-        Sievert = 'sievert'
+        Sievert = 'Sievert'
         """
             The sievert is a unit in the International System of Units (SI) intended to represent the stochastic health risk of ionizing radiation, which is defined as the probability of causing radiation-induced cancer and genetic damage.
         """
         
-        RoentgenEquivalentMan = 'roentgen_equivalent_man'
+        RoentgenEquivalentMan = 'RoentgenEquivalentMan'
         """
             
         """
         
-        Nanosievert = 'nanosievert'
+        Nanosievert = 'Nanosievert'
         """
             
         """
         
-        Microsievert = 'microsievert'
+        Microsievert = 'Microsievert'
         """
             
         """
         
-        Millisievert = 'millisievert'
+        Millisievert = 'Millisievert'
         """
             
         """
         
-        MilliroentgenEquivalentMan = 'milliroentgen_equivalent_man'
+        MilliroentgenEquivalentMan = 'MilliroentgenEquivalentMan'
         """
             
         """
         
+
+class RadiationEquivalentDoseDto:
+    """
+    A DTO representation of a RadiationEquivalentDose
+
+    Attributes:
+        value (float): The value of the RadiationEquivalentDose.
+        unit (RadiationEquivalentDoseUnits): The specific unit that the RadiationEquivalentDose value is representing.
+    """
+
+    def __init__(self, value: float, unit: RadiationEquivalentDoseUnits):
+        """
+        Create a new DTO representation of a RadiationEquivalentDose
+
+        Parameters:
+            value (float): The value of the RadiationEquivalentDose.
+            unit (RadiationEquivalentDoseUnits): The specific unit that the RadiationEquivalentDose value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the RadiationEquivalentDose
+        """
+        self.unit: RadiationEquivalentDoseUnits = unit
+        """
+        The specific unit that the RadiationEquivalentDose value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a RadiationEquivalentDose DTO JSON object representing the current unit.
+
+        :return: JSON object represents RadiationEquivalentDose DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Sievert"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of RadiationEquivalentDose DTO from a json representation.
+
+        :param data: The RadiationEquivalentDose DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Sievert"}
+        :return: A new instance of RadiationEquivalentDoseDto.
+        :rtype: RadiationEquivalentDoseDto
+        """
+        return RadiationEquivalentDoseDto(value=data["value"], unit=RadiationEquivalentDoseUnits(data["unit"]))
+
 
 class RadiationEquivalentDose(AbstractMeasure):
     """
@@ -71,6 +121,54 @@ class RadiationEquivalentDose(AbstractMeasure):
 
     def convert(self, unit: RadiationEquivalentDoseUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert) -> RadiationEquivalentDoseDto:
+        """
+        Get a new instance of RadiationEquivalentDose DTO representing the current unit.
+
+        :param hold_in_unit: The specific RadiationEquivalentDose unit to store the RadiationEquivalentDose value in the DTO representation.
+        :type hold_in_unit: RadiationEquivalentDoseUnits
+        :return: A new instance of RadiationEquivalentDoseDto.
+        :rtype: RadiationEquivalentDoseDto
+        """
+        return RadiationEquivalentDoseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert):
+        """
+        Get a RadiationEquivalentDose DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RadiationEquivalentDose unit to store the RadiationEquivalentDose value in the DTO representation.
+        :type hold_in_unit: RadiationEquivalentDoseUnits
+        :return: JSON object represents RadiationEquivalentDose DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Sievert"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(radiation_equivalent_dose_dto: RadiationEquivalentDoseDto):
+        """
+        Obtain a new instance of RadiationEquivalentDose from a DTO unit object.
+
+        :param radiation_equivalent_dose_dto: The RadiationEquivalentDose DTO representation.
+        :type radiation_equivalent_dose_dto: RadiationEquivalentDoseDto
+        :return: A new instance of RadiationEquivalentDose.
+        :rtype: RadiationEquivalentDose
+        """
+        return RadiationEquivalentDose(radiation_equivalent_dose_dto.value, radiation_equivalent_dose_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RadiationEquivalentDose from a DTO unit json representation.
+
+        :param data: The RadiationEquivalentDose DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Sievert"}
+        :return: A new instance of RadiationEquivalentDose.
+        :rtype: RadiationEquivalentDose
+        """
+        return RadiationEquivalentDose.from_dto(RadiationEquivalentDoseDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RadiationEquivalentDoseUnits) -> float:
         value = self._value

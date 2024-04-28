@@ -10,216 +10,266 @@ class LengthUnits(Enum):
             LengthUnits enumeration
         """
         
-        Meter = 'meter'
+        Meter = 'Meter'
         """
             
         """
         
-        Mile = 'mile'
+        Mile = 'Mile'
         """
             The statute mile was standardised between the British Commonwealth and the United States by an international agreement in 1959, when it was formally redefined with respect to SI units as exactly 1,609.344 metres.
         """
         
-        Yard = 'yard'
+        Yard = 'Yard'
         """
             The yard (symbol: yd) is an English unit of length in both the British imperial and US customary systems of measurement equalling 3 feet (or 36 inches). Since 1959 the yard has been by international agreement standardized as exactly 0.9144 meter. A distance of 1,760 yards is equal to 1 mile.
         """
         
-        Foot = 'foot'
+        Foot = 'Foot'
         """
             
         """
         
-        UsSurveyFoot = 'us_survey_foot'
+        UsSurveyFoot = 'UsSurveyFoot'
         """
             In the United States, the foot was defined as 12 inches, with the inch being defined by the Mendenhall Order of 1893 as 39.37 inches = 1 m. This makes a U.S. survey foot exactly 1200/3937 meters.
         """
         
-        Inch = 'inch'
+        Inch = 'Inch'
         """
             
         """
         
-        Mil = 'mil'
+        Mil = 'Mil'
         """
             
         """
         
-        NauticalMile = 'nautical_mile'
+        NauticalMile = 'NauticalMile'
         """
             
         """
         
-        Fathom = 'fathom'
+        Fathom = 'Fathom'
         """
             
         """
         
-        Shackle = 'shackle'
+        Shackle = 'Shackle'
         """
             
         """
         
-        Microinch = 'microinch'
+        Microinch = 'Microinch'
         """
             
         """
         
-        PrinterPoint = 'printer_point'
+        PrinterPoint = 'PrinterPoint'
         """
             
         """
         
-        DtpPoint = 'dtp_point'
+        DtpPoint = 'DtpPoint'
         """
             
         """
         
-        PrinterPica = 'printer_pica'
+        PrinterPica = 'PrinterPica'
         """
             
         """
         
-        DtpPica = 'dtp_pica'
+        DtpPica = 'DtpPica'
         """
             
         """
         
-        Twip = 'twip'
+        Twip = 'Twip'
         """
             
         """
         
-        Hand = 'hand'
+        Hand = 'Hand'
         """
             
         """
         
-        AstronomicalUnit = 'astronomical_unit'
+        AstronomicalUnit = 'AstronomicalUnit'
         """
             One Astronomical Unit is the distance from the solar system Star, the sun, to planet Earth.
         """
         
-        Parsec = 'parsec'
+        Parsec = 'Parsec'
         """
             A parsec is defined as the distance at which one astronomical unit (AU) subtends an angle of one arcsecond.
         """
         
-        LightYear = 'light_year'
+        LightYear = 'LightYear'
         """
             A Light Year (ly) is the distance that light travel during an Earth year, ie 365 days.
         """
         
-        SolarRadius = 'solar_radius'
+        SolarRadius = 'SolarRadius'
         """
             Solar radius is a ratio unit to the radius of the solar system star, the sun.
         """
         
-        Chain = 'chain'
+        Chain = 'Chain'
         """
             
         """
         
-        Angstrom = 'angstrom'
+        Angstrom = 'Angstrom'
         """
             Angstrom is a metric unit of length equal to 1e-10 meter
         """
         
-        DataMile = 'data_mile'
+        DataMile = 'DataMile'
         """
             In radar-related subjects and in JTIDS, a data mile is a unit of distance equal to 6000 feet (1.8288 kilometres or 0.987 nautical miles).
         """
         
-        Femtometer = 'femtometer'
+        Femtometer = 'Femtometer'
         """
             
         """
         
-        Picometer = 'picometer'
+        Picometer = 'Picometer'
         """
             
         """
         
-        Nanometer = 'nanometer'
+        Nanometer = 'Nanometer'
         """
             
         """
         
-        Micrometer = 'micrometer'
+        Micrometer = 'Micrometer'
         """
             
         """
         
-        Millimeter = 'millimeter'
+        Millimeter = 'Millimeter'
         """
             
         """
         
-        Centimeter = 'centimeter'
+        Centimeter = 'Centimeter'
         """
             
         """
         
-        Decimeter = 'decimeter'
+        Decimeter = 'Decimeter'
         """
             
         """
         
-        Decameter = 'decameter'
+        Decameter = 'Decameter'
         """
             
         """
         
-        Hectometer = 'hectometer'
+        Hectometer = 'Hectometer'
         """
             
         """
         
-        Kilometer = 'kilometer'
+        Kilometer = 'Kilometer'
         """
             
         """
         
-        Megameter = 'megameter'
+        Megameter = 'Megameter'
         """
             
         """
         
-        Gigameter = 'gigameter'
+        Gigameter = 'Gigameter'
         """
             
         """
         
-        Kiloyard = 'kiloyard'
+        Kiloyard = 'Kiloyard'
         """
             
         """
         
-        Kilofoot = 'kilofoot'
+        Kilofoot = 'Kilofoot'
         """
             
         """
         
-        Kiloparsec = 'kiloparsec'
+        Kiloparsec = 'Kiloparsec'
         """
             
         """
         
-        Megaparsec = 'megaparsec'
+        Megaparsec = 'Megaparsec'
         """
             
         """
         
-        KilolightYear = 'kilolight_year'
+        KilolightYear = 'KilolightYear'
         """
             
         """
         
-        MegalightYear = 'megalight_year'
+        MegalightYear = 'MegalightYear'
         """
             
         """
         
+
+class LengthDto:
+    """
+    A DTO representation of a Length
+
+    Attributes:
+        value (float): The value of the Length.
+        unit (LengthUnits): The specific unit that the Length value is representing.
+    """
+
+    def __init__(self, value: float, unit: LengthUnits):
+        """
+        Create a new DTO representation of a Length
+
+        Parameters:
+            value (float): The value of the Length.
+            unit (LengthUnits): The specific unit that the Length value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Length
+        """
+        self.unit: LengthUnits = unit
+        """
+        The specific unit that the Length value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Length DTO JSON object representing the current unit.
+
+        :return: JSON object represents Length DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Meter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Length DTO from a json representation.
+
+        :param data: The Length DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Meter"}
+        :return: A new instance of LengthDto.
+        :rtype: LengthDto
+        """
+        return LengthDto(value=data["value"], unit=LengthUnits(data["unit"]))
+
 
 class Length(AbstractMeasure):
     """
@@ -323,6 +373,54 @@ class Length(AbstractMeasure):
 
     def convert(self, unit: LengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LengthUnits = LengthUnits.Meter) -> LengthDto:
+        """
+        Get a new instance of Length DTO representing the current unit.
+
+        :param hold_in_unit: The specific Length unit to store the Length value in the DTO representation.
+        :type hold_in_unit: LengthUnits
+        :return: A new instance of LengthDto.
+        :rtype: LengthDto
+        """
+        return LengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LengthUnits = LengthUnits.Meter):
+        """
+        Get a Length DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Length unit to store the Length value in the DTO representation.
+        :type hold_in_unit: LengthUnits
+        :return: JSON object represents Length DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Meter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(length_dto: LengthDto):
+        """
+        Obtain a new instance of Length from a DTO unit object.
+
+        :param length_dto: The Length DTO representation.
+        :type length_dto: LengthDto
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length(length_dto.value, length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Length from a DTO unit json representation.
+
+        :param data: The Length DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Meter"}
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length.from_dto(LengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LengthUnits) -> float:
         value = self._value

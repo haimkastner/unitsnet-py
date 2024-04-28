@@ -10,131 +10,181 @@ class TorqueUnits(Enum):
             TorqueUnits enumeration
         """
         
-        NewtonMillimeter = 'newton_millimeter'
+        NewtonMillimeter = 'NewtonMillimeter'
         """
             
         """
         
-        NewtonCentimeter = 'newton_centimeter'
+        NewtonCentimeter = 'NewtonCentimeter'
         """
             
         """
         
-        NewtonMeter = 'newton_meter'
+        NewtonMeter = 'NewtonMeter'
         """
             
         """
         
-        PoundalFoot = 'poundal_foot'
+        PoundalFoot = 'PoundalFoot'
         """
             
         """
         
-        PoundForceInch = 'pound_force_inch'
+        PoundForceInch = 'PoundForceInch'
         """
             
         """
         
-        PoundForceFoot = 'pound_force_foot'
+        PoundForceFoot = 'PoundForceFoot'
         """
             
         """
         
-        GramForceMillimeter = 'gram_force_millimeter'
+        GramForceMillimeter = 'GramForceMillimeter'
         """
             
         """
         
-        GramForceCentimeter = 'gram_force_centimeter'
+        GramForceCentimeter = 'GramForceCentimeter'
         """
             
         """
         
-        GramForceMeter = 'gram_force_meter'
+        GramForceMeter = 'GramForceMeter'
         """
             
         """
         
-        KilogramForceMillimeter = 'kilogram_force_millimeter'
+        KilogramForceMillimeter = 'KilogramForceMillimeter'
         """
             
         """
         
-        KilogramForceCentimeter = 'kilogram_force_centimeter'
+        KilogramForceCentimeter = 'KilogramForceCentimeter'
         """
             
         """
         
-        KilogramForceMeter = 'kilogram_force_meter'
+        KilogramForceMeter = 'KilogramForceMeter'
         """
             
         """
         
-        TonneForceMillimeter = 'tonne_force_millimeter'
+        TonneForceMillimeter = 'TonneForceMillimeter'
         """
             
         """
         
-        TonneForceCentimeter = 'tonne_force_centimeter'
+        TonneForceCentimeter = 'TonneForceCentimeter'
         """
             
         """
         
-        TonneForceMeter = 'tonne_force_meter'
+        TonneForceMeter = 'TonneForceMeter'
         """
             
         """
         
-        KilonewtonMillimeter = 'kilonewton_millimeter'
+        KilonewtonMillimeter = 'KilonewtonMillimeter'
         """
             
         """
         
-        MeganewtonMillimeter = 'meganewton_millimeter'
+        MeganewtonMillimeter = 'MeganewtonMillimeter'
         """
             
         """
         
-        KilonewtonCentimeter = 'kilonewton_centimeter'
+        KilonewtonCentimeter = 'KilonewtonCentimeter'
         """
             
         """
         
-        MeganewtonCentimeter = 'meganewton_centimeter'
+        MeganewtonCentimeter = 'MeganewtonCentimeter'
         """
             
         """
         
-        KilonewtonMeter = 'kilonewton_meter'
+        KilonewtonMeter = 'KilonewtonMeter'
         """
             
         """
         
-        MeganewtonMeter = 'meganewton_meter'
+        MeganewtonMeter = 'MeganewtonMeter'
         """
             
         """
         
-        KilopoundForceInch = 'kilopound_force_inch'
+        KilopoundForceInch = 'KilopoundForceInch'
         """
             
         """
         
-        MegapoundForceInch = 'megapound_force_inch'
+        MegapoundForceInch = 'MegapoundForceInch'
         """
             
         """
         
-        KilopoundForceFoot = 'kilopound_force_foot'
+        KilopoundForceFoot = 'KilopoundForceFoot'
         """
             
         """
         
-        MegapoundForceFoot = 'megapound_force_foot'
+        MegapoundForceFoot = 'MegapoundForceFoot'
         """
             
         """
         
+
+class TorqueDto:
+    """
+    A DTO representation of a Torque
+
+    Attributes:
+        value (float): The value of the Torque.
+        unit (TorqueUnits): The specific unit that the Torque value is representing.
+    """
+
+    def __init__(self, value: float, unit: TorqueUnits):
+        """
+        Create a new DTO representation of a Torque
+
+        Parameters:
+            value (float): The value of the Torque.
+            unit (TorqueUnits): The specific unit that the Torque value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Torque
+        """
+        self.unit: TorqueUnits = unit
+        """
+        The specific unit that the Torque value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Torque DTO JSON object representing the current unit.
+
+        :return: JSON object represents Torque DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Torque DTO from a json representation.
+
+        :param data: The Torque DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeter"}
+        :return: A new instance of TorqueDto.
+        :rtype: TorqueDto
+        """
+        return TorqueDto(value=data["value"], unit=TorqueUnits(data["unit"]))
+
 
 class Torque(AbstractMeasure):
     """
@@ -204,6 +254,54 @@ class Torque(AbstractMeasure):
 
     def convert(self, unit: TorqueUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TorqueUnits = TorqueUnits.NewtonMeter) -> TorqueDto:
+        """
+        Get a new instance of Torque DTO representing the current unit.
+
+        :param hold_in_unit: The specific Torque unit to store the Torque value in the DTO representation.
+        :type hold_in_unit: TorqueUnits
+        :return: A new instance of TorqueDto.
+        :rtype: TorqueDto
+        """
+        return TorqueDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TorqueUnits = TorqueUnits.NewtonMeter):
+        """
+        Get a Torque DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Torque unit to store the Torque value in the DTO representation.
+        :type hold_in_unit: TorqueUnits
+        :return: JSON object represents Torque DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(torque_dto: TorqueDto):
+        """
+        Obtain a new instance of Torque from a DTO unit object.
+
+        :param torque_dto: The Torque DTO representation.
+        :type torque_dto: TorqueDto
+        :return: A new instance of Torque.
+        :rtype: Torque
+        """
+        return Torque(torque_dto.value, torque_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Torque from a DTO unit json representation.
+
+        :param data: The Torque DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeter"}
+        :return: A new instance of Torque.
+        :rtype: Torque
+        """
+        return Torque.from_dto(TorqueDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TorqueUnits) -> float:
         value = self._value

@@ -10,71 +10,121 @@ class RotationalSpeedUnits(Enum):
             RotationalSpeedUnits enumeration
         """
         
-        RadianPerSecond = 'radian_per_second'
+        RadianPerSecond = 'RadianPerSecond'
         """
             
         """
         
-        DegreePerSecond = 'degree_per_second'
+        DegreePerSecond = 'DegreePerSecond'
         """
             
         """
         
-        DegreePerMinute = 'degree_per_minute'
+        DegreePerMinute = 'DegreePerMinute'
         """
             
         """
         
-        RevolutionPerSecond = 'revolution_per_second'
+        RevolutionPerSecond = 'RevolutionPerSecond'
         """
             
         """
         
-        RevolutionPerMinute = 'revolution_per_minute'
+        RevolutionPerMinute = 'RevolutionPerMinute'
         """
             
         """
         
-        NanoradianPerSecond = 'nanoradian_per_second'
+        NanoradianPerSecond = 'NanoradianPerSecond'
         """
             
         """
         
-        MicroradianPerSecond = 'microradian_per_second'
+        MicroradianPerSecond = 'MicroradianPerSecond'
         """
             
         """
         
-        MilliradianPerSecond = 'milliradian_per_second'
+        MilliradianPerSecond = 'MilliradianPerSecond'
         """
             
         """
         
-        CentiradianPerSecond = 'centiradian_per_second'
+        CentiradianPerSecond = 'CentiradianPerSecond'
         """
             
         """
         
-        DeciradianPerSecond = 'deciradian_per_second'
+        DeciradianPerSecond = 'DeciradianPerSecond'
         """
             
         """
         
-        NanodegreePerSecond = 'nanodegree_per_second'
+        NanodegreePerSecond = 'NanodegreePerSecond'
         """
             
         """
         
-        MicrodegreePerSecond = 'microdegree_per_second'
+        MicrodegreePerSecond = 'MicrodegreePerSecond'
         """
             
         """
         
-        MillidegreePerSecond = 'millidegree_per_second'
+        MillidegreePerSecond = 'MillidegreePerSecond'
         """
             
         """
         
+
+class RotationalSpeedDto:
+    """
+    A DTO representation of a RotationalSpeed
+
+    Attributes:
+        value (float): The value of the RotationalSpeed.
+        unit (RotationalSpeedUnits): The specific unit that the RotationalSpeed value is representing.
+    """
+
+    def __init__(self, value: float, unit: RotationalSpeedUnits):
+        """
+        Create a new DTO representation of a RotationalSpeed
+
+        Parameters:
+            value (float): The value of the RotationalSpeed.
+            unit (RotationalSpeedUnits): The specific unit that the RotationalSpeed value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the RotationalSpeed
+        """
+        self.unit: RotationalSpeedUnits = unit
+        """
+        The specific unit that the RotationalSpeed value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a RotationalSpeed DTO JSON object representing the current unit.
+
+        :return: JSON object represents RotationalSpeed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "RadianPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of RotationalSpeed DTO from a json representation.
+
+        :param data: The RotationalSpeed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "RadianPerSecond"}
+        :return: A new instance of RotationalSpeedDto.
+        :rtype: RotationalSpeedDto
+        """
+        return RotationalSpeedDto(value=data["value"], unit=RotationalSpeedUnits(data["unit"]))
+
 
 class RotationalSpeed(AbstractMeasure):
     """
@@ -120,6 +170,54 @@ class RotationalSpeed(AbstractMeasure):
 
     def convert(self, unit: RotationalSpeedUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> RotationalSpeedDto:
+        """
+        Get a new instance of RotationalSpeed DTO representing the current unit.
+
+        :param hold_in_unit: The specific RotationalSpeed unit to store the RotationalSpeed value in the DTO representation.
+        :type hold_in_unit: RotationalSpeedUnits
+        :return: A new instance of RotationalSpeedDto.
+        :rtype: RotationalSpeedDto
+        """
+        return RotationalSpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond):
+        """
+        Get a RotationalSpeed DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RotationalSpeed unit to store the RotationalSpeed value in the DTO representation.
+        :type hold_in_unit: RotationalSpeedUnits
+        :return: JSON object represents RotationalSpeed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "RadianPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(rotational_speed_dto: RotationalSpeedDto):
+        """
+        Obtain a new instance of RotationalSpeed from a DTO unit object.
+
+        :param rotational_speed_dto: The RotationalSpeed DTO representation.
+        :type rotational_speed_dto: RotationalSpeedDto
+        :return: A new instance of RotationalSpeed.
+        :rtype: RotationalSpeed
+        """
+        return RotationalSpeed(rotational_speed_dto.value, rotational_speed_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RotationalSpeed from a DTO unit json representation.
+
+        :param data: The RotationalSpeed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "RadianPerSecond"}
+        :return: A new instance of RotationalSpeed.
+        :rtype: RotationalSpeed
+        """
+        return RotationalSpeed.from_dto(RotationalSpeedDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RotationalSpeedUnits) -> float:
         value = self._value

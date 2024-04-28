@@ -10,61 +10,111 @@ class ElectricChargeUnits(Enum):
             ElectricChargeUnits enumeration
         """
         
-        Coulomb = 'coulomb'
+        Coulomb = 'Coulomb'
         """
             
         """
         
-        AmpereHour = 'ampere_hour'
+        AmpereHour = 'AmpereHour'
         """
             
         """
         
-        Picocoulomb = 'picocoulomb'
+        Picocoulomb = 'Picocoulomb'
         """
             
         """
         
-        Nanocoulomb = 'nanocoulomb'
+        Nanocoulomb = 'Nanocoulomb'
         """
             
         """
         
-        Microcoulomb = 'microcoulomb'
+        Microcoulomb = 'Microcoulomb'
         """
             
         """
         
-        Millicoulomb = 'millicoulomb'
+        Millicoulomb = 'Millicoulomb'
         """
             
         """
         
-        Kilocoulomb = 'kilocoulomb'
+        Kilocoulomb = 'Kilocoulomb'
         """
             
         """
         
-        Megacoulomb = 'megacoulomb'
+        Megacoulomb = 'Megacoulomb'
         """
             
         """
         
-        MilliampereHour = 'milliampere_hour'
+        MilliampereHour = 'MilliampereHour'
         """
             
         """
         
-        KiloampereHour = 'kiloampere_hour'
+        KiloampereHour = 'KiloampereHour'
         """
             
         """
         
-        MegaampereHour = 'megaampere_hour'
+        MegaampereHour = 'MegaampereHour'
         """
             
         """
         
+
+class ElectricChargeDto:
+    """
+    A DTO representation of a ElectricCharge
+
+    Attributes:
+        value (float): The value of the ElectricCharge.
+        unit (ElectricChargeUnits): The specific unit that the ElectricCharge value is representing.
+    """
+
+    def __init__(self, value: float, unit: ElectricChargeUnits):
+        """
+        Create a new DTO representation of a ElectricCharge
+
+        Parameters:
+            value (float): The value of the ElectricCharge.
+            unit (ElectricChargeUnits): The specific unit that the ElectricCharge value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the ElectricCharge
+        """
+        self.unit: ElectricChargeUnits = unit
+        """
+        The specific unit that the ElectricCharge value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a ElectricCharge DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricCharge DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Coulomb"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of ElectricCharge DTO from a json representation.
+
+        :param data: The ElectricCharge DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Coulomb"}
+        :return: A new instance of ElectricChargeDto.
+        :rtype: ElectricChargeDto
+        """
+        return ElectricChargeDto(value=data["value"], unit=ElectricChargeUnits(data["unit"]))
+
 
 class ElectricCharge(AbstractMeasure):
     """
@@ -106,6 +156,54 @@ class ElectricCharge(AbstractMeasure):
 
     def convert(self, unit: ElectricChargeUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> ElectricChargeDto:
+        """
+        Get a new instance of ElectricCharge DTO representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCharge unit to store the ElectricCharge value in the DTO representation.
+        :type hold_in_unit: ElectricChargeUnits
+        :return: A new instance of ElectricChargeDto.
+        :rtype: ElectricChargeDto
+        """
+        return ElectricChargeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb):
+        """
+        Get a ElectricCharge DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCharge unit to store the ElectricCharge value in the DTO representation.
+        :type hold_in_unit: ElectricChargeUnits
+        :return: JSON object represents ElectricCharge DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Coulomb"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(electric_charge_dto: ElectricChargeDto):
+        """
+        Obtain a new instance of ElectricCharge from a DTO unit object.
+
+        :param electric_charge_dto: The ElectricCharge DTO representation.
+        :type electric_charge_dto: ElectricChargeDto
+        :return: A new instance of ElectricCharge.
+        :rtype: ElectricCharge
+        """
+        return ElectricCharge(electric_charge_dto.value, electric_charge_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricCharge from a DTO unit json representation.
+
+        :param data: The ElectricCharge DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Coulomb"}
+        :return: A new instance of ElectricCharge.
+        :rtype: ElectricCharge
+        """
+        return ElectricCharge.from_dto(ElectricChargeDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricChargeUnits) -> float:
         value = self._value

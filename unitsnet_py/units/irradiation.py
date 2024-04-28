@@ -10,51 +10,101 @@ class IrradiationUnits(Enum):
             IrradiationUnits enumeration
         """
         
-        JoulePerSquareMeter = 'joule_per_square_meter'
+        JoulePerSquareMeter = 'JoulePerSquareMeter'
         """
             
         """
         
-        JoulePerSquareCentimeter = 'joule_per_square_centimeter'
+        JoulePerSquareCentimeter = 'JoulePerSquareCentimeter'
         """
             
         """
         
-        JoulePerSquareMillimeter = 'joule_per_square_millimeter'
+        JoulePerSquareMillimeter = 'JoulePerSquareMillimeter'
         """
             
         """
         
-        WattHourPerSquareMeter = 'watt_hour_per_square_meter'
+        WattHourPerSquareMeter = 'WattHourPerSquareMeter'
         """
             
         """
         
-        BtuPerSquareFoot = 'btu_per_square_foot'
+        BtuPerSquareFoot = 'BtuPerSquareFoot'
         """
             
         """
         
-        KilojoulePerSquareMeter = 'kilojoule_per_square_meter'
+        KilojoulePerSquareMeter = 'KilojoulePerSquareMeter'
         """
             
         """
         
-        MillijoulePerSquareCentimeter = 'millijoule_per_square_centimeter'
+        MillijoulePerSquareCentimeter = 'MillijoulePerSquareCentimeter'
         """
             
         """
         
-        KilowattHourPerSquareMeter = 'kilowatt_hour_per_square_meter'
+        KilowattHourPerSquareMeter = 'KilowattHourPerSquareMeter'
         """
             
         """
         
-        KilobtuPerSquareFoot = 'kilobtu_per_square_foot'
+        KilobtuPerSquareFoot = 'KilobtuPerSquareFoot'
         """
             
         """
         
+
+class IrradiationDto:
+    """
+    A DTO representation of a Irradiation
+
+    Attributes:
+        value (float): The value of the Irradiation.
+        unit (IrradiationUnits): The specific unit that the Irradiation value is representing.
+    """
+
+    def __init__(self, value: float, unit: IrradiationUnits):
+        """
+        Create a new DTO representation of a Irradiation
+
+        Parameters:
+            value (float): The value of the Irradiation.
+            unit (IrradiationUnits): The specific unit that the Irradiation value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Irradiation
+        """
+        self.unit: IrradiationUnits = unit
+        """
+        The specific unit that the Irradiation value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Irradiation DTO JSON object representing the current unit.
+
+        :return: JSON object represents Irradiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerSquareMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Irradiation DTO from a json representation.
+
+        :param data: The Irradiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerSquareMeter"}
+        :return: A new instance of IrradiationDto.
+        :rtype: IrradiationDto
+        """
+        return IrradiationDto(value=data["value"], unit=IrradiationUnits(data["unit"]))
+
 
 class Irradiation(AbstractMeasure):
     """
@@ -92,6 +142,54 @@ class Irradiation(AbstractMeasure):
 
     def convert(self, unit: IrradiationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> IrradiationDto:
+        """
+        Get a new instance of Irradiation DTO representing the current unit.
+
+        :param hold_in_unit: The specific Irradiation unit to store the Irradiation value in the DTO representation.
+        :type hold_in_unit: IrradiationUnits
+        :return: A new instance of IrradiationDto.
+        :rtype: IrradiationDto
+        """
+        return IrradiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter):
+        """
+        Get a Irradiation DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Irradiation unit to store the Irradiation value in the DTO representation.
+        :type hold_in_unit: IrradiationUnits
+        :return: JSON object represents Irradiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(irradiation_dto: IrradiationDto):
+        """
+        Obtain a new instance of Irradiation from a DTO unit object.
+
+        :param irradiation_dto: The Irradiation DTO representation.
+        :type irradiation_dto: IrradiationDto
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
+        return Irradiation(irradiation_dto.value, irradiation_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Irradiation from a DTO unit json representation.
+
+        :param data: The Irradiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerSquareMeter"}
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
+        return Irradiation.from_dto(IrradiationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: IrradiationUnits) -> float:
         value = self._value

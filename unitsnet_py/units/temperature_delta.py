@@ -10,51 +10,101 @@ class TemperatureDeltaUnits(Enum):
             TemperatureDeltaUnits enumeration
         """
         
-        Kelvin = 'kelvin'
+        Kelvin = 'Kelvin'
         """
             
         """
         
-        DegreeCelsius = 'degree_celsius'
+        DegreeCelsius = 'DegreeCelsius'
         """
             
         """
         
-        DegreeDelisle = 'degree_delisle'
+        DegreeDelisle = 'DegreeDelisle'
         """
             
         """
         
-        DegreeFahrenheit = 'degree_fahrenheit'
+        DegreeFahrenheit = 'DegreeFahrenheit'
         """
             
         """
         
-        DegreeNewton = 'degree_newton'
+        DegreeNewton = 'DegreeNewton'
         """
             
         """
         
-        DegreeRankine = 'degree_rankine'
+        DegreeRankine = 'DegreeRankine'
         """
             
         """
         
-        DegreeReaumur = 'degree_reaumur'
+        DegreeReaumur = 'DegreeReaumur'
         """
             
         """
         
-        DegreeRoemer = 'degree_roemer'
+        DegreeRoemer = 'DegreeRoemer'
         """
             
         """
         
-        MillidegreeCelsius = 'millidegree_celsius'
+        MillidegreeCelsius = 'MillidegreeCelsius'
         """
             
         """
         
+
+class TemperatureDeltaDto:
+    """
+    A DTO representation of a TemperatureDelta
+
+    Attributes:
+        value (float): The value of the TemperatureDelta.
+        unit (TemperatureDeltaUnits): The specific unit that the TemperatureDelta value is representing.
+    """
+
+    def __init__(self, value: float, unit: TemperatureDeltaUnits):
+        """
+        Create a new DTO representation of a TemperatureDelta
+
+        Parameters:
+            value (float): The value of the TemperatureDelta.
+            unit (TemperatureDeltaUnits): The specific unit that the TemperatureDelta value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the TemperatureDelta
+        """
+        self.unit: TemperatureDeltaUnits = unit
+        """
+        The specific unit that the TemperatureDelta value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a TemperatureDelta DTO JSON object representing the current unit.
+
+        :return: JSON object represents TemperatureDelta DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kelvin"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of TemperatureDelta DTO from a json representation.
+
+        :param data: The TemperatureDelta DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kelvin"}
+        :return: A new instance of TemperatureDeltaDto.
+        :rtype: TemperatureDeltaDto
+        """
+        return TemperatureDeltaDto(value=data["value"], unit=TemperatureDeltaUnits(data["unit"]))
+
 
 class TemperatureDelta(AbstractMeasure):
     """
@@ -92,6 +142,54 @@ class TemperatureDelta(AbstractMeasure):
 
     def convert(self, unit: TemperatureDeltaUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> TemperatureDeltaDto:
+        """
+        Get a new instance of TemperatureDelta DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureDelta unit to store the TemperatureDelta value in the DTO representation.
+        :type hold_in_unit: TemperatureDeltaUnits
+        :return: A new instance of TemperatureDeltaDto.
+        :rtype: TemperatureDeltaDto
+        """
+        return TemperatureDeltaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin):
+        """
+        Get a TemperatureDelta DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureDelta unit to store the TemperatureDelta value in the DTO representation.
+        :type hold_in_unit: TemperatureDeltaUnits
+        :return: JSON object represents TemperatureDelta DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(temperature_delta_dto: TemperatureDeltaDto):
+        """
+        Obtain a new instance of TemperatureDelta from a DTO unit object.
+
+        :param temperature_delta_dto: The TemperatureDelta DTO representation.
+        :type temperature_delta_dto: TemperatureDeltaDto
+        :return: A new instance of TemperatureDelta.
+        :rtype: TemperatureDelta
+        """
+        return TemperatureDelta(temperature_delta_dto.value, temperature_delta_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of TemperatureDelta from a DTO unit json representation.
+
+        :param data: The TemperatureDelta DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kelvin"}
+        :return: A new instance of TemperatureDelta.
+        :rtype: TemperatureDelta
+        """
+        return TemperatureDelta.from_dto(TemperatureDeltaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TemperatureDeltaUnits) -> float:
         value = self._value

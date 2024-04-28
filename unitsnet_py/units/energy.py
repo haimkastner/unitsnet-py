@@ -10,206 +10,256 @@ class EnergyUnits(Enum):
             EnergyUnits enumeration
         """
         
-        Joule = 'joule'
+        Joule = 'Joule'
         """
             
         """
         
-        Calorie = 'calorie'
+        Calorie = 'Calorie'
         """
             
         """
         
-        BritishThermalUnit = 'british_thermal_unit'
+        BritishThermalUnit = 'BritishThermalUnit'
         """
             
         """
         
-        ElectronVolt = 'electron_volt'
+        ElectronVolt = 'ElectronVolt'
         """
             
         """
         
-        FootPound = 'foot_pound'
+        FootPound = 'FootPound'
         """
             
         """
         
-        Erg = 'erg'
+        Erg = 'Erg'
         """
             
         """
         
-        WattHour = 'watt_hour'
+        WattHour = 'WattHour'
         """
             
         """
         
-        WattDay = 'watt_day'
+        WattDay = 'WattDay'
         """
             
         """
         
-        ThermEc = 'therm_ec'
+        ThermEc = 'ThermEc'
         """
             
         """
         
-        ThermUs = 'therm_us'
+        ThermUs = 'ThermUs'
         """
             
         """
         
-        ThermImperial = 'therm_imperial'
+        ThermImperial = 'ThermImperial'
         """
             
         """
         
-        HorsepowerHour = 'horsepower_hour'
+        HorsepowerHour = 'HorsepowerHour'
         """
             
         """
         
-        Nanojoule = 'nanojoule'
+        Nanojoule = 'Nanojoule'
         """
             
         """
         
-        Microjoule = 'microjoule'
+        Microjoule = 'Microjoule'
         """
             
         """
         
-        Millijoule = 'millijoule'
+        Millijoule = 'Millijoule'
         """
             
         """
         
-        Kilojoule = 'kilojoule'
+        Kilojoule = 'Kilojoule'
         """
             
         """
         
-        Megajoule = 'megajoule'
+        Megajoule = 'Megajoule'
         """
             
         """
         
-        Gigajoule = 'gigajoule'
+        Gigajoule = 'Gigajoule'
         """
             
         """
         
-        Terajoule = 'terajoule'
+        Terajoule = 'Terajoule'
         """
             
         """
         
-        Petajoule = 'petajoule'
+        Petajoule = 'Petajoule'
         """
             
         """
         
-        Kilocalorie = 'kilocalorie'
+        Kilocalorie = 'Kilocalorie'
         """
             
         """
         
-        Megacalorie = 'megacalorie'
+        Megacalorie = 'Megacalorie'
         """
             
         """
         
-        KilobritishThermalUnit = 'kilobritish_thermal_unit'
+        KilobritishThermalUnit = 'KilobritishThermalUnit'
         """
             
         """
         
-        MegabritishThermalUnit = 'megabritish_thermal_unit'
+        MegabritishThermalUnit = 'MegabritishThermalUnit'
         """
             
         """
         
-        GigabritishThermalUnit = 'gigabritish_thermal_unit'
+        GigabritishThermalUnit = 'GigabritishThermalUnit'
         """
             
         """
         
-        KiloelectronVolt = 'kiloelectron_volt'
+        KiloelectronVolt = 'KiloelectronVolt'
         """
             
         """
         
-        MegaelectronVolt = 'megaelectron_volt'
+        MegaelectronVolt = 'MegaelectronVolt'
         """
             
         """
         
-        GigaelectronVolt = 'gigaelectron_volt'
+        GigaelectronVolt = 'GigaelectronVolt'
         """
             
         """
         
-        TeraelectronVolt = 'teraelectron_volt'
+        TeraelectronVolt = 'TeraelectronVolt'
         """
             
         """
         
-        KilowattHour = 'kilowatt_hour'
+        KilowattHour = 'KilowattHour'
         """
             
         """
         
-        MegawattHour = 'megawatt_hour'
+        MegawattHour = 'MegawattHour'
         """
             
         """
         
-        GigawattHour = 'gigawatt_hour'
+        GigawattHour = 'GigawattHour'
         """
             
         """
         
-        TerawattHour = 'terawatt_hour'
+        TerawattHour = 'TerawattHour'
         """
             
         """
         
-        KilowattDay = 'kilowatt_day'
+        KilowattDay = 'KilowattDay'
         """
             
         """
         
-        MegawattDay = 'megawatt_day'
+        MegawattDay = 'MegawattDay'
         """
             
         """
         
-        GigawattDay = 'gigawatt_day'
+        GigawattDay = 'GigawattDay'
         """
             
         """
         
-        TerawattDay = 'terawatt_day'
+        TerawattDay = 'TerawattDay'
         """
             
         """
         
-        DecathermEc = 'decatherm_ec'
+        DecathermEc = 'DecathermEc'
         """
             
         """
         
-        DecathermUs = 'decatherm_us'
+        DecathermUs = 'DecathermUs'
         """
             
         """
         
-        DecathermImperial = 'decatherm_imperial'
+        DecathermImperial = 'DecathermImperial'
         """
             
         """
         
+
+class EnergyDto:
+    """
+    A DTO representation of a Energy
+
+    Attributes:
+        value (float): The value of the Energy.
+        unit (EnergyUnits): The specific unit that the Energy value is representing.
+    """
+
+    def __init__(self, value: float, unit: EnergyUnits):
+        """
+        Create a new DTO representation of a Energy
+
+        Parameters:
+            value (float): The value of the Energy.
+            unit (EnergyUnits): The specific unit that the Energy value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Energy
+        """
+        self.unit: EnergyUnits = unit
+        """
+        The specific unit that the Energy value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Energy DTO JSON object representing the current unit.
+
+        :return: JSON object represents Energy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Joule"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Energy DTO from a json representation.
+
+        :param data: The Energy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Joule"}
+        :return: A new instance of EnergyDto.
+        :rtype: EnergyDto
+        """
+        return EnergyDto(value=data["value"], unit=EnergyUnits(data["unit"]))
+
 
 class Energy(AbstractMeasure):
     """
@@ -309,6 +359,54 @@ class Energy(AbstractMeasure):
 
     def convert(self, unit: EnergyUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: EnergyUnits = EnergyUnits.Joule) -> EnergyDto:
+        """
+        Get a new instance of Energy DTO representing the current unit.
+
+        :param hold_in_unit: The specific Energy unit to store the Energy value in the DTO representation.
+        :type hold_in_unit: EnergyUnits
+        :return: A new instance of EnergyDto.
+        :rtype: EnergyDto
+        """
+        return EnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: EnergyUnits = EnergyUnits.Joule):
+        """
+        Get a Energy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Energy unit to store the Energy value in the DTO representation.
+        :type hold_in_unit: EnergyUnits
+        :return: JSON object represents Energy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Joule"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(energy_dto: EnergyDto):
+        """
+        Obtain a new instance of Energy from a DTO unit object.
+
+        :param energy_dto: The Energy DTO representation.
+        :type energy_dto: EnergyDto
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
+        return Energy(energy_dto.value, energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Energy from a DTO unit json representation.
+
+        :param data: The Energy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Joule"}
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
+        return Energy.from_dto(EnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:
         value = self._value

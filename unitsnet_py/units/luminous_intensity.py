@@ -10,11 +10,61 @@ class LuminousIntensityUnits(Enum):
             LuminousIntensityUnits enumeration
         """
         
-        Candela = 'candela'
+        Candela = 'Candela'
         """
             
         """
         
+
+class LuminousIntensityDto:
+    """
+    A DTO representation of a LuminousIntensity
+
+    Attributes:
+        value (float): The value of the LuminousIntensity.
+        unit (LuminousIntensityUnits): The specific unit that the LuminousIntensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: LuminousIntensityUnits):
+        """
+        Create a new DTO representation of a LuminousIntensity
+
+        Parameters:
+            value (float): The value of the LuminousIntensity.
+            unit (LuminousIntensityUnits): The specific unit that the LuminousIntensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the LuminousIntensity
+        """
+        self.unit: LuminousIntensityUnits = unit
+        """
+        The specific unit that the LuminousIntensity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a LuminousIntensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents LuminousIntensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Candela"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of LuminousIntensity DTO from a json representation.
+
+        :param data: The LuminousIntensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Candela"}
+        :return: A new instance of LuminousIntensityDto.
+        :rtype: LuminousIntensityDto
+        """
+        return LuminousIntensityDto(value=data["value"], unit=LuminousIntensityUnits(data["unit"]))
+
 
 class LuminousIntensity(AbstractMeasure):
     """
@@ -36,6 +86,54 @@ class LuminousIntensity(AbstractMeasure):
 
     def convert(self, unit: LuminousIntensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela) -> LuminousIntensityDto:
+        """
+        Get a new instance of LuminousIntensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific LuminousIntensity unit to store the LuminousIntensity value in the DTO representation.
+        :type hold_in_unit: LuminousIntensityUnits
+        :return: A new instance of LuminousIntensityDto.
+        :rtype: LuminousIntensityDto
+        """
+        return LuminousIntensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela):
+        """
+        Get a LuminousIntensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LuminousIntensity unit to store the LuminousIntensity value in the DTO representation.
+        :type hold_in_unit: LuminousIntensityUnits
+        :return: JSON object represents LuminousIntensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Candela"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(luminous_intensity_dto: LuminousIntensityDto):
+        """
+        Obtain a new instance of LuminousIntensity from a DTO unit object.
+
+        :param luminous_intensity_dto: The LuminousIntensity DTO representation.
+        :type luminous_intensity_dto: LuminousIntensityDto
+        :return: A new instance of LuminousIntensity.
+        :rtype: LuminousIntensity
+        """
+        return LuminousIntensity(luminous_intensity_dto.value, luminous_intensity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LuminousIntensity from a DTO unit json representation.
+
+        :param data: The LuminousIntensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Candela"}
+        :return: A new instance of LuminousIntensity.
+        :rtype: LuminousIntensity
+        """
+        return LuminousIntensity.from_dto(LuminousIntensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LuminousIntensityUnits) -> float:
         value = self._value

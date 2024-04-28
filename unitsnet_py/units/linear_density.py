@@ -10,76 +10,126 @@ class LinearDensityUnits(Enum):
             LinearDensityUnits enumeration
         """
         
-        GramPerMillimeter = 'gram_per_millimeter'
+        GramPerMillimeter = 'GramPerMillimeter'
         """
             
         """
         
-        GramPerCentimeter = 'gram_per_centimeter'
+        GramPerCentimeter = 'GramPerCentimeter'
         """
             
         """
         
-        GramPerMeter = 'gram_per_meter'
+        GramPerMeter = 'GramPerMeter'
         """
             
         """
         
-        PoundPerInch = 'pound_per_inch'
+        PoundPerInch = 'PoundPerInch'
         """
             
         """
         
-        PoundPerFoot = 'pound_per_foot'
+        PoundPerFoot = 'PoundPerFoot'
         """
             
         """
         
-        MicrogramPerMillimeter = 'microgram_per_millimeter'
+        MicrogramPerMillimeter = 'MicrogramPerMillimeter'
         """
             
         """
         
-        MilligramPerMillimeter = 'milligram_per_millimeter'
+        MilligramPerMillimeter = 'MilligramPerMillimeter'
         """
             
         """
         
-        KilogramPerMillimeter = 'kilogram_per_millimeter'
+        KilogramPerMillimeter = 'KilogramPerMillimeter'
         """
             
         """
         
-        MicrogramPerCentimeter = 'microgram_per_centimeter'
+        MicrogramPerCentimeter = 'MicrogramPerCentimeter'
         """
             
         """
         
-        MilligramPerCentimeter = 'milligram_per_centimeter'
+        MilligramPerCentimeter = 'MilligramPerCentimeter'
         """
             
         """
         
-        KilogramPerCentimeter = 'kilogram_per_centimeter'
+        KilogramPerCentimeter = 'KilogramPerCentimeter'
         """
             
         """
         
-        MicrogramPerMeter = 'microgram_per_meter'
+        MicrogramPerMeter = 'MicrogramPerMeter'
         """
             
         """
         
-        MilligramPerMeter = 'milligram_per_meter'
+        MilligramPerMeter = 'MilligramPerMeter'
         """
             
         """
         
-        KilogramPerMeter = 'kilogram_per_meter'
+        KilogramPerMeter = 'KilogramPerMeter'
         """
             
         """
         
+
+class LinearDensityDto:
+    """
+    A DTO representation of a LinearDensity
+
+    Attributes:
+        value (float): The value of the LinearDensity.
+        unit (LinearDensityUnits): The specific unit that the LinearDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: LinearDensityUnits):
+        """
+        Create a new DTO representation of a LinearDensity
+
+        Parameters:
+            value (float): The value of the LinearDensity.
+            unit (LinearDensityUnits): The specific unit that the LinearDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the LinearDensity
+        """
+        self.unit: LinearDensityUnits = unit
+        """
+        The specific unit that the LinearDensity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a LinearDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents LinearDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of LinearDensity DTO from a json representation.
+
+        :param data: The LinearDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMeter"}
+        :return: A new instance of LinearDensityDto.
+        :rtype: LinearDensityDto
+        """
+        return LinearDensityDto(value=data["value"], unit=LinearDensityUnits(data["unit"]))
+
 
 class LinearDensity(AbstractMeasure):
     """
@@ -127,6 +177,54 @@ class LinearDensity(AbstractMeasure):
 
     def convert(self, unit: LinearDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> LinearDensityDto:
+        """
+        Get a new instance of LinearDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific LinearDensity unit to store the LinearDensity value in the DTO representation.
+        :type hold_in_unit: LinearDensityUnits
+        :return: A new instance of LinearDensityDto.
+        :rtype: LinearDensityDto
+        """
+        return LinearDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter):
+        """
+        Get a LinearDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LinearDensity unit to store the LinearDensity value in the DTO representation.
+        :type hold_in_unit: LinearDensityUnits
+        :return: JSON object represents LinearDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(linear_density_dto: LinearDensityDto):
+        """
+        Obtain a new instance of LinearDensity from a DTO unit object.
+
+        :param linear_density_dto: The LinearDensity DTO representation.
+        :type linear_density_dto: LinearDensityDto
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity(linear_density_dto.value, linear_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LinearDensity from a DTO unit json representation.
+
+        :param data: The LinearDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMeter"}
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity.from_dto(LinearDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LinearDensityUnits) -> float:
         value = self._value

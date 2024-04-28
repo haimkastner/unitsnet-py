@@ -10,86 +10,136 @@ class AbsorbedDoseOfIonizingRadiationUnits(Enum):
             AbsorbedDoseOfIonizingRadiationUnits enumeration
         """
         
-        Gray = 'gray'
+        Gray = 'Gray'
         """
             The gray is the unit of ionizing radiation dose in the SI, defined as the absorption of one joule of radiation energy per kilogram of matter.
         """
         
-        Rad = 'rad'
+        Rad = 'Rad'
         """
             The rad is a unit of absorbed radiation dose, defined as 1 rad = 0.01 Gy = 0.01 J/kg.
         """
         
-        Femtogray = 'femtogray'
+        Femtogray = 'Femtogray'
         """
             
         """
         
-        Picogray = 'picogray'
+        Picogray = 'Picogray'
         """
             
         """
         
-        Nanogray = 'nanogray'
+        Nanogray = 'Nanogray'
         """
             
         """
         
-        Microgray = 'microgray'
+        Microgray = 'Microgray'
         """
             
         """
         
-        Milligray = 'milligray'
+        Milligray = 'Milligray'
         """
             
         """
         
-        Centigray = 'centigray'
+        Centigray = 'Centigray'
         """
             
         """
         
-        Kilogray = 'kilogray'
+        Kilogray = 'Kilogray'
         """
             
         """
         
-        Megagray = 'megagray'
+        Megagray = 'Megagray'
         """
             
         """
         
-        Gigagray = 'gigagray'
+        Gigagray = 'Gigagray'
         """
             
         """
         
-        Teragray = 'teragray'
+        Teragray = 'Teragray'
         """
             
         """
         
-        Petagray = 'petagray'
+        Petagray = 'Petagray'
         """
             
         """
         
-        Millirad = 'millirad'
+        Millirad = 'Millirad'
         """
             
         """
         
-        Kilorad = 'kilorad'
+        Kilorad = 'Kilorad'
         """
             
         """
         
-        Megarad = 'megarad'
+        Megarad = 'Megarad'
         """
             
         """
         
+
+class AbsorbedDoseOfIonizingRadiationDto:
+    """
+    A DTO representation of a AbsorbedDoseOfIonizingRadiation
+
+    Attributes:
+        value (float): The value of the AbsorbedDoseOfIonizingRadiation.
+        unit (AbsorbedDoseOfIonizingRadiationUnits): The specific unit that the AbsorbedDoseOfIonizingRadiation value is representing.
+    """
+
+    def __init__(self, value: float, unit: AbsorbedDoseOfIonizingRadiationUnits):
+        """
+        Create a new DTO representation of a AbsorbedDoseOfIonizingRadiation
+
+        Parameters:
+            value (float): The value of the AbsorbedDoseOfIonizingRadiation.
+            unit (AbsorbedDoseOfIonizingRadiationUnits): The specific unit that the AbsorbedDoseOfIonizingRadiation value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the AbsorbedDoseOfIonizingRadiation
+        """
+        self.unit: AbsorbedDoseOfIonizingRadiationUnits = unit
+        """
+        The specific unit that the AbsorbedDoseOfIonizingRadiation value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a AbsorbedDoseOfIonizingRadiation DTO JSON object representing the current unit.
+
+        :return: JSON object represents AbsorbedDoseOfIonizingRadiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Gray"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of AbsorbedDoseOfIonizingRadiation DTO from a json representation.
+
+        :param data: The AbsorbedDoseOfIonizingRadiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Gray"}
+        :return: A new instance of AbsorbedDoseOfIonizingRadiationDto.
+        :rtype: AbsorbedDoseOfIonizingRadiationDto
+        """
+        return AbsorbedDoseOfIonizingRadiationDto(value=data["value"], unit=AbsorbedDoseOfIonizingRadiationUnits(data["unit"]))
+
 
 class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
     """
@@ -141,6 +191,54 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
 
     def convert(self, unit: AbsorbedDoseOfIonizingRadiationUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> AbsorbedDoseOfIonizingRadiationDto:
+        """
+        Get a new instance of AbsorbedDoseOfIonizingRadiation DTO representing the current unit.
+
+        :param hold_in_unit: The specific AbsorbedDoseOfIonizingRadiation unit to store the AbsorbedDoseOfIonizingRadiation value in the DTO representation.
+        :type hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits
+        :return: A new instance of AbsorbedDoseOfIonizingRadiationDto.
+        :rtype: AbsorbedDoseOfIonizingRadiationDto
+        """
+        return AbsorbedDoseOfIonizingRadiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray):
+        """
+        Get a AbsorbedDoseOfIonizingRadiation DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AbsorbedDoseOfIonizingRadiation unit to store the AbsorbedDoseOfIonizingRadiation value in the DTO representation.
+        :type hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits
+        :return: JSON object represents AbsorbedDoseOfIonizingRadiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Gray"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(absorbed_dose_of_ionizing_radiation_dto: AbsorbedDoseOfIonizingRadiationDto):
+        """
+        Obtain a new instance of AbsorbedDoseOfIonizingRadiation from a DTO unit object.
+
+        :param absorbed_dose_of_ionizing_radiation_dto: The AbsorbedDoseOfIonizingRadiation DTO representation.
+        :type absorbed_dose_of_ionizing_radiation_dto: AbsorbedDoseOfIonizingRadiationDto
+        :return: A new instance of AbsorbedDoseOfIonizingRadiation.
+        :rtype: AbsorbedDoseOfIonizingRadiation
+        """
+        return AbsorbedDoseOfIonizingRadiation(absorbed_dose_of_ionizing_radiation_dto.value, absorbed_dose_of_ionizing_radiation_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AbsorbedDoseOfIonizingRadiation from a DTO unit json representation.
+
+        :param data: The AbsorbedDoseOfIonizingRadiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Gray"}
+        :return: A new instance of AbsorbedDoseOfIonizingRadiation.
+        :rtype: AbsorbedDoseOfIonizingRadiation
+        """
+        return AbsorbedDoseOfIonizingRadiation.from_dto(AbsorbedDoseOfIonizingRadiationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AbsorbedDoseOfIonizingRadiationUnits) -> float:
         value = self._value

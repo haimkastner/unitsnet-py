@@ -10,16 +10,66 @@ class RatioChangeRateUnits(Enum):
             RatioChangeRateUnits enumeration
         """
         
-        PercentPerSecond = 'percent_per_second'
+        PercentPerSecond = 'PercentPerSecond'
         """
             
         """
         
-        DecimalFractionPerSecond = 'decimal_fraction_per_second'
+        DecimalFractionPerSecond = 'DecimalFractionPerSecond'
         """
             
         """
         
+
+class RatioChangeRateDto:
+    """
+    A DTO representation of a RatioChangeRate
+
+    Attributes:
+        value (float): The value of the RatioChangeRate.
+        unit (RatioChangeRateUnits): The specific unit that the RatioChangeRate value is representing.
+    """
+
+    def __init__(self, value: float, unit: RatioChangeRateUnits):
+        """
+        Create a new DTO representation of a RatioChangeRate
+
+        Parameters:
+            value (float): The value of the RatioChangeRate.
+            unit (RatioChangeRateUnits): The specific unit that the RatioChangeRate value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the RatioChangeRate
+        """
+        self.unit: RatioChangeRateUnits = unit
+        """
+        The specific unit that the RatioChangeRate value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a RatioChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents RatioChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFractionPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of RatioChangeRate DTO from a json representation.
+
+        :param data: The RatioChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFractionPerSecond"}
+        :return: A new instance of RatioChangeRateDto.
+        :rtype: RatioChangeRateDto
+        """
+        return RatioChangeRateDto(value=data["value"], unit=RatioChangeRateUnits(data["unit"]))
+
 
 class RatioChangeRate(AbstractMeasure):
     """
@@ -43,6 +93,54 @@ class RatioChangeRate(AbstractMeasure):
 
     def convert(self, unit: RatioChangeRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> RatioChangeRateDto:
+        """
+        Get a new instance of RatioChangeRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific RatioChangeRate unit to store the RatioChangeRate value in the DTO representation.
+        :type hold_in_unit: RatioChangeRateUnits
+        :return: A new instance of RatioChangeRateDto.
+        :rtype: RatioChangeRateDto
+        """
+        return RatioChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond):
+        """
+        Get a RatioChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RatioChangeRate unit to store the RatioChangeRate value in the DTO representation.
+        :type hold_in_unit: RatioChangeRateUnits
+        :return: JSON object represents RatioChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFractionPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(ratio_change_rate_dto: RatioChangeRateDto):
+        """
+        Obtain a new instance of RatioChangeRate from a DTO unit object.
+
+        :param ratio_change_rate_dto: The RatioChangeRate DTO representation.
+        :type ratio_change_rate_dto: RatioChangeRateDto
+        :return: A new instance of RatioChangeRate.
+        :rtype: RatioChangeRate
+        """
+        return RatioChangeRate(ratio_change_rate_dto.value, ratio_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RatioChangeRate from a DTO unit json representation.
+
+        :param data: The RatioChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFractionPerSecond"}
+        :return: A new instance of RatioChangeRate.
+        :rtype: RatioChangeRate
+        """
+        return RatioChangeRate.from_dto(RatioChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RatioChangeRateUnits) -> float:
         value = self._value

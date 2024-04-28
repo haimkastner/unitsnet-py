@@ -10,171 +10,221 @@ class MassFlowUnits(Enum):
             MassFlowUnits enumeration
         """
         
-        GramPerSecond = 'gram_per_second'
+        GramPerSecond = 'GramPerSecond'
         """
             
         """
         
-        GramPerDay = 'gram_per_day'
+        GramPerDay = 'GramPerDay'
         """
             
         """
         
-        GramPerHour = 'gram_per_hour'
+        GramPerHour = 'GramPerHour'
         """
             
         """
         
-        KilogramPerHour = 'kilogram_per_hour'
+        KilogramPerHour = 'KilogramPerHour'
         """
             
         """
         
-        KilogramPerMinute = 'kilogram_per_minute'
+        KilogramPerMinute = 'KilogramPerMinute'
         """
             
         """
         
-        TonnePerHour = 'tonne_per_hour'
+        TonnePerHour = 'TonnePerHour'
         """
             
         """
         
-        PoundPerDay = 'pound_per_day'
+        PoundPerDay = 'PoundPerDay'
         """
             
         """
         
-        PoundPerHour = 'pound_per_hour'
+        PoundPerHour = 'PoundPerHour'
         """
             
         """
         
-        PoundPerMinute = 'pound_per_minute'
+        PoundPerMinute = 'PoundPerMinute'
         """
             
         """
         
-        PoundPerSecond = 'pound_per_second'
+        PoundPerSecond = 'PoundPerSecond'
         """
             
         """
         
-        TonnePerDay = 'tonne_per_day'
+        TonnePerDay = 'TonnePerDay'
         """
             
         """
         
-        ShortTonPerHour = 'short_ton_per_hour'
+        ShortTonPerHour = 'ShortTonPerHour'
         """
             
         """
         
-        NanogramPerSecond = 'nanogram_per_second'
+        NanogramPerSecond = 'NanogramPerSecond'
         """
             
         """
         
-        MicrogramPerSecond = 'microgram_per_second'
+        MicrogramPerSecond = 'MicrogramPerSecond'
         """
             
         """
         
-        MilligramPerSecond = 'milligram_per_second'
+        MilligramPerSecond = 'MilligramPerSecond'
         """
             
         """
         
-        CentigramPerSecond = 'centigram_per_second'
+        CentigramPerSecond = 'CentigramPerSecond'
         """
             
         """
         
-        DecigramPerSecond = 'decigram_per_second'
+        DecigramPerSecond = 'DecigramPerSecond'
         """
             
         """
         
-        DecagramPerSecond = 'decagram_per_second'
+        DecagramPerSecond = 'DecagramPerSecond'
         """
             
         """
         
-        HectogramPerSecond = 'hectogram_per_second'
+        HectogramPerSecond = 'HectogramPerSecond'
         """
             
         """
         
-        KilogramPerSecond = 'kilogram_per_second'
+        KilogramPerSecond = 'KilogramPerSecond'
         """
             
         """
         
-        NanogramPerDay = 'nanogram_per_day'
+        NanogramPerDay = 'NanogramPerDay'
         """
             
         """
         
-        MicrogramPerDay = 'microgram_per_day'
+        MicrogramPerDay = 'MicrogramPerDay'
         """
             
         """
         
-        MilligramPerDay = 'milligram_per_day'
+        MilligramPerDay = 'MilligramPerDay'
         """
             
         """
         
-        CentigramPerDay = 'centigram_per_day'
+        CentigramPerDay = 'CentigramPerDay'
         """
             
         """
         
-        DecigramPerDay = 'decigram_per_day'
+        DecigramPerDay = 'DecigramPerDay'
         """
             
         """
         
-        DecagramPerDay = 'decagram_per_day'
+        DecagramPerDay = 'DecagramPerDay'
         """
             
         """
         
-        HectogramPerDay = 'hectogram_per_day'
+        HectogramPerDay = 'HectogramPerDay'
         """
             
         """
         
-        KilogramPerDay = 'kilogram_per_day'
+        KilogramPerDay = 'KilogramPerDay'
         """
             
         """
         
-        MegagramPerDay = 'megagram_per_day'
+        MegagramPerDay = 'MegagramPerDay'
         """
             
         """
         
-        MegapoundPerDay = 'megapound_per_day'
+        MegapoundPerDay = 'MegapoundPerDay'
         """
             
         """
         
-        MegapoundPerHour = 'megapound_per_hour'
+        MegapoundPerHour = 'MegapoundPerHour'
         """
             
         """
         
-        MegapoundPerMinute = 'megapound_per_minute'
+        MegapoundPerMinute = 'MegapoundPerMinute'
         """
             
         """
         
-        MegapoundPerSecond = 'megapound_per_second'
+        MegapoundPerSecond = 'MegapoundPerSecond'
         """
             
         """
         
+
+class MassFlowDto:
+    """
+    A DTO representation of a MassFlow
+
+    Attributes:
+        value (float): The value of the MassFlow.
+        unit (MassFlowUnits): The specific unit that the MassFlow value is representing.
+    """
+
+    def __init__(self, value: float, unit: MassFlowUnits):
+        """
+        Create a new DTO representation of a MassFlow
+
+        Parameters:
+            value (float): The value of the MassFlow.
+            unit (MassFlowUnits): The specific unit that the MassFlow value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the MassFlow
+        """
+        self.unit: MassFlowUnits = unit
+        """
+        The specific unit that the MassFlow value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a MassFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of MassFlow DTO from a json representation.
+
+        :param data: The MassFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerSecond"}
+        :return: A new instance of MassFlowDto.
+        :rtype: MassFlowDto
+        """
+        return MassFlowDto(value=data["value"], unit=MassFlowUnits(data["unit"]))
+
 
 class MassFlow(AbstractMeasure):
     """
@@ -260,6 +310,54 @@ class MassFlow(AbstractMeasure):
 
     def convert(self, unit: MassFlowUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> MassFlowDto:
+        """
+        Get a new instance of MassFlow DTO representing the current unit.
+
+        :param hold_in_unit: The specific MassFlow unit to store the MassFlow value in the DTO representation.
+        :type hold_in_unit: MassFlowUnits
+        :return: A new instance of MassFlowDto.
+        :rtype: MassFlowDto
+        """
+        return MassFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassFlowUnits = MassFlowUnits.GramPerSecond):
+        """
+        Get a MassFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassFlow unit to store the MassFlow value in the DTO representation.
+        :type hold_in_unit: MassFlowUnits
+        :return: JSON object represents MassFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(mass_flow_dto: MassFlowDto):
+        """
+        Obtain a new instance of MassFlow from a DTO unit object.
+
+        :param mass_flow_dto: The MassFlow DTO representation.
+        :type mass_flow_dto: MassFlowDto
+        :return: A new instance of MassFlow.
+        :rtype: MassFlow
+        """
+        return MassFlow(mass_flow_dto.value, mass_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassFlow from a DTO unit json representation.
+
+        :param data: The MassFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerSecond"}
+        :return: A new instance of MassFlow.
+        :rtype: MassFlow
+        """
+        return MassFlow.from_dto(MassFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassFlowUnits) -> float:
         value = self._value

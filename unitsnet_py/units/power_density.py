@@ -10,226 +10,276 @@ class PowerDensityUnits(Enum):
             PowerDensityUnits enumeration
         """
         
-        WattPerCubicMeter = 'watt_per_cubic_meter'
+        WattPerCubicMeter = 'WattPerCubicMeter'
         """
             
         """
         
-        WattPerCubicInch = 'watt_per_cubic_inch'
+        WattPerCubicInch = 'WattPerCubicInch'
         """
             
         """
         
-        WattPerCubicFoot = 'watt_per_cubic_foot'
+        WattPerCubicFoot = 'WattPerCubicFoot'
         """
             
         """
         
-        WattPerLiter = 'watt_per_liter'
+        WattPerLiter = 'WattPerLiter'
         """
             
         """
         
-        PicowattPerCubicMeter = 'picowatt_per_cubic_meter'
+        PicowattPerCubicMeter = 'PicowattPerCubicMeter'
         """
             
         """
         
-        NanowattPerCubicMeter = 'nanowatt_per_cubic_meter'
+        NanowattPerCubicMeter = 'NanowattPerCubicMeter'
         """
             
         """
         
-        MicrowattPerCubicMeter = 'microwatt_per_cubic_meter'
+        MicrowattPerCubicMeter = 'MicrowattPerCubicMeter'
         """
             
         """
         
-        MilliwattPerCubicMeter = 'milliwatt_per_cubic_meter'
+        MilliwattPerCubicMeter = 'MilliwattPerCubicMeter'
         """
             
         """
         
-        DeciwattPerCubicMeter = 'deciwatt_per_cubic_meter'
+        DeciwattPerCubicMeter = 'DeciwattPerCubicMeter'
         """
             
         """
         
-        DecawattPerCubicMeter = 'decawatt_per_cubic_meter'
+        DecawattPerCubicMeter = 'DecawattPerCubicMeter'
         """
             
         """
         
-        KilowattPerCubicMeter = 'kilowatt_per_cubic_meter'
+        KilowattPerCubicMeter = 'KilowattPerCubicMeter'
         """
             
         """
         
-        MegawattPerCubicMeter = 'megawatt_per_cubic_meter'
+        MegawattPerCubicMeter = 'MegawattPerCubicMeter'
         """
             
         """
         
-        GigawattPerCubicMeter = 'gigawatt_per_cubic_meter'
+        GigawattPerCubicMeter = 'GigawattPerCubicMeter'
         """
             
         """
         
-        TerawattPerCubicMeter = 'terawatt_per_cubic_meter'
+        TerawattPerCubicMeter = 'TerawattPerCubicMeter'
         """
             
         """
         
-        PicowattPerCubicInch = 'picowatt_per_cubic_inch'
+        PicowattPerCubicInch = 'PicowattPerCubicInch'
         """
             
         """
         
-        NanowattPerCubicInch = 'nanowatt_per_cubic_inch'
+        NanowattPerCubicInch = 'NanowattPerCubicInch'
         """
             
         """
         
-        MicrowattPerCubicInch = 'microwatt_per_cubic_inch'
+        MicrowattPerCubicInch = 'MicrowattPerCubicInch'
         """
             
         """
         
-        MilliwattPerCubicInch = 'milliwatt_per_cubic_inch'
+        MilliwattPerCubicInch = 'MilliwattPerCubicInch'
         """
             
         """
         
-        DeciwattPerCubicInch = 'deciwatt_per_cubic_inch'
+        DeciwattPerCubicInch = 'DeciwattPerCubicInch'
         """
             
         """
         
-        DecawattPerCubicInch = 'decawatt_per_cubic_inch'
+        DecawattPerCubicInch = 'DecawattPerCubicInch'
         """
             
         """
         
-        KilowattPerCubicInch = 'kilowatt_per_cubic_inch'
+        KilowattPerCubicInch = 'KilowattPerCubicInch'
         """
             
         """
         
-        MegawattPerCubicInch = 'megawatt_per_cubic_inch'
+        MegawattPerCubicInch = 'MegawattPerCubicInch'
         """
             
         """
         
-        GigawattPerCubicInch = 'gigawatt_per_cubic_inch'
+        GigawattPerCubicInch = 'GigawattPerCubicInch'
         """
             
         """
         
-        TerawattPerCubicInch = 'terawatt_per_cubic_inch'
+        TerawattPerCubicInch = 'TerawattPerCubicInch'
         """
             
         """
         
-        PicowattPerCubicFoot = 'picowatt_per_cubic_foot'
+        PicowattPerCubicFoot = 'PicowattPerCubicFoot'
         """
             
         """
         
-        NanowattPerCubicFoot = 'nanowatt_per_cubic_foot'
+        NanowattPerCubicFoot = 'NanowattPerCubicFoot'
         """
             
         """
         
-        MicrowattPerCubicFoot = 'microwatt_per_cubic_foot'
+        MicrowattPerCubicFoot = 'MicrowattPerCubicFoot'
         """
             
         """
         
-        MilliwattPerCubicFoot = 'milliwatt_per_cubic_foot'
+        MilliwattPerCubicFoot = 'MilliwattPerCubicFoot'
         """
             
         """
         
-        DeciwattPerCubicFoot = 'deciwatt_per_cubic_foot'
+        DeciwattPerCubicFoot = 'DeciwattPerCubicFoot'
         """
             
         """
         
-        DecawattPerCubicFoot = 'decawatt_per_cubic_foot'
+        DecawattPerCubicFoot = 'DecawattPerCubicFoot'
         """
             
         """
         
-        KilowattPerCubicFoot = 'kilowatt_per_cubic_foot'
+        KilowattPerCubicFoot = 'KilowattPerCubicFoot'
         """
             
         """
         
-        MegawattPerCubicFoot = 'megawatt_per_cubic_foot'
+        MegawattPerCubicFoot = 'MegawattPerCubicFoot'
         """
             
         """
         
-        GigawattPerCubicFoot = 'gigawatt_per_cubic_foot'
+        GigawattPerCubicFoot = 'GigawattPerCubicFoot'
         """
             
         """
         
-        TerawattPerCubicFoot = 'terawatt_per_cubic_foot'
+        TerawattPerCubicFoot = 'TerawattPerCubicFoot'
         """
             
         """
         
-        PicowattPerLiter = 'picowatt_per_liter'
+        PicowattPerLiter = 'PicowattPerLiter'
         """
             
         """
         
-        NanowattPerLiter = 'nanowatt_per_liter'
+        NanowattPerLiter = 'NanowattPerLiter'
         """
             
         """
         
-        MicrowattPerLiter = 'microwatt_per_liter'
+        MicrowattPerLiter = 'MicrowattPerLiter'
         """
             
         """
         
-        MilliwattPerLiter = 'milliwatt_per_liter'
+        MilliwattPerLiter = 'MilliwattPerLiter'
         """
             
         """
         
-        DeciwattPerLiter = 'deciwatt_per_liter'
+        DeciwattPerLiter = 'DeciwattPerLiter'
         """
             
         """
         
-        DecawattPerLiter = 'decawatt_per_liter'
+        DecawattPerLiter = 'DecawattPerLiter'
         """
             
         """
         
-        KilowattPerLiter = 'kilowatt_per_liter'
+        KilowattPerLiter = 'KilowattPerLiter'
         """
             
         """
         
-        MegawattPerLiter = 'megawatt_per_liter'
+        MegawattPerLiter = 'MegawattPerLiter'
         """
             
         """
         
-        GigawattPerLiter = 'gigawatt_per_liter'
+        GigawattPerLiter = 'GigawattPerLiter'
         """
             
         """
         
-        TerawattPerLiter = 'terawatt_per_liter'
+        TerawattPerLiter = 'TerawattPerLiter'
         """
             
         """
         
+
+class PowerDensityDto:
+    """
+    A DTO representation of a PowerDensity
+
+    Attributes:
+        value (float): The value of the PowerDensity.
+        unit (PowerDensityUnits): The specific unit that the PowerDensity value is representing.
+    """
+
+    def __init__(self, value: float, unit: PowerDensityUnits):
+        """
+        Create a new DTO representation of a PowerDensity
+
+        Parameters:
+            value (float): The value of the PowerDensity.
+            unit (PowerDensityUnits): The specific unit that the PowerDensity value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the PowerDensity
+        """
+        self.unit: PowerDensityUnits = unit
+        """
+        The specific unit that the PowerDensity value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a PowerDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents PowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerCubicMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of PowerDensity DTO from a json representation.
+
+        :param data: The PowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerCubicMeter"}
+        :return: A new instance of PowerDensityDto.
+        :rtype: PowerDensityDto
+        """
+        return PowerDensityDto(value=data["value"], unit=PowerDensityUnits(data["unit"]))
+
 
 class PowerDensity(AbstractMeasure):
     """
@@ -337,6 +387,54 @@ class PowerDensity(AbstractMeasure):
 
     def convert(self, unit: PowerDensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> PowerDensityDto:
+        """
+        Get a new instance of PowerDensity DTO representing the current unit.
+
+        :param hold_in_unit: The specific PowerDensity unit to store the PowerDensity value in the DTO representation.
+        :type hold_in_unit: PowerDensityUnits
+        :return: A new instance of PowerDensityDto.
+        :rtype: PowerDensityDto
+        """
+        return PowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter):
+        """
+        Get a PowerDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific PowerDensity unit to store the PowerDensity value in the DTO representation.
+        :type hold_in_unit: PowerDensityUnits
+        :return: JSON object represents PowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(power_density_dto: PowerDensityDto):
+        """
+        Obtain a new instance of PowerDensity from a DTO unit object.
+
+        :param power_density_dto: The PowerDensity DTO representation.
+        :type power_density_dto: PowerDensityDto
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
+        return PowerDensity(power_density_dto.value, power_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of PowerDensity from a DTO unit json representation.
+
+        :param data: The PowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerCubicMeter"}
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
+        return PowerDensity.from_dto(PowerDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:
         value = self._value

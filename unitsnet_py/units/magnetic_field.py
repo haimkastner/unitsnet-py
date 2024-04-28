@@ -10,36 +10,86 @@ class MagneticFieldUnits(Enum):
             MagneticFieldUnits enumeration
         """
         
-        Tesla = 'tesla'
+        Tesla = 'Tesla'
         """
             
         """
         
-        Gauss = 'gauss'
+        Gauss = 'Gauss'
         """
             
         """
         
-        Nanotesla = 'nanotesla'
+        Nanotesla = 'Nanotesla'
         """
             
         """
         
-        Microtesla = 'microtesla'
+        Microtesla = 'Microtesla'
         """
             
         """
         
-        Millitesla = 'millitesla'
+        Millitesla = 'Millitesla'
         """
             
         """
         
-        Milligauss = 'milligauss'
+        Milligauss = 'Milligauss'
         """
             
         """
         
+
+class MagneticFieldDto:
+    """
+    A DTO representation of a MagneticField
+
+    Attributes:
+        value (float): The value of the MagneticField.
+        unit (MagneticFieldUnits): The specific unit that the MagneticField value is representing.
+    """
+
+    def __init__(self, value: float, unit: MagneticFieldUnits):
+        """
+        Create a new DTO representation of a MagneticField
+
+        Parameters:
+            value (float): The value of the MagneticField.
+            unit (MagneticFieldUnits): The specific unit that the MagneticField value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the MagneticField
+        """
+        self.unit: MagneticFieldUnits = unit
+        """
+        The specific unit that the MagneticField value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a MagneticField DTO JSON object representing the current unit.
+
+        :return: JSON object represents MagneticField DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Tesla"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of MagneticField DTO from a json representation.
+
+        :param data: The MagneticField DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Tesla"}
+        :return: A new instance of MagneticFieldDto.
+        :rtype: MagneticFieldDto
+        """
+        return MagneticFieldDto(value=data["value"], unit=MagneticFieldUnits(data["unit"]))
+
 
 class MagneticField(AbstractMeasure):
     """
@@ -71,6 +121,54 @@ class MagneticField(AbstractMeasure):
 
     def convert(self, unit: MagneticFieldUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> MagneticFieldDto:
+        """
+        Get a new instance of MagneticField DTO representing the current unit.
+
+        :param hold_in_unit: The specific MagneticField unit to store the MagneticField value in the DTO representation.
+        :type hold_in_unit: MagneticFieldUnits
+        :return: A new instance of MagneticFieldDto.
+        :rtype: MagneticFieldDto
+        """
+        return MagneticFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MagneticFieldUnits = MagneticFieldUnits.Tesla):
+        """
+        Get a MagneticField DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MagneticField unit to store the MagneticField value in the DTO representation.
+        :type hold_in_unit: MagneticFieldUnits
+        :return: JSON object represents MagneticField DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Tesla"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(magnetic_field_dto: MagneticFieldDto):
+        """
+        Obtain a new instance of MagneticField from a DTO unit object.
+
+        :param magnetic_field_dto: The MagneticField DTO representation.
+        :type magnetic_field_dto: MagneticFieldDto
+        :return: A new instance of MagneticField.
+        :rtype: MagneticField
+        """
+        return MagneticField(magnetic_field_dto.value, magnetic_field_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MagneticField from a DTO unit json representation.
+
+        :param data: The MagneticField DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Tesla"}
+        :return: A new instance of MagneticField.
+        :rtype: MagneticField
+        """
+        return MagneticField.from_dto(MagneticFieldDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MagneticFieldUnits) -> float:
         value = self._value

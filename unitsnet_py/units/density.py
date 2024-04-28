@@ -10,286 +10,336 @@ class DensityUnits(Enum):
             DensityUnits enumeration
         """
         
-        GramPerCubicMillimeter = 'gram_per_cubic_millimeter'
+        GramPerCubicMillimeter = 'GramPerCubicMillimeter'
         """
             
         """
         
-        GramPerCubicCentimeter = 'gram_per_cubic_centimeter'
+        GramPerCubicCentimeter = 'GramPerCubicCentimeter'
         """
             
         """
         
-        GramPerCubicMeter = 'gram_per_cubic_meter'
+        GramPerCubicMeter = 'GramPerCubicMeter'
         """
             
         """
         
-        PoundPerCubicInch = 'pound_per_cubic_inch'
+        PoundPerCubicInch = 'PoundPerCubicInch'
         """
             
         """
         
-        PoundPerCubicFoot = 'pound_per_cubic_foot'
+        PoundPerCubicFoot = 'PoundPerCubicFoot'
         """
             
         """
         
-        PoundPerCubicYard = 'pound_per_cubic_yard'
+        PoundPerCubicYard = 'PoundPerCubicYard'
         """
             Calculated from the definition of <a href="https://en.wikipedia.org/wiki/Pound_(mass)">pound</a> and <a href="https://en.wikipedia.org/wiki/Yard">yard</a> compared to metric kilogram and meter.
         """
         
-        TonnePerCubicMillimeter = 'tonne_per_cubic_millimeter'
+        TonnePerCubicMillimeter = 'TonnePerCubicMillimeter'
         """
             
         """
         
-        TonnePerCubicCentimeter = 'tonne_per_cubic_centimeter'
+        TonnePerCubicCentimeter = 'TonnePerCubicCentimeter'
         """
             
         """
         
-        TonnePerCubicMeter = 'tonne_per_cubic_meter'
+        TonnePerCubicMeter = 'TonnePerCubicMeter'
         """
             
         """
         
-        SlugPerCubicFoot = 'slug_per_cubic_foot'
+        SlugPerCubicFoot = 'SlugPerCubicFoot'
         """
             
         """
         
-        GramPerLiter = 'gram_per_liter'
+        GramPerLiter = 'GramPerLiter'
         """
             
         """
         
-        GramPerDeciliter = 'gram_per_deciliter'
+        GramPerDeciliter = 'GramPerDeciliter'
         """
             
         """
         
-        GramPerMilliliter = 'gram_per_milliliter'
+        GramPerMilliliter = 'GramPerMilliliter'
         """
             
         """
         
-        PoundPerUSGallon = 'pound_per_us_gallon'
+        PoundPerUSGallon = 'PoundPerUSGallon'
         """
             
         """
         
-        PoundPerImperialGallon = 'pound_per_imperial_gallon'
+        PoundPerImperialGallon = 'PoundPerImperialGallon'
         """
             
         """
         
-        KilogramPerLiter = 'kilogram_per_liter'
+        KilogramPerLiter = 'KilogramPerLiter'
         """
             
         """
         
-        TonnePerCubicFoot = 'tonne_per_cubic_foot'
+        TonnePerCubicFoot = 'TonnePerCubicFoot'
         """
             
         """
         
-        TonnePerCubicInch = 'tonne_per_cubic_inch'
+        TonnePerCubicInch = 'TonnePerCubicInch'
         """
             
         """
         
-        GramPerCubicFoot = 'gram_per_cubic_foot'
+        GramPerCubicFoot = 'GramPerCubicFoot'
         """
             
         """
         
-        GramPerCubicInch = 'gram_per_cubic_inch'
+        GramPerCubicInch = 'GramPerCubicInch'
         """
             
         """
         
-        PoundPerCubicMeter = 'pound_per_cubic_meter'
+        PoundPerCubicMeter = 'PoundPerCubicMeter'
         """
             
         """
         
-        PoundPerCubicCentimeter = 'pound_per_cubic_centimeter'
+        PoundPerCubicCentimeter = 'PoundPerCubicCentimeter'
         """
             
         """
         
-        PoundPerCubicMillimeter = 'pound_per_cubic_millimeter'
+        PoundPerCubicMillimeter = 'PoundPerCubicMillimeter'
         """
             
         """
         
-        SlugPerCubicMeter = 'slug_per_cubic_meter'
+        SlugPerCubicMeter = 'SlugPerCubicMeter'
         """
             
         """
         
-        SlugPerCubicCentimeter = 'slug_per_cubic_centimeter'
+        SlugPerCubicCentimeter = 'SlugPerCubicCentimeter'
         """
             
         """
         
-        SlugPerCubicMillimeter = 'slug_per_cubic_millimeter'
+        SlugPerCubicMillimeter = 'SlugPerCubicMillimeter'
         """
             
         """
         
-        SlugPerCubicInch = 'slug_per_cubic_inch'
+        SlugPerCubicInch = 'SlugPerCubicInch'
         """
             
         """
         
-        KilogramPerCubicMillimeter = 'kilogram_per_cubic_millimeter'
+        KilogramPerCubicMillimeter = 'KilogramPerCubicMillimeter'
         """
             
         """
         
-        KilogramPerCubicCentimeter = 'kilogram_per_cubic_centimeter'
+        KilogramPerCubicCentimeter = 'KilogramPerCubicCentimeter'
         """
             
         """
         
-        KilogramPerCubicMeter = 'kilogram_per_cubic_meter'
+        KilogramPerCubicMeter = 'KilogramPerCubicMeter'
         """
             
         """
         
-        MilligramPerCubicMeter = 'milligram_per_cubic_meter'
+        MilligramPerCubicMeter = 'MilligramPerCubicMeter'
         """
             
         """
         
-        MicrogramPerCubicMeter = 'microgram_per_cubic_meter'
+        MicrogramPerCubicMeter = 'MicrogramPerCubicMeter'
         """
             
         """
         
-        KilopoundPerCubicInch = 'kilopound_per_cubic_inch'
+        KilopoundPerCubicInch = 'KilopoundPerCubicInch'
         """
             
         """
         
-        KilopoundPerCubicFoot = 'kilopound_per_cubic_foot'
+        KilopoundPerCubicFoot = 'KilopoundPerCubicFoot'
         """
             
         """
         
-        KilopoundPerCubicYard = 'kilopound_per_cubic_yard'
+        KilopoundPerCubicYard = 'KilopoundPerCubicYard'
         """
             
         """
         
-        FemtogramPerLiter = 'femtogram_per_liter'
+        FemtogramPerLiter = 'FemtogramPerLiter'
         """
             
         """
         
-        PicogramPerLiter = 'picogram_per_liter'
+        PicogramPerLiter = 'PicogramPerLiter'
         """
             
         """
         
-        NanogramPerLiter = 'nanogram_per_liter'
+        NanogramPerLiter = 'NanogramPerLiter'
         """
             
         """
         
-        MicrogramPerLiter = 'microgram_per_liter'
+        MicrogramPerLiter = 'MicrogramPerLiter'
         """
             
         """
         
-        MilligramPerLiter = 'milligram_per_liter'
+        MilligramPerLiter = 'MilligramPerLiter'
         """
             
         """
         
-        CentigramPerLiter = 'centigram_per_liter'
+        CentigramPerLiter = 'CentigramPerLiter'
         """
             
         """
         
-        DecigramPerLiter = 'decigram_per_liter'
+        DecigramPerLiter = 'DecigramPerLiter'
         """
             
         """
         
-        FemtogramPerDeciliter = 'femtogram_per_deciliter'
+        FemtogramPerDeciliter = 'FemtogramPerDeciliter'
         """
             
         """
         
-        PicogramPerDeciliter = 'picogram_per_deciliter'
+        PicogramPerDeciliter = 'PicogramPerDeciliter'
         """
             
         """
         
-        NanogramPerDeciliter = 'nanogram_per_deciliter'
+        NanogramPerDeciliter = 'NanogramPerDeciliter'
         """
             
         """
         
-        MicrogramPerDeciliter = 'microgram_per_deciliter'
+        MicrogramPerDeciliter = 'MicrogramPerDeciliter'
         """
             
         """
         
-        MilligramPerDeciliter = 'milligram_per_deciliter'
+        MilligramPerDeciliter = 'MilligramPerDeciliter'
         """
             
         """
         
-        CentigramPerDeciliter = 'centigram_per_deciliter'
+        CentigramPerDeciliter = 'CentigramPerDeciliter'
         """
             
         """
         
-        DecigramPerDeciliter = 'decigram_per_deciliter'
+        DecigramPerDeciliter = 'DecigramPerDeciliter'
         """
             
         """
         
-        FemtogramPerMilliliter = 'femtogram_per_milliliter'
+        FemtogramPerMilliliter = 'FemtogramPerMilliliter'
         """
             
         """
         
-        PicogramPerMilliliter = 'picogram_per_milliliter'
+        PicogramPerMilliliter = 'PicogramPerMilliliter'
         """
             
         """
         
-        NanogramPerMilliliter = 'nanogram_per_milliliter'
+        NanogramPerMilliliter = 'NanogramPerMilliliter'
         """
             
         """
         
-        MicrogramPerMilliliter = 'microgram_per_milliliter'
+        MicrogramPerMilliliter = 'MicrogramPerMilliliter'
         """
             
         """
         
-        MilligramPerMilliliter = 'milligram_per_milliliter'
+        MilligramPerMilliliter = 'MilligramPerMilliliter'
         """
             
         """
         
-        CentigramPerMilliliter = 'centigram_per_milliliter'
+        CentigramPerMilliliter = 'CentigramPerMilliliter'
         """
             
         """
         
-        DecigramPerMilliliter = 'decigram_per_milliliter'
+        DecigramPerMilliliter = 'DecigramPerMilliliter'
         """
             
         """
         
+
+class DensityDto:
+    """
+    A DTO representation of a Density
+
+    Attributes:
+        value (float): The value of the Density.
+        unit (DensityUnits): The specific unit that the Density value is representing.
+    """
+
+    def __init__(self, value: float, unit: DensityUnits):
+        """
+        Create a new DTO representation of a Density
+
+        Parameters:
+            value (float): The value of the Density.
+            unit (DensityUnits): The specific unit that the Density value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Density
+        """
+        self.unit: DensityUnits = unit
+        """
+        The specific unit that the Density value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Density DTO JSON object representing the current unit.
+
+        :return: JSON object represents Density DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Density DTO from a json representation.
+
+        :param data: The Density DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of DensityDto.
+        :rtype: DensityDto
+        """
+        return DensityDto(value=data["value"], unit=DensityUnits(data["unit"]))
+
 
 class Density(AbstractMeasure):
     """
@@ -421,6 +471,54 @@ class Density(AbstractMeasure):
 
     def convert(self, unit: DensityUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> DensityDto:
+        """
+        Get a new instance of Density DTO representing the current unit.
+
+        :param hold_in_unit: The specific Density unit to store the Density value in the DTO representation.
+        :type hold_in_unit: DensityUnits
+        :return: A new instance of DensityDto.
+        :rtype: DensityDto
+        """
+        return DensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: DensityUnits = DensityUnits.KilogramPerCubicMeter):
+        """
+        Get a Density DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Density unit to store the Density value in the DTO representation.
+        :type hold_in_unit: DensityUnits
+        :return: JSON object represents Density DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(density_dto: DensityDto):
+        """
+        Obtain a new instance of Density from a DTO unit object.
+
+        :param density_dto: The Density DTO representation.
+        :type density_dto: DensityDto
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density(density_dto.value, density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Density from a DTO unit json representation.
+
+        :param data: The Density DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density.from_dto(DensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: DensityUnits) -> float:
         value = self._value

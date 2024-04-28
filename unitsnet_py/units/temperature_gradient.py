@@ -10,26 +10,76 @@ class TemperatureGradientUnits(Enum):
             TemperatureGradientUnits enumeration
         """
         
-        KelvinPerMeter = 'kelvin_per_meter'
+        KelvinPerMeter = 'KelvinPerMeter'
         """
             
         """
         
-        DegreeCelsiusPerMeter = 'degree_celsius_per_meter'
+        DegreeCelsiusPerMeter = 'DegreeCelsiusPerMeter'
         """
             
         """
         
-        DegreeFahrenheitPerFoot = 'degree_fahrenheit_per_foot'
+        DegreeFahrenheitPerFoot = 'DegreeFahrenheitPerFoot'
         """
             
         """
         
-        DegreeCelsiusPerKilometer = 'degree_celsius_per_kilometer'
+        DegreeCelsiusPerKilometer = 'DegreeCelsiusPerKilometer'
         """
             
         """
         
+
+class TemperatureGradientDto:
+    """
+    A DTO representation of a TemperatureGradient
+
+    Attributes:
+        value (float): The value of the TemperatureGradient.
+        unit (TemperatureGradientUnits): The specific unit that the TemperatureGradient value is representing.
+    """
+
+    def __init__(self, value: float, unit: TemperatureGradientUnits):
+        """
+        Create a new DTO representation of a TemperatureGradient
+
+        Parameters:
+            value (float): The value of the TemperatureGradient.
+            unit (TemperatureGradientUnits): The specific unit that the TemperatureGradient value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the TemperatureGradient
+        """
+        self.unit: TemperatureGradientUnits = unit
+        """
+        The specific unit that the TemperatureGradient value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a TemperatureGradient DTO JSON object representing the current unit.
+
+        :return: JSON object represents TemperatureGradient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KelvinPerMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of TemperatureGradient DTO from a json representation.
+
+        :param data: The TemperatureGradient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KelvinPerMeter"}
+        :return: A new instance of TemperatureGradientDto.
+        :rtype: TemperatureGradientDto
+        """
+        return TemperatureGradientDto(value=data["value"], unit=TemperatureGradientUnits(data["unit"]))
+
 
 class TemperatureGradient(AbstractMeasure):
     """
@@ -57,6 +107,54 @@ class TemperatureGradient(AbstractMeasure):
 
     def convert(self, unit: TemperatureGradientUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> TemperatureGradientDto:
+        """
+        Get a new instance of TemperatureGradient DTO representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureGradient unit to store the TemperatureGradient value in the DTO representation.
+        :type hold_in_unit: TemperatureGradientUnits
+        :return: A new instance of TemperatureGradientDto.
+        :rtype: TemperatureGradientDto
+        """
+        return TemperatureGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter):
+        """
+        Get a TemperatureGradient DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureGradient unit to store the TemperatureGradient value in the DTO representation.
+        :type hold_in_unit: TemperatureGradientUnits
+        :return: JSON object represents TemperatureGradient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KelvinPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(temperature_gradient_dto: TemperatureGradientDto):
+        """
+        Obtain a new instance of TemperatureGradient from a DTO unit object.
+
+        :param temperature_gradient_dto: The TemperatureGradient DTO representation.
+        :type temperature_gradient_dto: TemperatureGradientDto
+        :return: A new instance of TemperatureGradient.
+        :rtype: TemperatureGradient
+        """
+        return TemperatureGradient(temperature_gradient_dto.value, temperature_gradient_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of TemperatureGradient from a DTO unit json representation.
+
+        :param data: The TemperatureGradient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KelvinPerMeter"}
+        :return: A new instance of TemperatureGradient.
+        :rtype: TemperatureGradient
+        """
+        return TemperatureGradient.from_dto(TemperatureGradientDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TemperatureGradientUnits) -> float:
         value = self._value

@@ -10,136 +10,186 @@ class PowerUnits(Enum):
             PowerUnits enumeration
         """
         
-        Watt = 'watt'
+        Watt = 'Watt'
         """
             
         """
         
-        MechanicalHorsepower = 'mechanical_horsepower'
+        MechanicalHorsepower = 'MechanicalHorsepower'
         """
             
         """
         
-        MetricHorsepower = 'metric_horsepower'
+        MetricHorsepower = 'MetricHorsepower'
         """
             
         """
         
-        ElectricalHorsepower = 'electrical_horsepower'
+        ElectricalHorsepower = 'ElectricalHorsepower'
         """
             
         """
         
-        BoilerHorsepower = 'boiler_horsepower'
+        BoilerHorsepower = 'BoilerHorsepower'
         """
             
         """
         
-        HydraulicHorsepower = 'hydraulic_horsepower'
+        HydraulicHorsepower = 'HydraulicHorsepower'
         """
             
         """
         
-        BritishThermalUnitPerHour = 'british_thermal_unit_per_hour'
+        BritishThermalUnitPerHour = 'BritishThermalUnitPerHour'
         """
             
         """
         
-        JoulePerHour = 'joule_per_hour'
+        JoulePerHour = 'JoulePerHour'
         """
             
         """
         
-        Femtowatt = 'femtowatt'
+        Femtowatt = 'Femtowatt'
         """
             
         """
         
-        Picowatt = 'picowatt'
+        Picowatt = 'Picowatt'
         """
             
         """
         
-        Nanowatt = 'nanowatt'
+        Nanowatt = 'Nanowatt'
         """
             
         """
         
-        Microwatt = 'microwatt'
+        Microwatt = 'Microwatt'
         """
             
         """
         
-        Milliwatt = 'milliwatt'
+        Milliwatt = 'Milliwatt'
         """
             
         """
         
-        Deciwatt = 'deciwatt'
+        Deciwatt = 'Deciwatt'
         """
             
         """
         
-        Decawatt = 'decawatt'
+        Decawatt = 'Decawatt'
         """
             
         """
         
-        Kilowatt = 'kilowatt'
+        Kilowatt = 'Kilowatt'
         """
             
         """
         
-        Megawatt = 'megawatt'
+        Megawatt = 'Megawatt'
         """
             
         """
         
-        Gigawatt = 'gigawatt'
+        Gigawatt = 'Gigawatt'
         """
             
         """
         
-        Terawatt = 'terawatt'
+        Terawatt = 'Terawatt'
         """
             
         """
         
-        Petawatt = 'petawatt'
+        Petawatt = 'Petawatt'
         """
             
         """
         
-        KilobritishThermalUnitPerHour = 'kilobritish_thermal_unit_per_hour'
+        KilobritishThermalUnitPerHour = 'KilobritishThermalUnitPerHour'
         """
             
         """
         
-        MegabritishThermalUnitPerHour = 'megabritish_thermal_unit_per_hour'
+        MegabritishThermalUnitPerHour = 'MegabritishThermalUnitPerHour'
         """
             
         """
         
-        MillijoulePerHour = 'millijoule_per_hour'
+        MillijoulePerHour = 'MillijoulePerHour'
         """
             
         """
         
-        KilojoulePerHour = 'kilojoule_per_hour'
+        KilojoulePerHour = 'KilojoulePerHour'
         """
             
         """
         
-        MegajoulePerHour = 'megajoule_per_hour'
+        MegajoulePerHour = 'MegajoulePerHour'
         """
             
         """
         
-        GigajoulePerHour = 'gigajoule_per_hour'
+        GigajoulePerHour = 'GigajoulePerHour'
         """
             
         """
         
+
+class PowerDto:
+    """
+    A DTO representation of a Power
+
+    Attributes:
+        value (float): The value of the Power.
+        unit (PowerUnits): The specific unit that the Power value is representing.
+    """
+
+    def __init__(self, value: float, unit: PowerUnits):
+        """
+        Create a new DTO representation of a Power
+
+        Parameters:
+            value (float): The value of the Power.
+            unit (PowerUnits): The specific unit that the Power value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the Power
+        """
+        self.unit: PowerUnits = unit
+        """
+        The specific unit that the Power value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a Power DTO JSON object representing the current unit.
+
+        :return: JSON object represents Power DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Watt"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of Power DTO from a json representation.
+
+        :param data: The Power DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Watt"}
+        :return: A new instance of PowerDto.
+        :rtype: PowerDto
+        """
+        return PowerDto(value=data["value"], unit=PowerUnits(data["unit"]))
+
 
 class Power(AbstractMeasure):
     """
@@ -211,6 +261,54 @@ class Power(AbstractMeasure):
 
     def convert(self, unit: PowerUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: PowerUnits = PowerUnits.Watt) -> PowerDto:
+        """
+        Get a new instance of Power DTO representing the current unit.
+
+        :param hold_in_unit: The specific Power unit to store the Power value in the DTO representation.
+        :type hold_in_unit: PowerUnits
+        :return: A new instance of PowerDto.
+        :rtype: PowerDto
+        """
+        return PowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PowerUnits = PowerUnits.Watt):
+        """
+        Get a Power DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Power unit to store the Power value in the DTO representation.
+        :type hold_in_unit: PowerUnits
+        :return: JSON object represents Power DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Watt"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(power_dto: PowerDto):
+        """
+        Obtain a new instance of Power from a DTO unit object.
+
+        :param power_dto: The Power DTO representation.
+        :type power_dto: PowerDto
+        :return: A new instance of Power.
+        :rtype: Power
+        """
+        return Power(power_dto.value, power_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Power from a DTO unit json representation.
+
+        :param data: The Power DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Watt"}
+        :return: A new instance of Power.
+        :rtype: Power
+        """
+        return Power.from_dto(PowerDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PowerUnits) -> float:
         value = self._value

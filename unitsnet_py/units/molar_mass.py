@@ -10,71 +10,121 @@ class MolarMassUnits(Enum):
             MolarMassUnits enumeration
         """
         
-        GramPerMole = 'gram_per_mole'
+        GramPerMole = 'GramPerMole'
         """
             
         """
         
-        KilogramPerKilomole = 'kilogram_per_kilomole'
+        KilogramPerKilomole = 'KilogramPerKilomole'
         """
             
         """
         
-        PoundPerMole = 'pound_per_mole'
+        PoundPerMole = 'PoundPerMole'
         """
             
         """
         
-        NanogramPerMole = 'nanogram_per_mole'
+        NanogramPerMole = 'NanogramPerMole'
         """
             
         """
         
-        MicrogramPerMole = 'microgram_per_mole'
+        MicrogramPerMole = 'MicrogramPerMole'
         """
             
         """
         
-        MilligramPerMole = 'milligram_per_mole'
+        MilligramPerMole = 'MilligramPerMole'
         """
             
         """
         
-        CentigramPerMole = 'centigram_per_mole'
+        CentigramPerMole = 'CentigramPerMole'
         """
             
         """
         
-        DecigramPerMole = 'decigram_per_mole'
+        DecigramPerMole = 'DecigramPerMole'
         """
             
         """
         
-        DecagramPerMole = 'decagram_per_mole'
+        DecagramPerMole = 'DecagramPerMole'
         """
             
         """
         
-        HectogramPerMole = 'hectogram_per_mole'
+        HectogramPerMole = 'HectogramPerMole'
         """
             
         """
         
-        KilogramPerMole = 'kilogram_per_mole'
+        KilogramPerMole = 'KilogramPerMole'
         """
             
         """
         
-        KilopoundPerMole = 'kilopound_per_mole'
+        KilopoundPerMole = 'KilopoundPerMole'
         """
             
         """
         
-        MegapoundPerMole = 'megapound_per_mole'
+        MegapoundPerMole = 'MegapoundPerMole'
         """
             
         """
         
+
+class MolarMassDto:
+    """
+    A DTO representation of a MolarMass
+
+    Attributes:
+        value (float): The value of the MolarMass.
+        unit (MolarMassUnits): The specific unit that the MolarMass value is representing.
+    """
+
+    def __init__(self, value: float, unit: MolarMassUnits):
+        """
+        Create a new DTO representation of a MolarMass
+
+        Parameters:
+            value (float): The value of the MolarMass.
+            unit (MolarMassUnits): The specific unit that the MolarMass value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the MolarMass
+        """
+        self.unit: MolarMassUnits = unit
+        """
+        The specific unit that the MolarMass value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a MolarMass DTO JSON object representing the current unit.
+
+        :return: JSON object represents MolarMass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMole"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of MolarMass DTO from a json representation.
+
+        :param data: The MolarMass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMole"}
+        :return: A new instance of MolarMassDto.
+        :rtype: MolarMassDto
+        """
+        return MolarMassDto(value=data["value"], unit=MolarMassUnits(data["unit"]))
+
 
 class MolarMass(AbstractMeasure):
     """
@@ -120,6 +170,54 @@ class MolarMass(AbstractMeasure):
 
     def convert(self, unit: MolarMassUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> MolarMassDto:
+        """
+        Get a new instance of MolarMass DTO representing the current unit.
+
+        :param hold_in_unit: The specific MolarMass unit to store the MolarMass value in the DTO representation.
+        :type hold_in_unit: MolarMassUnits
+        :return: A new instance of MolarMassDto.
+        :rtype: MolarMassDto
+        """
+        return MolarMassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolarMassUnits = MolarMassUnits.KilogramPerMole):
+        """
+        Get a MolarMass DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MolarMass unit to store the MolarMass value in the DTO representation.
+        :type hold_in_unit: MolarMassUnits
+        :return: JSON object represents MolarMass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMole"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(molar_mass_dto: MolarMassDto):
+        """
+        Obtain a new instance of MolarMass from a DTO unit object.
+
+        :param molar_mass_dto: The MolarMass DTO representation.
+        :type molar_mass_dto: MolarMassDto
+        :return: A new instance of MolarMass.
+        :rtype: MolarMass
+        """
+        return MolarMass(molar_mass_dto.value, molar_mass_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MolarMass from a DTO unit json representation.
+
+        :param data: The MolarMass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMole"}
+        :return: A new instance of MolarMass.
+        :rtype: MolarMass
+        """
+        return MolarMass.from_dto(MolarMassDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:
         value = self._value

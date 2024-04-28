@@ -10,76 +10,126 @@ class BitRateUnits(Enum):
             BitRateUnits enumeration
         """
         
-        BitPerSecond = 'bit_per_second'
+        BitPerSecond = 'BitPerSecond'
         """
             
         """
         
-        BytePerSecond = 'byte_per_second'
+        BytePerSecond = 'BytePerSecond'
         """
             
         """
         
-        KilobitPerSecond = 'kilobit_per_second'
+        KilobitPerSecond = 'KilobitPerSecond'
         """
             
         """
         
-        MegabitPerSecond = 'megabit_per_second'
+        MegabitPerSecond = 'MegabitPerSecond'
         """
             
         """
         
-        GigabitPerSecond = 'gigabit_per_second'
+        GigabitPerSecond = 'GigabitPerSecond'
         """
             
         """
         
-        TerabitPerSecond = 'terabit_per_second'
+        TerabitPerSecond = 'TerabitPerSecond'
         """
             
         """
         
-        PetabitPerSecond = 'petabit_per_second'
+        PetabitPerSecond = 'PetabitPerSecond'
         """
             
         """
         
-        ExabitPerSecond = 'exabit_per_second'
+        ExabitPerSecond = 'ExabitPerSecond'
         """
             
         """
         
-        KilobytePerSecond = 'kilobyte_per_second'
+        KilobytePerSecond = 'KilobytePerSecond'
         """
             
         """
         
-        MegabytePerSecond = 'megabyte_per_second'
+        MegabytePerSecond = 'MegabytePerSecond'
         """
             
         """
         
-        GigabytePerSecond = 'gigabyte_per_second'
+        GigabytePerSecond = 'GigabytePerSecond'
         """
             
         """
         
-        TerabytePerSecond = 'terabyte_per_second'
+        TerabytePerSecond = 'TerabytePerSecond'
         """
             
         """
         
-        PetabytePerSecond = 'petabyte_per_second'
+        PetabytePerSecond = 'PetabytePerSecond'
         """
             
         """
         
-        ExabytePerSecond = 'exabyte_per_second'
+        ExabytePerSecond = 'ExabytePerSecond'
         """
             
         """
         
+
+class BitRateDto:
+    """
+    A DTO representation of a BitRate
+
+    Attributes:
+        value (float): The value of the BitRate.
+        unit (BitRateUnits): The specific unit that the BitRate value is representing.
+    """
+
+    def __init__(self, value: float, unit: BitRateUnits):
+        """
+        Create a new DTO representation of a BitRate
+
+        Parameters:
+            value (float): The value of the BitRate.
+            unit (BitRateUnits): The specific unit that the BitRate value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the BitRate
+        """
+        self.unit: BitRateUnits = unit
+        """
+        The specific unit that the BitRate value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a BitRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents BitRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "BitPerSecond"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of BitRate DTO from a json representation.
+
+        :param data: The BitRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "BitPerSecond"}
+        :return: A new instance of BitRateDto.
+        :rtype: BitRateDto
+        """
+        return BitRateDto(value=data["value"], unit=BitRateUnits(data["unit"]))
+
 
 class BitRate(AbstractMeasure):
     """
@@ -127,6 +177,54 @@ class BitRate(AbstractMeasure):
 
     def convert(self, unit: BitRateUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: BitRateUnits = BitRateUnits.BitPerSecond) -> BitRateDto:
+        """
+        Get a new instance of BitRate DTO representing the current unit.
+
+        :param hold_in_unit: The specific BitRate unit to store the BitRate value in the DTO representation.
+        :type hold_in_unit: BitRateUnits
+        :return: A new instance of BitRateDto.
+        :rtype: BitRateDto
+        """
+        return BitRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: BitRateUnits = BitRateUnits.BitPerSecond):
+        """
+        Get a BitRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific BitRate unit to store the BitRate value in the DTO representation.
+        :type hold_in_unit: BitRateUnits
+        :return: JSON object represents BitRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "BitPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(bit_rate_dto: BitRateDto):
+        """
+        Obtain a new instance of BitRate from a DTO unit object.
+
+        :param bit_rate_dto: The BitRate DTO representation.
+        :type bit_rate_dto: BitRateDto
+        :return: A new instance of BitRate.
+        :rtype: BitRate
+        """
+        return BitRate(bit_rate_dto.value, bit_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of BitRate from a DTO unit json representation.
+
+        :param data: The BitRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "BitPerSecond"}
+        :return: A new instance of BitRate.
+        :rtype: BitRate
+        """
+        return BitRate.from_dto(BitRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: BitRateUnits) -> float:
         value = self._value

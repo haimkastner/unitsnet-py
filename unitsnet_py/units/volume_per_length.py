@@ -10,51 +10,101 @@ class VolumePerLengthUnits(Enum):
             VolumePerLengthUnits enumeration
         """
         
-        CubicMeterPerMeter = 'cubic_meter_per_meter'
+        CubicMeterPerMeter = 'CubicMeterPerMeter'
         """
             
         """
         
-        LiterPerMeter = 'liter_per_meter'
+        LiterPerMeter = 'LiterPerMeter'
         """
             
         """
         
-        LiterPerKilometer = 'liter_per_kilometer'
+        LiterPerKilometer = 'LiterPerKilometer'
         """
             
         """
         
-        LiterPerMillimeter = 'liter_per_millimeter'
+        LiterPerMillimeter = 'LiterPerMillimeter'
         """
             
         """
         
-        OilBarrelPerFoot = 'oil_barrel_per_foot'
+        OilBarrelPerFoot = 'OilBarrelPerFoot'
         """
             
         """
         
-        CubicYardPerFoot = 'cubic_yard_per_foot'
+        CubicYardPerFoot = 'CubicYardPerFoot'
         """
             
         """
         
-        CubicYardPerUsSurveyFoot = 'cubic_yard_per_us_survey_foot'
+        CubicYardPerUsSurveyFoot = 'CubicYardPerUsSurveyFoot'
         """
             
         """
         
-        UsGallonPerMile = 'us_gallon_per_mile'
+        UsGallonPerMile = 'UsGallonPerMile'
         """
             
         """
         
-        ImperialGallonPerMile = 'imperial_gallon_per_mile'
+        ImperialGallonPerMile = 'ImperialGallonPerMile'
         """
             
         """
         
+
+class VolumePerLengthDto:
+    """
+    A DTO representation of a VolumePerLength
+
+    Attributes:
+        value (float): The value of the VolumePerLength.
+        unit (VolumePerLengthUnits): The specific unit that the VolumePerLength value is representing.
+    """
+
+    def __init__(self, value: float, unit: VolumePerLengthUnits):
+        """
+        Create a new DTO representation of a VolumePerLength
+
+        Parameters:
+            value (float): The value of the VolumePerLength.
+            unit (VolumePerLengthUnits): The specific unit that the VolumePerLength value is representing.
+        """
+        self.value: float = value
+        """
+        The value of the VolumePerLength
+        """
+        self.unit: VolumePerLengthUnits = unit
+        """
+        The specific unit that the VolumePerLength value is representing
+        """
+
+    def to_json(self):
+        """
+        Get a VolumePerLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerMeter"}
+        """
+        return {"value": self.value, "unit": self.unit.value}
+
+    @staticmethod
+    def from_json(data):
+        """
+        Obtain a new instance of VolumePerLength DTO from a json representation.
+
+        :param data: The VolumePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerMeter"}
+        :return: A new instance of VolumePerLengthDto.
+        :rtype: VolumePerLengthDto
+        """
+        return VolumePerLengthDto(value=data["value"], unit=VolumePerLengthUnits(data["unit"]))
+
 
 class VolumePerLength(AbstractMeasure):
     """
@@ -92,6 +142,54 @@ class VolumePerLength(AbstractMeasure):
 
     def convert(self, unit: VolumePerLengthUnits) -> float:
         return self.__convert_from_base(unit)
+
+    def to_dto(self, hold_in_unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> VolumePerLengthDto:
+        """
+        Get a new instance of VolumePerLength DTO representing the current unit.
+
+        :param hold_in_unit: The specific VolumePerLength unit to store the VolumePerLength value in the DTO representation.
+        :type hold_in_unit: VolumePerLengthUnits
+        :return: A new instance of VolumePerLengthDto.
+        :rtype: VolumePerLengthDto
+        """
+        return VolumePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter):
+        """
+        Get a VolumePerLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumePerLength unit to store the VolumePerLength value in the DTO representation.
+        :type hold_in_unit: VolumePerLengthUnits
+        :return: JSON object represents VolumePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
+
+    @staticmethod
+    def from_dto(volume_per_length_dto: VolumePerLengthDto):
+        """
+        Obtain a new instance of VolumePerLength from a DTO unit object.
+
+        :param volume_per_length_dto: The VolumePerLength DTO representation.
+        :type volume_per_length_dto: VolumePerLengthDto
+        :return: A new instance of VolumePerLength.
+        :rtype: VolumePerLength
+        """
+        return VolumePerLength(volume_per_length_dto.value, volume_per_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumePerLength from a DTO unit json representation.
+
+        :param data: The VolumePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerMeter"}
+        :return: A new instance of VolumePerLength.
+        :rtype: VolumePerLength
+        """
+        return VolumePerLength.from_dto(VolumePerLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumePerLengthUnits) -> float:
         value = self._value
