@@ -261,21 +261,29 @@ class ReactiveEnergy(AbstractMeasure):
         return self.__megavoltampere_reactive_hours
 
     
-    def to_string(self, unit: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour) -> str:
+    def to_string(self, unit: ReactiveEnergyUnits = ReactiveEnergyUnits.VoltampereReactiveHour, fractional_digits: int = None) -> str:
         """
-        Format the ReactiveEnergy to string.
-        Note! the default format for ReactiveEnergy is VoltampereReactiveHour.
-        To specify the unit format set the 'unit' parameter.
+        Format the ReactiveEnergy to a string.
+        
+        Note: the default format for ReactiveEnergy is VoltampereReactiveHour.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ReactiveEnergy. Default is 'VoltampereReactiveHour'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ReactiveEnergyUnits.VoltampereReactiveHour:
-            return f"""{self.voltampere_reactive_hours} varh"""
+            return f"""{super()._truncate_fraction_digits(self.voltampere_reactive_hours, fractional_digits)} varh"""
         
         if unit == ReactiveEnergyUnits.KilovoltampereReactiveHour:
-            return f"""{self.kilovoltampere_reactive_hours} kvarh"""
+            return f"""{super()._truncate_fraction_digits(self.kilovoltampere_reactive_hours, fractional_digits)} kvarh"""
         
         if unit == ReactiveEnergyUnits.MegavoltampereReactiveHour:
-            return f"""{self.megavoltampere_reactive_hours} Mvarh"""
+            return f"""{super()._truncate_fraction_digits(self.megavoltampere_reactive_hours, fractional_digits)} Mvarh"""
         
         return f'{self._value}'
 

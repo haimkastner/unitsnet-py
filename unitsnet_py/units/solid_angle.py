@@ -183,15 +183,23 @@ class SolidAngle(AbstractMeasure):
         return self.__steradians
 
     
-    def to_string(self, unit: SolidAngleUnits = SolidAngleUnits.Steradian) -> str:
+    def to_string(self, unit: SolidAngleUnits = SolidAngleUnits.Steradian, fractional_digits: int = None) -> str:
         """
-        Format the SolidAngle to string.
-        Note! the default format for SolidAngle is Steradian.
-        To specify the unit format set the 'unit' parameter.
+        Format the SolidAngle to a string.
+        
+        Note: the default format for SolidAngle is Steradian.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SolidAngle. Default is 'Steradian'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SolidAngleUnits.Steradian:
-            return f"""{self.steradians} sr"""
+            return f"""{super()._truncate_fraction_digits(self.steradians, fractional_digits)} sr"""
         
         return f'{self._value}'
 

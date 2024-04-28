@@ -612,48 +612,56 @@ class MassFlux(AbstractMeasure):
         return self.__kilograms_per_hour_per_square_millimeter
 
     
-    def to_string(self, unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter) -> str:
+    def to_string(self, unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the MassFlux to string.
-        Note! the default format for MassFlux is KilogramPerSecondPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the MassFlux to a string.
+        
+        Note: the default format for MassFlux is KilogramPerSecondPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MassFlux. Default is 'KilogramPerSecondPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassFluxUnits.GramPerSecondPerSquareMeter:
-            return f"""{self.grams_per_second_per_square_meter} g·s⁻¹·m⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_second_per_square_meter, fractional_digits)} g·s⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.GramPerSecondPerSquareCentimeter:
-            return f"""{self.grams_per_second_per_square_centimeter} g·s⁻¹·cm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_second_per_square_centimeter, fractional_digits)} g·s⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.GramPerSecondPerSquareMillimeter:
-            return f"""{self.grams_per_second_per_square_millimeter} g·s⁻¹·mm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_second_per_square_millimeter, fractional_digits)} g·s⁻¹·mm⁻²"""
         
         if unit == MassFluxUnits.GramPerHourPerSquareMeter:
-            return f"""{self.grams_per_hour_per_square_meter} g·h⁻¹·m⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_hour_per_square_meter, fractional_digits)} g·h⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.GramPerHourPerSquareCentimeter:
-            return f"""{self.grams_per_hour_per_square_centimeter} g·h⁻¹·cm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_hour_per_square_centimeter, fractional_digits)} g·h⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.GramPerHourPerSquareMillimeter:
-            return f"""{self.grams_per_hour_per_square_millimeter} g·h⁻¹·mm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_hour_per_square_millimeter, fractional_digits)} g·h⁻¹·mm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareMeter:
-            return f"""{self.kilograms_per_second_per_square_meter} kg·s⁻¹·m⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_second_per_square_meter, fractional_digits)} kg·s⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareCentimeter:
-            return f"""{self.kilograms_per_second_per_square_centimeter} kg·s⁻¹·cm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_second_per_square_centimeter, fractional_digits)} kg·s⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerSecondPerSquareMillimeter:
-            return f"""{self.kilograms_per_second_per_square_millimeter} kg·s⁻¹·mm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_second_per_square_millimeter, fractional_digits)} kg·s⁻¹·mm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareMeter:
-            return f"""{self.kilograms_per_hour_per_square_meter} kg·h⁻¹·m⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_hour_per_square_meter, fractional_digits)} kg·h⁻¹·m⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareCentimeter:
-            return f"""{self.kilograms_per_hour_per_square_centimeter} kg·h⁻¹·cm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_hour_per_square_centimeter, fractional_digits)} kg·h⁻¹·cm⁻²"""
         
         if unit == MassFluxUnits.KilogramPerHourPerSquareMillimeter:
-            return f"""{self.kilograms_per_hour_per_square_millimeter} kg·h⁻¹·mm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_hour_per_square_millimeter, fractional_digits)} kg·h⁻¹·mm⁻²"""
         
         return f'{self._value}'
 

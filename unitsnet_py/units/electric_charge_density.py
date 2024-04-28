@@ -183,15 +183,23 @@ class ElectricChargeDensity(AbstractMeasure):
         return self.__coulombs_per_cubic_meter
 
     
-    def to_string(self, unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter) -> str:
+    def to_string(self, unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricChargeDensity to string.
-        Note! the default format for ElectricChargeDensity is CoulombPerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricChargeDensity to a string.
+        
+        Note: the default format for ElectricChargeDensity is CoulombPerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricChargeDensity. Default is 'CoulombPerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricChargeDensityUnits.CoulombPerCubicMeter:
-            return f"""{self.coulombs_per_cubic_meter} C/m³"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs_per_cubic_meter, fractional_digits)} C/m³"""
         
         return f'{self._value}'
 

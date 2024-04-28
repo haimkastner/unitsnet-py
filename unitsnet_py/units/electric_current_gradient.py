@@ -417,33 +417,41 @@ class ElectricCurrentGradient(AbstractMeasure):
         return self.__milliamperes_per_minute
 
     
-    def to_string(self, unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond) -> str:
+    def to_string(self, unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond, fractional_digits: int = None) -> str:
         """
-        Format the ElectricCurrentGradient to string.
-        Note! the default format for ElectricCurrentGradient is AmperePerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricCurrentGradient to a string.
+        
+        Note: the default format for ElectricCurrentGradient is AmperePerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricCurrentGradient. Default is 'AmperePerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricCurrentGradientUnits.AmperePerSecond:
-            return f"""{self.amperes_per_second} A/s"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_second, fractional_digits)} A/s"""
         
         if unit == ElectricCurrentGradientUnits.AmperePerMinute:
-            return f"""{self.amperes_per_minute} A/min"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_minute, fractional_digits)} A/min"""
         
         if unit == ElectricCurrentGradientUnits.AmperePerMillisecond:
-            return f"""{self.amperes_per_millisecond} A/ms"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_millisecond, fractional_digits)} A/ms"""
         
         if unit == ElectricCurrentGradientUnits.AmperePerMicrosecond:
-            return f"""{self.amperes_per_microsecond} A/μs"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_microsecond, fractional_digits)} A/μs"""
         
         if unit == ElectricCurrentGradientUnits.AmperePerNanosecond:
-            return f"""{self.amperes_per_nanosecond} A/ns"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_nanosecond, fractional_digits)} A/ns"""
         
         if unit == ElectricCurrentGradientUnits.MilliamperePerSecond:
-            return f"""{self.milliamperes_per_second} mA/s"""
+            return f"""{super()._truncate_fraction_digits(self.milliamperes_per_second, fractional_digits)} mA/s"""
         
         if unit == ElectricCurrentGradientUnits.MilliamperePerMinute:
-            return f"""{self.milliamperes_per_minute} mA/min"""
+            return f"""{super()._truncate_fraction_digits(self.milliamperes_per_minute, fractional_digits)} mA/min"""
         
         return f'{self._value}'
 

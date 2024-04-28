@@ -729,57 +729,65 @@ class ForceChangeRate(AbstractMeasure):
         return self.__kilopounds_force_per_second
 
     
-    def to_string(self, unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond) -> str:
+    def to_string(self, unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the ForceChangeRate to string.
-        Note! the default format for ForceChangeRate is NewtonPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the ForceChangeRate to a string.
+        
+        Note: the default format for ForceChangeRate is NewtonPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ForceChangeRate. Default is 'NewtonPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ForceChangeRateUnits.NewtonPerMinute:
-            return f"""{self.newtons_per_minute} N/min"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_minute, fractional_digits)} N/min"""
         
         if unit == ForceChangeRateUnits.NewtonPerSecond:
-            return f"""{self.newtons_per_second} N/s"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_second, fractional_digits)} N/s"""
         
         if unit == ForceChangeRateUnits.PoundForcePerMinute:
-            return f"""{self.pounds_force_per_minute} lbf/min"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_minute, fractional_digits)} lbf/min"""
         
         if unit == ForceChangeRateUnits.PoundForcePerSecond:
-            return f"""{self.pounds_force_per_second} lbf/s"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_second, fractional_digits)} lbf/s"""
         
         if unit == ForceChangeRateUnits.DecanewtonPerMinute:
-            return f"""{self.decanewtons_per_minute} daN/min"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons_per_minute, fractional_digits)} daN/min"""
         
         if unit == ForceChangeRateUnits.KilonewtonPerMinute:
-            return f"""{self.kilonewtons_per_minute} kN/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_minute, fractional_digits)} kN/min"""
         
         if unit == ForceChangeRateUnits.NanonewtonPerSecond:
-            return f"""{self.nanonewtons_per_second} nN/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanonewtons_per_second, fractional_digits)} nN/s"""
         
         if unit == ForceChangeRateUnits.MicronewtonPerSecond:
-            return f"""{self.micronewtons_per_second} μN/s"""
+            return f"""{super()._truncate_fraction_digits(self.micronewtons_per_second, fractional_digits)} μN/s"""
         
         if unit == ForceChangeRateUnits.MillinewtonPerSecond:
-            return f"""{self.millinewtons_per_second} mN/s"""
+            return f"""{super()._truncate_fraction_digits(self.millinewtons_per_second, fractional_digits)} mN/s"""
         
         if unit == ForceChangeRateUnits.CentinewtonPerSecond:
-            return f"""{self.centinewtons_per_second} cN/s"""
+            return f"""{super()._truncate_fraction_digits(self.centinewtons_per_second, fractional_digits)} cN/s"""
         
         if unit == ForceChangeRateUnits.DecinewtonPerSecond:
-            return f"""{self.decinewtons_per_second} dN/s"""
+            return f"""{super()._truncate_fraction_digits(self.decinewtons_per_second, fractional_digits)} dN/s"""
         
         if unit == ForceChangeRateUnits.DecanewtonPerSecond:
-            return f"""{self.decanewtons_per_second} daN/s"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons_per_second, fractional_digits)} daN/s"""
         
         if unit == ForceChangeRateUnits.KilonewtonPerSecond:
-            return f"""{self.kilonewtons_per_second} kN/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_second, fractional_digits)} kN/s"""
         
         if unit == ForceChangeRateUnits.KilopoundForcePerMinute:
-            return f"""{self.kilopounds_force_per_minute} klbf/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_minute, fractional_digits)} klbf/min"""
         
         if unit == ForceChangeRateUnits.KilopoundForcePerSecond:
-            return f"""{self.kilopounds_force_per_second} klbf/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_second, fractional_digits)} klbf/s"""
         
         return f'{self._value}'
 

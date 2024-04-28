@@ -222,18 +222,26 @@ class ThermalConductivity(AbstractMeasure):
         return self.__btus_per_hour_foot_fahrenheit
 
     
-    def to_string(self, unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin) -> str:
+    def to_string(self, unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin, fractional_digits: int = None) -> str:
         """
-        Format the ThermalConductivity to string.
-        Note! the default format for ThermalConductivity is WattPerMeterKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the ThermalConductivity to a string.
+        
+        Note: the default format for ThermalConductivity is WattPerMeterKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ThermalConductivity. Default is 'WattPerMeterKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ThermalConductivityUnits.WattPerMeterKelvin:
-            return f"""{self.watts_per_meter_kelvin} W/m·K"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_meter_kelvin, fractional_digits)} W/m·K"""
         
         if unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
-            return f"""{self.btus_per_hour_foot_fahrenheit} BTU/h·ft·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_foot_fahrenheit, fractional_digits)} BTU/h·ft·°F"""
         
         return f'{self._value}'
 

@@ -378,30 +378,38 @@ class MagneticField(AbstractMeasure):
         return self.__milligausses
 
     
-    def to_string(self, unit: MagneticFieldUnits = MagneticFieldUnits.Tesla) -> str:
+    def to_string(self, unit: MagneticFieldUnits = MagneticFieldUnits.Tesla, fractional_digits: int = None) -> str:
         """
-        Format the MagneticField to string.
-        Note! the default format for MagneticField is Tesla.
-        To specify the unit format set the 'unit' parameter.
+        Format the MagneticField to a string.
+        
+        Note: the default format for MagneticField is Tesla.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MagneticField. Default is 'Tesla'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MagneticFieldUnits.Tesla:
-            return f"""{self.teslas} T"""
+            return f"""{super()._truncate_fraction_digits(self.teslas, fractional_digits)} T"""
         
         if unit == MagneticFieldUnits.Gauss:
-            return f"""{self.gausses} G"""
+            return f"""{super()._truncate_fraction_digits(self.gausses, fractional_digits)} G"""
         
         if unit == MagneticFieldUnits.Nanotesla:
-            return f"""{self.nanoteslas} nT"""
+            return f"""{super()._truncate_fraction_digits(self.nanoteslas, fractional_digits)} nT"""
         
         if unit == MagneticFieldUnits.Microtesla:
-            return f"""{self.microteslas} μT"""
+            return f"""{super()._truncate_fraction_digits(self.microteslas, fractional_digits)} μT"""
         
         if unit == MagneticFieldUnits.Millitesla:
-            return f"""{self.milliteslas} mT"""
+            return f"""{super()._truncate_fraction_digits(self.milliteslas, fractional_digits)} mT"""
         
         if unit == MagneticFieldUnits.Milligauss:
-            return f"""{self.milligausses} mG"""
+            return f"""{super()._truncate_fraction_digits(self.milligausses, fractional_digits)} mG"""
         
         return f'{self._value}'
 

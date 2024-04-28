@@ -300,24 +300,32 @@ class Illuminance(AbstractMeasure):
         return self.__megalux
 
     
-    def to_string(self, unit: IlluminanceUnits = IlluminanceUnits.Lux) -> str:
+    def to_string(self, unit: IlluminanceUnits = IlluminanceUnits.Lux, fractional_digits: int = None) -> str:
         """
-        Format the Illuminance to string.
-        Note! the default format for Illuminance is Lux.
-        To specify the unit format set the 'unit' parameter.
+        Format the Illuminance to a string.
+        
+        Note: the default format for Illuminance is Lux.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Illuminance. Default is 'Lux'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == IlluminanceUnits.Lux:
-            return f"""{self.lux} lx"""
+            return f"""{super()._truncate_fraction_digits(self.lux, fractional_digits)} lx"""
         
         if unit == IlluminanceUnits.Millilux:
-            return f"""{self.millilux} mlx"""
+            return f"""{super()._truncate_fraction_digits(self.millilux, fractional_digits)} mlx"""
         
         if unit == IlluminanceUnits.Kilolux:
-            return f"""{self.kilolux} klx"""
+            return f"""{super()._truncate_fraction_digits(self.kilolux, fractional_digits)} klx"""
         
         if unit == IlluminanceUnits.Megalux:
-            return f"""{self.megalux} Mlx"""
+            return f"""{super()._truncate_fraction_digits(self.megalux, fractional_digits)} Mlx"""
         
         return f'{self._value}'
 

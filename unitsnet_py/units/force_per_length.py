@@ -1626,126 +1626,134 @@ class ForcePerLength(AbstractMeasure):
         return self.__meganewtons_per_millimeter
 
     
-    def to_string(self, unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter) -> str:
+    def to_string(self, unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the ForcePerLength to string.
-        Note! the default format for ForcePerLength is NewtonPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ForcePerLength to a string.
+        
+        Note: the default format for ForcePerLength is NewtonPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ForcePerLength. Default is 'NewtonPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ForcePerLengthUnits.NewtonPerMeter:
-            return f"""{self.newtons_per_meter} N/m"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_meter, fractional_digits)} N/m"""
         
         if unit == ForcePerLengthUnits.NewtonPerCentimeter:
-            return f"""{self.newtons_per_centimeter} N/cm"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_centimeter, fractional_digits)} N/cm"""
         
         if unit == ForcePerLengthUnits.NewtonPerMillimeter:
-            return f"""{self.newtons_per_millimeter} N/mm"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_millimeter, fractional_digits)} N/mm"""
         
         if unit == ForcePerLengthUnits.KilogramForcePerMeter:
-            return f"""{self.kilograms_force_per_meter} kgf/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_meter, fractional_digits)} kgf/m"""
         
         if unit == ForcePerLengthUnits.KilogramForcePerCentimeter:
-            return f"""{self.kilograms_force_per_centimeter} kgf/cm"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_centimeter, fractional_digits)} kgf/cm"""
         
         if unit == ForcePerLengthUnits.KilogramForcePerMillimeter:
-            return f"""{self.kilograms_force_per_millimeter} kgf/mm"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_millimeter, fractional_digits)} kgf/mm"""
         
         if unit == ForcePerLengthUnits.TonneForcePerMeter:
-            return f"""{self.tonnes_force_per_meter} tf/m"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_meter, fractional_digits)} tf/m"""
         
         if unit == ForcePerLengthUnits.TonneForcePerCentimeter:
-            return f"""{self.tonnes_force_per_centimeter} tf/cm"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_centimeter, fractional_digits)} tf/cm"""
         
         if unit == ForcePerLengthUnits.TonneForcePerMillimeter:
-            return f"""{self.tonnes_force_per_millimeter} tf/mm"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_millimeter, fractional_digits)} tf/mm"""
         
         if unit == ForcePerLengthUnits.PoundForcePerFoot:
-            return f"""{self.pounds_force_per_foot} lbf/ft"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_foot, fractional_digits)} lbf/ft"""
         
         if unit == ForcePerLengthUnits.PoundForcePerInch:
-            return f"""{self.pounds_force_per_inch} lbf/in"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_inch, fractional_digits)} lbf/in"""
         
         if unit == ForcePerLengthUnits.PoundForcePerYard:
-            return f"""{self.pounds_force_per_yard} lbf/yd"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_yard, fractional_digits)} lbf/yd"""
         
         if unit == ForcePerLengthUnits.KilopoundForcePerFoot:
-            return f"""{self.kilopounds_force_per_foot} kipf/ft"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_foot, fractional_digits)} kipf/ft"""
         
         if unit == ForcePerLengthUnits.KilopoundForcePerInch:
-            return f"""{self.kilopounds_force_per_inch} kipf/in"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_inch, fractional_digits)} kipf/in"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerMeter:
-            return f"""{self.nanonewtons_per_meter} nN/m"""
+            return f"""{super()._truncate_fraction_digits(self.nanonewtons_per_meter, fractional_digits)} nN/m"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerMeter:
-            return f"""{self.micronewtons_per_meter} μN/m"""
+            return f"""{super()._truncate_fraction_digits(self.micronewtons_per_meter, fractional_digits)} μN/m"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerMeter:
-            return f"""{self.millinewtons_per_meter} mN/m"""
+            return f"""{super()._truncate_fraction_digits(self.millinewtons_per_meter, fractional_digits)} mN/m"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerMeter:
-            return f"""{self.centinewtons_per_meter} cN/m"""
+            return f"""{super()._truncate_fraction_digits(self.centinewtons_per_meter, fractional_digits)} cN/m"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerMeter:
-            return f"""{self.decinewtons_per_meter} dN/m"""
+            return f"""{super()._truncate_fraction_digits(self.decinewtons_per_meter, fractional_digits)} dN/m"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerMeter:
-            return f"""{self.decanewtons_per_meter} daN/m"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons_per_meter, fractional_digits)} daN/m"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerMeter:
-            return f"""{self.kilonewtons_per_meter} kN/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_meter, fractional_digits)} kN/m"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerMeter:
-            return f"""{self.meganewtons_per_meter} MN/m"""
+            return f"""{super()._truncate_fraction_digits(self.meganewtons_per_meter, fractional_digits)} MN/m"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerCentimeter:
-            return f"""{self.nanonewtons_per_centimeter} nN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.nanonewtons_per_centimeter, fractional_digits)} nN/cm"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerCentimeter:
-            return f"""{self.micronewtons_per_centimeter} μN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.micronewtons_per_centimeter, fractional_digits)} μN/cm"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerCentimeter:
-            return f"""{self.millinewtons_per_centimeter} mN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.millinewtons_per_centimeter, fractional_digits)} mN/cm"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerCentimeter:
-            return f"""{self.centinewtons_per_centimeter} cN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.centinewtons_per_centimeter, fractional_digits)} cN/cm"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerCentimeter:
-            return f"""{self.decinewtons_per_centimeter} dN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.decinewtons_per_centimeter, fractional_digits)} dN/cm"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerCentimeter:
-            return f"""{self.decanewtons_per_centimeter} daN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons_per_centimeter, fractional_digits)} daN/cm"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerCentimeter:
-            return f"""{self.kilonewtons_per_centimeter} kN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_centimeter, fractional_digits)} kN/cm"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerCentimeter:
-            return f"""{self.meganewtons_per_centimeter} MN/cm"""
+            return f"""{super()._truncate_fraction_digits(self.meganewtons_per_centimeter, fractional_digits)} MN/cm"""
         
         if unit == ForcePerLengthUnits.NanonewtonPerMillimeter:
-            return f"""{self.nanonewtons_per_millimeter} nN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.nanonewtons_per_millimeter, fractional_digits)} nN/mm"""
         
         if unit == ForcePerLengthUnits.MicronewtonPerMillimeter:
-            return f"""{self.micronewtons_per_millimeter} μN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.micronewtons_per_millimeter, fractional_digits)} μN/mm"""
         
         if unit == ForcePerLengthUnits.MillinewtonPerMillimeter:
-            return f"""{self.millinewtons_per_millimeter} mN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.millinewtons_per_millimeter, fractional_digits)} mN/mm"""
         
         if unit == ForcePerLengthUnits.CentinewtonPerMillimeter:
-            return f"""{self.centinewtons_per_millimeter} cN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.centinewtons_per_millimeter, fractional_digits)} cN/mm"""
         
         if unit == ForcePerLengthUnits.DecinewtonPerMillimeter:
-            return f"""{self.decinewtons_per_millimeter} dN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.decinewtons_per_millimeter, fractional_digits)} dN/mm"""
         
         if unit == ForcePerLengthUnits.DecanewtonPerMillimeter:
-            return f"""{self.decanewtons_per_millimeter} daN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons_per_millimeter, fractional_digits)} daN/mm"""
         
         if unit == ForcePerLengthUnits.KilonewtonPerMillimeter:
-            return f"""{self.kilonewtons_per_millimeter} kN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_millimeter, fractional_digits)} kN/mm"""
         
         if unit == ForcePerLengthUnits.MeganewtonPerMillimeter:
-            return f"""{self.meganewtons_per_millimeter} MN/mm"""
+            return f"""{super()._truncate_fraction_digits(self.meganewtons_per_millimeter, fractional_digits)} MN/mm"""
         
         return f'{self._value}'
 

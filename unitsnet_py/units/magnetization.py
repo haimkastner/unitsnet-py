@@ -183,15 +183,23 @@ class Magnetization(AbstractMeasure):
         return self.__amperes_per_meter
 
     
-    def to_string(self, unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter) -> str:
+    def to_string(self, unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter, fractional_digits: int = None) -> str:
         """
-        Format the Magnetization to string.
-        Note! the default format for Magnetization is AmperePerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Magnetization to a string.
+        
+        Note: the default format for Magnetization is AmperePerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Magnetization. Default is 'AmperePerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MagnetizationUnits.AmperePerMeter:
-            return f"""{self.amperes_per_meter} A/m"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_meter, fractional_digits)} A/m"""
         
         return f'{self._value}'
 

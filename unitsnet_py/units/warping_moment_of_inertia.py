@@ -378,30 +378,38 @@ class WarpingMomentOfInertia(AbstractMeasure):
         return self.__inches_to_the_sixth
 
     
-    def to_string(self, unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth) -> str:
+    def to_string(self, unit: WarpingMomentOfInertiaUnits = WarpingMomentOfInertiaUnits.MeterToTheSixth, fractional_digits: int = None) -> str:
         """
-        Format the WarpingMomentOfInertia to string.
-        Note! the default format for WarpingMomentOfInertia is MeterToTheSixth.
-        To specify the unit format set the 'unit' parameter.
+        Format the WarpingMomentOfInertia to a string.
+        
+        Note: the default format for WarpingMomentOfInertia is MeterToTheSixth.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the WarpingMomentOfInertia. Default is 'MeterToTheSixth'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == WarpingMomentOfInertiaUnits.MeterToTheSixth:
-            return f"""{self.meters_to_the_sixth} m⁶"""
+            return f"""{super()._truncate_fraction_digits(self.meters_to_the_sixth, fractional_digits)} m⁶"""
         
         if unit == WarpingMomentOfInertiaUnits.DecimeterToTheSixth:
-            return f"""{self.decimeters_to_the_sixth} dm⁶"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_to_the_sixth, fractional_digits)} dm⁶"""
         
         if unit == WarpingMomentOfInertiaUnits.CentimeterToTheSixth:
-            return f"""{self.centimeters_to_the_sixth} cm⁶"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_to_the_sixth, fractional_digits)} cm⁶"""
         
         if unit == WarpingMomentOfInertiaUnits.MillimeterToTheSixth:
-            return f"""{self.millimeters_to_the_sixth} mm⁶"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_to_the_sixth, fractional_digits)} mm⁶"""
         
         if unit == WarpingMomentOfInertiaUnits.FootToTheSixth:
-            return f"""{self.feet_to_the_sixth} ft⁶"""
+            return f"""{super()._truncate_fraction_digits(self.feet_to_the_sixth, fractional_digits)} ft⁶"""
         
         if unit == WarpingMomentOfInertiaUnits.InchToTheSixth:
-            return f"""{self.inches_to_the_sixth} in⁶"""
+            return f"""{super()._truncate_fraction_digits(self.inches_to_the_sixth, fractional_digits)} in⁶"""
         
         return f'{self._value}'
 

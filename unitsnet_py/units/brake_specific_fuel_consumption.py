@@ -261,21 +261,29 @@ class BrakeSpecificFuelConsumption(AbstractMeasure):
         return self.__pounds_per_mechanical_horsepower_hour
 
     
-    def to_string(self, unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule) -> str:
+    def to_string(self, unit: BrakeSpecificFuelConsumptionUnits = BrakeSpecificFuelConsumptionUnits.KilogramPerJoule, fractional_digits: int = None) -> str:
         """
-        Format the BrakeSpecificFuelConsumption to string.
-        Note! the default format for BrakeSpecificFuelConsumption is KilogramPerJoule.
-        To specify the unit format set the 'unit' parameter.
+        Format the BrakeSpecificFuelConsumption to a string.
+        
+        Note: the default format for BrakeSpecificFuelConsumption is KilogramPerJoule.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the BrakeSpecificFuelConsumption. Default is 'KilogramPerJoule'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == BrakeSpecificFuelConsumptionUnits.GramPerKiloWattHour:
-            return f"""{self.grams_per_kilo_watt_hour} g/kWh"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_kilo_watt_hour, fractional_digits)} g/kWh"""
         
         if unit == BrakeSpecificFuelConsumptionUnits.KilogramPerJoule:
-            return f"""{self.kilograms_per_joule} kg/J"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_joule, fractional_digits)} kg/J"""
         
         if unit == BrakeSpecificFuelConsumptionUnits.PoundPerMechanicalHorsepowerHour:
-            return f"""{self.pounds_per_mechanical_horsepower_hour} lb/hph"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_mechanical_horsepower_hour, fractional_digits)} lb/hph"""
         
         return f'{self._value}'
 

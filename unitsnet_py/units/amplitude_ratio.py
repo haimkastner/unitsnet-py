@@ -300,24 +300,32 @@ class AmplitudeRatio(AbstractMeasure):
         return self.__decibels_unloaded
 
     
-    def to_string(self, unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt) -> str:
+    def to_string(self, unit: AmplitudeRatioUnits = AmplitudeRatioUnits.DecibelVolt, fractional_digits: int = None) -> str:
         """
-        Format the AmplitudeRatio to string.
-        Note! the default format for AmplitudeRatio is DecibelVolt.
-        To specify the unit format set the 'unit' parameter.
+        Format the AmplitudeRatio to a string.
+        
+        Note: the default format for AmplitudeRatio is DecibelVolt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the AmplitudeRatio. Default is 'DecibelVolt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AmplitudeRatioUnits.DecibelVolt:
-            return f"""{self.decibel_volts} dBV"""
+            return f"""{super()._truncate_fraction_digits(self.decibel_volts, fractional_digits)} dBV"""
         
         if unit == AmplitudeRatioUnits.DecibelMicrovolt:
-            return f"""{self.decibel_microvolts} dBµV"""
+            return f"""{super()._truncate_fraction_digits(self.decibel_microvolts, fractional_digits)} dBµV"""
         
         if unit == AmplitudeRatioUnits.DecibelMillivolt:
-            return f"""{self.decibel_millivolts} dBmV"""
+            return f"""{super()._truncate_fraction_digits(self.decibel_millivolts, fractional_digits)} dBmV"""
         
         if unit == AmplitudeRatioUnits.DecibelUnloaded:
-            return f"""{self.decibels_unloaded} dBu"""
+            return f"""{super()._truncate_fraction_digits(self.decibels_unloaded, fractional_digits)} dBu"""
         
         return f'{self._value}'
 

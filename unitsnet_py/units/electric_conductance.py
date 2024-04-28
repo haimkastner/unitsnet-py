@@ -339,27 +339,35 @@ class ElectricConductance(AbstractMeasure):
         return self.__kilosiemens
 
     
-    def to_string(self, unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens) -> str:
+    def to_string(self, unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens, fractional_digits: int = None) -> str:
         """
-        Format the ElectricConductance to string.
-        Note! the default format for ElectricConductance is Siemens.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricConductance to a string.
+        
+        Note: the default format for ElectricConductance is Siemens.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricConductance. Default is 'Siemens'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricConductanceUnits.Siemens:
-            return f"""{self.siemens} S"""
+            return f"""{super()._truncate_fraction_digits(self.siemens, fractional_digits)} S"""
         
         if unit == ElectricConductanceUnits.Nanosiemens:
-            return f"""{self.nanosiemens} nS"""
+            return f"""{super()._truncate_fraction_digits(self.nanosiemens, fractional_digits)} nS"""
         
         if unit == ElectricConductanceUnits.Microsiemens:
-            return f"""{self.microsiemens} μS"""
+            return f"""{super()._truncate_fraction_digits(self.microsiemens, fractional_digits)} μS"""
         
         if unit == ElectricConductanceUnits.Millisiemens:
-            return f"""{self.millisiemens} mS"""
+            return f"""{super()._truncate_fraction_digits(self.millisiemens, fractional_digits)} mS"""
         
         if unit == ElectricConductanceUnits.Kilosiemens:
-            return f"""{self.kilosiemens} kS"""
+            return f"""{super()._truncate_fraction_digits(self.kilosiemens, fractional_digits)} kS"""
         
         return f'{self._value}'
 

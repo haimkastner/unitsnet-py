@@ -300,24 +300,32 @@ class ElectricAdmittance(AbstractMeasure):
         return self.__millisiemens
 
     
-    def to_string(self, unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens) -> str:
+    def to_string(self, unit: ElectricAdmittanceUnits = ElectricAdmittanceUnits.Siemens, fractional_digits: int = None) -> str:
         """
-        Format the ElectricAdmittance to string.
-        Note! the default format for ElectricAdmittance is Siemens.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricAdmittance to a string.
+        
+        Note: the default format for ElectricAdmittance is Siemens.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricAdmittance. Default is 'Siemens'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricAdmittanceUnits.Siemens:
-            return f"""{self.siemens} S"""
+            return f"""{super()._truncate_fraction_digits(self.siemens, fractional_digits)} S"""
         
         if unit == ElectricAdmittanceUnits.Nanosiemens:
-            return f"""{self.nanosiemens} nS"""
+            return f"""{super()._truncate_fraction_digits(self.nanosiemens, fractional_digits)} nS"""
         
         if unit == ElectricAdmittanceUnits.Microsiemens:
-            return f"""{self.microsiemens} μS"""
+            return f"""{super()._truncate_fraction_digits(self.microsiemens, fractional_digits)} μS"""
         
         if unit == ElectricAdmittanceUnits.Millisiemens:
-            return f"""{self.millisiemens} mS"""
+            return f"""{super()._truncate_fraction_digits(self.millisiemens, fractional_digits)} mS"""
         
         return f'{self._value}'
 

@@ -183,15 +183,23 @@ class LuminousIntensity(AbstractMeasure):
         return self.__candela
 
     
-    def to_string(self, unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela) -> str:
+    def to_string(self, unit: LuminousIntensityUnits = LuminousIntensityUnits.Candela, fractional_digits: int = None) -> str:
         """
-        Format the LuminousIntensity to string.
-        Note! the default format for LuminousIntensity is Candela.
-        To specify the unit format set the 'unit' parameter.
+        Format the LuminousIntensity to a string.
+        
+        Note: the default format for LuminousIntensity is Candela.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the LuminousIntensity. Default is 'Candela'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LuminousIntensityUnits.Candela:
-            return f"""{self.candela} cd"""
+            return f"""{super()._truncate_fraction_digits(self.candela, fractional_digits)} cd"""
         
         return f'{self._value}'
 

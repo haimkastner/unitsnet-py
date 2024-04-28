@@ -183,15 +183,23 @@ class Permittivity(AbstractMeasure):
         return self.__farads_per_meter
 
     
-    def to_string(self, unit: PermittivityUnits = PermittivityUnits.FaradPerMeter) -> str:
+    def to_string(self, unit: PermittivityUnits = PermittivityUnits.FaradPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the Permittivity to string.
-        Note! the default format for Permittivity is FaradPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Permittivity to a string.
+        
+        Note: the default format for Permittivity is FaradPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Permittivity. Default is 'FaradPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PermittivityUnits.FaradPerMeter:
-            return f"""{self.farads_per_meter} F/m"""
+            return f"""{super()._truncate_fraction_digits(self.farads_per_meter, fractional_digits)} F/m"""
         
         return f'{self._value}'
 

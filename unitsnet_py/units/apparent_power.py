@@ -378,30 +378,38 @@ class ApparentPower(AbstractMeasure):
         return self.__gigavoltamperes
 
     
-    def to_string(self, unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere) -> str:
+    def to_string(self, unit: ApparentPowerUnits = ApparentPowerUnits.Voltampere, fractional_digits: int = None) -> str:
         """
-        Format the ApparentPower to string.
-        Note! the default format for ApparentPower is Voltampere.
-        To specify the unit format set the 'unit' parameter.
+        Format the ApparentPower to a string.
+        
+        Note: the default format for ApparentPower is Voltampere.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ApparentPower. Default is 'Voltampere'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ApparentPowerUnits.Voltampere:
-            return f"""{self.voltamperes} VA"""
+            return f"""{super()._truncate_fraction_digits(self.voltamperes, fractional_digits)} VA"""
         
         if unit == ApparentPowerUnits.Microvoltampere:
-            return f"""{self.microvoltamperes} μVA"""
+            return f"""{super()._truncate_fraction_digits(self.microvoltamperes, fractional_digits)} μVA"""
         
         if unit == ApparentPowerUnits.Millivoltampere:
-            return f"""{self.millivoltamperes} mVA"""
+            return f"""{super()._truncate_fraction_digits(self.millivoltamperes, fractional_digits)} mVA"""
         
         if unit == ApparentPowerUnits.Kilovoltampere:
-            return f"""{self.kilovoltamperes} kVA"""
+            return f"""{super()._truncate_fraction_digits(self.kilovoltamperes, fractional_digits)} kVA"""
         
         if unit == ApparentPowerUnits.Megavoltampere:
-            return f"""{self.megavoltamperes} MVA"""
+            return f"""{super()._truncate_fraction_digits(self.megavoltamperes, fractional_digits)} MVA"""
         
         if unit == ApparentPowerUnits.Gigavoltampere:
-            return f"""{self.gigavoltamperes} GVA"""
+            return f"""{super()._truncate_fraction_digits(self.gigavoltamperes, fractional_digits)} GVA"""
         
         return f'{self._value}'
 

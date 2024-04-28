@@ -183,15 +183,23 @@ class MagneticFlux(AbstractMeasure):
         return self.__webers
 
     
-    def to_string(self, unit: MagneticFluxUnits = MagneticFluxUnits.Weber) -> str:
+    def to_string(self, unit: MagneticFluxUnits = MagneticFluxUnits.Weber, fractional_digits: int = None) -> str:
         """
-        Format the MagneticFlux to string.
-        Note! the default format for MagneticFlux is Weber.
-        To specify the unit format set the 'unit' parameter.
+        Format the MagneticFlux to a string.
+        
+        Note: the default format for MagneticFlux is Weber.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MagneticFlux. Default is 'Weber'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MagneticFluxUnits.Weber:
-            return f"""{self.webers} Wb"""
+            return f"""{super()._truncate_fraction_digits(self.webers, fractional_digits)} Wb"""
         
         return f'{self._value}'
 

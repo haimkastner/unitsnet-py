@@ -534,42 +534,50 @@ class Luminance(AbstractMeasure):
         return self.__kilocandelas_per_square_meter
 
     
-    def to_string(self, unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter) -> str:
+    def to_string(self, unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the Luminance to string.
-        Note! the default format for Luminance is CandelaPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Luminance to a string.
+        
+        Note: the default format for Luminance is CandelaPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Luminance. Default is 'CandelaPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LuminanceUnits.CandelaPerSquareMeter:
-            return f"""{self.candelas_per_square_meter} Cd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.candelas_per_square_meter, fractional_digits)} Cd/m²"""
         
         if unit == LuminanceUnits.CandelaPerSquareFoot:
-            return f"""{self.candelas_per_square_foot} Cd/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.candelas_per_square_foot, fractional_digits)} Cd/ft²"""
         
         if unit == LuminanceUnits.CandelaPerSquareInch:
-            return f"""{self.candelas_per_square_inch} Cd/in²"""
+            return f"""{super()._truncate_fraction_digits(self.candelas_per_square_inch, fractional_digits)} Cd/in²"""
         
         if unit == LuminanceUnits.Nit:
-            return f"""{self.nits} nt"""
+            return f"""{super()._truncate_fraction_digits(self.nits, fractional_digits)} nt"""
         
         if unit == LuminanceUnits.NanocandelaPerSquareMeter:
-            return f"""{self.nanocandelas_per_square_meter} nCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.nanocandelas_per_square_meter, fractional_digits)} nCd/m²"""
         
         if unit == LuminanceUnits.MicrocandelaPerSquareMeter:
-            return f"""{self.microcandelas_per_square_meter} μCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.microcandelas_per_square_meter, fractional_digits)} μCd/m²"""
         
         if unit == LuminanceUnits.MillicandelaPerSquareMeter:
-            return f"""{self.millicandelas_per_square_meter} mCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.millicandelas_per_square_meter, fractional_digits)} mCd/m²"""
         
         if unit == LuminanceUnits.CenticandelaPerSquareMeter:
-            return f"""{self.centicandelas_per_square_meter} cCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.centicandelas_per_square_meter, fractional_digits)} cCd/m²"""
         
         if unit == LuminanceUnits.DecicandelaPerSquareMeter:
-            return f"""{self.decicandelas_per_square_meter} dCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.decicandelas_per_square_meter, fractional_digits)} dCd/m²"""
         
         if unit == LuminanceUnits.KilocandelaPerSquareMeter:
-            return f"""{self.kilocandelas_per_square_meter} kCd/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilocandelas_per_square_meter, fractional_digits)} kCd/m²"""
         
         return f'{self._value}'
 

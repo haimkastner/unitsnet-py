@@ -1197,93 +1197,101 @@ class Mass(AbstractMeasure):
         return self.__megapounds
 
     
-    def to_string(self, unit: MassUnits = MassUnits.Kilogram) -> str:
+    def to_string(self, unit: MassUnits = MassUnits.Kilogram, fractional_digits: int = None) -> str:
         """
-        Format the Mass to string.
-        Note! the default format for Mass is Kilogram.
-        To specify the unit format set the 'unit' parameter.
+        Format the Mass to a string.
+        
+        Note: the default format for Mass is Kilogram.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Mass. Default is 'Kilogram'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassUnits.Gram:
-            return f"""{self.grams} g"""
+            return f"""{super()._truncate_fraction_digits(self.grams, fractional_digits)} g"""
         
         if unit == MassUnits.Tonne:
-            return f"""{self.tonnes} t"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes, fractional_digits)} t"""
         
         if unit == MassUnits.ShortTon:
-            return f"""{self.short_tons} t (short)"""
+            return f"""{super()._truncate_fraction_digits(self.short_tons, fractional_digits)} t (short)"""
         
         if unit == MassUnits.LongTon:
-            return f"""{self.long_tons} long tn"""
+            return f"""{super()._truncate_fraction_digits(self.long_tons, fractional_digits)} long tn"""
         
         if unit == MassUnits.Pound:
-            return f"""{self.pounds} lb"""
+            return f"""{super()._truncate_fraction_digits(self.pounds, fractional_digits)} lb"""
         
         if unit == MassUnits.Ounce:
-            return f"""{self.ounces} oz"""
+            return f"""{super()._truncate_fraction_digits(self.ounces, fractional_digits)} oz"""
         
         if unit == MassUnits.Slug:
-            return f"""{self.slugs} slug"""
+            return f"""{super()._truncate_fraction_digits(self.slugs, fractional_digits)} slug"""
         
         if unit == MassUnits.Stone:
-            return f"""{self.stone} st"""
+            return f"""{super()._truncate_fraction_digits(self.stone, fractional_digits)} st"""
         
         if unit == MassUnits.ShortHundredweight:
-            return f"""{self.short_hundredweight} cwt"""
+            return f"""{super()._truncate_fraction_digits(self.short_hundredweight, fractional_digits)} cwt"""
         
         if unit == MassUnits.LongHundredweight:
-            return f"""{self.long_hundredweight} cwt"""
+            return f"""{super()._truncate_fraction_digits(self.long_hundredweight, fractional_digits)} cwt"""
         
         if unit == MassUnits.Grain:
-            return f"""{self.grains} gr"""
+            return f"""{super()._truncate_fraction_digits(self.grains, fractional_digits)} gr"""
         
         if unit == MassUnits.SolarMass:
-            return f"""{self.solar_masses} M☉"""
+            return f"""{super()._truncate_fraction_digits(self.solar_masses, fractional_digits)} M☉"""
         
         if unit == MassUnits.EarthMass:
-            return f"""{self.earth_masses} em"""
+            return f"""{super()._truncate_fraction_digits(self.earth_masses, fractional_digits)} em"""
         
         if unit == MassUnits.Femtogram:
-            return f"""{self.femtograms} fg"""
+            return f"""{super()._truncate_fraction_digits(self.femtograms, fractional_digits)} fg"""
         
         if unit == MassUnits.Picogram:
-            return f"""{self.picograms} pg"""
+            return f"""{super()._truncate_fraction_digits(self.picograms, fractional_digits)} pg"""
         
         if unit == MassUnits.Nanogram:
-            return f"""{self.nanograms} ng"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms, fractional_digits)} ng"""
         
         if unit == MassUnits.Microgram:
-            return f"""{self.micrograms} μg"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms, fractional_digits)} μg"""
         
         if unit == MassUnits.Milligram:
-            return f"""{self.milligrams} mg"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams, fractional_digits)} mg"""
         
         if unit == MassUnits.Centigram:
-            return f"""{self.centigrams} cg"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams, fractional_digits)} cg"""
         
         if unit == MassUnits.Decigram:
-            return f"""{self.decigrams} dg"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams, fractional_digits)} dg"""
         
         if unit == MassUnits.Decagram:
-            return f"""{self.decagrams} dag"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams, fractional_digits)} dag"""
         
         if unit == MassUnits.Hectogram:
-            return f"""{self.hectograms} hg"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms, fractional_digits)} hg"""
         
         if unit == MassUnits.Kilogram:
-            return f"""{self.kilograms} kg"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms, fractional_digits)} kg"""
         
         if unit == MassUnits.Kilotonne:
-            return f"""{self.kilotonnes} kt"""
+            return f"""{super()._truncate_fraction_digits(self.kilotonnes, fractional_digits)} kt"""
         
         if unit == MassUnits.Megatonne:
-            return f"""{self.megatonnes} Mt"""
+            return f"""{super()._truncate_fraction_digits(self.megatonnes, fractional_digits)} Mt"""
         
         if unit == MassUnits.Kilopound:
-            return f"""{self.kilopounds} klb"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds, fractional_digits)} klb"""
         
         if unit == MassUnits.Megapound:
-            return f"""{self.megapounds} Mlb"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds, fractional_digits)} Mlb"""
         
         return f'{self._value}'
 

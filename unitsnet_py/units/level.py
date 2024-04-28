@@ -222,18 +222,26 @@ class Level(AbstractMeasure):
         return self.__nepers
 
     
-    def to_string(self, unit: LevelUnits = LevelUnits.Decibel) -> str:
+    def to_string(self, unit: LevelUnits = LevelUnits.Decibel, fractional_digits: int = None) -> str:
         """
-        Format the Level to string.
-        Note! the default format for Level is Decibel.
-        To specify the unit format set the 'unit' parameter.
+        Format the Level to a string.
+        
+        Note: the default format for Level is Decibel.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Level. Default is 'Decibel'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LevelUnits.Decibel:
-            return f"""{self.decibels} dB"""
+            return f"""{super()._truncate_fraction_digits(self.decibels, fractional_digits)} dB"""
         
         if unit == LevelUnits.Neper:
-            return f"""{self.nepers} Np"""
+            return f"""{super()._truncate_fraction_digits(self.nepers, fractional_digits)} Np"""
         
         return f'{self._value}'
 

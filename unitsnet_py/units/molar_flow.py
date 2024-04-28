@@ -495,39 +495,47 @@ class MolarFlow(AbstractMeasure):
         return self.__kilomoles_per_hour
 
     
-    def to_string(self, unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond) -> str:
+    def to_string(self, unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond, fractional_digits: int = None) -> str:
         """
-        Format the MolarFlow to string.
-        Note! the default format for MolarFlow is MolePerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the MolarFlow to a string.
+        
+        Note: the default format for MolarFlow is MolePerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MolarFlow. Default is 'MolePerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolarFlowUnits.MolePerSecond:
-            return f"""{self.moles_per_second} mol/s"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_second, fractional_digits)} mol/s"""
         
         if unit == MolarFlowUnits.MolePerMinute:
-            return f"""{self.moles_per_minute} mol/min"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_minute, fractional_digits)} mol/min"""
         
         if unit == MolarFlowUnits.MolePerHour:
-            return f"""{self.moles_per_hour} kmol/h"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_hour, fractional_digits)} kmol/h"""
         
         if unit == MolarFlowUnits.PoundMolePerSecond:
-            return f"""{self.pound_moles_per_second} lbmol/s"""
+            return f"""{super()._truncate_fraction_digits(self.pound_moles_per_second, fractional_digits)} lbmol/s"""
         
         if unit == MolarFlowUnits.PoundMolePerMinute:
-            return f"""{self.pound_moles_per_minute} lbmol/min"""
+            return f"""{super()._truncate_fraction_digits(self.pound_moles_per_minute, fractional_digits)} lbmol/min"""
         
         if unit == MolarFlowUnits.PoundMolePerHour:
-            return f"""{self.pound_moles_per_hour} lbmol/h"""
+            return f"""{super()._truncate_fraction_digits(self.pound_moles_per_hour, fractional_digits)} lbmol/h"""
         
         if unit == MolarFlowUnits.KilomolePerSecond:
-            return f"""{self.kilomoles_per_second} kmol/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_second, fractional_digits)} kmol/s"""
         
         if unit == MolarFlowUnits.KilomolePerMinute:
-            return f"""{self.kilomoles_per_minute} kmol/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_minute, fractional_digits)} kmol/min"""
         
         if unit == MolarFlowUnits.KilomolePerHour:
-            return f"""{self.kilomoles_per_hour} kkmol/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_hour, fractional_digits)} kkmol/h"""
         
         return f'{self._value}'
 

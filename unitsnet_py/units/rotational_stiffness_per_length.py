@@ -339,27 +339,35 @@ class RotationalStiffnessPerLength(AbstractMeasure):
         return self.__meganewton_meters_per_radian_per_meter
 
     
-    def to_string(self, unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter) -> str:
+    def to_string(self, unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the RotationalStiffnessPerLength to string.
-        Note! the default format for RotationalStiffnessPerLength is NewtonMeterPerRadianPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the RotationalStiffnessPerLength to a string.
+        
+        Note: the default format for RotationalStiffnessPerLength is NewtonMeterPerRadianPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RotationalStiffnessPerLength. Default is 'NewtonMeterPerRadianPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter:
-            return f"""{self.newton_meters_per_radian_per_meter} N·m/rad/m"""
+            return f"""{super()._truncate_fraction_digits(self.newton_meters_per_radian_per_meter, fractional_digits)} N·m/rad/m"""
         
         if unit == RotationalStiffnessPerLengthUnits.PoundForceFootPerDegreesPerFoot:
-            return f"""{self.pound_force_feet_per_degrees_per_feet} lbf·ft/deg/ft"""
+            return f"""{super()._truncate_fraction_digits(self.pound_force_feet_per_degrees_per_feet, fractional_digits)} lbf·ft/deg/ft"""
         
         if unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
-            return f"""{self.kilopound_force_feet_per_degrees_per_feet} kipf·ft/°/ft"""
+            return f"""{super()._truncate_fraction_digits(self.kilopound_force_feet_per_degrees_per_feet, fractional_digits)} kipf·ft/°/ft"""
         
         if unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
-            return f"""{self.kilonewton_meters_per_radian_per_meter} kN·m/rad/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewton_meters_per_radian_per_meter, fractional_digits)} kN·m/rad/m"""
         
         if unit == RotationalStiffnessPerLengthUnits.MeganewtonMeterPerRadianPerMeter:
-            return f"""{self.meganewton_meters_per_radian_per_meter} MN·m/rad/m"""
+            return f"""{super()._truncate_fraction_digits(self.meganewton_meters_per_radian_per_meter, fractional_digits)} MN·m/rad/m"""
         
         return f'{self._value}'
 

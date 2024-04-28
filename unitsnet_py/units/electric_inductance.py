@@ -339,27 +339,35 @@ class ElectricInductance(AbstractMeasure):
         return self.__millihenries
 
     
-    def to_string(self, unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry) -> str:
+    def to_string(self, unit: ElectricInductanceUnits = ElectricInductanceUnits.Henry, fractional_digits: int = None) -> str:
         """
-        Format the ElectricInductance to string.
-        Note! the default format for ElectricInductance is Henry.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricInductance to a string.
+        
+        Note: the default format for ElectricInductance is Henry.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricInductance. Default is 'Henry'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricInductanceUnits.Henry:
-            return f"""{self.henries} H"""
+            return f"""{super()._truncate_fraction_digits(self.henries, fractional_digits)} H"""
         
         if unit == ElectricInductanceUnits.Picohenry:
-            return f"""{self.picohenries} pH"""
+            return f"""{super()._truncate_fraction_digits(self.picohenries, fractional_digits)} pH"""
         
         if unit == ElectricInductanceUnits.Nanohenry:
-            return f"""{self.nanohenries} nH"""
+            return f"""{super()._truncate_fraction_digits(self.nanohenries, fractional_digits)} nH"""
         
         if unit == ElectricInductanceUnits.Microhenry:
-            return f"""{self.microhenries} μH"""
+            return f"""{super()._truncate_fraction_digits(self.microhenries, fractional_digits)} μH"""
         
         if unit == ElectricInductanceUnits.Millihenry:
-            return f"""{self.millihenries} mH"""
+            return f"""{super()._truncate_fraction_digits(self.millihenries, fractional_digits)} mH"""
         
         return f'{self._value}'
 

@@ -261,21 +261,29 @@ class ApparentEnergy(AbstractMeasure):
         return self.__megavoltampere_hours
 
     
-    def to_string(self, unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour) -> str:
+    def to_string(self, unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour, fractional_digits: int = None) -> str:
         """
-        Format the ApparentEnergy to string.
-        Note! the default format for ApparentEnergy is VoltampereHour.
-        To specify the unit format set the 'unit' parameter.
+        Format the ApparentEnergy to a string.
+        
+        Note: the default format for ApparentEnergy is VoltampereHour.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ApparentEnergy. Default is 'VoltampereHour'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ApparentEnergyUnits.VoltampereHour:
-            return f"""{self.voltampere_hours} VAh"""
+            return f"""{super()._truncate_fraction_digits(self.voltampere_hours, fractional_digits)} VAh"""
         
         if unit == ApparentEnergyUnits.KilovoltampereHour:
-            return f"""{self.kilovoltampere_hours} kVAh"""
+            return f"""{super()._truncate_fraction_digits(self.kilovoltampere_hours, fractional_digits)} kVAh"""
         
         if unit == ApparentEnergyUnits.MegavoltampereHour:
-            return f"""{self.megavoltampere_hours} MVAh"""
+            return f"""{super()._truncate_fraction_digits(self.megavoltampere_hours, fractional_digits)} MVAh"""
         
         return f'{self._value}'
 

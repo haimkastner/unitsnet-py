@@ -339,27 +339,35 @@ class ElectricPotentialAc(AbstractMeasure):
         return self.__megavolts_ac
 
     
-    def to_string(self, unit: ElectricPotentialAcUnits = ElectricPotentialAcUnits.VoltAc) -> str:
+    def to_string(self, unit: ElectricPotentialAcUnits = ElectricPotentialAcUnits.VoltAc, fractional_digits: int = None) -> str:
         """
-        Format the ElectricPotentialAc to string.
-        Note! the default format for ElectricPotentialAc is VoltAc.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricPotentialAc to a string.
+        
+        Note: the default format for ElectricPotentialAc is VoltAc.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricPotentialAc. Default is 'VoltAc'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricPotentialAcUnits.VoltAc:
-            return f"""{self.volts_ac} Vac"""
+            return f"""{super()._truncate_fraction_digits(self.volts_ac, fractional_digits)} Vac"""
         
         if unit == ElectricPotentialAcUnits.MicrovoltAc:
-            return f"""{self.microvolts_ac} μVac"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts_ac, fractional_digits)} μVac"""
         
         if unit == ElectricPotentialAcUnits.MillivoltAc:
-            return f"""{self.millivolts_ac} mVac"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts_ac, fractional_digits)} mVac"""
         
         if unit == ElectricPotentialAcUnits.KilovoltAc:
-            return f"""{self.kilovolts_ac} kVac"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts_ac, fractional_digits)} kVac"""
         
         if unit == ElectricPotentialAcUnits.MegavoltAc:
-            return f"""{self.megavolts_ac} MVac"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts_ac, fractional_digits)} MVac"""
         
         return f'{self._value}'
 

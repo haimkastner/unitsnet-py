@@ -3069,237 +3069,245 @@ class VolumeFlow(AbstractMeasure):
         return self.__megauk_gallons_per_second
 
     
-    def to_string(self, unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond) -> str:
+    def to_string(self, unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the VolumeFlow to string.
-        Note! the default format for VolumeFlow is CubicMeterPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the VolumeFlow to a string.
+        
+        Note: the default format for VolumeFlow is CubicMeterPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VolumeFlow. Default is 'CubicMeterPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VolumeFlowUnits.CubicMeterPerSecond:
-            return f"""{self.cubic_meters_per_second} m³/s"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_second, fractional_digits)} m³/s"""
         
         if unit == VolumeFlowUnits.CubicMeterPerMinute:
-            return f"""{self.cubic_meters_per_minute} m³/min"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_minute, fractional_digits)} m³/min"""
         
         if unit == VolumeFlowUnits.CubicMeterPerHour:
-            return f"""{self.cubic_meters_per_hour} m³/h"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_hour, fractional_digits)} m³/h"""
         
         if unit == VolumeFlowUnits.CubicMeterPerDay:
-            return f"""{self.cubic_meters_per_day} m³/d"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_day, fractional_digits)} m³/d"""
         
         if unit == VolumeFlowUnits.CubicFootPerSecond:
-            return f"""{self.cubic_feet_per_second} ft³/s"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_feet_per_second, fractional_digits)} ft³/s"""
         
         if unit == VolumeFlowUnits.CubicFootPerMinute:
-            return f"""{self.cubic_feet_per_minute} ft³/min"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_feet_per_minute, fractional_digits)} ft³/min"""
         
         if unit == VolumeFlowUnits.CubicFootPerHour:
-            return f"""{self.cubic_feet_per_hour} ft³/h"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_feet_per_hour, fractional_digits)} ft³/h"""
         
         if unit == VolumeFlowUnits.CubicYardPerSecond:
-            return f"""{self.cubic_yards_per_second} yd³/s"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_second, fractional_digits)} yd³/s"""
         
         if unit == VolumeFlowUnits.CubicYardPerMinute:
-            return f"""{self.cubic_yards_per_minute} yd³/min"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_minute, fractional_digits)} yd³/min"""
         
         if unit == VolumeFlowUnits.CubicYardPerHour:
-            return f"""{self.cubic_yards_per_hour} yd³/h"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_hour, fractional_digits)} yd³/h"""
         
         if unit == VolumeFlowUnits.CubicYardPerDay:
-            return f"""{self.cubic_yards_per_day} cy/day"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_day, fractional_digits)} cy/day"""
         
         if unit == VolumeFlowUnits.MillionUsGallonPerDay:
-            return f"""{self.million_us_gallons_per_day} MGD"""
+            return f"""{super()._truncate_fraction_digits(self.million_us_gallons_per_day, fractional_digits)} MGD"""
         
         if unit == VolumeFlowUnits.UsGallonPerDay:
-            return f"""{self.us_gallons_per_day} gpd"""
+            return f"""{super()._truncate_fraction_digits(self.us_gallons_per_day, fractional_digits)} gpd"""
         
         if unit == VolumeFlowUnits.LiterPerSecond:
-            return f"""{self.liters_per_second} L/s"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_second, fractional_digits)} L/s"""
         
         if unit == VolumeFlowUnits.LiterPerMinute:
-            return f"""{self.liters_per_minute} L/min"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_minute, fractional_digits)} L/min"""
         
         if unit == VolumeFlowUnits.LiterPerHour:
-            return f"""{self.liters_per_hour} L/h"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_hour, fractional_digits)} L/h"""
         
         if unit == VolumeFlowUnits.LiterPerDay:
-            return f"""{self.liters_per_day} l/day"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_day, fractional_digits)} l/day"""
         
         if unit == VolumeFlowUnits.UsGallonPerSecond:
-            return f"""{self.us_gallons_per_second} gal (U.S.)/s"""
+            return f"""{super()._truncate_fraction_digits(self.us_gallons_per_second, fractional_digits)} gal (U.S.)/s"""
         
         if unit == VolumeFlowUnits.UsGallonPerMinute:
-            return f"""{self.us_gallons_per_minute} gal (U.S.)/min"""
+            return f"""{super()._truncate_fraction_digits(self.us_gallons_per_minute, fractional_digits)} gal (U.S.)/min"""
         
         if unit == VolumeFlowUnits.UkGallonPerDay:
-            return f"""{self.uk_gallons_per_day} gal (U. K.)/d"""
+            return f"""{super()._truncate_fraction_digits(self.uk_gallons_per_day, fractional_digits)} gal (U. K.)/d"""
         
         if unit == VolumeFlowUnits.UkGallonPerHour:
-            return f"""{self.uk_gallons_per_hour} gal (imp.)/h"""
+            return f"""{super()._truncate_fraction_digits(self.uk_gallons_per_hour, fractional_digits)} gal (imp.)/h"""
         
         if unit == VolumeFlowUnits.UkGallonPerMinute:
-            return f"""{self.uk_gallons_per_minute} gal (imp.)/min"""
+            return f"""{super()._truncate_fraction_digits(self.uk_gallons_per_minute, fractional_digits)} gal (imp.)/min"""
         
         if unit == VolumeFlowUnits.UkGallonPerSecond:
-            return f"""{self.uk_gallons_per_second} gal (imp.)/s"""
+            return f"""{super()._truncate_fraction_digits(self.uk_gallons_per_second, fractional_digits)} gal (imp.)/s"""
         
         if unit == VolumeFlowUnits.KilousGallonPerMinute:
-            return f"""{self.kilous_gallons_per_minute} kgal (U.S.)/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilous_gallons_per_minute, fractional_digits)} kgal (U.S.)/min"""
         
         if unit == VolumeFlowUnits.UsGallonPerHour:
-            return f"""{self.us_gallons_per_hour} gal (U.S.)/h"""
+            return f"""{super()._truncate_fraction_digits(self.us_gallons_per_hour, fractional_digits)} gal (U.S.)/h"""
         
         if unit == VolumeFlowUnits.CubicDecimeterPerMinute:
-            return f"""{self.cubic_decimeters_per_minute} dm³/min"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_decimeters_per_minute, fractional_digits)} dm³/min"""
         
         if unit == VolumeFlowUnits.OilBarrelPerDay:
-            return f"""{self.oil_barrels_per_day} bbl/d"""
+            return f"""{super()._truncate_fraction_digits(self.oil_barrels_per_day, fractional_digits)} bbl/d"""
         
         if unit == VolumeFlowUnits.OilBarrelPerMinute:
-            return f"""{self.oil_barrels_per_minute} bbl/min"""
+            return f"""{super()._truncate_fraction_digits(self.oil_barrels_per_minute, fractional_digits)} bbl/min"""
         
         if unit == VolumeFlowUnits.OilBarrelPerHour:
-            return f"""{self.oil_barrels_per_hour} bbl/hr"""
+            return f"""{super()._truncate_fraction_digits(self.oil_barrels_per_hour, fractional_digits)} bbl/hr"""
         
         if unit == VolumeFlowUnits.OilBarrelPerSecond:
-            return f"""{self.oil_barrels_per_second} bbl/s"""
+            return f"""{super()._truncate_fraction_digits(self.oil_barrels_per_second, fractional_digits)} bbl/s"""
         
         if unit == VolumeFlowUnits.CubicMillimeterPerSecond:
-            return f"""{self.cubic_millimeters_per_second} mm³/s"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_millimeters_per_second, fractional_digits)} mm³/s"""
         
         if unit == VolumeFlowUnits.AcreFootPerSecond:
-            return f"""{self.acre_feet_per_second} af/s"""
+            return f"""{super()._truncate_fraction_digits(self.acre_feet_per_second, fractional_digits)} af/s"""
         
         if unit == VolumeFlowUnits.AcreFootPerMinute:
-            return f"""{self.acre_feet_per_minute} af/m"""
+            return f"""{super()._truncate_fraction_digits(self.acre_feet_per_minute, fractional_digits)} af/m"""
         
         if unit == VolumeFlowUnits.AcreFootPerHour:
-            return f"""{self.acre_feet_per_hour} af/h"""
+            return f"""{super()._truncate_fraction_digits(self.acre_feet_per_hour, fractional_digits)} af/h"""
         
         if unit == VolumeFlowUnits.AcreFootPerDay:
-            return f"""{self.acre_feet_per_day} af/d"""
+            return f"""{super()._truncate_fraction_digits(self.acre_feet_per_day, fractional_digits)} af/d"""
         
         if unit == VolumeFlowUnits.CubicCentimeterPerMinute:
-            return f"""{self.cubic_centimeters_per_minute} cm³/min"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_centimeters_per_minute, fractional_digits)} cm³/min"""
         
         if unit == VolumeFlowUnits.MegausGallonPerDay:
-            return f"""{self.megaus_gallons_per_day} Mgpd"""
+            return f"""{super()._truncate_fraction_digits(self.megaus_gallons_per_day, fractional_digits)} Mgpd"""
         
         if unit == VolumeFlowUnits.NanoliterPerSecond:
-            return f"""{self.nanoliters_per_second} nL/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_second, fractional_digits)} nL/s"""
         
         if unit == VolumeFlowUnits.MicroliterPerSecond:
-            return f"""{self.microliters_per_second} μL/s"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_second, fractional_digits)} μL/s"""
         
         if unit == VolumeFlowUnits.MilliliterPerSecond:
-            return f"""{self.milliliters_per_second} mL/s"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_second, fractional_digits)} mL/s"""
         
         if unit == VolumeFlowUnits.CentiliterPerSecond:
-            return f"""{self.centiliters_per_second} cL/s"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_second, fractional_digits)} cL/s"""
         
         if unit == VolumeFlowUnits.DeciliterPerSecond:
-            return f"""{self.deciliters_per_second} dL/s"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_second, fractional_digits)} dL/s"""
         
         if unit == VolumeFlowUnits.DecaliterPerSecond:
-            return f"""{self.decaliters_per_second} daL/s"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_second, fractional_digits)} daL/s"""
         
         if unit == VolumeFlowUnits.HectoliterPerSecond:
-            return f"""{self.hectoliters_per_second} hL/s"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_second, fractional_digits)} hL/s"""
         
         if unit == VolumeFlowUnits.KiloliterPerSecond:
-            return f"""{self.kiloliters_per_second} kL/s"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_second, fractional_digits)} kL/s"""
         
         if unit == VolumeFlowUnits.MegaliterPerSecond:
-            return f"""{self.megaliters_per_second} ML/s"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_second, fractional_digits)} ML/s"""
         
         if unit == VolumeFlowUnits.NanoliterPerMinute:
-            return f"""{self.nanoliters_per_minute} nL/min"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_minute, fractional_digits)} nL/min"""
         
         if unit == VolumeFlowUnits.MicroliterPerMinute:
-            return f"""{self.microliters_per_minute} μL/min"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_minute, fractional_digits)} μL/min"""
         
         if unit == VolumeFlowUnits.MilliliterPerMinute:
-            return f"""{self.milliliters_per_minute} mL/min"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_minute, fractional_digits)} mL/min"""
         
         if unit == VolumeFlowUnits.CentiliterPerMinute:
-            return f"""{self.centiliters_per_minute} cL/min"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_minute, fractional_digits)} cL/min"""
         
         if unit == VolumeFlowUnits.DeciliterPerMinute:
-            return f"""{self.deciliters_per_minute} dL/min"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_minute, fractional_digits)} dL/min"""
         
         if unit == VolumeFlowUnits.DecaliterPerMinute:
-            return f"""{self.decaliters_per_minute} daL/min"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_minute, fractional_digits)} daL/min"""
         
         if unit == VolumeFlowUnits.HectoliterPerMinute:
-            return f"""{self.hectoliters_per_minute} hL/min"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_minute, fractional_digits)} hL/min"""
         
         if unit == VolumeFlowUnits.KiloliterPerMinute:
-            return f"""{self.kiloliters_per_minute} kL/min"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_minute, fractional_digits)} kL/min"""
         
         if unit == VolumeFlowUnits.MegaliterPerMinute:
-            return f"""{self.megaliters_per_minute} ML/min"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_minute, fractional_digits)} ML/min"""
         
         if unit == VolumeFlowUnits.NanoliterPerHour:
-            return f"""{self.nanoliters_per_hour} nL/h"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_hour, fractional_digits)} nL/h"""
         
         if unit == VolumeFlowUnits.MicroliterPerHour:
-            return f"""{self.microliters_per_hour} μL/h"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_hour, fractional_digits)} μL/h"""
         
         if unit == VolumeFlowUnits.MilliliterPerHour:
-            return f"""{self.milliliters_per_hour} mL/h"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_hour, fractional_digits)} mL/h"""
         
         if unit == VolumeFlowUnits.CentiliterPerHour:
-            return f"""{self.centiliters_per_hour} cL/h"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_hour, fractional_digits)} cL/h"""
         
         if unit == VolumeFlowUnits.DeciliterPerHour:
-            return f"""{self.deciliters_per_hour} dL/h"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_hour, fractional_digits)} dL/h"""
         
         if unit == VolumeFlowUnits.DecaliterPerHour:
-            return f"""{self.decaliters_per_hour} daL/h"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_hour, fractional_digits)} daL/h"""
         
         if unit == VolumeFlowUnits.HectoliterPerHour:
-            return f"""{self.hectoliters_per_hour} hL/h"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_hour, fractional_digits)} hL/h"""
         
         if unit == VolumeFlowUnits.KiloliterPerHour:
-            return f"""{self.kiloliters_per_hour} kL/h"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_hour, fractional_digits)} kL/h"""
         
         if unit == VolumeFlowUnits.MegaliterPerHour:
-            return f"""{self.megaliters_per_hour} ML/h"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_hour, fractional_digits)} ML/h"""
         
         if unit == VolumeFlowUnits.NanoliterPerDay:
-            return f"""{self.nanoliters_per_day} nl/day"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_day, fractional_digits)} nl/day"""
         
         if unit == VolumeFlowUnits.MicroliterPerDay:
-            return f"""{self.microliters_per_day} μl/day"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_day, fractional_digits)} μl/day"""
         
         if unit == VolumeFlowUnits.MilliliterPerDay:
-            return f"""{self.milliliters_per_day} ml/day"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_day, fractional_digits)} ml/day"""
         
         if unit == VolumeFlowUnits.CentiliterPerDay:
-            return f"""{self.centiliters_per_day} cl/day"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_day, fractional_digits)} cl/day"""
         
         if unit == VolumeFlowUnits.DeciliterPerDay:
-            return f"""{self.deciliters_per_day} dl/day"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_day, fractional_digits)} dl/day"""
         
         if unit == VolumeFlowUnits.DecaliterPerDay:
-            return f"""{self.decaliters_per_day} dal/day"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_day, fractional_digits)} dal/day"""
         
         if unit == VolumeFlowUnits.HectoliterPerDay:
-            return f"""{self.hectoliters_per_day} hl/day"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_day, fractional_digits)} hl/day"""
         
         if unit == VolumeFlowUnits.KiloliterPerDay:
-            return f"""{self.kiloliters_per_day} kl/day"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_day, fractional_digits)} kl/day"""
         
         if unit == VolumeFlowUnits.MegaliterPerDay:
-            return f"""{self.megaliters_per_day} Ml/day"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_day, fractional_digits)} Ml/day"""
         
         if unit == VolumeFlowUnits.MegaukGallonPerDay:
-            return f"""{self.megauk_gallons_per_day} Mgal (U. K.)/d"""
+            return f"""{super()._truncate_fraction_digits(self.megauk_gallons_per_day, fractional_digits)} Mgal (U. K.)/d"""
         
         if unit == VolumeFlowUnits.MegaukGallonPerSecond:
-            return f"""{self.megauk_gallons_per_second} Mgal (imp.)/s"""
+            return f"""{super()._truncate_fraction_digits(self.megauk_gallons_per_second, fractional_digits)} Mgal (imp.)/s"""
         
         return f'{self._value}'
 

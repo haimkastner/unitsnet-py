@@ -1782,138 +1782,146 @@ class Length(AbstractMeasure):
         return self.__megalight_years
 
     
-    def to_string(self, unit: LengthUnits = LengthUnits.Meter) -> str:
+    def to_string(self, unit: LengthUnits = LengthUnits.Meter, fractional_digits: int = None) -> str:
         """
-        Format the Length to string.
-        Note! the default format for Length is Meter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Length to a string.
+        
+        Note: the default format for Length is Meter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Length. Default is 'Meter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LengthUnits.Meter:
-            return f"""{self.meters} m"""
+            return f"""{super()._truncate_fraction_digits(self.meters, fractional_digits)} m"""
         
         if unit == LengthUnits.Mile:
-            return f"""{self.miles} mi"""
+            return f"""{super()._truncate_fraction_digits(self.miles, fractional_digits)} mi"""
         
         if unit == LengthUnits.Yard:
-            return f"""{self.yards} yd"""
+            return f"""{super()._truncate_fraction_digits(self.yards, fractional_digits)} yd"""
         
         if unit == LengthUnits.Foot:
-            return f"""{self.feet} ft"""
+            return f"""{super()._truncate_fraction_digits(self.feet, fractional_digits)} ft"""
         
         if unit == LengthUnits.UsSurveyFoot:
-            return f"""{self.us_survey_feet} ftUS"""
+            return f"""{super()._truncate_fraction_digits(self.us_survey_feet, fractional_digits)} ftUS"""
         
         if unit == LengthUnits.Inch:
-            return f"""{self.inches} in"""
+            return f"""{super()._truncate_fraction_digits(self.inches, fractional_digits)} in"""
         
         if unit == LengthUnits.Mil:
-            return f"""{self.mils} mil"""
+            return f"""{super()._truncate_fraction_digits(self.mils, fractional_digits)} mil"""
         
         if unit == LengthUnits.NauticalMile:
-            return f"""{self.nautical_miles} NM"""
+            return f"""{super()._truncate_fraction_digits(self.nautical_miles, fractional_digits)} NM"""
         
         if unit == LengthUnits.Fathom:
-            return f"""{self.fathoms} fathom"""
+            return f"""{super()._truncate_fraction_digits(self.fathoms, fractional_digits)} fathom"""
         
         if unit == LengthUnits.Shackle:
-            return f"""{self.shackles} shackle"""
+            return f"""{super()._truncate_fraction_digits(self.shackles, fractional_digits)} shackle"""
         
         if unit == LengthUnits.Microinch:
-            return f"""{self.microinches} µin"""
+            return f"""{super()._truncate_fraction_digits(self.microinches, fractional_digits)} µin"""
         
         if unit == LengthUnits.PrinterPoint:
-            return f"""{self.printer_points} pt"""
+            return f"""{super()._truncate_fraction_digits(self.printer_points, fractional_digits)} pt"""
         
         if unit == LengthUnits.DtpPoint:
-            return f"""{self.dtp_points} pt"""
+            return f"""{super()._truncate_fraction_digits(self.dtp_points, fractional_digits)} pt"""
         
         if unit == LengthUnits.PrinterPica:
-            return f"""{self.printer_picas} pica"""
+            return f"""{super()._truncate_fraction_digits(self.printer_picas, fractional_digits)} pica"""
         
         if unit == LengthUnits.DtpPica:
-            return f"""{self.dtp_picas} pica"""
+            return f"""{super()._truncate_fraction_digits(self.dtp_picas, fractional_digits)} pica"""
         
         if unit == LengthUnits.Twip:
-            return f"""{self.twips} twip"""
+            return f"""{super()._truncate_fraction_digits(self.twips, fractional_digits)} twip"""
         
         if unit == LengthUnits.Hand:
-            return f"""{self.hands} h"""
+            return f"""{super()._truncate_fraction_digits(self.hands, fractional_digits)} h"""
         
         if unit == LengthUnits.AstronomicalUnit:
-            return f"""{self.astronomical_units} au"""
+            return f"""{super()._truncate_fraction_digits(self.astronomical_units, fractional_digits)} au"""
         
         if unit == LengthUnits.Parsec:
-            return f"""{self.parsecs} pc"""
+            return f"""{super()._truncate_fraction_digits(self.parsecs, fractional_digits)} pc"""
         
         if unit == LengthUnits.LightYear:
-            return f"""{self.light_years} ly"""
+            return f"""{super()._truncate_fraction_digits(self.light_years, fractional_digits)} ly"""
         
         if unit == LengthUnits.SolarRadius:
-            return f"""{self.solar_radiuses} R⊙"""
+            return f"""{super()._truncate_fraction_digits(self.solar_radiuses, fractional_digits)} R⊙"""
         
         if unit == LengthUnits.Chain:
-            return f"""{self.chains} ch"""
+            return f"""{super()._truncate_fraction_digits(self.chains, fractional_digits)} ch"""
         
         if unit == LengthUnits.Angstrom:
-            return f"""{self.angstroms} Å"""
+            return f"""{super()._truncate_fraction_digits(self.angstroms, fractional_digits)} Å"""
         
         if unit == LengthUnits.DataMile:
-            return f"""{self.data_miles} DM"""
+            return f"""{super()._truncate_fraction_digits(self.data_miles, fractional_digits)} DM"""
         
         if unit == LengthUnits.Femtometer:
-            return f"""{self.femtometers} fm"""
+            return f"""{super()._truncate_fraction_digits(self.femtometers, fractional_digits)} fm"""
         
         if unit == LengthUnits.Picometer:
-            return f"""{self.picometers} pm"""
+            return f"""{super()._truncate_fraction_digits(self.picometers, fractional_digits)} pm"""
         
         if unit == LengthUnits.Nanometer:
-            return f"""{self.nanometers} nm"""
+            return f"""{super()._truncate_fraction_digits(self.nanometers, fractional_digits)} nm"""
         
         if unit == LengthUnits.Micrometer:
-            return f"""{self.micrometers} μm"""
+            return f"""{super()._truncate_fraction_digits(self.micrometers, fractional_digits)} μm"""
         
         if unit == LengthUnits.Millimeter:
-            return f"""{self.millimeters} mm"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters, fractional_digits)} mm"""
         
         if unit == LengthUnits.Centimeter:
-            return f"""{self.centimeters} cm"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters, fractional_digits)} cm"""
         
         if unit == LengthUnits.Decimeter:
-            return f"""{self.decimeters} dm"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters, fractional_digits)} dm"""
         
         if unit == LengthUnits.Decameter:
-            return f"""{self.decameters} dam"""
+            return f"""{super()._truncate_fraction_digits(self.decameters, fractional_digits)} dam"""
         
         if unit == LengthUnits.Hectometer:
-            return f"""{self.hectometers} hm"""
+            return f"""{super()._truncate_fraction_digits(self.hectometers, fractional_digits)} hm"""
         
         if unit == LengthUnits.Kilometer:
-            return f"""{self.kilometers} km"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers, fractional_digits)} km"""
         
         if unit == LengthUnits.Megameter:
-            return f"""{self.megameters} Mm"""
+            return f"""{super()._truncate_fraction_digits(self.megameters, fractional_digits)} Mm"""
         
         if unit == LengthUnits.Gigameter:
-            return f"""{self.gigameters} Gm"""
+            return f"""{super()._truncate_fraction_digits(self.gigameters, fractional_digits)} Gm"""
         
         if unit == LengthUnits.Kiloyard:
-            return f"""{self.kiloyards} kyd"""
+            return f"""{super()._truncate_fraction_digits(self.kiloyards, fractional_digits)} kyd"""
         
         if unit == LengthUnits.Kilofoot:
-            return f"""{self.kilofeet} kft"""
+            return f"""{super()._truncate_fraction_digits(self.kilofeet, fractional_digits)} kft"""
         
         if unit == LengthUnits.Kiloparsec:
-            return f"""{self.kiloparsecs} kpc"""
+            return f"""{super()._truncate_fraction_digits(self.kiloparsecs, fractional_digits)} kpc"""
         
         if unit == LengthUnits.Megaparsec:
-            return f"""{self.megaparsecs} Mpc"""
+            return f"""{super()._truncate_fraction_digits(self.megaparsecs, fractional_digits)} Mpc"""
         
         if unit == LengthUnits.KilolightYear:
-            return f"""{self.kilolight_years} kly"""
+            return f"""{super()._truncate_fraction_digits(self.kilolight_years, fractional_digits)} kly"""
         
         if unit == LengthUnits.MegalightYear:
-            return f"""{self.megalight_years} Mly"""
+            return f"""{super()._truncate_fraction_digits(self.megalight_years, fractional_digits)} Mly"""
         
         return f'{self._value}'
 

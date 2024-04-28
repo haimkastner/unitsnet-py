@@ -183,15 +183,23 @@ class Turbidity(AbstractMeasure):
         return self.__ntu
 
     
-    def to_string(self, unit: TurbidityUnits = TurbidityUnits.NTU) -> str:
+    def to_string(self, unit: TurbidityUnits = TurbidityUnits.NTU, fractional_digits: int = None) -> str:
         """
-        Format the Turbidity to string.
-        Note! the default format for Turbidity is NTU.
-        To specify the unit format set the 'unit' parameter.
+        Format the Turbidity to a string.
+        
+        Note: the default format for Turbidity is NTU.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Turbidity. Default is 'NTU'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TurbidityUnits.NTU:
-            return f"""{self.ntu} NTU"""
+            return f"""{super()._truncate_fraction_digits(self.ntu, fractional_digits)} NTU"""
         
         return f'{self._value}'
 

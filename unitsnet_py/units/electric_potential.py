@@ -378,30 +378,38 @@ class ElectricPotential(AbstractMeasure):
         return self.__megavolts
 
     
-    def to_string(self, unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt) -> str:
+    def to_string(self, unit: ElectricPotentialUnits = ElectricPotentialUnits.Volt, fractional_digits: int = None) -> str:
         """
-        Format the ElectricPotential to string.
-        Note! the default format for ElectricPotential is Volt.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricPotential to a string.
+        
+        Note: the default format for ElectricPotential is Volt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricPotential. Default is 'Volt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricPotentialUnits.Volt:
-            return f"""{self.volts} V"""
+            return f"""{super()._truncate_fraction_digits(self.volts, fractional_digits)} V"""
         
         if unit == ElectricPotentialUnits.Nanovolt:
-            return f"""{self.nanovolts} nV"""
+            return f"""{super()._truncate_fraction_digits(self.nanovolts, fractional_digits)} nV"""
         
         if unit == ElectricPotentialUnits.Microvolt:
-            return f"""{self.microvolts} μV"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts, fractional_digits)} μV"""
         
         if unit == ElectricPotentialUnits.Millivolt:
-            return f"""{self.millivolts} mV"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts, fractional_digits)} mV"""
         
         if unit == ElectricPotentialUnits.Kilovolt:
-            return f"""{self.kilovolts} kV"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts, fractional_digits)} kV"""
         
         if unit == ElectricPotentialUnits.Megavolt:
-            return f"""{self.megavolts} MV"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts, fractional_digits)} MV"""
         
         return f'{self._value}'
 

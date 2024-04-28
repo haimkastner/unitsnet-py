@@ -651,51 +651,59 @@ class Impulse(AbstractMeasure):
         return self.__meganewton_seconds
 
     
-    def to_string(self, unit: ImpulseUnits = ImpulseUnits.NewtonSecond) -> str:
+    def to_string(self, unit: ImpulseUnits = ImpulseUnits.NewtonSecond, fractional_digits: int = None) -> str:
         """
-        Format the Impulse to string.
-        Note! the default format for Impulse is NewtonSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the Impulse to a string.
+        
+        Note: the default format for Impulse is NewtonSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Impulse. Default is 'NewtonSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ImpulseUnits.KilogramMeterPerSecond:
-            return f"""{self.kilogram_meters_per_second} kg·m/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_meters_per_second, fractional_digits)} kg·m/s"""
         
         if unit == ImpulseUnits.NewtonSecond:
-            return f"""{self.newton_seconds} N·s"""
+            return f"""{super()._truncate_fraction_digits(self.newton_seconds, fractional_digits)} N·s"""
         
         if unit == ImpulseUnits.PoundFootPerSecond:
-            return f"""{self.pound_feet_per_second} lb·ft/s"""
+            return f"""{super()._truncate_fraction_digits(self.pound_feet_per_second, fractional_digits)} lb·ft/s"""
         
         if unit == ImpulseUnits.PoundForceSecond:
-            return f"""{self.pound_force_seconds} lbf·s"""
+            return f"""{super()._truncate_fraction_digits(self.pound_force_seconds, fractional_digits)} lbf·s"""
         
         if unit == ImpulseUnits.SlugFootPerSecond:
-            return f"""{self.slug_feet_per_second} slug·ft/s"""
+            return f"""{super()._truncate_fraction_digits(self.slug_feet_per_second, fractional_digits)} slug·ft/s"""
         
         if unit == ImpulseUnits.NanonewtonSecond:
-            return f"""{self.nanonewton_seconds} nN·s"""
+            return f"""{super()._truncate_fraction_digits(self.nanonewton_seconds, fractional_digits)} nN·s"""
         
         if unit == ImpulseUnits.MicronewtonSecond:
-            return f"""{self.micronewton_seconds} μN·s"""
+            return f"""{super()._truncate_fraction_digits(self.micronewton_seconds, fractional_digits)} μN·s"""
         
         if unit == ImpulseUnits.MillinewtonSecond:
-            return f"""{self.millinewton_seconds} mN·s"""
+            return f"""{super()._truncate_fraction_digits(self.millinewton_seconds, fractional_digits)} mN·s"""
         
         if unit == ImpulseUnits.CentinewtonSecond:
-            return f"""{self.centinewton_seconds} cN·s"""
+            return f"""{super()._truncate_fraction_digits(self.centinewton_seconds, fractional_digits)} cN·s"""
         
         if unit == ImpulseUnits.DecinewtonSecond:
-            return f"""{self.decinewton_seconds} dN·s"""
+            return f"""{super()._truncate_fraction_digits(self.decinewton_seconds, fractional_digits)} dN·s"""
         
         if unit == ImpulseUnits.DecanewtonSecond:
-            return f"""{self.decanewton_seconds} daN·s"""
+            return f"""{super()._truncate_fraction_digits(self.decanewton_seconds, fractional_digits)} daN·s"""
         
         if unit == ImpulseUnits.KilonewtonSecond:
-            return f"""{self.kilonewton_seconds} kN·s"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewton_seconds, fractional_digits)} kN·s"""
         
         if unit == ImpulseUnits.MeganewtonSecond:
-            return f"""{self.meganewton_seconds} MN·s"""
+            return f"""{super()._truncate_fraction_digits(self.meganewton_seconds, fractional_digits)} MN·s"""
         
         return f'{self._value}'
 

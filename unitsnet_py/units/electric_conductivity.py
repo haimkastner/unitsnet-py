@@ -378,30 +378,38 @@ class ElectricConductivity(AbstractMeasure):
         return self.__millisiemens_per_centimeter
 
     
-    def to_string(self, unit: ElectricConductivityUnits = ElectricConductivityUnits.SiemensPerMeter) -> str:
+    def to_string(self, unit: ElectricConductivityUnits = ElectricConductivityUnits.SiemensPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricConductivity to string.
-        Note! the default format for ElectricConductivity is SiemensPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricConductivity to a string.
+        
+        Note: the default format for ElectricConductivity is SiemensPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricConductivity. Default is 'SiemensPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricConductivityUnits.SiemensPerMeter:
-            return f"""{self.siemens_per_meter} S/m"""
+            return f"""{super()._truncate_fraction_digits(self.siemens_per_meter, fractional_digits)} S/m"""
         
         if unit == ElectricConductivityUnits.SiemensPerInch:
-            return f"""{self.siemens_per_inch} S/in"""
+            return f"""{super()._truncate_fraction_digits(self.siemens_per_inch, fractional_digits)} S/in"""
         
         if unit == ElectricConductivityUnits.SiemensPerFoot:
-            return f"""{self.siemens_per_foot} S/ft"""
+            return f"""{super()._truncate_fraction_digits(self.siemens_per_foot, fractional_digits)} S/ft"""
         
         if unit == ElectricConductivityUnits.SiemensPerCentimeter:
-            return f"""{self.siemens_per_centimeter} S/cm"""
+            return f"""{super()._truncate_fraction_digits(self.siemens_per_centimeter, fractional_digits)} S/cm"""
         
         if unit == ElectricConductivityUnits.MicrosiemensPerCentimeter:
-            return f"""{self.microsiemens_per_centimeter} μS/cm"""
+            return f"""{super()._truncate_fraction_digits(self.microsiemens_per_centimeter, fractional_digits)} μS/cm"""
         
         if unit == ElectricConductivityUnits.MillisiemensPerCentimeter:
-            return f"""{self.millisiemens_per_centimeter} mS/cm"""
+            return f"""{super()._truncate_fraction_digits(self.millisiemens_per_centimeter, fractional_digits)} mS/cm"""
         
         return f'{self._value}'
 

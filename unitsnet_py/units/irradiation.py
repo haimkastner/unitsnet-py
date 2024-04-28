@@ -495,39 +495,47 @@ class Irradiation(AbstractMeasure):
         return self.__kilobtus_per_square_foot
 
     
-    def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter) -> str:
+    def to_string(self, unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the Irradiation to string.
-        Note! the default format for Irradiation is JoulePerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Irradiation to a string.
+        
+        Note: the default format for Irradiation is JoulePerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Irradiation. Default is 'JoulePerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == IrradiationUnits.JoulePerSquareMeter:
-            return f"""{self.joules_per_square_meter} J/m²"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_square_meter, fractional_digits)} J/m²"""
         
         if unit == IrradiationUnits.JoulePerSquareCentimeter:
-            return f"""{self.joules_per_square_centimeter} J/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_square_centimeter, fractional_digits)} J/cm²"""
         
         if unit == IrradiationUnits.JoulePerSquareMillimeter:
-            return f"""{self.joules_per_square_millimeter} J/mm²"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_square_millimeter, fractional_digits)} J/mm²"""
         
         if unit == IrradiationUnits.WattHourPerSquareMeter:
-            return f"""{self.watt_hours_per_square_meter} Wh/m²"""
+            return f"""{super()._truncate_fraction_digits(self.watt_hours_per_square_meter, fractional_digits)} Wh/m²"""
         
         if unit == IrradiationUnits.BtuPerSquareFoot:
-            return f"""{self.btus_per_square_foot} Btu/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_square_foot, fractional_digits)} Btu/ft²"""
         
         if unit == IrradiationUnits.KilojoulePerSquareMeter:
-            return f"""{self.kilojoules_per_square_meter} kJ/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_square_meter, fractional_digits)} kJ/m²"""
         
         if unit == IrradiationUnits.MillijoulePerSquareCentimeter:
-            return f"""{self.millijoules_per_square_centimeter} mJ/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.millijoules_per_square_centimeter, fractional_digits)} mJ/cm²"""
         
         if unit == IrradiationUnits.KilowattHourPerSquareMeter:
-            return f"""{self.kilowatt_hours_per_square_meter} kWh/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_hours_per_square_meter, fractional_digits)} kWh/m²"""
         
         if unit == IrradiationUnits.KilobtuPerSquareFoot:
-            return f"""{self.kilobtus_per_square_foot} kBtu/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.kilobtus_per_square_foot, fractional_digits)} kBtu/ft²"""
         
         return f'{self._value}'
 

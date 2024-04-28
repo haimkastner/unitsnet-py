@@ -2328,180 +2328,188 @@ class Density(AbstractMeasure):
         return self.__decigrams_per_milliliter
 
     
-    def to_string(self, unit: DensityUnits = DensityUnits.KilogramPerCubicMeter) -> str:
+    def to_string(self, unit: DensityUnits = DensityUnits.KilogramPerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the Density to string.
-        Note! the default format for Density is KilogramPerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Density to a string.
+        
+        Note: the default format for Density is KilogramPerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Density. Default is 'KilogramPerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == DensityUnits.GramPerCubicMillimeter:
-            return f"""{self.grams_per_cubic_millimeter} g/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_millimeter, fractional_digits)} g/mm³"""
         
         if unit == DensityUnits.GramPerCubicCentimeter:
-            return f"""{self.grams_per_cubic_centimeter} g/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_centimeter, fractional_digits)} g/cm³"""
         
         if unit == DensityUnits.GramPerCubicMeter:
-            return f"""{self.grams_per_cubic_meter} g/m³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_meter, fractional_digits)} g/m³"""
         
         if unit == DensityUnits.PoundPerCubicInch:
-            return f"""{self.pounds_per_cubic_inch} lb/in³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_inch, fractional_digits)} lb/in³"""
         
         if unit == DensityUnits.PoundPerCubicFoot:
-            return f"""{self.pounds_per_cubic_foot} lb/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_foot, fractional_digits)} lb/ft³"""
         
         if unit == DensityUnits.PoundPerCubicYard:
-            return f"""{self.pounds_per_cubic_yard} lb/yd³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_yard, fractional_digits)} lb/yd³"""
         
         if unit == DensityUnits.TonnePerCubicMillimeter:
-            return f"""{self.tonnes_per_cubic_millimeter} t/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_millimeter, fractional_digits)} t/mm³"""
         
         if unit == DensityUnits.TonnePerCubicCentimeter:
-            return f"""{self.tonnes_per_cubic_centimeter} t/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_centimeter, fractional_digits)} t/cm³"""
         
         if unit == DensityUnits.TonnePerCubicMeter:
-            return f"""{self.tonnes_per_cubic_meter} t/m³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_meter, fractional_digits)} t/m³"""
         
         if unit == DensityUnits.SlugPerCubicFoot:
-            return f"""{self.slugs_per_cubic_foot} slug/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_foot, fractional_digits)} slug/ft³"""
         
         if unit == DensityUnits.GramPerLiter:
-            return f"""{self.grams_per_liter} g/L"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_liter, fractional_digits)} g/L"""
         
         if unit == DensityUnits.GramPerDeciliter:
-            return f"""{self.grams_per_deci_liter} g/dl"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_deci_liter, fractional_digits)} g/dl"""
         
         if unit == DensityUnits.GramPerMilliliter:
-            return f"""{self.grams_per_milliliter} g/ml"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_milliliter, fractional_digits)} g/ml"""
         
         if unit == DensityUnits.PoundPerUSGallon:
-            return f"""{self.pounds_per_us_gallon} ppg (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_us_gallon, fractional_digits)} ppg (U.S.)"""
         
         if unit == DensityUnits.PoundPerImperialGallon:
-            return f"""{self.pounds_per_imperial_gallon} ppg (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_imperial_gallon, fractional_digits)} ppg (imp.)"""
         
         if unit == DensityUnits.KilogramPerLiter:
-            return f"""{self.kilograms_per_liter} kg/l"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_liter, fractional_digits)} kg/l"""
         
         if unit == DensityUnits.TonnePerCubicFoot:
-            return f"""{self.tonnes_per_cubic_foot} t/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_foot, fractional_digits)} t/ft³"""
         
         if unit == DensityUnits.TonnePerCubicInch:
-            return f"""{self.tonnes_per_cubic_inch} t/in³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_inch, fractional_digits)} t/in³"""
         
         if unit == DensityUnits.GramPerCubicFoot:
-            return f"""{self.grams_per_cubic_foot} g/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_foot, fractional_digits)} g/ft³"""
         
         if unit == DensityUnits.GramPerCubicInch:
-            return f"""{self.grams_per_cubic_inch} g/in³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_inch, fractional_digits)} g/in³"""
         
         if unit == DensityUnits.PoundPerCubicMeter:
-            return f"""{self.pounds_per_cubic_meter} lb/m³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_meter, fractional_digits)} lb/m³"""
         
         if unit == DensityUnits.PoundPerCubicCentimeter:
-            return f"""{self.pounds_per_cubic_centimeter} lb/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_centimeter, fractional_digits)} lb/cm³"""
         
         if unit == DensityUnits.PoundPerCubicMillimeter:
-            return f"""{self.pounds_per_cubic_millimeter} lb/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_millimeter, fractional_digits)} lb/mm³"""
         
         if unit == DensityUnits.SlugPerCubicMeter:
-            return f"""{self.slugs_per_cubic_meter} slug/m³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_meter, fractional_digits)} slug/m³"""
         
         if unit == DensityUnits.SlugPerCubicCentimeter:
-            return f"""{self.slugs_per_cubic_centimeter} slug/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_centimeter, fractional_digits)} slug/cm³"""
         
         if unit == DensityUnits.SlugPerCubicMillimeter:
-            return f"""{self.slugs_per_cubic_millimeter} slug/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_millimeter, fractional_digits)} slug/mm³"""
         
         if unit == DensityUnits.SlugPerCubicInch:
-            return f"""{self.slugs_per_cubic_inch} slug/in³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_inch, fractional_digits)} slug/in³"""
         
         if unit == DensityUnits.KilogramPerCubicMillimeter:
-            return f"""{self.kilograms_per_cubic_millimeter} kg/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_millimeter, fractional_digits)} kg/mm³"""
         
         if unit == DensityUnits.KilogramPerCubicCentimeter:
-            return f"""{self.kilograms_per_cubic_centimeter} kg/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_centimeter, fractional_digits)} kg/cm³"""
         
         if unit == DensityUnits.KilogramPerCubicMeter:
-            return f"""{self.kilograms_per_cubic_meter} kg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_meter, fractional_digits)} kg/m³"""
         
         if unit == DensityUnits.MilligramPerCubicMeter:
-            return f"""{self.milligrams_per_cubic_meter} mg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_cubic_meter, fractional_digits)} mg/m³"""
         
         if unit == DensityUnits.MicrogramPerCubicMeter:
-            return f"""{self.micrograms_per_cubic_meter} μg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_cubic_meter, fractional_digits)} μg/m³"""
         
         if unit == DensityUnits.KilopoundPerCubicInch:
-            return f"""{self.kilopounds_per_cubic_inch} klb/in³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_cubic_inch, fractional_digits)} klb/in³"""
         
         if unit == DensityUnits.KilopoundPerCubicFoot:
-            return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_cubic_foot, fractional_digits)} klb/ft³"""
         
         if unit == DensityUnits.KilopoundPerCubicYard:
-            return f"""{self.kilopounds_per_cubic_yard} klb/yd³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_cubic_yard, fractional_digits)} klb/yd³"""
         
         if unit == DensityUnits.FemtogramPerLiter:
-            return f"""{self.femtograms_per_liter} fg/L"""
+            return f"""{super()._truncate_fraction_digits(self.femtograms_per_liter, fractional_digits)} fg/L"""
         
         if unit == DensityUnits.PicogramPerLiter:
-            return f"""{self.picograms_per_liter} pg/L"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_liter, fractional_digits)} pg/L"""
         
         if unit == DensityUnits.NanogramPerLiter:
-            return f"""{self.nanograms_per_liter} ng/L"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_liter, fractional_digits)} ng/L"""
         
         if unit == DensityUnits.MicrogramPerLiter:
-            return f"""{self.micrograms_per_liter} μg/L"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_liter, fractional_digits)} μg/L"""
         
         if unit == DensityUnits.MilligramPerLiter:
-            return f"""{self.milligrams_per_liter} mg/L"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_liter, fractional_digits)} mg/L"""
         
         if unit == DensityUnits.CentigramPerLiter:
-            return f"""{self.centigrams_per_liter} cg/L"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_liter, fractional_digits)} cg/L"""
         
         if unit == DensityUnits.DecigramPerLiter:
-            return f"""{self.decigrams_per_liter} dg/L"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_liter, fractional_digits)} dg/L"""
         
         if unit == DensityUnits.FemtogramPerDeciliter:
-            return f"""{self.femtograms_per_deci_liter} fg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.femtograms_per_deci_liter, fractional_digits)} fg/dl"""
         
         if unit == DensityUnits.PicogramPerDeciliter:
-            return f"""{self.picograms_per_deci_liter} pg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_deci_liter, fractional_digits)} pg/dl"""
         
         if unit == DensityUnits.NanogramPerDeciliter:
-            return f"""{self.nanograms_per_deci_liter} ng/dl"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_deci_liter, fractional_digits)} ng/dl"""
         
         if unit == DensityUnits.MicrogramPerDeciliter:
-            return f"""{self.micrograms_per_deci_liter} μg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_deci_liter, fractional_digits)} μg/dl"""
         
         if unit == DensityUnits.MilligramPerDeciliter:
-            return f"""{self.milligrams_per_deci_liter} mg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_deci_liter, fractional_digits)} mg/dl"""
         
         if unit == DensityUnits.CentigramPerDeciliter:
-            return f"""{self.centigrams_per_deci_liter} cg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_deci_liter, fractional_digits)} cg/dl"""
         
         if unit == DensityUnits.DecigramPerDeciliter:
-            return f"""{self.decigrams_per_deci_liter} dg/dl"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_deci_liter, fractional_digits)} dg/dl"""
         
         if unit == DensityUnits.FemtogramPerMilliliter:
-            return f"""{self.femtograms_per_milliliter} fg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.femtograms_per_milliliter, fractional_digits)} fg/ml"""
         
         if unit == DensityUnits.PicogramPerMilliliter:
-            return f"""{self.picograms_per_milliliter} pg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_milliliter, fractional_digits)} pg/ml"""
         
         if unit == DensityUnits.NanogramPerMilliliter:
-            return f"""{self.nanograms_per_milliliter} ng/ml"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_milliliter, fractional_digits)} ng/ml"""
         
         if unit == DensityUnits.MicrogramPerMilliliter:
-            return f"""{self.micrograms_per_milliliter} μg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_milliliter, fractional_digits)} μg/ml"""
         
         if unit == DensityUnits.MilligramPerMilliliter:
-            return f"""{self.milligrams_per_milliliter} mg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_milliliter, fractional_digits)} mg/ml"""
         
         if unit == DensityUnits.CentigramPerMilliliter:
-            return f"""{self.centigrams_per_milliliter} cg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_milliliter, fractional_digits)} cg/ml"""
         
         if unit == DensityUnits.DecigramPerMilliliter:
-            return f"""{self.decigrams_per_milliliter} dg/ml"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_milliliter, fractional_digits)} dg/ml"""
         
         return f'{self._value}'
 

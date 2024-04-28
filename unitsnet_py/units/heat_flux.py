@@ -846,66 +846,74 @@ class HeatFlux(AbstractMeasure):
         return self.__kilocalories_per_second_square_centimeter
 
     
-    def to_string(self, unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter) -> str:
+    def to_string(self, unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the HeatFlux to string.
-        Note! the default format for HeatFlux is WattPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the HeatFlux to a string.
+        
+        Note: the default format for HeatFlux is WattPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the HeatFlux. Default is 'WattPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == HeatFluxUnits.WattPerSquareMeter:
-            return f"""{self.watts_per_square_meter} W/m²"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter, fractional_digits)} W/m²"""
         
         if unit == HeatFluxUnits.WattPerSquareInch:
-            return f"""{self.watts_per_square_inch} W/in²"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_inch, fractional_digits)} W/in²"""
         
         if unit == HeatFluxUnits.WattPerSquareFoot:
-            return f"""{self.watts_per_square_foot} W/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_foot, fractional_digits)} W/ft²"""
         
         if unit == HeatFluxUnits.BtuPerSecondSquareInch:
-            return f"""{self.btus_per_second_square_inch} BTU/s·in²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_inch, fractional_digits)} BTU/s·in²"""
         
         if unit == HeatFluxUnits.BtuPerSecondSquareFoot:
-            return f"""{self.btus_per_second_square_foot} BTU/s·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_foot, fractional_digits)} BTU/s·ft²"""
         
         if unit == HeatFluxUnits.BtuPerMinuteSquareFoot:
-            return f"""{self.btus_per_minute_square_foot} BTU/min·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_minute_square_foot, fractional_digits)} BTU/min·ft²"""
         
         if unit == HeatFluxUnits.BtuPerHourSquareFoot:
-            return f"""{self.btus_per_hour_square_foot} BTU/h·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot, fractional_digits)} BTU/h·ft²"""
         
         if unit == HeatFluxUnits.CaloriePerSecondSquareCentimeter:
-            return f"""{self.calories_per_second_square_centimeter} cal/s·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_second_square_centimeter, fractional_digits)} cal/s·cm²"""
         
         if unit == HeatFluxUnits.KilocaloriePerHourSquareMeter:
-            return f"""{self.kilocalories_per_hour_square_meter} kcal/h·m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter, fractional_digits)} kcal/h·m²"""
         
         if unit == HeatFluxUnits.PoundForcePerFootSecond:
-            return f"""{self.pounds_force_per_foot_second} lbf/(ft·s)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_foot_second, fractional_digits)} lbf/(ft·s)"""
         
         if unit == HeatFluxUnits.PoundPerSecondCubed:
-            return f"""{self.pounds_per_second_cubed} lb/s³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_second_cubed, fractional_digits)} lb/s³"""
         
         if unit == HeatFluxUnits.NanowattPerSquareMeter:
-            return f"""{self.nanowatts_per_square_meter} nW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_square_meter, fractional_digits)} nW/m²"""
         
         if unit == HeatFluxUnits.MicrowattPerSquareMeter:
-            return f"""{self.microwatts_per_square_meter} μW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_square_meter, fractional_digits)} μW/m²"""
         
         if unit == HeatFluxUnits.MilliwattPerSquareMeter:
-            return f"""{self.milliwatts_per_square_meter} mW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_square_meter, fractional_digits)} mW/m²"""
         
         if unit == HeatFluxUnits.CentiwattPerSquareMeter:
-            return f"""{self.centiwatts_per_square_meter} cW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.centiwatts_per_square_meter, fractional_digits)} cW/m²"""
         
         if unit == HeatFluxUnits.DeciwattPerSquareMeter:
-            return f"""{self.deciwatts_per_square_meter} dW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts_per_square_meter, fractional_digits)} dW/m²"""
         
         if unit == HeatFluxUnits.KilowattPerSquareMeter:
-            return f"""{self.kilowatts_per_square_meter} kW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_square_meter, fractional_digits)} kW/m²"""
         
         if unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return f"""{self.kilocalories_per_second_square_centimeter} kcal/s·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_second_square_centimeter, fractional_digits)} kcal/s·cm²"""
         
         return f'{self._value}'
 

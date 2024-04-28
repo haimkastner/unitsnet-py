@@ -261,21 +261,29 @@ class LeakRate(AbstractMeasure):
         return self.__torr_liters_per_second
 
     
-    def to_string(self, unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond) -> str:
+    def to_string(self, unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the LeakRate to string.
-        Note! the default format for LeakRate is PascalCubicMeterPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the LeakRate to a string.
+        
+        Note: the default format for LeakRate is PascalCubicMeterPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the LeakRate. Default is 'PascalCubicMeterPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LeakRateUnits.PascalCubicMeterPerSecond:
-            return f"""{self.pascal_cubic_meters_per_second} Pa·m³/s"""
+            return f"""{super()._truncate_fraction_digits(self.pascal_cubic_meters_per_second, fractional_digits)} Pa·m³/s"""
         
         if unit == LeakRateUnits.MillibarLiterPerSecond:
-            return f"""{self.millibar_liters_per_second} mbar·l/s"""
+            return f"""{super()._truncate_fraction_digits(self.millibar_liters_per_second, fractional_digits)} mbar·l/s"""
         
         if unit == LeakRateUnits.TorrLiterPerSecond:
-            return f"""{self.torr_liters_per_second} Torr·l/s"""
+            return f"""{super()._truncate_fraction_digits(self.torr_liters_per_second, fractional_digits)} Torr·l/s"""
         
         return f'{self._value}'
 

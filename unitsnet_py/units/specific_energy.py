@@ -1314,102 +1314,110 @@ class SpecificEnergy(AbstractMeasure):
         return self.__gigawatt_hours_per_pound
 
     
-    def to_string(self, unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram) -> str:
+    def to_string(self, unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram, fractional_digits: int = None) -> str:
         """
-        Format the SpecificEnergy to string.
-        Note! the default format for SpecificEnergy is JoulePerKilogram.
-        To specify the unit format set the 'unit' parameter.
+        Format the SpecificEnergy to a string.
+        
+        Note: the default format for SpecificEnergy is JoulePerKilogram.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SpecificEnergy. Default is 'JoulePerKilogram'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpecificEnergyUnits.JoulePerKilogram:
-            return f"""{self.joules_per_kilogram} J/kg"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram, fractional_digits)} J/kg"""
         
         if unit == SpecificEnergyUnits.MegaJoulePerTonne:
-            return f"""{self.mega_joules_per_tonne} MJ/t"""
+            return f"""{super()._truncate_fraction_digits(self.mega_joules_per_tonne, fractional_digits)} MJ/t"""
         
         if unit == SpecificEnergyUnits.CaloriePerGram:
-            return f"""{self.calories_per_gram} cal/g"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_gram, fractional_digits)} cal/g"""
         
         if unit == SpecificEnergyUnits.WattHourPerKilogram:
-            return f"""{self.watt_hours_per_kilogram} Wh/kg"""
+            return f"""{super()._truncate_fraction_digits(self.watt_hours_per_kilogram, fractional_digits)} Wh/kg"""
         
         if unit == SpecificEnergyUnits.WattDayPerKilogram:
-            return f"""{self.watt_days_per_kilogram} Wd/kg"""
+            return f"""{super()._truncate_fraction_digits(self.watt_days_per_kilogram, fractional_digits)} Wd/kg"""
         
         if unit == SpecificEnergyUnits.WattDayPerTonne:
-            return f"""{self.watt_days_per_tonne} Wd/t"""
+            return f"""{super()._truncate_fraction_digits(self.watt_days_per_tonne, fractional_digits)} Wd/t"""
         
         if unit == SpecificEnergyUnits.WattDayPerShortTon:
-            return f"""{self.watt_days_per_short_ton} Wd/ST"""
+            return f"""{super()._truncate_fraction_digits(self.watt_days_per_short_ton, fractional_digits)} Wd/ST"""
         
         if unit == SpecificEnergyUnits.WattHourPerPound:
-            return f"""{self.watt_hours_per_pound} Wh/lbs"""
+            return f"""{super()._truncate_fraction_digits(self.watt_hours_per_pound, fractional_digits)} Wh/lbs"""
         
         if unit == SpecificEnergyUnits.BtuPerPound:
-            return f"""{self.btu_per_pound} btu/lb"""
+            return f"""{super()._truncate_fraction_digits(self.btu_per_pound, fractional_digits)} btu/lb"""
         
         if unit == SpecificEnergyUnits.KilojoulePerKilogram:
-            return f"""{self.kilojoules_per_kilogram} kJ/kg"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram, fractional_digits)} kJ/kg"""
         
         if unit == SpecificEnergyUnits.MegajoulePerKilogram:
-            return f"""{self.megajoules_per_kilogram} MJ/kg"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram, fractional_digits)} MJ/kg"""
         
         if unit == SpecificEnergyUnits.KilocaloriePerGram:
-            return f"""{self.kilocalories_per_gram} kcal/g"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_gram, fractional_digits)} kcal/g"""
         
         if unit == SpecificEnergyUnits.KilowattHourPerKilogram:
-            return f"""{self.kilowatt_hours_per_kilogram} kWh/kg"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_hours_per_kilogram, fractional_digits)} kWh/kg"""
         
         if unit == SpecificEnergyUnits.MegawattHourPerKilogram:
-            return f"""{self.megawatt_hours_per_kilogram} MWh/kg"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_hours_per_kilogram, fractional_digits)} MWh/kg"""
         
         if unit == SpecificEnergyUnits.GigawattHourPerKilogram:
-            return f"""{self.gigawatt_hours_per_kilogram} GWh/kg"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_hours_per_kilogram, fractional_digits)} GWh/kg"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerKilogram:
-            return f"""{self.kilowatt_days_per_kilogram} kWd/kg"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_days_per_kilogram, fractional_digits)} kWd/kg"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerKilogram:
-            return f"""{self.megawatt_days_per_kilogram} MWd/kg"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_days_per_kilogram, fractional_digits)} MWd/kg"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerKilogram:
-            return f"""{self.gigawatt_days_per_kilogram} GWd/kg"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_days_per_kilogram, fractional_digits)} GWd/kg"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerKilogram:
-            return f"""{self.terawatt_days_per_kilogram} TWd/kg"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_days_per_kilogram, fractional_digits)} TWd/kg"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerTonne:
-            return f"""{self.kilowatt_days_per_tonne} kWd/t"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_days_per_tonne, fractional_digits)} kWd/t"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerTonne:
-            return f"""{self.megawatt_days_per_tonne} MWd/t"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_days_per_tonne, fractional_digits)} MWd/t"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerTonne:
-            return f"""{self.gigawatt_days_per_tonne} GWd/t"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_days_per_tonne, fractional_digits)} GWd/t"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerTonne:
-            return f"""{self.terawatt_days_per_tonne} TWd/t"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_days_per_tonne, fractional_digits)} TWd/t"""
         
         if unit == SpecificEnergyUnits.KilowattDayPerShortTon:
-            return f"""{self.kilowatt_days_per_short_ton} kWd/ST"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_days_per_short_ton, fractional_digits)} kWd/ST"""
         
         if unit == SpecificEnergyUnits.MegawattDayPerShortTon:
-            return f"""{self.megawatt_days_per_short_ton} MWd/ST"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_days_per_short_ton, fractional_digits)} MWd/ST"""
         
         if unit == SpecificEnergyUnits.GigawattDayPerShortTon:
-            return f"""{self.gigawatt_days_per_short_ton} GWd/ST"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_days_per_short_ton, fractional_digits)} GWd/ST"""
         
         if unit == SpecificEnergyUnits.TerawattDayPerShortTon:
-            return f"""{self.terawatt_days_per_short_ton} TWd/ST"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_days_per_short_ton, fractional_digits)} TWd/ST"""
         
         if unit == SpecificEnergyUnits.KilowattHourPerPound:
-            return f"""{self.kilowatt_hours_per_pound} kWh/lbs"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_hours_per_pound, fractional_digits)} kWh/lbs"""
         
         if unit == SpecificEnergyUnits.MegawattHourPerPound:
-            return f"""{self.megawatt_hours_per_pound} MWh/lbs"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_hours_per_pound, fractional_digits)} MWh/lbs"""
         
         if unit == SpecificEnergyUnits.GigawattHourPerPound:
-            return f"""{self.gigawatt_hours_per_pound} GWh/lbs"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_hours_per_pound, fractional_digits)} GWh/lbs"""
         
         return f'{self._value}'
 

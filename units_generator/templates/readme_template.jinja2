@@ -53,6 +53,9 @@ print(angle.to_string())  # 180 °
 
 print(angle.to_string(AngleUnits.Degree))  # 180 °
 print(angle.to_string(AngleUnits.Radian))  # 3.141592653589793 rad
+
+# Specify fraction digits max length
+print(angle.to_string(AngleUnits.Radian, 2))  # 3.14 rad
 ```
 
 ## Additional methods

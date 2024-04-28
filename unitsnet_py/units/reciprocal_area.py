@@ -573,45 +573,53 @@ class ReciprocalArea(AbstractMeasure):
         return self.__inverse_square_inches
 
     
-    def to_string(self, unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter) -> str:
+    def to_string(self, unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the ReciprocalArea to string.
-        Note! the default format for ReciprocalArea is InverseSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ReciprocalArea to a string.
+        
+        Note: the default format for ReciprocalArea is InverseSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ReciprocalArea. Default is 'InverseSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ReciprocalAreaUnits.InverseSquareMeter:
-            return f"""{self.inverse_square_meters} m⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_meters, fractional_digits)} m⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareKilometer:
-            return f"""{self.inverse_square_kilometers} km⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_kilometers, fractional_digits)} km⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareDecimeter:
-            return f"""{self.inverse_square_decimeters} dm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_decimeters, fractional_digits)} dm⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareCentimeter:
-            return f"""{self.inverse_square_centimeters} cm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_centimeters, fractional_digits)} cm⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareMillimeter:
-            return f"""{self.inverse_square_millimeters} mm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_millimeters, fractional_digits)} mm⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareMicrometer:
-            return f"""{self.inverse_square_micrometers} µm⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_micrometers, fractional_digits)} µm⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareMile:
-            return f"""{self.inverse_square_miles} mi⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_miles, fractional_digits)} mi⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareYard:
-            return f"""{self.inverse_square_yards} yd⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_yards, fractional_digits)} yd⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseSquareFoot:
-            return f"""{self.inverse_square_feet} ft⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_feet, fractional_digits)} ft⁻²"""
         
         if unit == ReciprocalAreaUnits.InverseUsSurveySquareFoot:
-            return f"""{self.inverse_us_survey_square_feet} ft⁻² (US)"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_us_survey_square_feet, fractional_digits)} ft⁻² (US)"""
         
         if unit == ReciprocalAreaUnits.InverseSquareInch:
-            return f"""{self.inverse_square_inches} in⁻²"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_square_inches, fractional_digits)} in⁻²"""
         
         return f'{self._value}'
 

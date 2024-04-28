@@ -495,39 +495,47 @@ class ElectricCurrent(AbstractMeasure):
         return self.__megaamperes
 
     
-    def to_string(self, unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere) -> str:
+    def to_string(self, unit: ElectricCurrentUnits = ElectricCurrentUnits.Ampere, fractional_digits: int = None) -> str:
         """
-        Format the ElectricCurrent to string.
-        Note! the default format for ElectricCurrent is Ampere.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricCurrent to a string.
+        
+        Note: the default format for ElectricCurrent is Ampere.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricCurrent. Default is 'Ampere'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricCurrentUnits.Ampere:
-            return f"""{self.amperes} A"""
+            return f"""{super()._truncate_fraction_digits(self.amperes, fractional_digits)} A"""
         
         if unit == ElectricCurrentUnits.Femtoampere:
-            return f"""{self.femtoamperes} fA"""
+            return f"""{super()._truncate_fraction_digits(self.femtoamperes, fractional_digits)} fA"""
         
         if unit == ElectricCurrentUnits.Picoampere:
-            return f"""{self.picoamperes} pA"""
+            return f"""{super()._truncate_fraction_digits(self.picoamperes, fractional_digits)} pA"""
         
         if unit == ElectricCurrentUnits.Nanoampere:
-            return f"""{self.nanoamperes} nA"""
+            return f"""{super()._truncate_fraction_digits(self.nanoamperes, fractional_digits)} nA"""
         
         if unit == ElectricCurrentUnits.Microampere:
-            return f"""{self.microamperes} μA"""
+            return f"""{super()._truncate_fraction_digits(self.microamperes, fractional_digits)} μA"""
         
         if unit == ElectricCurrentUnits.Milliampere:
-            return f"""{self.milliamperes} mA"""
+            return f"""{super()._truncate_fraction_digits(self.milliamperes, fractional_digits)} mA"""
         
         if unit == ElectricCurrentUnits.Centiampere:
-            return f"""{self.centiamperes} cA"""
+            return f"""{super()._truncate_fraction_digits(self.centiamperes, fractional_digits)} cA"""
         
         if unit == ElectricCurrentUnits.Kiloampere:
-            return f"""{self.kiloamperes} kA"""
+            return f"""{super()._truncate_fraction_digits(self.kiloamperes, fractional_digits)} kA"""
         
         if unit == ElectricCurrentUnits.Megaampere:
-            return f"""{self.megaamperes} MA"""
+            return f"""{super()._truncate_fraction_digits(self.megaamperes, fractional_digits)} MA"""
         
         return f'{self._value}'
 

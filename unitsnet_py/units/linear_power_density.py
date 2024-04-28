@@ -1119,87 +1119,95 @@ class LinearPowerDensity(AbstractMeasure):
         return self.__gigawatts_per_foot
 
     
-    def to_string(self, unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter) -> str:
+    def to_string(self, unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the LinearPowerDensity to string.
-        Note! the default format for LinearPowerDensity is WattPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the LinearPowerDensity to a string.
+        
+        Note: the default format for LinearPowerDensity is WattPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the LinearPowerDensity. Default is 'WattPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LinearPowerDensityUnits.WattPerMeter:
-            return f"""{self.watts_per_meter} W/m"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_meter, fractional_digits)} W/m"""
         
         if unit == LinearPowerDensityUnits.WattPerCentimeter:
-            return f"""{self.watts_per_centimeter} W/cm"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_centimeter, fractional_digits)} W/cm"""
         
         if unit == LinearPowerDensityUnits.WattPerMillimeter:
-            return f"""{self.watts_per_millimeter} W/mm"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_millimeter, fractional_digits)} W/mm"""
         
         if unit == LinearPowerDensityUnits.WattPerInch:
-            return f"""{self.watts_per_inch} W/in"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_inch, fractional_digits)} W/in"""
         
         if unit == LinearPowerDensityUnits.WattPerFoot:
-            return f"""{self.watts_per_foot} W/ft"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_foot, fractional_digits)} W/ft"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerMeter:
-            return f"""{self.milliwatts_per_meter} mW/m"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_meter, fractional_digits)} mW/m"""
         
         if unit == LinearPowerDensityUnits.KilowattPerMeter:
-            return f"""{self.kilowatts_per_meter} kW/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_meter, fractional_digits)} kW/m"""
         
         if unit == LinearPowerDensityUnits.MegawattPerMeter:
-            return f"""{self.megawatts_per_meter} MW/m"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_meter, fractional_digits)} MW/m"""
         
         if unit == LinearPowerDensityUnits.GigawattPerMeter:
-            return f"""{self.gigawatts_per_meter} GW/m"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_meter, fractional_digits)} GW/m"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerCentimeter:
-            return f"""{self.milliwatts_per_centimeter} mW/cm"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_centimeter, fractional_digits)} mW/cm"""
         
         if unit == LinearPowerDensityUnits.KilowattPerCentimeter:
-            return f"""{self.kilowatts_per_centimeter} kW/cm"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_centimeter, fractional_digits)} kW/cm"""
         
         if unit == LinearPowerDensityUnits.MegawattPerCentimeter:
-            return f"""{self.megawatts_per_centimeter} MW/cm"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_centimeter, fractional_digits)} MW/cm"""
         
         if unit == LinearPowerDensityUnits.GigawattPerCentimeter:
-            return f"""{self.gigawatts_per_centimeter} GW/cm"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_centimeter, fractional_digits)} GW/cm"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerMillimeter:
-            return f"""{self.milliwatts_per_millimeter} mW/mm"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_millimeter, fractional_digits)} mW/mm"""
         
         if unit == LinearPowerDensityUnits.KilowattPerMillimeter:
-            return f"""{self.kilowatts_per_millimeter} kW/mm"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_millimeter, fractional_digits)} kW/mm"""
         
         if unit == LinearPowerDensityUnits.MegawattPerMillimeter:
-            return f"""{self.megawatts_per_millimeter} MW/mm"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_millimeter, fractional_digits)} MW/mm"""
         
         if unit == LinearPowerDensityUnits.GigawattPerMillimeter:
-            return f"""{self.gigawatts_per_millimeter} GW/mm"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_millimeter, fractional_digits)} GW/mm"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerInch:
-            return f"""{self.milliwatts_per_inch} mW/in"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_inch, fractional_digits)} mW/in"""
         
         if unit == LinearPowerDensityUnits.KilowattPerInch:
-            return f"""{self.kilowatts_per_inch} kW/in"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_inch, fractional_digits)} kW/in"""
         
         if unit == LinearPowerDensityUnits.MegawattPerInch:
-            return f"""{self.megawatts_per_inch} MW/in"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_inch, fractional_digits)} MW/in"""
         
         if unit == LinearPowerDensityUnits.GigawattPerInch:
-            return f"""{self.gigawatts_per_inch} GW/in"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_inch, fractional_digits)} GW/in"""
         
         if unit == LinearPowerDensityUnits.MilliwattPerFoot:
-            return f"""{self.milliwatts_per_foot} mW/ft"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_foot, fractional_digits)} mW/ft"""
         
         if unit == LinearPowerDensityUnits.KilowattPerFoot:
-            return f"""{self.kilowatts_per_foot} kW/ft"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_foot, fractional_digits)} kW/ft"""
         
         if unit == LinearPowerDensityUnits.MegawattPerFoot:
-            return f"""{self.megawatts_per_foot} MW/ft"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_foot, fractional_digits)} MW/ft"""
         
         if unit == LinearPowerDensityUnits.GigawattPerFoot:
-            return f"""{self.gigawatts_per_foot} GW/ft"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_foot, fractional_digits)} GW/ft"""
         
         return f'{self._value}'
 

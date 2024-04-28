@@ -417,33 +417,41 @@ class ElectricResistance(AbstractMeasure):
         return self.__teraohms
 
     
-    def to_string(self, unit: ElectricResistanceUnits = ElectricResistanceUnits.Ohm) -> str:
+    def to_string(self, unit: ElectricResistanceUnits = ElectricResistanceUnits.Ohm, fractional_digits: int = None) -> str:
         """
-        Format the ElectricResistance to string.
-        Note! the default format for ElectricResistance is Ohm.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricResistance to a string.
+        
+        Note: the default format for ElectricResistance is Ohm.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricResistance. Default is 'Ohm'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricResistanceUnits.Ohm:
-            return f"""{self.ohms} Ω"""
+            return f"""{super()._truncate_fraction_digits(self.ohms, fractional_digits)} Ω"""
         
         if unit == ElectricResistanceUnits.Microohm:
-            return f"""{self.microohms} μΩ"""
+            return f"""{super()._truncate_fraction_digits(self.microohms, fractional_digits)} μΩ"""
         
         if unit == ElectricResistanceUnits.Milliohm:
-            return f"""{self.milliohms} mΩ"""
+            return f"""{super()._truncate_fraction_digits(self.milliohms, fractional_digits)} mΩ"""
         
         if unit == ElectricResistanceUnits.Kiloohm:
-            return f"""{self.kiloohms} kΩ"""
+            return f"""{super()._truncate_fraction_digits(self.kiloohms, fractional_digits)} kΩ"""
         
         if unit == ElectricResistanceUnits.Megaohm:
-            return f"""{self.megaohms} MΩ"""
+            return f"""{super()._truncate_fraction_digits(self.megaohms, fractional_digits)} MΩ"""
         
         if unit == ElectricResistanceUnits.Gigaohm:
-            return f"""{self.gigaohms} GΩ"""
+            return f"""{super()._truncate_fraction_digits(self.gigaohms, fractional_digits)} GΩ"""
         
         if unit == ElectricResistanceUnits.Teraohm:
-            return f"""{self.teraohms} TΩ"""
+            return f"""{super()._truncate_fraction_digits(self.teraohms, fractional_digits)} TΩ"""
         
         return f'{self._value}'
 

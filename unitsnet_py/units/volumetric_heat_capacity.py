@@ -495,39 +495,47 @@ class VolumetricHeatCapacity(AbstractMeasure):
         return self.__kilocalories_per_cubic_centimeter_degree_celsius
 
     
-    def to_string(self, unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin) -> str:
+    def to_string(self, unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin, fractional_digits: int = None) -> str:
         """
-        Format the VolumetricHeatCapacity to string.
-        Note! the default format for VolumetricHeatCapacity is JoulePerCubicMeterKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the VolumetricHeatCapacity to a string.
+        
+        Note: the default format for VolumetricHeatCapacity is JoulePerCubicMeterKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VolumetricHeatCapacity. Default is 'JoulePerCubicMeterKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin:
-            return f"""{self.joules_per_cubic_meter_kelvin} J/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_kelvin, fractional_digits)} J/m³·K"""
         
         if unit == VolumetricHeatCapacityUnits.JoulePerCubicMeterDegreeCelsius:
-            return f"""{self.joules_per_cubic_meter_degree_celsius} J/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_degree_celsius, fractional_digits)} J/m³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.CaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{self.calories_per_cubic_centimeter_degree_celsius} cal/cm³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_cubic_centimeter_degree_celsius, fractional_digits)} cal/cm³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
-            return f"""{self.btus_per_cubic_foot_degree_fahrenheit} BTU/ft³·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_cubic_foot_degree_fahrenheit, fractional_digits)} BTU/ft³·°F"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
-            return f"""{self.kilojoules_per_cubic_meter_kelvin} kJ/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_kelvin, fractional_digits)} kJ/m³·K"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
-            return f"""{self.megajoules_per_cubic_meter_kelvin} MJ/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_kelvin, fractional_digits)} MJ/m³·K"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
-            return f"""{self.kilojoules_per_cubic_meter_degree_celsius} kJ/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_degree_celsius, fractional_digits)} kJ/m³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
-            return f"""{self.megajoules_per_cubic_meter_degree_celsius} MJ/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_degree_celsius, fractional_digits)} MJ/m³·°C"""
         
         if unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{self.kilocalories_per_cubic_centimeter_degree_celsius} kcal/cm³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_cubic_centimeter_degree_celsius, fractional_digits)} kcal/cm³·°C"""
         
         return f'{self._value}'
 

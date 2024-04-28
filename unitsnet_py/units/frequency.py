@@ -651,51 +651,59 @@ class Frequency(AbstractMeasure):
         return self.__terahertz
 
     
-    def to_string(self, unit: FrequencyUnits = FrequencyUnits.Hertz) -> str:
+    def to_string(self, unit: FrequencyUnits = FrequencyUnits.Hertz, fractional_digits: int = None) -> str:
         """
-        Format the Frequency to string.
-        Note! the default format for Frequency is Hertz.
-        To specify the unit format set the 'unit' parameter.
+        Format the Frequency to a string.
+        
+        Note: the default format for Frequency is Hertz.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Frequency. Default is 'Hertz'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == FrequencyUnits.Hertz:
-            return f"""{self.hertz} Hz"""
+            return f"""{super()._truncate_fraction_digits(self.hertz, fractional_digits)} Hz"""
         
         if unit == FrequencyUnits.RadianPerSecond:
-            return f"""{self.radians_per_second} rad/s"""
+            return f"""{super()._truncate_fraction_digits(self.radians_per_second, fractional_digits)} rad/s"""
         
         if unit == FrequencyUnits.CyclePerMinute:
-            return f"""{self.cycles_per_minute} cpm"""
+            return f"""{super()._truncate_fraction_digits(self.cycles_per_minute, fractional_digits)} cpm"""
         
         if unit == FrequencyUnits.CyclePerHour:
-            return f"""{self.cycles_per_hour} cph"""
+            return f"""{super()._truncate_fraction_digits(self.cycles_per_hour, fractional_digits)} cph"""
         
         if unit == FrequencyUnits.BeatPerMinute:
-            return f"""{self.beats_per_minute} bpm"""
+            return f"""{super()._truncate_fraction_digits(self.beats_per_minute, fractional_digits)} bpm"""
         
         if unit == FrequencyUnits.PerSecond:
-            return f"""{self.per_second} s⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.per_second, fractional_digits)} s⁻¹"""
         
         if unit == FrequencyUnits.BUnit:
-            return f"""{self.b_units} B Units"""
+            return f"""{super()._truncate_fraction_digits(self.b_units, fractional_digits)} B Units"""
         
         if unit == FrequencyUnits.Microhertz:
-            return f"""{self.microhertz} μHz"""
+            return f"""{super()._truncate_fraction_digits(self.microhertz, fractional_digits)} μHz"""
         
         if unit == FrequencyUnits.Millihertz:
-            return f"""{self.millihertz} mHz"""
+            return f"""{super()._truncate_fraction_digits(self.millihertz, fractional_digits)} mHz"""
         
         if unit == FrequencyUnits.Kilohertz:
-            return f"""{self.kilohertz} kHz"""
+            return f"""{super()._truncate_fraction_digits(self.kilohertz, fractional_digits)} kHz"""
         
         if unit == FrequencyUnits.Megahertz:
-            return f"""{self.megahertz} MHz"""
+            return f"""{super()._truncate_fraction_digits(self.megahertz, fractional_digits)} MHz"""
         
         if unit == FrequencyUnits.Gigahertz:
-            return f"""{self.gigahertz} GHz"""
+            return f"""{super()._truncate_fraction_digits(self.gigahertz, fractional_digits)} GHz"""
         
         if unit == FrequencyUnits.Terahertz:
-            return f"""{self.terahertz} THz"""
+            return f"""{super()._truncate_fraction_digits(self.terahertz, fractional_digits)} THz"""
         
         return f'{self._value}'
 

@@ -300,24 +300,32 @@ class RotationalAcceleration(AbstractMeasure):
         return self.__revolutions_per_second_squared
 
     
-    def to_string(self, unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared) -> str:
+    def to_string(self, unit: RotationalAccelerationUnits = RotationalAccelerationUnits.RadianPerSecondSquared, fractional_digits: int = None) -> str:
         """
-        Format the RotationalAcceleration to string.
-        Note! the default format for RotationalAcceleration is RadianPerSecondSquared.
-        To specify the unit format set the 'unit' parameter.
+        Format the RotationalAcceleration to a string.
+        
+        Note: the default format for RotationalAcceleration is RadianPerSecondSquared.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RotationalAcceleration. Default is 'RadianPerSecondSquared'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RotationalAccelerationUnits.RadianPerSecondSquared:
-            return f"""{self.radians_per_second_squared} rad/s²"""
+            return f"""{super()._truncate_fraction_digits(self.radians_per_second_squared, fractional_digits)} rad/s²"""
         
         if unit == RotationalAccelerationUnits.DegreePerSecondSquared:
-            return f"""{self.degrees_per_second_squared} °/s²"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_per_second_squared, fractional_digits)} °/s²"""
         
         if unit == RotationalAccelerationUnits.RevolutionPerMinutePerSecond:
-            return f"""{self.revolutions_per_minute_per_second} rpm/s"""
+            return f"""{super()._truncate_fraction_digits(self.revolutions_per_minute_per_second, fractional_digits)} rpm/s"""
         
         if unit == RotationalAccelerationUnits.RevolutionPerSecondSquared:
-            return f"""{self.revolutions_per_second_squared} r/s²"""
+            return f"""{super()._truncate_fraction_digits(self.revolutions_per_second_squared, fractional_digits)} r/s²"""
         
         return f'{self._value}'
 

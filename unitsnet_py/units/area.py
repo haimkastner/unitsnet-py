@@ -690,54 +690,62 @@ class Area(AbstractMeasure):
         return self.__square_nautical_miles
 
     
-    def to_string(self, unit: AreaUnits = AreaUnits.SquareMeter) -> str:
+    def to_string(self, unit: AreaUnits = AreaUnits.SquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the Area to string.
-        Note! the default format for Area is SquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Area to a string.
+        
+        Note: the default format for Area is SquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Area. Default is 'SquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AreaUnits.SquareKilometer:
-            return f"""{self.square_kilometers} km²"""
+            return f"""{super()._truncate_fraction_digits(self.square_kilometers, fractional_digits)} km²"""
         
         if unit == AreaUnits.SquareMeter:
-            return f"""{self.square_meters} m²"""
+            return f"""{super()._truncate_fraction_digits(self.square_meters, fractional_digits)} m²"""
         
         if unit == AreaUnits.SquareDecimeter:
-            return f"""{self.square_decimeters} dm²"""
+            return f"""{super()._truncate_fraction_digits(self.square_decimeters, fractional_digits)} dm²"""
         
         if unit == AreaUnits.SquareCentimeter:
-            return f"""{self.square_centimeters} cm²"""
+            return f"""{super()._truncate_fraction_digits(self.square_centimeters, fractional_digits)} cm²"""
         
         if unit == AreaUnits.SquareMillimeter:
-            return f"""{self.square_millimeters} mm²"""
+            return f"""{super()._truncate_fraction_digits(self.square_millimeters, fractional_digits)} mm²"""
         
         if unit == AreaUnits.SquareMicrometer:
-            return f"""{self.square_micrometers} µm²"""
+            return f"""{super()._truncate_fraction_digits(self.square_micrometers, fractional_digits)} µm²"""
         
         if unit == AreaUnits.SquareMile:
-            return f"""{self.square_miles} mi²"""
+            return f"""{super()._truncate_fraction_digits(self.square_miles, fractional_digits)} mi²"""
         
         if unit == AreaUnits.SquareYard:
-            return f"""{self.square_yards} yd²"""
+            return f"""{super()._truncate_fraction_digits(self.square_yards, fractional_digits)} yd²"""
         
         if unit == AreaUnits.SquareFoot:
-            return f"""{self.square_feet} ft²"""
+            return f"""{super()._truncate_fraction_digits(self.square_feet, fractional_digits)} ft²"""
         
         if unit == AreaUnits.UsSurveySquareFoot:
-            return f"""{self.us_survey_square_feet} ft² (US)"""
+            return f"""{super()._truncate_fraction_digits(self.us_survey_square_feet, fractional_digits)} ft² (US)"""
         
         if unit == AreaUnits.SquareInch:
-            return f"""{self.square_inches} in²"""
+            return f"""{super()._truncate_fraction_digits(self.square_inches, fractional_digits)} in²"""
         
         if unit == AreaUnits.Acre:
-            return f"""{self.acres} ac"""
+            return f"""{super()._truncate_fraction_digits(self.acres, fractional_digits)} ac"""
         
         if unit == AreaUnits.Hectare:
-            return f"""{self.hectares} ha"""
+            return f"""{super()._truncate_fraction_digits(self.hectares, fractional_digits)} ha"""
         
         if unit == AreaUnits.SquareNauticalMile:
-            return f"""{self.square_nautical_miles} nmi²"""
+            return f"""{super()._truncate_fraction_digits(self.square_nautical_miles, fractional_digits)} nmi²"""
         
         return f'{self._value}'
 

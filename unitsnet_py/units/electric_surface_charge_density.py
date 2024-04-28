@@ -261,21 +261,29 @@ class ElectricSurfaceChargeDensity(AbstractMeasure):
         return self.__coulombs_per_square_inch
 
     
-    def to_string(self, unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter) -> str:
+    def to_string(self, unit: ElectricSurfaceChargeDensityUnits = ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricSurfaceChargeDensity to string.
-        Note! the default format for ElectricSurfaceChargeDensity is CoulombPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricSurfaceChargeDensity to a string.
+        
+        Note: the default format for ElectricSurfaceChargeDensity is CoulombPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricSurfaceChargeDensity. Default is 'CoulombPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareMeter:
-            return f"""{self.coulombs_per_square_meter} C/m²"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs_per_square_meter, fractional_digits)} C/m²"""
         
         if unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareCentimeter:
-            return f"""{self.coulombs_per_square_centimeter} C/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs_per_square_centimeter, fractional_digits)} C/cm²"""
         
         if unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareInch:
-            return f"""{self.coulombs_per_square_inch} C/in²"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs_per_square_inch, fractional_digits)} C/in²"""
         
         return f'{self._value}'
 

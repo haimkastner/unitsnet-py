@@ -2055,159 +2055,167 @@ class MassConcentration(AbstractMeasure):
         return self.__kilopounds_per_cubic_foot
 
     
-    def to_string(self, unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter) -> str:
+    def to_string(self, unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the MassConcentration to string.
-        Note! the default format for MassConcentration is KilogramPerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the MassConcentration to a string.
+        
+        Note: the default format for MassConcentration is KilogramPerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MassConcentration. Default is 'KilogramPerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassConcentrationUnits.GramPerCubicMillimeter:
-            return f"""{self.grams_per_cubic_millimeter} g/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_millimeter, fractional_digits)} g/mm³"""
         
         if unit == MassConcentrationUnits.GramPerCubicCentimeter:
-            return f"""{self.grams_per_cubic_centimeter} g/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_centimeter, fractional_digits)} g/cm³"""
         
         if unit == MassConcentrationUnits.GramPerCubicMeter:
-            return f"""{self.grams_per_cubic_meter} g/m³"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_cubic_meter, fractional_digits)} g/m³"""
         
         if unit == MassConcentrationUnits.GramPerMicroliter:
-            return f"""{self.grams_per_microliter} g/μL"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_microliter, fractional_digits)} g/μL"""
         
         if unit == MassConcentrationUnits.GramPerMilliliter:
-            return f"""{self.grams_per_milliliter} g/mL"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_milliliter, fractional_digits)} g/mL"""
         
         if unit == MassConcentrationUnits.GramPerDeciliter:
-            return f"""{self.grams_per_deciliter} g/dL"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_deciliter, fractional_digits)} g/dL"""
         
         if unit == MassConcentrationUnits.GramPerLiter:
-            return f"""{self.grams_per_liter} g/L"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_liter, fractional_digits)} g/L"""
         
         if unit == MassConcentrationUnits.TonnePerCubicMillimeter:
-            return f"""{self.tonnes_per_cubic_millimeter} t/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_millimeter, fractional_digits)} t/mm³"""
         
         if unit == MassConcentrationUnits.TonnePerCubicCentimeter:
-            return f"""{self.tonnes_per_cubic_centimeter} t/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_centimeter, fractional_digits)} t/cm³"""
         
         if unit == MassConcentrationUnits.TonnePerCubicMeter:
-            return f"""{self.tonnes_per_cubic_meter} t/m³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_cubic_meter, fractional_digits)} t/m³"""
         
         if unit == MassConcentrationUnits.PoundPerCubicInch:
-            return f"""{self.pounds_per_cubic_inch} lb/in³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_inch, fractional_digits)} lb/in³"""
         
         if unit == MassConcentrationUnits.PoundPerCubicFoot:
-            return f"""{self.pounds_per_cubic_foot} lb/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_cubic_foot, fractional_digits)} lb/ft³"""
         
         if unit == MassConcentrationUnits.SlugPerCubicFoot:
-            return f"""{self.slugs_per_cubic_foot} slug/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.slugs_per_cubic_foot, fractional_digits)} slug/ft³"""
         
         if unit == MassConcentrationUnits.PoundPerUSGallon:
-            return f"""{self.pounds_per_us_gallon} ppg (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_us_gallon, fractional_digits)} ppg (U.S.)"""
         
         if unit == MassConcentrationUnits.OuncePerUSGallon:
-            return f"""{self.ounces_per_us_gallon} oz/gal (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.ounces_per_us_gallon, fractional_digits)} oz/gal (U.S.)"""
         
         if unit == MassConcentrationUnits.OuncePerImperialGallon:
-            return f"""{self.ounces_per_imperial_gallon} oz/gal (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.ounces_per_imperial_gallon, fractional_digits)} oz/gal (imp.)"""
         
         if unit == MassConcentrationUnits.PoundPerImperialGallon:
-            return f"""{self.pounds_per_imperial_gallon} ppg (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_imperial_gallon, fractional_digits)} ppg (imp.)"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicMillimeter:
-            return f"""{self.kilograms_per_cubic_millimeter} kg/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_millimeter, fractional_digits)} kg/mm³"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicCentimeter:
-            return f"""{self.kilograms_per_cubic_centimeter} kg/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_centimeter, fractional_digits)} kg/cm³"""
         
         if unit == MassConcentrationUnits.KilogramPerCubicMeter:
-            return f"""{self.kilograms_per_cubic_meter} kg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_cubic_meter, fractional_digits)} kg/m³"""
         
         if unit == MassConcentrationUnits.MilligramPerCubicMeter:
-            return f"""{self.milligrams_per_cubic_meter} mg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_cubic_meter, fractional_digits)} mg/m³"""
         
         if unit == MassConcentrationUnits.MicrogramPerCubicMeter:
-            return f"""{self.micrograms_per_cubic_meter} μg/m³"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_cubic_meter, fractional_digits)} μg/m³"""
         
         if unit == MassConcentrationUnits.PicogramPerMicroliter:
-            return f"""{self.picograms_per_microliter} pg/μL"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_microliter, fractional_digits)} pg/μL"""
         
         if unit == MassConcentrationUnits.NanogramPerMicroliter:
-            return f"""{self.nanograms_per_microliter} ng/μL"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_microliter, fractional_digits)} ng/μL"""
         
         if unit == MassConcentrationUnits.MicrogramPerMicroliter:
-            return f"""{self.micrograms_per_microliter} μg/μL"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_microliter, fractional_digits)} μg/μL"""
         
         if unit == MassConcentrationUnits.MilligramPerMicroliter:
-            return f"""{self.milligrams_per_microliter} mg/μL"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_microliter, fractional_digits)} mg/μL"""
         
         if unit == MassConcentrationUnits.CentigramPerMicroliter:
-            return f"""{self.centigrams_per_microliter} cg/μL"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_microliter, fractional_digits)} cg/μL"""
         
         if unit == MassConcentrationUnits.DecigramPerMicroliter:
-            return f"""{self.decigrams_per_microliter} dg/μL"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_microliter, fractional_digits)} dg/μL"""
         
         if unit == MassConcentrationUnits.PicogramPerMilliliter:
-            return f"""{self.picograms_per_milliliter} pg/mL"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_milliliter, fractional_digits)} pg/mL"""
         
         if unit == MassConcentrationUnits.NanogramPerMilliliter:
-            return f"""{self.nanograms_per_milliliter} ng/mL"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_milliliter, fractional_digits)} ng/mL"""
         
         if unit == MassConcentrationUnits.MicrogramPerMilliliter:
-            return f"""{self.micrograms_per_milliliter} μg/mL"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_milliliter, fractional_digits)} μg/mL"""
         
         if unit == MassConcentrationUnits.MilligramPerMilliliter:
-            return f"""{self.milligrams_per_milliliter} mg/mL"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_milliliter, fractional_digits)} mg/mL"""
         
         if unit == MassConcentrationUnits.CentigramPerMilliliter:
-            return f"""{self.centigrams_per_milliliter} cg/mL"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_milliliter, fractional_digits)} cg/mL"""
         
         if unit == MassConcentrationUnits.DecigramPerMilliliter:
-            return f"""{self.decigrams_per_milliliter} dg/mL"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_milliliter, fractional_digits)} dg/mL"""
         
         if unit == MassConcentrationUnits.PicogramPerDeciliter:
-            return f"""{self.picograms_per_deciliter} pg/dL"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_deciliter, fractional_digits)} pg/dL"""
         
         if unit == MassConcentrationUnits.NanogramPerDeciliter:
-            return f"""{self.nanograms_per_deciliter} ng/dL"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_deciliter, fractional_digits)} ng/dL"""
         
         if unit == MassConcentrationUnits.MicrogramPerDeciliter:
-            return f"""{self.micrograms_per_deciliter} μg/dL"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_deciliter, fractional_digits)} μg/dL"""
         
         if unit == MassConcentrationUnits.MilligramPerDeciliter:
-            return f"""{self.milligrams_per_deciliter} mg/dL"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_deciliter, fractional_digits)} mg/dL"""
         
         if unit == MassConcentrationUnits.CentigramPerDeciliter:
-            return f"""{self.centigrams_per_deciliter} cg/dL"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_deciliter, fractional_digits)} cg/dL"""
         
         if unit == MassConcentrationUnits.DecigramPerDeciliter:
-            return f"""{self.decigrams_per_deciliter} dg/dL"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_deciliter, fractional_digits)} dg/dL"""
         
         if unit == MassConcentrationUnits.PicogramPerLiter:
-            return f"""{self.picograms_per_liter} pg/L"""
+            return f"""{super()._truncate_fraction_digits(self.picograms_per_liter, fractional_digits)} pg/L"""
         
         if unit == MassConcentrationUnits.NanogramPerLiter:
-            return f"""{self.nanograms_per_liter} ng/L"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_liter, fractional_digits)} ng/L"""
         
         if unit == MassConcentrationUnits.MicrogramPerLiter:
-            return f"""{self.micrograms_per_liter} μg/L"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_liter, fractional_digits)} μg/L"""
         
         if unit == MassConcentrationUnits.MilligramPerLiter:
-            return f"""{self.milligrams_per_liter} mg/L"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_liter, fractional_digits)} mg/L"""
         
         if unit == MassConcentrationUnits.CentigramPerLiter:
-            return f"""{self.centigrams_per_liter} cg/L"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_liter, fractional_digits)} cg/L"""
         
         if unit == MassConcentrationUnits.DecigramPerLiter:
-            return f"""{self.decigrams_per_liter} dg/L"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_liter, fractional_digits)} dg/L"""
         
         if unit == MassConcentrationUnits.KilogramPerLiter:
-            return f"""{self.kilograms_per_liter} kg/L"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_liter, fractional_digits)} kg/L"""
         
         if unit == MassConcentrationUnits.KilopoundPerCubicInch:
-            return f"""{self.kilopounds_per_cubic_inch} klb/in³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_cubic_inch, fractional_digits)} klb/in³"""
         
         if unit == MassConcentrationUnits.KilopoundPerCubicFoot:
-            return f"""{self.kilopounds_per_cubic_foot} klb/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_cubic_foot, fractional_digits)} klb/ft³"""
         
         return f'{self._value}'
 

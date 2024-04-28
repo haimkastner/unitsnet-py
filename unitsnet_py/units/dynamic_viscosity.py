@@ -534,42 +534,50 @@ class DynamicViscosity(AbstractMeasure):
         return self.__centipoise
 
     
-    def to_string(self, unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared) -> str:
+    def to_string(self, unit: DynamicViscosityUnits = DynamicViscosityUnits.NewtonSecondPerMeterSquared, fractional_digits: int = None) -> str:
         """
-        Format the DynamicViscosity to string.
-        Note! the default format for DynamicViscosity is NewtonSecondPerMeterSquared.
-        To specify the unit format set the 'unit' parameter.
+        Format the DynamicViscosity to a string.
+        
+        Note: the default format for DynamicViscosity is NewtonSecondPerMeterSquared.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the DynamicViscosity. Default is 'NewtonSecondPerMeterSquared'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == DynamicViscosityUnits.NewtonSecondPerMeterSquared:
-            return f"""{self.newton_seconds_per_meter_squared} Ns/m²"""
+            return f"""{super()._truncate_fraction_digits(self.newton_seconds_per_meter_squared, fractional_digits)} Ns/m²"""
         
         if unit == DynamicViscosityUnits.PascalSecond:
-            return f"""{self.pascal_seconds} Pa·s"""
+            return f"""{super()._truncate_fraction_digits(self.pascal_seconds, fractional_digits)} Pa·s"""
         
         if unit == DynamicViscosityUnits.Poise:
-            return f"""{self.poise} P"""
+            return f"""{super()._truncate_fraction_digits(self.poise, fractional_digits)} P"""
         
         if unit == DynamicViscosityUnits.Reyn:
-            return f"""{self.reyns} reyn"""
+            return f"""{super()._truncate_fraction_digits(self.reyns, fractional_digits)} reyn"""
         
         if unit == DynamicViscosityUnits.PoundForceSecondPerSquareInch:
-            return f"""{self.pounds_force_second_per_square_inch} lbf·s/in²"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_second_per_square_inch, fractional_digits)} lbf·s/in²"""
         
         if unit == DynamicViscosityUnits.PoundForceSecondPerSquareFoot:
-            return f"""{self.pounds_force_second_per_square_foot} lbf·s/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_second_per_square_foot, fractional_digits)} lbf·s/ft²"""
         
         if unit == DynamicViscosityUnits.PoundPerFootSecond:
-            return f"""{self.pounds_per_foot_second} lb/ft·s"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_foot_second, fractional_digits)} lb/ft·s"""
         
         if unit == DynamicViscosityUnits.MillipascalSecond:
-            return f"""{self.millipascal_seconds} mPa·s"""
+            return f"""{super()._truncate_fraction_digits(self.millipascal_seconds, fractional_digits)} mPa·s"""
         
         if unit == DynamicViscosityUnits.MicropascalSecond:
-            return f"""{self.micropascal_seconds} μPa·s"""
+            return f"""{super()._truncate_fraction_digits(self.micropascal_seconds, fractional_digits)} μPa·s"""
         
         if unit == DynamicViscosityUnits.Centipoise:
-            return f"""{self.centipoise} cP"""
+            return f"""{super()._truncate_fraction_digits(self.centipoise, fractional_digits)} cP"""
         
         return f'{self._value}'
 

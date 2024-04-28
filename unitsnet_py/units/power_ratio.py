@@ -222,18 +222,26 @@ class PowerRatio(AbstractMeasure):
         return self.__decibel_milliwatts
 
     
-    def to_string(self, unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt) -> str:
+    def to_string(self, unit: PowerRatioUnits = PowerRatioUnits.DecibelWatt, fractional_digits: int = None) -> str:
         """
-        Format the PowerRatio to string.
-        Note! the default format for PowerRatio is DecibelWatt.
-        To specify the unit format set the 'unit' parameter.
+        Format the PowerRatio to a string.
+        
+        Note: the default format for PowerRatio is DecibelWatt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the PowerRatio. Default is 'DecibelWatt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PowerRatioUnits.DecibelWatt:
-            return f"""{self.decibel_watts} dBW"""
+            return f"""{super()._truncate_fraction_digits(self.decibel_watts, fractional_digits)} dBW"""
         
         if unit == PowerRatioUnits.DecibelMilliwatt:
-            return f"""{self.decibel_milliwatts} dBmW"""
+            return f"""{super()._truncate_fraction_digits(self.decibel_milliwatts, fractional_digits)} dBmW"""
         
         return f'{self._value}'
 

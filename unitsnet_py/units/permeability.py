@@ -183,15 +183,23 @@ class Permeability(AbstractMeasure):
         return self.__henries_per_meter
 
     
-    def to_string(self, unit: PermeabilityUnits = PermeabilityUnits.HenryPerMeter) -> str:
+    def to_string(self, unit: PermeabilityUnits = PermeabilityUnits.HenryPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the Permeability to string.
-        Note! the default format for Permeability is HenryPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Permeability to a string.
+        
+        Note: the default format for Permeability is HenryPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Permeability. Default is 'HenryPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PermeabilityUnits.HenryPerMeter:
-            return f"""{self.henries_per_meter} H/m"""
+            return f"""{super()._truncate_fraction_digits(self.henries_per_meter, fractional_digits)} H/m"""
         
         return f'{self._value}'
 

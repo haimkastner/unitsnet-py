@@ -807,63 +807,71 @@ class SpecificWeight(AbstractMeasure):
         return self.__kilopounds_force_per_cubic_foot
 
     
-    def to_string(self, unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter) -> str:
+    def to_string(self, unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the SpecificWeight to string.
-        Note! the default format for SpecificWeight is NewtonPerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the SpecificWeight to a string.
+        
+        Note: the default format for SpecificWeight is NewtonPerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SpecificWeight. Default is 'NewtonPerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpecificWeightUnits.NewtonPerCubicMillimeter:
-            return f"""{self.newtons_per_cubic_millimeter} N/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_cubic_millimeter, fractional_digits)} N/mm³"""
         
         if unit == SpecificWeightUnits.NewtonPerCubicCentimeter:
-            return f"""{self.newtons_per_cubic_centimeter} N/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_cubic_centimeter, fractional_digits)} N/cm³"""
         
         if unit == SpecificWeightUnits.NewtonPerCubicMeter:
-            return f"""{self.newtons_per_cubic_meter} N/m³"""
+            return f"""{super()._truncate_fraction_digits(self.newtons_per_cubic_meter, fractional_digits)} N/m³"""
         
         if unit == SpecificWeightUnits.KilogramForcePerCubicMillimeter:
-            return f"""{self.kilograms_force_per_cubic_millimeter} kgf/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_cubic_millimeter, fractional_digits)} kgf/mm³"""
         
         if unit == SpecificWeightUnits.KilogramForcePerCubicCentimeter:
-            return f"""{self.kilograms_force_per_cubic_centimeter} kgf/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_cubic_centimeter, fractional_digits)} kgf/cm³"""
         
         if unit == SpecificWeightUnits.KilogramForcePerCubicMeter:
-            return f"""{self.kilograms_force_per_cubic_meter} kgf/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force_per_cubic_meter, fractional_digits)} kgf/m³"""
         
         if unit == SpecificWeightUnits.PoundForcePerCubicInch:
-            return f"""{self.pounds_force_per_cubic_inch} lbf/in³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_cubic_inch, fractional_digits)} lbf/in³"""
         
         if unit == SpecificWeightUnits.PoundForcePerCubicFoot:
-            return f"""{self.pounds_force_per_cubic_foot} lbf/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_cubic_foot, fractional_digits)} lbf/ft³"""
         
         if unit == SpecificWeightUnits.TonneForcePerCubicMillimeter:
-            return f"""{self.tonnes_force_per_cubic_millimeter} tf/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_cubic_millimeter, fractional_digits)} tf/mm³"""
         
         if unit == SpecificWeightUnits.TonneForcePerCubicCentimeter:
-            return f"""{self.tonnes_force_per_cubic_centimeter} tf/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_cubic_centimeter, fractional_digits)} tf/cm³"""
         
         if unit == SpecificWeightUnits.TonneForcePerCubicMeter:
-            return f"""{self.tonnes_force_per_cubic_meter} tf/m³"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force_per_cubic_meter, fractional_digits)} tf/m³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicMillimeter:
-            return f"""{self.kilonewtons_per_cubic_millimeter} kN/mm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_cubic_millimeter, fractional_digits)} kN/mm³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicCentimeter:
-            return f"""{self.kilonewtons_per_cubic_centimeter} kN/cm³"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_cubic_centimeter, fractional_digits)} kN/cm³"""
         
         if unit == SpecificWeightUnits.KilonewtonPerCubicMeter:
-            return f"""{self.kilonewtons_per_cubic_meter} kN/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_cubic_meter, fractional_digits)} kN/m³"""
         
         if unit == SpecificWeightUnits.MeganewtonPerCubicMeter:
-            return f"""{self.meganewtons_per_cubic_meter} MN/m³"""
+            return f"""{super()._truncate_fraction_digits(self.meganewtons_per_cubic_meter, fractional_digits)} MN/m³"""
         
         if unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
-            return f"""{self.kilopounds_force_per_cubic_inch} klbf/in³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_cubic_inch, fractional_digits)} klbf/in³"""
         
         if unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
-            return f"""{self.kilopounds_force_per_cubic_foot} klbf/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_cubic_foot, fractional_digits)} klbf/ft³"""
         
         return f'{self._value}'
 

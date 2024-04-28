@@ -378,30 +378,38 @@ class RadiationEquivalentDose(AbstractMeasure):
         return self.__milliroentgens_equivalent_man
 
     
-    def to_string(self, unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert) -> str:
+    def to_string(self, unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert, fractional_digits: int = None) -> str:
         """
-        Format the RadiationEquivalentDose to string.
-        Note! the default format for RadiationEquivalentDose is Sievert.
-        To specify the unit format set the 'unit' parameter.
+        Format the RadiationEquivalentDose to a string.
+        
+        Note: the default format for RadiationEquivalentDose is Sievert.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RadiationEquivalentDose. Default is 'Sievert'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RadiationEquivalentDoseUnits.Sievert:
-            return f"""{self.sieverts} Sv"""
+            return f"""{super()._truncate_fraction_digits(self.sieverts, fractional_digits)} Sv"""
         
         if unit == RadiationEquivalentDoseUnits.RoentgenEquivalentMan:
-            return f"""{self.roentgens_equivalent_man} rem"""
+            return f"""{super()._truncate_fraction_digits(self.roentgens_equivalent_man, fractional_digits)} rem"""
         
         if unit == RadiationEquivalentDoseUnits.Nanosievert:
-            return f"""{self.nanosieverts} nSv"""
+            return f"""{super()._truncate_fraction_digits(self.nanosieverts, fractional_digits)} nSv"""
         
         if unit == RadiationEquivalentDoseUnits.Microsievert:
-            return f"""{self.microsieverts} μSv"""
+            return f"""{super()._truncate_fraction_digits(self.microsieverts, fractional_digits)} μSv"""
         
         if unit == RadiationEquivalentDoseUnits.Millisievert:
-            return f"""{self.millisieverts} mSv"""
+            return f"""{super()._truncate_fraction_digits(self.millisieverts, fractional_digits)} mSv"""
         
         if unit == RadiationEquivalentDoseUnits.MilliroentgenEquivalentMan:
-            return f"""{self.milliroentgens_equivalent_man} mrem"""
+            return f"""{super()._truncate_fraction_digits(self.milliroentgens_equivalent_man, fractional_digits)} mrem"""
         
         return f'{self._value}'
 

@@ -1704,132 +1704,140 @@ class Energy(AbstractMeasure):
         return self.__decatherms_imperial
 
     
-    def to_string(self, unit: EnergyUnits = EnergyUnits.Joule) -> str:
+    def to_string(self, unit: EnergyUnits = EnergyUnits.Joule, fractional_digits: int = None) -> str:
         """
-        Format the Energy to string.
-        Note! the default format for Energy is Joule.
-        To specify the unit format set the 'unit' parameter.
+        Format the Energy to a string.
+        
+        Note: the default format for Energy is Joule.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Energy. Default is 'Joule'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == EnergyUnits.Joule:
-            return f"""{self.joules} J"""
+            return f"""{super()._truncate_fraction_digits(self.joules, fractional_digits)} J"""
         
         if unit == EnergyUnits.Calorie:
-            return f"""{self.calories} cal"""
+            return f"""{super()._truncate_fraction_digits(self.calories, fractional_digits)} cal"""
         
         if unit == EnergyUnits.BritishThermalUnit:
-            return f"""{self.british_thermal_units} BTU"""
+            return f"""{super()._truncate_fraction_digits(self.british_thermal_units, fractional_digits)} BTU"""
         
         if unit == EnergyUnits.ElectronVolt:
-            return f"""{self.electron_volts} eV"""
+            return f"""{super()._truncate_fraction_digits(self.electron_volts, fractional_digits)} eV"""
         
         if unit == EnergyUnits.FootPound:
-            return f"""{self.foot_pounds} ft·lb"""
+            return f"""{super()._truncate_fraction_digits(self.foot_pounds, fractional_digits)} ft·lb"""
         
         if unit == EnergyUnits.Erg:
-            return f"""{self.ergs} erg"""
+            return f"""{super()._truncate_fraction_digits(self.ergs, fractional_digits)} erg"""
         
         if unit == EnergyUnits.WattHour:
-            return f"""{self.watt_hours} Wh"""
+            return f"""{super()._truncate_fraction_digits(self.watt_hours, fractional_digits)} Wh"""
         
         if unit == EnergyUnits.WattDay:
-            return f"""{self.watt_days} Wd"""
+            return f"""{super()._truncate_fraction_digits(self.watt_days, fractional_digits)} Wd"""
         
         if unit == EnergyUnits.ThermEc:
-            return f"""{self.therms_ec} th (E.C.)"""
+            return f"""{super()._truncate_fraction_digits(self.therms_ec, fractional_digits)} th (E.C.)"""
         
         if unit == EnergyUnits.ThermUs:
-            return f"""{self.therms_us} th (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.therms_us, fractional_digits)} th (U.S.)"""
         
         if unit == EnergyUnits.ThermImperial:
-            return f"""{self.therms_imperial} th (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.therms_imperial, fractional_digits)} th (imp.)"""
         
         if unit == EnergyUnits.HorsepowerHour:
-            return f"""{self.horsepower_hours} hp·h"""
+            return f"""{super()._truncate_fraction_digits(self.horsepower_hours, fractional_digits)} hp·h"""
         
         if unit == EnergyUnits.Nanojoule:
-            return f"""{self.nanojoules} nJ"""
+            return f"""{super()._truncate_fraction_digits(self.nanojoules, fractional_digits)} nJ"""
         
         if unit == EnergyUnits.Microjoule:
-            return f"""{self.microjoules} μJ"""
+            return f"""{super()._truncate_fraction_digits(self.microjoules, fractional_digits)} μJ"""
         
         if unit == EnergyUnits.Millijoule:
-            return f"""{self.millijoules} mJ"""
+            return f"""{super()._truncate_fraction_digits(self.millijoules, fractional_digits)} mJ"""
         
         if unit == EnergyUnits.Kilojoule:
-            return f"""{self.kilojoules} kJ"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules, fractional_digits)} kJ"""
         
         if unit == EnergyUnits.Megajoule:
-            return f"""{self.megajoules} MJ"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules, fractional_digits)} MJ"""
         
         if unit == EnergyUnits.Gigajoule:
-            return f"""{self.gigajoules} GJ"""
+            return f"""{super()._truncate_fraction_digits(self.gigajoules, fractional_digits)} GJ"""
         
         if unit == EnergyUnits.Terajoule:
-            return f"""{self.terajoules} TJ"""
+            return f"""{super()._truncate_fraction_digits(self.terajoules, fractional_digits)} TJ"""
         
         if unit == EnergyUnits.Petajoule:
-            return f"""{self.petajoules} PJ"""
+            return f"""{super()._truncate_fraction_digits(self.petajoules, fractional_digits)} PJ"""
         
         if unit == EnergyUnits.Kilocalorie:
-            return f"""{self.kilocalories} kcal"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories, fractional_digits)} kcal"""
         
         if unit == EnergyUnits.Megacalorie:
-            return f"""{self.megacalories} Mcal"""
+            return f"""{super()._truncate_fraction_digits(self.megacalories, fractional_digits)} Mcal"""
         
         if unit == EnergyUnits.KilobritishThermalUnit:
-            return f"""{self.kilobritish_thermal_units} kBTU"""
+            return f"""{super()._truncate_fraction_digits(self.kilobritish_thermal_units, fractional_digits)} kBTU"""
         
         if unit == EnergyUnits.MegabritishThermalUnit:
-            return f"""{self.megabritish_thermal_units} MBTU"""
+            return f"""{super()._truncate_fraction_digits(self.megabritish_thermal_units, fractional_digits)} MBTU"""
         
         if unit == EnergyUnits.GigabritishThermalUnit:
-            return f"""{self.gigabritish_thermal_units} GBTU"""
+            return f"""{super()._truncate_fraction_digits(self.gigabritish_thermal_units, fractional_digits)} GBTU"""
         
         if unit == EnergyUnits.KiloelectronVolt:
-            return f"""{self.kiloelectron_volts} keV"""
+            return f"""{super()._truncate_fraction_digits(self.kiloelectron_volts, fractional_digits)} keV"""
         
         if unit == EnergyUnits.MegaelectronVolt:
-            return f"""{self.megaelectron_volts} MeV"""
+            return f"""{super()._truncate_fraction_digits(self.megaelectron_volts, fractional_digits)} MeV"""
         
         if unit == EnergyUnits.GigaelectronVolt:
-            return f"""{self.gigaelectron_volts} GeV"""
+            return f"""{super()._truncate_fraction_digits(self.gigaelectron_volts, fractional_digits)} GeV"""
         
         if unit == EnergyUnits.TeraelectronVolt:
-            return f"""{self.teraelectron_volts} TeV"""
+            return f"""{super()._truncate_fraction_digits(self.teraelectron_volts, fractional_digits)} TeV"""
         
         if unit == EnergyUnits.KilowattHour:
-            return f"""{self.kilowatt_hours} kWh"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_hours, fractional_digits)} kWh"""
         
         if unit == EnergyUnits.MegawattHour:
-            return f"""{self.megawatt_hours} MWh"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_hours, fractional_digits)} MWh"""
         
         if unit == EnergyUnits.GigawattHour:
-            return f"""{self.gigawatt_hours} GWh"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_hours, fractional_digits)} GWh"""
         
         if unit == EnergyUnits.TerawattHour:
-            return f"""{self.terawatt_hours} TWh"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_hours, fractional_digits)} TWh"""
         
         if unit == EnergyUnits.KilowattDay:
-            return f"""{self.kilowatt_days} kWd"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_days, fractional_digits)} kWd"""
         
         if unit == EnergyUnits.MegawattDay:
-            return f"""{self.megawatt_days} MWd"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_days, fractional_digits)} MWd"""
         
         if unit == EnergyUnits.GigawattDay:
-            return f"""{self.gigawatt_days} GWd"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_days, fractional_digits)} GWd"""
         
         if unit == EnergyUnits.TerawattDay:
-            return f"""{self.terawatt_days} TWd"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_days, fractional_digits)} TWd"""
         
         if unit == EnergyUnits.DecathermEc:
-            return f"""{self.decatherms_ec} dath (E.C.)"""
+            return f"""{super()._truncate_fraction_digits(self.decatherms_ec, fractional_digits)} dath (E.C.)"""
         
         if unit == EnergyUnits.DecathermUs:
-            return f"""{self.decatherms_us} dath (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.decatherms_us, fractional_digits)} dath (U.S.)"""
         
         if unit == EnergyUnits.DecathermImperial:
-            return f"""{self.decatherms_imperial} dath (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.decatherms_imperial, fractional_digits)} dath (imp.)"""
         
         return f'{self._value}'
 
