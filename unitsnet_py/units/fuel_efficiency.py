@@ -58,10 +58,26 @@ class FuelEfficiencyDto:
         """
 
     def to_json(self):
+        """
+        Get a FuelEfficiency DTO JSON object representing the current unit.
+
+        :return: JSON object represents FuelEfficiency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "LiterPer100Kilometers"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of FuelEfficiency DTO from a json representation.
+
+        :param data: The FuelEfficiency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :return: A new instance of FuelEfficiencyDto.
+        :rtype: FuelEfficiencyDto
+        """
         return FuelEfficiencyDto(value=data["value"], unit=FuelEfficiencyUnits(data["unit"]))
 
 
@@ -102,6 +118,18 @@ class FuelEfficiency(AbstractMeasure):
         :rtype: FuelEfficiencyDto
         """
         return FuelEfficiencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers):
+        """
+        Get a FuelEfficiency DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific FuelEfficiency unit to store the FuelEfficiency value in the DTO representation.
+        :type hold_in_unit: FuelEfficiencyUnits
+        :return: JSON object represents FuelEfficiency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "LiterPer100Kilometers"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(fuel_efficiency_dto: FuelEfficiencyDto):
@@ -114,6 +142,19 @@ class FuelEfficiency(AbstractMeasure):
         :rtype: FuelEfficiency
         """
         return FuelEfficiency(fuel_efficiency_dto.value, fuel_efficiency_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of FuelEfficiency from a DTO unit json representation.
+
+        :param data: The FuelEfficiency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :return: A new instance of FuelEfficiency.
+        :rtype: FuelEfficiency
+        """
+        return FuelEfficiency.from_dto(FuelEfficiencyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: FuelEfficiencyUnits) -> float:
         value = self._value

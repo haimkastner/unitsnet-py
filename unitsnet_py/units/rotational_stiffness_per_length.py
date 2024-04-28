@@ -63,10 +63,26 @@ class RotationalStiffnessPerLengthDto:
         """
 
     def to_json(self):
+        """
+        Get a RotationalStiffnessPerLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents RotationalStiffnessPerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadianPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of RotationalStiffnessPerLength DTO from a json representation.
+
+        :param data: The RotationalStiffnessPerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadianPerMeter"}
+        :return: A new instance of RotationalStiffnessPerLengthDto.
+        :rtype: RotationalStiffnessPerLengthDto
+        """
         return RotationalStiffnessPerLengthDto(value=data["value"], unit=RotationalStiffnessPerLengthUnits(data["unit"]))
 
 
@@ -109,6 +125,18 @@ class RotationalStiffnessPerLength(AbstractMeasure):
         :rtype: RotationalStiffnessPerLengthDto
         """
         return RotationalStiffnessPerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RotationalStiffnessPerLengthUnits = RotationalStiffnessPerLengthUnits.NewtonMeterPerRadianPerMeter):
+        """
+        Get a RotationalStiffnessPerLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffnessPerLength unit to store the RotationalStiffnessPerLength value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessPerLengthUnits
+        :return: JSON object represents RotationalStiffnessPerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadianPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(rotational_stiffness_per_length_dto: RotationalStiffnessPerLengthDto):
@@ -121,6 +149,19 @@ class RotationalStiffnessPerLength(AbstractMeasure):
         :rtype: RotationalStiffnessPerLength
         """
         return RotationalStiffnessPerLength(rotational_stiffness_per_length_dto.value, rotational_stiffness_per_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RotationalStiffnessPerLength from a DTO unit json representation.
+
+        :param data: The RotationalStiffnessPerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadianPerMeter"}
+        :return: A new instance of RotationalStiffnessPerLength.
+        :rtype: RotationalStiffnessPerLength
+        """
+        return RotationalStiffnessPerLength.from_dto(RotationalStiffnessPerLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RotationalStiffnessPerLengthUnits) -> float:
         value = self._value

@@ -68,10 +68,26 @@ class RadiationEquivalentDoseDto:
         """
 
     def to_json(self):
+        """
+        Get a RadiationEquivalentDose DTO JSON object representing the current unit.
+
+        :return: JSON object represents RadiationEquivalentDose DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Sievert"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of RadiationEquivalentDose DTO from a json representation.
+
+        :param data: The RadiationEquivalentDose DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Sievert"}
+        :return: A new instance of RadiationEquivalentDoseDto.
+        :rtype: RadiationEquivalentDoseDto
+        """
         return RadiationEquivalentDoseDto(value=data["value"], unit=RadiationEquivalentDoseUnits(data["unit"]))
 
 
@@ -116,6 +132,18 @@ class RadiationEquivalentDose(AbstractMeasure):
         :rtype: RadiationEquivalentDoseDto
         """
         return RadiationEquivalentDoseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RadiationEquivalentDoseUnits = RadiationEquivalentDoseUnits.Sievert):
+        """
+        Get a RadiationEquivalentDose DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RadiationEquivalentDose unit to store the RadiationEquivalentDose value in the DTO representation.
+        :type hold_in_unit: RadiationEquivalentDoseUnits
+        :return: JSON object represents RadiationEquivalentDose DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Sievert"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(radiation_equivalent_dose_dto: RadiationEquivalentDoseDto):
@@ -128,6 +156,19 @@ class RadiationEquivalentDose(AbstractMeasure):
         :rtype: RadiationEquivalentDose
         """
         return RadiationEquivalentDose(radiation_equivalent_dose_dto.value, radiation_equivalent_dose_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RadiationEquivalentDose from a DTO unit json representation.
+
+        :param data: The RadiationEquivalentDose DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Sievert"}
+        :return: A new instance of RadiationEquivalentDose.
+        :rtype: RadiationEquivalentDose
+        """
+        return RadiationEquivalentDose.from_dto(RadiationEquivalentDoseDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RadiationEquivalentDoseUnits) -> float:
         value = self._value

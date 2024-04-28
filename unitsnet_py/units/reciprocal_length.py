@@ -88,10 +88,26 @@ class ReciprocalLengthDto:
         """
 
     def to_json(self):
+        """
+        Get a ReciprocalLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents ReciprocalLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InverseMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ReciprocalLength DTO from a json representation.
+
+        :param data: The ReciprocalLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InverseMeter"}
+        :return: A new instance of ReciprocalLengthDto.
+        :rtype: ReciprocalLengthDto
+        """
         return ReciprocalLengthDto(value=data["value"], unit=ReciprocalLengthUnits(data["unit"]))
 
 
@@ -144,6 +160,18 @@ class ReciprocalLength(AbstractMeasure):
         :rtype: ReciprocalLengthDto
         """
         return ReciprocalLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter):
+        """
+        Get a ReciprocalLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ReciprocalLength unit to store the ReciprocalLength value in the DTO representation.
+        :type hold_in_unit: ReciprocalLengthUnits
+        :return: JSON object represents ReciprocalLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InverseMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(reciprocal_length_dto: ReciprocalLengthDto):
@@ -156,6 +184,19 @@ class ReciprocalLength(AbstractMeasure):
         :rtype: ReciprocalLength
         """
         return ReciprocalLength(reciprocal_length_dto.value, reciprocal_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ReciprocalLength from a DTO unit json representation.
+
+        :param data: The ReciprocalLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InverseMeter"}
+        :return: A new instance of ReciprocalLength.
+        :rtype: ReciprocalLength
+        """
+        return ReciprocalLength.from_dto(ReciprocalLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ReciprocalLengthUnits) -> float:
         value = self._value

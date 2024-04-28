@@ -113,10 +113,26 @@ class ForceDto:
         """
 
     def to_json(self):
+        """
+        Get a Force DTO JSON object representing the current unit.
+
+        :return: JSON object represents Force DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Newton"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Force DTO from a json representation.
+
+        :param data: The Force DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Newton"}
+        :return: A new instance of ForceDto.
+        :rtype: ForceDto
+        """
         return ForceDto(value=data["value"], unit=ForceUnits(data["unit"]))
 
 
@@ -179,6 +195,18 @@ class Force(AbstractMeasure):
         :rtype: ForceDto
         """
         return ForceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ForceUnits = ForceUnits.Newton):
+        """
+        Get a Force DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Force unit to store the Force value in the DTO representation.
+        :type hold_in_unit: ForceUnits
+        :return: JSON object represents Force DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Newton"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(force_dto: ForceDto):
@@ -191,6 +219,19 @@ class Force(AbstractMeasure):
         :rtype: Force
         """
         return Force(force_dto.value, force_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Force from a DTO unit json representation.
+
+        :param data: The Force DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Newton"}
+        :return: A new instance of Force.
+        :rtype: Force
+        """
+        return Force.from_dto(ForceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ForceUnits) -> float:
         value = self._value

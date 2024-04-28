@@ -83,10 +83,26 @@ class MolarFlowDto:
         """
 
     def to_json(self):
+        """
+        Get a MolarFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents MolarFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MolePerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MolarFlow DTO from a json representation.
+
+        :param data: The MolarFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MolePerSecond"}
+        :return: A new instance of MolarFlowDto.
+        :rtype: MolarFlowDto
+        """
         return MolarFlowDto(value=data["value"], unit=MolarFlowUnits(data["unit"]))
 
 
@@ -137,6 +153,18 @@ class MolarFlow(AbstractMeasure):
         :rtype: MolarFlowDto
         """
         return MolarFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolarFlowUnits = MolarFlowUnits.MolePerSecond):
+        """
+        Get a MolarFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MolarFlow unit to store the MolarFlow value in the DTO representation.
+        :type hold_in_unit: MolarFlowUnits
+        :return: JSON object represents MolarFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MolePerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(molar_flow_dto: MolarFlowDto):
@@ -149,6 +177,19 @@ class MolarFlow(AbstractMeasure):
         :rtype: MolarFlow
         """
         return MolarFlow(molar_flow_dto.value, molar_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MolarFlow from a DTO unit json representation.
+
+        :param data: The MolarFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MolePerSecond"}
+        :return: A new instance of MolarFlow.
+        :rtype: MolarFlow
+        """
+        return MolarFlow.from_dto(MolarFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolarFlowUnits) -> float:
         value = self._value

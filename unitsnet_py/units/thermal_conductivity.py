@@ -48,10 +48,26 @@ class ThermalConductivityDto:
         """
 
     def to_json(self):
+        """
+        Get a ThermalConductivity DTO JSON object representing the current unit.
+
+        :return: JSON object represents ThermalConductivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeterKelvin"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ThermalConductivity DTO from a json representation.
+
+        :param data: The ThermalConductivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeterKelvin"}
+        :return: A new instance of ThermalConductivityDto.
+        :rtype: ThermalConductivityDto
+        """
         return ThermalConductivityDto(value=data["value"], unit=ThermalConductivityUnits(data["unit"]))
 
 
@@ -88,6 +104,18 @@ class ThermalConductivity(AbstractMeasure):
         :rtype: ThermalConductivityDto
         """
         return ThermalConductivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin):
+        """
+        Get a ThermalConductivity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ThermalConductivity unit to store the ThermalConductivity value in the DTO representation.
+        :type hold_in_unit: ThermalConductivityUnits
+        :return: JSON object represents ThermalConductivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeterKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(thermal_conductivity_dto: ThermalConductivityDto):
@@ -100,6 +128,19 @@ class ThermalConductivity(AbstractMeasure):
         :rtype: ThermalConductivity
         """
         return ThermalConductivity(thermal_conductivity_dto.value, thermal_conductivity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ThermalConductivity from a DTO unit json representation.
+
+        :param data: The ThermalConductivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeterKelvin"}
+        :return: A new instance of ThermalConductivity.
+        :rtype: ThermalConductivity
+        """
+        return ThermalConductivity.from_dto(ThermalConductivityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ThermalConductivityUnits) -> float:
         value = self._value

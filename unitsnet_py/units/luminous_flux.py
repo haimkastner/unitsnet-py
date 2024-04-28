@@ -43,10 +43,26 @@ class LuminousFluxDto:
         """
 
     def to_json(self):
+        """
+        Get a LuminousFlux DTO JSON object representing the current unit.
+
+        :return: JSON object represents LuminousFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Lumen"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of LuminousFlux DTO from a json representation.
+
+        :param data: The LuminousFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Lumen"}
+        :return: A new instance of LuminousFluxDto.
+        :rtype: LuminousFluxDto
+        """
         return LuminousFluxDto(value=data["value"], unit=LuminousFluxUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class LuminousFlux(AbstractMeasure):
         :rtype: LuminousFluxDto
         """
         return LuminousFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LuminousFluxUnits = LuminousFluxUnits.Lumen):
+        """
+        Get a LuminousFlux DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LuminousFlux unit to store the LuminousFlux value in the DTO representation.
+        :type hold_in_unit: LuminousFluxUnits
+        :return: JSON object represents LuminousFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Lumen"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(luminous_flux_dto: LuminousFluxDto):
@@ -93,6 +121,19 @@ class LuminousFlux(AbstractMeasure):
         :rtype: LuminousFlux
         """
         return LuminousFlux(luminous_flux_dto.value, luminous_flux_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LuminousFlux from a DTO unit json representation.
+
+        :param data: The LuminousFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Lumen"}
+        :return: A new instance of LuminousFlux.
+        :rtype: LuminousFlux
+        """
+        return LuminousFlux.from_dto(LuminousFluxDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LuminousFluxUnits) -> float:
         value = self._value

@@ -168,10 +168,26 @@ class PowerDto:
         """
 
     def to_json(self):
+        """
+        Get a Power DTO JSON object representing the current unit.
+
+        :return: JSON object represents Power DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Watt"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Power DTO from a json representation.
+
+        :param data: The Power DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Watt"}
+        :return: A new instance of PowerDto.
+        :rtype: PowerDto
+        """
         return PowerDto(value=data["value"], unit=PowerUnits(data["unit"]))
 
 
@@ -256,6 +272,18 @@ class Power(AbstractMeasure):
         :rtype: PowerDto
         """
         return PowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PowerUnits = PowerUnits.Watt):
+        """
+        Get a Power DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Power unit to store the Power value in the DTO representation.
+        :type hold_in_unit: PowerUnits
+        :return: JSON object represents Power DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Watt"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(power_dto: PowerDto):
@@ -268,6 +296,19 @@ class Power(AbstractMeasure):
         :rtype: Power
         """
         return Power(power_dto.value, power_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Power from a DTO unit json representation.
+
+        :param data: The Power DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Watt"}
+        :return: A new instance of Power.
+        :rtype: Power
+        """
+        return Power.from_dto(PowerDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PowerUnits) -> float:
         value = self._value

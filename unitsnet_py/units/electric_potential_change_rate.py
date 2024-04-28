@@ -138,10 +138,26 @@ class ElectricPotentialChangeRateDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricPotentialChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricPotentialChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate DTO from a json representation.
+
+        :param data: The ElectricPotentialChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerSecond"}
+        :return: A new instance of ElectricPotentialChangeRateDto.
+        :rtype: ElectricPotentialChangeRateDto
+        """
         return ElectricPotentialChangeRateDto(value=data["value"], unit=ElectricPotentialChangeRateUnits(data["unit"]))
 
 
@@ -214,6 +230,18 @@ class ElectricPotentialChangeRate(AbstractMeasure):
         :rtype: ElectricPotentialChangeRateDto
         """
         return ElectricPotentialChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond):
+        """
+        Get a ElectricPotentialChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricPotentialChangeRate unit to store the ElectricPotentialChangeRate value in the DTO representation.
+        :type hold_in_unit: ElectricPotentialChangeRateUnits
+        :return: JSON object represents ElectricPotentialChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_potential_change_rate_dto: ElectricPotentialChangeRateDto):
@@ -226,6 +254,19 @@ class ElectricPotentialChangeRate(AbstractMeasure):
         :rtype: ElectricPotentialChangeRate
         """
         return ElectricPotentialChangeRate(electric_potential_change_rate_dto.value, electric_potential_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricPotentialChangeRate from a DTO unit json representation.
+
+        :param data: The ElectricPotentialChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerSecond"}
+        :return: A new instance of ElectricPotentialChangeRate.
+        :rtype: ElectricPotentialChangeRate
+        """
+        return ElectricPotentialChangeRate.from_dto(ElectricPotentialChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricPotentialChangeRateUnits) -> float:
         value = self._value

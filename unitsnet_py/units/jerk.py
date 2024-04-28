@@ -93,10 +93,26 @@ class JerkDto:
         """
 
     def to_json(self):
+        """
+        Get a Jerk DTO JSON object representing the current unit.
+
+        :return: JSON object represents Jerk DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecondCubed"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Jerk DTO from a json representation.
+
+        :param data: The Jerk DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecondCubed"}
+        :return: A new instance of JerkDto.
+        :rtype: JerkDto
+        """
         return JerkDto(value=data["value"], unit=JerkUnits(data["unit"]))
 
 
@@ -151,6 +167,18 @@ class Jerk(AbstractMeasure):
         :rtype: JerkDto
         """
         return JerkDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: JerkUnits = JerkUnits.MeterPerSecondCubed):
+        """
+        Get a Jerk DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Jerk unit to store the Jerk value in the DTO representation.
+        :type hold_in_unit: JerkUnits
+        :return: JSON object represents Jerk DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecondCubed"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(jerk_dto: JerkDto):
@@ -163,6 +191,19 @@ class Jerk(AbstractMeasure):
         :rtype: Jerk
         """
         return Jerk(jerk_dto.value, jerk_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Jerk from a DTO unit json representation.
+
+        :param data: The Jerk DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecondCubed"}
+        :return: A new instance of Jerk.
+        :rtype: Jerk
+        """
+        return Jerk.from_dto(JerkDto.from_json(data))
 
     def __convert_from_base(self, from_unit: JerkUnits) -> float:
         value = self._value

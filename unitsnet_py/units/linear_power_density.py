@@ -163,10 +163,26 @@ class LinearPowerDensityDto:
         """
 
     def to_json(self):
+        """
+        Get a LinearPowerDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents LinearPowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of LinearPowerDensity DTO from a json representation.
+
+        :param data: The LinearPowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeter"}
+        :return: A new instance of LinearPowerDensityDto.
+        :rtype: LinearPowerDensityDto
+        """
         return LinearPowerDensityDto(value=data["value"], unit=LinearPowerDensityUnits(data["unit"]))
 
 
@@ -249,6 +265,18 @@ class LinearPowerDensity(AbstractMeasure):
         :rtype: LinearPowerDensityDto
         """
         return LinearPowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LinearPowerDensityUnits = LinearPowerDensityUnits.WattPerMeter):
+        """
+        Get a LinearPowerDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LinearPowerDensity unit to store the LinearPowerDensity value in the DTO representation.
+        :type hold_in_unit: LinearPowerDensityUnits
+        :return: JSON object represents LinearPowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(linear_power_density_dto: LinearPowerDensityDto):
@@ -261,6 +289,19 @@ class LinearPowerDensity(AbstractMeasure):
         :rtype: LinearPowerDensity
         """
         return LinearPowerDensity(linear_power_density_dto.value, linear_power_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LinearPowerDensity from a DTO unit json representation.
+
+        :param data: The LinearPowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerMeter"}
+        :return: A new instance of LinearPowerDensity.
+        :rtype: LinearPowerDensity
+        """
+        return LinearPowerDensity.from_dto(LinearPowerDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LinearPowerDensityUnits) -> float:
         value = self._value

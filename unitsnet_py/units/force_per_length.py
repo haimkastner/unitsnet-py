@@ -228,10 +228,26 @@ class ForcePerLengthDto:
         """
 
     def to_json(self):
+        """
+        Get a ForcePerLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents ForcePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ForcePerLength DTO from a json representation.
+
+        :param data: The ForcePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerMeter"}
+        :return: A new instance of ForcePerLengthDto.
+        :rtype: ForcePerLengthDto
+        """
         return ForcePerLengthDto(value=data["value"], unit=ForcePerLengthUnits(data["unit"]))
 
 
@@ -340,6 +356,18 @@ class ForcePerLength(AbstractMeasure):
         :rtype: ForcePerLengthDto
         """
         return ForcePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ForcePerLengthUnits = ForcePerLengthUnits.NewtonPerMeter):
+        """
+        Get a ForcePerLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ForcePerLength unit to store the ForcePerLength value in the DTO representation.
+        :type hold_in_unit: ForcePerLengthUnits
+        :return: JSON object represents ForcePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(force_per_length_dto: ForcePerLengthDto):
@@ -352,6 +380,19 @@ class ForcePerLength(AbstractMeasure):
         :rtype: ForcePerLength
         """
         return ForcePerLength(force_per_length_dto.value, force_per_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ForcePerLength from a DTO unit json representation.
+
+        :param data: The ForcePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerMeter"}
+        :return: A new instance of ForcePerLength.
+        :rtype: ForcePerLength
+        """
+        return ForcePerLength.from_dto(ForcePerLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ForcePerLengthUnits) -> float:
         value = self._value

@@ -203,10 +203,26 @@ class RotationalStiffnessDto:
         """
 
     def to_json(self):
+        """
+        Get a RotationalStiffness DTO JSON object representing the current unit.
+
+        :return: JSON object represents RotationalStiffness DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of RotationalStiffness DTO from a json representation.
+
+        :param data: The RotationalStiffness DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        :return: A new instance of RotationalStiffnessDto.
+        :rtype: RotationalStiffnessDto
+        """
         return RotationalStiffnessDto(value=data["value"], unit=RotationalStiffnessUnits(data["unit"]))
 
 
@@ -305,6 +321,18 @@ class RotationalStiffness(AbstractMeasure):
         :rtype: RotationalStiffnessDto
         """
         return RotationalStiffnessDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RotationalStiffnessUnits = RotationalStiffnessUnits.NewtonMeterPerRadian):
+        """
+        Get a RotationalStiffness DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific RotationalStiffness unit to store the RotationalStiffness value in the DTO representation.
+        :type hold_in_unit: RotationalStiffnessUnits
+        :return: JSON object represents RotationalStiffness DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(rotational_stiffness_dto: RotationalStiffnessDto):
@@ -317,6 +345,19 @@ class RotationalStiffness(AbstractMeasure):
         :rtype: RotationalStiffness
         """
         return RotationalStiffness(rotational_stiffness_dto.value, rotational_stiffness_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of RotationalStiffness from a DTO unit json representation.
+
+        :param data: The RotationalStiffness DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerRadian"}
+        :return: A new instance of RotationalStiffness.
+        :rtype: RotationalStiffness
+        """
+        return RotationalStiffness.from_dto(RotationalStiffnessDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RotationalStiffnessUnits) -> float:
         value = self._value

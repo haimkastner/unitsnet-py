@@ -48,10 +48,26 @@ class LevelDto:
         """
 
     def to_json(self):
+        """
+        Get a Level DTO JSON object representing the current unit.
+
+        :return: JSON object represents Level DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Decibel"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Level DTO from a json representation.
+
+        :param data: The Level DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Decibel"}
+        :return: A new instance of LevelDto.
+        :rtype: LevelDto
+        """
         return LevelDto(value=data["value"], unit=LevelUnits(data["unit"]))
 
 
@@ -88,6 +104,18 @@ class Level(AbstractMeasure):
         :rtype: LevelDto
         """
         return LevelDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LevelUnits = LevelUnits.Decibel):
+        """
+        Get a Level DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Level unit to store the Level value in the DTO representation.
+        :type hold_in_unit: LevelUnits
+        :return: JSON object represents Level DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Decibel"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(level_dto: LevelDto):
@@ -100,6 +128,19 @@ class Level(AbstractMeasure):
         :rtype: Level
         """
         return Level(level_dto.value, level_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Level from a DTO unit json representation.
+
+        :param data: The Level DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Decibel"}
+        :return: A new instance of Level.
+        :rtype: Level
+        """
+        return Level.from_dto(LevelDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LevelUnits) -> float:
         value = self._value

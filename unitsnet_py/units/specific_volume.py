@@ -53,10 +53,26 @@ class SpecificVolumeDto:
         """
 
     def to_json(self):
+        """
+        Get a SpecificVolume DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificVolume DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerKilogram"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of SpecificVolume DTO from a json representation.
+
+        :param data: The SpecificVolume DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerKilogram"}
+        :return: A new instance of SpecificVolumeDto.
+        :rtype: SpecificVolumeDto
+        """
         return SpecificVolumeDto(value=data["value"], unit=SpecificVolumeUnits(data["unit"]))
 
 
@@ -95,6 +111,18 @@ class SpecificVolume(AbstractMeasure):
         :rtype: SpecificVolumeDto
         """
         return SpecificVolumeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram):
+        """
+        Get a SpecificVolume DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificVolume unit to store the SpecificVolume value in the DTO representation.
+        :type hold_in_unit: SpecificVolumeUnits
+        :return: JSON object represents SpecificVolume DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerKilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(specific_volume_dto: SpecificVolumeDto):
@@ -107,6 +135,19 @@ class SpecificVolume(AbstractMeasure):
         :rtype: SpecificVolume
         """
         return SpecificVolume(specific_volume_dto.value, specific_volume_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificVolume from a DTO unit json representation.
+
+        :param data: The SpecificVolume DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerKilogram"}
+        :return: A new instance of SpecificVolume.
+        :rtype: SpecificVolume
+        """
+        return SpecificVolume.from_dto(SpecificVolumeDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificVolumeUnits) -> float:
         value = self._value

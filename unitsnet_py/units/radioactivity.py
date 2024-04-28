@@ -183,10 +183,26 @@ class RadioactivityDto:
         """
 
     def to_json(self):
+        """
+        Get a Radioactivity DTO JSON object representing the current unit.
+
+        :return: JSON object represents Radioactivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Becquerel"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Radioactivity DTO from a json representation.
+
+        :param data: The Radioactivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Becquerel"}
+        :return: A new instance of RadioactivityDto.
+        :rtype: RadioactivityDto
+        """
         return RadioactivityDto(value=data["value"], unit=RadioactivityUnits(data["unit"]))
 
 
@@ -277,6 +293,18 @@ class Radioactivity(AbstractMeasure):
         :rtype: RadioactivityDto
         """
         return RadioactivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RadioactivityUnits = RadioactivityUnits.Becquerel):
+        """
+        Get a Radioactivity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Radioactivity unit to store the Radioactivity value in the DTO representation.
+        :type hold_in_unit: RadioactivityUnits
+        :return: JSON object represents Radioactivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Becquerel"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(radioactivity_dto: RadioactivityDto):
@@ -289,6 +317,19 @@ class Radioactivity(AbstractMeasure):
         :rtype: Radioactivity
         """
         return Radioactivity(radioactivity_dto.value, radioactivity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Radioactivity from a DTO unit json representation.
+
+        :param data: The Radioactivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Becquerel"}
+        :return: A new instance of Radioactivity.
+        :rtype: Radioactivity
+        """
+        return Radioactivity.from_dto(RadioactivityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RadioactivityUnits) -> float:
         value = self._value

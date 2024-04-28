@@ -103,10 +103,26 @@ class ImpulseDto:
         """
 
     def to_json(self):
+        """
+        Get a Impulse DTO JSON object representing the current unit.
+
+        :return: JSON object represents Impulse DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Impulse DTO from a json representation.
+
+        :param data: The Impulse DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonSecond"}
+        :return: A new instance of ImpulseDto.
+        :rtype: ImpulseDto
+        """
         return ImpulseDto(value=data["value"], unit=ImpulseUnits(data["unit"]))
 
 
@@ -165,6 +181,18 @@ class Impulse(AbstractMeasure):
         :rtype: ImpulseDto
         """
         return ImpulseDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ImpulseUnits = ImpulseUnits.NewtonSecond):
+        """
+        Get a Impulse DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Impulse unit to store the Impulse value in the DTO representation.
+        :type hold_in_unit: ImpulseUnits
+        :return: JSON object represents Impulse DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(impulse_dto: ImpulseDto):
@@ -177,6 +205,19 @@ class Impulse(AbstractMeasure):
         :rtype: Impulse
         """
         return Impulse(impulse_dto.value, impulse_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Impulse from a DTO unit json representation.
+
+        :param data: The Impulse DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonSecond"}
+        :return: A new instance of Impulse.
+        :rtype: Impulse
+        """
+        return Impulse.from_dto(ImpulseDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ImpulseUnits) -> float:
         value = self._value

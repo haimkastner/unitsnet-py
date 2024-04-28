@@ -138,10 +138,26 @@ class VolumeConcentrationDto:
         """
 
     def to_json(self):
+        """
+        Get a VolumeConcentration DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumeConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of VolumeConcentration DTO from a json representation.
+
+        :param data: The VolumeConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of VolumeConcentrationDto.
+        :rtype: VolumeConcentrationDto
+        """
         return VolumeConcentrationDto(value=data["value"], unit=VolumeConcentrationUnits(data["unit"]))
 
 
@@ -214,6 +230,18 @@ class VolumeConcentration(AbstractMeasure):
         :rtype: VolumeConcentrationDto
         """
         return VolumeConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction):
+        """
+        Get a VolumeConcentration DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumeConcentration unit to store the VolumeConcentration value in the DTO representation.
+        :type hold_in_unit: VolumeConcentrationUnits
+        :return: JSON object represents VolumeConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(volume_concentration_dto: VolumeConcentrationDto):
@@ -226,6 +254,19 @@ class VolumeConcentration(AbstractMeasure):
         :rtype: VolumeConcentration
         """
         return VolumeConcentration(volume_concentration_dto.value, volume_concentration_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumeConcentration from a DTO unit json representation.
+
+        :param data: The VolumeConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of VolumeConcentration.
+        :rtype: VolumeConcentration
+        """
+        return VolumeConcentration.from_dto(VolumeConcentrationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeConcentrationUnits) -> float:
         value = self._value

@@ -73,10 +73,26 @@ class ElectricCurrentGradientDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricCurrentGradient DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricCurrentGradient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "AmperePerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricCurrentGradient DTO from a json representation.
+
+        :param data: The ElectricCurrentGradient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "AmperePerSecond"}
+        :return: A new instance of ElectricCurrentGradientDto.
+        :rtype: ElectricCurrentGradientDto
+        """
         return ElectricCurrentGradientDto(value=data["value"], unit=ElectricCurrentGradientUnits(data["unit"]))
 
 
@@ -123,6 +139,18 @@ class ElectricCurrentGradient(AbstractMeasure):
         :rtype: ElectricCurrentGradientDto
         """
         return ElectricCurrentGradientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricCurrentGradientUnits = ElectricCurrentGradientUnits.AmperePerSecond):
+        """
+        Get a ElectricCurrentGradient DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricCurrentGradient unit to store the ElectricCurrentGradient value in the DTO representation.
+        :type hold_in_unit: ElectricCurrentGradientUnits
+        :return: JSON object represents ElectricCurrentGradient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "AmperePerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_current_gradient_dto: ElectricCurrentGradientDto):
@@ -135,6 +163,19 @@ class ElectricCurrentGradient(AbstractMeasure):
         :rtype: ElectricCurrentGradient
         """
         return ElectricCurrentGradient(electric_current_gradient_dto.value, electric_current_gradient_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricCurrentGradient from a DTO unit json representation.
+
+        :param data: The ElectricCurrentGradient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "AmperePerSecond"}
+        :return: A new instance of ElectricCurrentGradient.
+        :rtype: ElectricCurrentGradient
+        """
+        return ElectricCurrentGradient.from_dto(ElectricCurrentGradientDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricCurrentGradientUnits) -> float:
         value = self._value

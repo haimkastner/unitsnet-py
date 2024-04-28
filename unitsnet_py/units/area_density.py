@@ -53,10 +53,26 @@ class AreaDensityDto:
         """
 
     def to_json(self):
+        """
+        Get a AreaDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents AreaDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of AreaDensity DTO from a json representation.
+
+        :param data: The AreaDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerSquareMeter"}
+        :return: A new instance of AreaDensityDto.
+        :rtype: AreaDensityDto
+        """
         return AreaDensityDto(value=data["value"], unit=AreaDensityUnits(data["unit"]))
 
 
@@ -95,6 +111,18 @@ class AreaDensity(AbstractMeasure):
         :rtype: AreaDensityDto
         """
         return AreaDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter):
+        """
+        Get a AreaDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AreaDensity unit to store the AreaDensity value in the DTO representation.
+        :type hold_in_unit: AreaDensityUnits
+        :return: JSON object represents AreaDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(area_density_dto: AreaDensityDto):
@@ -107,6 +135,19 @@ class AreaDensity(AbstractMeasure):
         :rtype: AreaDensity
         """
         return AreaDensity(area_density_dto.value, area_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AreaDensity from a DTO unit json representation.
+
+        :param data: The AreaDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerSquareMeter"}
+        :return: A new instance of AreaDensity.
+        :rtype: AreaDensity
+        """
+        return AreaDensity.from_dto(AreaDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AreaDensityUnits) -> float:
         value = self._value

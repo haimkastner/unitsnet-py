@@ -248,10 +248,26 @@ class LengthDto:
         """
 
     def to_json(self):
+        """
+        Get a Length DTO JSON object representing the current unit.
+
+        :return: JSON object represents Length DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Meter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Length DTO from a json representation.
+
+        :param data: The Length DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Meter"}
+        :return: A new instance of LengthDto.
+        :rtype: LengthDto
+        """
         return LengthDto(value=data["value"], unit=LengthUnits(data["unit"]))
 
 
@@ -368,6 +384,18 @@ class Length(AbstractMeasure):
         :rtype: LengthDto
         """
         return LengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LengthUnits = LengthUnits.Meter):
+        """
+        Get a Length DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Length unit to store the Length value in the DTO representation.
+        :type hold_in_unit: LengthUnits
+        :return: JSON object represents Length DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Meter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(length_dto: LengthDto):
@@ -380,6 +408,19 @@ class Length(AbstractMeasure):
         :rtype: Length
         """
         return Length(length_dto.value, length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Length from a DTO unit json representation.
+
+        :param data: The Length DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Meter"}
+        :return: A new instance of Length.
+        :rtype: Length
+        """
+        return Length.from_dto(LengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LengthUnits) -> float:
         value = self._value

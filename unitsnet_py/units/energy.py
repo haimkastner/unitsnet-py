@@ -238,10 +238,26 @@ class EnergyDto:
         """
 
     def to_json(self):
+        """
+        Get a Energy DTO JSON object representing the current unit.
+
+        :return: JSON object represents Energy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Joule"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Energy DTO from a json representation.
+
+        :param data: The Energy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Joule"}
+        :return: A new instance of EnergyDto.
+        :rtype: EnergyDto
+        """
         return EnergyDto(value=data["value"], unit=EnergyUnits(data["unit"]))
 
 
@@ -354,6 +370,18 @@ class Energy(AbstractMeasure):
         :rtype: EnergyDto
         """
         return EnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: EnergyUnits = EnergyUnits.Joule):
+        """
+        Get a Energy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Energy unit to store the Energy value in the DTO representation.
+        :type hold_in_unit: EnergyUnits
+        :return: JSON object represents Energy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Joule"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(energy_dto: EnergyDto):
@@ -366,6 +394,19 @@ class Energy(AbstractMeasure):
         :rtype: Energy
         """
         return Energy(energy_dto.value, energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Energy from a DTO unit json representation.
+
+        :param data: The Energy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Joule"}
+        :return: A new instance of Energy.
+        :rtype: Energy
+        """
+        return Energy.from_dto(EnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: EnergyUnits) -> float:
         value = self._value

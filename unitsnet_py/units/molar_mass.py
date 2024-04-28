@@ -103,10 +103,26 @@ class MolarMassDto:
         """
 
     def to_json(self):
+        """
+        Get a MolarMass DTO JSON object representing the current unit.
+
+        :return: JSON object represents MolarMass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMole"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MolarMass DTO from a json representation.
+
+        :param data: The MolarMass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMole"}
+        :return: A new instance of MolarMassDto.
+        :rtype: MolarMassDto
+        """
         return MolarMassDto(value=data["value"], unit=MolarMassUnits(data["unit"]))
 
 
@@ -165,6 +181,18 @@ class MolarMass(AbstractMeasure):
         :rtype: MolarMassDto
         """
         return MolarMassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolarMassUnits = MolarMassUnits.KilogramPerMole):
+        """
+        Get a MolarMass DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MolarMass unit to store the MolarMass value in the DTO representation.
+        :type hold_in_unit: MolarMassUnits
+        :return: JSON object represents MolarMass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMole"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(molar_mass_dto: MolarMassDto):
@@ -177,6 +205,19 @@ class MolarMass(AbstractMeasure):
         :rtype: MolarMass
         """
         return MolarMass(molar_mass_dto.value, molar_mass_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MolarMass from a DTO unit json representation.
+
+        :param data: The MolarMass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMole"}
+        :return: A new instance of MolarMass.
+        :rtype: MolarMass
+        """
+        return MolarMass.from_dto(MolarMassDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolarMassUnits) -> float:
         value = self._value

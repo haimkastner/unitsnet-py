@@ -43,10 +43,26 @@ class ElectricFieldDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricField DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricField DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricField DTO from a json representation.
+
+        :param data: The ElectricField DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerMeter"}
+        :return: A new instance of ElectricFieldDto.
+        :rtype: ElectricFieldDto
+        """
         return ElectricFieldDto(value=data["value"], unit=ElectricFieldUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class ElectricField(AbstractMeasure):
         :rtype: ElectricFieldDto
         """
         return ElectricFieldDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter):
+        """
+        Get a ElectricField DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricField unit to store the ElectricField value in the DTO representation.
+        :type hold_in_unit: ElectricFieldUnits
+        :return: JSON object represents ElectricField DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_field_dto: ElectricFieldDto):
@@ -93,6 +121,19 @@ class ElectricField(AbstractMeasure):
         :rtype: ElectricField
         """
         return ElectricField(electric_field_dto.value, electric_field_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricField from a DTO unit json representation.
+
+        :param data: The ElectricField DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltPerMeter"}
+        :return: A new instance of ElectricField.
+        :rtype: ElectricField
+        """
+        return ElectricField.from_dto(ElectricFieldDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricFieldUnits) -> float:
         value = self._value

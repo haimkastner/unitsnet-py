@@ -53,10 +53,26 @@ class ApparentEnergyDto:
         """
 
     def to_json(self):
+        """
+        Get a ApparentEnergy DTO JSON object representing the current unit.
+
+        :return: JSON object represents ApparentEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltampereHour"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ApparentEnergy DTO from a json representation.
+
+        :param data: The ApparentEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltampereHour"}
+        :return: A new instance of ApparentEnergyDto.
+        :rtype: ApparentEnergyDto
+        """
         return ApparentEnergyDto(value=data["value"], unit=ApparentEnergyUnits(data["unit"]))
 
 
@@ -95,6 +111,18 @@ class ApparentEnergy(AbstractMeasure):
         :rtype: ApparentEnergyDto
         """
         return ApparentEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ApparentEnergyUnits = ApparentEnergyUnits.VoltampereHour):
+        """
+        Get a ApparentEnergy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ApparentEnergy unit to store the ApparentEnergy value in the DTO representation.
+        :type hold_in_unit: ApparentEnergyUnits
+        :return: JSON object represents ApparentEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltampereHour"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(apparent_energy_dto: ApparentEnergyDto):
@@ -107,6 +135,19 @@ class ApparentEnergy(AbstractMeasure):
         :rtype: ApparentEnergy
         """
         return ApparentEnergy(apparent_energy_dto.value, apparent_energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ApparentEnergy from a DTO unit json representation.
+
+        :param data: The ApparentEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltampereHour"}
+        :return: A new instance of ApparentEnergy.
+        :rtype: ApparentEnergy
+        """
+        return ApparentEnergy.from_dto(ApparentEnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ApparentEnergyUnits) -> float:
         value = self._value

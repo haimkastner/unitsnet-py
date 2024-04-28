@@ -43,10 +43,26 @@ class ScalarDto:
         """
 
     def to_json(self):
+        """
+        Get a Scalar DTO JSON object representing the current unit.
+
+        :return: JSON object represents Scalar DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Amount"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Scalar DTO from a json representation.
+
+        :param data: The Scalar DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Amount"}
+        :return: A new instance of ScalarDto.
+        :rtype: ScalarDto
+        """
         return ScalarDto(value=data["value"], unit=ScalarUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class Scalar(AbstractMeasure):
         :rtype: ScalarDto
         """
         return ScalarDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ScalarUnits = ScalarUnits.Amount):
+        """
+        Get a Scalar DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Scalar unit to store the Scalar value in the DTO representation.
+        :type hold_in_unit: ScalarUnits
+        :return: JSON object represents Scalar DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Amount"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(scalar_dto: ScalarDto):
@@ -93,6 +121,19 @@ class Scalar(AbstractMeasure):
         :rtype: Scalar
         """
         return Scalar(scalar_dto.value, scalar_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Scalar from a DTO unit json representation.
+
+        :param data: The Scalar DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Amount"}
+        :return: A new instance of Scalar.
+        :rtype: Scalar
+        """
+        return Scalar.from_dto(ScalarDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ScalarUnits) -> float:
         value = self._value

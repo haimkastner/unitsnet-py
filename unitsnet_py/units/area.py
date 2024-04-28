@@ -108,10 +108,26 @@ class AreaDto:
         """
 
     def to_json(self):
+        """
+        Get a Area DTO JSON object representing the current unit.
+
+        :return: JSON object represents Area DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Area DTO from a json representation.
+
+        :param data: The Area DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeter"}
+        :return: A new instance of AreaDto.
+        :rtype: AreaDto
+        """
         return AreaDto(value=data["value"], unit=AreaUnits(data["unit"]))
 
 
@@ -172,6 +188,18 @@ class Area(AbstractMeasure):
         :rtype: AreaDto
         """
         return AreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AreaUnits = AreaUnits.SquareMeter):
+        """
+        Get a Area DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Area unit to store the Area value in the DTO representation.
+        :type hold_in_unit: AreaUnits
+        :return: JSON object represents Area DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(area_dto: AreaDto):
@@ -184,6 +212,19 @@ class Area(AbstractMeasure):
         :rtype: Area
         """
         return Area(area_dto.value, area_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Area from a DTO unit json representation.
+
+        :param data: The Area DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeter"}
+        :return: A new instance of Area.
+        :rtype: Area
+        """
+        return Area.from_dto(AreaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AreaUnits) -> float:
         value = self._value

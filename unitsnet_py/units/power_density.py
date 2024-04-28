@@ -258,10 +258,26 @@ class PowerDensityDto:
         """
 
     def to_json(self):
+        """
+        Get a PowerDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents PowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerCubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of PowerDensity DTO from a json representation.
+
+        :param data: The PowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerCubicMeter"}
+        :return: A new instance of PowerDensityDto.
+        :rtype: PowerDensityDto
+        """
         return PowerDensityDto(value=data["value"], unit=PowerDensityUnits(data["unit"]))
 
 
@@ -382,6 +398,18 @@ class PowerDensity(AbstractMeasure):
         :rtype: PowerDensityDto
         """
         return PowerDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter):
+        """
+        Get a PowerDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific PowerDensity unit to store the PowerDensity value in the DTO representation.
+        :type hold_in_unit: PowerDensityUnits
+        :return: JSON object represents PowerDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(power_density_dto: PowerDensityDto):
@@ -394,6 +422,19 @@ class PowerDensity(AbstractMeasure):
         :rtype: PowerDensity
         """
         return PowerDensity(power_density_dto.value, power_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of PowerDensity from a DTO unit json representation.
+
+        :param data: The PowerDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerCubicMeter"}
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
+        return PowerDensity.from_dto(PowerDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PowerDensityUnits) -> float:
         value = self._value

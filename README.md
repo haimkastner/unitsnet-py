@@ -53,9 +53,13 @@ print(angle.to_string())  # 180 °
 
 print(angle.to_string(AngleUnits.Degree))  # 180 °
 print(angle.to_string(AngleUnits.Radian))  # 3.141592653589793 rad
+```
 
-# Additional methods
+## Additional methods
 
+Check, compare, calculate etc. with unitsnet:
+
+```python
 length1 = Length.from_meters(10)
 length2 = Length.from_decimeters(100)
 length3 = Length.from_meters(3)
@@ -99,6 +103,41 @@ print(np_array_double_length.kilometers) # [[ 4.  8. 12.][14. 16. 18.]]
 print(np_array_double_length.meters) # [[ 4000.  8000. 12000.][14000. 16000. 18000.]]
 
 ```
+## DTO - Data Transfer Object
+
+As UnitsNet provides a convenient way to work within a running service, there are occasions where the data needs to be exposed outside of the service, typically through an API containing the unit value or consumed from an API.
+
+To support this with a clear API schema and make it easy to convert to and from this schema to the specific format, it's recommended to use DTOs and the UnitsNet flavor converters.
+
+```python
+from unitsnet_py import Length, LengthDto, LengthUnits
+
+ # Create a Length unit object
+length = Length.from_meters(100.01)
+# Obtain the DTO object as json, represented by the default unit - meter
+length_dto_json = length.to_dto_json() # {"value":100.01,"unit":"Meter"}
+# Obtain the same value but represent DTO in KM 
+length_dto_represents_in_km_json = length.to_dto_json(LengthUnits.Kilometer) # {'value': 0.10001, 'unit': 'Kilometer'}
+# Load JSON to DTO, and load
+length_from_meters_dto = Length.from_dto_json(length_dto_json)
+# The exact same value as
+length_from_km_dto = Length.from_dto_json(length_dto_represents_in_km_json)
+
+# Also, it supported to create and handle as DTO instance and to create to/from json to it.
+
+# Get a DTO instance from a Length instance
+length_dto: LengthDto = length.to_dto()
+# Get the json representation of the DTO
+length_json = length_dto.to_json() # {"value":100.01,"unit":"Meter"}
+# Obtain DTO instance from a json representation
+length_dto: LengthDto = LengthDto.from_json(length_json)
+# Obtain Length unit from a DTO instance
+length = Length.from_dto(length_dto)
+```
+
+Check out the OpenAPI [unitsnet-openapi-spec](https://haimkastner.github.io/unitsnet-openapi-spec-example/) example schema.
+
+Also, refer to the detailed discussions on GitHub: [haimkastner/unitsnet-js#31](https://github.com/haimkastner/unitsnet-js/issues/31) & [angularsen/UnitsNet#1378](https://github.com/angularsen/UnitsNet/issues/1378).
 
 ### Supported units
 
@@ -487,4 +526,5 @@ Get the same strongly typed units on other platforms, based on the same [unit de
 |----------------------------|-------------|---------------------------------------------------|------------------------------------------------------|--------------|
 | C#                         | UnitsNet    | [nuget](https://www.nuget.org/packages/UnitsNet/) | [github](https://github.com/angularsen/UnitsNet)     | @angularsen  |
 | JavaScript /<br>TypeScript | unitsnet-js | [npm](https://www.npmjs.com/package/unitsnet-js)  | [github](https://github.com/haimkastner/unitsnet-js) | @haimkastner |
+| Python                     | unitsnet-py | [pypi](https://pypi.org/project/unitsnet-py)      | [github](https://github.com/haimkastner/unitsnet-py) | @haimkastner |
 

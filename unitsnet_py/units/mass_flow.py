@@ -203,10 +203,26 @@ class MassFlowDto:
         """
 
     def to_json(self):
+        """
+        Get a MassFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MassFlow DTO from a json representation.
+
+        :param data: The MassFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerSecond"}
+        :return: A new instance of MassFlowDto.
+        :rtype: MassFlowDto
+        """
         return MassFlowDto(value=data["value"], unit=MassFlowUnits(data["unit"]))
 
 
@@ -305,6 +321,18 @@ class MassFlow(AbstractMeasure):
         :rtype: MassFlowDto
         """
         return MassFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassFlowUnits = MassFlowUnits.GramPerSecond):
+        """
+        Get a MassFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassFlow unit to store the MassFlow value in the DTO representation.
+        :type hold_in_unit: MassFlowUnits
+        :return: JSON object represents MassFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_flow_dto: MassFlowDto):
@@ -317,6 +345,19 @@ class MassFlow(AbstractMeasure):
         :rtype: MassFlow
         """
         return MassFlow(mass_flow_dto.value, mass_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassFlow from a DTO unit json representation.
+
+        :param data: The MassFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerSecond"}
+        :return: A new instance of MassFlow.
+        :rtype: MassFlow
+        """
+        return MassFlow.from_dto(MassFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassFlowUnits) -> float:
         value = self._value

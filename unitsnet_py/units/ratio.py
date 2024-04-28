@@ -68,10 +68,26 @@ class RatioDto:
         """
 
     def to_json(self):
+        """
+        Get a Ratio DTO JSON object representing the current unit.
+
+        :return: JSON object represents Ratio DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Ratio DTO from a json representation.
+
+        :param data: The Ratio DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of RatioDto.
+        :rtype: RatioDto
+        """
         return RatioDto(value=data["value"], unit=RatioUnits(data["unit"]))
 
 
@@ -116,6 +132,18 @@ class Ratio(AbstractMeasure):
         :rtype: RatioDto
         """
         return RatioDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: RatioUnits = RatioUnits.DecimalFraction):
+        """
+        Get a Ratio DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Ratio unit to store the Ratio value in the DTO representation.
+        :type hold_in_unit: RatioUnits
+        :return: JSON object represents Ratio DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(ratio_dto: RatioDto):
@@ -128,6 +156,19 @@ class Ratio(AbstractMeasure):
         :rtype: Ratio
         """
         return Ratio(ratio_dto.value, ratio_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Ratio from a DTO unit json representation.
+
+        :param data: The Ratio DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of Ratio.
+        :rtype: Ratio
+        """
+        return Ratio.from_dto(RatioDto.from_json(data))
 
     def __convert_from_base(self, from_unit: RatioUnits) -> float:
         value = self._value

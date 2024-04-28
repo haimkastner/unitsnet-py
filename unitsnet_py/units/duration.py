@@ -93,10 +93,26 @@ class DurationDto:
         """
 
     def to_json(self):
+        """
+        Get a Duration DTO JSON object representing the current unit.
+
+        :return: JSON object represents Duration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Second"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Duration DTO from a json representation.
+
+        :param data: The Duration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Second"}
+        :return: A new instance of DurationDto.
+        :rtype: DurationDto
+        """
         return DurationDto(value=data["value"], unit=DurationUnits(data["unit"]))
 
 
@@ -151,6 +167,18 @@ class Duration(AbstractMeasure):
         :rtype: DurationDto
         """
         return DurationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: DurationUnits = DurationUnits.Second):
+        """
+        Get a Duration DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Duration unit to store the Duration value in the DTO representation.
+        :type hold_in_unit: DurationUnits
+        :return: JSON object represents Duration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Second"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(duration_dto: DurationDto):
@@ -163,6 +191,19 @@ class Duration(AbstractMeasure):
         :rtype: Duration
         """
         return Duration(duration_dto.value, duration_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Duration from a DTO unit json representation.
+
+        :param data: The Duration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Second"}
+        :return: A new instance of Duration.
+        :rtype: Duration
+        """
+        return Duration.from_dto(DurationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: DurationUnits) -> float:
         value = self._value

@@ -43,10 +43,26 @@ class SolidAngleDto:
         """
 
     def to_json(self):
+        """
+        Get a SolidAngle DTO JSON object representing the current unit.
+
+        :return: JSON object represents SolidAngle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Steradian"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of SolidAngle DTO from a json representation.
+
+        :param data: The SolidAngle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Steradian"}
+        :return: A new instance of SolidAngleDto.
+        :rtype: SolidAngleDto
+        """
         return SolidAngleDto(value=data["value"], unit=SolidAngleUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class SolidAngle(AbstractMeasure):
         :rtype: SolidAngleDto
         """
         return SolidAngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SolidAngleUnits = SolidAngleUnits.Steradian):
+        """
+        Get a SolidAngle DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SolidAngle unit to store the SolidAngle value in the DTO representation.
+        :type hold_in_unit: SolidAngleUnits
+        :return: JSON object represents SolidAngle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Steradian"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(solid_angle_dto: SolidAngleDto):
@@ -93,6 +121,19 @@ class SolidAngle(AbstractMeasure):
         :rtype: SolidAngle
         """
         return SolidAngle(solid_angle_dto.value, solid_angle_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SolidAngle from a DTO unit json representation.
+
+        :param data: The SolidAngle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Steradian"}
+        :return: A new instance of SolidAngle.
+        :rtype: SolidAngle
+        """
+        return SolidAngle.from_dto(SolidAngleDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SolidAngleUnits) -> float:
         value = self._value

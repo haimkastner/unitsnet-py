@@ -63,10 +63,26 @@ class ElectricConductanceDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricConductance DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricConductance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Siemens"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricConductance DTO from a json representation.
+
+        :param data: The ElectricConductance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Siemens"}
+        :return: A new instance of ElectricConductanceDto.
+        :rtype: ElectricConductanceDto
+        """
         return ElectricConductanceDto(value=data["value"], unit=ElectricConductanceUnits(data["unit"]))
 
 
@@ -109,6 +125,18 @@ class ElectricConductance(AbstractMeasure):
         :rtype: ElectricConductanceDto
         """
         return ElectricConductanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricConductanceUnits = ElectricConductanceUnits.Siemens):
+        """
+        Get a ElectricConductance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricConductance unit to store the ElectricConductance value in the DTO representation.
+        :type hold_in_unit: ElectricConductanceUnits
+        :return: JSON object represents ElectricConductance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Siemens"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_conductance_dto: ElectricConductanceDto):
@@ -121,6 +149,19 @@ class ElectricConductance(AbstractMeasure):
         :rtype: ElectricConductance
         """
         return ElectricConductance(electric_conductance_dto.value, electric_conductance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricConductance from a DTO unit json representation.
+
+        :param data: The ElectricConductance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Siemens"}
+        :return: A new instance of ElectricConductance.
+        :rtype: ElectricConductance
+        """
+        return ElectricConductance.from_dto(ElectricConductanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricConductanceUnits) -> float:
         value = self._value

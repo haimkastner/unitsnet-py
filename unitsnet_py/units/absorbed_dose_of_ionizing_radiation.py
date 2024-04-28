@@ -118,10 +118,26 @@ class AbsorbedDoseOfIonizingRadiationDto:
         """
 
     def to_json(self):
+        """
+        Get a AbsorbedDoseOfIonizingRadiation DTO JSON object representing the current unit.
+
+        :return: JSON object represents AbsorbedDoseOfIonizingRadiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Gray"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of AbsorbedDoseOfIonizingRadiation DTO from a json representation.
+
+        :param data: The AbsorbedDoseOfIonizingRadiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Gray"}
+        :return: A new instance of AbsorbedDoseOfIonizingRadiationDto.
+        :rtype: AbsorbedDoseOfIonizingRadiationDto
+        """
         return AbsorbedDoseOfIonizingRadiationDto(value=data["value"], unit=AbsorbedDoseOfIonizingRadiationUnits(data["unit"]))
 
 
@@ -186,6 +202,18 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         :rtype: AbsorbedDoseOfIonizingRadiationDto
         """
         return AbsorbedDoseOfIonizingRadiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray):
+        """
+        Get a AbsorbedDoseOfIonizingRadiation DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AbsorbedDoseOfIonizingRadiation unit to store the AbsorbedDoseOfIonizingRadiation value in the DTO representation.
+        :type hold_in_unit: AbsorbedDoseOfIonizingRadiationUnits
+        :return: JSON object represents AbsorbedDoseOfIonizingRadiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Gray"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(absorbed_dose_of_ionizing_radiation_dto: AbsorbedDoseOfIonizingRadiationDto):
@@ -198,6 +226,19 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         :rtype: AbsorbedDoseOfIonizingRadiation
         """
         return AbsorbedDoseOfIonizingRadiation(absorbed_dose_of_ionizing_radiation_dto.value, absorbed_dose_of_ionizing_radiation_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AbsorbedDoseOfIonizingRadiation from a DTO unit json representation.
+
+        :param data: The AbsorbedDoseOfIonizingRadiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Gray"}
+        :return: A new instance of AbsorbedDoseOfIonizingRadiation.
+        :rtype: AbsorbedDoseOfIonizingRadiation
+        """
+        return AbsorbedDoseOfIonizingRadiation.from_dto(AbsorbedDoseOfIonizingRadiationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AbsorbedDoseOfIonizingRadiationUnits) -> float:
         value = self._value

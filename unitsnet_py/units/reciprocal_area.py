@@ -93,10 +93,26 @@ class ReciprocalAreaDto:
         """
 
     def to_json(self):
+        """
+        Get a ReciprocalArea DTO JSON object representing the current unit.
+
+        :return: JSON object represents ReciprocalArea DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InverseSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ReciprocalArea DTO from a json representation.
+
+        :param data: The ReciprocalArea DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InverseSquareMeter"}
+        :return: A new instance of ReciprocalAreaDto.
+        :rtype: ReciprocalAreaDto
+        """
         return ReciprocalAreaDto(value=data["value"], unit=ReciprocalAreaUnits(data["unit"]))
 
 
@@ -151,6 +167,18 @@ class ReciprocalArea(AbstractMeasure):
         :rtype: ReciprocalAreaDto
         """
         return ReciprocalAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ReciprocalAreaUnits = ReciprocalAreaUnits.InverseSquareMeter):
+        """
+        Get a ReciprocalArea DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ReciprocalArea unit to store the ReciprocalArea value in the DTO representation.
+        :type hold_in_unit: ReciprocalAreaUnits
+        :return: JSON object represents ReciprocalArea DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InverseSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(reciprocal_area_dto: ReciprocalAreaDto):
@@ -163,6 +191,19 @@ class ReciprocalArea(AbstractMeasure):
         :rtype: ReciprocalArea
         """
         return ReciprocalArea(reciprocal_area_dto.value, reciprocal_area_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ReciprocalArea from a DTO unit json representation.
+
+        :param data: The ReciprocalArea DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InverseSquareMeter"}
+        :return: A new instance of ReciprocalArea.
+        :rtype: ReciprocalArea
+        """
+        return ReciprocalArea.from_dto(ReciprocalAreaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ReciprocalAreaUnits) -> float:
         value = self._value

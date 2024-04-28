@@ -83,10 +83,26 @@ class VolumetricHeatCapacityDto:
         """
 
     def to_json(self):
+        """
+        Get a VolumetricHeatCapacity DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumetricHeatCapacity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerCubicMeterKelvin"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of VolumetricHeatCapacity DTO from a json representation.
+
+        :param data: The VolumetricHeatCapacity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerCubicMeterKelvin"}
+        :return: A new instance of VolumetricHeatCapacityDto.
+        :rtype: VolumetricHeatCapacityDto
+        """
         return VolumetricHeatCapacityDto(value=data["value"], unit=VolumetricHeatCapacityUnits(data["unit"]))
 
 
@@ -137,6 +153,18 @@ class VolumetricHeatCapacity(AbstractMeasure):
         :rtype: VolumetricHeatCapacityDto
         """
         return VolumetricHeatCapacityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumetricHeatCapacityUnits = VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin):
+        """
+        Get a VolumetricHeatCapacity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumetricHeatCapacity unit to store the VolumetricHeatCapacity value in the DTO representation.
+        :type hold_in_unit: VolumetricHeatCapacityUnits
+        :return: JSON object represents VolumetricHeatCapacity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerCubicMeterKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(volumetric_heat_capacity_dto: VolumetricHeatCapacityDto):
@@ -149,6 +177,19 @@ class VolumetricHeatCapacity(AbstractMeasure):
         :rtype: VolumetricHeatCapacity
         """
         return VolumetricHeatCapacity(volumetric_heat_capacity_dto.value, volumetric_heat_capacity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumetricHeatCapacity from a DTO unit json representation.
+
+        :param data: The VolumetricHeatCapacity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerCubicMeterKelvin"}
+        :return: A new instance of VolumetricHeatCapacity.
+        :rtype: VolumetricHeatCapacity
+        """
+        return VolumetricHeatCapacity.from_dto(VolumetricHeatCapacityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumetricHeatCapacityUnits) -> float:
         value = self._value

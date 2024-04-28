@@ -98,10 +98,26 @@ class MassFluxDto:
         """
 
     def to_json(self):
+        """
+        Get a MassFlux DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerSecondPerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MassFlux DTO from a json representation.
+
+        :param data: The MassFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerSecondPerSquareMeter"}
+        :return: A new instance of MassFluxDto.
+        :rtype: MassFluxDto
+        """
         return MassFluxDto(value=data["value"], unit=MassFluxUnits(data["unit"]))
 
 
@@ -158,6 +174,18 @@ class MassFlux(AbstractMeasure):
         :rtype: MassFluxDto
         """
         return MassFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassFluxUnits = MassFluxUnits.KilogramPerSecondPerSquareMeter):
+        """
+        Get a MassFlux DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassFlux unit to store the MassFlux value in the DTO representation.
+        :type hold_in_unit: MassFluxUnits
+        :return: JSON object represents MassFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerSecondPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_flux_dto: MassFluxDto):
@@ -170,6 +198,19 @@ class MassFlux(AbstractMeasure):
         :rtype: MassFlux
         """
         return MassFlux(mass_flux_dto.value, mass_flux_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassFlux from a DTO unit json representation.
+
+        :param data: The MassFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerSecondPerSquareMeter"}
+        :return: A new instance of MassFlux.
+        :rtype: MassFlux
+        """
+        return MassFlux.from_dto(MassFluxDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassFluxUnits) -> float:
         value = self._value

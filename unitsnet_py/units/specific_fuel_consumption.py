@@ -58,10 +58,26 @@ class SpecificFuelConsumptionDto:
         """
 
     def to_json(self):
+        """
+        Get a SpecificFuelConsumption DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificFuelConsumption DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerKiloNewtonSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of SpecificFuelConsumption DTO from a json representation.
+
+        :param data: The SpecificFuelConsumption DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerKiloNewtonSecond"}
+        :return: A new instance of SpecificFuelConsumptionDto.
+        :rtype: SpecificFuelConsumptionDto
+        """
         return SpecificFuelConsumptionDto(value=data["value"], unit=SpecificFuelConsumptionUnits(data["unit"]))
 
 
@@ -102,6 +118,18 @@ class SpecificFuelConsumption(AbstractMeasure):
         :rtype: SpecificFuelConsumptionDto
         """
         return SpecificFuelConsumptionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond):
+        """
+        Get a SpecificFuelConsumption DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificFuelConsumption unit to store the SpecificFuelConsumption value in the DTO representation.
+        :type hold_in_unit: SpecificFuelConsumptionUnits
+        :return: JSON object represents SpecificFuelConsumption DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "GramPerKiloNewtonSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(specific_fuel_consumption_dto: SpecificFuelConsumptionDto):
@@ -114,6 +142,19 @@ class SpecificFuelConsumption(AbstractMeasure):
         :rtype: SpecificFuelConsumption
         """
         return SpecificFuelConsumption(specific_fuel_consumption_dto.value, specific_fuel_consumption_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificFuelConsumption from a DTO unit json representation.
+
+        :param data: The SpecificFuelConsumption DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "GramPerKiloNewtonSecond"}
+        :return: A new instance of SpecificFuelConsumption.
+        :rtype: SpecificFuelConsumption
+        """
+        return SpecificFuelConsumption.from_dto(SpecificFuelConsumptionDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificFuelConsumptionUnits) -> float:
         value = self._value

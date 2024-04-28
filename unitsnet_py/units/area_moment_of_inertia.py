@@ -68,10 +68,26 @@ class AreaMomentOfInertiaDto:
         """
 
     def to_json(self):
+        """
+        Get a AreaMomentOfInertia DTO JSON object representing the current unit.
+
+        :return: JSON object represents AreaMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterToTheFourth"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of AreaMomentOfInertia DTO from a json representation.
+
+        :param data: The AreaMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterToTheFourth"}
+        :return: A new instance of AreaMomentOfInertiaDto.
+        :rtype: AreaMomentOfInertiaDto
+        """
         return AreaMomentOfInertiaDto(value=data["value"], unit=AreaMomentOfInertiaUnits(data["unit"]))
 
 
@@ -116,6 +132,18 @@ class AreaMomentOfInertia(AbstractMeasure):
         :rtype: AreaMomentOfInertiaDto
         """
         return AreaMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth):
+        """
+        Get a AreaMomentOfInertia DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AreaMomentOfInertia unit to store the AreaMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: AreaMomentOfInertiaUnits
+        :return: JSON object represents AreaMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterToTheFourth"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(area_moment_of_inertia_dto: AreaMomentOfInertiaDto):
@@ -128,6 +156,19 @@ class AreaMomentOfInertia(AbstractMeasure):
         :rtype: AreaMomentOfInertia
         """
         return AreaMomentOfInertia(area_moment_of_inertia_dto.value, area_moment_of_inertia_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AreaMomentOfInertia from a DTO unit json representation.
+
+        :param data: The AreaMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterToTheFourth"}
+        :return: A new instance of AreaMomentOfInertia.
+        :rtype: AreaMomentOfInertia
+        """
+        return AreaMomentOfInertia.from_dto(AreaMomentOfInertiaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AreaMomentOfInertiaUnits) -> float:
         value = self._value

@@ -43,10 +43,26 @@ class ElectricChargeDensityDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricChargeDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricChargeDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerCubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricChargeDensity DTO from a json representation.
+
+        :param data: The ElectricChargeDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerCubicMeter"}
+        :return: A new instance of ElectricChargeDensityDto.
+        :rtype: ElectricChargeDensityDto
+        """
         return ElectricChargeDensityDto(value=data["value"], unit=ElectricChargeDensityUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class ElectricChargeDensity(AbstractMeasure):
         :rtype: ElectricChargeDensityDto
         """
         return ElectricChargeDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricChargeDensityUnits = ElectricChargeDensityUnits.CoulombPerCubicMeter):
+        """
+        Get a ElectricChargeDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricChargeDensity unit to store the ElectricChargeDensity value in the DTO representation.
+        :type hold_in_unit: ElectricChargeDensityUnits
+        :return: JSON object represents ElectricChargeDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CoulombPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_charge_density_dto: ElectricChargeDensityDto):
@@ -93,6 +121,19 @@ class ElectricChargeDensity(AbstractMeasure):
         :rtype: ElectricChargeDensity
         """
         return ElectricChargeDensity(electric_charge_density_dto.value, electric_charge_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricChargeDensity from a DTO unit json representation.
+
+        :param data: The ElectricChargeDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CoulombPerCubicMeter"}
+        :return: A new instance of ElectricChargeDensity.
+        :rtype: ElectricChargeDensity
+        """
+        return ElectricChargeDensity.from_dto(ElectricChargeDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricChargeDensityUnits) -> float:
         value = self._value

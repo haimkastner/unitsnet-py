@@ -63,10 +63,26 @@ class HeatTransferCoefficientDto:
         """
 
     def to_json(self):
+        """
+        Get a HeatTransferCoefficient DTO JSON object representing the current unit.
+
+        :return: JSON object represents HeatTransferCoefficient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeterKelvin"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of HeatTransferCoefficient DTO from a json representation.
+
+        :param data: The HeatTransferCoefficient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeterKelvin"}
+        :return: A new instance of HeatTransferCoefficientDto.
+        :rtype: HeatTransferCoefficientDto
+        """
         return HeatTransferCoefficientDto(value=data["value"], unit=HeatTransferCoefficientUnits(data["unit"]))
 
 
@@ -109,6 +125,18 @@ class HeatTransferCoefficient(AbstractMeasure):
         :rtype: HeatTransferCoefficientDto
         """
         return HeatTransferCoefficientDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin):
+        """
+        Get a HeatTransferCoefficient DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific HeatTransferCoefficient unit to store the HeatTransferCoefficient value in the DTO representation.
+        :type hold_in_unit: HeatTransferCoefficientUnits
+        :return: JSON object represents HeatTransferCoefficient DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeterKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(heat_transfer_coefficient_dto: HeatTransferCoefficientDto):
@@ -121,6 +149,19 @@ class HeatTransferCoefficient(AbstractMeasure):
         :rtype: HeatTransferCoefficient
         """
         return HeatTransferCoefficient(heat_transfer_coefficient_dto.value, heat_transfer_coefficient_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of HeatTransferCoefficient from a DTO unit json representation.
+
+        :param data: The HeatTransferCoefficient DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeterKelvin"}
+        :return: A new instance of HeatTransferCoefficient.
+        :rtype: HeatTransferCoefficient
+        """
+        return HeatTransferCoefficient.from_dto(HeatTransferCoefficientDto.from_json(data))
 
     def __convert_from_base(self, from_unit: HeatTransferCoefficientUnits) -> float:
         value = self._value

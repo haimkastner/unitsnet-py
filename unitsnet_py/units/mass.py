@@ -173,10 +173,26 @@ class MassDto:
         """
 
     def to_json(self):
+        """
+        Get a Mass DTO JSON object representing the current unit.
+
+        :return: JSON object represents Mass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kilogram"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Mass DTO from a json representation.
+
+        :param data: The Mass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kilogram"}
+        :return: A new instance of MassDto.
+        :rtype: MassDto
+        """
         return MassDto(value=data["value"], unit=MassUnits(data["unit"]))
 
 
@@ -263,6 +279,18 @@ class Mass(AbstractMeasure):
         :rtype: MassDto
         """
         return MassDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassUnits = MassUnits.Kilogram):
+        """
+        Get a Mass DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Mass unit to store the Mass value in the DTO representation.
+        :type hold_in_unit: MassUnits
+        :return: JSON object represents Mass DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Kilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_dto: MassDto):
@@ -275,6 +303,19 @@ class Mass(AbstractMeasure):
         :rtype: Mass
         """
         return Mass(mass_dto.value, mass_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Mass from a DTO unit json representation.
+
+        :param data: The Mass DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Kilogram"}
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass.from_dto(MassDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassUnits) -> float:
         value = self._value

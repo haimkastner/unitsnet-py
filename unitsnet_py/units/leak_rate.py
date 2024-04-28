@@ -53,10 +53,26 @@ class LeakRateDto:
         """
 
     def to_json(self):
+        """
+        Get a LeakRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents LeakRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalCubicMeterPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of LeakRate DTO from a json representation.
+
+        :param data: The LeakRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalCubicMeterPerSecond"}
+        :return: A new instance of LeakRateDto.
+        :rtype: LeakRateDto
+        """
         return LeakRateDto(value=data["value"], unit=LeakRateUnits(data["unit"]))
 
 
@@ -95,6 +111,18 @@ class LeakRate(AbstractMeasure):
         :rtype: LeakRateDto
         """
         return LeakRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond):
+        """
+        Get a LeakRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LeakRate unit to store the LeakRate value in the DTO representation.
+        :type hold_in_unit: LeakRateUnits
+        :return: JSON object represents LeakRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalCubicMeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(leak_rate_dto: LeakRateDto):
@@ -107,6 +135,19 @@ class LeakRate(AbstractMeasure):
         :rtype: LeakRate
         """
         return LeakRate(leak_rate_dto.value, leak_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LeakRate from a DTO unit json representation.
+
+        :param data: The LeakRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalCubicMeterPerSecond"}
+        :return: A new instance of LeakRate.
+        :rtype: LeakRate
+        """
+        return LeakRate.from_dto(LeakRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LeakRateUnits) -> float:
         value = self._value

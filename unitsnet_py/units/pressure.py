@@ -283,10 +283,26 @@ class PressureDto:
         """
 
     def to_json(self):
+        """
+        Get a Pressure DTO JSON object representing the current unit.
+
+        :return: JSON object represents Pressure DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Pascal"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Pressure DTO from a json representation.
+
+        :param data: The Pressure DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Pascal"}
+        :return: A new instance of PressureDto.
+        :rtype: PressureDto
+        """
         return PressureDto(value=data["value"], unit=PressureUnits(data["unit"]))
 
 
@@ -417,6 +433,18 @@ class Pressure(AbstractMeasure):
         :rtype: PressureDto
         """
         return PressureDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PressureUnits = PressureUnits.Pascal):
+        """
+        Get a Pressure DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Pressure unit to store the Pressure value in the DTO representation.
+        :type hold_in_unit: PressureUnits
+        :return: JSON object represents Pressure DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Pascal"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(pressure_dto: PressureDto):
@@ -429,6 +457,19 @@ class Pressure(AbstractMeasure):
         :rtype: Pressure
         """
         return Pressure(pressure_dto.value, pressure_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Pressure from a DTO unit json representation.
+
+        :param data: The Pressure DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Pascal"}
+        :return: A new instance of Pressure.
+        :rtype: Pressure
+        """
+        return Pressure.from_dto(PressureDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PressureUnits) -> float:
         value = self._value

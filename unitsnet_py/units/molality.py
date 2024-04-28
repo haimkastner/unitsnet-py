@@ -48,10 +48,26 @@ class MolalityDto:
         """
 
     def to_json(self):
+        """
+        Get a Molality DTO JSON object representing the current unit.
+
+        :return: JSON object represents Molality DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MolePerKilogram"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Molality DTO from a json representation.
+
+        :param data: The Molality DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MolePerKilogram"}
+        :return: A new instance of MolalityDto.
+        :rtype: MolalityDto
+        """
         return MolalityDto(value=data["value"], unit=MolalityUnits(data["unit"]))
 
 
@@ -88,6 +104,18 @@ class Molality(AbstractMeasure):
         :rtype: MolalityDto
         """
         return MolalityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolalityUnits = MolalityUnits.MolePerKilogram):
+        """
+        Get a Molality DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Molality unit to store the Molality value in the DTO representation.
+        :type hold_in_unit: MolalityUnits
+        :return: JSON object represents Molality DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MolePerKilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(molality_dto: MolalityDto):
@@ -100,6 +128,19 @@ class Molality(AbstractMeasure):
         :rtype: Molality
         """
         return Molality(molality_dto.value, molality_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Molality from a DTO unit json representation.
+
+        :param data: The Molality DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MolePerKilogram"}
+        :return: A new instance of Molality.
+        :rtype: Molality
+        """
+        return Molality.from_dto(MolalityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolalityUnits) -> float:
         value = self._value

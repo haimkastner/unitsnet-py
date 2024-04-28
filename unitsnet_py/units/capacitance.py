@@ -73,10 +73,26 @@ class CapacitanceDto:
         """
 
     def to_json(self):
+        """
+        Get a Capacitance DTO JSON object representing the current unit.
+
+        :return: JSON object represents Capacitance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Farad"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Capacitance DTO from a json representation.
+
+        :param data: The Capacitance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Farad"}
+        :return: A new instance of CapacitanceDto.
+        :rtype: CapacitanceDto
+        """
         return CapacitanceDto(value=data["value"], unit=CapacitanceUnits(data["unit"]))
 
 
@@ -123,6 +139,18 @@ class Capacitance(AbstractMeasure):
         :rtype: CapacitanceDto
         """
         return CapacitanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: CapacitanceUnits = CapacitanceUnits.Farad):
+        """
+        Get a Capacitance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Capacitance unit to store the Capacitance value in the DTO representation.
+        :type hold_in_unit: CapacitanceUnits
+        :return: JSON object represents Capacitance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Farad"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(capacitance_dto: CapacitanceDto):
@@ -135,6 +163,19 @@ class Capacitance(AbstractMeasure):
         :rtype: Capacitance
         """
         return Capacitance(capacitance_dto.value, capacitance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Capacitance from a DTO unit json representation.
+
+        :param data: The Capacitance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Farad"}
+        :return: A new instance of Capacitance.
+        :rtype: Capacitance
+        """
+        return Capacitance.from_dto(CapacitanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: CapacitanceUnits) -> float:
         value = self._value

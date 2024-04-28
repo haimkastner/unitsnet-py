@@ -43,10 +43,26 @@ class VitaminADto:
         """
 
     def to_json(self):
+        """
+        Get a VitaminA DTO JSON object representing the current unit.
+
+        :return: JSON object represents VitaminA DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InternationalUnit"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of VitaminA DTO from a json representation.
+
+        :param data: The VitaminA DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InternationalUnit"}
+        :return: A new instance of VitaminADto.
+        :rtype: VitaminADto
+        """
         return VitaminADto(value=data["value"], unit=VitaminAUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class VitaminA(AbstractMeasure):
         :rtype: VitaminADto
         """
         return VitaminADto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VitaminAUnits = VitaminAUnits.InternationalUnit):
+        """
+        Get a VitaminA DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VitaminA unit to store the VitaminA value in the DTO representation.
+        :type hold_in_unit: VitaminAUnits
+        :return: JSON object represents VitaminA DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "InternationalUnit"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(vitamin_a_dto: VitaminADto):
@@ -93,6 +121,19 @@ class VitaminA(AbstractMeasure):
         :rtype: VitaminA
         """
         return VitaminA(vitamin_a_dto.value, vitamin_a_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VitaminA from a DTO unit json representation.
+
+        :param data: The VitaminA DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "InternationalUnit"}
+        :return: A new instance of VitaminA.
+        :rtype: VitaminA
+        """
+        return VitaminA.from_dto(VitaminADto.from_json(data))
 
     def __convert_from_base(self, from_unit: VitaminAUnits) -> float:
         value = self._value

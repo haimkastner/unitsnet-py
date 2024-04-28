@@ -73,10 +73,26 @@ class EntropyDto:
         """
 
     def to_json(self):
+        """
+        Get a Entropy DTO JSON object representing the current unit.
+
+        :return: JSON object represents Entropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKelvin"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Entropy DTO from a json representation.
+
+        :param data: The Entropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKelvin"}
+        :return: A new instance of EntropyDto.
+        :rtype: EntropyDto
+        """
         return EntropyDto(value=data["value"], unit=EntropyUnits(data["unit"]))
 
 
@@ -123,6 +139,18 @@ class Entropy(AbstractMeasure):
         :rtype: EntropyDto
         """
         return EntropyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: EntropyUnits = EntropyUnits.JoulePerKelvin):
+        """
+        Get a Entropy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Entropy unit to store the Entropy value in the DTO representation.
+        :type hold_in_unit: EntropyUnits
+        :return: JSON object represents Entropy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKelvin"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(entropy_dto: EntropyDto):
@@ -135,6 +163,19 @@ class Entropy(AbstractMeasure):
         :rtype: Entropy
         """
         return Entropy(entropy_dto.value, entropy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Entropy from a DTO unit json representation.
+
+        :param data: The Entropy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKelvin"}
+        :return: A new instance of Entropy.
+        :rtype: Entropy
+        """
+        return Entropy.from_dto(EntropyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: EntropyUnits) -> float:
         value = self._value

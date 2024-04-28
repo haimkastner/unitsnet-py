@@ -203,10 +203,26 @@ class SpeedDto:
         """
 
     def to_json(self):
+        """
+        Get a Speed DTO JSON object representing the current unit.
+
+        :return: JSON object represents Speed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Speed DTO from a json representation.
+
+        :param data: The Speed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecond"}
+        :return: A new instance of SpeedDto.
+        :rtype: SpeedDto
+        """
         return SpeedDto(value=data["value"], unit=SpeedUnits(data["unit"]))
 
 
@@ -305,6 +321,18 @@ class Speed(AbstractMeasure):
         :rtype: SpeedDto
         """
         return SpeedDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpeedUnits = SpeedUnits.MeterPerSecond):
+        """
+        Get a Speed DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Speed unit to store the Speed value in the DTO representation.
+        :type hold_in_unit: SpeedUnits
+        :return: JSON object represents Speed DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "MeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(speed_dto: SpeedDto):
@@ -317,6 +345,19 @@ class Speed(AbstractMeasure):
         :rtype: Speed
         """
         return Speed(speed_dto.value, speed_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Speed from a DTO unit json representation.
+
+        :param data: The Speed DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "MeterPerSecond"}
+        :return: A new instance of Speed.
+        :rtype: Speed
+        """
+        return Speed.from_dto(SpeedDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpeedUnits) -> float:
         value = self._value

@@ -68,10 +68,26 @@ class ThermalResistanceDto:
         """
 
     def to_json(self):
+        """
+        Get a ThermalResistance DTO JSON object representing the current unit.
+
+        :return: JSON object represents ThermalResistance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ThermalResistance DTO from a json representation.
+
+        :param data: The ThermalResistance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :return: A new instance of ThermalResistanceDto.
+        :rtype: ThermalResistanceDto
+        """
         return ThermalResistanceDto(value=data["value"], unit=ThermalResistanceUnits(data["unit"]))
 
 
@@ -116,6 +132,18 @@ class ThermalResistance(AbstractMeasure):
         :rtype: ThermalResistanceDto
         """
         return ThermalResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt):
+        """
+        Get a ThermalResistance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ThermalResistance unit to store the ThermalResistance value in the DTO representation.
+        :type hold_in_unit: ThermalResistanceUnits
+        :return: JSON object represents ThermalResistance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(thermal_resistance_dto: ThermalResistanceDto):
@@ -128,6 +156,19 @@ class ThermalResistance(AbstractMeasure):
         :rtype: ThermalResistance
         """
         return ThermalResistance(thermal_resistance_dto.value, thermal_resistance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ThermalResistance from a DTO unit json representation.
+
+        :param data: The ThermalResistance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :return: A new instance of ThermalResistance.
+        :rtype: ThermalResistance
+        """
+        return ThermalResistance.from_dto(ThermalResistanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ThermalResistanceUnits) -> float:
         value = self._value

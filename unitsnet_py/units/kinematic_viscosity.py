@@ -83,10 +83,26 @@ class KinematicViscosityDto:
         """
 
     def to_json(self):
+        """
+        Get a KinematicViscosity DTO JSON object representing the current unit.
+
+        :return: JSON object represents KinematicViscosity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeterPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of KinematicViscosity DTO from a json representation.
+
+        :param data: The KinematicViscosity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeterPerSecond"}
+        :return: A new instance of KinematicViscosityDto.
+        :rtype: KinematicViscosityDto
+        """
         return KinematicViscosityDto(value=data["value"], unit=KinematicViscosityUnits(data["unit"]))
 
 
@@ -137,6 +153,18 @@ class KinematicViscosity(AbstractMeasure):
         :rtype: KinematicViscosityDto
         """
         return KinematicViscosityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond):
+        """
+        Get a KinematicViscosity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific KinematicViscosity unit to store the KinematicViscosity value in the DTO representation.
+        :type hold_in_unit: KinematicViscosityUnits
+        :return: JSON object represents KinematicViscosity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "SquareMeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(kinematic_viscosity_dto: KinematicViscosityDto):
@@ -149,6 +177,19 @@ class KinematicViscosity(AbstractMeasure):
         :rtype: KinematicViscosity
         """
         return KinematicViscosity(kinematic_viscosity_dto.value, kinematic_viscosity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of KinematicViscosity from a DTO unit json representation.
+
+        :param data: The KinematicViscosity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "SquareMeterPerSecond"}
+        :return: A new instance of KinematicViscosity.
+        :rtype: KinematicViscosity
+        """
+        return KinematicViscosity.from_dto(KinematicViscosityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: KinematicViscosityUnits) -> float:
         value = self._value

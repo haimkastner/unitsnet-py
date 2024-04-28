@@ -108,10 +108,26 @@ class ElectricResistivityDto:
         """
 
     def to_json(self):
+        """
+        Get a ElectricResistivity DTO JSON object representing the current unit.
+
+        :return: JSON object represents ElectricResistivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "OhmMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ElectricResistivity DTO from a json representation.
+
+        :param data: The ElectricResistivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "OhmMeter"}
+        :return: A new instance of ElectricResistivityDto.
+        :rtype: ElectricResistivityDto
+        """
         return ElectricResistivityDto(value=data["value"], unit=ElectricResistivityUnits(data["unit"]))
 
 
@@ -172,6 +188,18 @@ class ElectricResistivity(AbstractMeasure):
         :rtype: ElectricResistivityDto
         """
         return ElectricResistivityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter):
+        """
+        Get a ElectricResistivity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ElectricResistivity unit to store the ElectricResistivity value in the DTO representation.
+        :type hold_in_unit: ElectricResistivityUnits
+        :return: JSON object represents ElectricResistivity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "OhmMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(electric_resistivity_dto: ElectricResistivityDto):
@@ -184,6 +212,19 @@ class ElectricResistivity(AbstractMeasure):
         :rtype: ElectricResistivity
         """
         return ElectricResistivity(electric_resistivity_dto.value, electric_resistivity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ElectricResistivity from a DTO unit json representation.
+
+        :param data: The ElectricResistivity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "OhmMeter"}
+        :return: A new instance of ElectricResistivity.
+        :rtype: ElectricResistivity
+        """
+        return ElectricResistivity.from_dto(ElectricResistivityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ElectricResistivityUnits) -> float:
         value = self._value

@@ -308,10 +308,26 @@ class VolumeDto:
         """
 
     def to_json(self):
+        """
+        Get a Volume DTO JSON object representing the current unit.
+
+        :return: JSON object represents Volume DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Volume DTO from a json representation.
+
+        :param data: The Volume DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeter"}
+        :return: A new instance of VolumeDto.
+        :rtype: VolumeDto
+        """
         return VolumeDto(value=data["value"], unit=VolumeUnits(data["unit"]))
 
 
@@ -452,6 +468,18 @@ class Volume(AbstractMeasure):
         :rtype: VolumeDto
         """
         return VolumeDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeUnits = VolumeUnits.CubicMeter):
+        """
+        Get a Volume DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Volume unit to store the Volume value in the DTO representation.
+        :type hold_in_unit: VolumeUnits
+        :return: JSON object represents Volume DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(volume_dto: VolumeDto):
@@ -464,6 +492,19 @@ class Volume(AbstractMeasure):
         :rtype: Volume
         """
         return Volume(volume_dto.value, volume_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Volume from a DTO unit json representation.
+
+        :param data: The Volume DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeter"}
+        :return: A new instance of Volume.
+        :rtype: Volume
+        """
+        return Volume.from_dto(VolumeDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeUnits) -> float:
         value = self._value

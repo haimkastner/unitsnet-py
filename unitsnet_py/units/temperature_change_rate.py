@@ -88,10 +88,26 @@ class TemperatureChangeRateDto:
         """
 
     def to_json(self):
+        """
+        Get a TemperatureChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents TemperatureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DegreeCelsiusPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of TemperatureChangeRate DTO from a json representation.
+
+        :param data: The TemperatureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DegreeCelsiusPerSecond"}
+        :return: A new instance of TemperatureChangeRateDto.
+        :rtype: TemperatureChangeRateDto
+        """
         return TemperatureChangeRateDto(value=data["value"], unit=TemperatureChangeRateUnits(data["unit"]))
 
 
@@ -144,6 +160,18 @@ class TemperatureChangeRate(AbstractMeasure):
         :rtype: TemperatureChangeRateDto
         """
         return TemperatureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond):
+        """
+        Get a TemperatureChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific TemperatureChangeRate unit to store the TemperatureChangeRate value in the DTO representation.
+        :type hold_in_unit: TemperatureChangeRateUnits
+        :return: JSON object represents TemperatureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DegreeCelsiusPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(temperature_change_rate_dto: TemperatureChangeRateDto):
@@ -156,6 +184,19 @@ class TemperatureChangeRate(AbstractMeasure):
         :rtype: TemperatureChangeRate
         """
         return TemperatureChangeRate(temperature_change_rate_dto.value, temperature_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of TemperatureChangeRate from a DTO unit json representation.
+
+        :param data: The TemperatureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DegreeCelsiusPerSecond"}
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate.from_dto(TemperatureChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TemperatureChangeRateUnits) -> float:
         value = self._value

@@ -53,10 +53,26 @@ class MolarEnergyDto:
         """
 
     def to_json(self):
+        """
+        Get a MolarEnergy DTO JSON object representing the current unit.
+
+        :return: JSON object represents MolarEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerMole"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MolarEnergy DTO from a json representation.
+
+        :param data: The MolarEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerMole"}
+        :return: A new instance of MolarEnergyDto.
+        :rtype: MolarEnergyDto
+        """
         return MolarEnergyDto(value=data["value"], unit=MolarEnergyUnits(data["unit"]))
 
 
@@ -95,6 +111,18 @@ class MolarEnergy(AbstractMeasure):
         :rtype: MolarEnergyDto
         """
         return MolarEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole):
+        """
+        Get a MolarEnergy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MolarEnergy unit to store the MolarEnergy value in the DTO representation.
+        :type hold_in_unit: MolarEnergyUnits
+        :return: JSON object represents MolarEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerMole"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(molar_energy_dto: MolarEnergyDto):
@@ -107,6 +135,19 @@ class MolarEnergy(AbstractMeasure):
         :rtype: MolarEnergy
         """
         return MolarEnergy(molar_energy_dto.value, molar_energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MolarEnergy from a DTO unit json representation.
+
+        :param data: The MolarEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerMole"}
+        :return: A new instance of MolarEnergy.
+        :rtype: MolarEnergy
+        """
+        return MolarEnergy.from_dto(MolarEnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MolarEnergyUnits) -> float:
         value = self._value

@@ -283,10 +283,26 @@ class MassConcentrationDto:
         """
 
     def to_json(self):
+        """
+        Get a MassConcentration DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MassConcentration DTO from a json representation.
+
+        :param data: The MassConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of MassConcentrationDto.
+        :rtype: MassConcentrationDto
+        """
         return MassConcentrationDto(value=data["value"], unit=MassConcentrationUnits(data["unit"]))
 
 
@@ -417,6 +433,18 @@ class MassConcentration(AbstractMeasure):
         :rtype: MassConcentrationDto
         """
         return MassConcentrationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassConcentrationUnits = MassConcentrationUnits.KilogramPerCubicMeter):
+        """
+        Get a MassConcentration DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassConcentration unit to store the MassConcentration value in the DTO representation.
+        :type hold_in_unit: MassConcentrationUnits
+        :return: JSON object represents MassConcentration DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_concentration_dto: MassConcentrationDto):
@@ -429,6 +457,19 @@ class MassConcentration(AbstractMeasure):
         :rtype: MassConcentration
         """
         return MassConcentration(mass_concentration_dto.value, mass_concentration_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassConcentration from a DTO unit json representation.
+
+        :param data: The MassConcentration DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of MassConcentration.
+        :rtype: MassConcentration
+        """
+        return MassConcentration.from_dto(MassConcentrationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassConcentrationUnits) -> float:
         value = self._value

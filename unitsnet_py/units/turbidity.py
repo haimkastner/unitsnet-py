@@ -43,10 +43,26 @@ class TurbidityDto:
         """
 
     def to_json(self):
+        """
+        Get a Turbidity DTO JSON object representing the current unit.
+
+        :return: JSON object represents Turbidity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NTU"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Turbidity DTO from a json representation.
+
+        :param data: The Turbidity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NTU"}
+        :return: A new instance of TurbidityDto.
+        :rtype: TurbidityDto
+        """
         return TurbidityDto(value=data["value"], unit=TurbidityUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class Turbidity(AbstractMeasure):
         :rtype: TurbidityDto
         """
         return TurbidityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TurbidityUnits = TurbidityUnits.NTU):
+        """
+        Get a Turbidity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Turbidity unit to store the Turbidity value in the DTO representation.
+        :type hold_in_unit: TurbidityUnits
+        :return: JSON object represents Turbidity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NTU"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(turbidity_dto: TurbidityDto):
@@ -93,6 +121,19 @@ class Turbidity(AbstractMeasure):
         :rtype: Turbidity
         """
         return Turbidity(turbidity_dto.value, turbidity_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Turbidity from a DTO unit json representation.
+
+        :param data: The Turbidity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NTU"}
+        :return: A new instance of Turbidity.
+        :rtype: Turbidity
+        """
+        return Turbidity.from_dto(TurbidityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TurbidityUnits) -> float:
         value = self._value

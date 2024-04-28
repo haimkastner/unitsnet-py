@@ -108,10 +108,26 @@ class LinearDensityDto:
         """
 
     def to_json(self):
+        """
+        Get a LinearDensity DTO JSON object representing the current unit.
+
+        :return: JSON object represents LinearDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of LinearDensity DTO from a json representation.
+
+        :param data: The LinearDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMeter"}
+        :return: A new instance of LinearDensityDto.
+        :rtype: LinearDensityDto
+        """
         return LinearDensityDto(value=data["value"], unit=LinearDensityUnits(data["unit"]))
 
 
@@ -172,6 +188,18 @@ class LinearDensity(AbstractMeasure):
         :rtype: LinearDensityDto
         """
         return LinearDensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter):
+        """
+        Get a LinearDensity DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific LinearDensity unit to store the LinearDensity value in the DTO representation.
+        :type hold_in_unit: LinearDensityUnits
+        :return: JSON object represents LinearDensity DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(linear_density_dto: LinearDensityDto):
@@ -184,6 +212,19 @@ class LinearDensity(AbstractMeasure):
         :rtype: LinearDensity
         """
         return LinearDensity(linear_density_dto.value, linear_density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of LinearDensity from a DTO unit json representation.
+
+        :param data: The LinearDensity DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerMeter"}
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity.from_dto(LinearDensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LinearDensityUnits) -> float:
         value = self._value

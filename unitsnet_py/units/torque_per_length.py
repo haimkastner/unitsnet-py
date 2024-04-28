@@ -143,10 +143,26 @@ class TorquePerLengthDto:
         """
 
     def to_json(self):
+        """
+        Get a TorquePerLength DTO JSON object representing the current unit.
+
+        :return: JSON object represents TorquePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of TorquePerLength DTO from a json representation.
+
+        :param data: The TorquePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerMeter"}
+        :return: A new instance of TorquePerLengthDto.
+        :rtype: TorquePerLengthDto
+        """
         return TorquePerLengthDto(value=data["value"], unit=TorquePerLengthUnits(data["unit"]))
 
 
@@ -221,6 +237,18 @@ class TorquePerLength(AbstractMeasure):
         :rtype: TorquePerLengthDto
         """
         return TorquePerLengthDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter):
+        """
+        Get a TorquePerLength DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific TorquePerLength unit to store the TorquePerLength value in the DTO representation.
+        :type hold_in_unit: TorquePerLengthUnits
+        :return: JSON object represents TorquePerLength DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeterPerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(torque_per_length_dto: TorquePerLengthDto):
@@ -233,6 +261,19 @@ class TorquePerLength(AbstractMeasure):
         :rtype: TorquePerLength
         """
         return TorquePerLength(torque_per_length_dto.value, torque_per_length_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of TorquePerLength from a DTO unit json representation.
+
+        :param data: The TorquePerLength DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeterPerMeter"}
+        :return: A new instance of TorquePerLength.
+        :rtype: TorquePerLength
+        """
+        return TorquePerLength.from_dto(TorquePerLengthDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TorquePerLengthUnits) -> float:
         value = self._value

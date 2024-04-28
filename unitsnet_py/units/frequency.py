@@ -103,10 +103,26 @@ class FrequencyDto:
         """
 
     def to_json(self):
+        """
+        Get a Frequency DTO JSON object representing the current unit.
+
+        :return: JSON object represents Frequency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Hertz"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Frequency DTO from a json representation.
+
+        :param data: The Frequency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Hertz"}
+        :return: A new instance of FrequencyDto.
+        :rtype: FrequencyDto
+        """
         return FrequencyDto(value=data["value"], unit=FrequencyUnits(data["unit"]))
 
 
@@ -165,6 +181,18 @@ class Frequency(AbstractMeasure):
         :rtype: FrequencyDto
         """
         return FrequencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: FrequencyUnits = FrequencyUnits.Hertz):
+        """
+        Get a Frequency DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Frequency unit to store the Frequency value in the DTO representation.
+        :type hold_in_unit: FrequencyUnits
+        :return: JSON object represents Frequency DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Hertz"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(frequency_dto: FrequencyDto):
@@ -177,6 +205,19 @@ class Frequency(AbstractMeasure):
         :rtype: Frequency
         """
         return Frequency(frequency_dto.value, frequency_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Frequency from a DTO unit json representation.
+
+        :param data: The Frequency DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Hertz"}
+        :return: A new instance of Frequency.
+        :rtype: Frequency
+        """
+        return Frequency.from_dto(FrequencyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: FrequencyUnits) -> float:
         value = self._value

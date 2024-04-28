@@ -83,10 +83,26 @@ class IrradiationDto:
         """
 
     def to_json(self):
+        """
+        Get a Irradiation DTO JSON object representing the current unit.
+
+        :return: JSON object represents Irradiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Irradiation DTO from a json representation.
+
+        :param data: The Irradiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerSquareMeter"}
+        :return: A new instance of IrradiationDto.
+        :rtype: IrradiationDto
+        """
         return IrradiationDto(value=data["value"], unit=IrradiationUnits(data["unit"]))
 
 
@@ -137,6 +153,18 @@ class Irradiation(AbstractMeasure):
         :rtype: IrradiationDto
         """
         return IrradiationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: IrradiationUnits = IrradiationUnits.JoulePerSquareMeter):
+        """
+        Get a Irradiation DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Irradiation unit to store the Irradiation value in the DTO representation.
+        :type hold_in_unit: IrradiationUnits
+        :return: JSON object represents Irradiation DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(irradiation_dto: IrradiationDto):
@@ -149,6 +177,19 @@ class Irradiation(AbstractMeasure):
         :rtype: Irradiation
         """
         return Irradiation(irradiation_dto.value, irradiation_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Irradiation from a DTO unit json representation.
+
+        :param data: The Irradiation DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerSquareMeter"}
+        :return: A new instance of Irradiation.
+        :rtype: Irradiation
+        """
+        return Irradiation.from_dto(IrradiationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: IrradiationUnits) -> float:
         value = self._value

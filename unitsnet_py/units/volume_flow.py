@@ -413,10 +413,26 @@ class VolumeFlowDto:
         """
 
     def to_json(self):
+        """
+        Get a VolumeFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of VolumeFlow DTO from a json representation.
+
+        :param data: The VolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecond"}
+        :return: A new instance of VolumeFlowDto.
+        :rtype: VolumeFlowDto
+        """
         return VolumeFlowDto(value=data["value"], unit=VolumeFlowUnits(data["unit"]))
 
 
@@ -599,6 +615,18 @@ class VolumeFlow(AbstractMeasure):
         :rtype: VolumeFlowDto
         """
         return VolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeFlowUnits = VolumeFlowUnits.CubicMeterPerSecond):
+        """
+        Get a VolumeFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlow unit to store the VolumeFlow value in the DTO representation.
+        :type hold_in_unit: VolumeFlowUnits
+        :return: JSON object represents VolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(volume_flow_dto: VolumeFlowDto):
@@ -611,6 +639,19 @@ class VolumeFlow(AbstractMeasure):
         :rtype: VolumeFlow
         """
         return VolumeFlow(volume_flow_dto.value, volume_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumeFlow from a DTO unit json representation.
+
+        :param data: The VolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecond"}
+        :return: A new instance of VolumeFlow.
+        :rtype: VolumeFlow
+        """
+        return VolumeFlow.from_dto(VolumeFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeFlowUnits) -> float:
         value = self._value

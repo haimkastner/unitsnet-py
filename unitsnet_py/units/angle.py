@@ -118,10 +118,26 @@ class AngleDto:
         """
 
     def to_json(self):
+        """
+        Get a Angle DTO JSON object representing the current unit.
+
+        :return: JSON object represents Angle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Degree"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Angle DTO from a json representation.
+
+        :param data: The Angle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Degree"}
+        :return: A new instance of AngleDto.
+        :rtype: AngleDto
+        """
         return AngleDto(value=data["value"], unit=AngleUnits(data["unit"]))
 
 
@@ -186,6 +202,18 @@ class Angle(AbstractMeasure):
         :rtype: AngleDto
         """
         return AngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AngleUnits = AngleUnits.Degree):
+        """
+        Get a Angle DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Angle unit to store the Angle value in the DTO representation.
+        :type hold_in_unit: AngleUnits
+        :return: JSON object represents Angle DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Degree"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(angle_dto: AngleDto):
@@ -198,6 +226,19 @@ class Angle(AbstractMeasure):
         :rtype: Angle
         """
         return Angle(angle_dto.value, angle_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Angle from a DTO unit json representation.
+
+        :param data: The Angle DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Degree"}
+        :return: A new instance of Angle.
+        :rtype: Angle
+        """
+        return Angle.from_dto(AngleDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AngleUnits) -> float:
         value = self._value

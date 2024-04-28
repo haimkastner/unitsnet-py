@@ -48,10 +48,26 @@ class VolumeFlowPerAreaDto:
         """
 
     def to_json(self):
+        """
+        Get a VolumeFlowPerArea DTO JSON object representing the current unit.
+
+        :return: JSON object represents VolumeFlowPerArea DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecondPerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of VolumeFlowPerArea DTO from a json representation.
+
+        :param data: The VolumeFlowPerArea DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecondPerSquareMeter"}
+        :return: A new instance of VolumeFlowPerAreaDto.
+        :rtype: VolumeFlowPerAreaDto
+        """
         return VolumeFlowPerAreaDto(value=data["value"], unit=VolumeFlowPerAreaUnits(data["unit"]))
 
 
@@ -88,6 +104,18 @@ class VolumeFlowPerArea(AbstractMeasure):
         :rtype: VolumeFlowPerAreaDto
         """
         return VolumeFlowPerAreaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter):
+        """
+        Get a VolumeFlowPerArea DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific VolumeFlowPerArea unit to store the VolumeFlowPerArea value in the DTO representation.
+        :type hold_in_unit: VolumeFlowPerAreaUnits
+        :return: JSON object represents VolumeFlowPerArea DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CubicMeterPerSecondPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(volume_flow_per_area_dto: VolumeFlowPerAreaDto):
@@ -100,6 +128,19 @@ class VolumeFlowPerArea(AbstractMeasure):
         :rtype: VolumeFlowPerArea
         """
         return VolumeFlowPerArea(volume_flow_per_area_dto.value, volume_flow_per_area_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of VolumeFlowPerArea from a DTO unit json representation.
+
+        :param data: The VolumeFlowPerArea DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CubicMeterPerSecondPerSquareMeter"}
+        :return: A new instance of VolumeFlowPerArea.
+        :rtype: VolumeFlowPerArea
+        """
+        return VolumeFlowPerArea.from_dto(VolumeFlowPerAreaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: VolumeFlowPerAreaUnits) -> float:
         value = self._value

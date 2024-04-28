@@ -128,10 +128,26 @@ class PressureChangeRateDto:
         """
 
     def to_json(self):
+        """
+        Get a PressureChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents PressureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of PressureChangeRate DTO from a json representation.
+
+        :param data: The PressureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalPerSecond"}
+        :return: A new instance of PressureChangeRateDto.
+        :rtype: PressureChangeRateDto
+        """
         return PressureChangeRateDto(value=data["value"], unit=PressureChangeRateUnits(data["unit"]))
 
 
@@ -200,6 +216,18 @@ class PressureChangeRate(AbstractMeasure):
         :rtype: PressureChangeRateDto
         """
         return PressureChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond):
+        """
+        Get a PressureChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific PressureChangeRate unit to store the PressureChangeRate value in the DTO representation.
+        :type hold_in_unit: PressureChangeRateUnits
+        :return: JSON object represents PressureChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "PascalPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(pressure_change_rate_dto: PressureChangeRateDto):
@@ -212,6 +240,19 @@ class PressureChangeRate(AbstractMeasure):
         :rtype: PressureChangeRate
         """
         return PressureChangeRate(pressure_change_rate_dto.value, pressure_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of PressureChangeRate from a DTO unit json representation.
+
+        :param data: The PressureChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "PascalPerSecond"}
+        :return: A new instance of PressureChangeRate.
+        :rtype: PressureChangeRate
+        """
+        return PressureChangeRate.from_dto(PressureChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: PressureChangeRateUnits) -> float:
         value = self._value

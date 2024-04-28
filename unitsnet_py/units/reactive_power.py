@@ -58,10 +58,26 @@ class ReactivePowerDto:
         """
 
     def to_json(self):
+        """
+        Get a ReactivePower DTO JSON object representing the current unit.
+
+        :return: JSON object represents ReactivePower DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltampereReactive"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ReactivePower DTO from a json representation.
+
+        :param data: The ReactivePower DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltampereReactive"}
+        :return: A new instance of ReactivePowerDto.
+        :rtype: ReactivePowerDto
+        """
         return ReactivePowerDto(value=data["value"], unit=ReactivePowerUnits(data["unit"]))
 
 
@@ -102,6 +118,18 @@ class ReactivePower(AbstractMeasure):
         :rtype: ReactivePowerDto
         """
         return ReactivePowerDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive):
+        """
+        Get a ReactivePower DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ReactivePower unit to store the ReactivePower value in the DTO representation.
+        :type hold_in_unit: ReactivePowerUnits
+        :return: JSON object represents ReactivePower DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "VoltampereReactive"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(reactive_power_dto: ReactivePowerDto):
@@ -114,6 +142,19 @@ class ReactivePower(AbstractMeasure):
         :rtype: ReactivePower
         """
         return ReactivePower(reactive_power_dto.value, reactive_power_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ReactivePower from a DTO unit json representation.
+
+        :param data: The ReactivePower DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "VoltampereReactive"}
+        :return: A new instance of ReactivePower.
+        :rtype: ReactivePower
+        """
+        return ReactivePower.from_dto(ReactivePowerDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ReactivePowerUnits) -> float:
         value = self._value

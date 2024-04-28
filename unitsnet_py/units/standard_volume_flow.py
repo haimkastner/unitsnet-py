@@ -83,10 +83,26 @@ class StandardVolumeFlowDto:
         """
 
     def to_json(self):
+        """
+        Get a StandardVolumeFlow DTO JSON object representing the current unit.
+
+        :return: JSON object represents StandardVolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "StandardCubicMeterPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of StandardVolumeFlow DTO from a json representation.
+
+        :param data: The StandardVolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "StandardCubicMeterPerSecond"}
+        :return: A new instance of StandardVolumeFlowDto.
+        :rtype: StandardVolumeFlowDto
+        """
         return StandardVolumeFlowDto(value=data["value"], unit=StandardVolumeFlowUnits(data["unit"]))
 
 
@@ -137,6 +153,18 @@ class StandardVolumeFlow(AbstractMeasure):
         :rtype: StandardVolumeFlowDto
         """
         return StandardVolumeFlowDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond):
+        """
+        Get a StandardVolumeFlow DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific StandardVolumeFlow unit to store the StandardVolumeFlow value in the DTO representation.
+        :type hold_in_unit: StandardVolumeFlowUnits
+        :return: JSON object represents StandardVolumeFlow DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "StandardCubicMeterPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(standard_volume_flow_dto: StandardVolumeFlowDto):
@@ -149,6 +177,19 @@ class StandardVolumeFlow(AbstractMeasure):
         :rtype: StandardVolumeFlow
         """
         return StandardVolumeFlow(standard_volume_flow_dto.value, standard_volume_flow_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of StandardVolumeFlow from a DTO unit json representation.
+
+        :param data: The StandardVolumeFlow DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "StandardCubicMeterPerSecond"}
+        :return: A new instance of StandardVolumeFlow.
+        :rtype: StandardVolumeFlow
+        """
+        return StandardVolumeFlow.from_dto(StandardVolumeFlowDto.from_json(data))
 
     def __convert_from_base(self, from_unit: StandardVolumeFlowUnits) -> float:
         value = self._value

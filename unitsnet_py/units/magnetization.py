@@ -43,10 +43,26 @@ class MagnetizationDto:
         """
 
     def to_json(self):
+        """
+        Get a Magnetization DTO JSON object representing the current unit.
+
+        :return: JSON object represents Magnetization DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "AmperePerMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Magnetization DTO from a json representation.
+
+        :param data: The Magnetization DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "AmperePerMeter"}
+        :return: A new instance of MagnetizationDto.
+        :rtype: MagnetizationDto
+        """
         return MagnetizationDto(value=data["value"], unit=MagnetizationUnits(data["unit"]))
 
 
@@ -81,6 +97,18 @@ class Magnetization(AbstractMeasure):
         :rtype: MagnetizationDto
         """
         return MagnetizationDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MagnetizationUnits = MagnetizationUnits.AmperePerMeter):
+        """
+        Get a Magnetization DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Magnetization unit to store the Magnetization value in the DTO representation.
+        :type hold_in_unit: MagnetizationUnits
+        :return: JSON object represents Magnetization DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "AmperePerMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(magnetization_dto: MagnetizationDto):
@@ -93,6 +121,19 @@ class Magnetization(AbstractMeasure):
         :rtype: Magnetization
         """
         return Magnetization(magnetization_dto.value, magnetization_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Magnetization from a DTO unit json representation.
+
+        :param data: The Magnetization DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "AmperePerMeter"}
+        :return: A new instance of Magnetization.
+        :rtype: Magnetization
+        """
+        return Magnetization.from_dto(MagnetizationDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MagnetizationUnits) -> float:
         value = self._value

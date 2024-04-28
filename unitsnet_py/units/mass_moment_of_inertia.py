@@ -178,10 +178,26 @@ class MassMomentOfInertiaDto:
         """
 
     def to_json(self):
+        """
+        Get a MassMomentOfInertia DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MassMomentOfInertia DTO from a json representation.
+
+        :param data: The MassMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramSquareMeter"}
+        :return: A new instance of MassMomentOfInertiaDto.
+        :rtype: MassMomentOfInertiaDto
+        """
         return MassMomentOfInertiaDto(value=data["value"], unit=MassMomentOfInertiaUnits(data["unit"]))
 
 
@@ -270,6 +286,18 @@ class MassMomentOfInertia(AbstractMeasure):
         :rtype: MassMomentOfInertiaDto
         """
         return MassMomentOfInertiaDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter):
+        """
+        Get a MassMomentOfInertia DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassMomentOfInertia unit to store the MassMomentOfInertia value in the DTO representation.
+        :type hold_in_unit: MassMomentOfInertiaUnits
+        :return: JSON object represents MassMomentOfInertia DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_moment_of_inertia_dto: MassMomentOfInertiaDto):
@@ -282,6 +310,19 @@ class MassMomentOfInertia(AbstractMeasure):
         :rtype: MassMomentOfInertia
         """
         return MassMomentOfInertia(mass_moment_of_inertia_dto.value, mass_moment_of_inertia_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassMomentOfInertia from a DTO unit json representation.
+
+        :param data: The MassMomentOfInertia DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramSquareMeter"}
+        :return: A new instance of MassMomentOfInertia.
+        :rtype: MassMomentOfInertia
+        """
+        return MassMomentOfInertia.from_dto(MassMomentOfInertiaDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassMomentOfInertiaUnits) -> float:
         value = self._value

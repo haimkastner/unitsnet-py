@@ -123,10 +123,26 @@ class AmountOfSubstanceDto:
         """
 
     def to_json(self):
+        """
+        Get a AmountOfSubstance DTO JSON object representing the current unit.
+
+        :return: JSON object represents AmountOfSubstance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Mole"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of AmountOfSubstance DTO from a json representation.
+
+        :param data: The AmountOfSubstance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Mole"}
+        :return: A new instance of AmountOfSubstanceDto.
+        :rtype: AmountOfSubstanceDto
+        """
         return AmountOfSubstanceDto(value=data["value"], unit=AmountOfSubstanceUnits(data["unit"]))
 
 
@@ -193,6 +209,18 @@ class AmountOfSubstance(AbstractMeasure):
         :rtype: AmountOfSubstanceDto
         """
         return AmountOfSubstanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole):
+        """
+        Get a AmountOfSubstance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific AmountOfSubstance unit to store the AmountOfSubstance value in the DTO representation.
+        :type hold_in_unit: AmountOfSubstanceUnits
+        :return: JSON object represents AmountOfSubstance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "Mole"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(amount_of_substance_dto: AmountOfSubstanceDto):
@@ -205,6 +233,19 @@ class AmountOfSubstance(AbstractMeasure):
         :rtype: AmountOfSubstance
         """
         return AmountOfSubstance(amount_of_substance_dto.value, amount_of_substance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of AmountOfSubstance from a DTO unit json representation.
+
+        :param data: The AmountOfSubstance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "Mole"}
+        :return: A new instance of AmountOfSubstance.
+        :rtype: AmountOfSubstance
+        """
+        return AmountOfSubstance.from_dto(AmountOfSubstanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: AmountOfSubstanceUnits) -> float:
         value = self._value

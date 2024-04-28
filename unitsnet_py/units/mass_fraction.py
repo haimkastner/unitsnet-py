@@ -158,10 +158,26 @@ class MassFractionDto:
         """
 
     def to_json(self):
+        """
+        Get a MassFraction DTO JSON object representing the current unit.
+
+        :return: JSON object represents MassFraction DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of MassFraction DTO from a json representation.
+
+        :param data: The MassFraction DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of MassFractionDto.
+        :rtype: MassFractionDto
+        """
         return MassFractionDto(value=data["value"], unit=MassFractionUnits(data["unit"]))
 
 
@@ -242,6 +258,18 @@ class MassFraction(AbstractMeasure):
         :rtype: MassFractionDto
         """
         return MassFractionDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: MassFractionUnits = MassFractionUnits.DecimalFraction):
+        """
+        Get a MassFraction DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific MassFraction unit to store the MassFraction value in the DTO representation.
+        :type hold_in_unit: MassFractionUnits
+        :return: JSON object represents MassFraction DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "DecimalFraction"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(mass_fraction_dto: MassFractionDto):
@@ -254,6 +282,19 @@ class MassFraction(AbstractMeasure):
         :rtype: MassFraction
         """
         return MassFraction(mass_fraction_dto.value, mass_fraction_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of MassFraction from a DTO unit json representation.
+
+        :param data: The MassFraction DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "DecimalFraction"}
+        :return: A new instance of MassFraction.
+        :rtype: MassFraction
+        """
+        return MassFraction.from_dto(MassFractionDto.from_json(data))
 
     def __convert_from_base(self, from_unit: MassFractionUnits) -> float:
         value = self._value

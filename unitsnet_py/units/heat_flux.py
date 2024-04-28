@@ -128,10 +128,26 @@ class HeatFluxDto:
         """
 
     def to_json(self):
+        """
+        Get a HeatFlux DTO JSON object representing the current unit.
+
+        :return: JSON object represents HeatFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of HeatFlux DTO from a json representation.
+
+        :param data: The HeatFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeter"}
+        :return: A new instance of HeatFluxDto.
+        :rtype: HeatFluxDto
+        """
         return HeatFluxDto(value=data["value"], unit=HeatFluxUnits(data["unit"]))
 
 
@@ -200,6 +216,18 @@ class HeatFlux(AbstractMeasure):
         :rtype: HeatFluxDto
         """
         return HeatFluxDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: HeatFluxUnits = HeatFluxUnits.WattPerSquareMeter):
+        """
+        Get a HeatFlux DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific HeatFlux unit to store the HeatFlux value in the DTO representation.
+        :type hold_in_unit: HeatFluxUnits
+        :return: JSON object represents HeatFlux DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "WattPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(heat_flux_dto: HeatFluxDto):
@@ -212,6 +240,19 @@ class HeatFlux(AbstractMeasure):
         :rtype: HeatFlux
         """
         return HeatFlux(heat_flux_dto.value, heat_flux_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of HeatFlux from a DTO unit json representation.
+
+        :param data: The HeatFlux DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "WattPerSquareMeter"}
+        :return: A new instance of HeatFlux.
+        :rtype: HeatFlux
+        """
+        return HeatFlux.from_dto(HeatFluxDto.from_json(data))
 
     def __convert_from_base(self, from_unit: HeatFluxUnits) -> float:
         value = self._value

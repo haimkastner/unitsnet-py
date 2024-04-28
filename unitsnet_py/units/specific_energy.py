@@ -188,10 +188,26 @@ class SpecificEnergyDto:
         """
 
     def to_json(self):
+        """
+        Get a SpecificEnergy DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogram"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of SpecificEnergy DTO from a json representation.
+
+        :param data: The SpecificEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogram"}
+        :return: A new instance of SpecificEnergyDto.
+        :rtype: SpecificEnergyDto
+        """
         return SpecificEnergyDto(value=data["value"], unit=SpecificEnergyUnits(data["unit"]))
 
 
@@ -284,6 +300,18 @@ class SpecificEnergy(AbstractMeasure):
         :rtype: SpecificEnergyDto
         """
         return SpecificEnergyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificEnergyUnits = SpecificEnergyUnits.JoulePerKilogram):
+        """
+        Get a SpecificEnergy DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificEnergy unit to store the SpecificEnergy value in the DTO representation.
+        :type hold_in_unit: SpecificEnergyUnits
+        :return: JSON object represents SpecificEnergy DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "JoulePerKilogram"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(specific_energy_dto: SpecificEnergyDto):
@@ -296,6 +324,19 @@ class SpecificEnergy(AbstractMeasure):
         :rtype: SpecificEnergy
         """
         return SpecificEnergy(specific_energy_dto.value, specific_energy_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificEnergy from a DTO unit json representation.
+
+        :param data: The SpecificEnergy DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "JoulePerKilogram"}
+        :return: A new instance of SpecificEnergy.
+        :rtype: SpecificEnergy
+        """
+        return SpecificEnergy.from_dto(SpecificEnergyDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificEnergyUnits) -> float:
         value = self._value

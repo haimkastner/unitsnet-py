@@ -88,10 +88,26 @@ class LuminanceDto:
         """
 
     def to_json(self):
+        """
+        Get a Luminance DTO JSON object representing the current unit.
+
+        :return: JSON object represents Luminance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CandelaPerSquareMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Luminance DTO from a json representation.
+
+        :param data: The Luminance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CandelaPerSquareMeter"}
+        :return: A new instance of LuminanceDto.
+        :rtype: LuminanceDto
+        """
         return LuminanceDto(value=data["value"], unit=LuminanceUnits(data["unit"]))
 
 
@@ -144,6 +160,18 @@ class Luminance(AbstractMeasure):
         :rtype: LuminanceDto
         """
         return LuminanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: LuminanceUnits = LuminanceUnits.CandelaPerSquareMeter):
+        """
+        Get a Luminance DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Luminance unit to store the Luminance value in the DTO representation.
+        :type hold_in_unit: LuminanceUnits
+        :return: JSON object represents Luminance DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "CandelaPerSquareMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(luminance_dto: LuminanceDto):
@@ -156,6 +184,19 @@ class Luminance(AbstractMeasure):
         :rtype: Luminance
         """
         return Luminance(luminance_dto.value, luminance_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Luminance from a DTO unit json representation.
+
+        :param data: The Luminance DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "CandelaPerSquareMeter"}
+        :return: A new instance of Luminance.
+        :rtype: Luminance
+        """
+        return Luminance.from_dto(LuminanceDto.from_json(data))
 
     def __convert_from_base(self, from_unit: LuminanceUnits) -> float:
         value = self._value

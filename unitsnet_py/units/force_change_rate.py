@@ -113,10 +113,26 @@ class ForceChangeRateDto:
         """
 
     def to_json(self):
+        """
+        Get a ForceChangeRate DTO JSON object representing the current unit.
+
+        :return: JSON object represents ForceChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerSecond"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of ForceChangeRate DTO from a json representation.
+
+        :param data: The ForceChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerSecond"}
+        :return: A new instance of ForceChangeRateDto.
+        :rtype: ForceChangeRateDto
+        """
         return ForceChangeRateDto(value=data["value"], unit=ForceChangeRateUnits(data["unit"]))
 
 
@@ -179,6 +195,18 @@ class ForceChangeRate(AbstractMeasure):
         :rtype: ForceChangeRateDto
         """
         return ForceChangeRateDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: ForceChangeRateUnits = ForceChangeRateUnits.NewtonPerSecond):
+        """
+        Get a ForceChangeRate DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific ForceChangeRate unit to store the ForceChangeRate value in the DTO representation.
+        :type hold_in_unit: ForceChangeRateUnits
+        :return: JSON object represents ForceChangeRate DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerSecond"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(force_change_rate_dto: ForceChangeRateDto):
@@ -191,6 +219,19 @@ class ForceChangeRate(AbstractMeasure):
         :rtype: ForceChangeRate
         """
         return ForceChangeRate(force_change_rate_dto.value, force_change_rate_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of ForceChangeRate from a DTO unit json representation.
+
+        :param data: The ForceChangeRate DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerSecond"}
+        :return: A new instance of ForceChangeRate.
+        :rtype: ForceChangeRate
+        """
+        return ForceChangeRate.from_dto(ForceChangeRateDto.from_json(data))
 
     def __convert_from_base(self, from_unit: ForceChangeRateUnits) -> float:
         value = self._value

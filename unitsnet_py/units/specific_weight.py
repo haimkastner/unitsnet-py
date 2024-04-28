@@ -123,10 +123,26 @@ class SpecificWeightDto:
         """
 
     def to_json(self):
+        """
+        Get a SpecificWeight DTO JSON object representing the current unit.
+
+        :return: JSON object represents SpecificWeight DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerCubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of SpecificWeight DTO from a json representation.
+
+        :param data: The SpecificWeight DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerCubicMeter"}
+        :return: A new instance of SpecificWeightDto.
+        :rtype: SpecificWeightDto
+        """
         return SpecificWeightDto(value=data["value"], unit=SpecificWeightUnits(data["unit"]))
 
 
@@ -193,6 +209,18 @@ class SpecificWeight(AbstractMeasure):
         :rtype: SpecificWeightDto
         """
         return SpecificWeightDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: SpecificWeightUnits = SpecificWeightUnits.NewtonPerCubicMeter):
+        """
+        Get a SpecificWeight DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific SpecificWeight unit to store the SpecificWeight value in the DTO representation.
+        :type hold_in_unit: SpecificWeightUnits
+        :return: JSON object represents SpecificWeight DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(specific_weight_dto: SpecificWeightDto):
@@ -205,6 +233,19 @@ class SpecificWeight(AbstractMeasure):
         :rtype: SpecificWeight
         """
         return SpecificWeight(specific_weight_dto.value, specific_weight_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of SpecificWeight from a DTO unit json representation.
+
+        :param data: The SpecificWeight DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonPerCubicMeter"}
+        :return: A new instance of SpecificWeight.
+        :rtype: SpecificWeight
+        """
+        return SpecificWeight.from_dto(SpecificWeightDto.from_json(data))
 
     def __convert_from_base(self, from_unit: SpecificWeightUnits) -> float:
         value = self._value

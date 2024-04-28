@@ -163,10 +163,26 @@ class TorqueDto:
         """
 
     def to_json(self):
+        """
+        Get a Torque DTO JSON object representing the current unit.
+
+        :return: JSON object represents Torque DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Torque DTO from a json representation.
+
+        :param data: The Torque DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeter"}
+        :return: A new instance of TorqueDto.
+        :rtype: TorqueDto
+        """
         return TorqueDto(value=data["value"], unit=TorqueUnits(data["unit"]))
 
 
@@ -249,6 +265,18 @@ class Torque(AbstractMeasure):
         :rtype: TorqueDto
         """
         return TorqueDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: TorqueUnits = TorqueUnits.NewtonMeter):
+        """
+        Get a Torque DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Torque unit to store the Torque value in the DTO representation.
+        :type hold_in_unit: TorqueUnits
+        :return: JSON object represents Torque DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "NewtonMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(torque_dto: TorqueDto):
@@ -261,6 +289,19 @@ class Torque(AbstractMeasure):
         :rtype: Torque
         """
         return Torque(torque_dto.value, torque_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Torque from a DTO unit json representation.
+
+        :param data: The Torque DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "NewtonMeter"}
+        :return: A new instance of Torque.
+        :rtype: Torque
+        """
+        return Torque.from_dto(TorqueDto.from_json(data))
 
     def __convert_from_base(self, from_unit: TorqueUnits) -> float:
         value = self._value

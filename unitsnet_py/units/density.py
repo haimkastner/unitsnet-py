@@ -318,10 +318,26 @@ class DensityDto:
         """
 
     def to_json(self):
+        """
+        Get a Density DTO JSON object representing the current unit.
+
+        :return: JSON object represents Density DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
         return {"value": self.value, "unit": self.unit.value}
 
     @staticmethod
     def from_json(data):
+        """
+        Obtain a new instance of Density DTO from a json representation.
+
+        :param data: The Density DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of DensityDto.
+        :rtype: DensityDto
+        """
         return DensityDto(value=data["value"], unit=DensityUnits(data["unit"]))
 
 
@@ -466,6 +482,18 @@ class Density(AbstractMeasure):
         :rtype: DensityDto
         """
         return DensityDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
+    
+    def to_dto_json(self, hold_in_unit: DensityUnits = DensityUnits.KilogramPerCubicMeter):
+        """
+        Get a Density DTO JSON object representing the current unit.
+
+        :param hold_in_unit: The specific Density unit to store the Density value in the DTO representation.
+        :type hold_in_unit: DensityUnits
+        :return: JSON object represents Density DTO.
+        :rtype: dict
+        :example return: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        """
+        return self.to_dto(hold_in_unit).to_json()
 
     @staticmethod
     def from_dto(density_dto: DensityDto):
@@ -478,6 +506,19 @@ class Density(AbstractMeasure):
         :rtype: Density
         """
         return Density(density_dto.value, density_dto.unit)
+
+    @staticmethod
+    def from_dto_json(data: dict):
+        """
+        Obtain a new instance of Density from a DTO unit json representation.
+
+        :param data: The Density DTO in JSON representation.
+        :type data: dict
+        :example data: {"value": 100, "unit": "KilogramPerCubicMeter"}
+        :return: A new instance of Density.
+        :rtype: Density
+        """
+        return Density.from_dto(DensityDto.from_json(data))
 
     def __convert_from_base(self, from_unit: DensityUnits) -> float:
         value = self._value
