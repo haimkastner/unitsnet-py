@@ -534,42 +534,50 @@ class ReciprocalLength(AbstractMeasure):
         return self.__inverse_microinches
 
     
-    def to_string(self, unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter) -> str:
+    def to_string(self, unit: ReciprocalLengthUnits = ReciprocalLengthUnits.InverseMeter, fractional_digits: int = None) -> str:
         """
-        Format the ReciprocalLength to string.
-        Note! the default format for ReciprocalLength is InverseMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ReciprocalLength to a string.
+        
+        Note: the default format for ReciprocalLength is InverseMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ReciprocalLength. Default is 'InverseMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ReciprocalLengthUnits.InverseMeter:
-            return f"""{self.inverse_meters} m⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_meters, fractional_digits)} m⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseCentimeter:
-            return f"""{self.inverse_centimeters} cm⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_centimeters, fractional_digits)} cm⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseMillimeter:
-            return f"""{self.inverse_millimeters} mm⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_millimeters, fractional_digits)} mm⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseMile:
-            return f"""{self.inverse_miles} mi⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_miles, fractional_digits)} mi⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseYard:
-            return f"""{self.inverse_yards} yd⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_yards, fractional_digits)} yd⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseFoot:
-            return f"""{self.inverse_feet} ft⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_feet, fractional_digits)} ft⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseUsSurveyFoot:
-            return f"""{self.inverse_us_survey_feet} ftUS⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_us_survey_feet, fractional_digits)} ftUS⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseInch:
-            return f"""{self.inverse_inches} in⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_inches, fractional_digits)} in⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseMil:
-            return f"""{self.inverse_mils} mil⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_mils, fractional_digits)} mil⁻¹"""
         
         if unit == ReciprocalLengthUnits.InverseMicroinch:
-            return f"""{self.inverse_microinches} µin⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_microinches, fractional_digits)} µin⁻¹"""
         
         return f'{self._value}'
 

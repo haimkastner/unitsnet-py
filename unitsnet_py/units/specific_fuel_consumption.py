@@ -300,24 +300,32 @@ class SpecificFuelConsumption(AbstractMeasure):
         return self.__kilograms_per_kilo_newton_second
 
     
-    def to_string(self, unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond) -> str:
+    def to_string(self, unit: SpecificFuelConsumptionUnits = SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond, fractional_digits: int = None) -> str:
         """
-        Format the SpecificFuelConsumption to string.
-        Note! the default format for SpecificFuelConsumption is GramPerKiloNewtonSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the SpecificFuelConsumption to a string.
+        
+        Note: the default format for SpecificFuelConsumption is GramPerKiloNewtonSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SpecificFuelConsumption. Default is 'GramPerKiloNewtonSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpecificFuelConsumptionUnits.PoundMassPerPoundForceHour:
-            return f"""{self.pounds_mass_per_pound_force_hour} lb/(lbf·h)"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_mass_per_pound_force_hour, fractional_digits)} lb/(lbf·h)"""
         
         if unit == SpecificFuelConsumptionUnits.KilogramPerKilogramForceHour:
-            return f"""{self.kilograms_per_kilogram_force_hour} kg/(kgf�h)"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilogram_force_hour, fractional_digits)} kg/(kgf�h)"""
         
         if unit == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
-            return f"""{self.grams_per_kilo_newton_second} g/(kN�s)"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_kilo_newton_second, fractional_digits)} g/(kN�s)"""
         
         if unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
-            return f"""{self.kilograms_per_kilo_newton_second} kg/(kN�s)"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilo_newton_second, fractional_digits)} kg/(kN�s)"""
         
         return f'{self._value}'
 

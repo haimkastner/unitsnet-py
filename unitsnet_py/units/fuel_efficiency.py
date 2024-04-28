@@ -300,24 +300,32 @@ class FuelEfficiency(AbstractMeasure):
         return self.__kilometers_per_liters
 
     
-    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> str:
+    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers, fractional_digits: int = None) -> str:
         """
-        Format the FuelEfficiency to string.
-        Note! the default format for FuelEfficiency is LiterPer100Kilometers.
-        To specify the unit format set the 'unit' parameter.
+        Format the FuelEfficiency to a string.
+        
+        Note: the default format for FuelEfficiency is LiterPer100Kilometers.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the FuelEfficiency. Default is 'LiterPer100Kilometers'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == FuelEfficiencyUnits.LiterPer100Kilometers:
-            return f"""{self.liters_per100_kilometers} L/100km"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per100_kilometers, fractional_digits)} L/100km"""
         
         if unit == FuelEfficiencyUnits.MilePerUsGallon:
-            return f"""{self.miles_per_us_gallon} mpg (U.S.)"""
+            return f"""{super()._truncate_fraction_digits(self.miles_per_us_gallon, fractional_digits)} mpg (U.S.)"""
         
         if unit == FuelEfficiencyUnits.MilePerUkGallon:
-            return f"""{self.miles_per_uk_gallon} mpg (imp.)"""
+            return f"""{super()._truncate_fraction_digits(self.miles_per_uk_gallon, fractional_digits)} mpg (imp.)"""
         
         if unit == FuelEfficiencyUnits.KilometerPerLiter:
-            return f"""{self.kilometers_per_liters} km/L"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_liters, fractional_digits)} km/L"""
         
         return f'{self._value}'
 

@@ -573,45 +573,53 @@ class Duration(AbstractMeasure):
         return self.__milliseconds
 
     
-    def to_string(self, unit: DurationUnits = DurationUnits.Second) -> str:
+    def to_string(self, unit: DurationUnits = DurationUnits.Second, fractional_digits: int = None) -> str:
         """
-        Format the Duration to string.
-        Note! the default format for Duration is Second.
-        To specify the unit format set the 'unit' parameter.
+        Format the Duration to a string.
+        
+        Note: the default format for Duration is Second.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Duration. Default is 'Second'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == DurationUnits.Year365:
-            return f"""{self.years365} yr"""
+            return f"""{super()._truncate_fraction_digits(self.years365, fractional_digits)} yr"""
         
         if unit == DurationUnits.Month30:
-            return f"""{self.months30} mo"""
+            return f"""{super()._truncate_fraction_digits(self.months30, fractional_digits)} mo"""
         
         if unit == DurationUnits.Week:
-            return f"""{self.weeks} wk"""
+            return f"""{super()._truncate_fraction_digits(self.weeks, fractional_digits)} wk"""
         
         if unit == DurationUnits.Day:
-            return f"""{self.days} d"""
+            return f"""{super()._truncate_fraction_digits(self.days, fractional_digits)} d"""
         
         if unit == DurationUnits.Hour:
-            return f"""{self.hours} h"""
+            return f"""{super()._truncate_fraction_digits(self.hours, fractional_digits)} h"""
         
         if unit == DurationUnits.Minute:
-            return f"""{self.minutes} m"""
+            return f"""{super()._truncate_fraction_digits(self.minutes, fractional_digits)} m"""
         
         if unit == DurationUnits.Second:
-            return f"""{self.seconds} s"""
+            return f"""{super()._truncate_fraction_digits(self.seconds, fractional_digits)} s"""
         
         if unit == DurationUnits.JulianYear:
-            return f"""{self.julian_years} jyr"""
+            return f"""{super()._truncate_fraction_digits(self.julian_years, fractional_digits)} jyr"""
         
         if unit == DurationUnits.Nanosecond:
-            return f"""{self.nanoseconds} ns"""
+            return f"""{super()._truncate_fraction_digits(self.nanoseconds, fractional_digits)} ns"""
         
         if unit == DurationUnits.Microsecond:
-            return f"""{self.microseconds} μs"""
+            return f"""{super()._truncate_fraction_digits(self.microseconds, fractional_digits)} μs"""
         
         if unit == DurationUnits.Millisecond:
-            return f"""{self.milliseconds} ms"""
+            return f"""{super()._truncate_fraction_digits(self.milliseconds, fractional_digits)} ms"""
         
         return f'{self._value}'
 

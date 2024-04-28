@@ -612,48 +612,56 @@ class EnergyDensity(AbstractMeasure):
         return self.__petawatt_hours_per_cubic_meter
 
     
-    def to_string(self, unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter) -> str:
+    def to_string(self, unit: EnergyDensityUnits = EnergyDensityUnits.JoulePerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the EnergyDensity to string.
-        Note! the default format for EnergyDensity is JoulePerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the EnergyDensity to a string.
+        
+        Note: the default format for EnergyDensity is JoulePerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the EnergyDensity. Default is 'JoulePerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == EnergyDensityUnits.JoulePerCubicMeter:
-            return f"""{self.joules_per_cubic_meter} J/m³"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter, fractional_digits)} J/m³"""
         
         if unit == EnergyDensityUnits.WattHourPerCubicMeter:
-            return f"""{self.watt_hours_per_cubic_meter} Wh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.watt_hours_per_cubic_meter, fractional_digits)} Wh/m³"""
         
         if unit == EnergyDensityUnits.KilojoulePerCubicMeter:
-            return f"""{self.kilojoules_per_cubic_meter} kJ/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter, fractional_digits)} kJ/m³"""
         
         if unit == EnergyDensityUnits.MegajoulePerCubicMeter:
-            return f"""{self.megajoules_per_cubic_meter} MJ/m³"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter, fractional_digits)} MJ/m³"""
         
         if unit == EnergyDensityUnits.GigajoulePerCubicMeter:
-            return f"""{self.gigajoules_per_cubic_meter} GJ/m³"""
+            return f"""{super()._truncate_fraction_digits(self.gigajoules_per_cubic_meter, fractional_digits)} GJ/m³"""
         
         if unit == EnergyDensityUnits.TerajoulePerCubicMeter:
-            return f"""{self.terajoules_per_cubic_meter} TJ/m³"""
+            return f"""{super()._truncate_fraction_digits(self.terajoules_per_cubic_meter, fractional_digits)} TJ/m³"""
         
         if unit == EnergyDensityUnits.PetajoulePerCubicMeter:
-            return f"""{self.petajoules_per_cubic_meter} PJ/m³"""
+            return f"""{super()._truncate_fraction_digits(self.petajoules_per_cubic_meter, fractional_digits)} PJ/m³"""
         
         if unit == EnergyDensityUnits.KilowattHourPerCubicMeter:
-            return f"""{self.kilowatt_hours_per_cubic_meter} kWh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatt_hours_per_cubic_meter, fractional_digits)} kWh/m³"""
         
         if unit == EnergyDensityUnits.MegawattHourPerCubicMeter:
-            return f"""{self.megawatt_hours_per_cubic_meter} MWh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.megawatt_hours_per_cubic_meter, fractional_digits)} MWh/m³"""
         
         if unit == EnergyDensityUnits.GigawattHourPerCubicMeter:
-            return f"""{self.gigawatt_hours_per_cubic_meter} GWh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatt_hours_per_cubic_meter, fractional_digits)} GWh/m³"""
         
         if unit == EnergyDensityUnits.TerawattHourPerCubicMeter:
-            return f"""{self.terawatt_hours_per_cubic_meter} TWh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.terawatt_hours_per_cubic_meter, fractional_digits)} TWh/m³"""
         
         if unit == EnergyDensityUnits.PetawattHourPerCubicMeter:
-            return f"""{self.petawatt_hours_per_cubic_meter} PWh/m³"""
+            return f"""{super()._truncate_fraction_digits(self.petawatt_hours_per_cubic_meter, fractional_digits)} PWh/m³"""
         
         return f'{self._value}'
 

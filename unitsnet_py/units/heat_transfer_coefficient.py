@@ -339,27 +339,35 @@ class HeatTransferCoefficient(AbstractMeasure):
         return self.__kilocalories_per_hour_square_meter_degree_celsius
 
     
-    def to_string(self, unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin) -> str:
+    def to_string(self, unit: HeatTransferCoefficientUnits = HeatTransferCoefficientUnits.WattPerSquareMeterKelvin, fractional_digits: int = None) -> str:
         """
-        Format the HeatTransferCoefficient to string.
-        Note! the default format for HeatTransferCoefficient is WattPerSquareMeterKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the HeatTransferCoefficient to a string.
+        
+        Note: the default format for HeatTransferCoefficient is WattPerSquareMeterKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the HeatTransferCoefficient. Default is 'WattPerSquareMeterKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == HeatTransferCoefficientUnits.WattPerSquareMeterKelvin:
-            return f"""{self.watts_per_square_meter_kelvin} W/m²·K"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_kelvin, fractional_digits)} W/m²·K"""
         
         if unit == HeatTransferCoefficientUnits.WattPerSquareMeterCelsius:
-            return f"""{self.watts_per_square_meter_celsius} W/m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_celsius, fractional_digits)} W/m²·°C"""
         
         if unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
-            return f"""{self.btus_per_hour_square_foot_degree_fahrenheit} Btu/h·ft²·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot_degree_fahrenheit, fractional_digits)} Btu/h·ft²·°F"""
         
         if unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{self.calories_per_hour_square_meter_degree_celsius} kcal/h·m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_hour_square_meter_degree_celsius, fractional_digits)} kcal/h·m²·°C"""
         
         if unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{self.kilocalories_per_hour_square_meter_degree_celsius} kkcal/h·m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter_degree_celsius, fractional_digits)} kkcal/h·m²·°C"""
         
         return f'{self._value}'
 

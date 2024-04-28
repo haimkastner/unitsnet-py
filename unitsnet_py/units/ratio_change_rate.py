@@ -222,18 +222,26 @@ class RatioChangeRate(AbstractMeasure):
         return self.__decimal_fractions_per_second
 
     
-    def to_string(self, unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond) -> str:
+    def to_string(self, unit: RatioChangeRateUnits = RatioChangeRateUnits.DecimalFractionPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the RatioChangeRate to string.
-        Note! the default format for RatioChangeRate is DecimalFractionPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the RatioChangeRate to a string.
+        
+        Note: the default format for RatioChangeRate is DecimalFractionPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RatioChangeRate. Default is 'DecimalFractionPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RatioChangeRateUnits.PercentPerSecond:
-            return f"""{self.percents_per_second} %/s"""
+            return f"""{super()._truncate_fraction_digits(self.percents_per_second, fractional_digits)} %/s"""
         
         if unit == RatioChangeRateUnits.DecimalFractionPerSecond:
-            return f"""{self.decimal_fractions_per_second} /s"""
+            return f"""{super()._truncate_fraction_digits(self.decimal_fractions_per_second, fractional_digits)} /s"""
         
         return f'{self._value}'
 

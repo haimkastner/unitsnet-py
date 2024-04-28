@@ -534,42 +534,50 @@ class TemperatureChangeRate(AbstractMeasure):
         return self.__kilodegrees_celsius_per_second
 
     
-    def to_string(self, unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond) -> str:
+    def to_string(self, unit: TemperatureChangeRateUnits = TemperatureChangeRateUnits.DegreeCelsiusPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the TemperatureChangeRate to string.
-        Note! the default format for TemperatureChangeRate is DegreeCelsiusPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the TemperatureChangeRate to a string.
+        
+        Note: the default format for TemperatureChangeRate is DegreeCelsiusPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the TemperatureChangeRate. Default is 'DegreeCelsiusPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TemperatureChangeRateUnits.DegreeCelsiusPerSecond:
-            return f"""{self.degrees_celsius_per_second} °C/s"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_second, fractional_digits)} °C/s"""
         
         if unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
-            return f"""{self.degrees_celsius_per_minute} °C/min"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_minute, fractional_digits)} °C/min"""
         
         if unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
-            return f"""{self.nanodegrees_celsius_per_second} n°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanodegrees_celsius_per_second, fractional_digits)} n°C/s"""
         
         if unit == TemperatureChangeRateUnits.MicrodegreeCelsiusPerSecond:
-            return f"""{self.microdegrees_celsius_per_second} μ°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.microdegrees_celsius_per_second, fractional_digits)} μ°C/s"""
         
         if unit == TemperatureChangeRateUnits.MillidegreeCelsiusPerSecond:
-            return f"""{self.millidegrees_celsius_per_second} m°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.millidegrees_celsius_per_second, fractional_digits)} m°C/s"""
         
         if unit == TemperatureChangeRateUnits.CentidegreeCelsiusPerSecond:
-            return f"""{self.centidegrees_celsius_per_second} c°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.centidegrees_celsius_per_second, fractional_digits)} c°C/s"""
         
         if unit == TemperatureChangeRateUnits.DecidegreeCelsiusPerSecond:
-            return f"""{self.decidegrees_celsius_per_second} d°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.decidegrees_celsius_per_second, fractional_digits)} d°C/s"""
         
         if unit == TemperatureChangeRateUnits.DecadegreeCelsiusPerSecond:
-            return f"""{self.decadegrees_celsius_per_second} da°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.decadegrees_celsius_per_second, fractional_digits)} da°C/s"""
         
         if unit == TemperatureChangeRateUnits.HectodegreeCelsiusPerSecond:
-            return f"""{self.hectodegrees_celsius_per_second} h°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.hectodegrees_celsius_per_second, fractional_digits)} h°C/s"""
         
         if unit == TemperatureChangeRateUnits.KilodegreeCelsiusPerSecond:
-            return f"""{self.kilodegrees_celsius_per_second} k°C/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilodegrees_celsius_per_second, fractional_digits)} k°C/s"""
         
         return f'{self._value}'
 

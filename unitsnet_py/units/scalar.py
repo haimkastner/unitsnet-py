@@ -183,15 +183,23 @@ class Scalar(AbstractMeasure):
         return self.__amount
 
     
-    def to_string(self, unit: ScalarUnits = ScalarUnits.Amount) -> str:
+    def to_string(self, unit: ScalarUnits = ScalarUnits.Amount, fractional_digits: int = None) -> str:
         """
-        Format the Scalar to string.
-        Note! the default format for Scalar is Amount.
-        To specify the unit format set the 'unit' parameter.
+        Format the Scalar to a string.
+        
+        Note: the default format for Scalar is Amount.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Scalar. Default is 'Amount'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ScalarUnits.Amount:
-            return f"""{self.amount} """
+            return f"""{super()._truncate_fraction_digits(self.amount, fractional_digits)} """
         
         return f'{self._value}'
 

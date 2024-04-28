@@ -183,15 +183,23 @@ class LuminousFlux(AbstractMeasure):
         return self.__lumens
 
     
-    def to_string(self, unit: LuminousFluxUnits = LuminousFluxUnits.Lumen) -> str:
+    def to_string(self, unit: LuminousFluxUnits = LuminousFluxUnits.Lumen, fractional_digits: int = None) -> str:
         """
-        Format the LuminousFlux to string.
-        Note! the default format for LuminousFlux is Lumen.
-        To specify the unit format set the 'unit' parameter.
+        Format the LuminousFlux to a string.
+        
+        Note: the default format for LuminousFlux is Lumen.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the LuminousFlux. Default is 'Lumen'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LuminousFluxUnits.Lumen:
-            return f"""{self.lumens} lm"""
+            return f"""{super()._truncate_fraction_digits(self.lumens, fractional_digits)} lm"""
         
         return f'{self._value}'
 

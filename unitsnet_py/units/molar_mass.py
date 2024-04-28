@@ -651,51 +651,59 @@ class MolarMass(AbstractMeasure):
         return self.__megapounds_per_mole
 
     
-    def to_string(self, unit: MolarMassUnits = MolarMassUnits.KilogramPerMole) -> str:
+    def to_string(self, unit: MolarMassUnits = MolarMassUnits.KilogramPerMole, fractional_digits: int = None) -> str:
         """
-        Format the MolarMass to string.
-        Note! the default format for MolarMass is KilogramPerMole.
-        To specify the unit format set the 'unit' parameter.
+        Format the MolarMass to a string.
+        
+        Note: the default format for MolarMass is KilogramPerMole.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MolarMass. Default is 'KilogramPerMole'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolarMassUnits.GramPerMole:
-            return f"""{self.grams_per_mole} g/mol"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_mole, fractional_digits)} g/mol"""
         
         if unit == MolarMassUnits.KilogramPerKilomole:
-            return f"""{self.kilograms_per_kilomole} kg/kmol"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilomole, fractional_digits)} kg/kmol"""
         
         if unit == MolarMassUnits.PoundPerMole:
-            return f"""{self.pounds_per_mole} lb/mol"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_mole, fractional_digits)} lb/mol"""
         
         if unit == MolarMassUnits.NanogramPerMole:
-            return f"""{self.nanograms_per_mole} ng/mol"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_mole, fractional_digits)} ng/mol"""
         
         if unit == MolarMassUnits.MicrogramPerMole:
-            return f"""{self.micrograms_per_mole} μg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_mole, fractional_digits)} μg/mol"""
         
         if unit == MolarMassUnits.MilligramPerMole:
-            return f"""{self.milligrams_per_mole} mg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_mole, fractional_digits)} mg/mol"""
         
         if unit == MolarMassUnits.CentigramPerMole:
-            return f"""{self.centigrams_per_mole} cg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_mole, fractional_digits)} cg/mol"""
         
         if unit == MolarMassUnits.DecigramPerMole:
-            return f"""{self.decigrams_per_mole} dg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_mole, fractional_digits)} dg/mol"""
         
         if unit == MolarMassUnits.DecagramPerMole:
-            return f"""{self.decagrams_per_mole} dag/mol"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams_per_mole, fractional_digits)} dag/mol"""
         
         if unit == MolarMassUnits.HectogramPerMole:
-            return f"""{self.hectograms_per_mole} hg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms_per_mole, fractional_digits)} hg/mol"""
         
         if unit == MolarMassUnits.KilogramPerMole:
-            return f"""{self.kilograms_per_mole} kg/mol"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_mole, fractional_digits)} kg/mol"""
         
         if unit == MolarMassUnits.KilopoundPerMole:
-            return f"""{self.kilopounds_per_mole} klb/mol"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_per_mole, fractional_digits)} klb/mol"""
         
         if unit == MolarMassUnits.MegapoundPerMole:
-            return f"""{self.megapounds_per_mole} Mlb/mol"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_per_mole, fractional_digits)} Mlb/mol"""
         
         return f'{self._value}'
 

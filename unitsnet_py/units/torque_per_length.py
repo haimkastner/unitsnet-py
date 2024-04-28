@@ -963,75 +963,83 @@ class TorquePerLength(AbstractMeasure):
         return self.__megapound_force_feet_per_foot
 
     
-    def to_string(self, unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter) -> str:
+    def to_string(self, unit: TorquePerLengthUnits = TorquePerLengthUnits.NewtonMeterPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the TorquePerLength to string.
-        Note! the default format for TorquePerLength is NewtonMeterPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the TorquePerLength to a string.
+        
+        Note: the default format for TorquePerLength is NewtonMeterPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the TorquePerLength. Default is 'NewtonMeterPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TorquePerLengthUnits.NewtonMillimeterPerMeter:
-            return f"""{self.newton_millimeters_per_meter} N·mm/m"""
+            return f"""{super()._truncate_fraction_digits(self.newton_millimeters_per_meter, fractional_digits)} N·mm/m"""
         
         if unit == TorquePerLengthUnits.NewtonCentimeterPerMeter:
-            return f"""{self.newton_centimeters_per_meter} N·cm/m"""
+            return f"""{super()._truncate_fraction_digits(self.newton_centimeters_per_meter, fractional_digits)} N·cm/m"""
         
         if unit == TorquePerLengthUnits.NewtonMeterPerMeter:
-            return f"""{self.newton_meters_per_meter} N·m/m"""
+            return f"""{super()._truncate_fraction_digits(self.newton_meters_per_meter, fractional_digits)} N·m/m"""
         
         if unit == TorquePerLengthUnits.PoundForceInchPerFoot:
-            return f"""{self.pound_force_inches_per_foot} lbf·in/ft"""
+            return f"""{super()._truncate_fraction_digits(self.pound_force_inches_per_foot, fractional_digits)} lbf·in/ft"""
         
         if unit == TorquePerLengthUnits.PoundForceFootPerFoot:
-            return f"""{self.pound_force_feet_per_foot} lbf·ft/ft"""
+            return f"""{super()._truncate_fraction_digits(self.pound_force_feet_per_foot, fractional_digits)} lbf·ft/ft"""
         
         if unit == TorquePerLengthUnits.KilogramForceMillimeterPerMeter:
-            return f"""{self.kilogram_force_millimeters_per_meter} kgf·mm/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_force_millimeters_per_meter, fractional_digits)} kgf·mm/m"""
         
         if unit == TorquePerLengthUnits.KilogramForceCentimeterPerMeter:
-            return f"""{self.kilogram_force_centimeters_per_meter} kgf·cm/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_force_centimeters_per_meter, fractional_digits)} kgf·cm/m"""
         
         if unit == TorquePerLengthUnits.KilogramForceMeterPerMeter:
-            return f"""{self.kilogram_force_meters_per_meter} kgf·m/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_force_meters_per_meter, fractional_digits)} kgf·m/m"""
         
         if unit == TorquePerLengthUnits.TonneForceMillimeterPerMeter:
-            return f"""{self.tonne_force_millimeters_per_meter} tf·mm/m"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_force_millimeters_per_meter, fractional_digits)} tf·mm/m"""
         
         if unit == TorquePerLengthUnits.TonneForceCentimeterPerMeter:
-            return f"""{self.tonne_force_centimeters_per_meter} tf·cm/m"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_force_centimeters_per_meter, fractional_digits)} tf·cm/m"""
         
         if unit == TorquePerLengthUnits.TonneForceMeterPerMeter:
-            return f"""{self.tonne_force_meters_per_meter} tf·m/m"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_force_meters_per_meter, fractional_digits)} tf·m/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonMillimeterPerMeter:
-            return f"""{self.kilonewton_millimeters_per_meter} kN·mm/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewton_millimeters_per_meter, fractional_digits)} kN·mm/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonMillimeterPerMeter:
-            return f"""{self.meganewton_millimeters_per_meter} MN·mm/m"""
+            return f"""{super()._truncate_fraction_digits(self.meganewton_millimeters_per_meter, fractional_digits)} MN·mm/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonCentimeterPerMeter:
-            return f"""{self.kilonewton_centimeters_per_meter} kN·cm/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewton_centimeters_per_meter, fractional_digits)} kN·cm/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonCentimeterPerMeter:
-            return f"""{self.meganewton_centimeters_per_meter} MN·cm/m"""
+            return f"""{super()._truncate_fraction_digits(self.meganewton_centimeters_per_meter, fractional_digits)} MN·cm/m"""
         
         if unit == TorquePerLengthUnits.KilonewtonMeterPerMeter:
-            return f"""{self.kilonewton_meters_per_meter} kN·m/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewton_meters_per_meter, fractional_digits)} kN·m/m"""
         
         if unit == TorquePerLengthUnits.MeganewtonMeterPerMeter:
-            return f"""{self.meganewton_meters_per_meter} MN·m/m"""
+            return f"""{super()._truncate_fraction_digits(self.meganewton_meters_per_meter, fractional_digits)} MN·m/m"""
         
         if unit == TorquePerLengthUnits.KilopoundForceInchPerFoot:
-            return f"""{self.kilopound_force_inches_per_foot} klbf·in/ft"""
+            return f"""{super()._truncate_fraction_digits(self.kilopound_force_inches_per_foot, fractional_digits)} klbf·in/ft"""
         
         if unit == TorquePerLengthUnits.MegapoundForceInchPerFoot:
-            return f"""{self.megapound_force_inches_per_foot} Mlbf·in/ft"""
+            return f"""{super()._truncate_fraction_digits(self.megapound_force_inches_per_foot, fractional_digits)} Mlbf·in/ft"""
         
         if unit == TorquePerLengthUnits.KilopoundForceFootPerFoot:
-            return f"""{self.kilopound_force_feet_per_foot} klbf·ft/ft"""
+            return f"""{super()._truncate_fraction_digits(self.kilopound_force_feet_per_foot, fractional_digits)} klbf·ft/ft"""
         
         if unit == TorquePerLengthUnits.MegapoundForceFootPerFoot:
-            return f"""{self.megapound_force_feet_per_foot} Mlbf·ft/ft"""
+            return f"""{super()._truncate_fraction_digits(self.megapound_force_feet_per_foot, fractional_digits)} Mlbf·ft/ft"""
         
         return f'{self._value}'
 

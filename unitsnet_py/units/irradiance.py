@@ -690,54 +690,62 @@ class Irradiance(AbstractMeasure):
         return self.__megawatts_per_square_centimeter
 
     
-    def to_string(self, unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter) -> str:
+    def to_string(self, unit: IrradianceUnits = IrradianceUnits.WattPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the Irradiance to string.
-        Note! the default format for Irradiance is WattPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Irradiance to a string.
+        
+        Note: the default format for Irradiance is WattPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Irradiance. Default is 'WattPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == IrradianceUnits.WattPerSquareMeter:
-            return f"""{self.watts_per_square_meter} W/m²"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter, fractional_digits)} W/m²"""
         
         if unit == IrradianceUnits.WattPerSquareCentimeter:
-            return f"""{self.watts_per_square_centimeter} W/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_centimeter, fractional_digits)} W/cm²"""
         
         if unit == IrradianceUnits.PicowattPerSquareMeter:
-            return f"""{self.picowatts_per_square_meter} pW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_square_meter, fractional_digits)} pW/m²"""
         
         if unit == IrradianceUnits.NanowattPerSquareMeter:
-            return f"""{self.nanowatts_per_square_meter} nW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_square_meter, fractional_digits)} nW/m²"""
         
         if unit == IrradianceUnits.MicrowattPerSquareMeter:
-            return f"""{self.microwatts_per_square_meter} μW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_square_meter, fractional_digits)} μW/m²"""
         
         if unit == IrradianceUnits.MilliwattPerSquareMeter:
-            return f"""{self.milliwatts_per_square_meter} mW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_square_meter, fractional_digits)} mW/m²"""
         
         if unit == IrradianceUnits.KilowattPerSquareMeter:
-            return f"""{self.kilowatts_per_square_meter} kW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_square_meter, fractional_digits)} kW/m²"""
         
         if unit == IrradianceUnits.MegawattPerSquareMeter:
-            return f"""{self.megawatts_per_square_meter} MW/m²"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_square_meter, fractional_digits)} MW/m²"""
         
         if unit == IrradianceUnits.PicowattPerSquareCentimeter:
-            return f"""{self.picowatts_per_square_centimeter} pW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_square_centimeter, fractional_digits)} pW/cm²"""
         
         if unit == IrradianceUnits.NanowattPerSquareCentimeter:
-            return f"""{self.nanowatts_per_square_centimeter} nW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_square_centimeter, fractional_digits)} nW/cm²"""
         
         if unit == IrradianceUnits.MicrowattPerSquareCentimeter:
-            return f"""{self.microwatts_per_square_centimeter} μW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_square_centimeter, fractional_digits)} μW/cm²"""
         
         if unit == IrradianceUnits.MilliwattPerSquareCentimeter:
-            return f"""{self.milliwatts_per_square_centimeter} mW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_square_centimeter, fractional_digits)} mW/cm²"""
         
         if unit == IrradianceUnits.KilowattPerSquareCentimeter:
-            return f"""{self.kilowatts_per_square_centimeter} kW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_square_centimeter, fractional_digits)} kW/cm²"""
         
         if unit == IrradianceUnits.MegawattPerSquareCentimeter:
-            return f"""{self.megawatts_per_square_centimeter} MW/cm²"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_square_centimeter, fractional_digits)} MW/cm²"""
         
         return f'{self._value}'
 

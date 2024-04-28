@@ -573,45 +573,53 @@ class ElectricCharge(AbstractMeasure):
         return self.__megaampere_hours
 
     
-    def to_string(self, unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb) -> str:
+    def to_string(self, unit: ElectricChargeUnits = ElectricChargeUnits.Coulomb, fractional_digits: int = None) -> str:
         """
-        Format the ElectricCharge to string.
-        Note! the default format for ElectricCharge is Coulomb.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricCharge to a string.
+        
+        Note: the default format for ElectricCharge is Coulomb.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricCharge. Default is 'Coulomb'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricChargeUnits.Coulomb:
-            return f"""{self.coulombs} C"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs, fractional_digits)} C"""
         
         if unit == ElectricChargeUnits.AmpereHour:
-            return f"""{self.ampere_hours} A-h"""
+            return f"""{super()._truncate_fraction_digits(self.ampere_hours, fractional_digits)} A-h"""
         
         if unit == ElectricChargeUnits.Picocoulomb:
-            return f"""{self.picocoulombs} pC"""
+            return f"""{super()._truncate_fraction_digits(self.picocoulombs, fractional_digits)} pC"""
         
         if unit == ElectricChargeUnits.Nanocoulomb:
-            return f"""{self.nanocoulombs} nC"""
+            return f"""{super()._truncate_fraction_digits(self.nanocoulombs, fractional_digits)} nC"""
         
         if unit == ElectricChargeUnits.Microcoulomb:
-            return f"""{self.microcoulombs} μC"""
+            return f"""{super()._truncate_fraction_digits(self.microcoulombs, fractional_digits)} μC"""
         
         if unit == ElectricChargeUnits.Millicoulomb:
-            return f"""{self.millicoulombs} mC"""
+            return f"""{super()._truncate_fraction_digits(self.millicoulombs, fractional_digits)} mC"""
         
         if unit == ElectricChargeUnits.Kilocoulomb:
-            return f"""{self.kilocoulombs} kC"""
+            return f"""{super()._truncate_fraction_digits(self.kilocoulombs, fractional_digits)} kC"""
         
         if unit == ElectricChargeUnits.Megacoulomb:
-            return f"""{self.megacoulombs} MC"""
+            return f"""{super()._truncate_fraction_digits(self.megacoulombs, fractional_digits)} MC"""
         
         if unit == ElectricChargeUnits.MilliampereHour:
-            return f"""{self.milliampere_hours} mA-h"""
+            return f"""{super()._truncate_fraction_digits(self.milliampere_hours, fractional_digits)} mA-h"""
         
         if unit == ElectricChargeUnits.KiloampereHour:
-            return f"""{self.kiloampere_hours} kA-h"""
+            return f"""{super()._truncate_fraction_digits(self.kiloampere_hours, fractional_digits)} kA-h"""
         
         if unit == ElectricChargeUnits.MegaampereHour:
-            return f"""{self.megaampere_hours} MA-h"""
+            return f"""{super()._truncate_fraction_digits(self.megaampere_hours, fractional_digits)} MA-h"""
         
         return f'{self._value}'
 

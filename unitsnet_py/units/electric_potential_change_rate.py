@@ -924,72 +924,80 @@ class ElectricPotentialChangeRate(AbstractMeasure):
         return self.__megavolts_per_hours
 
     
-    def to_string(self, unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond) -> str:
+    def to_string(self, unit: ElectricPotentialChangeRateUnits = ElectricPotentialChangeRateUnits.VoltPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the ElectricPotentialChangeRate to string.
-        Note! the default format for ElectricPotentialChangeRate is VoltPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricPotentialChangeRate to a string.
+        
+        Note: the default format for ElectricPotentialChangeRate is VoltPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricPotentialChangeRate. Default is 'VoltPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricPotentialChangeRateUnits.VoltPerSecond:
-            return f"""{self.volts_per_seconds} V/s"""
+            return f"""{super()._truncate_fraction_digits(self.volts_per_seconds, fractional_digits)} V/s"""
         
         if unit == ElectricPotentialChangeRateUnits.VoltPerMicrosecond:
-            return f"""{self.volts_per_microseconds} V/μs"""
+            return f"""{super()._truncate_fraction_digits(self.volts_per_microseconds, fractional_digits)} V/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.VoltPerMinute:
-            return f"""{self.volts_per_minutes} V/min"""
+            return f"""{super()._truncate_fraction_digits(self.volts_per_minutes, fractional_digits)} V/min"""
         
         if unit == ElectricPotentialChangeRateUnits.VoltPerHour:
-            return f"""{self.volts_per_hours} V/h"""
+            return f"""{super()._truncate_fraction_digits(self.volts_per_hours, fractional_digits)} V/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerSecond:
-            return f"""{self.microvolts_per_seconds} μV/s"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts_per_seconds, fractional_digits)} μV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerSecond:
-            return f"""{self.millivolts_per_seconds} mV/s"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts_per_seconds, fractional_digits)} mV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerSecond:
-            return f"""{self.kilovolts_per_seconds} kV/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts_per_seconds, fractional_digits)} kV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerSecond:
-            return f"""{self.megavolts_per_seconds} MV/s"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts_per_seconds, fractional_digits)} MV/s"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMicrosecond:
-            return f"""{self.microvolts_per_microseconds} μV/μs"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts_per_microseconds, fractional_digits)} μV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerMicrosecond:
-            return f"""{self.millivolts_per_microseconds} mV/μs"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts_per_microseconds, fractional_digits)} mV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerMicrosecond:
-            return f"""{self.kilovolts_per_microseconds} kV/μs"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts_per_microseconds, fractional_digits)} kV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerMicrosecond:
-            return f"""{self.megavolts_per_microseconds} MV/μs"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts_per_microseconds, fractional_digits)} MV/μs"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerMinute:
-            return f"""{self.microvolts_per_minutes} μV/min"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts_per_minutes, fractional_digits)} μV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerMinute:
-            return f"""{self.millivolts_per_minutes} mV/min"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts_per_minutes, fractional_digits)} mV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerMinute:
-            return f"""{self.kilovolts_per_minutes} kV/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts_per_minutes, fractional_digits)} kV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerMinute:
-            return f"""{self.megavolts_per_minutes} MV/min"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts_per_minutes, fractional_digits)} MV/min"""
         
         if unit == ElectricPotentialChangeRateUnits.MicrovoltPerHour:
-            return f"""{self.microvolts_per_hours} μV/h"""
+            return f"""{super()._truncate_fraction_digits(self.microvolts_per_hours, fractional_digits)} μV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MillivoltPerHour:
-            return f"""{self.millivolts_per_hours} mV/h"""
+            return f"""{super()._truncate_fraction_digits(self.millivolts_per_hours, fractional_digits)} mV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.KilovoltPerHour:
-            return f"""{self.kilovolts_per_hours} kV/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilovolts_per_hours, fractional_digits)} kV/h"""
         
         if unit == ElectricPotentialChangeRateUnits.MegavoltPerHour:
-            return f"""{self.megavolts_per_hours} MV/h"""
+            return f"""{super()._truncate_fraction_digits(self.megavolts_per_hours, fractional_digits)} MV/h"""
         
         return f'{self._value}'
 

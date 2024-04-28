@@ -222,18 +222,26 @@ class VolumeFlowPerArea(AbstractMeasure):
         return self.__cubic_feet_per_minute_per_square_foot
 
     
-    def to_string(self, unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter) -> str:
+    def to_string(self, unit: VolumeFlowPerAreaUnits = VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the VolumeFlowPerArea to string.
-        Note! the default format for VolumeFlowPerArea is CubicMeterPerSecondPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the VolumeFlowPerArea to a string.
+        
+        Note: the default format for VolumeFlowPerArea is CubicMeterPerSecondPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VolumeFlowPerArea. Default is 'CubicMeterPerSecondPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VolumeFlowPerAreaUnits.CubicMeterPerSecondPerSquareMeter:
-            return f"""{self.cubic_meters_per_second_per_square_meter} m³/(s·m²)"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_second_per_square_meter, fractional_digits)} m³/(s·m²)"""
         
         if unit == VolumeFlowPerAreaUnits.CubicFootPerMinutePerSquareFoot:
-            return f"""{self.cubic_feet_per_minute_per_square_foot} CFM/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_feet_per_minute_per_square_foot, fractional_digits)} CFM/ft²"""
         
         return f'{self._value}'
 

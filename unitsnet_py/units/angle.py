@@ -768,60 +768,68 @@ class Angle(AbstractMeasure):
         return self.__millidegrees
 
     
-    def to_string(self, unit: AngleUnits = AngleUnits.Degree) -> str:
+    def to_string(self, unit: AngleUnits = AngleUnits.Degree, fractional_digits: int = None) -> str:
         """
-        Format the Angle to string.
-        Note! the default format for Angle is Degree.
-        To specify the unit format set the 'unit' parameter.
+        Format the Angle to a string.
+        
+        Note: the default format for Angle is Degree.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Angle. Default is 'Degree'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AngleUnits.Radian:
-            return f"""{self.radians} rad"""
+            return f"""{super()._truncate_fraction_digits(self.radians, fractional_digits)} rad"""
         
         if unit == AngleUnits.Degree:
-            return f"""{self.degrees} °"""
+            return f"""{super()._truncate_fraction_digits(self.degrees, fractional_digits)} °"""
         
         if unit == AngleUnits.Arcminute:
-            return f"""{self.arcminutes} '"""
+            return f"""{super()._truncate_fraction_digits(self.arcminutes, fractional_digits)} '"""
         
         if unit == AngleUnits.Arcsecond:
-            return f"""{self.arcseconds} ″"""
+            return f"""{super()._truncate_fraction_digits(self.arcseconds, fractional_digits)} ″"""
         
         if unit == AngleUnits.Gradian:
-            return f"""{self.gradians} g"""
+            return f"""{super()._truncate_fraction_digits(self.gradians, fractional_digits)} g"""
         
         if unit == AngleUnits.NatoMil:
-            return f"""{self.nato_mils} mil"""
+            return f"""{super()._truncate_fraction_digits(self.nato_mils, fractional_digits)} mil"""
         
         if unit == AngleUnits.Revolution:
-            return f"""{self.revolutions} r"""
+            return f"""{super()._truncate_fraction_digits(self.revolutions, fractional_digits)} r"""
         
         if unit == AngleUnits.Tilt:
-            return f"""{self.tilt} sin(θ)"""
+            return f"""{super()._truncate_fraction_digits(self.tilt, fractional_digits)} sin(θ)"""
         
         if unit == AngleUnits.Nanoradian:
-            return f"""{self.nanoradians} nrad"""
+            return f"""{super()._truncate_fraction_digits(self.nanoradians, fractional_digits)} nrad"""
         
         if unit == AngleUnits.Microradian:
-            return f"""{self.microradians} μrad"""
+            return f"""{super()._truncate_fraction_digits(self.microradians, fractional_digits)} μrad"""
         
         if unit == AngleUnits.Milliradian:
-            return f"""{self.milliradians} mrad"""
+            return f"""{super()._truncate_fraction_digits(self.milliradians, fractional_digits)} mrad"""
         
         if unit == AngleUnits.Centiradian:
-            return f"""{self.centiradians} crad"""
+            return f"""{super()._truncate_fraction_digits(self.centiradians, fractional_digits)} crad"""
         
         if unit == AngleUnits.Deciradian:
-            return f"""{self.deciradians} drad"""
+            return f"""{super()._truncate_fraction_digits(self.deciradians, fractional_digits)} drad"""
         
         if unit == AngleUnits.Nanodegree:
-            return f"""{self.nanodegrees} n°"""
+            return f"""{super()._truncate_fraction_digits(self.nanodegrees, fractional_digits)} n°"""
         
         if unit == AngleUnits.Microdegree:
-            return f"""{self.microdegrees} μ°"""
+            return f"""{super()._truncate_fraction_digits(self.microdegrees, fractional_digits)} μ°"""
         
         if unit == AngleUnits.Millidegree:
-            return f"""{self.millidegrees} m°"""
+            return f"""{super()._truncate_fraction_digits(self.millidegrees, fractional_digits)} m°"""
         
         return f'{self._value}'
 

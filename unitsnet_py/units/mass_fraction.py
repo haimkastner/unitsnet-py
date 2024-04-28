@@ -1080,84 +1080,92 @@ class MassFraction(AbstractMeasure):
         return self.__kilograms_per_kilogram
 
     
-    def to_string(self, unit: MassFractionUnits = MassFractionUnits.DecimalFraction) -> str:
+    def to_string(self, unit: MassFractionUnits = MassFractionUnits.DecimalFraction, fractional_digits: int = None) -> str:
         """
-        Format the MassFraction to string.
-        Note! the default format for MassFraction is DecimalFraction.
-        To specify the unit format set the 'unit' parameter.
+        Format the MassFraction to a string.
+        
+        Note: the default format for MassFraction is DecimalFraction.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MassFraction. Default is 'DecimalFraction'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassFractionUnits.DecimalFraction:
-            return f"""{self.decimal_fractions} """
+            return f"""{super()._truncate_fraction_digits(self.decimal_fractions, fractional_digits)} """
         
         if unit == MassFractionUnits.GramPerGram:
-            return f"""{self.grams_per_gram} g/g"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_gram, fractional_digits)} g/g"""
         
         if unit == MassFractionUnits.GramPerKilogram:
-            return f"""{self.grams_per_kilogram} g/kg"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_kilogram, fractional_digits)} g/kg"""
         
         if unit == MassFractionUnits.Percent:
-            return f"""{self.percent} %"""
+            return f"""{super()._truncate_fraction_digits(self.percent, fractional_digits)} %"""
         
         if unit == MassFractionUnits.PartPerThousand:
-            return f"""{self.parts_per_thousand} ‰"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_thousand, fractional_digits)} ‰"""
         
         if unit == MassFractionUnits.PartPerMillion:
-            return f"""{self.parts_per_million} ppm"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_million, fractional_digits)} ppm"""
         
         if unit == MassFractionUnits.PartPerBillion:
-            return f"""{self.parts_per_billion} ppb"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_billion, fractional_digits)} ppb"""
         
         if unit == MassFractionUnits.PartPerTrillion:
-            return f"""{self.parts_per_trillion} ppt"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_trillion, fractional_digits)} ppt"""
         
         if unit == MassFractionUnits.NanogramPerGram:
-            return f"""{self.nanograms_per_gram} ng/g"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_gram, fractional_digits)} ng/g"""
         
         if unit == MassFractionUnits.MicrogramPerGram:
-            return f"""{self.micrograms_per_gram} μg/g"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_gram, fractional_digits)} μg/g"""
         
         if unit == MassFractionUnits.MilligramPerGram:
-            return f"""{self.milligrams_per_gram} mg/g"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_gram, fractional_digits)} mg/g"""
         
         if unit == MassFractionUnits.CentigramPerGram:
-            return f"""{self.centigrams_per_gram} cg/g"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_gram, fractional_digits)} cg/g"""
         
         if unit == MassFractionUnits.DecigramPerGram:
-            return f"""{self.decigrams_per_gram} dg/g"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_gram, fractional_digits)} dg/g"""
         
         if unit == MassFractionUnits.DecagramPerGram:
-            return f"""{self.decagrams_per_gram} dag/g"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams_per_gram, fractional_digits)} dag/g"""
         
         if unit == MassFractionUnits.HectogramPerGram:
-            return f"""{self.hectograms_per_gram} hg/g"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms_per_gram, fractional_digits)} hg/g"""
         
         if unit == MassFractionUnits.KilogramPerGram:
-            return f"""{self.kilograms_per_gram} kg/g"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_gram, fractional_digits)} kg/g"""
         
         if unit == MassFractionUnits.NanogramPerKilogram:
-            return f"""{self.nanograms_per_kilogram} ng/kg"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_kilogram, fractional_digits)} ng/kg"""
         
         if unit == MassFractionUnits.MicrogramPerKilogram:
-            return f"""{self.micrograms_per_kilogram} μg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_kilogram, fractional_digits)} μg/kg"""
         
         if unit == MassFractionUnits.MilligramPerKilogram:
-            return f"""{self.milligrams_per_kilogram} mg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_kilogram, fractional_digits)} mg/kg"""
         
         if unit == MassFractionUnits.CentigramPerKilogram:
-            return f"""{self.centigrams_per_kilogram} cg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_kilogram, fractional_digits)} cg/kg"""
         
         if unit == MassFractionUnits.DecigramPerKilogram:
-            return f"""{self.decigrams_per_kilogram} dg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_kilogram, fractional_digits)} dg/kg"""
         
         if unit == MassFractionUnits.DecagramPerKilogram:
-            return f"""{self.decagrams_per_kilogram} dag/kg"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams_per_kilogram, fractional_digits)} dag/kg"""
         
         if unit == MassFractionUnits.HectogramPerKilogram:
-            return f"""{self.hectograms_per_kilogram} hg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms_per_kilogram, fractional_digits)} hg/kg"""
         
         if unit == MassFractionUnits.KilogramPerKilogram:
-            return f"""{self.kilograms_per_kilogram} kg/kg"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilogram, fractional_digits)} kg/kg"""
         
         return f'{self._value}'
 

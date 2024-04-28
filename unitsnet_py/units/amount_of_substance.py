@@ -807,63 +807,71 @@ class AmountOfSubstance(AbstractMeasure):
         return self.__kilopound_moles
 
     
-    def to_string(self, unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole) -> str:
+    def to_string(self, unit: AmountOfSubstanceUnits = AmountOfSubstanceUnits.Mole, fractional_digits: int = None) -> str:
         """
-        Format the AmountOfSubstance to string.
-        Note! the default format for AmountOfSubstance is Mole.
-        To specify the unit format set the 'unit' parameter.
+        Format the AmountOfSubstance to a string.
+        
+        Note: the default format for AmountOfSubstance is Mole.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the AmountOfSubstance. Default is 'Mole'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AmountOfSubstanceUnits.Mole:
-            return f"""{self.moles} mol"""
+            return f"""{super()._truncate_fraction_digits(self.moles, fractional_digits)} mol"""
         
         if unit == AmountOfSubstanceUnits.PoundMole:
-            return f"""{self.pound_moles} lbmol"""
+            return f"""{super()._truncate_fraction_digits(self.pound_moles, fractional_digits)} lbmol"""
         
         if unit == AmountOfSubstanceUnits.Femtomole:
-            return f"""{self.femtomoles} fmol"""
+            return f"""{super()._truncate_fraction_digits(self.femtomoles, fractional_digits)} fmol"""
         
         if unit == AmountOfSubstanceUnits.Picomole:
-            return f"""{self.picomoles} pmol"""
+            return f"""{super()._truncate_fraction_digits(self.picomoles, fractional_digits)} pmol"""
         
         if unit == AmountOfSubstanceUnits.Nanomole:
-            return f"""{self.nanomoles} nmol"""
+            return f"""{super()._truncate_fraction_digits(self.nanomoles, fractional_digits)} nmol"""
         
         if unit == AmountOfSubstanceUnits.Micromole:
-            return f"""{self.micromoles} μmol"""
+            return f"""{super()._truncate_fraction_digits(self.micromoles, fractional_digits)} μmol"""
         
         if unit == AmountOfSubstanceUnits.Millimole:
-            return f"""{self.millimoles} mmol"""
+            return f"""{super()._truncate_fraction_digits(self.millimoles, fractional_digits)} mmol"""
         
         if unit == AmountOfSubstanceUnits.Centimole:
-            return f"""{self.centimoles} cmol"""
+            return f"""{super()._truncate_fraction_digits(self.centimoles, fractional_digits)} cmol"""
         
         if unit == AmountOfSubstanceUnits.Decimole:
-            return f"""{self.decimoles} dmol"""
+            return f"""{super()._truncate_fraction_digits(self.decimoles, fractional_digits)} dmol"""
         
         if unit == AmountOfSubstanceUnits.Kilomole:
-            return f"""{self.kilomoles} kmol"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles, fractional_digits)} kmol"""
         
         if unit == AmountOfSubstanceUnits.Megamole:
-            return f"""{self.megamoles} Mmol"""
+            return f"""{super()._truncate_fraction_digits(self.megamoles, fractional_digits)} Mmol"""
         
         if unit == AmountOfSubstanceUnits.NanopoundMole:
-            return f"""{self.nanopound_moles} nlbmol"""
+            return f"""{super()._truncate_fraction_digits(self.nanopound_moles, fractional_digits)} nlbmol"""
         
         if unit == AmountOfSubstanceUnits.MicropoundMole:
-            return f"""{self.micropound_moles} μlbmol"""
+            return f"""{super()._truncate_fraction_digits(self.micropound_moles, fractional_digits)} μlbmol"""
         
         if unit == AmountOfSubstanceUnits.MillipoundMole:
-            return f"""{self.millipound_moles} mlbmol"""
+            return f"""{super()._truncate_fraction_digits(self.millipound_moles, fractional_digits)} mlbmol"""
         
         if unit == AmountOfSubstanceUnits.CentipoundMole:
-            return f"""{self.centipound_moles} clbmol"""
+            return f"""{super()._truncate_fraction_digits(self.centipound_moles, fractional_digits)} clbmol"""
         
         if unit == AmountOfSubstanceUnits.DecipoundMole:
-            return f"""{self.decipound_moles} dlbmol"""
+            return f"""{super()._truncate_fraction_digits(self.decipound_moles, fractional_digits)} dlbmol"""
         
         if unit == AmountOfSubstanceUnits.KilopoundMole:
-            return f"""{self.kilopound_moles} klbmol"""
+            return f"""{super()._truncate_fraction_digits(self.kilopound_moles, fractional_digits)} klbmol"""
         
         return f'{self._value}'
 

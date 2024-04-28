@@ -183,15 +183,23 @@ class VitaminA(AbstractMeasure):
         return self.__international_units
 
     
-    def to_string(self, unit: VitaminAUnits = VitaminAUnits.InternationalUnit) -> str:
+    def to_string(self, unit: VitaminAUnits = VitaminAUnits.InternationalUnit, fractional_digits: int = None) -> str:
         """
-        Format the VitaminA to string.
-        Note! the default format for VitaminA is InternationalUnit.
-        To specify the unit format set the 'unit' parameter.
+        Format the VitaminA to a string.
+        
+        Note: the default format for VitaminA is InternationalUnit.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VitaminA. Default is 'InternationalUnit'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VitaminAUnits.InternationalUnit:
-            return f"""{self.international_units} IU"""
+            return f"""{super()._truncate_fraction_digits(self.international_units, fractional_digits)} IU"""
         
         return f'{self._value}'
 

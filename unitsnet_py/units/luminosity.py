@@ -690,54 +690,62 @@ class Luminosity(AbstractMeasure):
         return self.__petawatts
 
     
-    def to_string(self, unit: LuminosityUnits = LuminosityUnits.Watt) -> str:
+    def to_string(self, unit: LuminosityUnits = LuminosityUnits.Watt, fractional_digits: int = None) -> str:
         """
-        Format the Luminosity to string.
-        Note! the default format for Luminosity is Watt.
-        To specify the unit format set the 'unit' parameter.
+        Format the Luminosity to a string.
+        
+        Note: the default format for Luminosity is Watt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Luminosity. Default is 'Watt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LuminosityUnits.Watt:
-            return f"""{self.watts} W"""
+            return f"""{super()._truncate_fraction_digits(self.watts, fractional_digits)} W"""
         
         if unit == LuminosityUnits.SolarLuminosity:
-            return f"""{self.solar_luminosities} L⊙"""
+            return f"""{super()._truncate_fraction_digits(self.solar_luminosities, fractional_digits)} L⊙"""
         
         if unit == LuminosityUnits.Femtowatt:
-            return f"""{self.femtowatts} fW"""
+            return f"""{super()._truncate_fraction_digits(self.femtowatts, fractional_digits)} fW"""
         
         if unit == LuminosityUnits.Picowatt:
-            return f"""{self.picowatts} pW"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts, fractional_digits)} pW"""
         
         if unit == LuminosityUnits.Nanowatt:
-            return f"""{self.nanowatts} nW"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts, fractional_digits)} nW"""
         
         if unit == LuminosityUnits.Microwatt:
-            return f"""{self.microwatts} μW"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts, fractional_digits)} μW"""
         
         if unit == LuminosityUnits.Milliwatt:
-            return f"""{self.milliwatts} mW"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts, fractional_digits)} mW"""
         
         if unit == LuminosityUnits.Deciwatt:
-            return f"""{self.deciwatts} dW"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts, fractional_digits)} dW"""
         
         if unit == LuminosityUnits.Decawatt:
-            return f"""{self.decawatts} daW"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts, fractional_digits)} daW"""
         
         if unit == LuminosityUnits.Kilowatt:
-            return f"""{self.kilowatts} kW"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts, fractional_digits)} kW"""
         
         if unit == LuminosityUnits.Megawatt:
-            return f"""{self.megawatts} MW"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts, fractional_digits)} MW"""
         
         if unit == LuminosityUnits.Gigawatt:
-            return f"""{self.gigawatts} GW"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts, fractional_digits)} GW"""
         
         if unit == LuminosityUnits.Terawatt:
-            return f"""{self.terawatts} TW"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts, fractional_digits)} TW"""
         
         if unit == LuminosityUnits.Petawatt:
-            return f"""{self.petawatts} PW"""
+            return f"""{super()._truncate_fraction_digits(self.petawatts, fractional_digits)} PW"""
         
         return f'{self._value}'
 

@@ -49,3 +49,17 @@ class AbstractMeasure:
         if not isinstance(other, type(self)):
             return NotImplemented
         return self._value < other._value
+    
+    def _truncate_fraction_digits(self, num: float, fractional_digits: int):
+        if fractional_digits is None:
+            return num
+        # Convert the number to a string with the desired precision
+        num_string = format(num, f".{fractional_digits}f")
+        
+        # Parse the string back to a number
+        truncated_num = float(num_string)
+        
+        if truncated_num % 1 == 0:  # Check if num is an integer, if so convert it to int, so the X.0 will be printed as X only
+            return int(truncated_num)
+
+        return truncated_num

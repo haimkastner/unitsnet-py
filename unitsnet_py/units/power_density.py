@@ -1860,144 +1860,152 @@ class PowerDensity(AbstractMeasure):
         return self.__terawatts_per_liter
 
     
-    def to_string(self, unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter) -> str:
+    def to_string(self, unit: PowerDensityUnits = PowerDensityUnits.WattPerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the PowerDensity to string.
-        Note! the default format for PowerDensity is WattPerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the PowerDensity to a string.
+        
+        Note: the default format for PowerDensity is WattPerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the PowerDensity. Default is 'WattPerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PowerDensityUnits.WattPerCubicMeter:
-            return f"""{self.watts_per_cubic_meter} W/m³"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_cubic_meter, fractional_digits)} W/m³"""
         
         if unit == PowerDensityUnits.WattPerCubicInch:
-            return f"""{self.watts_per_cubic_inch} W/in³"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_cubic_inch, fractional_digits)} W/in³"""
         
         if unit == PowerDensityUnits.WattPerCubicFoot:
-            return f"""{self.watts_per_cubic_foot} W/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_cubic_foot, fractional_digits)} W/ft³"""
         
         if unit == PowerDensityUnits.WattPerLiter:
-            return f"""{self.watts_per_liter} W/l"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_liter, fractional_digits)} W/l"""
         
         if unit == PowerDensityUnits.PicowattPerCubicMeter:
-            return f"""{self.picowatts_per_cubic_meter} pW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_cubic_meter, fractional_digits)} pW/m³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicMeter:
-            return f"""{self.nanowatts_per_cubic_meter} nW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_cubic_meter, fractional_digits)} nW/m³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicMeter:
-            return f"""{self.microwatts_per_cubic_meter} μW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_cubic_meter, fractional_digits)} μW/m³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicMeter:
-            return f"""{self.milliwatts_per_cubic_meter} mW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_cubic_meter, fractional_digits)} mW/m³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicMeter:
-            return f"""{self.deciwatts_per_cubic_meter} dW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts_per_cubic_meter, fractional_digits)} dW/m³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicMeter:
-            return f"""{self.decawatts_per_cubic_meter} daW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts_per_cubic_meter, fractional_digits)} daW/m³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicMeter:
-            return f"""{self.kilowatts_per_cubic_meter} kW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_cubic_meter, fractional_digits)} kW/m³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicMeter:
-            return f"""{self.megawatts_per_cubic_meter} MW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_cubic_meter, fractional_digits)} MW/m³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicMeter:
-            return f"""{self.gigawatts_per_cubic_meter} GW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_cubic_meter, fractional_digits)} GW/m³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicMeter:
-            return f"""{self.terawatts_per_cubic_meter} TW/m³"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts_per_cubic_meter, fractional_digits)} TW/m³"""
         
         if unit == PowerDensityUnits.PicowattPerCubicInch:
-            return f"""{self.picowatts_per_cubic_inch} pW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_cubic_inch, fractional_digits)} pW/in³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicInch:
-            return f"""{self.nanowatts_per_cubic_inch} nW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_cubic_inch, fractional_digits)} nW/in³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicInch:
-            return f"""{self.microwatts_per_cubic_inch} μW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_cubic_inch, fractional_digits)} μW/in³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicInch:
-            return f"""{self.milliwatts_per_cubic_inch} mW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_cubic_inch, fractional_digits)} mW/in³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicInch:
-            return f"""{self.deciwatts_per_cubic_inch} dW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts_per_cubic_inch, fractional_digits)} dW/in³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicInch:
-            return f"""{self.decawatts_per_cubic_inch} daW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts_per_cubic_inch, fractional_digits)} daW/in³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicInch:
-            return f"""{self.kilowatts_per_cubic_inch} kW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_cubic_inch, fractional_digits)} kW/in³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicInch:
-            return f"""{self.megawatts_per_cubic_inch} MW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_cubic_inch, fractional_digits)} MW/in³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicInch:
-            return f"""{self.gigawatts_per_cubic_inch} GW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_cubic_inch, fractional_digits)} GW/in³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicInch:
-            return f"""{self.terawatts_per_cubic_inch} TW/in³"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts_per_cubic_inch, fractional_digits)} TW/in³"""
         
         if unit == PowerDensityUnits.PicowattPerCubicFoot:
-            return f"""{self.picowatts_per_cubic_foot} pW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_cubic_foot, fractional_digits)} pW/ft³"""
         
         if unit == PowerDensityUnits.NanowattPerCubicFoot:
-            return f"""{self.nanowatts_per_cubic_foot} nW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_cubic_foot, fractional_digits)} nW/ft³"""
         
         if unit == PowerDensityUnits.MicrowattPerCubicFoot:
-            return f"""{self.microwatts_per_cubic_foot} μW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_cubic_foot, fractional_digits)} μW/ft³"""
         
         if unit == PowerDensityUnits.MilliwattPerCubicFoot:
-            return f"""{self.milliwatts_per_cubic_foot} mW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_cubic_foot, fractional_digits)} mW/ft³"""
         
         if unit == PowerDensityUnits.DeciwattPerCubicFoot:
-            return f"""{self.deciwatts_per_cubic_foot} dW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts_per_cubic_foot, fractional_digits)} dW/ft³"""
         
         if unit == PowerDensityUnits.DecawattPerCubicFoot:
-            return f"""{self.decawatts_per_cubic_foot} daW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts_per_cubic_foot, fractional_digits)} daW/ft³"""
         
         if unit == PowerDensityUnits.KilowattPerCubicFoot:
-            return f"""{self.kilowatts_per_cubic_foot} kW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_cubic_foot, fractional_digits)} kW/ft³"""
         
         if unit == PowerDensityUnits.MegawattPerCubicFoot:
-            return f"""{self.megawatts_per_cubic_foot} MW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_cubic_foot, fractional_digits)} MW/ft³"""
         
         if unit == PowerDensityUnits.GigawattPerCubicFoot:
-            return f"""{self.gigawatts_per_cubic_foot} GW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_cubic_foot, fractional_digits)} GW/ft³"""
         
         if unit == PowerDensityUnits.TerawattPerCubicFoot:
-            return f"""{self.terawatts_per_cubic_foot} TW/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts_per_cubic_foot, fractional_digits)} TW/ft³"""
         
         if unit == PowerDensityUnits.PicowattPerLiter:
-            return f"""{self.picowatts_per_liter} pW/l"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts_per_liter, fractional_digits)} pW/l"""
         
         if unit == PowerDensityUnits.NanowattPerLiter:
-            return f"""{self.nanowatts_per_liter} nW/l"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts_per_liter, fractional_digits)} nW/l"""
         
         if unit == PowerDensityUnits.MicrowattPerLiter:
-            return f"""{self.microwatts_per_liter} μW/l"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts_per_liter, fractional_digits)} μW/l"""
         
         if unit == PowerDensityUnits.MilliwattPerLiter:
-            return f"""{self.milliwatts_per_liter} mW/l"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts_per_liter, fractional_digits)} mW/l"""
         
         if unit == PowerDensityUnits.DeciwattPerLiter:
-            return f"""{self.deciwatts_per_liter} dW/l"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts_per_liter, fractional_digits)} dW/l"""
         
         if unit == PowerDensityUnits.DecawattPerLiter:
-            return f"""{self.decawatts_per_liter} daW/l"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts_per_liter, fractional_digits)} daW/l"""
         
         if unit == PowerDensityUnits.KilowattPerLiter:
-            return f"""{self.kilowatts_per_liter} kW/l"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts_per_liter, fractional_digits)} kW/l"""
         
         if unit == PowerDensityUnits.MegawattPerLiter:
-            return f"""{self.megawatts_per_liter} MW/l"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts_per_liter, fractional_digits)} MW/l"""
         
         if unit == PowerDensityUnits.GigawattPerLiter:
-            return f"""{self.gigawatts_per_liter} GW/l"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts_per_liter, fractional_digits)} GW/l"""
         
         if unit == PowerDensityUnits.TerawattPerLiter:
-            return f"""{self.terawatts_per_liter} TW/l"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts_per_liter, fractional_digits)} TW/l"""
         
         return f'{self._value}'
 

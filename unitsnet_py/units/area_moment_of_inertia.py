@@ -378,30 +378,38 @@ class AreaMomentOfInertia(AbstractMeasure):
         return self.__inches_to_the_fourth
 
     
-    def to_string(self, unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth) -> str:
+    def to_string(self, unit: AreaMomentOfInertiaUnits = AreaMomentOfInertiaUnits.MeterToTheFourth, fractional_digits: int = None) -> str:
         """
-        Format the AreaMomentOfInertia to string.
-        Note! the default format for AreaMomentOfInertia is MeterToTheFourth.
-        To specify the unit format set the 'unit' parameter.
+        Format the AreaMomentOfInertia to a string.
+        
+        Note: the default format for AreaMomentOfInertia is MeterToTheFourth.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the AreaMomentOfInertia. Default is 'MeterToTheFourth'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AreaMomentOfInertiaUnits.MeterToTheFourth:
-            return f"""{self.meters_to_the_fourth} m⁴"""
+            return f"""{super()._truncate_fraction_digits(self.meters_to_the_fourth, fractional_digits)} m⁴"""
         
         if unit == AreaMomentOfInertiaUnits.DecimeterToTheFourth:
-            return f"""{self.decimeters_to_the_fourth} dm⁴"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_to_the_fourth, fractional_digits)} dm⁴"""
         
         if unit == AreaMomentOfInertiaUnits.CentimeterToTheFourth:
-            return f"""{self.centimeters_to_the_fourth} cm⁴"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_to_the_fourth, fractional_digits)} cm⁴"""
         
         if unit == AreaMomentOfInertiaUnits.MillimeterToTheFourth:
-            return f"""{self.millimeters_to_the_fourth} mm⁴"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_to_the_fourth, fractional_digits)} mm⁴"""
         
         if unit == AreaMomentOfInertiaUnits.FootToTheFourth:
-            return f"""{self.feet_to_the_fourth} ft⁴"""
+            return f"""{super()._truncate_fraction_digits(self.feet_to_the_fourth, fractional_digits)} ft⁴"""
         
         if unit == AreaMomentOfInertiaUnits.InchToTheFourth:
-            return f"""{self.inches_to_the_fourth} in⁴"""
+            return f"""{super()._truncate_fraction_digits(self.inches_to_the_fourth, fractional_digits)} in⁴"""
         
         return f'{self._value}'
 

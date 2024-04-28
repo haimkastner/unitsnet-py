@@ -261,21 +261,29 @@ class MolarEntropy(AbstractMeasure):
         return self.__megajoules_per_mole_kelvin
 
     
-    def to_string(self, unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin) -> str:
+    def to_string(self, unit: MolarEntropyUnits = MolarEntropyUnits.JoulePerMoleKelvin, fractional_digits: int = None) -> str:
         """
-        Format the MolarEntropy to string.
-        Note! the default format for MolarEntropy is JoulePerMoleKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the MolarEntropy to a string.
+        
+        Note: the default format for MolarEntropy is JoulePerMoleKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MolarEntropy. Default is 'JoulePerMoleKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolarEntropyUnits.JoulePerMoleKelvin:
-            return f"""{self.joules_per_mole_kelvin} J/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_mole_kelvin, fractional_digits)} J/(mol*K)"""
         
         if unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
-            return f"""{self.kilojoules_per_mole_kelvin} kJ/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_mole_kelvin, fractional_digits)} kJ/(mol*K)"""
         
         if unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
-            return f"""{self.megajoules_per_mole_kelvin} MJ/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_mole_kelvin, fractional_digits)} MJ/(mol*K)"""
         
         return f'{self._value}'
 

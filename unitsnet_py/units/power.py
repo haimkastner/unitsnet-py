@@ -1158,90 +1158,98 @@ class Power(AbstractMeasure):
         return self.__gigajoules_per_hour
 
     
-    def to_string(self, unit: PowerUnits = PowerUnits.Watt) -> str:
+    def to_string(self, unit: PowerUnits = PowerUnits.Watt, fractional_digits: int = None) -> str:
         """
-        Format the Power to string.
-        Note! the default format for Power is Watt.
-        To specify the unit format set the 'unit' parameter.
+        Format the Power to a string.
+        
+        Note: the default format for Power is Watt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Power. Default is 'Watt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PowerUnits.Watt:
-            return f"""{self.watts} W"""
+            return f"""{super()._truncate_fraction_digits(self.watts, fractional_digits)} W"""
         
         if unit == PowerUnits.MechanicalHorsepower:
-            return f"""{self.mechanical_horsepower} hp(I)"""
+            return f"""{super()._truncate_fraction_digits(self.mechanical_horsepower, fractional_digits)} hp(I)"""
         
         if unit == PowerUnits.MetricHorsepower:
-            return f"""{self.metric_horsepower} hp(M)"""
+            return f"""{super()._truncate_fraction_digits(self.metric_horsepower, fractional_digits)} hp(M)"""
         
         if unit == PowerUnits.ElectricalHorsepower:
-            return f"""{self.electrical_horsepower} hp(E)"""
+            return f"""{super()._truncate_fraction_digits(self.electrical_horsepower, fractional_digits)} hp(E)"""
         
         if unit == PowerUnits.BoilerHorsepower:
-            return f"""{self.boiler_horsepower} hp(S)"""
+            return f"""{super()._truncate_fraction_digits(self.boiler_horsepower, fractional_digits)} hp(S)"""
         
         if unit == PowerUnits.HydraulicHorsepower:
-            return f"""{self.hydraulic_horsepower} hp(H)"""
+            return f"""{super()._truncate_fraction_digits(self.hydraulic_horsepower, fractional_digits)} hp(H)"""
         
         if unit == PowerUnits.BritishThermalUnitPerHour:
-            return f"""{self.british_thermal_units_per_hour} Btu/h"""
+            return f"""{super()._truncate_fraction_digits(self.british_thermal_units_per_hour, fractional_digits)} Btu/h"""
         
         if unit == PowerUnits.JoulePerHour:
-            return f"""{self.joules_per_hour} J/h"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_hour, fractional_digits)} J/h"""
         
         if unit == PowerUnits.Femtowatt:
-            return f"""{self.femtowatts} fW"""
+            return f"""{super()._truncate_fraction_digits(self.femtowatts, fractional_digits)} fW"""
         
         if unit == PowerUnits.Picowatt:
-            return f"""{self.picowatts} pW"""
+            return f"""{super()._truncate_fraction_digits(self.picowatts, fractional_digits)} pW"""
         
         if unit == PowerUnits.Nanowatt:
-            return f"""{self.nanowatts} nW"""
+            return f"""{super()._truncate_fraction_digits(self.nanowatts, fractional_digits)} nW"""
         
         if unit == PowerUnits.Microwatt:
-            return f"""{self.microwatts} μW"""
+            return f"""{super()._truncate_fraction_digits(self.microwatts, fractional_digits)} μW"""
         
         if unit == PowerUnits.Milliwatt:
-            return f"""{self.milliwatts} mW"""
+            return f"""{super()._truncate_fraction_digits(self.milliwatts, fractional_digits)} mW"""
         
         if unit == PowerUnits.Deciwatt:
-            return f"""{self.deciwatts} dW"""
+            return f"""{super()._truncate_fraction_digits(self.deciwatts, fractional_digits)} dW"""
         
         if unit == PowerUnits.Decawatt:
-            return f"""{self.decawatts} daW"""
+            return f"""{super()._truncate_fraction_digits(self.decawatts, fractional_digits)} daW"""
         
         if unit == PowerUnits.Kilowatt:
-            return f"""{self.kilowatts} kW"""
+            return f"""{super()._truncate_fraction_digits(self.kilowatts, fractional_digits)} kW"""
         
         if unit == PowerUnits.Megawatt:
-            return f"""{self.megawatts} MW"""
+            return f"""{super()._truncate_fraction_digits(self.megawatts, fractional_digits)} MW"""
         
         if unit == PowerUnits.Gigawatt:
-            return f"""{self.gigawatts} GW"""
+            return f"""{super()._truncate_fraction_digits(self.gigawatts, fractional_digits)} GW"""
         
         if unit == PowerUnits.Terawatt:
-            return f"""{self.terawatts} TW"""
+            return f"""{super()._truncate_fraction_digits(self.terawatts, fractional_digits)} TW"""
         
         if unit == PowerUnits.Petawatt:
-            return f"""{self.petawatts} PW"""
+            return f"""{super()._truncate_fraction_digits(self.petawatts, fractional_digits)} PW"""
         
         if unit == PowerUnits.KilobritishThermalUnitPerHour:
-            return f"""{self.kilobritish_thermal_units_per_hour} kBtu/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilobritish_thermal_units_per_hour, fractional_digits)} kBtu/h"""
         
         if unit == PowerUnits.MegabritishThermalUnitPerHour:
-            return f"""{self.megabritish_thermal_units_per_hour} MBtu/h"""
+            return f"""{super()._truncate_fraction_digits(self.megabritish_thermal_units_per_hour, fractional_digits)} MBtu/h"""
         
         if unit == PowerUnits.MillijoulePerHour:
-            return f"""{self.millijoules_per_hour} mJ/h"""
+            return f"""{super()._truncate_fraction_digits(self.millijoules_per_hour, fractional_digits)} mJ/h"""
         
         if unit == PowerUnits.KilojoulePerHour:
-            return f"""{self.kilojoules_per_hour} kJ/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_hour, fractional_digits)} kJ/h"""
         
         if unit == PowerUnits.MegajoulePerHour:
-            return f"""{self.megajoules_per_hour} MJ/h"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_hour, fractional_digits)} MJ/h"""
         
         if unit == PowerUnits.GigajoulePerHour:
-            return f"""{self.gigajoules_per_hour} GJ/h"""
+            return f"""{super()._truncate_fraction_digits(self.gigajoules_per_hour, fractional_digits)} GJ/h"""
         
         return f'{self._value}'
 

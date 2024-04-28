@@ -846,66 +846,74 @@ class PressureChangeRate(AbstractMeasure):
         return self.__millibars_per_minute
 
     
-    def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond) -> str:
+    def to_string(self, unit: PressureChangeRateUnits = PressureChangeRateUnits.PascalPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the PressureChangeRate to string.
-        Note! the default format for PressureChangeRate is PascalPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the PressureChangeRate to a string.
+        
+        Note: the default format for PressureChangeRate is PascalPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the PressureChangeRate. Default is 'PascalPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PressureChangeRateUnits.PascalPerSecond:
-            return f"""{self.pascals_per_second} Pa/s"""
+            return f"""{super()._truncate_fraction_digits(self.pascals_per_second, fractional_digits)} Pa/s"""
         
         if unit == PressureChangeRateUnits.PascalPerMinute:
-            return f"""{self.pascals_per_minute} Pa/min"""
+            return f"""{super()._truncate_fraction_digits(self.pascals_per_minute, fractional_digits)} Pa/min"""
         
         if unit == PressureChangeRateUnits.MillimeterOfMercuryPerSecond:
-            return f"""{self.millimeters_of_mercury_per_second} mmHg/s"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_of_mercury_per_second, fractional_digits)} mmHg/s"""
         
         if unit == PressureChangeRateUnits.AtmospherePerSecond:
-            return f"""{self.atmospheres_per_second} atm/s"""
+            return f"""{super()._truncate_fraction_digits(self.atmospheres_per_second, fractional_digits)} atm/s"""
         
         if unit == PressureChangeRateUnits.PoundForcePerSquareInchPerSecond:
-            return f"""{self.pounds_force_per_square_inch_per_second} psi/s"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_square_inch_per_second, fractional_digits)} psi/s"""
         
         if unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
-            return f"""{self.pounds_force_per_square_inch_per_minute} psi/min"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force_per_square_inch_per_minute, fractional_digits)} psi/min"""
         
         if unit == PressureChangeRateUnits.BarPerSecond:
-            return f"""{self.bars_per_second} bar/s"""
+            return f"""{super()._truncate_fraction_digits(self.bars_per_second, fractional_digits)} bar/s"""
         
         if unit == PressureChangeRateUnits.BarPerMinute:
-            return f"""{self.bars_per_minute} bar/min"""
+            return f"""{super()._truncate_fraction_digits(self.bars_per_minute, fractional_digits)} bar/min"""
         
         if unit == PressureChangeRateUnits.KilopascalPerSecond:
-            return f"""{self.kilopascals_per_second} kPa/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilopascals_per_second, fractional_digits)} kPa/s"""
         
         if unit == PressureChangeRateUnits.MegapascalPerSecond:
-            return f"""{self.megapascals_per_second} MPa/s"""
+            return f"""{super()._truncate_fraction_digits(self.megapascals_per_second, fractional_digits)} MPa/s"""
         
         if unit == PressureChangeRateUnits.KilopascalPerMinute:
-            return f"""{self.kilopascals_per_minute} kPa/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilopascals_per_minute, fractional_digits)} kPa/min"""
         
         if unit == PressureChangeRateUnits.MegapascalPerMinute:
-            return f"""{self.megapascals_per_minute} MPa/min"""
+            return f"""{super()._truncate_fraction_digits(self.megapascals_per_minute, fractional_digits)} MPa/min"""
         
         if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
-            return f"""{self.kilopounds_force_per_square_inch_per_second} kpsi/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_square_inch_per_second, fractional_digits)} kpsi/s"""
         
         if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
-            return f"""{self.megapounds_force_per_square_inch_per_second} Mpsi/s"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_force_per_square_inch_per_second, fractional_digits)} Mpsi/s"""
         
         if unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
-            return f"""{self.kilopounds_force_per_square_inch_per_minute} kpsi/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_square_inch_per_minute, fractional_digits)} kpsi/min"""
         
         if unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
-            return f"""{self.megapounds_force_per_square_inch_per_minute} Mpsi/min"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_force_per_square_inch_per_minute, fractional_digits)} Mpsi/min"""
         
         if unit == PressureChangeRateUnits.MillibarPerSecond:
-            return f"""{self.millibars_per_second} mbar/s"""
+            return f"""{super()._truncate_fraction_digits(self.millibars_per_second, fractional_digits)} mbar/s"""
         
         if unit == PressureChangeRateUnits.MillibarPerMinute:
-            return f"""{self.millibars_per_minute} mbar/min"""
+            return f"""{super()._truncate_fraction_digits(self.millibars_per_minute, fractional_digits)} mbar/min"""
         
         return f'{self._value}'
 

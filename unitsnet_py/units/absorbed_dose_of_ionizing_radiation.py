@@ -768,60 +768,68 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         return self.__megarads
 
     
-    def to_string(self, unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray) -> str:
+    def to_string(self, unit: AbsorbedDoseOfIonizingRadiationUnits = AbsorbedDoseOfIonizingRadiationUnits.Gray, fractional_digits: int = None) -> str:
         """
-        Format the AbsorbedDoseOfIonizingRadiation to string.
-        Note! the default format for AbsorbedDoseOfIonizingRadiation is Gray.
-        To specify the unit format set the 'unit' parameter.
+        Format the AbsorbedDoseOfIonizingRadiation to a string.
+        
+        Note: the default format for AbsorbedDoseOfIonizingRadiation is Gray.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the AbsorbedDoseOfIonizingRadiation. Default is 'Gray'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Gray:
-            return f"""{self.grays} Gy"""
+            return f"""{super()._truncate_fraction_digits(self.grays, fractional_digits)} Gy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Rad:
-            return f"""{self.rads} rad"""
+            return f"""{super()._truncate_fraction_digits(self.rads, fractional_digits)} rad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Femtogray:
-            return f"""{self.femtograys} fGy"""
+            return f"""{super()._truncate_fraction_digits(self.femtograys, fractional_digits)} fGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Picogray:
-            return f"""{self.picograys} pGy"""
+            return f"""{super()._truncate_fraction_digits(self.picograys, fractional_digits)} pGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Nanogray:
-            return f"""{self.nanograys} nGy"""
+            return f"""{super()._truncate_fraction_digits(self.nanograys, fractional_digits)} nGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Microgray:
-            return f"""{self.micrograys} μGy"""
+            return f"""{super()._truncate_fraction_digits(self.micrograys, fractional_digits)} μGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Milligray:
-            return f"""{self.milligrays} mGy"""
+            return f"""{super()._truncate_fraction_digits(self.milligrays, fractional_digits)} mGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
-            return f"""{self.centigrays} cGy"""
+            return f"""{super()._truncate_fraction_digits(self.centigrays, fractional_digits)} cGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
-            return f"""{self.kilograys} kGy"""
+            return f"""{super()._truncate_fraction_digits(self.kilograys, fractional_digits)} kGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Megagray:
-            return f"""{self.megagrays} MGy"""
+            return f"""{super()._truncate_fraction_digits(self.megagrays, fractional_digits)} MGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Gigagray:
-            return f"""{self.gigagrays} GGy"""
+            return f"""{super()._truncate_fraction_digits(self.gigagrays, fractional_digits)} GGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Teragray:
-            return f"""{self.teragrays} TGy"""
+            return f"""{super()._truncate_fraction_digits(self.teragrays, fractional_digits)} TGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Petagray:
-            return f"""{self.petagrays} PGy"""
+            return f"""{super()._truncate_fraction_digits(self.petagrays, fractional_digits)} PGy"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Millirad:
-            return f"""{self.millirads} mrad"""
+            return f"""{super()._truncate_fraction_digits(self.millirads, fractional_digits)} mrad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Kilorad:
-            return f"""{self.kilorads} krad"""
+            return f"""{super()._truncate_fraction_digits(self.kilorads, fractional_digits)} krad"""
         
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Megarad:
-            return f"""{self.megarads} Mrad"""
+            return f"""{super()._truncate_fraction_digits(self.megarads, fractional_digits)} Mrad"""
         
         return f'{self._value}'
 

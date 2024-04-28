@@ -261,21 +261,29 @@ class SpecificVolume(AbstractMeasure):
         return self.__millicubic_meters_per_kilogram
 
     
-    def to_string(self, unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram) -> str:
+    def to_string(self, unit: SpecificVolumeUnits = SpecificVolumeUnits.CubicMeterPerKilogram, fractional_digits: int = None) -> str:
         """
-        Format the SpecificVolume to string.
-        Note! the default format for SpecificVolume is CubicMeterPerKilogram.
-        To specify the unit format set the 'unit' parameter.
+        Format the SpecificVolume to a string.
+        
+        Note: the default format for SpecificVolume is CubicMeterPerKilogram.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SpecificVolume. Default is 'CubicMeterPerKilogram'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpecificVolumeUnits.CubicMeterPerKilogram:
-            return f"""{self.cubic_meters_per_kilogram} m³/kg"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_kilogram, fractional_digits)} m³/kg"""
         
         if unit == SpecificVolumeUnits.CubicFootPerPound:
-            return f"""{self.cubic_feet_per_pound} ft³/lb"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_feet_per_pound, fractional_digits)} ft³/lb"""
         
         if unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
-            return f"""{self.millicubic_meters_per_kilogram} mm³/kg"""
+            return f"""{super()._truncate_fraction_digits(self.millicubic_meters_per_kilogram, fractional_digits)} mm³/kg"""
         
         return f'{self._value}'
 

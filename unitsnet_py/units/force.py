@@ -729,57 +729,65 @@ class Force(AbstractMeasure):
         return self.__kilopounds_force
 
     
-    def to_string(self, unit: ForceUnits = ForceUnits.Newton) -> str:
+    def to_string(self, unit: ForceUnits = ForceUnits.Newton, fractional_digits: int = None) -> str:
         """
-        Format the Force to string.
-        Note! the default format for Force is Newton.
-        To specify the unit format set the 'unit' parameter.
+        Format the Force to a string.
+        
+        Note: the default format for Force is Newton.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Force. Default is 'Newton'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ForceUnits.Dyn:
-            return f"""{self.dyne} dyn"""
+            return f"""{super()._truncate_fraction_digits(self.dyne, fractional_digits)} dyn"""
         
         if unit == ForceUnits.KilogramForce:
-            return f"""{self.kilograms_force} kgf"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_force, fractional_digits)} kgf"""
         
         if unit == ForceUnits.TonneForce:
-            return f"""{self.tonnes_force} tf"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_force, fractional_digits)} tf"""
         
         if unit == ForceUnits.Newton:
-            return f"""{self.newtons} N"""
+            return f"""{super()._truncate_fraction_digits(self.newtons, fractional_digits)} N"""
         
         if unit == ForceUnits.KiloPond:
-            return f"""{self.kilo_ponds} kp"""
+            return f"""{super()._truncate_fraction_digits(self.kilo_ponds, fractional_digits)} kp"""
         
         if unit == ForceUnits.Poundal:
-            return f"""{self.poundals} pdl"""
+            return f"""{super()._truncate_fraction_digits(self.poundals, fractional_digits)} pdl"""
         
         if unit == ForceUnits.PoundForce:
-            return f"""{self.pounds_force} lbf"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_force, fractional_digits)} lbf"""
         
         if unit == ForceUnits.OunceForce:
-            return f"""{self.ounce_force} ozf"""
+            return f"""{super()._truncate_fraction_digits(self.ounce_force, fractional_digits)} ozf"""
         
         if unit == ForceUnits.ShortTonForce:
-            return f"""{self.short_tons_force} tf (short)"""
+            return f"""{super()._truncate_fraction_digits(self.short_tons_force, fractional_digits)} tf (short)"""
         
         if unit == ForceUnits.Micronewton:
-            return f"""{self.micronewtons} μN"""
+            return f"""{super()._truncate_fraction_digits(self.micronewtons, fractional_digits)} μN"""
         
         if unit == ForceUnits.Millinewton:
-            return f"""{self.millinewtons} mN"""
+            return f"""{super()._truncate_fraction_digits(self.millinewtons, fractional_digits)} mN"""
         
         if unit == ForceUnits.Decanewton:
-            return f"""{self.decanewtons} daN"""
+            return f"""{super()._truncate_fraction_digits(self.decanewtons, fractional_digits)} daN"""
         
         if unit == ForceUnits.Kilonewton:
-            return f"""{self.kilonewtons} kN"""
+            return f"""{super()._truncate_fraction_digits(self.kilonewtons, fractional_digits)} kN"""
         
         if unit == ForceUnits.Meganewton:
-            return f"""{self.meganewtons} MN"""
+            return f"""{super()._truncate_fraction_digits(self.meganewtons, fractional_digits)} MN"""
         
         if unit == ForceUnits.KilopoundForce:
-            return f"""{self.kilopounds_force} klbf"""
+            return f"""{super()._truncate_fraction_digits(self.kilopounds_force, fractional_digits)} klbf"""
         
         return f'{self._value}'
 

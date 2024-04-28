@@ -183,15 +183,23 @@ class ElectricField(AbstractMeasure):
         return self.__volts_per_meter
 
     
-    def to_string(self, unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter) -> str:
+    def to_string(self, unit: ElectricFieldUnits = ElectricFieldUnits.VoltPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricField to string.
-        Note! the default format for ElectricField is VoltPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricField to a string.
+        
+        Note: the default format for ElectricField is VoltPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricField. Default is 'VoltPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricFieldUnits.VoltPerMeter:
-            return f"""{self.volts_per_meter} V/m"""
+            return f"""{super()._truncate_fraction_digits(self.volts_per_meter, fractional_digits)} V/m"""
         
         return f'{self._value}'
 

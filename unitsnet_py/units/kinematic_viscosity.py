@@ -495,39 +495,47 @@ class KinematicViscosity(AbstractMeasure):
         return self.__kilostokes
 
     
-    def to_string(self, unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond) -> str:
+    def to_string(self, unit: KinematicViscosityUnits = KinematicViscosityUnits.SquareMeterPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the KinematicViscosity to string.
-        Note! the default format for KinematicViscosity is SquareMeterPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the KinematicViscosity to a string.
+        
+        Note: the default format for KinematicViscosity is SquareMeterPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the KinematicViscosity. Default is 'SquareMeterPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == KinematicViscosityUnits.SquareMeterPerSecond:
-            return f"""{self.square_meters_per_second} m²/s"""
+            return f"""{super()._truncate_fraction_digits(self.square_meters_per_second, fractional_digits)} m²/s"""
         
         if unit == KinematicViscosityUnits.Stokes:
-            return f"""{self.stokes} St"""
+            return f"""{super()._truncate_fraction_digits(self.stokes, fractional_digits)} St"""
         
         if unit == KinematicViscosityUnits.SquareFootPerSecond:
-            return f"""{self.square_feet_per_second} ft²/s"""
+            return f"""{super()._truncate_fraction_digits(self.square_feet_per_second, fractional_digits)} ft²/s"""
         
         if unit == KinematicViscosityUnits.Nanostokes:
-            return f"""{self.nanostokes} nSt"""
+            return f"""{super()._truncate_fraction_digits(self.nanostokes, fractional_digits)} nSt"""
         
         if unit == KinematicViscosityUnits.Microstokes:
-            return f"""{self.microstokes} μSt"""
+            return f"""{super()._truncate_fraction_digits(self.microstokes, fractional_digits)} μSt"""
         
         if unit == KinematicViscosityUnits.Millistokes:
-            return f"""{self.millistokes} mSt"""
+            return f"""{super()._truncate_fraction_digits(self.millistokes, fractional_digits)} mSt"""
         
         if unit == KinematicViscosityUnits.Centistokes:
-            return f"""{self.centistokes} cSt"""
+            return f"""{super()._truncate_fraction_digits(self.centistokes, fractional_digits)} cSt"""
         
         if unit == KinematicViscosityUnits.Decistokes:
-            return f"""{self.decistokes} dSt"""
+            return f"""{super()._truncate_fraction_digits(self.decistokes, fractional_digits)} dSt"""
         
         if unit == KinematicViscosityUnits.Kilostokes:
-            return f"""{self.kilostokes} kSt"""
+            return f"""{super()._truncate_fraction_digits(self.kilostokes, fractional_digits)} kSt"""
         
         return f'{self._value}'
 

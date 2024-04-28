@@ -378,30 +378,38 @@ class Ratio(AbstractMeasure):
         return self.__parts_per_trillion
 
     
-    def to_string(self, unit: RatioUnits = RatioUnits.DecimalFraction) -> str:
+    def to_string(self, unit: RatioUnits = RatioUnits.DecimalFraction, fractional_digits: int = None) -> str:
         """
-        Format the Ratio to string.
-        Note! the default format for Ratio is DecimalFraction.
-        To specify the unit format set the 'unit' parameter.
+        Format the Ratio to a string.
+        
+        Note: the default format for Ratio is DecimalFraction.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Ratio. Default is 'DecimalFraction'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RatioUnits.DecimalFraction:
-            return f"""{self.decimal_fractions} """
+            return f"""{super()._truncate_fraction_digits(self.decimal_fractions, fractional_digits)} """
         
         if unit == RatioUnits.Percent:
-            return f"""{self.percent} %"""
+            return f"""{super()._truncate_fraction_digits(self.percent, fractional_digits)} %"""
         
         if unit == RatioUnits.PartPerThousand:
-            return f"""{self.parts_per_thousand} ‰"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_thousand, fractional_digits)} ‰"""
         
         if unit == RatioUnits.PartPerMillion:
-            return f"""{self.parts_per_million} ppm"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_million, fractional_digits)} ppm"""
         
         if unit == RatioUnits.PartPerBillion:
-            return f"""{self.parts_per_billion} ppb"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_billion, fractional_digits)} ppb"""
         
         if unit == RatioUnits.PartPerTrillion:
-            return f"""{self.parts_per_trillion} ppt"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_trillion, fractional_digits)} ppt"""
         
         return f'{self._value}'
 

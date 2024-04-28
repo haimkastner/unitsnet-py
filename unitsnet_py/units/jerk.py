@@ -573,45 +573,53 @@ class Jerk(AbstractMeasure):
         return self.__millistandard_gravities_per_second
 
     
-    def to_string(self, unit: JerkUnits = JerkUnits.MeterPerSecondCubed) -> str:
+    def to_string(self, unit: JerkUnits = JerkUnits.MeterPerSecondCubed, fractional_digits: int = None) -> str:
         """
-        Format the Jerk to string.
-        Note! the default format for Jerk is MeterPerSecondCubed.
-        To specify the unit format set the 'unit' parameter.
+        Format the Jerk to a string.
+        
+        Note: the default format for Jerk is MeterPerSecondCubed.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Jerk. Default is 'MeterPerSecondCubed'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == JerkUnits.MeterPerSecondCubed:
-            return f"""{self.meters_per_second_cubed} m/s³"""
+            return f"""{super()._truncate_fraction_digits(self.meters_per_second_cubed, fractional_digits)} m/s³"""
         
         if unit == JerkUnits.InchPerSecondCubed:
-            return f"""{self.inches_per_second_cubed} in/s³"""
+            return f"""{super()._truncate_fraction_digits(self.inches_per_second_cubed, fractional_digits)} in/s³"""
         
         if unit == JerkUnits.FootPerSecondCubed:
-            return f"""{self.feet_per_second_cubed} ft/s³"""
+            return f"""{super()._truncate_fraction_digits(self.feet_per_second_cubed, fractional_digits)} ft/s³"""
         
         if unit == JerkUnits.StandardGravitiesPerSecond:
-            return f"""{self.standard_gravities_per_second} g/s"""
+            return f"""{super()._truncate_fraction_digits(self.standard_gravities_per_second, fractional_digits)} g/s"""
         
         if unit == JerkUnits.NanometerPerSecondCubed:
-            return f"""{self.nanometers_per_second_cubed} nm/s³"""
+            return f"""{super()._truncate_fraction_digits(self.nanometers_per_second_cubed, fractional_digits)} nm/s³"""
         
         if unit == JerkUnits.MicrometerPerSecondCubed:
-            return f"""{self.micrometers_per_second_cubed} μm/s³"""
+            return f"""{super()._truncate_fraction_digits(self.micrometers_per_second_cubed, fractional_digits)} μm/s³"""
         
         if unit == JerkUnits.MillimeterPerSecondCubed:
-            return f"""{self.millimeters_per_second_cubed} mm/s³"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_per_second_cubed, fractional_digits)} mm/s³"""
         
         if unit == JerkUnits.CentimeterPerSecondCubed:
-            return f"""{self.centimeters_per_second_cubed} cm/s³"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_per_second_cubed, fractional_digits)} cm/s³"""
         
         if unit == JerkUnits.DecimeterPerSecondCubed:
-            return f"""{self.decimeters_per_second_cubed} dm/s³"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_per_second_cubed, fractional_digits)} dm/s³"""
         
         if unit == JerkUnits.KilometerPerSecondCubed:
-            return f"""{self.kilometers_per_second_cubed} km/s³"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_second_cubed, fractional_digits)} km/s³"""
         
         if unit == JerkUnits.MillistandardGravitiesPerSecond:
-            return f"""{self.millistandard_gravities_per_second} mg/s"""
+            return f"""{super()._truncate_fraction_digits(self.millistandard_gravities_per_second, fractional_digits)} mg/s"""
         
         return f'{self._value}'
 

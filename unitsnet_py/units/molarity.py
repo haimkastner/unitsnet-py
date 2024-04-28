@@ -573,45 +573,53 @@ class Molarity(AbstractMeasure):
         return self.__decimoles_per_liter
 
     
-    def to_string(self, unit: MolarityUnits = MolarityUnits.MolePerCubicMeter) -> str:
+    def to_string(self, unit: MolarityUnits = MolarityUnits.MolePerCubicMeter, fractional_digits: int = None) -> str:
         """
-        Format the Molarity to string.
-        Note! the default format for Molarity is MolePerCubicMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the Molarity to a string.
+        
+        Note: the default format for Molarity is MolePerCubicMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Molarity. Default is 'MolePerCubicMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolarityUnits.MolePerCubicMeter:
-            return f"""{self.moles_per_cubic_meter} mol/m³"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_cubic_meter, fractional_digits)} mol/m³"""
         
         if unit == MolarityUnits.MolePerLiter:
-            return f"""{self.moles_per_liter} mol/L"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_liter, fractional_digits)} mol/L"""
         
         if unit == MolarityUnits.PoundMolePerCubicFoot:
-            return f"""{self.pound_moles_per_cubic_foot} lbmol/ft³"""
+            return f"""{super()._truncate_fraction_digits(self.pound_moles_per_cubic_foot, fractional_digits)} lbmol/ft³"""
         
         if unit == MolarityUnits.KilomolePerCubicMeter:
-            return f"""{self.kilomoles_per_cubic_meter} kmol/m³"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_cubic_meter, fractional_digits)} kmol/m³"""
         
         if unit == MolarityUnits.FemtomolePerLiter:
-            return f"""{self.femtomoles_per_liter} fmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.femtomoles_per_liter, fractional_digits)} fmol/L"""
         
         if unit == MolarityUnits.PicomolePerLiter:
-            return f"""{self.picomoles_per_liter} pmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.picomoles_per_liter, fractional_digits)} pmol/L"""
         
         if unit == MolarityUnits.NanomolePerLiter:
-            return f"""{self.nanomoles_per_liter} nmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.nanomoles_per_liter, fractional_digits)} nmol/L"""
         
         if unit == MolarityUnits.MicromolePerLiter:
-            return f"""{self.micromoles_per_liter} μmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.micromoles_per_liter, fractional_digits)} μmol/L"""
         
         if unit == MolarityUnits.MillimolePerLiter:
-            return f"""{self.millimoles_per_liter} mmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.millimoles_per_liter, fractional_digits)} mmol/L"""
         
         if unit == MolarityUnits.CentimolePerLiter:
-            return f"""{self.centimoles_per_liter} cmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.centimoles_per_liter, fractional_digits)} cmol/L"""
         
         if unit == MolarityUnits.DecimolePerLiter:
-            return f"""{self.decimoles_per_liter} dmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.decimoles_per_liter, fractional_digits)} dmol/L"""
         
         return f'{self._value}'
 

@@ -417,33 +417,41 @@ class Capacitance(AbstractMeasure):
         return self.__megafarads
 
     
-    def to_string(self, unit: CapacitanceUnits = CapacitanceUnits.Farad) -> str:
+    def to_string(self, unit: CapacitanceUnits = CapacitanceUnits.Farad, fractional_digits: int = None) -> str:
         """
-        Format the Capacitance to string.
-        Note! the default format for Capacitance is Farad.
-        To specify the unit format set the 'unit' parameter.
+        Format the Capacitance to a string.
+        
+        Note: the default format for Capacitance is Farad.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Capacitance. Default is 'Farad'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == CapacitanceUnits.Farad:
-            return f"""{self.farads} F"""
+            return f"""{super()._truncate_fraction_digits(self.farads, fractional_digits)} F"""
         
         if unit == CapacitanceUnits.Picofarad:
-            return f"""{self.picofarads} pF"""
+            return f"""{super()._truncate_fraction_digits(self.picofarads, fractional_digits)} pF"""
         
         if unit == CapacitanceUnits.Nanofarad:
-            return f"""{self.nanofarads} nF"""
+            return f"""{super()._truncate_fraction_digits(self.nanofarads, fractional_digits)} nF"""
         
         if unit == CapacitanceUnits.Microfarad:
-            return f"""{self.microfarads} μF"""
+            return f"""{super()._truncate_fraction_digits(self.microfarads, fractional_digits)} μF"""
         
         if unit == CapacitanceUnits.Millifarad:
-            return f"""{self.millifarads} mF"""
+            return f"""{super()._truncate_fraction_digits(self.millifarads, fractional_digits)} mF"""
         
         if unit == CapacitanceUnits.Kilofarad:
-            return f"""{self.kilofarads} kF"""
+            return f"""{super()._truncate_fraction_digits(self.kilofarads, fractional_digits)} kF"""
         
         if unit == CapacitanceUnits.Megafarad:
-            return f"""{self.megafarads} MF"""
+            return f"""{super()._truncate_fraction_digits(self.megafarads, fractional_digits)} MF"""
         
         return f'{self._value}'
 

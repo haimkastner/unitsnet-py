@@ -1236,96 +1236,104 @@ class MassMomentOfInertia(AbstractMeasure):
         return self.__megatonne_square_milimeters
 
     
-    def to_string(self, unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter) -> str:
+    def to_string(self, unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the MassMomentOfInertia to string.
-        Note! the default format for MassMomentOfInertia is KilogramSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the MassMomentOfInertia to a string.
+        
+        Note: the default format for MassMomentOfInertia is KilogramSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MassMomentOfInertia. Default is 'KilogramSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassMomentOfInertiaUnits.GramSquareMeter:
-            return f"""{self.gram_square_meters} g·m²"""
+            return f"""{super()._truncate_fraction_digits(self.gram_square_meters, fractional_digits)} g·m²"""
         
         if unit == MassMomentOfInertiaUnits.GramSquareDecimeter:
-            return f"""{self.gram_square_decimeters} g·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.gram_square_decimeters, fractional_digits)} g·dm²"""
         
         if unit == MassMomentOfInertiaUnits.GramSquareCentimeter:
-            return f"""{self.gram_square_centimeters} g·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.gram_square_centimeters, fractional_digits)} g·cm²"""
         
         if unit == MassMomentOfInertiaUnits.GramSquareMillimeter:
-            return f"""{self.gram_square_millimeters} g·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.gram_square_millimeters, fractional_digits)} g·mm²"""
         
         if unit == MassMomentOfInertiaUnits.TonneSquareMeter:
-            return f"""{self.tonne_square_meters} t·m²"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_square_meters, fractional_digits)} t·m²"""
         
         if unit == MassMomentOfInertiaUnits.TonneSquareDecimeter:
-            return f"""{self.tonne_square_decimeters} t·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_square_decimeters, fractional_digits)} t·dm²"""
         
         if unit == MassMomentOfInertiaUnits.TonneSquareCentimeter:
-            return f"""{self.tonne_square_centimeters} t·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_square_centimeters, fractional_digits)} t·cm²"""
         
         if unit == MassMomentOfInertiaUnits.TonneSquareMilimeter:
-            return f"""{self.tonne_square_milimeters} t·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.tonne_square_milimeters, fractional_digits)} t·mm²"""
         
         if unit == MassMomentOfInertiaUnits.PoundSquareFoot:
-            return f"""{self.pound_square_feet} lb·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.pound_square_feet, fractional_digits)} lb·ft²"""
         
         if unit == MassMomentOfInertiaUnits.PoundSquareInch:
-            return f"""{self.pound_square_inches} lb·in²"""
+            return f"""{super()._truncate_fraction_digits(self.pound_square_inches, fractional_digits)} lb·in²"""
         
         if unit == MassMomentOfInertiaUnits.SlugSquareFoot:
-            return f"""{self.slug_square_feet} slug·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.slug_square_feet, fractional_digits)} slug·ft²"""
         
         if unit == MassMomentOfInertiaUnits.SlugSquareInch:
-            return f"""{self.slug_square_inches} slug·in²"""
+            return f"""{super()._truncate_fraction_digits(self.slug_square_inches, fractional_digits)} slug·in²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareMeter:
-            return f"""{self.milligram_square_meters} mg·m²"""
+            return f"""{super()._truncate_fraction_digits(self.milligram_square_meters, fractional_digits)} mg·m²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareMeter:
-            return f"""{self.kilogram_square_meters} kg·m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_square_meters, fractional_digits)} kg·m²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareDecimeter:
-            return f"""{self.milligram_square_decimeters} mg·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.milligram_square_decimeters, fractional_digits)} mg·dm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareDecimeter:
-            return f"""{self.kilogram_square_decimeters} kg·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_square_decimeters, fractional_digits)} kg·dm²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareCentimeter:
-            return f"""{self.milligram_square_centimeters} mg·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.milligram_square_centimeters, fractional_digits)} mg·cm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareCentimeter:
-            return f"""{self.kilogram_square_centimeters} kg·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_square_centimeters, fractional_digits)} kg·cm²"""
         
         if unit == MassMomentOfInertiaUnits.MilligramSquareMillimeter:
-            return f"""{self.milligram_square_millimeters} mg·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.milligram_square_millimeters, fractional_digits)} mg·mm²"""
         
         if unit == MassMomentOfInertiaUnits.KilogramSquareMillimeter:
-            return f"""{self.kilogram_square_millimeters} kg·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilogram_square_millimeters, fractional_digits)} kg·mm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareMeter:
-            return f"""{self.kilotonne_square_meters} kt·m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_meters, fractional_digits)} kt·m²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareMeter:
-            return f"""{self.megatonne_square_meters} Mt·m²"""
+            return f"""{super()._truncate_fraction_digits(self.megatonne_square_meters, fractional_digits)} Mt·m²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareDecimeter:
-            return f"""{self.kilotonne_square_decimeters} kt·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_decimeters, fractional_digits)} kt·dm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareDecimeter:
-            return f"""{self.megatonne_square_decimeters} Mt·dm²"""
+            return f"""{super()._truncate_fraction_digits(self.megatonne_square_decimeters, fractional_digits)} Mt·dm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareCentimeter:
-            return f"""{self.kilotonne_square_centimeters} kt·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_centimeters, fractional_digits)} kt·cm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
-            return f"""{self.megatonne_square_centimeters} Mt·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.megatonne_square_centimeters, fractional_digits)} Mt·cm²"""
         
         if unit == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
-            return f"""{self.kilotonne_square_milimeters} kt·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_milimeters, fractional_digits)} kt·mm²"""
         
         if unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
-            return f"""{self.megatonne_square_milimeters} Mt·mm²"""
+            return f"""{super()._truncate_fraction_digits(self.megatonne_square_milimeters, fractional_digits)} Mt·mm²"""
         
         return f'{self._value}'
 

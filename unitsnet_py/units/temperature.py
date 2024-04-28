@@ -534,42 +534,50 @@ class Temperature(AbstractMeasure):
         return self.__solar_temperatures
 
     
-    def to_string(self, unit: TemperatureUnits = TemperatureUnits.Kelvin) -> str:
+    def to_string(self, unit: TemperatureUnits = TemperatureUnits.Kelvin, fractional_digits: int = None) -> str:
         """
-        Format the Temperature to string.
-        Note! the default format for Temperature is Kelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the Temperature to a string.
+        
+        Note: the default format for Temperature is Kelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Temperature. Default is 'Kelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TemperatureUnits.Kelvin:
-            return f"""{self.kelvins} K"""
+            return f"""{super()._truncate_fraction_digits(self.kelvins, fractional_digits)} K"""
         
         if unit == TemperatureUnits.DegreeCelsius:
-            return f"""{self.degrees_celsius} °C"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius, fractional_digits)} °C"""
         
         if unit == TemperatureUnits.MillidegreeCelsius:
-            return f"""{self.millidegrees_celsius} m°C"""
+            return f"""{super()._truncate_fraction_digits(self.millidegrees_celsius, fractional_digits)} m°C"""
         
         if unit == TemperatureUnits.DegreeDelisle:
-            return f"""{self.degrees_delisle} °De"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_delisle, fractional_digits)} °De"""
         
         if unit == TemperatureUnits.DegreeFahrenheit:
-            return f"""{self.degrees_fahrenheit} °F"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit, fractional_digits)} °F"""
         
         if unit == TemperatureUnits.DegreeNewton:
-            return f"""{self.degrees_newton} °N"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_newton, fractional_digits)} °N"""
         
         if unit == TemperatureUnits.DegreeRankine:
-            return f"""{self.degrees_rankine} °R"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_rankine, fractional_digits)} °R"""
         
         if unit == TemperatureUnits.DegreeReaumur:
-            return f"""{self.degrees_reaumur} °Ré"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_reaumur, fractional_digits)} °Ré"""
         
         if unit == TemperatureUnits.DegreeRoemer:
-            return f"""{self.degrees_roemer} °Rø"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_roemer, fractional_digits)} °Rø"""
         
         if unit == TemperatureUnits.SolarTemperature:
-            return f"""{self.solar_temperatures} T⊙"""
+            return f"""{super()._truncate_fraction_digits(self.solar_temperatures, fractional_digits)} T⊙"""
         
         return f'{self._value}'
 

@@ -495,39 +495,47 @@ class VolumePerLength(AbstractMeasure):
         return self.__imperial_gallons_per_mile
 
     
-    def to_string(self, unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter) -> str:
+    def to_string(self, unit: VolumePerLengthUnits = VolumePerLengthUnits.CubicMeterPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the VolumePerLength to string.
-        Note! the default format for VolumePerLength is CubicMeterPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the VolumePerLength to a string.
+        
+        Note: the default format for VolumePerLength is CubicMeterPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VolumePerLength. Default is 'CubicMeterPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VolumePerLengthUnits.CubicMeterPerMeter:
-            return f"""{self.cubic_meters_per_meter} m³/m"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_meters_per_meter, fractional_digits)} m³/m"""
         
         if unit == VolumePerLengthUnits.LiterPerMeter:
-            return f"""{self.liters_per_meter} l/m"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_meter, fractional_digits)} l/m"""
         
         if unit == VolumePerLengthUnits.LiterPerKilometer:
-            return f"""{self.liters_per_kilometer} l/km"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_kilometer, fractional_digits)} l/km"""
         
         if unit == VolumePerLengthUnits.LiterPerMillimeter:
-            return f"""{self.liters_per_millimeter} l/mm"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_millimeter, fractional_digits)} l/mm"""
         
         if unit == VolumePerLengthUnits.OilBarrelPerFoot:
-            return f"""{self.oil_barrels_per_foot} bbl/ft"""
+            return f"""{super()._truncate_fraction_digits(self.oil_barrels_per_foot, fractional_digits)} bbl/ft"""
         
         if unit == VolumePerLengthUnits.CubicYardPerFoot:
-            return f"""{self.cubic_yards_per_foot} yd³/ft"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_foot, fractional_digits)} yd³/ft"""
         
         if unit == VolumePerLengthUnits.CubicYardPerUsSurveyFoot:
-            return f"""{self.cubic_yards_per_us_survey_foot} yd³/ftUS"""
+            return f"""{super()._truncate_fraction_digits(self.cubic_yards_per_us_survey_foot, fractional_digits)} yd³/ftUS"""
         
         if unit == VolumePerLengthUnits.UsGallonPerMile:
-            return f"""{self.us_gallons_per_mile} gal (U.S.)/mi"""
+            return f"""{super()._truncate_fraction_digits(self.us_gallons_per_mile, fractional_digits)} gal (U.S.)/mi"""
         
         if unit == VolumePerLengthUnits.ImperialGallonPerMile:
-            return f"""{self.imperial_gallons_per_mile} gal (imp.)/mi"""
+            return f"""{super()._truncate_fraction_digits(self.imperial_gallons_per_mile, fractional_digits)} gal (imp.)/mi"""
         
         return f'{self._value}'
 

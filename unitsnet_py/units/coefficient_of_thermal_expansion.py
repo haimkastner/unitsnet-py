@@ -378,30 +378,38 @@ class CoefficientOfThermalExpansion(AbstractMeasure):
         return self.__ppm_per_degree_fahrenheit
 
     
-    def to_string(self, unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin) -> str:
+    def to_string(self, unit: CoefficientOfThermalExpansionUnits = CoefficientOfThermalExpansionUnits.PerKelvin, fractional_digits: int = None) -> str:
         """
-        Format the CoefficientOfThermalExpansion to string.
-        Note! the default format for CoefficientOfThermalExpansion is PerKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the CoefficientOfThermalExpansion to a string.
+        
+        Note: the default format for CoefficientOfThermalExpansion is PerKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the CoefficientOfThermalExpansion. Default is 'PerKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == CoefficientOfThermalExpansionUnits.PerKelvin:
-            return f"""{self.per_kelvin} K⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.per_kelvin, fractional_digits)} K⁻¹"""
         
         if unit == CoefficientOfThermalExpansionUnits.PerDegreeCelsius:
-            return f"""{self.per_degree_celsius} °C⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.per_degree_celsius, fractional_digits)} °C⁻¹"""
         
         if unit == CoefficientOfThermalExpansionUnits.PerDegreeFahrenheit:
-            return f"""{self.per_degree_fahrenheit} °F⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.per_degree_fahrenheit, fractional_digits)} °F⁻¹"""
         
         if unit == CoefficientOfThermalExpansionUnits.PpmPerKelvin:
-            return f"""{self.ppm_per_kelvin} ppm/K"""
+            return f"""{super()._truncate_fraction_digits(self.ppm_per_kelvin, fractional_digits)} ppm/K"""
         
         if unit == CoefficientOfThermalExpansionUnits.PpmPerDegreeCelsius:
-            return f"""{self.ppm_per_degree_celsius} ppm/°C"""
+            return f"""{super()._truncate_fraction_digits(self.ppm_per_degree_celsius, fractional_digits)} ppm/°C"""
         
         if unit == CoefficientOfThermalExpansionUnits.PpmPerDegreeFahrenheit:
-            return f"""{self.ppm_per_degree_fahrenheit} ppm/°F"""
+            return f"""{super()._truncate_fraction_digits(self.ppm_per_degree_fahrenheit, fractional_digits)} ppm/°F"""
         
         return f'{self._value}'
 

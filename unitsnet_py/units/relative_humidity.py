@@ -183,15 +183,23 @@ class RelativeHumidity(AbstractMeasure):
         return self.__percent
 
     
-    def to_string(self, unit: RelativeHumidityUnits = RelativeHumidityUnits.Percent) -> str:
+    def to_string(self, unit: RelativeHumidityUnits = RelativeHumidityUnits.Percent, fractional_digits: int = None) -> str:
         """
-        Format the RelativeHumidity to string.
-        Note! the default format for RelativeHumidity is Percent.
-        To specify the unit format set the 'unit' parameter.
+        Format the RelativeHumidity to a string.
+        
+        Note: the default format for RelativeHumidity is Percent.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RelativeHumidity. Default is 'Percent'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RelativeHumidityUnits.Percent:
-            return f"""{self.percent} %RH"""
+            return f"""{super()._truncate_fraction_digits(self.percent, fractional_digits)} %RH"""
         
         return f'{self._value}'
 

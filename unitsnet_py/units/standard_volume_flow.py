@@ -495,39 +495,47 @@ class StandardVolumeFlow(AbstractMeasure):
         return self.__standard_cubic_feet_per_hour
 
     
-    def to_string(self, unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond) -> str:
+    def to_string(self, unit: StandardVolumeFlowUnits = StandardVolumeFlowUnits.StandardCubicMeterPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the StandardVolumeFlow to string.
-        Note! the default format for StandardVolumeFlow is StandardCubicMeterPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the StandardVolumeFlow to a string.
+        
+        Note: the default format for StandardVolumeFlow is StandardCubicMeterPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the StandardVolumeFlow. Default is 'StandardCubicMeterPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == StandardVolumeFlowUnits.StandardCubicMeterPerSecond:
-            return f"""{self.standard_cubic_meters_per_second} Sm³/s"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_meters_per_second, fractional_digits)} Sm³/s"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicMeterPerMinute:
-            return f"""{self.standard_cubic_meters_per_minute} Sm³/min"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_meters_per_minute, fractional_digits)} Sm³/min"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicMeterPerHour:
-            return f"""{self.standard_cubic_meters_per_hour} Sm³/h"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_meters_per_hour, fractional_digits)} Sm³/h"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicMeterPerDay:
-            return f"""{self.standard_cubic_meters_per_day} Sm³/d"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_meters_per_day, fractional_digits)} Sm³/d"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicCentimeterPerMinute:
-            return f"""{self.standard_cubic_centimeters_per_minute} sccm"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_centimeters_per_minute, fractional_digits)} sccm"""
         
         if unit == StandardVolumeFlowUnits.StandardLiterPerMinute:
-            return f"""{self.standard_liters_per_minute} slm"""
+            return f"""{super()._truncate_fraction_digits(self.standard_liters_per_minute, fractional_digits)} slm"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicFootPerSecond:
-            return f"""{self.standard_cubic_feet_per_second} Sft³/s"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_feet_per_second, fractional_digits)} Sft³/s"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicFootPerMinute:
-            return f"""{self.standard_cubic_feet_per_minute} scfm"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_feet_per_minute, fractional_digits)} scfm"""
         
         if unit == StandardVolumeFlowUnits.StandardCubicFootPerHour:
-            return f"""{self.standard_cubic_feet_per_hour} scfh"""
+            return f"""{super()._truncate_fraction_digits(self.standard_cubic_feet_per_hour, fractional_digits)} scfh"""
         
         return f'{self._value}'
 

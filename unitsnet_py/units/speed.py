@@ -1431,111 +1431,119 @@ class Speed(AbstractMeasure):
         return self.__kilometers_per_hour
 
     
-    def to_string(self, unit: SpeedUnits = SpeedUnits.MeterPerSecond) -> str:
+    def to_string(self, unit: SpeedUnits = SpeedUnits.MeterPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the Speed to string.
-        Note! the default format for Speed is MeterPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the Speed to a string.
+        
+        Note: the default format for Speed is MeterPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Speed. Default is 'MeterPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpeedUnits.MeterPerSecond:
-            return f"""{self.meters_per_second} m/s"""
+            return f"""{super()._truncate_fraction_digits(self.meters_per_second, fractional_digits)} m/s"""
         
         if unit == SpeedUnits.MeterPerMinute:
-            return f"""{self.meters_per_minutes} m/min"""
+            return f"""{super()._truncate_fraction_digits(self.meters_per_minutes, fractional_digits)} m/min"""
         
         if unit == SpeedUnits.MeterPerHour:
-            return f"""{self.meters_per_hour} m/h"""
+            return f"""{super()._truncate_fraction_digits(self.meters_per_hour, fractional_digits)} m/h"""
         
         if unit == SpeedUnits.FootPerSecond:
-            return f"""{self.feet_per_second} ft/s"""
+            return f"""{super()._truncate_fraction_digits(self.feet_per_second, fractional_digits)} ft/s"""
         
         if unit == SpeedUnits.FootPerMinute:
-            return f"""{self.feet_per_minute} ft/min"""
+            return f"""{super()._truncate_fraction_digits(self.feet_per_minute, fractional_digits)} ft/min"""
         
         if unit == SpeedUnits.FootPerHour:
-            return f"""{self.feet_per_hour} ft/h"""
+            return f"""{super()._truncate_fraction_digits(self.feet_per_hour, fractional_digits)} ft/h"""
         
         if unit == SpeedUnits.UsSurveyFootPerSecond:
-            return f"""{self.us_survey_feet_per_second} ftUS/s"""
+            return f"""{super()._truncate_fraction_digits(self.us_survey_feet_per_second, fractional_digits)} ftUS/s"""
         
         if unit == SpeedUnits.UsSurveyFootPerMinute:
-            return f"""{self.us_survey_feet_per_minute} ftUS/min"""
+            return f"""{super()._truncate_fraction_digits(self.us_survey_feet_per_minute, fractional_digits)} ftUS/min"""
         
         if unit == SpeedUnits.UsSurveyFootPerHour:
-            return f"""{self.us_survey_feet_per_hour} ftUS/h"""
+            return f"""{super()._truncate_fraction_digits(self.us_survey_feet_per_hour, fractional_digits)} ftUS/h"""
         
         if unit == SpeedUnits.InchPerSecond:
-            return f"""{self.inches_per_second} in/s"""
+            return f"""{super()._truncate_fraction_digits(self.inches_per_second, fractional_digits)} in/s"""
         
         if unit == SpeedUnits.InchPerMinute:
-            return f"""{self.inches_per_minute} in/min"""
+            return f"""{super()._truncate_fraction_digits(self.inches_per_minute, fractional_digits)} in/min"""
         
         if unit == SpeedUnits.InchPerHour:
-            return f"""{self.inches_per_hour} in/h"""
+            return f"""{super()._truncate_fraction_digits(self.inches_per_hour, fractional_digits)} in/h"""
         
         if unit == SpeedUnits.YardPerSecond:
-            return f"""{self.yards_per_second} yd/s"""
+            return f"""{super()._truncate_fraction_digits(self.yards_per_second, fractional_digits)} yd/s"""
         
         if unit == SpeedUnits.YardPerMinute:
-            return f"""{self.yards_per_minute} yd/min"""
+            return f"""{super()._truncate_fraction_digits(self.yards_per_minute, fractional_digits)} yd/min"""
         
         if unit == SpeedUnits.YardPerHour:
-            return f"""{self.yards_per_hour} yd/h"""
+            return f"""{super()._truncate_fraction_digits(self.yards_per_hour, fractional_digits)} yd/h"""
         
         if unit == SpeedUnits.Knot:
-            return f"""{self.knots} kn"""
+            return f"""{super()._truncate_fraction_digits(self.knots, fractional_digits)} kn"""
         
         if unit == SpeedUnits.MilePerHour:
-            return f"""{self.miles_per_hour} mph"""
+            return f"""{super()._truncate_fraction_digits(self.miles_per_hour, fractional_digits)} mph"""
         
         if unit == SpeedUnits.Mach:
-            return f"""{self.mach} M"""
+            return f"""{super()._truncate_fraction_digits(self.mach, fractional_digits)} M"""
         
         if unit == SpeedUnits.NanometerPerSecond:
-            return f"""{self.nanometers_per_second} nm/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanometers_per_second, fractional_digits)} nm/s"""
         
         if unit == SpeedUnits.MicrometerPerSecond:
-            return f"""{self.micrometers_per_second} μm/s"""
+            return f"""{super()._truncate_fraction_digits(self.micrometers_per_second, fractional_digits)} μm/s"""
         
         if unit == SpeedUnits.MillimeterPerSecond:
-            return f"""{self.millimeters_per_second} mm/s"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_per_second, fractional_digits)} mm/s"""
         
         if unit == SpeedUnits.CentimeterPerSecond:
-            return f"""{self.centimeters_per_second} cm/s"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_per_second, fractional_digits)} cm/s"""
         
         if unit == SpeedUnits.DecimeterPerSecond:
-            return f"""{self.decimeters_per_second} dm/s"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_per_second, fractional_digits)} dm/s"""
         
         if unit == SpeedUnits.KilometerPerSecond:
-            return f"""{self.kilometers_per_second} km/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_second, fractional_digits)} km/s"""
         
         if unit == SpeedUnits.NanometerPerMinute:
-            return f"""{self.nanometers_per_minutes} nm/min"""
+            return f"""{super()._truncate_fraction_digits(self.nanometers_per_minutes, fractional_digits)} nm/min"""
         
         if unit == SpeedUnits.MicrometerPerMinute:
-            return f"""{self.micrometers_per_minutes} μm/min"""
+            return f"""{super()._truncate_fraction_digits(self.micrometers_per_minutes, fractional_digits)} μm/min"""
         
         if unit == SpeedUnits.MillimeterPerMinute:
-            return f"""{self.millimeters_per_minutes} mm/min"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_per_minutes, fractional_digits)} mm/min"""
         
         if unit == SpeedUnits.CentimeterPerMinute:
-            return f"""{self.centimeters_per_minutes} cm/min"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_per_minutes, fractional_digits)} cm/min"""
         
         if unit == SpeedUnits.DecimeterPerMinute:
-            return f"""{self.decimeters_per_minutes} dm/min"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_per_minutes, fractional_digits)} dm/min"""
         
         if unit == SpeedUnits.KilometerPerMinute:
-            return f"""{self.kilometers_per_minutes} km/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_minutes, fractional_digits)} km/min"""
         
         if unit == SpeedUnits.MillimeterPerHour:
-            return f"""{self.millimeters_per_hour} mm/h"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_per_hour, fractional_digits)} mm/h"""
         
         if unit == SpeedUnits.CentimeterPerHour:
-            return f"""{self.centimeters_per_hour} cm/h"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_per_hour, fractional_digits)} cm/h"""
         
         if unit == SpeedUnits.KilometerPerHour:
-            return f"""{self.kilometers_per_hour} km/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_hour, fractional_digits)} km/h"""
         
         return f'{self._value}'
 

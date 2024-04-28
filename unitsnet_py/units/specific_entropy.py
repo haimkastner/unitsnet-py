@@ -495,39 +495,47 @@ class SpecificEntropy(AbstractMeasure):
         return self.__kilocalories_per_gram_kelvin
 
     
-    def to_string(self, unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin) -> str:
+    def to_string(self, unit: SpecificEntropyUnits = SpecificEntropyUnits.JoulePerKilogramKelvin, fractional_digits: int = None) -> str:
         """
-        Format the SpecificEntropy to string.
-        Note! the default format for SpecificEntropy is JoulePerKilogramKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the SpecificEntropy to a string.
+        
+        Note: the default format for SpecificEntropy is JoulePerKilogramKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the SpecificEntropy. Default is 'JoulePerKilogramKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == SpecificEntropyUnits.JoulePerKilogramKelvin:
-            return f"""{self.joules_per_kilogram_kelvin} J/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_kelvin, fractional_digits)} J/kg.K"""
         
         if unit == SpecificEntropyUnits.JoulePerKilogramDegreeCelsius:
-            return f"""{self.joules_per_kilogram_degree_celsius} J/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_degree_celsius, fractional_digits)} J/kg.C"""
         
         if unit == SpecificEntropyUnits.CaloriePerGramKelvin:
-            return f"""{self.calories_per_gram_kelvin} cal/g.K"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_gram_kelvin, fractional_digits)} cal/g.K"""
         
         if unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
-            return f"""{self.btus_per_pound_fahrenheit} BTU/lb·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_pound_fahrenheit, fractional_digits)} BTU/lb·°F"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
-            return f"""{self.kilojoules_per_kilogram_kelvin} kJ/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_kelvin, fractional_digits)} kJ/kg.K"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
-            return f"""{self.megajoules_per_kilogram_kelvin} MJ/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_kelvin, fractional_digits)} MJ/kg.K"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
-            return f"""{self.kilojoules_per_kilogram_degree_celsius} kJ/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_degree_celsius, fractional_digits)} kJ/kg.C"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
-            return f"""{self.megajoules_per_kilogram_degree_celsius} MJ/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_degree_celsius, fractional_digits)} MJ/kg.C"""
         
         if unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
-            return f"""{self.kilocalories_per_gram_kelvin} kcal/g.K"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_gram_kelvin, fractional_digits)} kcal/g.K"""
         
         return f'{self._value}'
 

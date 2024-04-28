@@ -261,21 +261,29 @@ class ElectricCurrentDensity(AbstractMeasure):
         return self.__amperes_per_square_foot
 
     
-    def to_string(self, unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter) -> str:
+    def to_string(self, unit: ElectricCurrentDensityUnits = ElectricCurrentDensityUnits.AmperePerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricCurrentDensity to string.
-        Note! the default format for ElectricCurrentDensity is AmperePerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricCurrentDensity to a string.
+        
+        Note: the default format for ElectricCurrentDensity is AmperePerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricCurrentDensity. Default is 'AmperePerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricCurrentDensityUnits.AmperePerSquareMeter:
-            return f"""{self.amperes_per_square_meter} A/m²"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_square_meter, fractional_digits)} A/m²"""
         
         if unit == ElectricCurrentDensityUnits.AmperePerSquareInch:
-            return f"""{self.amperes_per_square_inch} A/in²"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_square_inch, fractional_digits)} A/in²"""
         
         if unit == ElectricCurrentDensityUnits.AmperePerSquareFoot:
-            return f"""{self.amperes_per_square_foot} A/ft²"""
+            return f"""{super()._truncate_fraction_digits(self.amperes_per_square_foot, fractional_digits)} A/ft²"""
         
         return f'{self._value}'
 

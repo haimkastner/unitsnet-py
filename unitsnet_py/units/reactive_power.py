@@ -300,24 +300,32 @@ class ReactivePower(AbstractMeasure):
         return self.__gigavoltamperes_reactive
 
     
-    def to_string(self, unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive) -> str:
+    def to_string(self, unit: ReactivePowerUnits = ReactivePowerUnits.VoltampereReactive, fractional_digits: int = None) -> str:
         """
-        Format the ReactivePower to string.
-        Note! the default format for ReactivePower is VoltampereReactive.
-        To specify the unit format set the 'unit' parameter.
+        Format the ReactivePower to a string.
+        
+        Note: the default format for ReactivePower is VoltampereReactive.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ReactivePower. Default is 'VoltampereReactive'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ReactivePowerUnits.VoltampereReactive:
-            return f"""{self.voltamperes_reactive} var"""
+            return f"""{super()._truncate_fraction_digits(self.voltamperes_reactive, fractional_digits)} var"""
         
         if unit == ReactivePowerUnits.KilovoltampereReactive:
-            return f"""{self.kilovoltamperes_reactive} kvar"""
+            return f"""{super()._truncate_fraction_digits(self.kilovoltamperes_reactive, fractional_digits)} kvar"""
         
         if unit == ReactivePowerUnits.MegavoltampereReactive:
-            return f"""{self.megavoltamperes_reactive} Mvar"""
+            return f"""{super()._truncate_fraction_digits(self.megavoltamperes_reactive, fractional_digits)} Mvar"""
         
         if unit == ReactivePowerUnits.GigavoltampereReactive:
-            return f"""{self.gigavoltamperes_reactive} Gvar"""
+            return f"""{super()._truncate_fraction_digits(self.gigavoltamperes_reactive, fractional_digits)} Gvar"""
         
         return f'{self._value}'
 

@@ -261,21 +261,29 @@ class AreaDensity(AbstractMeasure):
         return self.__milligrams_per_square_meter
 
     
-    def to_string(self, unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter) -> str:
+    def to_string(self, unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the AreaDensity to string.
-        Note! the default format for AreaDensity is KilogramPerSquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the AreaDensity to a string.
+        
+        Note: the default format for AreaDensity is KilogramPerSquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the AreaDensity. Default is 'KilogramPerSquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AreaDensityUnits.KilogramPerSquareMeter:
-            return f"""{self.kilograms_per_square_meter} kg/m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_square_meter, fractional_digits)} kg/m²"""
         
         if unit == AreaDensityUnits.GramPerSquareMeter:
-            return f"""{self.grams_per_square_meter} g/m²"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_square_meter, fractional_digits)} g/m²"""
         
         if unit == AreaDensityUnits.MilligramPerSquareMeter:
-            return f"""{self.milligrams_per_square_meter} mg/m²"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_square_meter, fractional_digits)} mg/m²"""
         
         return f'{self._value}'
 

@@ -339,27 +339,35 @@ class PorousMediumPermeability(AbstractMeasure):
         return self.__millidarcys
 
     
-    def to_string(self, unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter) -> str:
+    def to_string(self, unit: PorousMediumPermeabilityUnits = PorousMediumPermeabilityUnits.SquareMeter, fractional_digits: int = None) -> str:
         """
-        Format the PorousMediumPermeability to string.
-        Note! the default format for PorousMediumPermeability is SquareMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the PorousMediumPermeability to a string.
+        
+        Note: the default format for PorousMediumPermeability is SquareMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the PorousMediumPermeability. Default is 'SquareMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == PorousMediumPermeabilityUnits.Darcy:
-            return f"""{self.darcys} D"""
+            return f"""{super()._truncate_fraction_digits(self.darcys, fractional_digits)} D"""
         
         if unit == PorousMediumPermeabilityUnits.SquareMeter:
-            return f"""{self.square_meters} m²"""
+            return f"""{super()._truncate_fraction_digits(self.square_meters, fractional_digits)} m²"""
         
         if unit == PorousMediumPermeabilityUnits.SquareCentimeter:
-            return f"""{self.square_centimeters} cm²"""
+            return f"""{super()._truncate_fraction_digits(self.square_centimeters, fractional_digits)} cm²"""
         
         if unit == PorousMediumPermeabilityUnits.Microdarcy:
-            return f"""{self.microdarcys} μD"""
+            return f"""{super()._truncate_fraction_digits(self.microdarcys, fractional_digits)} μD"""
         
         if unit == PorousMediumPermeabilityUnits.Millidarcy:
-            return f"""{self.millidarcys} mD"""
+            return f"""{super()._truncate_fraction_digits(self.millidarcys, fractional_digits)} mD"""
         
         return f'{self._value}'
 

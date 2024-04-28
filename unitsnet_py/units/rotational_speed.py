@@ -651,51 +651,59 @@ class RotationalSpeed(AbstractMeasure):
         return self.__millidegrees_per_second
 
     
-    def to_string(self, unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond) -> str:
+    def to_string(self, unit: RotationalSpeedUnits = RotationalSpeedUnits.RadianPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the RotationalSpeed to string.
-        Note! the default format for RotationalSpeed is RadianPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the RotationalSpeed to a string.
+        
+        Note: the default format for RotationalSpeed is RadianPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RotationalSpeed. Default is 'RadianPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RotationalSpeedUnits.RadianPerSecond:
-            return f"""{self.radians_per_second} rad/s"""
+            return f"""{super()._truncate_fraction_digits(self.radians_per_second, fractional_digits)} rad/s"""
         
         if unit == RotationalSpeedUnits.DegreePerSecond:
-            return f"""{self.degrees_per_second} °/s"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_per_second, fractional_digits)} °/s"""
         
         if unit == RotationalSpeedUnits.DegreePerMinute:
-            return f"""{self.degrees_per_minute} °/min"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_per_minute, fractional_digits)} °/min"""
         
         if unit == RotationalSpeedUnits.RevolutionPerSecond:
-            return f"""{self.revolutions_per_second} r/s"""
+            return f"""{super()._truncate_fraction_digits(self.revolutions_per_second, fractional_digits)} r/s"""
         
         if unit == RotationalSpeedUnits.RevolutionPerMinute:
-            return f"""{self.revolutions_per_minute} rpm"""
+            return f"""{super()._truncate_fraction_digits(self.revolutions_per_minute, fractional_digits)} rpm"""
         
         if unit == RotationalSpeedUnits.NanoradianPerSecond:
-            return f"""{self.nanoradians_per_second} nrad/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanoradians_per_second, fractional_digits)} nrad/s"""
         
         if unit == RotationalSpeedUnits.MicroradianPerSecond:
-            return f"""{self.microradians_per_second} μrad/s"""
+            return f"""{super()._truncate_fraction_digits(self.microradians_per_second, fractional_digits)} μrad/s"""
         
         if unit == RotationalSpeedUnits.MilliradianPerSecond:
-            return f"""{self.milliradians_per_second} mrad/s"""
+            return f"""{super()._truncate_fraction_digits(self.milliradians_per_second, fractional_digits)} mrad/s"""
         
         if unit == RotationalSpeedUnits.CentiradianPerSecond:
-            return f"""{self.centiradians_per_second} crad/s"""
+            return f"""{super()._truncate_fraction_digits(self.centiradians_per_second, fractional_digits)} crad/s"""
         
         if unit == RotationalSpeedUnits.DeciradianPerSecond:
-            return f"""{self.deciradians_per_second} drad/s"""
+            return f"""{super()._truncate_fraction_digits(self.deciradians_per_second, fractional_digits)} drad/s"""
         
         if unit == RotationalSpeedUnits.NanodegreePerSecond:
-            return f"""{self.nanodegrees_per_second} n°/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanodegrees_per_second, fractional_digits)} n°/s"""
         
         if unit == RotationalSpeedUnits.MicrodegreePerSecond:
-            return f"""{self.microdegrees_per_second} μ°/s"""
+            return f"""{super()._truncate_fraction_digits(self.microdegrees_per_second, fractional_digits)} μ°/s"""
         
         if unit == RotationalSpeedUnits.MillidegreePerSecond:
-            return f"""{self.millidegrees_per_second} m°/s"""
+            return f"""{super()._truncate_fraction_digits(self.millidegrees_per_second, fractional_digits)} m°/s"""
         
         return f'{self._value}'
 

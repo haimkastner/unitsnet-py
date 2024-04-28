@@ -924,72 +924,80 @@ class VolumeConcentration(AbstractMeasure):
         return self.__deciliters_per_mililiter
 
     
-    def to_string(self, unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction) -> str:
+    def to_string(self, unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction, fractional_digits: int = None) -> str:
         """
-        Format the VolumeConcentration to string.
-        Note! the default format for VolumeConcentration is DecimalFraction.
-        To specify the unit format set the 'unit' parameter.
+        Format the VolumeConcentration to a string.
+        
+        Note: the default format for VolumeConcentration is DecimalFraction.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the VolumeConcentration. Default is 'DecimalFraction'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == VolumeConcentrationUnits.DecimalFraction:
-            return f"""{self.decimal_fractions} """
+            return f"""{super()._truncate_fraction_digits(self.decimal_fractions, fractional_digits)} """
         
         if unit == VolumeConcentrationUnits.LitersPerLiter:
-            return f"""{self.liters_per_liter} L/L"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_liter, fractional_digits)} L/L"""
         
         if unit == VolumeConcentrationUnits.LitersPerMililiter:
-            return f"""{self.liters_per_mililiter} L/mL"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_mililiter, fractional_digits)} L/mL"""
         
         if unit == VolumeConcentrationUnits.Percent:
-            return f"""{self.percent} %"""
+            return f"""{super()._truncate_fraction_digits(self.percent, fractional_digits)} %"""
         
         if unit == VolumeConcentrationUnits.PartPerThousand:
-            return f"""{self.parts_per_thousand} ‰"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_thousand, fractional_digits)} ‰"""
         
         if unit == VolumeConcentrationUnits.PartPerMillion:
-            return f"""{self.parts_per_million} ppm"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_million, fractional_digits)} ppm"""
         
         if unit == VolumeConcentrationUnits.PartPerBillion:
-            return f"""{self.parts_per_billion} ppb"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_billion, fractional_digits)} ppb"""
         
         if unit == VolumeConcentrationUnits.PartPerTrillion:
-            return f"""{self.parts_per_trillion} ppt"""
+            return f"""{super()._truncate_fraction_digits(self.parts_per_trillion, fractional_digits)} ppt"""
         
         if unit == VolumeConcentrationUnits.PicolitersPerLiter:
-            return f"""{self.picoliters_per_liter} pL/L"""
+            return f"""{super()._truncate_fraction_digits(self.picoliters_per_liter, fractional_digits)} pL/L"""
         
         if unit == VolumeConcentrationUnits.NanolitersPerLiter:
-            return f"""{self.nanoliters_per_liter} nL/L"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_liter, fractional_digits)} nL/L"""
         
         if unit == VolumeConcentrationUnits.MicrolitersPerLiter:
-            return f"""{self.microliters_per_liter} μL/L"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_liter, fractional_digits)} μL/L"""
         
         if unit == VolumeConcentrationUnits.MillilitersPerLiter:
-            return f"""{self.milliliters_per_liter} mL/L"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_liter, fractional_digits)} mL/L"""
         
         if unit == VolumeConcentrationUnits.CentilitersPerLiter:
-            return f"""{self.centiliters_per_liter} cL/L"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_liter, fractional_digits)} cL/L"""
         
         if unit == VolumeConcentrationUnits.DecilitersPerLiter:
-            return f"""{self.deciliters_per_liter} dL/L"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_liter, fractional_digits)} dL/L"""
         
         if unit == VolumeConcentrationUnits.PicolitersPerMililiter:
-            return f"""{self.picoliters_per_mililiter} pL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.picoliters_per_mililiter, fractional_digits)} pL/mL"""
         
         if unit == VolumeConcentrationUnits.NanolitersPerMililiter:
-            return f"""{self.nanoliters_per_mililiter} nL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_mililiter, fractional_digits)} nL/mL"""
         
         if unit == VolumeConcentrationUnits.MicrolitersPerMililiter:
-            return f"""{self.microliters_per_mililiter} μL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_mililiter, fractional_digits)} μL/mL"""
         
         if unit == VolumeConcentrationUnits.MillilitersPerMililiter:
-            return f"""{self.milliliters_per_mililiter} mL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_mililiter, fractional_digits)} mL/mL"""
         
         if unit == VolumeConcentrationUnits.CentilitersPerMililiter:
-            return f"""{self.centiliters_per_mililiter} cL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_mililiter, fractional_digits)} cL/mL"""
         
         if unit == VolumeConcentrationUnits.DecilitersPerMililiter:
-            return f"""{self.deciliters_per_mililiter} dL/mL"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_mililiter, fractional_digits)} dL/mL"""
         
         return f'{self._value}'
 

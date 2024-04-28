@@ -300,24 +300,32 @@ class TemperatureGradient(AbstractMeasure):
         return self.__degrees_celcius_per_kilometer
 
     
-    def to_string(self, unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter) -> str:
+    def to_string(self, unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the TemperatureGradient to string.
-        Note! the default format for TemperatureGradient is KelvinPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the TemperatureGradient to a string.
+        
+        Note: the default format for TemperatureGradient is KelvinPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the TemperatureGradient. Default is 'KelvinPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TemperatureGradientUnits.KelvinPerMeter:
-            return f"""{self.kelvins_per_meter} ∆°K/m"""
+            return f"""{super()._truncate_fraction_digits(self.kelvins_per_meter, fractional_digits)} ∆°K/m"""
         
         if unit == TemperatureGradientUnits.DegreeCelsiusPerMeter:
-            return f"""{self.degrees_celcius_per_meter} ∆°C/m"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celcius_per_meter, fractional_digits)} ∆°C/m"""
         
         if unit == TemperatureGradientUnits.DegreeFahrenheitPerFoot:
-            return f"""{self.degrees_fahrenheit_per_foot} ∆°F/ft"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit_per_foot, fractional_digits)} ∆°F/ft"""
         
         if unit == TemperatureGradientUnits.DegreeCelsiusPerKilometer:
-            return f"""{self.degrees_celcius_per_kilometer} ∆°C/km"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celcius_per_kilometer, fractional_digits)} ∆°C/km"""
         
         return f'{self._value}'
 

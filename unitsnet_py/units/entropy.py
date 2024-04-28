@@ -417,33 +417,41 @@ class Entropy(AbstractMeasure):
         return self.__kilojoules_per_degree_celsius
 
     
-    def to_string(self, unit: EntropyUnits = EntropyUnits.JoulePerKelvin) -> str:
+    def to_string(self, unit: EntropyUnits = EntropyUnits.JoulePerKelvin, fractional_digits: int = None) -> str:
         """
-        Format the Entropy to string.
-        Note! the default format for Entropy is JoulePerKelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the Entropy to a string.
+        
+        Note: the default format for Entropy is JoulePerKelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Entropy. Default is 'JoulePerKelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == EntropyUnits.JoulePerKelvin:
-            return f"""{self.joules_per_kelvin} J/K"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kelvin, fractional_digits)} J/K"""
         
         if unit == EntropyUnits.CaloriePerKelvin:
-            return f"""{self.calories_per_kelvin} cal/K"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_kelvin, fractional_digits)} cal/K"""
         
         if unit == EntropyUnits.JoulePerDegreeCelsius:
-            return f"""{self.joules_per_degree_celsius} J/C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_degree_celsius, fractional_digits)} J/C"""
         
         if unit == EntropyUnits.KilojoulePerKelvin:
-            return f"""{self.kilojoules_per_kelvin} kJ/K"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kelvin, fractional_digits)} kJ/K"""
         
         if unit == EntropyUnits.MegajoulePerKelvin:
-            return f"""{self.megajoules_per_kelvin} MJ/K"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kelvin, fractional_digits)} MJ/K"""
         
         if unit == EntropyUnits.KilocaloriePerKelvin:
-            return f"""{self.kilocalories_per_kelvin} kcal/K"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_kelvin, fractional_digits)} kcal/K"""
         
         if unit == EntropyUnits.KilojoulePerDegreeCelsius:
-            return f"""{self.kilojoules_per_degree_celsius} kJ/C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_degree_celsius, fractional_digits)} kJ/C"""
         
         return f'{self._value}'
 

@@ -690,54 +690,62 @@ class Acceleration(AbstractMeasure):
         return self.__millistandard_gravity
 
     
-    def to_string(self, unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared) -> str:
+    def to_string(self, unit: AccelerationUnits = AccelerationUnits.MeterPerSecondSquared, fractional_digits: int = None) -> str:
         """
-        Format the Acceleration to string.
-        Note! the default format for Acceleration is MeterPerSecondSquared.
-        To specify the unit format set the 'unit' parameter.
+        Format the Acceleration to a string.
+        
+        Note: the default format for Acceleration is MeterPerSecondSquared.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Acceleration. Default is 'MeterPerSecondSquared'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == AccelerationUnits.MeterPerSecondSquared:
-            return f"""{self.meters_per_second_squared} m/s²"""
+            return f"""{super()._truncate_fraction_digits(self.meters_per_second_squared, fractional_digits)} m/s²"""
         
         if unit == AccelerationUnits.InchPerSecondSquared:
-            return f"""{self.inches_per_second_squared} in/s²"""
+            return f"""{super()._truncate_fraction_digits(self.inches_per_second_squared, fractional_digits)} in/s²"""
         
         if unit == AccelerationUnits.FootPerSecondSquared:
-            return f"""{self.feet_per_second_squared} ft/s²"""
+            return f"""{super()._truncate_fraction_digits(self.feet_per_second_squared, fractional_digits)} ft/s²"""
         
         if unit == AccelerationUnits.KnotPerSecond:
-            return f"""{self.knots_per_second} kn/s"""
+            return f"""{super()._truncate_fraction_digits(self.knots_per_second, fractional_digits)} kn/s"""
         
         if unit == AccelerationUnits.KnotPerMinute:
-            return f"""{self.knots_per_minute} kn/min"""
+            return f"""{super()._truncate_fraction_digits(self.knots_per_minute, fractional_digits)} kn/min"""
         
         if unit == AccelerationUnits.KnotPerHour:
-            return f"""{self.knots_per_hour} kn/h"""
+            return f"""{super()._truncate_fraction_digits(self.knots_per_hour, fractional_digits)} kn/h"""
         
         if unit == AccelerationUnits.StandardGravity:
-            return f"""{self.standard_gravity} g"""
+            return f"""{super()._truncate_fraction_digits(self.standard_gravity, fractional_digits)} g"""
         
         if unit == AccelerationUnits.NanometerPerSecondSquared:
-            return f"""{self.nanometers_per_second_squared} nm/s²"""
+            return f"""{super()._truncate_fraction_digits(self.nanometers_per_second_squared, fractional_digits)} nm/s²"""
         
         if unit == AccelerationUnits.MicrometerPerSecondSquared:
-            return f"""{self.micrometers_per_second_squared} μm/s²"""
+            return f"""{super()._truncate_fraction_digits(self.micrometers_per_second_squared, fractional_digits)} μm/s²"""
         
         if unit == AccelerationUnits.MillimeterPerSecondSquared:
-            return f"""{self.millimeters_per_second_squared} mm/s²"""
+            return f"""{super()._truncate_fraction_digits(self.millimeters_per_second_squared, fractional_digits)} mm/s²"""
         
         if unit == AccelerationUnits.CentimeterPerSecondSquared:
-            return f"""{self.centimeters_per_second_squared} cm/s²"""
+            return f"""{super()._truncate_fraction_digits(self.centimeters_per_second_squared, fractional_digits)} cm/s²"""
         
         if unit == AccelerationUnits.DecimeterPerSecondSquared:
-            return f"""{self.decimeters_per_second_squared} dm/s²"""
+            return f"""{super()._truncate_fraction_digits(self.decimeters_per_second_squared, fractional_digits)} dm/s²"""
         
         if unit == AccelerationUnits.KilometerPerSecondSquared:
-            return f"""{self.kilometers_per_second_squared} km/s²"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_second_squared, fractional_digits)} km/s²"""
         
         if unit == AccelerationUnits.MillistandardGravity:
-            return f"""{self.millistandard_gravity} mg"""
+            return f"""{super()._truncate_fraction_digits(self.millistandard_gravity, fractional_digits)} mg"""
         
         return f'{self._value}'
 

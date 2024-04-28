@@ -456,36 +456,44 @@ class RadiationExposure(AbstractMeasure):
         return self.__milliroentgens
 
     
-    def to_string(self, unit: RadiationExposureUnits = RadiationExposureUnits.CoulombPerKilogram) -> str:
+    def to_string(self, unit: RadiationExposureUnits = RadiationExposureUnits.CoulombPerKilogram, fractional_digits: int = None) -> str:
         """
-        Format the RadiationExposure to string.
-        Note! the default format for RadiationExposure is CoulombPerKilogram.
-        To specify the unit format set the 'unit' parameter.
+        Format the RadiationExposure to a string.
+        
+        Note: the default format for RadiationExposure is CoulombPerKilogram.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the RadiationExposure. Default is 'CoulombPerKilogram'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RadiationExposureUnits.CoulombPerKilogram:
-            return f"""{self.coulombs_per_kilogram} C/kg"""
+            return f"""{super()._truncate_fraction_digits(self.coulombs_per_kilogram, fractional_digits)} C/kg"""
         
         if unit == RadiationExposureUnits.Roentgen:
-            return f"""{self.roentgens} R"""
+            return f"""{super()._truncate_fraction_digits(self.roentgens, fractional_digits)} R"""
         
         if unit == RadiationExposureUnits.PicocoulombPerKilogram:
-            return f"""{self.picocoulombs_per_kilogram} pC/kg"""
+            return f"""{super()._truncate_fraction_digits(self.picocoulombs_per_kilogram, fractional_digits)} pC/kg"""
         
         if unit == RadiationExposureUnits.NanocoulombPerKilogram:
-            return f"""{self.nanocoulombs_per_kilogram} nC/kg"""
+            return f"""{super()._truncate_fraction_digits(self.nanocoulombs_per_kilogram, fractional_digits)} nC/kg"""
         
         if unit == RadiationExposureUnits.MicrocoulombPerKilogram:
-            return f"""{self.microcoulombs_per_kilogram} μC/kg"""
+            return f"""{super()._truncate_fraction_digits(self.microcoulombs_per_kilogram, fractional_digits)} μC/kg"""
         
         if unit == RadiationExposureUnits.MillicoulombPerKilogram:
-            return f"""{self.millicoulombs_per_kilogram} mC/kg"""
+            return f"""{super()._truncate_fraction_digits(self.millicoulombs_per_kilogram, fractional_digits)} mC/kg"""
         
         if unit == RadiationExposureUnits.Microroentgen:
-            return f"""{self.microroentgens} μR"""
+            return f"""{super()._truncate_fraction_digits(self.microroentgens, fractional_digits)} μR"""
         
         if unit == RadiationExposureUnits.Milliroentgen:
-            return f"""{self.milliroentgens} mR"""
+            return f"""{super()._truncate_fraction_digits(self.milliroentgens, fractional_digits)} mR"""
         
         return f'{self._value}'
 

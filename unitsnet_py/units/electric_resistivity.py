@@ -690,54 +690,62 @@ class ElectricResistivity(AbstractMeasure):
         return self.__megaohms_centimeter
 
     
-    def to_string(self, unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter) -> str:
+    def to_string(self, unit: ElectricResistivityUnits = ElectricResistivityUnits.OhmMeter, fractional_digits: int = None) -> str:
         """
-        Format the ElectricResistivity to string.
-        Note! the default format for ElectricResistivity is OhmMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the ElectricResistivity to a string.
+        
+        Note: the default format for ElectricResistivity is OhmMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ElectricResistivity. Default is 'OhmMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ElectricResistivityUnits.OhmMeter:
-            return f"""{self.ohm_meters} Ω·m"""
+            return f"""{super()._truncate_fraction_digits(self.ohm_meters, fractional_digits)} Ω·m"""
         
         if unit == ElectricResistivityUnits.OhmCentimeter:
-            return f"""{self.ohms_centimeter} Ω·cm"""
+            return f"""{super()._truncate_fraction_digits(self.ohms_centimeter, fractional_digits)} Ω·cm"""
         
         if unit == ElectricResistivityUnits.PicoohmMeter:
-            return f"""{self.picoohm_meters} pΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.picoohm_meters, fractional_digits)} pΩ·m"""
         
         if unit == ElectricResistivityUnits.NanoohmMeter:
-            return f"""{self.nanoohm_meters} nΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.nanoohm_meters, fractional_digits)} nΩ·m"""
         
         if unit == ElectricResistivityUnits.MicroohmMeter:
-            return f"""{self.microohm_meters} μΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.microohm_meters, fractional_digits)} μΩ·m"""
         
         if unit == ElectricResistivityUnits.MilliohmMeter:
-            return f"""{self.milliohm_meters} mΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.milliohm_meters, fractional_digits)} mΩ·m"""
         
         if unit == ElectricResistivityUnits.KiloohmMeter:
-            return f"""{self.kiloohm_meters} kΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.kiloohm_meters, fractional_digits)} kΩ·m"""
         
         if unit == ElectricResistivityUnits.MegaohmMeter:
-            return f"""{self.megaohm_meters} MΩ·m"""
+            return f"""{super()._truncate_fraction_digits(self.megaohm_meters, fractional_digits)} MΩ·m"""
         
         if unit == ElectricResistivityUnits.PicoohmCentimeter:
-            return f"""{self.picoohms_centimeter} pΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.picoohms_centimeter, fractional_digits)} pΩ·cm"""
         
         if unit == ElectricResistivityUnits.NanoohmCentimeter:
-            return f"""{self.nanoohms_centimeter} nΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.nanoohms_centimeter, fractional_digits)} nΩ·cm"""
         
         if unit == ElectricResistivityUnits.MicroohmCentimeter:
-            return f"""{self.microohms_centimeter} μΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.microohms_centimeter, fractional_digits)} μΩ·cm"""
         
         if unit == ElectricResistivityUnits.MilliohmCentimeter:
-            return f"""{self.milliohms_centimeter} mΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.milliohms_centimeter, fractional_digits)} mΩ·cm"""
         
         if unit == ElectricResistivityUnits.KiloohmCentimeter:
-            return f"""{self.kiloohms_centimeter} kΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.kiloohms_centimeter, fractional_digits)} kΩ·cm"""
         
         if unit == ElectricResistivityUnits.MegaohmCentimeter:
-            return f"""{self.megaohms_centimeter} MΩ·cm"""
+            return f"""{super()._truncate_fraction_digits(self.megaohms_centimeter, fractional_digits)} MΩ·cm"""
         
         return f'{self._value}'
 

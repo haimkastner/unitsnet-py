@@ -495,39 +495,47 @@ class TemperatureDelta(AbstractMeasure):
         return self.__millidegrees_celsius
 
     
-    def to_string(self, unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin) -> str:
+    def to_string(self, unit: TemperatureDeltaUnits = TemperatureDeltaUnits.Kelvin, fractional_digits: int = None) -> str:
         """
-        Format the TemperatureDelta to string.
-        Note! the default format for TemperatureDelta is Kelvin.
-        To specify the unit format set the 'unit' parameter.
+        Format the TemperatureDelta to a string.
+        
+        Note: the default format for TemperatureDelta is Kelvin.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the TemperatureDelta. Default is 'Kelvin'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == TemperatureDeltaUnits.Kelvin:
-            return f"""{self.kelvins} ∆K"""
+            return f"""{super()._truncate_fraction_digits(self.kelvins, fractional_digits)} ∆K"""
         
         if unit == TemperatureDeltaUnits.DegreeCelsius:
-            return f"""{self.degrees_celsius} ∆°C"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius, fractional_digits)} ∆°C"""
         
         if unit == TemperatureDeltaUnits.DegreeDelisle:
-            return f"""{self.degrees_delisle} ∆°De"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_delisle, fractional_digits)} ∆°De"""
         
         if unit == TemperatureDeltaUnits.DegreeFahrenheit:
-            return f"""{self.degrees_fahrenheit} ∆°F"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit, fractional_digits)} ∆°F"""
         
         if unit == TemperatureDeltaUnits.DegreeNewton:
-            return f"""{self.degrees_newton} ∆°N"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_newton, fractional_digits)} ∆°N"""
         
         if unit == TemperatureDeltaUnits.DegreeRankine:
-            return f"""{self.degrees_rankine} ∆°R"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_rankine, fractional_digits)} ∆°R"""
         
         if unit == TemperatureDeltaUnits.DegreeReaumur:
-            return f"""{self.degrees_reaumur} ∆°Ré"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_reaumur, fractional_digits)} ∆°Ré"""
         
         if unit == TemperatureDeltaUnits.DegreeRoemer:
-            return f"""{self.degrees_roemer} ∆°Rø"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_roemer, fractional_digits)} ∆°Rø"""
         
         if unit == TemperatureDeltaUnits.MillidegreeCelsius:
-            return f"""{self.millidegrees_celsius} m∆°C"""
+            return f"""{super()._truncate_fraction_digits(self.millidegrees_celsius, fractional_digits)} m∆°C"""
         
         return f'{self._value}'
 

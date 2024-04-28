@@ -417,33 +417,41 @@ class Compressibility(AbstractMeasure):
         return self.__inverse_pounds_force_per_square_inch
 
     
-    def to_string(self, unit: CompressibilityUnits = CompressibilityUnits.InversePascal) -> str:
+    def to_string(self, unit: CompressibilityUnits = CompressibilityUnits.InversePascal, fractional_digits: int = None) -> str:
         """
-        Format the Compressibility to string.
-        Note! the default format for Compressibility is InversePascal.
-        To specify the unit format set the 'unit' parameter.
+        Format the Compressibility to a string.
+        
+        Note: the default format for Compressibility is InversePascal.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Compressibility. Default is 'InversePascal'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == CompressibilityUnits.InversePascal:
-            return f"""{self.inverse_pascals} Pa⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_pascals, fractional_digits)} Pa⁻¹"""
         
         if unit == CompressibilityUnits.InverseKilopascal:
-            return f"""{self.inverse_kilopascals} kPa⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_kilopascals, fractional_digits)} kPa⁻¹"""
         
         if unit == CompressibilityUnits.InverseMegapascal:
-            return f"""{self.inverse_megapascals} MPa⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_megapascals, fractional_digits)} MPa⁻¹"""
         
         if unit == CompressibilityUnits.InverseAtmosphere:
-            return f"""{self.inverse_atmospheres} atm⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_atmospheres, fractional_digits)} atm⁻¹"""
         
         if unit == CompressibilityUnits.InverseMillibar:
-            return f"""{self.inverse_millibars} mbar⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_millibars, fractional_digits)} mbar⁻¹"""
         
         if unit == CompressibilityUnits.InverseBar:
-            return f"""{self.inverse_bars} bar⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_bars, fractional_digits)} bar⁻¹"""
         
         if unit == CompressibilityUnits.InversePoundForcePerSquareInch:
-            return f"""{self.inverse_pounds_force_per_square_inch} psi⁻¹"""
+            return f"""{super()._truncate_fraction_digits(self.inverse_pounds_force_per_square_inch, fractional_digits)} psi⁻¹"""
         
         return f'{self._value}'
 

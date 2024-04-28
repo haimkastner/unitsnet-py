@@ -690,54 +690,62 @@ class Information(AbstractMeasure):
         return self.__exabits
 
     
-    def to_string(self, unit: InformationUnits = InformationUnits.Bit) -> str:
+    def to_string(self, unit: InformationUnits = InformationUnits.Bit, fractional_digits: int = None) -> str:
         """
-        Format the Information to string.
-        Note! the default format for Information is Bit.
-        To specify the unit format set the 'unit' parameter.
+        Format the Information to a string.
+        
+        Note: the default format for Information is Bit.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Information. Default is 'Bit'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == InformationUnits.Byte:
-            return f"""{self.bytes} B"""
+            return f"""{super()._truncate_fraction_digits(self.bytes, fractional_digits)} B"""
         
         if unit == InformationUnits.Bit:
-            return f"""{self.bits} b"""
+            return f"""{super()._truncate_fraction_digits(self.bits, fractional_digits)} b"""
         
         if unit == InformationUnits.Kilobyte:
-            return f"""{self.kilobytes} kB"""
+            return f"""{super()._truncate_fraction_digits(self.kilobytes, fractional_digits)} kB"""
         
         if unit == InformationUnits.Megabyte:
-            return f"""{self.megabytes} MB"""
+            return f"""{super()._truncate_fraction_digits(self.megabytes, fractional_digits)} MB"""
         
         if unit == InformationUnits.Gigabyte:
-            return f"""{self.gigabytes} GB"""
+            return f"""{super()._truncate_fraction_digits(self.gigabytes, fractional_digits)} GB"""
         
         if unit == InformationUnits.Terabyte:
-            return f"""{self.terabytes} TB"""
+            return f"""{super()._truncate_fraction_digits(self.terabytes, fractional_digits)} TB"""
         
         if unit == InformationUnits.Petabyte:
-            return f"""{self.petabytes} PB"""
+            return f"""{super()._truncate_fraction_digits(self.petabytes, fractional_digits)} PB"""
         
         if unit == InformationUnits.Exabyte:
-            return f"""{self.exabytes} EB"""
+            return f"""{super()._truncate_fraction_digits(self.exabytes, fractional_digits)} EB"""
         
         if unit == InformationUnits.Kilobit:
-            return f"""{self.kilobits} kb"""
+            return f"""{super()._truncate_fraction_digits(self.kilobits, fractional_digits)} kb"""
         
         if unit == InformationUnits.Megabit:
-            return f"""{self.megabits} Mb"""
+            return f"""{super()._truncate_fraction_digits(self.megabits, fractional_digits)} Mb"""
         
         if unit == InformationUnits.Gigabit:
-            return f"""{self.gigabits} Gb"""
+            return f"""{super()._truncate_fraction_digits(self.gigabits, fractional_digits)} Gb"""
         
         if unit == InformationUnits.Terabit:
-            return f"""{self.terabits} Tb"""
+            return f"""{super()._truncate_fraction_digits(self.terabits, fractional_digits)} Tb"""
         
         if unit == InformationUnits.Petabit:
-            return f"""{self.petabits} Pb"""
+            return f"""{super()._truncate_fraction_digits(self.petabits, fractional_digits)} Pb"""
         
         if unit == InformationUnits.Exabit:
-            return f"""{self.exabits} Eb"""
+            return f"""{super()._truncate_fraction_digits(self.exabits, fractional_digits)} Eb"""
         
         return f'{self._value}'
 

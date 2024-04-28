@@ -183,15 +183,23 @@ class {{ unit }}(AbstractMeasure):
         return self.__{{ method.name }}
 
     {% endfor %}
-    def to_string(self, unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}) -> str:
+    def to_string(self, unit: {{ unit }}Units = {{ unit }}Units.{{ base_unit }}, fractional_digits: int = None) -> str:
         """
-        Format the {{ unit }} to string.
-        Note! the default format for {{ unit }} is {{ base_unit }}.
-        To specify the unit format set the 'unit' parameter.
+        Format the {{ unit }} to a string.
+        
+        Note: the default format for {{ unit }} is {{ base_unit }}.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the {{ unit }}. Default is '{{ base_unit }}'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         {% for method in methods %}
         if unit == {{ unit }}Units.{{ method.unit }}:
-            return f"""{self.{{ method.name }}} {{ method.abbreviation }}"""
+            return f"""{super()._truncate_fraction_digits(self.{{ method.name }}, fractional_digits)} {{ method.abbreviation }}"""
         {% endfor %}
         return f'{self._value}'
 

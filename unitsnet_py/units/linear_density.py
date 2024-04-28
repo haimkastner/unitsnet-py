@@ -690,54 +690,62 @@ class LinearDensity(AbstractMeasure):
         return self.__kilograms_per_meter
 
     
-    def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter) -> str:
+    def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter, fractional_digits: int = None) -> str:
         """
-        Format the LinearDensity to string.
-        Note! the default format for LinearDensity is KilogramPerMeter.
-        To specify the unit format set the 'unit' parameter.
+        Format the LinearDensity to a string.
+        
+        Note: the default format for LinearDensity is KilogramPerMeter.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the LinearDensity. Default is 'KilogramPerMeter'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == LinearDensityUnits.GramPerMillimeter:
-            return f"""{self.grams_per_millimeter} g/mm"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_millimeter, fractional_digits)} g/mm"""
         
         if unit == LinearDensityUnits.GramPerCentimeter:
-            return f"""{self.grams_per_centimeter} g/cm"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_centimeter, fractional_digits)} g/cm"""
         
         if unit == LinearDensityUnits.GramPerMeter:
-            return f"""{self.grams_per_meter} g/m"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_meter, fractional_digits)} g/m"""
         
         if unit == LinearDensityUnits.PoundPerInch:
-            return f"""{self.pounds_per_inch} lb/in"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_inch, fractional_digits)} lb/in"""
         
         if unit == LinearDensityUnits.PoundPerFoot:
-            return f"""{self.pounds_per_foot} lb/ft"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_foot, fractional_digits)} lb/ft"""
         
         if unit == LinearDensityUnits.MicrogramPerMillimeter:
-            return f"""{self.micrograms_per_millimeter} μg/mm"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_millimeter, fractional_digits)} μg/mm"""
         
         if unit == LinearDensityUnits.MilligramPerMillimeter:
-            return f"""{self.milligrams_per_millimeter} mg/mm"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_millimeter, fractional_digits)} mg/mm"""
         
         if unit == LinearDensityUnits.KilogramPerMillimeter:
-            return f"""{self.kilograms_per_millimeter} kg/mm"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_millimeter, fractional_digits)} kg/mm"""
         
         if unit == LinearDensityUnits.MicrogramPerCentimeter:
-            return f"""{self.micrograms_per_centimeter} μg/cm"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_centimeter, fractional_digits)} μg/cm"""
         
         if unit == LinearDensityUnits.MilligramPerCentimeter:
-            return f"""{self.milligrams_per_centimeter} mg/cm"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_centimeter, fractional_digits)} mg/cm"""
         
         if unit == LinearDensityUnits.KilogramPerCentimeter:
-            return f"""{self.kilograms_per_centimeter} kg/cm"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_centimeter, fractional_digits)} kg/cm"""
         
         if unit == LinearDensityUnits.MicrogramPerMeter:
-            return f"""{self.micrograms_per_meter} μg/m"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_meter, fractional_digits)} μg/m"""
         
         if unit == LinearDensityUnits.MilligramPerMeter:
-            return f"""{self.milligrams_per_meter} mg/m"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_meter, fractional_digits)} mg/m"""
         
         if unit == LinearDensityUnits.KilogramPerMeter:
-            return f"""{self.kilograms_per_meter} kg/m"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_meter, fractional_digits)} kg/m"""
         
         return f'{self._value}'
 

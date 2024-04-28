@@ -222,18 +222,26 @@ class Molality(AbstractMeasure):
         return self.__moles_per_gram
 
     
-    def to_string(self, unit: MolalityUnits = MolalityUnits.MolePerKilogram) -> str:
+    def to_string(self, unit: MolalityUnits = MolalityUnits.MolePerKilogram, fractional_digits: int = None) -> str:
         """
-        Format the Molality to string.
-        Note! the default format for Molality is MolePerKilogram.
-        To specify the unit format set the 'unit' parameter.
+        Format the Molality to a string.
+        
+        Note: the default format for Molality is MolePerKilogram.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Molality. Default is 'MolePerKilogram'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolalityUnits.MolePerKilogram:
-            return f"""{self.moles_per_kilogram} mol/kg"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_kilogram, fractional_digits)} mol/kg"""
         
         if unit == MolalityUnits.MolePerGram:
-            return f"""{self.moles_per_gram} mol/g"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_gram, fractional_digits)} mol/g"""
         
         return f'{self._value}'
 

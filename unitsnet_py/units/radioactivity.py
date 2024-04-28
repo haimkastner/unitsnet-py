@@ -1275,99 +1275,107 @@ class Radioactivity(AbstractMeasure):
         return self.__terarutherfords
 
     
-    def to_string(self, unit: RadioactivityUnits = RadioactivityUnits.Becquerel) -> str:
+    def to_string(self, unit: RadioactivityUnits = RadioactivityUnits.Becquerel, fractional_digits: int = None) -> str:
         """
-        Format the Radioactivity to string.
-        Note! the default format for Radioactivity is Becquerel.
-        To specify the unit format set the 'unit' parameter.
+        Format the Radioactivity to a string.
+        
+        Note: the default format for Radioactivity is Becquerel.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the Radioactivity. Default is 'Becquerel'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == RadioactivityUnits.Becquerel:
-            return f"""{self.becquerels} Bq"""
+            return f"""{super()._truncate_fraction_digits(self.becquerels, fractional_digits)} Bq"""
         
         if unit == RadioactivityUnits.Curie:
-            return f"""{self.curies} Ci"""
+            return f"""{super()._truncate_fraction_digits(self.curies, fractional_digits)} Ci"""
         
         if unit == RadioactivityUnits.Rutherford:
-            return f"""{self.rutherfords} Rd"""
+            return f"""{super()._truncate_fraction_digits(self.rutherfords, fractional_digits)} Rd"""
         
         if unit == RadioactivityUnits.Picobecquerel:
-            return f"""{self.picobecquerels} pBq"""
+            return f"""{super()._truncate_fraction_digits(self.picobecquerels, fractional_digits)} pBq"""
         
         if unit == RadioactivityUnits.Nanobecquerel:
-            return f"""{self.nanobecquerels} nBq"""
+            return f"""{super()._truncate_fraction_digits(self.nanobecquerels, fractional_digits)} nBq"""
         
         if unit == RadioactivityUnits.Microbecquerel:
-            return f"""{self.microbecquerels} μBq"""
+            return f"""{super()._truncate_fraction_digits(self.microbecquerels, fractional_digits)} μBq"""
         
         if unit == RadioactivityUnits.Millibecquerel:
-            return f"""{self.millibecquerels} mBq"""
+            return f"""{super()._truncate_fraction_digits(self.millibecquerels, fractional_digits)} mBq"""
         
         if unit == RadioactivityUnits.Kilobecquerel:
-            return f"""{self.kilobecquerels} kBq"""
+            return f"""{super()._truncate_fraction_digits(self.kilobecquerels, fractional_digits)} kBq"""
         
         if unit == RadioactivityUnits.Megabecquerel:
-            return f"""{self.megabecquerels} MBq"""
+            return f"""{super()._truncate_fraction_digits(self.megabecquerels, fractional_digits)} MBq"""
         
         if unit == RadioactivityUnits.Gigabecquerel:
-            return f"""{self.gigabecquerels} GBq"""
+            return f"""{super()._truncate_fraction_digits(self.gigabecquerels, fractional_digits)} GBq"""
         
         if unit == RadioactivityUnits.Terabecquerel:
-            return f"""{self.terabecquerels} TBq"""
+            return f"""{super()._truncate_fraction_digits(self.terabecquerels, fractional_digits)} TBq"""
         
         if unit == RadioactivityUnits.Petabecquerel:
-            return f"""{self.petabecquerels} PBq"""
+            return f"""{super()._truncate_fraction_digits(self.petabecquerels, fractional_digits)} PBq"""
         
         if unit == RadioactivityUnits.Exabecquerel:
-            return f"""{self.exabecquerels} EBq"""
+            return f"""{super()._truncate_fraction_digits(self.exabecquerels, fractional_digits)} EBq"""
         
         if unit == RadioactivityUnits.Picocurie:
-            return f"""{self.picocuries} pCi"""
+            return f"""{super()._truncate_fraction_digits(self.picocuries, fractional_digits)} pCi"""
         
         if unit == RadioactivityUnits.Nanocurie:
-            return f"""{self.nanocuries} nCi"""
+            return f"""{super()._truncate_fraction_digits(self.nanocuries, fractional_digits)} nCi"""
         
         if unit == RadioactivityUnits.Microcurie:
-            return f"""{self.microcuries} μCi"""
+            return f"""{super()._truncate_fraction_digits(self.microcuries, fractional_digits)} μCi"""
         
         if unit == RadioactivityUnits.Millicurie:
-            return f"""{self.millicuries} mCi"""
+            return f"""{super()._truncate_fraction_digits(self.millicuries, fractional_digits)} mCi"""
         
         if unit == RadioactivityUnits.Kilocurie:
-            return f"""{self.kilocuries} kCi"""
+            return f"""{super()._truncate_fraction_digits(self.kilocuries, fractional_digits)} kCi"""
         
         if unit == RadioactivityUnits.Megacurie:
-            return f"""{self.megacuries} MCi"""
+            return f"""{super()._truncate_fraction_digits(self.megacuries, fractional_digits)} MCi"""
         
         if unit == RadioactivityUnits.Gigacurie:
-            return f"""{self.gigacuries} GCi"""
+            return f"""{super()._truncate_fraction_digits(self.gigacuries, fractional_digits)} GCi"""
         
         if unit == RadioactivityUnits.Teracurie:
-            return f"""{self.teracuries} TCi"""
+            return f"""{super()._truncate_fraction_digits(self.teracuries, fractional_digits)} TCi"""
         
         if unit == RadioactivityUnits.Picorutherford:
-            return f"""{self.picorutherfords} pRd"""
+            return f"""{super()._truncate_fraction_digits(self.picorutherfords, fractional_digits)} pRd"""
         
         if unit == RadioactivityUnits.Nanorutherford:
-            return f"""{self.nanorutherfords} nRd"""
+            return f"""{super()._truncate_fraction_digits(self.nanorutherfords, fractional_digits)} nRd"""
         
         if unit == RadioactivityUnits.Microrutherford:
-            return f"""{self.microrutherfords} μRd"""
+            return f"""{super()._truncate_fraction_digits(self.microrutherfords, fractional_digits)} μRd"""
         
         if unit == RadioactivityUnits.Millirutherford:
-            return f"""{self.millirutherfords} mRd"""
+            return f"""{super()._truncate_fraction_digits(self.millirutherfords, fractional_digits)} mRd"""
         
         if unit == RadioactivityUnits.Kilorutherford:
-            return f"""{self.kilorutherfords} kRd"""
+            return f"""{super()._truncate_fraction_digits(self.kilorutherfords, fractional_digits)} kRd"""
         
         if unit == RadioactivityUnits.Megarutherford:
-            return f"""{self.megarutherfords} MRd"""
+            return f"""{super()._truncate_fraction_digits(self.megarutherfords, fractional_digits)} MRd"""
         
         if unit == RadioactivityUnits.Gigarutherford:
-            return f"""{self.gigarutherfords} GRd"""
+            return f"""{super()._truncate_fraction_digits(self.gigarutherfords, fractional_digits)} GRd"""
         
         if unit == RadioactivityUnits.Terarutherford:
-            return f"""{self.terarutherfords} TRd"""
+            return f"""{super()._truncate_fraction_digits(self.terarutherfords, fractional_digits)} TRd"""
         
         return f'{self._value}'
 

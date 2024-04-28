@@ -261,21 +261,29 @@ class MolarEnergy(AbstractMeasure):
         return self.__megajoules_per_mole
 
     
-    def to_string(self, unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole) -> str:
+    def to_string(self, unit: MolarEnergyUnits = MolarEnergyUnits.JoulePerMole, fractional_digits: int = None) -> str:
         """
-        Format the MolarEnergy to string.
-        Note! the default format for MolarEnergy is JoulePerMole.
-        To specify the unit format set the 'unit' parameter.
+        Format the MolarEnergy to a string.
+        
+        Note: the default format for MolarEnergy is JoulePerMole.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MolarEnergy. Default is 'JoulePerMole'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MolarEnergyUnits.JoulePerMole:
-            return f"""{self.joules_per_mole} J/mol"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_mole, fractional_digits)} J/mol"""
         
         if unit == MolarEnergyUnits.KilojoulePerMole:
-            return f"""{self.kilojoules_per_mole} kJ/mol"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_mole, fractional_digits)} kJ/mol"""
         
         if unit == MolarEnergyUnits.MegajoulePerMole:
-            return f"""{self.megajoules_per_mole} MJ/mol"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_mole, fractional_digits)} MJ/mol"""
         
         return f'{self._value}'
 

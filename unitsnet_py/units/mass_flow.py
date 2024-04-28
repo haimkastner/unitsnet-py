@@ -1431,111 +1431,119 @@ class MassFlow(AbstractMeasure):
         return self.__megapounds_per_second
 
     
-    def to_string(self, unit: MassFlowUnits = MassFlowUnits.GramPerSecond) -> str:
+    def to_string(self, unit: MassFlowUnits = MassFlowUnits.GramPerSecond, fractional_digits: int = None) -> str:
         """
-        Format the MassFlow to string.
-        Note! the default format for MassFlow is GramPerSecond.
-        To specify the unit format set the 'unit' parameter.
+        Format the MassFlow to a string.
+        
+        Note: the default format for MassFlow is GramPerSecond.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the MassFlow. Default is 'GramPerSecond'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == MassFlowUnits.GramPerSecond:
-            return f"""{self.grams_per_second} g/s"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_second, fractional_digits)} g/s"""
         
         if unit == MassFlowUnits.GramPerDay:
-            return f"""{self.grams_per_day} g/d"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_day, fractional_digits)} g/d"""
         
         if unit == MassFlowUnits.GramPerHour:
-            return f"""{self.grams_per_hour} g/h"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_hour, fractional_digits)} g/h"""
         
         if unit == MassFlowUnits.KilogramPerHour:
-            return f"""{self.kilograms_per_hour} kg/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_hour, fractional_digits)} kg/h"""
         
         if unit == MassFlowUnits.KilogramPerMinute:
-            return f"""{self.kilograms_per_minute} kg/min"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_minute, fractional_digits)} kg/min"""
         
         if unit == MassFlowUnits.TonnePerHour:
-            return f"""{self.tonnes_per_hour} t/h"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_hour, fractional_digits)} t/h"""
         
         if unit == MassFlowUnits.PoundPerDay:
-            return f"""{self.pounds_per_day} lb/d"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_day, fractional_digits)} lb/d"""
         
         if unit == MassFlowUnits.PoundPerHour:
-            return f"""{self.pounds_per_hour} lb/h"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_hour, fractional_digits)} lb/h"""
         
         if unit == MassFlowUnits.PoundPerMinute:
-            return f"""{self.pounds_per_minute} lb/min"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_minute, fractional_digits)} lb/min"""
         
         if unit == MassFlowUnits.PoundPerSecond:
-            return f"""{self.pounds_per_second} lb/s"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_second, fractional_digits)} lb/s"""
         
         if unit == MassFlowUnits.TonnePerDay:
-            return f"""{self.tonnes_per_day} t/d"""
+            return f"""{super()._truncate_fraction_digits(self.tonnes_per_day, fractional_digits)} t/d"""
         
         if unit == MassFlowUnits.ShortTonPerHour:
-            return f"""{self.short_tons_per_hour} short tn/h"""
+            return f"""{super()._truncate_fraction_digits(self.short_tons_per_hour, fractional_digits)} short tn/h"""
         
         if unit == MassFlowUnits.NanogramPerSecond:
-            return f"""{self.nanograms_per_second} ng/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_second, fractional_digits)} ng/s"""
         
         if unit == MassFlowUnits.MicrogramPerSecond:
-            return f"""{self.micrograms_per_second} μg/s"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_second, fractional_digits)} μg/s"""
         
         if unit == MassFlowUnits.MilligramPerSecond:
-            return f"""{self.milligrams_per_second} mg/s"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_second, fractional_digits)} mg/s"""
         
         if unit == MassFlowUnits.CentigramPerSecond:
-            return f"""{self.centigrams_per_second} cg/s"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_second, fractional_digits)} cg/s"""
         
         if unit == MassFlowUnits.DecigramPerSecond:
-            return f"""{self.decigrams_per_second} dg/s"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_second, fractional_digits)} dg/s"""
         
         if unit == MassFlowUnits.DecagramPerSecond:
-            return f"""{self.decagrams_per_second} dag/s"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams_per_second, fractional_digits)} dag/s"""
         
         if unit == MassFlowUnits.HectogramPerSecond:
-            return f"""{self.hectograms_per_second} hg/s"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms_per_second, fractional_digits)} hg/s"""
         
         if unit == MassFlowUnits.KilogramPerSecond:
-            return f"""{self.kilograms_per_second} kg/s"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_second, fractional_digits)} kg/s"""
         
         if unit == MassFlowUnits.NanogramPerDay:
-            return f"""{self.nanograms_per_day} ng/d"""
+            return f"""{super()._truncate_fraction_digits(self.nanograms_per_day, fractional_digits)} ng/d"""
         
         if unit == MassFlowUnits.MicrogramPerDay:
-            return f"""{self.micrograms_per_day} μg/d"""
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_day, fractional_digits)} μg/d"""
         
         if unit == MassFlowUnits.MilligramPerDay:
-            return f"""{self.milligrams_per_day} mg/d"""
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_day, fractional_digits)} mg/d"""
         
         if unit == MassFlowUnits.CentigramPerDay:
-            return f"""{self.centigrams_per_day} cg/d"""
+            return f"""{super()._truncate_fraction_digits(self.centigrams_per_day, fractional_digits)} cg/d"""
         
         if unit == MassFlowUnits.DecigramPerDay:
-            return f"""{self.decigrams_per_day} dg/d"""
+            return f"""{super()._truncate_fraction_digits(self.decigrams_per_day, fractional_digits)} dg/d"""
         
         if unit == MassFlowUnits.DecagramPerDay:
-            return f"""{self.decagrams_per_day} dag/d"""
+            return f"""{super()._truncate_fraction_digits(self.decagrams_per_day, fractional_digits)} dag/d"""
         
         if unit == MassFlowUnits.HectogramPerDay:
-            return f"""{self.hectograms_per_day} hg/d"""
+            return f"""{super()._truncate_fraction_digits(self.hectograms_per_day, fractional_digits)} hg/d"""
         
         if unit == MassFlowUnits.KilogramPerDay:
-            return f"""{self.kilograms_per_day} kg/d"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_day, fractional_digits)} kg/d"""
         
         if unit == MassFlowUnits.MegagramPerDay:
-            return f"""{self.megagrams_per_day} Mg/d"""
+            return f"""{super()._truncate_fraction_digits(self.megagrams_per_day, fractional_digits)} Mg/d"""
         
         if unit == MassFlowUnits.MegapoundPerDay:
-            return f"""{self.megapounds_per_day} Mlb/d"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_per_day, fractional_digits)} Mlb/d"""
         
         if unit == MassFlowUnits.MegapoundPerHour:
-            return f"""{self.megapounds_per_hour} Mlb/h"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_per_hour, fractional_digits)} Mlb/h"""
         
         if unit == MassFlowUnits.MegapoundPerMinute:
-            return f"""{self.megapounds_per_minute} Mlb/min"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_per_minute, fractional_digits)} Mlb/min"""
         
         if unit == MassFlowUnits.MegapoundPerSecond:
-            return f"""{self.megapounds_per_second} Mlb/s"""
+            return f"""{super()._truncate_fraction_digits(self.megapounds_per_second, fractional_digits)} Mlb/s"""
         
         return f'{self._value}'
 

@@ -378,30 +378,38 @@ class ThermalResistance(AbstractMeasure):
         return self.__hour_square_feet_degrees_fahrenheit_per_btu
 
     
-    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> str:
+    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt, fractional_digits: int = None) -> str:
         """
-        Format the ThermalResistance to string.
-        Note! the default format for ThermalResistance is SquareMeterKelvinPerKilowatt.
-        To specify the unit format set the 'unit' parameter.
+        Format the ThermalResistance to a string.
+        
+        Note: the default format for ThermalResistance is SquareMeterKelvinPerKilowatt.
+        To specify the unit format, set the 'unit' parameter.
+        
+        Args:
+            unit (str): The unit to format the ThermalResistance. Default is 'SquareMeterKelvinPerKilowatt'.
+            fractional_digits (int, optional): The number of fractional digits to keep.
+
+        Returns:
+            str: The string format of the Angle.
         """
         
         if unit == ThermalResistanceUnits.SquareMeterKelvinPerKilowatt:
-            return f"""{self.square_meter_kelvins_per_kilowatt} m²K/kW"""
+            return f"""{super()._truncate_fraction_digits(self.square_meter_kelvins_per_kilowatt, fractional_digits)} m²K/kW"""
         
         if unit == ThermalResistanceUnits.SquareMeterKelvinPerWatt:
-            return f"""{self.square_meter_kelvins_per_watt} m²K/W"""
+            return f"""{super()._truncate_fraction_digits(self.square_meter_kelvins_per_watt, fractional_digits)} m²K/W"""
         
         if unit == ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt:
-            return f"""{self.square_meter_degrees_celsius_per_watt} m²°C/W"""
+            return f"""{super()._truncate_fraction_digits(self.square_meter_degrees_celsius_per_watt, fractional_digits)} m²°C/W"""
         
         if unit == ThermalResistanceUnits.SquareCentimeterKelvinPerWatt:
-            return f"""{self.square_centimeter_kelvins_per_watt} cm²K/W"""
+            return f"""{super()._truncate_fraction_digits(self.square_centimeter_kelvins_per_watt, fractional_digits)} cm²K/W"""
         
         if unit == ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie:
-            return f"""{self.square_centimeter_hour_degrees_celsius_per_kilocalorie} cm²Hr°C/kcal"""
+            return f"""{super()._truncate_fraction_digits(self.square_centimeter_hour_degrees_celsius_per_kilocalorie, fractional_digits)} cm²Hr°C/kcal"""
         
         if unit == ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu:
-            return f"""{self.hour_square_feet_degrees_fahrenheit_per_btu} Hrft²°F/Btu"""
+            return f"""{super()._truncate_fraction_digits(self.hour_square_feet_degrees_fahrenheit_per_btu, fractional_digits)} Hrft²°F/Btu"""
         
         return f'{self._value}'
 
