@@ -1,5 +1,15 @@
 # unitsnet-py
 
+[![Build & Test Status](https://github.com/haimkastner/unitsnet-py/workflows/unitsnet-py/badge.svg?branch=main)](https://github.com/haimkastner/unitsnet-py/actions)
+
+ [![Latest Release](https://img.shields.io/github/v/release/haimkastner/unitsnet-py)](https://github.com/haimkastner/unitsnet-py/releases) 
+[![PyPI version](https://img.shields.io/pypi/v/unitsnet-py)](https://pypi.org/project/unitsnet-py/)
+
+
+[![GitHub stars](https://img.shields.io/github/stars/haimkastner/unitsnet-py.svg?style=social&label=Stars)](https://github.com/haimkastner/unitsnet-py/stargazers) 
+[![pypi downloads](https://img.shields.io/pypi/dm/unitsnet-py.svg?style=social)](https://pypi.org/project/unitsnet-py/)
+[![License](https://img.shields.io/github/license/haimkastner/unitsnet-py.svg?style=social)](https://github.com/haimkastner/unitsnet-py/blob/master/LICENSE)
+
 The unitsnet-py package provides an efficient way to store unit variables and perform easy conversions to different units when it required. 
 
 It offers support for more than 100 unit types across various unit categories, including pretty-printing, comparison, and arithmetic methods. 
@@ -7,10 +17,6 @@ It offers support for more than 100 unit types across various unit categories, i
 The API is designed to be user-friendly and straightforward to use.
 
 The library is built on top of the [Units.NET](https://github.com/angularsen/UnitsNet) project and leverages their [definitions sources](https://github.com/angularsen/UnitsNet/tree/master/Common/UnitDefinitions) to generate the Python unit classes.
-
-
-[![Build & Test Status](https://github.com/haimkastner/unitsnet-py/workflows/unitsnet-py/badge.svg?branch=main)](https://github.com/haimkastner/unitsnet-py/actions)
-
 
 ###### The unitsnet-py package does not require any external dependencies or packages to function.
 
