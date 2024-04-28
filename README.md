@@ -132,7 +132,7 @@ length_from_meters_dto = Length.from_dto_json(length_dto_json)
 # The exact same value as
 length_from_km_dto = Length.from_dto_json(length_dto_represents_in_km_json)
 
-# Also, it supported to create and handle as DTO instance and to create to/from json to it.
+# Additionally, it supports creating and handling as a DTO instance, as well as creating and converting to/from JSON.
 
 # Get a DTO instance from a Length instance
 length_dto: LengthDto = length.to_dto()
