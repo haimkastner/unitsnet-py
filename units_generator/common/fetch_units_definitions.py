@@ -1,19 +1,24 @@
-from .utils import get_json_from_cdn
-
-
+from .utils import get_json_from_cdn, read_json_file, write_json_file
+    
 def get_definitions(repo_owner_and_name):
     directory_url = f"https://api.github.com/repos/{repo_owner_and_name}/contents/Common/UnitDefinitions"
     files_url = f"https://raw.githubusercontent.com/{repo_owner_and_name}/master/Common/UnitDefinitions"
 
-    print("[get_definitions] Fetching units files list...")
-    directory_files = get_json_from_cdn(directory_url)
+    directory_files = read_json_file('files.json')
+    if not directory_files:
+        print("[get_definitions] Fetching units files list...")
+        directory_files = get_json_from_cdn(directory_url)
+        write_json_file('files.json', directory_files)
 
     print("[get_definitions] Fetching units definitions...")
 
     definitions = []
     for file in directory_files:
         name = file.get("name")
-        definition = get_json_from_cdn(f"{files_url}/{name}")
+        definition = read_json_file(name)
+        if not definition:
+            definition = get_json_from_cdn(f"{files_url}/{name}")
+            write_json_file(name, definition)
 
         for unit in definition["Units"]:
             mark_as_deprecated = False

@@ -1,7 +1,46 @@
 import requests
 import json
 import re
+import os
 
+def ensure_directory_existence(file_path):
+    """
+    Ensure that the directory containing the given file path exists.
+    If the directory does not exist, create it.
+    """
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+def write_json_file(file_name, data):
+    """
+    Write JSON data to a file.
+    """
+    try:
+        file_path = os.path.join(os.getcwd(), '.cache', file_name)
+        ensure_directory_existence(file_path)
+        with open(file_path, 'w') as file:
+            json.dump(data, file, indent=2)
+        print(f"JSON data has been written to {file_path}")
+    except Exception as e:
+        print('Error writing JSON file:', e)
+
+def read_json_file(file_name):
+    """
+    Read JSON data from a file.
+    """
+    try:
+        file_path = os.path.join(os.getcwd(), '.cache', file_name)
+        if os.path.exists(file_path):
+            print(f"Loading {file_path} cache ...")
+            with open(file_path, 'r') as file:
+                return json.load(file)
+        else:
+            return None
+    except Exception as e:
+        print('Error reading JSON file:', e)
+        return None
+    
 
 def get_json_from_cdn(cdn_url):
     try:
