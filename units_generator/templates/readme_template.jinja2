@@ -99,7 +99,7 @@ print(results6.to_string(LengthUnits.Meter))  # 1000 m
 # Complex objects
 
 # Any object supports arithmetic operations can be used as well as unit
-# see numpay array example:
+# see numpy array example:
 import numpy as np
 
 np_array = np.array([[2, 4, 6], [7, 8, 9]])

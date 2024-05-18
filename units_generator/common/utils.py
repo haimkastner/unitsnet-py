@@ -81,6 +81,12 @@ prefixes_factor = {
     'Nano': 1e-9,
     'Pico': 1e-12,
     'Femto': 1e-15,
+    'Kibi': 1024,
+    'Mebi': 1024 ** 2,
+    'Gibi': 1024 ** 3,
+    'Tebi': 1024 ** 4,
+    'Pebi': 1024 ** 5,
+    'Exbi': 1024 ** 6
 }
 
 
@@ -99,5 +105,11 @@ prefixes_factor_abbreviation = {
     'Micro': 'μ',
     'Nano': 'n',
     'Pico': 'p',
-    'Femto': 'f'
+    'Femto': 'f',
+    'Kibi': 'KiB',
+    'Mebi': 'MiB',
+    'Gibi': 'GiB',
+    'Tebi': 'TiB',
+    'Pebi': 'PiB',
+    'Exbi': 'EiB',
 }

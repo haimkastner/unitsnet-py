@@ -3,6 +3,7 @@ from unitsnet_py import (
     Angle,
     Length,
     LengthUnits,
+    Information
 )
 
 
@@ -30,6 +31,14 @@ class TestUnitConversion(unittest.TestCase):
     def test_convert_unit_prefix_to_base(self):
         angle = Angle.from_microradians(3141592.65358979)
         self.assertAlmostEqual(angle.degrees, 180, delta=0.00001)
+
+    def test_convert_bits_prefix_to_base(self):
+        data = Information.from_kibibits(1)
+        self.assertAlmostEqual(data.bits, 1024)
+
+    def test_convert_base_to_bits_prefix(self):
+        data = Information.from_bits(1024)
+        self.assertAlmostEqual(data.kibibits, 1)
 
     def test_convert_to_specific_unit_enum(self):
         param_list = [
