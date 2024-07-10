@@ -35,6 +35,11 @@ class LinearDensityUnits(Enum):
             
         """
         
+        GramPerFoot = 'GramPerFoot'
+        """
+            
+        """
+        
         MicrogramPerMillimeter = 'MicrogramPerMillimeter'
         """
             
@@ -76,6 +81,21 @@ class LinearDensityUnits(Enum):
         """
         
         KilogramPerMeter = 'KilogramPerMeter'
+        """
+            
+        """
+        
+        MicrogramPerFoot = 'MicrogramPerFoot'
+        """
+            
+        """
+        
+        MilligramPerFoot = 'MilligramPerFoot'
+        """
+            
+        """
+        
+        KilogramPerFoot = 'KilogramPerFoot'
         """
             
         """
@@ -156,6 +176,8 @@ class LinearDensity(AbstractMeasure):
         
         self.__pounds_per_foot = None
         
+        self.__grams_per_foot = None
+        
         self.__micrograms_per_millimeter = None
         
         self.__milligrams_per_millimeter = None
@@ -173,6 +195,12 @@ class LinearDensity(AbstractMeasure):
         self.__milligrams_per_meter = None
         
         self.__kilograms_per_meter = None
+        
+        self.__micrograms_per_foot = None
+        
+        self.__milligrams_per_foot = None
+        
+        self.__kilograms_per_foot = None
         
 
     def convert(self, unit: LinearDensityUnits) -> float:
@@ -244,6 +272,9 @@ class LinearDensity(AbstractMeasure):
         if from_unit == LinearDensityUnits.PoundPerFoot:
             return (value / 1.48816394)
         
+        if from_unit == LinearDensityUnits.GramPerFoot:
+            return (value / ( 1e-3 / 0.3048 ))
+        
         if from_unit == LinearDensityUnits.MicrogramPerMillimeter:
             return ((value) / 1e-06)
         
@@ -271,6 +302,15 @@ class LinearDensity(AbstractMeasure):
         if from_unit == LinearDensityUnits.KilogramPerMeter:
             return ((value / 1e-3) / 1000.0)
         
+        if from_unit == LinearDensityUnits.MicrogramPerFoot:
+            return ((value / ( 1e-3 / 0.3048 )) / 1e-06)
+        
+        if from_unit == LinearDensityUnits.MilligramPerFoot:
+            return ((value / ( 1e-3 / 0.3048 )) / 0.001)
+        
+        if from_unit == LinearDensityUnits.KilogramPerFoot:
+            return ((value / ( 1e-3 / 0.3048 )) / 1000.0)
+        
         return None
 
 
@@ -290,6 +330,9 @@ class LinearDensity(AbstractMeasure):
         
         if to_unit == LinearDensityUnits.PoundPerFoot:
             return (value * 1.48816394)
+        
+        if to_unit == LinearDensityUnits.GramPerFoot:
+            return (value * ( 1e-3 / 0.3048 ))
         
         if to_unit == LinearDensityUnits.MicrogramPerMillimeter:
             return ((value) * 1e-06)
@@ -317,6 +360,15 @@ class LinearDensity(AbstractMeasure):
         
         if to_unit == LinearDensityUnits.KilogramPerMeter:
             return ((value * 1e-3) * 1000.0)
+        
+        if to_unit == LinearDensityUnits.MicrogramPerFoot:
+            return ((value * ( 1e-3 / 0.3048 )) * 1e-06)
+        
+        if to_unit == LinearDensityUnits.MilligramPerFoot:
+            return ((value * ( 1e-3 / 0.3048 )) * 0.001)
+        
+        if to_unit == LinearDensityUnits.KilogramPerFoot:
+            return ((value * ( 1e-3 / 0.3048 )) * 1000.0)
         
         return None
 
@@ -399,6 +451,21 @@ class LinearDensity(AbstractMeasure):
         :rtype: LinearDensity
         """
         return LinearDensity(pounds_per_foot, LinearDensityUnits.PoundPerFoot)
+
+    
+    @staticmethod
+    def from_grams_per_foot(grams_per_foot: float):
+        """
+        Create a new instance of LinearDensity from a value in grams_per_foot.
+
+        
+
+        :param meters: The LinearDensity value in grams_per_foot.
+        :type grams_per_foot: float
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity(grams_per_foot, LinearDensityUnits.GramPerFoot)
 
     
     @staticmethod
@@ -536,6 +603,51 @@ class LinearDensity(AbstractMeasure):
         return LinearDensity(kilograms_per_meter, LinearDensityUnits.KilogramPerMeter)
 
     
+    @staticmethod
+    def from_micrograms_per_foot(micrograms_per_foot: float):
+        """
+        Create a new instance of LinearDensity from a value in micrograms_per_foot.
+
+        
+
+        :param meters: The LinearDensity value in micrograms_per_foot.
+        :type micrograms_per_foot: float
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity(micrograms_per_foot, LinearDensityUnits.MicrogramPerFoot)
+
+    
+    @staticmethod
+    def from_milligrams_per_foot(milligrams_per_foot: float):
+        """
+        Create a new instance of LinearDensity from a value in milligrams_per_foot.
+
+        
+
+        :param meters: The LinearDensity value in milligrams_per_foot.
+        :type milligrams_per_foot: float
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity(milligrams_per_foot, LinearDensityUnits.MilligramPerFoot)
+
+    
+    @staticmethod
+    def from_kilograms_per_foot(kilograms_per_foot: float):
+        """
+        Create a new instance of LinearDensity from a value in kilograms_per_foot.
+
+        
+
+        :param meters: The LinearDensity value in kilograms_per_foot.
+        :type kilograms_per_foot: float
+        :return: A new instance of LinearDensity.
+        :rtype: LinearDensity
+        """
+        return LinearDensity(kilograms_per_foot, LinearDensityUnits.KilogramPerFoot)
+
+    
     @property
     def grams_per_millimeter(self) -> float:
         """
@@ -589,6 +701,17 @@ class LinearDensity(AbstractMeasure):
             return self.__pounds_per_foot
         self.__pounds_per_foot = self.__convert_from_base(LinearDensityUnits.PoundPerFoot)
         return self.__pounds_per_foot
+
+    
+    @property
+    def grams_per_foot(self) -> float:
+        """
+        
+        """
+        if self.__grams_per_foot != None:
+            return self.__grams_per_foot
+        self.__grams_per_foot = self.__convert_from_base(LinearDensityUnits.GramPerFoot)
+        return self.__grams_per_foot
 
     
     @property
@@ -690,6 +813,39 @@ class LinearDensity(AbstractMeasure):
         return self.__kilograms_per_meter
 
     
+    @property
+    def micrograms_per_foot(self) -> float:
+        """
+        
+        """
+        if self.__micrograms_per_foot != None:
+            return self.__micrograms_per_foot
+        self.__micrograms_per_foot = self.__convert_from_base(LinearDensityUnits.MicrogramPerFoot)
+        return self.__micrograms_per_foot
+
+    
+    @property
+    def milligrams_per_foot(self) -> float:
+        """
+        
+        """
+        if self.__milligrams_per_foot != None:
+            return self.__milligrams_per_foot
+        self.__milligrams_per_foot = self.__convert_from_base(LinearDensityUnits.MilligramPerFoot)
+        return self.__milligrams_per_foot
+
+    
+    @property
+    def kilograms_per_foot(self) -> float:
+        """
+        
+        """
+        if self.__kilograms_per_foot != None:
+            return self.__kilograms_per_foot
+        self.__kilograms_per_foot = self.__convert_from_base(LinearDensityUnits.KilogramPerFoot)
+        return self.__kilograms_per_foot
+
+    
     def to_string(self, unit: LinearDensityUnits = LinearDensityUnits.KilogramPerMeter, fractional_digits: int = None) -> str:
         """
         Format the LinearDensity to a string.
@@ -720,6 +876,9 @@ class LinearDensity(AbstractMeasure):
         if unit == LinearDensityUnits.PoundPerFoot:
             return f"""{super()._truncate_fraction_digits(self.pounds_per_foot, fractional_digits)} lb/ft"""
         
+        if unit == LinearDensityUnits.GramPerFoot:
+            return f"""{super()._truncate_fraction_digits(self.grams_per_foot, fractional_digits)} g/ft"""
+        
         if unit == LinearDensityUnits.MicrogramPerMillimeter:
             return f"""{super()._truncate_fraction_digits(self.micrograms_per_millimeter, fractional_digits)} μg/mm"""
         
@@ -747,6 +906,15 @@ class LinearDensity(AbstractMeasure):
         if unit == LinearDensityUnits.KilogramPerMeter:
             return f"""{super()._truncate_fraction_digits(self.kilograms_per_meter, fractional_digits)} kg/m"""
         
+        if unit == LinearDensityUnits.MicrogramPerFoot:
+            return f"""{super()._truncate_fraction_digits(self.micrograms_per_foot, fractional_digits)} μg/ft"""
+        
+        if unit == LinearDensityUnits.MilligramPerFoot:
+            return f"""{super()._truncate_fraction_digits(self.milligrams_per_foot, fractional_digits)} mg/ft"""
+        
+        if unit == LinearDensityUnits.KilogramPerFoot:
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_foot, fractional_digits)} kg/ft"""
+        
         return f'{self._value}'
 
 
@@ -771,6 +939,9 @@ class LinearDensity(AbstractMeasure):
         
         if unit_abbreviation == LinearDensityUnits.PoundPerFoot:
             return """lb/ft"""
+        
+        if unit_abbreviation == LinearDensityUnits.GramPerFoot:
+            return """g/ft"""
         
         if unit_abbreviation == LinearDensityUnits.MicrogramPerMillimeter:
             return """μg/mm"""
@@ -798,4 +969,13 @@ class LinearDensity(AbstractMeasure):
         
         if unit_abbreviation == LinearDensityUnits.KilogramPerMeter:
             return """kg/m"""
+        
+        if unit_abbreviation == LinearDensityUnits.MicrogramPerFoot:
+            return """μg/ft"""
+        
+        if unit_abbreviation == LinearDensityUnits.MilligramPerFoot:
+            return """mg/ft"""
+        
+        if unit_abbreviation == LinearDensityUnits.KilogramPerFoot:
+            return """kg/ft"""
         
