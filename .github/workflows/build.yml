@@ -24,12 +24,15 @@ jobs:
         if: github.ref == 'refs/heads/main'
         id: update_version
         run: |
+          VERSION=$(python setup.py --version)
+          DEFINITION_VERSION=$(grep -oP "(?<=definition_version = ')[^']+" setup.py)
+          CURRENT_DEFINITION=$(python ./scripts/definition-version.py)
+          NEXT_VERSION=$(python ./scripts/next-package-version.py $VERSION $DEFINITION_VERSION $CURRENT_DEFINITION)
 
-          old_version=$(python setup.py --version)
-          IFS='.' read -ra parts <<< "$old_version" 
-          version="${parts[0]}.${parts[1]}.$((parts[2]+1))"
-          sed -i 's|'$old_version'|'$version'|g' setup.py
-          echo "VERSION=$version" >> $GITHUB_OUTPUT
+          sed -i 's|'$VERSION'|'$NEXT_VERSION'|g' setup.py
+          sed -i "s/definition_version = '[^']*'/definition_version = '$CURRENT_DEFINITION'/" setup.py
+          
+          echo "VERSION=$NEXT_VERSION" >> $GITHUB_OUTPUT
 
       - name: Get version info
         id: version_info

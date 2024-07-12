@@ -10,6 +10,10 @@ packages = \
 package_data = \
 {'': ['*']}
 
+# The UnitNet definition version that the current package is based on to generate units classes
+# see 
+definition_version = '5.54.0'
+
 setup_kwargs = {
     'name': 'unitsnet-py',
     'version': '0.1.117',
@@ -19,9 +23,9 @@ setup_kwargs = {
     'long_description': long_description,
     'long_description_content_type': "text/markdown",
     'author': 'Haim Kastner',
-    'author_email': 'haim.kastner@gmail.com',
+    'author_email': 'hello@haim-kastner.com',
     'maintainer': 'Haim Kastner',
-    'maintainer_email': 'haim.kastner@gmail.com',
+    'maintainer_email': 'hello@haim-kastner.com',
     'url': 'https://github.com/haimkastner/unitsnet-py',
     'packages': packages,
     'package_data': package_data,
