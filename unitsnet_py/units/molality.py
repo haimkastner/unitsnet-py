@@ -20,6 +20,11 @@ class MolalityUnits(Enum):
             
         """
         
+        MillimolePerKilogram = 'MillimolePerKilogram'
+        """
+            
+        """
+        
 
 class MolalityDto:
     """
@@ -90,6 +95,8 @@ class Molality(AbstractMeasure):
         
         self.__moles_per_gram = None
         
+        self.__millimoles_per_kilogram = None
+        
 
     def convert(self, unit: MolalityUnits) -> float:
         return self.__convert_from_base(unit)
@@ -151,6 +158,9 @@ class Molality(AbstractMeasure):
         if from_unit == MolalityUnits.MolePerGram:
             return (value * 1e-3)
         
+        if from_unit == MolalityUnits.MillimolePerKilogram:
+            return ((value) / 0.001)
+        
         return None
 
 
@@ -161,6 +171,9 @@ class Molality(AbstractMeasure):
         
         if to_unit == MolalityUnits.MolePerGram:
             return (value / 1e-3)
+        
+        if to_unit == MolalityUnits.MillimolePerKilogram:
+            return ((value) * 0.001)
         
         return None
 
@@ -200,6 +213,21 @@ class Molality(AbstractMeasure):
         return Molality(moles_per_gram, MolalityUnits.MolePerGram)
 
     
+    @staticmethod
+    def from_millimoles_per_kilogram(millimoles_per_kilogram: float):
+        """
+        Create a new instance of Molality from a value in millimoles_per_kilogram.
+
+        
+
+        :param meters: The Molality value in millimoles_per_kilogram.
+        :type millimoles_per_kilogram: float
+        :return: A new instance of Molality.
+        :rtype: Molality
+        """
+        return Molality(millimoles_per_kilogram, MolalityUnits.MillimolePerKilogram)
+
+    
     @property
     def moles_per_kilogram(self) -> float:
         """
@@ -220,6 +248,17 @@ class Molality(AbstractMeasure):
             return self.__moles_per_gram
         self.__moles_per_gram = self.__convert_from_base(MolalityUnits.MolePerGram)
         return self.__moles_per_gram
+
+    
+    @property
+    def millimoles_per_kilogram(self) -> float:
+        """
+        
+        """
+        if self.__millimoles_per_kilogram != None:
+            return self.__millimoles_per_kilogram
+        self.__millimoles_per_kilogram = self.__convert_from_base(MolalityUnits.MillimolePerKilogram)
+        return self.__millimoles_per_kilogram
 
     
     def to_string(self, unit: MolalityUnits = MolalityUnits.MolePerKilogram, fractional_digits: int = None) -> str:
@@ -243,6 +282,9 @@ class Molality(AbstractMeasure):
         if unit == MolalityUnits.MolePerGram:
             return f"""{super()._truncate_fraction_digits(self.moles_per_gram, fractional_digits)} mol/g"""
         
+        if unit == MolalityUnits.MillimolePerKilogram:
+            return f"""{super()._truncate_fraction_digits(self.millimoles_per_kilogram, fractional_digits)} mmol/kg"""
+        
         return f'{self._value}'
 
 
@@ -258,4 +300,7 @@ class Molality(AbstractMeasure):
         
         if unit_abbreviation == MolalityUnits.MolePerGram:
             return """mol/g"""
+        
+        if unit_abbreviation == MolalityUnits.MillimolePerKilogram:
+            return """mmol/kg"""
         
