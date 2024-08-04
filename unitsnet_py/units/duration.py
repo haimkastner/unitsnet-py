@@ -50,6 +50,11 @@ class DurationUnits(Enum):
             
         """
         
+        Sol = 'Sol'
+        """
+            
+        """
+        
         Nanosecond = 'Nanosecond'
         """
             
@@ -147,6 +152,8 @@ class Duration(AbstractMeasure):
         
         self.__julian_years = None
         
+        self.__sols = None
+        
         self.__nanoseconds = None
         
         self.__microseconds = None
@@ -232,6 +239,9 @@ class Duration(AbstractMeasure):
         if from_unit == DurationUnits.JulianYear:
             return (value / (365.25 * 24 * 3600))
         
+        if from_unit == DurationUnits.Sol:
+            return (value / 88775.244)
+        
         if from_unit == DurationUnits.Nanosecond:
             return ((value) / 1e-09)
         
@@ -269,6 +279,9 @@ class Duration(AbstractMeasure):
         
         if to_unit == DurationUnits.JulianYear:
             return (value * 365.25 * 24 * 3600)
+        
+        if to_unit == DurationUnits.Sol:
+            return (value * 88775.244)
         
         if to_unit == DurationUnits.Nanosecond:
             return ((value) * 1e-09)
@@ -408,6 +421,21 @@ class Duration(AbstractMeasure):
 
     
     @staticmethod
+    def from_sols(sols: float):
+        """
+        Create a new instance of Duration from a value in sols.
+
+        
+
+        :param meters: The Duration value in sols.
+        :type sols: float
+        :return: A new instance of Duration.
+        :rtype: Duration
+        """
+        return Duration(sols, DurationUnits.Sol)
+
+    
+    @staticmethod
     def from_nanoseconds(nanoseconds: float):
         """
         Create a new instance of Duration from a value in nanoseconds.
@@ -541,6 +569,17 @@ class Duration(AbstractMeasure):
 
     
     @property
+    def sols(self) -> float:
+        """
+        
+        """
+        if self.__sols != None:
+            return self.__sols
+        self.__sols = self.__convert_from_base(DurationUnits.Sol)
+        return self.__sols
+
+    
+    @property
     def nanoseconds(self) -> float:
         """
         
@@ -612,6 +651,9 @@ class Duration(AbstractMeasure):
         if unit == DurationUnits.JulianYear:
             return f"""{super()._truncate_fraction_digits(self.julian_years, fractional_digits)} jyr"""
         
+        if unit == DurationUnits.Sol:
+            return f"""{super()._truncate_fraction_digits(self.sols, fractional_digits)} sol"""
+        
         if unit == DurationUnits.Nanosecond:
             return f"""{super()._truncate_fraction_digits(self.nanoseconds, fractional_digits)} ns"""
         
@@ -654,6 +696,9 @@ class Duration(AbstractMeasure):
         
         if unit_abbreviation == DurationUnits.JulianYear:
             return """jyr"""
+        
+        if unit_abbreviation == DurationUnits.Sol:
+            return """sol"""
         
         if unit_abbreviation == DurationUnits.Nanosecond:
             return """ns"""
