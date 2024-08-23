@@ -50,6 +50,11 @@ class PowerUnits(Enum):
             
         """
         
+        TonOfRefrigeration = 'TonOfRefrigeration'
+        """
+            
+        """
+        
         Femtowatt = 'Femtowatt'
         """
             
@@ -222,6 +227,8 @@ class Power(AbstractMeasure):
         
         self.__joules_per_hour = None
         
+        self.__tons_of_refrigeration = None
+        
         self.__femtowatts = None
         
         self.__picowatts = None
@@ -337,6 +344,9 @@ class Power(AbstractMeasure):
         if from_unit == PowerUnits.JoulePerHour:
             return (value * 3600)
         
+        if from_unit == PowerUnits.TonOfRefrigeration:
+            return (value / 3516.853)
+        
         if from_unit == PowerUnits.Femtowatt:
             return ((value) / 1e-15)
         
@@ -419,6 +429,9 @@ class Power(AbstractMeasure):
         
         if to_unit == PowerUnits.JoulePerHour:
             return (value / 3600)
+        
+        if to_unit == PowerUnits.TonOfRefrigeration:
+            return (value * 3516.853)
         
         if to_unit == PowerUnits.Femtowatt:
             return ((value) * 1e-15)
@@ -600,6 +613,21 @@ class Power(AbstractMeasure):
         :rtype: Power
         """
         return Power(joules_per_hour, PowerUnits.JoulePerHour)
+
+    
+    @staticmethod
+    def from_tons_of_refrigeration(tons_of_refrigeration: float):
+        """
+        Create a new instance of Power from a value in tons_of_refrigeration.
+
+        
+
+        :param meters: The Power value in tons_of_refrigeration.
+        :type tons_of_refrigeration: float
+        :return: A new instance of Power.
+        :rtype: Power
+        """
+        return Power(tons_of_refrigeration, PowerUnits.TonOfRefrigeration)
 
     
     @staticmethod
@@ -961,6 +989,17 @@ class Power(AbstractMeasure):
 
     
     @property
+    def tons_of_refrigeration(self) -> float:
+        """
+        
+        """
+        if self.__tons_of_refrigeration != None:
+            return self.__tons_of_refrigeration
+        self.__tons_of_refrigeration = self.__convert_from_base(PowerUnits.TonOfRefrigeration)
+        return self.__tons_of_refrigeration
+
+    
+    @property
     def femtowatts(self) -> float:
         """
         
@@ -1197,6 +1236,9 @@ class Power(AbstractMeasure):
         if unit == PowerUnits.JoulePerHour:
             return f"""{super()._truncate_fraction_digits(self.joules_per_hour, fractional_digits)} J/h"""
         
+        if unit == PowerUnits.TonOfRefrigeration:
+            return f"""{super()._truncate_fraction_digits(self.tons_of_refrigeration, fractional_digits)} TR"""
+        
         if unit == PowerUnits.Femtowatt:
             return f"""{super()._truncate_fraction_digits(self.femtowatts, fractional_digits)} fW"""
         
@@ -1284,6 +1326,9 @@ class Power(AbstractMeasure):
         
         if unit_abbreviation == PowerUnits.JoulePerHour:
             return """J/h"""
+        
+        if unit_abbreviation == PowerUnits.TonOfRefrigeration:
+            return """TR"""
         
         if unit_abbreviation == PowerUnits.Femtowatt:
             return """fW"""
