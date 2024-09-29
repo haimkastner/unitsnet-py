@@ -486,7 +486,7 @@ class Length(AbstractMeasure):
             return (value / 9.46073047258e15)
         
         if from_unit == LengthUnits.SolarRadius:
-            return (value / 6.95510000e+08)
+            return (value / 6.95700e8)
         
         if from_unit == LengthUnits.Chain:
             return (value / 20.1168)
@@ -617,7 +617,7 @@ class Length(AbstractMeasure):
             return (value * 9.46073047258e15)
         
         if to_unit == LengthUnits.SolarRadius:
-            return (value * 6.95510000e+08)
+            return (value * 6.95700e8)
         
         if to_unit == LengthUnits.Chain:
             return (value * 20.1168)
