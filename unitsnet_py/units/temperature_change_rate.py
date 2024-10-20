@@ -20,6 +20,11 @@ class TemperatureChangeRateUnits(Enum):
             
         """
         
+        DegreeKelvinPerMinute = 'DegreeKelvinPerMinute'
+        """
+            
+        """
+        
         NanodegreeCelsiusPerSecond = 'NanodegreeCelsiusPerSecond'
         """
             
@@ -130,6 +135,8 @@ class TemperatureChangeRate(AbstractMeasure):
         
         self.__degrees_celsius_per_minute = None
         
+        self.__degrees_kelvin_per_minute = None
+        
         self.__nanodegrees_celsius_per_second = None
         
         self.__microdegrees_celsius_per_second = None
@@ -207,6 +214,9 @@ class TemperatureChangeRate(AbstractMeasure):
         if from_unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return (value * 60)
         
+        if from_unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
+            return ((value + 273.15) * 60)
+        
         if from_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) / 1e-09)
         
@@ -241,6 +251,9 @@ class TemperatureChangeRate(AbstractMeasure):
         
         if to_unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return (value / 60)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
+            return ((value / 60) - 273.15)
         
         if to_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) * 1e-09)
@@ -302,6 +315,21 @@ class TemperatureChangeRate(AbstractMeasure):
         :rtype: TemperatureChangeRate
         """
         return TemperatureChangeRate(degrees_celsius_per_minute, TemperatureChangeRateUnits.DegreeCelsiusPerMinute)
+
+    
+    @staticmethod
+    def from_degrees_kelvin_per_minute(degrees_kelvin_per_minute: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_kelvin_per_minute.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_kelvin_per_minute.
+        :type degrees_kelvin_per_minute: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_kelvin_per_minute, TemperatureChangeRateUnits.DegreeKelvinPerMinute)
 
     
     @staticmethod
@@ -447,6 +475,17 @@ class TemperatureChangeRate(AbstractMeasure):
 
     
     @property
+    def degrees_kelvin_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__degrees_kelvin_per_minute != None:
+            return self.__degrees_kelvin_per_minute
+        self.__degrees_kelvin_per_minute = self.__convert_from_base(TemperatureChangeRateUnits.DegreeKelvinPerMinute)
+        return self.__degrees_kelvin_per_minute
+
+    
+    @property
     def nanodegrees_celsius_per_second(self) -> float:
         """
         
@@ -555,6 +594,9 @@ class TemperatureChangeRate(AbstractMeasure):
         if unit == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_minute, fractional_digits)} °C/min"""
         
+        if unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
+            return f"""{super()._truncate_fraction_digits(self.degrees_kelvin_per_minute, fractional_digits)} K/min"""
+        
         if unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return f"""{super()._truncate_fraction_digits(self.nanodegrees_celsius_per_second, fractional_digits)} n°C/s"""
         
@@ -594,6 +636,9 @@ class TemperatureChangeRate(AbstractMeasure):
         
         if unit_abbreviation == TemperatureChangeRateUnits.DegreeCelsiusPerMinute:
             return """°C/min"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
+            return """K/min"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return """n°C/s"""
