@@ -150,7 +150,7 @@ Also, refer to the detailed discussions on GitHub: [haimkastner/unitsnet-js#31](
 
 ## Supported units
 
-[UnitsNet supported Units](Units.md)
+[UnitsNet supported Units](https://github.com/haimkastner/unitsnet-py/blob/main/Units.md)
 
 ## Units.NET on other platforms
 
