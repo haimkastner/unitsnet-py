@@ -11,7 +11,7 @@ with open("units_generator/templates/export_template.jinja2", "r", encoding="utf
     export_classes_template = f.read()
 
 
-readme_template = ""
-with open("units_generator/templates/readme_template.jinja2", "r", encoding="utf-8") as f:
-    readme_template = f.read()
+docs_template = ""
+with open("units_generator/templates/docs_template.jinja2", "r", encoding="utf-8") as f:
+    docs_template = f.read()
 
