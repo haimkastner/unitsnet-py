@@ -25,6 +25,36 @@ class TemperatureChangeRateUnits(Enum):
             
         """
         
+        DegreeFahrenheitPerMinute = 'DegreeFahrenheitPerMinute'
+        """
+            
+        """
+        
+        DegreeFahrenheitPerSecond = 'DegreeFahrenheitPerSecond'
+        """
+            
+        """
+        
+        DegreeKelvinPerSecond = 'DegreeKelvinPerSecond'
+        """
+            
+        """
+        
+        DegreeCelsiusPerHour = 'DegreeCelsiusPerHour'
+        """
+            
+        """
+        
+        DegreeKelvinPerHour = 'DegreeKelvinPerHour'
+        """
+            
+        """
+        
+        DegreeFahrenheitPerHour = 'DegreeFahrenheitPerHour'
+        """
+            
+        """
+        
         NanodegreeCelsiusPerSecond = 'NanodegreeCelsiusPerSecond'
         """
             
@@ -137,6 +167,18 @@ class TemperatureChangeRate(AbstractMeasure):
         
         self.__degrees_kelvin_per_minute = None
         
+        self.__degrees_fahrenheit_per_minute = None
+        
+        self.__degrees_fahrenheit_per_second = None
+        
+        self.__degrees_kelvin_per_second = None
+        
+        self.__degrees_celsius_per_hour = None
+        
+        self.__degrees_kelvin_per_hour = None
+        
+        self.__degrees_fahrenheit_per_hour = None
+        
         self.__nanodegrees_celsius_per_second = None
         
         self.__microdegrees_celsius_per_second = None
@@ -215,7 +257,25 @@ class TemperatureChangeRate(AbstractMeasure):
             return (value * 60)
         
         if from_unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
-            return ((value + 273.15) * 60)
+            return (value * 60)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerMinute:
+            return (value * 9 / 5 * 60)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerSecond:
+            return (value * 9 / 5)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeKelvinPerSecond:
+            return (value)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeCelsiusPerHour:
+            return (value * 3600)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeKelvinPerHour:
+            return (value * 3600)
+        
+        if from_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerHour:
+            return (value * 9 / 5 * 3600)
         
         if from_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) / 1e-09)
@@ -253,7 +313,25 @@ class TemperatureChangeRate(AbstractMeasure):
             return (value / 60)
         
         if to_unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
-            return ((value / 60) - 273.15)
+            return (value / 60)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerMinute:
+            return (value * 5 / 9 / 60)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerSecond:
+            return (value * 5 / 9)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeKelvinPerSecond:
+            return (value)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeCelsiusPerHour:
+            return (value / 3600)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeKelvinPerHour:
+            return (value / 3600)
+        
+        if to_unit == TemperatureChangeRateUnits.DegreeFahrenheitPerHour:
+            return (value * 5 / 9 / 3600)
         
         if to_unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return ((value) * 1e-09)
@@ -330,6 +408,96 @@ class TemperatureChangeRate(AbstractMeasure):
         :rtype: TemperatureChangeRate
         """
         return TemperatureChangeRate(degrees_kelvin_per_minute, TemperatureChangeRateUnits.DegreeKelvinPerMinute)
+
+    
+    @staticmethod
+    def from_degrees_fahrenheit_per_minute(degrees_fahrenheit_per_minute: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_fahrenheit_per_minute.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_fahrenheit_per_minute.
+        :type degrees_fahrenheit_per_minute: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_fahrenheit_per_minute, TemperatureChangeRateUnits.DegreeFahrenheitPerMinute)
+
+    
+    @staticmethod
+    def from_degrees_fahrenheit_per_second(degrees_fahrenheit_per_second: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_fahrenheit_per_second.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_fahrenheit_per_second.
+        :type degrees_fahrenheit_per_second: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_fahrenheit_per_second, TemperatureChangeRateUnits.DegreeFahrenheitPerSecond)
+
+    
+    @staticmethod
+    def from_degrees_kelvin_per_second(degrees_kelvin_per_second: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_kelvin_per_second.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_kelvin_per_second.
+        :type degrees_kelvin_per_second: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_kelvin_per_second, TemperatureChangeRateUnits.DegreeKelvinPerSecond)
+
+    
+    @staticmethod
+    def from_degrees_celsius_per_hour(degrees_celsius_per_hour: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_celsius_per_hour.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_celsius_per_hour.
+        :type degrees_celsius_per_hour: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_celsius_per_hour, TemperatureChangeRateUnits.DegreeCelsiusPerHour)
+
+    
+    @staticmethod
+    def from_degrees_kelvin_per_hour(degrees_kelvin_per_hour: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_kelvin_per_hour.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_kelvin_per_hour.
+        :type degrees_kelvin_per_hour: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_kelvin_per_hour, TemperatureChangeRateUnits.DegreeKelvinPerHour)
+
+    
+    @staticmethod
+    def from_degrees_fahrenheit_per_hour(degrees_fahrenheit_per_hour: float):
+        """
+        Create a new instance of TemperatureChangeRate from a value in degrees_fahrenheit_per_hour.
+
+        
+
+        :param meters: The TemperatureChangeRate value in degrees_fahrenheit_per_hour.
+        :type degrees_fahrenheit_per_hour: float
+        :return: A new instance of TemperatureChangeRate.
+        :rtype: TemperatureChangeRate
+        """
+        return TemperatureChangeRate(degrees_fahrenheit_per_hour, TemperatureChangeRateUnits.DegreeFahrenheitPerHour)
 
     
     @staticmethod
@@ -486,6 +654,72 @@ class TemperatureChangeRate(AbstractMeasure):
 
     
     @property
+    def degrees_fahrenheit_per_minute(self) -> float:
+        """
+        
+        """
+        if self.__degrees_fahrenheit_per_minute != None:
+            return self.__degrees_fahrenheit_per_minute
+        self.__degrees_fahrenheit_per_minute = self.__convert_from_base(TemperatureChangeRateUnits.DegreeFahrenheitPerMinute)
+        return self.__degrees_fahrenheit_per_minute
+
+    
+    @property
+    def degrees_fahrenheit_per_second(self) -> float:
+        """
+        
+        """
+        if self.__degrees_fahrenheit_per_second != None:
+            return self.__degrees_fahrenheit_per_second
+        self.__degrees_fahrenheit_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DegreeFahrenheitPerSecond)
+        return self.__degrees_fahrenheit_per_second
+
+    
+    @property
+    def degrees_kelvin_per_second(self) -> float:
+        """
+        
+        """
+        if self.__degrees_kelvin_per_second != None:
+            return self.__degrees_kelvin_per_second
+        self.__degrees_kelvin_per_second = self.__convert_from_base(TemperatureChangeRateUnits.DegreeKelvinPerSecond)
+        return self.__degrees_kelvin_per_second
+
+    
+    @property
+    def degrees_celsius_per_hour(self) -> float:
+        """
+        
+        """
+        if self.__degrees_celsius_per_hour != None:
+            return self.__degrees_celsius_per_hour
+        self.__degrees_celsius_per_hour = self.__convert_from_base(TemperatureChangeRateUnits.DegreeCelsiusPerHour)
+        return self.__degrees_celsius_per_hour
+
+    
+    @property
+    def degrees_kelvin_per_hour(self) -> float:
+        """
+        
+        """
+        if self.__degrees_kelvin_per_hour != None:
+            return self.__degrees_kelvin_per_hour
+        self.__degrees_kelvin_per_hour = self.__convert_from_base(TemperatureChangeRateUnits.DegreeKelvinPerHour)
+        return self.__degrees_kelvin_per_hour
+
+    
+    @property
+    def degrees_fahrenheit_per_hour(self) -> float:
+        """
+        
+        """
+        if self.__degrees_fahrenheit_per_hour != None:
+            return self.__degrees_fahrenheit_per_hour
+        self.__degrees_fahrenheit_per_hour = self.__convert_from_base(TemperatureChangeRateUnits.DegreeFahrenheitPerHour)
+        return self.__degrees_fahrenheit_per_hour
+
+    
+    @property
     def nanodegrees_celsius_per_second(self) -> float:
         """
         
@@ -597,6 +831,24 @@ class TemperatureChangeRate(AbstractMeasure):
         if unit == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
             return f"""{super()._truncate_fraction_digits(self.degrees_kelvin_per_minute, fractional_digits)} K/min"""
         
+        if unit == TemperatureChangeRateUnits.DegreeFahrenheitPerMinute:
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit_per_minute, fractional_digits)} °F/min"""
+        
+        if unit == TemperatureChangeRateUnits.DegreeFahrenheitPerSecond:
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit_per_second, fractional_digits)} °F/s"""
+        
+        if unit == TemperatureChangeRateUnits.DegreeKelvinPerSecond:
+            return f"""{super()._truncate_fraction_digits(self.degrees_kelvin_per_second, fractional_digits)} K/s"""
+        
+        if unit == TemperatureChangeRateUnits.DegreeCelsiusPerHour:
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_hour, fractional_digits)} °C/h"""
+        
+        if unit == TemperatureChangeRateUnits.DegreeKelvinPerHour:
+            return f"""{super()._truncate_fraction_digits(self.degrees_kelvin_per_hour, fractional_digits)} K/h"""
+        
+        if unit == TemperatureChangeRateUnits.DegreeFahrenheitPerHour:
+            return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit_per_hour, fractional_digits)} °F/h"""
+        
         if unit == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return f"""{super()._truncate_fraction_digits(self.nanodegrees_celsius_per_second, fractional_digits)} n°C/s"""
         
@@ -639,6 +891,24 @@ class TemperatureChangeRate(AbstractMeasure):
         
         if unit_abbreviation == TemperatureChangeRateUnits.DegreeKelvinPerMinute:
             return """K/min"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeFahrenheitPerMinute:
+            return """°F/min"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeFahrenheitPerSecond:
+            return """°F/s"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeKelvinPerSecond:
+            return """K/s"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeCelsiusPerHour:
+            return """°C/h"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeKelvinPerHour:
+            return """K/h"""
+        
+        if unit_abbreviation == TemperatureChangeRateUnits.DegreeFahrenheitPerHour:
+            return """°F/h"""
         
         if unit_abbreviation == TemperatureChangeRateUnits.NanodegreeCelsiusPerSecond:
             return """n°C/s"""
