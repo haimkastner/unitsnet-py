@@ -83,6 +83,7 @@ from .units.power_ratio import PowerRatio, PowerRatioUnits, PowerRatioDto
 from .units.pressure import Pressure, PressureUnits, PressureDto
 from .units.pressure_change_rate import PressureChangeRate, PressureChangeRateUnits, PressureChangeRateDto
 from .units.radiation_equivalent_dose import RadiationEquivalentDose, RadiationEquivalentDoseUnits, RadiationEquivalentDoseDto
+from .units.radiation_equivalent_dose_rate import RadiationEquivalentDoseRate, RadiationEquivalentDoseRateUnits, RadiationEquivalentDoseRateDto
 from .units.radiation_exposure import RadiationExposure, RadiationExposureUnits, RadiationExposureDto
 from .units.radioactivity import Radioactivity, RadioactivityUnits, RadioactivityDto
 from .units.ratio import Ratio, RatioUnits, RatioDto
@@ -210,6 +211,7 @@ __all__ = [
  'Pressure', 'PressureUnits', 'PressureDto',
  'PressureChangeRate', 'PressureChangeRateUnits', 'PressureChangeRateDto',
  'RadiationEquivalentDose', 'RadiationEquivalentDoseUnits', 'RadiationEquivalentDoseDto',
+ 'RadiationEquivalentDoseRate', 'RadiationEquivalentDoseRateUnits', 'RadiationEquivalentDoseRateDto',
  'RadiationExposure', 'RadiationExposureUnits', 'RadiationExposureDto',
  'Radioactivity', 'RadioactivityUnits', 'RadioactivityDto',
  'Ratio', 'RatioUnits', 'RatioDto',
