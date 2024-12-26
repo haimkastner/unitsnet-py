@@ -14,6 +14,7 @@ from .units.capacitance import Capacitance, CapacitanceUnits, CapacitanceDto
 from .units.coefficient_of_thermal_expansion import CoefficientOfThermalExpansion, CoefficientOfThermalExpansionUnits, CoefficientOfThermalExpansionDto
 from .units.compressibility import Compressibility, CompressibilityUnits, CompressibilityDto
 from .units.density import Density, DensityUnits, DensityDto
+from .units.dose_area_product import DoseAreaProduct, DoseAreaProductUnits, DoseAreaProductDto
 from .units.duration import Duration, DurationUnits, DurationDto
 from .units.dynamic_viscosity import DynamicViscosity, DynamicViscosityUnits, DynamicViscosityDto
 from .units.electric_admittance import ElectricAdmittance, ElectricAdmittanceUnits, ElectricAdmittanceDto
@@ -142,6 +143,7 @@ __all__ = [
  'CoefficientOfThermalExpansion', 'CoefficientOfThermalExpansionUnits', 'CoefficientOfThermalExpansionDto',
  'Compressibility', 'CompressibilityUnits', 'CompressibilityDto',
  'Density', 'DensityUnits', 'DensityDto',
+ 'DoseAreaProduct', 'DoseAreaProductUnits', 'DoseAreaProductDto',
  'Duration', 'DurationUnits', 'DurationDto',
  'DynamicViscosity', 'DynamicViscosityUnits', 'DynamicViscosityDto',
  'ElectricAdmittance', 'ElectricAdmittanceUnits', 'ElectricAdmittanceDto',
