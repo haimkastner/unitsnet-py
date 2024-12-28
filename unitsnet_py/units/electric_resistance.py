@@ -15,6 +15,11 @@ class ElectricResistanceUnits(Enum):
             
         """
         
+        Nanoohm = 'Nanoohm'
+        """
+            
+        """
+        
         Microohm = 'Microohm'
         """
             
@@ -98,7 +103,7 @@ class ElectricResistanceDto:
 
 class ElectricResistance(AbstractMeasure):
     """
-    The electrical resistance of an electrical conductor is the opposition to the passage of an electric current through that conductor.
+    The electrical resistance of an object is a measure of its opposition to the flow of electric current. Along with reactance, it is one of two elements of impedance. Its reciprocal quantity is electrical conductance.
 
     Args:
         value (float): The value.
@@ -112,6 +117,8 @@ class ElectricResistance(AbstractMeasure):
         self._value = self.__convert_to_base(value, from_unit)
         
         self.__ohms = None
+        
+        self.__nanoohms = None
         
         self.__microohms = None
         
@@ -183,6 +190,9 @@ class ElectricResistance(AbstractMeasure):
         if from_unit == ElectricResistanceUnits.Ohm:
             return (value)
         
+        if from_unit == ElectricResistanceUnits.Nanoohm:
+            return ((value) / 1e-09)
+        
         if from_unit == ElectricResistanceUnits.Microohm:
             return ((value) / 1e-06)
         
@@ -208,6 +218,9 @@ class ElectricResistance(AbstractMeasure):
         
         if to_unit == ElectricResistanceUnits.Ohm:
             return (value)
+        
+        if to_unit == ElectricResistanceUnits.Nanoohm:
+            return ((value) * 1e-09)
         
         if to_unit == ElectricResistanceUnits.Microohm:
             return ((value) * 1e-06)
@@ -248,6 +261,21 @@ class ElectricResistance(AbstractMeasure):
         :rtype: ElectricResistance
         """
         return ElectricResistance(ohms, ElectricResistanceUnits.Ohm)
+
+    
+    @staticmethod
+    def from_nanoohms(nanoohms: float):
+        """
+        Create a new instance of ElectricResistance from a value in nanoohms.
+
+        
+
+        :param meters: The ElectricResistance value in nanoohms.
+        :type nanoohms: float
+        :return: A new instance of ElectricResistance.
+        :rtype: ElectricResistance
+        """
+        return ElectricResistance(nanoohms, ElectricResistanceUnits.Nanoohm)
 
     
     @staticmethod
@@ -352,6 +380,17 @@ class ElectricResistance(AbstractMeasure):
 
     
     @property
+    def nanoohms(self) -> float:
+        """
+        
+        """
+        if self.__nanoohms != None:
+            return self.__nanoohms
+        self.__nanoohms = self.__convert_from_base(ElectricResistanceUnits.Nanoohm)
+        return self.__nanoohms
+
+    
+    @property
     def microohms(self) -> float:
         """
         
@@ -435,6 +474,9 @@ class ElectricResistance(AbstractMeasure):
         if unit == ElectricResistanceUnits.Ohm:
             return f"""{super()._truncate_fraction_digits(self.ohms, fractional_digits)} Ω"""
         
+        if unit == ElectricResistanceUnits.Nanoohm:
+            return f"""{super()._truncate_fraction_digits(self.nanoohms, fractional_digits)} nΩ"""
+        
         if unit == ElectricResistanceUnits.Microohm:
             return f"""{super()._truncate_fraction_digits(self.microohms, fractional_digits)} μΩ"""
         
@@ -465,6 +507,9 @@ class ElectricResistance(AbstractMeasure):
         
         if unit_abbreviation == ElectricResistanceUnits.Ohm:
             return """Ω"""
+        
+        if unit_abbreviation == ElectricResistanceUnits.Nanoohm:
+            return """nΩ"""
         
         if unit_abbreviation == ElectricResistanceUnits.Microohm:
             return """μΩ"""
