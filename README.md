@@ -1,6 +1,6 @@
 # unitsnet-py
 
-[![Build & Test Status](https://github.com/haimkastner/unitsnet-py/workflows/unitsnet-py/badge.svg?branch=main)](https://github.com/haimkastner/unitsnet-py/actions)
+[![unitsnet-py](https://github.com/haimkastner/unitsnet-py/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/haimkastner/unitsnet-py/actions/workflows/build.yml)
 
  [![Latest Release](https://img.shields.io/github/v/release/haimkastner/unitsnet-py)](https://github.com/haimkastner/unitsnet-py/releases) 
 [![PyPI version](https://img.shields.io/pypi/v/unitsnet-py)](https://pypi.org/project/unitsnet-py/)
