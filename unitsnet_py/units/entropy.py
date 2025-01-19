@@ -439,7 +439,7 @@ class Entropy(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.calories_per_kelvin, fractional_digits)} cal/K"""
         
         if unit == EntropyUnits.JoulePerDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_degree_celsius, fractional_digits)} J/C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_degree_celsius, fractional_digits)} J/°C"""
         
         if unit == EntropyUnits.KilojoulePerKelvin:
             return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kelvin, fractional_digits)} kJ/K"""
@@ -451,7 +451,7 @@ class Entropy(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.kilocalories_per_kelvin, fractional_digits)} kcal/K"""
         
         if unit == EntropyUnits.KilojoulePerDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_degree_celsius, fractional_digits)} kJ/C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_degree_celsius, fractional_digits)} kJ/°C"""
         
         return f'{self._value}'
 
@@ -470,7 +470,7 @@ class Entropy(AbstractMeasure):
             return """cal/K"""
         
         if unit_abbreviation == EntropyUnits.JoulePerDegreeCelsius:
-            return """J/C"""
+            return """J/°C"""
         
         if unit_abbreviation == EntropyUnits.KilojoulePerKelvin:
             return """kJ/K"""
@@ -482,5 +482,5 @@ class Entropy(AbstractMeasure):
             return """kcal/K"""
         
         if unit_abbreviation == EntropyUnits.KilojoulePerDegreeCelsius:
-            return """kJ/C"""
+            return """kJ/°C"""
         

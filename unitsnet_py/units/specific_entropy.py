@@ -511,31 +511,31 @@ class SpecificEntropy(AbstractMeasure):
         """
         
         if unit == SpecificEntropyUnits.JoulePerKilogramKelvin:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_kelvin, fractional_digits)} J/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_kelvin, fractional_digits)} J/kg·K"""
         
         if unit == SpecificEntropyUnits.JoulePerKilogramDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_degree_celsius, fractional_digits)} J/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram_degree_celsius, fractional_digits)} J/kg·°C"""
         
         if unit == SpecificEntropyUnits.CaloriePerGramKelvin:
-            return f"""{super()._truncate_fraction_digits(self.calories_per_gram_kelvin, fractional_digits)} cal/g.K"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_gram_kelvin, fractional_digits)} cal/g·K"""
         
         if unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return f"""{super()._truncate_fraction_digits(self.btus_per_pound_fahrenheit, fractional_digits)} BTU/lb·°F"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_kelvin, fractional_digits)} kJ/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_kelvin, fractional_digits)} kJ/kg·K"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
-            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_kelvin, fractional_digits)} MJ/kg.K"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_kelvin, fractional_digits)} MJ/kg·K"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_degree_celsius, fractional_digits)} kJ/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_degree_celsius, fractional_digits)} kJ/kg·°C"""
         
         if unit == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_degree_celsius, fractional_digits)} MJ/kg.C"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_kilogram_degree_celsius, fractional_digits)} MJ/kg·°C"""
         
         if unit == SpecificEntropyUnits.KilocaloriePerGramKelvin:
-            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_gram_kelvin, fractional_digits)} kcal/g.K"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_gram_kelvin, fractional_digits)} kcal/g·K"""
         
         return f'{self._value}'
 
@@ -548,29 +548,29 @@ class SpecificEntropy(AbstractMeasure):
         """
         
         if unit_abbreviation == SpecificEntropyUnits.JoulePerKilogramKelvin:
-            return """J/kg.K"""
+            return """J/kg·K"""
         
         if unit_abbreviation == SpecificEntropyUnits.JoulePerKilogramDegreeCelsius:
-            return """J/kg.C"""
+            return """J/kg·°C"""
         
         if unit_abbreviation == SpecificEntropyUnits.CaloriePerGramKelvin:
-            return """cal/g.K"""
+            return """cal/g·K"""
         
         if unit_abbreviation == SpecificEntropyUnits.BtuPerPoundFahrenheit:
             return """BTU/lb·°F"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
-            return """kJ/kg.K"""
+            return """kJ/kg·K"""
         
         if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramKelvin:
-            return """MJ/kg.K"""
+            return """MJ/kg·K"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramDegreeCelsius:
-            return """kJ/kg.C"""
+            return """kJ/kg·°C"""
         
         if unit_abbreviation == SpecificEntropyUnits.MegajoulePerKilogramDegreeCelsius:
-            return """MJ/kg.C"""
+            return """MJ/kg·°C"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilocaloriePerGramKelvin:
-            return """kcal/g.K"""
+            return """kcal/g·K"""
         

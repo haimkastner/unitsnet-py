@@ -277,13 +277,13 @@ class MolarEntropy(AbstractMeasure):
         """
         
         if unit == MolarEntropyUnits.JoulePerMoleKelvin:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_mole_kelvin, fractional_digits)} J/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_mole_kelvin, fractional_digits)} J/(mol·K)"""
         
         if unit == MolarEntropyUnits.KilojoulePerMoleKelvin:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_mole_kelvin, fractional_digits)} kJ/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_mole_kelvin, fractional_digits)} kJ/(mol·K)"""
         
         if unit == MolarEntropyUnits.MegajoulePerMoleKelvin:
-            return f"""{super()._truncate_fraction_digits(self.megajoules_per_mole_kelvin, fractional_digits)} MJ/(mol*K)"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_mole_kelvin, fractional_digits)} MJ/(mol·K)"""
         
         return f'{self._value}'
 
@@ -296,11 +296,11 @@ class MolarEntropy(AbstractMeasure):
         """
         
         if unit_abbreviation == MolarEntropyUnits.JoulePerMoleKelvin:
-            return """J/(mol*K)"""
+            return """J/(mol·K)"""
         
         if unit_abbreviation == MolarEntropyUnits.KilojoulePerMoleKelvin:
-            return """kJ/(mol*K)"""
+            return """kJ/(mol·K)"""
         
         if unit_abbreviation == MolarEntropyUnits.MegajoulePerMoleKelvin:
-            return """MJ/(mol*K)"""
+            return """MJ/(mol·K)"""
         

@@ -319,13 +319,13 @@ class SpecificFuelConsumption(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.pounds_mass_per_pound_force_hour, fractional_digits)} lb/(lbf·h)"""
         
         if unit == SpecificFuelConsumptionUnits.KilogramPerKilogramForceHour:
-            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilogram_force_hour, fractional_digits)} kg/(kgf�h)"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilogram_force_hour, fractional_digits)} kg/(kgf·h)"""
         
         if unit == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
-            return f"""{super()._truncate_fraction_digits(self.grams_per_kilo_newton_second, fractional_digits)} g/(kN�s)"""
+            return f"""{super()._truncate_fraction_digits(self.grams_per_kilo_newton_second, fractional_digits)} g/(kN·s)"""
         
         if unit == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
-            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilo_newton_second, fractional_digits)} kg/(kN�s)"""
+            return f"""{super()._truncate_fraction_digits(self.kilograms_per_kilo_newton_second, fractional_digits)} kg/(kN·s)"""
         
         return f'{self._value}'
 
@@ -341,11 +341,11 @@ class SpecificFuelConsumption(AbstractMeasure):
             return """lb/(lbf·h)"""
         
         if unit_abbreviation == SpecificFuelConsumptionUnits.KilogramPerKilogramForceHour:
-            return """kg/(kgf�h)"""
+            return """kg/(kgf·h)"""
         
         if unit_abbreviation == SpecificFuelConsumptionUnits.GramPerKiloNewtonSecond:
-            return """g/(kN�s)"""
+            return """g/(kN·s)"""
         
         if unit_abbreviation == SpecificFuelConsumptionUnits.KilogramPerKiloNewtonSecond:
-            return """kg/(kN�s)"""
+            return """kg/(kN·s)"""
         
