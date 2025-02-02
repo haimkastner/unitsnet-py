@@ -45,6 +45,7 @@ from .units.electric_susceptance import ElectricSusceptance, ElectricSusceptance
 from .units.energy import Energy, EnergyUnits, EnergyDto
 from .units.energy_density import EnergyDensity, EnergyDensityUnits, EnergyDensityDto
 from .units.entropy import Entropy, EntropyUnits, EntropyDto
+from .units.fluid_resistance import FluidResistance, FluidResistanceUnits, FluidResistanceDto
 from .units.force import Force, ForceUnits, ForceDto
 from .units.force_change_rate import ForceChangeRate, ForceChangeRateUnits, ForceChangeRateDto
 from .units.force_per_length import ForcePerLength, ForcePerLengthUnits, ForcePerLengthDto
@@ -182,6 +183,7 @@ __all__ = [
  'Energy', 'EnergyUnits', 'EnergyDto',
  'EnergyDensity', 'EnergyDensityUnits', 'EnergyDensityDto',
  'Entropy', 'EntropyUnits', 'EntropyDto',
+ 'FluidResistance', 'FluidResistanceUnits', 'FluidResistanceDto',
  'Force', 'ForceUnits', 'ForceDto',
  'ForceChangeRate', 'ForceChangeRateUnits', 'ForceChangeRateDto',
  'ForcePerLength', 'ForcePerLengthUnits', 'ForcePerLengthDto',
