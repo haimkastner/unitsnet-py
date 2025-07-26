@@ -2,7 +2,13 @@ import sys
 
 # Function to parse version string to major, minor, patch
 def parse_version(version):
-    major, minor, patch = map(int, version.split('.'))
+    major, minor, patch = version.split('.')
+    # Handle pre-release tags in patch (e.g., "0-pre015")
+    if '-' in patch:
+        patch, _ = patch.split('-', 1)
+    major = int(major)
+    minor = int(minor)
+    patch = int(patch)
     return {'major': major, 'minor': minor, 'patch': patch}
 
 # Function to increment the version
