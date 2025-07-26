@@ -149,7 +149,7 @@ class VolumeFlowPerArea(AbstractMeasure):
             return (value)
         
         if from_unit == VolumeFlowPerAreaUnits.CubicFootPerMinutePerSquareFoot:
-            return (value * 196.850394)
+            return (value * 9.290304e-2 / (0.028316846592 / 60))
         
         return None
 
@@ -160,7 +160,7 @@ class VolumeFlowPerArea(AbstractMeasure):
             return (value)
         
         if to_unit == VolumeFlowPerAreaUnits.CubicFootPerMinutePerSquareFoot:
-            return (value / 196.850394)
+            return (value * (0.028316846592 / 60) / 9.290304e-2)
         
         return None
 

@@ -98,11 +98,11 @@ class TemperatureGradient(AbstractMeasure):
         
         self.__kelvins_per_meter = None
         
-        self.__degrees_celcius_per_meter = None
+        self.__degrees_celsius_per_meter = None
         
         self.__degrees_fahrenheit_per_foot = None
         
-        self.__degrees_celcius_per_kilometer = None
+        self.__degrees_celsius_per_kilometer = None
         
 
     def convert(self, unit: TemperatureGradientUnits) -> float:
@@ -212,18 +212,18 @@ class TemperatureGradient(AbstractMeasure):
 
     
     @staticmethod
-    def from_degrees_celcius_per_meter(degrees_celcius_per_meter: float):
+    def from_degrees_celsius_per_meter(degrees_celsius_per_meter: float):
         """
-        Create a new instance of TemperatureGradient from a value in degrees_celcius_per_meter.
+        Create a new instance of TemperatureGradient from a value in degrees_celsius_per_meter.
 
         
 
-        :param meters: The TemperatureGradient value in degrees_celcius_per_meter.
-        :type degrees_celcius_per_meter: float
+        :param meters: The TemperatureGradient value in degrees_celsius_per_meter.
+        :type degrees_celsius_per_meter: float
         :return: A new instance of TemperatureGradient.
         :rtype: TemperatureGradient
         """
-        return TemperatureGradient(degrees_celcius_per_meter, TemperatureGradientUnits.DegreeCelsiusPerMeter)
+        return TemperatureGradient(degrees_celsius_per_meter, TemperatureGradientUnits.DegreeCelsiusPerMeter)
 
     
     @staticmethod
@@ -242,18 +242,18 @@ class TemperatureGradient(AbstractMeasure):
 
     
     @staticmethod
-    def from_degrees_celcius_per_kilometer(degrees_celcius_per_kilometer: float):
+    def from_degrees_celsius_per_kilometer(degrees_celsius_per_kilometer: float):
         """
-        Create a new instance of TemperatureGradient from a value in degrees_celcius_per_kilometer.
+        Create a new instance of TemperatureGradient from a value in degrees_celsius_per_kilometer.
 
         
 
-        :param meters: The TemperatureGradient value in degrees_celcius_per_kilometer.
-        :type degrees_celcius_per_kilometer: float
+        :param meters: The TemperatureGradient value in degrees_celsius_per_kilometer.
+        :type degrees_celsius_per_kilometer: float
         :return: A new instance of TemperatureGradient.
         :rtype: TemperatureGradient
         """
-        return TemperatureGradient(degrees_celcius_per_kilometer, TemperatureGradientUnits.DegreeCelsiusPerKilometer)
+        return TemperatureGradient(degrees_celsius_per_kilometer, TemperatureGradientUnits.DegreeCelsiusPerKilometer)
 
     
     @property
@@ -268,14 +268,14 @@ class TemperatureGradient(AbstractMeasure):
 
     
     @property
-    def degrees_celcius_per_meter(self) -> float:
+    def degrees_celsius_per_meter(self) -> float:
         """
         
         """
-        if self.__degrees_celcius_per_meter != None:
-            return self.__degrees_celcius_per_meter
-        self.__degrees_celcius_per_meter = self.__convert_from_base(TemperatureGradientUnits.DegreeCelsiusPerMeter)
-        return self.__degrees_celcius_per_meter
+        if self.__degrees_celsius_per_meter != None:
+            return self.__degrees_celsius_per_meter
+        self.__degrees_celsius_per_meter = self.__convert_from_base(TemperatureGradientUnits.DegreeCelsiusPerMeter)
+        return self.__degrees_celsius_per_meter
 
     
     @property
@@ -290,14 +290,14 @@ class TemperatureGradient(AbstractMeasure):
 
     
     @property
-    def degrees_celcius_per_kilometer(self) -> float:
+    def degrees_celsius_per_kilometer(self) -> float:
         """
         
         """
-        if self.__degrees_celcius_per_kilometer != None:
-            return self.__degrees_celcius_per_kilometer
-        self.__degrees_celcius_per_kilometer = self.__convert_from_base(TemperatureGradientUnits.DegreeCelsiusPerKilometer)
-        return self.__degrees_celcius_per_kilometer
+        if self.__degrees_celsius_per_kilometer != None:
+            return self.__degrees_celsius_per_kilometer
+        self.__degrees_celsius_per_kilometer = self.__convert_from_base(TemperatureGradientUnits.DegreeCelsiusPerKilometer)
+        return self.__degrees_celsius_per_kilometer
 
     
     def to_string(self, unit: TemperatureGradientUnits = TemperatureGradientUnits.KelvinPerMeter, fractional_digits: int = None) -> str:
@@ -319,13 +319,13 @@ class TemperatureGradient(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.kelvins_per_meter, fractional_digits)} ∆°K/m"""
         
         if unit == TemperatureGradientUnits.DegreeCelsiusPerMeter:
-            return f"""{super()._truncate_fraction_digits(self.degrees_celcius_per_meter, fractional_digits)} ∆°C/m"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_meter, fractional_digits)} ∆°C/m"""
         
         if unit == TemperatureGradientUnits.DegreeFahrenheitPerFoot:
             return f"""{super()._truncate_fraction_digits(self.degrees_fahrenheit_per_foot, fractional_digits)} ∆°F/ft"""
         
         if unit == TemperatureGradientUnits.DegreeCelsiusPerKilometer:
-            return f"""{super()._truncate_fraction_digits(self.degrees_celcius_per_kilometer, fractional_digits)} ∆°C/km"""
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_kilometer, fractional_digits)} ∆°C/km"""
         
         return f'{self._value}'
 

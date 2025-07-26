@@ -50,6 +50,11 @@ class AbsorbedDoseOfIonizingRadiationUnits(Enum):
             
         """
         
+        Decigray = 'Decigray'
+        """
+            
+        """
+        
         Kilogray = 'Kilogray'
         """
             
@@ -172,6 +177,8 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         
         self.__centigrays = None
         
+        self.__decigrays = None
+        
         self.__kilograys = None
         
         self.__megagrays = None
@@ -267,6 +274,9 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         if from_unit == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
             return ((value) / 0.01)
         
+        if from_unit == AbsorbedDoseOfIonizingRadiationUnits.Decigray:
+            return ((value) / 0.1)
+        
         if from_unit == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
             return ((value) / 1000.0)
         
@@ -319,6 +329,9 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         
         if to_unit == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
             return ((value) * 0.01)
+        
+        if to_unit == AbsorbedDoseOfIonizingRadiationUnits.Decigray:
+            return ((value) * 0.1)
         
         if to_unit == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
             return ((value) * 1000.0)
@@ -470,6 +483,21 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         :rtype: AbsorbedDoseOfIonizingRadiation
         """
         return AbsorbedDoseOfIonizingRadiation(centigrays, AbsorbedDoseOfIonizingRadiationUnits.Centigray)
+
+    
+    @staticmethod
+    def from_decigrays(decigrays: float):
+        """
+        Create a new instance of AbsorbedDoseOfIonizingRadiation from a value in decigrays.
+
+        
+
+        :param meters: The AbsorbedDoseOfIonizingRadiation value in decigrays.
+        :type decigrays: float
+        :return: A new instance of AbsorbedDoseOfIonizingRadiation.
+        :rtype: AbsorbedDoseOfIonizingRadiation
+        """
+        return AbsorbedDoseOfIonizingRadiation(decigrays, AbsorbedDoseOfIonizingRadiationUnits.Decigray)
 
     
     @staticmethod
@@ -681,6 +709,17 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
 
     
     @property
+    def decigrays(self) -> float:
+        """
+        
+        """
+        if self.__decigrays != None:
+            return self.__decigrays
+        self.__decigrays = self.__convert_from_base(AbsorbedDoseOfIonizingRadiationUnits.Decigray)
+        return self.__decigrays
+
+    
+    @property
     def kilograys(self) -> float:
         """
         
@@ -807,6 +846,9 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
             return f"""{super()._truncate_fraction_digits(self.centigrays, fractional_digits)} cGy"""
         
+        if unit == AbsorbedDoseOfIonizingRadiationUnits.Decigray:
+            return f"""{super()._truncate_fraction_digits(self.decigrays, fractional_digits)} dGy"""
+        
         if unit == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
             return f"""{super()._truncate_fraction_digits(self.kilograys, fractional_digits)} kGy"""
         
@@ -864,6 +906,9 @@ class AbsorbedDoseOfIonizingRadiation(AbstractMeasure):
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Centigray:
             return """cGy"""
+        
+        if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Decigray:
+            return """dGy"""
         
         if unit_abbreviation == AbsorbedDoseOfIonizingRadiationUnits.Kilogray:
             return """kGy"""

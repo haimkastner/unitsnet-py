@@ -52,22 +52,22 @@ class VolumeUnits(Enum):
         
         CubicMile = 'CubicMile'
         """
-            
+            A cubic mile (abbreviation: cu mi or mi3) is an imperial and US customary (non-SI non-metric) unit of volume, used in the United States, Canada and the United Kingdom. It is defined as the volume of a cube with sides of 1 mile (63360 inches, 5280 feet, 1760 yards or ~1.609 kilometres) in length.
         """
         
         CubicYard = 'CubicYard'
         """
-            
+            A cubic yard is an Imperial / U.S. customary (non-SI non-metric) unit of volume, used in Canada and the United States. It is defined as the volume of a cube with sides of 1 yard (3 feet, 36 inches, 0.9144 meters) in length.
         """
         
         CubicFoot = 'CubicFoot'
         """
-            
+            The cubic foot (symbol ft3 or cu ft) is an imperial and US customary (non-metric) unit of volume, used in the United States and the United Kingdom. It is defined as the volume of a cube with sides of one foot (0.3048 m) in length.
         """
         
         CubicInch = 'CubicInch'
         """
-            
+            The cubic inch (symbol in3) is a unit of volume in the Imperial units and United States customary units systems. It is the volume of a cube with each of its three dimensions (length, width, and height) being one inch long which is equivalent to 1/231 of a US gallon.
         """
         
         ImperialGallon = 'ImperialGallon'
@@ -77,7 +77,7 @@ class VolumeUnits(Enum):
         
         ImperialOunce = 'ImperialOunce'
         """
-            
+            An imperial fluid ounce is 1⁄20 of an imperial pint, 1⁄160 of an imperial gallon or exactly 28.4130625 mL.
         """
         
         UsGallon = 'UsGallon'
@@ -87,92 +87,92 @@ class VolumeUnits(Enum):
         
         UsOunce = 'UsOunce'
         """
-            
+            A US customary fluid ounce is 1⁄16 of a US liquid pint and 1⁄128 of a US liquid gallon or exactly 29.5735295625 mL, making it about 4.08% larger than the imperial fluid ounce.
         """
         
         UsTablespoon = 'UsTablespoon'
         """
-            
+            The traditional U.S. interpretation of the tablespoon as a unit of volume is: 1 US tablespoon = 4 fluid drams, or 3 teaspoons or 1/2 US fluid ounce (≈ 14.8 ml)
         """
         
         AuTablespoon = 'AuTablespoon'
         """
-            
+            In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
         """
         
         UkTablespoon = 'UkTablespoon'
         """
-            
+            In nutrition labeling in the U.S. and the U.K., a tablespoon is defined as 15 ml (0.51 US fl oz). In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
         """
         
         MetricTeaspoon = 'MetricTeaspoon'
         """
-            
+            The metric teaspoon as a unit of culinary measure is 5 ml (0.18 imp fl oz; 0.17 US fl oz),[17] equal to 5 cm3, 1⁄3 UK/Canadian metric tablespoon, or 1⁄4 Australian metric tablespoon.
         """
         
         UsTeaspoon = 'UsTeaspoon'
         """
-            
+            As a unit of culinary measure, one teaspoon in the United States is 1⁄3 tablespoon, exactly 4.92892159375 ml, 1 1⁄3 US fluid drams, 1⁄6 US fl oz, 1⁄48 US cup, 1⁄768 US liquid gallon, or 77⁄256 (0.30078125) cubic inches.
         """
         
         MetricCup = 'MetricCup'
         """
-            
+            Australia, Canada, New Zealand, and some other members of the Commonwealth of Nations, being former British colonies that have since metricated, employ a metric cup of 250 millilitres. Although derived from the metric system, it is not an SI unit.
         """
         
         UsCustomaryCup = 'UsCustomaryCup'
         """
-            
+            In the United States, the customary cup is half of a liquid pint or 1⁄16 US customary gallon which is 236.5882365 milliliters exactly.
         """
         
         UsLegalCup = 'UsLegalCup'
         """
-            
+            The cup currently used in the United States for nutrition labelling is defined in United States law as 240 ml.
         """
         
         OilBarrel = 'OilBarrel'
         """
-            
+            In the oil industry, one barrel (unit symbol bbl) is a unit of volume used for measuring oil defined as exactly 42 US gallons, approximately 159 liters, or 35 imperial gallons.
         """
         
         UsBeerBarrel = 'UsBeerBarrel'
         """
-            
+            Fluid barrels vary depending on what is being measured and where. In the US most fluid barrels (apart from oil) are 31.5 US gallons (26 imp gal; 119 L) (half a hogshead), but a beer barrel is 31 US gallons (26 imp gal; 117 L).
         """
         
         ImperialBeerBarrel = 'ImperialBeerBarrel'
         """
-            
+            Fluid barrels vary depending on what is being measured and where. In the UK a beer barrel is 36 imperial gallons (43 US gal; ~164 L).
         """
         
         UsQuart = 'UsQuart'
         """
-            
+            The US liquid quart equals 57.75 cubic inches, which is exactly equal to 0.946352946 L.
         """
         
         ImperialQuart = 'ImperialQuart'
         """
-            
+            The imperial quart, which is used for both liquid and dry capacity, is equal to one quarter of an imperial gallon, or exactly 1.1365225 liters.
         """
         
         UsPint = 'UsPint'
         """
-            
+            The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
         """
         
         AcreFoot = 'AcreFoot'
         """
-            
+            An acre-foot is 43,560 cubic feet (~1,233.5 m3).
         """
         
         ImperialPint = 'ImperialPint'
         """
-            
+            The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
         """
         
         BoardFoot = 'BoardFoot'
         """
-            
+            The board foot or board-foot is a unit of measurement for the volume of lumber in the United States and Canada. It equals the volume of a board that is one-foot (305 mm) in length, one-foot (305 mm) in width, and one-inch (25.4 mm) in thickness.
         """
         
         Nanoliter = 'Nanoliter'
@@ -534,13 +534,13 @@ class Volume(AbstractMeasure):
             return (value * 1e18)
         
         if from_unit == VolumeUnits.CubicMile:
-            return (value / 4.16818182544058e9)
+            return (value / 4.168181825440579584e9)
         
         if from_unit == VolumeUnits.CubicYard:
-            return (value / 0.764554858)
+            return (value / 0.764554857984)
         
         if from_unit == VolumeUnits.CubicFoot:
-            return (value / 2.8316846592e-2)
+            return (value / 0.028316846592)
         
         if from_unit == VolumeUnits.CubicInch:
             return (value / 1.6387064e-5)
@@ -549,13 +549,13 @@ class Volume(AbstractMeasure):
             return (value / 0.00454609)
         
         if from_unit == VolumeUnits.ImperialOunce:
-            return (value / 2.8413062499962901241875439064617e-5)
+            return (value / 2.84130625e-5)
         
         if from_unit == VolumeUnits.UsGallon:
             return (value / 0.003785411784)
         
         if from_unit == VolumeUnits.UsOunce:
-            return (value / 2.957352956253760505068307980135e-5)
+            return (value / 2.95735295625e-5)
         
         if from_unit == VolumeUnits.UsTablespoon:
             return (value / 1.478676478125e-5)
@@ -585,7 +585,7 @@ class Volume(AbstractMeasure):
             return (value / 0.158987294928)
         
         if from_unit == VolumeUnits.UsBeerBarrel:
-            return (value / 0.1173477658)
+            return (value / 0.117347765304)
         
         if from_unit == VolumeUnits.ImperialBeerBarrel:
             return (value / 0.16365924)
@@ -600,13 +600,13 @@ class Volume(AbstractMeasure):
             return (value / 4.73176473e-4)
         
         if from_unit == VolumeUnits.AcreFoot:
-            return (value * 0.000810714)
+            return (value / 1233.48183754752)
         
         if from_unit == VolumeUnits.ImperialPint:
             return (value / 5.6826125e-4)
         
         if from_unit == VolumeUnits.BoardFoot:
-            return (value / 2.3597372158e-3)
+            return (value / (0.028316846592 / 12))
         
         if from_unit == VolumeUnits.Nanoliter:
             return ((value * 1e3) / 1e-09)
@@ -642,13 +642,13 @@ class Volume(AbstractMeasure):
             return ((value) / 1000.0)
         
         if from_unit == VolumeUnits.HectocubicFoot:
-            return ((value / 2.8316846592e-2) / 100.0)
+            return ((value / 0.028316846592) / 100.0)
         
         if from_unit == VolumeUnits.KilocubicFoot:
-            return ((value / 2.8316846592e-2) / 1000.0)
+            return ((value / 0.028316846592) / 1000.0)
         
         if from_unit == VolumeUnits.MegacubicFoot:
-            return ((value / 2.8316846592e-2) / 1000000.0)
+            return ((value / 0.028316846592) / 1000000.0)
         
         if from_unit == VolumeUnits.KiloimperialGallon:
             return ((value / 0.00454609) / 1000.0)
@@ -701,13 +701,13 @@ class Volume(AbstractMeasure):
             return (value / 1e18)
         
         if to_unit == VolumeUnits.CubicMile:
-            return (value * 4.16818182544058e9)
+            return (value * 4.168181825440579584e9)
         
         if to_unit == VolumeUnits.CubicYard:
-            return (value * 0.764554858)
+            return (value * 0.764554857984)
         
         if to_unit == VolumeUnits.CubicFoot:
-            return (value * 2.8316846592e-2)
+            return (value * 0.028316846592)
         
         if to_unit == VolumeUnits.CubicInch:
             return (value * 1.6387064e-5)
@@ -716,13 +716,13 @@ class Volume(AbstractMeasure):
             return (value * 0.00454609)
         
         if to_unit == VolumeUnits.ImperialOunce:
-            return (value * 2.8413062499962901241875439064617e-5)
+            return (value * 2.84130625e-5)
         
         if to_unit == VolumeUnits.UsGallon:
             return (value * 0.003785411784)
         
         if to_unit == VolumeUnits.UsOunce:
-            return (value * 2.957352956253760505068307980135e-5)
+            return (value * 2.95735295625e-5)
         
         if to_unit == VolumeUnits.UsTablespoon:
             return (value * 1.478676478125e-5)
@@ -752,7 +752,7 @@ class Volume(AbstractMeasure):
             return (value * 0.158987294928)
         
         if to_unit == VolumeUnits.UsBeerBarrel:
-            return (value * 0.1173477658)
+            return (value * 0.117347765304)
         
         if to_unit == VolumeUnits.ImperialBeerBarrel:
             return (value * 0.16365924)
@@ -767,13 +767,13 @@ class Volume(AbstractMeasure):
             return (value * 4.73176473e-4)
         
         if to_unit == VolumeUnits.AcreFoot:
-            return (value / 0.000810714)
+            return (value * 1233.48183754752)
         
         if to_unit == VolumeUnits.ImperialPint:
             return (value * 5.6826125e-4)
         
         if to_unit == VolumeUnits.BoardFoot:
-            return (value * 2.3597372158e-3)
+            return (value * (0.028316846592 / 12))
         
         if to_unit == VolumeUnits.Nanoliter:
             return ((value / 1e3) * 1e-09)
@@ -809,13 +809,13 @@ class Volume(AbstractMeasure):
             return ((value) * 1000.0)
         
         if to_unit == VolumeUnits.HectocubicFoot:
-            return ((value * 2.8316846592e-2) * 100.0)
+            return ((value * 0.028316846592) * 100.0)
         
         if to_unit == VolumeUnits.KilocubicFoot:
-            return ((value * 2.8316846592e-2) * 1000.0)
+            return ((value * 0.028316846592) * 1000.0)
         
         if to_unit == VolumeUnits.MegacubicFoot:
-            return ((value * 2.8316846592e-2) * 1000000.0)
+            return ((value * 0.028316846592) * 1000000.0)
         
         if to_unit == VolumeUnits.KiloimperialGallon:
             return ((value * 0.00454609) * 1000.0)
@@ -971,7 +971,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in cubic_miles.
 
-        
+        A cubic mile (abbreviation: cu mi or mi3) is an imperial and US customary (non-SI non-metric) unit of volume, used in the United States, Canada and the United Kingdom. It is defined as the volume of a cube with sides of 1 mile (63360 inches, 5280 feet, 1760 yards or ~1.609 kilometres) in length.
 
         :param meters: The Volume value in cubic_miles.
         :type cubic_miles: float
@@ -986,7 +986,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in cubic_yards.
 
-        
+        A cubic yard is an Imperial / U.S. customary (non-SI non-metric) unit of volume, used in Canada and the United States. It is defined as the volume of a cube with sides of 1 yard (3 feet, 36 inches, 0.9144 meters) in length.
 
         :param meters: The Volume value in cubic_yards.
         :type cubic_yards: float
@@ -1001,7 +1001,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in cubic_feet.
 
-        
+        The cubic foot (symbol ft3 or cu ft) is an imperial and US customary (non-metric) unit of volume, used in the United States and the United Kingdom. It is defined as the volume of a cube with sides of one foot (0.3048 m) in length.
 
         :param meters: The Volume value in cubic_feet.
         :type cubic_feet: float
@@ -1016,7 +1016,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in cubic_inches.
 
-        
+        The cubic inch (symbol in3) is a unit of volume in the Imperial units and United States customary units systems. It is the volume of a cube with each of its three dimensions (length, width, and height) being one inch long which is equivalent to 1/231 of a US gallon.
 
         :param meters: The Volume value in cubic_inches.
         :type cubic_inches: float
@@ -1046,7 +1046,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in imperial_ounces.
 
-        
+        An imperial fluid ounce is 1⁄20 of an imperial pint, 1⁄160 of an imperial gallon or exactly 28.4130625 mL.
 
         :param meters: The Volume value in imperial_ounces.
         :type imperial_ounces: float
@@ -1076,7 +1076,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_ounces.
 
-        
+        A US customary fluid ounce is 1⁄16 of a US liquid pint and 1⁄128 of a US liquid gallon or exactly 29.5735295625 mL, making it about 4.08% larger than the imperial fluid ounce.
 
         :param meters: The Volume value in us_ounces.
         :type us_ounces: float
@@ -1091,7 +1091,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_tablespoons.
 
-        
+        The traditional U.S. interpretation of the tablespoon as a unit of volume is: 1 US tablespoon = 4 fluid drams, or 3 teaspoons or 1/2 US fluid ounce (≈ 14.8 ml)
 
         :param meters: The Volume value in us_tablespoons.
         :type us_tablespoons: float
@@ -1106,7 +1106,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in au_tablespoons.
 
-        
+        In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
 
         :param meters: The Volume value in au_tablespoons.
         :type au_tablespoons: float
@@ -1121,7 +1121,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in uk_tablespoons.
 
-        
+        In nutrition labeling in the U.S. and the U.K., a tablespoon is defined as 15 ml (0.51 US fl oz). In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
 
         :param meters: The Volume value in uk_tablespoons.
         :type uk_tablespoons: float
@@ -1136,7 +1136,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in metric_teaspoons.
 
-        
+        The metric teaspoon as a unit of culinary measure is 5 ml (0.18 imp fl oz; 0.17 US fl oz),[17] equal to 5 cm3, 1⁄3 UK/Canadian metric tablespoon, or 1⁄4 Australian metric tablespoon.
 
         :param meters: The Volume value in metric_teaspoons.
         :type metric_teaspoons: float
@@ -1151,7 +1151,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_teaspoons.
 
-        
+        As a unit of culinary measure, one teaspoon in the United States is 1⁄3 tablespoon, exactly 4.92892159375 ml, 1 1⁄3 US fluid drams, 1⁄6 US fl oz, 1⁄48 US cup, 1⁄768 US liquid gallon, or 77⁄256 (0.30078125) cubic inches.
 
         :param meters: The Volume value in us_teaspoons.
         :type us_teaspoons: float
@@ -1166,7 +1166,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in metric_cups.
 
-        
+        Australia, Canada, New Zealand, and some other members of the Commonwealth of Nations, being former British colonies that have since metricated, employ a metric cup of 250 millilitres. Although derived from the metric system, it is not an SI unit.
 
         :param meters: The Volume value in metric_cups.
         :type metric_cups: float
@@ -1181,7 +1181,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_customary_cups.
 
-        
+        In the United States, the customary cup is half of a liquid pint or 1⁄16 US customary gallon which is 236.5882365 milliliters exactly.
 
         :param meters: The Volume value in us_customary_cups.
         :type us_customary_cups: float
@@ -1196,7 +1196,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_legal_cups.
 
-        
+        The cup currently used in the United States for nutrition labelling is defined in United States law as 240 ml.
 
         :param meters: The Volume value in us_legal_cups.
         :type us_legal_cups: float
@@ -1211,7 +1211,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in oil_barrels.
 
-        
+        In the oil industry, one barrel (unit symbol bbl) is a unit of volume used for measuring oil defined as exactly 42 US gallons, approximately 159 liters, or 35 imperial gallons.
 
         :param meters: The Volume value in oil_barrels.
         :type oil_barrels: float
@@ -1226,7 +1226,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_beer_barrels.
 
-        
+        Fluid barrels vary depending on what is being measured and where. In the US most fluid barrels (apart from oil) are 31.5 US gallons (26 imp gal; 119 L) (half a hogshead), but a beer barrel is 31 US gallons (26 imp gal; 117 L).
 
         :param meters: The Volume value in us_beer_barrels.
         :type us_beer_barrels: float
@@ -1241,7 +1241,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in imperial_beer_barrels.
 
-        
+        Fluid barrels vary depending on what is being measured and where. In the UK a beer barrel is 36 imperial gallons (43 US gal; ~164 L).
 
         :param meters: The Volume value in imperial_beer_barrels.
         :type imperial_beer_barrels: float
@@ -1256,7 +1256,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_quarts.
 
-        
+        The US liquid quart equals 57.75 cubic inches, which is exactly equal to 0.946352946 L.
 
         :param meters: The Volume value in us_quarts.
         :type us_quarts: float
@@ -1271,7 +1271,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in imperial_quarts.
 
-        
+        The imperial quart, which is used for both liquid and dry capacity, is equal to one quarter of an imperial gallon, or exactly 1.1365225 liters.
 
         :param meters: The Volume value in imperial_quarts.
         :type imperial_quarts: float
@@ -1286,7 +1286,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in us_pints.
 
-        
+        The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
 
         :param meters: The Volume value in us_pints.
         :type us_pints: float
@@ -1301,7 +1301,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in acre_feet.
 
-        
+        An acre-foot is 43,560 cubic feet (~1,233.5 m3).
 
         :param meters: The Volume value in acre_feet.
         :type acre_feet: float
@@ -1316,7 +1316,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in imperial_pints.
 
-        
+        The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
 
         :param meters: The Volume value in imperial_pints.
         :type imperial_pints: float
@@ -1331,7 +1331,7 @@ class Volume(AbstractMeasure):
         """
         Create a new instance of Volume from a value in board_feet.
 
-        
+        The board foot or board-foot is a unit of measurement for the volume of lumber in the United States and Canada. It equals the volume of a board that is one-foot (305 mm) in length, one-foot (305 mm) in width, and one-inch (25.4 mm) in thickness.
 
         :param meters: The Volume value in board_feet.
         :type board_feet: float
@@ -1747,7 +1747,7 @@ class Volume(AbstractMeasure):
     @property
     def cubic_miles(self) -> float:
         """
-        
+        A cubic mile (abbreviation: cu mi or mi3) is an imperial and US customary (non-SI non-metric) unit of volume, used in the United States, Canada and the United Kingdom. It is defined as the volume of a cube with sides of 1 mile (63360 inches, 5280 feet, 1760 yards or ~1.609 kilometres) in length.
         """
         if self.__cubic_miles != None:
             return self.__cubic_miles
@@ -1758,7 +1758,7 @@ class Volume(AbstractMeasure):
     @property
     def cubic_yards(self) -> float:
         """
-        
+        A cubic yard is an Imperial / U.S. customary (non-SI non-metric) unit of volume, used in Canada and the United States. It is defined as the volume of a cube with sides of 1 yard (3 feet, 36 inches, 0.9144 meters) in length.
         """
         if self.__cubic_yards != None:
             return self.__cubic_yards
@@ -1769,7 +1769,7 @@ class Volume(AbstractMeasure):
     @property
     def cubic_feet(self) -> float:
         """
-        
+        The cubic foot (symbol ft3 or cu ft) is an imperial and US customary (non-metric) unit of volume, used in the United States and the United Kingdom. It is defined as the volume of a cube with sides of one foot (0.3048 m) in length.
         """
         if self.__cubic_feet != None:
             return self.__cubic_feet
@@ -1780,7 +1780,7 @@ class Volume(AbstractMeasure):
     @property
     def cubic_inches(self) -> float:
         """
-        
+        The cubic inch (symbol in3) is a unit of volume in the Imperial units and United States customary units systems. It is the volume of a cube with each of its three dimensions (length, width, and height) being one inch long which is equivalent to 1/231 of a US gallon.
         """
         if self.__cubic_inches != None:
             return self.__cubic_inches
@@ -1802,7 +1802,7 @@ class Volume(AbstractMeasure):
     @property
     def imperial_ounces(self) -> float:
         """
-        
+        An imperial fluid ounce is 1⁄20 of an imperial pint, 1⁄160 of an imperial gallon or exactly 28.4130625 mL.
         """
         if self.__imperial_ounces != None:
             return self.__imperial_ounces
@@ -1824,7 +1824,7 @@ class Volume(AbstractMeasure):
     @property
     def us_ounces(self) -> float:
         """
-        
+        A US customary fluid ounce is 1⁄16 of a US liquid pint and 1⁄128 of a US liquid gallon or exactly 29.5735295625 mL, making it about 4.08% larger than the imperial fluid ounce.
         """
         if self.__us_ounces != None:
             return self.__us_ounces
@@ -1835,7 +1835,7 @@ class Volume(AbstractMeasure):
     @property
     def us_tablespoons(self) -> float:
         """
-        
+        The traditional U.S. interpretation of the tablespoon as a unit of volume is: 1 US tablespoon = 4 fluid drams, or 3 teaspoons or 1/2 US fluid ounce (≈ 14.8 ml)
         """
         if self.__us_tablespoons != None:
             return self.__us_tablespoons
@@ -1846,7 +1846,7 @@ class Volume(AbstractMeasure):
     @property
     def au_tablespoons(self) -> float:
         """
-        
+        In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
         """
         if self.__au_tablespoons != None:
             return self.__au_tablespoons
@@ -1857,7 +1857,7 @@ class Volume(AbstractMeasure):
     @property
     def uk_tablespoons(self) -> float:
         """
-        
+        In nutrition labeling in the U.S. and the U.K., a tablespoon is defined as 15 ml (0.51 US fl oz). In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
         """
         if self.__uk_tablespoons != None:
             return self.__uk_tablespoons
@@ -1868,7 +1868,7 @@ class Volume(AbstractMeasure):
     @property
     def metric_teaspoons(self) -> float:
         """
-        
+        The metric teaspoon as a unit of culinary measure is 5 ml (0.18 imp fl oz; 0.17 US fl oz),[17] equal to 5 cm3, 1⁄3 UK/Canadian metric tablespoon, or 1⁄4 Australian metric tablespoon.
         """
         if self.__metric_teaspoons != None:
             return self.__metric_teaspoons
@@ -1879,7 +1879,7 @@ class Volume(AbstractMeasure):
     @property
     def us_teaspoons(self) -> float:
         """
-        
+        As a unit of culinary measure, one teaspoon in the United States is 1⁄3 tablespoon, exactly 4.92892159375 ml, 1 1⁄3 US fluid drams, 1⁄6 US fl oz, 1⁄48 US cup, 1⁄768 US liquid gallon, or 77⁄256 (0.30078125) cubic inches.
         """
         if self.__us_teaspoons != None:
             return self.__us_teaspoons
@@ -1890,7 +1890,7 @@ class Volume(AbstractMeasure):
     @property
     def metric_cups(self) -> float:
         """
-        
+        Australia, Canada, New Zealand, and some other members of the Commonwealth of Nations, being former British colonies that have since metricated, employ a metric cup of 250 millilitres. Although derived from the metric system, it is not an SI unit.
         """
         if self.__metric_cups != None:
             return self.__metric_cups
@@ -1901,7 +1901,7 @@ class Volume(AbstractMeasure):
     @property
     def us_customary_cups(self) -> float:
         """
-        
+        In the United States, the customary cup is half of a liquid pint or 1⁄16 US customary gallon which is 236.5882365 milliliters exactly.
         """
         if self.__us_customary_cups != None:
             return self.__us_customary_cups
@@ -1912,7 +1912,7 @@ class Volume(AbstractMeasure):
     @property
     def us_legal_cups(self) -> float:
         """
-        
+        The cup currently used in the United States for nutrition labelling is defined in United States law as 240 ml.
         """
         if self.__us_legal_cups != None:
             return self.__us_legal_cups
@@ -1923,7 +1923,7 @@ class Volume(AbstractMeasure):
     @property
     def oil_barrels(self) -> float:
         """
-        
+        In the oil industry, one barrel (unit symbol bbl) is a unit of volume used for measuring oil defined as exactly 42 US gallons, approximately 159 liters, or 35 imperial gallons.
         """
         if self.__oil_barrels != None:
             return self.__oil_barrels
@@ -1934,7 +1934,7 @@ class Volume(AbstractMeasure):
     @property
     def us_beer_barrels(self) -> float:
         """
-        
+        Fluid barrels vary depending on what is being measured and where. In the US most fluid barrels (apart from oil) are 31.5 US gallons (26 imp gal; 119 L) (half a hogshead), but a beer barrel is 31 US gallons (26 imp gal; 117 L).
         """
         if self.__us_beer_barrels != None:
             return self.__us_beer_barrels
@@ -1945,7 +1945,7 @@ class Volume(AbstractMeasure):
     @property
     def imperial_beer_barrels(self) -> float:
         """
-        
+        Fluid barrels vary depending on what is being measured and where. In the UK a beer barrel is 36 imperial gallons (43 US gal; ~164 L).
         """
         if self.__imperial_beer_barrels != None:
             return self.__imperial_beer_barrels
@@ -1956,7 +1956,7 @@ class Volume(AbstractMeasure):
     @property
     def us_quarts(self) -> float:
         """
-        
+        The US liquid quart equals 57.75 cubic inches, which is exactly equal to 0.946352946 L.
         """
         if self.__us_quarts != None:
             return self.__us_quarts
@@ -1967,7 +1967,7 @@ class Volume(AbstractMeasure):
     @property
     def imperial_quarts(self) -> float:
         """
-        
+        The imperial quart, which is used for both liquid and dry capacity, is equal to one quarter of an imperial gallon, or exactly 1.1365225 liters.
         """
         if self.__imperial_quarts != None:
             return self.__imperial_quarts
@@ -1978,7 +1978,7 @@ class Volume(AbstractMeasure):
     @property
     def us_pints(self) -> float:
         """
-        
+        The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
         """
         if self.__us_pints != None:
             return self.__us_pints
@@ -1989,7 +1989,7 @@ class Volume(AbstractMeasure):
     @property
     def acre_feet(self) -> float:
         """
-        
+        An acre-foot is 43,560 cubic feet (~1,233.5 m3).
         """
         if self.__acre_feet != None:
             return self.__acre_feet
@@ -2000,7 +2000,7 @@ class Volume(AbstractMeasure):
     @property
     def imperial_pints(self) -> float:
         """
-        
+        The pint is a unit of volume or capacity in both the imperial and United States customary measurement systems. In both of those systems it is traditionally one eighth of a gallon. The British imperial pint is about 20% larger than the American pint because the two systems are defined differently.
         """
         if self.__imperial_pints != None:
             return self.__imperial_pints
@@ -2011,7 +2011,7 @@ class Volume(AbstractMeasure):
     @property
     def board_feet(self) -> float:
         """
-        
+        The board foot or board-foot is a unit of measurement for the volume of lumber in the United States and Canada. It equals the volume of a board that is one-foot (305 mm) in length, one-foot (305 mm) in width, and one-inch (25.4 mm) in thickness.
         """
         if self.__board_feet != None:
             return self.__board_feet
@@ -2314,28 +2314,28 @@ class Volume(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.us_ounces, fractional_digits)} oz (U.S.)"""
         
         if unit == VolumeUnits.UsTablespoon:
-            return f"""{super()._truncate_fraction_digits(self.us_tablespoons, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.us_tablespoons, fractional_digits)} tablespoon (U.S.)"""
         
         if unit == VolumeUnits.AuTablespoon:
-            return f"""{super()._truncate_fraction_digits(self.au_tablespoons, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.au_tablespoons, fractional_digits)} tablespoon (A.U.)"""
         
         if unit == VolumeUnits.UkTablespoon:
-            return f"""{super()._truncate_fraction_digits(self.uk_tablespoons, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.uk_tablespoons, fractional_digits)} tablespoon (U.K.)"""
         
         if unit == VolumeUnits.MetricTeaspoon:
             return f"""{super()._truncate_fraction_digits(self.metric_teaspoons, fractional_digits)} tsp"""
         
         if unit == VolumeUnits.UsTeaspoon:
-            return f"""{super()._truncate_fraction_digits(self.us_teaspoons, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.us_teaspoons, fractional_digits)} teaspoon (U.S.)"""
         
         if unit == VolumeUnits.MetricCup:
-            return f"""{super()._truncate_fraction_digits(self.metric_cups, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.metric_cups, fractional_digits)} metric cup"""
         
         if unit == VolumeUnits.UsCustomaryCup:
-            return f"""{super()._truncate_fraction_digits(self.us_customary_cups, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.us_customary_cups, fractional_digits)} cup (U.S. customary)"""
         
         if unit == VolumeUnits.UsLegalCup:
-            return f"""{super()._truncate_fraction_digits(self.us_legal_cups, fractional_digits)} """
+            return f"""{super()._truncate_fraction_digits(self.us_legal_cups, fractional_digits)} cup (U.S.)"""
         
         if unit == VolumeUnits.OilBarrel:
             return f"""{super()._truncate_fraction_digits(self.oil_barrels, fractional_digits)} bbl"""
@@ -2486,28 +2486,28 @@ class Volume(AbstractMeasure):
             return """oz (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.UsTablespoon:
-            return """"""
+            return """tablespoon (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.AuTablespoon:
-            return """"""
+            return """tablespoon (A.U.)"""
         
         if unit_abbreviation == VolumeUnits.UkTablespoon:
-            return """"""
+            return """tablespoon (U.K.)"""
         
         if unit_abbreviation == VolumeUnits.MetricTeaspoon:
             return """tsp"""
         
         if unit_abbreviation == VolumeUnits.UsTeaspoon:
-            return """"""
+            return """teaspoon (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.MetricCup:
-            return """"""
+            return """metric cup"""
         
         if unit_abbreviation == VolumeUnits.UsCustomaryCup:
-            return """"""
+            return """cup (U.S. customary)"""
         
         if unit_abbreviation == VolumeUnits.UsLegalCup:
-            return """"""
+            return """cup (U.S.)"""
         
         if unit_abbreviation == VolumeUnits.OilBarrel:
             return """bbl"""

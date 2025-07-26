@@ -10,32 +10,12 @@ class ThermalResistanceUnits(Enum):
             ThermalResistanceUnits enumeration
         """
         
-        SquareMeterKelvinPerKilowatt = 'SquareMeterKelvinPerKilowatt'
+        KelvinPerWatt = 'KelvinPerWatt'
         """
             
         """
         
-        SquareMeterKelvinPerWatt = 'SquareMeterKelvinPerWatt'
-        """
-            
-        """
-        
-        SquareMeterDegreeCelsiusPerWatt = 'SquareMeterDegreeCelsiusPerWatt'
-        """
-            
-        """
-        
-        SquareCentimeterKelvinPerWatt = 'SquareCentimeterKelvinPerWatt'
-        """
-            
-        """
-        
-        SquareCentimeterHourDegreeCelsiusPerKilocalorie = 'SquareCentimeterHourDegreeCelsiusPerKilocalorie'
-        """
-            
-        """
-        
-        HourSquareFeetDegreeFahrenheitPerBtu = 'HourSquareFeetDegreeFahrenheitPerBtu'
+        DegreeCelsiusPerWatt = 'DegreeCelsiusPerWatt'
         """
             
         """
@@ -73,7 +53,7 @@ class ThermalResistanceDto:
 
         :return: JSON object represents ThermalResistance DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :example return: {"value": 100, "unit": "KelvinPerWatt"}
         """
         return {"value": self.value, "unit": self.unit.value}
 
@@ -84,7 +64,7 @@ class ThermalResistanceDto:
 
         :param data: The ThermalResistance DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :example data: {"value": 100, "unit": "KelvinPerWatt"}
         :return: A new instance of ThermalResistanceDto.
         :rtype: ThermalResistanceDto
         """
@@ -93,36 +73,28 @@ class ThermalResistanceDto:
 
 class ThermalResistance(AbstractMeasure):
     """
-    Heat Transfer Coefficient or Thermal conductivity - indicates a materials ability to conduct heat.
+    Thermal resistance (R) measures the opposition to the heat current in a material or system. It is measured in units of kelvins per watt (K/W) and indicates how much temperature difference (in kelvins) is required to transfer a unit of heat current (in watts) through the material or object. It is essential to optimize the building insulation, evaluate the efficiency of electronic devices, and enhance the performance of heat sinks in various applications.
 
     Args:
         value (float): The value.
-        from_unit (ThermalResistanceUnits): The ThermalResistance unit to create from, The default unit is SquareMeterKelvinPerKilowatt
+        from_unit (ThermalResistanceUnits): The ThermalResistance unit to create from, The default unit is KelvinPerWatt
     """
-    def __init__(self, value: float, from_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt):
+    def __init__(self, value: float, from_unit: ThermalResistanceUnits = ThermalResistanceUnits.KelvinPerWatt):
         # Do not validate type, to allow working with numpay arrays and similar objects who supports all arithmetic 
         # operations, but they are not a number, see #14 
         # if math.isnan(value):
         #     raise ValueError('Invalid unit: value is NaN')
         self._value = self.__convert_to_base(value, from_unit)
         
-        self.__square_meter_kelvins_per_kilowatt = None
+        self.__kelvins_per_watt = None
         
-        self.__square_meter_kelvins_per_watt = None
-        
-        self.__square_meter_degrees_celsius_per_watt = None
-        
-        self.__square_centimeter_kelvins_per_watt = None
-        
-        self.__square_centimeter_hour_degrees_celsius_per_kilocalorie = None
-        
-        self.__hour_square_feet_degrees_fahrenheit_per_btu = None
+        self.__degrees_celsius_per_watt = None
         
 
     def convert(self, unit: ThermalResistanceUnits) -> float:
         return self.__convert_from_base(unit)
 
-    def to_dto(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> ThermalResistanceDto:
+    def to_dto(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.KelvinPerWatt) -> ThermalResistanceDto:
         """
         Get a new instance of ThermalResistance DTO representing the current unit.
 
@@ -133,7 +105,7 @@ class ThermalResistance(AbstractMeasure):
         """
         return ThermalResistanceDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
     
-    def to_dto_json(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt):
+    def to_dto_json(self, hold_in_unit: ThermalResistanceUnits = ThermalResistanceUnits.KelvinPerWatt):
         """
         Get a ThermalResistance DTO JSON object representing the current unit.
 
@@ -141,7 +113,7 @@ class ThermalResistance(AbstractMeasure):
         :type hold_in_unit: ThermalResistanceUnits
         :return: JSON object represents ThermalResistance DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :example return: {"value": 100, "unit": "KelvinPerWatt"}
         """
         return self.to_dto(hold_in_unit).to_json()
 
@@ -164,7 +136,7 @@ class ThermalResistance(AbstractMeasure):
 
         :param data: The ThermalResistance DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "SquareMeterKelvinPerKilowatt"}
+        :example data: {"value": 100, "unit": "KelvinPerWatt"}
         :return: A new instance of ThermalResistance.
         :rtype: ThermalResistance
         """
@@ -173,46 +145,22 @@ class ThermalResistance(AbstractMeasure):
     def __convert_from_base(self, from_unit: ThermalResistanceUnits) -> float:
         value = self._value
         
-        if from_unit == ThermalResistanceUnits.SquareMeterKelvinPerKilowatt:
+        if from_unit == ThermalResistanceUnits.KelvinPerWatt:
             return (value)
         
-        if from_unit == ThermalResistanceUnits.SquareMeterKelvinPerWatt:
-            return (value / 1000)
-        
-        if from_unit == ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt:
-            return (value / 1000.0)
-        
-        if from_unit == ThermalResistanceUnits.SquareCentimeterKelvinPerWatt:
-            return (value / 0.1)
-        
-        if from_unit == ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie:
-            return (value / 0.0859779507590433)
-        
-        if from_unit == ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu:
-            return (value / 176.1121482159839)
+        if from_unit == ThermalResistanceUnits.DegreeCelsiusPerWatt:
+            return (value)
         
         return None
 
 
     def __convert_to_base(self, value: float, to_unit: ThermalResistanceUnits) -> float:
         
-        if to_unit == ThermalResistanceUnits.SquareMeterKelvinPerKilowatt:
+        if to_unit == ThermalResistanceUnits.KelvinPerWatt:
             return (value)
         
-        if to_unit == ThermalResistanceUnits.SquareMeterKelvinPerWatt:
-            return (value * 1000)
-        
-        if to_unit == ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt:
-            return (value * 1000.0)
-        
-        if to_unit == ThermalResistanceUnits.SquareCentimeterKelvinPerWatt:
-            return (value * 0.1)
-        
-        if to_unit == ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie:
-            return (value * 0.0859779507590433)
-        
-        if to_unit == ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu:
-            return (value * 176.1121482159839)
+        if to_unit == ThermalResistanceUnits.DegreeCelsiusPerWatt:
+            return (value)
         
         return None
 
@@ -223,219 +171,91 @@ class ThermalResistance(AbstractMeasure):
 
     
     @staticmethod
-    def from_square_meter_kelvins_per_kilowatt(square_meter_kelvins_per_kilowatt: float):
+    def from_kelvins_per_watt(kelvins_per_watt: float):
         """
-        Create a new instance of ThermalResistance from a value in square_meter_kelvins_per_kilowatt.
+        Create a new instance of ThermalResistance from a value in kelvins_per_watt.
 
         
 
-        :param meters: The ThermalResistance value in square_meter_kelvins_per_kilowatt.
-        :type square_meter_kelvins_per_kilowatt: float
+        :param meters: The ThermalResistance value in kelvins_per_watt.
+        :type kelvins_per_watt: float
         :return: A new instance of ThermalResistance.
         :rtype: ThermalResistance
         """
-        return ThermalResistance(square_meter_kelvins_per_kilowatt, ThermalResistanceUnits.SquareMeterKelvinPerKilowatt)
+        return ThermalResistance(kelvins_per_watt, ThermalResistanceUnits.KelvinPerWatt)
 
     
     @staticmethod
-    def from_square_meter_kelvins_per_watt(square_meter_kelvins_per_watt: float):
+    def from_degrees_celsius_per_watt(degrees_celsius_per_watt: float):
         """
-        Create a new instance of ThermalResistance from a value in square_meter_kelvins_per_watt.
+        Create a new instance of ThermalResistance from a value in degrees_celsius_per_watt.
 
         
 
-        :param meters: The ThermalResistance value in square_meter_kelvins_per_watt.
-        :type square_meter_kelvins_per_watt: float
+        :param meters: The ThermalResistance value in degrees_celsius_per_watt.
+        :type degrees_celsius_per_watt: float
         :return: A new instance of ThermalResistance.
         :rtype: ThermalResistance
         """
-        return ThermalResistance(square_meter_kelvins_per_watt, ThermalResistanceUnits.SquareMeterKelvinPerWatt)
-
-    
-    @staticmethod
-    def from_square_meter_degrees_celsius_per_watt(square_meter_degrees_celsius_per_watt: float):
-        """
-        Create a new instance of ThermalResistance from a value in square_meter_degrees_celsius_per_watt.
-
-        
-
-        :param meters: The ThermalResistance value in square_meter_degrees_celsius_per_watt.
-        :type square_meter_degrees_celsius_per_watt: float
-        :return: A new instance of ThermalResistance.
-        :rtype: ThermalResistance
-        """
-        return ThermalResistance(square_meter_degrees_celsius_per_watt, ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt)
-
-    
-    @staticmethod
-    def from_square_centimeter_kelvins_per_watt(square_centimeter_kelvins_per_watt: float):
-        """
-        Create a new instance of ThermalResistance from a value in square_centimeter_kelvins_per_watt.
-
-        
-
-        :param meters: The ThermalResistance value in square_centimeter_kelvins_per_watt.
-        :type square_centimeter_kelvins_per_watt: float
-        :return: A new instance of ThermalResistance.
-        :rtype: ThermalResistance
-        """
-        return ThermalResistance(square_centimeter_kelvins_per_watt, ThermalResistanceUnits.SquareCentimeterKelvinPerWatt)
-
-    
-    @staticmethod
-    def from_square_centimeter_hour_degrees_celsius_per_kilocalorie(square_centimeter_hour_degrees_celsius_per_kilocalorie: float):
-        """
-        Create a new instance of ThermalResistance from a value in square_centimeter_hour_degrees_celsius_per_kilocalorie.
-
-        
-
-        :param meters: The ThermalResistance value in square_centimeter_hour_degrees_celsius_per_kilocalorie.
-        :type square_centimeter_hour_degrees_celsius_per_kilocalorie: float
-        :return: A new instance of ThermalResistance.
-        :rtype: ThermalResistance
-        """
-        return ThermalResistance(square_centimeter_hour_degrees_celsius_per_kilocalorie, ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie)
-
-    
-    @staticmethod
-    def from_hour_square_feet_degrees_fahrenheit_per_btu(hour_square_feet_degrees_fahrenheit_per_btu: float):
-        """
-        Create a new instance of ThermalResistance from a value in hour_square_feet_degrees_fahrenheit_per_btu.
-
-        
-
-        :param meters: The ThermalResistance value in hour_square_feet_degrees_fahrenheit_per_btu.
-        :type hour_square_feet_degrees_fahrenheit_per_btu: float
-        :return: A new instance of ThermalResistance.
-        :rtype: ThermalResistance
-        """
-        return ThermalResistance(hour_square_feet_degrees_fahrenheit_per_btu, ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu)
+        return ThermalResistance(degrees_celsius_per_watt, ThermalResistanceUnits.DegreeCelsiusPerWatt)
 
     
     @property
-    def square_meter_kelvins_per_kilowatt(self) -> float:
+    def kelvins_per_watt(self) -> float:
         """
         
         """
-        if self.__square_meter_kelvins_per_kilowatt != None:
-            return self.__square_meter_kelvins_per_kilowatt
-        self.__square_meter_kelvins_per_kilowatt = self.__convert_from_base(ThermalResistanceUnits.SquareMeterKelvinPerKilowatt)
-        return self.__square_meter_kelvins_per_kilowatt
+        if self.__kelvins_per_watt != None:
+            return self.__kelvins_per_watt
+        self.__kelvins_per_watt = self.__convert_from_base(ThermalResistanceUnits.KelvinPerWatt)
+        return self.__kelvins_per_watt
 
     
     @property
-    def square_meter_kelvins_per_watt(self) -> float:
+    def degrees_celsius_per_watt(self) -> float:
         """
         
         """
-        if self.__square_meter_kelvins_per_watt != None:
-            return self.__square_meter_kelvins_per_watt
-        self.__square_meter_kelvins_per_watt = self.__convert_from_base(ThermalResistanceUnits.SquareMeterKelvinPerWatt)
-        return self.__square_meter_kelvins_per_watt
+        if self.__degrees_celsius_per_watt != None:
+            return self.__degrees_celsius_per_watt
+        self.__degrees_celsius_per_watt = self.__convert_from_base(ThermalResistanceUnits.DegreeCelsiusPerWatt)
+        return self.__degrees_celsius_per_watt
 
     
-    @property
-    def square_meter_degrees_celsius_per_watt(self) -> float:
-        """
-        
-        """
-        if self.__square_meter_degrees_celsius_per_watt != None:
-            return self.__square_meter_degrees_celsius_per_watt
-        self.__square_meter_degrees_celsius_per_watt = self.__convert_from_base(ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt)
-        return self.__square_meter_degrees_celsius_per_watt
-
-    
-    @property
-    def square_centimeter_kelvins_per_watt(self) -> float:
-        """
-        
-        """
-        if self.__square_centimeter_kelvins_per_watt != None:
-            return self.__square_centimeter_kelvins_per_watt
-        self.__square_centimeter_kelvins_per_watt = self.__convert_from_base(ThermalResistanceUnits.SquareCentimeterKelvinPerWatt)
-        return self.__square_centimeter_kelvins_per_watt
-
-    
-    @property
-    def square_centimeter_hour_degrees_celsius_per_kilocalorie(self) -> float:
-        """
-        
-        """
-        if self.__square_centimeter_hour_degrees_celsius_per_kilocalorie != None:
-            return self.__square_centimeter_hour_degrees_celsius_per_kilocalorie
-        self.__square_centimeter_hour_degrees_celsius_per_kilocalorie = self.__convert_from_base(ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie)
-        return self.__square_centimeter_hour_degrees_celsius_per_kilocalorie
-
-    
-    @property
-    def hour_square_feet_degrees_fahrenheit_per_btu(self) -> float:
-        """
-        
-        """
-        if self.__hour_square_feet_degrees_fahrenheit_per_btu != None:
-            return self.__hour_square_feet_degrees_fahrenheit_per_btu
-        self.__hour_square_feet_degrees_fahrenheit_per_btu = self.__convert_from_base(ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu)
-        return self.__hour_square_feet_degrees_fahrenheit_per_btu
-
-    
-    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt, fractional_digits: int = None) -> str:
+    def to_string(self, unit: ThermalResistanceUnits = ThermalResistanceUnits.KelvinPerWatt, fractional_digits: int = None) -> str:
         """
         Format the ThermalResistance to a string.
         
-        Note: the default format for ThermalResistance is SquareMeterKelvinPerKilowatt.
+        Note: the default format for ThermalResistance is KelvinPerWatt.
         To specify the unit format, set the 'unit' parameter.
         
         Args:
-            unit (str): The unit to format the ThermalResistance. Default is 'SquareMeterKelvinPerKilowatt'.
+            unit (str): The unit to format the ThermalResistance. Default is 'KelvinPerWatt'.
             fractional_digits (int, optional): The number of fractional digits to keep.
 
         Returns:
             str: The string format of the Angle.
         """
         
-        if unit == ThermalResistanceUnits.SquareMeterKelvinPerKilowatt:
-            return f"""{super()._truncate_fraction_digits(self.square_meter_kelvins_per_kilowatt, fractional_digits)} m²K/kW"""
+        if unit == ThermalResistanceUnits.KelvinPerWatt:
+            return f"""{super()._truncate_fraction_digits(self.kelvins_per_watt, fractional_digits)} K/W"""
         
-        if unit == ThermalResistanceUnits.SquareMeterKelvinPerWatt:
-            return f"""{super()._truncate_fraction_digits(self.square_meter_kelvins_per_watt, fractional_digits)} m²K/W"""
-        
-        if unit == ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt:
-            return f"""{super()._truncate_fraction_digits(self.square_meter_degrees_celsius_per_watt, fractional_digits)} m²°C/W"""
-        
-        if unit == ThermalResistanceUnits.SquareCentimeterKelvinPerWatt:
-            return f"""{super()._truncate_fraction_digits(self.square_centimeter_kelvins_per_watt, fractional_digits)} cm²K/W"""
-        
-        if unit == ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie:
-            return f"""{super()._truncate_fraction_digits(self.square_centimeter_hour_degrees_celsius_per_kilocalorie, fractional_digits)} cm²Hr°C/kcal"""
-        
-        if unit == ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu:
-            return f"""{super()._truncate_fraction_digits(self.hour_square_feet_degrees_fahrenheit_per_btu, fractional_digits)} Hrft²°F/Btu"""
+        if unit == ThermalResistanceUnits.DegreeCelsiusPerWatt:
+            return f"""{super()._truncate_fraction_digits(self.degrees_celsius_per_watt, fractional_digits)} °C/W"""
         
         return f'{self._value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: ThermalResistanceUnits = ThermalResistanceUnits.SquareMeterKelvinPerKilowatt) -> str:
+    def get_unit_abbreviation(self, unit_abbreviation: ThermalResistanceUnits = ThermalResistanceUnits.KelvinPerWatt) -> str:
         """
         Get ThermalResistance unit abbreviation.
-        Note! the default abbreviation for ThermalResistance is SquareMeterKelvinPerKilowatt.
+        Note! the default abbreviation for ThermalResistance is KelvinPerWatt.
         To specify the unit abbreviation set the 'unit_abbreviation' parameter.
         """
         
-        if unit_abbreviation == ThermalResistanceUnits.SquareMeterKelvinPerKilowatt:
-            return """m²K/kW"""
+        if unit_abbreviation == ThermalResistanceUnits.KelvinPerWatt:
+            return """K/W"""
         
-        if unit_abbreviation == ThermalResistanceUnits.SquareMeterKelvinPerWatt:
-            return """m²K/W"""
-        
-        if unit_abbreviation == ThermalResistanceUnits.SquareMeterDegreeCelsiusPerWatt:
-            return """m²°C/W"""
-        
-        if unit_abbreviation == ThermalResistanceUnits.SquareCentimeterKelvinPerWatt:
-            return """cm²K/W"""
-        
-        if unit_abbreviation == ThermalResistanceUnits.SquareCentimeterHourDegreeCelsiusPerKilocalorie:
-            return """cm²Hr°C/kcal"""
-        
-        if unit_abbreviation == ThermalResistanceUnits.HourSquareFeetDegreeFahrenheitPerBtu:
-            return """Hrft²°F/Btu"""
+        if unit_abbreviation == ThermalResistanceUnits.DegreeCelsiusPerWatt:
+            return """°C/W"""
         

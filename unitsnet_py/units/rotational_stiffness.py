@@ -366,10 +366,10 @@ class RotationalStiffness(AbstractMeasure):
             return (value)
         
         if from_unit == RotationalStiffnessUnits.PoundForceFootPerDegrees:
-            return (value / 77.6826)
+            return (value / (4.4482216152605 * 0.3048 * 180 / math.pi))
         
         if from_unit == RotationalStiffnessUnits.KilopoundForceFootPerDegrees:
-            return (value / 77682.6)
+            return (value / (4.4482216152605e3 * 0.3048 * 180 / math.pi))
         
         if from_unit == RotationalStiffnessUnits.NewtonMillimeterPerDegree:
             return (value / 180 * math.pi * 1000)
@@ -381,7 +381,7 @@ class RotationalStiffness(AbstractMeasure):
             return (value * 1000)
         
         if from_unit == RotationalStiffnessUnits.PoundForceFeetPerRadian:
-            return (value / 1.3558179483314)
+            return (value / (4.4482216152605 * 0.3048))
         
         if from_unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return ((value) / 1000.0)
@@ -470,10 +470,10 @@ class RotationalStiffness(AbstractMeasure):
             return (value)
         
         if to_unit == RotationalStiffnessUnits.PoundForceFootPerDegrees:
-            return (value * 77.6826)
+            return (value * (4.4482216152605 * 0.3048 * 180 / math.pi))
         
         if to_unit == RotationalStiffnessUnits.KilopoundForceFootPerDegrees:
-            return (value * 77682.6)
+            return (value * (4.4482216152605e3 * 0.3048 * 180 / math.pi))
         
         if to_unit == RotationalStiffnessUnits.NewtonMillimeterPerDegree:
             return (value * 180 / math.pi * 0.001)
@@ -485,7 +485,7 @@ class RotationalStiffness(AbstractMeasure):
             return (value * 0.001)
         
         if to_unit == RotationalStiffnessUnits.PoundForceFeetPerRadian:
-            return (value * 1.3558179483314)
+            return (value * 4.4482216152605 * 0.3048)
         
         if to_unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return ((value) * 1000.0)

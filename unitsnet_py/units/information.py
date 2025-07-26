@@ -15,6 +15,11 @@ class InformationUnits(Enum):
             
         """
         
+        Octet = 'Octet'
+        """
+            
+        """
+        
         Bit = 'Bit'
         """
             
@@ -76,6 +81,66 @@ class InformationUnits(Enum):
         """
         
         Exbibyte = 'Exbibyte'
+        """
+            
+        """
+        
+        Kilooctet = 'Kilooctet'
+        """
+            
+        """
+        
+        Megaoctet = 'Megaoctet'
+        """
+            
+        """
+        
+        Gigaoctet = 'Gigaoctet'
+        """
+            
+        """
+        
+        Teraoctet = 'Teraoctet'
+        """
+            
+        """
+        
+        Petaoctet = 'Petaoctet'
+        """
+            
+        """
+        
+        Exaoctet = 'Exaoctet'
+        """
+            
+        """
+        
+        Kibioctet = 'Kibioctet'
+        """
+            
+        """
+        
+        Mebioctet = 'Mebioctet'
+        """
+            
+        """
+        
+        Gibioctet = 'Gibioctet'
+        """
+            
+        """
+        
+        Tebioctet = 'Tebioctet'
+        """
+            
+        """
+        
+        Pebioctet = 'Pebioctet'
+        """
+            
+        """
+        
+        Exbioctet = 'Exbioctet'
         """
             
         """
@@ -208,6 +273,8 @@ class Information(AbstractMeasure):
         
         self.__bytes = None
         
+        self.__octets = None
+        
         self.__bits = None
         
         self.__kilobytes = None
@@ -233,6 +300,30 @@ class Information(AbstractMeasure):
         self.__pebibytes = None
         
         self.__exbibytes = None
+        
+        self.__kilooctets = None
+        
+        self.__megaoctets = None
+        
+        self.__gigaoctets = None
+        
+        self.__teraoctets = None
+        
+        self.__petaoctets = None
+        
+        self.__exaoctets = None
+        
+        self.__kibioctets = None
+        
+        self.__mebioctets = None
+        
+        self.__gibioctets = None
+        
+        self.__tebioctets = None
+        
+        self.__pebioctets = None
+        
+        self.__exbioctets = None
         
         self.__kilobits = None
         
@@ -316,6 +407,9 @@ class Information(AbstractMeasure):
         if from_unit == InformationUnits.Byte:
             return (value / 8)
         
+        if from_unit == InformationUnits.Octet:
+            return (value / 8)
+        
         if from_unit == InformationUnits.Bit:
             return (value)
         
@@ -353,6 +447,42 @@ class Information(AbstractMeasure):
             return ((value / 8) / 1125899906842624)
         
         if from_unit == InformationUnits.Exbibyte:
+            return ((value / 8) / 1152921504606846976)
+        
+        if from_unit == InformationUnits.Kilooctet:
+            return ((value / 8) / 1000.0)
+        
+        if from_unit == InformationUnits.Megaoctet:
+            return ((value / 8) / 1000000.0)
+        
+        if from_unit == InformationUnits.Gigaoctet:
+            return ((value / 8) / 1000000000.0)
+        
+        if from_unit == InformationUnits.Teraoctet:
+            return ((value / 8) / 1000000000000.0)
+        
+        if from_unit == InformationUnits.Petaoctet:
+            return ((value / 8) / 1000000000000000.0)
+        
+        if from_unit == InformationUnits.Exaoctet:
+            return ((value / 8) / 1e+18)
+        
+        if from_unit == InformationUnits.Kibioctet:
+            return ((value / 8) / 1024)
+        
+        if from_unit == InformationUnits.Mebioctet:
+            return ((value / 8) / 1048576)
+        
+        if from_unit == InformationUnits.Gibioctet:
+            return ((value / 8) / 1073741824)
+        
+        if from_unit == InformationUnits.Tebioctet:
+            return ((value / 8) / 1099511627776)
+        
+        if from_unit == InformationUnits.Pebioctet:
+            return ((value / 8) / 1125899906842624)
+        
+        if from_unit == InformationUnits.Exbioctet:
             return ((value / 8) / 1152921504606846976)
         
         if from_unit == InformationUnits.Kilobit:
@@ -399,6 +529,9 @@ class Information(AbstractMeasure):
         if to_unit == InformationUnits.Byte:
             return (value * 8)
         
+        if to_unit == InformationUnits.Octet:
+            return (value * 8)
+        
         if to_unit == InformationUnits.Bit:
             return (value)
         
@@ -436,6 +569,42 @@ class Information(AbstractMeasure):
             return ((value * 8) * 1125899906842624)
         
         if to_unit == InformationUnits.Exbibyte:
+            return ((value * 8) * 1152921504606846976)
+        
+        if to_unit == InformationUnits.Kilooctet:
+            return ((value * 8) * 1000.0)
+        
+        if to_unit == InformationUnits.Megaoctet:
+            return ((value * 8) * 1000000.0)
+        
+        if to_unit == InformationUnits.Gigaoctet:
+            return ((value * 8) * 1000000000.0)
+        
+        if to_unit == InformationUnits.Teraoctet:
+            return ((value * 8) * 1000000000000.0)
+        
+        if to_unit == InformationUnits.Petaoctet:
+            return ((value * 8) * 1000000000000000.0)
+        
+        if to_unit == InformationUnits.Exaoctet:
+            return ((value * 8) * 1e+18)
+        
+        if to_unit == InformationUnits.Kibioctet:
+            return ((value * 8) * 1024)
+        
+        if to_unit == InformationUnits.Mebioctet:
+            return ((value * 8) * 1048576)
+        
+        if to_unit == InformationUnits.Gibioctet:
+            return ((value * 8) * 1073741824)
+        
+        if to_unit == InformationUnits.Tebioctet:
+            return ((value * 8) * 1099511627776)
+        
+        if to_unit == InformationUnits.Pebioctet:
+            return ((value * 8) * 1125899906842624)
+        
+        if to_unit == InformationUnits.Exbioctet:
             return ((value * 8) * 1152921504606846976)
         
         if to_unit == InformationUnits.Kilobit:
@@ -495,6 +664,21 @@ class Information(AbstractMeasure):
         :rtype: Information
         """
         return Information(bytes, InformationUnits.Byte)
+
+    
+    @staticmethod
+    def from_octets(octets: float):
+        """
+        Create a new instance of Information from a value in octets.
+
+        
+
+        :param meters: The Information value in octets.
+        :type octets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(octets, InformationUnits.Octet)
 
     
     @staticmethod
@@ -693,6 +877,186 @@ class Information(AbstractMeasure):
 
     
     @staticmethod
+    def from_kilooctets(kilooctets: float):
+        """
+        Create a new instance of Information from a value in kilooctets.
+
+        
+
+        :param meters: The Information value in kilooctets.
+        :type kilooctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(kilooctets, InformationUnits.Kilooctet)
+
+    
+    @staticmethod
+    def from_megaoctets(megaoctets: float):
+        """
+        Create a new instance of Information from a value in megaoctets.
+
+        
+
+        :param meters: The Information value in megaoctets.
+        :type megaoctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(megaoctets, InformationUnits.Megaoctet)
+
+    
+    @staticmethod
+    def from_gigaoctets(gigaoctets: float):
+        """
+        Create a new instance of Information from a value in gigaoctets.
+
+        
+
+        :param meters: The Information value in gigaoctets.
+        :type gigaoctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(gigaoctets, InformationUnits.Gigaoctet)
+
+    
+    @staticmethod
+    def from_teraoctets(teraoctets: float):
+        """
+        Create a new instance of Information from a value in teraoctets.
+
+        
+
+        :param meters: The Information value in teraoctets.
+        :type teraoctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(teraoctets, InformationUnits.Teraoctet)
+
+    
+    @staticmethod
+    def from_petaoctets(petaoctets: float):
+        """
+        Create a new instance of Information from a value in petaoctets.
+
+        
+
+        :param meters: The Information value in petaoctets.
+        :type petaoctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(petaoctets, InformationUnits.Petaoctet)
+
+    
+    @staticmethod
+    def from_exaoctets(exaoctets: float):
+        """
+        Create a new instance of Information from a value in exaoctets.
+
+        
+
+        :param meters: The Information value in exaoctets.
+        :type exaoctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(exaoctets, InformationUnits.Exaoctet)
+
+    
+    @staticmethod
+    def from_kibioctets(kibioctets: float):
+        """
+        Create a new instance of Information from a value in kibioctets.
+
+        
+
+        :param meters: The Information value in kibioctets.
+        :type kibioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(kibioctets, InformationUnits.Kibioctet)
+
+    
+    @staticmethod
+    def from_mebioctets(mebioctets: float):
+        """
+        Create a new instance of Information from a value in mebioctets.
+
+        
+
+        :param meters: The Information value in mebioctets.
+        :type mebioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(mebioctets, InformationUnits.Mebioctet)
+
+    
+    @staticmethod
+    def from_gibioctets(gibioctets: float):
+        """
+        Create a new instance of Information from a value in gibioctets.
+
+        
+
+        :param meters: The Information value in gibioctets.
+        :type gibioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(gibioctets, InformationUnits.Gibioctet)
+
+    
+    @staticmethod
+    def from_tebioctets(tebioctets: float):
+        """
+        Create a new instance of Information from a value in tebioctets.
+
+        
+
+        :param meters: The Information value in tebioctets.
+        :type tebioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(tebioctets, InformationUnits.Tebioctet)
+
+    
+    @staticmethod
+    def from_pebioctets(pebioctets: float):
+        """
+        Create a new instance of Information from a value in pebioctets.
+
+        
+
+        :param meters: The Information value in pebioctets.
+        :type pebioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(pebioctets, InformationUnits.Pebioctet)
+
+    
+    @staticmethod
+    def from_exbioctets(exbioctets: float):
+        """
+        Create a new instance of Information from a value in exbioctets.
+
+        
+
+        :param meters: The Information value in exbioctets.
+        :type exbioctets: float
+        :return: A new instance of Information.
+        :rtype: Information
+        """
+        return Information(exbioctets, InformationUnits.Exbioctet)
+
+    
+    @staticmethod
     def from_kilobits(kilobits: float):
         """
         Create a new instance of Information from a value in kilobits.
@@ -884,6 +1248,17 @@ class Information(AbstractMeasure):
 
     
     @property
+    def octets(self) -> float:
+        """
+        
+        """
+        if self.__octets != None:
+            return self.__octets
+        self.__octets = self.__convert_from_base(InformationUnits.Octet)
+        return self.__octets
+
+    
+    @property
     def bits(self) -> float:
         """
         
@@ -1024,6 +1399,138 @@ class Information(AbstractMeasure):
             return self.__exbibytes
         self.__exbibytes = self.__convert_from_base(InformationUnits.Exbibyte)
         return self.__exbibytes
+
+    
+    @property
+    def kilooctets(self) -> float:
+        """
+        
+        """
+        if self.__kilooctets != None:
+            return self.__kilooctets
+        self.__kilooctets = self.__convert_from_base(InformationUnits.Kilooctet)
+        return self.__kilooctets
+
+    
+    @property
+    def megaoctets(self) -> float:
+        """
+        
+        """
+        if self.__megaoctets != None:
+            return self.__megaoctets
+        self.__megaoctets = self.__convert_from_base(InformationUnits.Megaoctet)
+        return self.__megaoctets
+
+    
+    @property
+    def gigaoctets(self) -> float:
+        """
+        
+        """
+        if self.__gigaoctets != None:
+            return self.__gigaoctets
+        self.__gigaoctets = self.__convert_from_base(InformationUnits.Gigaoctet)
+        return self.__gigaoctets
+
+    
+    @property
+    def teraoctets(self) -> float:
+        """
+        
+        """
+        if self.__teraoctets != None:
+            return self.__teraoctets
+        self.__teraoctets = self.__convert_from_base(InformationUnits.Teraoctet)
+        return self.__teraoctets
+
+    
+    @property
+    def petaoctets(self) -> float:
+        """
+        
+        """
+        if self.__petaoctets != None:
+            return self.__petaoctets
+        self.__petaoctets = self.__convert_from_base(InformationUnits.Petaoctet)
+        return self.__petaoctets
+
+    
+    @property
+    def exaoctets(self) -> float:
+        """
+        
+        """
+        if self.__exaoctets != None:
+            return self.__exaoctets
+        self.__exaoctets = self.__convert_from_base(InformationUnits.Exaoctet)
+        return self.__exaoctets
+
+    
+    @property
+    def kibioctets(self) -> float:
+        """
+        
+        """
+        if self.__kibioctets != None:
+            return self.__kibioctets
+        self.__kibioctets = self.__convert_from_base(InformationUnits.Kibioctet)
+        return self.__kibioctets
+
+    
+    @property
+    def mebioctets(self) -> float:
+        """
+        
+        """
+        if self.__mebioctets != None:
+            return self.__mebioctets
+        self.__mebioctets = self.__convert_from_base(InformationUnits.Mebioctet)
+        return self.__mebioctets
+
+    
+    @property
+    def gibioctets(self) -> float:
+        """
+        
+        """
+        if self.__gibioctets != None:
+            return self.__gibioctets
+        self.__gibioctets = self.__convert_from_base(InformationUnits.Gibioctet)
+        return self.__gibioctets
+
+    
+    @property
+    def tebioctets(self) -> float:
+        """
+        
+        """
+        if self.__tebioctets != None:
+            return self.__tebioctets
+        self.__tebioctets = self.__convert_from_base(InformationUnits.Tebioctet)
+        return self.__tebioctets
+
+    
+    @property
+    def pebioctets(self) -> float:
+        """
+        
+        """
+        if self.__pebioctets != None:
+            return self.__pebioctets
+        self.__pebioctets = self.__convert_from_base(InformationUnits.Pebioctet)
+        return self.__pebioctets
+
+    
+    @property
+    def exbioctets(self) -> float:
+        """
+        
+        """
+        if self.__exbioctets != None:
+            return self.__exbioctets
+        self.__exbioctets = self.__convert_from_base(InformationUnits.Exbioctet)
+        return self.__exbioctets
 
     
     @property
@@ -1176,6 +1683,9 @@ class Information(AbstractMeasure):
         if unit == InformationUnits.Byte:
             return f"""{super()._truncate_fraction_digits(self.bytes, fractional_digits)} B"""
         
+        if unit == InformationUnits.Octet:
+            return f"""{super()._truncate_fraction_digits(self.octets, fractional_digits)} o"""
+        
         if unit == InformationUnits.Bit:
             return f"""{super()._truncate_fraction_digits(self.bits, fractional_digits)} b"""
         
@@ -1214,6 +1724,42 @@ class Information(AbstractMeasure):
         
         if unit == InformationUnits.Exbibyte:
             return f"""{super()._truncate_fraction_digits(self.exbibytes, fractional_digits)} EiBB"""
+        
+        if unit == InformationUnits.Kilooctet:
+            return f"""{super()._truncate_fraction_digits(self.kilooctets, fractional_digits)} ko"""
+        
+        if unit == InformationUnits.Megaoctet:
+            return f"""{super()._truncate_fraction_digits(self.megaoctets, fractional_digits)} Mo"""
+        
+        if unit == InformationUnits.Gigaoctet:
+            return f"""{super()._truncate_fraction_digits(self.gigaoctets, fractional_digits)} Go"""
+        
+        if unit == InformationUnits.Teraoctet:
+            return f"""{super()._truncate_fraction_digits(self.teraoctets, fractional_digits)} To"""
+        
+        if unit == InformationUnits.Petaoctet:
+            return f"""{super()._truncate_fraction_digits(self.petaoctets, fractional_digits)} Po"""
+        
+        if unit == InformationUnits.Exaoctet:
+            return f"""{super()._truncate_fraction_digits(self.exaoctets, fractional_digits)} Eo"""
+        
+        if unit == InformationUnits.Kibioctet:
+            return f"""{super()._truncate_fraction_digits(self.kibioctets, fractional_digits)} KiBo"""
+        
+        if unit == InformationUnits.Mebioctet:
+            return f"""{super()._truncate_fraction_digits(self.mebioctets, fractional_digits)} MiBo"""
+        
+        if unit == InformationUnits.Gibioctet:
+            return f"""{super()._truncate_fraction_digits(self.gibioctets, fractional_digits)} GiBo"""
+        
+        if unit == InformationUnits.Tebioctet:
+            return f"""{super()._truncate_fraction_digits(self.tebioctets, fractional_digits)} TiBo"""
+        
+        if unit == InformationUnits.Pebioctet:
+            return f"""{super()._truncate_fraction_digits(self.pebioctets, fractional_digits)} PiBo"""
+        
+        if unit == InformationUnits.Exbioctet:
+            return f"""{super()._truncate_fraction_digits(self.exbioctets, fractional_digits)} EiBo"""
         
         if unit == InformationUnits.Kilobit:
             return f"""{super()._truncate_fraction_digits(self.kilobits, fractional_digits)} kb"""
@@ -1264,6 +1810,9 @@ class Information(AbstractMeasure):
         if unit_abbreviation == InformationUnits.Byte:
             return """B"""
         
+        if unit_abbreviation == InformationUnits.Octet:
+            return """o"""
+        
         if unit_abbreviation == InformationUnits.Bit:
             return """b"""
         
@@ -1302,6 +1851,42 @@ class Information(AbstractMeasure):
         
         if unit_abbreviation == InformationUnits.Exbibyte:
             return """EiBB"""
+        
+        if unit_abbreviation == InformationUnits.Kilooctet:
+            return """ko"""
+        
+        if unit_abbreviation == InformationUnits.Megaoctet:
+            return """Mo"""
+        
+        if unit_abbreviation == InformationUnits.Gigaoctet:
+            return """Go"""
+        
+        if unit_abbreviation == InformationUnits.Teraoctet:
+            return """To"""
+        
+        if unit_abbreviation == InformationUnits.Petaoctet:
+            return """Po"""
+        
+        if unit_abbreviation == InformationUnits.Exaoctet:
+            return """Eo"""
+        
+        if unit_abbreviation == InformationUnits.Kibioctet:
+            return """KiBo"""
+        
+        if unit_abbreviation == InformationUnits.Mebioctet:
+            return """MiBo"""
+        
+        if unit_abbreviation == InformationUnits.Gibioctet:
+            return """GiBo"""
+        
+        if unit_abbreviation == InformationUnits.Tebioctet:
+            return """TiBo"""
+        
+        if unit_abbreviation == InformationUnits.Pebioctet:
+            return """PiBo"""
+        
+        if unit_abbreviation == InformationUnits.Exbioctet:
+            return """EiBo"""
         
         if unit_abbreviation == InformationUnits.Kilobit:
             return """kb"""

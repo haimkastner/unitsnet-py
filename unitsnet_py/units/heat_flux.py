@@ -261,31 +261,31 @@ class HeatFlux(AbstractMeasure):
             return (value)
         
         if from_unit == HeatFluxUnits.WattPerSquareInch:
-            return (value / 1.5500031e3)
+            return (value * (2.54e-2 * 2.54e-2))
         
         if from_unit == HeatFluxUnits.WattPerSquareFoot:
-            return (value / 1.07639e1)
+            return (value * (0.3048 * 0.3048))
         
         if from_unit == HeatFluxUnits.BtuPerSecondSquareInch:
-            return (value / 1.63533984e6)
+            return (value * (2.54e-2 * 2.54e-2) / 1055.05585262)
         
         if from_unit == HeatFluxUnits.BtuPerSecondSquareFoot:
-            return (value / 1.13565267e4)
+            return (value * (0.3048 * 0.3048) / 1055.05585262)
         
         if from_unit == HeatFluxUnits.BtuPerMinuteSquareFoot:
-            return (value / 1.89275445e2)
+            return (value * (0.3048 * 0.3048 * 60) / 1055.05585262)
         
         if from_unit == HeatFluxUnits.BtuPerHourSquareFoot:
-            return (value / 3.15459075)
+            return (value * (0.3048 * 0.3048 * 3600) / 1055.05585262)
         
         if from_unit == HeatFluxUnits.CaloriePerSecondSquareCentimeter:
-            return (value / 4.1868e4)
+            return (value / 4.184e4)
         
         if from_unit == HeatFluxUnits.KilocaloriePerHourSquareMeter:
-            return (value / 1.163)
+            return (value * 3600 / 4.184e3)
         
         if from_unit == HeatFluxUnits.PoundForcePerFootSecond:
-            return (value / 1.459390293720636e1)
+            return (value * 9.290304e-2 / 1.3558179483314004)
         
         if from_unit == HeatFluxUnits.PoundPerSecondCubed:
             return (value / 4.5359237e-1)
@@ -309,7 +309,7 @@ class HeatFlux(AbstractMeasure):
             return ((value) / 1000.0)
         
         if from_unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return ((value / 4.1868e4) / 1000.0)
+            return ((value / 4.184e4) / 1000.0)
         
         return None
 
@@ -320,31 +320,31 @@ class HeatFlux(AbstractMeasure):
             return (value)
         
         if to_unit == HeatFluxUnits.WattPerSquareInch:
-            return (value * 1.5500031e3)
+            return (value / (2.54e-2 * 2.54e-2))
         
         if to_unit == HeatFluxUnits.WattPerSquareFoot:
-            return (value * 1.07639e1)
+            return (value / (0.3048 * 0.3048))
         
         if to_unit == HeatFluxUnits.BtuPerSecondSquareInch:
-            return (value * 1.63533984e6)
+            return (value * 1055.05585262 / (2.54e-2 * 2.54e-2))
         
         if to_unit == HeatFluxUnits.BtuPerSecondSquareFoot:
-            return (value * 1.13565267e4)
+            return (value * 1055.05585262 / (0.3048 * 0.3048))
         
         if to_unit == HeatFluxUnits.BtuPerMinuteSquareFoot:
-            return (value * 1.89275445e2)
+            return (value * 1055.05585262 / (0.3048 * 0.3048 * 60))
         
         if to_unit == HeatFluxUnits.BtuPerHourSquareFoot:
-            return (value * 3.15459075)
+            return (value * 1055.05585262 / (0.3048 * 0.3048 * 3600))
         
         if to_unit == HeatFluxUnits.CaloriePerSecondSquareCentimeter:
-            return (value * 4.1868e4)
+            return (value * 4.184e4)
         
         if to_unit == HeatFluxUnits.KilocaloriePerHourSquareMeter:
-            return (value * 1.163)
+            return (value * 4.184e3 / 3600)
         
         if to_unit == HeatFluxUnits.PoundForcePerFootSecond:
-            return (value * 1.459390293720636e1)
+            return (value * 1.3558179483314004 / 9.290304e-2)
         
         if to_unit == HeatFluxUnits.PoundPerSecondCubed:
             return (value * 4.5359237e-1)
@@ -368,7 +368,7 @@ class HeatFlux(AbstractMeasure):
             return ((value) * 1000.0)
         
         if to_unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return ((value * 4.1868e4) * 1000.0)
+            return ((value * 4.184e4) * 1000.0)
         
         return None
 
@@ -871,22 +871,22 @@ class HeatFlux(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.watts_per_square_foot, fractional_digits)} W/ft²"""
         
         if unit == HeatFluxUnits.BtuPerSecondSquareInch:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_inch, fractional_digits)} BTU/s·in²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_inch, fractional_digits)} BTU/(s·in²)"""
         
         if unit == HeatFluxUnits.BtuPerSecondSquareFoot:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_foot, fractional_digits)} BTU/s·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_foot, fractional_digits)} BTU/(s·ft²)"""
         
         if unit == HeatFluxUnits.BtuPerMinuteSquareFoot:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_minute_square_foot, fractional_digits)} BTU/min·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_minute_square_foot, fractional_digits)} BTU/(min·ft²)"""
         
         if unit == HeatFluxUnits.BtuPerHourSquareFoot:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot, fractional_digits)} BTU/h·ft²"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot, fractional_digits)} BTU/(h·ft²)"""
         
         if unit == HeatFluxUnits.CaloriePerSecondSquareCentimeter:
-            return f"""{super()._truncate_fraction_digits(self.calories_per_second_square_centimeter, fractional_digits)} cal/s·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_second_square_centimeter, fractional_digits)} cal/(s·cm²)"""
         
         if unit == HeatFluxUnits.KilocaloriePerHourSquareMeter:
-            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter, fractional_digits)} kcal/h·m²"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter, fractional_digits)} kcal/(h·m²)"""
         
         if unit == HeatFluxUnits.PoundForcePerFootSecond:
             return f"""{super()._truncate_fraction_digits(self.pounds_force_per_foot_second, fractional_digits)} lbf/(ft·s)"""
@@ -913,7 +913,7 @@ class HeatFlux(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.kilowatts_per_square_meter, fractional_digits)} kW/m²"""
         
         if unit == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_second_square_centimeter, fractional_digits)} kcal/s·cm²"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_second_square_centimeter, fractional_digits)} kcal/(s·cm²)"""
         
         return f'{self._value}'
 
@@ -935,22 +935,22 @@ class HeatFlux(AbstractMeasure):
             return """W/ft²"""
         
         if unit_abbreviation == HeatFluxUnits.BtuPerSecondSquareInch:
-            return """BTU/s·in²"""
+            return """BTU/(s·in²)"""
         
         if unit_abbreviation == HeatFluxUnits.BtuPerSecondSquareFoot:
-            return """BTU/s·ft²"""
+            return """BTU/(s·ft²)"""
         
         if unit_abbreviation == HeatFluxUnits.BtuPerMinuteSquareFoot:
-            return """BTU/min·ft²"""
+            return """BTU/(min·ft²)"""
         
         if unit_abbreviation == HeatFluxUnits.BtuPerHourSquareFoot:
-            return """BTU/h·ft²"""
+            return """BTU/(h·ft²)"""
         
         if unit_abbreviation == HeatFluxUnits.CaloriePerSecondSquareCentimeter:
-            return """cal/s·cm²"""
+            return """cal/(s·cm²)"""
         
         if unit_abbreviation == HeatFluxUnits.KilocaloriePerHourSquareMeter:
-            return """kcal/h·m²"""
+            return """kcal/(h·m²)"""
         
         if unit_abbreviation == HeatFluxUnits.PoundForcePerFootSecond:
             return """lbf/(ft·s)"""
@@ -977,5 +977,5 @@ class HeatFlux(AbstractMeasure):
             return """kW/m²"""
         
         if unit_abbreviation == HeatFluxUnits.KilocaloriePerSecondSquareCentimeter:
-            return """kcal/s·cm²"""
+            return """kcal/(s·cm²)"""
         

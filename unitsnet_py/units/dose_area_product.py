@@ -30,6 +30,11 @@ class DoseAreaProductUnits(Enum):
             
         """
         
+        GraySquareMicrometer = 'GraySquareMicrometer'
+        """
+            
+        """
+        
         MicrograySquareMeter = 'MicrograySquareMeter'
         """
             
@@ -110,6 +115,26 @@ class DoseAreaProductUnits(Enum):
             
         """
         
+        MicrograySquareMicrometer = 'MicrograySquareMicrometer'
+        """
+            
+        """
+        
+        MilligraySquareMicrometer = 'MilligraySquareMicrometer'
+        """
+            
+        """
+        
+        CentigraySquareMicrometer = 'CentigraySquareMicrometer'
+        """
+            
+        """
+        
+        DecigraySquareMicrometer = 'DecigraySquareMicrometer'
+        """
+            
+        """
+        
 
 class DoseAreaProductDto:
     """
@@ -184,6 +209,8 @@ class DoseAreaProduct(AbstractMeasure):
         
         self.__gray_square_millimeters = None
         
+        self.__gray_square_micrometers = None
+        
         self.__microgray_square_meters = None
         
         self.__milligray_square_meters = None
@@ -215,6 +242,14 @@ class DoseAreaProduct(AbstractMeasure):
         self.__centigray_square_millimeters = None
         
         self.__decigray_square_millimeters = None
+        
+        self.__microgray_square_micrometers = None
+        
+        self.__milligray_square_micrometers = None
+        
+        self.__centigray_square_micrometers = None
+        
+        self.__decigray_square_micrometers = None
         
 
     def convert(self, unit: DoseAreaProductUnits) -> float:
@@ -283,6 +318,9 @@ class DoseAreaProduct(AbstractMeasure):
         if from_unit == DoseAreaProductUnits.GraySquareMillimeter:
             return (value * 1000000)
         
+        if from_unit == DoseAreaProductUnits.GraySquareMicrometer:
+            return (value * 1000000000000)
+        
         if from_unit == DoseAreaProductUnits.MicrograySquareMeter:
             return ((value) / 1e-06)
         
@@ -331,6 +369,18 @@ class DoseAreaProduct(AbstractMeasure):
         if from_unit == DoseAreaProductUnits.DecigraySquareMillimeter:
             return ((value * 1000000) / 0.1)
         
+        if from_unit == DoseAreaProductUnits.MicrograySquareMicrometer:
+            return ((value * 1000000000000) / 1e-06)
+        
+        if from_unit == DoseAreaProductUnits.MilligraySquareMicrometer:
+            return ((value * 1000000000000) / 0.001)
+        
+        if from_unit == DoseAreaProductUnits.CentigraySquareMicrometer:
+            return ((value * 1000000000000) / 0.01)
+        
+        if from_unit == DoseAreaProductUnits.DecigraySquareMicrometer:
+            return ((value * 1000000000000) / 0.1)
+        
         return None
 
 
@@ -347,6 +397,9 @@ class DoseAreaProduct(AbstractMeasure):
         
         if to_unit == DoseAreaProductUnits.GraySquareMillimeter:
             return (value / 1000000)
+        
+        if to_unit == DoseAreaProductUnits.GraySquareMicrometer:
+            return (value / 1000000000000)
         
         if to_unit == DoseAreaProductUnits.MicrograySquareMeter:
             return ((value) * 1e-06)
@@ -395,6 +448,18 @@ class DoseAreaProduct(AbstractMeasure):
         
         if to_unit == DoseAreaProductUnits.DecigraySquareMillimeter:
             return ((value / 1000000) * 0.1)
+        
+        if to_unit == DoseAreaProductUnits.MicrograySquareMicrometer:
+            return ((value / 1000000000000) * 1e-06)
+        
+        if to_unit == DoseAreaProductUnits.MilligraySquareMicrometer:
+            return ((value / 1000000000000) * 0.001)
+        
+        if to_unit == DoseAreaProductUnits.CentigraySquareMicrometer:
+            return ((value / 1000000000000) * 0.01)
+        
+        if to_unit == DoseAreaProductUnits.DecigraySquareMicrometer:
+            return ((value / 1000000000000) * 0.1)
         
         return None
 
@@ -462,6 +527,21 @@ class DoseAreaProduct(AbstractMeasure):
         :rtype: DoseAreaProduct
         """
         return DoseAreaProduct(gray_square_millimeters, DoseAreaProductUnits.GraySquareMillimeter)
+
+    
+    @staticmethod
+    def from_gray_square_micrometers(gray_square_micrometers: float):
+        """
+        Create a new instance of DoseAreaProduct from a value in gray_square_micrometers.
+
+        
+
+        :param meters: The DoseAreaProduct value in gray_square_micrometers.
+        :type gray_square_micrometers: float
+        :return: A new instance of DoseAreaProduct.
+        :rtype: DoseAreaProduct
+        """
+        return DoseAreaProduct(gray_square_micrometers, DoseAreaProductUnits.GraySquareMicrometer)
 
     
     @staticmethod
@@ -704,6 +784,66 @@ class DoseAreaProduct(AbstractMeasure):
         return DoseAreaProduct(decigray_square_millimeters, DoseAreaProductUnits.DecigraySquareMillimeter)
 
     
+    @staticmethod
+    def from_microgray_square_micrometers(microgray_square_micrometers: float):
+        """
+        Create a new instance of DoseAreaProduct from a value in microgray_square_micrometers.
+
+        
+
+        :param meters: The DoseAreaProduct value in microgray_square_micrometers.
+        :type microgray_square_micrometers: float
+        :return: A new instance of DoseAreaProduct.
+        :rtype: DoseAreaProduct
+        """
+        return DoseAreaProduct(microgray_square_micrometers, DoseAreaProductUnits.MicrograySquareMicrometer)
+
+    
+    @staticmethod
+    def from_milligray_square_micrometers(milligray_square_micrometers: float):
+        """
+        Create a new instance of DoseAreaProduct from a value in milligray_square_micrometers.
+
+        
+
+        :param meters: The DoseAreaProduct value in milligray_square_micrometers.
+        :type milligray_square_micrometers: float
+        :return: A new instance of DoseAreaProduct.
+        :rtype: DoseAreaProduct
+        """
+        return DoseAreaProduct(milligray_square_micrometers, DoseAreaProductUnits.MilligraySquareMicrometer)
+
+    
+    @staticmethod
+    def from_centigray_square_micrometers(centigray_square_micrometers: float):
+        """
+        Create a new instance of DoseAreaProduct from a value in centigray_square_micrometers.
+
+        
+
+        :param meters: The DoseAreaProduct value in centigray_square_micrometers.
+        :type centigray_square_micrometers: float
+        :return: A new instance of DoseAreaProduct.
+        :rtype: DoseAreaProduct
+        """
+        return DoseAreaProduct(centigray_square_micrometers, DoseAreaProductUnits.CentigraySquareMicrometer)
+
+    
+    @staticmethod
+    def from_decigray_square_micrometers(decigray_square_micrometers: float):
+        """
+        Create a new instance of DoseAreaProduct from a value in decigray_square_micrometers.
+
+        
+
+        :param meters: The DoseAreaProduct value in decigray_square_micrometers.
+        :type decigray_square_micrometers: float
+        :return: A new instance of DoseAreaProduct.
+        :rtype: DoseAreaProduct
+        """
+        return DoseAreaProduct(decigray_square_micrometers, DoseAreaProductUnits.DecigraySquareMicrometer)
+
+    
     @property
     def gray_square_meters(self) -> float:
         """
@@ -746,6 +886,17 @@ class DoseAreaProduct(AbstractMeasure):
             return self.__gray_square_millimeters
         self.__gray_square_millimeters = self.__convert_from_base(DoseAreaProductUnits.GraySquareMillimeter)
         return self.__gray_square_millimeters
+
+    
+    @property
+    def gray_square_micrometers(self) -> float:
+        """
+        
+        """
+        if self.__gray_square_micrometers != None:
+            return self.__gray_square_micrometers
+        self.__gray_square_micrometers = self.__convert_from_base(DoseAreaProductUnits.GraySquareMicrometer)
+        return self.__gray_square_micrometers
 
     
     @property
@@ -924,6 +1075,50 @@ class DoseAreaProduct(AbstractMeasure):
         return self.__decigray_square_millimeters
 
     
+    @property
+    def microgray_square_micrometers(self) -> float:
+        """
+        
+        """
+        if self.__microgray_square_micrometers != None:
+            return self.__microgray_square_micrometers
+        self.__microgray_square_micrometers = self.__convert_from_base(DoseAreaProductUnits.MicrograySquareMicrometer)
+        return self.__microgray_square_micrometers
+
+    
+    @property
+    def milligray_square_micrometers(self) -> float:
+        """
+        
+        """
+        if self.__milligray_square_micrometers != None:
+            return self.__milligray_square_micrometers
+        self.__milligray_square_micrometers = self.__convert_from_base(DoseAreaProductUnits.MilligraySquareMicrometer)
+        return self.__milligray_square_micrometers
+
+    
+    @property
+    def centigray_square_micrometers(self) -> float:
+        """
+        
+        """
+        if self.__centigray_square_micrometers != None:
+            return self.__centigray_square_micrometers
+        self.__centigray_square_micrometers = self.__convert_from_base(DoseAreaProductUnits.CentigraySquareMicrometer)
+        return self.__centigray_square_micrometers
+
+    
+    @property
+    def decigray_square_micrometers(self) -> float:
+        """
+        
+        """
+        if self.__decigray_square_micrometers != None:
+            return self.__decigray_square_micrometers
+        self.__decigray_square_micrometers = self.__convert_from_base(DoseAreaProductUnits.DecigraySquareMicrometer)
+        return self.__decigray_square_micrometers
+
+    
     def to_string(self, unit: DoseAreaProductUnits = DoseAreaProductUnits.GraySquareMeter, fractional_digits: int = None) -> str:
         """
         Format the DoseAreaProduct to a string.
@@ -950,6 +1145,9 @@ class DoseAreaProduct(AbstractMeasure):
         
         if unit == DoseAreaProductUnits.GraySquareMillimeter:
             return f"""{super()._truncate_fraction_digits(self.gray_square_millimeters, fractional_digits)} Gy·mm²"""
+        
+        if unit == DoseAreaProductUnits.GraySquareMicrometer:
+            return f"""{super()._truncate_fraction_digits(self.gray_square_micrometers, fractional_digits)} Gy·μm²"""
         
         if unit == DoseAreaProductUnits.MicrograySquareMeter:
             return f"""{super()._truncate_fraction_digits(self.microgray_square_meters, fractional_digits)} μGy·m²"""
@@ -999,6 +1197,18 @@ class DoseAreaProduct(AbstractMeasure):
         if unit == DoseAreaProductUnits.DecigraySquareMillimeter:
             return f"""{super()._truncate_fraction_digits(self.decigray_square_millimeters, fractional_digits)} dGy·mm²"""
         
+        if unit == DoseAreaProductUnits.MicrograySquareMicrometer:
+            return f"""{super()._truncate_fraction_digits(self.microgray_square_micrometers, fractional_digits)} μGy·μm²"""
+        
+        if unit == DoseAreaProductUnits.MilligraySquareMicrometer:
+            return f"""{super()._truncate_fraction_digits(self.milligray_square_micrometers, fractional_digits)} mGy·μm²"""
+        
+        if unit == DoseAreaProductUnits.CentigraySquareMicrometer:
+            return f"""{super()._truncate_fraction_digits(self.centigray_square_micrometers, fractional_digits)} cGy·μm²"""
+        
+        if unit == DoseAreaProductUnits.DecigraySquareMicrometer:
+            return f"""{super()._truncate_fraction_digits(self.decigray_square_micrometers, fractional_digits)} dGy·μm²"""
+        
         return f'{self._value}'
 
 
@@ -1020,6 +1230,9 @@ class DoseAreaProduct(AbstractMeasure):
         
         if unit_abbreviation == DoseAreaProductUnits.GraySquareMillimeter:
             return """Gy·mm²"""
+        
+        if unit_abbreviation == DoseAreaProductUnits.GraySquareMicrometer:
+            return """Gy·μm²"""
         
         if unit_abbreviation == DoseAreaProductUnits.MicrograySquareMeter:
             return """μGy·m²"""
@@ -1068,4 +1281,16 @@ class DoseAreaProduct(AbstractMeasure):
         
         if unit_abbreviation == DoseAreaProductUnits.DecigraySquareMillimeter:
             return """dGy·mm²"""
+        
+        if unit_abbreviation == DoseAreaProductUnits.MicrograySquareMicrometer:
+            return """μGy·μm²"""
+        
+        if unit_abbreviation == DoseAreaProductUnits.MilligraySquareMicrometer:
+            return """mGy·μm²"""
+        
+        if unit_abbreviation == DoseAreaProductUnits.CentigraySquareMicrometer:
+            return """cGy·μm²"""
+        
+        if unit_abbreviation == DoseAreaProductUnits.DecigraySquareMicrometer:
+            return """dGy·μm²"""
         

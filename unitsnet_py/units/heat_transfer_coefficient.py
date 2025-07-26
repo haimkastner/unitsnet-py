@@ -173,13 +173,13 @@ class HeatTransferCoefficient(AbstractMeasure):
             return (value)
         
         if from_unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
-            return (value / 5.6782633411134878)
+            return (value / ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8))
         
         if from_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
-            return ((value / 4.1868) * 3600)
+            return ((value / 4.184) * 3600)
         
         if from_unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return (((value / 4.1868) * 3600) / 1000.0)
+            return (((value / 4.184) * 3600) / 1000.0)
         
         return None
 
@@ -193,13 +193,13 @@ class HeatTransferCoefficient(AbstractMeasure):
             return (value)
         
         if to_unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
-            return (value * 5.6782633411134878)
+            return (value * ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8))
         
         if to_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
-            return ((value * 4.1868) / 3600)
+            return ((value * 4.184) / 3600)
         
         if to_unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return (((value * 4.1868) / 3600) * 1000.0)
+            return (((value * 4.184) / 3600) * 1000.0)
         
         return None
 
@@ -355,19 +355,19 @@ class HeatTransferCoefficient(AbstractMeasure):
         """
         
         if unit == HeatTransferCoefficientUnits.WattPerSquareMeterKelvin:
-            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_kelvin, fractional_digits)} W/m²·K"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_kelvin, fractional_digits)} W/(m²·K)"""
         
         if unit == HeatTransferCoefficientUnits.WattPerSquareMeterCelsius:
-            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_celsius, fractional_digits)} W/m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_square_meter_celsius, fractional_digits)} W/(m²·°C)"""
         
         if unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot_degree_fahrenheit, fractional_digits)} Btu/h·ft²·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot_degree_fahrenheit, fractional_digits)} Btu/(h·ft²·°F)"""
         
         if unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.calories_per_hour_square_meter_degree_celsius, fractional_digits)} kcal/h·m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_hour_square_meter_degree_celsius, fractional_digits)} kcal/(h·m²·°C)"""
         
         if unit == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter_degree_celsius, fractional_digits)} kkcal/h·m²·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_hour_square_meter_degree_celsius, fractional_digits)} kkcal/(h·m²·°C)"""
         
         return f'{self._value}'
 
@@ -380,17 +380,17 @@ class HeatTransferCoefficient(AbstractMeasure):
         """
         
         if unit_abbreviation == HeatTransferCoefficientUnits.WattPerSquareMeterKelvin:
-            return """W/m²·K"""
+            return """W/(m²·K)"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.WattPerSquareMeterCelsius:
-            return """W/m²·°C"""
+            return """W/(m²·°C)"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
-            return """Btu/h·ft²·°F"""
+            return """Btu/(h·ft²·°F)"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
-            return """kcal/h·m²·°C"""
+            return """kcal/(h·m²·°C)"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.KilocaloriePerHourSquareMeterDegreeCelsius:
-            return """kkcal/h·m²·°C"""
+            return """kkcal/(h·m²·°C)"""
         

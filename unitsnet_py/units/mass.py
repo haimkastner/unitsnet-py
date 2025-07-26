@@ -17,7 +17,7 @@ class MassUnits(Enum):
         
         Tonne = 'Tonne'
         """
-            
+            The tonne is a unit of mass equal to 1,000 kilograms. It is a non-SI unit accepted for use with SI. It is also referred to as a metric ton in the United States to distinguish it from the non-metric units of the short ton (United States customary units) and the long ton (British imperial units). It is equivalent to approximately 2,204.6 pounds, 1.102 short tons, and 0.984 long tons.
         """
         
         ShortTon = 'ShortTon'
@@ -327,10 +327,10 @@ class Mass(AbstractMeasure):
             return (value / 1e3)
         
         if from_unit == MassUnits.ShortTon:
-            return (value / 9.0718474e2)
+            return (value / 907.18474)
         
         if from_unit == MassUnits.LongTon:
-            return (value / 1.0160469088e3)
+            return (value / 1016.0469088)
         
         if from_unit == MassUnits.Pound:
             return (value / 0.45359237)
@@ -339,19 +339,19 @@ class Mass(AbstractMeasure):
             return (value / 0.028349523125)
         
         if from_unit == MassUnits.Slug:
-            return (value * 6.852176556196105e-2)
+            return (value * 0.3048 / (0.45359237 * 9.80665))
         
         if from_unit == MassUnits.Stone:
-            return (value * 0.1574731728702698)
+            return (value / 6.35029318)
         
         if from_unit == MassUnits.ShortHundredweight:
-            return (value * 0.022046226218487758)
+            return (value / 45.359237)
         
         if from_unit == MassUnits.LongHundredweight:
-            return (value * 0.01968413055222121)
+            return (value / 50.80234544)
         
         if from_unit == MassUnits.Grain:
-            return (value * 15432.358352941431)
+            return (value / 64.79891e-6)
         
         if from_unit == MassUnits.SolarMass:
             return (value / 1.98947e30)
@@ -413,10 +413,10 @@ class Mass(AbstractMeasure):
             return (value * 1e3)
         
         if to_unit == MassUnits.ShortTon:
-            return (value * 9.0718474e2)
+            return (value * 907.18474)
         
         if to_unit == MassUnits.LongTon:
-            return (value * 1.0160469088e3)
+            return (value * 1016.0469088)
         
         if to_unit == MassUnits.Pound:
             return (value * 0.45359237)
@@ -425,19 +425,19 @@ class Mass(AbstractMeasure):
             return (value * 0.028349523125)
         
         if to_unit == MassUnits.Slug:
-            return (value / 6.852176556196105e-2)
+            return (value * 0.45359237 * 9.80665 / 0.3048)
         
         if to_unit == MassUnits.Stone:
-            return (value / 0.1574731728702698)
+            return (value * 6.35029318)
         
         if to_unit == MassUnits.ShortHundredweight:
-            return (value / 0.022046226218487758)
+            return (value * 45.359237)
         
         if to_unit == MassUnits.LongHundredweight:
-            return (value / 0.01968413055222121)
+            return (value * 50.80234544)
         
         if to_unit == MassUnits.Grain:
-            return (value / 15432.358352941431)
+            return (value * 64.79891e-6)
         
         if to_unit == MassUnits.SolarMass:
             return (value * 1.98947e30)
@@ -515,7 +515,7 @@ class Mass(AbstractMeasure):
         """
         Create a new instance of Mass from a value in tonnes.
 
-        
+        The tonne is a unit of mass equal to 1,000 kilograms. It is a non-SI unit accepted for use with SI. It is also referred to as a metric ton in the United States to distinguish it from the non-metric units of the short ton (United States customary units) and the long ton (British imperial units). It is equivalent to approximately 2,204.6 pounds, 1.102 short tons, and 0.984 long tons.
 
         :param meters: The Mass value in tonnes.
         :type tonnes: float
@@ -914,7 +914,7 @@ class Mass(AbstractMeasure):
     @property
     def tonnes(self) -> float:
         """
-        
+        The tonne is a unit of mass equal to 1,000 kilograms. It is a non-SI unit accepted for use with SI. It is also referred to as a metric ton in the United States to distinguish it from the non-metric units of the short ton (United States customary units) and the long ton (British imperial units). It is equivalent to approximately 2,204.6 pounds, 1.102 short tons, and 0.984 long tons.
         """
         if self.__tonnes != None:
             return self.__tonnes

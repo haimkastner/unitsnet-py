@@ -213,13 +213,13 @@ class StandardVolumeFlow(AbstractMeasure):
             return (value * 60000)
         
         if from_unit == StandardVolumeFlowUnits.StandardCubicFootPerSecond:
-            return (value * 35.314666721)
+            return (value / 0.028316846592)
         
         if from_unit == StandardVolumeFlowUnits.StandardCubicFootPerMinute:
-            return (value * 2118.88000326)
+            return (value / (0.028316846592 / 60))
         
         if from_unit == StandardVolumeFlowUnits.StandardCubicFootPerHour:
-            return (value / 7.8657907199999087346816086183876e-6)
+            return (value / (0.028316846592 / 3600))
         
         return None
 
@@ -245,13 +245,13 @@ class StandardVolumeFlow(AbstractMeasure):
             return (value / 60000)
         
         if to_unit == StandardVolumeFlowUnits.StandardCubicFootPerSecond:
-            return (value / 35.314666721)
+            return (value * 0.028316846592)
         
         if to_unit == StandardVolumeFlowUnits.StandardCubicFootPerMinute:
-            return (value / 2118.88000326)
+            return (value * 0.028316846592 / 60)
         
         if to_unit == StandardVolumeFlowUnits.StandardCubicFootPerHour:
-            return (value * 7.8657907199999087346816086183876e-6)
+            return (value * 0.028316846592 / 3600)
         
         return None
 

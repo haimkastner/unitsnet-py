@@ -407,37 +407,37 @@ class ForcePerLength(AbstractMeasure):
             return (value / 1e3)
         
         if from_unit == ForcePerLengthUnits.KilogramForcePerMeter:
-            return (value / 9.80665002864)
+            return (value / 9.80665)
         
         if from_unit == ForcePerLengthUnits.KilogramForcePerCentimeter:
-            return (value / 980.665002864)
+            return (value / 980.665)
         
         if from_unit == ForcePerLengthUnits.KilogramForcePerMillimeter:
-            return (value / 9.80665002864e3)
+            return (value / 9.80665e3)
         
         if from_unit == ForcePerLengthUnits.TonneForcePerMeter:
-            return (value / 9.80665002864e3)
+            return (value / 9.80665e3)
         
         if from_unit == ForcePerLengthUnits.TonneForcePerCentimeter:
-            return (value / 9.80665002864e5)
+            return (value / 9.80665e5)
         
         if from_unit == ForcePerLengthUnits.TonneForcePerMillimeter:
-            return (value / 9.80665002864e6)
+            return (value / 9.80665e6)
         
         if from_unit == ForcePerLengthUnits.PoundForcePerFoot:
-            return (value / 14.59390292)
+            return (value * 0.3048 / 4.4482216152605)
         
         if from_unit == ForcePerLengthUnits.PoundForcePerInch:
-            return (value / 1.75126835e2)
+            return (value * 2.54e-2 / 4.4482216152605)
         
         if from_unit == ForcePerLengthUnits.PoundForcePerYard:
-            return (value / 4.864634307)
+            return (value * 0.9144 / 4.4482216152605)
         
         if from_unit == ForcePerLengthUnits.KilopoundForcePerFoot:
-            return (value / 14593.90292)
+            return (value * 0.3048e-3 / 4.4482216152605)
         
         if from_unit == ForcePerLengthUnits.KilopoundForcePerInch:
-            return (value / 1.75126835e5)
+            return (value * 2.54e-5 / 4.4482216152605)
         
         if from_unit == ForcePerLengthUnits.NanonewtonPerMeter:
             return ((value) / 1e-09)
@@ -526,37 +526,37 @@ class ForcePerLength(AbstractMeasure):
             return (value * 1e3)
         
         if to_unit == ForcePerLengthUnits.KilogramForcePerMeter:
-            return (value * 9.80665002864)
+            return (value * 9.80665)
         
         if to_unit == ForcePerLengthUnits.KilogramForcePerCentimeter:
-            return (value * 980.665002864)
+            return (value * 980.665)
         
         if to_unit == ForcePerLengthUnits.KilogramForcePerMillimeter:
-            return (value * 9.80665002864e3)
+            return (value * 9.80665e3)
         
         if to_unit == ForcePerLengthUnits.TonneForcePerMeter:
-            return (value * 9.80665002864e3)
+            return (value * 9.80665e3)
         
         if to_unit == ForcePerLengthUnits.TonneForcePerCentimeter:
-            return (value * 9.80665002864e5)
+            return (value * 9.80665e5)
         
         if to_unit == ForcePerLengthUnits.TonneForcePerMillimeter:
-            return (value * 9.80665002864e6)
+            return (value * 9.80665e6)
         
         if to_unit == ForcePerLengthUnits.PoundForcePerFoot:
-            return (value * 14.59390292)
+            return (value * 4.4482216152605 / 0.3048)
         
         if to_unit == ForcePerLengthUnits.PoundForcePerInch:
-            return (value * 1.75126835e2)
+            return (value * 4.4482216152605 / 2.54e-2)
         
         if to_unit == ForcePerLengthUnits.PoundForcePerYard:
-            return (value * 4.864634307)
+            return (value * 4.4482216152605 / 0.9144)
         
         if to_unit == ForcePerLengthUnits.KilopoundForcePerFoot:
-            return (value * 14593.90292)
+            return (value * 4.4482216152605 / 0.3048e-3)
         
         if to_unit == ForcePerLengthUnits.KilopoundForcePerInch:
-            return (value * 1.75126835e5)
+            return (value * 4.4482216152605 / 2.54e-5)
         
         if to_unit == ForcePerLengthUnits.NanonewtonPerMeter:
             return ((value) * 1e-09)

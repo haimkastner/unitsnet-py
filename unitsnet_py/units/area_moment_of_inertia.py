@@ -186,10 +186,10 @@ class AreaMomentOfInertia(AbstractMeasure):
             return (value * 1e12)
         
         if from_unit == AreaMomentOfInertiaUnits.FootToTheFourth:
-            return (value / math.pow(0.3048, 4))
+            return (value / 0.0086309748412416)
         
         if from_unit == AreaMomentOfInertiaUnits.InchToTheFourth:
-            return (value / math.pow(2.54e-2, 4))
+            return (value / 0.0000004162314256)
         
         return None
 
@@ -209,10 +209,10 @@ class AreaMomentOfInertia(AbstractMeasure):
             return (value / 1e12)
         
         if to_unit == AreaMomentOfInertiaUnits.FootToTheFourth:
-            return (value * math.pow(0.3048, 4))
+            return (value * 0.0086309748412416)
         
         if to_unit == AreaMomentOfInertiaUnits.InchToTheFourth:
-            return (value * math.pow(2.54e-2, 4))
+            return (value * 0.0000004162314256)
         
         return None
 

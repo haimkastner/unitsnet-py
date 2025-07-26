@@ -186,10 +186,10 @@ class WarpingMomentOfInertia(AbstractMeasure):
             return (value * 1e18)
         
         if from_unit == WarpingMomentOfInertiaUnits.FootToTheSixth:
-            return (value / math.pow(0.3048, 6))
+            return (value / 0.000801843800914862014464)
         
         if from_unit == WarpingMomentOfInertiaUnits.InchToTheSixth:
-            return (value / math.pow(2.54e-2, 6))
+            return (value / 0.000000000268535866540096)
         
         return None
 
@@ -209,10 +209,10 @@ class WarpingMomentOfInertia(AbstractMeasure):
             return (value / 1e18)
         
         if to_unit == WarpingMomentOfInertiaUnits.FootToTheSixth:
-            return (value * math.pow(0.3048, 6))
+            return (value * 0.000801843800914862014464)
         
         if to_unit == WarpingMomentOfInertiaUnits.InchToTheSixth:
-            return (value * math.pow(2.54e-2, 6))
+            return (value * 0.000000000268535866540096)
         
         return None
 

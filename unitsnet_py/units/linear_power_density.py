@@ -316,10 +316,10 @@ class LinearPowerDensity(AbstractMeasure):
             return (value / 1e3)
         
         if from_unit == LinearPowerDensityUnits.WattPerInch:
-            return (value / 39.37007874)
+            return (value * 2.54e-2)
         
         if from_unit == LinearPowerDensityUnits.WattPerFoot:
-            return (value / 3.280839895)
+            return (value * 0.3048)
         
         if from_unit == LinearPowerDensityUnits.MilliwattPerMeter:
             return ((value) / 0.001)
@@ -358,28 +358,28 @@ class LinearPowerDensity(AbstractMeasure):
             return ((value / 1e3) / 1000000000.0)
         
         if from_unit == LinearPowerDensityUnits.MilliwattPerInch:
-            return ((value / 39.37007874) / 0.001)
+            return ((value * 2.54e-2) / 0.001)
         
         if from_unit == LinearPowerDensityUnits.KilowattPerInch:
-            return ((value / 39.37007874) / 1000.0)
+            return ((value * 2.54e-2) / 1000.0)
         
         if from_unit == LinearPowerDensityUnits.MegawattPerInch:
-            return ((value / 39.37007874) / 1000000.0)
+            return ((value * 2.54e-2) / 1000000.0)
         
         if from_unit == LinearPowerDensityUnits.GigawattPerInch:
-            return ((value / 39.37007874) / 1000000000.0)
+            return ((value * 2.54e-2) / 1000000000.0)
         
         if from_unit == LinearPowerDensityUnits.MilliwattPerFoot:
-            return ((value / 3.280839895) / 0.001)
+            return ((value * 0.3048) / 0.001)
         
         if from_unit == LinearPowerDensityUnits.KilowattPerFoot:
-            return ((value / 3.280839895) / 1000.0)
+            return ((value * 0.3048) / 1000.0)
         
         if from_unit == LinearPowerDensityUnits.MegawattPerFoot:
-            return ((value / 3.280839895) / 1000000.0)
+            return ((value * 0.3048) / 1000000.0)
         
         if from_unit == LinearPowerDensityUnits.GigawattPerFoot:
-            return ((value / 3.280839895) / 1000000000.0)
+            return ((value * 0.3048) / 1000000000.0)
         
         return None
 
@@ -396,10 +396,10 @@ class LinearPowerDensity(AbstractMeasure):
             return (value * 1e3)
         
         if to_unit == LinearPowerDensityUnits.WattPerInch:
-            return (value * 39.37007874)
+            return (value / 2.54e-2)
         
         if to_unit == LinearPowerDensityUnits.WattPerFoot:
-            return (value * 3.280839895)
+            return (value / 0.3048)
         
         if to_unit == LinearPowerDensityUnits.MilliwattPerMeter:
             return ((value) * 0.001)
@@ -438,28 +438,28 @@ class LinearPowerDensity(AbstractMeasure):
             return ((value * 1e3) * 1000000000.0)
         
         if to_unit == LinearPowerDensityUnits.MilliwattPerInch:
-            return ((value * 39.37007874) * 0.001)
+            return ((value / 2.54e-2) * 0.001)
         
         if to_unit == LinearPowerDensityUnits.KilowattPerInch:
-            return ((value * 39.37007874) * 1000.0)
+            return ((value / 2.54e-2) * 1000.0)
         
         if to_unit == LinearPowerDensityUnits.MegawattPerInch:
-            return ((value * 39.37007874) * 1000000.0)
+            return ((value / 2.54e-2) * 1000000.0)
         
         if to_unit == LinearPowerDensityUnits.GigawattPerInch:
-            return ((value * 39.37007874) * 1000000000.0)
+            return ((value / 2.54e-2) * 1000000000.0)
         
         if to_unit == LinearPowerDensityUnits.MilliwattPerFoot:
-            return ((value * 3.280839895) * 0.001)
+            return ((value / 0.3048) * 0.001)
         
         if to_unit == LinearPowerDensityUnits.KilowattPerFoot:
-            return ((value * 3.280839895) * 1000.0)
+            return ((value / 0.3048) * 1000.0)
         
         if to_unit == LinearPowerDensityUnits.MegawattPerFoot:
-            return ((value * 3.280839895) * 1000000.0)
+            return ((value / 0.3048) * 1000000.0)
         
         if to_unit == LinearPowerDensityUnits.GigawattPerFoot:
-            return ((value * 3.280839895) * 1000000000.0)
+            return ((value / 0.3048) * 1000000000.0)
         
         return None
 

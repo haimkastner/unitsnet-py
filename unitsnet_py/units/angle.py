@@ -45,11 +45,6 @@ class AngleUnits(Enum):
             
         """
         
-        Tilt = 'Tilt'
-        """
-            
-        """
-        
         Nanoradian = 'Nanoradian'
         """
             
@@ -123,7 +118,7 @@ class AngleDto:
 
         :return: JSON object represents Angle DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "Degree"}
+        :example return: {"value": 100, "unit": "Radian"}
         """
         return {"value": self.value, "unit": self.unit.value}
 
@@ -134,7 +129,7 @@ class AngleDto:
 
         :param data: The Angle DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "Degree"}
+        :example data: {"value": 100, "unit": "Radian"}
         :return: A new instance of AngleDto.
         :rtype: AngleDto
         """
@@ -147,9 +142,9 @@ class Angle(AbstractMeasure):
 
     Args:
         value (float): The value.
-        from_unit (AngleUnits): The Angle unit to create from, The default unit is Degree
+        from_unit (AngleUnits): The Angle unit to create from, The default unit is Radian
     """
-    def __init__(self, value: float, from_unit: AngleUnits = AngleUnits.Degree):
+    def __init__(self, value: float, from_unit: AngleUnits = AngleUnits.Radian):
         # Do not validate type, to allow working with numpay arrays and similar objects who supports all arithmetic 
         # operations, but they are not a number, see #14 
         # if math.isnan(value):
@@ -169,8 +164,6 @@ class Angle(AbstractMeasure):
         self.__nato_mils = None
         
         self.__revolutions = None
-        
-        self.__tilt = None
         
         self.__nanoradians = None
         
@@ -192,7 +185,7 @@ class Angle(AbstractMeasure):
     def convert(self, unit: AngleUnits) -> float:
         return self.__convert_from_base(unit)
 
-    def to_dto(self, hold_in_unit: AngleUnits = AngleUnits.Degree) -> AngleDto:
+    def to_dto(self, hold_in_unit: AngleUnits = AngleUnits.Radian) -> AngleDto:
         """
         Get a new instance of Angle DTO representing the current unit.
 
@@ -203,7 +196,7 @@ class Angle(AbstractMeasure):
         """
         return AngleDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
     
-    def to_dto_json(self, hold_in_unit: AngleUnits = AngleUnits.Degree):
+    def to_dto_json(self, hold_in_unit: AngleUnits = AngleUnits.Radian):
         """
         Get a Angle DTO JSON object representing the current unit.
 
@@ -211,7 +204,7 @@ class Angle(AbstractMeasure):
         :type hold_in_unit: AngleUnits
         :return: JSON object represents Angle DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "Degree"}
+        :example return: {"value": 100, "unit": "Radian"}
         """
         return self.to_dto(hold_in_unit).to_json()
 
@@ -234,7 +227,7 @@ class Angle(AbstractMeasure):
 
         :param data: The Angle DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "Degree"}
+        :example data: {"value": 100, "unit": "Radian"}
         :return: A new instance of Angle.
         :rtype: Angle
         """
@@ -244,52 +237,49 @@ class Angle(AbstractMeasure):
         value = self._value
         
         if from_unit == AngleUnits.Radian:
-            return (value / 180 * math.pi)
-        
-        if from_unit == AngleUnits.Degree:
             return (value)
         
+        if from_unit == AngleUnits.Degree:
+            return (value * 180 / math.pi)
+        
         if from_unit == AngleUnits.Arcminute:
-            return (value * 60)
+            return (value * 60 * 180 / math.pi)
         
         if from_unit == AngleUnits.Arcsecond:
-            return (value * 3600)
+            return (value * 3600 * 180 / math.pi)
         
         if from_unit == AngleUnits.Gradian:
-            return (value / 0.9)
+            return (value * 200 / math.pi)
         
         if from_unit == AngleUnits.NatoMil:
-            return (value * 160 / 9)
+            return (value * 3200 / math.pi)
         
         if from_unit == AngleUnits.Revolution:
-            return (value / 360)
-        
-        if from_unit == AngleUnits.Tilt:
-            return (math.sin(value / 180 * math.pi))
+            return (value / (2 * math.pi))
         
         if from_unit == AngleUnits.Nanoradian:
-            return ((value / 180 * math.pi) / 1e-09)
-        
-        if from_unit == AngleUnits.Microradian:
-            return ((value / 180 * math.pi) / 1e-06)
-        
-        if from_unit == AngleUnits.Milliradian:
-            return ((value / 180 * math.pi) / 0.001)
-        
-        if from_unit == AngleUnits.Centiradian:
-            return ((value / 180 * math.pi) / 0.01)
-        
-        if from_unit == AngleUnits.Deciradian:
-            return ((value / 180 * math.pi) / 0.1)
-        
-        if from_unit == AngleUnits.Nanodegree:
             return ((value) / 1e-09)
         
-        if from_unit == AngleUnits.Microdegree:
+        if from_unit == AngleUnits.Microradian:
             return ((value) / 1e-06)
         
-        if from_unit == AngleUnits.Millidegree:
+        if from_unit == AngleUnits.Milliradian:
             return ((value) / 0.001)
+        
+        if from_unit == AngleUnits.Centiradian:
+            return ((value) / 0.01)
+        
+        if from_unit == AngleUnits.Deciradian:
+            return ((value) / 0.1)
+        
+        if from_unit == AngleUnits.Nanodegree:
+            return ((value * 180 / math.pi) / 1e-09)
+        
+        if from_unit == AngleUnits.Microdegree:
+            return ((value * 180 / math.pi) / 1e-06)
+        
+        if from_unit == AngleUnits.Millidegree:
+            return ((value * 180 / math.pi) / 0.001)
         
         return None
 
@@ -297,52 +287,49 @@ class Angle(AbstractMeasure):
     def __convert_to_base(self, value: float, to_unit: AngleUnits) -> float:
         
         if to_unit == AngleUnits.Radian:
-            return (value * 180 / math.pi)
-        
-        if to_unit == AngleUnits.Degree:
             return (value)
         
+        if to_unit == AngleUnits.Degree:
+            return (value * math.pi / 180)
+        
         if to_unit == AngleUnits.Arcminute:
-            return (value / 60)
+            return (value * math.pi / (60 * 180))
         
         if to_unit == AngleUnits.Arcsecond:
-            return (value / 3600)
+            return (value * math.pi / (3600 * 180))
         
         if to_unit == AngleUnits.Gradian:
-            return (value * 0.9)
+            return (value * math.pi / 200)
         
         if to_unit == AngleUnits.NatoMil:
-            return (value * 9 / 160)
+            return (value * math.pi / 3200)
         
         if to_unit == AngleUnits.Revolution:
-            return (value * 360)
-        
-        if to_unit == AngleUnits.Tilt:
-            return (math.asin(value) * 180 / math.pi)
+            return (value * 2 * math.pi)
         
         if to_unit == AngleUnits.Nanoradian:
-            return ((value * 180 / math.pi) * 1e-09)
-        
-        if to_unit == AngleUnits.Microradian:
-            return ((value * 180 / math.pi) * 1e-06)
-        
-        if to_unit == AngleUnits.Milliradian:
-            return ((value * 180 / math.pi) * 0.001)
-        
-        if to_unit == AngleUnits.Centiradian:
-            return ((value * 180 / math.pi) * 0.01)
-        
-        if to_unit == AngleUnits.Deciradian:
-            return ((value * 180 / math.pi) * 0.1)
-        
-        if to_unit == AngleUnits.Nanodegree:
             return ((value) * 1e-09)
         
-        if to_unit == AngleUnits.Microdegree:
+        if to_unit == AngleUnits.Microradian:
             return ((value) * 1e-06)
         
-        if to_unit == AngleUnits.Millidegree:
+        if to_unit == AngleUnits.Milliradian:
             return ((value) * 0.001)
+        
+        if to_unit == AngleUnits.Centiradian:
+            return ((value) * 0.01)
+        
+        if to_unit == AngleUnits.Deciradian:
+            return ((value) * 0.1)
+        
+        if to_unit == AngleUnits.Nanodegree:
+            return ((value * math.pi / 180) * 1e-09)
+        
+        if to_unit == AngleUnits.Microdegree:
+            return ((value * math.pi / 180) * 1e-06)
+        
+        if to_unit == AngleUnits.Millidegree:
+            return ((value * math.pi / 180) * 0.001)
         
         return None
 
@@ -455,21 +442,6 @@ class Angle(AbstractMeasure):
         :rtype: Angle
         """
         return Angle(revolutions, AngleUnits.Revolution)
-
-    
-    @staticmethod
-    def from_tilt(tilt: float):
-        """
-        Create a new instance of Angle from a value in tilt.
-
-        
-
-        :param meters: The Angle value in tilt.
-        :type tilt: float
-        :return: A new instance of Angle.
-        :rtype: Angle
-        """
-        return Angle(tilt, AngleUnits.Tilt)
 
     
     @staticmethod
@@ -670,17 +642,6 @@ class Angle(AbstractMeasure):
 
     
     @property
-    def tilt(self) -> float:
-        """
-        
-        """
-        if self.__tilt != None:
-            return self.__tilt
-        self.__tilt = self.__convert_from_base(AngleUnits.Tilt)
-        return self.__tilt
-
-    
-    @property
     def nanoradians(self) -> float:
         """
         
@@ -768,15 +729,15 @@ class Angle(AbstractMeasure):
         return self.__millidegrees
 
     
-    def to_string(self, unit: AngleUnits = AngleUnits.Degree, fractional_digits: int = None) -> str:
+    def to_string(self, unit: AngleUnits = AngleUnits.Radian, fractional_digits: int = None) -> str:
         """
         Format the Angle to a string.
         
-        Note: the default format for Angle is Degree.
+        Note: the default format for Angle is Radian.
         To specify the unit format, set the 'unit' parameter.
         
         Args:
-            unit (str): The unit to format the Angle. Default is 'Degree'.
+            unit (str): The unit to format the Angle. Default is 'Radian'.
             fractional_digits (int, optional): The number of fractional digits to keep.
 
         Returns:
@@ -803,9 +764,6 @@ class Angle(AbstractMeasure):
         
         if unit == AngleUnits.Revolution:
             return f"""{super()._truncate_fraction_digits(self.revolutions, fractional_digits)} r"""
-        
-        if unit == AngleUnits.Tilt:
-            return f"""{super()._truncate_fraction_digits(self.tilt, fractional_digits)} sin(θ)"""
         
         if unit == AngleUnits.Nanoradian:
             return f"""{super()._truncate_fraction_digits(self.nanoradians, fractional_digits)} nrad"""
@@ -834,10 +792,10 @@ class Angle(AbstractMeasure):
         return f'{self._value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: AngleUnits = AngleUnits.Degree) -> str:
+    def get_unit_abbreviation(self, unit_abbreviation: AngleUnits = AngleUnits.Radian) -> str:
         """
         Get Angle unit abbreviation.
-        Note! the default abbreviation for Angle is Degree.
+        Note! the default abbreviation for Angle is Radian.
         To specify the unit abbreviation set the 'unit_abbreviation' parameter.
         """
         
@@ -861,9 +819,6 @@ class Angle(AbstractMeasure):
         
         if unit_abbreviation == AngleUnits.Revolution:
             return """r"""
-        
-        if unit_abbreviation == AngleUnits.Tilt:
-            return """sin(θ)"""
         
         if unit_abbreviation == AngleUnits.Nanoradian:
             return """nrad"""

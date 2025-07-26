@@ -170,10 +170,10 @@ class RotationalStiffnessPerLength(AbstractMeasure):
             return (value)
         
         if from_unit == RotationalStiffnessPerLengthUnits.PoundForceFootPerDegreesPerFoot:
-            return (value / 254.864324570)
+            return (value / (4.4482216152605 * 180 / math.pi))
         
         if from_unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
-            return (value / 254864.324570)
+            return (value / (4.4482216152605e3 * 180 / math.pi))
         
         if from_unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
             return ((value) / 1000.0)
@@ -190,10 +190,10 @@ class RotationalStiffnessPerLength(AbstractMeasure):
             return (value)
         
         if to_unit == RotationalStiffnessPerLengthUnits.PoundForceFootPerDegreesPerFoot:
-            return (value * 254.864324570)
+            return (value * (4.4482216152605 * 180 / math.pi))
         
         if to_unit == RotationalStiffnessPerLengthUnits.KilopoundForceFootPerDegreesPerFoot:
-            return (value * 254864.324570)
+            return (value * (4.4482216152605e3 * 180 / math.pi))
         
         if to_unit == RotationalStiffnessPerLengthUnits.KilonewtonMeterPerRadianPerMeter:
             return ((value) * 1000.0)

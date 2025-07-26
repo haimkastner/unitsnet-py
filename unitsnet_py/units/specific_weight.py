@@ -269,10 +269,10 @@ class SpecificWeight(AbstractMeasure):
             return (value / 9.80665)
         
         if from_unit == SpecificWeightUnits.PoundForcePerCubicInch:
-            return (value / 2.714471375263134e5)
+            return (value * 1.6387064e-5 / 4.4482216152605)
         
         if from_unit == SpecificWeightUnits.PoundForcePerCubicFoot:
-            return (value / 1.570874638462462e2)
+            return (value * 0.028316846592 / 4.4482216152605)
         
         if from_unit == SpecificWeightUnits.TonneForcePerCubicMillimeter:
             return (value / 9.80665e12)
@@ -296,10 +296,10 @@ class SpecificWeight(AbstractMeasure):
             return ((value) / 1000000.0)
         
         if from_unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
-            return ((value / 2.714471375263134e5) / 1000.0)
+            return ((value * 1.6387064e-5 / 4.4482216152605) / 1000.0)
         
         if from_unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
-            return ((value / 1.570874638462462e2) / 1000.0)
+            return ((value * 0.028316846592 / 4.4482216152605) / 1000.0)
         
         return None
 
@@ -325,10 +325,10 @@ class SpecificWeight(AbstractMeasure):
             return (value * 9.80665)
         
         if to_unit == SpecificWeightUnits.PoundForcePerCubicInch:
-            return (value * 2.714471375263134e5)
+            return (value * 4.4482216152605 / 1.6387064e-5)
         
         if to_unit == SpecificWeightUnits.PoundForcePerCubicFoot:
-            return (value * 1.570874638462462e2)
+            return (value * 4.4482216152605 / 0.028316846592)
         
         if to_unit == SpecificWeightUnits.TonneForcePerCubicMillimeter:
             return (value * 9.80665e12)
@@ -352,10 +352,10 @@ class SpecificWeight(AbstractMeasure):
             return ((value) * 1000000.0)
         
         if to_unit == SpecificWeightUnits.KilopoundForcePerCubicInch:
-            return ((value * 2.714471375263134e5) * 1000.0)
+            return ((value * 4.4482216152605 / 1.6387064e-5) * 1000.0)
         
         if to_unit == SpecificWeightUnits.KilopoundForcePerCubicFoot:
-            return ((value * 1.570874638462462e2) * 1000.0)
+            return ((value * 4.4482216152605 / 0.028316846592) * 1000.0)
         
         return None
 

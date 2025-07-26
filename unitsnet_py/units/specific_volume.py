@@ -156,7 +156,7 @@ class SpecificVolume(AbstractMeasure):
             return (value)
         
         if from_unit == SpecificVolumeUnits.CubicFootPerPound:
-            return (value * 16.01846353)
+            return (value * 0.45359237 / 0.028316846592)
         
         if from_unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return ((value) / 0.001)
@@ -170,7 +170,7 @@ class SpecificVolume(AbstractMeasure):
             return (value)
         
         if to_unit == SpecificVolumeUnits.CubicFootPerPound:
-            return (value / 16.01846353)
+            return (value * 0.028316846592 / 0.45359237)
         
         if to_unit == SpecificVolumeUnits.MillicubicMeterPerKilogram:
             return ((value) * 0.001)

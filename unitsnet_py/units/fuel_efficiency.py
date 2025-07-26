@@ -63,7 +63,7 @@ class FuelEfficiencyDto:
 
         :return: JSON object represents FuelEfficiency DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :example return: {"value": 100, "unit": "KilometerPerLiter"}
         """
         return {"value": self.value, "unit": self.unit.value}
 
@@ -74,7 +74,7 @@ class FuelEfficiencyDto:
 
         :param data: The FuelEfficiency DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :example data: {"value": 100, "unit": "KilometerPerLiter"}
         :return: A new instance of FuelEfficiencyDto.
         :rtype: FuelEfficiencyDto
         """
@@ -83,13 +83,13 @@ class FuelEfficiencyDto:
 
 class FuelEfficiency(AbstractMeasure):
     """
-    Fuel efficiency is a form of thermal efficiency, meaning the ratio from effort to result of a process that converts chemical potential energy contained in a carrier (fuel) into kinetic energy or work. Fuel economy is stated as "fuel consumption" in liters per 100 kilometers (L/100 km). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).
+    In the context of transport, fuel economy is the energy efficiency of a particular vehicle, given as a ratio of distance traveled per unit of fuel consumed. In most countries, using the metric system, fuel economy is stated as "fuel consumption" in liters per 100 kilometers (L/100 km) or kilometers per liter (km/L or kmpl). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).
 
     Args:
         value (float): The value.
-        from_unit (FuelEfficiencyUnits): The FuelEfficiency unit to create from, The default unit is LiterPer100Kilometers
+        from_unit (FuelEfficiencyUnits): The FuelEfficiency unit to create from, The default unit is KilometerPerLiter
     """
-    def __init__(self, value: float, from_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers):
+    def __init__(self, value: float, from_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.KilometerPerLiter):
         # Do not validate type, to allow working with numpay arrays and similar objects who supports all arithmetic 
         # operations, but they are not a number, see #14 
         # if math.isnan(value):
@@ -102,13 +102,13 @@ class FuelEfficiency(AbstractMeasure):
         
         self.__miles_per_uk_gallon = None
         
-        self.__kilometers_per_liters = None
+        self.__kilometers_per_liter = None
         
 
     def convert(self, unit: FuelEfficiencyUnits) -> float:
         return self.__convert_from_base(unit)
 
-    def to_dto(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> FuelEfficiencyDto:
+    def to_dto(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.KilometerPerLiter) -> FuelEfficiencyDto:
         """
         Get a new instance of FuelEfficiency DTO representing the current unit.
 
@@ -119,7 +119,7 @@ class FuelEfficiency(AbstractMeasure):
         """
         return FuelEfficiencyDto(value=self.convert(hold_in_unit), unit=hold_in_unit)
     
-    def to_dto_json(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers):
+    def to_dto_json(self, hold_in_unit: FuelEfficiencyUnits = FuelEfficiencyUnits.KilometerPerLiter):
         """
         Get a FuelEfficiency DTO JSON object representing the current unit.
 
@@ -127,7 +127,7 @@ class FuelEfficiency(AbstractMeasure):
         :type hold_in_unit: FuelEfficiencyUnits
         :return: JSON object represents FuelEfficiency DTO.
         :rtype: dict
-        :example return: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :example return: {"value": 100, "unit": "KilometerPerLiter"}
         """
         return self.to_dto(hold_in_unit).to_json()
 
@@ -150,7 +150,7 @@ class FuelEfficiency(AbstractMeasure):
 
         :param data: The FuelEfficiency DTO in JSON representation.
         :type data: dict
-        :example data: {"value": 100, "unit": "LiterPer100Kilometers"}
+        :example data: {"value": 100, "unit": "KilometerPerLiter"}
         :return: A new instance of FuelEfficiency.
         :rtype: FuelEfficiency
         """
@@ -160,16 +160,16 @@ class FuelEfficiency(AbstractMeasure):
         value = self._value
         
         if from_unit == FuelEfficiencyUnits.LiterPer100Kilometers:
-            return (value)
+            return (100 / value)
         
         if from_unit == FuelEfficiencyUnits.MilePerUsGallon:
-            return ((100 * 3.785411784) / (1.609344 * value))
+            return (value * 3.785411784 / 1.609344)
         
         if from_unit == FuelEfficiencyUnits.MilePerUkGallon:
-            return ((100 * 4.54609188) / (1.609344 * value))
+            return (value * 4.54609 / 1.609344)
         
         if from_unit == FuelEfficiencyUnits.KilometerPerLiter:
-            return (100 / value)
+            return (value)
         
         return None
 
@@ -177,16 +177,16 @@ class FuelEfficiency(AbstractMeasure):
     def __convert_to_base(self, value: float, to_unit: FuelEfficiencyUnits) -> float:
         
         if to_unit == FuelEfficiencyUnits.LiterPer100Kilometers:
-            return (value)
+            return (100 / value)
         
         if to_unit == FuelEfficiencyUnits.MilePerUsGallon:
-            return ((100 * 3.785411784) / (1.609344 * value))
+            return (value * 1.609344 / 3.785411784)
         
         if to_unit == FuelEfficiencyUnits.MilePerUkGallon:
-            return ((100 * 4.54609188) / (1.609344 * value))
+            return (value * 1.609344 / 4.54609)
         
         if to_unit == FuelEfficiencyUnits.KilometerPerLiter:
-            return (100 / value)
+            return (value)
         
         return None
 
@@ -242,18 +242,18 @@ class FuelEfficiency(AbstractMeasure):
 
     
     @staticmethod
-    def from_kilometers_per_liters(kilometers_per_liters: float):
+    def from_kilometers_per_liter(kilometers_per_liter: float):
         """
-        Create a new instance of FuelEfficiency from a value in kilometers_per_liters.
+        Create a new instance of FuelEfficiency from a value in kilometers_per_liter.
 
         
 
-        :param meters: The FuelEfficiency value in kilometers_per_liters.
-        :type kilometers_per_liters: float
+        :param meters: The FuelEfficiency value in kilometers_per_liter.
+        :type kilometers_per_liter: float
         :return: A new instance of FuelEfficiency.
         :rtype: FuelEfficiency
         """
-        return FuelEfficiency(kilometers_per_liters, FuelEfficiencyUnits.KilometerPerLiter)
+        return FuelEfficiency(kilometers_per_liter, FuelEfficiencyUnits.KilometerPerLiter)
 
     
     @property
@@ -290,25 +290,25 @@ class FuelEfficiency(AbstractMeasure):
 
     
     @property
-    def kilometers_per_liters(self) -> float:
+    def kilometers_per_liter(self) -> float:
         """
         
         """
-        if self.__kilometers_per_liters != None:
-            return self.__kilometers_per_liters
-        self.__kilometers_per_liters = self.__convert_from_base(FuelEfficiencyUnits.KilometerPerLiter)
-        return self.__kilometers_per_liters
+        if self.__kilometers_per_liter != None:
+            return self.__kilometers_per_liter
+        self.__kilometers_per_liter = self.__convert_from_base(FuelEfficiencyUnits.KilometerPerLiter)
+        return self.__kilometers_per_liter
 
     
-    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers, fractional_digits: int = None) -> str:
+    def to_string(self, unit: FuelEfficiencyUnits = FuelEfficiencyUnits.KilometerPerLiter, fractional_digits: int = None) -> str:
         """
         Format the FuelEfficiency to a string.
         
-        Note: the default format for FuelEfficiency is LiterPer100Kilometers.
+        Note: the default format for FuelEfficiency is KilometerPerLiter.
         To specify the unit format, set the 'unit' parameter.
         
         Args:
-            unit (str): The unit to format the FuelEfficiency. Default is 'LiterPer100Kilometers'.
+            unit (str): The unit to format the FuelEfficiency. Default is 'KilometerPerLiter'.
             fractional_digits (int, optional): The number of fractional digits to keep.
 
         Returns:
@@ -316,7 +316,7 @@ class FuelEfficiency(AbstractMeasure):
         """
         
         if unit == FuelEfficiencyUnits.LiterPer100Kilometers:
-            return f"""{super()._truncate_fraction_digits(self.liters_per100_kilometers, fractional_digits)} L/100km"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per100_kilometers, fractional_digits)} l/100km"""
         
         if unit == FuelEfficiencyUnits.MilePerUsGallon:
             return f"""{super()._truncate_fraction_digits(self.miles_per_us_gallon, fractional_digits)} mpg (U.S.)"""
@@ -325,20 +325,20 @@ class FuelEfficiency(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.miles_per_uk_gallon, fractional_digits)} mpg (imp.)"""
         
         if unit == FuelEfficiencyUnits.KilometerPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.kilometers_per_liters, fractional_digits)} km/L"""
+            return f"""{super()._truncate_fraction_digits(self.kilometers_per_liter, fractional_digits)} km/l"""
         
         return f'{self._value}'
 
 
-    def get_unit_abbreviation(self, unit_abbreviation: FuelEfficiencyUnits = FuelEfficiencyUnits.LiterPer100Kilometers) -> str:
+    def get_unit_abbreviation(self, unit_abbreviation: FuelEfficiencyUnits = FuelEfficiencyUnits.KilometerPerLiter) -> str:
         """
         Get FuelEfficiency unit abbreviation.
-        Note! the default abbreviation for FuelEfficiency is LiterPer100Kilometers.
+        Note! the default abbreviation for FuelEfficiency is KilometerPerLiter.
         To specify the unit abbreviation set the 'unit_abbreviation' parameter.
         """
         
         if unit_abbreviation == FuelEfficiencyUnits.LiterPer100Kilometers:
-            return """L/100km"""
+            return """l/100km"""
         
         if unit_abbreviation == FuelEfficiencyUnits.MilePerUsGallon:
             return """mpg (U.S.)"""
@@ -347,5 +347,5 @@ class FuelEfficiency(AbstractMeasure):
             return """mpg (imp.)"""
         
         if unit_abbreviation == FuelEfficiencyUnits.KilometerPerLiter:
-            return """km/L"""
+            return """km/l"""
         

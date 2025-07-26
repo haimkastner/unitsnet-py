@@ -15,12 +15,12 @@ class VolumeConcentrationUnits(Enum):
             
         """
         
-        LitersPerLiter = 'LitersPerLiter'
+        LiterPerLiter = 'LiterPerLiter'
         """
             
         """
         
-        LitersPerMililiter = 'LitersPerMililiter'
+        LiterPerMilliliter = 'LiterPerMilliliter'
         """
             
         """
@@ -50,62 +50,62 @@ class VolumeConcentrationUnits(Enum):
             
         """
         
-        PicolitersPerLiter = 'PicolitersPerLiter'
+        PicoliterPerLiter = 'PicoliterPerLiter'
         """
             
         """
         
-        NanolitersPerLiter = 'NanolitersPerLiter'
+        NanoliterPerLiter = 'NanoliterPerLiter'
         """
             
         """
         
-        MicrolitersPerLiter = 'MicrolitersPerLiter'
+        MicroliterPerLiter = 'MicroliterPerLiter'
         """
             
         """
         
-        MillilitersPerLiter = 'MillilitersPerLiter'
+        MilliliterPerLiter = 'MilliliterPerLiter'
         """
             
         """
         
-        CentilitersPerLiter = 'CentilitersPerLiter'
+        CentiliterPerLiter = 'CentiliterPerLiter'
         """
             
         """
         
-        DecilitersPerLiter = 'DecilitersPerLiter'
+        DeciliterPerLiter = 'DeciliterPerLiter'
         """
             
         """
         
-        PicolitersPerMililiter = 'PicolitersPerMililiter'
+        PicoliterPerMilliliter = 'PicoliterPerMilliliter'
         """
             
         """
         
-        NanolitersPerMililiter = 'NanolitersPerMililiter'
+        NanoliterPerMilliliter = 'NanoliterPerMilliliter'
         """
             
         """
         
-        MicrolitersPerMililiter = 'MicrolitersPerMililiter'
+        MicroliterPerMilliliter = 'MicroliterPerMilliliter'
         """
             
         """
         
-        MillilitersPerMililiter = 'MillilitersPerMililiter'
+        MilliliterPerMilliliter = 'MilliliterPerMilliliter'
         """
             
         """
         
-        CentilitersPerMililiter = 'CentilitersPerMililiter'
+        CentiliterPerMilliliter = 'CentiliterPerMilliliter'
         """
             
         """
         
-        DecilitersPerMililiter = 'DecilitersPerMililiter'
+        DeciliterPerMilliliter = 'DeciliterPerMilliliter'
         """
             
         """
@@ -180,7 +180,7 @@ class VolumeConcentration(AbstractMeasure):
         
         self.__liters_per_liter = None
         
-        self.__liters_per_mililiter = None
+        self.__liters_per_milliliter = None
         
         self.__percent = None
         
@@ -204,17 +204,17 @@ class VolumeConcentration(AbstractMeasure):
         
         self.__deciliters_per_liter = None
         
-        self.__picoliters_per_mililiter = None
+        self.__picoliters_per_milliliter = None
         
-        self.__nanoliters_per_mililiter = None
+        self.__nanoliters_per_milliliter = None
         
-        self.__microliters_per_mililiter = None
+        self.__microliters_per_milliliter = None
         
-        self.__milliliters_per_mililiter = None
+        self.__milliliters_per_milliliter = None
         
-        self.__centiliters_per_mililiter = None
+        self.__centiliters_per_milliliter = None
         
-        self.__deciliters_per_mililiter = None
+        self.__deciliters_per_milliliter = None
         
 
     def convert(self, unit: VolumeConcentrationUnits) -> float:
@@ -274,10 +274,10 @@ class VolumeConcentration(AbstractMeasure):
         if from_unit == VolumeConcentrationUnits.DecimalFraction:
             return (value)
         
-        if from_unit == VolumeConcentrationUnits.LitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.LiterPerLiter:
             return (value)
         
-        if from_unit == VolumeConcentrationUnits.LitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.LiterPerMilliliter:
             return (value * 1e-3)
         
         if from_unit == VolumeConcentrationUnits.Percent:
@@ -295,40 +295,40 @@ class VolumeConcentration(AbstractMeasure):
         if from_unit == VolumeConcentrationUnits.PartPerTrillion:
             return (value * 1e12)
         
-        if from_unit == VolumeConcentrationUnits.PicolitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.PicoliterPerLiter:
             return ((value) / 1e-12)
         
-        if from_unit == VolumeConcentrationUnits.NanolitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.NanoliterPerLiter:
             return ((value) / 1e-09)
         
-        if from_unit == VolumeConcentrationUnits.MicrolitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.MicroliterPerLiter:
             return ((value) / 1e-06)
         
-        if from_unit == VolumeConcentrationUnits.MillilitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.MilliliterPerLiter:
             return ((value) / 0.001)
         
-        if from_unit == VolumeConcentrationUnits.CentilitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.CentiliterPerLiter:
             return ((value) / 0.01)
         
-        if from_unit == VolumeConcentrationUnits.DecilitersPerLiter:
+        if from_unit == VolumeConcentrationUnits.DeciliterPerLiter:
             return ((value) / 0.1)
         
-        if from_unit == VolumeConcentrationUnits.PicolitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.PicoliterPerMilliliter:
             return ((value * 1e-3) / 1e-12)
         
-        if from_unit == VolumeConcentrationUnits.NanolitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.NanoliterPerMilliliter:
             return ((value * 1e-3) / 1e-09)
         
-        if from_unit == VolumeConcentrationUnits.MicrolitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.MicroliterPerMilliliter:
             return ((value * 1e-3) / 1e-06)
         
-        if from_unit == VolumeConcentrationUnits.MillilitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.MilliliterPerMilliliter:
             return ((value * 1e-3) / 0.001)
         
-        if from_unit == VolumeConcentrationUnits.CentilitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.CentiliterPerMilliliter:
             return ((value * 1e-3) / 0.01)
         
-        if from_unit == VolumeConcentrationUnits.DecilitersPerMililiter:
+        if from_unit == VolumeConcentrationUnits.DeciliterPerMilliliter:
             return ((value * 1e-3) / 0.1)
         
         return None
@@ -339,10 +339,10 @@ class VolumeConcentration(AbstractMeasure):
         if to_unit == VolumeConcentrationUnits.DecimalFraction:
             return (value)
         
-        if to_unit == VolumeConcentrationUnits.LitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.LiterPerLiter:
             return (value)
         
-        if to_unit == VolumeConcentrationUnits.LitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.LiterPerMilliliter:
             return (value / 1e-3)
         
         if to_unit == VolumeConcentrationUnits.Percent:
@@ -360,40 +360,40 @@ class VolumeConcentration(AbstractMeasure):
         if to_unit == VolumeConcentrationUnits.PartPerTrillion:
             return (value / 1e12)
         
-        if to_unit == VolumeConcentrationUnits.PicolitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.PicoliterPerLiter:
             return ((value) * 1e-12)
         
-        if to_unit == VolumeConcentrationUnits.NanolitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.NanoliterPerLiter:
             return ((value) * 1e-09)
         
-        if to_unit == VolumeConcentrationUnits.MicrolitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.MicroliterPerLiter:
             return ((value) * 1e-06)
         
-        if to_unit == VolumeConcentrationUnits.MillilitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.MilliliterPerLiter:
             return ((value) * 0.001)
         
-        if to_unit == VolumeConcentrationUnits.CentilitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.CentiliterPerLiter:
             return ((value) * 0.01)
         
-        if to_unit == VolumeConcentrationUnits.DecilitersPerLiter:
+        if to_unit == VolumeConcentrationUnits.DeciliterPerLiter:
             return ((value) * 0.1)
         
-        if to_unit == VolumeConcentrationUnits.PicolitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.PicoliterPerMilliliter:
             return ((value / 1e-3) * 1e-12)
         
-        if to_unit == VolumeConcentrationUnits.NanolitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.NanoliterPerMilliliter:
             return ((value / 1e-3) * 1e-09)
         
-        if to_unit == VolumeConcentrationUnits.MicrolitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.MicroliterPerMilliliter:
             return ((value / 1e-3) * 1e-06)
         
-        if to_unit == VolumeConcentrationUnits.MillilitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.MilliliterPerMilliliter:
             return ((value / 1e-3) * 0.001)
         
-        if to_unit == VolumeConcentrationUnits.CentilitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.CentiliterPerMilliliter:
             return ((value / 1e-3) * 0.01)
         
-        if to_unit == VolumeConcentrationUnits.DecilitersPerMililiter:
+        if to_unit == VolumeConcentrationUnits.DeciliterPerMilliliter:
             return ((value / 1e-3) * 0.1)
         
         return None
@@ -431,22 +431,22 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(liters_per_liter, VolumeConcentrationUnits.LitersPerLiter)
+        return VolumeConcentration(liters_per_liter, VolumeConcentrationUnits.LiterPerLiter)
 
     
     @staticmethod
-    def from_liters_per_mililiter(liters_per_mililiter: float):
+    def from_liters_per_milliliter(liters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in liters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in liters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in liters_per_mililiter.
-        :type liters_per_mililiter: float
+        :param meters: The VolumeConcentration value in liters_per_milliliter.
+        :type liters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(liters_per_mililiter, VolumeConcentrationUnits.LitersPerMililiter)
+        return VolumeConcentration(liters_per_milliliter, VolumeConcentrationUnits.LiterPerMilliliter)
 
     
     @staticmethod
@@ -536,7 +536,7 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(picoliters_per_liter, VolumeConcentrationUnits.PicolitersPerLiter)
+        return VolumeConcentration(picoliters_per_liter, VolumeConcentrationUnits.PicoliterPerLiter)
 
     
     @staticmethod
@@ -551,7 +551,7 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(nanoliters_per_liter, VolumeConcentrationUnits.NanolitersPerLiter)
+        return VolumeConcentration(nanoliters_per_liter, VolumeConcentrationUnits.NanoliterPerLiter)
 
     
     @staticmethod
@@ -566,7 +566,7 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(microliters_per_liter, VolumeConcentrationUnits.MicrolitersPerLiter)
+        return VolumeConcentration(microliters_per_liter, VolumeConcentrationUnits.MicroliterPerLiter)
 
     
     @staticmethod
@@ -581,7 +581,7 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(milliliters_per_liter, VolumeConcentrationUnits.MillilitersPerLiter)
+        return VolumeConcentration(milliliters_per_liter, VolumeConcentrationUnits.MilliliterPerLiter)
 
     
     @staticmethod
@@ -596,7 +596,7 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(centiliters_per_liter, VolumeConcentrationUnits.CentilitersPerLiter)
+        return VolumeConcentration(centiliters_per_liter, VolumeConcentrationUnits.CentiliterPerLiter)
 
     
     @staticmethod
@@ -611,97 +611,97 @@ class VolumeConcentration(AbstractMeasure):
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(deciliters_per_liter, VolumeConcentrationUnits.DecilitersPerLiter)
+        return VolumeConcentration(deciliters_per_liter, VolumeConcentrationUnits.DeciliterPerLiter)
 
     
     @staticmethod
-    def from_picoliters_per_mililiter(picoliters_per_mililiter: float):
+    def from_picoliters_per_milliliter(picoliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in picoliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in picoliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in picoliters_per_mililiter.
-        :type picoliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in picoliters_per_milliliter.
+        :type picoliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(picoliters_per_mililiter, VolumeConcentrationUnits.PicolitersPerMililiter)
+        return VolumeConcentration(picoliters_per_milliliter, VolumeConcentrationUnits.PicoliterPerMilliliter)
 
     
     @staticmethod
-    def from_nanoliters_per_mililiter(nanoliters_per_mililiter: float):
+    def from_nanoliters_per_milliliter(nanoliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in nanoliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in nanoliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in nanoliters_per_mililiter.
-        :type nanoliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in nanoliters_per_milliliter.
+        :type nanoliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(nanoliters_per_mililiter, VolumeConcentrationUnits.NanolitersPerMililiter)
+        return VolumeConcentration(nanoliters_per_milliliter, VolumeConcentrationUnits.NanoliterPerMilliliter)
 
     
     @staticmethod
-    def from_microliters_per_mililiter(microliters_per_mililiter: float):
+    def from_microliters_per_milliliter(microliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in microliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in microliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in microliters_per_mililiter.
-        :type microliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in microliters_per_milliliter.
+        :type microliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(microliters_per_mililiter, VolumeConcentrationUnits.MicrolitersPerMililiter)
+        return VolumeConcentration(microliters_per_milliliter, VolumeConcentrationUnits.MicroliterPerMilliliter)
 
     
     @staticmethod
-    def from_milliliters_per_mililiter(milliliters_per_mililiter: float):
+    def from_milliliters_per_milliliter(milliliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in milliliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in milliliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in milliliters_per_mililiter.
-        :type milliliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in milliliters_per_milliliter.
+        :type milliliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(milliliters_per_mililiter, VolumeConcentrationUnits.MillilitersPerMililiter)
+        return VolumeConcentration(milliliters_per_milliliter, VolumeConcentrationUnits.MilliliterPerMilliliter)
 
     
     @staticmethod
-    def from_centiliters_per_mililiter(centiliters_per_mililiter: float):
+    def from_centiliters_per_milliliter(centiliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in centiliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in centiliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in centiliters_per_mililiter.
-        :type centiliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in centiliters_per_milliliter.
+        :type centiliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(centiliters_per_mililiter, VolumeConcentrationUnits.CentilitersPerMililiter)
+        return VolumeConcentration(centiliters_per_milliliter, VolumeConcentrationUnits.CentiliterPerMilliliter)
 
     
     @staticmethod
-    def from_deciliters_per_mililiter(deciliters_per_mililiter: float):
+    def from_deciliters_per_milliliter(deciliters_per_milliliter: float):
         """
-        Create a new instance of VolumeConcentration from a value in deciliters_per_mililiter.
+        Create a new instance of VolumeConcentration from a value in deciliters_per_milliliter.
 
         
 
-        :param meters: The VolumeConcentration value in deciliters_per_mililiter.
-        :type deciliters_per_mililiter: float
+        :param meters: The VolumeConcentration value in deciliters_per_milliliter.
+        :type deciliters_per_milliliter: float
         :return: A new instance of VolumeConcentration.
         :rtype: VolumeConcentration
         """
-        return VolumeConcentration(deciliters_per_mililiter, VolumeConcentrationUnits.DecilitersPerMililiter)
+        return VolumeConcentration(deciliters_per_milliliter, VolumeConcentrationUnits.DeciliterPerMilliliter)
 
     
     @property
@@ -722,19 +722,19 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__liters_per_liter != None:
             return self.__liters_per_liter
-        self.__liters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.LitersPerLiter)
+        self.__liters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.LiterPerLiter)
         return self.__liters_per_liter
 
     
     @property
-    def liters_per_mililiter(self) -> float:
+    def liters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__liters_per_mililiter != None:
-            return self.__liters_per_mililiter
-        self.__liters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.LitersPerMililiter)
-        return self.__liters_per_mililiter
+        if self.__liters_per_milliliter != None:
+            return self.__liters_per_milliliter
+        self.__liters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.LiterPerMilliliter)
+        return self.__liters_per_milliliter
 
     
     @property
@@ -799,7 +799,7 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__picoliters_per_liter != None:
             return self.__picoliters_per_liter
-        self.__picoliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.PicolitersPerLiter)
+        self.__picoliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.PicoliterPerLiter)
         return self.__picoliters_per_liter
 
     
@@ -810,7 +810,7 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__nanoliters_per_liter != None:
             return self.__nanoliters_per_liter
-        self.__nanoliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.NanolitersPerLiter)
+        self.__nanoliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.NanoliterPerLiter)
         return self.__nanoliters_per_liter
 
     
@@ -821,7 +821,7 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__microliters_per_liter != None:
             return self.__microliters_per_liter
-        self.__microliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.MicrolitersPerLiter)
+        self.__microliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.MicroliterPerLiter)
         return self.__microliters_per_liter
 
     
@@ -832,7 +832,7 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__milliliters_per_liter != None:
             return self.__milliliters_per_liter
-        self.__milliliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.MillilitersPerLiter)
+        self.__milliliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.MilliliterPerLiter)
         return self.__milliliters_per_liter
 
     
@@ -843,7 +843,7 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__centiliters_per_liter != None:
             return self.__centiliters_per_liter
-        self.__centiliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.CentilitersPerLiter)
+        self.__centiliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.CentiliterPerLiter)
         return self.__centiliters_per_liter
 
     
@@ -854,74 +854,74 @@ class VolumeConcentration(AbstractMeasure):
         """
         if self.__deciliters_per_liter != None:
             return self.__deciliters_per_liter
-        self.__deciliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.DecilitersPerLiter)
+        self.__deciliters_per_liter = self.__convert_from_base(VolumeConcentrationUnits.DeciliterPerLiter)
         return self.__deciliters_per_liter
 
     
     @property
-    def picoliters_per_mililiter(self) -> float:
+    def picoliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__picoliters_per_mililiter != None:
-            return self.__picoliters_per_mililiter
-        self.__picoliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.PicolitersPerMililiter)
-        return self.__picoliters_per_mililiter
+        if self.__picoliters_per_milliliter != None:
+            return self.__picoliters_per_milliliter
+        self.__picoliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.PicoliterPerMilliliter)
+        return self.__picoliters_per_milliliter
 
     
     @property
-    def nanoliters_per_mililiter(self) -> float:
+    def nanoliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__nanoliters_per_mililiter != None:
-            return self.__nanoliters_per_mililiter
-        self.__nanoliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.NanolitersPerMililiter)
-        return self.__nanoliters_per_mililiter
+        if self.__nanoliters_per_milliliter != None:
+            return self.__nanoliters_per_milliliter
+        self.__nanoliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.NanoliterPerMilliliter)
+        return self.__nanoliters_per_milliliter
 
     
     @property
-    def microliters_per_mililiter(self) -> float:
+    def microliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__microliters_per_mililiter != None:
-            return self.__microliters_per_mililiter
-        self.__microliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.MicrolitersPerMililiter)
-        return self.__microliters_per_mililiter
+        if self.__microliters_per_milliliter != None:
+            return self.__microliters_per_milliliter
+        self.__microliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.MicroliterPerMilliliter)
+        return self.__microliters_per_milliliter
 
     
     @property
-    def milliliters_per_mililiter(self) -> float:
+    def milliliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__milliliters_per_mililiter != None:
-            return self.__milliliters_per_mililiter
-        self.__milliliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.MillilitersPerMililiter)
-        return self.__milliliters_per_mililiter
+        if self.__milliliters_per_milliliter != None:
+            return self.__milliliters_per_milliliter
+        self.__milliliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.MilliliterPerMilliliter)
+        return self.__milliliters_per_milliliter
 
     
     @property
-    def centiliters_per_mililiter(self) -> float:
+    def centiliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__centiliters_per_mililiter != None:
-            return self.__centiliters_per_mililiter
-        self.__centiliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.CentilitersPerMililiter)
-        return self.__centiliters_per_mililiter
+        if self.__centiliters_per_milliliter != None:
+            return self.__centiliters_per_milliliter
+        self.__centiliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.CentiliterPerMilliliter)
+        return self.__centiliters_per_milliliter
 
     
     @property
-    def deciliters_per_mililiter(self) -> float:
+    def deciliters_per_milliliter(self) -> float:
         """
         
         """
-        if self.__deciliters_per_mililiter != None:
-            return self.__deciliters_per_mililiter
-        self.__deciliters_per_mililiter = self.__convert_from_base(VolumeConcentrationUnits.DecilitersPerMililiter)
-        return self.__deciliters_per_mililiter
+        if self.__deciliters_per_milliliter != None:
+            return self.__deciliters_per_milliliter
+        self.__deciliters_per_milliliter = self.__convert_from_base(VolumeConcentrationUnits.DeciliterPerMilliliter)
+        return self.__deciliters_per_milliliter
 
     
     def to_string(self, unit: VolumeConcentrationUnits = VolumeConcentrationUnits.DecimalFraction, fractional_digits: int = None) -> str:
@@ -942,11 +942,11 @@ class VolumeConcentration(AbstractMeasure):
         if unit == VolumeConcentrationUnits.DecimalFraction:
             return f"""{super()._truncate_fraction_digits(self.decimal_fractions, fractional_digits)} """
         
-        if unit == VolumeConcentrationUnits.LitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.liters_per_liter, fractional_digits)} L/L"""
+        if unit == VolumeConcentrationUnits.LiterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.liters_per_liter, fractional_digits)} l/l"""
         
-        if unit == VolumeConcentrationUnits.LitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.liters_per_mililiter, fractional_digits)} L/mL"""
+        if unit == VolumeConcentrationUnits.LiterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.liters_per_milliliter, fractional_digits)} l/ml"""
         
         if unit == VolumeConcentrationUnits.Percent:
             return f"""{super()._truncate_fraction_digits(self.percent, fractional_digits)} %"""
@@ -963,41 +963,41 @@ class VolumeConcentration(AbstractMeasure):
         if unit == VolumeConcentrationUnits.PartPerTrillion:
             return f"""{super()._truncate_fraction_digits(self.parts_per_trillion, fractional_digits)} ppt"""
         
-        if unit == VolumeConcentrationUnits.PicolitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.picoliters_per_liter, fractional_digits)} pL/L"""
+        if unit == VolumeConcentrationUnits.PicoliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.picoliters_per_liter, fractional_digits)} pl/l"""
         
-        if unit == VolumeConcentrationUnits.NanolitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_liter, fractional_digits)} nL/L"""
+        if unit == VolumeConcentrationUnits.NanoliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_liter, fractional_digits)} nl/l"""
         
-        if unit == VolumeConcentrationUnits.MicrolitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.microliters_per_liter, fractional_digits)} μL/L"""
+        if unit == VolumeConcentrationUnits.MicroliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_liter, fractional_digits)} μl/l"""
         
-        if unit == VolumeConcentrationUnits.MillilitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.milliliters_per_liter, fractional_digits)} mL/L"""
+        if unit == VolumeConcentrationUnits.MilliliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_liter, fractional_digits)} ml/l"""
         
-        if unit == VolumeConcentrationUnits.CentilitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.centiliters_per_liter, fractional_digits)} cL/L"""
+        if unit == VolumeConcentrationUnits.CentiliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_liter, fractional_digits)} cl/l"""
         
-        if unit == VolumeConcentrationUnits.DecilitersPerLiter:
-            return f"""{super()._truncate_fraction_digits(self.deciliters_per_liter, fractional_digits)} dL/L"""
+        if unit == VolumeConcentrationUnits.DeciliterPerLiter:
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_liter, fractional_digits)} dl/l"""
         
-        if unit == VolumeConcentrationUnits.PicolitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.picoliters_per_mililiter, fractional_digits)} pL/mL"""
+        if unit == VolumeConcentrationUnits.PicoliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.picoliters_per_milliliter, fractional_digits)} pl/ml"""
         
-        if unit == VolumeConcentrationUnits.NanolitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_mililiter, fractional_digits)} nL/mL"""
+        if unit == VolumeConcentrationUnits.NanoliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_milliliter, fractional_digits)} nl/ml"""
         
-        if unit == VolumeConcentrationUnits.MicrolitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.microliters_per_mililiter, fractional_digits)} μL/mL"""
+        if unit == VolumeConcentrationUnits.MicroliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_milliliter, fractional_digits)} μl/ml"""
         
-        if unit == VolumeConcentrationUnits.MillilitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.milliliters_per_mililiter, fractional_digits)} mL/mL"""
+        if unit == VolumeConcentrationUnits.MilliliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_milliliter, fractional_digits)} ml/ml"""
         
-        if unit == VolumeConcentrationUnits.CentilitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.centiliters_per_mililiter, fractional_digits)} cL/mL"""
+        if unit == VolumeConcentrationUnits.CentiliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_milliliter, fractional_digits)} cl/ml"""
         
-        if unit == VolumeConcentrationUnits.DecilitersPerMililiter:
-            return f"""{super()._truncate_fraction_digits(self.deciliters_per_mililiter, fractional_digits)} dL/mL"""
+        if unit == VolumeConcentrationUnits.DeciliterPerMilliliter:
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_milliliter, fractional_digits)} dl/ml"""
         
         return f'{self._value}'
 
@@ -1012,11 +1012,11 @@ class VolumeConcentration(AbstractMeasure):
         if unit_abbreviation == VolumeConcentrationUnits.DecimalFraction:
             return """"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.LitersPerLiter:
-            return """L/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.LiterPerLiter:
+            return """l/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.LitersPerMililiter:
-            return """L/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.LiterPerMilliliter:
+            return """l/ml"""
         
         if unit_abbreviation == VolumeConcentrationUnits.Percent:
             return """%"""
@@ -1033,39 +1033,39 @@ class VolumeConcentration(AbstractMeasure):
         if unit_abbreviation == VolumeConcentrationUnits.PartPerTrillion:
             return """ppt"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.PicolitersPerLiter:
-            return """pL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.PicoliterPerLiter:
+            return """pl/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.NanolitersPerLiter:
-            return """nL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.NanoliterPerLiter:
+            return """nl/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.MicrolitersPerLiter:
-            return """μL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.MicroliterPerLiter:
+            return """μl/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.MillilitersPerLiter:
-            return """mL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.MilliliterPerLiter:
+            return """ml/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.CentilitersPerLiter:
-            return """cL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.CentiliterPerLiter:
+            return """cl/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.DecilitersPerLiter:
-            return """dL/L"""
+        if unit_abbreviation == VolumeConcentrationUnits.DeciliterPerLiter:
+            return """dl/l"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.PicolitersPerMililiter:
-            return """pL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.PicoliterPerMilliliter:
+            return """pl/ml"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.NanolitersPerMililiter:
-            return """nL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.NanoliterPerMilliliter:
+            return """nl/ml"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.MicrolitersPerMililiter:
-            return """μL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.MicroliterPerMilliliter:
+            return """μl/ml"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.MillilitersPerMililiter:
-            return """mL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.MilliliterPerMilliliter:
+            return """ml/ml"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.CentilitersPerMililiter:
-            return """cL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.CentiliterPerMilliliter:
+            return """cl/ml"""
         
-        if unit_abbreviation == VolumeConcentrationUnits.DecilitersPerMililiter:
-            return """dL/mL"""
+        if unit_abbreviation == VolumeConcentrationUnits.DeciliterPerMilliliter:
+            return """dl/ml"""
         

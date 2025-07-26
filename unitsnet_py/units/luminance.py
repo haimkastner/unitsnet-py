@@ -205,10 +205,10 @@ class Luminance(AbstractMeasure):
             return (value)
         
         if from_unit == LuminanceUnits.CandelaPerSquareFoot:
-            return (value/ 1.07639e1)
+            return (value * 9.290304e-2)
         
         if from_unit == LuminanceUnits.CandelaPerSquareInch:
-            return (value/ 1.5500031e3)
+            return (value * 0.00064516)
         
         if from_unit == LuminanceUnits.Nit:
             return (value)
@@ -240,10 +240,10 @@ class Luminance(AbstractMeasure):
             return (value)
         
         if to_unit == LuminanceUnits.CandelaPerSquareFoot:
-            return (value* 1.07639e1)
+            return (value / 9.290304e-2)
         
         if to_unit == LuminanceUnits.CandelaPerSquareInch:
-            return (value* 1.5500031e3)
+            return (value / 0.00064516)
         
         if to_unit == LuminanceUnits.Nit:
             return (value)

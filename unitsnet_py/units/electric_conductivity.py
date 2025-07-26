@@ -177,10 +177,10 @@ class ElectricConductivity(AbstractMeasure):
             return (value)
         
         if from_unit == ElectricConductivityUnits.SiemensPerInch:
-            return (value / 3.937007874015748e1)
+            return (value * 2.54e-2)
         
         if from_unit == ElectricConductivityUnits.SiemensPerFoot:
-            return (value / 3.2808398950131234)
+            return (value * 0.3048)
         
         if from_unit == ElectricConductivityUnits.SiemensPerCentimeter:
             return (value / 1e2)
@@ -200,10 +200,10 @@ class ElectricConductivity(AbstractMeasure):
             return (value)
         
         if to_unit == ElectricConductivityUnits.SiemensPerInch:
-            return (value * 3.937007874015748e1)
+            return (value / 2.54e-2)
         
         if to_unit == ElectricConductivityUnits.SiemensPerFoot:
-            return (value * 3.2808398950131234)
+            return (value / 0.3048)
         
         if to_unit == ElectricConductivityUnits.SiemensPerCentimeter:
             return (value * 1e2)

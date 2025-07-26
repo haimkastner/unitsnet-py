@@ -264,16 +264,16 @@ class PressureChangeRate(AbstractMeasure):
             return (value * 60)
         
         if from_unit == PressureChangeRateUnits.MillimeterOfMercuryPerSecond:
-            return (value / 133.322)
+            return (value / 133.322387415)
         
         if from_unit == PressureChangeRateUnits.AtmospherePerSecond:
             return (value / (1.01325 * 1e5))
         
         if from_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerSecond:
-            return (value / 6.894757293168361e3)
+            return (value * 0.00064516 / 4.4482216152605)
         
         if from_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
-            return (value / 6.894757293168361e3 * 60)
+            return (value * 60 / (4.4482216152605 / 0.00064516))
         
         if from_unit == PressureChangeRateUnits.BarPerSecond:
             return (value / 1e5)
@@ -294,16 +294,16 @@ class PressureChangeRate(AbstractMeasure):
             return ((value * 60) / 1000000.0)
         
         if from_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
-            return ((value / 6.894757293168361e3) / 1000.0)
+            return ((value * 0.00064516 / 4.4482216152605) / 1000.0)
         
         if from_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
-            return ((value / 6.894757293168361e3) / 1000000.0)
+            return ((value * 0.00064516 / 4.4482216152605) / 1000000.0)
         
         if from_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
-            return ((value / 6.894757293168361e3 * 60) / 1000.0)
+            return ((value * 60 / (4.4482216152605 / 0.00064516)) / 1000.0)
         
         if from_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
-            return ((value / 6.894757293168361e3 * 60) / 1000000.0)
+            return ((value * 60 / (4.4482216152605 / 0.00064516)) / 1000000.0)
         
         if from_unit == PressureChangeRateUnits.MillibarPerSecond:
             return ((value / 1e5) / 0.001)
@@ -323,16 +323,16 @@ class PressureChangeRate(AbstractMeasure):
             return (value / 60)
         
         if to_unit == PressureChangeRateUnits.MillimeterOfMercuryPerSecond:
-            return (value * 133.322)
+            return (value * 133.322387415)
         
         if to_unit == PressureChangeRateUnits.AtmospherePerSecond:
             return (value * 1.01325 * 1e5)
         
         if to_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerSecond:
-            return (value * 6.894757293168361e3)
+            return (value * 4.4482216152605 / 0.00064516)
         
         if to_unit == PressureChangeRateUnits.PoundForcePerSquareInchPerMinute:
-            return (value * 6.894757293168361e3 / 60)
+            return (value * (4.4482216152605 / 0.00064516) / 60)
         
         if to_unit == PressureChangeRateUnits.BarPerSecond:
             return (value * 1e5)
@@ -353,16 +353,16 @@ class PressureChangeRate(AbstractMeasure):
             return ((value / 60) * 1000000.0)
         
         if to_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerSecond:
-            return ((value * 6.894757293168361e3) * 1000.0)
+            return ((value * 4.4482216152605 / 0.00064516) * 1000.0)
         
         if to_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerSecond:
-            return ((value * 6.894757293168361e3) * 1000000.0)
+            return ((value * 4.4482216152605 / 0.00064516) * 1000000.0)
         
         if to_unit == PressureChangeRateUnits.KilopoundForcePerSquareInchPerMinute:
-            return ((value * 6.894757293168361e3 / 60) * 1000.0)
+            return ((value * (4.4482216152605 / 0.00064516) / 60) * 1000.0)
         
         if to_unit == PressureChangeRateUnits.MegapoundForcePerSquareInchPerMinute:
-            return ((value * 6.894757293168361e3 / 60) * 1000000.0)
+            return ((value * (4.4482216152605 / 0.00064516) / 60) * 1000000.0)
         
         if to_unit == PressureChangeRateUnits.MillibarPerSecond:
             return ((value * 1e5) * 0.001)

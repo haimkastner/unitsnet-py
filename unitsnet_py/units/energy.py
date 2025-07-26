@@ -27,17 +27,17 @@ class EnergyUnits(Enum):
         
         ElectronVolt = 'ElectronVolt'
         """
-            
+            In physics, an electronvolt (symbol eV, also written electron-volt and electron volt) is the measure of an amount of kinetic energy gained by a single electron accelerating from rest through an electric potential difference of one volt in vacuum. When used as a unit of energy, the numerical value of 1 eV in joules (symbol J) is equivalent to the numerical value of the charge of an electron in coulombs (symbol C). Under the 2019 redefinition of the SI base units, this sets 1 eV equal to the exact value 1.602176634×10−19 J.
         """
         
         FootPound = 'FootPound'
         """
-            
+            A pound-foot (lb⋅ft), abbreviated from pound-force foot (lbf · ft), is a unit of torque representing one pound of force acting at a perpendicular distance of one foot from a pivot point. Conversely one foot pound-force (ft · lbf) is the moment about an axis that applies one pound-force at a radius of one foot.
         """
         
         Erg = 'Erg'
         """
-            
+            The erg is a unit of energy equal to 10−7 joules (100 nJ). It originated in the Centimetre–gram–second system of units (CGS). It has the symbol erg. The erg is not an SI unit. Its name is derived from ergon (ἔργον), a Greek word meaning 'work' or 'task'.
         """
         
         WattHour = 'WattHour'
@@ -52,22 +52,22 @@ class EnergyUnits(Enum):
         
         ThermEc = 'ThermEc'
         """
-            
+            The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         
         ThermUs = 'ThermUs'
         """
-            
+            The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         
         ThermImperial = 'ThermImperial'
         """
-            
+            The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         
         HorsepowerHour = 'HorsepowerHour'
         """
-            
+            A horsepower-hour (symbol: hp⋅h) is an outdated unit of energy, not used in the International System of Units. The unit represents an amount of work a horse is supposed capable of delivering during an hour (1 horsepower integrated over a time interval of an hour).
         """
         
         Nanojoule = 'Nanojoule'
@@ -421,10 +421,10 @@ class Energy(AbstractMeasure):
             return (value / 1055.05585262)
         
         if from_unit == EnergyUnits.ElectronVolt:
-            return (value / 1.602176565e-19)
+            return (value / 1.602176634e-19)
         
         if from_unit == EnergyUnits.FootPound:
-            return (value / 1.355817948)
+            return (value / 1.3558179483314004)
         
         if from_unit == EnergyUnits.Erg:
             return (value / 1e-7)
@@ -445,7 +445,7 @@ class Energy(AbstractMeasure):
             return (value / 1.05505585257348e8)
         
         if from_unit == EnergyUnits.HorsepowerHour:
-            return (value / 2.6845195377e6)
+            return (value / (76.0402249 * 9.80665 * 3600))
         
         if from_unit == EnergyUnits.Nanojoule:
             return ((value) / 1e-09)
@@ -487,16 +487,16 @@ class Energy(AbstractMeasure):
             return ((value / 1055.05585262) / 1000000000.0)
         
         if from_unit == EnergyUnits.KiloelectronVolt:
-            return ((value / 1.602176565e-19) / 1000.0)
+            return ((value / 1.602176634e-19) / 1000.0)
         
         if from_unit == EnergyUnits.MegaelectronVolt:
-            return ((value / 1.602176565e-19) / 1000000.0)
+            return ((value / 1.602176634e-19) / 1000000.0)
         
         if from_unit == EnergyUnits.GigaelectronVolt:
-            return ((value / 1.602176565e-19) / 1000000000.0)
+            return ((value / 1.602176634e-19) / 1000000000.0)
         
         if from_unit == EnergyUnits.TeraelectronVolt:
-            return ((value / 1.602176565e-19) / 1000000000000.0)
+            return ((value / 1.602176634e-19) / 1000000000000.0)
         
         if from_unit == EnergyUnits.KilowattHour:
             return ((value / 3600) / 1000.0)
@@ -546,10 +546,10 @@ class Energy(AbstractMeasure):
             return (value * 1055.05585262)
         
         if to_unit == EnergyUnits.ElectronVolt:
-            return (value * 1.602176565e-19)
+            return (value * 1.602176634e-19)
         
         if to_unit == EnergyUnits.FootPound:
-            return (value * 1.355817948)
+            return (value * 1.3558179483314004)
         
         if to_unit == EnergyUnits.Erg:
             return (value * 1e-7)
@@ -570,7 +570,7 @@ class Energy(AbstractMeasure):
             return (value * 1.05505585257348e8)
         
         if to_unit == EnergyUnits.HorsepowerHour:
-            return (value * 2.6845195377e6)
+            return (value * 76.0402249 * 9.80665 * 3600)
         
         if to_unit == EnergyUnits.Nanojoule:
             return ((value) * 1e-09)
@@ -612,16 +612,16 @@ class Energy(AbstractMeasure):
             return ((value * 1055.05585262) * 1000000000.0)
         
         if to_unit == EnergyUnits.KiloelectronVolt:
-            return ((value * 1.602176565e-19) * 1000.0)
+            return ((value * 1.602176634e-19) * 1000.0)
         
         if to_unit == EnergyUnits.MegaelectronVolt:
-            return ((value * 1.602176565e-19) * 1000000.0)
+            return ((value * 1.602176634e-19) * 1000000.0)
         
         if to_unit == EnergyUnits.GigaelectronVolt:
-            return ((value * 1.602176565e-19) * 1000000000.0)
+            return ((value * 1.602176634e-19) * 1000000000.0)
         
         if to_unit == EnergyUnits.TeraelectronVolt:
-            return ((value * 1.602176565e-19) * 1000000000000.0)
+            return ((value * 1.602176634e-19) * 1000000000000.0)
         
         if to_unit == EnergyUnits.KilowattHour:
             return ((value * 3600) * 1000.0)
@@ -714,7 +714,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in electron_volts.
 
-        
+        In physics, an electronvolt (symbol eV, also written electron-volt and electron volt) is the measure of an amount of kinetic energy gained by a single electron accelerating from rest through an electric potential difference of one volt in vacuum. When used as a unit of energy, the numerical value of 1 eV in joules (symbol J) is equivalent to the numerical value of the charge of an electron in coulombs (symbol C). Under the 2019 redefinition of the SI base units, this sets 1 eV equal to the exact value 1.602176634×10−19 J.
 
         :param meters: The Energy value in electron_volts.
         :type electron_volts: float
@@ -729,7 +729,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in foot_pounds.
 
-        
+        A pound-foot (lb⋅ft), abbreviated from pound-force foot (lbf · ft), is a unit of torque representing one pound of force acting at a perpendicular distance of one foot from a pivot point. Conversely one foot pound-force (ft · lbf) is the moment about an axis that applies one pound-force at a radius of one foot.
 
         :param meters: The Energy value in foot_pounds.
         :type foot_pounds: float
@@ -744,7 +744,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in ergs.
 
-        
+        The erg is a unit of energy equal to 10−7 joules (100 nJ). It originated in the Centimetre–gram–second system of units (CGS). It has the symbol erg. The erg is not an SI unit. Its name is derived from ergon (ἔργον), a Greek word meaning 'work' or 'task'.
 
         :param meters: The Energy value in ergs.
         :type ergs: float
@@ -789,7 +789,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in therms_ec.
 
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
 
         :param meters: The Energy value in therms_ec.
         :type therms_ec: float
@@ -804,7 +804,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in therms_us.
 
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
 
         :param meters: The Energy value in therms_us.
         :type therms_us: float
@@ -819,7 +819,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in therms_imperial.
 
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
 
         :param meters: The Energy value in therms_imperial.
         :type therms_imperial: float
@@ -834,7 +834,7 @@ class Energy(AbstractMeasure):
         """
         Create a new instance of Energy from a value in horsepower_hours.
 
-        
+        A horsepower-hour (symbol: hp⋅h) is an outdated unit of energy, not used in the International System of Units. The unit represents an amount of work a horse is supposed capable of delivering during an hour (1 horsepower integrated over a time interval of an hour).
 
         :param meters: The Energy value in horsepower_hours.
         :type horsepower_hours: float
@@ -1300,7 +1300,7 @@ class Energy(AbstractMeasure):
     @property
     def electron_volts(self) -> float:
         """
-        
+        In physics, an electronvolt (symbol eV, also written electron-volt and electron volt) is the measure of an amount of kinetic energy gained by a single electron accelerating from rest through an electric potential difference of one volt in vacuum. When used as a unit of energy, the numerical value of 1 eV in joules (symbol J) is equivalent to the numerical value of the charge of an electron in coulombs (symbol C). Under the 2019 redefinition of the SI base units, this sets 1 eV equal to the exact value 1.602176634×10−19 J.
         """
         if self.__electron_volts != None:
             return self.__electron_volts
@@ -1311,7 +1311,7 @@ class Energy(AbstractMeasure):
     @property
     def foot_pounds(self) -> float:
         """
-        
+        A pound-foot (lb⋅ft), abbreviated from pound-force foot (lbf · ft), is a unit of torque representing one pound of force acting at a perpendicular distance of one foot from a pivot point. Conversely one foot pound-force (ft · lbf) is the moment about an axis that applies one pound-force at a radius of one foot.
         """
         if self.__foot_pounds != None:
             return self.__foot_pounds
@@ -1322,7 +1322,7 @@ class Energy(AbstractMeasure):
     @property
     def ergs(self) -> float:
         """
-        
+        The erg is a unit of energy equal to 10−7 joules (100 nJ). It originated in the Centimetre–gram–second system of units (CGS). It has the symbol erg. The erg is not an SI unit. Its name is derived from ergon (ἔργον), a Greek word meaning 'work' or 'task'.
         """
         if self.__ergs != None:
             return self.__ergs
@@ -1355,7 +1355,7 @@ class Energy(AbstractMeasure):
     @property
     def therms_ec(self) -> float:
         """
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         if self.__therms_ec != None:
             return self.__therms_ec
@@ -1366,7 +1366,7 @@ class Energy(AbstractMeasure):
     @property
     def therms_us(self) -> float:
         """
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         if self.__therms_us != None:
             return self.__therms_us
@@ -1377,7 +1377,7 @@ class Energy(AbstractMeasure):
     @property
     def therms_imperial(self) -> float:
         """
-        
+        The therm (symbol, thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU), and approximately 105 megajoules, 29.3 kilowatt-hours, 25,200 kilocalories and 25.2 thermies. One therm is the energy content of approximately 100 cubic feet (2.83 cubic metres) of natural gas at standard temperature and pressure. However, the BTU is not standardised worldwide, with slightly different values in the EU, UK, and United States, meaning that the energy content of the therm also varies by territory.
         """
         if self.__therms_imperial != None:
             return self.__therms_imperial
@@ -1388,7 +1388,7 @@ class Energy(AbstractMeasure):
     @property
     def horsepower_hours(self) -> float:
         """
-        
+        A horsepower-hour (symbol: hp⋅h) is an outdated unit of energy, not used in the International System of Units. The unit represents an amount of work a horse is supposed capable of delivering during an hour (1 horsepower integrated over a time interval of an hour).
         """
         if self.__horsepower_hours != None:
             return self.__horsepower_hours

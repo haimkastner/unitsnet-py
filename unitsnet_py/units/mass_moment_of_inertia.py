@@ -45,7 +45,7 @@ class MassMomentOfInertiaUnits(Enum):
             
         """
         
-        TonneSquareMilimeter = 'TonneSquareMilimeter'
+        TonneSquareMillimeter = 'TonneSquareMillimeter'
         """
             
         """
@@ -140,12 +140,12 @@ class MassMomentOfInertiaUnits(Enum):
             
         """
         
-        KilotonneSquareMilimeter = 'KilotonneSquareMilimeter'
+        KilotonneSquareMillimeter = 'KilotonneSquareMillimeter'
         """
             
         """
         
-        MegatonneSquareMilimeter = 'MegatonneSquareMilimeter'
+        MegatonneSquareMillimeter = 'MegatonneSquareMillimeter'
         """
             
         """
@@ -230,7 +230,7 @@ class MassMomentOfInertia(AbstractMeasure):
         
         self.__tonne_square_centimeters = None
         
-        self.__tonne_square_milimeters = None
+        self.__tonne_square_millimeters = None
         
         self.__pound_square_feet = None
         
@@ -268,9 +268,9 @@ class MassMomentOfInertia(AbstractMeasure):
         
         self.__megatonne_square_centimeters = None
         
-        self.__kilotonne_square_milimeters = None
+        self.__kilotonne_square_millimeters = None
         
-        self.__megatonne_square_milimeters = None
+        self.__megatonne_square_millimeters = None
         
 
     def convert(self, unit: MassMomentOfInertiaUnits) -> float:
@@ -348,20 +348,20 @@ class MassMomentOfInertia(AbstractMeasure):
         if from_unit == MassMomentOfInertiaUnits.TonneSquareCentimeter:
             return (value * 1e1)
         
-        if from_unit == MassMomentOfInertiaUnits.TonneSquareMilimeter:
+        if from_unit == MassMomentOfInertiaUnits.TonneSquareMillimeter:
             return (value * 1e3)
         
         if from_unit == MassMomentOfInertiaUnits.PoundSquareFoot:
-            return (value / 4.21401101e-2)
+            return (value / (0.45359237 * 9.290304e-2))
         
         if from_unit == MassMomentOfInertiaUnits.PoundSquareInch:
-            return (value / 2.9263965e-4)
+            return (value / (0.45359237 * 0.00064516))
         
         if from_unit == MassMomentOfInertiaUnits.SlugSquareFoot:
-            return (value / 1.3558179619)
+            return (value * 0.3048 / (0.45359237 * 9.290304e-2 * 9.80665))
         
         if from_unit == MassMomentOfInertiaUnits.SlugSquareInch:
-            return (value / 9.41540242e-3)
+            return (value * 0.3048 / (0.45359237 * 0.00064516 * 9.80665))
         
         if from_unit == MassMomentOfInertiaUnits.MilligramSquareMeter:
             return ((value * 1e3) / 0.001)
@@ -405,10 +405,10 @@ class MassMomentOfInertia(AbstractMeasure):
         if from_unit == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
             return ((value * 1e1) / 1000000.0)
         
-        if from_unit == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
+        if from_unit == MassMomentOfInertiaUnits.KilotonneSquareMillimeter:
             return ((value * 1e3) / 1000.0)
         
-        if from_unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
+        if from_unit == MassMomentOfInertiaUnits.MegatonneSquareMillimeter:
             return ((value * 1e3) / 1000000.0)
         
         return None
@@ -437,20 +437,20 @@ class MassMomentOfInertia(AbstractMeasure):
         if to_unit == MassMomentOfInertiaUnits.TonneSquareCentimeter:
             return (value / 1e1)
         
-        if to_unit == MassMomentOfInertiaUnits.TonneSquareMilimeter:
+        if to_unit == MassMomentOfInertiaUnits.TonneSquareMillimeter:
             return (value / 1e3)
         
         if to_unit == MassMomentOfInertiaUnits.PoundSquareFoot:
-            return (value * 4.21401101e-2)
+            return (value * (0.45359237 * 9.290304e-2))
         
         if to_unit == MassMomentOfInertiaUnits.PoundSquareInch:
-            return (value * 2.9263965e-4)
+            return (value * (0.45359237 * 0.00064516))
         
         if to_unit == MassMomentOfInertiaUnits.SlugSquareFoot:
-            return (value * 1.3558179619)
+            return (value * 0.45359237 * 9.290304e-2 * 9.80665 / 0.3048)
         
         if to_unit == MassMomentOfInertiaUnits.SlugSquareInch:
-            return (value * 9.41540242e-3)
+            return (value * 0.45359237 * 0.00064516 * 9.80665 / 0.3048)
         
         if to_unit == MassMomentOfInertiaUnits.MilligramSquareMeter:
             return ((value / 1e3) * 0.001)
@@ -494,10 +494,10 @@ class MassMomentOfInertia(AbstractMeasure):
         if to_unit == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
             return ((value / 1e1) * 1000000.0)
         
-        if to_unit == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
+        if to_unit == MassMomentOfInertiaUnits.KilotonneSquareMillimeter:
             return ((value / 1e3) * 1000.0)
         
-        if to_unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
+        if to_unit == MassMomentOfInertiaUnits.MegatonneSquareMillimeter:
             return ((value / 1e3) * 1000000.0)
         
         return None
@@ -614,18 +614,18 @@ class MassMomentOfInertia(AbstractMeasure):
 
     
     @staticmethod
-    def from_tonne_square_milimeters(tonne_square_milimeters: float):
+    def from_tonne_square_millimeters(tonne_square_millimeters: float):
         """
-        Create a new instance of MassMomentOfInertia from a value in tonne_square_milimeters.
+        Create a new instance of MassMomentOfInertia from a value in tonne_square_millimeters.
 
         
 
-        :param meters: The MassMomentOfInertia value in tonne_square_milimeters.
-        :type tonne_square_milimeters: float
+        :param meters: The MassMomentOfInertia value in tonne_square_millimeters.
+        :type tonne_square_millimeters: float
         :return: A new instance of MassMomentOfInertia.
         :rtype: MassMomentOfInertia
         """
-        return MassMomentOfInertia(tonne_square_milimeters, MassMomentOfInertiaUnits.TonneSquareMilimeter)
+        return MassMomentOfInertia(tonne_square_millimeters, MassMomentOfInertiaUnits.TonneSquareMillimeter)
 
     
     @staticmethod
@@ -899,33 +899,33 @@ class MassMomentOfInertia(AbstractMeasure):
 
     
     @staticmethod
-    def from_kilotonne_square_milimeters(kilotonne_square_milimeters: float):
+    def from_kilotonne_square_millimeters(kilotonne_square_millimeters: float):
         """
-        Create a new instance of MassMomentOfInertia from a value in kilotonne_square_milimeters.
+        Create a new instance of MassMomentOfInertia from a value in kilotonne_square_millimeters.
 
         
 
-        :param meters: The MassMomentOfInertia value in kilotonne_square_milimeters.
-        :type kilotonne_square_milimeters: float
+        :param meters: The MassMomentOfInertia value in kilotonne_square_millimeters.
+        :type kilotonne_square_millimeters: float
         :return: A new instance of MassMomentOfInertia.
         :rtype: MassMomentOfInertia
         """
-        return MassMomentOfInertia(kilotonne_square_milimeters, MassMomentOfInertiaUnits.KilotonneSquareMilimeter)
+        return MassMomentOfInertia(kilotonne_square_millimeters, MassMomentOfInertiaUnits.KilotonneSquareMillimeter)
 
     
     @staticmethod
-    def from_megatonne_square_milimeters(megatonne_square_milimeters: float):
+    def from_megatonne_square_millimeters(megatonne_square_millimeters: float):
         """
-        Create a new instance of MassMomentOfInertia from a value in megatonne_square_milimeters.
+        Create a new instance of MassMomentOfInertia from a value in megatonne_square_millimeters.
 
         
 
-        :param meters: The MassMomentOfInertia value in megatonne_square_milimeters.
-        :type megatonne_square_milimeters: float
+        :param meters: The MassMomentOfInertia value in megatonne_square_millimeters.
+        :type megatonne_square_millimeters: float
         :return: A new instance of MassMomentOfInertia.
         :rtype: MassMomentOfInertia
         """
-        return MassMomentOfInertia(megatonne_square_milimeters, MassMomentOfInertiaUnits.MegatonneSquareMilimeter)
+        return MassMomentOfInertia(megatonne_square_millimeters, MassMomentOfInertiaUnits.MegatonneSquareMillimeter)
 
     
     @property
@@ -1006,14 +1006,14 @@ class MassMomentOfInertia(AbstractMeasure):
 
     
     @property
-    def tonne_square_milimeters(self) -> float:
+    def tonne_square_millimeters(self) -> float:
         """
         
         """
-        if self.__tonne_square_milimeters != None:
-            return self.__tonne_square_milimeters
-        self.__tonne_square_milimeters = self.__convert_from_base(MassMomentOfInertiaUnits.TonneSquareMilimeter)
-        return self.__tonne_square_milimeters
+        if self.__tonne_square_millimeters != None:
+            return self.__tonne_square_millimeters
+        self.__tonne_square_millimeters = self.__convert_from_base(MassMomentOfInertiaUnits.TonneSquareMillimeter)
+        return self.__tonne_square_millimeters
 
     
     @property
@@ -1215,25 +1215,25 @@ class MassMomentOfInertia(AbstractMeasure):
 
     
     @property
-    def kilotonne_square_milimeters(self) -> float:
+    def kilotonne_square_millimeters(self) -> float:
         """
         
         """
-        if self.__kilotonne_square_milimeters != None:
-            return self.__kilotonne_square_milimeters
-        self.__kilotonne_square_milimeters = self.__convert_from_base(MassMomentOfInertiaUnits.KilotonneSquareMilimeter)
-        return self.__kilotonne_square_milimeters
+        if self.__kilotonne_square_millimeters != None:
+            return self.__kilotonne_square_millimeters
+        self.__kilotonne_square_millimeters = self.__convert_from_base(MassMomentOfInertiaUnits.KilotonneSquareMillimeter)
+        return self.__kilotonne_square_millimeters
 
     
     @property
-    def megatonne_square_milimeters(self) -> float:
+    def megatonne_square_millimeters(self) -> float:
         """
         
         """
-        if self.__megatonne_square_milimeters != None:
-            return self.__megatonne_square_milimeters
-        self.__megatonne_square_milimeters = self.__convert_from_base(MassMomentOfInertiaUnits.MegatonneSquareMilimeter)
-        return self.__megatonne_square_milimeters
+        if self.__megatonne_square_millimeters != None:
+            return self.__megatonne_square_millimeters
+        self.__megatonne_square_millimeters = self.__convert_from_base(MassMomentOfInertiaUnits.MegatonneSquareMillimeter)
+        return self.__megatonne_square_millimeters
 
     
     def to_string(self, unit: MassMomentOfInertiaUnits = MassMomentOfInertiaUnits.KilogramSquareMeter, fractional_digits: int = None) -> str:
@@ -1272,8 +1272,8 @@ class MassMomentOfInertia(AbstractMeasure):
         if unit == MassMomentOfInertiaUnits.TonneSquareCentimeter:
             return f"""{super()._truncate_fraction_digits(self.tonne_square_centimeters, fractional_digits)} t·cm²"""
         
-        if unit == MassMomentOfInertiaUnits.TonneSquareMilimeter:
-            return f"""{super()._truncate_fraction_digits(self.tonne_square_milimeters, fractional_digits)} t·mm²"""
+        if unit == MassMomentOfInertiaUnits.TonneSquareMillimeter:
+            return f"""{super()._truncate_fraction_digits(self.tonne_square_millimeters, fractional_digits)} t·mm²"""
         
         if unit == MassMomentOfInertiaUnits.PoundSquareFoot:
             return f"""{super()._truncate_fraction_digits(self.pound_square_feet, fractional_digits)} lb·ft²"""
@@ -1329,11 +1329,11 @@ class MassMomentOfInertia(AbstractMeasure):
         if unit == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
             return f"""{super()._truncate_fraction_digits(self.megatonne_square_centimeters, fractional_digits)} Mt·cm²"""
         
-        if unit == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
-            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_milimeters, fractional_digits)} kt·mm²"""
+        if unit == MassMomentOfInertiaUnits.KilotonneSquareMillimeter:
+            return f"""{super()._truncate_fraction_digits(self.kilotonne_square_millimeters, fractional_digits)} kt·mm²"""
         
-        if unit == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
-            return f"""{super()._truncate_fraction_digits(self.megatonne_square_milimeters, fractional_digits)} Mt·mm²"""
+        if unit == MassMomentOfInertiaUnits.MegatonneSquareMillimeter:
+            return f"""{super()._truncate_fraction_digits(self.megatonne_square_millimeters, fractional_digits)} Mt·mm²"""
         
         return f'{self._value}'
 
@@ -1366,7 +1366,7 @@ class MassMomentOfInertia(AbstractMeasure):
         if unit_abbreviation == MassMomentOfInertiaUnits.TonneSquareCentimeter:
             return """t·cm²"""
         
-        if unit_abbreviation == MassMomentOfInertiaUnits.TonneSquareMilimeter:
+        if unit_abbreviation == MassMomentOfInertiaUnits.TonneSquareMillimeter:
             return """t·mm²"""
         
         if unit_abbreviation == MassMomentOfInertiaUnits.PoundSquareFoot:
@@ -1423,9 +1423,9 @@ class MassMomentOfInertia(AbstractMeasure):
         if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareCentimeter:
             return """Mt·cm²"""
         
-        if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareMilimeter:
+        if unit_abbreviation == MassMomentOfInertiaUnits.KilotonneSquareMillimeter:
             return """kt·mm²"""
         
-        if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareMilimeter:
+        if unit_abbreviation == MassMomentOfInertiaUnits.MegatonneSquareMillimeter:
             return """Mt·mm²"""
         

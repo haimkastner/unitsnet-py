@@ -443,10 +443,10 @@ class PowerDensity(AbstractMeasure):
             return (value)
         
         if from_unit == PowerDensityUnits.WattPerCubicInch:
-            return (value / 6.102374409473228e4)
+            return (value * 1.6387064e-5)
         
         if from_unit == PowerDensityUnits.WattPerCubicFoot:
-            return (value / 3.531466672148859e1)
+            return (value * 0.028316846592)
         
         if from_unit == PowerDensityUnits.WattPerLiter:
             return (value / 1.0e3)
@@ -482,64 +482,64 @@ class PowerDensity(AbstractMeasure):
             return ((value) / 1000000000000.0)
         
         if from_unit == PowerDensityUnits.PicowattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1e-12)
+            return ((value * 1.6387064e-5) / 1e-12)
         
         if from_unit == PowerDensityUnits.NanowattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1e-09)
+            return ((value * 1.6387064e-5) / 1e-09)
         
         if from_unit == PowerDensityUnits.MicrowattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1e-06)
+            return ((value * 1.6387064e-5) / 1e-06)
         
         if from_unit == PowerDensityUnits.MilliwattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 0.001)
+            return ((value * 1.6387064e-5) / 0.001)
         
         if from_unit == PowerDensityUnits.DeciwattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 0.1)
+            return ((value * 1.6387064e-5) / 0.1)
         
         if from_unit == PowerDensityUnits.DecawattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 10.0)
+            return ((value * 1.6387064e-5) / 10.0)
         
         if from_unit == PowerDensityUnits.KilowattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1000.0)
+            return ((value * 1.6387064e-5) / 1000.0)
         
         if from_unit == PowerDensityUnits.MegawattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1000000.0)
+            return ((value * 1.6387064e-5) / 1000000.0)
         
         if from_unit == PowerDensityUnits.GigawattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1000000000.0)
+            return ((value * 1.6387064e-5) / 1000000000.0)
         
         if from_unit == PowerDensityUnits.TerawattPerCubicInch:
-            return ((value / 6.102374409473228e4) / 1000000000000.0)
+            return ((value * 1.6387064e-5) / 1000000000000.0)
         
         if from_unit == PowerDensityUnits.PicowattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1e-12)
+            return ((value * 0.028316846592) / 1e-12)
         
         if from_unit == PowerDensityUnits.NanowattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1e-09)
+            return ((value * 0.028316846592) / 1e-09)
         
         if from_unit == PowerDensityUnits.MicrowattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1e-06)
+            return ((value * 0.028316846592) / 1e-06)
         
         if from_unit == PowerDensityUnits.MilliwattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 0.001)
+            return ((value * 0.028316846592) / 0.001)
         
         if from_unit == PowerDensityUnits.DeciwattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 0.1)
+            return ((value * 0.028316846592) / 0.1)
         
         if from_unit == PowerDensityUnits.DecawattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 10.0)
+            return ((value * 0.028316846592) / 10.0)
         
         if from_unit == PowerDensityUnits.KilowattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1000.0)
+            return ((value * 0.028316846592) / 1000.0)
         
         if from_unit == PowerDensityUnits.MegawattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1000000.0)
+            return ((value * 0.028316846592) / 1000000.0)
         
         if from_unit == PowerDensityUnits.GigawattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1000000000.0)
+            return ((value * 0.028316846592) / 1000000000.0)
         
         if from_unit == PowerDensityUnits.TerawattPerCubicFoot:
-            return ((value / 3.531466672148859e1) / 1000000000000.0)
+            return ((value * 0.028316846592) / 1000000000000.0)
         
         if from_unit == PowerDensityUnits.PicowattPerLiter:
             return ((value / 1.0e3) / 1e-12)
@@ -580,10 +580,10 @@ class PowerDensity(AbstractMeasure):
             return (value)
         
         if to_unit == PowerDensityUnits.WattPerCubicInch:
-            return (value * 6.102374409473228e4)
+            return (value / 1.6387064e-5)
         
         if to_unit == PowerDensityUnits.WattPerCubicFoot:
-            return (value * 3.531466672148859e1)
+            return (value / 0.028316846592)
         
         if to_unit == PowerDensityUnits.WattPerLiter:
             return (value * 1.0e3)
@@ -619,64 +619,64 @@ class PowerDensity(AbstractMeasure):
             return ((value) * 1000000000000.0)
         
         if to_unit == PowerDensityUnits.PicowattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1e-12)
+            return ((value / 1.6387064e-5) * 1e-12)
         
         if to_unit == PowerDensityUnits.NanowattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1e-09)
+            return ((value / 1.6387064e-5) * 1e-09)
         
         if to_unit == PowerDensityUnits.MicrowattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1e-06)
+            return ((value / 1.6387064e-5) * 1e-06)
         
         if to_unit == PowerDensityUnits.MilliwattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 0.001)
+            return ((value / 1.6387064e-5) * 0.001)
         
         if to_unit == PowerDensityUnits.DeciwattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 0.1)
+            return ((value / 1.6387064e-5) * 0.1)
         
         if to_unit == PowerDensityUnits.DecawattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 10.0)
+            return ((value / 1.6387064e-5) * 10.0)
         
         if to_unit == PowerDensityUnits.KilowattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1000.0)
+            return ((value / 1.6387064e-5) * 1000.0)
         
         if to_unit == PowerDensityUnits.MegawattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1000000.0)
+            return ((value / 1.6387064e-5) * 1000000.0)
         
         if to_unit == PowerDensityUnits.GigawattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1000000000.0)
+            return ((value / 1.6387064e-5) * 1000000000.0)
         
         if to_unit == PowerDensityUnits.TerawattPerCubicInch:
-            return ((value * 6.102374409473228e4) * 1000000000000.0)
+            return ((value / 1.6387064e-5) * 1000000000000.0)
         
         if to_unit == PowerDensityUnits.PicowattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1e-12)
+            return ((value / 0.028316846592) * 1e-12)
         
         if to_unit == PowerDensityUnits.NanowattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1e-09)
+            return ((value / 0.028316846592) * 1e-09)
         
         if to_unit == PowerDensityUnits.MicrowattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1e-06)
+            return ((value / 0.028316846592) * 1e-06)
         
         if to_unit == PowerDensityUnits.MilliwattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 0.001)
+            return ((value / 0.028316846592) * 0.001)
         
         if to_unit == PowerDensityUnits.DeciwattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 0.1)
+            return ((value / 0.028316846592) * 0.1)
         
         if to_unit == PowerDensityUnits.DecawattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 10.0)
+            return ((value / 0.028316846592) * 10.0)
         
         if to_unit == PowerDensityUnits.KilowattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1000.0)
+            return ((value / 0.028316846592) * 1000.0)
         
         if to_unit == PowerDensityUnits.MegawattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1000000.0)
+            return ((value / 0.028316846592) * 1000000.0)
         
         if to_unit == PowerDensityUnits.GigawattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1000000000.0)
+            return ((value / 0.028316846592) * 1000000000.0)
         
         if to_unit == PowerDensityUnits.TerawattPerCubicFoot:
-            return ((value * 3.531466672148859e1) * 1000000000000.0)
+            return ((value / 0.028316846592) * 1000000000000.0)
         
         if to_unit == PowerDensityUnits.PicowattPerLiter:
             return ((value * 1.0e3) * 1e-12)

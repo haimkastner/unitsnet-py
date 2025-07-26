@@ -201,10 +201,10 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return (value)
         
         if from_unit == VolumetricHeatCapacityUnits.CaloriePerCubicCentimeterDegreeCelsius:
-            return (value * 2.388459e-7)
+            return (value / 4.184e6)
         
         if from_unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
-            return (value * 1.4910660e-5)
+            return (value / ((1055.05585262 / 0.028316846592) * 1.8))
         
         if from_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
             return ((value) / 1000.0)
@@ -219,7 +219,7 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return ((value) / 1000000.0)
         
         if from_unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return ((value * 2.388459e-7) / 1000.0)
+            return ((value / 4.184e6) / 1000.0)
         
         return None
 
@@ -233,10 +233,10 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return (value)
         
         if to_unit == VolumetricHeatCapacityUnits.CaloriePerCubicCentimeterDegreeCelsius:
-            return (value / 2.388459e-7)
+            return (value * 4.184e6)
         
         if to_unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
-            return (value / 1.4910660e-5)
+            return (value * (1055.05585262 / 0.028316846592) * 1.8)
         
         if to_unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
             return ((value) * 1000.0)
@@ -251,7 +251,7 @@ class VolumetricHeatCapacity(AbstractMeasure):
             return ((value) * 1000000.0)
         
         if to_unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return ((value / 2.388459e-7) * 1000.0)
+            return ((value * 4.184e6) * 1000.0)
         
         return None
 
@@ -511,31 +511,31 @@ class VolumetricHeatCapacity(AbstractMeasure):
         """
         
         if unit == VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_kelvin, fractional_digits)} J/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_kelvin, fractional_digits)} J/(m³·K)"""
         
         if unit == VolumetricHeatCapacityUnits.JoulePerCubicMeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_degree_celsius, fractional_digits)} J/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.joules_per_cubic_meter_degree_celsius, fractional_digits)} J/(m³·°C)"""
         
         if unit == VolumetricHeatCapacityUnits.CaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.calories_per_cubic_centimeter_degree_celsius, fractional_digits)} cal/cm³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.calories_per_cubic_centimeter_degree_celsius, fractional_digits)} cal/(cm³·°C)"""
         
         if unit == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_cubic_foot_degree_fahrenheit, fractional_digits)} BTU/ft³·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_cubic_foot_degree_fahrenheit, fractional_digits)} BTU/(ft³·°F)"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_kelvin, fractional_digits)} kJ/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_kelvin, fractional_digits)} kJ/(m³·K)"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
-            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_kelvin, fractional_digits)} MJ/m³·K"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_kelvin, fractional_digits)} MJ/(m³·K)"""
         
         if unit == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_degree_celsius, fractional_digits)} kJ/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilojoules_per_cubic_meter_degree_celsius, fractional_digits)} kJ/(m³·°C)"""
         
         if unit == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_degree_celsius, fractional_digits)} MJ/m³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_cubic_meter_degree_celsius, fractional_digits)} MJ/(m³·°C)"""
         
         if unit == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_cubic_centimeter_degree_celsius, fractional_digits)} kcal/cm³·°C"""
+            return f"""{super()._truncate_fraction_digits(self.kilocalories_per_cubic_centimeter_degree_celsius, fractional_digits)} kcal/(cm³·°C)"""
         
         return f'{self._value}'
 
@@ -548,29 +548,29 @@ class VolumetricHeatCapacity(AbstractMeasure):
         """
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.JoulePerCubicMeterKelvin:
-            return """J/m³·K"""
+            return """J/(m³·K)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.JoulePerCubicMeterDegreeCelsius:
-            return """J/m³·°C"""
+            return """J/(m³·°C)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.CaloriePerCubicCentimeterDegreeCelsius:
-            return """cal/cm³·°C"""
+            return """cal/(cm³·°C)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.BtuPerCubicFootDegreeFahrenheit:
-            return """BTU/ft³·°F"""
+            return """BTU/(ft³·°F)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterKelvin:
-            return """kJ/m³·K"""
+            return """kJ/(m³·K)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterKelvin:
-            return """MJ/m³·K"""
+            return """MJ/(m³·K)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilojoulePerCubicMeterDegreeCelsius:
-            return """kJ/m³·°C"""
+            return """kJ/(m³·°C)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.MegajoulePerCubicMeterDegreeCelsius:
-            return """MJ/m³·°C"""
+            return """MJ/(m³·°C)"""
         
         if unit_abbreviation == VolumetricHeatCapacityUnits.KilocaloriePerCubicCentimeterDegreeCelsius:
-            return """kcal/cm³·°C"""
+            return """kcal/(cm³·°C)"""
         

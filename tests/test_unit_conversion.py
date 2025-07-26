@@ -26,7 +26,7 @@ class TestUnitConversion(unittest.TestCase):
 
     def test_convert_base_prefix_to_base(self):
         angle = Angle.from_microdegrees(180000000)
-        self.assertEqual(angle.degrees, 180)
+        self.assertAlmostEqual(angle.degrees, 180, delta=0.00001)
 
     def test_convert_unit_prefix_to_base(self):
         angle = Angle.from_microradians(3141592.65358979)

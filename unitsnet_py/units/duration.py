@@ -55,6 +55,11 @@ class DurationUnits(Enum):
             
         """
         
+        Picosecond = 'Picosecond'
+        """
+            
+        """
+        
         Nanosecond = 'Nanosecond'
         """
             
@@ -154,6 +159,8 @@ class Duration(AbstractMeasure):
         
         self.__sols = None
         
+        self.__picoseconds = None
+        
         self.__nanoseconds = None
         
         self.__microseconds = None
@@ -242,6 +249,9 @@ class Duration(AbstractMeasure):
         if from_unit == DurationUnits.Sol:
             return (value / 88775.244)
         
+        if from_unit == DurationUnits.Picosecond:
+            return ((value) / 1e-12)
+        
         if from_unit == DurationUnits.Nanosecond:
             return ((value) / 1e-09)
         
@@ -282,6 +292,9 @@ class Duration(AbstractMeasure):
         
         if to_unit == DurationUnits.Sol:
             return (value * 88775.244)
+        
+        if to_unit == DurationUnits.Picosecond:
+            return ((value) * 1e-12)
         
         if to_unit == DurationUnits.Nanosecond:
             return ((value) * 1e-09)
@@ -436,6 +449,21 @@ class Duration(AbstractMeasure):
 
     
     @staticmethod
+    def from_picoseconds(picoseconds: float):
+        """
+        Create a new instance of Duration from a value in picoseconds.
+
+        
+
+        :param meters: The Duration value in picoseconds.
+        :type picoseconds: float
+        :return: A new instance of Duration.
+        :rtype: Duration
+        """
+        return Duration(picoseconds, DurationUnits.Picosecond)
+
+    
+    @staticmethod
     def from_nanoseconds(nanoseconds: float):
         """
         Create a new instance of Duration from a value in nanoseconds.
@@ -580,6 +608,17 @@ class Duration(AbstractMeasure):
 
     
     @property
+    def picoseconds(self) -> float:
+        """
+        
+        """
+        if self.__picoseconds != None:
+            return self.__picoseconds
+        self.__picoseconds = self.__convert_from_base(DurationUnits.Picosecond)
+        return self.__picoseconds
+
+    
+    @property
     def nanoseconds(self) -> float:
         """
         
@@ -654,6 +693,9 @@ class Duration(AbstractMeasure):
         if unit == DurationUnits.Sol:
             return f"""{super()._truncate_fraction_digits(self.sols, fractional_digits)} sol"""
         
+        if unit == DurationUnits.Picosecond:
+            return f"""{super()._truncate_fraction_digits(self.picoseconds, fractional_digits)} ps"""
+        
         if unit == DurationUnits.Nanosecond:
             return f"""{super()._truncate_fraction_digits(self.nanoseconds, fractional_digits)} ns"""
         
@@ -699,6 +741,9 @@ class Duration(AbstractMeasure):
         
         if unit_abbreviation == DurationUnits.Sol:
             return """sol"""
+        
+        if unit_abbreviation == DurationUnits.Picosecond:
+            return """ps"""
         
         if unit_abbreviation == DurationUnits.Nanosecond:
             return """ns"""

@@ -243,10 +243,10 @@ class ForceChangeRate(AbstractMeasure):
             return (value)
         
         if from_unit == ForceChangeRateUnits.PoundForcePerMinute:
-            return (value / 4.4482216152605095551842641431421 * 60)
+            return (value / 4.4482216152605 * 60)
         
         if from_unit == ForceChangeRateUnits.PoundForcePerSecond:
-            return (value / 4.4482216152605095551842641431421)
+            return (value / 4.4482216152605)
         
         if from_unit == ForceChangeRateUnits.DecanewtonPerMinute:
             return ((value * 60) / 10.0)
@@ -276,10 +276,10 @@ class ForceChangeRate(AbstractMeasure):
             return ((value) / 1000.0)
         
         if from_unit == ForceChangeRateUnits.KilopoundForcePerMinute:
-            return ((value / 4.4482216152605095551842641431421 * 60) / 1000.0)
+            return ((value / 4.4482216152605 * 60) / 1000.0)
         
         if from_unit == ForceChangeRateUnits.KilopoundForcePerSecond:
-            return ((value / 4.4482216152605095551842641431421) / 1000.0)
+            return ((value / 4.4482216152605) / 1000.0)
         
         return None
 
@@ -293,10 +293,10 @@ class ForceChangeRate(AbstractMeasure):
             return (value)
         
         if to_unit == ForceChangeRateUnits.PoundForcePerMinute:
-            return (value * 4.4482216152605095551842641431421 / 60)
+            return (value * 4.4482216152605 / 60)
         
         if to_unit == ForceChangeRateUnits.PoundForcePerSecond:
-            return (value * 4.4482216152605095551842641431421)
+            return (value * 4.4482216152605)
         
         if to_unit == ForceChangeRateUnits.DecanewtonPerMinute:
             return ((value / 60) * 10.0)
@@ -326,10 +326,10 @@ class ForceChangeRate(AbstractMeasure):
             return ((value) * 1000.0)
         
         if to_unit == ForceChangeRateUnits.KilopoundForcePerMinute:
-            return ((value * 4.4482216152605095551842641431421 / 60) * 1000.0)
+            return ((value * 4.4482216152605 / 60) * 1000.0)
         
         if to_unit == ForceChangeRateUnits.KilopoundForcePerSecond:
-            return ((value * 4.4482216152605095551842641431421) * 1000.0)
+            return ((value * 4.4482216152605) * 1000.0)
         
         return None
 
