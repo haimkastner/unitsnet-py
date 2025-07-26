@@ -15,11 +15,11 @@ package_data = {
 
 # The UnitNet definition version that the current package is based on to generate units classes
 # see 
-definition_version = '5.74.0'
+definition_version = '6.0.0-pre015'
 
 setup_kwargs = {
     'name': 'unitsnet-py',
-    'version': '0.1.154',
+    'version': '1.0.0',
     'license': 'MIT',
     'keywords': 'conversion, units-of-measure, units, quantities, unit-converter, converter, unit, measure, measures, measurement, measurements',
     'description': 'A better way to hold unit variables and easily convert to the destination unit',
