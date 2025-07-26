@@ -211,16 +211,16 @@ class DynamicViscosity(AbstractMeasure):
             return (value * 10)
         
         if from_unit == DynamicViscosityUnits.Reyn:
-            return (value / 6.8947572931683613e3)
+            return (value * 0.00064516 / 4.4482216152605)
         
         if from_unit == DynamicViscosityUnits.PoundForceSecondPerSquareInch:
-            return (value / 6.8947572931683613e3)
+            return (value * 0.00064516 / 4.4482216152605)
         
         if from_unit == DynamicViscosityUnits.PoundForceSecondPerSquareFoot:
-            return (value / 4.7880258980335843e1)
+            return (value * 9.290304e-2 / 4.4482216152605)
         
         if from_unit == DynamicViscosityUnits.PoundPerFootSecond:
-            return (value / 1.4881639)
+            return (value * 0.3048 / 0.45359237)
         
         if from_unit == DynamicViscosityUnits.MillipascalSecond:
             return ((value) / 0.001)
@@ -246,16 +246,16 @@ class DynamicViscosity(AbstractMeasure):
             return (value / 10)
         
         if to_unit == DynamicViscosityUnits.Reyn:
-            return (value * 6.8947572931683613e3)
+            return (value * 4.4482216152605 / 0.00064516)
         
         if to_unit == DynamicViscosityUnits.PoundForceSecondPerSquareInch:
-            return (value * 6.8947572931683613e3)
+            return (value * 4.4482216152605 / 0.00064516)
         
         if to_unit == DynamicViscosityUnits.PoundForceSecondPerSquareFoot:
-            return (value * 4.7880258980335843e1)
+            return (value * 4.4482216152605 / 9.290304e-2)
         
         if to_unit == DynamicViscosityUnits.PoundPerFootSecond:
-            return (value * 1.4881639)
+            return (value * 0.45359237 / 0.3048)
         
         if to_unit == DynamicViscosityUnits.MillipascalSecond:
             return ((value) * 0.001)
@@ -568,7 +568,7 @@ class DynamicViscosity(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.pounds_force_second_per_square_foot, fractional_digits)} lbf·s/ft²"""
         
         if unit == DynamicViscosityUnits.PoundPerFootSecond:
-            return f"""{super()._truncate_fraction_digits(self.pounds_per_foot_second, fractional_digits)} lb/ft·s"""
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_foot_second, fractional_digits)} lb/(ft·s)"""
         
         if unit == DynamicViscosityUnits.MillipascalSecond:
             return f"""{super()._truncate_fraction_digits(self.millipascal_seconds, fractional_digits)} mPa·s"""
@@ -608,7 +608,7 @@ class DynamicViscosity(AbstractMeasure):
             return """lbf·s/ft²"""
         
         if unit_abbreviation == DynamicViscosityUnits.PoundPerFootSecond:
-            return """lb/ft·s"""
+            return """lb/(ft·s)"""
         
         if unit_abbreviation == DynamicViscosityUnits.MillipascalSecond:
             return """mPa·s"""

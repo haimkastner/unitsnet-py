@@ -149,7 +149,7 @@ class ThermalConductivity(AbstractMeasure):
             return (value)
         
         if from_unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
-            return (value / 1.73073467)
+            return (value / ((1055.05585262 / (0.3048 * 3600)) * 1.8))
         
         return None
 
@@ -160,7 +160,7 @@ class ThermalConductivity(AbstractMeasure):
             return (value)
         
         if to_unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
-            return (value * 1.73073467)
+            return (value * ((1055.05585262 / (0.3048 * 3600)) * 1.8))
         
         return None
 
@@ -238,10 +238,10 @@ class ThermalConductivity(AbstractMeasure):
         """
         
         if unit == ThermalConductivityUnits.WattPerMeterKelvin:
-            return f"""{super()._truncate_fraction_digits(self.watts_per_meter_kelvin, fractional_digits)} W/m·K"""
+            return f"""{super()._truncate_fraction_digits(self.watts_per_meter_kelvin, fractional_digits)} W/(m·K)"""
         
         if unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_foot_fahrenheit, fractional_digits)} BTU/h·ft·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_hour_foot_fahrenheit, fractional_digits)} BTU/(h·ft·°F)"""
         
         return f'{self._value}'
 
@@ -254,8 +254,8 @@ class ThermalConductivity(AbstractMeasure):
         """
         
         if unit_abbreviation == ThermalConductivityUnits.WattPerMeterKelvin:
-            return """W/m·K"""
+            return """W/(m·K)"""
         
         if unit_abbreviation == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
-            return """BTU/h·ft·°F"""
+            return """BTU/(h·ft·°F)"""
         

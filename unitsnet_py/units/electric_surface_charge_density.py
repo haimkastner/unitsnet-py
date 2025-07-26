@@ -159,7 +159,7 @@ class ElectricSurfaceChargeDensity(AbstractMeasure):
             return (value / 1.0e4)
         
         if from_unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareInch:
-            return (value / 1.5500031000062000e3)
+            return (value * 0.00064516)
         
         return None
 
@@ -173,7 +173,7 @@ class ElectricSurfaceChargeDensity(AbstractMeasure):
             return (value * 1.0e4)
         
         if to_unit == ElectricSurfaceChargeDensityUnits.CoulombPerSquareInch:
-            return (value * 1.5500031000062000e3)
+            return (value / 0.00064516)
         
         return None
 

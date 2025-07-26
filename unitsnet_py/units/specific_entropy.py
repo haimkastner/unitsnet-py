@@ -520,7 +520,7 @@ class SpecificEntropy(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.calories_per_gram_kelvin, fractional_digits)} cal/g·K"""
         
         if unit == SpecificEntropyUnits.BtuPerPoundFahrenheit:
-            return f"""{super()._truncate_fraction_digits(self.btus_per_pound_fahrenheit, fractional_digits)} BTU/lb·°F"""
+            return f"""{super()._truncate_fraction_digits(self.btus_per_pound_fahrenheit, fractional_digits)} BTU/(lb·°F)"""
         
         if unit == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
             return f"""{super()._truncate_fraction_digits(self.kilojoules_per_kilogram_kelvin, fractional_digits)} kJ/kg·K"""
@@ -557,7 +557,7 @@ class SpecificEntropy(AbstractMeasure):
             return """cal/g·K"""
         
         if unit_abbreviation == SpecificEntropyUnits.BtuPerPoundFahrenheit:
-            return """BTU/lb·°F"""
+            return """BTU/(lb·°F)"""
         
         if unit_abbreviation == SpecificEntropyUnits.KilojoulePerKilogramKelvin:
             return """kJ/kg·K"""

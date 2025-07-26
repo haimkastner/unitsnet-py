@@ -381,13 +381,13 @@ class MassFlow(AbstractMeasure):
             return (value * 3.6 / 1000)
         
         if from_unit == MassFlowUnits.PoundPerDay:
-            return (value * 190.47936)
+            return (value * 86400 / 453.59237)
         
         if from_unit == MassFlowUnits.PoundPerHour:
-            return (value * 7.93664)
+            return (value * 3600 / 453.59237)
         
         if from_unit == MassFlowUnits.PoundPerMinute:
-            return (value * 0.132277)
+            return (value * 60 / 453.59237)
         
         if from_unit == MassFlowUnits.PoundPerSecond:
             return (value / 453.59237)
@@ -396,7 +396,7 @@ class MassFlow(AbstractMeasure):
             return (value * 0.0864000)
         
         if from_unit == MassFlowUnits.ShortTonPerHour:
-            return (value / 251.9957611)
+            return (value * 3.6 / 907.18474)
         
         if from_unit == MassFlowUnits.NanogramPerSecond:
             return ((value) / 1e-09)
@@ -450,13 +450,13 @@ class MassFlow(AbstractMeasure):
             return ((value * 86400) / 1000000.0)
         
         if from_unit == MassFlowUnits.MegapoundPerDay:
-            return ((value * 190.47936) / 1000000.0)
+            return ((value * 86400 / 453.59237) / 1000000.0)
         
         if from_unit == MassFlowUnits.MegapoundPerHour:
-            return ((value * 7.93664) / 1000000.0)
+            return ((value * 3600 / 453.59237) / 1000000.0)
         
         if from_unit == MassFlowUnits.MegapoundPerMinute:
-            return ((value * 0.132277) / 1000000.0)
+            return ((value * 60 / 453.59237) / 1000000.0)
         
         if from_unit == MassFlowUnits.MegapoundPerSecond:
             return ((value / 453.59237) / 1000000.0)
@@ -482,16 +482,16 @@ class MassFlow(AbstractMeasure):
             return (value / 0.06)
         
         if to_unit == MassFlowUnits.TonnePerHour:
-            return (1000 * value / 3.6)
+            return (value * 1000 / 3.6)
         
         if to_unit == MassFlowUnits.PoundPerDay:
-            return (value / 190.47936)
+            return (value * 453.59237 / 86400)
         
         if to_unit == MassFlowUnits.PoundPerHour:
-            return (value / 7.93664)
+            return (value * 453.59237 / 3600)
         
         if to_unit == MassFlowUnits.PoundPerMinute:
-            return (value / 0.132277)
+            return (value * 453.59237 / 60)
         
         if to_unit == MassFlowUnits.PoundPerSecond:
             return (value * 453.59237)
@@ -500,7 +500,7 @@ class MassFlow(AbstractMeasure):
             return (value / 0.0864000)
         
         if to_unit == MassFlowUnits.ShortTonPerHour:
-            return (value * 251.9957611)
+            return (value * 907.18474 / 3.6)
         
         if to_unit == MassFlowUnits.NanogramPerSecond:
             return ((value) * 1e-09)
@@ -554,13 +554,13 @@ class MassFlow(AbstractMeasure):
             return ((value / 86400) * 1000000.0)
         
         if to_unit == MassFlowUnits.MegapoundPerDay:
-            return ((value / 190.47936) * 1000000.0)
+            return ((value * 453.59237 / 86400) * 1000000.0)
         
         if to_unit == MassFlowUnits.MegapoundPerHour:
-            return ((value / 7.93664) * 1000000.0)
+            return ((value * 453.59237 / 3600) * 1000000.0)
         
         if to_unit == MassFlowUnits.MegapoundPerMinute:
-            return ((value / 0.132277) * 1000000.0)
+            return ((value * 453.59237 / 60) * 1000000.0)
         
         if to_unit == MassFlowUnits.MegapoundPerSecond:
             return ((value * 453.59237) * 1000000.0)

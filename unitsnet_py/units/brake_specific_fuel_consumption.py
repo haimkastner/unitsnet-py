@@ -159,7 +159,7 @@ class BrakeSpecificFuelConsumption(AbstractMeasure):
             return (value)
         
         if from_unit == BrakeSpecificFuelConsumptionUnits.PoundPerMechanicalHorsepowerHour:
-            return (value / 1.689659410672e-7)
+            return (value * 3600 / (0.45359237 / (76.0402249 * 9.80665)))
         
         return None
 
@@ -173,7 +173,7 @@ class BrakeSpecificFuelConsumption(AbstractMeasure):
             return (value)
         
         if to_unit == BrakeSpecificFuelConsumptionUnits.PoundPerMechanicalHorsepowerHour:
-            return (value * 1.689659410672e-7)
+            return (value * (0.45359237 / (76.0402249 * 9.80665))/3600)
         
         return None
 

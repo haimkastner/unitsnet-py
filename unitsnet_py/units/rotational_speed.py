@@ -232,10 +232,10 @@ class RotationalSpeed(AbstractMeasure):
             return ((180 * 60 / math.pi) * value)
         
         if from_unit == RotationalSpeedUnits.RevolutionPerSecond:
-            return (value / 6.2831853072)
+            return (value / (2 * math.pi))
         
         if from_unit == RotationalSpeedUnits.RevolutionPerMinute:
-            return ((value / 6.2831853072) * 60)
+            return ((value / (2 * math.pi)) * 60)
         
         if from_unit == RotationalSpeedUnits.NanoradianPerSecond:
             return ((value) / 1e-09)
@@ -276,10 +276,10 @@ class RotationalSpeed(AbstractMeasure):
             return ((math.pi / (180 * 60)) * value)
         
         if to_unit == RotationalSpeedUnits.RevolutionPerSecond:
-            return (value * 6.2831853072)
+            return (value * 2 * math.pi)
         
         if to_unit == RotationalSpeedUnits.RevolutionPerMinute:
-            return ((value * 6.2831853072) / 60)
+            return ((value * 2 * math.pi) / 60)
         
         if to_unit == RotationalSpeedUnits.NanoradianPerSecond:
             return ((value) * 1e-09)

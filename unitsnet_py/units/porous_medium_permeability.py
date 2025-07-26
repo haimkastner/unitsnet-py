@@ -12,7 +12,7 @@ class PorousMediumPermeabilityUnits(Enum):
         
         Darcy = 'Darcy'
         """
-            
+            The darcy (or darcy unit) and millidarcy (md or mD) are units of permeability, named after Henry Darcy. They are not SI units, but they are widely used in petroleum engineering and geology.
         """
         
         SquareMeter = 'SquareMeter'
@@ -214,7 +214,7 @@ class PorousMediumPermeability(AbstractMeasure):
         """
         Create a new instance of PorousMediumPermeability from a value in darcys.
 
-        
+        The darcy (or darcy unit) and millidarcy (md or mD) are units of permeability, named after Henry Darcy. They are not SI units, but they are widely used in petroleum engineering and geology.
 
         :param meters: The PorousMediumPermeability value in darcys.
         :type darcys: float
@@ -287,7 +287,7 @@ class PorousMediumPermeability(AbstractMeasure):
     @property
     def darcys(self) -> float:
         """
-        
+        The darcy (or darcy unit) and millidarcy (md or mD) are units of permeability, named after Henry Darcy. They are not SI units, but they are widely used in petroleum engineering and geology.
         """
         if self.__darcys != None:
             return self.__darcys

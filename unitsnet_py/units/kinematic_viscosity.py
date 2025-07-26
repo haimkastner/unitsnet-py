@@ -201,7 +201,7 @@ class KinematicViscosity(AbstractMeasure):
             return (value * 1e4)
         
         if from_unit == KinematicViscosityUnits.SquareFootPerSecond:
-            return (value * 10.7639)
+            return (value / 9.290304e-2)
         
         if from_unit == KinematicViscosityUnits.Nanostokes:
             return ((value * 1e4) / 1e-09)
@@ -233,7 +233,7 @@ class KinematicViscosity(AbstractMeasure):
             return (value / 1e4)
         
         if to_unit == KinematicViscosityUnits.SquareFootPerSecond:
-            return (value / 10.7639)
+            return (value * 9.290304e-2)
         
         if to_unit == KinematicViscosityUnits.Nanostokes:
             return ((value / 1e4) * 1e-09)

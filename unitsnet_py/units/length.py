@@ -27,7 +27,7 @@ class LengthUnits(Enum):
         
         Foot = 'Foot'
         """
-            
+            The foot (pl. feet; standard symbol: ft) is a unit of length in the British imperial and United States customary systems of measurement. The prime symbol, ′, is commonly used to represent the foot. In both customary and imperial units, one foot comprises 12 inches, and one yard comprises three feet. Since an international agreement in 1959, the foot is defined as equal to exactly 0.3048 meters.
         """
         
         UsSurveyFoot = 'UsSurveyFoot'
@@ -37,7 +37,7 @@ class LengthUnits(Enum):
         
         Inch = 'Inch'
         """
-            
+            The inch (symbol: in or ″) is a unit of length in the British Imperial and the United States customary systems of measurement. It is equal to 1/36 yard or 1/12 of a foot. Derived from the Roman uncia ("twelfth"), the word inch is also sometimes used to translate similar units in other measurement systems, usually understood as deriving from the width of the human thumb.
         """
         
         Mil = 'Mil'
@@ -67,32 +67,32 @@ class LengthUnits(Enum):
         
         PrinterPoint = 'PrinterPoint'
         """
-            
+            In typography, the point is the smallest unit of measure. It is used for measuring font size, leading, and other items on a printed page. In modern times this size of the point has been approximated as exactly 1⁄72.27 (0.01383700013837) of the inch by Donald Knuth for the default unit of his TeX computer typesetting system and is thus sometimes known as the TeX point.
         """
         
         DtpPoint = 'DtpPoint'
         """
-            
+            The desktop publishing point (DTP) is defined as 1⁄72 of an inch (1/72 × 25.4 mm ≈ 0.353 mm) and, as with earlier American point sizes, is considered to be 1⁄12 of a pica.
         """
         
         PrinterPica = 'PrinterPica'
         """
-            
+            The American pica of 0.16604 inches (~4.217 mm) was established by the United States Type Founders' Association in 1886. In TeX one pica is 400⁄2409 of an inch.
         """
         
         DtpPica = 'DtpPica'
         """
-            
+            The pica is a typographic unit of measure corresponding to approximately 1⁄6 of an inch, or from 1⁄68 to 1⁄73 of a foot. One pica is further divided into 12 points.
         """
         
         Twip = 'Twip'
         """
-            
+            A twip (abbreviating "twentieth of a point" or "twentieth of an inch point") is a typographical measurement, defined as 1⁄20 of a typographical point. One twip is 1⁄1440 inch, or ~17.64 μm.
         """
         
         Hand = 'Hand'
         """
-            
+            The hand is a non-SI unit of measurement of length standardized to 4 in (101.6 mm). It is used to measure the height of horses in many English-speaking countries, including Australia, Canada, Ireland, the United Kingdom, and the United States. It was originally based on the breadth of a human hand.
         """
         
         AstronomicalUnit = 'AstronomicalUnit'
@@ -117,7 +117,7 @@ class LengthUnits(Enum):
         
         Chain = 'Chain'
         """
-            
+            The chain (abbreviated ch) is a unit of length equal to 66 feet (22 yards), used in both the US customary and Imperial unit systems. It is subdivided into 100 links. There are 10 chains in a furlong, and 80 chains in one statute mile. In metric terms, it is 20.1168 m long.
         """
         
         Angstrom = 'Angstrom'
@@ -459,19 +459,19 @@ class Length(AbstractMeasure):
             return (value / 2.54e-8)
         
         if from_unit == LengthUnits.PrinterPoint:
-            return ((value / 2.54e-2) * 72.27)
+            return (value * 72.27 / 2.54e-2)
         
         if from_unit == LengthUnits.DtpPoint:
-            return ((value / 2.54e-2) * 72)
+            return (value * 72 / 2.54e-2)
         
         if from_unit == LengthUnits.PrinterPica:
-            return (value * 237.106301584)
+            return (value / (2.54e-2 * 400 / 2409))
         
         if from_unit == LengthUnits.DtpPica:
-            return (value * 236.220472441)
+            return (value * 6 / 2.54e-2)
         
         if from_unit == LengthUnits.Twip:
-            return (value * 56692.913385826)
+            return (value * 1440 / 2.54e-2)
         
         if from_unit == LengthUnits.Hand:
             return (value / 1.016e-1)
@@ -590,19 +590,19 @@ class Length(AbstractMeasure):
             return (value * 2.54e-8)
         
         if to_unit == LengthUnits.PrinterPoint:
-            return ((value / 72.27) * 2.54e-2)
+            return (value * 2.54e-2 / 72.27 )
         
         if to_unit == LengthUnits.DtpPoint:
-            return ((value / 72) * 2.54e-2)
+            return (value * 2.54e-2 / 72)
         
         if to_unit == LengthUnits.PrinterPica:
-            return (value / 237.106301584)
+            return (value * 2.54e-2 * 400 / 2409)
         
         if to_unit == LengthUnits.DtpPica:
-            return (value / 236.220472441)
+            return (value * 2.54e-2 / 6)
         
         if to_unit == LengthUnits.Twip:
-            return (value / 56692.913385826)
+            return (value * 2.54e-2 / 1440)
         
         if to_unit == LengthUnits.Hand:
             return (value * 1.016e-1)
@@ -740,7 +740,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in feet.
 
-        
+        The foot (pl. feet; standard symbol: ft) is a unit of length in the British imperial and United States customary systems of measurement. The prime symbol, ′, is commonly used to represent the foot. In both customary and imperial units, one foot comprises 12 inches, and one yard comprises three feet. Since an international agreement in 1959, the foot is defined as equal to exactly 0.3048 meters.
 
         :param meters: The Length value in feet.
         :type feet: float
@@ -770,7 +770,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in inches.
 
-        
+        The inch (symbol: in or ″) is a unit of length in the British Imperial and the United States customary systems of measurement. It is equal to 1/36 yard or 1/12 of a foot. Derived from the Roman uncia ("twelfth"), the word inch is also sometimes used to translate similar units in other measurement systems, usually understood as deriving from the width of the human thumb.
 
         :param meters: The Length value in inches.
         :type inches: float
@@ -860,7 +860,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in printer_points.
 
-        
+        In typography, the point is the smallest unit of measure. It is used for measuring font size, leading, and other items on a printed page. In modern times this size of the point has been approximated as exactly 1⁄72.27 (0.01383700013837) of the inch by Donald Knuth for the default unit of his TeX computer typesetting system and is thus sometimes known as the TeX point.
 
         :param meters: The Length value in printer_points.
         :type printer_points: float
@@ -875,7 +875,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in dtp_points.
 
-        
+        The desktop publishing point (DTP) is defined as 1⁄72 of an inch (1/72 × 25.4 mm ≈ 0.353 mm) and, as with earlier American point sizes, is considered to be 1⁄12 of a pica.
 
         :param meters: The Length value in dtp_points.
         :type dtp_points: float
@@ -890,7 +890,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in printer_picas.
 
-        
+        The American pica of 0.16604 inches (~4.217 mm) was established by the United States Type Founders' Association in 1886. In TeX one pica is 400⁄2409 of an inch.
 
         :param meters: The Length value in printer_picas.
         :type printer_picas: float
@@ -905,7 +905,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in dtp_picas.
 
-        
+        The pica is a typographic unit of measure corresponding to approximately 1⁄6 of an inch, or from 1⁄68 to 1⁄73 of a foot. One pica is further divided into 12 points.
 
         :param meters: The Length value in dtp_picas.
         :type dtp_picas: float
@@ -920,7 +920,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in twips.
 
-        
+        A twip (abbreviating "twentieth of a point" or "twentieth of an inch point") is a typographical measurement, defined as 1⁄20 of a typographical point. One twip is 1⁄1440 inch, or ~17.64 μm.
 
         :param meters: The Length value in twips.
         :type twips: float
@@ -935,7 +935,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in hands.
 
-        
+        The hand is a non-SI unit of measurement of length standardized to 4 in (101.6 mm). It is used to measure the height of horses in many English-speaking countries, including Australia, Canada, Ireland, the United Kingdom, and the United States. It was originally based on the breadth of a human hand.
 
         :param meters: The Length value in hands.
         :type hands: float
@@ -1010,7 +1010,7 @@ class Length(AbstractMeasure):
         """
         Create a new instance of Length from a value in chains.
 
-        
+        The chain (abbreviated ch) is a unit of length equal to 66 feet (22 yards), used in both the US customary and Imperial unit systems. It is subdivided into 100 links. There are 10 chains in a furlong, and 80 chains in one statute mile. In metric terms, it is 20.1168 m long.
 
         :param meters: The Length value in chains.
         :type chains: float
@@ -1356,7 +1356,7 @@ class Length(AbstractMeasure):
     @property
     def feet(self) -> float:
         """
-        
+        The foot (pl. feet; standard symbol: ft) is a unit of length in the British imperial and United States customary systems of measurement. The prime symbol, ′, is commonly used to represent the foot. In both customary and imperial units, one foot comprises 12 inches, and one yard comprises three feet. Since an international agreement in 1959, the foot is defined as equal to exactly 0.3048 meters.
         """
         if self.__feet != None:
             return self.__feet
@@ -1378,7 +1378,7 @@ class Length(AbstractMeasure):
     @property
     def inches(self) -> float:
         """
-        
+        The inch (symbol: in or ″) is a unit of length in the British Imperial and the United States customary systems of measurement. It is equal to 1/36 yard or 1/12 of a foot. Derived from the Roman uncia ("twelfth"), the word inch is also sometimes used to translate similar units in other measurement systems, usually understood as deriving from the width of the human thumb.
         """
         if self.__inches != None:
             return self.__inches
@@ -1444,7 +1444,7 @@ class Length(AbstractMeasure):
     @property
     def printer_points(self) -> float:
         """
-        
+        In typography, the point is the smallest unit of measure. It is used for measuring font size, leading, and other items on a printed page. In modern times this size of the point has been approximated as exactly 1⁄72.27 (0.01383700013837) of the inch by Donald Knuth for the default unit of his TeX computer typesetting system and is thus sometimes known as the TeX point.
         """
         if self.__printer_points != None:
             return self.__printer_points
@@ -1455,7 +1455,7 @@ class Length(AbstractMeasure):
     @property
     def dtp_points(self) -> float:
         """
-        
+        The desktop publishing point (DTP) is defined as 1⁄72 of an inch (1/72 × 25.4 mm ≈ 0.353 mm) and, as with earlier American point sizes, is considered to be 1⁄12 of a pica.
         """
         if self.__dtp_points != None:
             return self.__dtp_points
@@ -1466,7 +1466,7 @@ class Length(AbstractMeasure):
     @property
     def printer_picas(self) -> float:
         """
-        
+        The American pica of 0.16604 inches (~4.217 mm) was established by the United States Type Founders' Association in 1886. In TeX one pica is 400⁄2409 of an inch.
         """
         if self.__printer_picas != None:
             return self.__printer_picas
@@ -1477,7 +1477,7 @@ class Length(AbstractMeasure):
     @property
     def dtp_picas(self) -> float:
         """
-        
+        The pica is a typographic unit of measure corresponding to approximately 1⁄6 of an inch, or from 1⁄68 to 1⁄73 of a foot. One pica is further divided into 12 points.
         """
         if self.__dtp_picas != None:
             return self.__dtp_picas
@@ -1488,7 +1488,7 @@ class Length(AbstractMeasure):
     @property
     def twips(self) -> float:
         """
-        
+        A twip (abbreviating "twentieth of a point" or "twentieth of an inch point") is a typographical measurement, defined as 1⁄20 of a typographical point. One twip is 1⁄1440 inch, or ~17.64 μm.
         """
         if self.__twips != None:
             return self.__twips
@@ -1499,7 +1499,7 @@ class Length(AbstractMeasure):
     @property
     def hands(self) -> float:
         """
-        
+        The hand is a non-SI unit of measurement of length standardized to 4 in (101.6 mm). It is used to measure the height of horses in many English-speaking countries, including Australia, Canada, Ireland, the United Kingdom, and the United States. It was originally based on the breadth of a human hand.
         """
         if self.__hands != None:
             return self.__hands
@@ -1554,7 +1554,7 @@ class Length(AbstractMeasure):
     @property
     def chains(self) -> float:
         """
-        
+        The chain (abbreviated ch) is a unit of length equal to 66 feet (22 yards), used in both the US customary and Imperial unit systems. It is subdivided into 100 links. There are 10 chains in a furlong, and 80 chains in one statute mile. In metric terms, it is 20.1168 m long.
         """
         if self.__chains != None:
             return self.__chains

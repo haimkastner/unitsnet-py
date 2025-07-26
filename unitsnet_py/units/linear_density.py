@@ -267,10 +267,10 @@ class LinearDensity(AbstractMeasure):
             return (value / 1e-3)
         
         if from_unit == LinearDensityUnits.PoundPerInch:
-            return (value * 5.5997415e-2)
+            return (value * 2.54e-2 / 0.45359237)
         
         if from_unit == LinearDensityUnits.PoundPerFoot:
-            return (value / 1.48816394)
+            return (value * 0.3048 / 0.45359237)
         
         if from_unit == LinearDensityUnits.GramPerFoot:
             return (value / ( 1e-3 / 0.3048 ))
@@ -326,10 +326,10 @@ class LinearDensity(AbstractMeasure):
             return (value * 1e-3)
         
         if to_unit == LinearDensityUnits.PoundPerInch:
-            return (value / 5.5997415e-2)
+            return (value * 0.45359237 / 2.54e-2)
         
         if to_unit == LinearDensityUnits.PoundPerFoot:
-            return (value * 1.48816394)
+            return (value * 0.45359237 / 0.3048)
         
         if to_unit == LinearDensityUnits.GramPerFoot:
             return (value * ( 1e-3 / 0.3048 ))

@@ -156,10 +156,10 @@ class ElectricCurrentDensity(AbstractMeasure):
             return (value)
         
         if from_unit == ElectricCurrentDensityUnits.AmperePerSquareInch:
-            return (value / 1.5500031000062000e3)
+            return (value * 0.00064516)
         
         if from_unit == ElectricCurrentDensityUnits.AmperePerSquareFoot:
-            return (value / 1.0763910416709722e1)
+            return (value * 9.290304e-2)
         
         return None
 
@@ -170,10 +170,10 @@ class ElectricCurrentDensity(AbstractMeasure):
             return (value)
         
         if to_unit == ElectricCurrentDensityUnits.AmperePerSquareInch:
-            return (value * 1.5500031000062000e3)
+            return (value / 0.00064516)
         
         if to_unit == ElectricCurrentDensityUnits.AmperePerSquareFoot:
-            return (value * 1.0763910416709722e1)
+            return (value / 9.290304e-2)
         
         return None
 

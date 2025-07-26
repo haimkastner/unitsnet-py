@@ -212,7 +212,7 @@ class ElectricCharge(AbstractMeasure):
             return (value)
         
         if from_unit == ElectricChargeUnits.AmpereHour:
-            return (value * 2.77777777777e-4)
+            return (value / 3600)
         
         if from_unit == ElectricChargeUnits.Picocoulomb:
             return ((value) / 1e-12)
@@ -233,13 +233,13 @@ class ElectricCharge(AbstractMeasure):
             return ((value) / 1000000.0)
         
         if from_unit == ElectricChargeUnits.MilliampereHour:
-            return ((value * 2.77777777777e-4) / 0.001)
+            return ((value / 3600) / 0.001)
         
         if from_unit == ElectricChargeUnits.KiloampereHour:
-            return ((value * 2.77777777777e-4) / 1000.0)
+            return ((value / 3600) / 1000.0)
         
         if from_unit == ElectricChargeUnits.MegaampereHour:
-            return ((value * 2.77777777777e-4) / 1000000.0)
+            return ((value / 3600) / 1000000.0)
         
         return None
 
@@ -250,7 +250,7 @@ class ElectricCharge(AbstractMeasure):
             return (value)
         
         if to_unit == ElectricChargeUnits.AmpereHour:
-            return (value / 2.77777777777e-4)
+            return (value * 3600)
         
         if to_unit == ElectricChargeUnits.Picocoulomb:
             return ((value) * 1e-12)
@@ -271,13 +271,13 @@ class ElectricCharge(AbstractMeasure):
             return ((value) * 1000000.0)
         
         if to_unit == ElectricChargeUnits.MilliampereHour:
-            return ((value / 2.77777777777e-4) * 0.001)
+            return ((value * 3600) * 0.001)
         
         if to_unit == ElectricChargeUnits.KiloampereHour:
-            return ((value / 2.77777777777e-4) * 1000.0)
+            return ((value * 3600) * 1000.0)
         
         if to_unit == ElectricChargeUnits.MegaampereHour:
-            return ((value / 2.77777777777e-4) * 1000000.0)
+            return ((value * 3600) * 1000000.0)
         
         return None
 

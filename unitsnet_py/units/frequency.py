@@ -17,7 +17,7 @@ class FrequencyUnits(Enum):
         
         RadianPerSecond = 'RadianPerSecond'
         """
-            
+            In SI units, angular frequency is normally presented with the unit radian per second, and need not express a rotational value. The unit hertz (Hz) is dimensionally equivalent, but by convention it is only used for frequency f, never for angular frequency ω. This convention is used to help avoid the confusion that arises when dealing with quantities such as frequency and angular quantities because the units of measure (such as cycle or radian) are considered to be one and hence may be omitted when expressing quantities in terms of SI units.
         """
         
         CyclePerMinute = 'CyclePerMinute'
@@ -36,11 +36,6 @@ class FrequencyUnits(Enum):
         """
         
         PerSecond = 'PerSecond'
-        """
-            
-        """
-        
-        BUnit = 'BUnit'
         """
             
         """
@@ -153,8 +148,6 @@ class Frequency(AbstractMeasure):
         
         self.__per_second = None
         
-        self.__b_units = None
-        
         self.__microhertz = None
         
         self.__millihertz = None
@@ -226,7 +219,7 @@ class Frequency(AbstractMeasure):
             return (value)
         
         if from_unit == FrequencyUnits.RadianPerSecond:
-            return (value * 6.2831853072)
+            return (value * (2 * math.pi))
         
         if from_unit == FrequencyUnits.CyclePerMinute:
             return (value * 60)
@@ -239,9 +232,6 @@ class Frequency(AbstractMeasure):
         
         if from_unit == FrequencyUnits.PerSecond:
             return (value)
-        
-        if from_unit == FrequencyUnits.BUnit:
-            return (value * value * 1e-3)
         
         if from_unit == FrequencyUnits.Microhertz:
             return ((value) / 1e-06)
@@ -270,7 +260,7 @@ class Frequency(AbstractMeasure):
             return (value)
         
         if to_unit == FrequencyUnits.RadianPerSecond:
-            return (value / 6.2831853072)
+            return (value / (2 * math.pi))
         
         if to_unit == FrequencyUnits.CyclePerMinute:
             return (value / 60)
@@ -283,9 +273,6 @@ class Frequency(AbstractMeasure):
         
         if to_unit == FrequencyUnits.PerSecond:
             return (value)
-        
-        if to_unit == FrequencyUnits.BUnit:
-            return (math.sqrt(value * 1e3))
         
         if to_unit == FrequencyUnits.Microhertz:
             return ((value) * 1e-06)
@@ -333,7 +320,7 @@ class Frequency(AbstractMeasure):
         """
         Create a new instance of Frequency from a value in radians_per_second.
 
-        
+        In SI units, angular frequency is normally presented with the unit radian per second, and need not express a rotational value. The unit hertz (Hz) is dimensionally equivalent, but by convention it is only used for frequency f, never for angular frequency ω. This convention is used to help avoid the confusion that arises when dealing with quantities such as frequency and angular quantities because the units of measure (such as cycle or radian) are considered to be one and hence may be omitted when expressing quantities in terms of SI units.
 
         :param meters: The Frequency value in radians_per_second.
         :type radians_per_second: float
@@ -401,21 +388,6 @@ class Frequency(AbstractMeasure):
         :rtype: Frequency
         """
         return Frequency(per_second, FrequencyUnits.PerSecond)
-
-    
-    @staticmethod
-    def from_b_units(b_units: float):
-        """
-        Create a new instance of Frequency from a value in b_units.
-
-        
-
-        :param meters: The Frequency value in b_units.
-        :type b_units: float
-        :return: A new instance of Frequency.
-        :rtype: Frequency
-        """
-        return Frequency(b_units, FrequencyUnits.BUnit)
 
     
     @staticmethod
@@ -522,7 +494,7 @@ class Frequency(AbstractMeasure):
     @property
     def radians_per_second(self) -> float:
         """
-        
+        In SI units, angular frequency is normally presented with the unit radian per second, and need not express a rotational value. The unit hertz (Hz) is dimensionally equivalent, but by convention it is only used for frequency f, never for angular frequency ω. This convention is used to help avoid the confusion that arises when dealing with quantities such as frequency and angular quantities because the units of measure (such as cycle or radian) are considered to be one and hence may be omitted when expressing quantities in terms of SI units.
         """
         if self.__radians_per_second != None:
             return self.__radians_per_second
@@ -572,17 +544,6 @@ class Frequency(AbstractMeasure):
             return self.__per_second
         self.__per_second = self.__convert_from_base(FrequencyUnits.PerSecond)
         return self.__per_second
-
-    
-    @property
-    def b_units(self) -> float:
-        """
-        
-        """
-        if self.__b_units != None:
-            return self.__b_units
-        self.__b_units = self.__convert_from_base(FrequencyUnits.BUnit)
-        return self.__b_units
 
     
     @property
@@ -684,9 +645,6 @@ class Frequency(AbstractMeasure):
         if unit == FrequencyUnits.PerSecond:
             return f"""{super()._truncate_fraction_digits(self.per_second, fractional_digits)} s⁻¹"""
         
-        if unit == FrequencyUnits.BUnit:
-            return f"""{super()._truncate_fraction_digits(self.b_units, fractional_digits)} B Units"""
-        
         if unit == FrequencyUnits.Microhertz:
             return f"""{super()._truncate_fraction_digits(self.microhertz, fractional_digits)} μHz"""
         
@@ -732,9 +690,6 @@ class Frequency(AbstractMeasure):
         
         if unit_abbreviation == FrequencyUnits.PerSecond:
             return """s⁻¹"""
-        
-        if unit_abbreviation == FrequencyUnits.BUnit:
-            return """B Units"""
         
         if unit_abbreviation == FrequencyUnits.Microhertz:
             return """μHz"""

@@ -17,7 +17,7 @@ class LuminosityUnits(Enum):
         
         SolarLuminosity = 'SolarLuminosity'
         """
-            
+            The IAU has defined a nominal solar luminosity of 3.828×10^26 W to promote publication of consistent and comparable values in units of the solar luminosity.
         """
         
         Femtowatt = 'Femtowatt'
@@ -233,7 +233,7 @@ class Luminosity(AbstractMeasure):
             return (value)
         
         if from_unit == LuminosityUnits.SolarLuminosity:
-            return (value / 3.846e26)
+            return (value / 3.828e26)
         
         if from_unit == LuminosityUnits.Femtowatt:
             return ((value) / 1e-15)
@@ -280,7 +280,7 @@ class Luminosity(AbstractMeasure):
             return (value)
         
         if to_unit == LuminosityUnits.SolarLuminosity:
-            return (value * 3.846e26)
+            return (value * 3.828e26)
         
         if to_unit == LuminosityUnits.Femtowatt:
             return ((value) * 1e-15)
@@ -346,7 +346,7 @@ class Luminosity(AbstractMeasure):
         """
         Create a new instance of Luminosity from a value in solar_luminosities.
 
-        
+        The IAU has defined a nominal solar luminosity of 3.828×10^26 W to promote publication of consistent and comparable values in units of the solar luminosity.
 
         :param meters: The Luminosity value in solar_luminosities.
         :type solar_luminosities: float
@@ -550,7 +550,7 @@ class Luminosity(AbstractMeasure):
     @property
     def solar_luminosities(self) -> float:
         """
-        
+        The IAU has defined a nominal solar luminosity of 3.828×10^26 W to promote publication of consistent and comparable values in units of the solar luminosity.
         """
         if self.__solar_luminosities != None:
             return self.__solar_luminosities

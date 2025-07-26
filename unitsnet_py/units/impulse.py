@@ -229,13 +229,13 @@ class Impulse(AbstractMeasure):
             return (value)
         
         if from_unit == ImpulseUnits.PoundFootPerSecond:
-            return (value * 7.230657989877)
+            return (value / (0.45359237 * 0.3048))
         
         if from_unit == ImpulseUnits.PoundForceSecond:
-            return (value * 0.2248089430997)
+            return (value / (0.45359237 * 9.80665))
         
         if from_unit == ImpulseUnits.SlugFootPerSecond:
-            return (value * 0.224735720691)
+            return (value / (0.45359237 * 9.80665))
         
         if from_unit == ImpulseUnits.NanonewtonSecond:
             return ((value) / 1e-09)
@@ -273,13 +273,13 @@ class Impulse(AbstractMeasure):
             return (value)
         
         if to_unit == ImpulseUnits.PoundFootPerSecond:
-            return (value / 7.230657989877)
+            return (value * (0.45359237 * 0.3048))
         
         if to_unit == ImpulseUnits.PoundForceSecond:
-            return (value / 0.2248089430997)
+            return (value * 0.45359237 * 9.80665)
         
         if to_unit == ImpulseUnits.SlugFootPerSecond:
-            return (value / 0.224735720691)
+            return (value * (0.45359237 * 9.80665))
         
         if to_unit == ImpulseUnits.NanonewtonSecond:
             return ((value) * 1e-09)

@@ -669,103 +669,103 @@ class VolumeFlow(AbstractMeasure):
             return (value * 86400)
         
         if from_unit == VolumeFlowUnits.CubicFootPerSecond:
-            return (value * 35.314666721)
+            return (value / 0.028316846592)
         
         if from_unit == VolumeFlowUnits.CubicFootPerMinute:
-            return (value * 2118.88000326)
+            return (value / (0.028316846592 / 60))
         
         if from_unit == VolumeFlowUnits.CubicFootPerHour:
-            return (value / 7.8657907199999087346816086183876e-6)
+            return (value / (0.028316846592 / 3600))
         
         if from_unit == VolumeFlowUnits.CubicYardPerSecond:
             return (value / 0.764554857984)
         
         if from_unit == VolumeFlowUnits.CubicYardPerMinute:
-            return (value / 0.0127425809664)
+            return (value / (0.764554857984 / 60))
         
         if from_unit == VolumeFlowUnits.CubicYardPerHour:
-            return (value / 2.1237634944e-4)
+            return (value / (0.764554857984 / 3600))
         
         if from_unit == VolumeFlowUnits.CubicYardPerDay:
-            return (value * 113007)
+            return (value / (0.764554857984 / 86400))
         
         if from_unit == VolumeFlowUnits.MillionUsGallonPerDay:
-            return (value * 22.824465227)
+            return (value / (1e6 * 0.003785411784 / 86400))
         
         if from_unit == VolumeFlowUnits.UsGallonPerDay:
-            return (value * 22824465.227)
+            return (value / (0.003785411784 / 86400))
         
         if from_unit == VolumeFlowUnits.LiterPerSecond:
             return (value * 1000)
         
         if from_unit == VolumeFlowUnits.LiterPerMinute:
-            return (value * 60000.00000)
+            return (value * (1000 * 60))
         
         if from_unit == VolumeFlowUnits.LiterPerHour:
-            return (value * 3600000.000)
+            return (value * (1000 * 3600))
         
         if from_unit == VolumeFlowUnits.LiterPerDay:
-            return (value * 86400000)
+            return (value * (1000 * 86400))
         
         if from_unit == VolumeFlowUnits.UsGallonPerSecond:
-            return (value * 264.1720523581484)
+            return (value / 0.003785411784)
         
         if from_unit == VolumeFlowUnits.UsGallonPerMinute:
-            return (value * 15850.323141489)
+            return (value / (0.003785411784 / 60))
         
         if from_unit == VolumeFlowUnits.UkGallonPerDay:
-            return (value * 19005304)
+            return (value / (0.00454609 / 86400))
         
         if from_unit == VolumeFlowUnits.UkGallonPerHour:
-            return (value * 791887.667)
+            return (value / (0.00454609 / 3600))
         
         if from_unit == VolumeFlowUnits.UkGallonPerMinute:
-            return (value * 13198.2)
+            return (value / (0.00454609 / 60))
         
         if from_unit == VolumeFlowUnits.UkGallonPerSecond:
-            return (value * 219.969)
+            return (value / 0.00454609)
         
         if from_unit == VolumeFlowUnits.KilousGallonPerMinute:
-            return (value * 15.850323141489)
+            return (value / (1000 * 0.003785411784 / 60))
         
         if from_unit == VolumeFlowUnits.UsGallonPerHour:
-            return (value * 951019.38848933424)
+            return (value / (0.003785411784 / 3600))
         
         if from_unit == VolumeFlowUnits.CubicDecimeterPerMinute:
             return (value * 60000.00000)
         
         if from_unit == VolumeFlowUnits.OilBarrelPerDay:
-            return (value / 1.8401307283333333333333333333333e-6)
+            return (value / (0.158987294928 / 86400))
         
         if from_unit == VolumeFlowUnits.OilBarrelPerMinute:
-            return (value / 2.64978825e-3)
+            return (value / (0.158987294928 / 60))
         
         if from_unit == VolumeFlowUnits.OilBarrelPerHour:
-            return (value / 4.41631375e-5)
+            return (value / (0.158987294928 / 3600))
         
         if from_unit == VolumeFlowUnits.OilBarrelPerSecond:
-            return (value * 6.28981)
+            return (value / 0.158987294928)
         
         if from_unit == VolumeFlowUnits.CubicMillimeterPerSecond:
             return (value / 1e-9)
         
         if from_unit == VolumeFlowUnits.AcreFootPerSecond:
-            return (value * 0.000810713194)
+            return (value / 1233.48183754752)
         
         if from_unit == VolumeFlowUnits.AcreFootPerMinute:
-            return (value * 0.0486427916)
+            return (value / (1233.48183754752 / 60))
         
         if from_unit == VolumeFlowUnits.AcreFootPerHour:
-            return (value * 2.91857)
+            return (value / (1233.48183754752 / 3600))
         
         if from_unit == VolumeFlowUnits.AcreFootPerDay:
-            return (value * 70.0457)
+            return (value / (1233.48183754752 / 86400))
         
         if from_unit == VolumeFlowUnits.CubicCentimeterPerMinute:
-            return (value / 1.6666666666667e-8)
+            return (value / (1e-6 / 60))
         
         if from_unit == VolumeFlowUnits.MegausGallonPerDay:
-            return ((value * 22824465.227) / 1000000.0)
+            return ((value / (0.003785411784 / 86400)) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.NanoliterPerSecond:
             return ((value * 1000) / 1e-09)
@@ -795,91 +795,91 @@ class VolumeFlow(AbstractMeasure):
             return ((value * 1000) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.NanoliterPerMinute:
-            return ((value * 60000.00000) / 1e-09)
+            return ((value * (1000 * 60)) / 1e-09)
         
         if from_unit == VolumeFlowUnits.MicroliterPerMinute:
-            return ((value * 60000.00000) / 1e-06)
+            return ((value * (1000 * 60)) / 1e-06)
         
         if from_unit == VolumeFlowUnits.MilliliterPerMinute:
-            return ((value * 60000.00000) / 0.001)
+            return ((value * (1000 * 60)) / 0.001)
         
         if from_unit == VolumeFlowUnits.CentiliterPerMinute:
-            return ((value * 60000.00000) / 0.01)
+            return ((value * (1000 * 60)) / 0.01)
         
         if from_unit == VolumeFlowUnits.DeciliterPerMinute:
-            return ((value * 60000.00000) / 0.1)
+            return ((value * (1000 * 60)) / 0.1)
         
         if from_unit == VolumeFlowUnits.DecaliterPerMinute:
-            return ((value * 60000.00000) / 10.0)
+            return ((value * (1000 * 60)) / 10.0)
         
         if from_unit == VolumeFlowUnits.HectoliterPerMinute:
-            return ((value * 60000.00000) / 100.0)
+            return ((value * (1000 * 60)) / 100.0)
         
         if from_unit == VolumeFlowUnits.KiloliterPerMinute:
-            return ((value * 60000.00000) / 1000.0)
+            return ((value * (1000 * 60)) / 1000.0)
         
         if from_unit == VolumeFlowUnits.MegaliterPerMinute:
-            return ((value * 60000.00000) / 1000000.0)
+            return ((value * (1000 * 60)) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.NanoliterPerHour:
-            return ((value * 3600000.000) / 1e-09)
+            return ((value * (1000 * 3600)) / 1e-09)
         
         if from_unit == VolumeFlowUnits.MicroliterPerHour:
-            return ((value * 3600000.000) / 1e-06)
+            return ((value * (1000 * 3600)) / 1e-06)
         
         if from_unit == VolumeFlowUnits.MilliliterPerHour:
-            return ((value * 3600000.000) / 0.001)
+            return ((value * (1000 * 3600)) / 0.001)
         
         if from_unit == VolumeFlowUnits.CentiliterPerHour:
-            return ((value * 3600000.000) / 0.01)
+            return ((value * (1000 * 3600)) / 0.01)
         
         if from_unit == VolumeFlowUnits.DeciliterPerHour:
-            return ((value * 3600000.000) / 0.1)
+            return ((value * (1000 * 3600)) / 0.1)
         
         if from_unit == VolumeFlowUnits.DecaliterPerHour:
-            return ((value * 3600000.000) / 10.0)
+            return ((value * (1000 * 3600)) / 10.0)
         
         if from_unit == VolumeFlowUnits.HectoliterPerHour:
-            return ((value * 3600000.000) / 100.0)
+            return ((value * (1000 * 3600)) / 100.0)
         
         if from_unit == VolumeFlowUnits.KiloliterPerHour:
-            return ((value * 3600000.000) / 1000.0)
+            return ((value * (1000 * 3600)) / 1000.0)
         
         if from_unit == VolumeFlowUnits.MegaliterPerHour:
-            return ((value * 3600000.000) / 1000000.0)
+            return ((value * (1000 * 3600)) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.NanoliterPerDay:
-            return ((value * 86400000) / 1e-09)
+            return ((value * (1000 * 86400)) / 1e-09)
         
         if from_unit == VolumeFlowUnits.MicroliterPerDay:
-            return ((value * 86400000) / 1e-06)
+            return ((value * (1000 * 86400)) / 1e-06)
         
         if from_unit == VolumeFlowUnits.MilliliterPerDay:
-            return ((value * 86400000) / 0.001)
+            return ((value * (1000 * 86400)) / 0.001)
         
         if from_unit == VolumeFlowUnits.CentiliterPerDay:
-            return ((value * 86400000) / 0.01)
+            return ((value * (1000 * 86400)) / 0.01)
         
         if from_unit == VolumeFlowUnits.DeciliterPerDay:
-            return ((value * 86400000) / 0.1)
+            return ((value * (1000 * 86400)) / 0.1)
         
         if from_unit == VolumeFlowUnits.DecaliterPerDay:
-            return ((value * 86400000) / 10.0)
+            return ((value * (1000 * 86400)) / 10.0)
         
         if from_unit == VolumeFlowUnits.HectoliterPerDay:
-            return ((value * 86400000) / 100.0)
+            return ((value * (1000 * 86400)) / 100.0)
         
         if from_unit == VolumeFlowUnits.KiloliterPerDay:
-            return ((value * 86400000) / 1000.0)
+            return ((value * (1000 * 86400)) / 1000.0)
         
         if from_unit == VolumeFlowUnits.MegaliterPerDay:
-            return ((value * 86400000) / 1000000.0)
+            return ((value * (1000 * 86400)) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.MegaukGallonPerDay:
-            return ((value * 19005304) / 1000000.0)
+            return ((value / (0.00454609 / 86400)) / 1000000.0)
         
         if from_unit == VolumeFlowUnits.MegaukGallonPerSecond:
-            return ((value * 219.969) / 1000000.0)
+            return ((value / 0.00454609) / 1000000.0)
         
         return None
 
@@ -899,103 +899,103 @@ class VolumeFlow(AbstractMeasure):
             return (value / 86400)
         
         if to_unit == VolumeFlowUnits.CubicFootPerSecond:
-            return (value / 35.314666721)
+            return (value * 0.028316846592)
         
         if to_unit == VolumeFlowUnits.CubicFootPerMinute:
-            return (value / 2118.88000326)
+            return (value * 0.028316846592 / 60)
         
         if to_unit == VolumeFlowUnits.CubicFootPerHour:
-            return (value * 7.8657907199999087346816086183876e-6)
+            return (value * 0.028316846592 / 3600)
         
         if to_unit == VolumeFlowUnits.CubicYardPerSecond:
             return (value * 0.764554857984)
         
         if to_unit == VolumeFlowUnits.CubicYardPerMinute:
-            return (value * 0.0127425809664)
+            return (value * 0.764554857984 / 60)
         
         if to_unit == VolumeFlowUnits.CubicYardPerHour:
-            return (value * 2.1237634944e-4)
+            return (value * 0.764554857984 / 3600)
         
         if to_unit == VolumeFlowUnits.CubicYardPerDay:
-            return (value / 113007)
+            return (value * 0.764554857984 / 86400)
         
         if to_unit == VolumeFlowUnits.MillionUsGallonPerDay:
-            return (value / 22.824465227)
+            return (value * 1e6 * 0.003785411784 / 86400)
         
         if to_unit == VolumeFlowUnits.UsGallonPerDay:
-            return (value / 22824465.227)
+            return (value * 0.003785411784 / 86400)
         
         if to_unit == VolumeFlowUnits.LiterPerSecond:
             return (value / 1000)
         
         if to_unit == VolumeFlowUnits.LiterPerMinute:
-            return (value / 60000.00000)
+            return (value / (1000 * 60))
         
         if to_unit == VolumeFlowUnits.LiterPerHour:
-            return (value / 3600000.000)
+            return (value / (1000 * 3600))
         
         if to_unit == VolumeFlowUnits.LiterPerDay:
-            return (value / 86400000)
+            return (value / (1000 * 86400))
         
         if to_unit == VolumeFlowUnits.UsGallonPerSecond:
-            return (value / 264.1720523581484)
+            return (value * 0.003785411784)
         
         if to_unit == VolumeFlowUnits.UsGallonPerMinute:
-            return (value / 15850.323141489)
+            return (value * 0.003785411784 / 60)
         
         if to_unit == VolumeFlowUnits.UkGallonPerDay:
-            return (value / 19005304)
+            return (value * 0.00454609 / 86400)
         
         if to_unit == VolumeFlowUnits.UkGallonPerHour:
-            return (value / 791887.667)
+            return (value * 0.00454609 / 3600)
         
         if to_unit == VolumeFlowUnits.UkGallonPerMinute:
-            return (value / 13198.2)
+            return (value * 0.00454609 / 60)
         
         if to_unit == VolumeFlowUnits.UkGallonPerSecond:
-            return (value / 219.969)
+            return (value * 0.00454609)
         
         if to_unit == VolumeFlowUnits.KilousGallonPerMinute:
-            return (value / 15.850323141489)
+            return (value * 1000 * 0.003785411784 / 60)
         
         if to_unit == VolumeFlowUnits.UsGallonPerHour:
-            return (value / 951019.38848933424)
+            return (value * 0.003785411784 / 3600)
         
         if to_unit == VolumeFlowUnits.CubicDecimeterPerMinute:
             return (value / 60000.00000)
         
         if to_unit == VolumeFlowUnits.OilBarrelPerDay:
-            return (value * 1.8401307283333333333333333333333e-6)
+            return (value * 0.158987294928 / 86400)
         
         if to_unit == VolumeFlowUnits.OilBarrelPerMinute:
-            return (value * 2.64978825e-3)
+            return (value * 0.158987294928 / 60)
         
         if to_unit == VolumeFlowUnits.OilBarrelPerHour:
-            return (value * 4.41631375e-5)
+            return (value * 0.158987294928 / 3600)
         
         if to_unit == VolumeFlowUnits.OilBarrelPerSecond:
-            return (value / 6.28981)
+            return (value * 0.158987294928)
         
         if to_unit == VolumeFlowUnits.CubicMillimeterPerSecond:
             return (value * 1e-9)
         
         if to_unit == VolumeFlowUnits.AcreFootPerSecond:
-            return (value / 0.000810713194)
+            return (value * 1233.48183754752)
         
         if to_unit == VolumeFlowUnits.AcreFootPerMinute:
-            return (value / 0.0486427916)
+            return (value * 1233.48183754752 / 60)
         
         if to_unit == VolumeFlowUnits.AcreFootPerHour:
-            return (value / 2.91857)
+            return (value * 1233.48183754752 / 3600)
         
         if to_unit == VolumeFlowUnits.AcreFootPerDay:
-            return (value / 70.0457)
+            return (value * 1233.48183754752 / 86400)
         
         if to_unit == VolumeFlowUnits.CubicCentimeterPerMinute:
-            return (value * 1.6666666666667e-8)
+            return (value * 1e-6 / 60)
         
         if to_unit == VolumeFlowUnits.MegausGallonPerDay:
-            return ((value / 22824465.227) * 1000000.0)
+            return ((value * 0.003785411784 / 86400) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.NanoliterPerSecond:
             return ((value / 1000) * 1e-09)
@@ -1025,91 +1025,91 @@ class VolumeFlow(AbstractMeasure):
             return ((value / 1000) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.NanoliterPerMinute:
-            return ((value / 60000.00000) * 1e-09)
+            return ((value / (1000 * 60)) * 1e-09)
         
         if to_unit == VolumeFlowUnits.MicroliterPerMinute:
-            return ((value / 60000.00000) * 1e-06)
+            return ((value / (1000 * 60)) * 1e-06)
         
         if to_unit == VolumeFlowUnits.MilliliterPerMinute:
-            return ((value / 60000.00000) * 0.001)
+            return ((value / (1000 * 60)) * 0.001)
         
         if to_unit == VolumeFlowUnits.CentiliterPerMinute:
-            return ((value / 60000.00000) * 0.01)
+            return ((value / (1000 * 60)) * 0.01)
         
         if to_unit == VolumeFlowUnits.DeciliterPerMinute:
-            return ((value / 60000.00000) * 0.1)
+            return ((value / (1000 * 60)) * 0.1)
         
         if to_unit == VolumeFlowUnits.DecaliterPerMinute:
-            return ((value / 60000.00000) * 10.0)
+            return ((value / (1000 * 60)) * 10.0)
         
         if to_unit == VolumeFlowUnits.HectoliterPerMinute:
-            return ((value / 60000.00000) * 100.0)
+            return ((value / (1000 * 60)) * 100.0)
         
         if to_unit == VolumeFlowUnits.KiloliterPerMinute:
-            return ((value / 60000.00000) * 1000.0)
+            return ((value / (1000 * 60)) * 1000.0)
         
         if to_unit == VolumeFlowUnits.MegaliterPerMinute:
-            return ((value / 60000.00000) * 1000000.0)
+            return ((value / (1000 * 60)) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.NanoliterPerHour:
-            return ((value / 3600000.000) * 1e-09)
+            return ((value / (1000 * 3600)) * 1e-09)
         
         if to_unit == VolumeFlowUnits.MicroliterPerHour:
-            return ((value / 3600000.000) * 1e-06)
+            return ((value / (1000 * 3600)) * 1e-06)
         
         if to_unit == VolumeFlowUnits.MilliliterPerHour:
-            return ((value / 3600000.000) * 0.001)
+            return ((value / (1000 * 3600)) * 0.001)
         
         if to_unit == VolumeFlowUnits.CentiliterPerHour:
-            return ((value / 3600000.000) * 0.01)
+            return ((value / (1000 * 3600)) * 0.01)
         
         if to_unit == VolumeFlowUnits.DeciliterPerHour:
-            return ((value / 3600000.000) * 0.1)
+            return ((value / (1000 * 3600)) * 0.1)
         
         if to_unit == VolumeFlowUnits.DecaliterPerHour:
-            return ((value / 3600000.000) * 10.0)
+            return ((value / (1000 * 3600)) * 10.0)
         
         if to_unit == VolumeFlowUnits.HectoliterPerHour:
-            return ((value / 3600000.000) * 100.0)
+            return ((value / (1000 * 3600)) * 100.0)
         
         if to_unit == VolumeFlowUnits.KiloliterPerHour:
-            return ((value / 3600000.000) * 1000.0)
+            return ((value / (1000 * 3600)) * 1000.0)
         
         if to_unit == VolumeFlowUnits.MegaliterPerHour:
-            return ((value / 3600000.000) * 1000000.0)
+            return ((value / (1000 * 3600)) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.NanoliterPerDay:
-            return ((value / 86400000) * 1e-09)
+            return ((value / (1000 * 86400)) * 1e-09)
         
         if to_unit == VolumeFlowUnits.MicroliterPerDay:
-            return ((value / 86400000) * 1e-06)
+            return ((value / (1000 * 86400)) * 1e-06)
         
         if to_unit == VolumeFlowUnits.MilliliterPerDay:
-            return ((value / 86400000) * 0.001)
+            return ((value / (1000 * 86400)) * 0.001)
         
         if to_unit == VolumeFlowUnits.CentiliterPerDay:
-            return ((value / 86400000) * 0.01)
+            return ((value / (1000 * 86400)) * 0.01)
         
         if to_unit == VolumeFlowUnits.DeciliterPerDay:
-            return ((value / 86400000) * 0.1)
+            return ((value / (1000 * 86400)) * 0.1)
         
         if to_unit == VolumeFlowUnits.DecaliterPerDay:
-            return ((value / 86400000) * 10.0)
+            return ((value / (1000 * 86400)) * 10.0)
         
         if to_unit == VolumeFlowUnits.HectoliterPerDay:
-            return ((value / 86400000) * 100.0)
+            return ((value / (1000 * 86400)) * 100.0)
         
         if to_unit == VolumeFlowUnits.KiloliterPerDay:
-            return ((value / 86400000) * 1000.0)
+            return ((value / (1000 * 86400)) * 1000.0)
         
         if to_unit == VolumeFlowUnits.MegaliterPerDay:
-            return ((value / 86400000) * 1000000.0)
+            return ((value / (1000 * 86400)) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.MegaukGallonPerDay:
-            return ((value / 19005304) * 1000000.0)
+            return ((value * 0.00454609 / 86400) * 1000000.0)
         
         if to_unit == VolumeFlowUnits.MegaukGallonPerSecond:
-            return ((value / 219.969) * 1000000.0)
+            return ((value * 0.00454609) * 1000000.0)
         
         return None
 
@@ -3124,13 +3124,13 @@ class VolumeFlow(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.us_gallons_per_day, fractional_digits)} gpd"""
         
         if unit == VolumeFlowUnits.LiterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.liters_per_second, fractional_digits)} L/s"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_second, fractional_digits)} l/s"""
         
         if unit == VolumeFlowUnits.LiterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.liters_per_minute, fractional_digits)} L/min"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_minute, fractional_digits)} l/min"""
         
         if unit == VolumeFlowUnits.LiterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.liters_per_hour, fractional_digits)} L/h"""
+            return f"""{super()._truncate_fraction_digits(self.liters_per_hour, fractional_digits)} l/h"""
         
         if unit == VolumeFlowUnits.LiterPerDay:
             return f"""{super()._truncate_fraction_digits(self.liters_per_day, fractional_digits)} l/day"""
@@ -3196,85 +3196,85 @@ class VolumeFlow(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.megaus_gallons_per_day, fractional_digits)} Mgpd"""
         
         if unit == VolumeFlowUnits.NanoliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_second, fractional_digits)} nL/s"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_second, fractional_digits)} nl/s"""
         
         if unit == VolumeFlowUnits.MicroliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.microliters_per_second, fractional_digits)} μL/s"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_second, fractional_digits)} μl/s"""
         
         if unit == VolumeFlowUnits.MilliliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.milliliters_per_second, fractional_digits)} mL/s"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_second, fractional_digits)} ml/s"""
         
         if unit == VolumeFlowUnits.CentiliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.centiliters_per_second, fractional_digits)} cL/s"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_second, fractional_digits)} cl/s"""
         
         if unit == VolumeFlowUnits.DeciliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.deciliters_per_second, fractional_digits)} dL/s"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_second, fractional_digits)} dl/s"""
         
         if unit == VolumeFlowUnits.DecaliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.decaliters_per_second, fractional_digits)} daL/s"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_second, fractional_digits)} dal/s"""
         
         if unit == VolumeFlowUnits.HectoliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_second, fractional_digits)} hL/s"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_second, fractional_digits)} hl/s"""
         
         if unit == VolumeFlowUnits.KiloliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_second, fractional_digits)} kL/s"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_second, fractional_digits)} kl/s"""
         
         if unit == VolumeFlowUnits.MegaliterPerSecond:
-            return f"""{super()._truncate_fraction_digits(self.megaliters_per_second, fractional_digits)} ML/s"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_second, fractional_digits)} Ml/s"""
         
         if unit == VolumeFlowUnits.NanoliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_minute, fractional_digits)} nL/min"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_minute, fractional_digits)} nl/min"""
         
         if unit == VolumeFlowUnits.MicroliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.microliters_per_minute, fractional_digits)} μL/min"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_minute, fractional_digits)} μl/min"""
         
         if unit == VolumeFlowUnits.MilliliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.milliliters_per_minute, fractional_digits)} mL/min"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_minute, fractional_digits)} ml/min"""
         
         if unit == VolumeFlowUnits.CentiliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.centiliters_per_minute, fractional_digits)} cL/min"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_minute, fractional_digits)} cl/min"""
         
         if unit == VolumeFlowUnits.DeciliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.deciliters_per_minute, fractional_digits)} dL/min"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_minute, fractional_digits)} dl/min"""
         
         if unit == VolumeFlowUnits.DecaliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.decaliters_per_minute, fractional_digits)} daL/min"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_minute, fractional_digits)} dal/min"""
         
         if unit == VolumeFlowUnits.HectoliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_minute, fractional_digits)} hL/min"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_minute, fractional_digits)} hl/min"""
         
         if unit == VolumeFlowUnits.KiloliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_minute, fractional_digits)} kL/min"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_minute, fractional_digits)} kl/min"""
         
         if unit == VolumeFlowUnits.MegaliterPerMinute:
-            return f"""{super()._truncate_fraction_digits(self.megaliters_per_minute, fractional_digits)} ML/min"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_minute, fractional_digits)} Ml/min"""
         
         if unit == VolumeFlowUnits.NanoliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_hour, fractional_digits)} nL/h"""
+            return f"""{super()._truncate_fraction_digits(self.nanoliters_per_hour, fractional_digits)} nl/h"""
         
         if unit == VolumeFlowUnits.MicroliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.microliters_per_hour, fractional_digits)} μL/h"""
+            return f"""{super()._truncate_fraction_digits(self.microliters_per_hour, fractional_digits)} μl/h"""
         
         if unit == VolumeFlowUnits.MilliliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.milliliters_per_hour, fractional_digits)} mL/h"""
+            return f"""{super()._truncate_fraction_digits(self.milliliters_per_hour, fractional_digits)} ml/h"""
         
         if unit == VolumeFlowUnits.CentiliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.centiliters_per_hour, fractional_digits)} cL/h"""
+            return f"""{super()._truncate_fraction_digits(self.centiliters_per_hour, fractional_digits)} cl/h"""
         
         if unit == VolumeFlowUnits.DeciliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.deciliters_per_hour, fractional_digits)} dL/h"""
+            return f"""{super()._truncate_fraction_digits(self.deciliters_per_hour, fractional_digits)} dl/h"""
         
         if unit == VolumeFlowUnits.DecaliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.decaliters_per_hour, fractional_digits)} daL/h"""
+            return f"""{super()._truncate_fraction_digits(self.decaliters_per_hour, fractional_digits)} dal/h"""
         
         if unit == VolumeFlowUnits.HectoliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_hour, fractional_digits)} hL/h"""
+            return f"""{super()._truncate_fraction_digits(self.hectoliters_per_hour, fractional_digits)} hl/h"""
         
         if unit == VolumeFlowUnits.KiloliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_hour, fractional_digits)} kL/h"""
+            return f"""{super()._truncate_fraction_digits(self.kiloliters_per_hour, fractional_digits)} kl/h"""
         
         if unit == VolumeFlowUnits.MegaliterPerHour:
-            return f"""{super()._truncate_fraction_digits(self.megaliters_per_hour, fractional_digits)} ML/h"""
+            return f"""{super()._truncate_fraction_digits(self.megaliters_per_hour, fractional_digits)} Ml/h"""
         
         if unit == VolumeFlowUnits.NanoliterPerDay:
             return f"""{super()._truncate_fraction_digits(self.nanoliters_per_day, fractional_digits)} nl/day"""
@@ -3359,13 +3359,13 @@ class VolumeFlow(AbstractMeasure):
             return """gpd"""
         
         if unit_abbreviation == VolumeFlowUnits.LiterPerSecond:
-            return """L/s"""
+            return """l/s"""
         
         if unit_abbreviation == VolumeFlowUnits.LiterPerMinute:
-            return """L/min"""
+            return """l/min"""
         
         if unit_abbreviation == VolumeFlowUnits.LiterPerHour:
-            return """L/h"""
+            return """l/h"""
         
         if unit_abbreviation == VolumeFlowUnits.LiterPerDay:
             return """l/day"""
@@ -3431,85 +3431,85 @@ class VolumeFlow(AbstractMeasure):
             return """Mgpd"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerSecond:
-            return """nL/s"""
+            return """nl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerSecond:
-            return """μL/s"""
+            return """μl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerSecond:
-            return """mL/s"""
+            return """ml/s"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerSecond:
-            return """cL/s"""
+            return """cl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerSecond:
-            return """dL/s"""
+            return """dl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.DecaliterPerSecond:
-            return """daL/s"""
+            return """dal/s"""
         
         if unit_abbreviation == VolumeFlowUnits.HectoliterPerSecond:
-            return """hL/s"""
+            return """hl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerSecond:
-            return """kL/s"""
+            return """kl/s"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerSecond:
-            return """ML/s"""
+            return """Ml/s"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerMinute:
-            return """nL/min"""
+            return """nl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerMinute:
-            return """μL/min"""
+            return """μl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerMinute:
-            return """mL/min"""
+            return """ml/min"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerMinute:
-            return """cL/min"""
+            return """cl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerMinute:
-            return """dL/min"""
+            return """dl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.DecaliterPerMinute:
-            return """daL/min"""
+            return """dal/min"""
         
         if unit_abbreviation == VolumeFlowUnits.HectoliterPerMinute:
-            return """hL/min"""
+            return """hl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerMinute:
-            return """kL/min"""
+            return """kl/min"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerMinute:
-            return """ML/min"""
+            return """Ml/min"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerHour:
-            return """nL/h"""
+            return """nl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MicroliterPerHour:
-            return """μL/h"""
+            return """μl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MilliliterPerHour:
-            return """mL/h"""
+            return """ml/h"""
         
         if unit_abbreviation == VolumeFlowUnits.CentiliterPerHour:
-            return """cL/h"""
+            return """cl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.DeciliterPerHour:
-            return """dL/h"""
+            return """dl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.DecaliterPerHour:
-            return """daL/h"""
+            return """dal/h"""
         
         if unit_abbreviation == VolumeFlowUnits.HectoliterPerHour:
-            return """hL/h"""
+            return """hl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.KiloliterPerHour:
-            return """kL/h"""
+            return """kl/h"""
         
         if unit_abbreviation == VolumeFlowUnits.MegaliterPerHour:
-            return """ML/h"""
+            return """Ml/h"""
         
         if unit_abbreviation == VolumeFlowUnits.NanoliterPerDay:
             return """nl/day"""

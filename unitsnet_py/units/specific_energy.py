@@ -366,7 +366,7 @@ class SpecificEnergy(AbstractMeasure):
             return (value / 7.93664e3)
         
         if from_unit == SpecificEnergyUnits.BtuPerPound:
-            return (value / 2326.000075362)
+            return (value * 0.45359237 / 1055.05585262)
         
         if from_unit == SpecificEnergyUnits.KilojoulePerKilogram:
             return ((value) / 1000.0)
@@ -461,7 +461,7 @@ class SpecificEnergy(AbstractMeasure):
             return (value * 7.93664e3)
         
         if to_unit == SpecificEnergyUnits.BtuPerPound:
-            return (value * 2326.000075362)
+            return (value * 1055.05585262 / 0.45359237)
         
         if to_unit == SpecificEnergyUnits.KilojoulePerKilogram:
             return ((value) * 1000.0)

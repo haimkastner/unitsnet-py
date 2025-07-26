@@ -227,16 +227,16 @@ class ReciprocalArea(AbstractMeasure):
             return (value * 1e-12)
         
         if from_unit == ReciprocalAreaUnits.InverseSquareMile:
-            return (value * 2.59e6)
+            return (value * (1609.344 * 1609.344))
         
         if from_unit == ReciprocalAreaUnits.InverseSquareYard:
-            return (value * 0.836127)
+            return (value * (0.9144 * 0.9144))
         
         if from_unit == ReciprocalAreaUnits.InverseSquareFoot:
-            return (value * 0.092903)
+            return (value * 9.290304e-2)
         
         if from_unit == ReciprocalAreaUnits.InverseUsSurveySquareFoot:
-            return (value * 0.09290341161)
+            return (value * (1200.0 / 3937.0) * (1200.0 / 3937.0))
         
         if from_unit == ReciprocalAreaUnits.InverseSquareInch:
             return (value * 0.00064516)
@@ -265,16 +265,16 @@ class ReciprocalArea(AbstractMeasure):
             return (value / 1e-12)
         
         if to_unit == ReciprocalAreaUnits.InverseSquareMile:
-            return (value / 2.59e6)
+            return (value / (1609.344 * 1609.344))
         
         if to_unit == ReciprocalAreaUnits.InverseSquareYard:
-            return (value / 0.836127)
+            return (value / (0.9144 * 0.9144))
         
         if to_unit == ReciprocalAreaUnits.InverseSquareFoot:
-            return (value / 0.092903)
+            return (value / 9.290304e-2)
         
         if to_unit == ReciprocalAreaUnits.InverseUsSurveySquareFoot:
-            return (value / 0.09290341161)
+            return (value / (1200.0 / 3937.0) / (1200.0 / 3937.0))
         
         if to_unit == ReciprocalAreaUnits.InverseSquareInch:
             return (value / 0.00064516)

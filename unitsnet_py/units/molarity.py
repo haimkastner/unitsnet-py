@@ -215,7 +215,7 @@ class Molarity(AbstractMeasure):
             return (value * 1e-3)
         
         if from_unit == MolarityUnits.PoundMolePerCubicFoot:
-            return (value * 6.2427960576144611956325455827221e-5)
+            return (value / (1000 * 0.45359237 / 0.028316846592))
         
         if from_unit == MolarityUnits.KilomolePerCubicMeter:
             return ((value) / 1000.0)
@@ -253,7 +253,7 @@ class Molarity(AbstractMeasure):
             return (value / 1e-3)
         
         if to_unit == MolarityUnits.PoundMolePerCubicFoot:
-            return (value / 6.2427960576144611956325455827221e-5)
+            return (value * 1000 * 0.45359237 / 0.028316846592)
         
         if to_unit == MolarityUnits.KilomolePerCubicMeter:
             return ((value) * 1000.0)
@@ -592,7 +592,7 @@ class Molarity(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.moles_per_cubic_meter, fractional_digits)} mol/m³"""
         
         if unit == MolarityUnits.MolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.moles_per_liter, fractional_digits)} mol/L"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_liter, fractional_digits)} mol/l"""
         
         if unit == MolarityUnits.PoundMolePerCubicFoot:
             return f"""{super()._truncate_fraction_digits(self.pound_moles_per_cubic_foot, fractional_digits)} lbmol/ft³"""
@@ -601,25 +601,25 @@ class Molarity(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.kilomoles_per_cubic_meter, fractional_digits)} kmol/m³"""
         
         if unit == MolarityUnits.FemtomolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.femtomoles_per_liter, fractional_digits)} fmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.femtomoles_per_liter, fractional_digits)} fmol/l"""
         
         if unit == MolarityUnits.PicomolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.picomoles_per_liter, fractional_digits)} pmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.picomoles_per_liter, fractional_digits)} pmol/l"""
         
         if unit == MolarityUnits.NanomolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.nanomoles_per_liter, fractional_digits)} nmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.nanomoles_per_liter, fractional_digits)} nmol/l"""
         
         if unit == MolarityUnits.MicromolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.micromoles_per_liter, fractional_digits)} μmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.micromoles_per_liter, fractional_digits)} μmol/l"""
         
         if unit == MolarityUnits.MillimolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.millimoles_per_liter, fractional_digits)} mmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.millimoles_per_liter, fractional_digits)} mmol/l"""
         
         if unit == MolarityUnits.CentimolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.centimoles_per_liter, fractional_digits)} cmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.centimoles_per_liter, fractional_digits)} cmol/l"""
         
         if unit == MolarityUnits.DecimolePerLiter:
-            return f"""{super()._truncate_fraction_digits(self.decimoles_per_liter, fractional_digits)} dmol/L"""
+            return f"""{super()._truncate_fraction_digits(self.decimoles_per_liter, fractional_digits)} dmol/l"""
         
         return f'{self._value}'
 
@@ -635,7 +635,7 @@ class Molarity(AbstractMeasure):
             return """mol/m³"""
         
         if unit_abbreviation == MolarityUnits.MolePerLiter:
-            return """mol/L"""
+            return """mol/l"""
         
         if unit_abbreviation == MolarityUnits.PoundMolePerCubicFoot:
             return """lbmol/ft³"""
@@ -644,23 +644,23 @@ class Molarity(AbstractMeasure):
             return """kmol/m³"""
         
         if unit_abbreviation == MolarityUnits.FemtomolePerLiter:
-            return """fmol/L"""
+            return """fmol/l"""
         
         if unit_abbreviation == MolarityUnits.PicomolePerLiter:
-            return """pmol/L"""
+            return """pmol/l"""
         
         if unit_abbreviation == MolarityUnits.NanomolePerLiter:
-            return """nmol/L"""
+            return """nmol/l"""
         
         if unit_abbreviation == MolarityUnits.MicromolePerLiter:
-            return """μmol/L"""
+            return """μmol/l"""
         
         if unit_abbreviation == MolarityUnits.MillimolePerLiter:
-            return """mmol/L"""
+            return """mmol/l"""
         
         if unit_abbreviation == MolarityUnits.CentimolePerLiter:
-            return """cmol/L"""
+            return """cmol/l"""
         
         if unit_abbreviation == MolarityUnits.DecimolePerLiter:
-            return """dmol/L"""
+            return """dmol/l"""
         

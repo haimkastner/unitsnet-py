@@ -32,12 +32,12 @@ class AccelerationUnits(Enum):
         
         KnotPerMinute = 'KnotPerMinute'
         """
-            
+            The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
         """
         
         KnotPerHour = 'KnotPerHour'
         """
-            
+            The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
         """
         
         StandardGravity = 'StandardGravity'
@@ -239,13 +239,13 @@ class Acceleration(AbstractMeasure):
             return (value / 0.304800)
         
         if from_unit == AccelerationUnits.KnotPerSecond:
-            return (value / 0.5144444444444)
+            return (value / (1852.0 / 3600.0))
         
         if from_unit == AccelerationUnits.KnotPerMinute:
-            return (value / 0.5144444444444 * 60)
+            return (value * 60 / (1852.0 / 3600.0))
         
         if from_unit == AccelerationUnits.KnotPerHour:
-            return (value / 0.5144444444444 * 3600)
+            return (value * 3600 / (1852.0 / 3600.0))
         
         if from_unit == AccelerationUnits.StandardGravity:
             return (value / 9.80665)
@@ -286,13 +286,13 @@ class Acceleration(AbstractMeasure):
             return (value * 0.304800)
         
         if to_unit == AccelerationUnits.KnotPerSecond:
-            return (value * 0.5144444444444)
+            return (value * (1852.0 / 3600.0))
         
         if to_unit == AccelerationUnits.KnotPerMinute:
-            return (value * 0.5144444444444 / 60)
+            return (value * (1852.0 / 3600.0) / 60)
         
         if to_unit == AccelerationUnits.KnotPerHour:
-            return (value * 0.5144444444444 / 3600)
+            return (value * (1852.0 / 3600.0) / 3600)
         
         if to_unit == AccelerationUnits.StandardGravity:
             return (value * 9.80665)
@@ -391,7 +391,7 @@ class Acceleration(AbstractMeasure):
         """
         Create a new instance of Acceleration from a value in knots_per_minute.
 
-        
+        The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
 
         :param meters: The Acceleration value in knots_per_minute.
         :type knots_per_minute: float
@@ -406,7 +406,7 @@ class Acceleration(AbstractMeasure):
         """
         Create a new instance of Acceleration from a value in knots_per_hour.
 
-        
+        The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
 
         :param meters: The Acceleration value in knots_per_hour.
         :type knots_per_hour: float
@@ -583,7 +583,7 @@ class Acceleration(AbstractMeasure):
     @property
     def knots_per_minute(self) -> float:
         """
-        
+        The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
         """
         if self.__knots_per_minute != None:
             return self.__knots_per_minute
@@ -594,7 +594,7 @@ class Acceleration(AbstractMeasure):
     @property
     def knots_per_hour(self) -> float:
         """
-        
+        The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).
         """
         if self.__knots_per_hour != None:
             return self.__knots_per_hour

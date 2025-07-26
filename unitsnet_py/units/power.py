@@ -17,27 +17,27 @@ class PowerUnits(Enum):
         
         MechanicalHorsepower = 'MechanicalHorsepower'
         """
-            
+            Assuming the third CGPM (1901, CR 70) definition of standard gravity, gn = 9.80665 m/s2, is used to define the pound-force as well as the kilogram force, and the international avoirdupois pound (1959), one imperial horsepower is: 76.0402249 × 9.80665 kg⋅m2/s3
         """
         
         MetricHorsepower = 'MetricHorsepower'
         """
-            
+            DIN 66036 defines one metric horsepower as the power to raise a mass of 75 kilograms against the Earth's gravitational force over a distance of one metre in one second:[18] 75 kg × 9.80665 m/s2 × 1 m / 1 s = 75 kgf⋅m/s = 1 PS. This is equivalent to 735.49875 W, or 98.6% of an imperial horsepower.
         """
         
         ElectricalHorsepower = 'ElectricalHorsepower'
         """
-            
+            Nameplates on electrical motors show their power output, not the power input (the power delivered at the shaft, not the power consumed to drive the motor). This power output is ordinarily stated in watts or kilowatts. In the United States, the power output is stated in horsepower, which for this purpose is defined as exactly 746 W.
         """
         
         BoilerHorsepower = 'BoilerHorsepower'
         """
-            
+            Boiler horsepower is a boiler's capacity to deliver steam to a steam engine and is not the same unit of power as the 550 ft lb/s definition. One boiler horsepower is equal to the thermal energy rate required to evaporate 34.5 pounds (15.6 kg) of fresh water at 212 °F (100 °C) in one hour.
         """
         
         HydraulicHorsepower = 'HydraulicHorsepower'
         """
-            
+            Hydraulic horsepower can represent the power available within hydraulic machinery, power through the down-hole nozzle of a drilling rig, or can be used to estimate the mechanical power needed to generate a known hydraulic flow rate.
         """
         
         BritishThermalUnitPerHour = 'BritishThermalUnitPerHour'
@@ -324,10 +324,10 @@ class Power(AbstractMeasure):
             return (value)
         
         if from_unit == PowerUnits.MechanicalHorsepower:
-            return (value / 745.69)
+            return (value / (76.0402249 * 9.80665))
         
         if from_unit == PowerUnits.MetricHorsepower:
-            return (value / 735.49875)
+            return (value / (75 * 9.80665))
         
         if from_unit == PowerUnits.ElectricalHorsepower:
             return (value / 746)
@@ -336,10 +336,10 @@ class Power(AbstractMeasure):
             return (value / 9812.5)
         
         if from_unit == PowerUnits.HydraulicHorsepower:
-            return (value / 745.69988145)
+            return (value / 745.69987158227022)
         
         if from_unit == PowerUnits.BritishThermalUnitPerHour:
-            return (value / 0.29307107017)
+            return (value * 3600 / 1055.05585262)
         
         if from_unit == PowerUnits.JoulePerHour:
             return (value * 3600)
@@ -384,10 +384,10 @@ class Power(AbstractMeasure):
             return ((value) / 1000000000000000.0)
         
         if from_unit == PowerUnits.KilobritishThermalUnitPerHour:
-            return ((value / 0.29307107017) / 1000.0)
+            return ((value * 3600 / 1055.05585262) / 1000.0)
         
         if from_unit == PowerUnits.MegabritishThermalUnitPerHour:
-            return ((value / 0.29307107017) / 1000000.0)
+            return ((value * 3600 / 1055.05585262) / 1000000.0)
         
         if from_unit == PowerUnits.MillijoulePerHour:
             return ((value * 3600) / 0.001)
@@ -410,10 +410,10 @@ class Power(AbstractMeasure):
             return (value)
         
         if to_unit == PowerUnits.MechanicalHorsepower:
-            return (value * 745.69)
+            return (value * 76.0402249 * 9.80665)
         
         if to_unit == PowerUnits.MetricHorsepower:
-            return (value * 735.49875)
+            return (value * 75 * 9.80665)
         
         if to_unit == PowerUnits.ElectricalHorsepower:
             return (value * 746)
@@ -422,10 +422,10 @@ class Power(AbstractMeasure):
             return (value * 9812.5)
         
         if to_unit == PowerUnits.HydraulicHorsepower:
-            return (value * 745.69988145)
+            return (value * 745.69987158227022)
         
         if to_unit == PowerUnits.BritishThermalUnitPerHour:
-            return (value * 0.29307107017)
+            return (value * 1055.05585262 / 3600)
         
         if to_unit == PowerUnits.JoulePerHour:
             return (value / 3600)
@@ -470,10 +470,10 @@ class Power(AbstractMeasure):
             return ((value) * 1000000000000000.0)
         
         if to_unit == PowerUnits.KilobritishThermalUnitPerHour:
-            return ((value * 0.29307107017) * 1000.0)
+            return ((value * 1055.05585262 / 3600) * 1000.0)
         
         if to_unit == PowerUnits.MegabritishThermalUnitPerHour:
-            return ((value * 0.29307107017) * 1000000.0)
+            return ((value * 1055.05585262 / 3600) * 1000000.0)
         
         if to_unit == PowerUnits.MillijoulePerHour:
             return ((value / 3600) * 0.001)
@@ -515,7 +515,7 @@ class Power(AbstractMeasure):
         """
         Create a new instance of Power from a value in mechanical_horsepower.
 
-        
+        Assuming the third CGPM (1901, CR 70) definition of standard gravity, gn = 9.80665 m/s2, is used to define the pound-force as well as the kilogram force, and the international avoirdupois pound (1959), one imperial horsepower is: 76.0402249 × 9.80665 kg⋅m2/s3
 
         :param meters: The Power value in mechanical_horsepower.
         :type mechanical_horsepower: float
@@ -530,7 +530,7 @@ class Power(AbstractMeasure):
         """
         Create a new instance of Power from a value in metric_horsepower.
 
-        
+        DIN 66036 defines one metric horsepower as the power to raise a mass of 75 kilograms against the Earth's gravitational force over a distance of one metre in one second:[18] 75 kg × 9.80665 m/s2 × 1 m / 1 s = 75 kgf⋅m/s = 1 PS. This is equivalent to 735.49875 W, or 98.6% of an imperial horsepower.
 
         :param meters: The Power value in metric_horsepower.
         :type metric_horsepower: float
@@ -545,7 +545,7 @@ class Power(AbstractMeasure):
         """
         Create a new instance of Power from a value in electrical_horsepower.
 
-        
+        Nameplates on electrical motors show their power output, not the power input (the power delivered at the shaft, not the power consumed to drive the motor). This power output is ordinarily stated in watts or kilowatts. In the United States, the power output is stated in horsepower, which for this purpose is defined as exactly 746 W.
 
         :param meters: The Power value in electrical_horsepower.
         :type electrical_horsepower: float
@@ -560,7 +560,7 @@ class Power(AbstractMeasure):
         """
         Create a new instance of Power from a value in boiler_horsepower.
 
-        
+        Boiler horsepower is a boiler's capacity to deliver steam to a steam engine and is not the same unit of power as the 550 ft lb/s definition. One boiler horsepower is equal to the thermal energy rate required to evaporate 34.5 pounds (15.6 kg) of fresh water at 212 °F (100 °C) in one hour.
 
         :param meters: The Power value in boiler_horsepower.
         :type boiler_horsepower: float
@@ -575,7 +575,7 @@ class Power(AbstractMeasure):
         """
         Create a new instance of Power from a value in hydraulic_horsepower.
 
-        
+        Hydraulic horsepower can represent the power available within hydraulic machinery, power through the down-hole nozzle of a drilling rig, or can be used to estimate the mechanical power needed to generate a known hydraulic flow rate.
 
         :param meters: The Power value in hydraulic_horsepower.
         :type hydraulic_horsepower: float
@@ -914,7 +914,7 @@ class Power(AbstractMeasure):
     @property
     def mechanical_horsepower(self) -> float:
         """
-        
+        Assuming the third CGPM (1901, CR 70) definition of standard gravity, gn = 9.80665 m/s2, is used to define the pound-force as well as the kilogram force, and the international avoirdupois pound (1959), one imperial horsepower is: 76.0402249 × 9.80665 kg⋅m2/s3
         """
         if self.__mechanical_horsepower != None:
             return self.__mechanical_horsepower
@@ -925,7 +925,7 @@ class Power(AbstractMeasure):
     @property
     def metric_horsepower(self) -> float:
         """
-        
+        DIN 66036 defines one metric horsepower as the power to raise a mass of 75 kilograms against the Earth's gravitational force over a distance of one metre in one second:[18] 75 kg × 9.80665 m/s2 × 1 m / 1 s = 75 kgf⋅m/s = 1 PS. This is equivalent to 735.49875 W, or 98.6% of an imperial horsepower.
         """
         if self.__metric_horsepower != None:
             return self.__metric_horsepower
@@ -936,7 +936,7 @@ class Power(AbstractMeasure):
     @property
     def electrical_horsepower(self) -> float:
         """
-        
+        Nameplates on electrical motors show their power output, not the power input (the power delivered at the shaft, not the power consumed to drive the motor). This power output is ordinarily stated in watts or kilowatts. In the United States, the power output is stated in horsepower, which for this purpose is defined as exactly 746 W.
         """
         if self.__electrical_horsepower != None:
             return self.__electrical_horsepower
@@ -947,7 +947,7 @@ class Power(AbstractMeasure):
     @property
     def boiler_horsepower(self) -> float:
         """
-        
+        Boiler horsepower is a boiler's capacity to deliver steam to a steam engine and is not the same unit of power as the 550 ft lb/s definition. One boiler horsepower is equal to the thermal energy rate required to evaporate 34.5 pounds (15.6 kg) of fresh water at 212 °F (100 °C) in one hour.
         """
         if self.__boiler_horsepower != None:
             return self.__boiler_horsepower
@@ -958,7 +958,7 @@ class Power(AbstractMeasure):
     @property
     def hydraulic_horsepower(self) -> float:
         """
-        
+        Hydraulic horsepower can represent the power available within hydraulic machinery, power through the down-hole nozzle of a drilling rig, or can be used to estimate the mechanical power needed to generate a known hydraulic flow rate.
         """
         if self.__hydraulic_horsepower != None:
             return self.__hydraulic_horsepower

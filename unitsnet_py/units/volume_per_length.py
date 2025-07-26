@@ -207,19 +207,19 @@ class VolumePerLength(AbstractMeasure):
             return (value)
         
         if from_unit == VolumePerLengthUnits.OilBarrelPerFoot:
-            return (value * 1.91713408)
+            return (value * 0.3048 / 0.158987294928)
         
         if from_unit == VolumePerLengthUnits.CubicYardPerFoot:
-            return (value / 2.50838208)
+            return (value * 0.3048 / 0.764554857984)
         
         if from_unit == VolumePerLengthUnits.CubicYardPerUsSurveyFoot:
-            return (value / 2.50837706323584)
+            return (value * 1200 / (0.764554857984 * 3937))
         
         if from_unit == VolumePerLengthUnits.UsGallonPerMile:
-            return (value * (1000 * 1609.344 / 3.785411784))
+            return (value * 1609.344 / 0.003785411784)
         
         if from_unit == VolumePerLengthUnits.ImperialGallonPerMile:
-            return (value * (1000 * 1609.344 / 4.54609))
+            return (value * 1609.344 / 0.00454609)
         
         return None
 
@@ -239,19 +239,19 @@ class VolumePerLength(AbstractMeasure):
             return (value)
         
         if to_unit == VolumePerLengthUnits.OilBarrelPerFoot:
-            return (value / 1.91713408)
+            return (value * 0.158987294928 / 0.3048)
         
         if to_unit == VolumePerLengthUnits.CubicYardPerFoot:
-            return (value * 2.50838208)
+            return (value * 0.764554857984 / 0.3048)
         
         if to_unit == VolumePerLengthUnits.CubicYardPerUsSurveyFoot:
-            return (value * 2.50837706323584)
+            return (value * 0.764554857984 * 3937 / 1200)
         
         if to_unit == VolumePerLengthUnits.UsGallonPerMile:
-            return (value / (1000 * 1609.344 / 3.785411784))
+            return (value * 0.003785411784 / 1609.344)
         
         if to_unit == VolumePerLengthUnits.ImperialGallonPerMile:
-            return (value / (1000 * 1609.344 / 4.54609))
+            return (value * 0.00454609 / 1609.344)
         
         return None
 

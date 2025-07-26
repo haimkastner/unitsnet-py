@@ -316,13 +316,13 @@ class Torque(AbstractMeasure):
             return (value)
         
         if from_unit == TorqueUnits.PoundalFoot:
-            return (value / 4.21401100938048e-2)
+            return (value / (0.138254954376 * 0.3048))
         
         if from_unit == TorqueUnits.PoundForceInch:
-            return (value / 1.129848290276167e-1)
+            return (value / (4.4482216152605 * 2.54e-2))
         
         if from_unit == TorqueUnits.PoundForceFoot:
-            return (value / 1.3558179483314)
+            return (value / (4.4482216152605 * 0.3048))
         
         if from_unit == TorqueUnits.GramForceMillimeter:
             return (value / 9.80665e-6)
@@ -370,16 +370,16 @@ class Torque(AbstractMeasure):
             return ((value) / 1000000.0)
         
         if from_unit == TorqueUnits.KilopoundForceInch:
-            return ((value / 1.129848290276167e-1) / 1000.0)
+            return ((value / (4.4482216152605 * 2.54e-2)) / 1000.0)
         
         if from_unit == TorqueUnits.MegapoundForceInch:
-            return ((value / 1.129848290276167e-1) / 1000000.0)
+            return ((value / (4.4482216152605 * 2.54e-2)) / 1000000.0)
         
         if from_unit == TorqueUnits.KilopoundForceFoot:
-            return ((value / 1.3558179483314) / 1000.0)
+            return ((value / (4.4482216152605 * 0.3048)) / 1000.0)
         
         if from_unit == TorqueUnits.MegapoundForceFoot:
-            return ((value / 1.3558179483314) / 1000000.0)
+            return ((value / (4.4482216152605 * 0.3048)) / 1000000.0)
         
         return None
 
@@ -396,13 +396,13 @@ class Torque(AbstractMeasure):
             return (value)
         
         if to_unit == TorqueUnits.PoundalFoot:
-            return (value * 4.21401100938048e-2)
+            return (value * 0.138254954376 * 0.3048)
         
         if to_unit == TorqueUnits.PoundForceInch:
-            return (value * 1.129848290276167e-1)
+            return (value * 4.4482216152605 * 2.54e-2)
         
         if to_unit == TorqueUnits.PoundForceFoot:
-            return (value * 1.3558179483314)
+            return (value * 4.4482216152605 * 0.3048)
         
         if to_unit == TorqueUnits.GramForceMillimeter:
             return (value * 9.80665e-6)
@@ -450,16 +450,16 @@ class Torque(AbstractMeasure):
             return ((value) * 1000000.0)
         
         if to_unit == TorqueUnits.KilopoundForceInch:
-            return ((value * 1.129848290276167e-1) * 1000.0)
+            return ((value * 4.4482216152605 * 2.54e-2) * 1000.0)
         
         if to_unit == TorqueUnits.MegapoundForceInch:
-            return ((value * 1.129848290276167e-1) * 1000000.0)
+            return ((value * 4.4482216152605 * 2.54e-2) * 1000000.0)
         
         if to_unit == TorqueUnits.KilopoundForceFoot:
-            return ((value * 1.3558179483314) * 1000.0)
+            return ((value * 4.4482216152605 * 0.3048) * 1000.0)
         
         if to_unit == TorqueUnits.MegapoundForceFoot:
-            return ((value * 1.3558179483314) * 1000000.0)
+            return ((value * 4.4482216152605 * 0.3048) * 1000000.0)
         
         return None
 
