@@ -19,7 +19,7 @@ definition_version = '6.0.0-pre016'
 
 setup_kwargs = {
     'name': 'unitsnet-py',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'license': 'MIT',
     'keywords': 'conversion, units-of-measure, units, quantities, unit-converter, converter, unit, measure, measures, measurement, measurements',
     'description': 'A better way to hold unit variables and easily convert to the destination unit',
