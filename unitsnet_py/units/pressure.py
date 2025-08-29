@@ -220,6 +220,11 @@ class PressureUnits(Enum):
             
         """
         
+        Millitorr = 'Millitorr'
+        """
+            
+        """
+        
         KilopoundForcePerSquareInch = 'KilopoundForcePerSquareInch'
         """
             
@@ -394,6 +399,8 @@ class Pressure(AbstractMeasure):
         self.__kilonewtons_per_square_centimeter = None
         
         self.__kilonewtons_per_square_millimeter = None
+        
+        self.__millitorrs = None
         
         self.__kilopounds_force_per_square_inch = None
         
@@ -586,6 +593,9 @@ class Pressure(AbstractMeasure):
         if from_unit == PressureUnits.KilonewtonPerSquareMillimeter:
             return ((value / 1e6) / 1000.0)
         
+        if from_unit == PressureUnits.Millitorr:
+            return ((value * 760 / 101325) / 0.001)
+        
         if from_unit == PressureUnits.KilopoundForcePerSquareInch:
             return ((value * 0.00064516 / 4.4482216152605) / 1000.0)
         
@@ -731,6 +741,9 @@ class Pressure(AbstractMeasure):
         
         if to_unit == PressureUnits.KilonewtonPerSquareMillimeter:
             return ((value * 1e6) * 1000.0)
+        
+        if to_unit == PressureUnits.Millitorr:
+            return ((value * 101325 / 760) * 0.001)
         
         if to_unit == PressureUnits.KilopoundForcePerSquareInch:
             return ((value * 4.4482216152605 / 0.00064516) * 1000.0)
@@ -1386,6 +1399,21 @@ class Pressure(AbstractMeasure):
 
     
     @staticmethod
+    def from_millitorrs(millitorrs: float):
+        """
+        Create a new instance of Pressure from a value in millitorrs.
+
+        
+
+        :param meters: The Pressure value in millitorrs.
+        :type millitorrs: float
+        :return: A new instance of Pressure.
+        :rtype: Pressure
+        """
+        return Pressure(millitorrs, PressureUnits.Millitorr)
+
+    
+    @staticmethod
     def from_kilopounds_force_per_square_inch(kilopounds_force_per_square_inch: float):
         """
         Create a new instance of Pressure from a value in kilopounds_force_per_square_inch.
@@ -1923,6 +1951,17 @@ class Pressure(AbstractMeasure):
 
     
     @property
+    def millitorrs(self) -> float:
+        """
+        
+        """
+        if self.__millitorrs != None:
+            return self.__millitorrs
+        self.__millitorrs = self.__convert_from_base(PressureUnits.Millitorr)
+        return self.__millitorrs
+
+    
+    @property
     def kilopounds_force_per_square_inch(self) -> float:
         """
         
@@ -2118,6 +2157,9 @@ class Pressure(AbstractMeasure):
         if unit == PressureUnits.KilonewtonPerSquareMillimeter:
             return f"""{super()._truncate_fraction_digits(self.kilonewtons_per_square_millimeter, fractional_digits)} kN/mm²"""
         
+        if unit == PressureUnits.Millitorr:
+            return f"""{super()._truncate_fraction_digits(self.millitorrs, fractional_digits)} mtorr"""
+        
         if unit == PressureUnits.KilopoundForcePerSquareInch:
             return f"""{super()._truncate_fraction_digits(self.kilopounds_force_per_square_inch, fractional_digits)} kpsi"""
         
@@ -2268,6 +2310,9 @@ class Pressure(AbstractMeasure):
         
         if unit_abbreviation == PressureUnits.KilonewtonPerSquareMillimeter:
             return """kN/mm²"""
+        
+        if unit_abbreviation == PressureUnits.Millitorr:
+            return """mtorr"""
         
         if unit_abbreviation == PressureUnits.KilopoundForcePerSquareInch:
             return """kpsi"""

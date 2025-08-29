@@ -15,7 +15,7 @@ class SpecificEnergyUnits(Enum):
             
         """
         
-        MegaJoulePerTonne = 'MegaJoulePerTonne'
+        MegajoulePerTonne = 'MegajoulePerTonne'
         """
             
         """
@@ -228,7 +228,7 @@ class SpecificEnergy(AbstractMeasure):
         
         self.__joules_per_kilogram = None
         
-        self.__mega_joules_per_tonne = None
+        self.__megajoules_per_tonne = None
         
         self.__calories_per_gram = None
         
@@ -344,7 +344,7 @@ class SpecificEnergy(AbstractMeasure):
         if from_unit == SpecificEnergyUnits.JoulePerKilogram:
             return (value)
         
-        if from_unit == SpecificEnergyUnits.MegaJoulePerTonne:
+        if from_unit == SpecificEnergyUnits.MegajoulePerTonne:
             return (value / 1e3)
         
         if from_unit == SpecificEnergyUnits.CaloriePerGram:
@@ -439,7 +439,7 @@ class SpecificEnergy(AbstractMeasure):
         if to_unit == SpecificEnergyUnits.JoulePerKilogram:
             return (value)
         
-        if to_unit == SpecificEnergyUnits.MegaJoulePerTonne:
+        if to_unit == SpecificEnergyUnits.MegajoulePerTonne:
             return (value * 1e3)
         
         if to_unit == SpecificEnergyUnits.CaloriePerGram:
@@ -550,18 +550,18 @@ class SpecificEnergy(AbstractMeasure):
 
     
     @staticmethod
-    def from_mega_joules_per_tonne(mega_joules_per_tonne: float):
+    def from_megajoules_per_tonne(megajoules_per_tonne: float):
         """
-        Create a new instance of SpecificEnergy from a value in mega_joules_per_tonne.
+        Create a new instance of SpecificEnergy from a value in megajoules_per_tonne.
 
         
 
-        :param meters: The SpecificEnergy value in mega_joules_per_tonne.
-        :type mega_joules_per_tonne: float
+        :param meters: The SpecificEnergy value in megajoules_per_tonne.
+        :type megajoules_per_tonne: float
         :return: A new instance of SpecificEnergy.
         :rtype: SpecificEnergy
         """
-        return SpecificEnergy(mega_joules_per_tonne, SpecificEnergyUnits.MegaJoulePerTonne)
+        return SpecificEnergy(megajoules_per_tonne, SpecificEnergyUnits.MegajoulePerTonne)
 
     
     @staticmethod
@@ -996,14 +996,14 @@ class SpecificEnergy(AbstractMeasure):
 
     
     @property
-    def mega_joules_per_tonne(self) -> float:
+    def megajoules_per_tonne(self) -> float:
         """
         
         """
-        if self.__mega_joules_per_tonne != None:
-            return self.__mega_joules_per_tonne
-        self.__mega_joules_per_tonne = self.__convert_from_base(SpecificEnergyUnits.MegaJoulePerTonne)
-        return self.__mega_joules_per_tonne
+        if self.__megajoules_per_tonne != None:
+            return self.__megajoules_per_tonne
+        self.__megajoules_per_tonne = self.__convert_from_base(SpecificEnergyUnits.MegajoulePerTonne)
+        return self.__megajoules_per_tonne
 
     
     @property
@@ -1332,8 +1332,8 @@ class SpecificEnergy(AbstractMeasure):
         if unit == SpecificEnergyUnits.JoulePerKilogram:
             return f"""{super()._truncate_fraction_digits(self.joules_per_kilogram, fractional_digits)} J/kg"""
         
-        if unit == SpecificEnergyUnits.MegaJoulePerTonne:
-            return f"""{super()._truncate_fraction_digits(self.mega_joules_per_tonne, fractional_digits)} MJ/t"""
+        if unit == SpecificEnergyUnits.MegajoulePerTonne:
+            return f"""{super()._truncate_fraction_digits(self.megajoules_per_tonne, fractional_digits)} MJ/t"""
         
         if unit == SpecificEnergyUnits.CaloriePerGram:
             return f"""{super()._truncate_fraction_digits(self.calories_per_gram, fractional_digits)} cal/g"""
@@ -1432,7 +1432,7 @@ class SpecificEnergy(AbstractMeasure):
         if unit_abbreviation == SpecificEnergyUnits.JoulePerKilogram:
             return """J/kg"""
         
-        if unit_abbreviation == SpecificEnergyUnits.MegaJoulePerTonne:
+        if unit_abbreviation == SpecificEnergyUnits.MegajoulePerTonne:
             return """MJ/t"""
         
         if unit_abbreviation == SpecificEnergyUnits.CaloriePerGram:

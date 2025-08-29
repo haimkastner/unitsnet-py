@@ -30,7 +30,7 @@ class ForceUnits(Enum):
             The newton (symbol: N) is the unit of force in the International System of Units (SI). It is defined as 1 kg⋅m/s2, the force which gives a mass of 1 kilogram an acceleration of 1 metre per second per second.
         """
         
-        KiloPond = 'KiloPond'
+        Kilopond = 'Kilopond'
         """
             The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
         """
@@ -159,7 +159,7 @@ class Force(AbstractMeasure):
         
         self.__newtons = None
         
-        self.__kilo_ponds = None
+        self.__kiloponds = None
         
         self.__poundals = None
         
@@ -248,7 +248,7 @@ class Force(AbstractMeasure):
         if from_unit == ForceUnits.Newton:
             return (value)
         
-        if from_unit == ForceUnits.KiloPond:
+        if from_unit == ForceUnits.Kilopond:
             return (value / 9.80665)
         
         if from_unit == ForceUnits.Poundal:
@@ -298,7 +298,7 @@ class Force(AbstractMeasure):
         if to_unit == ForceUnits.Newton:
             return (value)
         
-        if to_unit == ForceUnits.KiloPond:
+        if to_unit == ForceUnits.Kilopond:
             return (value * 9.80665)
         
         if to_unit == ForceUnits.Poundal:
@@ -400,18 +400,18 @@ class Force(AbstractMeasure):
 
     
     @staticmethod
-    def from_kilo_ponds(kilo_ponds: float):
+    def from_kiloponds(kiloponds: float):
         """
-        Create a new instance of Force from a value in kilo_ponds.
+        Create a new instance of Force from a value in kiloponds.
 
         The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
 
-        :param meters: The Force value in kilo_ponds.
-        :type kilo_ponds: float
+        :param meters: The Force value in kiloponds.
+        :type kiloponds: float
         :return: A new instance of Force.
         :rtype: Force
         """
-        return Force(kilo_ponds, ForceUnits.KiloPond)
+        return Force(kiloponds, ForceUnits.Kilopond)
 
     
     @staticmethod
@@ -609,14 +609,14 @@ class Force(AbstractMeasure):
 
     
     @property
-    def kilo_ponds(self) -> float:
+    def kiloponds(self) -> float:
         """
         The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
         """
-        if self.__kilo_ponds != None:
-            return self.__kilo_ponds
-        self.__kilo_ponds = self.__convert_from_base(ForceUnits.KiloPond)
-        return self.__kilo_ponds
+        if self.__kiloponds != None:
+            return self.__kiloponds
+        self.__kiloponds = self.__convert_from_base(ForceUnits.Kilopond)
+        return self.__kiloponds
 
     
     @property
@@ -756,8 +756,8 @@ class Force(AbstractMeasure):
         if unit == ForceUnits.Newton:
             return f"""{super()._truncate_fraction_digits(self.newtons, fractional_digits)} N"""
         
-        if unit == ForceUnits.KiloPond:
-            return f"""{super()._truncate_fraction_digits(self.kilo_ponds, fractional_digits)} kp"""
+        if unit == ForceUnits.Kilopond:
+            return f"""{super()._truncate_fraction_digits(self.kiloponds, fractional_digits)} kp"""
         
         if unit == ForceUnits.Poundal:
             return f"""{super()._truncate_fraction_digits(self.poundals, fractional_digits)} pdl"""
@@ -811,7 +811,7 @@ class Force(AbstractMeasure):
         if unit_abbreviation == ForceUnits.Newton:
             return """N"""
         
-        if unit_abbreviation == ForceUnits.KiloPond:
+        if unit_abbreviation == ForceUnits.Kilopond:
             return """kp"""
         
         if unit_abbreviation == ForceUnits.Poundal:

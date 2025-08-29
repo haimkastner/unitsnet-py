@@ -100,6 +100,11 @@ class VolumeUnits(Enum):
             In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
         """
         
+        MetricTablespoon = 'MetricTablespoon'
+        """
+            An international metric tablespoon is exactly equal to 15 mL. It is the equivalence of 1⁠ 1/2 metric dessert spoons or 3 metric teaspoons.
+        """
+        
         UkTablespoon = 'UkTablespoon'
         """
             In nutrition labeling in the U.S. and the U.K., a tablespoon is defined as 15 ml (0.51 US fl oz). In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
@@ -382,6 +387,8 @@ class Volume(AbstractMeasure):
         
         self.__au_tablespoons = None
         
+        self.__metric_tablespoons = None
+        
         self.__uk_tablespoons = None
         
         self.__metric_teaspoons = None
@@ -563,6 +570,9 @@ class Volume(AbstractMeasure):
         if from_unit == VolumeUnits.AuTablespoon:
             return (value / 2e-5)
         
+        if from_unit == VolumeUnits.MetricTablespoon:
+            return (value / 1.5e-5)
+        
         if from_unit == VolumeUnits.UkTablespoon:
             return (value / 1.5e-5)
         
@@ -729,6 +739,9 @@ class Volume(AbstractMeasure):
         
         if to_unit == VolumeUnits.AuTablespoon:
             return (value * 2e-5)
+        
+        if to_unit == VolumeUnits.MetricTablespoon:
+            return (value * 1.5e-5)
         
         if to_unit == VolumeUnits.UkTablespoon:
             return (value * 1.5e-5)
@@ -1114,6 +1127,21 @@ class Volume(AbstractMeasure):
         :rtype: Volume
         """
         return Volume(au_tablespoons, VolumeUnits.AuTablespoon)
+
+    
+    @staticmethod
+    def from_metric_tablespoons(metric_tablespoons: float):
+        """
+        Create a new instance of Volume from a value in metric_tablespoons.
+
+        An international metric tablespoon is exactly equal to 15 mL. It is the equivalence of 1⁠ 1/2 metric dessert spoons or 3 metric teaspoons.
+
+        :param meters: The Volume value in metric_tablespoons.
+        :type metric_tablespoons: float
+        :return: A new instance of Volume.
+        :rtype: Volume
+        """
+        return Volume(metric_tablespoons, VolumeUnits.MetricTablespoon)
 
     
     @staticmethod
@@ -1855,6 +1883,17 @@ class Volume(AbstractMeasure):
 
     
     @property
+    def metric_tablespoons(self) -> float:
+        """
+        An international metric tablespoon is exactly equal to 15 mL. It is the equivalence of 1⁠ 1/2 metric dessert spoons or 3 metric teaspoons.
+        """
+        if self.__metric_tablespoons != None:
+            return self.__metric_tablespoons
+        self.__metric_tablespoons = self.__convert_from_base(VolumeUnits.MetricTablespoon)
+        return self.__metric_tablespoons
+
+    
+    @property
     def uk_tablespoons(self) -> float:
         """
         In nutrition labeling in the U.S. and the U.K., a tablespoon is defined as 15 ml (0.51 US fl oz). In Australia, the definition of the tablespoon is 20 ml (0.70 imp fl oz).
@@ -2319,6 +2358,9 @@ class Volume(AbstractMeasure):
         if unit == VolumeUnits.AuTablespoon:
             return f"""{super()._truncate_fraction_digits(self.au_tablespoons, fractional_digits)} tablespoon (A.U.)"""
         
+        if unit == VolumeUnits.MetricTablespoon:
+            return f"""{super()._truncate_fraction_digits(self.metric_tablespoons, fractional_digits)} tablespoon"""
+        
         if unit == VolumeUnits.UkTablespoon:
             return f"""{super()._truncate_fraction_digits(self.uk_tablespoons, fractional_digits)} tablespoon (U.K.)"""
         
@@ -2490,6 +2532,9 @@ class Volume(AbstractMeasure):
         
         if unit_abbreviation == VolumeUnits.AuTablespoon:
             return """tablespoon (A.U.)"""
+        
+        if unit_abbreviation == VolumeUnits.MetricTablespoon:
+            return """tablespoon"""
         
         if unit_abbreviation == VolumeUnits.UkTablespoon:
             return """tablespoon (U.K.)"""

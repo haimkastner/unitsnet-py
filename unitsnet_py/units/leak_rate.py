@@ -25,6 +25,11 @@ class LeakRateUnits(Enum):
             
         """
         
+        AtmCubicCentimeterPerSecond = 'AtmCubicCentimeterPerSecond'
+        """
+            
+        """
+        
 
 class LeakRateDto:
     """
@@ -97,6 +102,8 @@ class LeakRate(AbstractMeasure):
         
         self.__torr_liters_per_second = None
         
+        self.__atm_cubic_centimeters_per_second = None
+        
 
     def convert(self, unit: LeakRateUnits) -> float:
         return self.__convert_from_base(unit)
@@ -161,6 +168,9 @@ class LeakRate(AbstractMeasure):
         if from_unit == LeakRateUnits.TorrLiterPerSecond:
             return (value * 7.5)
         
+        if from_unit == LeakRateUnits.AtmCubicCentimeterPerSecond:
+            return (value * (1e6 / 101325))
+        
         return None
 
 
@@ -174,6 +184,9 @@ class LeakRate(AbstractMeasure):
         
         if to_unit == LeakRateUnits.TorrLiterPerSecond:
             return (value / 7.5)
+        
+        if to_unit == LeakRateUnits.AtmCubicCentimeterPerSecond:
+            return (value / (1e6 / 101325))
         
         return None
 
@@ -228,6 +241,21 @@ class LeakRate(AbstractMeasure):
         return LeakRate(torr_liters_per_second, LeakRateUnits.TorrLiterPerSecond)
 
     
+    @staticmethod
+    def from_atm_cubic_centimeters_per_second(atm_cubic_centimeters_per_second: float):
+        """
+        Create a new instance of LeakRate from a value in atm_cubic_centimeters_per_second.
+
+        
+
+        :param meters: The LeakRate value in atm_cubic_centimeters_per_second.
+        :type atm_cubic_centimeters_per_second: float
+        :return: A new instance of LeakRate.
+        :rtype: LeakRate
+        """
+        return LeakRate(atm_cubic_centimeters_per_second, LeakRateUnits.AtmCubicCentimeterPerSecond)
+
+    
     @property
     def pascal_cubic_meters_per_second(self) -> float:
         """
@@ -261,6 +289,17 @@ class LeakRate(AbstractMeasure):
         return self.__torr_liters_per_second
 
     
+    @property
+    def atm_cubic_centimeters_per_second(self) -> float:
+        """
+        
+        """
+        if self.__atm_cubic_centimeters_per_second != None:
+            return self.__atm_cubic_centimeters_per_second
+        self.__atm_cubic_centimeters_per_second = self.__convert_from_base(LeakRateUnits.AtmCubicCentimeterPerSecond)
+        return self.__atm_cubic_centimeters_per_second
+
+    
     def to_string(self, unit: LeakRateUnits = LeakRateUnits.PascalCubicMeterPerSecond, fractional_digits: int = None) -> str:
         """
         Format the LeakRate to a string.
@@ -285,6 +324,9 @@ class LeakRate(AbstractMeasure):
         if unit == LeakRateUnits.TorrLiterPerSecond:
             return f"""{super()._truncate_fraction_digits(self.torr_liters_per_second, fractional_digits)} Torr·l/s"""
         
+        if unit == LeakRateUnits.AtmCubicCentimeterPerSecond:
+            return f"""{super()._truncate_fraction_digits(self.atm_cubic_centimeters_per_second, fractional_digits)} atm·cm³/s"""
+        
         return f'{self._value}'
 
 
@@ -303,4 +345,7 @@ class LeakRate(AbstractMeasure):
         
         if unit_abbreviation == LeakRateUnits.TorrLiterPerSecond:
             return """Torr·l/s"""
+        
+        if unit_abbreviation == LeakRateUnits.AtmCubicCentimeterPerSecond:
+            return """atm·cm³/s"""
         
