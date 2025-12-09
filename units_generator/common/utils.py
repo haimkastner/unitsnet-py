@@ -1,5 +1,6 @@
 import requests
 import json
+import json5
 import re
 import os
 
@@ -50,7 +51,7 @@ def get_json_from_cdn(cdn_url):
         response.raise_for_status()
         # Skip utf-8 BOM char.
         cleaned_text = response.text.lstrip("\ufeff")
-        json_data = json.loads(cleaned_text)
+        json_data = json5.loads(cleaned_text)
         return json_data
     except requests.exceptions.RequestException as e:
         print(f"Failed to retrieve JSON from cdn: {e}")
