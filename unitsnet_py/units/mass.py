@@ -75,6 +75,11 @@ class MassUnits(Enum):
             Earth mass is a ratio unit to the mass of planet Earth.
         """
         
+        Dalton = 'Dalton'
+        """
+            The Dalton or unified atomic mass unit (abbreviation Da or u) is a unit of mass defined as 1/12 of the mass of an unbound neutral atom of carbon-12 in its nuclear and electronic ground state and at rest.
+        """
+        
         Femtogram = 'Femtogram'
         """
             
@@ -141,6 +146,21 @@ class MassUnits(Enum):
         """
         
         Megapound = 'Megapound'
+        """
+            
+        """
+        
+        Kilodalton = 'Kilodalton'
+        """
+            
+        """
+        
+        Megadalton = 'Megadalton'
+        """
+            
+        """
+        
+        Gigadalton = 'Gigadalton'
         """
             
         """
@@ -237,6 +257,8 @@ class Mass(AbstractMeasure):
         
         self.__earth_masses = None
         
+        self.__daltons = None
+        
         self.__femtograms = None
         
         self.__picograms = None
@@ -264,6 +286,12 @@ class Mass(AbstractMeasure):
         self.__kilopounds = None
         
         self.__megapounds = None
+        
+        self.__kilodaltons = None
+        
+        self.__megadaltons = None
+        
+        self.__gigadaltons = None
         
 
     def convert(self, unit: MassUnits) -> float:
@@ -359,6 +387,9 @@ class Mass(AbstractMeasure):
         if from_unit == MassUnits.EarthMass:
             return (value / 5.9722e+24)
         
+        if from_unit == MassUnits.Dalton:
+            return (value /  1.66053906660e-27)
+        
         if from_unit == MassUnits.Femtogram:
             return ((value * 1e3) / 1e-15)
         
@@ -400,6 +431,15 @@ class Mass(AbstractMeasure):
         
         if from_unit == MassUnits.Megapound:
             return ((value / 0.45359237) / 1000000.0)
+        
+        if from_unit == MassUnits.Kilodalton:
+            return ((value /  1.66053906660e-27) / 1000.0)
+        
+        if from_unit == MassUnits.Megadalton:
+            return ((value /  1.66053906660e-27) / 1000000.0)
+        
+        if from_unit == MassUnits.Gigadalton:
+            return ((value /  1.66053906660e-27) / 1000000000.0)
         
         return None
 
@@ -445,6 +485,9 @@ class Mass(AbstractMeasure):
         if to_unit == MassUnits.EarthMass:
             return (value * 5.9722e+24)
         
+        if to_unit == MassUnits.Dalton:
+            return (value *  1.66053906660e-27)
+        
         if to_unit == MassUnits.Femtogram:
             return ((value / 1e3) * 1e-15)
         
@@ -486,6 +529,15 @@ class Mass(AbstractMeasure):
         
         if to_unit == MassUnits.Megapound:
             return ((value * 0.45359237) * 1000000.0)
+        
+        if to_unit == MassUnits.Kilodalton:
+            return ((value *  1.66053906660e-27) * 1000.0)
+        
+        if to_unit == MassUnits.Megadalton:
+            return ((value *  1.66053906660e-27) * 1000000.0)
+        
+        if to_unit == MassUnits.Gigadalton:
+            return ((value *  1.66053906660e-27) * 1000000000.0)
         
         return None
 
@@ -688,6 +740,21 @@ class Mass(AbstractMeasure):
         :rtype: Mass
         """
         return Mass(earth_masses, MassUnits.EarthMass)
+
+    
+    @staticmethod
+    def from_daltons(daltons: float):
+        """
+        Create a new instance of Mass from a value in daltons.
+
+        The Dalton or unified atomic mass unit (abbreviation Da or u) is a unit of mass defined as 1/12 of the mass of an unbound neutral atom of carbon-12 in its nuclear and electronic ground state and at rest.
+
+        :param meters: The Mass value in daltons.
+        :type daltons: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(daltons, MassUnits.Dalton)
 
     
     @staticmethod
@@ -900,6 +967,51 @@ class Mass(AbstractMeasure):
         return Mass(megapounds, MassUnits.Megapound)
 
     
+    @staticmethod
+    def from_kilodaltons(kilodaltons: float):
+        """
+        Create a new instance of Mass from a value in kilodaltons.
+
+        
+
+        :param meters: The Mass value in kilodaltons.
+        :type kilodaltons: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(kilodaltons, MassUnits.Kilodalton)
+
+    
+    @staticmethod
+    def from_megadaltons(megadaltons: float):
+        """
+        Create a new instance of Mass from a value in megadaltons.
+
+        
+
+        :param meters: The Mass value in megadaltons.
+        :type megadaltons: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(megadaltons, MassUnits.Megadalton)
+
+    
+    @staticmethod
+    def from_gigadaltons(gigadaltons: float):
+        """
+        Create a new instance of Mass from a value in gigadaltons.
+
+        
+
+        :param meters: The Mass value in gigadaltons.
+        :type gigadaltons: float
+        :return: A new instance of Mass.
+        :rtype: Mass
+        """
+        return Mass(gigadaltons, MassUnits.Gigadalton)
+
+    
     @property
     def grams(self) -> float:
         """
@@ -1041,6 +1153,17 @@ class Mass(AbstractMeasure):
             return self.__earth_masses
         self.__earth_masses = self.__convert_from_base(MassUnits.EarthMass)
         return self.__earth_masses
+
+    
+    @property
+    def daltons(self) -> float:
+        """
+        The Dalton or unified atomic mass unit (abbreviation Da or u) is a unit of mass defined as 1/12 of the mass of an unbound neutral atom of carbon-12 in its nuclear and electronic ground state and at rest.
+        """
+        if self.__daltons != None:
+            return self.__daltons
+        self.__daltons = self.__convert_from_base(MassUnits.Dalton)
+        return self.__daltons
 
     
     @property
@@ -1197,6 +1320,39 @@ class Mass(AbstractMeasure):
         return self.__megapounds
 
     
+    @property
+    def kilodaltons(self) -> float:
+        """
+        
+        """
+        if self.__kilodaltons != None:
+            return self.__kilodaltons
+        self.__kilodaltons = self.__convert_from_base(MassUnits.Kilodalton)
+        return self.__kilodaltons
+
+    
+    @property
+    def megadaltons(self) -> float:
+        """
+        
+        """
+        if self.__megadaltons != None:
+            return self.__megadaltons
+        self.__megadaltons = self.__convert_from_base(MassUnits.Megadalton)
+        return self.__megadaltons
+
+    
+    @property
+    def gigadaltons(self) -> float:
+        """
+        
+        """
+        if self.__gigadaltons != None:
+            return self.__gigadaltons
+        self.__gigadaltons = self.__convert_from_base(MassUnits.Gigadalton)
+        return self.__gigadaltons
+
+    
     def to_string(self, unit: MassUnits = MassUnits.Kilogram, fractional_digits: int = None) -> str:
         """
         Format the Mass to a string.
@@ -1251,6 +1407,9 @@ class Mass(AbstractMeasure):
         if unit == MassUnits.EarthMass:
             return f"""{super()._truncate_fraction_digits(self.earth_masses, fractional_digits)} em"""
         
+        if unit == MassUnits.Dalton:
+            return f"""{super()._truncate_fraction_digits(self.daltons, fractional_digits)} Da"""
+        
         if unit == MassUnits.Femtogram:
             return f"""{super()._truncate_fraction_digits(self.femtograms, fractional_digits)} fg"""
         
@@ -1292,6 +1451,15 @@ class Mass(AbstractMeasure):
         
         if unit == MassUnits.Megapound:
             return f"""{super()._truncate_fraction_digits(self.megapounds, fractional_digits)} Mlb"""
+        
+        if unit == MassUnits.Kilodalton:
+            return f"""{super()._truncate_fraction_digits(self.kilodaltons, fractional_digits)} kDa"""
+        
+        if unit == MassUnits.Megadalton:
+            return f"""{super()._truncate_fraction_digits(self.megadaltons, fractional_digits)} MDa"""
+        
+        if unit == MassUnits.Gigadalton:
+            return f"""{super()._truncate_fraction_digits(self.gigadaltons, fractional_digits)} GDa"""
         
         return f'{self._value}'
 
@@ -1342,6 +1510,9 @@ class Mass(AbstractMeasure):
         if unit_abbreviation == MassUnits.EarthMass:
             return """em"""
         
+        if unit_abbreviation == MassUnits.Dalton:
+            return """Da"""
+        
         if unit_abbreviation == MassUnits.Femtogram:
             return """fg"""
         
@@ -1383,4 +1554,13 @@ class Mass(AbstractMeasure):
         
         if unit_abbreviation == MassUnits.Megapound:
             return """Mlb"""
+        
+        if unit_abbreviation == MassUnits.Kilodalton:
+            return """kDa"""
+        
+        if unit_abbreviation == MassUnits.Megadalton:
+            return """MDa"""
+        
+        if unit_abbreviation == MassUnits.Gigadalton:
+            return """GDa"""
         

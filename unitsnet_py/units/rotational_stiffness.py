@@ -45,6 +45,11 @@ class RotationalStiffnessUnits(Enum):
             
         """
         
+        KilopoundForceFootPerRadian = 'KilopoundForceFootPerRadian'
+        """
+            
+        """
+        
         KilonewtonMeterPerRadian = 'KilonewtonMeterPerRadian'
         """
             
@@ -255,6 +260,8 @@ class RotationalStiffness(AbstractMeasure):
         
         self.__pound_force_feet_per_radian = None
         
+        self.__kilopound_force_feet_per_radian = None
+        
         self.__kilonewton_meters_per_radian = None
         
         self.__meganewton_meters_per_radian = None
@@ -383,6 +390,9 @@ class RotationalStiffness(AbstractMeasure):
         if from_unit == RotationalStiffnessUnits.PoundForceFeetPerRadian:
             return (value / (4.4482216152605 * 0.3048))
         
+        if from_unit == RotationalStiffnessUnits.KilopoundForceFootPerRadian:
+            return (value / (4.4482216152605e3 * 0.3048))
+        
         if from_unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return ((value) / 1000.0)
         
@@ -486,6 +496,9 @@ class RotationalStiffness(AbstractMeasure):
         
         if to_unit == RotationalStiffnessUnits.PoundForceFeetPerRadian:
             return (value * 4.4482216152605 * 0.3048)
+        
+        if to_unit == RotationalStiffnessUnits.KilopoundForceFootPerRadian:
+            return (value * 4.4482216152605e3 * 0.3048)
         
         if to_unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return ((value) * 1000.0)
@@ -676,6 +689,21 @@ class RotationalStiffness(AbstractMeasure):
         :rtype: RotationalStiffness
         """
         return RotationalStiffness(pound_force_feet_per_radian, RotationalStiffnessUnits.PoundForceFeetPerRadian)
+
+    
+    @staticmethod
+    def from_kilopound_force_feet_per_radian(kilopound_force_feet_per_radian: float):
+        """
+        Create a new instance of RotationalStiffness from a value in kilopound_force_feet_per_radian.
+
+        
+
+        :param meters: The RotationalStiffness value in kilopound_force_feet_per_radian.
+        :type kilopound_force_feet_per_radian: float
+        :return: A new instance of RotationalStiffness.
+        :rtype: RotationalStiffness
+        """
+        return RotationalStiffness(kilopound_force_feet_per_radian, RotationalStiffnessUnits.KilopoundForceFootPerRadian)
 
     
     @staticmethod
@@ -1146,6 +1174,17 @@ class RotationalStiffness(AbstractMeasure):
 
     
     @property
+    def kilopound_force_feet_per_radian(self) -> float:
+        """
+        
+        """
+        if self.__kilopound_force_feet_per_radian != None:
+            return self.__kilopound_force_feet_per_radian
+        self.__kilopound_force_feet_per_radian = self.__convert_from_base(RotationalStiffnessUnits.KilopoundForceFootPerRadian)
+        return self.__kilopound_force_feet_per_radian
+
+    
+    @property
     def kilonewton_meters_per_radian(self) -> float:
         """
         
@@ -1467,6 +1506,9 @@ class RotationalStiffness(AbstractMeasure):
         if unit == RotationalStiffnessUnits.PoundForceFeetPerRadian:
             return f"""{super()._truncate_fraction_digits(self.pound_force_feet_per_radian, fractional_digits)} lbf·ft/rad"""
         
+        if unit == RotationalStiffnessUnits.KilopoundForceFootPerRadian:
+            return f"""{super()._truncate_fraction_digits(self.kilopound_force_feet_per_radian, fractional_digits)} kipf·ft/rad"""
+        
         if unit == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return f"""{super()._truncate_fraction_digits(self.kilonewton_meters_per_radian, fractional_digits)} kN·m/rad"""
         
@@ -1575,6 +1617,9 @@ class RotationalStiffness(AbstractMeasure):
         
         if unit_abbreviation == RotationalStiffnessUnits.PoundForceFeetPerRadian:
             return """lbf·ft/rad"""
+        
+        if unit_abbreviation == RotationalStiffnessUnits.KilopoundForceFootPerRadian:
+            return """kipf·ft/rad"""
         
         if unit_abbreviation == RotationalStiffnessUnits.KilonewtonMeterPerRadian:
             return """kN·m/rad"""
