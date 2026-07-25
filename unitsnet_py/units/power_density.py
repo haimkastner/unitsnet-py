@@ -30,6 +30,16 @@ class PowerDensityUnits(Enum):
             
         """
         
+        BtuPerSecondCubicInch = 'BtuPerSecondCubicInch'
+        """
+            
+        """
+        
+        BtuPerSecondCubicFoot = 'BtuPerSecondCubicFoot'
+        """
+            
+        """
+        
         PicowattPerCubicMeter = 'PicowattPerCubicMeter'
         """
             
@@ -304,6 +314,10 @@ class PowerDensity(AbstractMeasure):
         
         self.__watts_per_liter = None
         
+        self.__btus_per_second_cubic_inch = None
+        
+        self.__btus_per_second_cubic_foot = None
+        
         self.__picowatts_per_cubic_meter = None
         
         self.__nanowatts_per_cubic_meter = None
@@ -451,6 +465,12 @@ class PowerDensity(AbstractMeasure):
         if from_unit == PowerDensityUnits.WattPerLiter:
             return (value / 1.0e3)
         
+        if from_unit == PowerDensityUnits.BtuPerSecondCubicInch:
+            return (value / 1055.05585262 * (2.54e-2 * 2.54e-2 * 2.54e-2))
+        
+        if from_unit == PowerDensityUnits.BtuPerSecondCubicFoot:
+            return (value / 1055.05585262 * (0.3048 * 0.3048 * 0.3048))
+        
         if from_unit == PowerDensityUnits.PicowattPerCubicMeter:
             return ((value) / 1e-12)
         
@@ -587,6 +607,12 @@ class PowerDensity(AbstractMeasure):
         
         if to_unit == PowerDensityUnits.WattPerLiter:
             return (value * 1.0e3)
+        
+        if to_unit == PowerDensityUnits.BtuPerSecondCubicInch:
+            return (value * 1055.05585262 / (2.54e-2 * 2.54e-2 * 2.54e-2))
+        
+        if to_unit == PowerDensityUnits.BtuPerSecondCubicFoot:
+            return (value * 1055.05585262 / (0.3048 * 0.3048 * 0.3048))
         
         if to_unit == PowerDensityUnits.PicowattPerCubicMeter:
             return ((value) * 1e-12)
@@ -774,6 +800,36 @@ class PowerDensity(AbstractMeasure):
         :rtype: PowerDensity
         """
         return PowerDensity(watts_per_liter, PowerDensityUnits.WattPerLiter)
+
+    
+    @staticmethod
+    def from_btus_per_second_cubic_inch(btus_per_second_cubic_inch: float):
+        """
+        Create a new instance of PowerDensity from a value in btus_per_second_cubic_inch.
+
+        
+
+        :param meters: The PowerDensity value in btus_per_second_cubic_inch.
+        :type btus_per_second_cubic_inch: float
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
+        return PowerDensity(btus_per_second_cubic_inch, PowerDensityUnits.BtuPerSecondCubicInch)
+
+    
+    @staticmethod
+    def from_btus_per_second_cubic_foot(btus_per_second_cubic_foot: float):
+        """
+        Create a new instance of PowerDensity from a value in btus_per_second_cubic_foot.
+
+        
+
+        :param meters: The PowerDensity value in btus_per_second_cubic_foot.
+        :type btus_per_second_cubic_foot: float
+        :return: A new instance of PowerDensity.
+        :rtype: PowerDensity
+        """
+        return PowerDensity(btus_per_second_cubic_foot, PowerDensityUnits.BtuPerSecondCubicFoot)
 
     
     @staticmethod
@@ -1421,6 +1477,28 @@ class PowerDensity(AbstractMeasure):
 
     
     @property
+    def btus_per_second_cubic_inch(self) -> float:
+        """
+        
+        """
+        if self.__btus_per_second_cubic_inch != None:
+            return self.__btus_per_second_cubic_inch
+        self.__btus_per_second_cubic_inch = self.__convert_from_base(PowerDensityUnits.BtuPerSecondCubicInch)
+        return self.__btus_per_second_cubic_inch
+
+    
+    @property
+    def btus_per_second_cubic_foot(self) -> float:
+        """
+        
+        """
+        if self.__btus_per_second_cubic_foot != None:
+            return self.__btus_per_second_cubic_foot
+        self.__btus_per_second_cubic_foot = self.__convert_from_base(PowerDensityUnits.BtuPerSecondCubicFoot)
+        return self.__btus_per_second_cubic_foot
+
+    
+    @property
     def picowatts_per_cubic_meter(self) -> float:
         """
         
@@ -1887,6 +1965,12 @@ class PowerDensity(AbstractMeasure):
         if unit == PowerDensityUnits.WattPerLiter:
             return f"""{super()._truncate_fraction_digits(self.watts_per_liter, fractional_digits)} W/l"""
         
+        if unit == PowerDensityUnits.BtuPerSecondCubicInch:
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_cubic_inch, fractional_digits)} BTU/(s·in³)"""
+        
+        if unit == PowerDensityUnits.BtuPerSecondCubicFoot:
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_cubic_foot, fractional_digits)} BTU/(s·ft³)"""
+        
         if unit == PowerDensityUnits.PicowattPerCubicMeter:
             return f"""{super()._truncate_fraction_digits(self.picowatts_per_cubic_meter, fractional_digits)} pW/m³"""
         
@@ -2028,6 +2112,12 @@ class PowerDensity(AbstractMeasure):
         
         if unit_abbreviation == PowerDensityUnits.WattPerLiter:
             return """W/l"""
+        
+        if unit_abbreviation == PowerDensityUnits.BtuPerSecondCubicInch:
+            return """BTU/(s·in³)"""
+        
+        if unit_abbreviation == PowerDensityUnits.BtuPerSecondCubicFoot:
+            return """BTU/(s·ft³)"""
         
         if unit_abbreviation == PowerDensityUnits.PicowattPerCubicMeter:
             return """pW/m³"""

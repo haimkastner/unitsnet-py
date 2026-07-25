@@ -517,7 +517,7 @@ class MolarFlow(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.moles_per_minute, fractional_digits)} mol/min"""
         
         if unit == MolarFlowUnits.MolePerHour:
-            return f"""{super()._truncate_fraction_digits(self.moles_per_hour, fractional_digits)} kmol/h"""
+            return f"""{super()._truncate_fraction_digits(self.moles_per_hour, fractional_digits)} mol/h"""
         
         if unit == MolarFlowUnits.PoundMolePerSecond:
             return f"""{super()._truncate_fraction_digits(self.pound_moles_per_second, fractional_digits)} lbmol/s"""
@@ -535,7 +535,7 @@ class MolarFlow(AbstractMeasure):
             return f"""{super()._truncate_fraction_digits(self.kilomoles_per_minute, fractional_digits)} kmol/min"""
         
         if unit == MolarFlowUnits.KilomolePerHour:
-            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_hour, fractional_digits)} kkmol/h"""
+            return f"""{super()._truncate_fraction_digits(self.kilomoles_per_hour, fractional_digits)} kmol/h"""
         
         return f'{self._value}'
 
@@ -554,7 +554,7 @@ class MolarFlow(AbstractMeasure):
             return """mol/min"""
         
         if unit_abbreviation == MolarFlowUnits.MolePerHour:
-            return """kmol/h"""
+            return """mol/h"""
         
         if unit_abbreviation == MolarFlowUnits.PoundMolePerSecond:
             return """lbmol/s"""
@@ -572,5 +572,5 @@ class MolarFlow(AbstractMeasure):
             return """kmol/min"""
         
         if unit_abbreviation == MolarFlowUnits.KilomolePerHour:
-            return """kkmol/h"""
+            return """kmol/h"""
         

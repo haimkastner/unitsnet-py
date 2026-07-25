@@ -25,6 +25,11 @@ class HeatTransferCoefficientUnits(Enum):
             
         """
         
+        BtuPerSecondSquareInchDegreeFahrenheit = 'BtuPerSecondSquareInchDegreeFahrenheit'
+        """
+            
+        """
+        
         CaloriePerHourSquareMeterDegreeCelsius = 'CaloriePerHourSquareMeterDegreeCelsius'
         """
             
@@ -107,6 +112,8 @@ class HeatTransferCoefficient(AbstractMeasure):
         
         self.__btus_per_hour_square_foot_degree_fahrenheit = None
         
+        self.__btus_per_second_square_inch_degree_fahrenheit = None
+        
         self.__calories_per_hour_square_meter_degree_celsius = None
         
         self.__kilocalories_per_hour_square_meter_degree_celsius = None
@@ -175,6 +182,9 @@ class HeatTransferCoefficient(AbstractMeasure):
         if from_unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
             return (value / ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8))
         
+        if from_unit == HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit:
+            return (value / ((1055.05585262 / (2.54e-2 * 2.54e-2)) * 1.8))
+        
         if from_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return ((value / 4.184) * 3600)
         
@@ -194,6 +204,9 @@ class HeatTransferCoefficient(AbstractMeasure):
         
         if to_unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
             return (value * ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8))
+        
+        if to_unit == HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit:
+            return (value * ((1055.05585262 / (2.54e-2 * 2.54e-2)) * 1.8))
         
         if to_unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return ((value * 4.184) / 3600)
@@ -252,6 +265,21 @@ class HeatTransferCoefficient(AbstractMeasure):
         :rtype: HeatTransferCoefficient
         """
         return HeatTransferCoefficient(btus_per_hour_square_foot_degree_fahrenheit, HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit)
+
+    
+    @staticmethod
+    def from_btus_per_second_square_inch_degree_fahrenheit(btus_per_second_square_inch_degree_fahrenheit: float):
+        """
+        Create a new instance of HeatTransferCoefficient from a value in btus_per_second_square_inch_degree_fahrenheit.
+
+        
+
+        :param meters: The HeatTransferCoefficient value in btus_per_second_square_inch_degree_fahrenheit.
+        :type btus_per_second_square_inch_degree_fahrenheit: float
+        :return: A new instance of HeatTransferCoefficient.
+        :rtype: HeatTransferCoefficient
+        """
+        return HeatTransferCoefficient(btus_per_second_square_inch_degree_fahrenheit, HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit)
 
     
     @staticmethod
@@ -318,6 +346,17 @@ class HeatTransferCoefficient(AbstractMeasure):
 
     
     @property
+    def btus_per_second_square_inch_degree_fahrenheit(self) -> float:
+        """
+        
+        """
+        if self.__btus_per_second_square_inch_degree_fahrenheit != None:
+            return self.__btus_per_second_square_inch_degree_fahrenheit
+        self.__btus_per_second_square_inch_degree_fahrenheit = self.__convert_from_base(HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit)
+        return self.__btus_per_second_square_inch_degree_fahrenheit
+
+    
+    @property
     def calories_per_hour_square_meter_degree_celsius(self) -> float:
         """
         
@@ -363,6 +402,9 @@ class HeatTransferCoefficient(AbstractMeasure):
         if unit == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
             return f"""{super()._truncate_fraction_digits(self.btus_per_hour_square_foot_degree_fahrenheit, fractional_digits)} Btu/(h·ft²·°F)"""
         
+        if unit == HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit:
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_square_inch_degree_fahrenheit, fractional_digits)} Btu/(s·in²·°F)"""
+        
         if unit == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return f"""{super()._truncate_fraction_digits(self.calories_per_hour_square_meter_degree_celsius, fractional_digits)} kcal/(h·m²·°C)"""
         
@@ -387,6 +429,9 @@ class HeatTransferCoefficient(AbstractMeasure):
         
         if unit_abbreviation == HeatTransferCoefficientUnits.BtuPerHourSquareFootDegreeFahrenheit:
             return """Btu/(h·ft²·°F)"""
+        
+        if unit_abbreviation == HeatTransferCoefficientUnits.BtuPerSecondSquareInchDegreeFahrenheit:
+            return """Btu/(s·in²·°F)"""
         
         if unit_abbreviation == HeatTransferCoefficientUnits.CaloriePerHourSquareMeterDegreeCelsius:
             return """kcal/(h·m²·°C)"""

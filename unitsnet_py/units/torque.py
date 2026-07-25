@@ -25,6 +25,16 @@ class TorqueUnits(Enum):
             
         """
         
+        OunceForceFoot = 'OunceForceFoot'
+        """
+            
+        """
+        
+        OunceForceInch = 'OunceForceInch'
+        """
+            
+        """
+        
         PoundalFoot = 'PoundalFoot'
         """
             
@@ -207,6 +217,10 @@ class Torque(AbstractMeasure):
         
         self.__newton_meters = None
         
+        self.__ounce_force_feet = None
+        
+        self.__ounce_force_inches = None
+        
         self.__poundal_feet = None
         
         self.__pound_force_inches = None
@@ -315,6 +329,12 @@ class Torque(AbstractMeasure):
         if from_unit == TorqueUnits.NewtonMeter:
             return (value)
         
+        if from_unit == TorqueUnits.OunceForceFoot:
+            return (value / ((4.4482216152605 / 16) * 0.3048))
+        
+        if from_unit == TorqueUnits.OunceForceInch:
+            return (value / ((4.4482216152605 / 16) * 2.54e-2))
+        
         if from_unit == TorqueUnits.PoundalFoot:
             return (value / (0.138254954376 * 0.3048))
         
@@ -394,6 +414,12 @@ class Torque(AbstractMeasure):
         
         if to_unit == TorqueUnits.NewtonMeter:
             return (value)
+        
+        if to_unit == TorqueUnits.OunceForceFoot:
+            return (value * (4.4482216152605 / 16) * 0.3048)
+        
+        if to_unit == TorqueUnits.OunceForceInch:
+            return (value * (4.4482216152605 / 16) * 2.54e-2)
         
         if to_unit == TorqueUnits.PoundalFoot:
             return (value * 0.138254954376 * 0.3048)
@@ -512,6 +538,36 @@ class Torque(AbstractMeasure):
         :rtype: Torque
         """
         return Torque(newton_meters, TorqueUnits.NewtonMeter)
+
+    
+    @staticmethod
+    def from_ounce_force_feet(ounce_force_feet: float):
+        """
+        Create a new instance of Torque from a value in ounce_force_feet.
+
+        
+
+        :param meters: The Torque value in ounce_force_feet.
+        :type ounce_force_feet: float
+        :return: A new instance of Torque.
+        :rtype: Torque
+        """
+        return Torque(ounce_force_feet, TorqueUnits.OunceForceFoot)
+
+    
+    @staticmethod
+    def from_ounce_force_inches(ounce_force_inches: float):
+        """
+        Create a new instance of Torque from a value in ounce_force_inches.
+
+        
+
+        :param meters: The Torque value in ounce_force_inches.
+        :type ounce_force_inches: float
+        :return: A new instance of Torque.
+        :rtype: Torque
+        """
+        return Torque(ounce_force_inches, TorqueUnits.OunceForceInch)
 
     
     @staticmethod
@@ -878,6 +934,28 @@ class Torque(AbstractMeasure):
 
     
     @property
+    def ounce_force_feet(self) -> float:
+        """
+        
+        """
+        if self.__ounce_force_feet != None:
+            return self.__ounce_force_feet
+        self.__ounce_force_feet = self.__convert_from_base(TorqueUnits.OunceForceFoot)
+        return self.__ounce_force_feet
+
+    
+    @property
+    def ounce_force_inches(self) -> float:
+        """
+        
+        """
+        if self.__ounce_force_inches != None:
+            return self.__ounce_force_inches
+        self.__ounce_force_inches = self.__convert_from_base(TorqueUnits.OunceForceInch)
+        return self.__ounce_force_inches
+
+    
+    @property
     def poundal_feet(self) -> float:
         """
         
@@ -1143,6 +1221,12 @@ class Torque(AbstractMeasure):
         if unit == TorqueUnits.NewtonMeter:
             return f"""{super()._truncate_fraction_digits(self.newton_meters, fractional_digits)} N·m"""
         
+        if unit == TorqueUnits.OunceForceFoot:
+            return f"""{super()._truncate_fraction_digits(self.ounce_force_feet, fractional_digits)} ozf·ft"""
+        
+        if unit == TorqueUnits.OunceForceInch:
+            return f"""{super()._truncate_fraction_digits(self.ounce_force_inches, fractional_digits)} ozf·in"""
+        
         if unit == TorqueUnits.PoundalFoot:
             return f"""{super()._truncate_fraction_digits(self.poundal_feet, fractional_digits)} pdl·ft"""
         
@@ -1227,6 +1311,12 @@ class Torque(AbstractMeasure):
         
         if unit_abbreviation == TorqueUnits.NewtonMeter:
             return """N·m"""
+        
+        if unit_abbreviation == TorqueUnits.OunceForceFoot:
+            return """ozf·ft"""
+        
+        if unit_abbreviation == TorqueUnits.OunceForceInch:
+            return """ozf·in"""
         
         if unit_abbreviation == TorqueUnits.PoundalFoot:
             return """pdl·ft"""

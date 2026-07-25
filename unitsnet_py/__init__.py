@@ -6,6 +6,7 @@ from .units.angle import Angle, AngleUnits, AngleDto
 from .units.area import Area, AreaUnits, AreaDto
 from .units.area_density import AreaDensity, AreaDensityUnits, AreaDensityDto
 from .units.area_moment_of_inertia import AreaMomentOfInertia, AreaMomentOfInertiaUnits, AreaMomentOfInertiaDto
+from .units.area_per_length import AreaPerLength, AreaPerLengthUnits, AreaPerLengthDto
 from .units.bit_rate import BitRate, BitRateUnits, BitRateDto
 from .units.brake_specific_fuel_consumption import BrakeSpecificFuelConsumption, BrakeSpecificFuelConsumptionUnits, BrakeSpecificFuelConsumptionDto
 from .units.coefficient_of_thermal_expansion import CoefficientOfThermalExpansion, CoefficientOfThermalExpansionUnits, CoefficientOfThermalExpansionDto
@@ -137,6 +138,7 @@ __all__ = [
  'Area', 'AreaUnits', 'AreaDto',
  'AreaDensity', 'AreaDensityUnits', 'AreaDensityDto',
  'AreaMomentOfInertia', 'AreaMomentOfInertiaUnits', 'AreaMomentOfInertiaDto',
+ 'AreaPerLength', 'AreaPerLengthUnits', 'AreaPerLengthDto',
  'BitRate', 'BitRateUnits', 'BitRateDto',
  'BrakeSpecificFuelConsumption', 'BrakeSpecificFuelConsumptionUnits', 'BrakeSpecificFuelConsumptionDto',
  'CoefficientOfThermalExpansion', 'CoefficientOfThermalExpansionUnits', 'CoefficientOfThermalExpansionDto',

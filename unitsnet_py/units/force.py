@@ -15,6 +15,11 @@ class ForceUnits(Enum):
             One dyne is equal to 10 micronewtons, 10e−5 N or to 10 nsn (nanosthenes) in the old metre–tonne–second system of units.
         """
         
+        GramForce = 'GramForce'
+        """
+            The gram-force is a unit of force equal to the magnitude of force exerted by a gram of mass in standard gravity (9.80665 m/s²). It is equal to 9.80665 × 10⁻³ N.
+        """
+        
         KilogramForce = 'KilogramForce'
         """
             The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
@@ -153,6 +158,8 @@ class Force(AbstractMeasure):
         
         self.__dyne = None
         
+        self.__grams_force = None
+        
         self.__kilograms_force = None
         
         self.__tonnes_force = None
@@ -239,6 +246,9 @@ class Force(AbstractMeasure):
         if from_unit == ForceUnits.Dyn:
             return (value * 1e5)
         
+        if from_unit == ForceUnits.GramForce:
+            return (value / 9.80665e-3)
+        
         if from_unit == ForceUnits.KilogramForce:
             return (value / 9.80665)
         
@@ -288,6 +298,9 @@ class Force(AbstractMeasure):
         
         if to_unit == ForceUnits.Dyn:
             return (value / 1e5)
+        
+        if to_unit == ForceUnits.GramForce:
+            return (value * 9.80665e-3)
         
         if to_unit == ForceUnits.KilogramForce:
             return (value * 9.80665)
@@ -352,6 +365,21 @@ class Force(AbstractMeasure):
         :rtype: Force
         """
         return Force(dyne, ForceUnits.Dyn)
+
+    
+    @staticmethod
+    def from_grams_force(grams_force: float):
+        """
+        Create a new instance of Force from a value in grams_force.
+
+        The gram-force is a unit of force equal to the magnitude of force exerted by a gram of mass in standard gravity (9.80665 m/s²). It is equal to 9.80665 × 10⁻³ N.
+
+        :param meters: The Force value in grams_force.
+        :type grams_force: float
+        :return: A new instance of Force.
+        :rtype: Force
+        """
+        return Force(grams_force, ForceUnits.GramForce)
 
     
     @staticmethod
@@ -576,6 +604,17 @@ class Force(AbstractMeasure):
 
     
     @property
+    def grams_force(self) -> float:
+        """
+        The gram-force is a unit of force equal to the magnitude of force exerted by a gram of mass in standard gravity (9.80665 m/s²). It is equal to 9.80665 × 10⁻³ N.
+        """
+        if self.__grams_force != None:
+            return self.__grams_force
+        self.__grams_force = self.__convert_from_base(ForceUnits.GramForce)
+        return self.__grams_force
+
+    
+    @property
     def kilograms_force(self) -> float:
         """
         The kilogram-force, or kilopond, is equal to the magnitude of the force exerted on one kilogram of mass in a 9.80665 m/s2 gravitational field (standard gravity). Therefore, one kilogram-force is by definition equal to 9.80665 N.
@@ -747,6 +786,9 @@ class Force(AbstractMeasure):
         if unit == ForceUnits.Dyn:
             return f"""{super()._truncate_fraction_digits(self.dyne, fractional_digits)} dyn"""
         
+        if unit == ForceUnits.GramForce:
+            return f"""{super()._truncate_fraction_digits(self.grams_force, fractional_digits)} gf"""
+        
         if unit == ForceUnits.KilogramForce:
             return f"""{super()._truncate_fraction_digits(self.kilograms_force, fractional_digits)} kgf"""
         
@@ -801,6 +843,9 @@ class Force(AbstractMeasure):
         
         if unit_abbreviation == ForceUnits.Dyn:
             return """dyn"""
+        
+        if unit_abbreviation == ForceUnits.GramForce:
+            return """gf"""
         
         if unit_abbreviation == ForceUnits.KilogramForce:
             return """kgf"""

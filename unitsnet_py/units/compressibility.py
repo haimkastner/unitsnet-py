@@ -184,22 +184,22 @@ class Compressibility(AbstractMeasure):
             return (value)
         
         if from_unit == CompressibilityUnits.InverseKilopascal:
-            return (value / 1e3)
+            return (value * 1e3)
         
         if from_unit == CompressibilityUnits.InverseMegapascal:
-            return (value / 1e6)
+            return (value * 1e6)
         
         if from_unit == CompressibilityUnits.InverseAtmosphere:
-            return (value / 101325)
+            return (value * 101325)
         
         if from_unit == CompressibilityUnits.InverseMillibar:
-            return (value / 100)
+            return (value * 100)
         
         if from_unit == CompressibilityUnits.InverseBar:
-            return (value / 1e5)
+            return (value * 1e5)
         
         if from_unit == CompressibilityUnits.InversePoundForcePerSquareInch:
-            return (value / 6.894757293168361e3)
+            return (value * 6.894757293168361e3)
         
         return None
 
@@ -210,22 +210,22 @@ class Compressibility(AbstractMeasure):
             return (value)
         
         if to_unit == CompressibilityUnits.InverseKilopascal:
-            return (value * 1e3)
+            return (value / 1e3)
         
         if to_unit == CompressibilityUnits.InverseMegapascal:
-            return (value * 1e6)
+            return (value / 1e6)
         
         if to_unit == CompressibilityUnits.InverseAtmosphere:
-            return (value * 101325)
+            return (value / 101325)
         
         if to_unit == CompressibilityUnits.InverseMillibar:
-            return (value * 100)
+            return (value / 100)
         
         if to_unit == CompressibilityUnits.InverseBar:
-            return (value * 1e5)
+            return (value / 1e5)
         
         if to_unit == CompressibilityUnits.InversePoundForcePerSquareInch:
-            return (value * 6.894757293168361e3)
+            return (value / 6.894757293168361e3)
         
         return None
 

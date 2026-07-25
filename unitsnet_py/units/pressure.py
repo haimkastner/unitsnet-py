@@ -135,6 +135,16 @@ class PressureUnits(Enum):
             Inches of water is a non-SI unit for pressure. It is defined as the pressure exerted by a column of water of 1 inch in height at defined conditions. At a temperature of 4 °C (39.2 °F) pure water has its highest density (1000 kg/m3). At that temperature and assuming the standard acceleration of gravity, 1 inAq is approximately 249.082 pascals (0.0361263 psi).
         """
         
+        MilligramForcePerSquareMeter = 'MilligramForcePerSquareMeter'
+        """
+            
+        """
+        
+        MilligramForcePerSquareFoot = 'MilligramForcePerSquareFoot'
+        """
+            
+        """
+        
         Micropascal = 'Micropascal'
         """
             
@@ -366,6 +376,10 @@ class Pressure(AbstractMeasure):
         
         self.__inches_of_water_column = None
         
+        self.__milligrams_force_per_square_meter = None
+        
+        self.__milligrams_force_per_square_foot = None
+        
         self.__micropascals = None
         
         self.__millipascals = None
@@ -542,6 +556,12 @@ class Pressure(AbstractMeasure):
         if from_unit == PressureUnits.InchOfWaterColumn:
             return (value / (2.54e-2 * 9.80665e3))
         
+        if from_unit == PressureUnits.MilligramForcePerSquareMeter:
+            return (value / 9.80665e-6)
+        
+        if from_unit == PressureUnits.MilligramForcePerSquareFoot:
+            return (value / 9.80665e-6 * 9.290304e-2)
+        
         if from_unit == PressureUnits.Micropascal:
             return ((value) / 1e-06)
         
@@ -690,6 +710,12 @@ class Pressure(AbstractMeasure):
         
         if to_unit == PressureUnits.InchOfWaterColumn:
             return (value * 2.54e-2 * 9.80665e3)
+        
+        if to_unit == PressureUnits.MilligramForcePerSquareMeter:
+            return (value * 9.80665e-6)
+        
+        if to_unit == PressureUnits.MilligramForcePerSquareFoot:
+            return (value * 9.80665e-6 / 9.290304e-2)
         
         if to_unit == PressureUnits.Micropascal:
             return ((value) * 1e-06)
@@ -1141,6 +1167,36 @@ class Pressure(AbstractMeasure):
         :rtype: Pressure
         """
         return Pressure(inches_of_water_column, PressureUnits.InchOfWaterColumn)
+
+    
+    @staticmethod
+    def from_milligrams_force_per_square_meter(milligrams_force_per_square_meter: float):
+        """
+        Create a new instance of Pressure from a value in milligrams_force_per_square_meter.
+
+        
+
+        :param meters: The Pressure value in milligrams_force_per_square_meter.
+        :type milligrams_force_per_square_meter: float
+        :return: A new instance of Pressure.
+        :rtype: Pressure
+        """
+        return Pressure(milligrams_force_per_square_meter, PressureUnits.MilligramForcePerSquareMeter)
+
+    
+    @staticmethod
+    def from_milligrams_force_per_square_foot(milligrams_force_per_square_foot: float):
+        """
+        Create a new instance of Pressure from a value in milligrams_force_per_square_foot.
+
+        
+
+        :param meters: The Pressure value in milligrams_force_per_square_foot.
+        :type milligrams_force_per_square_foot: float
+        :return: A new instance of Pressure.
+        :rtype: Pressure
+        """
+        return Pressure(milligrams_force_per_square_foot, PressureUnits.MilligramForcePerSquareFoot)
 
     
     @staticmethod
@@ -1764,6 +1820,28 @@ class Pressure(AbstractMeasure):
 
     
     @property
+    def milligrams_force_per_square_meter(self) -> float:
+        """
+        
+        """
+        if self.__milligrams_force_per_square_meter != None:
+            return self.__milligrams_force_per_square_meter
+        self.__milligrams_force_per_square_meter = self.__convert_from_base(PressureUnits.MilligramForcePerSquareMeter)
+        return self.__milligrams_force_per_square_meter
+
+    
+    @property
+    def milligrams_force_per_square_foot(self) -> float:
+        """
+        
+        """
+        if self.__milligrams_force_per_square_foot != None:
+            return self.__milligrams_force_per_square_foot
+        self.__milligrams_force_per_square_foot = self.__convert_from_base(PressureUnits.MilligramForcePerSquareFoot)
+        return self.__milligrams_force_per_square_foot
+
+    
+    @property
     def micropascals(self) -> float:
         """
         
@@ -2106,6 +2184,12 @@ class Pressure(AbstractMeasure):
         if unit == PressureUnits.InchOfWaterColumn:
             return f"""{super()._truncate_fraction_digits(self.inches_of_water_column, fractional_digits)} inH2O"""
         
+        if unit == PressureUnits.MilligramForcePerSquareMeter:
+            return f"""{super()._truncate_fraction_digits(self.milligrams_force_per_square_meter, fractional_digits)} mgf/m²"""
+        
+        if unit == PressureUnits.MilligramForcePerSquareFoot:
+            return f"""{super()._truncate_fraction_digits(self.milligrams_force_per_square_foot, fractional_digits)} mgf/ft²"""
+        
         if unit == PressureUnits.Micropascal:
             return f"""{super()._truncate_fraction_digits(self.micropascals, fractional_digits)} μPa"""
         
@@ -2259,6 +2343,12 @@ class Pressure(AbstractMeasure):
         
         if unit_abbreviation == PressureUnits.InchOfWaterColumn:
             return """inH2O"""
+        
+        if unit_abbreviation == PressureUnits.MilligramForcePerSquareMeter:
+            return """mgf/m²"""
+        
+        if unit_abbreviation == PressureUnits.MilligramForcePerSquareFoot:
+            return """mgf/ft²"""
         
         if unit_abbreviation == PressureUnits.Micropascal:
             return """μPa"""

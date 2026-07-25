@@ -25,6 +25,16 @@ class AreaDensityUnits(Enum):
             
         """
         
+        PoundPerSquareFoot = 'PoundPerSquareFoot'
+        """
+            
+        """
+        
+        PoundPerThousandSquareFeet = 'PoundPerThousandSquareFeet'
+        """
+            
+        """
+        
 
 class AreaDensityDto:
     """
@@ -97,6 +107,10 @@ class AreaDensity(AbstractMeasure):
         
         self.__milligrams_per_square_meter = None
         
+        self.__pounds_per_square_foot = None
+        
+        self.__pounds_per_thousand_square_feet = None
+        
 
     def convert(self, unit: AreaDensityUnits) -> float:
         return self.__convert_from_base(unit)
@@ -161,6 +175,12 @@ class AreaDensity(AbstractMeasure):
         if from_unit == AreaDensityUnits.MilligramPerSquareMeter:
             return (value * 1000000)
         
+        if from_unit == AreaDensityUnits.PoundPerSquareFoot:
+            return (value / (0.45359237 / 0.09290304))
+        
+        if from_unit == AreaDensityUnits.PoundPerThousandSquareFeet:
+            return (value / (0.45359237 / 0.09290304) * 1000)
+        
         return None
 
 
@@ -174,6 +194,12 @@ class AreaDensity(AbstractMeasure):
         
         if to_unit == AreaDensityUnits.MilligramPerSquareMeter:
             return (value / 1000000)
+        
+        if to_unit == AreaDensityUnits.PoundPerSquareFoot:
+            return (value * (0.45359237 / 0.09290304))
+        
+        if to_unit == AreaDensityUnits.PoundPerThousandSquareFeet:
+            return (value * (0.45359237 / 0.09290304) / 1000)
         
         return None
 
@@ -228,6 +254,36 @@ class AreaDensity(AbstractMeasure):
         return AreaDensity(milligrams_per_square_meter, AreaDensityUnits.MilligramPerSquareMeter)
 
     
+    @staticmethod
+    def from_pounds_per_square_foot(pounds_per_square_foot: float):
+        """
+        Create a new instance of AreaDensity from a value in pounds_per_square_foot.
+
+        
+
+        :param meters: The AreaDensity value in pounds_per_square_foot.
+        :type pounds_per_square_foot: float
+        :return: A new instance of AreaDensity.
+        :rtype: AreaDensity
+        """
+        return AreaDensity(pounds_per_square_foot, AreaDensityUnits.PoundPerSquareFoot)
+
+    
+    @staticmethod
+    def from_pounds_per_thousand_square_feet(pounds_per_thousand_square_feet: float):
+        """
+        Create a new instance of AreaDensity from a value in pounds_per_thousand_square_feet.
+
+        
+
+        :param meters: The AreaDensity value in pounds_per_thousand_square_feet.
+        :type pounds_per_thousand_square_feet: float
+        :return: A new instance of AreaDensity.
+        :rtype: AreaDensity
+        """
+        return AreaDensity(pounds_per_thousand_square_feet, AreaDensityUnits.PoundPerThousandSquareFeet)
+
+    
     @property
     def kilograms_per_square_meter(self) -> float:
         """
@@ -261,6 +317,28 @@ class AreaDensity(AbstractMeasure):
         return self.__milligrams_per_square_meter
 
     
+    @property
+    def pounds_per_square_foot(self) -> float:
+        """
+        
+        """
+        if self.__pounds_per_square_foot != None:
+            return self.__pounds_per_square_foot
+        self.__pounds_per_square_foot = self.__convert_from_base(AreaDensityUnits.PoundPerSquareFoot)
+        return self.__pounds_per_square_foot
+
+    
+    @property
+    def pounds_per_thousand_square_feet(self) -> float:
+        """
+        
+        """
+        if self.__pounds_per_thousand_square_feet != None:
+            return self.__pounds_per_thousand_square_feet
+        self.__pounds_per_thousand_square_feet = self.__convert_from_base(AreaDensityUnits.PoundPerThousandSquareFeet)
+        return self.__pounds_per_thousand_square_feet
+
+    
     def to_string(self, unit: AreaDensityUnits = AreaDensityUnits.KilogramPerSquareMeter, fractional_digits: int = None) -> str:
         """
         Format the AreaDensity to a string.
@@ -285,6 +363,12 @@ class AreaDensity(AbstractMeasure):
         if unit == AreaDensityUnits.MilligramPerSquareMeter:
             return f"""{super()._truncate_fraction_digits(self.milligrams_per_square_meter, fractional_digits)} mg/m²"""
         
+        if unit == AreaDensityUnits.PoundPerSquareFoot:
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_square_foot, fractional_digits)} lb/ft²"""
+        
+        if unit == AreaDensityUnits.PoundPerThousandSquareFeet:
+            return f"""{super()._truncate_fraction_digits(self.pounds_per_thousand_square_feet, fractional_digits)} lb/MSF"""
+        
         return f'{self._value}'
 
 
@@ -303,4 +387,10 @@ class AreaDensity(AbstractMeasure):
         
         if unit_abbreviation == AreaDensityUnits.MilligramPerSquareMeter:
             return """mg/m²"""
+        
+        if unit_abbreviation == AreaDensityUnits.PoundPerSquareFoot:
+            return """lb/ft²"""
+        
+        if unit_abbreviation == AreaDensityUnits.PoundPerThousandSquareFeet:
+            return """lb/MSF"""
         

@@ -20,6 +20,11 @@ class ThermalConductivityUnits(Enum):
             
         """
         
+        BtuPerSecondInchFahrenheit = 'BtuPerSecondInchFahrenheit'
+        """
+            
+        """
+        
 
 class ThermalConductivityDto:
     """
@@ -90,6 +95,8 @@ class ThermalConductivity(AbstractMeasure):
         
         self.__btus_per_hour_foot_fahrenheit = None
         
+        self.__btus_per_second_inch_fahrenheit = None
+        
 
     def convert(self, unit: ThermalConductivityUnits) -> float:
         return self.__convert_from_base(unit)
@@ -151,6 +158,9 @@ class ThermalConductivity(AbstractMeasure):
         if from_unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
             return (value / ((1055.05585262 / (0.3048 * 3600)) * 1.8))
         
+        if from_unit == ThermalConductivityUnits.BtuPerSecondInchFahrenheit:
+            return (value / ((1055.05585262 / 2.54e-2) * 1.8))
+        
         return None
 
 
@@ -161,6 +171,9 @@ class ThermalConductivity(AbstractMeasure):
         
         if to_unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
             return (value * ((1055.05585262 / (0.3048 * 3600)) * 1.8))
+        
+        if to_unit == ThermalConductivityUnits.BtuPerSecondInchFahrenheit:
+            return (value * ((1055.05585262 / 2.54e-2) * 1.8))
         
         return None
 
@@ -200,6 +213,21 @@ class ThermalConductivity(AbstractMeasure):
         return ThermalConductivity(btus_per_hour_foot_fahrenheit, ThermalConductivityUnits.BtuPerHourFootFahrenheit)
 
     
+    @staticmethod
+    def from_btus_per_second_inch_fahrenheit(btus_per_second_inch_fahrenheit: float):
+        """
+        Create a new instance of ThermalConductivity from a value in btus_per_second_inch_fahrenheit.
+
+        
+
+        :param meters: The ThermalConductivity value in btus_per_second_inch_fahrenheit.
+        :type btus_per_second_inch_fahrenheit: float
+        :return: A new instance of ThermalConductivity.
+        :rtype: ThermalConductivity
+        """
+        return ThermalConductivity(btus_per_second_inch_fahrenheit, ThermalConductivityUnits.BtuPerSecondInchFahrenheit)
+
+    
     @property
     def watts_per_meter_kelvin(self) -> float:
         """
@@ -220,6 +248,17 @@ class ThermalConductivity(AbstractMeasure):
             return self.__btus_per_hour_foot_fahrenheit
         self.__btus_per_hour_foot_fahrenheit = self.__convert_from_base(ThermalConductivityUnits.BtuPerHourFootFahrenheit)
         return self.__btus_per_hour_foot_fahrenheit
+
+    
+    @property
+    def btus_per_second_inch_fahrenheit(self) -> float:
+        """
+        
+        """
+        if self.__btus_per_second_inch_fahrenheit != None:
+            return self.__btus_per_second_inch_fahrenheit
+        self.__btus_per_second_inch_fahrenheit = self.__convert_from_base(ThermalConductivityUnits.BtuPerSecondInchFahrenheit)
+        return self.__btus_per_second_inch_fahrenheit
 
     
     def to_string(self, unit: ThermalConductivityUnits = ThermalConductivityUnits.WattPerMeterKelvin, fractional_digits: int = None) -> str:
@@ -243,6 +282,9 @@ class ThermalConductivity(AbstractMeasure):
         if unit == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
             return f"""{super()._truncate_fraction_digits(self.btus_per_hour_foot_fahrenheit, fractional_digits)} BTU/(h·ft·°F)"""
         
+        if unit == ThermalConductivityUnits.BtuPerSecondInchFahrenheit:
+            return f"""{super()._truncate_fraction_digits(self.btus_per_second_inch_fahrenheit, fractional_digits)} BTU/(s·in·°F)"""
+        
         return f'{self._value}'
 
 
@@ -258,4 +300,7 @@ class ThermalConductivity(AbstractMeasure):
         
         if unit_abbreviation == ThermalConductivityUnits.BtuPerHourFootFahrenheit:
             return """BTU/(h·ft·°F)"""
+        
+        if unit_abbreviation == ThermalConductivityUnits.BtuPerSecondInchFahrenheit:
+            return """BTU/(s·in·°F)"""
         
