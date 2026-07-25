@@ -8,6 +8,8 @@ def get_definitions(repo_owner_and_name):
     if not directory_files:
         print("[get_definitions] Fetching units files list...")
         directory_files = get_json_from_cdn(directory_url)
+        if not isinstance(directory_files, list):
+            raise ValueError(f"Unexpected response from GitHub API: {directory_files}")
         write_json_file('files.json', directory_files)
 
     print("[get_definitions] Fetching units definitions...")

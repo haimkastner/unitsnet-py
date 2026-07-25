@@ -45,9 +45,11 @@ def read_json_file(file_name):
 
 def get_json_from_cdn(cdn_url):
     try:
-        response = requests.get(
-            cdn_url, headers={"user-agent": "PostmanRuntime/7.20.1"}
-        )
+        github_token = os.environ.get("GITHUB_TOKEN")
+        headers = {"user-agent": "PostmanRuntime/7.20.1"}
+        if github_token:
+            headers["Authorization"] = f"token {github_token}"
+        response = requests.get(cdn_url, headers=headers)
         response.raise_for_status()
         # Skip utf-8 BOM char.
         cleaned_text = response.text.lstrip("\ufeff")
